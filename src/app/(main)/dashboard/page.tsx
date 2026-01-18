@@ -15,7 +15,7 @@ import { useSettingsStore } from "@/stores/settingsStore"
 import { calculateWeeklyTarget } from "@/lib/holidays"
 
 export default function DashboardPage() {
-  const { records, getTodayTotalMinutes } = useRecordStore()
+  const { records } = useRecordStore()
   const {
     examDates,
     subjectTargetHours,
@@ -80,9 +80,8 @@ export default function DashboardPage() {
   const totalTargetHours = Object.values(subjectTargetHours).reduce((sum, h) => sum + h, 0)
   const totalProgress = totalTargetHours > 0 ? Math.round((totalStudyHours / totalTargetHours) * 100) : 0
 
-  // タイマーの今日の時間も加算して表示
-  const todayTimerMinutes = getTodayTotalMinutes()
-  const todayDisplayMinutes = todayStats.studyMinutes + todayTimerMinutes
+  // 記録からの学習時間のみを表示（タイマーは記録に含まれるため）
+  const todayDisplayMinutes = todayStats.studyMinutes
 
   return (
     <>
@@ -161,11 +160,6 @@ export default function DashboardPage() {
                     <p className="text-2xl font-bold">
                       {formatMinutes(todayDisplayMinutes)}
                     </p>
-                    {todayTimerMinutes > 0 && todayStats.studyMinutes > 0 && (
-                      <p className="text-xs text-muted-foreground">
-                        記録: {formatMinutes(todayStats.studyMinutes)} + タイマー: {formatMinutes(todayTimerMinutes)}
-                      </p>
-                    )}
                   </div>
                   <Clock className="h-8 w-8 text-muted-foreground" />
                 </div>
