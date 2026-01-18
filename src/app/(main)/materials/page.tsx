@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { Header } from "@/components/layout/Header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -19,32 +19,23 @@ import {
   Eye,
 } from "lucide-react"
 
-// モックデータ
-const mockMaterials: Material[] = [
-  {
-    id: "1",
-    name: "FAR Vol.1 - Financial Statements",
-    subject: "FAR",
-    pdfWithoutAnswers: null,
-    pdfWithAnswers: null,
-    totalPages: 150,
-    createdAt: "2026-01-10T10:00:00Z",
-    updatedAt: "2026-01-15T14:30:00Z",
-  },
-  {
-    id: "2",
-    name: "AUD Vol.1 - Audit Planning",
-    subject: "AUD",
-    pdfWithoutAnswers: null,
-    pdfWithAnswers: null,
-    totalPages: 120,
-    createdAt: "2026-01-08T09:00:00Z",
-    updatedAt: "2026-01-12T11:00:00Z",
-  },
-]
+const STORAGE_KEY = "uscpa-materials"
+
+// ローカルストレージから教材を読み込む
+const loadMaterials = (): Material[] => {
+  if (typeof window === "undefined") return []
+  const stored = localStorage.getItem(STORAGE_KEY)
+  return stored ? JSON.parse(stored) : []
+}
+
+// ローカルストレージに教材を保存
+const saveMaterials = (materials: Material[]) => {
+  if (typeof window === "undefined") return
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(materials))
+}
 
 export default function MaterialsPage() {
-  const [materials, setMaterials] = useState<Material[]>(mockMaterials)
+  const [materials, setMaterials] = useState<Material[]>([])
   const [isUploading, setIsUploading] = useState(false)
   const [showUploadForm, setShowUploadForm] = useState(false)
   const [uploadName, setUploadName] = useState("")
@@ -54,6 +45,11 @@ export default function MaterialsPage() {
 
   const fileInputWithoutRef = useRef<HTMLInputElement>(null)
   const fileInputWithRef = useRef<HTMLInputElement>(null)
+
+  // 初回読み込み時にローカルストレージから教材を取得
+  useEffect(() => {
+    setMaterials(loadMaterials())
+  }, [])
 
   const handleUpload = async () => {
     if (!uploadName || !pdfWithoutAnswers) {
@@ -78,14 +74,14 @@ export default function MaterialsPage() {
       updatedAt: new Date().toISOString(),
     }
 
-    setMaterials([newMaterial, ...materials])
+    const updatedMaterials = [newMaterial, ...materials]
+    setMaterials(updatedMaterials)
+    saveMaterials(updatedMaterials)
     setShowUploadForm(false)
     setUploadName("")
     setPdfWithoutAnswers(null)
     setPdfWithAnswers(null)
     setIsUploading(false)
-
-    alert("教材をアップロードしました（デモ）")
   }
 
   return (

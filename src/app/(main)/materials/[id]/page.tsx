@@ -30,15 +30,26 @@ import {
 } from "lucide-react"
 
 // モックデータ - 実際にはNotion APIから取得
+// 注意: デモデータにはPDFがないため、実際にアップロードした教材のみ閲覧可能
 const getMockMaterial = (id: string): Material | null => {
-  // デモ用：IDに関わらずサンプルPDFを返す
+  // ローカルストレージから教材データを取得（教材一覧でアップロードしたもの）
+  if (typeof window !== "undefined") {
+    const storedMaterials = localStorage.getItem("uscpa-materials")
+    if (storedMaterials) {
+      const materials: Material[] = JSON.parse(storedMaterials)
+      const found = materials.find(m => m.id === id)
+      if (found) return found
+    }
+  }
+
+  // デモ用のモックデータ（PDFなし）
   return {
     id,
     name: "FAR Vol.1 - Financial Statements",
     subject: "FAR" as Subject,
-    pdfWithoutAnswers: "/sample.pdf", // public/sample.pdf を用意
-    pdfWithAnswers: "/sample-answers.pdf", // 回答あり版
-    totalPages: 10,
+    pdfWithoutAnswers: null, // PDFはアップロードが必要
+    pdfWithAnswers: null,
+    totalPages: 0,
     createdAt: "2026-01-10T10:00:00Z",
     updatedAt: "2026-01-15T14:30:00Z",
   }
