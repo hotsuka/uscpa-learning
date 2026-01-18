@@ -21,20 +21,20 @@ export function getNotionClient(): Client {
 // 環境変数からデータベースIDを取得
 export function getDbIds() {
   return {
-    settings: process.env.NOTION_SETTINGS_DB_ID,
-    sessions: process.env.NOTION_SESSIONS_DB_ID,
-    records: process.env.NOTION_RECORDS_DB_ID,
-    notes: process.env.NOTION_NOTES_DB_ID,
+    settings: process.env.NOTION_SETTINGS_DB_ID?.trim(),
+    sessions: process.env.NOTION_SESSIONS_DB_ID?.trim(),
+    records: process.env.NOTION_RECORDS_DB_ID?.trim(),
+    notes: process.env.NOTION_NOTES_DB_ID?.trim(),
   }
 }
 
 // Notion APIが利用可能かチェック
 export function isNotionConfigured(): boolean {
   return !!(
-    process.env.NOTION_API_KEY &&
-    process.env.NOTION_SETTINGS_DB_ID &&
-    process.env.NOTION_SESSIONS_DB_ID &&
-    process.env.NOTION_RECORDS_DB_ID &&
-    process.env.NOTION_NOTES_DB_ID
+    process.env.NOTION_API_KEY?.trim() &&
+    process.env.NOTION_SETTINGS_DB_ID?.trim() &&
+    process.env.NOTION_SESSIONS_DB_ID?.trim() &&
+    process.env.NOTION_RECORDS_DB_ID?.trim() &&
+    process.env.NOTION_NOTES_DB_ID?.trim()
   )
 }
