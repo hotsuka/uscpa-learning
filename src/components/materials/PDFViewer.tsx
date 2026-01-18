@@ -53,7 +53,7 @@ export function PDFViewer({
   const [drawingPath, setDrawingPath] = useState<string>("")
 
   const containerRef = useRef<HTMLDivElement>(null)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const overlayRef = useRef<HTMLDivElement>(null)
   const pageContainerRef = useRef<HTMLDivElement>(null)
   const [pageSize, setPageSize] = useState({ width: 0, height: 0 })
 
@@ -249,7 +249,7 @@ export function PDFViewer({
           {/* アノテーションオーバーレイ - 透明なdivでクリックをキャプチャ */}
           {pageSize.width > 0 && (
             <div
-              ref={canvasRef as React.RefObject<HTMLDivElement>}
+              ref={overlayRef}
               className={cn(
                 "absolute top-0 left-0",
                 activeTool !== "select" ? "cursor-crosshair" : "pointer-events-none"
