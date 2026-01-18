@@ -109,12 +109,17 @@ export const useSettingsStore = create<SettingsState>()(
         set({ isSyncing: true })
 
         try {
+          // Notionの設定DBスキーマに合わせてデータを変換
+          // totalTargetHours = 科目別目標時間の合計
+          const totalTargetHours = Object.values(state.subjectTargetHours).reduce(
+            (sum, hours) => sum + hours,
+            0
+          )
+
           const data = {
             name: "マイ設定",
-            weekdayTargetHours: state.weekdayTargetHours,
-            weekendTargetHours: state.weekendTargetHours,
+            totalTargetHours,
             examDates: state.examDates,
-            subjectTargetHours: state.subjectTargetHours,
           }
 
           if (state.notionPageId) {
@@ -152,17 +157,17 @@ export const useSettingsStore = create<SettingsState>()(
           const response = await fetch("/api/notion/settings")
           if (response.ok) {
             const data = await response.json()
+            // Notionから取得した試験日をローカルに反映
+            // totalTargetHoursはNotionの目標学習時間（合計）
+            // 科目別の時間はローカルで管理するため、ここでは更新しない
             set({
               notionPageId: data.id,
-              weekdayTargetHours: data.weekdayTargetHours,
-              weekendTargetHours: data.weekendTargetHours,
               examDates: {
-                FAR: data.examDates.FAR || "",
-                AUD: data.examDates.AUD || "",
-                REG: data.examDates.REG || "",
-                BAR: data.examDates.BAR || "",
+                FAR: data.examDates?.FAR || "",
+                AUD: data.examDates?.AUD || "",
+                REG: data.examDates?.REG || "",
+                BAR: data.examDates?.BAR || "",
               },
-              subjectTargetHours: data.subjectTargetHours,
               lastSyncedAt: new Date().toISOString(),
             })
           }

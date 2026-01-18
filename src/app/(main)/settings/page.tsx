@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo } from "react"
+import { useMemo, useEffect } from "react"
 import { Header } from "@/components/layout/Header"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -24,6 +24,7 @@ import {
   TrendingUp,
   RefreshCw,
   Bot,
+  Loader2,
 } from "lucide-react"
 import { useAuthContext } from "@/contexts/AuthContext"
 import {
@@ -48,7 +49,19 @@ export default function SettingsPage() {
     setPomodoroMinutes,
     setBreakMinutes,
     getTotalTargetHours,
+    isSyncing,
+    syncToNotion,
+    fetchFromNotion,
+    notionPageId,
   } = useSettingsStore()
+
+  // 初回マウント時にNotionから設定を読み込む
+  useEffect(() => {
+    // ローカルにnotion pageIdがない場合のみNotionからフェッチ
+    if (!notionPageId) {
+      fetchFromNotion()
+    }
+  }, [notionPageId, fetchFromNotion])
 
   // 学習記録から科目別の累計時間を取得
   const { records } = useRecordStore()
@@ -112,7 +125,7 @@ export default function SettingsPage() {
                 <span className="text-muted-foreground">接続状態を確認中...</span>
               </div>
             ) : !isConfigured ? (
-              <div className="flex items-center justify-between">
+              <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <AlertCircle className="h-5 w-5 text-yellow-500" />
                   <div>
@@ -121,6 +134,22 @@ export default function SettingsPage() {
                       環境変数でNotion APIを設定してください
                     </p>
                   </div>
+                </div>
+                {/* 未設定でも同期ボタンを表示（試行用） */}
+                <div className="pt-2 border-t">
+                  <Button
+                    variant="outline"
+                    onClick={syncToNotion}
+                    disabled={isSyncing}
+                    className="w-full"
+                  >
+                    {isSyncing ? (
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    ) : (
+                      <RefreshCw className="h-4 w-4 mr-2" />
+                    )}
+                    設定をNotionに同期
+                  </Button>
                 </div>
               </div>
             ) : isConnected && user ? (
@@ -158,27 +187,58 @@ export default function SettingsPage() {
                       </p>
                     </div>
                   </div>
-                  <Button variant="outline" onClick={refresh}>
-                    <RefreshCw className="h-4 w-4 mr-2" />
-                    再確認
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button
+                      variant="outline"
+                      onClick={syncToNotion}
+                      disabled={isSyncing}
+                    >
+                      {isSyncing ? (
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                      ) : (
+                        <RefreshCw className="h-4 w-4 mr-2" />
+                      )}
+                      Notionに同期
+                    </Button>
+                    <Button variant="ghost" onClick={refresh}>
+                      <RefreshCw className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </div>
               </div>
             ) : (
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <AlertCircle className="h-5 w-5 text-red-500" />
-                  <div>
-                    <p className="font-medium">接続エラー</p>
-                    <p className="text-sm text-muted-foreground">
-                      {errorMessage || "Notionへの接続に失敗しました"}
-                    </p>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <AlertCircle className="h-5 w-5 text-red-500" />
+                    <div>
+                      <p className="font-medium">接続エラー</p>
+                      <p className="text-sm text-muted-foreground">
+                        {errorMessage || "Notionへの接続に失敗しました"}
+                      </p>
+                    </div>
                   </div>
+                  <Button variant="outline" onClick={refresh}>
+                    <RefreshCw className="h-4 w-4 mr-2" />
+                    再試行
+                  </Button>
                 </div>
-                <Button variant="outline" onClick={refresh}>
-                  <RefreshCw className="h-4 w-4 mr-2" />
-                  再試行
-                </Button>
+                {/* エラー時も同期ボタンを表示 */}
+                <div className="pt-2 border-t">
+                  <Button
+                    variant="outline"
+                    onClick={syncToNotion}
+                    disabled={isSyncing}
+                    className="w-full"
+                  >
+                    {isSyncing ? (
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    ) : (
+                      <RefreshCw className="h-4 w-4 mr-2" />
+                    )}
+                    設定をNotionに同期
+                  </Button>
+                </div>
               </div>
             )}
           </CardContent>
