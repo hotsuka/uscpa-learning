@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useTimer } from "@/hooks/useTimer"
 import { Header } from "@/components/layout/Header"
 import { Card, CardContent } from "@/components/ui/card"
@@ -10,10 +10,20 @@ import {
   SubjectSelector,
   SubtopicSelector,
   ModeToggle,
+  RecordDialog,
+  type RecordData,
 } from "@/components/timer"
 import { formatMinutes } from "@/lib/utils"
-import { SUBJECTS } from "@/types"
+import { SUBJECTS, type Subject } from "@/types"
 import { useRecordStore, checkAndResetDailyMinutes } from "@/stores/recordStore"
+
+interface PendingSession {
+  subject: Subject
+  subtopic: string | null
+  durationSeconds: number
+  startTime: number
+  endTime: number
+}
 
 export default function TimerPage() {
   const {
@@ -35,7 +45,11 @@ export default function TimerPage() {
     reset,
   } = useTimer()
 
-  const { addTodayStudyMinutes, getTodayTotalMinutes } = useRecordStore()
+  const { addTodayStudyMinutes, addRecord, getTodayTotalMinutes } = useRecordStore()
+
+  // 記録ダイアログの状態
+  const [showRecordDialog, setShowRecordDialog] = useState(false)
+  const [pendingSession, setPendingSession] = useState<PendingSession | null>(null)
 
   // 日付チェック（日付が変わっていたらリセット）
   useEffect(() => {
@@ -45,34 +59,88 @@ export default function TimerPage() {
   // 今日の全科目の学習時間
   const todayTotalMinutes = getTodayTotalMinutes()
 
-  const handleStop = async () => {
+  const handleStop = () => {
     const session = stop()
     if (session) {
-      // 記録ストアに今日の学習時間を追加
-      const minutes = Math.floor(session.durationSeconds / 60)
-      addTodayStudyMinutes(session.subject, minutes)
+      // セッション情報を保持してダイアログを表示
+      setPendingSession({
+        subject: session.subject,
+        subtopic: session.subtopic,
+        durationSeconds: session.durationSeconds,
+        startTime: session.startTime,
+        endTime: session.endTime,
+      })
+      setShowRecordDialog(true)
+    }
+  }
 
-      // Notionにセッションを保存（バックグラウンド）
+  const handleSaveRecord = async (data: RecordData) => {
+    if (!pendingSession) return
+
+    const minutes = Math.floor(pendingSession.durationSeconds / 60)
+
+    // 記録ストアに今日の学習時間を追加
+    addTodayStudyMinutes(pendingSession.subject, minutes)
+
+    // 学習記録をストアに追加（Notion同期も含む）
+    addRecord({
+      recordType: data.recordType,
+      subject: data.subject,
+      subtopic: data.subtopic,
+      studyMinutes: data.studyMinutes,
+      totalQuestions: data.totalQuestions,
+      correctAnswers: data.correctAnswers,
+      roundNumber: data.roundNumber,
+      chapter: data.chapter,
+      pageRange: data.pageRange,
+      memo: data.memo,
+      studiedAt: data.studiedAt,
+    })
+
+    // Notionにセッションも保存（バックグラウンド）
+    fetch("/api/notion/sessions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        subject: pendingSession.subject,
+        subtopic: pendingSession.subtopic,
+        studyMinutes: minutes,
+        startedAt: new Date(pendingSession.startTime).toISOString(),
+        endedAt: new Date(pendingSession.endTime).toISOString(),
+      }),
+    }).catch((error) => {
+      console.error("Failed to save session to Notion:", error)
+    })
+
+    // ダイアログを閉じてリセット
+    setShowRecordDialog(false)
+    setPendingSession(null)
+  }
+
+  const handleCancelRecord = () => {
+    // キャンセルしてもセッションは保存する（記録なし）
+    if (pendingSession) {
+      const minutes = Math.floor(pendingSession.durationSeconds / 60)
+      addTodayStudyMinutes(pendingSession.subject, minutes)
+
+      // Notionにセッションのみ保存
       fetch("/api/notion/sessions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          subject: session.subject,
-          subtopic: session.subtopic,
+          subject: pendingSession.subject,
+          subtopic: pendingSession.subtopic,
           studyMinutes: minutes,
-          startedAt: new Date(session.startTime).toISOString(),
-          endedAt: new Date(session.endTime).toISOString(),
+          startedAt: new Date(pendingSession.startTime).toISOString(),
+          endedAt: new Date(pendingSession.endTime).toISOString(),
         }),
       }).catch((error) => {
         console.error("Failed to save session to Notion:", error)
       })
-
-      const subtopicText = session.subtopic ? ` (${session.subtopic})` : ""
-      alert(
-        `${SUBJECTS[session.subject].name}${subtopicText}の学習を記録しました\n` +
-        `学習時間: ${formatMinutes(minutes)}`
-      )
     }
+
+    setShowRecordDialog(false)
+    setPendingSession(null)
   }
 
   return (
@@ -161,6 +229,19 @@ export default function TimerPage() {
           )}
         </div>
       </div>
+
+      {/* 記録ダイアログ */}
+      {pendingSession && (
+        <RecordDialog
+          open={showRecordDialog}
+          onOpenChange={setShowRecordDialog}
+          subject={pendingSession.subject}
+          subtopic={pendingSession.subtopic}
+          studyMinutes={Math.floor(pendingSession.durationSeconds / 60)}
+          onSave={handleSaveRecord}
+          onCancel={handleCancelRecord}
+        />
+      )}
     </>
   )
 }
