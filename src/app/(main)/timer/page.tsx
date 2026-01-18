@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useMemo } from "react"
 import { useTimer } from "@/hooks/useTimer"
 import { Header } from "@/components/layout/Header"
 import { Card, CardContent } from "@/components/ui/card"
@@ -15,7 +15,7 @@ import {
 } from "@/components/timer"
 import { formatMinutes } from "@/lib/utils"
 import { SUBJECTS, type Subject } from "@/types"
-import { useRecordStore, checkAndResetDailyMinutes } from "@/stores/recordStore"
+import { useRecordStore } from "@/stores/recordStore"
 
 interface PendingSession {
   subject: Subject
@@ -45,19 +45,18 @@ export default function TimerPage() {
     reset,
   } = useTimer()
 
-  const { addTodayStudyMinutes, addRecord, getTodayTotalMinutes } = useRecordStore()
+  const { addRecord, records } = useRecordStore()
 
   // 記録ダイアログの状態
   const [showRecordDialog, setShowRecordDialog] = useState(false)
   const [pendingSession, setPendingSession] = useState<PendingSession | null>(null)
 
-  // 日付チェック（日付が変わっていたらリセット）
-  useEffect(() => {
-    checkAndResetDailyMinutes()
-  }, [])
-
-  // 今日の全科目の学習時間
-  const todayTotalMinutes = getTodayTotalMinutes()
+  // 今日の記録から学習時間を計算
+  const todayTotalMinutes = useMemo(() => {
+    const today = new Date().toISOString().split("T")[0]
+    const todayRecords = records.filter((r) => r.studiedAt === today)
+    return todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0)
+  }, [records])
 
   const handleStop = () => {
     const session = stop()
@@ -78,9 +77,6 @@ export default function TimerPage() {
     if (!pendingSession) return
 
     const minutes = Math.floor(pendingSession.durationSeconds / 60)
-
-    // 記録ストアに今日の学習時間を追加
-    addTodayStudyMinutes(pendingSession.subject, minutes)
 
     // 学習記録をストアに追加（Notion同期も含む）
     addRecord({
@@ -118,27 +114,7 @@ export default function TimerPage() {
   }
 
   const handleCancelRecord = () => {
-    // キャンセルしてもセッションは保存する（記録なし）
-    if (pendingSession) {
-      const minutes = Math.floor(pendingSession.durationSeconds / 60)
-      addTodayStudyMinutes(pendingSession.subject, minutes)
-
-      // Notionにセッションのみ保存
-      fetch("/api/notion/sessions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          subject: pendingSession.subject,
-          subtopic: pendingSession.subtopic,
-          studyMinutes: minutes,
-          startedAt: new Date(pendingSession.startTime).toISOString(),
-          endedAt: new Date(pendingSession.endTime).toISOString(),
-        }),
-      }).catch((error) => {
-        console.error("Failed to save session to Notion:", error)
-      })
-    }
-
+    // キャンセル時はセッションを破棄（記録なし）
     setShowRecordDialog(false)
     setPendingSession(null)
   }
@@ -205,13 +181,13 @@ export default function TimerPage() {
           <Card>
             <CardContent className="py-4">
               <div className="text-center">
-                <p className="text-sm text-muted-foreground">今日の学習時間（タイマー累計）</p>
+                <p className="text-sm text-muted-foreground">今日の学習時間</p>
                 <p className="text-2xl font-bold mt-1">
                   {formatMinutes(todayTotalMinutes + Math.floor(elapsedSeconds / 60))}
                 </p>
-                {todayTotalMinutes > 0 && elapsedSeconds > 0 && (
+                {elapsedSeconds >= 60 && (
                   <p className="text-xs text-muted-foreground mt-1">
-                    (記録済み: {formatMinutes(todayTotalMinutes)} + 現在: {formatMinutes(Math.floor(elapsedSeconds / 60))})
+                    (現在のセッション: +{formatMinutes(Math.floor(elapsedSeconds / 60))})
                   </p>
                 )}
               </div>
