@@ -129,7 +129,7 @@ export default function DashboardPage() {
                                 残り {remainingHours.toFixed(0)}h
                               </p>
                               <p className={`font-medium flex items-center justify-center gap-1 ${
-                                isOnTrack ? "text-green-600" : "text-amber-600"
+                                isOnTrack ? "text-green-700" : "text-amber-700"
                               }`}>
                                 {isOnTrack ? (
                                   <CheckCircle className="h-3 w-3" />
