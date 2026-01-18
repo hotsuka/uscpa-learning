@@ -22,7 +22,10 @@ import {
   Info,
   Target,
   TrendingUp,
+  LogOut,
+  User,
 } from "lucide-react"
+import { useAuthContext } from "@/contexts/AuthContext"
 import {
   calculateWeeklyTarget,
   getThisWeekHolidays,
@@ -84,14 +87,14 @@ export default function SettingsPage() {
   // 今週の月曜日
   const thisWeekMonday = useMemo(() => getThisWeekMonday(), [])
 
-  // Notion接続状態（モック）
-  const notionConnected = false
+  // 認証コンテキストから取得
+  const { user, isAuthenticated, login, logout, isLoading: authLoading } = useAuthContext()
 
   return (
     <>
       <Header title="設定" />
       <div className="p-4 md:p-8 space-y-6">
-        {/* Notion接続状態 */}
+        {/* アカウント・Notion連携 */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -102,11 +105,39 @@ export default function SettingsPage() {
               Notionと連携してデータを保存・同期します
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <div className="flex items-center justify-between">
+          <CardContent className="space-y-4">
+            {authLoading ? (
               <div className="flex items-center gap-3">
-                {notionConnected ? (
-                  <>
+                <div className="h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+                <span className="text-muted-foreground">接続状態を確認中...</span>
+              </div>
+            ) : isAuthenticated && user ? (
+              <div className="space-y-4">
+                {/* ユーザー情報 */}
+                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                  <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    {user.avatarUrl ? (
+                      <img
+                        src={user.avatarUrl}
+                        alt=""
+                        className="h-10 w-10 rounded-full"
+                      />
+                    ) : (
+                      <User className="h-5 w-5 text-primary" />
+                    )}
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-medium">{user.name || "Notionユーザー"}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {user.workspaceName || "ワークスペース"}
+                    </p>
+                  </div>
+                  <CheckCircle2 className="h-5 w-5 text-green-500" />
+                </div>
+
+                {/* 接続状態 */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-green-500" />
                     <div>
                       <p className="font-medium">接続済み</p>
@@ -114,23 +145,29 @@ export default function SettingsPage() {
                         データはNotionに同期されています
                       </p>
                     </div>
-                  </>
-                ) : (
-                  <>
-                    <AlertCircle className="h-5 w-5 text-yellow-500" />
-                    <div>
-                      <p className="font-medium">未接続</p>
-                      <p className="text-sm text-muted-foreground">
-                        Notionに接続してデータを保存しましょう
-                      </p>
-                    </div>
-                  </>
-                )}
+                  </div>
+                  <Button variant="outline" onClick={logout}>
+                    <LogOut className="h-4 w-4 mr-2" />
+                    ログアウト
+                  </Button>
+                </div>
               </div>
-              <Button variant={notionConnected ? "outline" : "default"}>
-                {notionConnected ? "再接続" : "Notionに接続"}
-              </Button>
-            </div>
+            ) : (
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <AlertCircle className="h-5 w-5 text-yellow-500" />
+                  <div>
+                    <p className="font-medium">未接続</p>
+                    <p className="text-sm text-muted-foreground">
+                      Notionに接続してデータを保存しましょう
+                    </p>
+                  </div>
+                </div>
+                <Button onClick={login}>
+                  Notionに接続
+                </Button>
+              </div>
+            )}
           </CardContent>
         </Card>
 

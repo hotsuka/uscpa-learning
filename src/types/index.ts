@@ -212,3 +212,19 @@ export interface MaterialAnnotation {
   createdAt: string
   updatedAt: string
 }
+
+// Notion OAuth認証
+export interface NotionUser {
+  id: string
+  botId: string
+  workspaceId: string
+  workspaceName: string | null
+  workspaceIcon: string | null
+  accessToken: string
+}
+
+export interface AuthSession {
+  user: NotionUser | null
+  isAuthenticated: boolean
+  isLoading: boolean
+}
