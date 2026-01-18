@@ -120,6 +120,24 @@ const withPWA = require('next-pwa')({
 })
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  // 画像最適化
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+  },
+  // 圧縮有効化
+  compress: true,
+  // パワードバイヘッダーを無効化（セキュリティ）
+  poweredByHeader: false,
+  // 本番ビルドでソースマップを無効化（パフォーマンス）
+  productionBrowserSourceMaps: false,
+  // 実験的機能
+  experimental: {
+    // 最適化されたパッケージインポート
+    optimizePackageImports: ['lucide-react', 'recharts'],
+  },
+}
 
 module.exports = withPWA(nextConfig)
