@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef, useCallback } from "react"
+import { useState, useRef } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import "react-pdf/dist/Page/AnnotationLayer.css"
 import "react-pdf/dist/Page/TextLayer.css"
@@ -54,10 +54,17 @@ export function PDFViewer({
 
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const pageContainerRef = useRef<HTMLDivElement>(null)
+  const [pageSize, setPageSize] = useState({ width: 0, height: 0 })
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages)
     setIsLoading(false)
+  }
+
+  // ページサイズを取得してオーバーレイに適用
+  const onPageLoadSuccess = (page: { width: number; height: number }) => {
+    setPageSize({ width: page.width, height: page.height })
   }
 
   const onDocumentLoadError = (error: Error) => {
@@ -92,69 +99,6 @@ export function PDFViewer({
   const currentAnnotations = annotations.filter(
     (a) => a.pageNumber === pageNumber
   )
-
-  // キャンバス上でのマウスイベント処理
-  const handleCanvasMouseDown = useCallback(
-    (e: React.MouseEvent<HTMLCanvasElement>) => {
-      if (activeTool === "select" || !canvasRef.current) return
-
-      const rect = canvasRef.current.getBoundingClientRect()
-      const x = (e.clientX - rect.left) / scale
-      const y = (e.clientY - rect.top) / scale
-
-      if (activeTool === "drawing") {
-        setIsDrawing(true)
-        setDrawingPath(`M ${x} ${y}`)
-      } else if (activeTool === "highlight" || activeTool === "note") {
-        // ハイライトまたはメモの開始点
-        if (onAnnotationAdd) {
-          onAnnotationAdd({
-            materialId: "", // 親コンポーネントで設定
-            pageNumber,
-            x,
-            y,
-            width: 100,
-            height: 20,
-            type: activeTool,
-            content: activeTool === "note" ? "" : "",
-            color: selectedColor,
-          })
-        }
-      }
-    },
-    [activeTool, pageNumber, scale, selectedColor, onAnnotationAdd]
-  )
-
-  const handleCanvasMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLCanvasElement>) => {
-      if (!isDrawing || !canvasRef.current) return
-
-      const rect = canvasRef.current.getBoundingClientRect()
-      const x = (e.clientX - rect.left) / scale
-      const y = (e.clientY - rect.top) / scale
-
-      setDrawingPath((prev) => `${prev} L ${x} ${y}`)
-    },
-    [isDrawing, scale]
-  )
-
-  const handleCanvasMouseUp = useCallback(() => {
-    if (isDrawing && drawingPath && onAnnotationAdd) {
-      onAnnotationAdd({
-        materialId: "",
-        pageNumber,
-        x: 0,
-        y: 0,
-        width: 0,
-        height: 0,
-        type: "drawing",
-        content: drawingPath,
-        color: selectedColor,
-      })
-    }
-    setIsDrawing(false)
-    setDrawingPath("")
-  }, [isDrawing, drawingPath, pageNumber, selectedColor, onAnnotationAdd])
 
   const toolColors = [
     { color: "#ffff00", name: "黄" },
@@ -277,7 +221,7 @@ export function PDFViewer({
         ref={containerRef}
         className="flex-1 overflow-auto bg-muted/30 flex justify-center p-4"
       >
-        <div className="relative">
+        <div ref={pageContainerRef} className="relative">
           <Document
             file={pdfUrl}
             onLoadSuccess={onDocumentLoadSuccess}
@@ -298,61 +242,140 @@ export function PDFViewer({
               scale={scale}
               renderTextLayer={true}
               renderAnnotationLayer={true}
+              onLoadSuccess={onPageLoadSuccess}
             />
           </Document>
 
-          {/* アノテーションオーバーレイ */}
-          <canvas
-            ref={canvasRef}
-            className={cn(
-              "absolute top-0 left-0 w-full h-full",
-              activeTool !== "select" && "cursor-crosshair"
-            )}
-            onMouseDown={handleCanvasMouseDown}
-            onMouseMove={handleCanvasMouseMove}
-            onMouseUp={handleCanvasMouseUp}
-            onMouseLeave={handleCanvasMouseUp}
-          />
+          {/* アノテーションオーバーレイ - 透明なdivでクリックをキャプチャ */}
+          {pageSize.width > 0 && (
+            <div
+              ref={canvasRef as React.RefObject<HTMLDivElement>}
+              className={cn(
+                "absolute top-0 left-0",
+                activeTool !== "select" ? "cursor-crosshair" : "pointer-events-none"
+              )}
+              style={{
+                width: pageSize.width * scale,
+                height: pageSize.height * scale,
+              }}
+              onMouseDown={(e) => {
+                if (activeTool === "select") return
+                const rect = e.currentTarget.getBoundingClientRect()
+                const x = (e.clientX - rect.left) / scale
+                const y = (e.clientY - rect.top) / scale
+
+                if (activeTool === "drawing") {
+                  setIsDrawing(true)
+                  setDrawingPath(`M ${x} ${y}`)
+                } else if (activeTool === "highlight" || activeTool === "note") {
+                  if (onAnnotationAdd) {
+                    onAnnotationAdd({
+                      materialId: "",
+                      pageNumber,
+                      x,
+                      y,
+                      width: 100,
+                      height: 20,
+                      type: activeTool,
+                      content: activeTool === "note" ? "" : "",
+                      color: selectedColor,
+                    })
+                  }
+                }
+              }}
+              onMouseMove={(e) => {
+                if (!isDrawing) return
+                const rect = e.currentTarget.getBoundingClientRect()
+                const x = (e.clientX - rect.left) / scale
+                const y = (e.clientY - rect.top) / scale
+                setDrawingPath((prev) => `${prev} L ${x} ${y}`)
+              }}
+              onMouseUp={() => {
+                if (isDrawing && drawingPath && onAnnotationAdd) {
+                  onAnnotationAdd({
+                    materialId: "",
+                    pageNumber,
+                    x: 0,
+                    y: 0,
+                    width: 0,
+                    height: 0,
+                    type: "drawing",
+                    content: drawingPath,
+                    color: selectedColor,
+                  })
+                }
+                setIsDrawing(false)
+                setDrawingPath("")
+              }}
+              onMouseLeave={() => {
+                if (isDrawing && drawingPath && onAnnotationAdd) {
+                  onAnnotationAdd({
+                    materialId: "",
+                    pageNumber,
+                    x: 0,
+                    y: 0,
+                    width: 0,
+                    height: 0,
+                    type: "drawing",
+                    content: drawingPath,
+                    color: selectedColor,
+                  })
+                }
+                setIsDrawing(false)
+                setDrawingPath("")
+              }}
+            />
+          )}
 
           {/* アノテーション表示 */}
-          <svg className="absolute top-0 left-0 w-full h-full pointer-events-none">
-            {currentAnnotations.map((annotation) => {
-              if (annotation.type === "drawing") {
-                return (
-                  <path
-                    key={annotation.id}
-                    d={annotation.content}
-                    stroke={annotation.color}
-                    strokeWidth={2 / scale}
-                    fill="none"
-                  />
-                )
-              }
-              if (annotation.type === "highlight") {
-                return (
-                  <rect
-                    key={annotation.id}
-                    x={annotation.x * scale}
-                    y={annotation.y * scale}
-                    width={annotation.width * scale}
-                    height={annotation.height * scale}
-                    fill={annotation.color}
-                    opacity={0.3}
-                  />
-                )
-              }
-              return null
-            })}
-            {/* 現在描画中のパス */}
-            {isDrawing && drawingPath && (
-              <path
-                d={drawingPath}
-                stroke={selectedColor}
-                strokeWidth={2 / scale}
-                fill="none"
-              />
-            )}
-          </svg>
+          {pageSize.width > 0 && (
+            <svg
+              className="absolute top-0 left-0 pointer-events-none"
+              style={{
+                width: pageSize.width * scale,
+                height: pageSize.height * scale,
+              }}
+            >
+              {currentAnnotations.map((annotation) => {
+                if (annotation.type === "drawing") {
+                  return (
+                    <path
+                      key={annotation.id}
+                      d={annotation.content}
+                      stroke={annotation.color}
+                      strokeWidth={2}
+                      fill="none"
+                      transform={`scale(${scale})`}
+                    />
+                  )
+                }
+                if (annotation.type === "highlight") {
+                  return (
+                    <rect
+                      key={annotation.id}
+                      x={annotation.x * scale}
+                      y={annotation.y * scale}
+                      width={annotation.width * scale}
+                      height={annotation.height * scale}
+                      fill={annotation.color}
+                      opacity={0.3}
+                    />
+                  )
+                }
+                return null
+              })}
+              {/* 現在描画中のパス */}
+              {isDrawing && drawingPath && (
+                <path
+                  d={drawingPath}
+                  stroke={selectedColor}
+                  strokeWidth={2}
+                  fill="none"
+                  transform={`scale(${scale})`}
+                />
+              )}
+            </svg>
+          )}
         </div>
       </div>
 
