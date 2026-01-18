@@ -6,71 +6,60 @@ interface NotionUser {
   id: string
   name?: string
   avatarUrl?: string | null
-  botId: string
-  workspaceId: string
-  workspaceName: string | null
-  workspaceIcon: string | null
+  type: string
 }
 
 interface AuthContextType {
   user: NotionUser | null
-  isAuthenticated: boolean
+  isConnected: boolean
+  isConfigured: boolean
   isLoading: boolean
-  login: () => void
-  logout: () => Promise<void>
   refresh: () => Promise<void>
+  errorMessage: string | null
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<NotionUser | null>(null)
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isConnected, setIsConnected] = useState(false)
+  const [isConfigured, setIsConfigured] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
-  const checkSession = useCallback(async () => {
+  const checkConnection = useCallback(async () => {
     try {
+      setIsLoading(true)
       const response = await fetch("/api/auth/session")
       const data = await response.json()
 
       setUser(data.user)
-      setIsAuthenticated(data.isAuthenticated)
+      setIsConnected(data.isAuthenticated)
+      setIsConfigured(data.isConfigured ?? false)
+      setErrorMessage(data.message ?? null)
     } catch {
       setUser(null)
-      setIsAuthenticated(false)
+      setIsConnected(false)
+      setIsConfigured(false)
+      setErrorMessage("接続状態の確認に失敗しました")
     } finally {
       setIsLoading(false)
     }
   }, [])
 
   useEffect(() => {
-    checkSession()
-  }, [checkSession])
-
-  const login = useCallback(() => {
-    window.location.href = "/api/auth/login"
-  }, [])
-
-  const logout = useCallback(async () => {
-    try {
-      await fetch("/api/auth/logout", { method: "POST" })
-      setUser(null)
-      setIsAuthenticated(false)
-      window.location.href = "/login"
-    } catch (error) {
-      console.error("Logout failed:", error)
-    }
-  }, [])
+    checkConnection()
+  }, [checkConnection])
 
   return (
     <AuthContext.Provider
       value={{
         user,
-        isAuthenticated,
+        isConnected,
+        isConfigured,
         isLoading,
-        login,
-        logout,
-        refresh: checkSession,
+        refresh: checkConnection,
+        errorMessage,
       }}
     >
       {children}

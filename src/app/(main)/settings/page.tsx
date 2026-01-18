@@ -22,8 +22,8 @@ import {
   Info,
   Target,
   TrendingUp,
-  LogOut,
-  User,
+  RefreshCw,
+  Bot,
 } from "lucide-react"
 import { useAuthContext } from "@/contexts/AuthContext"
 import {
@@ -87,14 +87,14 @@ export default function SettingsPage() {
   // 今週の月曜日
   const thisWeekMonday = useMemo(() => getThisWeekMonday(), [])
 
-  // 認証コンテキストから取得
-  const { user, isAuthenticated, login, logout, isLoading: authLoading } = useAuthContext()
+  // Notion接続状態を取得
+  const { user, isConnected, isConfigured, isLoading: authLoading, refresh, errorMessage } = useAuthContext()
 
   return (
     <>
       <Header title="設定" />
       <div className="p-4 md:p-8 space-y-6">
-        {/* アカウント・Notion連携 */}
+        {/* Notion連携状態 */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -102,7 +102,7 @@ export default function SettingsPage() {
               Notion連携
             </CardTitle>
             <CardDescription>
-              Notionと連携してデータを保存・同期します
+              Notionデータベースとの接続状態
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -111,9 +111,21 @@ export default function SettingsPage() {
                 <div className="h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent" />
                 <span className="text-muted-foreground">接続状態を確認中...</span>
               </div>
-            ) : isAuthenticated && user ? (
+            ) : !isConfigured ? (
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <AlertCircle className="h-5 w-5 text-yellow-500" />
+                  <div>
+                    <p className="font-medium">未設定</p>
+                    <p className="text-sm text-muted-foreground">
+                      環境変数でNotion APIを設定してください
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : isConnected && user ? (
               <div className="space-y-4">
-                {/* ユーザー情報 */}
+                {/* ボット情報 */}
                 <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
                   <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
                     {user.avatarUrl ? (
@@ -123,13 +135,13 @@ export default function SettingsPage() {
                         className="h-10 w-10 rounded-full"
                       />
                     ) : (
-                      <User className="h-5 w-5 text-primary" />
+                      <Bot className="h-5 w-5 text-primary" />
                     )}
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium">{user.name || "Notionユーザー"}</p>
+                    <p className="font-medium">{user.name || "Notion Integration"}</p>
                     <p className="text-sm text-muted-foreground">
-                      {user.workspaceName || "ワークスペース"}
+                      Internal Integration
                     </p>
                   </div>
                   <CheckCircle2 className="h-5 w-5 text-green-500" />
@@ -146,25 +158,26 @@ export default function SettingsPage() {
                       </p>
                     </div>
                   </div>
-                  <Button variant="outline" onClick={logout}>
-                    <LogOut className="h-4 w-4 mr-2" />
-                    ログアウト
+                  <Button variant="outline" onClick={refresh}>
+                    <RefreshCw className="h-4 w-4 mr-2" />
+                    再確認
                   </Button>
                 </div>
               </div>
             ) : (
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <AlertCircle className="h-5 w-5 text-yellow-500" />
+                  <AlertCircle className="h-5 w-5 text-red-500" />
                   <div>
-                    <p className="font-medium">未接続</p>
+                    <p className="font-medium">接続エラー</p>
                     <p className="text-sm text-muted-foreground">
-                      Notionに接続してデータを保存しましょう
+                      {errorMessage || "Notionへの接続に失敗しました"}
                     </p>
                   </div>
                 </div>
-                <Button onClick={login}>
-                  Notionに接続
+                <Button variant="outline" onClick={refresh}>
+                  <RefreshCw className="h-4 w-4 mr-2" />
+                  再試行
                 </Button>
               </div>
             )}
