@@ -4,10 +4,8 @@ import type { Subject } from "@/types"
 export interface NotionSettings {
   id: string
   name: string
-  weekdayTargetHours: number
-  weekendTargetHours: number
+  totalTargetHours: number
   examDates: Record<Subject, string | null>
-  subjectTargetHours: Record<Subject, number>
 }
 
 // 設定を取得（最初の1件のみ）
@@ -34,19 +32,12 @@ export async function getSettings(): Promise<NotionSettings | null> {
   return {
     id: page.id,
     name: props["名前"]?.title?.[0]?.text?.content || "マイ設定",
-    weekdayTargetHours: props["平日目標時間"]?.number ?? 3,
-    weekendTargetHours: props["休日目標時間"]?.number ?? 5,
+    totalTargetHours: props["目標学習時間"]?.number ?? 1100,
     examDates: {
       FAR: props["FAR試験日"]?.date?.start || null,
       AUD: props["AUD試験日"]?.date?.start || null,
       REG: props["REG試験日"]?.date?.start || null,
       BAR: props["BAR試験日"]?.date?.start || null,
-    },
-    subjectTargetHours: {
-      FAR: props["FAR目標時間"]?.number ?? 400,
-      AUD: props["AUD目標時間"]?.number ?? 250,
-      REG: props["REG目標時間"]?.number ?? 250,
-      BAR: props["BAR目標時間"]?.number ?? 200,
     },
   }
 }
@@ -68,8 +59,7 @@ export async function createSettings(
       名前: {
         title: [{ text: { content: settings.name } }],
       },
-      平日目標時間: { number: settings.weekdayTargetHours },
-      休日目標時間: { number: settings.weekendTargetHours },
+      目標学習時間: { number: settings.totalTargetHours },
       FAR試験日: settings.examDates.FAR
         ? { date: { start: settings.examDates.FAR } }
         : { date: null },
@@ -82,10 +72,6 @@ export async function createSettings(
       BAR試験日: settings.examDates.BAR
         ? { date: { start: settings.examDates.BAR } }
         : { date: null },
-      FAR目標時間: { number: settings.subjectTargetHours.FAR },
-      AUD目標時間: { number: settings.subjectTargetHours.AUD },
-      REG目標時間: { number: settings.subjectTargetHours.REG },
-      BAR目標時間: { number: settings.subjectTargetHours.BAR },
     },
   })
 
@@ -107,11 +93,8 @@ export async function updateSettings(
   if (updates.name !== undefined) {
     properties["名前"] = { title: [{ text: { content: updates.name } }] }
   }
-  if (updates.weekdayTargetHours !== undefined) {
-    properties["平日目標時間"] = { number: updates.weekdayTargetHours }
-  }
-  if (updates.weekendTargetHours !== undefined) {
-    properties["休日目標時間"] = { number: updates.weekendTargetHours }
+  if (updates.totalTargetHours !== undefined) {
+    properties["目標学習時間"] = { number: updates.totalTargetHours }
   }
   if (updates.examDates) {
     if (updates.examDates.FAR !== undefined) {
@@ -133,20 +116,6 @@ export async function updateSettings(
       properties["BAR試験日"] = updates.examDates.BAR
         ? { date: { start: updates.examDates.BAR } }
         : { date: null }
-    }
-  }
-  if (updates.subjectTargetHours) {
-    if (updates.subjectTargetHours.FAR !== undefined) {
-      properties["FAR目標時間"] = { number: updates.subjectTargetHours.FAR }
-    }
-    if (updates.subjectTargetHours.AUD !== undefined) {
-      properties["AUD目標時間"] = { number: updates.subjectTargetHours.AUD }
-    }
-    if (updates.subjectTargetHours.REG !== undefined) {
-      properties["REG目標時間"] = { number: updates.subjectTargetHours.REG }
-    }
-    if (updates.subjectTargetHours.BAR !== undefined) {
-      properties["BAR目標時間"] = { number: updates.subjectTargetHours.BAR }
     }
   }
 

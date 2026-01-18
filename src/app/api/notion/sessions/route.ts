@@ -51,7 +51,17 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const session = await createSession(body)
+
+    // タイマーページからのリクエスト形式を変換
+    const sessionData = {
+      subject: body.subject as Subject,
+      subtopic: body.subtopic || null,
+      durationMinutes: body.studyMinutes || body.durationMinutes || 0,
+      startedAt: body.startedAt,
+      endedAt: body.endedAt,
+    }
+
+    const session = await createSession(sessionData)
 
     return NextResponse.json(session, { status: 201 })
   } catch (error) {

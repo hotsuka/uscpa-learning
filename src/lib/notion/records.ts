@@ -36,12 +36,6 @@ export async function getRecords(options?: {
       select: { equals: options.subject },
     })
   }
-  if (options?.recordType) {
-    filter.push({
-      property: "記録タイプ",
-      select: { equals: options.recordType },
-    })
-  }
 
   const response = await notion.databases.query({
     database_id: dbIds.records,
@@ -54,17 +48,17 @@ export async function getRecords(options?: {
     const props = page.properties
     return {
       id: page.id,
-      recordType: (props["記録タイプ"]?.select?.name || "practice") as RecordType,
+      recordType: "practice" as RecordType,
       subject: (props["科目"]?.select?.name || "FAR") as Subject,
       subtopic: props["テーマ"]?.rich_text?.[0]?.text?.content || null,
-      studyMinutes: props["学習時間(分)"]?.number || 0,
+      studyMinutes: 0,
       totalQuestions: props["問題数"]?.number || null,
       correctAnswers: props["正解数"]?.number || null,
       roundNumber: props["周回数"]?.number || null,
-      chapter: props["チャプター"]?.rich_text?.[0]?.text?.content || null,
-      pageRange: props["ページ範囲"]?.rich_text?.[0]?.text?.content || null,
+      chapter: null,
+      pageRange: null,
       studiedAt: props["演習日"]?.date?.start || new Date().toISOString().split("T")[0],
-      memo: props["メモ"]?.rich_text?.[0]?.text?.content || null,
+      memo: null,
       createdAt: page.created_time,
     }
   })
@@ -80,17 +74,17 @@ export async function getRecordById(pageId: string): Promise<StudyRecord | null>
 
     return {
       id: page.id,
-      recordType: (props["記録タイプ"]?.select?.name || "practice") as RecordType,
+      recordType: "practice" as RecordType,
       subject: (props["科目"]?.select?.name || "FAR") as Subject,
       subtopic: props["テーマ"]?.rich_text?.[0]?.text?.content || null,
-      studyMinutes: props["学習時間(分)"]?.number || 0,
+      studyMinutes: 0,
       totalQuestions: props["問題数"]?.number || null,
       correctAnswers: props["正解数"]?.number || null,
       roundNumber: props["周回数"]?.number || null,
-      chapter: props["チャプター"]?.rich_text?.[0]?.text?.content || null,
-      pageRange: props["ページ範囲"]?.rich_text?.[0]?.text?.content || null,
+      chapter: null,
+      pageRange: null,
       studiedAt: props["演習日"]?.date?.start || new Date().toISOString().split("T")[0],
-      memo: props["メモ"]?.rich_text?.[0]?.text?.content || null,
+      memo: null,
       createdAt: page.created_time,
     }
   } catch {
@@ -109,7 +103,7 @@ export async function createRecord(
     throw new Error("NOTION_RECORDS_DB_ID is not set")
   }
 
-  // 名前を自動生成
+  // 名前を自動生成: "2026/01/17 FAR Ch.5"
   const subtopicPart = record.subtopic ? ` ${record.subtopic}` : ""
   const name = `${record.studiedAt} ${record.subject}${subtopicPart}`
 
@@ -118,32 +112,21 @@ export async function createRecord(
       title: [{ text: { content: name } }],
     },
     科目: { select: { name: record.subject } },
-    記録タイプ: { select: { name: record.recordType } },
-    "学習時間(分)": { number: record.studyMinutes },
     演習日: { date: { start: record.studiedAt } },
   }
 
-  // オプショナルフィールド
+  // オプショナルフィールド（計画書のスキーマに合わせる）
   if (record.subtopic) {
     properties["テーマ"] = { rich_text: [{ text: { content: record.subtopic } }] }
   }
-  if (record.totalQuestions !== null) {
+  if (record.totalQuestions !== null && record.totalQuestions !== undefined) {
     properties["問題数"] = { number: record.totalQuestions }
   }
-  if (record.correctAnswers !== null) {
+  if (record.correctAnswers !== null && record.correctAnswers !== undefined) {
     properties["正解数"] = { number: record.correctAnswers }
   }
-  if (record.roundNumber !== null) {
+  if (record.roundNumber !== null && record.roundNumber !== undefined) {
     properties["周回数"] = { number: record.roundNumber }
-  }
-  if (record.chapter) {
-    properties["チャプター"] = { rich_text: [{ text: { content: record.chapter } }] }
-  }
-  if (record.pageRange) {
-    properties["ページ範囲"] = { rich_text: [{ text: { content: record.pageRange } }] }
-  }
-  if (record.memo) {
-    properties["メモ"] = { rich_text: [{ text: { content: record.memo } }] }
   }
 
   const response = await notion.pages.create({
@@ -170,16 +153,10 @@ export async function updateRecord(
   if (updates.subject !== undefined) {
     properties["科目"] = { select: { name: updates.subject } }
   }
-  if (updates.recordType !== undefined) {
-    properties["記録タイプ"] = { select: { name: updates.recordType } }
-  }
   if (updates.subtopic !== undefined) {
     properties["テーマ"] = updates.subtopic
       ? { rich_text: [{ text: { content: updates.subtopic } }] }
       : { rich_text: [] }
-  }
-  if (updates.studyMinutes !== undefined) {
-    properties["学習時間(分)"] = { number: updates.studyMinutes }
   }
   if (updates.totalQuestions !== undefined) {
     properties["問題数"] = updates.totalQuestions !== null
@@ -195,21 +172,6 @@ export async function updateRecord(
     properties["周回数"] = updates.roundNumber !== null
       ? { number: updates.roundNumber }
       : { number: null }
-  }
-  if (updates.chapter !== undefined) {
-    properties["チャプター"] = updates.chapter
-      ? { rich_text: [{ text: { content: updates.chapter } }] }
-      : { rich_text: [] }
-  }
-  if (updates.pageRange !== undefined) {
-    properties["ページ範囲"] = updates.pageRange
-      ? { rich_text: [{ text: { content: updates.pageRange } }] }
-      : { rich_text: [] }
-  }
-  if (updates.memo !== undefined) {
-    properties["メモ"] = updates.memo
-      ? { rich_text: [{ text: { content: updates.memo } }] }
-      : { rich_text: [] }
   }
   if (updates.studiedAt !== undefined) {
     properties["演習日"] = { date: { start: updates.studiedAt } }
