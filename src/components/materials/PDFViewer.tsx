@@ -23,7 +23,7 @@ import type { MaterialAnnotation } from "@/types"
 // PDF.jsワーカーの設定（クライアントサイドでのみ実行）
 // react-pdf 10.xは内部でpdfjs-dist 5.4.296を使用
 if (typeof window !== "undefined") {
-  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`
+  pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
 }
 
 interface PDFViewerProps {
