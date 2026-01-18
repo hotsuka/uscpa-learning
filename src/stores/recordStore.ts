@@ -9,6 +9,12 @@ interface RecordState {
   // 今日の学習時間（タイマーから同期、分単位）
   todayStudyMinutes: Record<Subject, number>
 
+  // Notion同期用
+  isSyncing: boolean
+  lastSyncedAt: string | null
+  // ローカルIDとNotionページIDのマッピング
+  notionIdMap: Record<string, string>
+
   // アクション
   addRecord: (record: Omit<StudyRecord, "id" | "createdAt">) => void
   updateRecord: (id: string, updates: Partial<Omit<StudyRecord, "id" | "createdAt">>) => void
@@ -17,6 +23,11 @@ interface RecordState {
   updateTodayStudyMinutes: (subject: Subject, minutes: number) => void
   addTodayStudyMinutes: (subject: Subject, minutes: number) => void
   resetTodayStudyMinutes: () => void
+
+  // Notion同期アクション
+  syncRecordToNotion: (record: StudyRecord) => Promise<string | null>
+  fetchRecordsFromNotion: () => Promise<void>
+  deleteRecordFromNotion: (id: string) => Promise<void>
 
   // 集計
   getTotalStudyHours: (subject: Subject) => number
@@ -35,6 +46,11 @@ export const useRecordStore = create<RecordState>()(
         BAR: 0,
       },
 
+      // Notion同期用
+      isSyncing: false,
+      lastSyncedAt: null,
+      notionIdMap: {},
+
       addRecord: (record) => {
         const newRecord: StudyRecord = {
           ...record,
@@ -44,6 +60,9 @@ export const useRecordStore = create<RecordState>()(
         set((state) => ({
           records: [newRecord, ...state.records],
         }))
+
+        // バックグラウンドでNotion同期
+        get().syncRecordToNotion(newRecord).catch(console.error)
       },
 
       updateRecord: (id, updates) => {
@@ -52,11 +71,27 @@ export const useRecordStore = create<RecordState>()(
             r.id === id ? { ...r, ...updates } : r
           ),
         }))
+
+        // NotionページIDがあれば同期
+        const notionId = get().notionIdMap[id]
+        if (notionId) {
+          fetch("/api/notion/records", {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id: notionId, ...updates }),
+          }).catch(console.error)
+        }
       },
 
       deleteRecord: (id) => {
+        // Notionから削除
+        get().deleteRecordFromNotion(id).catch(console.error)
+
         set((state) => ({
           records: state.records.filter((r) => r.id !== id),
+          notionIdMap: Object.fromEntries(
+            Object.entries(state.notionIdMap).filter(([key]) => key !== id)
+          ),
         }))
       },
 
@@ -93,6 +128,92 @@ export const useRecordStore = create<RecordState>()(
         })
       },
 
+      // Notion同期アクション
+      syncRecordToNotion: async (record) => {
+        try {
+          const response = await fetch("/api/notion/records", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              recordType: record.recordType,
+              subject: record.subject,
+              subtopic: record.subtopic,
+              studyMinutes: record.studyMinutes,
+              totalQuestions: record.totalQuestions,
+              correctAnswers: record.correctAnswers,
+              roundNumber: record.roundNumber,
+              chapter: record.chapter,
+              pageRange: record.pageRange,
+              memo: record.memo,
+              studiedAt: record.studiedAt,
+            }),
+          })
+
+          if (response.ok) {
+            const result = await response.json()
+            set((state) => ({
+              notionIdMap: {
+                ...state.notionIdMap,
+                [record.id]: result.id,
+              },
+            }))
+            return result.id
+          }
+          return null
+        } catch (error) {
+          console.error("Failed to sync record to Notion:", error)
+          return null
+        }
+      },
+
+      fetchRecordsFromNotion: async () => {
+        set({ isSyncing: true })
+
+        try {
+          const response = await fetch("/api/notion/records")
+          if (response.ok) {
+            const notionRecords: StudyRecord[] = await response.json()
+
+            // 既存のローカル記録とマージ
+            const localRecords = get().records
+            const notionIdMap: Record<string, string> = {}
+
+            // NotionのIDをローカルIDとしても使用
+            for (const record of notionRecords) {
+              notionIdMap[record.id] = record.id
+            }
+
+            // ローカルにのみ存在する記録（まだNotion同期されていない）を保持
+            const localOnlyRecords = localRecords.filter(
+              (local) => !Object.keys(get().notionIdMap).includes(local.id)
+            )
+
+            set({
+              records: [...notionRecords, ...localOnlyRecords],
+              notionIdMap: { ...get().notionIdMap, ...notionIdMap },
+              lastSyncedAt: new Date().toISOString(),
+            })
+          }
+        } catch (error) {
+          console.error("Failed to fetch records from Notion:", error)
+        } finally {
+          set({ isSyncing: false })
+        }
+      },
+
+      deleteRecordFromNotion: async (id) => {
+        const notionId = get().notionIdMap[id]
+        if (!notionId) return
+
+        try {
+          await fetch(`/api/notion/records?id=${notionId}`, {
+            method: "DELETE",
+          })
+        } catch (error) {
+          console.error("Failed to delete record from Notion:", error)
+        }
+      },
+
       // 科目別の累計学習時間（時間単位）
       getTotalStudyHours: (subject) => {
         const records = get().records.filter((r) => r.subject === subject)
@@ -116,6 +237,8 @@ export const useRecordStore = create<RecordState>()(
       partialize: (state) => ({
         records: state.records,
         todayStudyMinutes: state.todayStudyMinutes,
+        notionIdMap: state.notionIdMap,
+        lastSyncedAt: state.lastSyncedAt,
       }),
     }
   )

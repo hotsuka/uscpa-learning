@@ -52,7 +52,21 @@ export default function TimerPage() {
       const minutes = Math.floor(session.durationSeconds / 60)
       addTodayStudyMinutes(session.subject, minutes)
 
-      console.log("Session saved:", session)
+      // Notionにセッションを保存（バックグラウンド）
+      fetch("/api/notion/sessions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: session.subject,
+          subtopic: session.subtopic,
+          studyMinutes: minutes,
+          startedAt: new Date(session.startTime).toISOString(),
+          endedAt: new Date(session.endTime).toISOString(),
+        }),
+      }).catch((error) => {
+        console.error("Failed to save session to Notion:", error)
+      })
+
       const subtopicText = session.subtopic ? ` (${session.subtopic})` : ""
       alert(
         `${SUBJECTS[session.subject].name}${subtopicText}の学習を記録しました\n` +
