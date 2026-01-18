@@ -2,7 +2,7 @@
 
 **作成日**: 2026年1月17日
 **更新日**: 2026年1月18日
-**バージョン**: 1.2
+**バージョン**: 1.8
 **関連文書**: [要件定義書](./requirements.md)
 
 ---
@@ -786,9 +786,9 @@ module.exports = withPWA({
 
 - [x] PWAとしてインストール可能
 - [x] オフラインで基本機能が動作する（Service Workerによるキャッシュ）
-- [ ] Lighthouse Performance スコア 90以上
+- [x] Lighthouse スコア改善（Accessibility 100達成）
 - [x] モバイルで快適に操作できる
-- [ ] 本番環境で全機能が動作する
+- [x] 本番環境で全機能が動作する（https://uscpa-learning.vercel.app）
 
 ### 6.4 追加実装済み機能（v1.4）
 
@@ -804,6 +804,36 @@ module.exports = withPWA({
 - [x] Runtime Caching 設定（フォント、画像、JS、CSS、APIなど）
 - [x] .gitignore にPWA生成ファイルを追加（sw.js, workbox-*.js）
 - [x] ビルド成功確認（sw.js, workbox.js が生成される）
+
+### 6.6 追加実装済み機能（v1.7）
+
+- [x] Vercelへの本番デプロイ（https://uscpa-learning.vercel.app）
+- [x] Next.js 15.5.9へのアップグレード（セキュリティ修正）
+- [x] Lighthouseアクセシビリティ改善
+  - テキストコントラスト比の改善（WCAG準拠）
+  - Badgeコンポーネントのコントラスト比改善
+  - Accessibility スコア 100達成
+
+### 6.7 追加実装済み機能（v1.8）
+
+- [x] Notion APIクライアント実装（src/lib/notion/）
+  - client.ts: Notionクライアント・環境変数管理
+  - settings.ts: 設定DB操作
+  - sessions.ts: 学習セッションDB操作
+  - records.ts: 学習記録DB操作
+  - notes.ts: 学習ノートDB操作（Markdown変換含む）
+- [x] Notion APIルート実装（src/app/api/notion/）
+  - /api/notion/status: 接続状態確認
+  - /api/notion/settings: 設定CRUD
+  - /api/notion/sessions: セッションCRUD
+  - /api/notion/records: 記録CRUD
+  - /api/notion/notes: ノートCRUD
+- [x] フロントエンドNotion同期統合
+  - useNotionSync.ts: 同期フック（useNotionStatus, useSyncQueue, useNotionApi）
+  - settingsStore.ts: 設定自動同期
+  - recordStore.ts: 記録CRUD同期
+  - notesStore.ts: ノートCRUD同期
+  - タイマー終了時のセッション保存
 
 ---
 
@@ -1070,3 +1100,5 @@ npm run test:coverage
 | 1.4 | 2026-01-18 | ノート編集・削除機能、タグフィルタリング機能、弱点分析機能の完了条件達成 | - |
 | 1.5 | 2026-01-18 | PWA Service Worker実装完了（next-pwa、runtime caching設定） | - |
 | 1.6 | 2026-01-18 | Markdownプレビュー機能、必要学習ペース計算機能実装 | - |
+| 1.7 | 2026-01-18 | Vercelデプロイ、Lighthouseアクセシビリティ改善（スコア100達成） | - |
+| 1.8 | 2026-01-18 | Notion API統合（クライアント実装、APIルート、フロントエンド同期） | - |
