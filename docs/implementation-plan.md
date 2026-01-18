@@ -1,0 +1,1072 @@
+# USCPA学習管理アプリケーション 実装計画書
+
+**作成日**: 2026年1月17日
+**更新日**: 2026年1月18日
+**バージョン**: 1.2
+**関連文書**: [要件定義書](./requirements.md)
+
+---
+
+## 目次
+
+1. [実装概要](#1-実装概要)
+2. [開発環境セットアップ](#2-開発環境セットアップ)
+3. [Phase 1: プロジェクト基盤構築](#3-phase-1-プロジェクト基盤構築)
+4. [Phase 2: コア機能実装](#4-phase-2-コア機能実装)
+5. [Phase 3: 分析・ダッシュボード実装](#5-phase-3-分析ダッシュボード実装)
+6. [Phase 4: PWA対応・リリース準備](#6-phase-4-pwa対応リリース準備)
+7. [ディレクトリ構成](#7-ディレクトリ構成)
+8. [コンポーネント設計](#8-コンポーネント設計)
+9. [API設計](#9-api設計)
+10. [テスト計画](#10-テスト計画)
+11. [デプロイ手順](#11-デプロイ手順)
+
+---
+
+## 1. 実装概要
+
+### 1.1 技術スタック詳細
+
+| カテゴリ | 技術 | バージョン | 用途 |
+|----------|------|------------|------|
+| フレームワーク | Next.js | 14.x | App Router使用、SSR/SSG対応 |
+| 言語 | TypeScript | 5.x | 型安全な開発 |
+| スタイリング | Tailwind CSS | 3.x | ユーティリティファーストCSS |
+| UIライブラリ | shadcn/ui | latest | アクセシブルなコンポーネント |
+| 状態管理 | Zustand | 4.x | 軽量な状態管理 |
+| フォーム | React Hook Form | 7.x | フォームバリデーション |
+| バリデーション | Zod | 3.x | スキーマバリデーション |
+| グラフ | Recharts | 2.x | データ可視化 |
+| 日付操作 | date-fns | 3.x | 日付フォーマット・計算 |
+| BaaS | Supabase | latest | DB、認証、リアルタイム |
+| PWA | next-pwa | 5.x | Service Worker生成 |
+| テスト | Vitest + Testing Library | latest | ユニット・統合テスト |
+| Linter | ESLint + Prettier | latest | コード品質 |
+
+### 1.2 開発原則
+
+1. **型安全性**: 全てのコードにTypeScriptの厳格な型付け
+2. **コンポーネント設計**: Atomic Designに基づく再利用可能な設計
+3. **アクセシビリティ**: WAI-ARIA準拠、キーボード操作対応
+4. **パフォーマンス**: Core Web Vitals最適化
+5. **テスト駆動**: 重要なロジックにはテストを記述
+
+---
+
+## 2. 開発環境セットアップ
+
+### 2.1 前提条件
+
+```bash
+# 必要なツール
+- Node.js 20.x 以上
+- npm 10.x 以上（または pnpm 8.x）
+- Git
+- VSCode（推奨エディタ）
+```
+
+### 2.2 推奨VSCode拡張機能
+
+```json
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "prisma.prisma",
+    "formulahendry.auto-rename-tag"
+  ]
+}
+```
+
+### 2.3 Supabaseセットアップ手順
+
+1. **アカウント作成**
+   - https://supabase.com にアクセス
+   - GitHubアカウントでサインアップ
+
+2. **プロジェクト作成**
+   - 「New Project」をクリック
+   - プロジェクト名: `uscpa-learning`
+   - リージョン: `Northeast Asia (Tokyo)` 推奨
+   - データベースパスワードを設定（安全な場所に保存）
+
+3. **API キー取得**
+   - Settings → API から以下を取得
+     - `Project URL` → NEXT_PUBLIC_SUPABASE_URL
+     - `anon public` → NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+4. **認証設定**
+   - Authentication → Providers
+   - Email を有効化
+   - 「Confirm email」をオフ（開発時）
+
+---
+
+## 3. Phase 1: プロジェクト基盤構築
+
+### 3.1 タスク一覧
+
+| # | タスク | 詳細 | 成果物 |
+|---|--------|------|--------|
+| 1.1 | プロジェクト作成 | Next.js 14 + TypeScript | 基本プロジェクト |
+| 1.2 | Tailwind CSS設定 | カスタムテーマ設定 | tailwind.config.ts |
+| 1.3 | shadcn/ui導入 | 必要コンポーネント追加 | components/ui/* |
+| 1.4 | Supabase接続 | クライアント設定 | lib/supabase.ts |
+| 1.5 | 環境変数設定 | .env.local作成 | .env.local |
+| 1.6 | 認証機能実装 | ログイン/サインアップ | app/(auth)/* |
+| 1.7 | レイアウト作成 | 共通レイアウト | app/layout.tsx |
+| 1.8 | ナビゲーション | ボトムナビ（モバイル）/サイドバー（PC） | components/navigation/* |
+
+### 3.2 実装手順
+
+#### Step 1.1: プロジェクト作成
+
+```bash
+# プロジェクト作成
+npx create-next-app@latest uscpa-learning --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+
+cd uscpa-learning
+
+# 追加パッケージインストール
+npm install @supabase/supabase-js @supabase/ssr zustand react-hook-form zod @hookform/resolvers date-fns recharts
+
+# 開発用パッケージ
+npm install -D @types/node prettier eslint-config-prettier
+```
+
+#### Step 1.2: shadcn/ui セットアップ
+
+```bash
+# shadcn/ui 初期化
+npx shadcn@latest init
+
+# 必要なコンポーネントを追加
+npx shadcn@latest add button card input label tabs select dialog toast badge progress dropdown-menu avatar separator
+```
+
+#### Step 1.3: 環境変数設定
+
+```env
+# .env.local
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+```
+
+#### Step 1.4: Supabaseクライアント設定
+
+```typescript
+// src/lib/supabase/client.ts
+import { createBrowserClient } from '@supabase/ssr'
+
+export function createClient() {
+  return createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+}
+```
+
+```typescript
+// src/lib/supabase/server.ts
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { cookies } from 'next/headers'
+
+export async function createClient() {
+  const cookieStore = await cookies()
+
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll()
+        },
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options)
+            )
+          } catch {
+            // Server Component からの呼び出し時は無視
+          }
+        },
+      },
+    }
+  )
+}
+```
+
+#### Step 1.5: データベーススキーマ作成
+
+Supabase SQL Editorで実行:
+
+```sql
+-- プロファイルテーブル
+CREATE TABLE profiles (
+  id UUID REFERENCES auth.users ON DELETE CASCADE PRIMARY KEY,
+  email TEXT NOT NULL,
+  exam_date DATE,
+  target_hours INTEGER DEFAULT 1000,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 学習セッションテーブル
+CREATE TABLE study_sessions (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
+  subject TEXT NOT NULL CHECK (subject IN ('FAR', 'AUD', 'REG', 'BAR')),
+  duration_seconds INTEGER NOT NULL DEFAULT 0,
+  started_at TIMESTAMP WITH TIME ZONE NOT NULL,
+  ended_at TIMESTAMP WITH TIME ZONE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 過去問演習記録テーブル
+CREATE TABLE practice_records (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
+  subject TEXT NOT NULL CHECK (subject IN ('FAR', 'AUD', 'REG', 'BAR')),
+  topic TEXT,
+  total_questions INTEGER NOT NULL CHECK (total_questions > 0),
+  correct_answers INTEGER NOT NULL CHECK (correct_answers >= 0),
+  round_number INTEGER NOT NULL DEFAULT 1,
+  practiced_at DATE NOT NULL DEFAULT CURRENT_DATE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  CONSTRAINT valid_answers CHECK (correct_answers <= total_questions)
+);
+
+-- 学習ノートテーブル
+CREATE TABLE study_notes (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
+  title TEXT NOT NULL,
+  content TEXT,
+  tags TEXT[] DEFAULT '{}',
+  subject TEXT CHECK (subject IN ('FAR', 'AUD', 'REG', 'BAR')),
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- インデックス作成
+CREATE INDEX idx_study_sessions_user_id ON study_sessions(user_id);
+CREATE INDEX idx_study_sessions_started_at ON study_sessions(started_at);
+CREATE INDEX idx_practice_records_user_id ON practice_records(user_id);
+CREATE INDEX idx_practice_records_practiced_at ON practice_records(practiced_at);
+CREATE INDEX idx_study_notes_user_id ON study_notes(user_id);
+CREATE INDEX idx_study_notes_tags ON study_notes USING GIN(tags);
+
+-- Row Level Security 有効化
+ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE study_sessions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE practice_records ENABLE ROW LEVEL SECURITY;
+ALTER TABLE study_notes ENABLE ROW LEVEL SECURITY;
+
+-- RLSポリシー作成
+CREATE POLICY "Users can view own profile" ON profiles
+  FOR SELECT USING (auth.uid() = id);
+
+CREATE POLICY "Users can update own profile" ON profiles
+  FOR UPDATE USING (auth.uid() = id);
+
+CREATE POLICY "Users can insert own profile" ON profiles
+  FOR INSERT WITH CHECK (auth.uid() = id);
+
+CREATE POLICY "Users can manage own sessions" ON study_sessions
+  FOR ALL USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can manage own practice records" ON practice_records
+  FOR ALL USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can manage own notes" ON study_notes
+  FOR ALL USING (auth.uid() = user_id);
+
+-- プロファイル自動作成トリガー
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO public.profiles (id, email)
+  VALUES (NEW.id, NEW.email);
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
+```
+
+#### Step 1.6: 型定義
+
+```typescript
+// src/types/database.ts
+export type Subject = 'FAR' | 'AUD' | 'REG' | 'BAR'
+
+export interface Profile {
+  id: string
+  email: string
+  exam_date: string | null
+  target_hours: number
+  created_at: string
+}
+
+export interface StudySession {
+  id: string
+  user_id: string
+  subject: Subject
+  duration_seconds: number
+  started_at: string
+  ended_at: string | null
+  created_at: string
+}
+
+export interface PracticeRecord {
+  id: string
+  user_id: string
+  subject: Subject
+  topic: string | null
+  total_questions: number
+  correct_answers: number
+  round_number: number
+  practiced_at: string
+  created_at: string
+}
+
+export interface StudyNote {
+  id: string
+  user_id: string
+  title: string
+  content: string | null
+  tags: string[]
+  subject: Subject | null
+  created_at: string
+  updated_at: string
+}
+```
+
+### 3.3 完了条件
+
+- [x] `npm run dev` でエラーなく起動
+- [ ] Supabaseとの接続確認（未実装 - ローカルストレージで代替中）
+- [ ] ユーザー登録・ログインができる（未実装）
+- [x] 認証後のリダイレクトが正常動作
+- [x] レスポンシブレイアウトが表示される
+
+---
+
+## 4. Phase 2: コア機能実装
+
+### 4.1 タスク一覧
+
+| # | タスク | 詳細 | 成果物 |
+|---|--------|------|--------|
+| 2.1 | タイマーUI | ストップウォッチ/ポモドーロ切替 | components/timer/* |
+| 2.2 | タイマーロジック | 時間計測、バックグラウンド対応 | hooks/useTimer.ts |
+| 2.3 | セッション保存 | Supabaseへの記録保存 | actions/sessions.ts |
+| 2.4 | 過去問記録フォーム | 入力フォームとバリデーション | components/practice/* |
+| 2.5 | 過去問記録一覧 | 記録の表示・編集・削除 | app/records/* |
+| 2.6 | ノートエディタ | Markdown入力対応 | components/notes/* |
+| 2.7 | ノート一覧・検索 | フィルタリング・検索 | app/notes/* |
+| 2.8 | タグ管理 | タグの追加・表示 | components/tags/* |
+
+### 4.2 実装詳細
+
+#### 4.2.1 タイマー機能
+
+```typescript
+// src/hooks/useTimer.ts
+import { useState, useEffect, useCallback, useRef } from 'react'
+
+type TimerMode = 'stopwatch' | 'pomodoro'
+type TimerStatus = 'idle' | 'running' | 'paused'
+
+interface UseTimerOptions {
+  pomodoroMinutes?: number
+  breakMinutes?: number
+  onComplete?: () => void
+}
+
+export function useTimer(options: UseTimerOptions = {}) {
+  const {
+    pomodoroMinutes = 25,
+    breakMinutes = 5,
+    onComplete
+  } = options
+
+  const [mode, setMode] = useState<TimerMode>('stopwatch')
+  const [status, setStatus] = useState<TimerStatus>('idle')
+  const [elapsedSeconds, setElapsedSeconds] = useState(0)
+  const [isBreak, setIsBreak] = useState(false)
+
+  const startTimeRef = useRef<number | null>(null)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+
+  const pomodoroSeconds = pomodoroMinutes * 60
+  const breakSeconds = breakMinutes * 60
+
+  // ストップウォッチモード: 経過時間
+  // ポモドーロモード: 残り時間
+  const displaySeconds = mode === 'stopwatch'
+    ? elapsedSeconds
+    : (isBreak ? breakSeconds : pomodoroSeconds) - elapsedSeconds
+
+  const start = useCallback(() => {
+    if (status === 'running') return
+
+    startTimeRef.current = Date.now() - (elapsedSeconds * 1000)
+    setStatus('running')
+
+    intervalRef.current = setInterval(() => {
+      const elapsed = Math.floor((Date.now() - startTimeRef.current!) / 1000)
+      setElapsedSeconds(elapsed)
+
+      // ポモドーロモードの完了チェック
+      if (mode === 'pomodoro') {
+        const limit = isBreak ? breakSeconds : pomodoroSeconds
+        if (elapsed >= limit) {
+          if (!isBreak) {
+            setIsBreak(true)
+            setElapsedSeconds(0)
+            startTimeRef.current = Date.now()
+          } else {
+            stop()
+            onComplete?.()
+          }
+        }
+      }
+    }, 1000)
+  }, [status, elapsedSeconds, mode, isBreak, pomodoroSeconds, breakSeconds, onComplete])
+
+  const pause = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+      intervalRef.current = null
+    }
+    setStatus('paused')
+  }, [])
+
+  const stop = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+      intervalRef.current = null
+    }
+    setStatus('idle')
+    const finalSeconds = elapsedSeconds
+    setElapsedSeconds(0)
+    setIsBreak(false)
+    startTimeRef.current = null
+    return finalSeconds
+  }, [elapsedSeconds])
+
+  const reset = useCallback(() => {
+    stop()
+  }, [stop])
+
+  const toggleMode = useCallback((newMode: TimerMode) => {
+    if (status !== 'idle') return
+    setMode(newMode)
+    setElapsedSeconds(0)
+  }, [status])
+
+  // クリーンアップ
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
+  }, [])
+
+  // Page Visibility API でバックグラウンド対応
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && status === 'running' && startTimeRef.current) {
+        const elapsed = Math.floor((Date.now() - startTimeRef.current) / 1000)
+        setElapsedSeconds(elapsed)
+      }
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
+  }, [status])
+
+  return {
+    mode,
+    status,
+    elapsedSeconds,
+    displaySeconds,
+    isBreak,
+    start,
+    pause,
+    stop,
+    reset,
+    toggleMode,
+  }
+}
+```
+
+#### 4.2.2 過去問記録フォーム
+
+```typescript
+// src/lib/validations/practice.ts
+import { z } from 'zod'
+
+export const practiceRecordSchema = z.object({
+  subject: z.enum(['FAR', 'AUD', 'REG', 'BAR']),
+  topic: z.string().optional(),
+  total_questions: z.number().min(1, '1問以上入力してください'),
+  correct_answers: z.number().min(0, '0以上の数値を入力してください'),
+  round_number: z.number().min(1).default(1),
+  practiced_at: z.string(),
+}).refine(
+  (data) => data.correct_answers <= data.total_questions,
+  {
+    message: '正解数は問題数以下にしてください',
+    path: ['correct_answers'],
+  }
+)
+
+export type PracticeRecordInput = z.infer<typeof practiceRecordSchema>
+```
+
+#### 4.2.3 学習ノート機能
+
+```typescript
+// src/lib/validations/note.ts
+import { z } from 'zod'
+
+export const studyNoteSchema = z.object({
+  title: z.string().min(1, 'タイトルを入力してください').max(100),
+  content: z.string().optional(),
+  tags: z.array(z.string()).default([]),
+  subject: z.enum(['FAR', 'AUD', 'REG', 'BAR']).nullable(),
+})
+
+export type StudyNoteInput = z.infer<typeof studyNoteSchema>
+```
+
+### 4.3 完了条件
+
+- [x] タイマーが正確に動作する（ストップウォッチ/ポモドーロ両モード）
+- [x] タブ切り替え後も時間が正しく計測される
+- [x] セッション終了時にデータが保存される（ローカルストレージ）
+- [x] 過去問記録の CRUD 操作ができる
+- [x] バリデーションエラーが適切に表示される
+- [x] ノートの作成・編集・削除ができる
+- [x] タグでのフィルタリングができる
+
+### 4.4 追加実装済み機能（v1.2）
+
+- [x] 学習記録に学習時間フィールドを追加
+- [x] タイマーと記録画面の連動（タイマーの今日の学習時間をデフォルト表示）
+- [x] 記録ストア（recordStore）の実装
+- [x] テキスト復習タイプの記録対応
+- [x] サブテーマ（サブトピック）の選択機能
+- [x] 学習記録画面での学習時間表示
+- [x] PDF教材ビューア（react-pdf）
+
+### 4.5 追加実装済み機能（v1.3）
+
+- [x] 設定ストア（settingsStore）の実装 - 設定値のlocalStorage永続化
+- [x] 学習記録の編集機能（/records/[id]ページ）
+- [x] 学習記録の削除機能（確認ダイアログ付き）
+- [x] 記録一覧からの詳細画面への遷移（クリックで詳細ページへ）
+- [x] タイマーボタンへのラベル追加（Start/Pause/Resume/Reset/Record）
+
+---
+
+## 5. Phase 3: 分析・ダッシュボード実装
+
+### 5.1 タスク一覧
+
+| # | タスク | 詳細 | 成果物 |
+|---|--------|------|--------|
+| 3.1 | ダッシュボードUI | カード型レイアウト | app/dashboard/* |
+| 3.2 | カウントダウン | 試験日までの残り日数 | components/countdown/* |
+| 3.3 | 今日のサマリー | 学習時間・問題数 | components/summary/* |
+| 3.4 | 学習時間グラフ | 日/週/月の推移 | components/charts/StudyTimeChart.tsx |
+| 3.5 | 正答率グラフ | 科目別の正答率 | components/charts/AccuracyChart.tsx |
+| 3.6 | 弱点分析 | 低正答率テーマ抽出 | components/analysis/* |
+| 3.7 | 進捗バー | 目標達成率 | components/progress/* |
+
+### 5.2 実装詳細
+
+#### 5.2.1 データ集計ユーティリティ
+
+```typescript
+// src/lib/analytics.ts
+import { StudySession, PracticeRecord } from '@/types/database'
+import { startOfDay, startOfWeek, startOfMonth, format } from 'date-fns'
+
+// 日別学習時間集計
+export function aggregateStudyTimeByDay(sessions: StudySession[]) {
+  const grouped = sessions.reduce((acc, session) => {
+    const day = format(new Date(session.started_at), 'yyyy-MM-dd')
+    acc[day] = (acc[day] || 0) + session.duration_seconds
+    return acc
+  }, {} as Record<string, number>)
+
+  return Object.entries(grouped).map(([date, seconds]) => ({
+    date,
+    hours: Math.round((seconds / 3600) * 10) / 10,
+  }))
+}
+
+// 科目別学習時間集計
+export function aggregateStudyTimeBySubject(sessions: StudySession[]) {
+  const grouped = sessions.reduce((acc, session) => {
+    acc[session.subject] = (acc[session.subject] || 0) + session.duration_seconds
+    return acc
+  }, {} as Record<string, number>)
+
+  return Object.entries(grouped).map(([subject, seconds]) => ({
+    subject,
+    hours: Math.round((seconds / 3600) * 10) / 10,
+  }))
+}
+
+// 科目別正答率計算
+export function calculateAccuracyBySubject(records: PracticeRecord[]) {
+  const grouped = records.reduce((acc, record) => {
+    if (!acc[record.subject]) {
+      acc[record.subject] = { total: 0, correct: 0 }
+    }
+    acc[record.subject].total += record.total_questions
+    acc[record.subject].correct += record.correct_answers
+    return acc
+  }, {} as Record<string, { total: number; correct: number }>)
+
+  return Object.entries(grouped).map(([subject, data]) => ({
+    subject,
+    accuracy: Math.round((data.correct / data.total) * 100),
+    total: data.total,
+    correct: data.correct,
+  }))
+}
+
+// 弱点テーマ抽出（正答率70%未満）
+export function identifyWeakTopics(records: PracticeRecord[], threshold = 70) {
+  const grouped = records.reduce((acc, record) => {
+    if (!record.topic) return acc
+
+    const key = `${record.subject}:${record.topic}`
+    if (!acc[key]) {
+      acc[key] = { subject: record.subject, topic: record.topic, total: 0, correct: 0 }
+    }
+    acc[key].total += record.total_questions
+    acc[key].correct += record.correct_answers
+    return acc
+  }, {} as Record<string, { subject: string; topic: string; total: number; correct: number }>)
+
+  return Object.values(grouped)
+    .map(data => ({
+      ...data,
+      accuracy: Math.round((data.correct / data.total) * 100),
+    }))
+    .filter(data => data.accuracy < threshold)
+    .sort((a, b) => a.accuracy - b.accuracy)
+}
+
+// 必要学習ペース計算
+export function calculateRequiredPace(
+  totalTargetHours: number,
+  completedHours: number,
+  daysRemaining: number
+): number {
+  if (daysRemaining <= 0) return 0
+  const remainingHours = totalTargetHours - completedHours
+  return Math.ceil((remainingHours / daysRemaining) * 10) / 10
+}
+```
+
+#### 5.2.2 ダッシュボードページ
+
+```typescript
+// src/app/(main)/dashboard/page.tsx 構成イメージ
+
+// コンポーネント構成:
+// - CountdownCard: 試験日カウントダウン
+// - TodaySummaryCard: 今日の学習サマリー
+// - WeeklyProgressCard: 週間進捗バー
+// - QuickActions: クイックアクションボタン
+// - RecentActivityList: 最近の活動一覧
+```
+
+### 5.3 完了条件
+
+- [x] ダッシュボードに全情報が表示される
+- [x] カウントダウンが正確に計算される
+- [x] グラフが正しく描画される
+- [x] 弱点分野が正答率に基づいて表示される
+- [x] データ更新時にリアルタイムで反映される
+
+### 5.4 追加実装済み機能（v1.2）
+
+- [x] 科目別目標学習時間の設定（設定画面）
+- [x] 平日/休日別の目標時間設定
+- [x] 祝日考慮の週間目標計算（日本の祝日データ2025-2027年）
+- [x] 記録ベースの進捗表示（ダッシュボード）
+- [x] 今日の学習時間・問題数・正答率のサマリー
+- [x] 週間進捗バー
+- [x] 科目別進捗バー（目標時間に対する達成率）
+
+### 5.5 追加実装済み機能（v1.3）
+
+- [x] 試験日見込み学習時間の表示（設定画面）
+- [x] 目標達成可否の判定（残り日数×日割り学習時間と残り必要時間の比較）
+- [x] 達成可能時は緑色で「現在のペースで目標達成可能」と表示
+- [x] 不足時は赤色で「あと○時間不足（1日+○h必要）」と表示
+- [x] ノートストア（notesStore）の実装 - ノートのlocalStorage永続化
+- [x] 分析画面での実データ表示（recordStore、settingsStoreからデータ取得）
+
+---
+
+## 6. Phase 4: PWA対応・リリース準備
+
+### 6.1 タスク一覧
+
+| # | タスク | 詳細 | 成果物 |
+|---|--------|------|--------|
+| 4.1 | PWA設定 | next-pwa導入 | next.config.js |
+| 4.2 | マニフェスト | アプリ情報定義 | public/manifest.json |
+| 4.3 | アイコン作成 | 各サイズのアイコン | public/icons/* |
+| 4.4 | オフライン対応 | Service Worker設定 | sw.js |
+| 4.5 | レスポンシブ調整 | モバイル最適化 | 各コンポーネント |
+| 4.6 | パフォーマンス最適化 | Lighthouse改善 | - |
+| 4.7 | 本番環境設定 | 環境変数、ドメイン | Vercel設定 |
+| 4.8 | デプロイ | Vercelへデプロイ | 本番URL |
+
+### 6.2 実装詳細
+
+#### 6.2.1 PWA設定
+
+```javascript
+// next.config.js
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+  register: true,
+  skipWaiting: true,
+})
+
+module.exports = withPWA({
+  // Next.js config
+})
+```
+
+#### 6.2.2 マニフェスト
+
+```json
+// public/manifest.json
+{
+  "name": "USCPA学習管理",
+  "short_name": "USCPA Study",
+  "description": "USCPA試験の学習進捗を管理するアプリ",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+```
+
+### 6.3 完了条件
+
+- [x] PWAとしてインストール可能
+- [x] オフラインで基本機能が動作する（Service Workerによるキャッシュ）
+- [ ] Lighthouse Performance スコア 90以上
+- [x] モバイルで快適に操作できる
+- [ ] 本番環境で全機能が動作する
+
+### 6.4 追加実装済み機能（v1.4）
+
+- [x] manifest.json の作成（アプリ名、説明、アイコン設定）
+- [x] SVGアイコンの作成
+- [x] Apple Web App対応メタタグ
+- [x] PWAショートカット設定（タイマー、記録追加）
+
+### 6.5 追加実装済み機能（v1.5）
+
+- [x] next-pwa パッケージの導入
+- [x] Service Worker 設定（next.config.js）
+- [x] Runtime Caching 設定（フォント、画像、JS、CSS、APIなど）
+- [x] .gitignore にPWA生成ファイルを追加（sw.js, workbox-*.js）
+- [x] ビルド成功確認（sw.js, workbox.js が生成される）
+
+---
+
+## 7. ディレクトリ構成
+
+```
+src/
+├── app/
+│   ├── (auth)/
+│   │   ├── login/
+│   │   │   └── page.tsx
+│   │   ├── signup/
+│   │   │   └── page.tsx
+│   │   └── layout.tsx
+│   ├── (main)/
+│   │   ├── dashboard/
+│   │   │   └── page.tsx
+│   │   ├── timer/
+│   │   │   └── page.tsx
+│   │   ├── records/
+│   │   │   ├── page.tsx
+│   │   │   └── [id]/
+│   │   │       └── page.tsx
+│   │   ├── notes/
+│   │   │   ├── page.tsx
+│   │   │   ├── new/
+│   │   │   │   └── page.tsx
+│   │   │   └── [id]/
+│   │   │       └── page.tsx
+│   │   ├── analytics/
+│   │   │   └── page.tsx
+│   │   ├── settings/
+│   │   │   └── page.tsx
+│   │   └── layout.tsx
+│   ├── api/
+│   │   └── auth/
+│   │       └── callback/
+│   │           └── route.ts
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── components/
+│   ├── ui/                    # shadcn/ui コンポーネント
+│   ├── navigation/
+│   │   ├── BottomNav.tsx
+│   │   ├── Sidebar.tsx
+│   │   └── Header.tsx
+│   ├── timer/
+│   │   ├── TimerDisplay.tsx
+│   │   ├── TimerControls.tsx
+│   │   ├── SubjectSelector.tsx
+│   │   └── ModeToggle.tsx
+│   ├── practice/
+│   │   ├── PracticeForm.tsx
+│   │   ├── PracticeList.tsx
+│   │   └── PracticeCard.tsx
+│   ├── notes/
+│   │   ├── NoteEditor.tsx
+│   │   ├── NoteList.tsx
+│   │   ├── NoteCard.tsx
+│   │   └── TagInput.tsx
+│   ├── charts/
+│   │   ├── StudyTimeChart.tsx
+│   │   ├── AccuracyChart.tsx
+│   │   └── SubjectPieChart.tsx
+│   ├── dashboard/
+│   │   ├── CountdownCard.tsx
+│   │   ├── TodaySummaryCard.tsx
+│   │   ├── WeeklyProgressCard.tsx
+│   │   └── QuickActions.tsx
+│   └── common/
+│       ├── Loading.tsx
+│       ├── ErrorBoundary.tsx
+│       └── EmptyState.tsx
+├── hooks/
+│   ├── useTimer.ts
+│   ├── useAuth.ts
+│   ├── useSessions.ts
+│   ├── usePracticeRecords.ts
+│   └── useStudyNotes.ts
+├── lib/
+│   ├── supabase/
+│   │   ├── client.ts
+│   │   ├── server.ts
+│   │   └── middleware.ts
+│   ├── validations/
+│   │   ├── practice.ts
+│   │   └── note.ts
+│   ├── analytics.ts
+│   └── utils.ts
+├── stores/
+│   ├── timerStore.ts
+│   └── userStore.ts
+├── types/
+│   └── database.ts
+└── middleware.ts
+```
+
+---
+
+## 8. コンポーネント設計
+
+### 8.1 コンポーネント一覧
+
+| コンポーネント | 種別 | 説明 |
+|----------------|------|------|
+| TimerDisplay | Presentational | タイマー表示（時:分:秒） |
+| TimerControls | Container | 開始/停止/リセットボタン |
+| SubjectSelector | Presentational | 科目選択ドロップダウン |
+| PracticeForm | Container | 過去問記録入力フォーム |
+| PracticeList | Container | 記録一覧（フィルタ付き） |
+| NoteEditor | Container | Markdownエディタ |
+| CountdownCard | Presentational | カウントダウン表示 |
+| StudyTimeChart | Presentational | 学習時間グラフ |
+
+### 8.2 状態管理設計
+
+```typescript
+// src/stores/timerStore.ts
+import { create } from 'zustand'
+import { Subject } from '@/types/database'
+
+interface TimerState {
+  selectedSubject: Subject
+  isRunning: boolean
+  startTime: number | null
+  setSubject: (subject: Subject) => void
+  setRunning: (running: boolean) => void
+  setStartTime: (time: number | null) => void
+}
+
+export const useTimerStore = create<TimerState>((set) => ({
+  selectedSubject: 'FAR',
+  isRunning: false,
+  startTime: null,
+  setSubject: (subject) => set({ selectedSubject: subject }),
+  setRunning: (running) => set({ isRunning: running }),
+  setStartTime: (time) => set({ startTime: time }),
+}))
+```
+
+---
+
+## 9. API設計
+
+### 9.1 Server Actions
+
+| アクション | 用途 | 入力 | 出力 |
+|-----------|------|------|------|
+| createSession | セッション作成 | SessionInput | Session |
+| updateSession | セッション更新 | id, SessionInput | Session |
+| getSessions | セッション取得 | filters | Session[] |
+| createPracticeRecord | 記録作成 | PracticeInput | PracticeRecord |
+| updatePracticeRecord | 記録更新 | id, PracticeInput | PracticeRecord |
+| deletePracticeRecord | 記録削除 | id | void |
+| createNote | ノート作成 | NoteInput | StudyNote |
+| updateNote | ノート更新 | id, NoteInput | StudyNote |
+| deleteNote | ノート削除 | id | void |
+| updateProfile | プロフィール更新 | ProfileInput | Profile |
+
+### 9.2 リアルタイム購読
+
+```typescript
+// セッション変更の購読例
+const channel = supabase
+  .channel('study_sessions')
+  .on(
+    'postgres_changes',
+    {
+      event: '*',
+      schema: 'public',
+      table: 'study_sessions',
+      filter: `user_id=eq.${userId}`,
+    },
+    (payload) => {
+      // 状態更新処理
+    }
+  )
+  .subscribe()
+```
+
+---
+
+## 10. テスト計画
+
+### 10.1 テスト種別
+
+| 種別 | 対象 | ツール |
+|------|------|--------|
+| ユニットテスト | ユーティリティ関数、hooks | Vitest |
+| コンポーネントテスト | UIコンポーネント | Testing Library |
+| E2Eテスト | 主要フロー | Playwright（将来） |
+
+### 10.2 テスト対象優先度
+
+1. **高**: タイマーロジック（useTimer）
+2. **高**: データ集計関数（analytics.ts）
+3. **中**: バリデーションスキーマ
+4. **中**: 認証フロー
+5. **低**: UIコンポーネント表示
+
+### 10.3 テストコマンド
+
+```bash
+# 全テスト実行
+npm run test
+
+# ウォッチモード
+npm run test:watch
+
+# カバレッジ
+npm run test:coverage
+```
+
+---
+
+## 11. デプロイ手順
+
+### 11.1 事前準備
+
+1. GitHubリポジトリ作成
+2. Vercelアカウント作成・GitHub連携
+3. 本番用Supabaseプロジェクト作成（または既存を使用）
+
+### 11.2 Vercelデプロイ設定
+
+1. **プロジェクトインポート**
+   - Vercelダッシュボードで「New Project」
+   - GitHubリポジトリを選択
+
+2. **環境変数設定**
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=本番URL
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=本番Key
+   ```
+
+3. **ビルド設定**
+   - Framework: Next.js（自動検出）
+   - Build Command: `npm run build`
+   - Output Directory: `.next`
+
+4. **ドメイン設定**（任意）
+   - カスタムドメインを設定
+
+### 11.3 デプロイ後の確認
+
+- [ ] トップページが表示される
+- [ ] ユーザー登録ができる
+- [ ] ログイン/ログアウトができる
+- [ ] タイマーが動作する
+- [ ] データが保存・取得できる
+- [ ] PWAとしてインストールできる
+
+---
+
+## 改訂履歴
+
+| バージョン | 日付 | 内容 | 担当 |
+|------------|------|------|------|
+| 1.0 | 2026-01-17 | 初版作成 | - |
+| 1.1 | 2026-01-17 | Phase 1-2の実装完了を反映 | - |
+| 1.2 | 2026-01-18 | 学習時間管理機能、祝日対応週間目標、PDF教材ビューア追加 | - |
+| 1.3 | 2026-01-18 | 設定/ノート永続化、学習記録編集・削除、試験日見込み時間表示、タイマーボタンラベル追加 | - |
+| 1.4 | 2026-01-18 | ノート編集・削除機能、タグフィルタリング機能、弱点分析機能の完了条件達成 | - |
+| 1.5 | 2026-01-18 | PWA Service Worker実装完了（next-pwa、runtime caching設定） | - |
+| 1.6 | 2026-01-18 | Markdownプレビュー機能、必要学習ペース計算機能実装 | - |
