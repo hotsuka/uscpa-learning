@@ -3,7 +3,10 @@
 import { useEffect, useState, useMemo } from "react"
 import { useTimer } from "@/hooks/useTimer"
 import { Header } from "@/components/layout/Header"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import {
   TimerDisplay,
   TimerControls,
@@ -16,6 +19,7 @@ import {
 import { formatMinutes } from "@/lib/utils"
 import { SUBJECTS, type Subject } from "@/types"
 import { useRecordStore } from "@/stores/recordStore"
+import { FileQuestion, MessageSquare } from "lucide-react"
 
 interface PendingSession {
   subject: Subject
@@ -23,6 +27,9 @@ interface PendingSession {
   durationSeconds: number
   startTime: number
   endTime: number
+  totalQuestions: string
+  correctAnswers: string
+  memo: string
 }
 
 export default function TimerPage() {
@@ -36,9 +43,16 @@ export default function TimerPage() {
     isPaused,
     isIdle,
     elapsedSeconds,
+    totalQuestions,
+    correctAnswers,
+    memo,
     setSubject,
     setSubtopic,
     setMode,
+    setTotalQuestions,
+    setCorrectAnswers,
+    setMemo,
+    resetRecordFields,
     start,
     pause,
     stop,
@@ -58,6 +72,11 @@ export default function TimerPage() {
     return todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0)
   }, [records])
 
+  // 正答率の計算
+  const accuracy = totalQuestions && correctAnswers
+    ? Math.round((parseInt(correctAnswers) / parseInt(totalQuestions)) * 100)
+    : null
+
   const handleStop = () => {
     const session = stop()
     if (session) {
@@ -68,6 +87,9 @@ export default function TimerPage() {
         durationSeconds: session.durationSeconds,
         startTime: session.startTime,
         endTime: session.endTime,
+        totalQuestions: session.totalQuestions,
+        correctAnswers: session.correctAnswers,
+        memo: session.memo,
       })
       setShowRecordDialog(true)
     }
@@ -111,12 +133,14 @@ export default function TimerPage() {
     // ダイアログを閉じてリセット
     setShowRecordDialog(false)
     setPendingSession(null)
+    resetRecordFields()
   }
 
   const handleCancelRecord = () => {
     // キャンセル時はセッションを破棄（記録なし）
     setShowRecordDialog(false)
     setPendingSession(null)
+    resetRecordFields()
   }
 
   return (
@@ -177,6 +201,72 @@ export default function TimerPage() {
             onReset={reset}
           />
 
+          {/* 演習記録入力欄 */}
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2">
+                <FileQuestion className="h-4 w-4" />
+                演習記録（任意）
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {/* 問題数・正答数 */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="totalQuestions">問題数</Label>
+                  <Input
+                    id="totalQuestions"
+                    type="number"
+                    min="1"
+                    placeholder="例: 30"
+                    value={totalQuestions}
+                    onChange={(e) => setTotalQuestions(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="correctAnswers">正解数</Label>
+                  <Input
+                    id="correctAnswers"
+                    type="number"
+                    min="0"
+                    max={totalQuestions || undefined}
+                    placeholder="例: 24"
+                    value={correctAnswers}
+                    onChange={(e) => setCorrectAnswers(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              {/* 正答率表示 */}
+              {accuracy !== null && (
+                <div className="text-center p-2 bg-muted/50 rounded-lg">
+                  <span className="text-sm text-muted-foreground">正答率: </span>
+                  <span className={`text-lg font-bold ${
+                    accuracy >= 80 ? "text-green-600" :
+                    accuracy >= 60 ? "text-yellow-600" : "text-red-600"
+                  }`}>
+                    {accuracy}%
+                  </span>
+                </div>
+              )}
+
+              {/* メモ */}
+              <div className="space-y-2">
+                <Label htmlFor="memo" className="flex items-center gap-2">
+                  <MessageSquare className="h-3 w-3" />
+                  メモ
+                </Label>
+                <Textarea
+                  id="memo"
+                  placeholder="学習の感想や気づきなど..."
+                  value={memo}
+                  onChange={(e) => setMemo(e.target.value)}
+                  rows={2}
+                />
+              </div>
+            </CardContent>
+          </Card>
+
           {/* 今日の累計 */}
           <Card>
             <CardContent className="py-4">
@@ -214,6 +304,9 @@ export default function TimerPage() {
           subject={pendingSession.subject}
           subtopic={pendingSession.subtopic}
           studyMinutes={Math.floor(pendingSession.durationSeconds / 60)}
+          initialTotalQuestions={pendingSession.totalQuestions}
+          initialCorrectAnswers={pendingSession.correctAnswers}
+          initialMemo={pendingSession.memo}
           onSave={handleSaveRecord}
           onCancel={handleCancelRecord}
         />

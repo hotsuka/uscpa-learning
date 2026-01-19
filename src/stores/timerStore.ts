@@ -10,6 +10,11 @@ interface TimerState {
   pomodoroMinutes: number
   breakMinutes: number
 
+  // 記録用フィールド（タイマー画面で入力）
+  totalQuestions: string
+  correctAnswers: string
+  memo: string
+
   // 状態
   status: TimerStatus
   startTime: number | null
@@ -20,9 +25,13 @@ interface TimerState {
   setSubject: (subject: Subject) => void
   setSubtopic: (subtopic: string | null) => void
   setMode: (mode: TimerMode) => void
+  setTotalQuestions: (value: string) => void
+  setCorrectAnswers: (value: string) => void
+  setMemo: (value: string) => void
   start: () => void
   pause: () => void
-  stop: () => { subject: Subject; subtopic: string | null; durationSeconds: number; startTime: number; endTime: number } | null
+  stop: () => { subject: Subject; subtopic: string | null; durationSeconds: number; startTime: number; endTime: number; totalQuestions: string; correctAnswers: string; memo: string } | null
+  resetRecordFields: () => void
   reset: () => void
   tick: () => void
   syncElapsed: () => void
@@ -37,6 +46,11 @@ export const useTimerStore = create<TimerState>()(
       mode: "stopwatch",
       pomodoroMinutes: 25,
       breakMinutes: 5,
+
+      // 記録用フィールド
+      totalQuestions: "",
+      correctAnswers: "",
+      memo: "",
 
       // 初期状態
       status: "idle",
@@ -64,6 +78,12 @@ export const useTimerStore = create<TimerState>()(
           set({ mode, elapsedSeconds: 0, isBreak: false })
         }
       },
+
+      setTotalQuestions: (value) => set({ totalQuestions: value }),
+      setCorrectAnswers: (value) => set({ correctAnswers: value }),
+      setMemo: (value) => set({ memo: value }),
+
+      resetRecordFields: () => set({ totalQuestions: "", correctAnswers: "", memo: "" }),
 
       start: () => {
         const { status, startTime, elapsedSeconds } = get()
@@ -93,7 +113,7 @@ export const useTimerStore = create<TimerState>()(
       },
 
       stop: () => {
-        const { status, startTime, subject, subtopic, elapsedSeconds } = get()
+        const { status, startTime, subject, subtopic, elapsedSeconds, totalQuestions, correctAnswers, memo } = get()
         if (status === "idle" || !startTime) return null
 
         const endTime = Date.now()
@@ -101,7 +121,7 @@ export const useTimerStore = create<TimerState>()(
           ? Math.floor((endTime - startTime) / 1000)
           : elapsedSeconds
 
-        // 状態をリセット
+        // 状態をリセット（記録フィールドは保持）
         set({
           status: "idle",
           startTime: null,
@@ -118,6 +138,9 @@ export const useTimerStore = create<TimerState>()(
           durationSeconds: finalElapsed,
           startTime,
           endTime,
+          totalQuestions,
+          correctAnswers,
+          memo,
         }
       },
 
@@ -180,6 +203,9 @@ export const useTimerStore = create<TimerState>()(
         startTime: state.startTime,
         elapsedSeconds: state.elapsedSeconds,
         isBreak: state.isBreak,
+        totalQuestions: state.totalQuestions,
+        correctAnswers: state.correctAnswers,
+        memo: state.memo,
       }),
     }
   )

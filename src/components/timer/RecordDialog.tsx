@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {
   Dialog,
   DialogContent,
@@ -24,6 +24,10 @@ interface RecordDialogProps {
   subject: Subject
   subtopic: string | null
   studyMinutes: number
+  // タイマー画面から引き継ぐ値
+  initialTotalQuestions?: string
+  initialCorrectAnswers?: string
+  initialMemo?: string
   onSave: (data: RecordData) => Promise<void>
   onCancel: () => void
 }
@@ -51,17 +55,29 @@ export function RecordDialog({
   subject,
   subtopic,
   studyMinutes,
+  initialTotalQuestions = "",
+  initialCorrectAnswers = "",
+  initialMemo = "",
   onSave,
   onCancel,
 }: RecordDialogProps) {
   const [recordType, setRecordType] = useState<RecordType>("practice")
-  const [totalQuestions, setTotalQuestions] = useState<string>("")
-  const [correctAnswers, setCorrectAnswers] = useState<string>("")
+  const [totalQuestions, setTotalQuestions] = useState<string>(initialTotalQuestions)
+  const [correctAnswers, setCorrectAnswers] = useState<string>(initialCorrectAnswers)
   const [roundNumber, setRoundNumber] = useState<string>("1")
   const [chapter, setChapter] = useState<string>("")
   const [pageRange, setPageRange] = useState<string>("")
-  const [memo, setMemo] = useState<string>("")
+  const [memo, setMemo] = useState<string>(initialMemo)
   const [isSaving, setIsSaving] = useState(false)
+
+  // ダイアログが開いた時に初期値を設定
+  useEffect(() => {
+    if (open) {
+      setTotalQuestions(initialTotalQuestions)
+      setCorrectAnswers(initialCorrectAnswers)
+      setMemo(initialMemo)
+    }
+  }, [open, initialTotalQuestions, initialCorrectAnswers, initialMemo])
 
   const accuracy = totalQuestions && correctAnswers
     ? Math.round((parseInt(correctAnswers) / parseInt(totalQuestions)) * 100)
