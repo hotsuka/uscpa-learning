@@ -1,8 +1,8 @@
 # USCPA学習管理アプリケーション 実装計画書
 
 **作成日**: 2026年1月17日
-**更新日**: 2026年1月18日
-**バージョン**: 1.8
+**更新日**: 2026年1月19日
+**バージョン**: 1.9
 **関連文書**: [要件定義書](./requirements.md)
 
 ---
@@ -835,6 +835,27 @@ module.exports = withPWA({
   - notesStore.ts: ノートCRUD同期
   - タイマー終了時のセッション保存
 
+### 6.8 追加実装済み機能（v1.9）
+
+- [x] PDF教材機能の強化
+  - IndexedDBによるPDFファイルのローカル保存（src/lib/indexeddb.ts）
+  - 教材一覧ページ（/materials）
+  - 教材詳細ページ（/materials/[id]）でのPDFビューア
+  - 教材メタデータのlocalStorage管理（materialsStore.ts）
+- [x] ページ連動メモ機能
+  - PageMemo.tsx: ページ番号に紐づくメモ機能
+  - メモ入力欄とメモ一覧の表示
+  - メモ一覧クリックで該当ページにジャンプ
+  - メモのlocalStorage永続化
+- [x] リサイズ可能パネル（src/components/ui/resizable-panel.tsx）
+  - ResizableHorizontalPanel: 左右パネルの幅をドラッグで調整
+  - ResizableVerticalPanel: 上下パネルの高さをドラッグで調整
+  - パネルサイズのlocalStorage永続化
+- [x] 教材詳細画面のレイアウト改善
+  - PC: PDFビューア（左）とメモパネル（右）の水平リサイズ
+  - メモパネル内: メモ入力（上）とメモ一覧（下）の垂直リサイズ
+  - モバイル: PDF上部、メモ下部の固定レイアウト
+
 ---
 
 ## 7. ディレクトリ構成
@@ -1102,3 +1123,4 @@ npm run test:coverage
 | 1.6 | 2026-01-18 | Markdownプレビュー機能、必要学習ペース計算機能実装 | - |
 | 1.7 | 2026-01-18 | Vercelデプロイ、Lighthouseアクセシビリティ改善（スコア100達成） | - |
 | 1.8 | 2026-01-18 | Notion API統合（クライアント実装、APIルート、フロントエンド同期） | - |
+| 1.9 | 2026-01-19 | PDF教材機能強化（IndexedDB保存、ページ連動メモ、リサイズ可能パネル） | - |

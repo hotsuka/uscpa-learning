@@ -1,7 +1,7 @@
 # USCPA学習管理アプリケーション フォルダ構成
 
 **作成日**: 2026年1月17日
-**更新日**: 2026年1月18日
+**更新日**: 2026年1月19日
 **技術スタック**: Next.js 14 (App Router) + ローカルストレージ（Notion API連携予定）
 
 ---
@@ -120,7 +120,9 @@ src/components/
 │   ├── progress.tsx
 │   ├── dropdown-menu.tsx
 │   ├── avatar.tsx
-│   └── separator.tsx
+│   ├── separator.tsx
+│   ├── textarea.tsx
+│   └── resizable-panel.tsx         # リサイズ可能パネル（水平/垂直）★追加
 │
 ├── layout/                        # レイアウトコンポーネント
 │   ├── Header.tsx                 # ヘッダー
@@ -170,7 +172,8 @@ src/components/
 │   └── NotionConnection.tsx       # Notion接続状態
 │
 ├── materials/                     # 教材関連 ★追加
-│   └── PDFViewer.tsx              # PDFビューア（react-pdf）
+│   ├── PDFViewer.tsx              # PDFビューア（react-pdf）
+│   └── PageMemo.tsx               # ページ連動メモ機能 ★追加
 │
 └── common/                        # 共通コンポーネント
     ├── Loading.tsx                # ローディングスピナー
@@ -201,6 +204,7 @@ src/lib/
 ├── date.ts                        # 日付操作ユーティリティ
 ├── format.ts                      # フォーマット関数
 ├── holidays.ts                    # 日本の祝日データ・週間目標計算 ★追加
+├── indexeddb.ts                   # IndexedDBユーティリティ（PDF保存用）★追加
 ├── storage.ts                     # ローカルストレージ操作
 └── utils.ts                       # 汎用ユーティリティ（cn関数、formatMinutes等）
 ```
@@ -229,6 +233,7 @@ src/stores/
 ├── recordStore.ts                 # 学習記録状態（記録一覧、今日の学習時間、CRUD操作）
 ├── settingsStore.ts               # 設定状態（試験日、目標時間、ポモドーロ設定）★追加
 ├── notesStore.ts                  # ノート状態（ノート一覧、CRUD操作）★追加
+├── materialsStore.ts              # 教材状態（教材一覧、IndexedDB連携）★追加
 ├── userStore.ts                   # ユーザー情報（未実装）
 └── uiStore.ts                     # UI状態（サイドバー開閉等）
 ```
@@ -296,6 +301,9 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 | `src/app/api/notion/*/route.ts` | サーバーサイドでNotion API呼び出し |
 | `src/stores/timerStore.ts` | タイマー状態のグローバル管理 |
 | `src/lib/analytics.ts` | 学習データの集計・弱点分析 |
+| `src/lib/indexeddb.ts` | PDFファイルのIndexedDB保存・読み込み |
+| `src/components/ui/resizable-panel.tsx` | 水平/垂直リサイズ可能パネル |
+| `src/components/materials/PageMemo.tsx` | ページ連動メモ機能 |
 
 ---
 
