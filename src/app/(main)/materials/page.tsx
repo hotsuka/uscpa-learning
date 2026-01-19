@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { SubjectSelector } from "@/components/timer/SubjectSelector"
 import { SUBJECTS, type Subject, type Material } from "@/types"
+import { savePDFToIndexedDB } from "@/lib/indexeddb"
 import {
   Plus,
   FileText,
@@ -17,15 +18,42 @@ import {
   Calendar,
   BookOpen,
   Eye,
+  Trash2,
+  AlertTriangle,
 } from "lucide-react"
 
 const STORAGE_KEY = "uscpa-materials"
 
-// ローカルストレージから教材を読み込む
-const loadMaterials = (): Material[] => {
+// 教材データが有効かどうかチェック
+// indexeddb: で始まるか、pdfWithoutAnswersがnull（PDFなし）の場合のみ有効
+// blob: で始まる場合は無効（古い形式）
+const isValidMaterial = (m: Material): boolean => {
+  // PDFがない場合は有効
+  if (m.pdfWithoutAnswers === null) return true
+  // indexeddb:で始まる場合は有効
+  if (m.pdfWithoutAnswers.startsWith("indexeddb:")) return true
+  // それ以外（blob:など）は無効
+  return false
+}
+
+// ローカルストレージから全ての教材を読み込む（無効なものも含む）
+const loadAllMaterials = (): Material[] => {
   if (typeof window === "undefined") return []
   const stored = localStorage.getItem(STORAGE_KEY)
-  return stored ? JSON.parse(stored) : []
+  if (!stored) return []
+  return JSON.parse(stored)
+}
+
+// ローカルストレージから有効な教材のみを読み込む
+const loadMaterials = (): Material[] => {
+  const materials = loadAllMaterials()
+  return materials.filter(isValidMaterial)
+}
+
+// 無効な教材（古いblob形式）を取得
+const loadInvalidMaterials = (): Material[] => {
+  const materials = loadAllMaterials()
+  return materials.filter(m => !isValidMaterial(m))
 }
 
 // ローカルストレージに教材を保存
@@ -36,6 +64,7 @@ const saveMaterials = (materials: Material[]) => {
 
 export default function MaterialsPage() {
   const [materials, setMaterials] = useState<Material[]>([])
+  const [invalidMaterials, setInvalidMaterials] = useState<Material[]>([])
   const [isUploading, setIsUploading] = useState(false)
   const [showUploadForm, setShowUploadForm] = useState(false)
   const [uploadName, setUploadName] = useState("")
@@ -49,7 +78,34 @@ export default function MaterialsPage() {
   // 初回読み込み時にローカルストレージから教材を取得
   useEffect(() => {
     setMaterials(loadMaterials())
+    setInvalidMaterials(loadInvalidMaterials())
   }, [])
+
+  // 無効な教材を削除
+  const handleDeleteInvalidMaterial = (id: string) => {
+    // 現在のlocalStorageから直接読み込み
+    const stored = localStorage.getItem(STORAGE_KEY)
+    if (!stored) return
+
+    const allMaterials: Material[] = JSON.parse(stored)
+    const updatedMaterials = allMaterials.filter(m => m.id !== id)
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedMaterials))
+
+    // stateを更新
+    setInvalidMaterials(updatedMaterials.filter(m => !isValidMaterial(m)))
+    setMaterials(updatedMaterials.filter(isValidMaterial))
+  }
+
+  // 全ての無効な教材を一括削除
+  const handleDeleteAllInvalidMaterials = () => {
+    if (confirm("古い形式の教材をすべて削除しますか？")) {
+      // 有効な教材のみを保持
+      const validOnly = materials.filter(isValidMaterial)
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(validOnly))
+      setInvalidMaterials([])
+      setMaterials(validOnly)
+    }
+  }
 
   const handleUpload = async () => {
     if (!uploadName || !pdfWithoutAnswers) {
@@ -59,35 +115,135 @@ export default function MaterialsPage() {
 
     setIsUploading(true)
 
-    // TODO: 実際のアップロード処理
-    // - PDFをストレージにアップロード
-    // - Notionにメタデータを保存
+    try {
+      const materialId = `${Date.now()}`
 
-    const newMaterial: Material = {
-      id: `${Date.now()}`,
-      name: uploadName,
-      subject: uploadSubject,
-      pdfWithoutAnswers: URL.createObjectURL(pdfWithoutAnswers),
-      pdfWithAnswers: pdfWithAnswers ? URL.createObjectURL(pdfWithAnswers) : null,
-      totalPages: 0, // TODO: PDFから取得
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
+      // PDFファイルをIndexedDBに保存
+      await savePDFToIndexedDB(materialId, pdfWithoutAnswers, "without")
+      if (pdfWithAnswers) {
+        await savePDFToIndexedDB(materialId, pdfWithAnswers, "with")
+      }
+
+      // メタデータのみをlocalStorageに保存（blob URLは保存しない）
+      const newMaterial: Material = {
+        id: materialId,
+        name: uploadName,
+        subject: uploadSubject,
+        pdfWithoutAnswers: `indexeddb:${materialId}-without`, // IndexedDBへの参照
+        pdfWithAnswers: pdfWithAnswers ? `indexeddb:${materialId}-with` : null,
+        totalPages: 0,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      }
+
+      const updatedMaterials = [newMaterial, ...materials]
+      setMaterials(updatedMaterials)
+      saveMaterials(updatedMaterials)
+      setShowUploadForm(false)
+      setUploadName("")
+      setPdfWithoutAnswers(null)
+      setPdfWithAnswers(null)
+    } catch (error) {
+      console.error("Failed to save PDF:", error)
+      alert("PDFの保存に失敗しました")
+    } finally {
+      setIsUploading(false)
     }
-
-    const updatedMaterials = [newMaterial, ...materials]
-    setMaterials(updatedMaterials)
-    saveMaterials(updatedMaterials)
-    setShowUploadForm(false)
-    setUploadName("")
-    setPdfWithoutAnswers(null)
-    setPdfWithAnswers(null)
-    setIsUploading(false)
   }
 
   return (
     <>
       <Header title="教材" />
       <div className="p-4 md:p-8 space-y-6">
+        {/* 古い形式の教材の警告 */}
+        {invalidMaterials.length > 0 && (
+          <Card className="border-destructive bg-destructive/10">
+            <CardContent className="pt-6">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
+                <div className="flex-1 space-y-3">
+                  <div>
+                    <p className="font-medium text-destructive">
+                      古い形式の教材が {invalidMaterials.length} 件あります
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      以前のバージョンでアップロードされた教材は、ページをリロードすると読み込めなくなります。
+                      削除して再アップロードしてください。
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    {invalidMaterials.map((m) => (
+                      <div
+                        key={m.id}
+                        className="flex items-center justify-between bg-background rounded p-2"
+                      >
+                        <span className="text-sm truncate">{m.name}</span>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-destructive hover:text-destructive shrink-0"
+                          onClick={(e) => {
+                            e.preventDefault()
+                            e.stopPropagation()
+                            handleDeleteInvalidMaterial(m.id)
+                          }}
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex gap-2">
+                    <Button
+                      variant="destructive"
+                      size="sm"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        handleDeleteAllInvalidMaterials()
+                      }}
+                    >
+                      すべて削除
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        // 強制的にlocalStorageをクリアして再読み込み
+                        if (confirm("すべての教材データを削除してページを再読み込みしますか？")) {
+                          localStorage.removeItem(STORAGE_KEY)
+                          window.location.reload()
+                        }
+                      }}
+                    >
+                      全データリセット
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* データリセットボタン（デバッグ用） */}
+        <Button
+          variant="outline"
+          size="sm"
+          className="text-destructive"
+          onClick={() => {
+            if (confirm("すべての教材データを削除しますか？")) {
+              localStorage.removeItem(STORAGE_KEY)
+              setMaterials([])
+              setInvalidMaterials([])
+            }
+          }}
+        >
+          <Trash2 className="h-4 w-4 mr-2" />
+          全データ削除
+        </Button>
+
         {/* アップロードボタン */}
         <Button onClick={() => setShowUploadForm(!showUploadForm)}>
           <Plus className="h-4 w-4 mr-2" />

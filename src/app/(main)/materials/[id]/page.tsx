@@ -6,7 +6,10 @@ import { useRouter, useParams } from "next/navigation"
 import { Header } from "@/components/layout/Header"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { SUBJECTS, type Subject, type Material, type MaterialAnnotation } from "@/types"
+import { PageMemo } from "@/components/materials/PageMemo"
+import { ResizableHorizontalPanel } from "@/components/ui/resizable-panel"
+import { SUBJECTS, type Material } from "@/types"
+import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
 
 // PDFViewerはクライアントサイドのみで読み込む
 const PDFViewer = dynamic(
@@ -25,14 +28,13 @@ import {
   FileText,
   Eye,
   EyeOff,
-  Save,
   Trash2,
+  PanelRightClose,
+  PanelRightOpen,
 } from "lucide-react"
 
-// モックデータ - 実際にはNotion APIから取得
-// 注意: デモデータにはPDFがないため、実際にアップロードした教材のみ閲覧可能
-const getMockMaterial = (id: string): Material | null => {
-  // ローカルストレージから教材データを取得（教材一覧でアップロードしたもの）
+// ローカルストレージから教材データを取得
+const getMaterial = (id: string): Material | null => {
   if (typeof window !== "undefined") {
     const storedMaterials = localStorage.getItem("uscpa-materials")
     if (storedMaterials) {
@@ -41,18 +43,7 @@ const getMockMaterial = (id: string): Material | null => {
       if (found) return found
     }
   }
-
-  // デモ用のモックデータ（PDFなし）
-  return {
-    id,
-    name: "FAR Vol.1 - Financial Statements",
-    subject: "FAR" as Subject,
-    pdfWithoutAnswers: null, // PDFはアップロードが必要
-    pdfWithAnswers: null,
-    totalPages: 0,
-    createdAt: "2026-01-10T10:00:00Z",
-    updatedAt: "2026-01-15T14:30:00Z",
-  }
+  return null
 }
 
 export default function MaterialDetailPage() {
@@ -63,49 +54,75 @@ export default function MaterialDetailPage() {
   const [material, setMaterial] = useState<Material | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showAnswers, setShowAnswers] = useState(false)
-  const [annotations, setAnnotations] = useState<MaterialAnnotation[]>([])
+  const [pdfUrlWithout, setPdfUrlWithout] = useState<string | null>(null)
+  const [pdfUrlWith, setPdfUrlWith] = useState<string | null>(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(0)
+  const [showMemoPanel, setShowMemoPanel] = useState(true)
 
   useEffect(() => {
-    // 教材データを取得
-    const data = getMockMaterial(materialId)
-    setMaterial(data)
-    setIsLoading(false)
+    let urlWithout: string | null = null
+    let urlWith: string | null = null
 
-    // TODO: アノテーションをNotion/ローカルストレージから取得
+    const loadMaterial = async () => {
+      const data = getMaterial(materialId)
+      setMaterial(data)
+
+      if (data) {
+        // IndexedDBからPDFを読み込み
+        if (data.pdfWithoutAnswers?.startsWith("indexeddb:")) {
+          urlWithout = await getPDFFromIndexedDB(materialId, "without")
+          setPdfUrlWithout(urlWithout)
+        }
+        if (data.pdfWithAnswers?.startsWith("indexeddb:")) {
+          urlWith = await getPDFFromIndexedDB(materialId, "with")
+          setPdfUrlWith(urlWith)
+        }
+      }
+
+      setIsLoading(false)
+    }
+
+    loadMaterial()
+
+    // クリーンアップ: blob URLを解放
+    return () => {
+      if (urlWithout) URL.revokeObjectURL(urlWithout)
+      if (urlWith) URL.revokeObjectURL(urlWith)
+    }
   }, [materialId])
 
-  const handleAnnotationAdd = (
-    annotation: Omit<MaterialAnnotation, "id" | "createdAt" | "updatedAt">
-  ) => {
-    const newAnnotation: MaterialAnnotation = {
-      ...annotation,
-      id: `${Date.now()}`,
-      materialId,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    }
-    setAnnotations([...annotations, newAnnotation])
-
-    // TODO: Notion/ローカルストレージに保存
-    console.log("Annotation added:", newAnnotation)
+  const handlePageSelect = (page: number) => {
+    setCurrentPage(page)
   }
 
-  const handleAnnotationDelete = (annotationId: string) => {
-    setAnnotations(annotations.filter((a) => a.id !== annotationId))
-    // TODO: Notion/ローカルストレージから削除
-  }
-
-  const handleSaveAnnotations = () => {
-    // TODO: 全アノテーションを保存
-    console.log("Saving annotations:", annotations)
-    alert("メモを保存しました（デモ）")
-  }
-
-  const handleDeleteMaterial = () => {
+  const handleDeleteMaterial = async () => {
     if (confirm("この教材を削除しますか？メモも全て削除されます。")) {
-      // TODO: Notionから削除
-      alert("教材を削除しました（デモ）")
-      router.push("/materials")
+      try {
+        // IndexedDBからPDFを削除
+        await deleteAllPDFsForMaterial(materialId)
+
+        // localStorageから教材メタデータを削除
+        const storedMaterials = localStorage.getItem("uscpa-materials")
+        if (storedMaterials) {
+          const materials: Material[] = JSON.parse(storedMaterials)
+          const updatedMaterials = materials.filter(m => m.id !== materialId)
+          localStorage.setItem("uscpa-materials", JSON.stringify(updatedMaterials))
+        }
+
+        // メモも削除
+        const storedMemos = localStorage.getItem("uscpa-page-memos")
+        if (storedMemos) {
+          const allMemos = JSON.parse(storedMemos)
+          delete allMemos[materialId]
+          localStorage.setItem("uscpa-page-memos", JSON.stringify(allMemos))
+        }
+
+        router.push("/materials")
+      } catch (error) {
+        console.error("Failed to delete material:", error)
+        alert("教材の削除に失敗しました")
+      }
     }
   }
 
@@ -136,11 +153,9 @@ export default function MaterialDetailPage() {
   }
 
   const subjectInfo = SUBJECTS[material.subject]
-  const currentPdfUrl = showAnswers && material.pdfWithAnswers
-    ? material.pdfWithAnswers
-    : material.pdfWithoutAnswers
+  const currentPdfUrl = showAnswers && pdfUrlWith ? pdfUrlWith : pdfUrlWithout
 
-  // PDFがない場合のフォールバック
+  // PDFがない場合
   if (!currentPdfUrl) {
     return (
       <>
@@ -158,6 +173,29 @@ export default function MaterialDetailPage() {
       </>
     )
   }
+
+  // PDFビューアパネル
+  const pdfPanel = (
+    <PDFViewer
+      pdfUrl={currentPdfUrl}
+      currentPage={currentPage}
+      onPageChange={setCurrentPage}
+      onTotalPagesChange={setTotalPages}
+      className="h-full"
+    />
+  )
+
+  // メモパネル（PC用）
+  const memoPanel = (
+    <div className="h-full bg-background p-4 overflow-hidden">
+      <PageMemo
+        materialId={materialId}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageSelect={handlePageSelect}
+      />
+    </div>
+  )
 
   return (
     <>
@@ -191,7 +229,7 @@ export default function MaterialDetailPage() {
 
           <div className="flex items-center gap-2">
             {/* 回答あり/なし切り替え */}
-            {material.pdfWithAnswers && (
+            {pdfUrlWith && (
               <Button
                 variant={showAnswers ? "default" : "outline"}
                 size="sm"
@@ -211,9 +249,17 @@ export default function MaterialDetailPage() {
               </Button>
             )}
 
-            <Button variant="outline" size="sm" onClick={handleSaveAnnotations}>
-              <Save className="h-4 w-4 mr-1" />
-              保存
+            {/* メモパネル表示切り替え */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setShowMemoPanel(!showMemoPanel)}
+            >
+              {showMemoPanel ? (
+                <PanelRightClose className="h-4 w-4" />
+              ) : (
+                <PanelRightOpen className="h-4 w-4" />
+              )}
             </Button>
 
             <Button
@@ -227,15 +273,38 @@ export default function MaterialDetailPage() {
           </div>
         </div>
 
-        {/* PDFビューア */}
-        <div className="flex-1 overflow-hidden">
-          <PDFViewer
-            pdfUrl={currentPdfUrl}
-            annotations={annotations}
-            onAnnotationAdd={handleAnnotationAdd}
-            onAnnotationDelete={handleAnnotationDelete}
-            className="h-full"
-          />
+        {/* メインコンテンツ - PC */}
+        <div className="flex-1 overflow-hidden hidden md:block">
+          {showMemoPanel ? (
+            <ResizableHorizontalPanel
+              leftPanel={pdfPanel}
+              rightPanel={memoPanel}
+              defaultLeftWidth={66}
+              minLeftWidth={40}
+              maxLeftWidth={85}
+              storageKey="material-panel-horizontal-split"
+            />
+          ) : (
+            <div className="h-full">{pdfPanel}</div>
+          )}
+        </div>
+
+        {/* メインコンテンツ - モバイル */}
+        <div className="flex-1 overflow-hidden md:hidden flex flex-col">
+          <div className={showMemoPanel ? "flex-1" : "h-full"}>
+            {pdfPanel}
+          </div>
+          {/* モバイル用メモパネル（下部に表示） */}
+          {showMemoPanel && (
+            <div className="border-t bg-background p-4 h-[40vh] overflow-hidden">
+              <PageMemo
+                materialId={materialId}
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageSelect={handlePageSelect}
+              />
+            </div>
+          )}
         </div>
       </div>
     </>

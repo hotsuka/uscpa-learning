@@ -138,6 +138,11 @@ const nextConfig = {
     // 最適化されたパッケージインポート
     optimizePackageImports: ['lucide-react', 'recharts'],
   },
+  // webpack設定（pdf.js workerのため）
+  webpack: (config) => {
+    config.resolve.alias.canvas = false
+    return config
+  },
 }
 
 module.exports = withPWA(nextConfig)
