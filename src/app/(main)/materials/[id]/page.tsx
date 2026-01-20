@@ -1,15 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import dynamic from "next/dynamic"
 import { useRouter, useParams } from "next/navigation"
 import { Header } from "@/components/layout/Header"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { PageMemo } from "@/components/materials/PageMemo"
+import { PageMemo, type PageMemoRef } from "@/components/materials/PageMemo"
 import { ResizableHorizontalPanel } from "@/components/ui/resizable-panel"
 import { SUBJECTS, type Material } from "@/types"
 import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
+import { useIsDesktop } from "@/hooks/useMediaQuery"
 
 // PDFViewerはクライアントサイドのみで読み込む
 const PDFViewer = dynamic(
@@ -59,6 +60,13 @@ export default function MaterialDetailPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(0)
   const [showMemoPanel, setShowMemoPanel] = useState(true)
+  const [isMemoUnsaved, setIsMemoUnsaved] = useState(false)
+
+  // PC/モバイル判定
+  const isDesktop = useIsDesktop()
+
+  // PageMemoコンポーネントへの参照
+  const memoRef = useRef<PageMemoRef>(null)
 
   useEffect(() => {
     let urlWithout: string | null = null
@@ -92,7 +100,41 @@ export default function MaterialDetailPage() {
     }
   }, [materialId])
 
+  // ページ選択時の処理（未保存チェック付き）
   const handlePageSelect = (page: number) => {
+    if (page === currentPage) return
+
+    // 未保存の変更がある場合は確認
+    if (isMemoUnsaved) {
+      const shouldProceed = memoRef.current?.confirmUnsavedChanges()
+      if (!shouldProceed) return
+    }
+    setCurrentPage(page)
+  }
+
+  // 戻るボタンの処理（未保存チェック付き）
+  const handleBack = () => {
+    if (isMemoUnsaved) {
+      const shouldProceed = memoRef.current?.confirmUnsavedChanges()
+      if (!shouldProceed) return
+    }
+    router.push("/materials")
+  }
+
+  // メモの未保存状態変更ハンドラ
+  const handleMemoUnsavedChange = (isDirty: boolean) => {
+    setIsMemoUnsaved(isDirty)
+  }
+
+  // PDFビューアからのページ変更（未保存チェック付き）
+  const handlePageChange = (page: number) => {
+    if (page === currentPage) return
+
+    // 未保存の変更がある場合は確認
+    if (isMemoUnsaved) {
+      const shouldProceed = memoRef.current?.confirmUnsavedChanges()
+      if (!shouldProceed) return
+    }
     setCurrentPage(page)
   }
 
@@ -179,7 +221,7 @@ export default function MaterialDetailPage() {
     <PDFViewer
       pdfUrl={currentPdfUrl}
       currentPage={currentPage}
-      onPageChange={setCurrentPage}
+      onPageChange={handlePageChange}
       onTotalPagesChange={setTotalPages}
       className="h-full"
     />
@@ -189,10 +231,12 @@ export default function MaterialDetailPage() {
   const memoPanel = (
     <div className="h-full bg-background p-4 overflow-hidden">
       <PageMemo
+        ref={memoRef}
         materialId={materialId}
         currentPage={currentPage}
         totalPages={totalPages}
         onPageSelect={handlePageSelect}
+        onDirtyChange={handleMemoUnsavedChange}
       />
     </div>
   )
@@ -207,7 +251,7 @@ export default function MaterialDetailPage() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => router.push("/materials")}
+              onClick={handleBack}
             >
               <ArrowLeft className="h-4 w-4 mr-1" />
               戻る
@@ -274,38 +318,44 @@ export default function MaterialDetailPage() {
         </div>
 
         {/* メインコンテンツ - PC */}
-        <div className="flex-1 overflow-hidden hidden md:block">
-          {showMemoPanel ? (
-            <ResizableHorizontalPanel
-              leftPanel={pdfPanel}
-              rightPanel={memoPanel}
-              defaultLeftWidth={66}
-              minLeftWidth={40}
-              maxLeftWidth={85}
-              storageKey="material-panel-horizontal-split"
-            />
-          ) : (
-            <div className="h-full">{pdfPanel}</div>
-          )}
-        </div>
+        {isDesktop && (
+          <div className="flex-1 overflow-hidden">
+            {showMemoPanel ? (
+              <ResizableHorizontalPanel
+                leftPanel={pdfPanel}
+                rightPanel={memoPanel}
+                defaultLeftWidth={66}
+                minLeftWidth={40}
+                maxLeftWidth={85}
+                storageKey="material-panel-horizontal-split"
+              />
+            ) : (
+              <div className="h-full">{pdfPanel}</div>
+            )}
+          </div>
+        )}
 
         {/* メインコンテンツ - モバイル */}
-        <div className="flex-1 overflow-hidden md:hidden flex flex-col">
-          <div className={showMemoPanel ? "flex-1" : "h-full"}>
-            {pdfPanel}
-          </div>
-          {/* モバイル用メモパネル（下部に表示） */}
-          {showMemoPanel && (
-            <div className="border-t bg-background p-4 h-[40vh] overflow-hidden">
-              <PageMemo
-                materialId={materialId}
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageSelect={handlePageSelect}
-              />
+        {!isDesktop && (
+          <div className="flex-1 overflow-hidden flex flex-col">
+            <div className={showMemoPanel ? "flex-1" : "h-full"}>
+              {pdfPanel}
             </div>
-          )}
-        </div>
+            {/* モバイル用メモパネル（下部に表示） */}
+            {showMemoPanel && (
+              <div className="border-t bg-background p-4 h-[40vh] overflow-hidden">
+                <PageMemo
+                  ref={memoRef}
+                  materialId={materialId}
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageSelect={handlePageSelect}
+                  onDirtyChange={handleMemoUnsavedChange}
+                />
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </>
   )

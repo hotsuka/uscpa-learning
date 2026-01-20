@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback, useImperativeHandle, forwardRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -24,7 +24,15 @@ interface PageMemoProps {
   currentPage: number
   totalPages: number
   onPageSelect?: (page: number) => void
+  onDirtyChange?: (isDirty: boolean) => void
   className?: string
+}
+
+// 外部から参照可能なメソッド
+export interface PageMemoRef {
+  isDirty: () => boolean
+  save: () => void
+  confirmUnsavedChanges: () => boolean
 }
 
 const MEMO_STORAGE_KEY = "uscpa-page-memos"
@@ -86,7 +94,8 @@ const deleteMemoFromNotion = async (memoId: string): Promise<void> => {
   }
 }
 
-export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, className }: PageMemoProps) {
+export const PageMemo = forwardRef<PageMemoRef, PageMemoProps>(
+  function PageMemo({ materialId, currentPage, totalPages, onPageSelect, onDirtyChange, className }, ref) {
   const [memos, setMemos] = useState<Record<number, PageMemoData>>({})
   const [currentContent, setCurrentContent] = useState("")
   const [isDirty, setIsDirty] = useState(false)
@@ -104,17 +113,39 @@ export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, cl
     setIsDirty(false)
   }, [currentPage, memos])
 
+  // isDirty状態の変更を親コンポーネントに通知
+  useEffect(() => {
+    onDirtyChange?.(isDirty)
+  }, [isDirty, onDirtyChange])
+
+  // ブラウザを閉じる/ページを離れる際の警告
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (isDirty) {
+        e.preventDefault()
+        e.returnValue = "未保存のメモがあります。本当にページを離れますか？"
+        return e.returnValue
+      }
+    }
+
+    window.addEventListener("beforeunload", handleBeforeUnload)
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload)
+    }
+  }, [isDirty])
+
   const handleContentChange = (value: string) => {
     setCurrentContent(value)
     setIsDirty(true)
   }
 
-  const handleSave = () => {
+  // 内部保存処理
+  const handleSaveInternal = useCallback(() => {
     const now = new Date().toISOString()
     const existingMemo = memos[currentPage]
 
     const updatedMemo: PageMemoData = {
-      id: existingMemo?.id || generateUUID(),  // 新規作成時はUUID生成
+      id: existingMemo?.id || generateUUID(),
       materialId,
       pageNumber: currentPage,
       content: currentContent,
@@ -127,15 +158,12 @@ export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, cl
 
     if (currentContent.trim()) {
       updatedMemos[currentPage] = updatedMemo
-      // まずlocalStorageに保存（データ保護優先）
       setMemos(updatedMemos)
       saveMemos(materialId, updatedMemos)
       setIsDirty(false)
 
-      // バックグラウンドでNotion同期（非同期・fire-and-forget）
       syncMemoToNotion(updatedMemo).then((synced) => {
         if (synced) {
-          // 同期成功時にフラグを更新
           const currentMemos = loadMemos(materialId)
           if (currentMemos[currentPage]) {
             currentMemos[currentPage].notionSynced = true
@@ -144,18 +172,35 @@ export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, cl
         }
       }).catch(console.error)
     } else {
-      // 空の場合は削除
       const memoToDelete = existingMemo
       delete updatedMemos[currentPage]
       setMemos(updatedMemos)
       saveMemos(materialId, updatedMemos)
       setIsDirty(false)
 
-      // Notionからも削除（バックグラウンド）
       if (memoToDelete?.id) {
         deleteMemoFromNotion(memoToDelete.id).catch(console.error)
       }
     }
+  }, [memos, currentPage, currentContent, materialId])
+
+  // 外部からのアクセス用メソッドを公開
+  useImperativeHandle(ref, () => ({
+    isDirty: () => isDirty,
+    save: () => {
+      if (isDirty) {
+        handleSaveInternal()
+      }
+    },
+    confirmUnsavedChanges: () => {
+      if (!isDirty) return true
+      return confirm("未保存のメモがあります。保存せずに続行しますか？")
+    },
+  }), [isDirty, handleSaveInternal])
+
+  // UIからの保存ボタンハンドラ
+  const handleSave = () => {
+    handleSaveInternal()
   }
 
   const handleDelete = () => {
@@ -288,4 +333,4 @@ export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, cl
       />
     </div>
   )
-}
+})
