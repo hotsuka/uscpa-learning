@@ -239,12 +239,12 @@ export const useRecordStore = create<RecordState>()(
                 }
                 // 処理済みとしてマークからNotionレコードを削除
                 notionRecordMap.delete(notionId)
-              } else if (!notionId) {
-                // まだNotion同期されていないローカル記録 → 保持
+              } else {
+                // まだNotion同期されていないローカル記録、または
+                // notionIdマッピングがあるがNotion側にない場合 → ローカルを保持
+                // （ローカルデータを優先保護）
                 mergedRecords.push(localRecord)
               }
-              // notionIdがあるがnotionRecordMapにない場合 → Notionから削除された
-              // ローカルからも削除（mergedRecordsに追加しない）
             }
 
             // Notionにのみ存在する記録を追加

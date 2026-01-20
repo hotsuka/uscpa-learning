@@ -195,12 +195,12 @@ export const useNotesStore = create<NotesState>()(
                 }
                 // 処理済みとしてマップからNotionノートを削除
                 notionNoteMap.delete(notionId)
-              } else if (!notionId) {
-                // まだNotion同期されていないローカルノート → 保持
+              } else {
+                // まだNotion同期されていないローカルノート、または
+                // notionIdマッピングがあるがNotion側にない場合 → ローカルを保持
+                // （ローカルデータを優先保護）
                 mergedNotes.push(localNote)
               }
-              // notionIdがあるがnotionNoteMapにない場合 → Notionから削除された
-              // ローカルからも削除（mergedNotesに追加しない）
             }
 
             // Notionにのみ存在するノートを追加
