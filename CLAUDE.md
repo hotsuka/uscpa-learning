@@ -234,8 +234,9 @@ const withPWA = require('next-pwa')({
 
 1. **Notion APIのレート制限**: 頻繁なAPI呼び出しを避ける
 2. **ローカルファースト**: localStorageが主データソース、Notionは同期バックエンド
-3. **Notionは同期専用**: ユーザーはアプリからのみデータを操作（Notion直接編集なし）
-4. **科目コード**: FAR, AUD, REG, BAR の4科目（BARがデフォルト選択科目）
-5. **試験日は科目別**: 各科目に異なる試験日を設定可能
-6. **Sessions/Recordsの分離**: タイマー生データ(Sessions)と確定データ(Records)を分離して監査証跡を維持
-7. **PWA生成ファイル**: `sw.js`と`workbox-*.js`は.gitignoreで除外されている
+3. **ローカルデータ保護**: 同期時にリモートに存在しないローカルデータを削除しない
+4. **Notionは同期専用**: ユーザーはアプリからのみデータを操作（Notion直接編集なし）
+5. **科目コード**: FAR, AUD, REG, BAR の4科目（BARがデフォルト選択科目）
+6. **試験日は科目別**: 各科目に異なる試験日を設定可能
+7. **Sessions/Recordsの分離**: タイマー生データ(Sessions)と確定データ(Records)を分離して監査証跡を維持
+8. **PWA生成ファイル**: `sw.js`と`workbox-*.js`は.gitignoreで除外されている
