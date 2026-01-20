@@ -16,12 +16,13 @@ import {
   RecordDialog,
   type RecordData,
 } from "@/components/timer"
-import { formatMinutes } from "@/lib/utils"
+import { formatMinutes, generateUUID } from "@/lib/utils"
 import { SUBJECTS, type Subject } from "@/types"
 import { useRecordStore } from "@/stores/recordStore"
 import { FileQuestion, MessageSquare } from "lucide-react"
 
 interface PendingSession {
+  sessionId: string  // セッション識別子（v1.11追加）
   subject: Subject
   subtopic: string | null
   durationSeconds: number
@@ -82,6 +83,7 @@ export default function TimerPage() {
     if (session) {
       // セッション情報を保持してダイアログを表示
       setPendingSession({
+        sessionId: generateUUID(),  // セッション識別子を生成（v1.11追加）
         subject: session.subject,
         subtopic: session.subtopic,
         durationSeconds: session.durationSeconds,
@@ -113,6 +115,8 @@ export default function TimerPage() {
       pageRange: data.pageRange,
       memo: data.memo,
       studiedAt: data.studiedAt,
+      source: "timer",  // タイマー経由の記録（v1.11追加）
+      sessionId: pendingSession.sessionId,  // 紐づくセッションID（v1.11追加）
     })
 
     // Notionにセッションも保存（バックグラウンド）
@@ -120,6 +124,7 @@ export default function TimerPage() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        sessionId: pendingSession.sessionId,  // セッション識別子（v1.11追加）
         subject: pendingSession.subject,
         subtopic: pendingSession.subtopic,
         studyMinutes: minutes,

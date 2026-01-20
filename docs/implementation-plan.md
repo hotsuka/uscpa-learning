@@ -868,6 +868,106 @@ module.exports = withPWA({
   - ダイアログ表示時に初期値として設定
   - 記録保存・キャンセル時にフィールドをリセット
 
+### 6.10 Notionデータベース構成（v1.11予定）
+
+#### 設計方針
+
+- **ローカルファースト**: localStorageが主データソース、Notionは同期用バックエンド
+- **デバイス間同期**: Notionを介して複数デバイス間でデータを同期
+- **監査証跡**: Sessions（生データ）とRecords（確定データ）を分離して変更履歴を追跡
+- **Notion直接編集なし**: ユーザーはアプリからのみデータを操作
+
+#### DB1: 設定 (Settings)
+
+| プロパティ名 | 型 | 説明 |
+|-------------|-----|------|
+| 名前 | Title | "マイ設定" |
+| デバイスID | Text | 同期元デバイス識別子 |
+| 更新日時 | Date | 最終更新日時（競合解決用） |
+| FAR目標時間 | Number | FAR目標学習時間（時間） |
+| AUD目標時間 | Number | AUD目標学習時間（時間） |
+| REG目標時間 | Number | REG目標学習時間（時間） |
+| BAR目標時間 | Number | BAR目標学習時間（時間） |
+| FAR試験日 | Date | FAR受験予定日 |
+| AUD試験日 | Date | AUD受験予定日 |
+| REG試験日 | Date | REG受験予定日 |
+| BAR試験日 | Date | BAR受験予定日 |
+| 平日目標時間 | Number | 平日の日割り目標（時間） |
+| 休日目標時間 | Number | 休日の日割り目標（時間） |
+
+#### DB2: 学習セッション (Study Sessions) - 生データ
+
+| プロパティ名 | 型 | 説明 |
+|-------------|-----|------|
+| 名前 | Title | 自動生成 "2026/01/19 FAR 1h30m" |
+| セッションID | Text | ローカル生成UUID（主キー） |
+| 科目 | Select | FAR / AUD / REG / BAR |
+| サブトピック | Text | サブテーマ（任意） |
+| 学習時間(分) | Number | 学習時間（分単位） |
+| 開始日時 | Date | セッション開始日時 |
+| 終了日時 | Date | セッション終了日時 |
+| デバイスID | Text | 記録元デバイス識別子 |
+| 作成日時 | Date | レコード作成日時 |
+
+※ このDBは読み取り専用（タイマー終了時に自動作成、編集不可）
+
+#### DB3: 学習記録 (Practice Records) - 確定データ
+
+| プロパティ名 | 型 | 説明 |
+|-------------|-----|------|
+| 名前 | Title | 自動生成 "2026/01/19 FAR Ch.5" |
+| レコードID | Text | ローカル生成UUID（主キー） |
+| 科目 | Select | FAR / AUD / REG / BAR |
+| サブトピック | Text | サブテーマ（任意） |
+| 記録タイプ | Select | practice / textbook |
+| 学習時間(分) | Number | 学習時間（分単位） |
+| 問題数 | Number | 解いた問題数（practice時） |
+| 正解数 | Number | 正解した問題数（practice時） |
+| 周回数 | Number | 何周目か（practice時） |
+| チャプター | Text | 章・セクション（textbook時） |
+| ページ範囲 | Text | ページ範囲（textbook時） |
+| メモ | Text | 学習メモ |
+| 学習日 | Date | 学習した日付 |
+| ソース | Select | timer / manual（記録の作成元） |
+| セッションID | Text | 紐づくセッションID（timer時、監査用） |
+| デバイスID | Text | 記録元デバイス識別子 |
+| 作成日時 | Date | レコード作成日時 |
+| 更新日時 | Date | 最終更新日時 |
+
+#### DB4: 学習ノート (Study Notes) - ページメモ統合
+
+| プロパティ名 | 型 | 説明 |
+|-------------|-----|------|
+| 名前 | Title | ノートタイトル |
+| ノートID | Text | ローカル生成UUID（主キー） |
+| ノートタイプ | Select | note / page_memo |
+| 科目 | Select | FAR / AUD / REG / BAR |
+| タグ | Multi-select | 重要度、テーマなど |
+| 本文 | Text | ノート内容（Markdown） |
+| 教材ID | Text | 紐づくPDF教材ID（page_memo時） |
+| ページ番号 | Number | PDFページ番号（page_memo時） |
+| デバイスID | Text | 記録元デバイス識別子 |
+| 作成日時 | Created time | 自動 |
+| 更新日時 | Last edited time | 自動 |
+
+#### 同期仕様
+
+1. **初回同期（アプリ起動時）**
+   - NotionからデータをフェッチしlocalStorageと比較
+   - 更新日時が新しい方を採用（Last-Write-Wins）
+
+2. **書き込み同期**
+   - localStorageへの保存と同時にNotion APIを呼び出し
+   - オフライン時はキューに蓄積、オンライン復帰時に一括同期
+
+3. **競合解決**
+   - 更新日時（updatedAt）とデバイスIDで判定
+   - 新しい更新を優先（Last-Write-Wins）
+
+4. **デバイスID**
+   - 初回起動時にUUIDを生成してlocalStorageに保存
+   - 同一デバイスからの操作を識別
+
 ---
 
 ## 7. ディレクトリ構成
@@ -1137,3 +1237,4 @@ npm run test:coverage
 | 1.8 | 2026-01-18 | Notion API統合（クライアント実装、APIルート、フロントエンド同期） | - |
 | 1.9 | 2026-01-19 | PDF教材機能強化（IndexedDB保存、ページ連動メモ、リサイズ可能パネル） | - |
 | 1.10 | 2026-01-19 | タイマー画面に問題数・正答数・メモ入力欄を追加、記録ダイアログへの値引き継ぎ | - |
+| 1.11 | 2026-01-19 | Notion DB構成確定（4DB維持、Sessions/Records分離、ページメモ統合、同期仕様） | - |

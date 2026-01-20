@@ -100,20 +100,28 @@ export interface Settings {
   }
 }
 
-// 学習セッション
+// 記録のソース（作成元）
+export type RecordSource = "timer" | "manual"
+
+// ノートタイプ
+export type NoteType = "note" | "page_memo"
+
+// 学習セッション（タイマー生データ、読み取り専用）
 export interface StudySession {
-  id: string
+  id: string  // ローカル生成UUID
+  sessionId: string  // セッション識別子（Notion同期用キー）
   subject: Subject
   subtopic: string | null  // サブテーマ
   durationMinutes: number
   startedAt: string
   endedAt: string
+  deviceId: string  // 記録元デバイス識別子
   createdAt: string
 }
 
-// 学習記録（過去問演習 + テキスト復習）
+// 学習記録（過去問演習 + テキスト復習）- 確定データ
 export interface StudyRecord {
-  id: string
+  id: string  // ローカル生成UUID
   recordType: RecordType
   subject: Subject
   subtopic: string | null  // サブテーマ
@@ -129,19 +137,30 @@ export interface StudyRecord {
   // 共通
   studiedAt: string
   memo: string | null  // 自由入力欄（学びや補足）
+  // 監査証跡用（v1.11追加）
+  source: RecordSource  // 記録の作成元（timer / manual）
+  sessionId: string | null  // 紐づくセッションID（timer時のみ、監査用）
+  deviceId: string  // 記録元デバイス識別子
   createdAt: string
+  updatedAt: string  // 最終更新日時（競合解決用）
 }
 
 // 後方互換性のためのエイリアス
 export type PracticeRecord = StudyRecord
 
-// 学習ノート
+// 学習ノート（ノート + ページメモ統合）
 export interface StudyNote {
-  id: string
+  id: string  // ローカル生成UUID
+  noteType: NoteType  // ノートタイプ（note / page_memo）
   title: string
   content: string | null
   subject: Subject | null
   tags: string[]
+  // ページメモ用（v1.11追加）
+  materialId: string | null  // 紐づくPDF教材ID（page_memo時）
+  pageNumber: number | null  // PDFページ番号（page_memo時）
+  // 同期用
+  deviceId: string  // 記録元デバイス識別子
   createdAt: string
   updatedAt: string
 }

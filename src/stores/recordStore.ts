@@ -1,6 +1,25 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
-import type { Subject, RecordType, StudyRecord } from "@/types"
+import type { Subject, RecordType, StudyRecord, RecordSource } from "@/types"
+import { generateUUID, getDeviceId } from "@/lib/utils"
+
+// 記録作成時の入力データ（source, sessionIdを含む）
+interface RecordInput {
+  recordType: RecordType
+  subject: Subject
+  subtopic: string | null
+  studyMinutes: number
+  totalQuestions: number | null
+  correctAnswers: number | null
+  roundNumber: number | null
+  chapter: string | null
+  pageRange: string | null
+  studiedAt: string
+  memo: string | null
+  // 監査証跡用（v1.11追加）
+  source?: RecordSource  // デフォルトは "manual"
+  sessionId?: string | null  // タイマーからの記録時に設定
+}
 
 interface RecordState {
   // 記録データ
@@ -16,8 +35,8 @@ interface RecordState {
   notionIdMap: Record<string, string>
 
   // アクション
-  addRecord: (record: Omit<StudyRecord, "id" | "createdAt">) => void
-  updateRecord: (id: string, updates: Partial<Omit<StudyRecord, "id" | "createdAt">>) => void
+  addRecord: (record: RecordInput) => void
+  updateRecord: (id: string, updates: Partial<Omit<StudyRecord, "id" | "createdAt" | "deviceId" | "source" | "sessionId">>) => void
   deleteRecord: (id: string) => void
   getRecordById: (id: string) => StudyRecord | undefined
   updateTodayStudyMinutes: (subject: Subject, minutes: number) => void
@@ -52,10 +71,15 @@ export const useRecordStore = create<RecordState>()(
       notionIdMap: {},
 
       addRecord: (record) => {
+        const now = new Date().toISOString()
         const newRecord: StudyRecord = {
           ...record,
-          id: `record-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-          createdAt: new Date().toISOString(),
+          id: generateUUID(),
+          source: record.source ?? "manual",
+          sessionId: record.sessionId ?? null,
+          deviceId: getDeviceId(),
+          createdAt: now,
+          updatedAt: now,
         }
         set((state) => ({
           records: [newRecord, ...state.records],
@@ -66,9 +90,10 @@ export const useRecordStore = create<RecordState>()(
       },
 
       updateRecord: (id, updates) => {
+        const updatedAt = new Date().toISOString()
         set((state) => ({
           records: state.records.map((r) =>
-            r.id === id ? { ...r, ...updates } : r
+            r.id === id ? { ...r, ...updates, updatedAt } : r
           ),
         }))
 
@@ -135,6 +160,7 @@ export const useRecordStore = create<RecordState>()(
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
+              recordId: record.id,
               recordType: record.recordType,
               subject: record.subject,
               subtopic: record.subtopic,
@@ -146,6 +172,12 @@ export const useRecordStore = create<RecordState>()(
               pageRange: record.pageRange,
               memo: record.memo,
               studiedAt: record.studiedAt,
+              // 監査証跡用（v1.11追加）
+              source: record.source,
+              sessionId: record.sessionId,
+              deviceId: record.deviceId,
+              createdAt: record.createdAt,
+              updatedAt: record.updatedAt,
             }),
           })
 
@@ -174,23 +206,60 @@ export const useRecordStore = create<RecordState>()(
           if (response.ok) {
             const notionRecords: StudyRecord[] = await response.json()
 
-            // 既存のローカル記録とマージ
+            // 既存のローカル記録とマージ（Last-Write-Wins戦略）
             const localRecords = get().records
-            const notionIdMap: Record<string, string> = {}
+            const existingNotionIdMap = get().notionIdMap
+            const newNotionIdMap: Record<string, string> = { ...existingNotionIdMap }
 
-            // NotionのIDをローカルIDとしても使用
+            // NotionレコードのIDでマップを作成
+            const notionRecordMap = new Map<string, StudyRecord>()
             for (const record of notionRecords) {
-              notionIdMap[record.id] = record.id
+              notionRecordMap.set(record.id, record)
+              newNotionIdMap[record.id] = record.id
             }
 
-            // ローカルにのみ存在する記録（まだNotion同期されていない）を保持
-            const localOnlyRecords = localRecords.filter(
-              (local) => !Object.keys(get().notionIdMap).includes(local.id)
+            // マージされた記録リスト
+            const mergedRecords: StudyRecord[] = []
+
+            // ローカル記録を処理
+            for (const localRecord of localRecords) {
+              const notionId = existingNotionIdMap[localRecord.id]
+              if (notionId && notionRecordMap.has(notionId)) {
+                // Notionにも存在する → updatedAtで比較（Last-Write-Wins）
+                const notionRecord = notionRecordMap.get(notionId)!
+                const localUpdated = new Date(localRecord.updatedAt).getTime()
+                const notionUpdated = new Date(notionRecord.updatedAt).getTime()
+
+                if (localUpdated >= notionUpdated) {
+                  // ローカルが新しい → ローカルを採用
+                  mergedRecords.push(localRecord)
+                } else {
+                  // Notionが新しい → Notionを採用
+                  mergedRecords.push(notionRecord)
+                }
+                // 処理済みとしてマークからNotionレコードを削除
+                notionRecordMap.delete(notionId)
+              } else if (!notionId) {
+                // まだNotion同期されていないローカル記録 → 保持
+                mergedRecords.push(localRecord)
+              }
+              // notionIdがあるがnotionRecordMapにない場合 → Notionから削除された
+              // ローカルからも削除（mergedRecordsに追加しない）
+            }
+
+            // Notionにのみ存在する記録を追加
+            for (const notionRecord of notionRecordMap.values()) {
+              mergedRecords.push(notionRecord)
+            }
+
+            // 日付の新しい順にソート
+            mergedRecords.sort((a, b) =>
+              new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
             )
 
             set({
-              records: [...notionRecords, ...localOnlyRecords],
-              notionIdMap: { ...get().notionIdMap, ...notionIdMap },
+              records: mergedRecords,
+              notionIdMap: newNotionIdMap,
               lastSyncedAt: new Date().toISOString(),
             })
           }

@@ -1,11 +1,13 @@
 import { getNotionClient, getDbIds } from "./client"
-import type { Subject, StudyNote } from "@/types"
+import type { Subject, StudyNote, NoteType } from "@/types"
 
-// 学習ノートを取得
+// 学習ノートを取得（v1.11: 新フィールド対応）
 export async function getNotes(options?: {
   subject?: Subject
   tags?: string[]
   searchQuery?: string
+  noteType?: NoteType
+  materialId?: string
   limit?: number
 }): Promise<StudyNote[]> {
   const notion = getNotionClient()
@@ -37,29 +39,45 @@ export async function getNotes(options?: {
       title: { contains: options.searchQuery },
     })
   }
+  if (options?.noteType) {
+    filter.push({
+      property: "ノートタイプ",
+      select: { equals: options.noteType },
+    })
+  }
+  if (options?.materialId) {
+    filter.push({
+      property: "教材ID",
+      rich_text: { equals: options.materialId },
+    })
+  }
 
   const response = await notion.databases.query({
     database_id: dbIds.notes,
     filter: filter.length > 0 ? { and: filter } : undefined,
-    sorts: [{ property: "更新日", direction: "descending" }],
+    sorts: [{ property: "更新日時", direction: "descending" }],
     page_size: options?.limit || 100,
   })
 
   return response.results.map((page: any) => {
     const props = page.properties
     return {
-      id: page.id,
+      id: props["noteId"]?.rich_text?.[0]?.text?.content || page.id,
+      noteType: (props["ノートタイプ"]?.select?.name || "note") as NoteType,
       title: props["名前"]?.title?.[0]?.text?.content || "無題",
       content: null, // ページコンテンツは別途取得が必要
       subject: (props["科目"]?.select?.name || null) as Subject | null,
       tags: props["タグ"]?.multi_select?.map((s: any) => s.name) || [],
-      createdAt: page.created_time,
-      updatedAt: page.last_edited_time,
+      materialId: props["教材ID"]?.rich_text?.[0]?.text?.content || null,
+      pageNumber: props["ページ番号"]?.number || null,
+      deviceId: props["デバイスID"]?.rich_text?.[0]?.text?.content || "",
+      createdAt: props["作成日時"]?.date?.start || page.created_time,
+      updatedAt: props["更新日時"]?.date?.start || page.last_edited_time,
     }
   })
 }
 
-// 学習ノートを1件取得（コンテンツ含む）
+// 学習ノートを1件取得（コンテンツ含む）（v1.11: 新フィールド対応）
 export async function getNoteById(pageId: string): Promise<StudyNote | null> {
   const notion = getNotionClient()
 
@@ -72,13 +90,17 @@ export async function getNoteById(pageId: string): Promise<StudyNote | null> {
     const content = blocksToMarkdown(blocks.results)
 
     return {
-      id: page.id,
+      id: props["noteId"]?.rich_text?.[0]?.text?.content || page.id,
+      noteType: (props["ノートタイプ"]?.select?.name || "note") as NoteType,
       title: props["名前"]?.title?.[0]?.text?.content || "無題",
       content,
       subject: (props["科目"]?.select?.name || null) as Subject | null,
       tags: props["タグ"]?.multi_select?.map((s: any) => s.name) || [],
-      createdAt: page.created_time,
-      updatedAt: page.last_edited_time,
+      materialId: props["教材ID"]?.rich_text?.[0]?.text?.content || null,
+      pageNumber: props["ページ番号"]?.number || null,
+      deviceId: props["デバイスID"]?.rich_text?.[0]?.text?.content || "",
+      createdAt: props["作成日時"]?.date?.start || page.created_time,
+      updatedAt: props["更新日時"]?.date?.start || page.last_edited_time,
     }
   } catch {
     return null
@@ -226,9 +248,23 @@ function markdownToBlocks(markdown: string): any[] {
   return blocks
 }
 
-// 学習ノートを作成
+// 学習ノートを作成（v1.11: 新フィールド対応）
+interface CreateNoteInput {
+  noteId?: string  // ローカル生成UUID
+  noteType: NoteType
+  title: string
+  content: string | null
+  subject: Subject | null
+  tags: string[]
+  materialId: string | null
+  pageNumber: number | null
+  deviceId: string
+  createdAt?: string
+  updatedAt: string
+}
+
 export async function createNote(
-  note: Omit<StudyNote, "id" | "createdAt" | "updatedAt">
+  note: CreateNoteInput
 ): Promise<StudyNote> {
   const notion = getNotionClient()
   const dbIds = getDbIds()
@@ -241,6 +277,12 @@ export async function createNote(
     名前: {
       title: [{ text: { content: note.title } }],
     },
+    ノートタイプ: { select: { name: note.noteType } },
+  }
+
+  // noteId（ローカルUUID）
+  if (note.noteId) {
+    properties["noteId"] = { rich_text: [{ text: { content: note.noteId } }] }
   }
 
   if (note.subject) {
@@ -250,6 +292,21 @@ export async function createNote(
     properties["タグ"] = {
       multi_select: note.tags.map((tag) => ({ name: tag })),
     }
+  }
+  if (note.materialId) {
+    properties["教材ID"] = { rich_text: [{ text: { content: note.materialId } }] }
+  }
+  if (note.pageNumber !== null && note.pageNumber !== undefined) {
+    properties["ページ番号"] = { number: note.pageNumber }
+  }
+  if (note.deviceId) {
+    properties["デバイスID"] = { rich_text: [{ text: { content: note.deviceId } }] }
+  }
+  if (note.createdAt) {
+    properties["作成日時"] = { date: { start: note.createdAt } }
+  }
+  if (note.updatedAt) {
+    properties["更新日時"] = { date: { start: note.updatedAt } }
   }
 
   // ページコンテンツをブロックとして追加
@@ -262,25 +319,32 @@ export async function createNote(
   })
 
   return {
-    id: response.id,
+    id: note.noteId || response.id,
+    noteType: note.noteType,
     title: note.title,
     content: note.content,
     subject: note.subject,
     tags: note.tags,
-    createdAt: (response as any).created_time,
-    updatedAt: (response as any).last_edited_time,
+    materialId: note.materialId,
+    pageNumber: note.pageNumber,
+    deviceId: note.deviceId,
+    createdAt: note.createdAt || (response as any).created_time,
+    updatedAt: note.updatedAt,
   }
 }
 
-// 学習ノートを更新
+// 学習ノートを更新（v1.11: 新フィールド対応）
 export async function updateNote(
   pageId: string,
-  updates: Partial<Omit<StudyNote, "id" | "createdAt" | "updatedAt">>
+  updates: Partial<Omit<StudyNote, "id" | "createdAt" | "deviceId">> & { updatedAt?: string }
 ): Promise<void> {
   const notion = getNotionClient()
 
   const properties: Record<string, any> = {}
 
+  if (updates.noteType !== undefined) {
+    properties["ノートタイプ"] = { select: { name: updates.noteType } }
+  }
   if (updates.title !== undefined) {
     properties["名前"] = { title: [{ text: { content: updates.title } }] }
   }
@@ -293,6 +357,19 @@ export async function updateNote(
     properties["タグ"] = {
       multi_select: updates.tags.map((tag) => ({ name: tag })),
     }
+  }
+  if (updates.materialId !== undefined) {
+    properties["教材ID"] = updates.materialId
+      ? { rich_text: [{ text: { content: updates.materialId } }] }
+      : { rich_text: [] }
+  }
+  if (updates.pageNumber !== undefined) {
+    properties["ページ番号"] = updates.pageNumber !== null
+      ? { number: updates.pageNumber }
+      : { number: null }
+  }
+  if (updates.updatedAt !== undefined) {
+    properties["更新日時"] = { date: { start: updates.updatedAt } }
   }
 
   // プロパティを更新

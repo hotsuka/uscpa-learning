@@ -102,12 +102,23 @@ src/
 
 ## Notionデータベース構成
 
-4つのデータベースを使用:
+### 設計方針（v1.11）
+- **ローカルファースト**: localStorageが主データソース、Notionは同期用バックエンド
+- **デバイス間同期**: Notionを介して複数デバイス間でデータを同期
+- **監査証跡**: Sessions（生データ）とRecords（確定データ）を分離
+- **Notion直接編集なし**: ユーザーはアプリからのみデータを操作
 
-1. **設定 (Settings)**: 目標時間、科目別試験日
-2. **学習セッション (Study Sessions)**: タイマー記録
-3. **過去問記録 (Practice Records)**: 演習記録
-4. **学習ノート (Study Notes)**: ノート
+### 4つのデータベース
+
+1. **設定 (Settings)**: 目標時間、科目別試験日、デバイスID
+2. **学習セッション (Study Sessions)**: タイマー生データ（読み取り専用、監査用）
+3. **学習記録 (Practice Records)**: 確定データ（編集可能）
+   - `source`: "timer" | "manual"（作成元）
+   - `sessionId`: 紐づくセッションID（timer時）
+4. **学習ノート (Study Notes)**: ノート + ページメモ統合
+   - `noteType`: "note" | "page_memo"
+   - `materialId`: PDF教材ID（page_memo時）
+   - `pageNumber`: ページ番号（page_memo時）
 
 ## 環境変数
 
@@ -222,8 +233,9 @@ const withPWA = require('next-pwa')({
 ## 注意事項
 
 1. **Notion APIのレート制限**: 頻繁なAPI呼び出しを避ける
-2. **オフライン対応はタイマーのみ**: 記録入力はオンライン必須
-3. **科目コード**: FAR, AUD, REG, BAR の4科目（BARがデフォルト選択科目）
-4. **試験日は科目別**: 各科目に異なる試験日を設定可能
-5. **データはユーザーのNotion**: ユーザーが直接Notionで閲覧・編集可能
-6. **PWA生成ファイル**: `sw.js`と`workbox-*.js`は.gitignoreで除外されている
+2. **ローカルファースト**: localStorageが主データソース、Notionは同期バックエンド
+3. **Notionは同期専用**: ユーザーはアプリからのみデータを操作（Notion直接編集なし）
+4. **科目コード**: FAR, AUD, REG, BAR の4科目（BARがデフォルト選択科目）
+5. **試験日は科目別**: 各科目に異なる試験日を設定可能
+6. **Sessions/Recordsの分離**: タイマー生データ(Sessions)と確定データ(Records)を分離して監査証跡を維持
+7. **PWA生成ファイル**: `sw.js`と`workbox-*.js`は.gitignoreで除外されている

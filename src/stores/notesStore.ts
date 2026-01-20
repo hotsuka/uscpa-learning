@@ -1,6 +1,19 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
-import type { Subject, StudyNote } from "@/types"
+import type { Subject, StudyNote, NoteType } from "@/types"
+import { generateUUID, getDeviceId } from "@/lib/utils"
+
+// ノート作成時の入力データ
+interface NoteInput {
+  noteType?: NoteType  // デフォルトは "note"
+  title: string
+  content: string | null
+  subject: Subject | null
+  tags: string[]
+  // ページメモ用（v1.11追加）
+  materialId?: string | null
+  pageNumber?: number | null
+}
 
 interface NotesState {
   notes: StudyNote[]
@@ -11,8 +24,8 @@ interface NotesState {
   notionIdMap: Record<string, string>
 
   // アクション
-  addNote: (note: Omit<StudyNote, "id" | "createdAt" | "updatedAt">) => StudyNote
-  updateNote: (id: string, updates: Partial<Omit<StudyNote, "id" | "createdAt" | "updatedAt">>) => void
+  addNote: (note: NoteInput) => StudyNote
+  updateNote: (id: string, updates: Partial<Omit<StudyNote, "id" | "createdAt" | "updatedAt" | "deviceId">>) => void
   deleteNote: (id: string) => void
   getNoteById: (id: string) => StudyNote | undefined
 
@@ -24,6 +37,9 @@ interface NotesState {
   // フィルタリング
   getNotesBySubject: (subject: Subject) => StudyNote[]
   searchNotes: (query: string) => StudyNote[]
+  // ページメモ用（v1.11追加）
+  getPageMemosByMaterial: (materialId: string) => StudyNote[]
+  getPageMemoByPage: (materialId: string, pageNumber: number) => StudyNote | undefined
 }
 
 export const useNotesStore = create<NotesState>()(
@@ -39,8 +55,15 @@ export const useNotesStore = create<NotesState>()(
       addNote: (noteData) => {
         const now = new Date().toISOString()
         const newNote: StudyNote = {
-          id: `note-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
-          ...noteData,
+          id: generateUUID(),
+          noteType: noteData.noteType ?? "note",
+          title: noteData.title,
+          content: noteData.content,
+          subject: noteData.subject,
+          tags: noteData.tags,
+          materialId: noteData.materialId ?? null,
+          pageNumber: noteData.pageNumber ?? null,
+          deviceId: getDeviceId(),
           createdAt: now,
           updatedAt: now,
         }
@@ -139,23 +162,60 @@ export const useNotesStore = create<NotesState>()(
           if (response.ok) {
             const notionNotes: StudyNote[] = await response.json()
 
-            // 既存のローカルノートとマージ
+            // 既存のローカルノートとマージ（Last-Write-Wins戦略）
             const localNotes = get().notes
-            const notionIdMap: Record<string, string> = {}
+            const existingNotionIdMap = get().notionIdMap
+            const newNotionIdMap: Record<string, string> = { ...existingNotionIdMap }
 
-            // NotionのIDをローカルIDとしても使用
+            // NotionノートのIDでマップを作成
+            const notionNoteMap = new Map<string, StudyNote>()
             for (const note of notionNotes) {
-              notionIdMap[note.id] = note.id
+              notionNoteMap.set(note.id, note)
+              newNotionIdMap[note.id] = note.id
             }
 
-            // ローカルにのみ存在するノート（まだNotion同期されていない）を保持
-            const localOnlyNotes = localNotes.filter(
-              (local) => !Object.keys(get().notionIdMap).includes(local.id)
+            // マージされたノートリスト
+            const mergedNotes: StudyNote[] = []
+
+            // ローカルノートを処理
+            for (const localNote of localNotes) {
+              const notionId = existingNotionIdMap[localNote.id]
+              if (notionId && notionNoteMap.has(notionId)) {
+                // Notionにも存在する → updatedAtで比較（Last-Write-Wins）
+                const notionNote = notionNoteMap.get(notionId)!
+                const localUpdated = new Date(localNote.updatedAt).getTime()
+                const notionUpdated = new Date(notionNote.updatedAt).getTime()
+
+                if (localUpdated >= notionUpdated) {
+                  // ローカルが新しい → ローカルを採用
+                  mergedNotes.push(localNote)
+                } else {
+                  // Notionが新しい → Notionを採用
+                  mergedNotes.push(notionNote)
+                }
+                // 処理済みとしてマップからNotionノートを削除
+                notionNoteMap.delete(notionId)
+              } else if (!notionId) {
+                // まだNotion同期されていないローカルノート → 保持
+                mergedNotes.push(localNote)
+              }
+              // notionIdがあるがnotionNoteMapにない場合 → Notionから削除された
+              // ローカルからも削除（mergedNotesに追加しない）
+            }
+
+            // Notionにのみ存在するノートを追加
+            for (const notionNote of notionNoteMap.values()) {
+              mergedNotes.push(notionNote)
+            }
+
+            // 日付の新しい順にソート
+            mergedNotes.sort((a, b) =>
+              new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
             )
 
             set({
-              notes: [...notionNotes, ...localOnlyNotes],
-              notionIdMap: { ...get().notionIdMap, ...notionIdMap },
+              notes: mergedNotes,
+              notionIdMap: newNotionIdMap,
               lastSyncedAt: new Date().toISOString(),
             })
           }
@@ -190,6 +250,22 @@ export const useNotesStore = create<NotesState>()(
             note.title.toLowerCase().includes(lowerQuery) ||
             (note.content?.toLowerCase().includes(lowerQuery) ?? false) ||
             note.tags.some((tag) => tag.toLowerCase().includes(lowerQuery))
+        )
+      },
+
+      // ページメモ用（v1.11追加）
+      getPageMemosByMaterial: (materialId) => {
+        return get().notes.filter(
+          (note) => note.noteType === "page_memo" && note.materialId === materialId
+        ).sort((a, b) => (a.pageNumber ?? 0) - (b.pageNumber ?? 0))
+      },
+
+      getPageMemoByPage: (materialId, pageNumber) => {
+        return get().notes.find(
+          (note) =>
+            note.noteType === "page_memo" &&
+            note.materialId === materialId &&
+            note.pageNumber === pageNumber
         )
       },
     }),
