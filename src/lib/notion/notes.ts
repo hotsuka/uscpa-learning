@@ -52,12 +52,25 @@ export async function getNotes(options?: {
     })
   }
 
-  const response = await notion.databases.query({
-    database_id: dbIds.notes,
-    filter: filter.length > 0 ? { and: filter } : undefined,
-    sorts: [{ property: "更新日時", direction: "descending" }],
-    page_size: options?.limit || 100,
-  })
+  // 更新日時プロパティが存在しない場合のフォールバック
+  let response
+  try {
+    response = await notion.databases.query({
+      database_id: dbIds.notes,
+      filter: filter.length > 0 ? { and: filter } : undefined,
+      sorts: [{ property: "更新日時", direction: "descending" }],
+      page_size: options?.limit || 100,
+    })
+  } catch (sortError: any) {
+    // 更新日時プロパティがない場合、作成日時でソート（Notion自動生成）
+    console.warn("Falling back to created_time sort:", sortError?.message)
+    response = await notion.databases.query({
+      database_id: dbIds.notes,
+      filter: filter.length > 0 ? { and: filter } : undefined,
+      sorts: [{ timestamp: "created_time", direction: "descending" }],
+      page_size: options?.limit || 100,
+    })
+  }
 
   return response.results.map((page: any) => {
     const props = page.properties
@@ -302,11 +315,17 @@ export async function createNote(
   if (note.deviceId) {
     properties["デバイスID"] = { rich_text: [{ text: { content: note.deviceId } }] }
   }
-  if (note.createdAt) {
-    properties["作成日時"] = { date: { start: note.createdAt } }
-  }
-  if (note.updatedAt) {
-    properties["更新日時"] = { date: { start: note.updatedAt } }
+  // 作成日時・更新日時はDateプロパティがない場合スキップ（Notion自動生成を使用）
+  // これらのプロパティはオプションとして扱う
+  try {
+    if (note.createdAt) {
+      properties["作成日時"] = { date: { start: note.createdAt } }
+    }
+    if (note.updatedAt) {
+      properties["更新日時"] = { date: { start: note.updatedAt } }
+    }
+  } catch {
+    // Dateプロパティが存在しない場合は無視
   }
 
   // ページコンテンツをブロックとして追加

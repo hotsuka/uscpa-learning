@@ -130,10 +130,17 @@ export const useNotesStore = create<NotesState>()(
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
+              noteId: note.id,
+              noteType: note.noteType,
               title: note.title,
               subject: note.subject,
               content: note.content,
               tags: note.tags,
+              materialId: note.materialId,
+              pageNumber: note.pageNumber,
+              deviceId: note.deviceId,
+              createdAt: note.createdAt,
+              updatedAt: note.updatedAt,
             }),
           })
 

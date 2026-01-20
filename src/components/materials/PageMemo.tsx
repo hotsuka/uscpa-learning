@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,8 +8,11 @@ import { Badge } from "@/components/ui/badge"
 import { ResizableVerticalPanel } from "@/components/ui/resizable-panel"
 import { Save, Trash2, MessageSquare } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useNotesStore } from "@/stores/notesStore"
+import type { StudyNote } from "@/types"
 
 export interface PageMemoData {
+  id: string  // ノートID（notesStore連携用）
   materialId: string
   pageNumber: number
   content: string
@@ -25,43 +28,33 @@ interface PageMemoProps {
   className?: string
 }
 
-const MEMO_STORAGE_KEY = "uscpa-page-memos"
-
-// localStorageからメモを読み込む
-const loadMemos = (materialId: string): Record<number, PageMemoData> => {
-  if (typeof window === "undefined") return {}
-  const stored = localStorage.getItem(MEMO_STORAGE_KEY)
-  if (!stored) return {}
-  const allMemos: Record<string, Record<number, PageMemoData>> = JSON.parse(stored)
-  return allMemos[materialId] || {}
-}
-
-// localStorageにメモを保存
-const saveMemos = (materialId: string, memos: Record<number, PageMemoData>) => {
-  if (typeof window === "undefined") return
-  const stored = localStorage.getItem(MEMO_STORAGE_KEY)
-  const allMemos: Record<string, Record<number, PageMemoData>> = stored ? JSON.parse(stored) : {}
-  allMemos[materialId] = memos
-  localStorage.setItem(MEMO_STORAGE_KEY, JSON.stringify(allMemos))
-}
-
 export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, className }: PageMemoProps) {
-  const [memos, setMemos] = useState<Record<number, PageMemoData>>({})
+  const { notes, addNote, updateNote, deleteNote, getPageMemosByMaterial } = useNotesStore()
   const [currentContent, setCurrentContent] = useState("")
   const [isDirty, setIsDirty] = useState(false)
 
-  // 初回読み込み
-  useEffect(() => {
-    const loadedMemos = loadMemos(materialId)
-    setMemos(loadedMemos)
-  }, [materialId])
+  // この教材のページメモを取得
+  const pageMemos = useMemo(() => {
+    return getPageMemosByMaterial(materialId)
+  }, [notes, materialId, getPageMemosByMaterial])
+
+  // ページ番号→メモのマップを作成
+  const memosByPage = useMemo(() => {
+    const map: Record<number, StudyNote> = {}
+    for (const memo of pageMemos) {
+      if (memo.pageNumber !== null) {
+        map[memo.pageNumber] = memo
+      }
+    }
+    return map
+  }, [pageMemos])
 
   // ページ変更時に現在のメモを読み込む
   useEffect(() => {
-    const memo = memos[currentPage]
+    const memo = memosByPage[currentPage]
     setCurrentContent(memo?.content || "")
     setIsDirty(false)
-  }, [currentPage, memos])
+  }, [currentPage, memosByPage])
 
   const handleContentChange = (value: string) => {
     setCurrentContent(value)
@@ -69,44 +62,45 @@ export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, cl
   }
 
   const handleSave = () => {
-    const now = new Date().toISOString()
-    const existingMemo = memos[currentPage]
-
-    const updatedMemo: PageMemoData = {
-      materialId,
-      pageNumber: currentPage,
-      content: currentContent,
-      createdAt: existingMemo?.createdAt || now,
-      updatedAt: now,
-    }
-
-    const updatedMemos = { ...memos }
+    const existingMemo = memosByPage[currentPage]
 
     if (currentContent.trim()) {
-      updatedMemos[currentPage] = updatedMemo
-    } else {
+      if (existingMemo) {
+        // 既存メモを更新
+        updateNote(existingMemo.id, {
+          content: currentContent,
+        })
+      } else {
+        // 新規メモを作成
+        addNote({
+          noteType: "page_memo",
+          title: `P.${currentPage} メモ`,
+          content: currentContent,
+          subject: null,
+          tags: [],
+          materialId,
+          pageNumber: currentPage,
+        })
+      }
+    } else if (existingMemo) {
       // 空の場合は削除
-      delete updatedMemos[currentPage]
+      deleteNote(existingMemo.id)
     }
 
-    setMemos(updatedMemos)
-    saveMemos(materialId, updatedMemos)
     setIsDirty(false)
   }
 
   const handleDelete = () => {
-    if (confirm("このページのメモを削除しますか？")) {
-      const updatedMemos = { ...memos }
-      delete updatedMemos[currentPage]
-      setMemos(updatedMemos)
-      saveMemos(materialId, updatedMemos)
+    const existingMemo = memosByPage[currentPage]
+    if (existingMemo && confirm("このページのメモを削除しますか？")) {
+      deleteNote(existingMemo.id)
       setCurrentContent("")
       setIsDirty(false)
     }
   }
 
   // メモがあるページの一覧
-  const pagesWithMemos = Object.keys(memos)
+  const pagesWithMemos = Object.keys(memosByPage)
     .map(Number)
     .sort((a, b) => a - b)
 
@@ -145,7 +139,7 @@ export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, cl
             <Save className="h-4 w-4 mr-1" />
             保存
           </Button>
-          {memos[currentPage] && (
+          {memosByPage[currentPage] && (
             <Button
               variant="outline"
               size="sm"
@@ -176,7 +170,7 @@ export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, cl
         ) : (
           <div className="space-y-2 h-full overflow-y-auto pr-1">
             {pagesWithMemos.map((page) => {
-              const memo = memos[page]
+              const memo = memosByPage[page]
               return (
                 <div
                   key={page}

@@ -58,10 +58,10 @@ export async function GET(request: NextRequest) {
     })
 
     return NextResponse.json(notes)
-  } catch (error) {
+  } catch (error: any) {
     console.error("Failed to get notes:", error)
     return NextResponse.json(
-      { error: "Failed to get notes" },
+      { error: "Failed to get notes", details: error?.message || String(error) },
       { status: 500 }
     )
   }
@@ -77,13 +77,29 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const note = await createNote(body)
+
+    // v1.11: 新フィールド対応のバリデーション
+    const noteData = {
+      noteId: body.noteId,
+      noteType: body.noteType || "note",
+      title: body.title || "無題",
+      content: body.content || null,
+      subject: body.subject || null,
+      tags: body.tags || [],
+      materialId: body.materialId || null,
+      pageNumber: body.pageNumber ?? null,
+      deviceId: body.deviceId || "",
+      createdAt: body.createdAt,
+      updatedAt: body.updatedAt || new Date().toISOString(),
+    }
+
+    const note = await createNote(noteData)
 
     return NextResponse.json(note, { status: 201 })
-  } catch (error) {
+  } catch (error: any) {
     console.error("Failed to create note:", error)
     return NextResponse.json(
-      { error: "Failed to create note" },
+      { error: "Failed to create note", details: error?.message || String(error) },
       { status: 500 }
     )
   }
