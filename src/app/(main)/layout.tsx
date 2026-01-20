@@ -1,3 +1,5 @@
+"use client"
+
 import { Sidebar } from "@/components/layout/Sidebar"
 import { BottomNav } from "@/components/layout/BottomNav"
 import { SyncProvider } from "@/components/providers/SyncProvider"

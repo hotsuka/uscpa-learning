@@ -7,14 +7,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ResizableVerticalPanel } from "@/components/ui/resizable-panel"
 import { Save, Trash2, MessageSquare } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn, generateUUID, getDeviceId } from "@/lib/utils"
 
 export interface PageMemoData {
+  id?: string  // ローカルUUID（Notion同期用）
   materialId: string
   pageNumber: number
   content: string
   createdAt: string
   updatedAt: string
+  notionSynced?: boolean  // Notion同期済みフラグ
 }
 
 interface PageMemoProps {
@@ -45,6 +47,45 @@ const saveMemos = (materialId: string, memos: Record<number, PageMemoData>) => {
   localStorage.setItem(MEMO_STORAGE_KEY, JSON.stringify(allMemos))
 }
 
+// Notionにメモを同期（バックグラウンド）
+const syncMemoToNotion = async (memo: PageMemoData): Promise<boolean> => {
+  try {
+    const response = await fetch("/api/notion/notes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        noteId: memo.id,
+        noteType: "page_memo",
+        title: `P.${memo.pageNumber} メモ`,
+        content: memo.content,
+        subject: null,
+        tags: [],
+        materialId: memo.materialId,
+        pageNumber: memo.pageNumber,
+        deviceId: getDeviceId(),
+        createdAt: memo.createdAt,
+        updatedAt: memo.updatedAt,
+      }),
+    })
+    return response.ok
+  } catch (error) {
+    console.error("Failed to sync memo to Notion:", error)
+    return false
+  }
+}
+
+// Notionからメモを削除（バックグラウンド）
+const deleteMemoFromNotion = async (memoId: string): Promise<void> => {
+  if (!memoId) return
+  try {
+    await fetch(`/api/notion/notes?id=${memoId}`, {
+      method: "DELETE",
+    })
+  } catch (error) {
+    console.error("Failed to delete memo from Notion:", error)
+  }
+}
+
 export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, className }: PageMemoProps) {
   const [memos, setMemos] = useState<Record<number, PageMemoData>>({})
   const [currentContent, setCurrentContent] = useState("")
@@ -73,35 +114,64 @@ export function PageMemo({ materialId, currentPage, totalPages, onPageSelect, cl
     const existingMemo = memos[currentPage]
 
     const updatedMemo: PageMemoData = {
+      id: existingMemo?.id || generateUUID(),  // 新規作成時はUUID生成
       materialId,
       pageNumber: currentPage,
       content: currentContent,
       createdAt: existingMemo?.createdAt || now,
       updatedAt: now,
+      notionSynced: false,
     }
 
     const updatedMemos = { ...memos }
 
     if (currentContent.trim()) {
       updatedMemos[currentPage] = updatedMemo
+      // まずlocalStorageに保存（データ保護優先）
+      setMemos(updatedMemos)
+      saveMemos(materialId, updatedMemos)
+      setIsDirty(false)
+
+      // バックグラウンドでNotion同期（非同期・fire-and-forget）
+      syncMemoToNotion(updatedMemo).then((synced) => {
+        if (synced) {
+          // 同期成功時にフラグを更新
+          const currentMemos = loadMemos(materialId)
+          if (currentMemos[currentPage]) {
+            currentMemos[currentPage].notionSynced = true
+            saveMemos(materialId, currentMemos)
+          }
+        }
+      }).catch(console.error)
     } else {
       // 空の場合は削除
+      const memoToDelete = existingMemo
       delete updatedMemos[currentPage]
-    }
+      setMemos(updatedMemos)
+      saveMemos(materialId, updatedMemos)
+      setIsDirty(false)
 
-    setMemos(updatedMemos)
-    saveMemos(materialId, updatedMemos)
-    setIsDirty(false)
+      // Notionからも削除（バックグラウンド）
+      if (memoToDelete?.id) {
+        deleteMemoFromNotion(memoToDelete.id).catch(console.error)
+      }
+    }
   }
 
   const handleDelete = () => {
     if (confirm("このページのメモを削除しますか？")) {
+      const memoToDelete = memos[currentPage]
       const updatedMemos = { ...memos }
       delete updatedMemos[currentPage]
       setMemos(updatedMemos)
       saveMemos(materialId, updatedMemos)
       setCurrentContent("")
       setIsDirty(false)
+
+      // Notionからも削除（バックグラウンド）
+      if (memoToDelete?.id) {
+        deleteMemoFromNotion(memoToDelete.id).catch(console.error)
+      }
     }
   }
 
