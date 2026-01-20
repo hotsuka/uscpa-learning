@@ -868,7 +868,25 @@ module.exports = withPWA({
   - ダイアログ表示時に初期値として設定
   - 記録保存・キャンセル時にフィールドをリセット
 
-### 6.10 Notionデータベース構成（v1.11予定）
+### 6.11 追加実装済み機能（v1.12）
+
+- [x] メモ未保存警告機能
+  - PageMemoコンポーネントにforwardRefとuseImperativeHandleを追加
+  - 未保存状態の検出とonDirtyChangeコールバック実装
+  - 戻るボタン、ページ変更時に未保存確認ダイアログ表示
+  - ブラウザ終了時のbeforeunload警告
+  - 「未保存」バッジ表示
+- [x] useMediaQueryフック（src/hooks/useMediaQuery.ts）
+  - メディアクエリの状態を監視するカスタムフック
+  - useIsDesktop()でPC/モバイル判定
+  - PC/モバイルの条件付きレンダリングで重複コンポーネント問題を解消
+- [x] アプリ起動時のNotion同期機能
+  - SyncProvider（src/components/providers/SyncProvider.tsx）
+  - useSyncOnMountフック（初回マウント時に同期、5分間隔チェック）
+  - useSyncOnOnlineフック（オンライン復帰時に同期）
+  - メインレイアウト（src/app/(main)/layout.tsx）への統合
+
+### 6.12 Notionデータベース構成（v1.11予定）
 
 #### 設計方針
 
@@ -1238,3 +1256,4 @@ npm run test:coverage
 | 1.9 | 2026-01-19 | PDF教材機能強化（IndexedDB保存、ページ連動メモ、リサイズ可能パネル） | - |
 | 1.10 | 2026-01-19 | タイマー画面に問題数・正答数・メモ入力欄を追加、記録ダイアログへの値引き継ぎ | - |
 | 1.11 | 2026-01-19 | Notion DB構成確定（4DB維持、Sessions/Records分離、ページメモ統合、同期仕様） | - |
+| 1.12 | 2026-01-20 | メモ未保存警告機能、アプリ起動時Notion同期、useMediaQueryフック追加 | - |

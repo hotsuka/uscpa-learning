@@ -33,22 +33,25 @@ src/
 │   │   ├── timer/          # タイマー画面
 │   │   ├── records/        # 過去問記録
 │   │   ├── notes/          # 学習ノート
+│   │   ├── materials/      # PDF教材
 │   │   ├── analytics/      # 分析・レポート
 │   │   └── settings/       # 設定
 │   └── api/notion/         # Notion API Routes
 ├── components/
 │   ├── ui/                 # shadcn/ui コンポーネント
 │   ├── layout/             # ヘッダー、ナビゲーション
+│   ├── providers/          # プロバイダー（SyncProvider等）
 │   ├── timer/              # タイマー関連
 │   ├── records/            # 過去問記録関連
 │   ├── notes/              # 学習ノート関連
+│   ├── materials/          # PDF教材関連（PageMemo等）
 │   ├── dashboard/          # ダッシュボード関連
 │   ├── analytics/          # 分析・グラフ関連
 │   └── common/             # 共通コンポーネント
 ├── lib/
 │   ├── notion/             # Notion API操作
 │   └── validations/        # Zodスキーマ
-├── hooks/                  # カスタムフック
+├── hooks/                  # カスタムフック（useMediaQuery、useSyncOnMount等）
 ├── stores/                 # Zustand ストア
 └── types/                  # TypeScript型定義
 ```
@@ -240,3 +243,20 @@ const withPWA = require('next-pwa')({
 6. **試験日は科目別**: 各科目に異なる試験日を設定可能
 7. **Sessions/Recordsの分離**: タイマー生データ(Sessions)と確定データ(Records)を分離して監査証跡を維持
 8. **PWA生成ファイル**: `sw.js`と`workbox-*.js`は.gitignoreで除外されている
+
+## 追加実装（v1.12）
+
+### メモ未保存警告機能
+- PageMemoコンポーネント: forwardRef + useImperativeHandleで外部からメソッドを呼び出し可能
+- onDirtyChangeコールバック: 未保存状態を親コンポーネントに通知
+- 確認ダイアログ: 戻るボタン、ページ変更時に未保存の場合は確認
+- beforeunload: ブラウザ終了時に警告表示
+
+### アプリ起動時のNotion同期
+- SyncProvider: メインレイアウトで使用するプロバイダー
+- useSyncOnMount: 初回マウント時にNotion同期（5分間隔チェック）
+- useSyncOnOnline: オンライン復帰時に自動同期
+
+### useMediaQueryフック
+- PC/モバイル判定: useIsDesktop()でTailwindのmdブレークポイント（768px）を監視
+- 条件付きレンダリング: CSS hiddenではなくJSで切り替えて重複コンポーネント問題を解消
