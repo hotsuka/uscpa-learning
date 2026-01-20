@@ -48,19 +48,31 @@ export async function getSessions(options?: {
     const props = page.properties
     return {
       id: page.id,
+      sessionId: props["sessionId"]?.rich_text?.[0]?.text?.content || page.id,
       subject: (props["科目"]?.select?.name || "FAR") as Subject,
       subtopic: null,
       durationMinutes: props["学習時間(分)"]?.number || 0,
       startedAt: props["開始日時"]?.date?.start || new Date().toISOString(),
       endedAt: props["終了日時"]?.date?.start || new Date().toISOString(),
+      deviceId: props["デバイスID"]?.rich_text?.[0]?.text?.content || "",
       createdAt: page.created_time,
     }
   })
 }
 
-// 学習セッションを作成
+// 学習セッションを作成（v1.11: 新フィールド対応）
+interface CreateSessionInput {
+  sessionId: string  // ローカル生成UUID（同期用キー）
+  subject: Subject
+  subtopic: string | null
+  durationMinutes: number
+  startedAt: string
+  endedAt: string
+  deviceId: string
+}
+
 export async function createSession(
-  session: Omit<StudySession, "id" | "createdAt">
+  session: CreateSessionInput
 ): Promise<StudySession> {
   const notion = getNotionClient()
   const dbIds = getDbIds()
@@ -75,22 +87,40 @@ export async function createSession(
   const durationStr = formatMinutes(session.durationMinutes)
   const name = `${dateStr} ${session.subject} ${durationStr}`
 
+  const properties: Record<string, any> = {
+    名前: {
+      title: [{ text: { content: name } }],
+    },
+    科目: { select: { name: session.subject } },
+    "学習時間(分)": { number: session.durationMinutes },
+    開始日時: { date: { start: session.startedAt } },
+    終了日時: { date: { start: session.endedAt } },
+  }
+
+  // sessionId（v1.11追加）
+  if (session.sessionId) {
+    properties["sessionId"] = { rich_text: [{ text: { content: session.sessionId } }] }
+  }
+
+  // deviceId（v1.11追加）
+  if (session.deviceId) {
+    properties["デバイスID"] = { rich_text: [{ text: { content: session.deviceId } }] }
+  }
+
   const response = await notion.pages.create({
     parent: { database_id: dbIds.sessions },
-    properties: {
-      名前: {
-        title: [{ text: { content: name } }],
-      },
-      科目: { select: { name: session.subject } },
-      "学習時間(分)": { number: session.durationMinutes },
-      開始日時: { date: { start: session.startedAt } },
-      終了日時: { date: { start: session.endedAt } },
-    },
+    properties,
   })
 
   return {
     id: response.id,
-    ...session,
+    sessionId: session.sessionId,
+    subject: session.subject,
+    subtopic: session.subtopic,
+    durationMinutes: session.durationMinutes,
+    startedAt: session.startedAt,
+    endedAt: session.endedAt,
+    deviceId: session.deviceId,
     createdAt: (response as any).created_time,
   }
 }

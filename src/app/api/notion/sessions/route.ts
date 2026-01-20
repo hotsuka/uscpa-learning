@@ -52,13 +52,15 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json()
 
-    // タイマーページからのリクエスト形式を変換
+    // タイマーページからのリクエスト形式を変換（v1.11: sessionId, deviceId追加）
     const sessionData = {
+      sessionId: body.sessionId || body.id || "",
       subject: body.subject as Subject,
       subtopic: body.subtopic || null,
       durationMinutes: body.studyMinutes || body.durationMinutes || 0,
       startedAt: body.startedAt,
       endedAt: body.endedAt,
+      deviceId: body.deviceId || "",
     }
 
     const session = await createSession(sessionData)
