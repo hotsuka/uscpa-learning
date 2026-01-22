@@ -1,16 +1,19 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { Plus, Clock, BookOpen } from "lucide-react"
 import { Header } from "@/components/layout/Header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { DailySummary } from "@/components/records/DailySummary"
 import { useRecordStore } from "@/stores/recordStore"
 import { formatMinutes } from "@/lib/utils"
 
 export default function RecordsPage() {
   const { records } = useRecordStore()
+  const [selectedDate, setSelectedDate] = useState(() => new Date().toISOString().split("T")[0])
 
   // 日付の新しい順にソート
   const sortedRecords = [...records].sort((a, b) =>
@@ -31,6 +34,13 @@ export default function RecordsPage() {
               </Link>
             </Button>
           </div>
+
+          {/* 日別サマリー */}
+          <DailySummary
+            records={records}
+            selectedDate={selectedDate}
+            onDateChange={setSelectedDate}
+          />
 
           <div className="space-y-4">
             {sortedRecords.map((record) => {

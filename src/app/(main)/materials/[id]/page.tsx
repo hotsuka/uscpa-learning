@@ -7,7 +7,7 @@ import { Header } from "@/components/layout/Header"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { PageMemo, type PageMemoRef } from "@/components/materials/PageMemo"
-import { ResizableHorizontalPanel } from "@/components/ui/resizable-panel"
+import { ResizableHorizontalPanel, ResizableVerticalPanel } from "@/components/ui/resizable-panel"
 import { SUBJECTS, type Material } from "@/types"
 import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
 import { useIsDesktop } from "@/hooks/useMediaQuery"
@@ -32,7 +32,26 @@ import {
   Trash2,
   PanelRightClose,
   PanelRightOpen,
+  Columns,
+  Rows,
 } from "lucide-react"
+
+type LayoutMode = "horizontal" | "vertical"
+
+const LAYOUT_STORAGE_KEY = "uscpa-material-layout-mode"
+
+// レイアウトモードをlocalStorageから読み込み
+const loadLayoutMode = (): LayoutMode => {
+  if (typeof window === "undefined") return "horizontal"
+  const stored = localStorage.getItem(LAYOUT_STORAGE_KEY)
+  return (stored as LayoutMode) || "horizontal"
+}
+
+// レイアウトモードをlocalStorageに保存
+const saveLayoutMode = (mode: LayoutMode) => {
+  if (typeof window === "undefined") return
+  localStorage.setItem(LAYOUT_STORAGE_KEY, mode)
+}
 
 // ローカルストレージから教材データを取得
 const getMaterial = (id: string): Material | null => {
@@ -61,9 +80,22 @@ export default function MaterialDetailPage() {
   const [totalPages, setTotalPages] = useState(0)
   const [showMemoPanel, setShowMemoPanel] = useState(true)
   const [isMemoUnsaved, setIsMemoUnsaved] = useState(false)
+  const [layoutMode, setLayoutMode] = useState<LayoutMode>("horizontal")
 
   // PC/モバイル判定
   const isDesktop = useIsDesktop()
+
+  // レイアウトモードの読み込み
+  useEffect(() => {
+    setLayoutMode(loadLayoutMode())
+  }, [])
+
+  // レイアウトモード切り替え
+  const toggleLayoutMode = () => {
+    const newMode: LayoutMode = layoutMode === "horizontal" ? "vertical" : "horizontal"
+    setLayoutMode(newMode)
+    saveLayoutMode(newMode)
+  }
 
   // PageMemoコンポーネントへの参照
   const memoRef = useRef<PageMemoRef>(null)
@@ -306,6 +338,22 @@ export default function MaterialDetailPage() {
               )}
             </Button>
 
+            {/* レイアウト切り替え（PC版のみ） */}
+            {isDesktop && showMemoPanel && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={toggleLayoutMode}
+                title={layoutMode === "horizontal" ? "上下レイアウトに切り替え" : "左右レイアウトに切り替え"}
+              >
+                {layoutMode === "horizontal" ? (
+                  <Rows className="h-4 w-4" />
+                ) : (
+                  <Columns className="h-4 w-4" />
+                )}
+              </Button>
+            )}
+
             <Button
               variant="ghost"
               size="sm"
@@ -321,14 +369,25 @@ export default function MaterialDetailPage() {
         {isDesktop && (
           <div className="flex-1 overflow-hidden">
             {showMemoPanel ? (
-              <ResizableHorizontalPanel
-                leftPanel={pdfPanel}
-                rightPanel={memoPanel}
-                defaultLeftWidth={66}
-                minLeftWidth={40}
-                maxLeftWidth={85}
-                storageKey="material-panel-horizontal-split"
-              />
+              layoutMode === "horizontal" ? (
+                <ResizableHorizontalPanel
+                  leftPanel={pdfPanel}
+                  rightPanel={memoPanel}
+                  defaultLeftWidth={66}
+                  minLeftWidth={40}
+                  maxLeftWidth={85}
+                  storageKey="material-panel-horizontal-split"
+                />
+              ) : (
+                <ResizableVerticalPanel
+                  topPanel={pdfPanel}
+                  bottomPanel={memoPanel}
+                  defaultTopHeight={60}
+                  minTopHeight={30}
+                  maxTopHeight={80}
+                  storageKey="material-panel-vertical-split"
+                />
+              )
             ) : (
               <div className="h-full">{pdfPanel}</div>
             )}

@@ -20,6 +20,8 @@ import {
   Eye,
   Trash2,
   AlertTriangle,
+  Search,
+  X,
 } from "lucide-react"
 
 const STORAGE_KEY = "uscpa-materials"
@@ -72,8 +74,22 @@ export default function MaterialsPage() {
   const [pdfWithoutAnswers, setPdfWithoutAnswers] = useState<File | null>(null)
   const [pdfWithAnswers, setPdfWithAnswers] = useState<File | null>(null)
 
+  // 検索・フィルター用state
+  const [searchQuery, setSearchQuery] = useState("")
+  const [filterSubject, setFilterSubject] = useState<Subject | "all">("all")
+
   const fileInputWithoutRef = useRef<HTMLInputElement>(null)
   const fileInputWithRef = useRef<HTMLInputElement>(null)
+
+  // 検索・フィルター適用後の教材一覧
+  const filteredMaterials = materials.filter((material) => {
+    // 教材名で検索
+    const matchesSearch = searchQuery === "" ||
+      material.name.toLowerCase().includes(searchQuery.toLowerCase())
+    // 科目でフィルター
+    const matchesSubject = filterSubject === "all" || material.subject === filterSubject
+    return matchesSearch && matchesSubject
+  })
 
   // 初回読み込み時にローカルストレージから教材を取得
   useEffect(() => {
@@ -244,11 +260,63 @@ export default function MaterialsPage() {
           全データ削除
         </Button>
 
-        {/* アップロードボタン */}
-        <Button onClick={() => setShowUploadForm(!showUploadForm)}>
-          <Plus className="h-4 w-4 mr-2" />
-          教材をアップロード
-        </Button>
+        {/* 検索・フィルター・アップロードボタン */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          {/* 検索ボックス */}
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder="教材名で検索..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 pr-10"
+            />
+            {searchQuery && (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 p-0"
+                onClick={() => setSearchQuery("")}
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
+
+          {/* 科目フィルター */}
+          <div className="flex gap-2 flex-wrap">
+            <Badge
+              variant={filterSubject === "all" ? "default" : "outline"}
+              className="cursor-pointer"
+              onClick={() => setFilterSubject("all")}
+            >
+              すべて
+            </Badge>
+            {(Object.keys(SUBJECTS) as Subject[]).map((subject) => (
+              <Badge
+                key={subject}
+                variant={filterSubject === subject ? "default" : "outline"}
+                className="cursor-pointer"
+                style={filterSubject === subject ? {
+                  backgroundColor: SUBJECTS[subject].color,
+                  color: "white",
+                } : {
+                  borderColor: SUBJECTS[subject].color,
+                  color: SUBJECTS[subject].color,
+                }}
+                onClick={() => setFilterSubject(subject)}
+              >
+                {subject}
+              </Badge>
+            ))}
+          </div>
+
+          {/* アップロードボタン */}
+          <Button onClick={() => setShowUploadForm(!showUploadForm)} className="shrink-0">
+            <Plus className="h-4 w-4 mr-2" />
+            教材をアップロード
+          </Button>
+        </div>
 
         {/* アップロードフォーム */}
         {showUploadForm && (
@@ -360,9 +428,28 @@ export default function MaterialsPage() {
               </Button>
             </CardContent>
           </Card>
+        ) : filteredMaterials.length === 0 ? (
+          <Card>
+            <CardContent className="py-12 text-center">
+              <Search className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+              <p className="text-muted-foreground">
+                検索条件に一致する教材がありません
+              </p>
+              <Button
+                variant="link"
+                className="mt-2"
+                onClick={() => {
+                  setSearchQuery("")
+                  setFilterSubject("all")
+                }}
+              >
+                フィルターをクリア
+              </Button>
+            </CardContent>
+          </Card>
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {materials.map((material) => {
+            {filteredMaterials.map((material) => {
               const subjectInfo = SUBJECTS[material.subject]
               return (
                 <Link key={material.id} href={`/materials/${material.id}`}>
