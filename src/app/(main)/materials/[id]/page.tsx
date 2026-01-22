@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/Header"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { PageMemo, type PageMemoRef } from "@/components/materials/PageMemo"
+import { MiniTimer } from "@/components/materials/MiniTimer"
 import { ResizableHorizontalPanel, ResizableVerticalPanel } from "@/components/ui/resizable-panel"
 import { SUBJECTS, type Material } from "@/types"
 import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
@@ -279,14 +280,14 @@ export default function MaterialDetailPage() {
       <div className="flex flex-col h-[calc(100vh-4rem)] md:h-[calc(100vh-0rem)]">
         {/* ヘッダーバー */}
         <div className="flex items-center justify-between p-2 border-b bg-background flex-wrap gap-2">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
             <Button
               variant="ghost"
               size="sm"
               onClick={handleBack}
             >
               <ArrowLeft className="h-4 w-4 mr-1" />
-              戻る
+              <span className="hidden sm:inline">戻る</span>
             </Button>
             <div className="flex items-center gap-2">
               <Badge
@@ -297,11 +298,14 @@ export default function MaterialDetailPage() {
               >
                 {material.subject}
               </Badge>
-              <span className="font-medium text-sm truncate max-w-[200px] md:max-w-none">
+              <span className="font-medium text-sm truncate max-w-[120px] sm:max-w-[200px] md:max-w-none">
                 {material.name}
               </span>
             </div>
           </div>
+
+          {/* ミニタイマー（中央） */}
+          <MiniTimer className="hidden sm:flex" />
 
           <div className="flex items-center gap-2">
             {/* 回答あり/なし切り替え */}
@@ -363,6 +367,11 @@ export default function MaterialDetailPage() {
               <Trash2 className="h-4 w-4" />
             </Button>
           </div>
+        </div>
+
+        {/* モバイル用ミニタイマー（ヘッダー下） */}
+        <div className="sm:hidden border-b bg-muted/30 p-2 flex justify-center">
+          <MiniTimer />
         </div>
 
         {/* メインコンテンツ - PC */}
