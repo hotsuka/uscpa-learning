@@ -97,8 +97,8 @@ export function MiniTimer({ className }: MiniTimerProps) {
           <Input
             type="number"
             min={0}
-            value={totalQuestions || ""}
-            onChange={(e) => setTotalQuestions(e.target.value ? Number(e.target.value) : 0)}
+            value={totalQuestions}
+            onChange={(e) => setTotalQuestions(e.target.value)}
             className="w-14 h-7 text-sm px-2"
             placeholder="0"
           />
@@ -108,25 +108,25 @@ export function MiniTimer({ className }: MiniTimerProps) {
           <Input
             type="number"
             min={0}
-            max={totalQuestions || undefined}
-            value={correctAnswers || ""}
-            onChange={(e) => setCorrectAnswers(e.target.value ? Number(e.target.value) : 0)}
+            max={totalQuestions ? Number(totalQuestions) : undefined}
+            value={correctAnswers}
+            onChange={(e) => setCorrectAnswers(e.target.value)}
             className="w-14 h-7 text-sm px-2"
             placeholder="0"
           />
         </div>
         {/* 正答率表示 */}
-        {totalQuestions > 0 && (
+        {Number(totalQuestions) > 0 && (
           <Badge
             variant="outline"
             className={cn(
               "text-xs",
-              correctAnswers / totalQuestions >= 0.8 && "border-green-500 text-green-600",
-              correctAnswers / totalQuestions >= 0.6 && correctAnswers / totalQuestions < 0.8 && "border-yellow-500 text-yellow-600",
-              correctAnswers / totalQuestions < 0.6 && "border-red-500 text-red-600"
+              Number(correctAnswers) / Number(totalQuestions) >= 0.8 && "border-green-500 text-green-600",
+              Number(correctAnswers) / Number(totalQuestions) >= 0.6 && Number(correctAnswers) / Number(totalQuestions) < 0.8 && "border-yellow-500 text-yellow-600",
+              Number(correctAnswers) / Number(totalQuestions) < 0.6 && "border-red-500 text-red-600"
             )}
           >
-            {Math.round((correctAnswers / totalQuestions) * 100)}%
+            {Math.round((Number(correctAnswers) / Number(totalQuestions)) * 100)}%
           </Badge>
         )}
       </div>
