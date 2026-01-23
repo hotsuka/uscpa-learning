@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
 import { useTimer } from "@/hooks/useTimer"
 import { Play, Pause, Square, Clock } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -17,9 +18,13 @@ export function MiniTimer({ className }: MiniTimerProps) {
     isRunning,
     isPaused,
     isIdle,
+    totalQuestions,
+    correctAnswers,
     start,
     pause,
     reset,
+    setTotalQuestions,
+    setCorrectAnswers,
   } = useTimer()
 
   return (
@@ -79,6 +84,50 @@ export function MiniTimer({ className }: MiniTimerProps) {
           >
             <Square className="h-4 w-4" />
           </Button>
+        )}
+      </div>
+
+      {/* 区切り線 */}
+      <div className="w-px h-6 bg-border mx-1" />
+
+      {/* 問題数・正解数入力 */}
+      <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
+          <span className="text-xs text-muted-foreground whitespace-nowrap">問題</span>
+          <Input
+            type="number"
+            min={0}
+            value={totalQuestions || ""}
+            onChange={(e) => setTotalQuestions(e.target.value ? Number(e.target.value) : 0)}
+            className="w-14 h-7 text-sm px-2"
+            placeholder="0"
+          />
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="text-xs text-muted-foreground whitespace-nowrap">正解</span>
+          <Input
+            type="number"
+            min={0}
+            max={totalQuestions || undefined}
+            value={correctAnswers || ""}
+            onChange={(e) => setCorrectAnswers(e.target.value ? Number(e.target.value) : 0)}
+            className="w-14 h-7 text-sm px-2"
+            placeholder="0"
+          />
+        </div>
+        {/* 正答率表示 */}
+        {totalQuestions > 0 && (
+          <Badge
+            variant="outline"
+            className={cn(
+              "text-xs",
+              correctAnswers / totalQuestions >= 0.8 && "border-green-500 text-green-600",
+              correctAnswers / totalQuestions >= 0.6 && correctAnswers / totalQuestions < 0.8 && "border-yellow-500 text-yellow-600",
+              correctAnswers / totalQuestions < 0.6 && "border-red-500 text-red-600"
+            )}
+          >
+            {Math.round((correctAnswers / totalQuestions) * 100)}%
+          </Badge>
         )}
       </div>
     </div>
