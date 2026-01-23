@@ -15,7 +15,15 @@ import {
   Target,
   Clock,
   CheckCircle2,
+  BookOpen,
 } from "lucide-react"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 type Period = "week" | "month" | "all"
 
@@ -23,6 +31,7 @@ export default function AnalyticsPage() {
   const { records } = useRecordStore()
   const { subjectTargetHours } = useSettingsStore()
   const [selectedPeriod, setSelectedPeriod] = useState<Period>("week")
+  const [selectedTopic, setSelectedTopic] = useState<string>("")
 
   // 期間でフィルタしたレコードを取得
   const filteredRecords = useMemo(() => {
@@ -161,6 +170,55 @@ export default function AnalyticsPage() {
       .sort((a, b) => a.accuracy - b.accuracy)
       .slice(0, 5) // 上位5件
   }, [filteredRecords])
+
+  // 全てのテーマ（サブトピック/チャプター）を取得
+  const allTopics = useMemo(() => {
+    const topicSet = new Set<string>()
+    for (const record of records) {
+      const topic = record.subtopic || record.chapter
+      if (topic) {
+        topicSet.add(topic)
+      }
+    }
+    return Array.from(topicSet).sort()
+  }, [records])
+
+  // 選択されたテーマの統計を計算
+  const topicStats = useMemo(() => {
+    if (!selectedTopic) return null
+
+    const topicRecords = records.filter((r) => {
+      const topic = r.subtopic || r.chapter
+      return topic === selectedTopic && r.recordType === "practice"
+    })
+
+    if (topicRecords.length === 0) return null
+
+    const totalQuestions = topicRecords.reduce((sum, r) => sum + (r.totalQuestions || 0), 0)
+    const totalCorrect = topicRecords.reduce((sum, r) => sum + (r.correctAnswers || 0), 0)
+    const accuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0
+
+    // 科目別の内訳
+    const bySubject: Record<Subject, { questions: number; correct: number }> = {
+      FAR: { questions: 0, correct: 0 },
+      AUD: { questions: 0, correct: 0 },
+      REG: { questions: 0, correct: 0 },
+      BAR: { questions: 0, correct: 0 },
+    }
+
+    for (const record of topicRecords) {
+      bySubject[record.subject].questions += record.totalQuestions || 0
+      bySubject[record.subject].correct += record.correctAnswers || 0
+    }
+
+    return {
+      totalQuestions,
+      totalCorrect,
+      accuracy,
+      recordCount: topicRecords.length,
+      bySubject,
+    }
+  }, [records, selectedTopic])
 
   return (
     <>
@@ -369,6 +427,116 @@ export default function AnalyticsPage() {
                 <p className="text-xs mt-1">
                   学習記録が蓄積されると、正答率の低いテーマが表示されます
                 </p>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* テーマ別統計 */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <BookOpen className="h-5 w-5" />
+              テーマ別統計
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {/* テーマ選択 */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium">テーマを選択</label>
+              <Select value={selectedTopic} onValueChange={setSelectedTopic}>
+                <SelectTrigger className="w-full md:w-[300px]">
+                  <SelectValue placeholder="テーマを選択してください" />
+                </SelectTrigger>
+                <SelectContent>
+                  {allTopics.length > 0 ? (
+                    allTopics.map((topic) => (
+                      <SelectItem key={topic} value={topic}>
+                        {topic}
+                      </SelectItem>
+                    ))
+                  ) : (
+                    <SelectItem value="_empty" disabled>
+                      テーマがありません
+                    </SelectItem>
+                  )}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* 統計表示 */}
+            {selectedTopic && topicStats ? (
+              <div className="space-y-4">
+                {/* サマリー */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-muted/50 rounded-lg p-4 text-center">
+                    <p className="text-sm text-muted-foreground">問題数</p>
+                    <p className="text-2xl font-bold">{topicStats.totalQuestions}</p>
+                  </div>
+                  <div className="bg-muted/50 rounded-lg p-4 text-center">
+                    <p className="text-sm text-muted-foreground">正解数</p>
+                    <p className="text-2xl font-bold">{topicStats.totalCorrect}</p>
+                  </div>
+                  <div className="bg-muted/50 rounded-lg p-4 text-center">
+                    <p className="text-sm text-muted-foreground">正答率</p>
+                    <p className={`text-2xl font-bold ${
+                      topicStats.accuracy >= 80 ? "text-green-600" :
+                      topicStats.accuracy >= 60 ? "text-yellow-600" : "text-red-600"
+                    }`}>
+                      {topicStats.accuracy}%
+                    </p>
+                  </div>
+                </div>
+
+                {/* 科目別内訳 */}
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">科目別内訳</p>
+                  <div className="space-y-2">
+                    {SUBJECT_OPTIONS.map((subject) => {
+                      const subjectData = topicStats.bySubject[subject]
+                      if (subjectData.questions === 0) return null
+                      const subjectAccuracy = Math.round((subjectData.correct / subjectData.questions) * 100)
+                      const subjectInfo = SUBJECTS[subject]
+                      return (
+                        <div
+                          key={subject}
+                          className="flex items-center justify-between p-2 bg-muted/30 rounded"
+                        >
+                          <div className="flex items-center gap-2">
+                            <div
+                              className="w-3 h-3 rounded-full"
+                              style={{ backgroundColor: subjectInfo.color }}
+                            />
+                            <span className="text-sm font-medium">{subject}</span>
+                          </div>
+                          <div className="flex items-center gap-4 text-sm">
+                            <span className="text-muted-foreground">
+                              {subjectData.correct}/{subjectData.questions}問
+                            </span>
+                            <Badge
+                              variant={subjectAccuracy >= 70 ? "default" : "secondary"}
+                              className="min-w-[50px] justify-center"
+                            >
+                              {subjectAccuracy}%
+                            </Badge>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                <p className="text-xs text-muted-foreground">
+                  ※ 全期間の演習記録から集計（{topicStats.recordCount}件の記録）
+                </p>
+              </div>
+            ) : selectedTopic ? (
+              <div className="text-center py-8 text-muted-foreground">
+                <p>このテーマの演習記録がありません</p>
+              </div>
+            ) : (
+              <div className="text-center py-8 text-muted-foreground">
+                <p>テーマを選択すると統計が表示されます</p>
               </div>
             )}
           </CardContent>
