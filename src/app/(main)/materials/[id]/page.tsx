@@ -12,6 +12,13 @@ import { ResizableHorizontalPanel, ResizableVerticalPanel } from "@/components/u
 import { SUBJECTS, type Material } from "@/types"
 import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
 import { useIsDesktop } from "@/hooks/useMediaQuery"
+import { useTimer } from "@/hooks/useTimer"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 // PDFViewerはクライアントサイドのみで読み込む
 const PDFViewer = dynamic(
@@ -35,6 +42,7 @@ import {
   PanelRightOpen,
   Columns,
   Rows,
+  Keyboard,
 } from "lucide-react"
 
 type LayoutMode = "horizontal" | "vertical"
@@ -86,10 +94,45 @@ export default function MaterialDetailPage() {
   // PC/モバイル判定
   const isDesktop = useIsDesktop()
 
+  // タイマー操作用
+  const { isRunning, isPaused, isIdle, start, pause } = useTimer()
+
   // レイアウトモードの読み込み
   useEffect(() => {
     setLayoutMode(loadLayoutMode())
   }, [])
+
+  // キーボードショートカット
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ctrl+S / Cmd+S: メモを保存
+      if ((e.ctrlKey || e.metaKey) && e.key === "s") {
+        e.preventDefault()
+        memoRef.current?.save()
+        return
+      }
+
+      // Space: タイマー操作（input/textareaにフォーカスがある時は無視）
+      if (e.key === " " && e.code === "Space") {
+        const activeElement = document.activeElement
+        const isInputFocused = activeElement instanceof HTMLInputElement ||
+          activeElement instanceof HTMLTextAreaElement ||
+          activeElement?.getAttribute("contenteditable") === "true"
+
+        if (!isInputFocused) {
+          e.preventDefault()
+          if (isRunning) {
+            pause()
+          } else {
+            start()
+          }
+        }
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isRunning, isPaused, isIdle, start, pause])
 
   // レイアウトモード切り替え
   const toggleLayoutMode = () => {
@@ -357,6 +400,23 @@ export default function MaterialDetailPage() {
                 )}
               </Button>
             )}
+
+            {/* ショートカットヘルプ */}
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" size="sm" className="hidden sm:flex">
+                    <Keyboard className="h-4 w-4" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="text-xs">
+                  <div className="space-y-1">
+                    <p><kbd className="px-1 py-0.5 bg-muted rounded text-[10px]">Ctrl+S</kbd> メモを保存</p>
+                    <p><kbd className="px-1 py-0.5 bg-muted rounded text-[10px]">Space</kbd> タイマー開始/停止</p>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
 
             <Button
               variant="ghost"
