@@ -13,12 +13,6 @@ import { SUBJECTS, type Material } from "@/types"
 import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
 import { useIsDesktop } from "@/hooks/useMediaQuery"
 import { useTimer } from "@/hooks/useTimer"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 
 // PDFViewerはクライアントサイドのみで読み込む
 const PDFViewer = dynamic(
@@ -42,7 +36,6 @@ import {
   PanelRightOpen,
   Columns,
   Rows,
-  Keyboard,
 } from "lucide-react"
 
 type LayoutMode = "horizontal" | "vertical"
@@ -400,23 +393,6 @@ export default function MaterialDetailPage() {
                 )}
               </Button>
             )}
-
-            {/* ショートカットヘルプ */}
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="sm" className="hidden sm:flex">
-                    <Keyboard className="h-4 w-4" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent side="bottom" className="text-xs">
-                  <div className="space-y-1">
-                    <p><kbd className="px-1 py-0.5 bg-muted rounded text-[10px]">Ctrl+S</kbd> メモを保存</p>
-                    <p><kbd className="px-1 py-0.5 bg-muted rounded text-[10px]">Space</kbd> タイマー開始/停止</p>
-                  </div>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
 
             <Button
               variant="ghost"

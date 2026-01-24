@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, Timer, BookOpen, FileText, BarChart3, Settings, GraduationCap } from "lucide-react"
+import { LayoutDashboard, Timer, BookOpen, FileText, BarChart3, Settings, GraduationCap, Keyboard } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
@@ -16,6 +16,9 @@ const navItems = [
 
 export function Sidebar() {
   const pathname = usePathname()
+
+  // 教材詳細ページかどうか判定（/materials/[id] の形式）
+  const isMaterialDetailPage = pathname.startsWith("/materials/") && pathname !== "/materials/"
 
   return (
     <aside className="hidden md:flex flex-col w-64 border-r bg-card h-screen fixed left-0 top-0">
@@ -50,6 +53,26 @@ export function Sidebar() {
           })}
         </ul>
       </nav>
+
+      {/* 教材詳細ページのショートカット説明 */}
+      {isMaterialDetailPage && (
+        <div className="p-4 border-t">
+          <div className="flex items-center gap-2 mb-2 text-muted-foreground">
+            <Keyboard className="h-4 w-4" />
+            <span className="text-xs font-medium">ショートカット</span>
+          </div>
+          <div className="space-y-1.5 text-xs text-muted-foreground">
+            <div className="flex items-center justify-between">
+              <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">Ctrl+S</kbd>
+              <span>メモを保存</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">Space</kbd>
+              <span>タイマー開始/停止</span>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="p-4 border-t">
         <p className="text-xs text-muted-foreground text-center">
