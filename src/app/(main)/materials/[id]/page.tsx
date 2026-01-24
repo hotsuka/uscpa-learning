@@ -111,22 +111,22 @@ export default function MaterialDetailPage() {
         return
       }
 
-      // Ctrl/Cmd + +/= でズームイン
-      if ((e.ctrlKey || e.metaKey) && (e.key === "+" || e.key === "=")) {
+      // input/textareaにフォーカスがある時は以下のショートカットを無視
+      if (isInputFocused) return
+
+      // ] でズームイン
+      if (e.key === "]") {
         e.preventDefault()
         pdfViewerRef.current?.zoomIn()
         return
       }
 
-      // Ctrl/Cmd + - でズームアウト
-      if ((e.ctrlKey || e.metaKey) && e.key === "-") {
+      // [ でズームアウト
+      if (e.key === "[") {
         e.preventDefault()
         pdfViewerRef.current?.zoomOut()
         return
       }
-
-      // input/textareaにフォーカスがある時は以下のショートカットを無視
-      if (isInputFocused) return
 
       // Space: タイマー操作
       if (e.key === " " && e.code === "Space") {

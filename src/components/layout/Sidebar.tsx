@@ -67,8 +67,8 @@ export function Sidebar() {
               <span>ページ移動</span>
             </div>
             <div className="flex items-center justify-between">
-              <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">Ctrl+/-</kbd>
-              <span>拡大/縮小</span>
+              <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">[ / ]</kbd>
+              <span>縮小/拡大</span>
             </div>
             <div className="flex items-center justify-between">
               <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">Ctrl+S</kbd>
