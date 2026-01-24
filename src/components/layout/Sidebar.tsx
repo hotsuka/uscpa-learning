@@ -63,6 +63,14 @@ export function Sidebar() {
           </div>
           <div className="space-y-1.5 text-xs text-muted-foreground">
             <div className="flex items-center justify-between">
+              <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">←/→</kbd>
+              <span>ページ移動</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">Ctrl+/-</kbd>
+              <span>拡大/縮小</span>
+            </div>
+            <div className="flex items-center justify-between">
               <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">Ctrl+S</kbd>
               <span>メモを保存</span>
             </div>

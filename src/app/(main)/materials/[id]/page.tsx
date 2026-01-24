@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { PageMemo, type PageMemoRef } from "@/components/materials/PageMemo"
 import { MiniTimer } from "@/components/materials/MiniTimer"
+import type { PDFViewerRef } from "@/components/materials/PDFViewer"
 import { ResizableHorizontalPanel, ResizableVerticalPanel } from "@/components/ui/resizable-panel"
 import { SUBJECTS, type Material } from "@/types"
 import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
@@ -98,6 +99,11 @@ export default function MaterialDetailPage() {
   // キーボードショートカット
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      const activeElement = document.activeElement
+      const isInputFocused = activeElement instanceof HTMLInputElement ||
+        activeElement instanceof HTMLTextAreaElement ||
+        activeElement?.getAttribute("contenteditable") === "true"
+
       // Ctrl+S / Cmd+S: メモを保存
       if ((e.ctrlKey || e.metaKey) && e.key === "s") {
         e.preventDefault()
@@ -105,21 +111,46 @@ export default function MaterialDetailPage() {
         return
       }
 
-      // Space: タイマー操作（input/textareaにフォーカスがある時は無視）
-      if (e.key === " " && e.code === "Space") {
-        const activeElement = document.activeElement
-        const isInputFocused = activeElement instanceof HTMLInputElement ||
-          activeElement instanceof HTMLTextAreaElement ||
-          activeElement?.getAttribute("contenteditable") === "true"
+      // Ctrl/Cmd + +/= でズームイン
+      if ((e.ctrlKey || e.metaKey) && (e.key === "+" || e.key === "=")) {
+        e.preventDefault()
+        pdfViewerRef.current?.zoomIn()
+        return
+      }
 
-        if (!isInputFocused) {
-          e.preventDefault()
-          if (isRunning) {
-            pause()
-          } else {
-            start()
-          }
+      // Ctrl/Cmd + - でズームアウト
+      if ((e.ctrlKey || e.metaKey) && e.key === "-") {
+        e.preventDefault()
+        pdfViewerRef.current?.zoomOut()
+        return
+      }
+
+      // input/textareaにフォーカスがある時は以下のショートカットを無視
+      if (isInputFocused) return
+
+      // Space: タイマー操作
+      if (e.key === " " && e.code === "Space") {
+        e.preventDefault()
+        if (isRunning) {
+          pause()
+        } else {
+          start()
         }
+        return
+      }
+
+      // 左矢印 / PageUp: 前のページ
+      if (e.key === "ArrowLeft" || e.key === "PageUp") {
+        e.preventDefault()
+        pdfViewerRef.current?.goToPrevPage()
+        return
+      }
+
+      // 右矢印 / PageDown: 次のページ
+      if (e.key === "ArrowRight" || e.key === "PageDown") {
+        e.preventDefault()
+        pdfViewerRef.current?.goToNextPage()
+        return
       }
     }
 
@@ -136,6 +167,9 @@ export default function MaterialDetailPage() {
 
   // PageMemoコンポーネントへの参照
   const memoRef = useRef<PageMemoRef>(null)
+
+  // PDFViewerコンポーネントへの参照
+  const pdfViewerRef = useRef<PDFViewerRef>(null)
 
   useEffect(() => {
     let urlWithout: string | null = null
@@ -288,6 +322,7 @@ export default function MaterialDetailPage() {
   // PDFビューアパネル
   const pdfPanel = (
     <PDFViewer
+      ref={pdfViewerRef}
       pdfUrl={currentPdfUrl}
       currentPage={currentPage}
       onPageChange={handlePageChange}

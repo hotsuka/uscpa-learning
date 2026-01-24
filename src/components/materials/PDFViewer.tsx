@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import "react-pdf/dist/Page/AnnotationLayer.css"
 import "react-pdf/dist/Page/TextLayer.css"
@@ -28,13 +28,21 @@ interface PDFViewerProps {
   className?: string
 }
 
-export function PDFViewer({
+// 外部から参照可能なメソッド
+export interface PDFViewerRef {
+  goToPrevPage: () => void
+  goToNextPage: () => void
+  zoomIn: () => void
+  zoomOut: () => void
+}
+
+export const PDFViewer = forwardRef<PDFViewerRef, PDFViewerProps>(function PDFViewer({
   pdfUrl,
   currentPage,
   onPageChange,
   onTotalPagesChange,
   className,
-}: PDFViewerProps) {
+}, ref) {
   const [numPages, setNumPages] = useState<number>(0)
   const [pageNumber, setPageNumber] = useState(currentPage || 1)
   const [scale, setScale] = useState(1.0)
@@ -79,6 +87,14 @@ export function PDFViewer({
   const handleZoomOut = () => {
     setScale((prev) => Math.max(0.5, prev - 0.25))
   }
+
+  // 外部からのアクセス用メソッドを公開
+  useImperativeHandle(ref, () => ({
+    goToPrevPage,
+    goToNextPage,
+    zoomIn: handleZoomIn,
+    zoomOut: handleZoomOut,
+  }), [numPages, pageNumber])
 
   const handlePageInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value)
@@ -172,4 +188,4 @@ export function PDFViewer({
       </div>
     </div>
   )
-}
+})
