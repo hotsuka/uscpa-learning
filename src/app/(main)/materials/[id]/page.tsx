@@ -111,13 +111,6 @@ export default function MaterialDetailPage() {
         return
       }
 
-      // Ctrl+F / Cmd+F: PDF検索
-      if ((e.ctrlKey || e.metaKey) && e.key === "f") {
-        e.preventDefault()
-        pdfViewerRef.current?.openSearch()
-        return
-      }
-
       // input/textareaにフォーカスがある時は以下のショートカットを無視
       if (isInputFocused) return
 
