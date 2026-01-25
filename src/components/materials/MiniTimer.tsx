@@ -41,6 +41,7 @@ export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniT
     isRunning,
     isPaused,
     isIdle,
+    elapsedSeconds,
     totalQuestions,
     correctAnswers,
     start,
@@ -50,9 +51,13 @@ export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniT
     setCorrectAnswers,
   } = useTimer()
 
-  // 今日の合計勉強時間
+  // 今日の合計勉強時間（記録済み）
   const getTodayTotalMinutes = useRecordStore((state) => state.getTodayTotalMinutes)
-  const todayTotalMinutes = getTodayTotalMinutes()
+  const recordedTodayMinutes = getTodayTotalMinutes()
+
+  // 現在のセッション時間を分に変換して加算
+  const currentSessionMinutes = Math.floor(elapsedSeconds / 60)
+  const todayTotalMinutes = recordedTodayMinutes + currentSessionMinutes
 
   // 日付チェック（日付が変わったらリセット）
   useEffect(() => {
