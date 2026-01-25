@@ -1,5 +1,6 @@
 "use client"
 
+import { forwardRef, useImperativeHandle } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
@@ -11,7 +12,15 @@ interface MiniTimerProps {
   className?: string
 }
 
-export function MiniTimer({ className }: MiniTimerProps) {
+// 外部から参照可能なメソッド
+export interface MiniTimerRef {
+  incrementQuestions: () => void
+  decrementQuestions: () => void
+  incrementCorrect: () => void
+  decrementCorrect: () => void
+}
+
+export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniTimer({ className }, ref) {
   const {
     subject,
     displayTime,
@@ -26,6 +35,39 @@ export function MiniTimer({ className }: MiniTimerProps) {
     setTotalQuestions,
     setCorrectAnswers,
   } = useTimer()
+
+  // 外部からのアクセス用メソッドを公開
+  useImperativeHandle(ref, () => ({
+    incrementQuestions: () => {
+      const current = Number(totalQuestions) || 0
+      setTotalQuestions(String(current + 1))
+    },
+    decrementQuestions: () => {
+      const current = Number(totalQuestions) || 0
+      if (current > 0) {
+        setTotalQuestions(String(current - 1))
+        // 正解数が問題数を超えないように調整
+        const correct = Number(correctAnswers) || 0
+        if (correct > current - 1) {
+          setCorrectAnswers(String(current - 1))
+        }
+      }
+    },
+    incrementCorrect: () => {
+      const current = Number(correctAnswers) || 0
+      const total = Number(totalQuestions) || 0
+      // 問題数を超えないように
+      if (total === 0 || current < total) {
+        setCorrectAnswers(String(current + 1))
+      }
+    },
+    decrementCorrect: () => {
+      const current = Number(correctAnswers) || 0
+      if (current > 0) {
+        setCorrectAnswers(String(current - 1))
+      }
+    },
+  }), [totalQuestions, correctAnswers, setTotalQuestions, setCorrectAnswers])
 
   return (
     <div className={cn("flex items-center gap-2 bg-muted/50 rounded-lg px-3 py-1.5", className)}>
@@ -132,4 +174,4 @@ export function MiniTimer({ className }: MiniTimerProps) {
       </div>
     </div>
   )
-}
+})

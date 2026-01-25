@@ -78,6 +78,14 @@ export function Sidebar() {
               <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">Space</kbd>
               <span>タイマー開始/停止</span>
             </div>
+            <div className="flex items-center justify-between">
+              <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">Q / Shift+Q</kbd>
+              <span>問題数 +/-</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">A / Shift+A</kbd>
+              <span>正解数 +/-</span>
+            </div>
           </div>
         </div>
       )}

@@ -7,7 +7,7 @@ import { Header } from "@/components/layout/Header"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { PageMemo, type PageMemoRef } from "@/components/materials/PageMemo"
-import { MiniTimer } from "@/components/materials/MiniTimer"
+import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
 import type { PDFViewerRef } from "@/components/materials/PDFViewer"
 import { ResizableHorizontalPanel, ResizableVerticalPanel } from "@/components/ui/resizable-panel"
 import { SUBJECTS, type Material } from "@/types"
@@ -152,6 +152,28 @@ export default function MaterialDetailPage() {
         pdfViewerRef.current?.goToNextPage()
         return
       }
+
+      // Q: 問題数を増減
+      if (e.key === "q" || e.key === "Q") {
+        e.preventDefault()
+        if (e.shiftKey) {
+          miniTimerRef.current?.decrementQuestions()
+        } else {
+          miniTimerRef.current?.incrementQuestions()
+        }
+        return
+      }
+
+      // A: 正解数を増減
+      if (e.key === "a" || e.key === "A") {
+        e.preventDefault()
+        if (e.shiftKey) {
+          miniTimerRef.current?.decrementCorrect()
+        } else {
+          miniTimerRef.current?.incrementCorrect()
+        }
+        return
+      }
     }
 
     window.addEventListener("keydown", handleKeyDown)
@@ -170,6 +192,9 @@ export default function MaterialDetailPage() {
 
   // PDFViewerコンポーネントへの参照
   const pdfViewerRef = useRef<PDFViewerRef>(null)
+
+  // MiniTimerコンポーネントへの参照
+  const miniTimerRef = useRef<MiniTimerRef>(null)
 
   useEffect(() => {
     let urlWithout: string | null = null
@@ -376,7 +401,7 @@ export default function MaterialDetailPage() {
           </div>
 
           {/* ミニタイマー（中央） */}
-          <MiniTimer className="hidden sm:flex" />
+          <MiniTimer ref={miniTimerRef} className="hidden sm:flex" />
 
           <div className="flex items-center gap-2">
             {/* 回答あり/なし切り替え */}
