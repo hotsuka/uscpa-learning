@@ -174,11 +174,21 @@ export default function MaterialDetailPage() {
         }
         return
       }
+
+      // V: 回答あり/なし切り替え
+      if (e.key === "v" || e.key === "V") {
+        e.preventDefault()
+        // 回答ありPDFがある場合のみ切り替え
+        if (pdfUrlWith) {
+          setShowAnswers((prev) => !prev)
+        }
+        return
+      }
     }
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [isRunning, isPaused, isIdle, start, pause])
+  }, [isRunning, isPaused, isIdle, start, pause, pdfUrlWith])
 
   // レイアウトモード切り替え
   const toggleLayoutMode = () => {

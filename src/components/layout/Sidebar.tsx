@@ -86,6 +86,10 @@ export function Sidebar() {
               <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">A / Shift+A</kbd>
               <span>正解数 +/-</span>
             </div>
+            <div className="flex items-center justify-between">
+              <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">V</kbd>
+              <span>回答あり/なし</span>
+            </div>
           </div>
         </div>
       )}
