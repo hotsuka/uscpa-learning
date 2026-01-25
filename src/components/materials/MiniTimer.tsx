@@ -1,12 +1,26 @@
 "use client"
 
-import { forwardRef, useImperativeHandle } from "react"
+import { forwardRef, useImperativeHandle, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { useTimer } from "@/hooks/useTimer"
-import { Play, Pause, Square, Clock } from "lucide-react"
+import { useRecordStore, checkAndResetDailyMinutes } from "@/stores/recordStore"
+import { Play, Pause, Square, Clock, Calendar } from "lucide-react"
 import { cn } from "@/lib/utils"
+
+// 分を「Xh Xm」形式にフォーマット
+function formatMinutesToHoursMinutes(minutes: number): string {
+  const hours = Math.floor(minutes / 60)
+  const mins = minutes % 60
+  if (hours > 0 && mins > 0) {
+    return `${hours}h ${mins}m`
+  } else if (hours > 0) {
+    return `${hours}h`
+  } else {
+    return `${mins}m`
+  }
+}
 
 interface MiniTimerProps {
   className?: string
@@ -35,6 +49,15 @@ export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniT
     setTotalQuestions,
     setCorrectAnswers,
   } = useTimer()
+
+  // 今日の合計勉強時間
+  const getTodayTotalMinutes = useRecordStore((state) => state.getTodayTotalMinutes)
+  const todayTotalMinutes = getTodayTotalMinutes()
+
+  // 日付チェック（日付が変わったらリセット）
+  useEffect(() => {
+    checkAndResetDailyMinutes()
+  }, [])
 
   // 外部からのアクセス用メソッドを公開
   useImperativeHandle(ref, () => ({
@@ -71,6 +94,15 @@ export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniT
 
   return (
     <div className={cn("flex items-center gap-2 bg-muted/50 rounded-lg px-3 py-1.5", className)}>
+      {/* 今日の合計勉強時間 */}
+      <div className="flex items-center gap-1 text-muted-foreground" title="今日の合計勉強時間">
+        <Calendar className="h-3.5 w-3.5" />
+        <span className="text-xs font-medium">{formatMinutesToHoursMinutes(todayTotalMinutes)}</span>
+      </div>
+
+      {/* 区切り線 */}
+      <div className="w-px h-5 bg-border" />
+
       {/* 科目バッジ */}
       <Badge variant="outline" className="text-xs">
         {subject}
