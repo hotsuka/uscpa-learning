@@ -51,9 +51,12 @@ export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniT
     setCorrectAnswers,
   } = useTimer()
 
-  // 今日の合計勉強時間（記録済み）
-  const getTodayTotalMinutes = useRecordStore((state) => state.getTodayTotalMinutes)
-  const recordedTodayMinutes = getTodayTotalMinutes()
+  // 今日の合計勉強時間（記録済み）- recordsから直接計算
+  const recordedTodayMinutes = useRecordStore((state) => {
+    const today = new Date().toISOString().split("T")[0]
+    const todayRecords = state.records.filter((r) => r.studiedAt === today)
+    return todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0)
+  })
 
   // 現在のセッション時間を分に変換して加算
   const currentSessionMinutes = Math.floor(elapsedSeconds / 60)
