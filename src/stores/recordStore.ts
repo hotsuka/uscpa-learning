@@ -290,10 +290,11 @@ export const useRecordStore = create<RecordState>()(
         return Math.round(totalMinutes / 60 * 10) / 10 // 小数点1桁
       },
 
-      // 今日の全科目合計（分単位）
+      // 今日の全科目合計（分単位）- recordsから計算
       getTodayTotalMinutes: () => {
-        const todayMinutes = get().todayStudyMinutes
-        return Object.values(todayMinutes).reduce((sum, m) => sum + m, 0)
+        const today = new Date().toISOString().split("T")[0]
+        const todayRecords = get().records.filter((r) => r.studiedAt === today)
+        return todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0)
       },
 
       // 科目別の今日の学習時間（分単位）
