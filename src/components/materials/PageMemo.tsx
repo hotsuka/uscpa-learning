@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback, useImperativeHandle, forwardRef } from "react"
+import { useState, useEffect, useCallback, useImperativeHandle, forwardRef, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -100,18 +100,63 @@ export const PageMemo = forwardRef<PageMemoRef, PageMemoProps>(
   const [currentContent, setCurrentContent] = useState("")
   const [isDirty, setIsDirty] = useState(false)
 
+  // refで最新の値を保持
+  const currentContentRef = useRef(currentContent)
+  const currentPageRef = useRef(currentPage)
+  const memosRef = useRef(memos)
+  const isDirtyRef = useRef(isDirty)
+  const prevPageRef = useRef(currentPage)
+
+  // ページ変更を検知して自動保存
+  if (currentPage !== prevPageRef.current) {
+    // 前のページに未保存の変更がある場合は保存
+    if (isDirtyRef.current && currentContentRef.current.trim()) {
+      const now = new Date().toISOString()
+      const prevPage = prevPageRef.current
+      const content = currentContentRef.current
+      const currentMemos = memosRef.current
+      const existingMemo = currentMemos[prevPage]
+
+      const updatedMemo: PageMemoData = {
+        id: existingMemo?.id || generateUUID(),
+        materialId,
+        pageNumber: prevPage,
+        content: content,
+        createdAt: existingMemo?.createdAt || now,
+        updatedAt: now,
+        notionSynced: false,
+      }
+
+      const updatedMemos = { ...currentMemos, [prevPage]: updatedMemo }
+      saveMemos(materialId, updatedMemos)
+
+      // 非同期でNotionに同期
+      syncMemoToNotion(updatedMemo).catch(console.error)
+    }
+
+    prevPageRef.current = currentPage
+  }
+
+  // refを同期的に更新
+  currentContentRef.current = currentContent
+  memosRef.current = memos
+  isDirtyRef.current = isDirty
+
   // 初回読み込み
   useEffect(() => {
     const loadedMemos = loadMemos(materialId)
     setMemos(loadedMemos)
   }, [materialId])
 
-  // ページ変更時に現在のメモを読み込む
+  // ページ変更時にlocalStorageから最新のメモを読み込む
   useEffect(() => {
-    const memo = memos[currentPage]
+    // localStorageから最新の状態を取得（自動保存後の反映のため）
+    const latestMemos = loadMemos(materialId)
+    setMemos(latestMemos)
+    const memo = latestMemos[currentPage]
     setCurrentContent(memo?.content || "")
     setIsDirty(false)
-  }, [currentPage, memos])
+  }, [currentPage, materialId])
 
   // isDirty状態の変更を親コンポーネントに通知
   useEffect(() => {
@@ -186,17 +231,62 @@ export const PageMemo = forwardRef<PageMemoRef, PageMemoProps>(
 
   // 外部からのアクセス用メソッドを公開
   useImperativeHandle(ref, () => ({
-    isDirty: () => isDirty,
+    isDirty: () => isDirtyRef.current,
     save: () => {
-      if (isDirty) {
-        handleSaveInternal()
+      // refから最新の値を取得して保存（クロージャーの古い値問題を回避）
+      const content = currentContentRef.current
+      const page = currentPageRef.current
+      const currentMemos = memosRef.current
+
+      if (!isDirtyRef.current) return
+
+      const now = new Date().toISOString()
+      const existingMemo = currentMemos[page]
+
+      const updatedMemo: PageMemoData = {
+        id: existingMemo?.id || generateUUID(),
+        materialId,
+        pageNumber: page,
+        content: content,
+        createdAt: existingMemo?.createdAt || now,
+        updatedAt: now,
+        notionSynced: false,
+      }
+
+      const updatedMemos = { ...currentMemos }
+
+      if (content.trim()) {
+        updatedMemos[page] = updatedMemo
+        setMemos(updatedMemos)
+        saveMemos(materialId, updatedMemos)
+        setIsDirty(false)
+
+        syncMemoToNotion(updatedMemo).then((synced) => {
+          if (synced) {
+            const latestMemos = loadMemos(materialId)
+            if (latestMemos[page]) {
+              latestMemos[page].notionSynced = true
+              saveMemos(materialId, latestMemos)
+            }
+          }
+        }).catch(console.error)
+      } else {
+        const memoToDelete = existingMemo
+        delete updatedMemos[page]
+        setMemos(updatedMemos)
+        saveMemos(materialId, updatedMemos)
+        setIsDirty(false)
+
+        if (memoToDelete?.id) {
+          deleteMemoFromNotion(memoToDelete.id).catch(console.error)
+        }
       }
     },
     confirmUnsavedChanges: () => {
-      if (!isDirty) return true
+      if (!isDirtyRef.current) return true
       return confirm("未保存のメモがあります。保存せずに続行しますか？")
     },
-  }), [isDirty, handleSaveInternal])
+  }), [materialId])
 
   // UIからの保存ボタンハンドラ
   const handleSave = () => {

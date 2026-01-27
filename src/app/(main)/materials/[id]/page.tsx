@@ -238,15 +238,9 @@ export default function MaterialDetailPage() {
     }
   }, [materialId])
 
-  // ページ選択時の処理（未保存チェック付き）
+  // ページ選択時の処理（自動保存はPageMemo内で行われる）
   const handlePageSelect = (page: number) => {
     if (page === currentPage) return
-
-    // 未保存の変更がある場合は確認
-    if (isMemoUnsaved) {
-      const shouldProceed = memoRef.current?.confirmUnsavedChanges()
-      if (!shouldProceed) return
-    }
     setCurrentPage(page)
   }
 
@@ -264,15 +258,9 @@ export default function MaterialDetailPage() {
     setIsMemoUnsaved(isDirty)
   }
 
-  // PDFビューアからのページ変更（未保存チェック付き）
+  // PDFビューアからのページ変更（自動保存付き）
   const handlePageChange = (page: number) => {
     if (page === currentPage) return
-
-    // 未保存の変更がある場合は確認
-    if (isMemoUnsaved) {
-      const shouldProceed = memoRef.current?.confirmUnsavedChanges()
-      if (!shouldProceed) return
-    }
     setCurrentPage(page)
   }
 
