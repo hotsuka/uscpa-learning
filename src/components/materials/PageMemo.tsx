@@ -139,6 +139,7 @@ export const PageMemo = forwardRef<PageMemoRef, PageMemoProps>(
 
   // refを同期的に更新
   currentContentRef.current = currentContent
+  currentPageRef.current = currentPage
   memosRef.current = memos
   isDirtyRef.current = isDirty
 
