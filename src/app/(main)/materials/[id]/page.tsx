@@ -392,6 +392,11 @@ export default function MaterialDetailPage() {
               >
                 {material.subject}
               </Badge>
+              {(material.subtopic ?? null) && (
+                <Badge variant="outline" className="text-xs">
+                  {material.subtopic}
+                </Badge>
+              )}
               <span className="font-medium text-sm truncate max-w-[120px] sm:max-w-[200px] md:max-w-none">
                 {material.name}
               </span>

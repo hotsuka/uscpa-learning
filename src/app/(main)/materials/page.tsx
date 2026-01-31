@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { SubjectSelector } from "@/components/timer/SubjectSelector"
+import { SubtopicSelector } from "@/components/timer/SubtopicSelector"
 import { SUBJECTS, type Subject, type Material } from "@/types"
 import { EmptyState } from "@/components/common/EmptyState"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
@@ -73,6 +74,7 @@ export default function MaterialsPage() {
   const [showUploadForm, setShowUploadForm] = useState(false)
   const [uploadName, setUploadName] = useState("")
   const [uploadSubject, setUploadSubject] = useState<Subject>("FAR")
+  const [uploadSubtopic, setUploadSubtopic] = useState("")
   const [pdfWithoutAnswers, setPdfWithoutAnswers] = useState<File | null>(null)
   const [pdfWithAnswers, setPdfWithAnswers] = useState<File | null>(null)
 
@@ -149,6 +151,7 @@ export default function MaterialsPage() {
         id: materialId,
         name: uploadName,
         subject: uploadSubject,
+        subtopic: uploadSubtopic || null,
         pdfWithoutAnswers: `indexeddb:${materialId}-without`, // IndexedDBへの参照
         pdfWithAnswers: pdfWithAnswers ? `indexeddb:${materialId}-with` : null,
         totalPages: 0,
@@ -161,6 +164,7 @@ export default function MaterialsPage() {
       saveMaterials(updatedMaterials)
       setShowUploadForm(false)
       setUploadName("")
+      setUploadSubtopic("")
       setPdfWithoutAnswers(null)
       setPdfWithAnswers(null)
     } catch (error) {
@@ -333,7 +337,20 @@ export default function MaterialsPage() {
                 <Label>科目</Label>
                 <SubjectSelector
                   value={uploadSubject}
-                  onChange={setUploadSubject}
+                  onChange={(v) => {
+                    setUploadSubject(v)
+                    setUploadSubtopic("")
+                  }}
+                  className="w-full"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label>サブテーマ（任意）</Label>
+                <SubtopicSelector
+                  subject={uploadSubject}
+                  value={uploadSubtopic}
+                  onChange={setUploadSubtopic}
                   className="w-full"
                 />
               </div>
@@ -452,15 +469,21 @@ export default function MaterialsPage() {
                           <FileText className="h-5 w-5 text-muted-foreground" />
                           <h3 className="font-medium line-clamp-2">{material.name}</h3>
                         </div>
-                        <Badge
-                          style={{
-                            backgroundColor: subjectInfo.lightColor,
-                            color: subjectInfo.color,
-                          }}
-                          className="shrink-0"
-                        >
-                          {material.subject}
-                        </Badge>
+                        <div className="flex items-center gap-1 shrink-0">
+                          <Badge
+                            style={{
+                              backgroundColor: subjectInfo.lightColor,
+                              color: subjectInfo.color,
+                            }}
+                          >
+                            {material.subject}
+                          </Badge>
+                          {(material.subtopic ?? null) && (
+                            <Badge variant="outline" className="text-xs">
+                              {material.subtopic}
+                            </Badge>
+                          )}
+                        </div>
                       </div>
 
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">

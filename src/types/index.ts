@@ -203,6 +203,7 @@ export interface Material {
   id: string
   name: string
   subject: Subject
+  subtopic: string | null
   // 回答なし版PDF
   pdfWithoutAnswers: string | null  // URL or base64
   // 回答あり版PDF
