@@ -14,6 +14,7 @@ import {
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogFooter,
@@ -130,6 +131,9 @@ export function SubtopicSelector({
         <DialogContent className="sm:max-w-[400px]">
           <DialogHeader>
             <DialogTitle>カスタムテーマを追加</DialogTitle>
+            <DialogDescription>
+              新しいサブテーマ名を入力してください
+            </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-4">
             <Input
