@@ -207,6 +207,10 @@ export const useTimerStore = create<TimerState>()(
         correctAnswers: state.correctAnswers,
         memo: state.memo,
       }),
+      merge: (persisted, current) => ({
+        ...current,
+        ...(persisted as object),
+      }),
     }
   )
 )
