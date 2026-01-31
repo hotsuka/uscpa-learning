@@ -38,7 +38,7 @@
 | バリデーション | Zod | 3.x | スキーマバリデーション |
 | グラフ | Recharts | 2.x | データ可視化 |
 | 日付操作 | date-fns | 3.x | 日付フォーマット・計算 |
-| BaaS | Supabase | latest | DB、認証、リアルタイム |
+| BaaS | Notion API | 2.x | DB同期バックエンド（Internal Integration） |
 | PWA | next-pwa | 5.x | Service Worker生成 |
 | テスト | Vitest + Testing Library | latest | ユニット・統合テスト |
 | Linter | ESLint + Prettier | latest | コード品質 |
@@ -79,27 +79,22 @@
 }
 ```
 
-### 2.3 Supabaseセットアップ手順
+### 2.3 Notion APIセットアップ手順（実装済み）
 
-1. **アカウント作成**
-   - https://supabase.com にアクセス
-   - GitHubアカウントでサインアップ
+1. **Internal Integration作成**
+   - https://www.notion.so/my-integrations にアクセス
+   - 「New integration」で Internal Integration を作成
+   - API キーを取得 → `NOTION_API_KEY`
 
-2. **プロジェクト作成**
-   - 「New Project」をクリック
-   - プロジェクト名: `uscpa-learning`
-   - リージョン: `Northeast Asia (Tokyo)` 推奨
-   - データベースパスワードを設定（安全な場所に保存）
+2. **データベース作成**
+   - Notion上で4つのデータベースを作成（Settings, Sessions, Records, Notes）
+   - 各DBのIDを環境変数に設定
 
-3. **API キー取得**
-   - Settings → API から以下を取得
-     - `Project URL` → NEXT_PUBLIC_SUPABASE_URL
-     - `anon public` → NEXT_PUBLIC_SUPABASE_ANON_KEY
+3. **環境変数**
+   - `NOTION_API_KEY` / `NOTION_SETTINGS_DB_ID` / `NOTION_SESSIONS_DB_ID` / `NOTION_RECORDS_DB_ID` / `NOTION_NOTES_DB_ID`
 
-4. **認証設定**
-   - Authentication → Providers
-   - Email を有効化
-   - 「Confirm email」をオフ（開発時）
+> **注**: 当初Supabaseで計画していたが、Notion API（Internal Integration）に変更。
+> 認証機能は未実装で、個人利用のシングルユーザー構成。
 
 ---
 
@@ -112,7 +107,7 @@
 | 1.1 | プロジェクト作成 | Next.js 14 + TypeScript | 基本プロジェクト |
 | 1.2 | Tailwind CSS設定 | カスタムテーマ設定 | tailwind.config.ts |
 | 1.3 | shadcn/ui導入 | 必要コンポーネント追加 | components/ui/* |
-| 1.4 | Supabase接続 | クライアント設定 | lib/supabase.ts |
+| 1.4 | Notion API接続 | クライアント設定 | lib/notion/client.ts |
 | 1.5 | 環境変数設定 | .env.local作成 | .env.local |
 | 1.6 | 認証機能実装 | ログイン/サインアップ | app/(auth)/* |
 | 1.7 | レイアウト作成 | 共通レイアウト | app/layout.tsx |
@@ -129,7 +124,7 @@ npx create-next-app@latest uscpa-learning --typescript --tailwind --eslint --app
 cd uscpa-learning
 
 # 追加パッケージインストール
-npm install @supabase/supabase-js @supabase/ssr zustand react-hook-form zod @hookform/resolvers date-fns recharts
+npm install @notionhq/client zustand react-hook-form zod @hookform/resolvers date-fns recharts
 
 # 開発用パッケージ
 npm install -D @types/node prettier eslint-config-prettier
@@ -149,153 +144,27 @@ npx shadcn@latest add button card input label tabs select dialog toast badge pro
 
 ```env
 # .env.local
-NEXT_PUBLIC_SUPABASE_URL=your-project-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+NOTION_API_KEY=secret_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+NOTION_SETTINGS_DB_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+NOTION_SESSIONS_DB_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+NOTION_RECORDS_DB_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+NOTION_NOTES_DB_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
-#### Step 1.4: Supabaseクライアント設定
+#### Step 1.4: Notion APIクライアント設定（実装済み）
 
 ```typescript
-// src/lib/supabase/client.ts
-import { createBrowserClient } from '@supabase/ssr'
+// src/lib/notion/client.ts
+import { Client } from '@notionhq/client'
 
-export function createClient() {
-  return createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  )
-}
+export const notion = new Client({
+  auth: process.env.NOTION_API_KEY,
+})
 ```
 
-```typescript
-// src/lib/supabase/server.ts
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { cookies } from 'next/headers'
-
-export async function createClient() {
-  const cookieStore = await cookies()
-
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {
-            // Server Component からの呼び出し時は無視
-          }
-        },
-      },
-    }
-  )
-}
-```
-
-#### Step 1.5: データベーススキーマ作成
-
-Supabase SQL Editorで実行:
-
-```sql
--- プロファイルテーブル
-CREATE TABLE profiles (
-  id UUID REFERENCES auth.users ON DELETE CASCADE PRIMARY KEY,
-  email TEXT NOT NULL,
-  exam_date DATE,
-  target_hours INTEGER DEFAULT 1000,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- 学習セッションテーブル
-CREATE TABLE study_sessions (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
-  subject TEXT NOT NULL CHECK (subject IN ('FAR', 'AUD', 'REG', 'BAR')),
-  duration_seconds INTEGER NOT NULL DEFAULT 0,
-  started_at TIMESTAMP WITH TIME ZONE NOT NULL,
-  ended_at TIMESTAMP WITH TIME ZONE,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- 過去問演習記録テーブル
-CREATE TABLE practice_records (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
-  subject TEXT NOT NULL CHECK (subject IN ('FAR', 'AUD', 'REG', 'BAR')),
-  topic TEXT,
-  total_questions INTEGER NOT NULL CHECK (total_questions > 0),
-  correct_answers INTEGER NOT NULL CHECK (correct_answers >= 0),
-  round_number INTEGER NOT NULL DEFAULT 1,
-  practiced_at DATE NOT NULL DEFAULT CURRENT_DATE,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  CONSTRAINT valid_answers CHECK (correct_answers <= total_questions)
-);
-
--- 学習ノートテーブル
-CREATE TABLE study_notes (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
-  title TEXT NOT NULL,
-  content TEXT,
-  tags TEXT[] DEFAULT '{}',
-  subject TEXT CHECK (subject IN ('FAR', 'AUD', 'REG', 'BAR')),
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- インデックス作成
-CREATE INDEX idx_study_sessions_user_id ON study_sessions(user_id);
-CREATE INDEX idx_study_sessions_started_at ON study_sessions(started_at);
-CREATE INDEX idx_practice_records_user_id ON practice_records(user_id);
-CREATE INDEX idx_practice_records_practiced_at ON practice_records(practiced_at);
-CREATE INDEX idx_study_notes_user_id ON study_notes(user_id);
-CREATE INDEX idx_study_notes_tags ON study_notes USING GIN(tags);
-
--- Row Level Security 有効化
-ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
-ALTER TABLE study_sessions ENABLE ROW LEVEL SECURITY;
-ALTER TABLE practice_records ENABLE ROW LEVEL SECURITY;
-ALTER TABLE study_notes ENABLE ROW LEVEL SECURITY;
-
--- RLSポリシー作成
-CREATE POLICY "Users can view own profile" ON profiles
-  FOR SELECT USING (auth.uid() = id);
-
-CREATE POLICY "Users can update own profile" ON profiles
-  FOR UPDATE USING (auth.uid() = id);
-
-CREATE POLICY "Users can insert own profile" ON profiles
-  FOR INSERT WITH CHECK (auth.uid() = id);
-
-CREATE POLICY "Users can manage own sessions" ON study_sessions
-  FOR ALL USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can manage own practice records" ON practice_records
-  FOR ALL USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can manage own notes" ON study_notes
-  FOR ALL USING (auth.uid() = user_id);
-
--- プロファイル自動作成トリガー
-CREATE OR REPLACE FUNCTION public.handle_new_user()
-RETURNS TRIGGER AS $$
-BEGIN
-  INSERT INTO public.profiles (id, email)
-  VALUES (NEW.id, NEW.email);
-  RETURN NEW;
-END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
-
-CREATE TRIGGER on_auth_user_created
-  AFTER INSERT ON auth.users
-  FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
-```
+> **注**: データベーススキーマはNotionデータベースのプロパティとして定義。
+> 詳細は「6.14 Notionデータベース構成」を参照。
 
 #### Step 1.6: 型定義
 
@@ -348,8 +217,8 @@ export interface StudyNote {
 ### 3.3 完了条件
 
 - [x] `npm run dev` でエラーなく起動
-- [ ] Supabaseとの接続確認（未実装 - ローカルストレージで代替中）
-- [ ] ユーザー登録・ログインができる（未実装）
+- [x] Notion APIとの接続確認（Internal Integration）
+- [x] ~~ユーザー登録・ログイン~~（個人利用のため未実装、認証不要）
 - [x] 認証後のリダイレクトが正常動作
 - [x] レスポンシブレイアウトが表示される
 
@@ -363,7 +232,7 @@ export interface StudyNote {
 |---|--------|------|--------|
 | 2.1 | タイマーUI | ストップウォッチ/ポモドーロ切替 | components/timer/* |
 | 2.2 | タイマーロジック | 時間計測、バックグラウンド対応 | hooks/useTimer.ts |
-| 2.3 | セッション保存 | Supabaseへの記録保存 | actions/sessions.ts |
+| 2.3 | セッション保存 | Notion APIへの記録保存 | api/notion/sessions/route.ts |
 | 2.4 | 過去問記録フォーム | 入力フォームとバリデーション | components/practice/* |
 | 2.5 | 過去問記録一覧 | 記録の表示・編集・削除 | app/records/* |
 | 2.6 | ノートエディタ | Markdown入力対応 | components/notes/* |
@@ -1098,10 +967,13 @@ src/
 │   ├── usePracticeRecords.ts
 │   └── useStudyNotes.ts
 ├── lib/
-│   ├── supabase/
+│   ├── notion/
 │   │   ├── client.ts
-│   │   ├── server.ts
-│   │   └── middleware.ts
+│   │   ├── sessions.ts
+│   │   ├── records.ts
+│   │   ├── notes.ts
+│   │   ├── settings.ts
+│   │   └── types.ts
 │   ├── validations/
 │   │   ├── practice.ts
 │   │   └── note.ts
@@ -1177,25 +1049,17 @@ export const useTimerStore = create<TimerState>((set) => ({
 | deleteNote | ノート削除 | id | void |
 | updateProfile | プロフィール更新 | ProfileInput | Profile |
 
-### 9.2 リアルタイム購読
+### 9.2 Notion同期方式
 
-```typescript
-// セッション変更の購読例
-const channel = supabase
-  .channel('study_sessions')
-  .on(
-    'postgres_changes',
-    {
-      event: '*',
-      schema: 'public',
-      table: 'study_sessions',
-      filter: `user_id=eq.${userId}`,
-    },
-    (payload) => {
-      // 状態更新処理
-    }
-  )
-  .subscribe()
+```
+ローカルファーストアーキテクチャ:
+- 主データソース: localStorage（Zustand persist）
+- 同期バックエンド: Notion API（Internal Integration）
+- 同期タイミング:
+  1. アプリ起動時（useSyncOnMount: 5分間隔チェック）
+  2. オンライン復帰時（useSyncOnOnline）
+  3. データ作成/更新/削除時に非同期同期
+- オフライン対応: 同期キューにlocalStorage永続化、オンライン時に一括処理
 ```
 
 ---
@@ -1239,7 +1103,7 @@ npm run test:coverage
 
 1. GitHubリポジトリ作成
 2. Vercelアカウント作成・GitHub連携
-3. 本番用Supabaseプロジェクト作成（または既存を使用）
+3. Notion Internal Integrationの本番API Key設定
 
 ### 11.2 Vercelデプロイ設定
 
@@ -1249,8 +1113,12 @@ npm run test:coverage
 
 2. **環境変数設定**
    ```
-   NEXT_PUBLIC_SUPABASE_URL=本番URL
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=本番Key
+   NOTION_API_KEY=本番APIキー
+   NOTION_SETTINGS_DB_ID=本番設定DB ID
+   NOTION_SESSIONS_DB_ID=本番セッションDB ID
+   NOTION_RECORDS_DB_ID=本番記録DB ID
+   NOTION_NOTES_DB_ID=本番ノートDB ID
+   NEXT_PUBLIC_APP_URL=https://your-domain.vercel.app
    ```
 
 3. **ビルド設定**
@@ -1263,12 +1131,12 @@ npm run test:coverage
 
 ### 11.3 デプロイ後の確認
 
-- [ ] トップページが表示される
-- [ ] ユーザー登録ができる
-- [ ] ログイン/ログアウトができる
-- [ ] タイマーが動作する
-- [ ] データが保存・取得できる
-- [ ] PWAとしてインストールできる
+- [x] トップページが表示される（ダッシュボードにリダイレクト）
+- [x] ~~ユーザー登録ができる~~（個人利用のため不要）
+- [x] ~~ログイン/ログアウトができる~~（個人利用のため不要）
+- [x] タイマーが動作する
+- [x] データが保存・取得できる（localStorage + Notion同期）
+- [x] PWAとしてインストールできる
 
 ---
 
