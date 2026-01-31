@@ -42,7 +42,7 @@ export function SubtopicSelector({
   disabled,
 }: SubtopicSelectorProps) {
   const presetSubtopics = SUBJECT_SUBTOPICS[subject]
-  const customSubtopics = useSettingsStore((s) => s.customSubtopics[subject] || [])
+  const customSubtopics = useSettingsStore((s) => s.customSubtopics?.[subject] ?? [])
   const addCustomSubtopic = useSettingsStore((s) => s.addCustomSubtopic)
 
   const [showAddDialog, setShowAddDialog] = useState(false)

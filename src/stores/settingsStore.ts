@@ -238,6 +238,17 @@ export const useSettingsStore = create<SettingsState>()(
         notionPageId: state.notionPageId,
         lastSyncedAt: state.lastSyncedAt,
       }),
+      merge: (persisted, current) => ({
+        ...current,
+        ...(persisted as object),
+        customSubtopics: {
+          FAR: [],
+          AUD: [],
+          REG: [],
+          BAR: [],
+          ...((persisted as Record<string, unknown>)?.customSubtopics as Record<string, string[]> || {}),
+        },
+      }),
     }
   )
 )
