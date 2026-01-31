@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Plus } from "lucide-react"
 import { type Subject, SUBJECT_SUBTOPICS } from "@/types"
 import { useSettingsStore } from "@/stores/settingsStore"
 
@@ -32,7 +33,6 @@ interface SubtopicSelectorProps {
 }
 
 const NONE_VALUE = "__none__"
-const ADD_NEW_VALUE = "__add_new__"
 
 export function SubtopicSelector({
   subject,
@@ -52,11 +52,6 @@ export function SubtopicSelector({
   const allSubtopics = [...presetSubtopics, ...customSubtopics]
 
   const handleChange = (newValue: string) => {
-    if (newValue === ADD_NEW_VALUE) {
-      // Selectのクローズ後にDialogを開く（フォーカス競合回避）
-      requestAnimationFrame(() => setShowAddDialog(true))
-      return
-    }
     onChange(newValue === NONE_VALUE ? "" : newValue)
   }
 
@@ -87,40 +82,49 @@ export function SubtopicSelector({
 
   return (
     <>
-      <Select
-        value={value || NONE_VALUE}
-        onValueChange={handleChange}
-        disabled={disabled}
-      >
-        <SelectTrigger className={className}>
-          <SelectValue placeholder="サブテーマを選択..." />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value={NONE_VALUE}>（指定なし）</SelectItem>
-          {presetSubtopics.map((subtopic) => (
-            <SelectItem key={subtopic} value={subtopic}>
-              {subtopic}
-            </SelectItem>
-          ))}
-          {customSubtopics.length > 0 && (
-            <>
-              <SelectSeparator />
-              <SelectGroup>
-                <SelectLabel>カスタムテーマ</SelectLabel>
-                {customSubtopics.map((subtopic) => (
-                  <SelectItem key={subtopic} value={subtopic}>
-                    {subtopic}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </>
-          )}
-          <SelectSeparator />
-          <SelectItem value={ADD_NEW_VALUE} className="text-primary">
-            + 新しいテーマを追加...
-          </SelectItem>
-        </SelectContent>
-      </Select>
+      <div className="flex gap-1">
+        <Select
+          value={value || NONE_VALUE}
+          onValueChange={handleChange}
+          disabled={disabled}
+        >
+          <SelectTrigger className={className}>
+            <SelectValue placeholder="サブテーマを選択..." />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value={NONE_VALUE}>（指定なし）</SelectItem>
+            {presetSubtopics.map((subtopic) => (
+              <SelectItem key={subtopic} value={subtopic}>
+                {subtopic}
+              </SelectItem>
+            ))}
+            {customSubtopics.length > 0 && (
+              <>
+                <SelectSeparator />
+                <SelectGroup>
+                  <SelectLabel>カスタムテーマ</SelectLabel>
+                  {customSubtopics.map((subtopic) => (
+                    <SelectItem key={subtopic} value={subtopic}>
+                      {subtopic}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </>
+            )}
+          </SelectContent>
+        </Select>
+        <Button
+          type="button"
+          variant="outline"
+          size="icon"
+          className="shrink-0"
+          disabled={disabled}
+          onClick={() => setShowAddDialog(true)}
+          title="カスタムテーマを追加"
+        >
+          <Plus className="h-4 w-4" />
+        </Button>
+      </div>
 
       <Dialog open={showAddDialog} onOpenChange={handleDialogClose}>
         <DialogContent className="sm:max-w-[400px]">
