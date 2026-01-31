@@ -10,7 +10,8 @@ import { PageMemo, type PageMemoRef } from "@/components/materials/PageMemo"
 import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
 import type { PDFViewerRef } from "@/components/materials/PDFViewer"
 import { ResizableHorizontalPanel, ResizableVerticalPanel } from "@/components/ui/resizable-panel"
-import { SUBJECTS, type Material } from "@/types"
+import { SUBJECTS, type Subject, type Material } from "@/types"
+import { SubtopicSelector } from "@/components/timer/SubtopicSelector"
 import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
 import { useIsDesktop } from "@/hooks/useMediaQuery"
 import { useTimer } from "@/hooks/useTimer"
@@ -68,6 +69,17 @@ const getMaterial = (id: string): Material | null => {
     }
   }
   return null
+}
+
+// ローカルストレージの教材データを更新
+const updateMaterialInStorage = (id: string, updates: Partial<Material>) => {
+  const storedMaterials = localStorage.getItem("uscpa-materials")
+  if (!storedMaterials) return
+  const materials: Material[] = JSON.parse(storedMaterials)
+  const updated = materials.map(m =>
+    m.id === id ? { ...m, ...updates, updatedAt: new Date().toISOString() } : m
+  )
+  localStorage.setItem("uscpa-materials", JSON.stringify(updated))
 }
 
 export default function MaterialDetailPage() {
@@ -392,11 +404,16 @@ export default function MaterialDetailPage() {
               >
                 {material.subject}
               </Badge>
-              {(material.subtopic ?? null) && (
-                <Badge variant="outline" className="text-xs">
-                  {material.subtopic}
-                </Badge>
-              )}
+              <SubtopicSelector
+                subject={material.subject}
+                value={material.subtopic ?? ""}
+                onChange={(newSubtopic) => {
+                  const updated = { ...material, subtopic: newSubtopic || null }
+                  setMaterial(updated)
+                  updateMaterialInStorage(materialId, { subtopic: newSubtopic || null })
+                }}
+                className="w-[140px] sm:w-[180px] h-8 text-xs"
+              />
               <span className="font-medium text-sm truncate max-w-[120px] sm:max-w-[200px] md:max-w-none">
                 {material.name}
               </span>
