@@ -13,6 +13,7 @@ import { type Subject, type RecordType } from "@/types"
 import { BookOpen, FileQuestion, Clock, Timer } from "lucide-react"
 import { useRecordStore, checkAndResetDailyMinutes } from "@/stores/recordStore"
 import { formatMinutes } from "@/lib/utils"
+import { practiceRecordSchema } from "@/lib/validations/practice"
 
 export default function NewRecordPage() {
   const router = useRouter()
@@ -57,6 +58,7 @@ export default function NewRecordPage() {
   const [pageRange, setPageRange] = useState("")
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [validationError, setValidationError] = useState<string | null>(null)
 
   // 今日の全科目の学習時間
   const todayTotalMinutes = getTodayTotalMinutes()
@@ -71,26 +73,30 @@ export default function NewRecordPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
+    setValidationError(null)
 
-    // 記録をストアに保存
-    addRecord({
+    const input = {
       recordType,
       subject,
       subtopic: subtopic || null,
       studyMinutes: totalStudyMinutes,
       studiedAt,
       memo: memo || null,
-      // 過去問演習用
-      totalQuestions: recordType === "practice" ? parseInt(totalQuestions) : null,
-      correctAnswers: recordType === "practice" ? parseInt(correctAnswers) : null,
-      roundNumber: recordType === "practice" ? parseInt(roundNumber) : null,
-      // テキスト復習用
+      totalQuestions: recordType === "practice" ? (parseInt(totalQuestions) || 0) : null,
+      correctAnswers: recordType === "practice" ? (parseInt(correctAnswers) || 0) : null,
+      roundNumber: recordType === "practice" ? (parseInt(roundNumber) || null) : null,
       chapter: recordType === "textbook" ? (chapter || null) : null,
       pageRange: recordType === "textbook" ? (pageRange || null) : null,
-    })
+    }
 
-    console.log("Record saved to store")
+    const result = practiceRecordSchema.safeParse(input)
+    if (!result.success) {
+      setValidationError(result.error.errors[0]?.message || "入力内容に誤りがあります")
+      return
+    }
+
+    setIsSubmitting(true)
+    addRecord(input)
     router.push("/records")
   }
 
@@ -309,6 +315,10 @@ export default function NewRecordPage() {
                     className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   />
                 </div>
+
+                {validationError && (
+                  <p className="text-sm text-destructive">{validationError}</p>
+                )}
 
                 <div className="flex gap-4">
                   <Button

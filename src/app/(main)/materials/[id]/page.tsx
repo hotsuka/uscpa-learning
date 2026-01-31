@@ -14,6 +14,7 @@ import { SUBJECTS, type Material } from "@/types"
 import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
 import { useIsDesktop } from "@/hooks/useMediaQuery"
 import { useTimer } from "@/hooks/useTimer"
+import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 
 // PDFViewerはクライアントサイドのみで読み込む
 const PDFViewer = dynamic(
@@ -83,6 +84,7 @@ export default function MaterialDetailPage() {
   const [totalPages, setTotalPages] = useState(0)
   const [showMemoPanel, setShowMemoPanel] = useState(true)
   const [isMemoUnsaved, setIsMemoUnsaved] = useState(false)
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false)
   const [layoutMode, setLayoutMode] = useState<LayoutMode>("horizontal")
 
   // PC/モバイル判定
@@ -265,32 +267,30 @@ export default function MaterialDetailPage() {
   }
 
   const handleDeleteMaterial = async () => {
-    if (confirm("この教材を削除しますか？メモも全て削除されます。")) {
-      try {
-        // IndexedDBからPDFを削除
-        await deleteAllPDFsForMaterial(materialId)
+    try {
+      // IndexedDBからPDFを削除
+      await deleteAllPDFsForMaterial(materialId)
 
-        // localStorageから教材メタデータを削除
-        const storedMaterials = localStorage.getItem("uscpa-materials")
-        if (storedMaterials) {
-          const materials: Material[] = JSON.parse(storedMaterials)
-          const updatedMaterials = materials.filter(m => m.id !== materialId)
-          localStorage.setItem("uscpa-materials", JSON.stringify(updatedMaterials))
-        }
-
-        // メモも削除
-        const storedMemos = localStorage.getItem("uscpa-page-memos")
-        if (storedMemos) {
-          const allMemos = JSON.parse(storedMemos)
-          delete allMemos[materialId]
-          localStorage.setItem("uscpa-page-memos", JSON.stringify(allMemos))
-        }
-
-        router.push("/materials")
-      } catch (error) {
-        console.error("Failed to delete material:", error)
-        alert("教材の削除に失敗しました")
+      // localStorageから教材メタデータを削除
+      const storedMaterials = localStorage.getItem("uscpa-materials")
+      if (storedMaterials) {
+        const materials: Material[] = JSON.parse(storedMaterials)
+        const updatedMaterials = materials.filter(m => m.id !== materialId)
+        localStorage.setItem("uscpa-materials", JSON.stringify(updatedMaterials))
       }
+
+      // メモも削除
+      const storedMemos = localStorage.getItem("uscpa-page-memos")
+      if (storedMemos) {
+        const allMemos = JSON.parse(storedMemos)
+        delete allMemos[materialId]
+        localStorage.setItem("uscpa-page-memos", JSON.stringify(allMemos))
+      }
+
+      router.push("/materials")
+    } catch (error) {
+      console.error("Failed to delete material:", error)
+      alert("教材の削除に失敗しました")
     }
   }
 
@@ -456,7 +456,7 @@ export default function MaterialDetailPage() {
               variant="ghost"
               size="sm"
               className="text-destructive hover:text-destructive"
-              onClick={handleDeleteMaterial}
+              onClick={() => setShowDeleteDialog(true)}
             >
               <Trash2 className="h-4 w-4" />
             </Button>
@@ -519,6 +519,16 @@ export default function MaterialDetailPage() {
           </div>
         )}
       </div>
+
+      <ConfirmDialog
+        open={showDeleteDialog}
+        onOpenChange={setShowDeleteDialog}
+        title="教材を削除"
+        description="この教材を削除しますか？メモも全て削除されます。"
+        confirmLabel="削除"
+        variant="destructive"
+        onConfirm={handleDeleteMaterial}
+      />
     </>
   )
 }

@@ -7,6 +7,8 @@ import { Header } from "@/components/layout/Header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { SubjectBadge } from "@/components/common/SubjectBadge"
+import { EmptyState } from "@/components/common/EmptyState"
 import { DailySummary } from "@/components/records/DailySummary"
 import { useRecordStore } from "@/stores/recordStore"
 import { formatMinutes } from "@/lib/utils"
@@ -55,11 +57,7 @@ export default function RecordsPage() {
                       <div className="flex items-start justify-between">
                         <div className="space-y-1">
                           <div className="flex items-center gap-2">
-                            <Badge
-                              variant={record.subject.toLowerCase() as "far" | "aud" | "reg" | "bar"}
-                            >
-                              {record.subject}
-                            </Badge>
+                            <SubjectBadge subject={record.subject} />
                             {record.recordType === "practice" && record.roundNumber && (
                               <span className="text-sm text-muted-foreground">
                                 {record.roundNumber}周目
@@ -115,16 +113,15 @@ export default function RecordsPage() {
 
           {sortedRecords.length === 0 && (
             <Card>
-              <CardContent className="py-12 text-center">
-                <p className="text-muted-foreground">
-                  まだ記録がありません
-                </p>
-                <Button asChild className="mt-4">
-                  <Link href="/records/new">
-                    <Plus className="h-4 w-4 mr-2" />
-                    最初の記録を追加
-                  </Link>
-                </Button>
+              <CardContent className="text-center">
+                <EmptyState message="まだ記録がありません">
+                  <Button asChild className="mt-4">
+                    <Link href="/records/new">
+                      <Plus className="h-4 w-4 mr-2" />
+                      最初の記録を追加
+                    </Link>
+                  </Button>
+                </EmptyState>
               </CardContent>
             </Card>
           )}

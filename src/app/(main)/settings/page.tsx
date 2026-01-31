@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
+import { Loading } from "@/components/common/Loading"
 import { SUBJECTS, type Subject } from "@/types"
 import { useSettingsStore } from "@/stores/settingsStore"
 import { useRecordStore } from "@/stores/recordStore"
@@ -120,10 +121,7 @@ export default function SettingsPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             {authLoading ? (
-              <div className="flex items-center gap-3">
-                <div className="h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-                <span className="text-muted-foreground">接続状態を確認中...</span>
-              </div>
+              <Loading size="sm" message="接続状態を確認中..." />
             ) : !isConfigured ? (
               <div className="space-y-4">
                 <div className="flex items-center gap-3">

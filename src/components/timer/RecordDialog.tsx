@@ -17,6 +17,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { BookOpen, FileText, Loader2 } from "lucide-react"
 import { SUBJECTS, type Subject, type RecordType } from "@/types"
 import { formatMinutes } from "@/lib/utils"
+import { practiceRecordSchema } from "@/lib/validations/practice"
 
 interface RecordDialogProps {
   open: boolean
@@ -69,6 +70,7 @@ export function RecordDialog({
   const [pageRange, setPageRange] = useState<string>("")
   const [memo, setMemo] = useState<string>(initialMemo)
   const [isSaving, setIsSaving] = useState(false)
+  const [validationError, setValidationError] = useState<string | null>(null)
 
   // ダイアログが開いた時に初期値を設定
   useEffect(() => {
@@ -84,6 +86,7 @@ export function RecordDialog({
     : null
 
   const handleSave = async () => {
+    setValidationError(null)
     setIsSaving(true)
     try {
       const data: RecordData = {
@@ -99,6 +102,13 @@ export function RecordDialog({
         memo: memo || null,
         studiedAt: new Date().toISOString().split("T")[0],
       }
+
+      const result = practiceRecordSchema.safeParse(data)
+      if (!result.success) {
+        setValidationError(result.error.errors[0]?.message || "入力内容に誤りがあります")
+        return
+      }
+
       await onSave(data)
       // フォームをリセット
       resetForm()
@@ -270,6 +280,10 @@ export function RecordDialog({
             />
           </div>
         </div>
+
+        {validationError && (
+          <p className="text-sm text-destructive">{validationError}</p>
+        )}
 
         <DialogFooter className="gap-2 sm:gap-0">
           <Button variant="outline" onClick={handleCancel} disabled={isSaving}>

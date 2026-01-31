@@ -14,6 +14,7 @@ import type { Subject } from "@/types"
 import { X, Plus, Eye, Edit } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { noteSchema } from "@/lib/validations/note"
 
 export default function NewNotePage() {
   const router = useRouter()
@@ -24,6 +25,7 @@ export default function NewNotePage() {
   const [tags, setTags] = useState<string[]>([])
   const [tagInput, setTagInput] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [validationError, setValidationError] = useState<string | null>(null)
 
   const handleAddTag = () => {
     const trimmedTag = tagInput.trim()
@@ -46,16 +48,17 @@ export default function NewNotePage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setValidationError(null)
+
+    const input = { title, content, subject, tags }
+    const result = noteSchema.safeParse(input)
+    if (!result.success) {
+      setValidationError(result.error.errors[0]?.message || "入力内容に誤りがあります")
+      return
+    }
+
     setIsSubmitting(true)
-
-    // ストアに保存
-    addNote({
-      title,
-      content,
-      subject,
-      tags,
-    })
-
+    addNote(input)
     router.push("/notes")
   }
 
@@ -164,6 +167,10 @@ export default function NewNotePage() {
                     タグをクリックすると削除できます
                   </p>
                 </div>
+
+                {validationError && (
+                  <p className="text-sm text-destructive">{validationError}</p>
+                )}
 
                 <div className="flex gap-4">
                   <Button

@@ -14,6 +14,10 @@ import { BookOpen, FileQuestion, Clock, Pencil, Save, X, Trash2, FileText } from
 import { useRecordStore } from "@/stores/recordStore"
 import { formatMinutes } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
+import { SubjectBadge } from "@/components/common/SubjectBadge"
+import { EmptyState } from "@/components/common/EmptyState"
+import { ConfirmDialog } from "@/components/common/ConfirmDialog"
+import { practiceRecordSchema } from "@/lib/validations/practice"
 
 export default function RecordDetailPage() {
   const router = useRouter()
@@ -23,6 +27,7 @@ export default function RecordDetailPage() {
 
   const record = getRecordById(recordId)
   const [isEditing, setIsEditing] = useState(false)
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false)
 
   // 編集用state
   const [recordType, setRecordType] = useState<RecordType>("practice")
@@ -38,6 +43,7 @@ export default function RecordDetailPage() {
   const [chapter, setChapter] = useState("")
   const [pageRange, setPageRange] = useState("")
   const [isSaving, setIsSaving] = useState(false)
+  const [validationError, setValidationError] = useState<string | null>(null)
 
   // レコードデータを編集用ステートに設定
   useEffect(() => {
@@ -69,16 +75,16 @@ export default function RecordDetailPage() {
         <div className="p-4 md:p-8">
           <div className="max-w-xl mx-auto">
             <Card>
-              <CardContent className="py-12 text-center">
-                <FileText className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                <p className="text-muted-foreground">記録が見つかりません</p>
-                <Button
-                  variant="outline"
-                  className="mt-4"
-                  onClick={() => router.push("/records")}
-                >
-                  記録一覧に戻る
-                </Button>
+              <CardContent className="text-center">
+                <EmptyState message="記録が見つかりません" icon={FileText}>
+                  <Button
+                    variant="outline"
+                    className="mt-4"
+                    onClick={() => router.push("/records")}
+                  >
+                    記録一覧に戻る
+                  </Button>
+                </EmptyState>
               </CardContent>
             </Card>
           </div>
@@ -96,31 +102,38 @@ export default function RecordDetailPage() {
       : 0
 
   const handleSave = async () => {
+    setValidationError(null)
     setIsSaving(true)
 
-    updateRecord(recordId, {
+    const input = {
       recordType,
       subject,
       subtopic: subtopic || null,
       studyMinutes: totalStudyMinutes,
       studiedAt,
       memo: memo || null,
-      totalQuestions: recordType === "practice" ? (parseInt(totalQuestions) || null) : null,
-      correctAnswers: recordType === "practice" ? (parseInt(correctAnswers) || null) : null,
+      totalQuestions: recordType === "practice" ? (parseInt(totalQuestions) || 0) : null,
+      correctAnswers: recordType === "practice" ? (parseInt(correctAnswers) || 0) : null,
       roundNumber: recordType === "practice" ? (parseInt(roundNumber) || null) : null,
       chapter: recordType === "textbook" ? (chapter || null) : null,
       pageRange: recordType === "textbook" ? (pageRange || null) : null,
-    })
+    }
 
+    const result = practiceRecordSchema.safeParse(input)
+    if (!result.success) {
+      setValidationError(result.error.errors[0]?.message || "入力内容に誤りがあります")
+      setIsSaving(false)
+      return
+    }
+
+    updateRecord(recordId, input)
     setIsEditing(false)
     setIsSaving(false)
   }
 
   const handleDelete = () => {
-    if (confirm("この記録を削除しますか？")) {
-      deleteRecord(recordId)
-      router.push("/records")
-    }
+    deleteRecord(recordId)
+    router.push("/records")
   }
 
   const handleCancel = () => {
@@ -184,7 +197,7 @@ export default function RecordDetailPage() {
                         <Pencil className="h-4 w-4 mr-1" />
                         編集
                       </Button>
-                      <Button variant="destructive" size="sm" onClick={handleDelete}>
+                      <Button variant="destructive" size="sm" onClick={() => setShowDeleteDialog(true)}>
                         <Trash2 className="h-4 w-4 mr-1" />
                         削除
                       </Button>
@@ -385,15 +398,17 @@ export default function RecordDetailPage() {
                       className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     />
                   </div>
+
+                  {validationError && (
+                    <p className="text-sm text-destructive">{validationError}</p>
+                  )}
                 </div>
               ) : (
                 // 表示モード
                 <div className="space-y-6">
                   {/* 基本情報 */}
                   <div className="flex items-center gap-3">
-                    <Badge variant={record.subject.toLowerCase() as "far" | "aud" | "reg" | "bar"}>
-                      {record.subject}
-                    </Badge>
+                    <SubjectBadge subject={record.subject} />
                     {record.recordType === "practice" && (
                       <Badge variant="outline">
                         <FileQuestion className="h-3 w-3 mr-1" />
@@ -485,6 +500,16 @@ export default function RecordDetailPage() {
           </div>
         </div>
       </div>
+
+      <ConfirmDialog
+        open={showDeleteDialog}
+        onOpenChange={setShowDeleteDialog}
+        title="記録を削除"
+        description="この記録を削除しますか？"
+        confirmLabel="削除"
+        variant="destructive"
+        onConfirm={handleDelete}
+      />
     </>
   )
 }
