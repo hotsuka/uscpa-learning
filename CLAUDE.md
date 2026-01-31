@@ -101,7 +101,23 @@ src/
 - 学習時間推移グラフ
 - 科目別正答率グラフ
 - 弱点分野の自動特定
+- テーマ別統計（テーマごとの学習時間・問題数・正答率）
 - 実データからのグラフ描画（recordStore、settingsStoreと連携）
+
+### 7. PDF教材
+- PDFアップロード・IndexedDB保存
+- 回答あり/なし2種類のPDF管理・切り替え
+- PDFビューア（react-pdf）: ページ移動、ズーム
+- PDF文章検索機能
+- ページ連動メモ（localStorage + Notion同期）
+- ページめくり時のメモ自動保存
+- メモ一覧クリックでページジャンプ
+- 水平/垂直レイアウト切り替え（localStorageで永続化）
+- リサイズ可能パネル（水平・垂直）
+- 教材内ミニタイマー（MiniTimer）: 問題数・正解数入力、今日の合計表示
+- キーボードショートカット（Ctrl+S, Space, ←→, Q/A, V, [/]）
+- サイドバーにショートカット説明表示
+- 教材一覧の検索機能
 
 ## Notionデータベース構成
 
@@ -249,7 +265,7 @@ const withPWA = require('next-pwa')({
 ### メモ未保存警告機能
 - PageMemoコンポーネント: forwardRef + useImperativeHandleで外部からメソッドを呼び出し可能
 - onDirtyChangeコールバック: 未保存状態を親コンポーネントに通知
-- 確認ダイアログ: 戻るボタン、ページ変更時に未保存の場合は確認
+- 確認ダイアログ: 戻るボタン時に未保存の場合は確認
 - beforeunload: ブラウザ終了時に警告表示
 
 ### アプリ起動時のNotion同期
@@ -260,3 +276,43 @@ const withPWA = require('next-pwa')({
 ### useMediaQueryフック
 - PC/モバイル判定: useIsDesktop()でTailwindのmdブレークポイント（768px）を監視
 - 条件付きレンダリング: CSS hiddenではなくJSで切り替えて重複コンポーネント問題を解消
+
+## 追加実装（v1.13）
+
+### 教材内ミニタイマー（MiniTimer）
+- 教材ページ内蔵のコンパクトタイマー（開始/停止/リセット）
+- 問題数・正解数の入力フィールド（Q/A キーで操作可能）
+- 今日の合計勉強時間をリアルタイム表示
+- forwardRef + useImperativeHandleで親からincrement/decrement操作
+
+### 教材ページ キーボードショートカット
+- Ctrl+S / Cmd+S: メモ保存
+- `]` / `[`: ズームイン / ズームアウト
+- Space: タイマー開始/停止
+- ← / → / PageUp / PageDown: ページ移動
+- Q / Shift+Q: 問題数 増/減
+- A / Shift+A: 正解数 増/減
+- V: 回答あり/なしPDF切り替え
+- input/textareaフォーカス時は一部ショートカット無効化
+- サイドバーにショートカット説明を表示
+
+### 回答あり/なしPDF管理
+- MaterialData型に pdfWithAnswers / pdfWithoutAnswers の2フィールド
+- UIボタン + Vキーショートカットで切り替え
+
+### PDF文章検索・教材検索
+- PDFViewer内蔵の文章検索機能
+- 教材一覧ページの検索フィルター
+
+### レイアウト切り替え
+- 水平（左右）/ 垂直（上下）レイアウトモード
+- localStorageで設定永続化
+
+### ページめくり時のメモ自動保存
+- ページ変更検知をrender内で同期的に実行（prevPageRef）
+- useRefで最新の状態を追跡（stale closure回避）
+- ページ変更時にlocalStorageへ即時保存 + Notion非同期同期
+- 確認ダイアログは廃止（戻るボタン時のみ残存）
+
+### テーマ別統計（分析ページ）
+- テーマごとの学習時間・問題数・正答率の詳細表示

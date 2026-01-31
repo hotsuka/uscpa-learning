@@ -1,8 +1,8 @@
 # USCPA学習管理アプリケーション 実装計画書
 
 **作成日**: 2026年1月17日
-**更新日**: 2026年1月19日
-**バージョン**: 1.10
+**更新日**: 2026年1月31日
+**バージョン**: 1.13
 **関連文書**: [要件定義書](./requirements.md)
 
 ---
@@ -873,7 +873,7 @@ module.exports = withPWA({
 - [x] メモ未保存警告機能
   - PageMemoコンポーネントにforwardRefとuseImperativeHandleを追加
   - 未保存状態の検出とonDirtyChangeコールバック実装
-  - 戻るボタン、ページ変更時に未保存確認ダイアログ表示
+  - 戻るボタン時に未保存確認ダイアログ表示
   - ブラウザ終了時のbeforeunload警告
   - 「未保存」バッジ表示
 - [x] useMediaQueryフック（src/hooks/useMediaQuery.ts）
@@ -886,7 +886,39 @@ module.exports = withPWA({
   - useSyncOnOnlineフック（オンライン復帰時に同期）
   - メインレイアウト（src/app/(main)/layout.tsx）への統合
 
-### 6.12 Notionデータベース構成（v1.11予定）
+### 6.13 追加実装済み機能（v1.13）
+
+- [x] 教材ページにミニタイマーを追加（src/components/materials/MiniTimer.tsx）
+  - 教材ページ内蔵のコンパクトタイマー（開始/停止/リセット）
+  - 問題数・正解数の入力フィールド
+  - 今日の合計勉強時間をリアルタイム表示
+  - forwardRef + useImperativeHandleによる外部操作対応
+- [x] 教材ページのキーボードショートカット
+  - Ctrl+S / Cmd+S: メモ保存
+  - `]` / `[`: ズームイン / ズームアウト
+  - Space: タイマー開始/停止
+  - ← / → / PageUp / PageDown: ページ移動
+  - Q / Shift+Q: 問題数 増/減
+  - A / Shift+A: 正解数 増/減
+  - V: 回答あり/なしPDF切り替え
+  - input/textareaフォーカス時は一部ショートカットを無効化
+- [x] サイドバーにショートカット説明を表示（src/components/layout/Sidebar.tsx）
+- [x] 回答あり/なし2種類のPDF管理
+  - MaterialData型にpdfWithAnswers / pdfWithoutAnswersフィールド
+  - 切り替えボタンUI + Vキーショートカット
+- [x] PDF文章検索機能（PDFViewer内蔵）
+- [x] 教材一覧の検索機能
+- [x] 水平/垂直レイアウト切り替え
+  - horizontal（左右）/ vertical（上下）モード
+  - localStorageで設定を永続化
+- [x] ページめくり時のメモ自動保存
+  - ページ変更検知をrender内で同期的に実行（prevPageRef使用）
+  - useRefによる最新状態の追跡（stale closure回避）
+  - localStorageへの即時保存 + Notion非同期同期
+  - ページ変更時にlocalStorageから最新メモを再読み込み
+- [x] 分析ページにテーマ別統計機能を追加
+
+### 6.14 Notionデータベース構成（v1.11予定）
 
 #### 設計方針
 
@@ -1257,3 +1289,4 @@ npm run test:coverage
 | 1.10 | 2026-01-19 | タイマー画面に問題数・正答数・メモ入力欄を追加、記録ダイアログへの値引き継ぎ | - |
 | 1.11 | 2026-01-19 | Notion DB構成確定（4DB維持、Sessions/Records分離、ページメモ統合、同期仕様） | - |
 | 1.12 | 2026-01-20 | メモ未保存警告機能、アプリ起動時Notion同期、useMediaQueryフック追加 | - |
+| 1.13 | 2026-01-31 | 教材ミニタイマー、キーボードショートカット、PDF検索、回答あり/なしPDF管理、レイアウト切替、テーマ別統計、メモ自動保存 | - |

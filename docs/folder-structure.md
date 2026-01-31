@@ -1,8 +1,8 @@
 # USCPA学習管理アプリケーション フォルダ構成
 
 **作成日**: 2026年1月17日
-**更新日**: 2026年1月19日
-**技術スタック**: Next.js 14 (App Router) + ローカルストレージ（Notion API連携予定）
+**更新日**: 2026年1月31日
+**技術スタック**: Next.js 14 (App Router) + ローカルストレージ + Notion API連携
 
 ---
 
@@ -127,8 +127,11 @@ src/components/
 ├── layout/                        # レイアウトコンポーネント
 │   ├── Header.tsx                 # ヘッダー
 │   ├── BottomNav.tsx              # モバイル用ボトムナビ
-│   ├── Sidebar.tsx                # PC用サイドバー
+│   ├── Sidebar.tsx                # PC用サイドバー（ショートカット説明表示付き）
 │   └── PageContainer.tsx          # ページコンテナ
+│
+├── providers/                     # プロバイダー ★追加
+│   └── SyncProvider.tsx           # アプリ起動時Notion同期プロバイダー
 │
 ├── timer/                         # タイマー関連
 │   ├── TimerDisplay.tsx           # タイマー表示（時:分:秒）
@@ -172,8 +175,9 @@ src/components/
 │   └── NotionConnection.tsx       # Notion接続状態
 │
 ├── materials/                     # 教材関連 ★追加
-│   ├── PDFViewer.tsx              # PDFビューア（react-pdf）
-│   └── PageMemo.tsx               # ページ連動メモ機能 ★追加
+│   ├── PDFViewer.tsx              # PDFビューア（react-pdf、文章検索機能付き）
+│   ├── MiniTimer.tsx              # 教材内ミニタイマー（問題数・正解数入力付き）★追加
+│   └── PageMemo.tsx               # ページ連動メモ機能（自動保存対応）★追加
 │
 └── common/                        # 共通コンポーネント
     ├── Loading.tsx                # ローディングスピナー
@@ -187,7 +191,7 @@ src/components/
 
 ```
 src/lib/
-├── notion/                        # Notion API関連（未実装）
+├── notion/                        # Notion API関連
 │   ├── client.ts                  # Notion クライアント初期化
 │   ├── sessions.ts                # 学習セッション操作
 │   ├── records.ts                 # 過去問記録操作
@@ -214,28 +218,19 @@ src/lib/
 ```
 src/hooks/
 ├── useTimer.ts                    # タイマーロジック
-├── useLocalStorage.ts             # ローカルストレージ
-├── useNotion.ts                   # Notion API操作
-├── useSessions.ts                 # 学習セッション
-├── usePracticeRecords.ts          # 過去問記録
-├── useStudyNotes.ts               # 学習ノート
-├── useSettings.ts                 # 設定
-├── useAuth.ts                     # 認証状態
-├── useOnlineStatus.ts             # オンライン状態検知
-└── useCountdown.ts                # カウントダウン計算
+├── useNotionSync.ts               # Notion同期（useNotionStatus, useSyncQueue, useNotionApi）
+├── useSyncOnMount.ts              # アプリ起動時同期（useSyncOnMount + useSyncOnOnline）
+└── useMediaQuery.ts               # メディアクエリ監視（useIsDesktop）
 ```
 
 ### src/stores/ - 状態管理
 
 ```
 src/stores/
-├── timerStore.ts                  # タイマー状態（科目、モード、セッション管理）
+├── timerStore.ts                  # タイマー状態（科目、モード、セッション管理、問題数・正解数）
 ├── recordStore.ts                 # 学習記録状態（記録一覧、今日の学習時間、CRUD操作）
-├── settingsStore.ts               # 設定状態（試験日、目標時間、ポモドーロ設定）★追加
-├── notesStore.ts                  # ノート状態（ノート一覧、CRUD操作）★追加
-├── materialsStore.ts              # 教材状態（教材一覧、IndexedDB連携）★追加
-├── userStore.ts                   # ユーザー情報（未実装）
-└── uiStore.ts                     # UI状態（サイドバー開閉等）
+├── settingsStore.ts               # 設定状態（試験日、目標時間、ポモドーロ設定）
+└── notesStore.ts                  # ノート状態（ノート一覧、CRUD操作）
 ```
 
 ### src/types/ - 型定義
@@ -303,7 +298,11 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 | `src/lib/analytics.ts` | 学習データの集計・弱点分析 |
 | `src/lib/indexeddb.ts` | PDFファイルのIndexedDB保存・読み込み |
 | `src/components/ui/resizable-panel.tsx` | 水平/垂直リサイズ可能パネル |
-| `src/components/materials/PageMemo.tsx` | ページ連動メモ機能 |
+| `src/components/materials/PageMemo.tsx` | ページ連動メモ機能（自動保存対応） |
+| `src/components/materials/MiniTimer.tsx` | 教材内ミニタイマー（問題数・正解数入力付き） |
+| `src/components/materials/PDFViewer.tsx` | PDFビューア（文章検索機能付き） |
+| `src/hooks/useSyncOnMount.ts` | アプリ起動時Notion同期・オンライン復帰時同期 |
+| `src/hooks/useMediaQuery.ts` | PC/モバイル判定（useIsDesktop） |
 
 ---
 
