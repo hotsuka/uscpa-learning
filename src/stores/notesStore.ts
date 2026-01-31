@@ -283,6 +283,10 @@ export const useNotesStore = create<NotesState>()(
         notionIdMap: state.notionIdMap,
         lastSyncedAt: state.lastSyncedAt,
       }),
+      merge: (persisted, current) => ({
+        ...current,
+        ...(persisted as object),
+      }),
     }
   )
 )

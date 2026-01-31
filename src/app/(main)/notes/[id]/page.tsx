@@ -8,9 +8,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
+import { EmptyState } from "@/components/common/EmptyState"
+import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 import { SubjectSelector } from "@/components/timer/SubjectSelector"
 import { MarkdownPreview } from "@/components/notes/MarkdownPreview"
 import { useNotesStore } from "@/stores/notesStore"
+import { noteSchema } from "@/lib/validations/note"
 import { SUBJECTS, type Subject } from "@/types"
 import { formatDate } from "@/lib/utils"
 import {
@@ -38,6 +41,8 @@ export default function NoteDetailPage() {
   const [editedTags, setEditedTags] = useState<string[]>([])
   const [tagInput, setTagInput] = useState("")
   const [isSaving, setIsSaving] = useState(false)
+  const [validationError, setValidationError] = useState<string | null>(null)
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false)
 
   // ノートデータを編集用ステートに設定
   useEffect(() => {
@@ -57,16 +62,16 @@ export default function NoteDetailPage() {
         <div className="p-4 md:p-8">
           <div className="max-w-3xl mx-auto">
             <Card>
-              <CardContent className="py-12 text-center">
-                <FileText className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                <p className="text-muted-foreground">ノートが見つかりません</p>
-                <Button
-                  variant="outline"
-                  className="mt-4"
-                  onClick={() => router.push("/notes")}
-                >
-                  ノート一覧に戻る
-                </Button>
+              <CardContent className="text-center">
+                <EmptyState message="ノートが見つかりません" icon={FileText}>
+                  <Button
+                    variant="outline"
+                    className="mt-4"
+                    onClick={() => router.push("/notes")}
+                  >
+                    ノート一覧に戻る
+                  </Button>
+                </EmptyState>
               </CardContent>
             </Card>
           </div>
@@ -90,24 +95,30 @@ export default function NoteDetailPage() {
   }
 
   const handleSave = async () => {
-    setIsSaving(true)
+    setValidationError(null)
 
-    updateNote(noteId, {
+    const input = {
       title: editedTitle,
       content: editedContent,
       subject: editedSubject,
       tags: editedTags,
-    })
+    }
 
+    const result = noteSchema.safeParse(input)
+    if (!result.success) {
+      setValidationError(result.error.errors[0]?.message || "入力内容に誤りがあります")
+      return
+    }
+
+    setIsSaving(true)
+    updateNote(noteId, input)
     setIsEditing(false)
     setIsSaving(false)
   }
 
-  const handleDelete = async () => {
-    if (confirm("このノートを削除しますか？")) {
-      deleteNote(noteId)
-      router.push("/notes")
-    }
+  const handleDelete = () => {
+    deleteNote(noteId)
+    router.push("/notes")
   }
 
   const handleCancel = () => {
@@ -164,7 +175,7 @@ export default function NoteDetailPage() {
                       <Button
                         variant="destructive"
                         size="sm"
-                        onClick={handleDelete}
+                        onClick={() => setShowDeleteDialog(true)}
                       >
                         <Trash2 className="h-4 w-4 mr-1" />
                         削除
@@ -263,6 +274,12 @@ export default function NoteDetailPage() {
               </div>
             </CardHeader>
 
+            {isEditing && validationError && (
+              <div className="px-6 pb-2">
+                <p className="text-sm text-destructive">{validationError}</p>
+              </div>
+            )}
+
             <CardContent>
               {isEditing ? (
                 <div className="space-y-2">
@@ -290,6 +307,16 @@ export default function NoteDetailPage() {
           </div>
         </div>
       </div>
+
+      <ConfirmDialog
+        open={showDeleteDialog}
+        onOpenChange={setShowDeleteDialog}
+        title="ノートを削除"
+        description="このノートを削除しますか？"
+        confirmLabel="削除"
+        variant="destructive"
+        onConfirm={handleDelete}
+      />
     </>
   )
 }

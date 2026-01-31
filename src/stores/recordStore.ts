@@ -310,6 +310,17 @@ export const useRecordStore = create<RecordState>()(
         notionIdMap: state.notionIdMap,
         lastSyncedAt: state.lastSyncedAt,
       }),
+      merge: (persisted, current) => ({
+        ...current,
+        ...(persisted as object),
+        todayStudyMinutes: {
+          FAR: 0,
+          AUD: 0,
+          REG: 0,
+          BAR: 0,
+          ...((persisted as Record<string, unknown>)?.todayStudyMinutes as Record<string, number> || {}),
+        },
+      }),
     }
   )
 )

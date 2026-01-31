@@ -94,6 +94,12 @@ USCPA（米国公認会計士）試験に目標期間内で合格するための
 - [x] 学習記録の削除機能（確認ダイアログ付き）
 - [x] 記録一覧からのクリックで詳細画面へ遷移
 
+#### 追加実装（v1.14）
+- [x] Zodバリデーションの統合（新規作成・編集・タイマー記録ダイアログ）
+- [x] ConfirmDialogによる削除確認（native confirm()から置き換え）
+- [x] SubjectBadgeコンポーネントによる科目バッジ表示の統一
+- [x] EmptyStateコンポーネントによる空状態表示の統一
+
 ---
 
 ### 2.3 学習ノート機能
@@ -133,6 +139,11 @@ USCPA（米国公認会計士）試験に目標期間内で合格するための
 - [x] ノート作成画面での編集/プレビュータブ切り替え
 - [x] ノート詳細画面でのMarkdownレンダリング
 - [x] Markdown記法のヘルプテキスト表示
+
+#### 追加実装（v1.14）
+- [x] Zodバリデーションの統合（新規作成・編集）
+- [x] ConfirmDialogによる削除確認（native confirm()から置き換え）
+- [x] EmptyStateコンポーネントによる空状態表示の統一
 
 ---
 
@@ -348,6 +359,34 @@ USCPA（米国公認会計士）試験に目標期間内で合格するための
 - [x] useSyncOnMountフック（初回マウント時に同期、5分間隔チェック）
 - [x] useSyncOnOnlineフック（オンライン復帰時に同期）
 - [x] メインレイアウトへのSyncProvider統合
+
+---
+
+### 2.10 UX・品質改善（v1.14）
+
+| 項目 | 内容 |
+|------|------|
+| 機能ID | F-010 |
+| 優先度 | 中（品質向上） |
+
+#### 共通コンポーネント
+- [x] EmptyState: データ未登録時の統一的な空状態表示（アイコン・子要素対応）
+- [x] SubjectBadge: 科目バッジの色・スタイル統一（FAR/AUD/REG/BAR）
+- [x] Loading: ローディングスピナーの統一（サイズ・メッセージ対応）
+- [x] ConfirmDialog: 確認ダイアログの統一（AlertDialog + バリアント対応）
+
+#### Zodバリデーション
+- [x] practiceRecordSchema: 学習記録のバリデーション（practice/textbook union型）
+- [x] noteSchema: ノートのバリデーション（タイトル・内容・科目・タグ）
+- [x] フォーム送信前のsafeParse適用（5箇所: records/new, records/[id], RecordDialog, notes/new, notes/[id]）
+
+#### エラーページ・ローディング
+- [x] not-found.tsx: カスタム404ページ
+- [x] loading.tsx: Loadingコンポーネントによるローディング画面
+
+#### テストインフラ
+- [x] vitest + jsdom環境のセットアップ
+- [x] Zodスキーマのユニットテスト（practice, note）
 
 ---
 
@@ -611,3 +650,4 @@ USCPA（米国公認会計士）試験に目標期間内で合格するための
 | 1.6 | 2026-01-19 | F-006をデバイス間データ同期機能に改訂（Notion同期、4DB構成、Sessions/Records分離） | - |
 | 1.7 | 2026-01-20 | メモ未保存警告機能、アプリ起動時Notion同期、useMediaQueryフックを追加 | - |
 | 1.8 | 2026-01-31 | 教材ミニタイマー、キーボードショートカット、PDF検索、回答あり/なしPDF管理、レイアウト切替、テーマ別統計、メモ自動保存を追加 | - |
+| 1.9 | 2026-01-31 | 共通コンポーネント統合（EmptyState/SubjectBadge/Loading/ConfirmDialog）、Zodバリデーション統合、テストインフラ構築、エラー/ローディングページ追加 | - |

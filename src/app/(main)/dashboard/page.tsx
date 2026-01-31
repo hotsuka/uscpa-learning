@@ -7,7 +7,7 @@ import { Header } from "@/components/layout/Header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { Badge } from "@/components/ui/badge"
+import { SubjectBadge } from "@/components/common/SubjectBadge"
 import { formatMinutes, daysUntil } from "@/lib/utils"
 import { SUBJECTS, SUBJECT_OPTIONS, type Subject } from "@/types"
 import { useRecordStore } from "@/stores/recordStore"
@@ -112,12 +112,7 @@ export default function DashboardPage() {
                       key={subject}
                       className="text-center p-3 rounded-lg bg-muted"
                     >
-                      <Badge
-                        variant={subject.toLowerCase() as "far" | "aud" | "reg" | "bar"}
-                        className="mb-2"
-                      >
-                        {subject}
-                      </Badge>
+                      <SubjectBadge subject={subject} className="mb-2" />
                       {days !== null ? (
                         <>
                           <p className="text-3xl font-bold">{days}</p>

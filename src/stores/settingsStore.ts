@@ -13,6 +13,8 @@ interface SettingsState {
   // ポモドーロ設定
   pomodoroMinutes: number
   breakMinutes: number
+  // カスタムサブテーマ
+  customSubtopics: Record<Subject, string[]>
 
   // Notion同期用
   notionPageId: string | null
@@ -26,6 +28,8 @@ interface SettingsState {
   setWeekendTargetHours: (hours: number) => void
   setPomodoroMinutes: (minutes: number) => void
   setBreakMinutes: (minutes: number) => void
+  addCustomSubtopic: (subject: Subject, subtopic: string) => void
+  removeCustomSubtopic: (subject: Subject, subtopic: string) => void
 
   // Notion同期アクション
   setNotionPageId: (id: string | null) => void
@@ -57,6 +61,12 @@ export const useSettingsStore = create<SettingsState>()(
       weekendTargetHours: 6,
       pomodoroMinutes: 25,
       breakMinutes: 5,
+      customSubtopics: {
+        FAR: [],
+        AUD: [],
+        REG: [],
+        BAR: [],
+      },
 
       // Notion同期用
       notionPageId: null,
@@ -95,6 +105,30 @@ export const useSettingsStore = create<SettingsState>()(
 
       setBreakMinutes: (minutes) => {
         set({ breakMinutes: minutes })
+      },
+
+      addCustomSubtopic: (subject, subtopic) => {
+        set((state) => {
+          const existing = state.customSubtopics[subject] || []
+          if (existing.includes(subtopic)) return state
+          return {
+            customSubtopics: {
+              ...state.customSubtopics,
+              [subject]: [...existing, subtopic],
+            },
+          }
+        })
+      },
+
+      removeCustomSubtopic: (subject, subtopic) => {
+        set((state) => ({
+          customSubtopics: {
+            ...state.customSubtopics,
+            [subject]: (state.customSubtopics[subject] || []).filter(
+              (s) => s !== subtopic
+            ),
+          },
+        }))
       },
 
       // Notion同期アクション
@@ -200,8 +234,20 @@ export const useSettingsStore = create<SettingsState>()(
         weekendTargetHours: state.weekendTargetHours,
         pomodoroMinutes: state.pomodoroMinutes,
         breakMinutes: state.breakMinutes,
+        customSubtopics: state.customSubtopics,
         notionPageId: state.notionPageId,
         lastSyncedAt: state.lastSyncedAt,
+      }),
+      merge: (persisted, current) => ({
+        ...current,
+        ...(persisted as object),
+        customSubtopics: {
+          FAR: [],
+          AUD: [],
+          REG: [],
+          BAR: [],
+          ...((persisted as Record<string, unknown>)?.customSubtopics as Record<string, string[]> || {}),
+        },
       }),
     }
   )

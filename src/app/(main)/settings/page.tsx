@@ -1,13 +1,14 @@
 "use client"
 
-import { useMemo, useEffect } from "react"
+import { useMemo, useEffect, useState } from "react"
 import { Header } from "@/components/layout/Header"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
-import { SUBJECTS, type Subject } from "@/types"
+import { Loading } from "@/components/common/Loading"
+import { SUBJECTS, SUBJECT_SUBTOPICS, type Subject } from "@/types"
 import { useSettingsStore } from "@/stores/settingsStore"
 import { useRecordStore } from "@/stores/recordStore"
 import { daysUntil } from "@/lib/utils"
@@ -25,6 +26,9 @@ import {
   RefreshCw,
   Bot,
   Loader2,
+  Tags,
+  Plus,
+  X,
 } from "lucide-react"
 import { useAuthContext } from "@/contexts/AuthContext"
 import {
@@ -49,11 +53,19 @@ export default function SettingsPage() {
     setPomodoroMinutes,
     setBreakMinutes,
     getTotalTargetHours,
+    customSubtopics,
+    addCustomSubtopic,
+    removeCustomSubtopic,
     isSyncing,
     syncToNotion,
     fetchFromNotion,
     notionPageId,
   } = useSettingsStore()
+
+  // カスタムテーマ追加用ステート
+  const [newSubtopicInputs, setNewSubtopicInputs] = useState<Record<Subject, string>>({
+    FAR: "", AUD: "", REG: "", BAR: "",
+  })
 
   // 初回マウント時にNotionから設定を読み込む
   useEffect(() => {
@@ -120,10 +132,7 @@ export default function SettingsPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             {authLoading ? (
-              <div className="flex items-center gap-3">
-                <div className="h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-                <span className="text-muted-foreground">接続状態を確認中...</span>
-              </div>
+              <Loading size="sm" message="接続状態を確認中..." />
             ) : !isConfigured ? (
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -579,6 +588,104 @@ export default function SettingsPage() {
                   <span className="text-muted-foreground">分</span>
                 </div>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* カスタムサブテーマ管理 */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Tags className="h-5 w-5" />
+              カスタムサブテーマ
+            </CardTitle>
+            <CardDescription>
+              科目別に独自のサブテーマを追加・管理（タイマー・記録で選択可能）
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {(Object.keys(SUBJECTS) as Subject[]).map((subject) => {
+                const subjectInfo = SUBJECTS[subject]
+                const customs = customSubtopics[subject] || []
+                const presetCount = SUBJECT_SUBTOPICS[subject].length
+
+                const handleAddSubtopic = () => {
+                  const trimmed = newSubtopicInputs[subject].trim()
+                  if (!trimmed) return
+                  const allExisting = [...SUBJECT_SUBTOPICS[subject], ...customs]
+                  if (allExisting.includes(trimmed)) return
+                  addCustomSubtopic(subject, trimmed)
+                  setNewSubtopicInputs((prev) => ({ ...prev, [subject]: "" }))
+                }
+
+                return (
+                  <div key={subject} className="space-y-3 p-3 rounded-lg border">
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-3 h-3 rounded-full"
+                        style={{ backgroundColor: subjectInfo.color }}
+                      />
+                      <span className="font-medium">{subject} - {subjectInfo.name}</span>
+                      <span className="text-xs text-muted-foreground">
+                        （プリセット{presetCount}件 + カスタム{customs.length}件）
+                      </span>
+                    </div>
+
+                    {/* カスタムテーマ一覧 */}
+                    {customs.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {customs.map((subtopic) => (
+                          <Badge
+                            key={subtopic}
+                            variant="secondary"
+                            className="flex items-center gap-1"
+                          >
+                            {subtopic}
+                            <button
+                              type="button"
+                              onClick={() => removeCustomSubtopic(subject, subtopic)}
+                              className="ml-1 hover:text-destructive"
+                            >
+                              <X className="h-3 w-3" />
+                            </button>
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* テーマ追加入力 */}
+                    <div className="flex gap-2">
+                      <Input
+                        value={newSubtopicInputs[subject]}
+                        onChange={(e) =>
+                          setNewSubtopicInputs((prev) => ({
+                            ...prev,
+                            [subject]: e.target.value,
+                          }))
+                        }
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") {
+                            e.preventDefault()
+                            handleAddSubtopic()
+                          }
+                        }}
+                        placeholder="新しいテーマ名..."
+                        className="flex-1"
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={handleAddSubtopic}
+                        disabled={!newSubtopicInputs[subject].trim()}
+                      >
+                        <Plus className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </CardContent>
         </Card>

@@ -1,6 +1,6 @@
 "use client"
 
-import { forwardRef, useImperativeHandle, useEffect } from "react"
+import { forwardRef, useImperativeHandle, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
@@ -8,6 +8,7 @@ import { useTimer } from "@/hooks/useTimer"
 import { useRecordStore, checkAndResetDailyMinutes } from "@/stores/recordStore"
 import { Play, Pause, Square, Clock, Calendar } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 
 // 分を「Xh Xm」形式にフォーマット
 function formatMinutesToHoursMinutes(minutes: number): string {
@@ -35,6 +36,7 @@ export interface MiniTimerRef {
 }
 
 export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniTimer({ className }, ref) {
+  const [showResetDialog, setShowResetDialog] = useState(false)
   const {
     subject,
     displayTime,
@@ -156,11 +158,7 @@ export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniT
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => {
-              if (confirm("タイマーをリセットしますか？記録は保存されません。")) {
-                reset()
-              }
-            }}
+            onClick={() => setShowResetDialog(true)}
             className="h-8 w-8 p-0 text-muted-foreground hover:text-destructive"
             title="リセット"
           >
@@ -212,6 +210,16 @@ export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniT
           </Badge>
         )}
       </div>
+
+      <ConfirmDialog
+        open={showResetDialog}
+        onOpenChange={setShowResetDialog}
+        title="タイマーをリセット"
+        description="タイマーをリセットしますか？記録は保存されません。"
+        confirmLabel="リセット"
+        variant="destructive"
+        onConfirm={reset}
+      />
     </div>
   )
 })

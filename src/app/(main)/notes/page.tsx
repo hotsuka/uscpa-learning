@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { EmptyState } from "@/components/common/EmptyState"
 import { Input } from "@/components/ui/input"
 import { SUBJECTS, type Subject } from "@/types"
 import { formatDate } from "@/lib/utils"
@@ -137,20 +138,23 @@ export default function NotesPage() {
         {/* ノート一覧 */}
         {filteredNotes.length === 0 ? (
           <Card>
-            <CardContent className="py-12 text-center">
-              <FileText className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">
-                {searchQuery || selectedSubject !== "all"
-                  ? "条件に一致するノートがありません"
-                  : "ノートがまだありません"}
-              </p>
-              {!searchQuery && selectedSubject === "all" && (
-                <Link href="/notes/new">
-                  <Button variant="link" className="mt-2">
-                    最初のノートを作成
-                  </Button>
-                </Link>
-              )}
+            <CardContent className="text-center">
+              <EmptyState
+                message={
+                  searchQuery || selectedSubject !== "all"
+                    ? "条件に一致するノートがありません"
+                    : "ノートがまだありません"
+                }
+                icon={FileText}
+              >
+                {!searchQuery && selectedSubject === "all" && (
+                  <Link href="/notes/new">
+                    <Button variant="link" className="mt-2">
+                      最初のノートを作成
+                    </Button>
+                  </Link>
+                )}
+              </EmptyState>
             </CardContent>
           </Card>
         ) : (

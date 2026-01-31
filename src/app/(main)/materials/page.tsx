@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { SubjectSelector } from "@/components/timer/SubjectSelector"
 import { SUBJECTS, type Subject, type Material } from "@/types"
+import { EmptyState } from "@/components/common/EmptyState"
+import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 import { savePDFToIndexedDB } from "@/lib/indexeddb"
 import {
   Plus,
@@ -74,6 +76,11 @@ export default function MaterialsPage() {
   const [pdfWithoutAnswers, setPdfWithoutAnswers] = useState<File | null>(null)
   const [pdfWithAnswers, setPdfWithAnswers] = useState<File | null>(null)
 
+  // ConfirmDialog用state
+  const [showDeleteInvalidDialog, setShowDeleteInvalidDialog] = useState(false)
+  const [showResetDialog, setShowResetDialog] = useState(false)
+  const [showDeleteAllDialog, setShowDeleteAllDialog] = useState(false)
+
   // 検索・フィルター用state
   const [searchQuery, setSearchQuery] = useState("")
   const [filterSubject, setFilterSubject] = useState<Subject | "all">("all")
@@ -114,13 +121,10 @@ export default function MaterialsPage() {
 
   // 全ての無効な教材を一括削除
   const handleDeleteAllInvalidMaterials = () => {
-    if (confirm("古い形式の教材をすべて削除しますか？")) {
-      // 有効な教材のみを保持
-      const validOnly = materials.filter(isValidMaterial)
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(validOnly))
-      setInvalidMaterials([])
-      setMaterials(validOnly)
-    }
+    const validOnly = materials.filter(isValidMaterial)
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(validOnly))
+    setInvalidMaterials([])
+    setMaterials(validOnly)
   }
 
   const handleUpload = async () => {
@@ -216,7 +220,7 @@ export default function MaterialsPage() {
                       onClick={(e) => {
                         e.preventDefault()
                         e.stopPropagation()
-                        handleDeleteAllInvalidMaterials()
+                        setShowDeleteInvalidDialog(true)
                       }}
                     >
                       すべて削除
@@ -227,11 +231,7 @@ export default function MaterialsPage() {
                       onClick={(e) => {
                         e.preventDefault()
                         e.stopPropagation()
-                        // 強制的にlocalStorageをクリアして再読み込み
-                        if (confirm("すべての教材データを削除してページを再読み込みしますか？")) {
-                          localStorage.removeItem(STORAGE_KEY)
-                          window.location.reload()
-                        }
+                        setShowResetDialog(true)
                       }}
                     >
                       全データリセット
@@ -248,13 +248,7 @@ export default function MaterialsPage() {
           variant="outline"
           size="sm"
           className="text-destructive"
-          onClick={() => {
-            if (confirm("すべての教材データを削除しますか？")) {
-              localStorage.removeItem(STORAGE_KEY)
-              setMaterials([])
-              setInvalidMaterials([])
-            }
-          }}
+          onClick={() => setShowDeleteAllDialog(true)}
         >
           <Trash2 className="h-4 w-4 mr-2" />
           全データ削除
@@ -416,35 +410,33 @@ export default function MaterialsPage() {
         {/* 教材一覧 */}
         {materials.length === 0 ? (
           <Card>
-            <CardContent className="py-12 text-center">
-              <BookOpen className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">教材がまだありません</p>
-              <Button
-                variant="link"
-                className="mt-2"
-                onClick={() => setShowUploadForm(true)}
-              >
-                最初の教材をアップロード
-              </Button>
+            <CardContent className="text-center">
+              <EmptyState message="教材がまだありません" icon={BookOpen}>
+                <Button
+                  variant="link"
+                  className="mt-2"
+                  onClick={() => setShowUploadForm(true)}
+                >
+                  最初の教材をアップロード
+                </Button>
+              </EmptyState>
             </CardContent>
           </Card>
         ) : filteredMaterials.length === 0 ? (
           <Card>
-            <CardContent className="py-12 text-center">
-              <Search className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">
-                検索条件に一致する教材がありません
-              </p>
-              <Button
-                variant="link"
-                className="mt-2"
-                onClick={() => {
-                  setSearchQuery("")
-                  setFilterSubject("all")
-                }}
-              >
-                フィルターをクリア
-              </Button>
+            <CardContent className="text-center">
+              <EmptyState message="検索条件に一致する教材がありません" icon={Search}>
+                <Button
+                  variant="link"
+                  className="mt-2"
+                  onClick={() => {
+                    setSearchQuery("")
+                    setFilterSubject("all")
+                  }}
+                >
+                  フィルターをクリア
+                </Button>
+              </EmptyState>
             </CardContent>
           </Card>
         ) : (
@@ -499,6 +491,43 @@ export default function MaterialsPage() {
           </div>
         )}
       </div>
+
+      <ConfirmDialog
+        open={showDeleteInvalidDialog}
+        onOpenChange={setShowDeleteInvalidDialog}
+        title="古い形式の教材を削除"
+        description="古い形式の教材をすべて削除しますか？"
+        confirmLabel="すべて削除"
+        variant="destructive"
+        onConfirm={handleDeleteAllInvalidMaterials}
+      />
+
+      <ConfirmDialog
+        open={showResetDialog}
+        onOpenChange={setShowResetDialog}
+        title="全データリセット"
+        description="すべての教材データを削除してページを再読み込みしますか？"
+        confirmLabel="リセット"
+        variant="destructive"
+        onConfirm={() => {
+          localStorage.removeItem(STORAGE_KEY)
+          window.location.reload()
+        }}
+      />
+
+      <ConfirmDialog
+        open={showDeleteAllDialog}
+        onOpenChange={setShowDeleteAllDialog}
+        title="全データ削除"
+        description="すべての教材データを削除しますか？"
+        confirmLabel="削除"
+        variant="destructive"
+        onConfirm={() => {
+          localStorage.removeItem(STORAGE_KEY)
+          setMaterials([])
+          setInvalidMaterials([])
+        }}
+      />
     </>
   )
 }

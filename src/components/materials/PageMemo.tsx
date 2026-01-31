@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ResizableVerticalPanel } from "@/components/ui/resizable-panel"
 import { Save, Trash2, MessageSquare } from "lucide-react"
+import { EmptyState } from "@/components/common/EmptyState"
+import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 import { cn, generateUUID, getDeviceId } from "@/lib/utils"
 
 export interface PageMemoData {
@@ -99,6 +101,7 @@ export const PageMemo = forwardRef<PageMemoRef, PageMemoProps>(
   const [memos, setMemos] = useState<Record<number, PageMemoData>>({})
   const [currentContent, setCurrentContent] = useState("")
   const [isDirty, setIsDirty] = useState(false)
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false)
 
   // refで最新の値を保持
   const currentContentRef = useRef(currentContent)
@@ -295,19 +298,17 @@ export const PageMemo = forwardRef<PageMemoRef, PageMemoProps>(
   }
 
   const handleDelete = () => {
-    if (confirm("このページのメモを削除しますか？")) {
-      const memoToDelete = memos[currentPage]
-      const updatedMemos = { ...memos }
-      delete updatedMemos[currentPage]
-      setMemos(updatedMemos)
-      saveMemos(materialId, updatedMemos)
-      setCurrentContent("")
-      setIsDirty(false)
+    const memoToDelete = memos[currentPage]
+    const updatedMemos = { ...memos }
+    delete updatedMemos[currentPage]
+    setMemos(updatedMemos)
+    saveMemos(materialId, updatedMemos)
+    setCurrentContent("")
+    setIsDirty(false)
 
-      // Notionからも削除（バックグラウンド）
-      if (memoToDelete?.id) {
-        deleteMemoFromNotion(memoToDelete.id).catch(console.error)
-      }
+    // Notionからも削除（バックグラウンド）
+    if (memoToDelete?.id) {
+      deleteMemoFromNotion(memoToDelete.id).catch(console.error)
     }
   }
 
@@ -355,7 +356,7 @@ export const PageMemo = forwardRef<PageMemoRef, PageMemoProps>(
             <Button
               variant="outline"
               size="sm"
-              onClick={handleDelete}
+              onClick={() => setShowDeleteDialog(true)}
               className="text-destructive hover:text-destructive"
             >
               <Trash2 className="h-4 w-4" />
@@ -376,9 +377,7 @@ export const PageMemo = forwardRef<PageMemoRef, PageMemoProps>(
       </CardHeader>
       <CardContent className="pt-0 flex-1 overflow-hidden pb-2">
         {memoCount === 0 ? (
-          <p className="text-sm text-muted-foreground">
-            まだメモがありません
-          </p>
+          <EmptyState message="まだメモがありません" className="py-4" />
         ) : (
           <div className="space-y-2 h-full overflow-y-auto pr-1">
             {pagesWithMemos.map((page) => {
@@ -421,6 +420,15 @@ export const PageMemo = forwardRef<PageMemoRef, PageMemoProps>(
         minTopHeight={25}
         maxTopHeight={80}
         storageKey="memo-panel-vertical-split"
+      />
+      <ConfirmDialog
+        open={showDeleteDialog}
+        onOpenChange={setShowDeleteDialog}
+        title="メモを削除"
+        description="このページのメモを削除しますか？"
+        confirmLabel="削除"
+        variant="destructive"
+        onConfirm={handleDelete}
       />
     </div>
   )
