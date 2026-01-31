@@ -53,7 +53,8 @@ export function SubtopicSelector({
 
   const handleChange = (newValue: string) => {
     if (newValue === ADD_NEW_VALUE) {
-      setShowAddDialog(true)
+      // Selectのクローズ後にDialogを開く（フォーカス競合回避）
+      requestAnimationFrame(() => setShowAddDialog(true))
       return
     }
     onChange(newValue === NONE_VALUE ? "" : newValue)
