@@ -159,6 +159,7 @@ export interface StudyNote {
   // ページメモ用（v1.11追加）
   materialId: string | null  // 紐づくPDF教材ID（page_memo時）
   pageNumber: number | null  // PDFページ番号（page_memo時）
+  roundNumber: number | null  // 周回数（page_memo時）
   // 同期用
   deviceId: string  // 記録元デバイス識別子
   createdAt: string

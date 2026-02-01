@@ -88,6 +88,7 @@ export async function POST(request: NextRequest) {
       tags: body.tags || [],
       materialId: body.materialId || null,
       pageNumber: body.pageNumber ?? null,
+      roundNumber: body.roundNumber ?? null,
       deviceId: body.deviceId || "",
       createdAt: body.createdAt,
       updatedAt: body.updatedAt || new Date().toISOString(),

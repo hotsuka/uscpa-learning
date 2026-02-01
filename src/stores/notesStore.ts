@@ -13,6 +13,7 @@ interface NoteInput {
   // ページメモ用（v1.11追加）
   materialId?: string | null
   pageNumber?: number | null
+  roundNumber?: number | null
 }
 
 interface NotesState {
@@ -63,6 +64,7 @@ export const useNotesStore = create<NotesState>()(
           tags: noteData.tags,
           materialId: noteData.materialId ?? null,
           pageNumber: noteData.pageNumber ?? null,
+          roundNumber: noteData.roundNumber ?? null,
           deviceId: getDeviceId(),
           createdAt: now,
           updatedAt: now,
@@ -138,6 +140,7 @@ export const useNotesStore = create<NotesState>()(
               tags: note.tags,
               materialId: note.materialId,
               pageNumber: note.pageNumber,
+              roundNumber: note.roundNumber,
               deviceId: note.deviceId,
               createdAt: note.createdAt,
               updatedAt: note.updatedAt,
