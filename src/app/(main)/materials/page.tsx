@@ -86,18 +86,28 @@ export default function MaterialsPage() {
   // 検索・フィルター用state
   const [searchQuery, setSearchQuery] = useState("")
   const [filterSubject, setFilterSubject] = useState<Subject | "all">("all")
+  const [filterSubtopic, setFilterSubtopic] = useState<string | "all">("all")
 
   const fileInputWithoutRef = useRef<HTMLInputElement>(null)
   const fileInputWithRef = useRef<HTMLInputElement>(null)
 
+  // 現在の科目フィルターに合致する教材からサブテーマ一覧を抽出
+  const availableSubtopics = Array.from(
+    new Set(
+      materials
+        .filter((m) => filterSubject === "all" || m.subject === filterSubject)
+        .map((m) => m.subtopic ?? null)
+        .filter((s): s is string => s !== null)
+    )
+  ).sort()
+
   // 検索・フィルター適用後の教材一覧
   const filteredMaterials = materials.filter((material) => {
-    // 教材名で検索
     const matchesSearch = searchQuery === "" ||
       material.name.toLowerCase().includes(searchQuery.toLowerCase())
-    // 科目でフィルター
     const matchesSubject = filterSubject === "all" || material.subject === filterSubject
-    return matchesSearch && matchesSubject
+    const matchesSubtopic = filterSubtopic === "all" || (material.subtopic ?? null) === filterSubtopic
+    return matchesSearch && matchesSubject && matchesSubtopic
   })
 
   // 初回読み込み時にローカルストレージから教材を取得
@@ -286,7 +296,7 @@ export default function MaterialsPage() {
             <Badge
               variant={filterSubject === "all" ? "default" : "outline"}
               className="cursor-pointer"
-              onClick={() => setFilterSubject("all")}
+              onClick={() => { setFilterSubject("all"); setFilterSubtopic("all") }}
             >
               すべて
             </Badge>
@@ -302,12 +312,35 @@ export default function MaterialsPage() {
                   borderColor: SUBJECTS[subject].color,
                   color: SUBJECTS[subject].color,
                 }}
-                onClick={() => setFilterSubject(subject)}
+                onClick={() => { setFilterSubject(subject); setFilterSubtopic("all") }}
               >
                 {subject}
               </Badge>
             ))}
           </div>
+
+          {/* サブテーマフィルター */}
+          {availableSubtopics.length > 0 && (
+            <div className="flex gap-2 flex-wrap">
+              <Badge
+                variant={filterSubtopic === "all" ? "default" : "outline"}
+                className="cursor-pointer"
+                onClick={() => setFilterSubtopic("all")}
+              >
+                全テーマ
+              </Badge>
+              {availableSubtopics.map((subtopic) => (
+                <Badge
+                  key={subtopic}
+                  variant={filterSubtopic === subtopic ? "default" : "outline"}
+                  className="cursor-pointer"
+                  onClick={() => setFilterSubtopic(subtopic)}
+                >
+                  {subtopic}
+                </Badge>
+              ))}
+            </div>
+          )}
 
           {/* アップロードボタン */}
           <Button onClick={() => setShowUploadForm(!showUploadForm)} className="shrink-0">
@@ -449,6 +482,7 @@ export default function MaterialsPage() {
                   onClick={() => {
                     setSearchQuery("")
                     setFilterSubject("all")
+                    setFilterSubtopic("all")
                   }}
                 >
                   フィルターをクリア
