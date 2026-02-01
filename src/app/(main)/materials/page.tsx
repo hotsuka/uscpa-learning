@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { SubjectSelector } from "@/components/timer/SubjectSelector"
 import { SubtopicSelector } from "@/components/timer/SubtopicSelector"
 import { SUBJECTS, type Subject, type Material } from "@/types"
@@ -321,25 +328,22 @@ export default function MaterialsPage() {
 
           {/* サブテーマフィルター */}
           {availableSubtopics.length > 0 && (
-            <div className="flex gap-2 flex-wrap">
-              <Badge
-                variant={filterSubtopic === "all" ? "default" : "outline"}
-                className="cursor-pointer"
-                onClick={() => setFilterSubtopic("all")}
-              >
-                全テーマ
-              </Badge>
-              {availableSubtopics.map((subtopic) => (
-                <Badge
-                  key={subtopic}
-                  variant={filterSubtopic === subtopic ? "default" : "outline"}
-                  className="cursor-pointer"
-                  onClick={() => setFilterSubtopic(subtopic)}
-                >
-                  {subtopic}
-                </Badge>
-              ))}
-            </div>
+            <Select
+              value={filterSubtopic}
+              onValueChange={setFilterSubtopic}
+            >
+              <SelectTrigger className="w-[180px] shrink-0">
+                <SelectValue placeholder="テーマで絞り込み" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">全テーマ</SelectItem>
+                {availableSubtopics.map((subtopic) => (
+                  <SelectItem key={subtopic} value={subtopic}>
+                    {subtopic}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           )}
 
           {/* アップロードボタン */}
