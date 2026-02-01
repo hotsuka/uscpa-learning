@@ -45,6 +45,7 @@ export interface NotionNoteProperties {
   名前: { title: Array<{ text: { content: string } }> }
   科目: { select: { name: string } | null }
   タグ: { multi_select: Array<{ name: string }> }
+  周回数: { number: number | null }
 }
 
 // ローカル型へのマッピング用ヘルパー

@@ -83,6 +83,7 @@ export async function getNotes(options?: {
       tags: props["タグ"]?.multi_select?.map((s: any) => s.name) || [],
       materialId: props["教材ID"]?.rich_text?.[0]?.text?.content || null,
       pageNumber: props["ページ番号"]?.number || null,
+      roundNumber: props["周回数"]?.number ?? null,
       deviceId: props["デバイスID"]?.rich_text?.[0]?.text?.content || "",
       createdAt: props["作成日時"]?.date?.start || page.created_time,
       updatedAt: props["更新日時"]?.date?.start || page.last_edited_time,
@@ -111,6 +112,7 @@ export async function getNoteById(pageId: string): Promise<StudyNote | null> {
       tags: props["タグ"]?.multi_select?.map((s: any) => s.name) || [],
       materialId: props["教材ID"]?.rich_text?.[0]?.text?.content || null,
       pageNumber: props["ページ番号"]?.number || null,
+      roundNumber: props["周回数"]?.number ?? null,
       deviceId: props["デバイスID"]?.rich_text?.[0]?.text?.content || "",
       createdAt: props["作成日時"]?.date?.start || page.created_time,
       updatedAt: props["更新日時"]?.date?.start || page.last_edited_time,
@@ -271,6 +273,7 @@ interface CreateNoteInput {
   tags: string[]
   materialId: string | null
   pageNumber: number | null
+  roundNumber: number | null
   deviceId: string
   createdAt?: string
   updatedAt: string
@@ -312,6 +315,9 @@ export async function createNote(
   if (note.pageNumber !== null && note.pageNumber !== undefined) {
     properties["ページ番号"] = { number: note.pageNumber }
   }
+  if (note.roundNumber !== null && note.roundNumber !== undefined) {
+    properties["周回数"] = { number: note.roundNumber }
+  }
   if (note.deviceId) {
     properties["デバイスID"] = { rich_text: [{ text: { content: note.deviceId } }] }
   }
@@ -346,6 +352,7 @@ export async function createNote(
     tags: note.tags,
     materialId: note.materialId,
     pageNumber: note.pageNumber,
+    roundNumber: note.roundNumber,
     deviceId: note.deviceId,
     createdAt: note.createdAt || (response as any).created_time,
     updatedAt: note.updatedAt,
@@ -385,6 +392,11 @@ export async function updateNote(
   if (updates.pageNumber !== undefined) {
     properties["ページ番号"] = updates.pageNumber !== null
       ? { number: updates.pageNumber }
+      : { number: null }
+  }
+  if (updates.roundNumber !== undefined) {
+    properties["周回数"] = updates.roundNumber !== null
+      ? { number: updates.roundNumber }
       : { number: null }
   }
   if (updates.updatedAt !== undefined) {
