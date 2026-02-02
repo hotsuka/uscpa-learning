@@ -558,14 +558,14 @@ export default function AnalyticsPage() {
                   <div className="space-y-2">
                     <p className="text-sm font-medium">周回別正答率</p>
                     <div className="overflow-x-auto">
-                      <div className="flex items-end justify-between gap-3 h-36 min-w-0" style={{ minWidth: `${topicStats.byRound.length * 60}px` }}>
+                      <div className="flex items-end justify-center gap-6 h-32">
                         {topicStats.byRound.map((roundData) => (
-                          <div key={roundData.round} className="flex-1 flex flex-col items-center gap-1 min-w-[48px]">
+                          <div key={roundData.round} className="flex flex-col items-center gap-1 w-16">
                             <span className="text-xs font-medium">
                               {roundData.accuracy}%
                             </span>
                             <div
-                              className={`w-full max-w-[40px] rounded-t transition-all ${
+                              className={`w-10 rounded-t transition-all ${
                                 roundData.accuracy >= 80
                                   ? "bg-green-500"
                                   : roundData.accuracy >= 60
@@ -573,8 +573,7 @@ export default function AnalyticsPage() {
                                   : "bg-red-500"
                               }`}
                               style={{
-                                height: `${roundData.accuracy}px`,
-                                minHeight: "4px",
+                                height: `${Math.max(Math.round((roundData.accuracy / 100) * 72), 4)}px`,
                               }}
                             />
                             <span className="text-sm font-medium">{roundData.label}</span>
