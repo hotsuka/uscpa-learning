@@ -11,6 +11,7 @@ import { useSettingsStore } from "@/stores/settingsStore"
 import {
   BarChart3,
   TrendingUp,
+  TrendingDown,
   AlertTriangle,
   Target,
   Clock,
@@ -206,10 +207,35 @@ export default function AnalyticsPage() {
       BAR: { questions: 0, correct: 0 },
     }
 
+    // 周回別の内訳
+    const byRoundRaw: Record<string, { questions: number; correct: number }> = {}
+
     for (const record of topicRecords) {
       bySubject[record.subject].questions += record.totalQuestions || 0
       bySubject[record.subject].correct += record.correctAnswers || 0
+
+      const roundKey = record.roundNumber != null ? String(record.roundNumber) : "-"
+      if (!byRoundRaw[roundKey]) {
+        byRoundRaw[roundKey] = { questions: 0, correct: 0 }
+      }
+      byRoundRaw[roundKey].questions += record.totalQuestions || 0
+      byRoundRaw[roundKey].correct += record.correctAnswers || 0
     }
+
+    // 周回をソート（"-" は末尾）して accuracy を計算
+    const byRound = Object.entries(byRoundRaw)
+      .sort(([a], [b]) => {
+        if (a === "-") return 1
+        if (b === "-") return -1
+        return Number(a) - Number(b)
+      })
+      .map(([round, data]) => ({
+        round,
+        label: round === "-" ? "R-" : `R${round}`,
+        questions: data.questions,
+        correct: data.correct,
+        accuracy: data.questions > 0 ? Math.round((data.correct / data.questions) * 100) : 0,
+      }))
 
     return {
       totalQuestions,
@@ -217,6 +243,7 @@ export default function AnalyticsPage() {
       accuracy,
       recordCount: topicRecords.length,
       bySubject,
+      byRound,
     }
   }, [records, selectedTopic])
 
@@ -525,6 +552,63 @@ export default function AnalyticsPage() {
                     })}
                   </div>
                 </div>
+
+                {/* 周回別正答率 */}
+                {topicStats.byRound.length >= 2 && (
+                  <div className="space-y-2">
+                    <p className="text-sm font-medium">周回別正答率</p>
+                    <div className="overflow-x-auto">
+                      <div className="flex items-end justify-between gap-3 h-36 min-w-0" style={{ minWidth: `${topicStats.byRound.length * 60}px` }}>
+                        {topicStats.byRound.map((roundData) => (
+                          <div key={roundData.round} className="flex-1 flex flex-col items-center gap-1 min-w-[48px]">
+                            <span className="text-xs font-medium">
+                              {roundData.accuracy}%
+                            </span>
+                            <div
+                              className={`w-full max-w-[40px] rounded-t transition-all ${
+                                roundData.accuracy >= 80
+                                  ? "bg-green-500"
+                                  : roundData.accuracy >= 60
+                                  ? "bg-yellow-500"
+                                  : "bg-red-500"
+                              }`}
+                              style={{
+                                height: `${roundData.accuracy}px`,
+                                minHeight: "4px",
+                              }}
+                            />
+                            <span className="text-sm font-medium">{roundData.label}</span>
+                            <span className="text-xs text-muted-foreground">{roundData.questions}問</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    {/* 推移インジケーター */}
+                    <div className="flex flex-wrap gap-3 mt-2">
+                      {topicStats.byRound.map((roundData, index) => {
+                        if (index === 0) return null
+                        const prev = topicStats.byRound[index - 1]
+                        const diff = roundData.accuracy - prev.accuracy
+                        return (
+                          <div key={roundData.round} className="flex items-center gap-1 text-xs">
+                            <span className="text-muted-foreground">{prev.label}→{roundData.label}:</span>
+                            {diff > 0 ? (
+                              <span className="flex items-center gap-0.5 text-green-600">
+                                <TrendingUp className="h-3 w-3" />+{diff}%
+                              </span>
+                            ) : diff < 0 ? (
+                              <span className="flex items-center gap-0.5 text-red-600">
+                                <TrendingDown className="h-3 w-3" />{diff}%
+                              </span>
+                            ) : (
+                              <span className="text-muted-foreground">±0%</span>
+                            )}
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
 
                 <p className="text-xs text-muted-foreground">
                   ※ 全期間の演習記録から集計（{topicStats.recordCount}件の記録）
