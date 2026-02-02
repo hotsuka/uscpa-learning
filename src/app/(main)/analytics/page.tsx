@@ -208,7 +208,7 @@ export default function AnalyticsPage() {
     }
 
     // 周回別の内訳
-    const byRoundRaw: Record<string, { questions: number; correct: number }> = {}
+    const byRoundRaw: Record<string, { questions: number; correct: number; lastDate: string }> = {}
 
     for (const record of topicRecords) {
       bySubject[record.subject].questions += record.totalQuestions || 0
@@ -216,10 +216,13 @@ export default function AnalyticsPage() {
 
       const roundKey = record.roundNumber != null ? String(record.roundNumber) : "-"
       if (!byRoundRaw[roundKey]) {
-        byRoundRaw[roundKey] = { questions: 0, correct: 0 }
+        byRoundRaw[roundKey] = { questions: 0, correct: 0, lastDate: "" }
       }
       byRoundRaw[roundKey].questions += record.totalQuestions || 0
       byRoundRaw[roundKey].correct += record.correctAnswers || 0
+      if (record.studiedAt > byRoundRaw[roundKey].lastDate) {
+        byRoundRaw[roundKey].lastDate = record.studiedAt
+      }
     }
 
     // 周回をソート（"-" は末尾）して accuracy を計算
@@ -235,6 +238,7 @@ export default function AnalyticsPage() {
         questions: data.questions,
         correct: data.correct,
         accuracy: data.questions > 0 ? Math.round((data.correct / data.questions) * 100) : 0,
+        lastDate: data.lastDate,
       }))
 
     return {
@@ -558,26 +562,31 @@ export default function AnalyticsPage() {
                   <div className="space-y-2">
                     <p className="text-sm font-medium">周回別正答率</p>
                     <div className="overflow-x-auto">
-                      <div className="flex items-end justify-center gap-6 h-32">
+                      <div className="flex justify-center gap-6">
                         {topicStats.byRound.map((roundData) => (
                           <div key={roundData.round} className="flex flex-col items-center gap-1 w-16">
                             <span className="text-xs font-medium">
                               {roundData.accuracy}%
                             </span>
-                            <div
-                              className={`w-10 rounded-t transition-all ${
-                                roundData.accuracy >= 80
-                                  ? "bg-green-500"
-                                  : roundData.accuracy >= 60
-                                  ? "bg-yellow-500"
-                                  : "bg-red-500"
-                              }`}
-                              style={{
-                                height: `${Math.max(Math.round((roundData.accuracy / 100) * 72), 4)}px`,
-                              }}
-                            />
+                            <div className="h-[72px] flex items-end">
+                              <div
+                                className={`w-10 rounded-t transition-all ${
+                                  roundData.accuracy >= 80
+                                    ? "bg-green-500"
+                                    : roundData.accuracy >= 60
+                                    ? "bg-yellow-500"
+                                    : "bg-red-500"
+                                }`}
+                                style={{
+                                  height: `${Math.max(Math.round((roundData.accuracy / 100) * 72), 4)}px`,
+                                }}
+                              />
+                            </div>
                             <span className="text-sm font-medium">{roundData.label}</span>
                             <span className="text-xs text-muted-foreground">{roundData.questions}問</span>
+                            <span className="text-xs text-muted-foreground">
+                              {new Date(roundData.lastDate).toLocaleDateString("ja-JP", { month: "numeric", day: "numeric" })}
+                            </span>
                           </div>
                         ))}
                       </div>
