@@ -97,9 +97,21 @@ export default function MaterialsPage() {
   const [filterSubtopic, setFilterSubtopic] = useState<string | "all">("all")
 
   const [downloadingId, setDownloadingId] = useState<string | null>(null)
+  const [isBulkDownloading, setIsBulkDownloading] = useState(false)
 
   const fileInputWithoutRef = useRef<HTMLInputElement>(null)
   const fileInputWithRef = useRef<HTMLInputElement>(null)
+
+  const triggerDownload = (blob: Blob, filename: string) => {
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = url
+    a.download = filename
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+  }
 
   const handleDownload = async (material: Material, type: "without" | "with") => {
     setDownloadingId(`${material.id}-${type}`)
@@ -111,19 +123,50 @@ export default function MaterialsPage() {
       }
       const suffix = type === "with" ? "_回答あり" : ""
       const filename = `${material.name}${suffix}.pdf`
-      const url = URL.createObjectURL(blob)
-      const a = document.createElement("a")
-      a.href = url
-      a.download = filename
-      document.body.appendChild(a)
-      a.click()
-      document.body.removeChild(a)
-      URL.revokeObjectURL(url)
+      triggerDownload(blob, filename)
     } catch (error) {
       console.error("Failed to export PDF:", error)
       alert("PDFのダウンロードに失敗しました")
     } finally {
       setDownloadingId(null)
+    }
+  }
+
+  const handleBulkDownload = async () => {
+    setIsBulkDownloading(true)
+    let successCount = 0
+    let failCount = 0
+    try {
+      for (const material of materials) {
+        if (material.pdfWithoutAnswers?.startsWith("indexeddb:")) {
+          const blob = await exportPDFFromIndexedDB(material.id, "without")
+          if (blob) {
+            triggerDownload(blob, `${material.name}.pdf`)
+            successCount++
+            await new Promise((r) => setTimeout(r, 300))
+          } else {
+            failCount++
+          }
+        }
+        if (material.pdfWithAnswers?.startsWith("indexeddb:")) {
+          const blob = await exportPDFFromIndexedDB(material.id, "with")
+          if (blob) {
+            triggerDownload(blob, `${material.name}_回答あり.pdf`)
+            successCount++
+            await new Promise((r) => setTimeout(r, 300))
+          } else {
+            failCount++
+          }
+        }
+      }
+      if (failCount > 0) {
+        alert(`${successCount}件ダウンロード完了、${failCount}件失敗`)
+      }
+    } catch (error) {
+      console.error("Failed to bulk export PDFs:", error)
+      alert("一括ダウンロード中にエラーが発生しました")
+    } finally {
+      setIsBulkDownloading(false)
     }
   }
 
@@ -375,11 +418,23 @@ export default function MaterialsPage() {
             </Select>
           )}
 
-          {/* アップロードボタン */}
-          <Button onClick={() => setShowUploadForm(!showUploadForm)} className="shrink-0">
-            <Plus className="h-4 w-4 mr-2" />
-            教材をアップロード
-          </Button>
+          {/* アクションボタン */}
+          <div className="flex gap-2 shrink-0">
+            {materials.length > 0 && (
+              <Button
+                variant="outline"
+                onClick={handleBulkDownload}
+                disabled={isBulkDownloading}
+              >
+                <Download className="h-4 w-4 mr-2" />
+                {isBulkDownloading ? "ダウンロード中..." : "一括DL"}
+              </Button>
+            )}
+            <Button onClick={() => setShowUploadForm(!showUploadForm)}>
+              <Plus className="h-4 w-4 mr-2" />
+              アップロード
+            </Button>
+          </div>
         </div>
 
         {/* アップロードフォーム */}
