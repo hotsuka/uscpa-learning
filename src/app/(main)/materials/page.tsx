@@ -20,7 +20,7 @@ import { SubtopicSelector } from "@/components/timer/SubtopicSelector"
 import { SUBJECTS, type Subject, type Material } from "@/types"
 import { EmptyState } from "@/components/common/EmptyState"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
-import { savePDFToIndexedDB } from "@/lib/indexeddb"
+import { savePDFToIndexedDB, exportPDFFromIndexedDB } from "@/lib/indexeddb"
 import {
   Plus,
   FileText,
@@ -32,6 +32,7 @@ import {
   AlertTriangle,
   Search,
   X,
+  Download,
 } from "lucide-react"
 
 const STORAGE_KEY = "uscpa-materials"
@@ -95,8 +96,36 @@ export default function MaterialsPage() {
   const [filterSubject, setFilterSubject] = useState<Subject | "all">("all")
   const [filterSubtopic, setFilterSubtopic] = useState<string | "all">("all")
 
+  const [downloadingId, setDownloadingId] = useState<string | null>(null)
+
   const fileInputWithoutRef = useRef<HTMLInputElement>(null)
   const fileInputWithRef = useRef<HTMLInputElement>(null)
+
+  const handleDownload = async (material: Material, type: "without" | "with") => {
+    setDownloadingId(`${material.id}-${type}`)
+    try {
+      const blob = await exportPDFFromIndexedDB(material.id, type)
+      if (!blob) {
+        alert("PDFが見つかりませんでした")
+        return
+      }
+      const suffix = type === "with" ? "_回答あり" : ""
+      const filename = `${material.name}${suffix}.pdf`
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement("a")
+      a.href = url
+      a.download = filename
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error("Failed to export PDF:", error)
+      alert("PDFのダウンロードに失敗しました")
+    } finally {
+      setDownloadingId(null)
+    }
+  }
 
   // 現在の科目フィルターに合致する教材からサブテーマ一覧を抽出
   const availableSubtopics = Array.from(
@@ -538,11 +567,42 @@ export default function MaterialsPage() {
                         </span>
                       </div>
 
-                      <div className="flex items-center text-xs text-muted-foreground pt-2 border-t">
-                        <Calendar className="h-3 w-3 mr-1" />
-                        <span>
-                          更新: {new Date(material.updatedAt).toLocaleDateString("ja-JP")}
-                        </span>
+                      <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t">
+                        <div className="flex items-center">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          <span>
+                            更新: {new Date(material.updatedAt).toLocaleDateString("ja-JP")}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-1" onClick={(e) => e.preventDefault()}>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="h-7 px-2 text-muted-foreground hover:text-foreground"
+                            disabled={downloadingId === `${material.id}-without`}
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              handleDownload(material, "without")
+                            }}
+                          >
+                            <Download className="h-3.5 w-3.5" />
+                          </Button>
+                          {material.pdfWithAnswers && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="h-7 px-2 text-muted-foreground hover:text-foreground"
+                              disabled={downloadingId === `${material.id}-with`}
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleDownload(material, "with")
+                              }}
+                            >
+                              <Download className="h-3.5 w-3.5 mr-1" />
+                              <Eye className="h-3 w-3" />
+                            </Button>
+                          )}
+                        </div>
                       </div>
                     </CardContent>
                   </Card>

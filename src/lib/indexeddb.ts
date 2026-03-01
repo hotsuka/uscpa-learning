@@ -148,6 +148,44 @@ export async function deletePDFFromIndexedDB(
 }
 
 /**
+ * IndexedDBからPDFファイルをBlobとして取得（エクスポート用）
+ */
+export async function exportPDFFromIndexedDB(
+  materialId: string,
+  type: "without" | "with"
+): Promise<Blob | null> {
+  try {
+    const db = await openDB()
+
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction(STORE_NAME, "readonly")
+      const store = transaction.objectStore(STORE_NAME)
+      const request = store.get(`${materialId}-${type}`)
+
+      request.onerror = () => {
+        reject(request.error)
+      }
+
+      request.onsuccess = () => {
+        const storedPDF = request.result as StoredPDF | undefined
+        if (storedPDF) {
+          resolve(new Blob([storedPDF.data], { type: storedPDF.mimeType }))
+        } else {
+          resolve(null)
+        }
+      }
+
+      transaction.oncomplete = () => {
+        db.close()
+      }
+    })
+  } catch (error) {
+    console.error("Error exporting PDF from IndexedDB:", error)
+    return null
+  }
+}
+
+/**
  * 教材に関連する全てのPDFを削除
  */
 export async function deleteAllPDFsForMaterial(materialId: string): Promise<void> {
