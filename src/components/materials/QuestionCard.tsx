@@ -68,9 +68,14 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
               {difficultyLabel[question.difficulty]}
             </Badge>
           </div>
-          <Badge variant="secondary" className="text-xs">
-            {question.subtopic}
-          </Badge>
+          <div className="flex items-center gap-2">
+            <Badge variant="outline" className="text-xs font-mono">
+              {question.id.toUpperCase()}
+            </Badge>
+            <Badge variant="secondary" className="text-xs">
+              {question.subtopic}
+            </Badge>
+          </div>
         </div>
 
         {/* 問題文 */}

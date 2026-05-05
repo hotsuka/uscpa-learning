@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { QuestionCard } from "@/components/materials/QuestionCard"
+import { MiniTimer } from "@/components/materials/MiniTimer"
 import { farQuestionSets, getTotalQuestionCount } from "@/data/questions/far"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { useRecordStore } from "@/stores/recordStore"
@@ -130,6 +131,9 @@ export default function QuestionsPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      <div className="sm:hidden border-b bg-muted/30 p-2 flex justify-center">
+        <MiniTimer />
+      </div>
       <main className="container max-w-3xl mx-auto p-4 pb-24">
         {/* 戻るリンク */}
         <Link
@@ -139,6 +143,11 @@ export default function QuestionsPage() {
           <ArrowLeft className="w-4 h-4" />
           教材一覧に戻る
         </Link>
+
+        {/* デスクトップ用ミニタイマー */}
+        <div className="hidden sm:flex justify-end mb-2">
+          <MiniTimer />
+        </div>
 
         {/* ページヘッダー */}
         <div className="mb-6">
@@ -232,6 +241,7 @@ export default function QuestionsPage() {
         {filteredQuestions.length > 0 && currentQuestion ? (
           <>
             <QuestionCard
+              key={currentQuestion.id}
               question={currentQuestion}
               questionNumber={currentIndex + 1}
               totalQuestions={filteredQuestions.length}
