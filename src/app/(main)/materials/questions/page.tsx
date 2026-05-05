@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect, useRef } from "react"
 import Link from "next/link"
 import { Header } from "@/components/layout/Header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -14,7 +14,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { QuestionCard } from "@/components/materials/QuestionCard"
-import { MiniTimer } from "@/components/materials/MiniTimer"
+import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
+import { useTimer } from "@/hooks/useTimer"
 import { farQuestionSets, getTotalQuestionCount } from "@/data/questions/far"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { useRecordStore } from "@/stores/recordStore"
@@ -36,6 +37,9 @@ export default function QuestionsPage() {
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all")
   const [weaknessMode, setWeaknessMode] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
+
+  const miniTimerRef = useRef<MiniTimerRef>(null)
+  const { isRunning, start, pause } = useTimer()
 
   const attempts = useQuestionBankStore((s) => s.attempts)
   const records = useRecordStore((s) => s.records)
@@ -109,6 +113,69 @@ export default function QuestionsPage() {
     return questions
   }, [selectedTopic, difficulty, weaknessMode, weakTopics])
 
+  // キーボードショートカット
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const activeElement = document.activeElement
+      const isInputFocused =
+        activeElement instanceof HTMLInputElement ||
+        activeElement instanceof HTMLTextAreaElement ||
+        activeElement?.getAttribute("contenteditable") === "true"
+
+      if (isInputFocused) return
+
+      // Space: タイマー開始/停止
+      if (e.key === " " && e.code === "Space") {
+        e.preventDefault()
+        if (isRunning) {
+          pause()
+        } else {
+          start()
+        }
+        return
+      }
+
+      // ←: 前の問題
+      if (e.key === "ArrowLeft") {
+        e.preventDefault()
+        setCurrentIndex((i) => Math.max(i - 1, 0))
+        return
+      }
+
+      // →: 次の問題
+      if (e.key === "ArrowRight") {
+        e.preventDefault()
+        setCurrentIndex((i) => Math.min(i + 1, filteredQuestions.length - 1))
+        return
+      }
+
+      // Q: 問題数を増減
+      if (e.key === "q" || e.key === "Q") {
+        e.preventDefault()
+        if (e.shiftKey) {
+          miniTimerRef.current?.decrementQuestions()
+        } else {
+          miniTimerRef.current?.incrementQuestions()
+        }
+        return
+      }
+
+      // A: 正解数を増減
+      if (e.key === "a" || e.key === "A") {
+        e.preventDefault()
+        if (e.shiftKey) {
+          miniTimerRef.current?.decrementCorrect()
+        } else {
+          miniTimerRef.current?.incrementCorrect()
+        }
+        return
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isRunning, start, pause, filteredQuestions.length])
+
   // ページ操作
   const currentQuestion = filteredQuestions[currentIndex]
   const goNext = () => setCurrentIndex((i) => Math.min(i + 1, filteredQuestions.length - 1))
@@ -146,7 +213,7 @@ export default function QuestionsPage() {
 
         {/* デスクトップ用ミニタイマー */}
         <div className="hidden sm:flex justify-end mb-2">
-          <MiniTimer />
+          <MiniTimer ref={miniTimerRef} />
         </div>
 
         {/* ページヘッダー */}
