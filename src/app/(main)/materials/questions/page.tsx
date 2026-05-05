@@ -45,19 +45,31 @@ export default function QuestionsPage() {
   const attempts = useQuestionBankStore((s) => s.attempts)
   const records = useRecordStore((s) => s.records)
 
-  // attemptsからトピック別統計を算出
+  // 問題IDからQuestionSetのtopicへのマップ（個別問題のtopicではなくセット単位で集約）
+  const questionSetTopicMap = useMemo(() => {
+    const map = new Map<string, string>()
+    for (const set of farQuestionSets) {
+      for (const q of set.questions) {
+        map.set(q.id, set.topic)
+      }
+    }
+    return map
+  }, [])
+
+  // attemptsからトピック別統計を算出（QuestionSetのtopic基準）
   const topicStats = useMemo(() => {
     const stats: Record<string, { correct: number; total: number; rate: number }> = {}
     for (const attempt of attempts) {
-      if (!stats[attempt.topic]) stats[attempt.topic] = { correct: 0, total: 0, rate: 0 }
-      stats[attempt.topic].total++
-      if (attempt.isCorrect) stats[attempt.topic].correct++
+      const setTopic = questionSetTopicMap.get(attempt.questionId) ?? attempt.topic
+      if (!stats[setTopic]) stats[setTopic] = { correct: 0, total: 0, rate: 0 }
+      stats[setTopic].total++
+      if (attempt.isCorrect) stats[setTopic].correct++
     }
     for (const topic of Object.keys(stats)) {
       stats[topic].rate = Math.round((stats[topic].correct / stats[topic].total) * 100)
     }
     return stats
-  }, [attempts])
+  }, [attempts, questionSetTopicMap])
 
   const attemptedCount = useMemo(() => new Set(attempts.map((a) => a.questionId)).size, [attempts])
 
