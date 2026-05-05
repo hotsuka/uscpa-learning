@@ -336,6 +336,28 @@ export default function MaterialsPage() {
           </Card>
         )}
 
+        {/* 問題バンクカード */}
+        <Link href="/materials/questions">
+          <Card className="border-blue-200 bg-blue-50/50 hover:bg-blue-50 transition-colors cursor-pointer">
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+                  <BookOpen className="w-6 h-6 text-blue-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-blue-900">FAR 問題バンク</h3>
+                  <p className="text-sm text-blue-700">
+                    AICPA公開問題ベースの追加演習（150問）
+                  </p>
+                </div>
+                <Badge variant="secondary" className="shrink-0">
+                  New
+                </Badge>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
         {/* データリセットボタン（デバッグ用） */}
         <Button
           variant="outline"

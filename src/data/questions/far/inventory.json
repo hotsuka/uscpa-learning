@@ -1,0 +1,196 @@
+{
+  "id": "far-inventory",
+  "name": "Inventory",
+  "topic": "Inventory",
+  "version": "1.0.0",
+  "questions": [
+    {
+      "id": "inv-001",
+      "topic": "Inventory",
+      "subtopic": "Lower of Cost or Net Realizable Value",
+      "stem": "Under ASC 330, inventory should be measured at:",
+      "choices": [
+        { "label": "A", "text": "Lower of cost or market (replacement cost)" },
+        { "label": "B", "text": "Lower of cost or net realizable value" },
+        { "label": "C", "text": "Fair value" },
+        { "label": "D", "text": "Historical cost without adjustment" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASU 2015-11 simplified the measurement of inventory by requiring entities that use FIFO or average cost to measure inventory at the lower of cost or net realizable value (NRV). NRV is estimated selling price less reasonably predictable costs of completion, disposal, and transportation. The previous lower of cost or market (with ceiling and floor tests) was eliminated for non-LIFO methods.",
+      "references": ["ASC 330-10-35-1B"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "inv-002",
+      "topic": "Inventory",
+      "subtopic": "LIFO Reserve",
+      "stem": "Company S uses LIFO and reports inventory of $400,000 with a LIFO reserve of $50,000. What would inventory be under FIFO?",
+      "choices": [
+        { "label": "A", "text": "$350,000" },
+        { "label": "B", "text": "$400,000" },
+        { "label": "C", "text": "$450,000" },
+        { "label": "D", "text": "$500,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The LIFO reserve represents the difference between inventory valued at LIFO and inventory valued at FIFO. FIFO inventory = LIFO inventory + LIFO reserve = $400,000 + $50,000 = $450,000. In periods of rising prices, LIFO typically reports lower inventory values than FIFO.",
+      "references": ["ASC 330-10-50-2"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "inv-003",
+      "topic": "Inventory",
+      "subtopic": "Periodic vs Perpetual",
+      "stem": "Under a periodic inventory system using LIFO, when is the cost of goods sold determined?",
+      "choices": [
+        { "label": "A", "text": "At the time of each sale" },
+        {
+          "label": "B",
+          "text": "At the end of the period based on ending inventory count"
+        },
+        { "label": "C", "text": "At the beginning of each month" },
+        {
+          "label": "D",
+          "text": "Only when a physical count differs from records"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under a periodic system, inventory quantities are determined by physical count at the end of the period. Cost of goods sold is then computed as: Beginning inventory + Purchases - Ending inventory. Under LIFO periodic, the most recent costs are assigned to COGS based on total period activity, which can differ from LIFO perpetual results.",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "inv-004",
+      "topic": "Inventory",
+      "subtopic": "Purchase Commitments",
+      "stem": "Entity T has a noncancelable purchase commitment to buy raw materials for $100,000. At year-end, the market value of those materials has declined to $85,000. What should Entity T recognize?",
+      "choices": [
+        { "label": "A", "text": "No entry until the materials are received" },
+        { "label": "B", "text": "A loss of $15,000 in the current period" },
+        { "label": "C", "text": "A liability of $100,000" },
+        { "label": "D", "text": "An asset write-down of $15,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 330-10-35-17, if the market price of goods subject to a firm, noncancelable purchase commitment declines below the commitment price, the loss should be recognized in the period in which the decline occurs. This is consistent with the lower of cost or NRV principle applied to existing inventory.",
+      "references": ["ASC 330-10-35-17"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "inv-005",
+      "topic": "Inventory",
+      "subtopic": "Cost Flow Assumptions",
+      "stem": "In a period of rising prices, which inventory cost flow method results in the highest net income?",
+      "choices": [
+        { "label": "A", "text": "LIFO" },
+        { "label": "B", "text": "FIFO" },
+        { "label": "C", "text": "Weighted average" },
+        { "label": "D", "text": "Specific identification" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a period of rising prices, FIFO assigns the oldest (lowest) costs to cost of goods sold, resulting in higher ending inventory and higher gross profit/net income. LIFO assigns the most recent (highest) costs to COGS, resulting in lower net income. Weighted average falls between FIFO and LIFO.",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "inv-006",
+      "topic": "Inventory",
+      "subtopic": "Consignment",
+      "stem": "Goods held on consignment should be included in the inventory of:",
+      "choices": [
+        { "label": "A", "text": "The consignee (the party holding the goods)" },
+        { "label": "B", "text": "The consignor (the owner of the goods)" },
+        { "label": "C", "text": "Neither party until the goods are sold" },
+        { "label": "D", "text": "Both parties on a proportional basis" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Consigned goods remain the property of the consignor until sold to a third party. They should be included in the consignor's inventory, not the consignee's. The consignee is merely holding the goods for sale on behalf of the consignor and does not have ownership risks and rewards.",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "inv-007",
+      "topic": "Inventory",
+      "subtopic": "Dollar-Value LIFO",
+      "stem": "Entity U uses dollar-value LIFO. Base year inventory is $100,000. At year-end, inventory at current prices is $132,000 and the price index is 1.10. What is ending inventory under dollar-value LIFO?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$122,000" },
+        { "label": "C", "text": "$132,000" },
+        { "label": "D", "text": "$110,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Step 1: Convert ending inventory to base-year dollars: $132,000 / 1.10 = $120,000. Step 2: Identify the layer: $120,000 - $100,000 base = $20,000 new layer at base-year prices. Step 3: Convert layer to current prices: $20,000 × 1.10 = $22,000. Step 4: Total DV-LIFO inventory: $100,000 (base layer at base prices) + $22,000 (new layer at current prices) = $122,000.",
+      "references": ["ASC 330-10-30-18"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "inv-008",
+      "topic": "Inventory",
+      "subtopic": "Gross Profit Method",
+      "stem": "Entity V needs to estimate ending inventory for interim reporting. Beginning inventory was $80,000, net purchases were $320,000, net sales were $500,000, and the historical gross profit rate is 40%. What is the estimated ending inventory?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "$80,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Estimated COGS = Sales × (1 - Gross profit rate) = $500,000 × 60% = $300,000. Goods available for sale = $80,000 + $320,000 = $400,000. Estimated ending inventory = $400,000 - $300,000 = $100,000.",
+      "references": ["ASC 330-10-30-20"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "inv-009",
+      "topic": "Inventory",
+      "subtopic": "Inventory Costs",
+      "stem": "Which of the following costs should be included in the cost of manufactured inventory?",
+      "choices": [
+        { "label": "A", "text": "Selling expenses" },
+        { "label": "B", "text": "General and administrative expenses" },
+        {
+          "label": "C",
+          "text": "Fixed manufacturing overhead allocated based on normal capacity"
+        },
+        {
+          "label": "D",
+          "text": "Abnormal amounts of freight, handling, and waste"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 330-10-30-1 through 30-8, the cost of inventory includes all costs of purchase, conversion, and other costs incurred in bringing inventories to their present location and condition. Fixed manufacturing overhead is allocated based on normal capacity. Abnormal waste and selling expenses are period costs excluded from inventory.",
+      "references": ["ASC 330-10-30-1", "ASC 330-10-30-8"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "inv-010",
+      "topic": "Inventory",
+      "subtopic": "LIFO Liquidation",
+      "stem": "During a period of rising prices, Company W experiences a LIFO liquidation (selling more units than purchased). What is the likely effect on financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Higher COGS and lower net income compared to normal operations"
+        },
+        {
+          "label": "B",
+          "text": "Lower COGS and higher net income due to dipping into old, low-cost layers"
+        },
+        { "label": "C", "text": "No effect on COGS" },
+        { "label": "D", "text": "Higher inventory values on the balance sheet" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A LIFO liquidation occurs when quantities sold exceed quantities purchased, causing old LIFO layers (with lower costs from prior periods) to be included in COGS. In periods of rising prices, these old lower costs reduce COGS and artificially inflate net income. Companies must disclose the effect of LIFO liquidations.",
+      "references": ["ASC 330-10-50-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    }
+  ]
+}
