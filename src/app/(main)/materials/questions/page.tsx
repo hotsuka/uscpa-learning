@@ -20,6 +20,7 @@ import { farQuestionSets, getTotalQuestionCount } from "@/data/questions/far"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { useRecordStore } from "@/stores/recordStore"
 import type { FARQuestion } from "@/types/questions"
+import { cn } from "@/lib/utils"
 import {
   ArrowLeft,
   Brain,
@@ -192,6 +193,17 @@ export default function QuestionsPage() {
     setCurrentIndex(0)
   }
 
+  // 問題ごとの解答状態マップ（未解答/最終正解/最終不正解）
+  const questionStatusMap = useMemo(() => {
+    const map = new Map<string, "correct" | "incorrect">()
+    for (const a of attempts) {
+      map.set(a.questionId, a.isCorrect ? "correct" : "incorrect")
+    }
+    return map
+  }, [attempts])
+
+  const [showGrid, setShowGrid] = useState(false)
+
   // 統計計算
   const totalQuestions = getTotalQuestionCount()
 
@@ -325,9 +337,12 @@ export default function QuestionsPage() {
                 <ChevronLeft className="w-4 h-4 mr-1" />
                 前の問題
               </Button>
-              <span className="text-sm text-muted-foreground">
+              <button
+                onClick={() => setShowGrid(!showGrid)}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
                 {currentIndex + 1} / {filteredQuestions.length}
-              </span>
+              </button>
               <Button
                 variant="outline"
                 size="sm"
@@ -338,6 +353,40 @@ export default function QuestionsPage() {
                 <ChevronRight className="w-4 h-4 ml-1" />
               </Button>
             </div>
+
+            {/* 問題番号グリッド */}
+            {showGrid && (
+              <Card className="mt-3">
+                <CardContent className="p-3">
+                  <div className="flex items-center gap-3 mb-2 text-xs text-muted-foreground">
+                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-green-500 inline-block" /> 正解</span>
+                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" /> 不正解</span>
+                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30 inline-block" /> 未解答</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {filteredQuestions.map((q, i) => {
+                      const status = questionStatusMap.get(q.id)
+                      const isCurrent = i === currentIndex
+                      return (
+                        <button
+                          key={q.id}
+                          onClick={() => { setCurrentIndex(i); setShowGrid(false) }}
+                          className={cn(
+                            "w-8 h-8 rounded text-xs font-medium transition-all flex items-center justify-center",
+                            isCurrent && "ring-2 ring-primary ring-offset-1",
+                            status === "correct" && "bg-green-100 text-green-800 hover:bg-green-200",
+                            status === "incorrect" && "bg-red-100 text-red-800 hover:bg-red-200",
+                            !status && "bg-muted text-muted-foreground hover:bg-muted/80",
+                          )}
+                        >
+                          {i + 1}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </>
         ) : (
           <Card>

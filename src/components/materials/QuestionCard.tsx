@@ -1,11 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle2, XCircle, ChevronDown, ChevronUp } from "lucide-react"
-import type { FARQuestion } from "@/types/questions"
+import { CheckCircle2, XCircle, ChevronDown, ChevronUp, History, Clock } from "lucide-react"
+import type { FARQuestion, QuestionAttempt } from "@/types/questions"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { cn } from "@/lib/utils"
 
@@ -19,7 +19,18 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [isAnswered, setIsAnswered] = useState(false)
   const [showExplanation, setShowExplanation] = useState(false)
+  const [showHistory, setShowHistory] = useState(false)
   const addAttempt = useQuestionBankStore((s) => s.addAttempt)
+  const attempts = useQuestionBankStore((s) => s.attempts)
+
+  const pastAttempts = useMemo(() => {
+    return attempts
+      .filter((a) => a.questionId === question.id)
+      .sort((a, b) => new Date(b.attemptedAt).getTime() - new Date(a.attemptedAt).getTime())
+  }, [attempts, question.id])
+
+  const pastCorrectCount = pastAttempts.filter((a) => a.isCorrect).length
+  const pastAccuracy = pastAttempts.length > 0 ? Math.round((pastCorrectCount / pastAttempts.length) * 100) : null
 
   const handleSubmit = () => {
     if (!selectedAnswer) return
@@ -59,7 +70,7 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
     <Card className="w-full">
       <CardContent className="pt-6">
         {/* ヘッダー */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">
               {questionNumber} / {totalQuestions}
@@ -77,6 +88,56 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
             </Badge>
           </div>
         </div>
+
+        {/* 解答履歴サマリー */}
+        {pastAttempts.length > 0 && (
+          <div className="mb-4">
+            <button
+              onClick={() => setShowHistory(!showHistory)}
+              className="w-full flex items-center justify-between p-2 rounded-lg bg-muted/50 hover:bg-muted/80 transition-colors"
+            >
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <History className="w-3.5 h-3.5" />
+                <span>{pastAttempts.length}回解答済み</span>
+                <span>·</span>
+                <span className={cn(
+                  "font-medium",
+                  pastAccuracy !== null && pastAccuracy >= 80 && "text-green-600",
+                  pastAccuracy !== null && pastAccuracy >= 50 && pastAccuracy < 80 && "text-yellow-600",
+                  pastAccuracy !== null && pastAccuracy < 50 && "text-red-600",
+                )}>
+                  正答率 {pastAccuracy}%
+                </span>
+                <span>·</span>
+                <span>直近: {pastAttempts[0].isCorrect ? "○" : "✕"}</span>
+              </div>
+              {showHistory ? <ChevronUp className="w-3.5 h-3.5 text-muted-foreground" /> : <ChevronDown className="w-3.5 h-3.5 text-muted-foreground" />}
+            </button>
+            {showHistory && (
+              <div className="mt-2 space-y-1 max-h-32 overflow-y-auto">
+                {pastAttempts.map((a, i) => (
+                  <div key={a.attemptedAt} className="flex items-center gap-2 text-xs px-2 py-1 rounded bg-muted/30">
+                    <span className="text-muted-foreground w-5 text-right">{pastAttempts.length - i}</span>
+                    {a.isCorrect ? (
+                      <CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" />
+                    ) : (
+                      <XCircle className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                    )}
+                    <span className={a.isCorrect ? "text-green-700" : "text-red-700"}>
+                      {a.selectedAnswer}
+                    </span>
+                    <span className="text-muted-foreground ml-auto flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {new Date(a.attemptedAt).toLocaleDateString("ja-JP", { month: "short", day: "numeric" })}
+                      {" "}
+                      {new Date(a.attemptedAt).toLocaleTimeString("ja-JP", { hour: "2-digit", minute: "2-digit" })}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* 問題文 */}
         <p className="text-base font-medium mb-6 leading-relaxed">{question.stem}</p>
