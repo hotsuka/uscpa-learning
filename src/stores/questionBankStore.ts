@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { QuestionAttempt } from "@/types/questions";
+import { farQuestionSets } from "@/data/questions/far";
 
 interface QuestionBankState {
   attempts: QuestionAttempt[];
@@ -76,6 +77,26 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
+      version: 1,
+      migrate: (persisted, version) => {
+        const state = persisted as { attempts: QuestionAttempt[] };
+        if (version === 0) {
+          const answerMap = new Map<string, string>();
+          for (const set of farQuestionSets) {
+            for (const q of set.questions) {
+              answerMap.set(q.id, q.correctAnswer);
+            }
+          }
+          state.attempts = state.attempts.map((a) => {
+            const correct = answerMap.get(a.questionId);
+            if (correct) {
+              return { ...a, isCorrect: a.selectedAnswer === correct };
+            }
+            return a;
+          });
+        }
+        return state;
+      },
     },
   ),
 );
