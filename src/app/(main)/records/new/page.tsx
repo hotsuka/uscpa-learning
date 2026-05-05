@@ -53,6 +53,9 @@ export default function NewRecordPage() {
   const [correctAnswers, setCorrectAnswers] = useState("")
   const [roundNumber, setRoundNumber] = useState("1")
 
+  // 問題バンクフラグ
+  const [fromQuestionBank, setFromQuestionBank] = useState(false)
+
   // テキスト復習用
   const [chapter, setChapter] = useState("")
   const [pageRange, setPageRange] = useState("")
@@ -87,6 +90,7 @@ export default function NewRecordPage() {
       roundNumber: recordType === "practice" ? (parseInt(roundNumber) || null) : null,
       chapter: recordType === "textbook" ? (chapter || null) : null,
       pageRange: recordType === "textbook" ? (pageRange || null) : null,
+      fromQuestionBank: recordType === "practice" ? fromQuestionBank : false,
     }
 
     const result = practiceRecordSchema.safeParse(input)
@@ -263,6 +267,20 @@ export default function NewRecordPage() {
                         onChange={(e) => setRoundNumber(e.target.value)}
                         required
                       />
+                    </div>
+
+                    {/* 問題バンクチェックボックス */}
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="fromQuestionBank"
+                        checked={fromQuestionBank}
+                        onChange={(e) => setFromQuestionBank(e.target.checked)}
+                        className="h-4 w-4 rounded border-gray-300"
+                      />
+                      <Label htmlFor="fromQuestionBank" className="text-sm font-normal cursor-pointer">
+                        問題バンクからの演習
+                      </Label>
                     </div>
                   </>
                 )}

@@ -59,6 +59,7 @@ export async function getRecords(options?: {
       pageRange: props["ページ範囲"]?.rich_text?.[0]?.text?.content || null,
       studiedAt: props["演習日"]?.date?.start || new Date().toISOString().split("T")[0],
       memo: props["メモ"]?.rich_text?.[0]?.text?.content || null,
+      fromQuestionBank: props["問題バンク"]?.checkbox ?? false,
       // 監査証跡用（v1.11追加）
       source: (props["作成元"]?.select?.name || "manual") as import("@/types").RecordSource,
       sessionId: props["セッションID"]?.rich_text?.[0]?.text?.content || null,
@@ -90,6 +91,7 @@ export async function getRecordById(pageId: string): Promise<StudyRecord | null>
       pageRange: props["ページ範囲"]?.rich_text?.[0]?.text?.content || null,
       studiedAt: props["演習日"]?.date?.start || new Date().toISOString().split("T")[0],
       memo: props["メモ"]?.rich_text?.[0]?.text?.content || null,
+      fromQuestionBank: props["問題バンク"]?.checkbox ?? false,
       // 監査証跡用（v1.11追加）
       source: (props["作成元"]?.select?.name || "manual") as import("@/types").RecordSource,
       sessionId: props["セッションID"]?.rich_text?.[0]?.text?.content || null,
@@ -116,6 +118,7 @@ interface CreateRecordInput {
   pageRange: string | null
   studiedAt: string
   memo: string | null
+  fromQuestionBank?: boolean
   // 監査証跡用（v1.11追加）
   source: import("@/types").RecordSource
   sessionId: string | null
@@ -180,6 +183,9 @@ export async function createRecord(
   if (record.memo) {
     properties["メモ"] = { rich_text: [{ text: { content: record.memo } }] }
   }
+  if (record.fromQuestionBank) {
+    properties["問題バンク"] = { checkbox: true }
+  }
   if (record.sessionId) {
     properties["セッションID"] = { rich_text: [{ text: { content: record.sessionId } }] }
   }
@@ -211,6 +217,7 @@ export async function createRecord(
     pageRange: record.pageRange,
     studiedAt: record.studiedAt,
     memo: record.memo,
+    fromQuestionBank: record.fromQuestionBank ?? false,
     source: record.source,
     sessionId: record.sessionId,
     deviceId: record.deviceId,
@@ -268,6 +275,9 @@ export async function updateRecord(
     properties["ページ範囲"] = updates.pageRange
       ? { rich_text: [{ text: { content: updates.pageRange } }] }
       : { rich_text: [] }
+  }
+  if (updates.fromQuestionBank !== undefined) {
+    properties["問題バンク"] = { checkbox: updates.fromQuestionBank }
   }
   if (updates.memo !== undefined) {
     properties["メモ"] = updates.memo

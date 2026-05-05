@@ -42,6 +42,7 @@ export default function RecordDetailPage() {
   const [roundNumber, setRoundNumber] = useState("1")
   const [chapter, setChapter] = useState("")
   const [pageRange, setPageRange] = useState("")
+  const [fromQuestionBank, setFromQuestionBank] = useState(false)
   const [isSaving, setIsSaving] = useState(false)
   const [validationError, setValidationError] = useState<string | null>(null)
 
@@ -64,6 +65,7 @@ export default function RecordDetailPage() {
       setRoundNumber(record.roundNumber ? String(record.roundNumber) : "1")
       setChapter(record.chapter || "")
       setPageRange(record.pageRange || "")
+      setFromQuestionBank(record.fromQuestionBank ?? false)
     }
   }, [record])
 
@@ -117,6 +119,7 @@ export default function RecordDetailPage() {
       roundNumber: recordType === "practice" ? (parseInt(roundNumber) || null) : null,
       chapter: recordType === "textbook" ? (chapter || null) : null,
       pageRange: recordType === "textbook" ? (pageRange || null) : null,
+      fromQuestionBank: recordType === "practice" ? fromQuestionBank : false,
     }
 
     const result = practiceRecordSchema.safeParse(input)
@@ -126,7 +129,7 @@ export default function RecordDetailPage() {
       return
     }
 
-    updateRecord(recordId, input)
+    updateRecord(recordId, { ...input })
     setIsEditing(false)
     setIsSaving(false)
   }
@@ -155,6 +158,7 @@ export default function RecordDetailPage() {
       setRoundNumber(record.roundNumber ? String(record.roundNumber) : "1")
       setChapter(record.chapter || "")
       setPageRange(record.pageRange || "")
+      setFromQuestionBank(record.fromQuestionBank ?? false)
     }
     setIsEditing(false)
   }
@@ -348,6 +352,20 @@ export default function RecordDetailPage() {
                           onChange={(e) => setRoundNumber(e.target.value)}
                         />
                       </div>
+
+                      {/* 問題バンクチェックボックス */}
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          id="fromQuestionBank"
+                          checked={fromQuestionBank}
+                          onChange={(e) => setFromQuestionBank(e.target.checked)}
+                          className="h-4 w-4 rounded border-gray-300"
+                        />
+                        <Label htmlFor="fromQuestionBank" className="text-sm font-normal cursor-pointer">
+                          問題バンクからの演習
+                        </Label>
+                      </div>
                     </>
                   )}
 
@@ -419,6 +437,11 @@ export default function RecordDetailPage() {
                       <Badge variant="outline">
                         <BookOpen className="h-3 w-3 mr-1" />
                         テキスト復習
+                      </Badge>
+                    )}
+                    {record.fromQuestionBank && (
+                      <Badge variant="outline" className="text-xs border-blue-500 text-blue-600">
+                        問題バンク
                       </Badge>
                     )}
                     {record.recordType === "practice" && record.roundNumber && (

@@ -63,6 +63,11 @@ export default function RecordsPage() {
                                 {record.roundNumber}周目
                               </span>
                             )}
+                            {record.fromQuestionBank && (
+                              <Badge variant="outline" className="text-xs border-blue-500 text-blue-600">
+                                問題バンク
+                              </Badge>
+                            )}
                             {record.recordType === "textbook" && (
                               <Badge variant="outline" className="text-xs">
                                 <BookOpen className="h-3 w-3 mr-1" />
