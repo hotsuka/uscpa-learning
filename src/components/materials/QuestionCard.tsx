@@ -221,6 +221,11 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
             {showExplanation && (
               <div className="p-4 rounded-lg bg-muted/50 space-y-3">
                 <p className="text-sm leading-relaxed">{question.explanation}</p>
+                {question.explanationJa && (
+                  <p className="text-sm leading-relaxed text-muted-foreground border-t pt-2">
+                    {question.explanationJa}
+                  </p>
+                )}
                 {question.references.length > 0 && (
                   <div className="flex flex-wrap gap-1">
                     {question.references.map((ref) => (

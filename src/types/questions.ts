@@ -6,6 +6,7 @@ export interface FARQuestion {
   choices: { label: string; text: string }[];
   correctAnswer: string;
   explanation: string;
+  explanationJa: string;
   references: string[];
   difficulty: "basic" | "intermediate" | "advanced";
   source: string;
