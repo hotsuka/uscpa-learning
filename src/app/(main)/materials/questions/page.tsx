@@ -36,9 +36,24 @@ export default function QuestionsPage() {
   const [weaknessMode, setWeaknessMode] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const topicStats = useQuestionBankStore((s) => s.getTopicStats())
-  const attemptedIds = useQuestionBankStore((s) => s.getAttemptedQuestionIds())
+  const attempts = useQuestionBankStore((s) => s.attempts)
   const records = useRecordStore((s) => s.records)
+
+  // attemptsからトピック別統計を算出
+  const topicStats = useMemo(() => {
+    const stats: Record<string, { correct: number; total: number; rate: number }> = {}
+    for (const attempt of attempts) {
+      if (!stats[attempt.topic]) stats[attempt.topic] = { correct: 0, total: 0, rate: 0 }
+      stats[attempt.topic].total++
+      if (attempt.isCorrect) stats[attempt.topic].correct++
+    }
+    for (const topic of Object.keys(stats)) {
+      stats[topic].rate = Math.round((stats[topic].correct / stats[topic].total) * 100)
+    }
+    return stats
+  }, [attempts])
+
+  const attemptedCount = useMemo(() => new Set(attempts.map((a) => a.questionId)).size, [attempts])
 
   // recordStoreから弱点トピック（正答率60%未満）を抽出
   const weakTopics = useMemo(() => {
@@ -111,7 +126,6 @@ export default function QuestionsPage() {
 
   // 統計計算
   const totalQuestions = getTotalQuestionCount()
-  const attemptedCount = attemptedIds.size
 
   return (
     <div className="min-h-screen bg-background">
