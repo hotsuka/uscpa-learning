@@ -16,7 +16,7 @@ import {
   RecordDialog,
   type RecordData,
 } from "@/components/timer";
-import { formatMinutes, generateUUID } from "@/lib/utils";
+import { formatMinutes, generateUUID, getJSTDateString } from "@/lib/utils";
 import { SUBJECTS, type Subject } from "@/types";
 import { useRecordStore } from "@/stores/recordStore";
 import { FileQuestion, MessageSquare } from "lucide-react";
@@ -70,7 +70,7 @@ export default function TimerPage() {
 
   // 今日の記録から学習時間を計算
   const todayTotalMinutes = useMemo(() => {
-    const today = new Date().toISOString().split("T")[0];
+    const today = getJSTDateString();
     const todayRecords = records.filter((r) => r.studiedAt === today);
     return todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0);
   }, [records]);

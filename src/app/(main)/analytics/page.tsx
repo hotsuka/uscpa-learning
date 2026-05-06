@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { SUBJECTS, SUBJECT_OPTIONS, type Subject } from "@/types"
 import { useRecordStore } from "@/stores/recordStore"
+import { getJSTDateString } from "@/lib/utils"
 import { useSettingsStore } from "@/stores/settingsStore"
 import {
   BarChart3,
@@ -55,7 +56,7 @@ export default function AnalyticsPage() {
       startDate = new Date(now.getFullYear(), now.getMonth(), 1)
     }
 
-    const startDateStr = startDate.toISOString().split("T")[0]
+    const startDateStr = getJSTDateString(startDate)
     return records.filter((r) => r.studiedAt >= startDateStr)
   }, [records, selectedPeriod])
 
@@ -101,7 +102,7 @@ export default function AnalyticsPage() {
     for (let i = 6; i >= 0; i--) {
       const date = new Date(today)
       date.setDate(date.getDate() - i)
-      const dateStr = date.toISOString().split("T")[0]
+      const dateStr = getJSTDateString(date)
       const dayRecords = records.filter((r) => r.studiedAt === dateStr)
       const minutes = dayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0)
 

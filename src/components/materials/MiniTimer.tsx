@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { useTimer } from "@/hooks/useTimer"
 import { useRecordStore, checkAndResetDailyMinutes } from "@/stores/recordStore"
 import { Play, Pause, Square, Clock, Calendar } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn, getJSTDateString } from "@/lib/utils"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 
 // 分を「Xh Xm」形式にフォーマット
@@ -55,7 +55,7 @@ export const MiniTimer = forwardRef<MiniTimerRef, MiniTimerProps>(function MiniT
 
   // 今日の合計勉強時間（記録済み）- recordsから直接計算
   const recordedTodayMinutes = useRecordStore((state) => {
-    const today = new Date().toISOString().split("T")[0]
+    const today = getJSTDateString()
     const todayRecords = state.records.filter((r) => r.studiedAt === today)
     return todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0)
   })

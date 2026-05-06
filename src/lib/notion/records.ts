@@ -1,4 +1,5 @@
 import { getNotionClient, getDbIds } from "./client"
+import { getJSTDateString } from "@/lib/utils"
 import type { Subject, RecordType, StudyRecord } from "@/types"
 
 // 学習記録を取得
@@ -57,7 +58,7 @@ export async function getRecords(options?: {
       roundNumber: props["周回数"]?.number || null,
       chapter: props["章"]?.rich_text?.[0]?.text?.content || null,
       pageRange: props["ページ範囲"]?.rich_text?.[0]?.text?.content || null,
-      studiedAt: props["演習日"]?.date?.start || new Date().toISOString().split("T")[0],
+      studiedAt: props["演習日"]?.date?.start || getJSTDateString(),
       memo: props["メモ"]?.rich_text?.[0]?.text?.content || null,
       fromQuestionBank: props["問題バンク"]?.checkbox ?? false,
       // 監査証跡用（v1.11追加）
@@ -89,7 +90,7 @@ export async function getRecordById(pageId: string): Promise<StudyRecord | null>
       roundNumber: props["周回数"]?.number || null,
       chapter: props["章"]?.rich_text?.[0]?.text?.content || null,
       pageRange: props["ページ範囲"]?.rich_text?.[0]?.text?.content || null,
-      studiedAt: props["演習日"]?.date?.start || new Date().toISOString().split("T")[0],
+      studiedAt: props["演習日"]?.date?.start || getJSTDateString(),
       memo: props["メモ"]?.rich_text?.[0]?.text?.content || null,
       fromQuestionBank: props["問題バンク"]?.checkbox ?? false,
       // 監査証跡用（v1.11追加）
@@ -309,7 +310,7 @@ export async function deleteRecord(pageId: string): Promise<void> {
 
 // 今日の記録を取得
 export async function getTodayRecords(): Promise<StudyRecord[]> {
-  const today = new Date().toISOString().split("T")[0]
+  const today = getJSTDateString()
   return getRecords({ startDate: today, endDate: today })
 }
 

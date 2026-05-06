@@ -11,11 +11,11 @@ import { SubjectBadge } from "@/components/common/SubjectBadge"
 import { EmptyState } from "@/components/common/EmptyState"
 import { DailySummary } from "@/components/records/DailySummary"
 import { useRecordStore } from "@/stores/recordStore"
-import { formatMinutes } from "@/lib/utils"
+import { formatMinutes, getJSTDateString } from "@/lib/utils"
 
 export default function RecordsPage() {
   const { records } = useRecordStore()
-  const [selectedDate, setSelectedDate] = useState(() => new Date().toISOString().split("T")[0])
+  const [selectedDate, setSelectedDate] = useState(() => getJSTDateString())
 
   // 日付の新しい順にソート
   const sortedRecords = [...records].sort((a, b) =>

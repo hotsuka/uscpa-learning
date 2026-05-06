@@ -16,7 +16,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { BookOpen, FileText, Loader2 } from "lucide-react"
 import { SUBJECTS, type Subject, type RecordType } from "@/types"
-import { formatMinutes } from "@/lib/utils"
+import { formatMinutes, getJSTDateString } from "@/lib/utils"
 import { practiceRecordSchema } from "@/lib/validations/practice"
 
 interface RecordDialogProps {
@@ -103,7 +103,7 @@ export function RecordDialog({
         chapter: recordType === "textbook" && chapter ? chapter : null,
         pageRange: recordType === "textbook" && pageRange ? pageRange : null,
         memo: memo || null,
-        studiedAt: new Date().toISOString().split("T")[0],
+        studiedAt: getJSTDateString(),
       }
 
       const result = practiceRecordSchema.safeParse(data)

@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { Subject, RecordType, StudyRecord, RecordSource } from "@/types";
-import { generateUUID, getDeviceId } from "@/lib/utils";
+import { generateUUID, getDeviceId, getJSTDateString } from "@/lib/utils";
 
 // 記録作成時の入力データ（source, sessionIdを含む）
 interface RecordInput {
@@ -312,7 +312,7 @@ export const useRecordStore = create<RecordState>()(
 
       // 今日の全科目合計（分単位）- recordsから計算
       getTodayTotalMinutes: () => {
-        const today = new Date().toISOString().split("T")[0];
+        const today = getJSTDateString();
         const todayRecords = get().records.filter((r) => r.studiedAt === today);
         return todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0);
       },
@@ -349,7 +349,7 @@ export const useRecordStore = create<RecordState>()(
 // 日付が変わったかチェックして、変わっていたらリセットする
 export function checkAndResetDailyMinutes() {
   const lastDate = localStorage.getItem("uscpa-last-study-date");
-  const today = new Date().toISOString().split("T")[0];
+  const today = getJSTDateString();
 
   if (lastDate !== today) {
     useRecordStore.getState().resetTodayStudyMinutes();

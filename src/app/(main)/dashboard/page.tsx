@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { SubjectBadge } from "@/components/common/SubjectBadge"
-import { formatMinutes, daysUntil } from "@/lib/utils"
+import { formatMinutes, daysUntil, getJSTDateString } from "@/lib/utils"
 import { SUBJECTS, SUBJECT_OPTIONS, type Subject } from "@/types"
 import { useRecordStore } from "@/stores/recordStore"
 import { useSettingsStore } from "@/stores/settingsStore"
@@ -32,7 +32,7 @@ export default function DashboardPage() {
 
   // 今日の統計を計算
   const todayStats = useMemo(() => {
-    const today = new Date().toISOString().split("T")[0]
+    const today = getJSTDateString()
     const todayRecords = records.filter((r) => r.studiedAt === today)
 
     const studyMinutes = todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0)
@@ -53,7 +53,7 @@ export default function DashboardPage() {
     monday.setDate(monday.getDate() + diff)
     monday.setHours(0, 0, 0, 0)
 
-    const mondayStr = monday.toISOString().split("T")[0]
+    const mondayStr = getJSTDateString(monday)
     const thisWeekRecords = records.filter((r) => r.studiedAt >= mondayStr)
     return thisWeekRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0)
   }, [records])

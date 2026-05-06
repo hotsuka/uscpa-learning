@@ -4,7 +4,7 @@ import { useMemo } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Clock, Target, CheckCircle2, Percent, ChevronLeft, ChevronRight, Calendar } from "lucide-react"
-import { formatMinutes } from "@/lib/utils"
+import { formatMinutes, getJSTDateString } from "@/lib/utils"
 import type { StudyRecord } from "@/types"
 
 interface DailySummaryProps {
@@ -37,11 +37,11 @@ export function DailySummary({ records, selectedDate, onDateChange }: DailySumma
   const changeDate = (days: number) => {
     const date = new Date(selectedDate)
     date.setDate(date.getDate() + days)
-    onDateChange(date.toISOString().split("T")[0])
+    onDateChange(getJSTDateString(date))
   }
 
   // 今日の日付
-  const today = new Date().toISOString().split("T")[0]
+  const today = getJSTDateString()
 
   // 日付のフォーマット
   const formatDate = (dateStr: string) => {

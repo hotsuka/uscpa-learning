@@ -12,7 +12,7 @@ import { SubtopicSelector } from "@/components/timer/SubtopicSelector"
 import { type Subject, type RecordType } from "@/types"
 import { BookOpen, FileQuestion, Clock, Timer } from "lucide-react"
 import { useRecordStore, checkAndResetDailyMinutes } from "@/stores/recordStore"
-import { formatMinutes } from "@/lib/utils"
+import { formatMinutes, getJSTDateString } from "@/lib/utils"
 import { practiceRecordSchema } from "@/lib/validations/practice"
 
 export default function NewRecordPage() {
@@ -28,9 +28,7 @@ export default function NewRecordPage() {
   const [recordType, setRecordType] = useState<RecordType>("practice")
   const [subject, setSubject] = useState<Subject>("FAR")
   const [subtopic, setSubtopic] = useState<string>("")
-  const [studiedAt, setStudiedAt] = useState(
-    new Date().toISOString().split("T")[0]
-  )
+  const [studiedAt, setStudiedAt] = useState(getJSTDateString())
   const [memo, setMemo] = useState("")
 
   // 学習時間（分単位）- タイマーからデフォルト値を取得
