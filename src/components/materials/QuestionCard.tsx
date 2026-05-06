@@ -20,15 +20,21 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
   const [isAnswered, setIsAnswered] = useState(false)
   const [showExplanation, setShowExplanation] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
-  // 選択肢をシャッフル（コンポーネントマウント時に1回だけ実行）
-  const shuffledChoices = useRef(
+  // 選択肢テキストのみシャッフル（ラベルA～Dは固定）
+  const { choices: shuffledChoices, correctAnswer: shuffledCorrectAnswer } = useRef(
     (() => {
-      const arr = [...question.choices]
-      for (let i = arr.length - 1; i > 0; i--) {
+      const labels = question.choices.map((c) => c.label)
+      const correctText = question.choices.find((c) => c.label === question.correctAnswer)!.text
+      // テキスト配列をシャッフル
+      const texts = question.choices.map((c) => c.text)
+      for (let i = texts.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1))
-        ;[arr[i], arr[j]] = [arr[j], arr[i]]
+        ;[texts[i], texts[j]] = [texts[j], texts[i]]
       }
-      return arr
+      return {
+        choices: labels.map((label, i) => ({ label, text: texts[i] })),
+        correctAnswer: labels[texts.indexOf(correctText)],
+      }
     })()
   ).current
 
@@ -46,7 +52,7 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
 
   const handleSubmit = () => {
     if (!selectedAnswer) return
-    const isCorrect = selectedAnswer === question.correctAnswer
+    const isCorrect = selectedAnswer === shuffledCorrectAnswer
     setIsAnswered(true)
     setShowExplanation(true)
     addAttempt({
@@ -64,7 +70,7 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
     setShowExplanation(false)
   }
 
-  const isCorrect = selectedAnswer === question.correctAnswer
+  const isCorrect = selectedAnswer === shuffledCorrectAnswer
 
   const difficultyColor = {
     basic: "bg-green-100 text-green-800",
@@ -158,7 +164,7 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
         <div className="space-y-3 mb-6">
           {shuffledChoices.map((choice) => {
             const isSelected = selectedAnswer === choice.label
-            const isCorrectChoice = choice.label === question.correctAnswer
+            const isCorrectChoice = choice.label === shuffledCorrectAnswer
             let choiceStyle = "border-border hover:border-primary hover:bg-accent cursor-pointer"
 
             if (isAnswered) {
@@ -214,7 +220,7 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
                 isCorrect ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
               )}
             >
-              {isCorrect ? "正解!" : `不正解 — 正解は ${question.correctAnswer}`}
+              {isCorrect ? "正解!" : `不正解 — 正解は ${shuffledCorrectAnswer}`}
             </div>
 
             {/* 解説トグル */}
