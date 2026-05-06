@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -20,6 +20,18 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
   const [isAnswered, setIsAnswered] = useState(false)
   const [showExplanation, setShowExplanation] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
+  // 選択肢をシャッフル（コンポーネントマウント時に1回だけ実行）
+  const shuffledChoices = useRef(
+    (() => {
+      const arr = [...question.choices]
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[arr[i], arr[j]] = [arr[j], arr[i]]
+      }
+      return arr
+    })()
+  ).current
+
   const addAttempt = useQuestionBankStore((s) => s.addAttempt)
   const attempts = useQuestionBankStore((s) => s.attempts)
 
@@ -144,7 +156,7 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
 
         {/* 選択肢 */}
         <div className="space-y-3 mb-6">
-          {question.choices.map((choice) => {
+          {shuffledChoices.map((choice) => {
             const isSelected = selectedAnswer === choice.label
             const isCorrectChoice = choice.label === question.correctAnswer
             let choiceStyle = "border-border hover:border-primary hover:bg-accent cursor-pointer"

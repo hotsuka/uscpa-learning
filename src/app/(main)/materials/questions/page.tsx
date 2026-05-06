@@ -29,6 +29,7 @@ import {
   ChevronLeft,
   ChevronRight,
   AlertTriangle,
+  XCircle,
 } from "lucide-react"
 
 type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced"
@@ -37,6 +38,7 @@ export default function QuestionsPage() {
   const [selectedTopic, setSelectedTopic] = useState<string>("all")
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all")
   const [weaknessMode, setWeaknessMode] = useState(false)
+  const [neverCorrectOnly, setNeverCorrectOnly] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const miniTimerRef = useRef<MiniTimerRef>(null)
@@ -88,6 +90,15 @@ export default function QuestionsPage() {
       .map(([topic]) => topic)
   }, [records])
 
+  // 1回でも正解したことがある問題IDのセット
+  const everCorrectIds = useMemo(() => {
+    const ids = new Set<string>()
+    for (const a of attempts) {
+      if (a.isCorrect) ids.add(a.questionId)
+    }
+    return ids
+  }, [attempts])
+
   // 問題をフィルタリング
   const filteredQuestions = useMemo(() => {
     let questions: FARQuestion[] = []
@@ -101,6 +112,11 @@ export default function QuestionsPage() {
 
     if (difficulty !== "all") {
       questions = questions.filter((q) => q.difficulty === difficulty)
+    }
+
+    // 未正解のみフィルター
+    if (neverCorrectOnly) {
+      questions = questions.filter((q) => !everCorrectIds.has(q.id))
     }
 
     if (weaknessMode && weakTopics.length > 0) {
@@ -124,7 +140,7 @@ export default function QuestionsPage() {
     }
 
     return questions
-  }, [selectedTopic, difficulty, weaknessMode, weakTopics])
+  }, [selectedTopic, difficulty, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds])
 
   // キーボードショートカット
   useEffect(() => {
@@ -307,24 +323,38 @@ export default function QuestionsPage() {
               </div>
             </div>
 
-            <Button
-              variant={weaknessMode ? "default" : "outline"}
-              size="sm"
-              onClick={() => {
-                setWeaknessMode(!weaknessMode)
-                setCurrentIndex(0)
-              }}
-              className="w-full sm:w-auto"
-              disabled={weakTopics.length === 0}
-            >
-              <Brain className="w-4 h-4 mr-2" />
-              弱点優先モード
-              {weakTopics.length > 0 && (
-                <Badge variant="secondary" className="ml-2">
-                  {weakTopics.length}
-                </Badge>
-              )}
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <Button
+                variant={weaknessMode ? "default" : "outline"}
+                size="sm"
+                onClick={() => {
+                  setWeaknessMode(!weaknessMode)
+                  setCurrentIndex(0)
+                }}
+                className="w-full sm:w-auto"
+                disabled={weakTopics.length === 0}
+              >
+                <Brain className="w-4 h-4 mr-2" />
+                弱点優先モード
+                {weakTopics.length > 0 && (
+                  <Badge variant="secondary" className="ml-2">
+                    {weakTopics.length}
+                  </Badge>
+                )}
+              </Button>
+              <Button
+                variant={neverCorrectOnly ? "default" : "outline"}
+                size="sm"
+                onClick={() => {
+                  setNeverCorrectOnly(!neverCorrectOnly)
+                  setCurrentIndex(0)
+                }}
+                className="w-full sm:w-auto"
+              >
+                <XCircle className="w-4 h-4 mr-2" />
+                未正解のみ
+              </Button>
+            </div>
           </CardContent>
         </Card>
 

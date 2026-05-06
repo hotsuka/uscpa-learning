@@ -42,6 +42,7 @@ export interface RecordData {
   totalQuestions: number | null
   correctAnswers: number | null
   roundNumber: number | null
+  fromQuestionBank: boolean
   // テキスト復習用
   chapter: string | null
   pageRange: string | null
@@ -69,6 +70,7 @@ export function RecordDialog({
   const [chapter, setChapter] = useState<string>("")
   const [pageRange, setPageRange] = useState<string>("")
   const [memo, setMemo] = useState<string>(initialMemo)
+  const [fromQuestionBank, setFromQuestionBank] = useState(false)
   const [isSaving, setIsSaving] = useState(false)
   const [validationError, setValidationError] = useState<string | null>(null)
 
@@ -97,6 +99,7 @@ export function RecordDialog({
         totalQuestions: recordType === "practice" && totalQuestions ? parseInt(totalQuestions) : null,
         correctAnswers: recordType === "practice" && correctAnswers ? parseInt(correctAnswers) : null,
         roundNumber: recordType === "practice" && roundNumber ? parseInt(roundNumber) : null,
+        fromQuestionBank: recordType === "practice" ? fromQuestionBank : false,
         chapter: recordType === "textbook" && chapter ? chapter : null,
         pageRange: recordType === "textbook" && pageRange ? pageRange : null,
         memo: memo || null,
@@ -127,6 +130,7 @@ export function RecordDialog({
     setTotalQuestions("")
     setCorrectAnswers("")
     setRoundNumber("1")
+    setFromQuestionBank(false)
     setChapter("")
     setPageRange("")
     setMemo("")
@@ -240,6 +244,20 @@ export function RecordDialog({
                   value={roundNumber}
                   onChange={(e) => setRoundNumber(e.target.value)}
                 />
+              </div>
+
+              {/* 問題バンクチェックボックス */}
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="fromQuestionBank"
+                  checked={fromQuestionBank}
+                  onChange={(e) => setFromQuestionBank(e.target.checked)}
+                  className="h-4 w-4 rounded border-gray-300"
+                />
+                <Label htmlFor="fromQuestionBank" className="text-sm font-normal cursor-pointer">
+                  問題バンクからの演習
+                </Label>
               </div>
             </div>
           )}

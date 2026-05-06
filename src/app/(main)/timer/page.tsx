@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useMemo } from "react"
-import { useTimer } from "@/hooks/useTimer"
-import { Header } from "@/components/layout/Header"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { useEffect, useState, useMemo } from "react";
+import { useTimer } from "@/hooks/useTimer";
+import { Header } from "@/components/layout/Header";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   TimerDisplay,
   TimerControls,
@@ -15,22 +15,22 @@ import {
   ModeToggle,
   RecordDialog,
   type RecordData,
-} from "@/components/timer"
-import { formatMinutes, generateUUID } from "@/lib/utils"
-import { SUBJECTS, type Subject } from "@/types"
-import { useRecordStore } from "@/stores/recordStore"
-import { FileQuestion, MessageSquare } from "lucide-react"
+} from "@/components/timer";
+import { formatMinutes, generateUUID } from "@/lib/utils";
+import { SUBJECTS, type Subject } from "@/types";
+import { useRecordStore } from "@/stores/recordStore";
+import { FileQuestion, MessageSquare } from "lucide-react";
 
 interface PendingSession {
-  sessionId: string  // セッション識別子（v1.11追加）
-  subject: Subject
-  subtopic: string | null
-  durationSeconds: number
-  startTime: number
-  endTime: number
-  totalQuestions: string
-  correctAnswers: string
-  memo: string
+  sessionId: string; // セッション識別子（v1.11追加）
+  subject: Subject;
+  subtopic: string | null;
+  durationSeconds: number;
+  startTime: number;
+  endTime: number;
+  totalQuestions: string;
+  correctAnswers: string;
+  memo: string;
 }
 
 export default function TimerPage() {
@@ -58,32 +58,35 @@ export default function TimerPage() {
     pause,
     stop,
     reset,
-  } = useTimer()
+  } = useTimer();
 
-  const { addRecord, records } = useRecordStore()
+  const { addRecord, records } = useRecordStore();
 
   // 記録ダイアログの状態
-  const [showRecordDialog, setShowRecordDialog] = useState(false)
-  const [pendingSession, setPendingSession] = useState<PendingSession | null>(null)
+  const [showRecordDialog, setShowRecordDialog] = useState(false);
+  const [pendingSession, setPendingSession] = useState<PendingSession | null>(
+    null,
+  );
 
   // 今日の記録から学習時間を計算
   const todayTotalMinutes = useMemo(() => {
-    const today = new Date().toISOString().split("T")[0]
-    const todayRecords = records.filter((r) => r.studiedAt === today)
-    return todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0)
-  }, [records])
+    const today = new Date().toISOString().split("T")[0];
+    const todayRecords = records.filter((r) => r.studiedAt === today);
+    return todayRecords.reduce((sum, r) => sum + (r.studyMinutes || 0), 0);
+  }, [records]);
 
   // 正答率の計算
-  const accuracy = totalQuestions && correctAnswers
-    ? Math.round((parseInt(correctAnswers) / parseInt(totalQuestions)) * 100)
-    : null
+  const accuracy =
+    totalQuestions && correctAnswers
+      ? Math.round((parseInt(correctAnswers) / parseInt(totalQuestions)) * 100)
+      : null;
 
   const handleStop = () => {
-    const session = stop()
+    const session = stop();
     if (session) {
       // セッション情報を保持してダイアログを表示
       setPendingSession({
-        sessionId: generateUUID(),  // セッション識別子を生成（v1.11追加）
+        sessionId: generateUUID(), // セッション識別子を生成（v1.11追加）
         subject: session.subject,
         subtopic: session.subtopic,
         durationSeconds: session.durationSeconds,
@@ -92,15 +95,15 @@ export default function TimerPage() {
         totalQuestions: session.totalQuestions,
         correctAnswers: session.correctAnswers,
         memo: session.memo,
-      })
-      setShowRecordDialog(true)
+      });
+      setShowRecordDialog(true);
     }
-  }
+  };
 
   const handleSaveRecord = async (data: RecordData) => {
-    if (!pendingSession) return
+    if (!pendingSession) return;
 
-    const minutes = Math.floor(pendingSession.durationSeconds / 60)
+    const minutes = Math.floor(pendingSession.durationSeconds / 60);
 
     // 学習記録をストアに追加（Notion同期も含む）
     addRecord({
@@ -111,20 +114,21 @@ export default function TimerPage() {
       totalQuestions: data.totalQuestions,
       correctAnswers: data.correctAnswers,
       roundNumber: data.roundNumber,
+      fromQuestionBank: data.fromQuestionBank,
       chapter: data.chapter,
       pageRange: data.pageRange,
       memo: data.memo,
       studiedAt: data.studiedAt,
-      source: "timer",  // タイマー経由の記録（v1.11追加）
-      sessionId: pendingSession.sessionId,  // 紐づくセッションID（v1.11追加）
-    })
+      source: "timer", // タイマー経由の記録（v1.11追加）
+      sessionId: pendingSession.sessionId, // 紐づくセッションID（v1.11追加）
+    });
 
     // Notionにセッションも保存（バックグラウンド）
     fetch("/api/notion/sessions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        sessionId: pendingSession.sessionId,  // セッション識別子（v1.11追加）
+        sessionId: pendingSession.sessionId, // セッション識別子（v1.11追加）
         subject: pendingSession.subject,
         subtopic: pendingSession.subtopic,
         studyMinutes: minutes,
@@ -132,21 +136,21 @@ export default function TimerPage() {
         endedAt: new Date(pendingSession.endTime).toISOString(),
       }),
     }).catch((error) => {
-      console.error("Failed to save session to Notion:", error)
-    })
+      console.error("Failed to save session to Notion:", error);
+    });
 
     // ダイアログを閉じてリセット
-    setShowRecordDialog(false)
-    setPendingSession(null)
-    resetRecordFields()
-  }
+    setShowRecordDialog(false);
+    setPendingSession(null);
+    resetRecordFields();
+  };
 
   const handleCancelRecord = () => {
     // キャンセル時はセッションを破棄（記録なし）
-    setShowRecordDialog(false)
-    setPendingSession(null)
-    resetRecordFields()
-  }
+    setShowRecordDialog(false);
+    setPendingSession(null);
+    resetRecordFields();
+  };
 
   return (
     <>
@@ -155,11 +159,7 @@ export default function TimerPage() {
         <div className="max-w-2xl mx-auto space-y-6">
           {/* モード切替 */}
           <div className="flex justify-center">
-            <ModeToggle
-              mode={mode}
-              onChange={setMode}
-              disabled={!isIdle}
-            />
+            <ModeToggle mode={mode} onChange={setMode} disabled={!isIdle} />
           </div>
 
           {/* 科目・サブテーマ選択 */}
@@ -189,10 +189,7 @@ export default function TimerPage() {
           {/* タイマー表示 */}
           <Card className="border-2">
             <CardContent className="py-12">
-              <TimerDisplay
-                time={displayTime}
-                isBreak={isBreak}
-              />
+              <TimerDisplay time={displayTime} isBreak={isBreak} />
             </CardContent>
           </Card>
 
@@ -245,11 +242,18 @@ export default function TimerPage() {
               {/* 正答率表示 */}
               {accuracy !== null && (
                 <div className="text-center p-2 bg-muted/50 rounded-lg">
-                  <span className="text-sm text-muted-foreground">正答率: </span>
-                  <span className={`text-lg font-bold ${
-                    accuracy >= 80 ? "text-green-600" :
-                    accuracy >= 60 ? "text-yellow-600" : "text-red-600"
-                  }`}>
+                  <span className="text-sm text-muted-foreground">
+                    正答率:{" "}
+                  </span>
+                  <span
+                    className={`text-lg font-bold ${
+                      accuracy >= 80
+                        ? "text-green-600"
+                        : accuracy >= 60
+                          ? "text-yellow-600"
+                          : "text-red-600"
+                    }`}
+                  >
                     {accuracy}%
                   </span>
                 </div>
@@ -278,11 +282,14 @@ export default function TimerPage() {
               <div className="text-center">
                 <p className="text-sm text-muted-foreground">今日の学習時間</p>
                 <p className="text-2xl font-bold mt-1">
-                  {formatMinutes(todayTotalMinutes + Math.floor(elapsedSeconds / 60))}
+                  {formatMinutes(
+                    todayTotalMinutes + Math.floor(elapsedSeconds / 60),
+                  )}
                 </p>
                 {elapsedSeconds >= 60 && (
                   <p className="text-xs text-muted-foreground mt-1">
-                    (現在のセッション: +{formatMinutes(Math.floor(elapsedSeconds / 60))})
+                    (現在のセッション: +
+                    {formatMinutes(Math.floor(elapsedSeconds / 60))})
                   </p>
                 )}
               </div>
@@ -293,9 +300,7 @@ export default function TimerPage() {
           {isIdle && (
             <div className="text-center text-sm text-muted-foreground">
               <p>科目とサブテーマを選択して、スタートボタンを押してください</p>
-              <p className="mt-1">
-                ポモドーロモード: 25分作業 → 5分休憩
-              </p>
+              <p className="mt-1">ポモドーロモード: 25分作業 → 5分休憩</p>
             </div>
           )}
         </div>
@@ -317,5 +322,5 @@ export default function TimerPage() {
         />
       )}
     </>
-  )
+  );
 }
