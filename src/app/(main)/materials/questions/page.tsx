@@ -39,6 +39,7 @@ export default function QuestionsPage() {
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all")
   const [weaknessMode, setWeaknessMode] = useState(false)
   const [neverCorrectOnly, setNeverCorrectOnly] = useState(false)
+  const [unattemptedOnly, setUnattemptedOnly] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const miniTimerRef = useRef<MiniTimerRef>(null)
@@ -73,7 +74,8 @@ export default function QuestionsPage() {
     return stats
   }, [attempts, questionSetTopicMap])
 
-  const attemptedCount = useMemo(() => new Set(attempts.map((a) => a.questionId)).size, [attempts])
+  const attemptedIds = useMemo(() => new Set(attempts.map((a) => a.questionId)), [attempts])
+  const attemptedCount = attemptedIds.size
 
   // recordStoreから弱点トピック（正答率60%未満）を抽出
   const weakTopics = useMemo(() => {
@@ -114,6 +116,11 @@ export default function QuestionsPage() {
       questions = questions.filter((q) => q.difficulty === difficulty)
     }
 
+    // 未解答のみフィルター
+    if (unattemptedOnly) {
+      questions = questions.filter((q) => !attemptedIds.has(q.id))
+    }
+
     // 未正解のみフィルター
     if (neverCorrectOnly) {
       questions = questions.filter((q) => !everCorrectIds.has(q.id))
@@ -140,7 +147,7 @@ export default function QuestionsPage() {
     }
 
     return questions
-  }, [selectedTopic, difficulty, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds])
+  }, [selectedTopic, difficulty, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, unattemptedOnly, attemptedIds])
 
   // キーボードショートカット
   useEffect(() => {
@@ -341,6 +348,21 @@ export default function QuestionsPage() {
                     {weakTopics.length}
                   </Badge>
                 )}
+              </Button>
+              <Button
+                variant={unattemptedOnly ? "default" : "outline"}
+                size="sm"
+                onClick={() => {
+                  setUnattemptedOnly(!unattemptedOnly)
+                  setCurrentIndex(0)
+                }}
+                className="w-full sm:w-auto"
+              >
+                <BookOpen className="w-4 h-4 mr-2" />
+                未解答のみ
+                <Badge variant="secondary" className="ml-2">
+                  {getTotalQuestionCount() - attemptedCount}
+                </Badge>
               </Button>
               <Button
                 variant={neverCorrectOnly ? "default" : "outline"}
