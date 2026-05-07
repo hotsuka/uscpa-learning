@@ -40,6 +40,9 @@ export default function QuestionsPage() {
   const [weaknessMode, setWeaknessMode] = useState(false)
   const [neverCorrectOnly, setNeverCorrectOnly] = useState(false)
   const [unattemptedOnly, setUnattemptedOnly] = useState(false)
+  // フィルターをオンにした時点でのスナップショット（回答後に問題が消えないようにするため）
+  const [frozenAttemptedIds, setFrozenAttemptedIds] = useState<Set<string> | null>(null)
+  const [frozenEverCorrectIds, setFrozenEverCorrectIds] = useState<Set<string> | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const miniTimerRef = useRef<MiniTimerRef>(null)
@@ -116,14 +119,16 @@ export default function QuestionsPage() {
       questions = questions.filter((q) => q.difficulty === difficulty)
     }
 
-    // 未解答のみフィルター
+    // 未解答のみフィルター（フィルター適用時点のスナップショットを使い、回答後も問題が消えないようにする）
     if (unattemptedOnly) {
-      questions = questions.filter((q) => !attemptedIds.has(q.id))
+      const idsForFilter = frozenAttemptedIds ?? attemptedIds
+      questions = questions.filter((q) => !idsForFilter.has(q.id))
     }
 
-    // 未正解のみフィルター
+    // 未正解のみフィルター（同様にスナップショットを使う）
     if (neverCorrectOnly) {
-      questions = questions.filter((q) => !everCorrectIds.has(q.id))
+      const idsForFilter = frozenEverCorrectIds ?? everCorrectIds
+      questions = questions.filter((q) => !idsForFilter.has(q.id))
     }
 
     if (weaknessMode && weakTopics.length > 0) {
@@ -147,7 +152,7 @@ export default function QuestionsPage() {
     }
 
     return questions
-  }, [selectedTopic, difficulty, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, unattemptedOnly, attemptedIds])
+  }, [selectedTopic, difficulty, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
 
   // キーボードショートカット
   useEffect(() => {
@@ -353,7 +358,13 @@ export default function QuestionsPage() {
                 variant={unattemptedOnly ? "default" : "outline"}
                 size="sm"
                 onClick={() => {
-                  setUnattemptedOnly(!unattemptedOnly)
+                  if (!unattemptedOnly) {
+                    setFrozenAttemptedIds(new Set(attemptedIds))
+                    setUnattemptedOnly(true)
+                  } else {
+                    setFrozenAttemptedIds(null)
+                    setUnattemptedOnly(false)
+                  }
                   setCurrentIndex(0)
                 }}
                 className="w-full sm:w-auto"
@@ -368,7 +379,13 @@ export default function QuestionsPage() {
                 variant={neverCorrectOnly ? "default" : "outline"}
                 size="sm"
                 onClick={() => {
-                  setNeverCorrectOnly(!neverCorrectOnly)
+                  if (!neverCorrectOnly) {
+                    setFrozenEverCorrectIds(new Set(everCorrectIds))
+                    setNeverCorrectOnly(true)
+                  } else {
+                    setFrozenEverCorrectIds(null)
+                    setNeverCorrectOnly(false)
+                  }
                   setCurrentIndex(0)
                 }}
                 className="w-full sm:w-auto"
