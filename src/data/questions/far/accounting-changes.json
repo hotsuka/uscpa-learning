@@ -2,7 +2,7 @@
   "id": "far-accounting-changes",
   "name": "Accounting Changes & Errors",
   "topic": "Accounting Changes & Errors",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "chg-001",
@@ -252,6 +252,210 @@
       "references": ["ASC 250-10-45-23"],
       "difficulty": "intermediate",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "chg-011",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Retrospective Adjustment Calculation",
+      "stem": "A company changes from FIFO to weighted average on January 1, Year 3. The following data is available: FIFO inventory at 12/31/Year 1 was $500,000, weighted average would have been $420,000; FIFO inventory at 12/31/Year 2 was $600,000, weighted average would have been $510,000. The tax rate is 25%. What is the cumulative effect adjustment to beginning retained earnings at 1/1/Year 2 (the earliest period presented)?",
+      "choices": [
+        { "label": "A", "text": "$60,000 decrease" },
+        { "label": "B", "text": "$80,000 decrease" },
+        { "label": "C", "text": "$67,500 decrease" },
+        { "label": "D", "text": "$90,000 decrease" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The cumulative difference at 12/31/Year 1 (beginning of Year 2) = FIFO − WA = $500,000 − $420,000 = $80,000 pre-tax. Under WA, inventory is lower, so retained earnings would have been lower. After-tax adjustment = $80,000 × (1 − 0.25) = $80,000 × 0.75 = $60,000 decrease to opening retained earnings.",
+      "explanationJa": "Year 1末（Year 2期首）時点の累積差額＝FIFO − 加重平均＝$500,000 − $420,000 = $80,000（税引前）。加重平均では棚卸資産が少ないため、利益剰余金も少なくなります。税引後調整＝$80,000 ×（1 − 0.25）= $80,000 × 0.75 = $60,000利益剰余金減少。",
+      "references": ["ASC 250-10-45-5", "ASC 250-10-45-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-012",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Change in Estimate - New Depreciation",
+      "stem": "Equipment was purchased for $500,000 with a $50,000 salvage value and a 10-year useful life (straight-line). After 6 years, the company revises the total useful life to 8 years and salvage to $0. What is the revised annual depreciation expense?",
+      "choices": [
+        { "label": "A", "text": "$115,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$140,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Original annual depreciation = ($500,000 − $50,000) / 10 = $45,000. Accumulated after 6 years = $45,000 × 6 = $270,000. Book value at revision = $500,000 − $270,000 = $230,000. Remaining life = 8 − 6 = 2 years. New annual depreciation = ($230,000 − $0) / 2 = $230,000 / 2 = $115,000.",
+      "explanationJa": "当初年間償却費＝（$500,000 − $50,000）/ 10 = $45,000。6年後の減価償却累計額＝$45,000 × 6 = $270,000。修正時帳簿価額＝$500,000 − $270,000 = $230,000。残存耐用年数＝8 − 6 = 2年。新年間償却費＝（$230,000 − $0）/ 2 = $115,000。",
+      "references": ["ASC 250-10-45-17"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-013",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Non-Counterbalancing Error",
+      "stem": "At the beginning of Year 1, a company purchased equipment for $200,000 (10-year life, no salvage) but erroneously expensed the entire amount. The error is discovered at the end of Year 3. What is the adjustment to beginning retained earnings at January 1, Year 3 (ignoring taxes)?",
+      "choices": [
+        { "label": "A", "text": "Increase of $160,000" },
+        { "label": "B", "text": "Increase of $200,000" },
+        { "label": "C", "text": "Increase of $140,000" },
+        { "label": "D", "text": "Increase of $180,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The equipment should have been capitalized at $200,000 and depreciated at $20,000/year. Through Year 2 (2 years of depreciation): Correct book value = $200,000 − ($20,000 × 2) = $160,000. As reported: fully expensed in Year 1, BV = $0. The error understated assets and retained earnings by $160,000 at 1/1/Year 3. Adjustment: increase retained earnings by $160,000.",
+      "explanationJa": "設備は$200,000で資産計上し年$20,000償却すべきでした。Year 2末まで（2年分の償却）：正しい帳簿価額＝$200,000 −（$20,000 × 2）= $160,000。報告上：Year 1で全額費用処理、帳簿価額＝$0。この誤謬により1/1/Year 3時点で資産と利益剰余金が$160,000過少計上されています。調整：利益剰余金$160,000増加。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-014",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Counterbalancing Error - Two-Year Impact",
+      "stem": "A company failed to accrue $30,000 of wages payable at December 31, Year 1. The wages were paid in January Year 2. If the error is not corrected, what is the combined effect on Year 1 and Year 2 net income?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Year 1 overstated $30,000; Year 2 understated $30,000"
+        },
+        {
+          "label": "B",
+          "text": "Year 1 understated $30,000; Year 2 overstated $30,000"
+        },
+        { "label": "C", "text": "Both years overstated by $30,000" },
+        { "label": "D", "text": "Year 1 overstated $30,000; Year 2 unaffected" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Failure to accrue wages at Year 1 end: expenses understated → Year 1 income OVERSTATED by $30,000. When paid in Year 2, the full $30,000 hits Year 2 expense (including the $30,000 that should have been Year 1 expense): Year 2 expenses overstated → Year 2 income UNDERSTATED by $30,000. This is a counterbalancing error; by end of Year 2, retained earnings are correct.",
+      "explanationJa": "Year 1末に給与未払計上漏れ：費用過少→Year 1利益$30,000過大計上。Year 2に支払時、$30,000全額がYear 2費用に（Year 1費用分を含む）：Year 2費用過大→Year 2利益$30,000過少計上。相殺誤謬であり、Year 2末には利益剰余金は正しくなります。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-015",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Retrospective Application - EPS Impact",
+      "stem": "A company changed from FIFO to LIFO on January 1, Year 3. For Year 2, FIFO COGS was $800,000 and LIFO COGS would have been $860,000. The tax rate is 30% and there are 100,000 shares outstanding. What is the per-share effect of the restatement on Year 2's basic EPS?",
+      "choices": [
+        { "label": "A", "text": "Decrease of $0.42" },
+        { "label": "B", "text": "Decrease of $0.60" },
+        { "label": "C", "text": "Increase of $0.42" },
+        { "label": "D", "text": "Decrease of $0.18" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under LIFO, COGS is higher by $60,000 ($860,000 − $800,000), so pre-tax income decreases by $60,000. After-tax effect = $60,000 × (1 − 0.30) = $42,000 decrease in net income. EPS effect = $42,000 / 100,000 shares = $0.42 decrease per share.",
+      "explanationJa": "LIFO下ではCOGSが$60,000高い（$860,000 − $800,000）ため、税引前利益が$60,000減少。税引後影響＝$60,000 ×（1 − 0.30）= $42,000の純利益減少。EPS影響＝$42,000 / 100,000株 = 1株当たり$0.42減少。",
+      "references": ["ASC 250-10-45-5", "ASC 250-10-50-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-016",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Error Correction - Retained Earnings Restatement",
+      "stem": "In Year 4, a company discovers it failed to record $75,000 of depreciation in Year 2 and $75,000 in Year 3 (total understatement $150,000). The tax rate is 20%. The company presents Years 3 and 4 comparatively. What is the prior period adjustment to beginning retained earnings of Year 3?",
+      "choices": [
+        { "label": "A", "text": "$60,000 decrease" },
+        { "label": "B", "text": "$75,000 decrease" },
+        { "label": "C", "text": "$120,000 decrease" },
+        { "label": "D", "text": "$150,000 decrease" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The earliest period presented is Year 3. The error prior to Year 3 (i.e., Year 2's $75,000 understatement) affects opening retained earnings of Year 3. Pre-tax adjustment = $75,000 (understated depreciation → overstated retained earnings). After-tax = $75,000 × (1 − 0.20) = $60,000 decrease to 1/1/Year 3 retained earnings. Year 3's $75,000 error is corrected by restating Year 3's depreciation expense.",
+      "explanationJa": "表示される最も早い期間はYear 3。Year 3以前の誤謬（Year 2の$75,000過少計上）はYear 3の期首利益剰余金に影響。税引前調整＝$75,000（償却費過少→利益剰余金過大）。税引後＝$75,000 ×（1 − 0.20）= $60,000のYear 3期首利益剰余金減少。Year 3の$75,000誤謬はYear 3の償却費を修正再表示して訂正します。",
+      "references": ["ASC 250-10-45-23", "ASC 250-10-45-24"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-017",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Change in Estimate - Warranty",
+      "stem": "A company estimated warranty costs at 2% of sales in Years 1-3. In Year 4, based on new data, the estimate is revised to 3% of sales. Year 4 sales are $5,000,000. What warranty expense does the company report in Year 4?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$250,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A change in estimate is applied prospectively. The new 3% rate applies only to Year 4 and forward. Year 4 warranty expense = $5,000,000 × 3% = $150,000. No catch-up adjustment is made for prior years' estimates. Prior years remain as reported (at 2%).",
+      "explanationJa": "見積りの変更は将来に向かって適用されます。新しい3%の率はYear 4以降にのみ適用。Year 4の保証費用＝$5,000,000 × 3% = $150,000。過去の年度の見積りに対するキャッチアップ調整は行いません。過去の年度は報告済み（2%）のままです。",
+      "references": ["ASC 250-10-45-17"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-018",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Multiple Inventory Errors",
+      "stem": "Ending inventory was understated by $40,000 in Year 1 and overstated by $25,000 in Year 2. If neither error was corrected, what is the net effect on Year 3's beginning retained earnings?",
+      "choices": [
+        { "label": "A", "text": "Overstated by $25,000" },
+        { "label": "B", "text": "Understated by $15,000" },
+        { "label": "C", "text": "Understated by $25,000" },
+        { "label": "D", "text": "No effect (errors fully counterbalanced)" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Year 1 ending inventory understated $40,000: Year 1 income understated $40,000, Year 2 income overstated $40,000 (counterbalancing). Year 2 ending inventory overstated $25,000: Year 2 income overstated $25,000. Combined effect on Year 2 income: +$40,000 + $25,000 = +$65,000 overstated. Cumulative through Year 2: Year 1 effect on RE (−$40,000) + Year 2 excess (+$65,000) = +$25,000 overstated. Year 3 beginning RE is overstated by $25,000.",
+      "explanationJa": "Year 1期末棚卸$40,000過少：Year 1利益$40,000過少、Year 2利益$40,000過大（相殺）。Year 2期末棚卸$25,000過大：Year 2利益$25,000過大。Year 2利益への合計影響：+$40,000 + $25,000 = +$65,000過大。Year 2末までの累積：Year 1のRE影響（−$40,000）+ Year 2超過（+$65,000）= +$25,000過大。Year 3期首REは$25,000過大計上。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-019",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Prospective Treatment - Impracticability",
+      "stem": "A construction company changes from the completed-contract method to the percentage-of-completion method. It is impracticable to determine the cumulative effect for projects completed in prior years. Under ASC 250, how is this change applied?",
+      "choices": [
+        { "label": "A", "text": "The change cannot be made" },
+        {
+          "label": "B",
+          "text": "Apply prospectively from the earliest date practicable"
+        },
+        { "label": "C", "text": "Record an estimated cumulative adjustment" },
+        {
+          "label": "D",
+          "text": "Apply retrospectively using management's best guess"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 250-10-45-9, when it is impracticable to determine the period-specific or cumulative effects of a change in principle, the entity applies the new principle prospectively from the earliest date practicable. The entity must disclose why retrospective application was impracticable.",
+      "explanationJa": "ASC 250-10-45-9に基づき、方針変更の各期間別または累積的影響を決定することが実務上不可能な場合、企業は実務上可能な最も早い日から新しい方針を将来に向かって適用します。企業は遡及適用が実務上不可能であった理由を開示しなければなりません。",
+      "references": ["ASC 250-10-45-9", "ASC 250-10-50-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-020",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Error - Insurance Prepayment",
+      "stem": "On January 1, Year 1, a company paid $120,000 for a 3-year insurance policy and expensed the entire amount in Year 1. The error is discovered on December 31, Year 2. Ignoring taxes, what is the correcting journal entry at December 31, Year 2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Prepaid Insurance $40,000; Credit Retained Earnings $40,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Prepaid Insurance $40,000; Credit Retained Earnings $80,000; Debit Insurance Expense $40,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Prepaid Insurance $40,000; Credit Insurance Expense $40,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Prepaid Insurance $80,000; Credit Retained Earnings $80,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The policy covers Years 1, 2, 3 at $40,000/year. In Year 1, $120,000 was expensed instead of $40,000 (overstatement of $80,000). Year 2's $40,000 expense was never recorded. At 12/31/Year 2: Prepaid remaining = $40,000 (for Year 3). Retained earnings effect: Year 1 was overstated by $80,000 expense; Year 2 was understated by $40,000 expense (not recorded). Net prior period impact = $80,000 − $40,000 = $40,000 understatement of RE. Entry: Dr Prepaid Insurance $40,000 (Year 3 coverage), Cr Retained Earnings $40,000.",
+      "explanationJa": "保険はYear 1、2、3の各$40,000。Year 1で$120,000全額費用処理（$80,000過大）。Year 2の$40,000費用は未計上。12/31/Year 2時点：前払残高＝$40,000（Year 3分）。利益剰余金影響：Year 1費用$80,000過大；Year 2費用$40,000過少（未計上）。期首REへの純影響＝$80,000 − $40,000 = $40,000 RE過少。仕訳：借方 前払保険$40,000、貸方 利益剰余金$40,000。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

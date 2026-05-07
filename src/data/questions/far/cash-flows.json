@@ -2,7 +2,7 @@
   "id": "far-cash-flows",
   "name": "Statement of Cash Flows",
   "topic": "Statement of Cash Flows",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "cf-001",
@@ -213,6 +213,186 @@
       "references": ["ASC 230-10-45-14", "ASC 835-30-45-3"],
       "difficulty": "intermediate",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-011",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method Adjustments",
+      "stem": "Company A reported net income of $350,000. Additional data: depreciation $40,000; amortization of patent $10,000; loss on disposal of equipment $8,000; increase in accounts receivable $22,000; decrease in inventory $14,000; increase in prepaid expenses $6,000; decrease in accounts payable $18,000; increase in accrued liabilities $9,000; gain on sale of investment $12,000. What is net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$373,000" },
+        { "label": "B", "text": "$363,000" },
+        { "label": "C", "text": "$385,000" },
+        { "label": "D", "text": "$353,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net income $350,000 + depreciation $40,000 + amortization $10,000 + loss on disposal $8,000 - gain on sale $12,000 - increase in AR $22,000 + decrease in inventory $14,000 - increase in prepaid $6,000 - decrease in AP $18,000 + increase in accrued liabilities $9,000 = $373,000. Non-cash items are added back, gains subtracted, losses added. Working capital changes: decreases in current assets add, increases subtract; increases in current liabilities add, decreases subtract.",
+      "explanationJa": "純利益$350,000 + 減価償却費$40,000 + 特許権償却$10,000 + 設備処分損$8,000 - 投資売却益$12,000 - 売掛金増加$22,000 + 棚卸資産減少$14,000 - 前払費用増加$6,000 - 買掛金減少$18,000 + 未払費用増加$9,000 = $373,000。非現金項目は加算、利益は減算、損失は加算する。運転資本の変動：流動資産の減少は加算、増加は減算。流動負債の増加は加算、減少は減算。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-012",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method",
+      "stem": "Entity B has the following data: Sales revenue $800,000; beginning AR $65,000; ending AR $78,000; write-offs of uncollectible accounts $5,000; bad debt expense $9,000. Under the direct method, what is cash collected from customers?",
+      "choices": [
+        { "label": "A", "text": "$782,000" },
+        { "label": "B", "text": "$787,000" },
+        { "label": "C", "text": "$791,000" },
+        { "label": "D", "text": "$778,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cash collected from customers = Sales - Increase in gross AR. Gross AR change: ending gross AR - beginning gross AR. Beginning gross AR = $65,000 + allowance; ending gross AR = $78,000 + allowance. However, the net change in AR (net) from $65,000 to $78,000 includes the effect of bad debt expense and write-offs. Direct calculation: Cash collected = Sales - (Ending AR - Beginning AR) - write-offs excluded from AR change = $800,000 - ($78,000 - $65,000) - $5,000 = $800,000 - $13,000 - $5,000 = $782,000. Alternatively: Beginning AR + Sales - Write-offs - Cash collected = Ending AR; $65,000 + $800,000 - $5,000 - Cash = $78,000; Cash = $782,000.",
+      "explanationJa": "顧客からの現金回収額 = 期首AR + 売上高 - 貸倒償却 - 期末AR。$65,000 + $800,000 - $5,000 - $78,000 = $782,000。ARのT勘定分析：期首$65,000に売上$800,000を加算し、貸倒償却$5,000と現金回収額を減算すると期末$78,000になる。貸倒引当金繰入額$9,000はARの純額に影響するが、現金の動きには影響しない。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-013",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method",
+      "stem": "Company C reports: Cost of goods sold $520,000; beginning inventory $90,000; ending inventory $75,000; beginning accounts payable $48,000; ending accounts payable $55,000. Under the direct method, what is cash paid to suppliers?",
+      "choices": [
+        { "label": "A", "text": "$498,000" },
+        { "label": "B", "text": "$512,000" },
+        { "label": "C", "text": "$505,000" },
+        { "label": "D", "text": "$528,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Step 1: Purchases = COGS + Ending inventory - Beginning inventory = $520,000 + $75,000 - $90,000 = $505,000. Step 2: Cash paid to suppliers = Purchases - Increase in AP = $505,000 - ($55,000 - $48,000) = $505,000 - $7,000 = $498,000. The decrease in inventory means fewer purchases were needed, and the increase in AP means less cash was paid.",
+      "explanationJa": "ステップ1：仕入高 = COGS + 期末棚卸資産 - 期首棚卸資産 = $520,000 + $75,000 - $90,000 = $505,000。ステップ2：仕入先への現金支払額 = 仕入高 - AP増加額 = $505,000 - ($55,000 - $48,000) = $505,000 - $7,000 = $498,000。棚卸資産の減少は仕入の減少を意味し、APの増加は支払現金の減少を意味する。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-014",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Investing Activities",
+      "stem": "Entity D acquired a building for $500,000 by paying $150,000 cash and signing a mortgage note for $350,000. Entity D also purchased equipment for $80,000 cash and sold old machinery (cost $120,000, accumulated depreciation $90,000) for $40,000 cash. What is net cash used in investing activities?",
+      "choices": [
+        { "label": "A", "text": "$190,000" },
+        { "label": "B", "text": "$540,000" },
+        { "label": "C", "text": "$230,000" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Building purchase (cash portion only): -$150,000 (the $350,000 mortgage is a noncash transaction disclosed separately). Equipment purchase: -$80,000. Sale of machinery: +$40,000. Net investing: -$150,000 - $80,000 + $40,000 = -$190,000. The noncash portion ($350,000 note for building) is excluded from the CF statement and disclosed as a noncash investing/financing activity.",
+      "explanationJa": "建物購入（現金部分のみ）：-$150,000（$350,000の住宅ローンは非現金取引として別途開示）。設備購入：-$80,000。機械売却：+$40,000。投資活動純額：-$150,000 - $80,000 + $40,000 = -$190,000。非現金部分（建物取得のための$350,000の手形）はCF計算書から除外され、非現金の投資・財務活動として開示される。",
+      "references": ["ASC 230-10-45-12", "ASC 230-10-50-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-015",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Operating Activities",
+      "stem": "Company E reported net income of $180,000. During the year, the company declared and paid dividends of $40,000, repurchased treasury stock for $60,000, issued bonds at a premium receiving $530,000 (face $500,000), and recognized amortization of bond premium of $3,000. Depreciation was $35,000 and there was a $10,000 unrealized loss on trading securities. What is cash from operating activities?",
+      "choices": [
+        { "label": "A", "text": "$222,000" },
+        { "label": "B", "text": "$212,000" },
+        { "label": "C", "text": "$232,000" },
+        { "label": "D", "text": "$225,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cash from operations starts with net income $180,000. Add back: depreciation $35,000 (non-cash expense); unrealized loss on trading securities $10,000 (non-cash mark-to-market). Subtract: amortization of bond premium $3,000 (premium amortization reduces interest expense below cash interest paid). Dividends, treasury stock, and bond issuance are all financing activities. Cash from operations = $180,000 + $35,000 + $10,000 - $3,000 = $222,000.",
+      "explanationJa": "営業活動CFは純利益$180,000から出発。加算：減価償却費$35,000（非現金費用）、売買目的有価証券の未実現損失$10,000（非現金の時価評価）。減算：社債プレミアム償却$3,000（プレミアム償却により利息費用が現金利息支払額より少なく計上されるため）。配当、自己株式取得、社債発行は全て財務活動。営業活動CF = $180,000 + $35,000 + $10,000 - $3,000 = $222,000。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-016",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Financing Activities",
+      "stem": "During Year 1, Company F had the following transactions: issued 10,000 shares of common stock ($1 par) at $15 per share; paid cash dividends of $25,000; repaid a $100,000 long-term note; borrowed $200,000 on a new long-term note; paid $8,000 in debt issuance costs related to the new note. What is net cash provided by financing activities?",
+      "choices": [
+        { "label": "A", "text": "$217,000" },
+        { "label": "B", "text": "$225,000" },
+        { "label": "C", "text": "$67,000" },
+        { "label": "D", "text": "$75,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Stock issuance: 10,000 × $15 = +$150,000. Dividends paid: -$25,000. Repayment of note: -$100,000. New borrowing: +$200,000. Debt issuance costs: -$8,000. Net financing: $150,000 - $25,000 - $100,000 + $200,000 - $8,000 = $217,000. All items are financing activities. Debt issuance costs are classified as financing per ASC 230.",
+      "explanationJa": "株式発行：10,000株 × $15 = +$150,000。配当支払：-$25,000。借入金返済：-$100,000。新規借入：+$200,000。社債発行費用：-$8,000。財務活動純額：$150,000 - $25,000 - $100,000 + $200,000 - $8,000 = $217,000。全項目が財務活動に分類される。社債発行費用はASC 230に基づき財務活動。",
+      "references": ["ASC 230-10-45-14", "ASC 230-10-45-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-017",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Free Cash Flow",
+      "stem": "Entity G reports: Cash from operating activities $420,000; capital expenditures $180,000; proceeds from asset sales $30,000; dividends paid $50,000; debt repayments $75,000; interest paid $40,000 (included in operating). What is Entity G's free cash flow (defined as operating cash flow less capital expenditures)?",
+      "choices": [
+        { "label": "A", "text": "$240,000" },
+        { "label": "B", "text": "$270,000" },
+        { "label": "C", "text": "$145,000" },
+        { "label": "D", "text": "$210,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Free cash flow (basic definition) = Cash from operating activities - Capital expenditures = $420,000 - $180,000 = $240,000. Proceeds from asset sales, dividends, debt repayments are not subtracted under the basic FCF definition. Interest is already included in operating cash flow under U.S. GAAP so no further adjustment is needed.",
+      "explanationJa": "フリー・キャッシュ・フロー（基本定義）= 営業活動CF - 資本的支出 = $420,000 - $180,000 = $240,000。資産売却収入、配当、借入金返済は基本的なFCF定義では差し引かない。利息は米国GAAPに基づき営業活動CFに既に含まれているため、追加の調整は不要。",
+      "references": ["ASC 230-10-45-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-018",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method Adjustments",
+      "stem": "Company H acquired 100% of Target Inc. for $600,000 cash. Target's assets at fair value: cash $45,000, AR $80,000, inventory $60,000, equipment $300,000, goodwill $200,000. Liabilities assumed: AP $50,000, notes payable $35,000. On Company H's consolidated statement of cash flows, what amount is reported as cash used in investing activities for this acquisition?",
+      "choices": [
+        { "label": "A", "text": "$555,000" },
+        { "label": "B", "text": "$600,000" },
+        { "label": "C", "text": "$515,000" },
+        { "label": "D", "text": "$645,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When reporting a business combination on the cash flow statement, the cash paid is shown net of cash acquired. Cash used in investing = Total cash paid - Cash acquired from Target = $600,000 - $45,000 = $555,000. Per ASC 230-10-45-21, the cash paid for an acquisition is investing, net of cash obtained.",
+      "explanationJa": "企業結合をキャッシュ・フロー計算書に報告する際、支払現金は取得した現金と相殺して表示する。投資活動のキャッシュ使用額 = 支払総額 - 取得先の現金 = $600,000 - $45,000 = $555,000。ASC 230-10-45-21に基づき、企業買収のための現金支払は、取得した現金を控除して投資活動に表示する。",
+      "references": ["ASC 230-10-45-21"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-019",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Operating Activities",
+      "stem": "Entity J reported income from continuing operations of $250,000, which includes: depreciation $45,000; equity method income from an investee of $30,000 (dividends received $18,000); deferred tax expense $12,000; increase in AR $20,000; decrease in AP $15,000; increase in unearned revenue $25,000. What is cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$285,000" },
+        { "label": "B", "text": "$297,000" },
+        { "label": "C", "text": "$303,000" },
+        { "label": "D", "text": "$273,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Start with income $250,000. Add: depreciation $45,000; deferred tax expense $12,000 (non-cash portion of tax); increase in unearned revenue $25,000 (liability increase). Subtract: equity income in excess of dividends ($30,000 - $18,000 = $12,000 subtracted, since only dividends represent cash); increase in AR $20,000; decrease in AP $15,000. Total: $250,000 + $45,000 + $12,000 + $25,000 - $12,000 - $20,000 - $15,000 = $285,000.",
+      "explanationJa": "利益$250,000から出発。加算：減価償却費$45,000、繰延税金費用$12,000（税金の非現金部分）、前受収益増加$25,000（負債の増加）。減算：配当超過持分法利益$12,000（持分法利益$30,000 - 受取配当$18,000 = $12,000を減算。配当のみが現金を表す）、AR増加$20,000、AP減少$15,000。合計：$250,000 + $45,000 + $12,000 + $25,000 - $12,000 - $20,000 - $15,000 = $285,000。",
+      "references": ["ASC 230-10-45-28", "ASC 323-10-45-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-020",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Reconciliation",
+      "stem": "Company K declared total dividends of $35,000 during the year, of which $8,000 remains unpaid as dividends payable at year-end. Beginning dividends payable was $0. No other financing activities occurred. What amount is reported as cash used in financing activities?",
+      "choices": [
+        { "label": "A", "text": "$27,000" },
+        { "label": "B", "text": "$35,000" },
+        { "label": "C", "text": "$8,000" },
+        { "label": "D", "text": "$43,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Only cash dividends actually paid are reported on the statement of cash flows. Dividends paid = Dividends declared - Increase in dividends payable = $35,000 - ($8,000 - $0) = $27,000. The $8,000 unpaid portion will appear on the cash flow statement when paid in a future period. The declaration of a dividend is not a cash flow event.",
+      "explanationJa": "キャッシュ・フロ���計算書には実際に支払われた配当のみが計上される。支払配当 = ���言配当 - 未払配当の増加 = $35,000 - ($8,000 - $0) = $27,000。未払いの$8,000は将来の支払時にキャッシュ・フロー計算書に計上される。配当の宣言自体はキャッシュ・フロー事象ではない。",
+      "references": ["ASC 230-10-45-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

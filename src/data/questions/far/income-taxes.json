@@ -2,7 +2,7 @@
   "id": "far-income-taxes",
   "name": "Income Taxes",
   "topic": "Income Taxes",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "tax-001",
@@ -136,8 +136,8 @@
         { "label": "D", "text": "Indefinitely with no limitation" }
       ],
       "correctAnswer": "B",
-      "explanation": "The Tax Cuts and Jobs Act (TCJA) of 2017 changed NOL rules for losses arising after December 31, 2017. These NOLs can be carried forward indefinitely (no expiration) but are limited to offsetting 80% of taxable income in any given year. The 2-year carryback was also generally eliminated.",
-      "explanationJa": "2017年の税制改革法（TCJA）により、2017年12月31日以降に発生した繰越欠損金（NOL）のルールが変更されました。これらのNOLは無期限に繰り越すことができますが（期限なし）、各年度の課税所得の80%までしか相殺できません。また、2年間の繰戻しも原則として廃止されました。",
+      "explanation": "The Tax Cuts and Jobs Act (TCJA) of 2017 changed NOL rules for losses arising after December 31, 2017. These NOLs can be carried forward indefinitely (no expiration) but are limited to offsetting 80% of taxable income in any given year.",
+      "explanationJa": "2017年の税制改革法（TCJA）により、2017年12月31日以降に発生した繰越欠損金（NOL）のルールが変更されました。これらのNOLは無期限に繰り越すことができますが（期限なし）、各年度の課税所得の80%までしか相殺できません。",
       "references": ["IRC Section 172", "ASC 740-10-45-21"],
       "difficulty": "intermediate",
       "source": "AICPA Released Questions"
@@ -205,8 +205,8 @@
         }
       ],
       "correctAnswer": "D",
-      "explanation": "ASC 740-30-25-17 provides an exception: a deferred tax liability is not recognized for undistributed earnings of a domestic subsidiary when the tax law provides a means by which the investment can be recovered tax-free and the parent has the intent and ability to use that means. For domestic subsidiaries, this typically relates to a dividends-received deduction combined with indefinite reinvestment intent.",
-      "explanationJa": "ASC 740-30-25-17は例外を規定しています。税法が投資を非課税で回収する手段を提供し、親会社がその手段を利用する意図と能力を有する場合、国内子会社の未分配利益に対する繰延税金負債は認識されません。国内子会社の場合、これは通常、受取配当金控除と無期限再投資の意図の組み合わせに関連します。",
+      "explanation": "ASC 740-30-25-17 provides an exception: a deferred tax liability is not recognized for undistributed earnings of a domestic subsidiary when the tax law provides a means by which the investment can be recovered tax-free and the parent has the intent and ability to use that means.",
+      "explanationJa": "ASC 740-30-25-17は例外を規定しています。税法が投資を非課税で回収する手段を提供し、親会社がその手段を利用する意図と能力を有する場合、国内子会社の未分配利益に対する繰延税金負債は認識されません。",
       "references": ["ASC 740-30-25-17", "ASC 740-30-25-18"],
       "difficulty": "advanced",
       "source": "AICPA Released Questions"
@@ -231,6 +231,198 @@
       "references": ["ASC 740-10-50-12"],
       "difficulty": "intermediate",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "tax-011",
+      "topic": "Income Taxes",
+      "subtopic": "Total Income Tax Expense",
+      "stem": "Alpha Corp. has pretax financial income of $800,000. This includes $20,000 of tax-exempt municipal bond interest (permanent difference). Additionally, tax depreciation exceeds book depreciation by $50,000 (temporary difference). The enacted tax rate is 25%. What is total income tax expense?",
+      "choices": [
+        { "label": "A", "text": "$195,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$182,500" },
+        { "label": "D", "text": "$187,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Total income tax expense = (Pretax income - Permanent differences) × Tax rate. Temporary differences shift between current and deferred but do not affect total expense. Total expense = ($800,000 - $20,000) × 25% = $780,000 × 25% = $195,000. Current portion = ($800,000 - $20,000 - $50,000) × 25% = $182,500. Deferred portion = $50,000 × 25% = $12,500.",
+      "explanationJa": "法人税等合計 = (税引前利益 − 永久差異) × 税率。一時差異は当期と繰延の間で移動するだけで合計額には影響しません。法人税等合計 = ($800,000 − $20,000) × 25% = $780,000 × 25% = $195,000。当期分 = ($800,000 − $20,000 − $50,000) × 25% = $182,500。繰延分 = $50,000 × 25% = $12,500。",
+      "references": ["ASC 740-10-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-012",
+      "topic": "Income Taxes",
+      "subtopic": "Net Deferred Tax Balance",
+      "stem": "Beta Corp. has the following temporary differences at year-end: Warranty liability (book basis $100,000, tax basis $0) creating a future deductible amount; Equipment (book basis $800,000, tax basis $600,000) creating a future taxable amount of $200,000. The enacted tax rate is 21%. What is the net deferred tax liability?",
+      "choices": [
+        { "label": "A", "text": "$21,000" },
+        { "label": "B", "text": "$42,000" },
+        { "label": "C", "text": "$63,000" },
+        { "label": "D", "text": "$31,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Warranty liability creates a DTA (future deductible): $100,000 × 21% = $21,000. Equipment creates a DTL (future taxable): $200,000 × 21% = $42,000. Net deferred tax = DTL $42,000 - DTA $21,000 = $21,000 net DTL.",
+      "explanationJa": "製品保証引当金はDTA（将来減算一時差異）を生じさせます：$100,000 × 21% = $21,000。設備はDTL（将来加算一時差異）を生じさせます：$200,000 × 21% = $42,000。繰延税金純額 = DTL $42,000 − DTA $21,000 = $21,000の繰延税金負債（純額）。",
+      "references": ["ASC 740-10-25-20", "ASC 740-10-45-6"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-013",
+      "topic": "Income Taxes",
+      "subtopic": "Valuation Allowance Calculation",
+      "stem": "Gamma Corp. has a gross deferred tax asset of $150,000. Based on available evidence, management concludes that it is more likely than not that only $90,000 of the DTA will be realized. What is the net deferred tax asset reported on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$90,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 740-10-30-5, a valuation allowance reduces the DTA to the amount expected to be realized. Valuation allowance = $150,000 - $90,000 = $60,000. Net DTA reported = Gross DTA - Valuation allowance = $150,000 - $60,000 = $90,000.",
+      "explanationJa": "ASC 740-10-30-5に基づき、評価性引当額はDTAを実現が見込まれる金額まで減額します。評価性引当額 = $150,000 − $90,000 = $60,000。報告される純DTA = 総DTA − 評価性引当額 = $150,000 − $60,000 = $90,000。",
+      "references": ["ASC 740-10-30-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-014",
+      "topic": "Income Taxes",
+      "subtopic": "Rate Change Adjustment",
+      "stem": "Delta Corp. has a deferred tax liability of $120,000 measured at the current enacted rate of 30%. The underlying temporary differences total $400,000. A new tax law is enacted reducing the rate to 21%. What adjustment should Delta record?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$36,000 decrease in DTL and income tax benefit"
+        },
+        {
+          "label": "B",
+          "text": "$36,000 increase in DTL and income tax expense"
+        },
+        { "label": "C", "text": "$84,000 decrease in DTL" },
+        { "label": "D", "text": "No adjustment until differences reverse" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 740-10-35-4, deferred taxes are remeasured at the new enacted rate in the period of enactment. New DTL = $400,000 × 21% = $84,000. Decrease = $120,000 - $84,000 = $36,000. Entry: Debit DTL $36,000, Credit Income Tax Benefit $36,000.",
+      "explanationJa": "ASC 740-10-35-4に基づき、繰延税金は法律制定期間に新たな制定税率で再測定されます。新DTL = $400,000 × 21% = $84,000。減少額 = $120,000 − $84,000 = $36,000。仕訳：借方 DTL $36,000、貸方 法人税等ベネフィット $36,000。",
+      "references": ["ASC 740-10-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-015",
+      "topic": "Income Taxes",
+      "subtopic": "NOL Carryforward - 80% Limitation",
+      "stem": "Epsilon Corp. has a post-2017 NOL carryforward of $500,000 at the beginning of Year 2. In Year 2, taxable income before NOL deduction is $300,000. The tax rate is 21%. What is Epsilon's current income tax payable for Year 2?",
+      "choices": [
+        { "label": "A", "text": "$12,600" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$63,000" },
+        { "label": "D", "text": "$42,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Post-2017 NOLs are limited to 80% of taxable income. Maximum NOL deduction = $300,000 × 80% = $240,000. Taxable income after NOL = $300,000 - $240,000 = $60,000. Current tax payable = $60,000 × 21% = $12,600. Remaining NOL carryforward = $500,000 - $240,000 = $260,000.",
+      "explanationJa": "2017年以降のNOLは課税所得の80%に制限されます。最大NOL控除 = $300,000 × 80% = $240,000。NOL後の課税所得 = $300,000 − $240,000 = $60,000。当期税金 = $60,000 × 21% = $12,600。残存NOL繰越 = $500,000 − $240,000 = $260,000。",
+      "references": ["IRC Section 172(a)", "ASC 740-10-45-21"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-016",
+      "topic": "Income Taxes",
+      "subtopic": "Deferred Tax on OCI Items",
+      "stem": "Zeta Corp. has an unrealized gain of $80,000 on available-for-sale (AFS) debt securities at year-end. The tax rate is 25%. What deferred tax liability is created, and where is the tax effect reported?",
+      "choices": [
+        { "label": "A", "text": "$20,000 DTL, recognized in OCI" },
+        {
+          "label": "B",
+          "text": "$20,000 DTL, recognized in income tax expense"
+        },
+        { "label": "C", "text": "$80,000 DTL, recognized in OCI" },
+        {
+          "label": "D",
+          "text": "$20,000 DTA, recognized in income tax expense"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The unrealized gain on AFS debt securities creates a taxable temporary difference (book basis > tax basis). DTL = $80,000 × 25% = $20,000. Under intraperiod tax allocation (ASC 740-20-45-2), the tax effect of items reported in OCI is also reported in OCI, not in income tax expense. Net OCI gain = $80,000 - $20,000 = $60,000.",
+      "explanationJa": "AFS負債証券の未実現利益は将来加算一時差異（帳簿価額 > 税務基準額）を生じさせます。DTL = $80,000 × 25% = $20,000。期間内税金配分（ASC 740-20-45-2）により、OCIに報告される項目の税効果もOCIに報告され、法人税等には含まれません。OCI純利益 = $80,000 − $20,000 = $60,000。",
+      "references": ["ASC 740-20-45-2", "ASC 320-10-35-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-017",
+      "topic": "Income Taxes",
+      "subtopic": "Current Tax Payable",
+      "stem": "Eta Corp. reports pretax financial income of $500,000. This includes $30,000 of municipal bond interest (nontaxable). Book depreciation is $60,000 and tax depreciation is $100,000. Bad debt expense (estimate) is $25,000 for book; actual write-offs for tax are $15,000. Tax rate is 21%. What is current income tax payable?",
+      "choices": [
+        { "label": "A", "text": "$92,400" },
+        { "label": "B", "text": "$105,000" },
+        { "label": "C", "text": "$98,700" },
+        { "label": "D", "text": "$88,200" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Taxable income = Pretax income - Municipal interest - Excess tax depreciation + Excess book bad debt expense = $500,000 - $30,000 - ($100,000 - $60,000) + ($25,000 - $15,000) = $500,000 - $30,000 - $40,000 + $10,000 = $440,000. Current tax payable = $440,000 × 21% = $92,400.",
+      "explanationJa": "課税所得 = 税引前利益 − 地方債利息 − 超過税務減価償却 + 超過帳簿貸倒費用 = $500,000 − $30,000 − ($100,000 − $60,000) + ($25,000 − $15,000) = $500,000 − $30,000 − $40,000 + $10,000 = $440,000。当期税金 = $440,000 × 21% = $92,400。",
+      "references": ["ASC 740-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-018",
+      "topic": "Income Taxes",
+      "subtopic": "Scheduled Reversal at Different Rates",
+      "stem": "Theta Corp. has a $150,000 taxable temporary difference. Of this, $100,000 will reverse in Year 3 when the enacted rate is 21%, and $50,000 will reverse in Year 4 when the enacted rate is 25%. What is the total deferred tax liability?",
+      "choices": [
+        { "label": "A", "text": "$33,500" },
+        { "label": "B", "text": "$31,500" },
+        { "label": "C", "text": "$37,500" },
+        { "label": "D", "text": "$34,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 740-10-30-8, deferred taxes are measured using the enacted tax rates expected to apply in the years the temporary differences reverse. DTL = ($100,000 × 21%) + ($50,000 × 25%) = $21,000 + $12,500 = $33,500.",
+      "explanationJa": "ASC 740-10-30-8に基づき、繰延税金は一時差異が解消する年度に適用されると見込まれる制定税率を使用して測定されます。DTL = ($100,000 × 21%) + ($50,000 × 25%) = $21,000 + $12,500 = $33,500。",
+      "references": ["ASC 740-10-30-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-019",
+      "topic": "Income Taxes",
+      "subtopic": "Tax Benefit from Operating Loss",
+      "stem": "Iota Corp. reports a pretax financial loss of $300,000 in Year 2 with no permanent or temporary differences. Future taxable income is sufficiently probable to realize the full benefit. The tax rate is 21%. What deferred tax benefit should Iota recognize in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$63,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$240,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The pretax loss of $300,000 creates a NOL carryforward (DTA). Since realization is sufficiently probable (no valuation allowance needed), DTA = $300,000 × 21% = $63,000. The entry records: Debit DTA $63,000, Credit Income Tax Benefit $63,000. Current tax payable is $0.",
+      "explanationJa": "税引前損失$300,000はNOL繰越（DTA）を生じさせます。実現が十分に見込まれるため（評価性引当額不要）、DTA = $300,000 × 21% = $63,000。仕訳：借方 DTA $63,000、貸方 法人税等ベネフィット $63,000。当期税金は$0です。",
+      "references": ["ASC 740-10-30-1", "ASC 740-10-30-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-020",
+      "topic": "Income Taxes",
+      "subtopic": "Effective Tax Rate",
+      "stem": "Kappa Corp. has pretax income of $500,000 which includes $50,000 of tax-exempt municipal bond interest. There are no other permanent differences and no temporary differences. The statutory tax rate is 25%. What is the effective tax rate?",
+      "choices": [
+        { "label": "A", "text": "22.5%" },
+        { "label": "B", "text": "25.0%" },
+        { "label": "C", "text": "20.0%" },
+        { "label": "D", "text": "23.5%" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Taxable income = $500,000 - $50,000 = $450,000. Income tax expense = $450,000 × 25% = $112,500. Effective tax rate = Tax expense / Pretax income = $112,500 / $500,000 = 22.5%. The municipal interest reduces the effective rate below the statutory rate.",
+      "explanationJa": "課税所得 = $500,000 − $50,000 = $450,000。法人税等 = $450,000 × 25% = $112,500。実効税率 = 法人税等 / 税引前利益 = $112,500 / $500,000 = 22.5%。地方債利息により実効税率は法定税率を下回ります。",
+      "references": ["ASC 740-10-50-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

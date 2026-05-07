@@ -2,7 +2,7 @@
   "id": "far-nonprofit-accounting",
   "name": "Not-for-Profit Accounting",
   "topic": "Not-for-Profit Accounting",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "nfp-001",
@@ -231,6 +231,207 @@
       "references": ["ASC 958-210-50-1A"],
       "difficulty": "intermediate",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "nfp-011",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Multi-Year Pledge Present Value",
+      "stem": "On January 1, Year 1, a museum receives an unconditional pledge of $300,000 payable in three equal annual installments of $100,000 starting December 31, Year 1. The appropriate discount rate is 5%. What amount of contribution revenue with donor restrictions does the museum recognize on January 1, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$272,325" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$285,714" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Multi-year pledges are recorded at present value. PV = $100,000/(1.05)¹ + $100,000/(1.05)² + $100,000/(1.05)³ = $95,238 + $90,703 + $86,384 = $272,325. This is the PV of a 3-year ordinary annuity at 5%. The discount ($27,675) is amortized as additional contribution revenue over the pledge period.",
+      "explanationJa": "複数年プレッジは現在価値で計上します。PV = $100,000/(1.05)¹ + $100,000/(1.05)² + $100,000/(1.05)³ = $95,238 + $90,703 + $86,384 = $272,325。これは5%の3年普通年金の現在価値です。割引額（$27,675）はプレッジ期間にわたり追加の寄付収益として償却されます。",
+      "references": ["ASC 958-605-30-3", "ASC 958-605-25-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-012",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Net Asset Reclassification - Time Restriction",
+      "stem": "On July 1, Year 1, an NFP receives $240,000 from a donor who stipulates the funds must be used equally over Years 2, 3, and 4 ($80,000 per year for program activities). What amount is reclassified from 'with donor restrictions' to 'without donor restrictions' during Year 2?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$240,000" },
+        { "label": "C", "text": "$160,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The donor imposed a time restriction: $80,000 to be used in each of Years 2, 3, and 4. In Year 1, the entire $240,000 is recognized as contribution revenue with donor restrictions. As each year's restriction is satisfied by the passage of time and use of funds, $80,000 is released (reclassified to without donor restrictions). In Year 2, $80,000 is reclassified.",
+      "explanationJa": "ドナーは時間制限を課しました：各Year 2、3、4に$80,000ずつ使用。Year 1では$240,000全額がドナー制限付き寄付収益として認識されます。各年の制限が時間の経過と資金使用により充足されると、$80,000が解除（制限なし純資産へ振替）されます。Year 2では$80,000が振り替えられます。",
+      "references": ["ASC 958-205-45-7", "ASC 958-605-45-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-013",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Underwater Endowment",
+      "stem": "A university has a donor-restricted endowment fund with an original gift of $5,000,000. Due to investment losses, the fair value of the endowment drops to $4,700,000. Under UPMIFA and ASC 958, how is the $300,000 decline reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a reduction of net assets without donor restrictions"
+        },
+        {
+          "label": "B",
+          "text": "As a reduction of net assets with donor restrictions"
+        },
+        { "label": "C", "text": "As a liability to the donor" },
+        {
+          "label": "D",
+          "text": "No financial statement impact; disclosed in notes only"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 958-205-45-10 (reflecting UPMIFA), investment losses that reduce the fair value of a donor-restricted endowment below the original gift amount (an 'underwater' endowment) are reported as a reduction of net assets with donor restrictions—not without donor restrictions. Required disclosures include the aggregate amount by which endowments are underwater.",
+      "explanationJa": "ASC 958-205-45-10（UPMIFAを反映）に基づき、ドナー制限付き基本財産の公正価値を当初寄付額以下に減少させる投資損失（「水面下」の基本財産）は、ドナー制限付き純資産の減少として報告されます。制限なし純資産ではありません。基本財産が水面下にある合計額の開示が要求されます。",
+      "references": ["ASC 958-205-45-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-014",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Contributed Nonfinancial Assets",
+      "stem": "A charity receives donated food valued at $180,000 and donated volunteer services (general labor, not specialized) valued at $60,000. What total amount of contribution revenue should be recognized?",
+      "choices": [
+        { "label": "A", "text": "$240,000" },
+        { "label": "B", "text": "$180,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Donated food (a nonfinancial asset) is recognized at fair value ($180,000) as contribution revenue. However, general volunteer labor that does not require specialized skills and does not create or enhance a nonfinancial asset does NOT meet the recognition criteria under ASC 958-605-25-16. Therefore, only $180,000 is recognized.",
+      "explanationJa": "寄贈された食品（非金融資産）は公正価値（$180,000）で寄付収益として認識されます。しかし、専門的スキルを要求せず、非金融資産を創出・増価しない一般的なボランティア労働は、ASC 958-605-25-16の認識基準を満たしません。したがって、$180,000のみが認識されます。",
+      "references": ["ASC 958-605-25-16", "ASC 958-605-30-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-015",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Conditional Grant - Barrier Met",
+      "stem": "A research institute receives a $1,500,000 government grant with a condition that the institute must incur qualifying research expenditures. During Year 1, the institute incurs $900,000 of qualifying expenditures. What amount of grant revenue should the institute recognize in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$900,000" },
+        { "label": "B", "text": "$1,500,000" },
+        { "label": "C", "text": "$600,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "This is a conditional contribution with a measurable performance-related barrier (incurring qualifying research expenditures). Under ASC 958-605-25-5A, revenue is recognized as the barrier is overcome. Since $900,000 of qualifying expenditures were incurred, $900,000 of the conditional grant is recognized as revenue. The remaining $600,000 is reported as a refundable advance (liability).",
+      "explanationJa": "これは測定可能な業績関連障壁（適格研究支出の発生）を伴う条件付き寄付です。ASC 958-605-25-5Aに基づき、障壁が克服されるに従い収益を認識します。適格支出$900,000が発生したため、条件付き補助金の$900,000を収益認識します。残り$600,000は返還可能前受金（負債）として報告されます。",
+      "references": ["ASC 958-605-25-5A", "ASC 958-605-25-11"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-016",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Split-Interest Agreement",
+      "stem": "A donor establishes a charitable remainder annuity trust with $800,000 in assets. The trust will pay the donor $50,000 annually for 10 years, then the remainder goes to the NFP. The present value of the annuity payments to the donor is $350,000. What amount does the NFP recognize as contribution revenue?",
+      "choices": [
+        { "label": "A", "text": "$450,000" },
+        { "label": "B", "text": "$800,000" },
+        { "label": "C", "text": "$350,000" },
+        { "label": "D", "text": "$500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 958-30, when an NFP is the remainder beneficiary of a charitable remainder trust, it recognizes the assets at fair value ($800,000), a liability for the PV of future payments to the income beneficiary ($350,000), and contribution revenue for the difference. Revenue = $800,000 − $350,000 = $450,000, classified as with donor restrictions.",
+      "explanationJa": "ASC 958-30に基づき、非営利組織が残余受益者である場合、資産を公正価値（$800,000）で認識し、収入受益者への将来支払の現在価値（$350,000）を負債として認識し、差額を寄付収益とします。収益＝$800,000 − $350,000 = $450,000。ドナー制限付きに分類されます。",
+      "references": ["ASC 958-30-25-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-017",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Functional Expense Allocation",
+      "stem": "An NFP has total occupancy costs of $600,000. Floor space allocation: Program services 60%, Management and general 25%, Fundraising 15%. What amount of occupancy cost is allocated to program services?",
+      "choices": [
+        { "label": "A", "text": "$360,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$90,000" },
+        { "label": "D", "text": "$600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Joint costs are allocated to functional categories using a reasonable method. Occupancy costs allocated to program services = $600,000 × 60% = $360,000. Management and general = $600,000 × 25% = $150,000. Fundraising = $600,000 × 15% = $90,000. The allocation method must be rational and systematic.",
+      "explanationJa": "共通費用は合理的な方法で機能別区分に配分されます。プログラムサービスへの施設費配分＝$600,000 × 60% = $360,000。管理・一般＝$600,000 × 25% = $150,000。資金調達＝$600,000 × 15% = $90,000。配分方法は合理的かつ体系的でなければなりません。",
+      "references": ["ASC 958-720-45-2A"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-018",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Endowment Spending - UPMIFA",
+      "stem": "A university's board adopts a spending policy of 4.5% of a 3-year rolling average fair value for its endowment. The 3-year average fair values are: Year 1: $20,000,000, Year 2: $21,000,000, Year 3: $22,000,000. What is the maximum spending appropriation for Year 4?",
+      "choices": [
+        { "label": "A", "text": "$945,000" },
+        { "label": "B", "text": "$990,000" },
+        { "label": "C", "text": "$900,000" },
+        { "label": "D", "text": "$1,000,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "3-year rolling average = ($20,000,000 + $21,000,000 + $22,000,000) / 3 = $63,000,000 / 3 = $21,000,000. Spending appropriation = $21,000,000 × 4.5% = $945,000. Under UPMIFA, the board's spending policy determines how much can be appropriated from the endowment for expenditure.",
+      "explanationJa": "3年移動平均＝（$20,000,000 + $21,000,000 + $22,000,000）/ 3 = $63,000,000 / 3 = $21,000,000。支出充当額＝$21,000,000 × 4.5% = $945,000。UPMIFAでは、理事会の支出方針が基本財産から支出のために充当できる金額を決定します。",
+      "references": ["ASC 958-205-45-10", "UPMIFA Section 4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-019",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Agency Transaction",
+      "stem": "A community foundation receives $500,000 from Donor X and agrees to distribute it to Charity Y as directed by Donor X. The foundation has no variance power. How does the community foundation report this transaction?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Contribution revenue of $500,000 with donor restrictions"
+        },
+        {
+          "label": "B",
+          "text": "Increase in assets $500,000 and increase in liabilities $500,000 (no revenue)"
+        },
+        {
+          "label": "C",
+          "text": "Contribution revenue of $500,000 without donor restrictions"
+        },
+        {
+          "label": "D",
+          "text": "No entry until funds are distributed to Charity Y"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 958-605-25-24, when an NFP receives assets as an intermediary/agent to transfer to a specified beneficiary (and has no variance power to redirect the assets), it does not recognize contribution revenue. Instead, it records a liability to the specified beneficiary. Assets increase $500,000, Liability (due to Charity Y) increases $500,000.",
+      "explanationJa": "ASC 958-605-25-24に基づき、非営利組織が指定受益者への移転を目的とする仲介者/代理人として資産を受領し（資産の転用権限なし）、寄付収益を認識しません。代わりに、指定受益者への負債を計上します。資産$500,000増加、負債（Charity Y向け未払金）$500,000増加。",
+      "references": ["ASC 958-605-25-24"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-020",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Statement of Activities - Change in Net Assets",
+      "stem": "An NFP has the following Year 1 activity: Contributions without donor restrictions $2,000,000; Contributions with donor restrictions $800,000; Net assets released from restrictions $500,000; Total expenses $1,900,000. What is the change in net assets without donor restrictions?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$1,400,000" },
+        { "label": "D", "text": "$2,500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Change in net assets without donor restrictions = Revenue without restrictions + Net assets released from restrictions − Expenses = $2,000,000 + $500,000 − $1,900,000 = $600,000. The $800,000 with donor restrictions affects only the 'with restrictions' column. Released restrictions ($500,000) are added to the 'without restrictions' column.",
+      "explanationJa": "制限なし純資産の変動＝制限なし収入＋制限解除による振替−費用＝$2,000,000 + $500,000 − $1,900,000 = $600,000。$800,000の制限付き寄付は「制限付き」列にのみ影響します。制限解除（$500,000）は「制限なし」列に加算されます。",
+      "references": ["ASC 958-205-45-1", "ASC 958-225-45-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

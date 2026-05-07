@@ -2,7 +2,7 @@
   "id": "far-consolidations",
   "name": "Consolidations",
   "topic": "Consolidations",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "con-001",
@@ -228,6 +228,186 @@
       "references": ["ASC 805-10-25-23"],
       "difficulty": "intermediate",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-011",
+      "topic": "Consolidations",
+      "subtopic": "Goodwill Calculation with NCI",
+      "stem": "Parker Corp acquires 80% of Stone Inc for $4,800,000 cash. On the acquisition date, Stone's identifiable net assets have a fair value of $5,200,000. The fair value of the 20% noncontrolling interest is $1,200,000. What amount of goodwill should be recognized in the consolidated financial statements?",
+      "choices": [
+        { "label": "A", "text": "$800,000" },
+        { "label": "B", "text": "$600,000" },
+        { "label": "C", "text": "$560,000" },
+        { "label": "D", "text": "$1,040,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the full goodwill method (ASC 805-30-30-1), goodwill = (Consideration transferred + Fair value of NCI) − Fair value of identifiable net assets. Goodwill = ($4,800,000 + $1,200,000) − $5,200,000 = $6,000,000 − $5,200,000 = $800,000.",
+      "explanationJa": "全額のれん法（ASC 805-30-30-1）では、のれん＝（移転対価＋NCIの公正価値）－識別可能純資産の公正価値。のれん＝（$4,800,000 + $1,200,000）− $5,200,000 = $6,000,000 − $5,200,000 = $800,000。",
+      "references": ["ASC 805-30-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-012",
+      "topic": "Consolidations",
+      "subtopic": "NCI Share of Subsidiary Income",
+      "stem": "Parent owns 75% of Sub acquired at the beginning of Year 1. Sub reports net income of $600,000 for Year 1. Sub's identifiable net assets included equipment with a fair value $200,000 above book value at acquisition (remaining useful life 10 years, straight-line). What is the noncontrolling interest's share of Sub's adjusted income for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$145,000" },
+        { "label": "C", "text": "$130,000" },
+        { "label": "D", "text": "$155,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Sub's adjusted income = Reported income − Excess depreciation = $600,000 − ($200,000 ÷ 10) = $600,000 − $20,000 = $580,000. NCI share = $580,000 × 25% = $145,000.",
+      "explanationJa": "子会社の調整後利益＝報告利益－超過償却費＝$600,000 −（$200,000 ÷ 10）= $600,000 − $20,000 = $580,000。NCI持分＝$580,000 × 25% = $145,000。",
+      "references": ["ASC 810-10-45-15", "ASC 805-20-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-013",
+      "topic": "Consolidations",
+      "subtopic": "Downstream Intercompany Profit Elimination",
+      "stem": "Parent (90% owner) sold inventory to Sub during Year 1 at a price of $500,000 (cost $350,000). At December 31, Year 1, Sub still holds 60% of this inventory unsold. What amount of unrealized intercompany profit must be eliminated from consolidated ending inventory?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$90,000" },
+        { "label": "C", "text": "$81,000" },
+        { "label": "D", "text": "$135,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Total intercompany profit = $500,000 − $350,000 = $150,000. Unsold portion = 60%. Unrealized profit to eliminate = $150,000 × 60% = $90,000. For downstream sales (parent to sub), 100% of unrealized profit is eliminated regardless of ownership percentage.",
+      "explanationJa": "会社間利益合計＝$500,000 − $350,000 = $150,000。未販売割合＝60%。消去すべき未実現利益＝$150,000 × 60% = $90,000。ダウンストリーム（親→子）の場合、所有割合に関係なく未実現利益の100%を消去します。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-014",
+      "topic": "Consolidations",
+      "subtopic": "Upstream Intercompany Profit - NCI Impact",
+      "stem": "Sub (80% owned by Parent) sold land to Parent for $750,000. Sub's original cost was $500,000. On the consolidated worksheet, how much of the unrealized gain is allocated to the noncontrolling interest?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$250,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Unrealized gain on upstream sale = $750,000 − $500,000 = $250,000. For upstream sales (sub to parent), the elimination is allocated between the parent and NCI based on ownership percentages. NCI allocation = $250,000 × 20% = $50,000.",
+      "explanationJa": "アップストリーム売却の未実現利益＝$750,000 − $500,000 = $250,000。アップストリーム（子→親）の場合、消去額は所有割合に基づき親会社とNCIに配分されます。NCI配分＝$250,000 × 20% = $50,000。",
+      "references": ["ASC 810-10-45-1", "ASC 810-10-45-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-015",
+      "topic": "Consolidations",
+      "subtopic": "Mid-Year Acquisition",
+      "stem": "Parent acquired 100% of Sub on April 1, Year 1. Sub's revenue and expenses are earned evenly throughout the year. Sub reported total revenue of $2,400,000 and total expenses of $1,800,000 for the full calendar year. What amounts are included in the Year 1 consolidated income statement for Sub's operations?",
+      "choices": [
+        { "label": "A", "text": "Revenue $2,400,000; Expenses $1,800,000" },
+        { "label": "B", "text": "Revenue $1,800,000; Expenses $1,350,000" },
+        { "label": "C", "text": "Revenue $600,000; Expenses $450,000" },
+        { "label": "D", "text": "Revenue $1,200,000; Expenses $900,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Only post-acquisition results are included in consolidation. From April 1 to December 31 = 9 months out of 12. Revenue = $2,400,000 × (9/12) = $1,800,000. Expenses = $1,800,000 × (9/12) = $1,350,000.",
+      "explanationJa": "連結には取得後の業績のみを含めます。4月1日から12月31日＝12か月中9か月。収益＝$2,400,000 ×（9/12）= $1,800,000。費用＝$1,800,000 ×（9/12）= $1,350,000。",
+      "references": ["ASC 805-10-25-6", "ASC 810-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-016",
+      "topic": "Consolidations",
+      "subtopic": "Step Acquisition - Remeasurement Gain",
+      "stem": "Parent held a 30% equity-method investment in Target (carrying amount $900,000). Parent then acquires the remaining 70% for $3,500,000, gaining control. On the acquisition date, the fair value of the previously held 30% interest is $1,500,000. What gain does Parent recognize on the remeasurement of the previously held interest?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$1,500,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$2,600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-10-25-10, when control is obtained in a step acquisition, the acquirer remeasures any previously held equity interest at acquisition-date fair value. Gain = Fair value − Carrying amount = $1,500,000 − $900,000 = $600,000. This gain is recognized in earnings.",
+      "explanationJa": "ASC 805-10-25-10に基づき、段階取得で支配を獲得した場合、取得企業は従前保有持分を取得日の公正価値で再測定します。利益＝公正価値－帳簿価額＝$1,500,000 − $900,000 = $600,000。この利益は損益に認識されます。",
+      "references": ["ASC 805-10-25-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-017",
+      "topic": "Consolidations",
+      "subtopic": "Equity Transaction - Ownership Change Without Loss of Control",
+      "stem": "Parent owns 80% of Sub. The carrying amount of Sub's total equity (including NCI) is $2,000,000, so NCI = $400,000. Parent purchases an additional 10% from NCI holders for $250,000. What is the adjustment to Parent's additional paid-in capital (APIC)?",
+      "choices": [
+        { "label": "A", "text": "Decrease of $50,000" },
+        { "label": "B", "text": "Increase of $50,000" },
+        { "label": "C", "text": "Decrease of $250,000" },
+        { "label": "D", "text": "No adjustment; goodwill increases by $50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When a parent purchases additional shares without losing control, it is an equity transaction (no gain/loss). NCI reduction = 10%/20% × $400,000 = $200,000. Parent paid $250,000 for NCI with book value of $200,000. The excess $250,000 − $200,000 = $50,000 reduces Parent's APIC (or retained earnings if APIC is insufficient).",
+      "explanationJa": "親会社が支配を維持したまま追加取得する場合、資本取引（損益なし）として処理します。NCI減少額＝10%/20% × $400,000 = $200,000。親会社は帳簿価額$200,000のNCIに対し$250,000を支払いました。超過額$250,000 − $200,000 = $50,000は親会社のAPIC（不足する場合は利益剰余金）を減少させます。",
+      "references": ["ASC 810-10-45-23"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-018",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Fixed Asset Sale",
+      "stem": "On January 1, Year 1, Parent sold equipment to Sub for $360,000. The equipment had a carrying value of $300,000 on Parent's books (original cost $500,000, accumulated depreciation $200,000). Sub depreciates the equipment over 6 years straight-line with no residual value. What is the net consolidation adjustment to depreciation expense for Year 1?",
+      "choices": [
+        { "label": "A", "text": "Decrease depreciation by $10,000" },
+        { "label": "B", "text": "Increase depreciation by $10,000" },
+        { "label": "C", "text": "Decrease depreciation by $60,000" },
+        { "label": "D", "text": "No adjustment needed" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sub records depreciation based on transfer price: $360,000 ÷ 6 = $60,000/year. From the consolidated perspective, the correct depreciation is based on original CV: $300,000 ÷ 6 = $50,000/year. Consolidation adjustment: Reduce depreciation by $60,000 − $50,000 = $10,000.",
+      "explanationJa": "子会社は譲渡価格に基づく減価償却を計上：$360,000 ÷ 6 = $60,000/年。連結上は取得価額ベースの減価償却が正しい：$300,000 ÷ 6 = $50,000/年。連結修正：減価償却費を$60,000 − $50,000 = $10,000減少させます。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-019",
+      "topic": "Consolidations",
+      "subtopic": "Deconsolidation Gain",
+      "stem": "Parent owns 100% of Sub (carrying amount of Sub's net assets on consolidated books = $1,800,000). Parent sells 70% of Sub for $1,680,000 cash, retaining 30%. The fair value of the retained 30% interest is $720,000. What gain or loss does Parent recognize on deconsolidation?",
+      "choices": [
+        { "label": "A", "text": "Gain of $600,000" },
+        { "label": "B", "text": "Gain of $480,000" },
+        { "label": "C", "text": "Gain of $1,680,000" },
+        { "label": "D", "text": "Loss of $120,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Upon loss of control, total gain = (Proceeds + FV of retained interest) − Carrying amount of subsidiary's net assets. Gain = ($1,680,000 + $720,000) − $1,800,000 = $2,400,000 − $1,800,000 = $600,000.",
+      "explanationJa": "支配喪失時の利益合計＝（売却代金＋保持持分の公正価値）－子会社純資産の帳簿価額。利益＝（$1,680,000 + $720,000）− $1,800,000 = $2,400,000 − $1,800,000 = $600,000。",
+      "references": ["ASC 810-10-40-3A", "ASC 810-10-40-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-020",
+      "topic": "Consolidations",
+      "subtopic": "Contingent Consideration",
+      "stem": "Parent acquires 100% of Target for $3,000,000 cash plus contingent consideration with an acquisition-date fair value of $400,000. Fair value of Target's identifiable net assets is $2,800,000. Two years later, the contingent consideration is settled for $500,000. What is the effect on Year 2 earnings from the contingent consideration settlement?",
+      "choices": [
+        { "label": "A", "text": "Loss of $100,000" },
+        { "label": "B", "text": "Increase goodwill by $100,000" },
+        { "label": "C", "text": "Loss of $500,000" },
+        { "label": "D", "text": "No effect on earnings; adjust equity" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "At acquisition, goodwill = ($3,000,000 + $400,000) − $2,800,000 = $600,000. Under ASC 805-30-35-1, changes in the fair value of contingent consideration classified as a liability after the acquisition date are recognized in earnings. The contingent consideration liability increased from $400,000 to $500,000, resulting in a $100,000 loss in Year 2 earnings. Goodwill is not adjusted.",
+      "explanationJa": "取得時、のれん＝（$3,000,000 + $400,000）− $2,800,000 = $600,000。ASC 805-30-35-1に基づき、取得日後の負債分類の条件付対価の公正価値変動は損益で認識します。条件付対価負債が$400,000から$500,000に増加し、Year 2に$100,000の損失を計上します。のれんは修正しません。",
+      "references": ["ASC 805-30-35-1", "ASC 805-30-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

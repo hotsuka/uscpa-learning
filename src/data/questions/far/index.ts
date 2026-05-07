@@ -15,6 +15,10 @@ import consolidations from "./consolidations.json";
 import governmentAccounting from "./government-accounting.json";
 import nonprofitAccounting from "./nonprofit-accounting.json";
 import accountingChanges from "./accounting-changes.json";
+import derivativesHedging from "./derivatives-hedging.json";
+import foreignCurrencyEps from "./foreign-currency-eps.json";
+import partnerships from "./partnerships.json";
+import creditLossCecl from "./credit-loss-cecl.json";
 
 export const farQuestionSets: QuestionSet[] = [
   cashFlows,
@@ -32,6 +36,10 @@ export const farQuestionSets: QuestionSet[] = [
   governmentAccounting,
   nonprofitAccounting,
   accountingChanges,
+  derivativesHedging,
+  foreignCurrencyEps,
+  partnerships,
+  creditLossCecl,
 ] as QuestionSet[];
 
 export const getTotalQuestionCount = (): number => {

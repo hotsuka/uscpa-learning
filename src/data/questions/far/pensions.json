@@ -2,7 +2,7 @@
   "id": "far-pensions",
   "name": "Pensions",
   "topic": "Pensions",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "pen-001",
@@ -240,6 +240,186 @@
       "references": ["ASC 715-20-50-1"],
       "difficulty": "basic",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-011",
+      "topic": "Pensions",
+      "subtopic": "Net Periodic Pension Cost Calculation",
+      "stem": "Apex Corp. has the following pension data for Year 2: Service cost $85,000; PBO at beginning of year $1,400,000; Discount rate 5%; Market-related value of plan assets at beginning of year $1,000,000; Expected return on assets 8%; Amortization of prior service cost $6,000; Amortization of net loss $7,000. What is Apex's net periodic pension cost for Year 2?",
+      "choices": [
+        { "label": "A", "text": "$88,000" },
+        { "label": "B", "text": "$168,000" },
+        { "label": "C", "text": "$98,000" },
+        { "label": "D", "text": "$75,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "NPPC = Service cost + Interest cost - Expected return + PSC amortization + Net loss amortization. Interest cost = $1,400,000 × 5% = $70,000. Expected return = $1,000,000 × 8% = $80,000. NPPC = $85,000 + $70,000 - $80,000 + $6,000 + $7,000 = $88,000.",
+      "explanationJa": "正味期間年金費用（NPPC）= 勤務費用 + 利息費用 − 期待収益 + 過去勤務費用償却 + 純損失償却。利息費用 = $1,400,000 × 5% = $70,000。期待収益 = $1,000,000 × 8% = $80,000。NPPC = $85,000 + $70,000 − $80,000 + $6,000 + $7,000 = $88,000。",
+      "references": ["ASC 715-30-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-012",
+      "topic": "Pensions",
+      "subtopic": "PBO Rollforward",
+      "stem": "Delta Corp.'s defined benefit plan has the following data: PBO at January 1 = $2,000,000; Service cost = $150,000; Discount rate = 5%; Benefits paid to retirees = $180,000; Actuarial loss from assumption change = $60,000; Plan amendment (prior service cost) = $80,000. What is the PBO at December 31?",
+      "choices": [
+        { "label": "A", "text": "$2,210,000" },
+        { "label": "B", "text": "$2,110,000" },
+        { "label": "C", "text": "$2,310,000" },
+        { "label": "D", "text": "$2,190,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "PBO rollforward: Beginning PBO + Service cost + Interest cost + Actuarial losses - Benefits paid + Plan amendments. Interest cost = $2,000,000 × 5% = $100,000. Ending PBO = $2,000,000 + $150,000 + $100,000 + $60,000 - $180,000 + $80,000 = $2,210,000.",
+      "explanationJa": "PBOロールフォワード：期首PBO + 勤務費用 + 利息費用 + 数理計算上の損失 − 給付支払額 + 制度改定。利息費用 = $2,000,000 × 5% = $100,000。期末PBO = $2,000,000 + $150,000 + $100,000 + $60,000 − $180,000 + $80,000 = $2,210,000。",
+      "references": ["ASC 715-30-35-4", "ASC 715-20-50-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-013",
+      "topic": "Pensions",
+      "subtopic": "Plan Assets Rollforward",
+      "stem": "Sigma Corp.'s pension plan has the following data for the year: Fair value of plan assets at January 1 = $900,000; Actual return on plan assets = $72,000; Employer contributions = $200,000; Benefits paid to retirees = $150,000; Administrative expenses paid from plan = $20,000. What is the fair value of plan assets at December 31?",
+      "choices": [
+        { "label": "A", "text": "$1,022,000" },
+        { "label": "B", "text": "$1,002,000" },
+        { "label": "C", "text": "$1,042,000" },
+        { "label": "D", "text": "$922,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Plan assets rollforward: Beginning FV + Actual return + Employer contributions - Benefits paid - Administrative expenses. Ending FV = $900,000 + $72,000 + $200,000 - $150,000 - $20,000 = $1,002,000.",
+      "explanationJa": "制度資産ロールフォワード：期首公正価値 + 実際収益 + 雇用主拠出金 − 給付支払額 − 管理費用。期末公正価値 = $900,000 + $72,000 + $200,000 − $150,000 − $20,000 = $1,002,000。",
+      "references": ["ASC 715-20-50-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-014",
+      "topic": "Pensions",
+      "subtopic": "Corridor Approach Calculation",
+      "stem": "At the beginning of Year 3, Omega Corp. has the following pension data: PBO = $2,400,000; Market-related value of plan assets = $2,100,000; Unrecognized net loss in AOCI = $290,000; Average remaining service period of active employees = 10 years. What is the minimum amortization of the net loss to be included in Year 3 pension cost?",
+      "choices": [
+        { "label": "A", "text": "$5,000" },
+        { "label": "B", "text": "$29,000" },
+        { "label": "C", "text": "$24,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Corridor = 10% × greater of PBO ($2,400,000) or MRVA ($2,100,000) = 10% × $2,400,000 = $240,000. Net loss in AOCI ($290,000) exceeds the corridor ($240,000) by $50,000. Minimum amortization = excess ÷ average remaining service period = $50,000 ÷ 10 years = $5,000.",
+      "explanationJa": "回廊 = PBO（$2,400,000）または制度資産の市場関連価値（$2,100,000）のいずれか大きい方の10% = $2,400,000 × 10% = $240,000。AOCIの未認識純損失（$290,000）が回廊（$240,000）を$50,000超過。最低償却額 = 超過額 ÷ 平均残存勤務期間 = $50,000 ÷ 10年 = $5,000。",
+      "references": ["ASC 715-30-35-24"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-015",
+      "topic": "Pensions",
+      "subtopic": "Funded Status Calculation",
+      "stem": "At December 31, Year 5, Gamma Corp. has a projected benefit obligation of $3,500,000 and plan assets with a fair value of $3,200,000. Additionally, the following amounts are in AOCI: unrecognized prior service cost $120,000 (debit) and unrecognized net loss $85,000 (debit). What amount should Gamma report as the net pension liability on its balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$95,000" },
+        { "label": "C", "text": "$505,000" },
+        { "label": "D", "text": "$215,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-20-45-1, the balance sheet reports only the funded status: PBO minus fair value of plan assets. The AOCI items (prior service cost and net loss) are reported in stockholders' equity as AOCI components, not added to the pension liability. Funded status = $3,500,000 - $3,200,000 = $300,000 net liability.",
+      "explanationJa": "ASC 715-20-45-1に基づき、貸借対照表には積立状況のみが報告されます：PBO − 制度資産の公正価値。AOCI項目（過去勤務費用と純損失）は株主資本のAOCI構成要素として報告され、年金負債に加算されません。積立状況 = $3,500,000 − $3,200,000 = $300,000の純負債。",
+      "references": ["ASC 715-20-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-016",
+      "topic": "Pensions",
+      "subtopic": "Asset Gain/Loss Recognition in OCI",
+      "stem": "Kappa Corp.'s pension plan has plan assets with a market-related value of $1,600,000 at the beginning of the year. The expected rate of return is 7%, and the actual return on plan assets for the year was $138,000. What amount of asset-related gain or loss is recognized in OCI for the year?",
+      "choices": [
+        { "label": "A", "text": "$26,000 gain" },
+        { "label": "B", "text": "$26,000 loss" },
+        { "label": "C", "text": "$138,000 gain" },
+        { "label": "D", "text": "$112,000 gain" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Expected return = $1,600,000 × 7% = $112,000. Actual return = $138,000. The difference (actual minus expected) = $138,000 - $112,000 = $26,000 gain. For pension cost, only the expected return ($112,000) reduces NPPC. The unexpected excess of $26,000 is an asset-related gain recognized in OCI (credit to AOCI, reducing any accumulated net loss).",
+      "explanationJa": "期待収益 = $1,600,000 × 7% = $112,000。実際収益 = $138,000。差額（実際 − 期待）= $138,000 − $112,000 = $26,000の利得。年金費用ではNPPCを減少させるのは期待収益（$112,000）のみ。予想外の超過$26,000は資産に関する利得としてOCIに認識されます（AOCIへの貸方、累積純損失を減少）。",
+      "references": ["ASC 715-30-35-22", "ASC 715-30-35-25"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-017",
+      "topic": "Pensions",
+      "subtopic": "Prior Service Cost Amortization",
+      "stem": "On January 1, Year 1, Theta Corp. amends its pension plan, creating prior service cost of $180,000. The company has 60 active employees, each expected to work 3 more years (total remaining service years = 180). Using the years-of-service method, what is the amortization of prior service cost in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$15,000" },
+        { "label": "C", "text": "$36,000" },
+        { "label": "D", "text": "$90,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Years-of-service method: Total service years = 60 employees × 3 years = 180. Year 1 fraction: All 60 employees work in Year 1, so fraction = 60/180 = 1/3. Amortization = $180,000 × (60/180) = $60,000. Alternatively, if straight-line over average remaining service period (3 years): $180,000 / 3 = $60,000. Both methods yield the same result here because all employees have equal remaining service lives.",
+      "explanationJa": "勤務年数法：総勤務年数 = 60人 × 3年 = 180。第1年の比率：60人全員が第1年に勤務するため、比率 = 60/180 = 1/3。償却額 = $180,000 × (60/180) = $60,000。全従業員の残存勤務期間が等しいため、平均残存勤務期間による定額法（$180,000 / 3 = $60,000）と同じ結果になります。",
+      "references": ["ASC 715-20-35-24"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-018",
+      "topic": "Pensions",
+      "subtopic": "Settlement Accounting",
+      "stem": "Lambda Corp. settles 25% of its pension obligation by purchasing annuity contracts. Before settlement, the PBO was $4,000,000, plan assets were $3,600,000 at fair value, and unrecognized net loss in AOCI was $200,000. The settlement cost (annuity purchase price) equals the proportionate share of the PBO settled ($1,000,000). What settlement loss should Lambda recognize?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A settlement requires proportional recognition of unrecognized net gain/loss from AOCI. Lambda settles 25% of the PBO. The pro-rata share of unrecognized net loss recognized in earnings = 25% × $200,000 = $50,000. This is the settlement loss recognized in the income statement.",
+      "explanationJa": "清算（セトルメント）では、AOCIにある未認識純損益の比例的認識が必要です。Lambdaが清算したPBOの割合は25%。損益として認識される未認識純損失の按分額 = 25% × $200,000 = $50,000。これが損益計算書に認識される清算損失です。",
+      "references": ["ASC 715-30-35-79", "ASC 715-30-35-80"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-019",
+      "topic": "Pensions",
+      "subtopic": "Interest Cost with Mid-Year Events",
+      "stem": "Epsilon Corp. has a PBO of $2,500,000 at January 1. The discount rate is 6%. Service cost accrues evenly throughout the year at $200,000 total. Benefits of $180,000 are paid on June 30. What is the interest cost component of pension expense for the year (assuming interest accrues on beginning PBO for the full year, with no adjustment for mid-year cash flows per simplified approach)?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$156,000" },
+        { "label": "C", "text": "$139,200" },
+        { "label": "D", "text": "$144,600" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the simplified approach commonly used in practice and CPA exam questions, interest cost is computed on the beginning-of-year PBO: Interest cost = $2,500,000 × 6% = $150,000. Mid-year service cost accruals and benefit payments do not adjust the interest calculation under this simplified method.",
+      "explanationJa": "実務およびCPA試験で一般的に使用される簡便法では、利息費用は期首PBOに基づいて計算されます：利息費用 = $2,500,000 × 6% = $150,000。この簡便法では、年中の勤務費用の発生や給付支払いは利息計算を調整しません。",
+      "references": ["ASC 715-30-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-020",
+      "topic": "Pensions",
+      "subtopic": "Defined Contribution Plan",
+      "stem": "Zeta Corp. sponsors a defined contribution (401k) plan. The plan requires the employer to match 100% of employee contributions up to 6% of salary. Total eligible employee salaries are $5,000,000. Employees contributed an average of 8% of their salaries. Additionally, the plan provides a discretionary profit-sharing contribution of 2% of salaries. What is Zeta's total pension expense for the defined contribution plan?",
+      "choices": [
+        { "label": "A", "text": "$400,000" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$500,000" },
+        { "label": "D", "text": "$240,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Employer match: Employees contributed 8% but match is capped at 6% of salary. Match = $5,000,000 × 6% = $300,000. Profit-sharing contribution = $5,000,000 × 2% = $100,000. Total DC expense = $300,000 + $100,000 = $400,000. For defined contribution plans, the expense equals the required contribution for the period.",
+      "explanationJa": "雇用主マッチング：従業員は8%拠出しましたが、マッチングは給与の6%が上限。マッチング = $5,000,000 × 6% = $300,000。利益分配拠出 = $5,000,000 × 2% = $100,000。確定拠出制度の費用合計 = $300,000 + $100,000 = $400,000。確定拠出制度では、費用はその期間の必要拠出額に等しくなります。",
+      "references": ["ASC 715-70-25-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

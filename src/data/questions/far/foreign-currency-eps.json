@@ -1,0 +1,188 @@
+{
+  "id": "far-foreign-currency-eps",
+  "name": "Foreign Currency & EPS",
+  "topic": "Foreign Currency & EPS",
+  "version": "1.0.0",
+  "questions": [
+    {
+      "id": "fx-001",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Translation vs Remeasurement",
+      "stem": "Under ASC 830, a foreign subsidiary whose functional currency is its local currency translates its financial statements using which method?",
+      "choices": [
+        { "label": "A", "text": "Temporal method (remeasurement)" },
+        { "label": "B", "text": "Current rate method (translation)" },
+        { "label": "C", "text": "Monetary/nonmonetary method" },
+        { "label": "D", "text": "All items at historical rates" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 830-10-45-3, when the functional currency is the local (foreign) currency, the current rate method is used: assets and liabilities at the current exchange rate, equity at historical rates, and income statement items at weighted-average rates (or transaction-date rates). The resulting translation adjustment is reported in OCI (CTA).",
+      "explanationJa": "ASC 830-10-45-3に基づき、機能通貨が現地（外国）通貨の場合、カレントレート法を使用：資産・負債は決算日レート、資本は取得日レート、損益項目は加重平均レート（または取引日レート）。結果として生じる換算調整はOCI（累積換算調整勘定）に報告されます。",
+      "references": ["ASC 830-10-45-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-002",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Translation - CTA Calculation",
+      "stem": "A U.S. parent has a foreign subsidiary with net assets of LC 5,000,000 at January 1 (rate $0.80/LC). During the year, net income is LC 800,000 (average rate $0.75/LC). No dividends are paid. The December 31 rate is $0.72/LC. What is the translation adjustment (CTA) for the year?",
+      "choices": [
+        { "label": "A", "text": "Loss of $424,000" },
+        { "label": "B", "text": "Loss of $600,000" },
+        { "label": "C", "text": "Gain of $424,000" },
+        { "label": "D", "text": "Loss of $176,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ending net assets in LC = 5,000,000 + 800,000 = LC 5,800,000. Net assets translated at current rate = 5,800,000 × $0.72 = $4,176,000. Beginning net assets translated at beginning rate = 5,000,000 × $0.80 = $4,000,000. Net income translated at average rate = 800,000 × $0.75 = $600,000. Expected ending in USD = $4,000,000 + $600,000 = $4,600,000. CTA = Actual − Expected = $4,176,000 − $4,600,000 = −$424,000 (loss in OCI).",
+      "explanationJa": "期末純資産（LC）= 5,000,000 + 800,000 = LC 5,800,000。決算日レートでの換算＝5,800,000 × $0.72 = $4,176,000。期首純資産の換算（期首レート）＝5,000,000 × $0.80 = $4,000,000。純利益の換算（平均レート）＝800,000 × $0.75 = $600,000。USD期待値＝$4,000,000 + $600,000 = $4,600,000。CTA＝実際 − 期待＝$4,176,000 − $4,600,000 = −$424,000（OCIに損失）。",
+      "references": ["ASC 830-10-45-3", "ASC 830-30-45-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-003",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Remeasurement - Gain/Loss",
+      "stem": "A foreign subsidiary has the U.S. dollar as its functional currency. It holds a monetary asset of LC 1,000,000 when the rate is $0.50/LC. At year-end, the rate is $0.48/LC. What remeasurement gain or loss is recognized in earnings?",
+      "choices": [
+        { "label": "A", "text": "Loss of $20,000" },
+        { "label": "B", "text": "Gain of $20,000" },
+        { "label": "C", "text": "Loss of $480,000" },
+        { "label": "D", "text": "No gain or loss; reported in OCI" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When the functional currency is the USD, the temporal method (remeasurement) is used. Monetary assets are remeasured at the current rate. Beginning value = LC 1,000,000 × $0.50 = $500,000. Ending value = LC 1,000,000 × $0.48 = $480,000. Loss = $500,000 − $480,000 = $20,000. Remeasurement gains/losses are recognized in earnings (not OCI).",
+      "explanationJa": "機能通貨がUSDの場合、テンポラル法（再測定）を使用。貨幣性資産は決算日レートで再測定。期首価値＝LC 1,000,000 × $0.50 = $500,000。期末価値＝LC 1,000,000 × $0.48 = $480,000。損失＝$500,000 − $480,000 = $20,000。再測定損益は損益（OCIではなく）に認識されます。",
+      "references": ["ASC 830-10-45-17", "ASC 830-10-45-18"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-004",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Foreign Currency Transaction",
+      "stem": "On November 1, a U.S. company sells goods to a French customer for €200,000 on account. The spot rate is $1.15/€. On December 31 (year-end), the spot rate is $1.18/€. What foreign exchange gain or loss does the U.S. company recognize at year-end?",
+      "choices": [
+        { "label": "A", "text": "Gain of $6,000" },
+        { "label": "B", "text": "Loss of $6,000" },
+        { "label": "C", "text": "Gain of $236,000" },
+        { "label": "D", "text": "No gain or loss until collection" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The receivable was recorded at $1.15 × €200,000 = $230,000. At year-end, the receivable is remeasured at $1.18 × €200,000 = $236,000. Since the euro strengthened, the receivable is worth more in USD. Foreign exchange gain = $236,000 − $230,000 = $6,000, recognized in earnings under ASC 830-20-35-1.",
+      "explanationJa": "売掛金は$1.15 × €200,000 = $230,000で計上。年末に$1.18 × €200,000 = $236,000で再測定。ユーロが上昇��たため、売掛金のUSD価値が増加。為替差益＝$236,000 − $230,000 = $6,000。ASC 830-20-35-1に基づき損益に認識。",
+      "references": ["ASC 830-20-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-005",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Basic EPS Calculation",
+      "stem": "A company has net income of $2,400,000. It has 600,000 shares of common stock outstanding all year and 50,000 shares of 6%, $100 par cumulative preferred stock outstanding. What is basic EPS?",
+      "choices": [
+        { "label": "A", "text": "$3.50" },
+        { "label": "B", "text": "$4.00" },
+        { "label": "C", "text": "$3.69" },
+        { "label": "D", "text": "$4.62" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Basic EPS = (Net income − Preferred dividends) / Weighted-average common shares. Preferred dividends = 50,000 × $100 × 6% = $300,000. Basic EPS = ($2,400,000 − $300,000) / 600,000 = $2,100,000 / 600,000 = $3.50.",
+      "explanationJa": "基本EPS＝（純利益 − 優先配��金）/ 加重平均普通株式数。優先配当金＝50,000 × $100 × 6% = $300,000。基本EPS＝（$2,400,000 − $300,000）/ 600,000 = $2,100,000 / 600,000 = $3.50。",
+      "references": ["ASC 260-10-45-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-006",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Diluted EPS - Convertible Bonds",
+      "stem": "A company has basic EPS of $5.00 (net income $1,000,000, 200,000 WA shares). It has $2,000,000 of 8% convertible bonds (convertible into 50,000 common shares). The tax rate is 25%. What is diluted EPS?",
+      "choices": [
+        { "label": "A", "text": "$4.48" },
+        { "label": "B", "text": "$5.00" },
+        { "label": "C", "text": "$4.64" },
+        { "label": "D", "text": "$4.00" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "If-converted method: Add back after-tax interest savings to numerator; add convertible shares to denominator. Interest = $2,000,000 × 8% = $160,000. Tax savings = $160,000 × 25% = $40,000. After-tax add-back = $160,000 − $40,000 = $120,000. Diluted EPS = ($1,000,000 + $120,000) / (200,000 + 50,000) = $1,120,000 / 250,000 = $4.48. Since $4.48 < $5.00, the bonds are dilutive.",
+      "explanationJa": "イフ・コンバーテッド法：分子に税引後利息節約額を加算、分母に転換株式数を加算。利息＝$2,000,000 × 8% = $160,000。税金節約＝$160,000 × 25% = $40,000。税引後加算額＝$160,000 − $40,000 = $120,000。希薄化EPS＝（$1,000,000 + $120,000）/（200,000 + 50,000）= $1,120,000 / 250,000 = $4.48。$4.48 < $5.00のため希薄化効果あり。",
+      "references": ["ASC 260-10-45-16", "ASC 260-10-45-40"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-007",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Diluted EPS - Stock Options (Treasury Stock Method)",
+      "stem": "A company has net income of $800,000 and 400,000 weighted-average shares outstanding. It has 40,000 stock options with an exercise price of $20. The average market price during the year is $50. What is diluted EPS?",
+      "choices": [
+        { "label": "A", "text": "$1.89" },
+        { "label": "B", "text": "$2.00" },
+        { "label": "C", "text": "$1.74" },
+        { "label": "D", "text": "$1.94" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Treasury stock method: Proceeds from exercise = 40,000 × $20 = $800,000. Shares repurchased at average market price = $800,000 / $50 = 16,000. Incremental shares = 40,000 − 16,000 = 24,000. Diluted EPS = $800,000 / (400,000 + 24,000) = $800,000 / 424,000 = $1.89.",
+      "explanationJa": "自己株式法：行使による払込金＝40,000 × $20 = $800,000。平均市場価格��買戻し＝$800,000 / $50 = 16,000株。増加株数＝40,000 − 16,000 = 24,000。希薄化EPS＝$800,000 /（400,000 + 24,000）= $800,000 / 424,000 = $1.89。",
+      "references": ["ASC 260-10-45-22", "ASC 260-10-45-23"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-008",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Weighted-Average Shares - Mid-Year Issuance",
+      "stem": "A company had 500,000 shares outstanding on January 1. On April 1, it issued 100,000 additional shares. On October 1, it repurchased 60,000 shares as treasury stock. What is the weighted-average number of shares for the year?",
+      "choices": [
+        { "label": "A", "text": "560,000" },
+        { "label": "B", "text": "575,000" },
+        { "label": "C", "text": "540,000" },
+        { "label": "D", "text": "600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Weighted-average shares: Jan 1 - Mar 31 (3 months): 500,000 shares. Apr 1 - Sep 30 (6 months): 500,000 + 100,000 = 600,000 shares. Oct 1 - Dec 31 (3 months): 600,000 − 60,000 = 540,000 shares. WA = (500,000 × 3/12) + (600,000 × 6/12) + (540,000 × 3/12) = 125,000 + 300,000 + 135,000 = 560,000.",
+      "explanationJa": "加重平均＝（500,000 × 3/12）+（600,000 × 6/12）+（540,000 × 3/12）= 125,000 + 300,000 + 135,000 = 560,000株。1月〜3月：500,000株（3か月）��4月〜9月：600,000株（6か月）、10月〜12月：540,000株（3か月）。",
+      "references": ["ASC 260-10-45-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-009",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Translation - Income Statement",
+      "stem": "A foreign subsidiary (functional currency = local currency) reports depreciation expense of LC 400,000 for the year. The asset was acquired when the exchange rate was $0.90/LC. The average rate for the year is $0.85/LC. The year-end rate is $0.82/LC. At what dollar amount is depreciation reported on the translated income statement?",
+      "choices": [
+        { "label": "A", "text": "$340,000" },
+        { "label": "B", "text": "$360,000" },
+        { "label": "C", "text": "$328,000" },
+        { "label": "D", "text": "$400,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the current rate method (translation), ALL income statement items are translated at the average rate for the period, regardless of the nature of the expense. Depreciation = LC 400,000 × $0.85 = $340,000. The historical rate ($0.90) is only used in the temporal method (remeasurement) for non-monetary items.",
+      "explanationJa": "カレントレート法（換算）では、費用の性質に関係なく、全ての損益項目を当期の平均レートで換算します。減価償却費＝LC 400,000 × $0.85 = $340,000。取得日レート（$0.90）はテンポラル法（再測定）で非貨幣性項目にのみ使用されます。",
+      "references": ["ASC 830-10-45-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-010",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "EPS - Stock Dividend Retroactive Adjustment",
+      "stem": "A company reported basic EPS of $4.00 for Year 1 (net income $800,000; 200,000 WA shares). On March 1, Year 2, the company declares a 10% stock dividend. What is the restated Year 1 basic EPS for comparative purposes?",
+      "choices": [
+        { "label": "A", "text": "$3.64" },
+        { "label": "B", "text": "$4.00" },
+        { "label": "C", "text": "$4.40" },
+        { "label": "D", "text": "$3.60" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 260-10-55-12, stock dividends and stock splits are applied retroactively to all prior periods presented for EPS calculations. Adjusted shares = 200,000 × 1.10 = 220,000. Restated Year 1 EPS = $800,000 / 220,000 = $3.636 ≈ $3.64.",
+      "explanationJa": "ASC 260-10-55-12に基づき、株式配当と株式分割はEPS計算において表示される全ての過去の期間に遡及適用され��す。調整後株数＝200,000 × 1.10 = 220,000。修正再表示Year 1 EPS＝$800,000 / 220,000 = $3.636 ≈ $3.64。",
+      "references": ["ASC 260-10-55-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    }
+  ]
+}

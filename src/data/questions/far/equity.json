@@ -2,7 +2,7 @@
   "id": "far-equity",
   "name": "Equity",
   "topic": "Equity",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "eq-001",
@@ -240,6 +240,186 @@
       "references": ["ASC 718-10-35-3"],
       "difficulty": "intermediate",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "eq-011",
+      "topic": "Equity",
+      "subtopic": "Basic EPS Calculation",
+      "stem": "Alpha Corp. reported net income of $600,000 for Year 1. It has 10,000 shares of 8%, $100 par cumulative preferred stock outstanding. Common shares: 200,000 outstanding on January 1, and 40,000 additional shares issued on April 1. What is basic EPS for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$2.26" },
+        { "label": "B", "text": "$2.60" },
+        { "label": "C", "text": "$2.17" },
+        { "label": "D", "text": "$2.50" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Preferred dividends = 10,000 × $100 × 8% = $80,000. Income available to common = $600,000 - $80,000 = $520,000. Weighted average shares = 200,000 × 12/12 + 40,000 × 9/12 = 200,000 + 30,000 = 230,000. Basic EPS = $520,000 / 230,000 = $2.26.",
+      "explanationJa": "優先配当 = 10,000株 × $100 × 8% = $80,000。普通株主に帰属する利益 = $600,000 − $80,000 = $520,000。加重平均株式数 = 200,000 × 12/12 + 40,000 × 9/12 = 230,000。基本EPS = $520,000 / 230,000 = $2.26。",
+      "references": ["ASC 260-10-45-10", "ASC 260-10-45-11"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-012",
+      "topic": "Equity",
+      "subtopic": "Diluted EPS - If-Converted",
+      "stem": "Beta Corp. has net income of $500,000 and 200,000 common shares outstanding. It also has convertible preferred stock (10,000 shares, $5 annual dividend per share) that is convertible into 25,000 common shares. What is diluted EPS?",
+      "choices": [
+        { "label": "A", "text": "$2.22" },
+        { "label": "B", "text": "$2.25" },
+        { "label": "C", "text": "$2.00" },
+        { "label": "D", "text": "$2.50" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Basic EPS = ($500,000 - $50,000) / 200,000 = $2.25. For diluted EPS (if-converted method): Add back preferred dividends to numerator ($500,000) and add conversion shares to denominator (200,000 + 25,000 = 225,000). Diluted EPS = $500,000 / 225,000 = $2.22. Since $2.22 < $2.25, the conversion is dilutive and included.",
+      "explanationJa": "基本EPS = ($500,000 − $50,000) / 200,000 = $2.25。希薄化後EPS（転換仮定法）：分子に優先配当を加算（$500,000）、分母に転換株式を加算（225,000）。希薄化後EPS = $500,000 / 225,000 = $2.22。$2.22 < $2.25であるため、転換は希薄化効果があり含められます。",
+      "references": ["ASC 260-10-45-40"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-013",
+      "topic": "Equity",
+      "subtopic": "Treasury Stock Reissue - Above Cost",
+      "stem": "Gamma Corp. holds 5,000 shares of treasury stock acquired at $30 per share (cost method). It reissues 3,000 of these shares at $38 per share. What is the credit to Additional Paid-in Capital from Treasury Stock transactions?",
+      "choices": [
+        { "label": "A", "text": "$24,000" },
+        { "label": "B", "text": "$114,000" },
+        { "label": "C", "text": "$8,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the cost method, when treasury stock is reissued above cost: Cash received = 3,000 × $38 = $114,000. Treasury Stock credit (at cost) = 3,000 × $30 = $90,000. The excess = $114,000 - $90,000 = $24,000 is credited to APIC - Treasury Stock.",
+      "explanationJa": "原価法では、自己株式を原価超で再発行する場合：受取現金 = 3,000 × $38 = $114,000。自己株式の貸方（原価）= 3,000 × $30 = $90,000。超過額 = $114,000 − $90,000 = $24,000は資本剰余金（自己株式取引）に貸方計上されます。",
+      "references": ["ASC 505-30-30-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-014",
+      "topic": "Equity",
+      "subtopic": "Stock Compensation with Forfeitures",
+      "stem": "On January 1, Year 1, Delta Corp. grants 12,000 stock options (fair value $10 per option at grant date) to employees with a 4-year cliff vesting period. Management estimates a 10% forfeiture rate. What is the stock compensation expense for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$27,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$25,000" },
+        { "label": "D", "text": "$120,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Expected options to vest = 12,000 × (1 - 10%) = 10,800. Total compensation cost = 10,800 × $10 = $108,000. Annual expense (straight-line over 4-year vesting period) = $108,000 / 4 = $27,000.",
+      "explanationJa": "権利確定見込みのオプション数 = 12,000 × (1 − 10%) = 10,800。報酬費用合計 = 10,800 × $10 = $108,000。年間費用（4年の権利確定期間にわたり定額）= $108,000 / 4 = $27,000。",
+      "references": ["ASC 718-10-35-3", "ASC 718-10-30-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-015",
+      "topic": "Equity",
+      "subtopic": "Weighted Average Shares - Stock Dividend",
+      "stem": "Epsilon Corp. had 100,000 common shares outstanding on January 1. On April 1, it issued 20,000 additional shares for cash. On July 1, it declared a 10% stock dividend. What is the weighted average number of shares for EPS computation?",
+      "choices": [
+        { "label": "A", "text": "126,500" },
+        { "label": "B", "text": "120,000" },
+        { "label": "C", "text": "132,000" },
+        { "label": "D", "text": "115,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Stock dividends are treated as if they occurred at the beginning of the year (retroactively applied). Jan 1 - Mar 31: 100,000 × 1.10 × 3/12 = 27,500. Apr 1 - Jun 30: 120,000 × 1.10 × 3/12 = 33,000. Jul 1 - Dec 31: 132,000 × 6/12 = 66,000. Total weighted average = 27,500 + 33,000 + 66,000 = 126,500.",
+      "explanationJa": "株式配当はEPS計算上、期首に発生したものとして遡及適用されます。1-3月：100,000 × 1.10 × 3/12 = 27,500。4-6月：120,000 × 1.10 × 3/12 = 33,000。7-12月：132,000 × 6/12 = 66,000。加重平均合計 = 27,500 + 33,000 + 66,000 = 126,500。",
+      "references": ["ASC 260-10-55-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-016",
+      "topic": "Equity",
+      "subtopic": "Treasury Stock Reissue - Below Cost",
+      "stem": "Zeta Corp. holds 2,000 treasury shares acquired at $40 per share (cost method). APIC from prior treasury stock transactions is $10,000. Zeta reissues 1,000 shares at $35 per share. What amount is debited to APIC - Treasury Stock?",
+      "choices": [
+        { "label": "A", "text": "$5,000" },
+        { "label": "B", "text": "$10,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cash received = 1,000 × $35 = $35,000. Treasury Stock credit (at cost) = 1,000 × $40 = $40,000. Shortfall = $40,000 - $35,000 = $5,000. Under the cost method, this shortfall is debited first to APIC - Treasury Stock (up to available balance). Since $5,000 ≤ $10,000 available, the full $5,000 is debited to APIC - Treasury Stock.",
+      "explanationJa": "受取現金 = 1,000 × $35 = $35,000。自己株式の貸方（原価）= 1,000 × $40 = $40,000。不足額 = $40,000 − $35,000 = $5,000。原価法では、不足額はまず資本剰余金（自己株式取引）から借方計上されます（利用可能残高まで）。$5,000 ≤ 利用可能$10,000のため、全額$5,000が資本剰余金から借方計上されます。",
+      "references": ["ASC 505-30-30-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-017",
+      "topic": "Equity",
+      "subtopic": "Anti-Dilutive Securities",
+      "stem": "Eta Corp. has net income of $300,000 and 150,000 weighted average common shares. It has 20,000 outstanding stock options with an exercise price of $50. The average market price of the stock during the year was $40. What is diluted EPS?",
+      "choices": [
+        { "label": "A", "text": "$2.00" },
+        { "label": "B", "text": "$1.76" },
+        { "label": "C", "text": "$1.96" },
+        { "label": "D", "text": "$1.88" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the treasury stock method, options are dilutive only when the exercise price is below the average market price. Here, exercise price ($50) > average market price ($40), so the options are out-of-the-money and anti-dilutive. Anti-dilutive securities are excluded from diluted EPS. Diluted EPS = Basic EPS = $300,000 / 150,000 = $2.00.",
+      "explanationJa": "自己株式法では、行使価格が平均市場価格を下回る場合にのみオプションは希薄化効果があります。ここでは行使価格（$50）> 平均市場価格（$40）であるため、オプションはアウト・オブ・ザ・マネーで反希薄化的です。反希薄化的証券は希薄化後EPSから除外されます。希薄化後EPS = 基本EPS = $300,000 / 150,000 = $2.00。",
+      "references": ["ASC 260-10-45-17"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-018",
+      "topic": "Equity",
+      "subtopic": "Book Value Per Share",
+      "stem": "Theta Corp. has total stockholders' equity of $5,000,000. Preferred stock: 20,000 shares, $100 par, 6% cumulative, callable at $105, with 2 years of dividends in arrears. Common stock: 200,000 shares outstanding. What is the book value per common share?",
+      "choices": [
+        { "label": "A", "text": "$13.30" },
+        { "label": "B", "text": "$14.50" },
+        { "label": "C", "text": "$25.00" },
+        { "label": "D", "text": "$11.80" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Preferred stockholders' claim: Liquidation value = 20,000 × $105 = $2,100,000. Dividends in arrears = 20,000 × $100 × 6% × 2 years = $240,000. Total preferred claim = $2,100,000 + $240,000 = $2,340,000. Equity available to common = $5,000,000 - $2,340,000 = $2,660,000. BV per common share = $2,660,000 / 200,000 = $13.30.",
+      "explanationJa": "優先株主の請求額：清算価値 = 20,000 × $105 = $2,100,000。未払配当 = 20,000 × $100 × 6% × 2年 = $240,000。優先請求合計 = $2,100,000 + $240,000 = $2,340,000。普通株主に帰属する資本 = $5,000,000 − $2,340,000 = $2,660,000。1株当たり簿価 = $2,660,000 / 200,000 = $13.30。",
+      "references": ["ASC 505-10-S99"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-019",
+      "topic": "Equity",
+      "subtopic": "Stock Split Effect on EPS",
+      "stem": "Iota Corp. reported net income of $900,000 for Year 1. It had 300,000 shares outstanding for the entire year. On October 1, Year 1, Iota declared a 3-for-1 stock split. What is basic EPS for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$1.00" },
+        { "label": "B", "text": "$3.00" },
+        { "label": "C", "text": "$2.00" },
+        { "label": "D", "text": "$1.50" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 260-10-55-12, stock splits are applied retroactively to all periods presented. The weighted average shares are adjusted as if the split occurred at the beginning of the year. WA shares = 300,000 × 3 = 900,000. Basic EPS = $900,000 / 900,000 = $1.00.",
+      "explanationJa": "ASC 260-10-55-12に基づき、株式分割は表示されるすべての期間に遡及適用されます。加重平均株式数は分割が期首に発生したかのように調整されます。加重平均株式数 = 300,000 × 3 = 900,000。基本EPS = $900,000 / 900,000 = $1.00。",
+      "references": ["ASC 260-10-55-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-020",
+      "topic": "Equity",
+      "subtopic": "Retained Earnings Statement",
+      "stem": "Kappa Corp. has the following data: Beginning retained earnings $800,000; Net income $250,000; Cash dividends declared $60,000; Small stock dividend (at market value) $90,000; Prior period adjustment for error correction (net of tax) reducing beginning balance by $50,000. What is ending retained earnings?",
+      "choices": [
+        { "label": "A", "text": "$850,000" },
+        { "label": "B", "text": "$900,000" },
+        { "label": "C", "text": "$800,000" },
+        { "label": "D", "text": "$940,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Prior period adjustment restates beginning balance: $800,000 - $50,000 = $750,000 (restated beginning). Ending RE = Restated beginning + Net income - Cash dividends - Stock dividend = $750,000 + $250,000 - $60,000 - $90,000 = $850,000.",
+      "explanationJa": "前期損益修正により期首残高を修正再表示：$800,000 − $50,000 = $750,000（修正後期首）。期末利益剰余金 = 修正後期首 + 純利益 − 現金配当 − 株式配当 = $750,000 + $250,000 − $60,000 − $90,000 = $850,000。",
+      "references": ["ASC 250-10-45-23", "ASC 505-20-30-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

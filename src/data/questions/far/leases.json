@@ -2,7 +2,7 @@
   "id": "far-leases",
   "name": "Leases (ASC 842)",
   "topic": "Leases (ASC 842)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "lease-001",
@@ -228,6 +228,186 @@
       "references": ["ASC 842-20-35-7"],
       "difficulty": "basic",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-011",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Finance Lease Total Expense",
+      "stem": "On January 1, Year 1, Lessee Inc. enters a 5-year finance lease. The initial right-of-use asset and lease liability are both measured at $500,000. The implicit rate is 6%. The ROU asset is amortized on a straight-line basis over the lease term. What is the total lease-related expense recognized in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$130,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$106,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "For a finance lease, total expense = Amortization of ROU asset + Interest on lease liability. Amortization = $500,000 / 5 years = $100,000. Interest = $500,000 × 6% = $30,000. Total Year 1 expense = $100,000 + $30,000 = $130,000.",
+      "explanationJa": "ファイナンスリースの費用合計 = 使用権資産の償却費 + リース負債の利息。償却費 = $500,000 / 5年 = $100,000。利息 = $500,000 × 6% = $30,000。第1年費用合計 = $100,000 + $30,000 = $130,000。",
+      "references": ["ASC 842-20-25-5", "ASC 842-20-35-7"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-012",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Operating Lease Escalating Payments",
+      "stem": "On January 1, Year 1, Alpha Corp. enters a 5-year operating lease with the following annual payments due at year-end: Year 1 $40,000; Year 2 $45,000; Year 3 $50,000; Year 4 $55,000; Year 5 $60,000. What is the lease expense Alpha should recognize in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$40,000" },
+        { "label": "C", "text": "$45,000" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-25-6, operating lease expense is recognized on a straight-line basis regardless of the payment pattern. Total payments = $40,000 + $45,000 + $50,000 + $55,000 + $60,000 = $250,000. Annual straight-line expense = $250,000 / 5 = $50,000.",
+      "explanationJa": "ASC 842-20-25-6に基づき、オペレーティングリース費用は支払パターンに関係なく定額で認識されます。支払総額 = $40,000 + $45,000 + $50,000 + $55,000 + $60,000 = $250,000。年間定額費用 = $250,000 / 5 = $50,000。",
+      "references": ["ASC 842-20-25-6"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-013",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease Liability Amortization",
+      "stem": "Beta Corp. enters a finance lease on January 1, Year 1, with an initial lease liability of $350,000. The annual lease payment is $90,000, due at the end of each year. The rate implicit in the lease is 8%. What is the lease liability balance at December 31, Year 1 (after the first payment)?",
+      "choices": [
+        { "label": "A", "text": "$288,000" },
+        { "label": "B", "text": "$260,000" },
+        { "label": "C", "text": "$350,000" },
+        { "label": "D", "text": "$378,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Year 1 interest on lease liability = $350,000 × 8% = $28,000. Payment of $90,000 is split: $28,000 interest and $62,000 principal reduction. Lease liability at December 31, Year 1 = $350,000 - $62,000 = $288,000. Equivalently: $350,000 + $28,000 - $90,000 = $288,000.",
+      "explanationJa": "第1年のリース負債に対する利息 = $350,000 × 8% = $28,000。支払い$90,000の内訳：利息$28,000、元本返済$62,000。12月31日第1年末のリース負債 = $350,000 − $62,000 = $288,000。別の計算：$350,000 + $28,000 − $90,000 = $288,000。",
+      "references": ["ASC 842-20-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-014",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease Modification Remeasurement",
+      "stem": "Gamma Corp. has an operating lease with 3 years remaining. The current lease liability is $150,000 and the ROU asset is $140,000. The lease is modified (not a separate lease), and the present value of the remaining payments under the modified terms, using a revised discount rate, is $195,000. What is the ROU asset balance immediately after the modification?",
+      "choices": [
+        { "label": "A", "text": "$185,000" },
+        { "label": "B", "text": "$195,000" },
+        { "label": "C", "text": "$150,000" },
+        { "label": "D", "text": "$140,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-35-4, when a lease is modified and does not qualify as a separate lease, the lessee remeasures the lease liability to $195,000. The change in liability = $195,000 - $150,000 = $45,000 increase. The ROU asset is adjusted by the same amount: $140,000 + $45,000 = $185,000.",
+      "explanationJa": "ASC 842-20-35-4に基づき、リースの変更が独立したリースとして適格でない場合、借手はリース負債を$195,000に再測定します。負債の変動 = $195,000 − $150,000 = $45,000増加。使用権資産も同額で調整：$140,000 + $45,000 = $185,000。",
+      "references": ["ASC 842-20-35-4", "ASC 842-10-25-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-015",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Sale-Leaseback Gain Calculation",
+      "stem": "Seller Corp. sells a building (carrying value $700,000) to Buyer Corp. at its fair value of $1,000,000, and simultaneously leases it back under an operating lease. The present value of the leaseback payments is $250,000. How much gain does Seller Corp. recognize at the transaction date?",
+      "choices": [
+        { "label": "A", "text": "$225,000" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$75,000" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Total gain = $1,000,000 - $700,000 = $300,000. Under ASC 842-40-25-3, the gain recognized is limited to the proportion of rights transferred. Rights retained (ROU proportion) = PV of leaseback payments / FV = $250,000 / $1,000,000 = 25%. Gain deferred (related to retained rights) = 25% × $300,000 = $75,000. Gain recognized = $300,000 - $75,000 = $225,000.",
+      "explanationJa": "利益合計 = $1,000,000 − $700,000 = $300,000。ASC 842-40-25-3に基づき、認識される利益は移転した権利の割合に限定されます。保持する権利（ROU比率）= リースバック支払いのPV / FV = $250,000 / $1,000,000 = 25%。繰り延べる利益（保持権利に関連）= 25% × $300,000 = $75,000。認識される利益 = $300,000 − $75,000 = $225,000。",
+      "references": ["ASC 842-40-25-3", "ASC 842-40-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-016",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "ROU Asset Initial Measurement",
+      "stem": "Delta Corp. enters a 6-year operating lease. The present value of lease payments (lease liability) is $420,000. Before commencement, Delta paid a $30,000 lease payment and incurred $12,000 in initial direct costs. Delta also received a $22,000 lease incentive from the lessor. What is the initial measurement of the right-of-use asset?",
+      "choices": [
+        { "label": "A", "text": "$440,000" },
+        { "label": "B", "text": "$420,000" },
+        { "label": "C", "text": "$462,000" },
+        { "label": "D", "text": "$432,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-30-5, ROU asset = Lease liability + Payments made before commencement + Initial direct costs - Lease incentives received. ROU = $420,000 + $30,000 + $12,000 - $22,000 = $440,000.",
+      "explanationJa": "ASC 842-20-30-5に基づき、使用権資産 = リース負債 + 開始前に支払ったリース料 + 当初直接コスト − 受領したリースインセンティブ。ROU = $420,000 + $30,000 + $12,000 − $22,000 = $440,000。",
+      "references": ["ASC 842-20-30-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-017",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor Sales-Type Lease Income",
+      "stem": "A lessor enters a sales-type lease on January 1, Year 1. The underlying equipment has a carrying amount of $450,000 and a fair value of $600,000. The present value of all lease payments equals $600,000. The implicit rate is 7%. What total income does the lessor recognize in Year 1 (selling profit plus interest income)?",
+      "choices": [
+        { "label": "A", "text": "$192,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$42,000" },
+        { "label": "D", "text": "$600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "At commencement: Selling profit = FV - CV = $600,000 - $450,000 = $150,000. The lessor recognizes a net investment in the lease of $600,000. Year 1 interest income = $600,000 × 7% = $42,000. Total Year 1 income = $150,000 + $42,000 = $192,000.",
+      "explanationJa": "開始時：売却利益 = FV − CV = $600,000 − $450,000 = $150,000。貸手はリースに対する正味投資$600,000を認識。第1年利息収益 = $600,000 × 7% = $42,000。第1年の収益合計 = $150,000 + $42,000 = $192,000。",
+      "references": ["ASC 842-30-25-1", "ASC 842-30-25-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-018",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Guaranteed Residual Value",
+      "stem": "Epsilon Corp. enters a finance lease. The present value of the annual lease payments, discounted at the implicit rate, is $280,000. The lessee guarantees a residual value of which the present value is $45,000. The lessee also incurs $8,000 of initial direct costs. What is the initial lease liability?",
+      "choices": [
+        { "label": "A", "text": "$325,000" },
+        { "label": "B", "text": "$333,000" },
+        { "label": "C", "text": "$280,000" },
+        { "label": "D", "text": "$288,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-30-1, the lease liability includes the PV of lease payments, which encompasses fixed payments and guaranteed residual values. Lease liability = PV of annual payments + PV of guaranteed residual = $280,000 + $45,000 = $325,000. Initial direct costs ($8,000) are added to the ROU asset, not the lease liability. ROU = $325,000 + $8,000 = $333,000.",
+      "explanationJa": "ASC 842-20-30-1に基づき、リース負債にはリース料の現在価値が含まれ、それには固定支払いおよび残価保証が含まれます。リース負債 = 年間支払いのPV + 残価保証のPV = $280,000 + $45,000 = $325,000。当初直接コスト（$8,000）はリース負債ではなく使用権資産に加算されます。ROU = $325,000 + $8,000 = $333,000。",
+      "references": ["ASC 842-20-30-1", "ASC 842-20-30-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-019",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Finance Lease Year 2 Interest",
+      "stem": "On January 1, Year 1, Zeta Corp. enters a finance lease with a lease liability of $500,000. Annual lease payments are $150,000, due at the end of each year. The implicit rate is 10%. What is the interest expense on the lease liability for Year 2?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$35,000" },
+        { "label": "D", "text": "$45,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Year 1: Interest = $500,000 × 10% = $50,000. Payment = $150,000. Principal reduction = $150,000 - $50,000 = $100,000. Liability end of Year 1 = $500,000 - $100,000 = $400,000. Year 2: Interest = $400,000 × 10% = $40,000.",
+      "explanationJa": "第1年：利息 = $500,000 × 10% = $50,000。支払い = $150,000。元本返済 = $150,000 − $50,000 = $100,000。第1年末負債残高 = $500,000 − $100,000 = $400,000。第2年：利息 = $400,000 × 10% = $40,000。",
+      "references": ["ASC 842-20-25-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-020",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "ROU Asset Impairment",
+      "stem": "Eta Corp. has a finance lease ROU asset with a carrying value of $300,000 at the beginning of Year 3 (after cumulative amortization). Due to market changes, Eta performs an impairment test per ASC 360. The undiscounted future cash flows from sublease are $250,000, and the fair value of the ROU asset is $220,000. What impairment loss should Eta recognize?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-35-9, ROU assets are tested for impairment under ASC 360 (long-lived assets). Step 1 (recoverability test): Carrying value ($300,000) > Undiscounted cash flows ($250,000), so the asset is impaired. Step 2 (measurement): Impairment loss = Carrying value - Fair value = $300,000 - $220,000 = $80,000.",
+      "explanationJa": "ASC 842-20-35-9に基づき、使用権資産はASC 360（長期性資産）に従って減損テストされます。ステップ1（回収可能性テスト）：帳簿価額（$300,000）> 割引前キャッシュフロー（$250,000）→ 減損あり。ステップ2（測定）：減損損失 = 帳簿価額 − 公正価値 = $300,000 − $220,000 = $80,000。",
+      "references": ["ASC 842-20-35-9", "ASC 360-10-35-17"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

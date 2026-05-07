@@ -2,7 +2,7 @@
   "id": "far-ppe-intangibles",
   "name": "Property, Plant & Equipment / Intangible Assets",
   "topic": "Property, Plant & Equipment",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "ppe-001",
@@ -230,10 +230,190 @@
       ],
       "correctAnswer": "B",
       "explanation": "ASC 350-40-25-2 requires that costs incurred during the application development stage be capitalized. Costs in the preliminary project stage (conceptual formulation, evaluation of alternatives) and post-implementation stage (training, maintenance) are expensed as incurred. The application development stage begins when management commits to funding and it is probable the project will be completed.",
-      "explanationJa": "ASC 350-40-25-2は、アプリケーション開発段階で発生したコストを資産計上することを要求している。予備的プロジェクト段階（概念の策定、代替案の評価）および導入後段階（研修、保守）のコストは発生時に費用処理される。アプリケーション開発段階は、経営者が資金提供を確約し、プロジェクトが完成する可能性が高くなった時点で開始する。",
+      "explanationJa": "ASC 350-40-25-2は、アプリケーション開発段階で発生し���コストを資産計上することを要求している。予備的プロジェクト段階（概念の策定、代替案の評価）および導入後段階（研修、保守）のコストは発生時に費用処理される。アプリケーション開発段階は、経営者が資金提供を確約し、プロジェクトが完成する可能性が高くなった時点で開始する。",
       "references": ["ASC 350-40-25-2"],
       "difficulty": "basic",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "ppe-011",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Capitalized Interest",
+      "stem": "Entity G is constructing a building. Average accumulated expenditures during the year are $600,000. The company has a specific construction loan of $400,000 at 8% and general borrowings with a weighted-average rate of 10%. Actual total interest incurred is $80,000. What amount of interest should be capitalized?",
+      "choices": [
+        { "label": "A", "text": "$52,000" },
+        { "label": "B", "text": "$32,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$80,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Avoidable interest = specific borrowing portion ($400,000 × 8% = $32,000) + excess expenditures at general rate (($600,000 - $400,000) × 10% = $20,000) = $52,000. Capitalized interest = lesser of avoidable interest ($52,000) and actual interest ($80,000) = $52,000.",
+      "explanationJa": "回避可能利息 = 特定借入分（$400,000 × 8% = $32,000）+ 超過支出の一般借入利率（($600,000 - $400,000) × 10% = $20,000）= $52,000。資産化利息 = 回避可能利息（$52,000）と実際利息（$80,000）の少ない方 = $52,000。",
+      "references": ["ASC 835-20-30-2", "ASC 835-20-30-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-012",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Depreciation",
+      "stem": "A machine costs $240,000 with a salvage value of $40,000 and a 5-year useful life. Using the sum-of-the-years'-digits method, what is the depreciation expense in Year 3?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$48,000" },
+        { "label": "C", "text": "$53,333" },
+        { "label": "D", "text": "$66,667" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Depreciable base = $240,000 - $40,000 = $200,000. SYD = 5+4+3+2+1 = 15. Year 3 fraction = 3/15. Depreciation = $200,000 × 3/15 = $40,000.",
+      "explanationJa": "償却基礎額 = $240,000 - $40,000 = $200,000。級数合計 = 5+4+3+2+1 = 15。第3年度の分数 = 3/15。減価償却費 = $200,000 × 3/15 = $40,000。",
+      "references": ["ASC 360-10-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-013",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Impairment",
+      "stem": "Entity H has equipment with a carrying value of $500,000. Due to a significant decline in market demand, management performs an impairment test. Undiscounted future cash flows are estimated at $420,000. Fair value is $350,000. What impairment loss should be recognized?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$80,000" },
+        { "label": "C", "text": "$130,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Step 1: Recoverability test — carrying value $500,000 > undiscounted CF $420,000, so the asset is impaired. Step 2: Impairment loss = carrying value - fair value = $500,000 - $350,000 = $150,000. The undiscounted CFs are only used for the trigger test, not to measure the loss.",
+      "explanationJa": "ステップ1：回収可能性テスト — 帳簿価額$500,000 > 割引前CF$420,000のため、減損している。ステップ2：減損損失 = 帳簿価額 - 公正価値 = $500,000 - $350,000 = $150,000。割引前CFはトリガーテストにのみ使用され、損失の測定には使用されない。",
+      "references": ["ASC 360-10-35-17"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-014",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Asset Retirement Obligations",
+      "stem": "Entity J recognizes an ARO of $50,000 (fair value) when a plant is placed in service. The credit-adjusted risk-free rate is 6%. What is the carrying amount of the ARO liability after 3 years?",
+      "choices": [
+        { "label": "A", "text": "$59,551" },
+        { "label": "B", "text": "$53,000" },
+        { "label": "C", "text": "$56,180" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The ARO liability is accreted using the credit-adjusted risk-free rate. After 3 years: $50,000 × (1.06)^3 = $50,000 × 1.191016 = $59,551. Each year's accretion expense: Y1 = $3,000, Y2 = $3,180, Y3 = $3,371.",
+      "explanationJa": "ARO負債は信用調整リスクフリーレートで増価される。3年後：$50,000 × (1.06)^3 = $50,000 × 1.191016 = $59,551。各年の増価費用：Y1 = $3,000、Y2 = $3,180、Y3 = $3,371。",
+      "references": ["ASC 410-20-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-015",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Nonmonetary Exchanges",
+      "stem": "Entity K exchanges equipment (cost $100,000, accumulated depreciation $60,000, fair value $55,000) for a different machine plus $5,000 cash. The exchange has commercial substance. What gain or loss should Entity K recognize?",
+      "choices": [
+        { "label": "A", "text": "$15,000 gain" },
+        { "label": "B", "text": "$10,000 gain" },
+        { "label": "C", "text": "$5,000 gain" },
+        { "label": "D", "text": "$0 (deferred)" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Book value of asset given = $100,000 - $60,000 = $40,000. Fair value of asset given = $55,000. Since the exchange has commercial substance, the full gain is recognized. Gain = FV given ($55,000) - BV ($40,000) = $15,000. The new asset is recorded at FV received = $55,000 - $5,000 cash = $50,000.",
+      "explanationJa": "引渡資産の帳簿価額 = $100,000 - $60,000 = $40,000。引渡資産の公正価値 = $55,000。商業的実質があるため全額の利益を認識。利益 = 公正価値$55,000 - 帳簿価額$40,000 = $15,000。取得資産 = 公正価値$55,000 - 受取現金$5,000 = $50,000で計上。",
+      "references": ["ASC 845-10-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-016",
+      "topic": "Intangible Assets",
+      "subtopic": "Goodwill Impairment",
+      "stem": "A reporting unit has a carrying amount of $2,000,000 (including goodwill of $300,000). Its fair value is determined to be $1,850,000. What is the goodwill impairment loss?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 350-20-35-3C (post-ASU 2017-04), impairment = excess of carrying amount over fair value, limited to goodwill balance. Excess = $2,000,000 - $1,850,000 = $150,000. Since $150,000 < goodwill balance of $300,000, the impairment loss is $150,000.",
+      "explanationJa": "ASC 350-20-35-3C（ASU 2017-04後）に基づき���減損 = 帳簿価額の公正価値超過額（のれん残高を上限）。超過額 = $2,000,000 - $1,850,000 = $150,000。$150,000 < のれん残高$300,000のため、減損損失は$150,000。",
+      "references": ["ASC 350-20-35-3C"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-017",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Component Depreciation",
+      "stem": "Entity L acquires a building for $1,000,000 with the following components: Structure 70% (useful life 30 years), Roof 15% (15 years), HVAC system 15% (10 years). All components have zero salvage value. What is total depreciation expense in Year 1 using component depreciation?",
+      "choices": [
+        { "label": "A", "text": "$48,333" },
+        { "label": "B", "text": "$33,333" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Structure: $700,000 / 30 = $23,333. Roof: $150,000 / 15 = $10,000. HVAC: $150,000 / 10 = $15,000. Total Year 1 depreciation = $23,333 + $10,000 + $15,000 = $48,333.",
+      "explanationJa": "構造体：$700,000 / 30 = $23,333。屋根：$150,000 / 15 = $10,000。空調：$150,000 / 10 = $15,000。第1年度減価償却費合計 = $23,333 + $10,000 + $15,000 = $48,333。",
+      "references": ["ASC 360-10-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-018",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Capitalized Interest",
+      "stem": "Entity M is constructing a warehouse. Expenditures: Jan 1 $200,000; Apr 1 $300,000; Oct 1 $100,000. The company's only borrowing is a 12-month construction loan at 8% annual interest. What is the amount of interest to be capitalized?",
+      "choices": [
+        { "label": "A", "text": "$36,000" },
+        { "label": "B", "text": "$48,000" },
+        { "label": "C", "text": "$24,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Weighted-average accumulated expenditures = $200,000 × 12/12 + $300,000 × 9/12 + $100,000 × 3/12 = $200,000 + $225,000 + $25,000 = $450,000. Avoidable interest = $450,000 × 8% = $36,000.",
+      "explanationJa": "加重平均累積支出額 = $200,000×12/12 + $300,000×9/12 + $100,000×3/12 = $200,000 + $225,000 + $25,000 = $450,000。回避可能利息 = $450,000 × 8% = $36,000。",
+      "references": ["ASC 835-20-30-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-019",
+      "topic": "Intangible Assets",
+      "subtopic": "Amortization Revision",
+      "stem": "Entity N acquired a patent for $600,000 with a remaining legal life of 12 years and estimated useful life of 8 years. After 3 years of amortization, the remaining useful life is revised to 3 additional years. What is the amortization expense in Year 4?",
+      "choices": [
+        { "label": "A", "text": "$125,000" },
+        { "label": "B", "text": "$75,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Initial amortization = $600,000 / 8 = $75,000/year. After 3 years: carrying value = $600,000 - (3 × $75,000) = $375,000. Revised remaining life = 3 years. New amortization = $375,000 / 3 = $125,000/year. Change in estimate is applied prospectively.",
+      "explanationJa": "当初償却額 = $600,000 / 8 = $75,000/年。3年後の帳簿価額 = $600,000 - (3×$75,000) = $375,000。改訂残存耐用年数 = 3年。新償却額 = $375,000 / 3 = $125,000/年。見積りの変更は将来に向かって適用される。",
+      "references": ["ASC 350-30-35-10", "ASC 250-10-45-17"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-020",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Asset Disposal",
+      "stem": "Entity P sells equipment on July 1. The equipment cost $180,000 with accumulated depreciation of $120,000 as of January 1. Annual straight-line depreciation is $36,000. The equipment is sold for $35,000. What is the gain or loss on disposal?",
+      "choices": [
+        { "label": "A", "text": "$7,000 loss" },
+        { "label": "B", "text": "$25,000 loss" },
+        { "label": "C", "text": "$15,000 loss" },
+        { "label": "D", "text": "$3,000 gain" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Depreciation Jan-Jun (half year) = $36,000 × 6/12 = $18,000. Accumulated depreciation at disposal = $120,000 + $18,000 = $138,000. Book value at disposal = $180,000 - $138,000 = $42,000. Loss = $42,000 - $35,000 = $7,000.",
+      "explanationJa": "1月〜6月の減価償却費 = $36,000 × 6/12 = $18,000。処分時減価償却累計額 = $120,000 + $18,000 = $138,000。処分時帳簿価額 = $180,000 - $138,000 = $42,000。損失 = $42,000 - $35,000 = $7,000。",
+      "references": ["ASC 360-10-40-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }
