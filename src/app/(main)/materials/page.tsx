@@ -358,6 +358,28 @@ export default function MaterialsPage() {
           </Card>
         </Link>
 
+        {/* TBS 問題バンクカード */}
+        <Link href="/materials/tbs">
+          <Card className="border-purple-200 bg-purple-50/50 hover:bg-purple-50 transition-colors cursor-pointer">
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center shrink-0">
+                  <BookOpen className="w-6 h-6 text-purple-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-purple-900">FAR TBS 問題バンク</h3>
+                  <p className="text-sm text-purple-700">
+                    Task Based Simulation — シナリオ形式の演習問題（5問）
+                  </p>
+                </div>
+                <Badge variant="secondary" className="shrink-0 bg-purple-100 text-purple-700">
+                  New
+                </Badge>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
         {/* データリセットボタン（デバッグ用） */}
         <Button
           variant="outline"

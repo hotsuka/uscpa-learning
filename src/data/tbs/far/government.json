@@ -1,0 +1,89 @@
+[
+  {
+    "id": "far-tbs-gov-001",
+    "subject": "FAR",
+    "topic": "Government Accounting",
+    "title": "一般基金の財務諸表作成（修正発生主義）",
+    "scenario": "City of Maplewood（メープルウッド市）の一般基金（General Fund）について、Year 1 の財務活動を分析し、**修正発生主義（Modified Accrual Basis）**に基づく基金財務諸表の作成を行ってください。\n\n詳細データは **Exhibit 1** と **Exhibit 2** を参照してください。",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Year 1 の収入・支出データ",
+        "content": "**歳入（Revenues）**\n\n| 項目 | 金額 |\n|---|---|\n| 財産税（Property taxes） | $3,200,000 |\n| 販売税（Sales taxes） | $1,800,000 |\n| 州政府交付金（State grants） | $500,000 |\n\n**歳出（Expenditures）**\n\n| 項目 | 金額 |\n|---|---|\n| 一般行政費（General administration） | $1,500,000 |\n| 警察・消防費（Public safety） | $2,200,000 |\n| 道路維持費（Road maintenance） | $800,000 |\n| 市民センター建設費（Capital outlay） | $900,000 |\n\n**他の財源（Other Financing Sources）**\n\n| 項目 | 金額 |\n|---|---|\n| 市債発行収入（Bond proceeds） | $700,000 |\n\n**期首基金残高（Beginning fund balance）**: $600,000"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: 修正発生主義の主要な会計原則",
+        "content": "| 原則 | 内容 |\n|---|---|\n| 収益の認識 | 測定可能で利用可能（60日以内に回収見込み）な場合に認識 |\n| 支出の認識 | 一般的に発生主義と同様（資本的支出も含む） |\n| 固定資産 | 一般基金では資産計上せず、**支出として費用処理** |\n| 長期負債 | 一般基金では負債計上せず、**他の財源として処理** |\n| 市債発行収入 | Other Financing Sources（歳入ではない）として分類 |"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "歳入合計",
+        "instruction": "Year 1 の一般基金の**歳入（Total Revenues）**合計を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 5500000,
+        "tolerance": 1,
+        "explanation": "Total Revenues = Property taxes $3,200,000 + Sales taxes $1,800,000 + State grants $500,000 = $5,500,000.",
+        "explanationJa": "歳入合計 = 財産税 $3,200,000 + 販売税 $1,800,000 + 州政府交付金 $500,000 = **$5,500,000**\n\n市債発行収入は「他の財源（Other Financing Sources）」に分類されるため歳入に含めません。",
+        "references": ["GASB 54", "GASB 34"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "歳出合計",
+        "instruction": "Year 1 の一般基金の**歳出（Total Expenditures）**合計を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 5400000,
+        "tolerance": 1,
+        "explanation": "Total Expenditures = General admin $1,500,000 + Public safety $2,200,000 + Road maintenance $800,000 + Capital outlay $900,000 = $5,400,000.",
+        "explanationJa": "歳出合計 = 一般行政 $1,500,000 + 警察消防 $2,200,000 + 道路維持 $800,000 + 市民センター建設 $900,000 = **$5,400,000**\n\n修正発生主義では、市民センター建設費のような**資本的支出も「歳出（Expenditure）」として処理**し、固定資産として資産計上しません。",
+        "references": ["GASB 34-70", "GASB 54"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "基金残高の純変動額",
+        "instruction": "Year 1 の**基金残高の純変動額（Net Change in Fund Balance）**を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 800000,
+        "tolerance": 1,
+        "explanation": "Net Change in Fund Balance = Revenues + Other Financing Sources − Expenditures = $5,500,000 + $700,000 − $5,400,000 = $800,000.",
+        "explanationJa": "純変動額 = 歳入 + 他の財源 − 歳出\n\n= $5,500,000 + $700,000 − $5,400,000 = **$800,000（増加）**\n\n市債発行収入 $700,000 は「他の財源」として含めます。",
+        "references": ["GASB 34"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "期末基金残高",
+        "instruction": "Year 1 末（12月31日）の**基金残高（Ending Fund Balance）**を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 1400000,
+        "tolerance": 1,
+        "explanation": "Ending fund balance = Beginning fund balance + Net change = $600,000 + $800,000 = $1,400,000.",
+        "explanationJa": "期末基金残高 = 期首基金残高 + 純変動額\n\n= $600,000 + $800,000 = **$1,400,000**",
+        "references": ["GASB 34"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "資本的支出の処理方法",
+        "instruction": "修正発生主義（Modified Accrual Basis）において、市民センター建設費（$900,000）はどのように処理されますか？",
+        "answerType": "select",
+        "options": [
+          "歳出（Expenditure）として当期に費用処理する",
+          "固定資産（Capital Asset）として計上し耐用年数にわたって減価償却する"
+        ],
+        "correctAnswer": "歳出（Expenditure）として当期に費用処理する",
+        "explanation": "Under modified accrual basis used in governmental funds, capital outlays are recorded as expenditures in the period incurred, not capitalized as assets. Capital assets are reported only in the government-wide financial statements using the full accrual basis.",
+        "explanationJa": "修正発生主義を採用する**政府型基金（Governmental Funds）では、資本的支出は固定資産として計上せず、支出（Expenditure）として当期に計上**します。\n\n固定資産が計上されるのは、完全発生主義を用いる**政府全体財務諸表（Government-wide Financial Statements）**のみです。\n\nこれが修正発生主義と企業会計の大きな違いの一つです。",
+        "references": ["GASB 34-70", "GASB 34-91"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "AICPA Sample / FAR Practice"
+  }
+]

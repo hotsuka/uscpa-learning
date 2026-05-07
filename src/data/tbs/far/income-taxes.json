@@ -1,0 +1,69 @@
+[
+  {
+    "id": "far-tbs-tax-001",
+    "subject": "FAR",
+    "topic": "Income Taxes",
+    "title": "繰延税金の計算と所得税費用の認識（ASC 740）",
+    "scenario": "XYZ Manufacturing Corp. は Year 1 が初年度の製造会社です。以下の情報に基づき、ASC 740 に従って所得税に関する会計処理を行ってください。\n\n詳細データは **Exhibit 1** を参照してください。",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Year 1 の税務・会計データ",
+        "content": "**損益計算書データ（会計上）**\n\n| 項目 | 金額 |\n|---|---|\n| 税引前会計利益 | $800,000 |\n\n**会計と税務の差異**\n\n| 差異の内容 | 会計上 | 税務上 | 差額 | 差異の種類 |\n|---|---|---|---|---|\n| 減価償却費（加速償却） | $200,000 | $320,000 | −$120,000（税務が多い） | 一時差異 |\n| 製品保証引当金繰入 | $50,000 | $0（実支出時控除） | +$50,000 | 一時差異 |\n| 罰金費用 | $20,000 | $0（損金不算入） | +$20,000 | 永久差異 |\n\n**法定実効税率**: 21%"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "課税所得の計算",
+        "instruction": "Year 1 の**課税所得**を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 750000,
+        "tolerance": 1,
+        "explanation": "Taxable income = Pretax income − Accelerated depreciation + Warranty accrual + Non-deductible penalty = $800,000 − $120,000 + $50,000 + $20,000 = $750,000.",
+        "explanationJa": "課税所得 = 税引前会計利益 ± 各差異の調整\n\n= $800,000 − $120,000（加速償却：税務上多く控除）+ $50,000（製品保証：税務未控除）+ $20,000（罰金：損金不算入）\n\n= **$750,000**",
+        "references": ["ASC 740-10-30-7"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "当期税金費用",
+        "instruction": "Year 1 の**当期税金費用（Current tax expense）**を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 157500,
+        "tolerance": 1,
+        "explanation": "Current tax expense = Taxable income × Tax rate = $750,000 × 21% = $157,500.",
+        "explanationJa": "当期税金費用 = 課税所得 × 法定税率 = $750,000 × 21% = **$157,500**\n\nこれは当期に実際に納付する税金額でもあります（繰越欠損金等がなければ）。",
+        "references": ["ASC 740-10-30-5"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "製品保証引当金による繰延税金の種類",
+        "instruction": "製品保証引当金 $50,000 の一時差異により生じる繰延税金は、**繰延税金資産（DTA）** と **繰延税金負債（DTL）** のどちらですか？",
+        "answerType": "select",
+        "options": ["繰延税金資産（DTA）", "繰延税金負債（DTL）"],
+        "correctAnswer": "繰延税金資産（DTA）",
+        "explanation": "The warranty accrual creates a deductible temporary difference. The expense is recognized for book purposes in Year 1, but deductible for tax purposes only when actually paid. This future deductibility creates a deferred tax asset. DTA = $50,000 × 21% = $10,500.",
+        "explanationJa": "製品保証引当金は**将来減算一時差異**です。\n\n- 会計上: Year 1 に $50,000 の費用認識\n- 税務上: 実際に保証修理コストを支出した年に控除\n\n将来の控除権（将来の税金を減らす効果）があるため → **繰延税金資産（DTA）**\n\nDTA = $50,000 × 21% = **$10,500**",
+        "references": ["ASC 740-10-25-2", "ASC 740-10-25-20"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "損益計算書の所得税費用合計",
+        "instruction": "Year 1 の損益計算書に計上される**所得税費用合計（Total income tax expense）**を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 172200,
+        "tolerance": 1,
+        "explanation": "Deferred tax expense = DTL (accelerated depreciation) − DTA (warranty) = $120,000 × 21% − $50,000 × 21% = $25,200 − $10,500 = $14,700. Total tax expense = Current $157,500 + Deferred $14,700 = $172,200. Verification: $800,000 × 21% + permanent difference tax effect = $168,000 + $20,000 × 21% = $168,000 + $4,200 = $172,200 ✓",
+        "explanationJa": "繰延税金費用の計算:\n- 繰延税金負債（加速償却）: $120,000 × 21% = **$25,200**\n- 繰延税金資産（製品保証）: $50,000 × 21% = **$10,500**\n- 繰延税金費用（純額）: $25,200 − $10,500 = **$14,700**（費用）\n\n所得税費用合計 = 当期 $157,500 + 繰延 $14,700 = **$172,200**\n\n【検証】会計利益 × 税率 + 永久差異税効果 = $168,000 + $4,200 = $172,200 ✓",
+        "references": ["ASC 740-10-30-5", "ASC 740-10-45-15"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 25,
+    "source": "AICPA Sample / FAR Practice"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "far-tbs-lease-001",
+    "subject": "FAR",
+    "topic": "Leases",
+    "title": "ファイナンスリースの分類と測定（ASC 842）",
+    "scenario": "BCD Manufacturing Corp.（借手）は Year 1 の **1月1日**に、製造設備を5年間リースする契約を締結しました。\n\nリース条件の詳細は **Exhibit 1** を、年金現価係数表は **Exhibit 2** を参照してください。",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: リース契約の条件",
+        "content": "| 項目 | 内容 |\n|---|---|\n| リース開始日 | Year 1 年1月1日 |\n| リース期間 | 5年 |\n| 年間リース料 | $50,000（毎年末払い） |\n| 延長オプション | なし |\n| 購入オプション | なし |\n| 残存価値保証 | なし |\n| 借手の追加借入利率 | 6% per annum |\n| 設備の公正価値 | $215,000 |\n| 設備の経済的耐用年数 | 6年 |\n| 所有権の移転 | なし |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: 年金現価係数（PVIFA）",
+        "content": "| 利率 | 4期 | 5期 | 6期 |\n|---|---|---|---|\n| 5% | 3.5460 | 4.3295 | 5.0757 |\n| **6%** | 3.4651 | **4.2124** | 4.9173 |\n| 7% | 3.3872 | 4.1002 | 4.7665 |\n\n※ PVIFA(6%, 5) = **4.2124**"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "リースの分類",
+        "instruction": "ASC 842 の分類基準に基づき、BCD Manufacturing Corp. にとってこのリースは何リースに分類されますか？",
+        "answerType": "select",
+        "options": ["ファイナンスリース", "オペレーティングリース"],
+        "correctAnswer": "ファイナンスリース",
+        "explanation": "The lease qualifies as a finance lease because: (1) the lease term (5 years) is for the major part of the economic life (5/6 = 83.3% ≥ 75%) and (2) the present value of lease payments ($210,620) represents substantially all of the fair value ($210,620/$215,000 = 97.9% ≥ 90%).",
+        "explanationJa": "このリースは以下の2つの基準を満たすため**ファイナンスリース**に分類されます。\n\n1. **リース期間 / 経済的耐用年数**: 5年 / 6年 = **83.3%** ≥ 75%（主要部分）\n2. **PV / 公正価値**: $210,620 / $215,000 = **97.9%** ≥ 90%（大部分）\n\nASC 842 では上記いずれか1つを満たせばファイナンスリースに分類されます。",
+        "references": ["ASC 842-20-25-2"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "使用権資産とリース負債の計上額",
+        "instruction": "Year 1 の1月1日（リース開始日）に計上する**使用権資産**および**リース負債**の金額を計算してください（単位: ドル、端数なし）。\n\nヒント: Exhibit 2 の PVIFA(6%, 5) = 4.2124 を使用してください。",
+        "answerType": "number",
+        "correctAnswer": 210620,
+        "tolerance": 100,
+        "explanation": "Right-of-use asset = Lease liability = PV of lease payments = $50,000 × 4.2124 = $210,620.",
+        "explanationJa": "使用権資産 = リース負債 = リース料の現在価値\n\n= $50,000 × PVIFA(6%, 5期) = $50,000 × 4.2124 = **$210,620**\n\nファイナンスリースでは、借手はリース開始日に使用権資産とリース負債を同額で計上します。",
+        "references": ["ASC 842-20-30-1", "ASC 842-20-30-5"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Year 1 の利息費用",
+        "instruction": "Year 1（1月1日 ～ 12月31日）に損益計算書に計上する**利息費用**を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 12637,
+        "tolerance": 1,
+        "explanation": "Interest expense = Beginning lease liability × Interest rate = $210,620 × 6% = $12,637.",
+        "explanationJa": "ファイナンスリースでは、実効利子率法でリース負債に対する利息を認識します。\n\n利息費用 = リース負債残高 × 利率 = $210,620 × 6% = **$12,637**",
+        "references": ["ASC 842-20-35-4"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Year 1 末のリース負債残高",
+        "instruction": "Year 1 末（12月31日時点）の**リース負債残高**を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 173257,
+        "tolerance": 1,
+        "explanation": "Principal repayment = $50,000 − $12,637 = $37,363. Ending lease liability = $210,620 − $37,363 = $173,257.",
+        "explanationJa": "Year 1 末のリース料 $50,000 の内訳:\n- 利息部分: $12,637（Work Tab 3）\n- 元金返済: $50,000 − $12,637 = **$37,363**\n\nYear 1 末リース負債 = $210,620 − $37,363 = **$173,257**",
+        "references": ["ASC 842-20-35-4"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "AICPA Sample / FAR Practice"
+  }
+]

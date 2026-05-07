@@ -1,0 +1,69 @@
+[
+  {
+    "id": "far-tbs-rev-001",
+    "subject": "FAR",
+    "topic": "Revenue Recognition",
+    "title": "ソフトウェアバンドル契約の収益配分と認識時期",
+    "scenario": "Apex Software Inc. は Year 1 の **7月1日**に、顧客と以下のバンドル契約（取引価格 **$80,000**・一括払い）を締結しました。契約には3つの独立した履行義務が含まれており、ASC 606 の5ステップモデルに基づいて収益認識を行う必要があります。\n\n各履行義務の詳細は **Exhibit 1** を参照してください。",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: 契約の履行義務とスタンドアロン販売価格",
+        "content": "| 履行義務 | スタンドアロン販売価格（SSP） | 引渡し時期・条件 |\n|---|---|---|\n| ソフトウェアライセンス | $60,000 | Year 1 7/1 に即時使用可能（時点での認識） |\n| インストールサービス | $20,000 | Year 1 7/8 までに完了（時点での認識） |\n| 1年間テクニカルサポート | $20,000 | Year 1 7/1 ～ Year 2 6/30（一定期間での認識） |\n| **合計 SSP** | **$100,000** | |\n\n**契約取引価格**: $80,000（割引あり）"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "ライセンスへの配分額",
+        "instruction": "ASC 606 の相対的スタンドアロン販売価格（RSSV）法を用いて、**ソフトウェアライセンス**に配分される取引価格を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 48000,
+        "tolerance": 1,
+        "explanation": "Allocation = $80,000 × ($60,000 / $100,000) = $48,000. The transaction price is allocated to each performance obligation in proportion to its standalone selling price.",
+        "explanationJa": "配分額 = $80,000 × ($60,000 / $100,000) = **$48,000**。取引価格は各履行義務のSSPの比率に応じて按分配分します（RSSV法）。",
+        "references": ["ASC 606-10-32-28", "ASC 606-10-32-31"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "1年間テクニカルサポートへの配分額",
+        "instruction": "RSSV法を用いて、**1年間テクニカルサポート**に配分される取引価格を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 16000,
+        "tolerance": 1,
+        "explanation": "Allocation = $80,000 × ($20,000 / $100,000) = $16,000.",
+        "explanationJa": "配分額 = $80,000 × ($20,000 / $100,000) = **$16,000**。SSP $20,000 は合計 $100,000 の20%なので、取引価格 $80,000 の20%を配分します。",
+        "references": ["ASC 606-10-32-28"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Year 1 の収益認識合計",
+        "instruction": "Year 1（1月1日 ～ 12月31日）に Apex Software が認識すべき収益合計を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 72000,
+        "tolerance": 1,
+        "explanation": "License $48,000 (recognized 7/1) + Installation $16,000 (recognized by 7/8) + Support $16,000 × 6/12 = $8,000 (July 1 – December 31). Total = $72,000.",
+        "explanationJa": "・ライセンス: **$48,000**（7/1 に全額認識）\n・インストール: **$16,000**（7/8 完了時に認識）\n・テクニカルサポート: $16,000 × 6/12 = **$8,000**（Year 1 の7〜12月分）\n\n合計 = $48,000 + $16,000 + $8,000 = **$72,000**",
+        "references": ["ASC 606-10-25-23", "ASC 606-10-25-27"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Year 1 末の繰延収益残高",
+        "instruction": "Year 1 の貸借対照表（12月31日時点）に計上される**繰延収益**の金額を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 8000,
+        "tolerance": 1,
+        "explanation": "The remaining support obligation: $16,000 × 6/12 = $8,000 (January 1 – June 30, Year 2 not yet earned).",
+        "explanationJa": "テクニカルサポートのうち Year 2 分（1〜6月）がまだ未履行のため、繰延収益として計上。\n\n$16,000 × 6/12 = **$8,000**",
+        "references": ["ASC 606-10-45-1"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 20,
+    "source": "AICPA Sample / FAR Practice"
+  }
+]

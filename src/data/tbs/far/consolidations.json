@@ -1,0 +1,77 @@
+[
+  {
+    "id": "far-tbs-cons-001",
+    "subject": "FAR",
+    "topic": "Consolidations",
+    "title": "企業結合・連結会計（のれんと非支配持分）",
+    "scenario": "Parent Corp. は Year 1 の **1月1日**に、Sub Corp. の発行済み普通株式の **80%** を **$480,000** で取得し、支配を獲得しました。\n\n取得日・Year 1 のデータは **Exhibit 1** と **Exhibit 2** を参照してください。なお、**全額のれん法（Full Goodwill Method）**を適用します。",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: 取得日（Year 1 1/1）のデータ",
+        "content": "**Sub Corp. の純資産（取得日）**\n\n| 項目 | 帳簿価額 | 公正価値 |\n|---|---|---|\n| 識別可能な純資産合計 | $500,000 | $500,000 |\n\n※ 帳簿価額 = 公正価値（資産・負債の評価差額なし）\n\n**支配株主の投資額**\n\n| 項目 | 金額 |\n|---|---|\n| 取得対価（移転した対価） | $480,000 |\n| 取得株式割合 | 80% |\n| 非支配持分（NCI）割合 | 20% |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Year 1 の追加情報",
+        "content": "| 項目 | 金額 |\n|---|---|\n| Sub Corp. の Year 1 純利益 | $80,000 |\n| Sub Corp. が支払った配当 | $30,000 |\n| 親子会社間の内部取引 | なし |\n| のれんの減損 | なし |\n\n**全額のれん法（Full Goodwill Method）**: 非支配持分を被取得企業の純資産の公正価値に基づいて測定する（US GAAP の原則）。"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "のれんの認識額",
+        "instruction": "ASC 805 の**全額のれん法**に基づき、取得日（Year 1 1/1）に認識する**のれん（Goodwill）**の金額を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 80000,
+        "tolerance": 1,
+        "explanation": "Under the full goodwill method: NCI = $500,000 × 20% = $100,000. Goodwill = Consideration transferred + NCI − Fair value of net assets = $480,000 + $100,000 − $500,000 = $80,000.",
+        "explanationJa": "全額のれん法では:\n\n①非支配持分（NCI）= 純資産公正価値 × NCI割合\n= $500,000 × 20% = **$100,000**\n\n②のれん = 取得対価 + NCI − 純資産公正価値\n= $480,000 + $100,000 − $500,000 = **$80,000**\n\n全額のれん法ではのれん全体（親会社帰属分 + NCI帰属分）を認識します。",
+        "references": ["ASC 805-20-30-1", "ASC 805-20-30-7"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "NCI に帰属する純利益",
+        "instruction": "Year 1 の連結損益計算書において、**非支配持分（NCI）に帰属する純利益**はいくらですか（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 16000,
+        "tolerance": 1,
+        "explanation": "NCI's share of net income = Sub Corp. net income × NCI% = $80,000 × 20% = $16,000.",
+        "explanationJa": "NCI 帰属純利益 = Sub Corp. 純利益 × NCI 割合\n= $80,000 × 20% = **$16,000**\n\n連結損益計算書では、当期純利益を「親会社株主帰属分」と「非支配持分帰属分」に区分表示します。",
+        "references": ["ASC 810-10-45-20"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Year 1 末の NCI 残高",
+        "instruction": "Year 1 末（12月31日）の連結貸借対照表における**非支配持分（NCI）の残高**を計算してください（単位: ドル、端数なし）。",
+        "answerType": "number",
+        "correctAnswer": 110000,
+        "tolerance": 1,
+        "explanation": "Beginning NCI = $100,000. NCI's share of net income = $16,000. NCI's share of dividends = $30,000 × 20% = $6,000. Ending NCI = $100,000 + $16,000 − $6,000 = $110,000.",
+        "explanationJa": "NCI残高のロールフォワード:\n\n期首 NCI: **$100,000**\n＋ NCI 帰属純利益: **$16,000**（Work Tab 2）\n－ NCI 帰属配当: $30,000 × 20% = **$6,000**\n\n期末 NCI = $100,000 + $16,000 − $6,000 = **$110,000**",
+        "references": ["ASC 810-10-45-21", "ASC 810-10-45-22"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "US GAAP のれんの事後処理",
+        "instruction": "US GAAP（ASC 350）の下で、のれんの事後測定として正しい処理はどれですか？",
+        "answerType": "select",
+        "options": [
+          "減損テストを毎年実施し、償却は行わない",
+          "耐用年数（最長40年）にわたって定額償却する"
+        ],
+        "correctAnswer": "減損テストを毎年実施し、償却は行わない",
+        "explanation": "Under US GAAP (ASC 350), goodwill is not amortized but is tested for impairment at least annually (or more frequently if triggering events occur). This differs from IFRS, which also prohibits amortization, and from prior US GAAP (APB 17) which required amortization over up to 40 years.",
+        "explanationJa": "**US GAAP（ASC 350）**: のれんは**償却せず**、少なくとも**年1回の減損テスト**を実施します。\n\n- 旧US GAAP（APB 17）: 最長40年で定額償却（廃止済み）\n- IFRS（IAS 36）: 減損テストのみ（US GAAPと同様、償却なし）\n\nのれんの償却廃止は SFAS 142（現 ASC 350）により Year 2002 から適用されました。",
+        "references": ["ASC 350-20-35-1", "ASC 350-20-35-28"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "AICPA Sample / FAR Practice"
+  }
+]
