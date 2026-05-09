@@ -62,10 +62,18 @@ export default function QuestionsPage() {
     return map
   }, [])
 
-  // attemptsからトピック別統計を算出（QuestionSetのtopic基準）
+  // attemptsからトピック別統計を算出（QuestionSetのtopic基準、同一問題は最新回答のみ）
   const topicStats = useMemo(() => {
-    const stats: Record<string, { correct: number; total: number; rate: number }> = {}
+    const latestAttempts = new Map<string, (typeof attempts)[0]>()
     for (const attempt of attempts) {
+      const existing = latestAttempts.get(attempt.questionId)
+      if (!existing || new Date(attempt.attemptedAt) > new Date(existing.attemptedAt)) {
+        latestAttempts.set(attempt.questionId, attempt)
+      }
+    }
+
+    const stats: Record<string, { correct: number; total: number; rate: number }> = {}
+    for (const attempt of latestAttempts.values()) {
       const setTopic = questionSetTopicMap.get(attempt.questionId) ?? attempt.topic
       if (!stats[setTopic]) stats[setTopic] = { correct: 0, total: 0, rate: 0 }
       stats[setTopic].total++

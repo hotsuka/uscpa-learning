@@ -35,11 +35,22 @@ export const useQuestionBankStore = create<QuestionBankState>()(
         const topicAttempts = get().attempts.filter((a) => a.topic === topic);
         if (topicAttempts.length === 0)
           return { correct: 0, total: 0, rate: 0 };
-        const correct = topicAttempts.filter((a) => a.isCorrect).length;
+        const latestByQuestion = new Map<string, (typeof topicAttempts)[0]>();
+        for (const a of topicAttempts) {
+          const existing = latestByQuestion.get(a.questionId);
+          if (
+            !existing ||
+            new Date(a.attemptedAt) > new Date(existing.attemptedAt)
+          ) {
+            latestByQuestion.set(a.questionId, a);
+          }
+        }
+        const latest = Array.from(latestByQuestion.values());
+        const correct = latest.filter((a) => a.isCorrect).length;
         return {
           correct,
-          total: topicAttempts.length,
-          rate: Math.round((correct / topicAttempts.length) * 100),
+          total: latest.length,
+          rate: Math.round((correct / latest.length) * 100),
         };
       },
 
@@ -48,11 +59,23 @@ export const useQuestionBankStore = create<QuestionBankState>()(
       },
 
       getTopicStats: () => {
+        const allAttempts = get().attempts;
+        const latestByQuestion = new Map<string, (typeof allAttempts)[0]>();
+        for (const a of allAttempts) {
+          const existing = latestByQuestion.get(a.questionId);
+          if (
+            !existing ||
+            new Date(a.attemptedAt) > new Date(existing.attemptedAt)
+          ) {
+            latestByQuestion.set(a.questionId, a);
+          }
+        }
+
         const stats: Record<
           string,
           { correct: number; total: number; rate: number }
         > = {};
-        for (const attempt of get().attempts) {
+        for (const attempt of latestByQuestion.values()) {
           if (!stats[attempt.topic]) {
             stats[attempt.topic] = { correct: 0, total: 0, rate: 0 };
           }
