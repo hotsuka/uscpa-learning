@@ -2,7 +2,7 @@
   "id": "far-leases",
   "name": "Leases (ASC 842)",
   "topic": "Leases (ASC 842)",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "lease-001",
@@ -406,6 +406,516 @@
       "explanation": "Under ASC 842-20-35-9, ROU assets are tested for impairment under ASC 360 (long-lived assets). Step 1 (recoverability test): Carrying value ($300,000) > Undiscounted cash flows ($250,000), so the asset is impaired. Step 2 (measurement): Impairment loss = Carrying value - Fair value = $300,000 - $220,000 = $80,000.",
       "explanationJa": "使用権資産はASC 360(長期性資産)に従い減損テストを行う。ステップ1(回収可能性テスト): 帳簿価額($300,000) > 割引前キャッシュフロー($250,000) → 減損あり。ステップ2(測定): 減損損失 = 帳簿価額 - 公正価値 = $300,000 - $220,000 = $80,000。",
       "references": ["ASC 842-20-35-9", "ASC 360-10-35-17"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-021",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease vs Non-Lease Components Allocation",
+      "stem": "Lessee A enters into a contract for office space that includes a lease component (rent: $10,000/month) and a non-lease component (maintenance services). The standalone price of maintenance is $2,000/month. Lessee A does NOT elect the practical expedient to combine components. How should Lessee A allocate the total payments?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Allocate the entire payment to the lease component"
+        },
+        {
+          "label": "B",
+          "text": "Allocate based on relative standalone prices: $10,000 to lease, $2,000 to maintenance"
+        },
+        { "label": "C", "text": "Allocate 50% to each component" },
+        {
+          "label": "D",
+          "text": "Allocate the entire payment to the non-lease component"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-15-33, a lessee that does not elect the practical expedient must allocate the consideration in the contract to lease and non-lease components on a relative standalone price basis. The lease component ($10,000) and non-lease component ($2,000) are allocated based on their observable or estimated standalone prices.",
+      "explanationJa": "ASC 842-10-15-33により、実務上の便法を選択しないレッシーは、契約の対価をリース要素と非リース要素に独立価格の比率で配分しなければならない。リース要素（$10,000）と非リース要素（$2,000）はそれぞれの独立価格に基づき配分する。",
+      "references": ["ASC 842-10-15-33"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-022",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Sublease Accounting",
+      "stem": "Company B is a lessee under a 10-year master lease for office space. Company B subleases the space to Company C for 6 years. Company B should classify the sublease based on which underlying asset?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The underlying asset (the office space itself)"
+        },
+        {
+          "label": "B",
+          "text": "The right-of-use asset arising from the master lease"
+        },
+        { "label": "C", "text": "The sublease payments receivable" },
+        { "label": "D", "text": "The fair value of the master lease" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-25-1A, an intermediate lessor (sublessor) classifies a sublease by reference to the right-of-use asset arising from the head lease, not the underlying asset itself. This is because the sublessor does not own the underlying asset but has a right-of-use asset from the head lease.",
+      "explanationJa": "ASC 842-10-25-1Aにより、転貸人（中間レッサー）は転貸リースを原資産ではなく、ヘッドリースから生じる使用権資産を基準に分類する。転貸人は原資産を所有しておらず、ヘッドリースからの使用権資産を有しているためである。",
+      "references": ["ASC 842-10-25-1A"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-023",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease Incentives",
+      "stem": "Lessor D offers Lessee E a $50,000 cash incentive to sign a 5-year operating lease with annual payments of $120,000. How should Lessee E account for the lease incentive?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize the $50,000 as other income in Year 1"
+        },
+        {
+          "label": "B",
+          "text": "Reduce the right-of-use asset by the $50,000 and recognize reduced lease expense over the lease term"
+        },
+        { "label": "C", "text": "Record the $50,000 as a deferred liability" },
+        {
+          "label": "D",
+          "text": "Offset the $50,000 against the first year's lease payment"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-20-30-5, lease incentives received by the lessee reduce the right-of-use asset. The ROU asset is initially measured as the lease liability plus initial direct costs, plus prepaid lease payments, minus lease incentives received. The reduced ROU asset results in lower amortization expense over the lease term.",
+      "explanationJa": "ASC 842-20-30-5により、レッシーが受け取るリース・インセンティブは使用権資産を減額する。使用権資産はリース負債＋初期直接コスト＋前払リース料−受取リース・インセンティブで当初測定する。減額された使用権資産により、リース期間にわたる償却費が減少する。",
+      "references": ["ASC 842-20-30-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-024",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Build-to-Suit Arrangements",
+      "stem": "Under ASC 842, when a lessee is involved in the construction of an asset before the lease commencement date and the arrangement is NOT considered to provide the lessee control of the asset during construction, how should the lessee account for payments made during the construction period?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Capitalize the payments as construction in progress"
+        },
+        {
+          "label": "B",
+          "text": "Record the payments as prepaid rent or deposits"
+        },
+        { "label": "C", "text": "Expense the payments as incurred" },
+        {
+          "label": "D",
+          "text": "Record the payments as a right-of-use asset immediately"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842, if the lessee does not control the asset during construction, the payments are treated as prepaid rent or deposits. The lessee does not recognize the asset or liability until the lease commencement date. This differs from prior guidance under ASC 840 where build-to-suit accounting could result in the lessee being deemed the owner during construction.",
+      "explanationJa": "ASC 842では、レッシーが建設中に資産を支配していない場合、支払いは前払賃料または預託金として処理する。リース開始日まで資産や負債を認識しない。これはASC 840の旧基準で建設中にレッシーが所有者とみなされ得た処理とは異なる。",
+      "references": ["ASC 842-20-30-5", "ASC 842-10-55-7"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-025",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease Term - Option to Extend",
+      "stem": "Lessee F enters into a 5-year lease with two 3-year renewal options. Lessee F has made significant leasehold improvements that are expected to have value through the first renewal period. It is reasonably certain that Lessee F will exercise the first renewal option but not the second. What is the lease term?",
+      "choices": [
+        { "label": "A", "text": "5 years" },
+        { "label": "B", "text": "8 years" },
+        { "label": "C", "text": "11 years" },
+        { "label": "D", "text": "6 years" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-55-26, the lease term includes the noncancelable period plus periods covered by renewal options that the lessee is reasonably certain to exercise. Significant leasehold improvements that create an economic incentive to renew support the conclusion that exercise is reasonably certain. Lease term = 5 + 3 = 8 years.",
+      "explanationJa": "ASC 842-10-55-26により、リース期間は解約不能期間に、レッシーが行使することが合理的に確実な更新オプション期間を加えたものである。重要な賃借権改良は更新の経済的インセンティブを創出し、行使の合理的確実性を裏付ける。リース期間 = 5 + 3 = 8年。",
+      "references": ["ASC 842-10-55-26"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-026",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor Direct Financing Lease",
+      "stem": "Lessor G enters into a direct financing lease. The fair value of the leased equipment is $500,000, the cost is $450,000, and initial direct costs are $10,000. The net investment in the lease equals the present value of lease payments plus the unguaranteed residual value. What selling profit, if any, does Lessor G recognize at lease commencement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$50,000 selling profit recognized at commencement"
+        },
+        {
+          "label": "B",
+          "text": "$40,000 selling profit recognized at commencement"
+        },
+        {
+          "label": "C",
+          "text": "No selling profit at commencement; it is deferred and recognized over the lease term"
+        },
+        {
+          "label": "D",
+          "text": "$50,000 recognized in other comprehensive income"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 842-30-25-7, in a direct financing lease, the lessor defers any selling profit at commencement. The net investment is measured such that the selling profit is embedded in the carrying amount of the lease and recognized over the lease term as part of the interest income. Initial direct costs also reduce the yield.",
+      "explanationJa": "ASC 842-30-25-7により、直接金融リースではレッサーは開始時に販売益を繰り延べる。正味投資額は販売益がリースの帳簿価額に組み込まれるよう測定され、リース期間にわたり利息収益の一部として認識される。初期直接コストも利回りを減少させる。",
+      "references": ["ASC 842-30-25-7"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-027",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Operating Lease - Lessor Accounting",
+      "stem": "Lessor H enters into a 5-year operating lease for equipment with a cost of $400,000 and an estimated useful life of 10 years. Annual lease payments are $60,000. How should Lessor H recognize lease income and depreciation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lease income of $60,000 per year; depreciation of $40,000 per year"
+        },
+        {
+          "label": "B",
+          "text": "Lease income of $60,000 per year; no depreciation during the lease term"
+        },
+        {
+          "label": "C",
+          "text": "Lease income of $48,000 per year; depreciation of $40,000 per year"
+        },
+        {
+          "label": "D",
+          "text": "Lease income of $60,000 per year; depreciation of $80,000 per year"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-30-25-11, for an operating lease, the lessor continues to recognize the underlying asset and depreciates it in accordance with ASC 360. The lessor recognizes lease income on a straight-line basis over the lease term. Annual lease income = $60,000. Annual depreciation = $400,000 / 10 years = $40,000.",
+      "explanationJa": "ASC 842-30-25-11により、オペレーティング・リースではレッサーは原資産の認識を継続し、ASC 360に従い減価償却する。リース収益はリース期間にわたり定額で認識。年間リース収益 = $60,000。年間減価償却 = $400,000 / 10年 = $40,000。",
+      "references": ["ASC 842-30-25-11", "ASC 842-30-35-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-028",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Related-Party Leases",
+      "stem": "A parent company leases office space to its wholly owned subsidiary. Under ASC 842, how should related-party leases be classified and measured?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Based on the legally enforceable terms and conditions of the lease"
+        },
+        {
+          "label": "B",
+          "text": "At fair market value regardless of the stated lease terms"
+        },
+        {
+          "label": "C",
+          "text": "As a capital contribution from parent to subsidiary"
+        },
+        {
+          "label": "D",
+          "text": "Related-party leases are excluded from ASC 842"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-10-55-12, related-party leases are classified and accounted for based on the legally enforceable terms and conditions of the lease, even if those terms differ from what would be negotiated between unrelated parties. The financial statements should disclose the related-party nature of the lease.",
+      "explanationJa": "ASC 842-10-55-12により、関連当事者リースは法的に強制力のあるリースの条件に基づき分類・会計処理する。無関係な当事者間で交渉される条件と異なる場合でも同様である。財務諸表ではリースの関連当事者性を開示する。",
+      "references": ["ASC 842-10-55-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-029",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease Termination Penalty",
+      "stem": "Lessee J has a 10-year finance lease. In Year 4, Lessee J terminates the lease early and pays a termination penalty of $80,000. The remaining right-of-use asset carrying amount is $200,000 and the lease liability is $230,000. What gain or loss should Lessee J recognize?",
+      "choices": [
+        { "label": "A", "text": "Loss of $50,000" },
+        { "label": "B", "text": "Loss of $80,000" },
+        { "label": "C", "text": "Gain of $30,000" },
+        { "label": "D", "text": "Loss of $280,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Upon early termination, the lessee derecognizes the ROU asset and lease liability and records the termination penalty. The gain/loss = Lease liability removed ($230,000) − ROU asset removed ($200,000) − Termination penalty paid ($80,000) = $230,000 − $200,000 − $80,000 = −$50,000 (loss of $50,000).",
+      "explanationJa": "早期終了時、レッシーは使用権資産とリース負債の認識を中止し、終了ペナルティを計上する。損益 = 消滅するリース負債($230,000) − 消滅する使用権資産($200,000) − 終了ペナルティ($80,000) = $230,000 − $200,000 − $80,000 = −$50,000（損失$50,000）。",
+      "references": ["ASC 842-20-40-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-030",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Remeasurement Triggering Events",
+      "stem": "Under ASC 842, which of the following events would trigger a remeasurement of the lease liability?",
+      "choices": [
+        { "label": "A", "text": "A change in the lessee's credit rating" },
+        {
+          "label": "B",
+          "text": "A change in the assessment of whether the lessee is reasonably certain to exercise a renewal option"
+        },
+        {
+          "label": "C",
+          "text": "A change in the general interest rate environment"
+        },
+        {
+          "label": "D",
+          "text": "A decline in the fair value of the leased asset"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-20-35-4, a lessee must remeasure the lease liability when there is a change in the lease term due to a reassessment of whether it is reasonably certain to exercise (or not exercise) a renewal option, purchase option, or termination option. Changes in credit ratings, general interest rates, or asset fair values do not trigger remeasurement.",
+      "explanationJa": "ASC 842-20-35-4により、更新オプション、購入オプション、または終了オプションの行使の合理的確実性の再評価によりリース期間が変更された場合、レッシーはリース負債を再測定しなければならない。信用格付け、一般金利、資産の公正価値の変動は再測定のトリガーとならない。",
+      "references": ["ASC 842-20-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-031",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Residual Value Guarantee - Lessee",
+      "stem": "Lessee K enters into a 5-year finance lease for equipment with annual payments of $20,000. Lessee K guarantees a residual value of $15,000 at the end of the lease. The expected residual value is $10,000. What amount of the residual value guarantee should be included in the lease liability?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$15,000 (present value of full guaranteed amount)"
+        },
+        {
+          "label": "B",
+          "text": "$10,000 (present value of expected residual)"
+        },
+        {
+          "label": "C",
+          "text": "$5,000 (present value of expected deficiency)"
+        },
+        { "label": "D", "text": "$0 because the guarantee is contingent" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-30-5(c), the lessee includes in the lease liability amounts probable of being owed under residual value guarantees. For a lessee, the full guaranteed residual value ($15,000) is included in the measurement of the lease liability, not just the expected deficiency.",
+      "explanationJa": "ASC 842-20-30-5(c)により、レッシーは残存価値保証に基づき支払う可能性が高い金額をリース負債に含める。レッシーの場合、予想される不足額のみではなく、保証残存価値の全額（$15,000）をリース負債の測定に含める。",
+      "references": ["ASC 842-20-30-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-032",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Short-Term Lease Recognition",
+      "stem": "Lessee L enters into a 10-month lease for office equipment with no renewal option and no purchase option. The monthly payment is $3,000. Lessee L elects the short-term lease exemption. How should Lessee L account for this lease?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a right-of-use asset and lease liability at commencement"
+        },
+        {
+          "label": "B",
+          "text": "Recognize lease expense on a straight-line basis over the lease term without recording a ROU asset or lease liability"
+        },
+        {
+          "label": "C",
+          "text": "Capitalize the total lease payments as an asset"
+        },
+        {
+          "label": "D",
+          "text": "Record as a finance lease with amortization and interest"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-20-25-2, a short-term lease (12 months or less at commencement, with no purchase option reasonably certain to be exercised) may be recognized on a straight-line basis over the lease term without recording a ROU asset or lease liability. The 10-month lease with no options qualifies.",
+      "explanationJa": "ASC 842-20-25-2により、短期リース（開始日時点で12ヶ月以下、行使が合理的に確実な購入オプションなし）は、使用権資産やリース負債を計上せず、リース期間にわたり定額でリース費用を認識できる。10ヶ月でオプションなしのリースは要件を満たす。",
+      "references": ["ASC 842-20-25-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-033",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease of Land and Building",
+      "stem": "A company enters into a single lease for land and a building. The land element has an indefinite life. Under ASC 842, how should the land and building components be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Both are classified together as a single lease"
+        },
+        {
+          "label": "B",
+          "text": "The land and building are separate lease components, and each is classified independently"
+        },
+        {
+          "label": "C",
+          "text": "The land is always an operating lease; the building follows standard classification criteria"
+        },
+        { "label": "D", "text": "Both must be classified as finance leases" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-15-28, land and building are generally considered separate lease components because the lessee can benefit from each independently. Each component is classified separately based on the ASC 842 classification criteria. The land component, with its indefinite life, typically fails the economic life and purchase option tests.",
+      "explanationJa": "ASC 842-10-15-28により、土地と建物はレッシーがそれぞれ独立して便益を得られるため、通常は別個のリース要素とみなす。各要素はASC 842の分類基準に基づき個別に分類する。耐用年数が無限の土地要素は、通常、経済的耐用年数や購入オプションの基準を満たさない。",
+      "references": ["ASC 842-10-15-28"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-034",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Finance Lease - Balance Sheet Presentation",
+      "stem": "On January 1, Year 1, Lessee M enters into a 5-year finance lease. The initial right-of-use asset is $500,000 and the lease liability is $500,000. In Year 1, Lessee M records amortization of $100,000 and interest expense of $30,000, and makes lease payments of $115,000. What are the ROU asset and lease liability balances at December 31, Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ROU asset: $400,000; Lease liability: $415,000"
+        },
+        {
+          "label": "B",
+          "text": "ROU asset: $400,000; Lease liability: $385,000"
+        },
+        {
+          "label": "C",
+          "text": "ROU asset: $385,000; Lease liability: $415,000"
+        },
+        {
+          "label": "D",
+          "text": "ROU asset: $430,000; Lease liability: $415,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ROU asset: $500,000 − $100,000 amortization = $400,000. Lease liability: $500,000 + $30,000 interest − $115,000 payment = $415,000. In a finance lease, the ROU asset is amortized separately and the liability is increased by interest and decreased by payments, similar to a financed purchase.",
+      "explanationJa": "使用権資産：$500,000 − 償却$100,000 = $400,000。リース負債：$500,000 + 利息$30,000 − 支払$115,000 = $415,000。ファイナンスリースでは、使用権資産は別途償却し、負債は利息で増加・支払で減少する（割賦購入と同様）。",
+      "references": ["ASC 842-20-35-1", "ASC 842-20-35-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-035",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor Operating Lease - Straight-Line Rent",
+      "stem": "Lessor N enters into a 5-year operating lease with the following annual rent schedule: Year 1: $0 (rent-free period), Years 2-5: $100,000 per year. What annual lease income should Lessor N recognize?",
+      "choices": [
+        { "label": "A", "text": "$100,000 in Years 2 through 5; $0 in Year 1" },
+        { "label": "B", "text": "$80,000 per year for 5 years" },
+        { "label": "C", "text": "$100,000 per year for 4 years" },
+        { "label": "D", "text": "$50,000 per year for 5 years" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-30-25-11, operating lease income is recognized on a straight-line basis over the lease term unless another systematic basis is more representative. Total rent = $0 + $100,000 × 4 = $400,000. Straight-line annual income = $400,000 / 5 = $80,000 per year.",
+      "explanationJa": "ASC 842-30-25-11により、オペレーティング・リース収益は、他の体系的な基準がより適切でない限り、リース期間にわたり定額で認識する。賃料合計 = $0 + $100,000 × 4 = $400,000。定額年間収益 = $400,000 / 5 = $80,000/年。",
+      "references": ["ASC 842-30-25-11"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-036",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Variable Payments Linked to Index",
+      "stem": "Lessee P enters into a lease with annual payments of $50,000 adjusted for CPI changes. At commencement, the CPI is 200. At remeasurement, the CPI is 210. The original lease liability was based on $50,000 payments. What payment amount should be used for the remeasured lease liability?",
+      "choices": [
+        { "label": "A", "text": "$50,000 (original amount)" },
+        { "label": "B", "text": "$52,500 (adjusted for CPI increase)" },
+        { "label": "C", "text": "$55,000" },
+        {
+          "label": "D",
+          "text": "The variable portion is excluded from lease liability"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-55-40, variable lease payments that depend on an index or rate are included in the lease liability using the index or rate at commencement. When a remeasurement event occurs, the payments are updated using the current index. Remeasured payment = $50,000 × (210 / 200) = $52,500.",
+      "explanationJa": "ASC 842-10-55-40により、指数または料率に連動する変動リース料は、開始日時点の指数・料率を使用してリース負債に含める。再測定事象が発生した場合、現在の指数を使用して支払額を更新する。再測定後の支払額 = $50,000 × (210 / 200) = $52,500。",
+      "references": ["ASC 842-10-55-40"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-037",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Right-of-Use Asset Subsequent Measurement",
+      "stem": "Lessee Q has an operating lease with an initial ROU asset of $300,000 and a lease term of 5 years. There are no lease incentives, prepayments, or impairment. After Year 2, what is the carrying amount of the ROU asset?",
+      "choices": [
+        { "label": "A", "text": "$180,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "It depends on the lease liability balance" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-35-7, for an operating lease, the ROU asset is subsequently measured at the lease liability balance, plus any prepaid/initial direct costs, minus any lease incentives and cumulative amortization. With straight-line lease expense and no other adjustments, the ROU asset amortizes evenly. After Year 2: $300,000 − ($300,000 / 5 × 2) = $300,000 − $120,000 = $180,000.",
+      "explanationJa": "ASC 842-20-35-7により、オペレーティング・リースの使用権資産は、リース負債残高に前払・初期直接コストを加算し、リース・インセンティブと累積償却額を控除して事後測定する。定額リース費用で他の調整がない場合、使用権資産は均等に償却される。第2年末: $300,000 − ($300,000 / 5 × 2) = $180,000。",
+      "references": ["ASC 842-20-35-7"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-038",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Initial Direct Costs - Lessee",
+      "stem": "Lessee R incurs the following costs in negotiating and arranging a lease: legal fees for lease negotiation ($5,000), commission paid to a broker ($8,000), and costs of employee time spent reviewing the lease ($3,000). Which costs should be included in the initial measurement of the right-of-use asset?",
+      "choices": [
+        { "label": "A", "text": "$16,000 (all three costs)" },
+        {
+          "label": "B",
+          "text": "$13,000 (legal fees and broker commission only)"
+        },
+        { "label": "C", "text": "$5,000 (legal fees only)" },
+        { "label": "D", "text": "$8,000 (broker commission only)" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-30-9, initial direct costs are incremental costs that would not have been incurred if the lease had not been obtained. Legal fees ($5,000) and broker commissions ($8,000) are incremental. Internal employee costs ($3,000) would have been incurred regardless and are not initial direct costs. Total = $5,000 + $8,000 = $13,000.",
+      "explanationJa": "ASC 842-10-30-9により、初期直接コストはリースを取得しなければ発生しなかった増分コストである。法務費用（$5,000）と仲介手数料（$8,000）は増分コスト。内部従業員コスト（$3,000）はリースの有無にかかわらず発生するため初期直接コストではない。合計 = $5,000 + $8,000 = $13,000。",
+      "references": ["ASC 842-10-30-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-039",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessee Transition - Modified Retrospective",
+      "stem": "Lessee S adopted ASC 842 using the modified retrospective transition method with the optional transition practical expedient (effective date as the date of initial application). Which of the following statements is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Comparative periods must be restated under ASC 842"
+        },
+        {
+          "label": "B",
+          "text": "A cumulative-effect adjustment is recognized in retained earnings at the beginning of the period of adoption"
+        },
+        {
+          "label": "C",
+          "text": "All existing leases must be reassessed for classification under ASC 842"
+        },
+        {
+          "label": "D",
+          "text": "Short-term leases at transition must be capitalized"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-65-1(c), entities using the modified retrospective method with the practical expedient recognize a cumulative-effect adjustment to retained earnings at the beginning of the period of adoption. Comparative periods continue to be presented under ASC 840. The package of practical expedients allows entities to not reassess lease classification.",
+      "explanationJa": "ASC 842-10-65-1(c)により、実務上の便法を使用した修正遡及法を適用する企業は、適用開始期間の期首に利益剰余金の累積的影響額の調整を認識する。比較期間はASC 840に基づき表示を継続。一括の実務上の便法により、リース分類の再評価は不要となる。",
+      "references": ["ASC 842-10-65-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-040",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Leveraged Lease Transition",
+      "stem": "Lessor T has an existing leveraged lease under ASC 840 at the time of ASC 842 adoption. Under the transition guidance, how should Lessor T account for the leveraged lease?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reclassify the leveraged lease as a direct financing lease under ASC 842"
+        },
+        {
+          "label": "B",
+          "text": "Continue to apply the leveraged lease model under ASC 840 until the lease expires or is modified"
+        },
+        {
+          "label": "C",
+          "text": "Immediately derecognize the leveraged lease and record a new lease under ASC 842"
+        },
+        {
+          "label": "D",
+          "text": "Reclassify the leveraged lease as an operating lease under ASC 842"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-65-1(cc), leveraged leases that commenced before the effective date of ASC 842 are grandfathered. Lessors continue to apply the leveraged lease accounting model from ASC 840 until the lease expires, is modified, or the lessor otherwise derecognizes it. New leveraged leases are not permitted under ASC 842.",
+      "explanationJa": "ASC 842-10-65-1(cc)により、ASC 842の発効日前に開始したレバレッジド・リースは既存のまま適用が継続される。レッサーはリースが満了、変更、またはその他の理由で認識中止されるまでASC 840のレバレッジド・リース会計モデルを適用し続ける。ASC 842では新たなレバレッジド・リースは認められない。",
+      "references": ["ASC 842-10-65-1"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }

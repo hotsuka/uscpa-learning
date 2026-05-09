@@ -2,7 +2,7 @@
   "id": "far-revenue-recognition",
   "name": "Revenue Recognition (ASC 606)",
   "topic": "Revenue Recognition (ASC 606)",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "rev-001",
@@ -424,6 +424,483 @@
       "explanation": "Under ASC 606-10-25-13(c), when remaining goods/services are not distinct from those already transferred, the modification is treated as part of the original contract with a cumulative catch-up. Cumulative revenue through Year 2 = $360,000 × (2/3) = $240,000. Year 2 revenue = $240,000 - $100,000 (Year 1) = $140,000.",
       "explanationJa": "残りの財・サービスが既に移転したものと区別できない場合、変更は当初契約の一部として累積的キャッチアップ調整(cumulative catch-up)で処理する。第2年末までの累積収益 = $360,000 × (2/3) = $240,000。第2年収益 = $240,000 - $100,000(第1年) = $140,000。",
       "references": ["ASC 606-10-25-13"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-021",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Contract Combination",
+      "stem": "Entity A enters into two contracts with the same customer on the same day. Contract 1 is for the sale of equipment for $500,000, and Contract 2 is for installation services for $50,000. The selling price of the equipment was negotiated based on the customer also purchasing installation services. Under ASC 606, how should Entity A account for these contracts?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Account for each contract separately since they are legally distinct"
+        },
+        {
+          "label": "B",
+          "text": "Combine the contracts and account for them as a single contract"
+        },
+        {
+          "label": "C",
+          "text": "Account for Contract 1 only and treat Contract 2 as a warranty"
+        },
+        {
+          "label": "D",
+          "text": "Defer all revenue until both contracts are completed"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 606-10-25-9 requires entities to combine contracts when they are entered into at or near the same time with the same customer (or related parties) and one or more of specified criteria are met, including that the consideration in one contract depends on the other. Since the equipment price was negotiated based on the installation purchase, the contracts should be combined.",
+      "explanationJa": "ASC 606-10-25-9は、同一顧客と同時期に締結された契約で、一方の対価が他方に依存する場合等は契約を結合することを要求する。設備の価格が据付サービスの購入を前提に交渉されたため、両契約を結合して単一の契約として会計処理する。",
+      "references": ["ASC 606-10-25-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-022",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Warranties - Service-Type vs Assurance-Type",
+      "stem": "Alpha Corp. sells a product with a standard one-year warranty included in the price and offers an optional extended two-year warranty for an additional fee. How should Alpha classify each warranty under ASC 606?",
+      "choices": [
+        { "label": "A", "text": "Both are assurance-type warranties" },
+        {
+          "label": "B",
+          "text": "Both are service-type warranties and separate performance obligations"
+        },
+        {
+          "label": "C",
+          "text": "The standard warranty is assurance-type; the extended warranty is a service-type performance obligation"
+        },
+        {
+          "label": "D",
+          "text": "The standard warranty is a service-type performance obligation; the extended warranty is assurance-type"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 606-10-25-19 through 25-21, a warranty that cannot be purchased separately (standard warranty) is typically an assurance-type warranty accounted for under ASC 460. A warranty that can be purchased separately (extended warranty) is a service-type warranty treated as a separate performance obligation under ASC 606.",
+      "explanationJa": "別途購入できない保証（標準保証）は通常、品質保証型（assurance-type）としてASC 460に従い会計処理する。別途購入可能な保証（延長保証）はサービス型（service-type）として、ASC 606の独立した履行義務となる。",
+      "references": ["ASC 606-10-25-19", "ASC 606-10-25-21"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-023",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Bill-and-Hold Arrangements",
+      "stem": "Beta Corp. manufactures custom machinery for Customer Z. Customer Z requests that Beta hold the completed machinery in its warehouse due to space constraints. Beta has identified the machinery, it is ready for transfer, and Beta cannot use or direct the machinery to another customer. Which additional criterion must be met for Beta to recognize revenue on a bill-and-hold basis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The customer must have paid in full for the machinery"
+        },
+        {
+          "label": "B",
+          "text": "The customer must have a substantive reason for the arrangement"
+        },
+        {
+          "label": "C",
+          "text": "The machinery must be insured by the customer"
+        },
+        { "label": "D", "text": "The arrangement must last less than 90 days" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 606-10-55-83 specifies criteria for bill-and-hold arrangements: (1) substantive reason for the arrangement, (2) product identified separately as belonging to customer, (3) product currently ready for transfer, and (4) entity cannot use the product or direct it to another customer. The customer's space constraint constitutes a substantive reason.",
+      "explanationJa": "ASC 606-10-55-83のbill-and-hold要件：(1) 取決めの実質的な理由、(2) 製品が顧客のものとして個別に識別、(3) 製品が現在移転可能な状態、(4) 企業が製品を使用または他の顧客に振り向けられない。顧客のスペース制約は実質的な理由に該当する。",
+      "references": ["ASC 606-10-55-83"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-024",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Consignment Arrangements",
+      "stem": "Gamma Corp. delivers goods to Retailer D under an arrangement where Retailer D can return unsold goods without penalty and Gamma retains the risk of obsolescence. Retailer D has no obligation to pay until the goods are sold to end customers. When should Gamma recognize revenue?",
+      "choices": [
+        { "label": "A", "text": "When the goods are delivered to Retailer D" },
+        {
+          "label": "B",
+          "text": "When Retailer D sells the goods to end customers"
+        },
+        { "label": "C", "text": "When the return period expires" },
+        { "label": "D", "text": "When Gamma ships the goods" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-80, indicators of a consignment arrangement include: the entity controls the product until a specified event occurs, the entity can require return of the product, and the dealer does not have an unconditional obligation to pay. Since all indicators are present, control does not transfer until the goods are sold to end customers.",
+      "explanationJa": "ASC 606-10-55-80の委託販売の指標：特定の事象まで企業が製品を支配、企業が返品を要求可能、ディーラーに無条件の支払義務がない。すべての指標が当てはまるため、エンドユーザーへの販売時まで支配は移転しない。",
+      "references": ["ASC 606-10-55-80"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-025",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Repurchase Agreements",
+      "stem": "Delta Corp. sells a product for $100,000 with a forward agreement to repurchase the product in 12 months for $110,000. The repurchase price exceeds the original selling price. How should Delta account for this transaction?",
+      "choices": [
+        { "label": "A", "text": "As a sale with a right of return" },
+        { "label": "B", "text": "As a financing arrangement" },
+        { "label": "C", "text": "As a lease" },
+        {
+          "label": "D",
+          "text": "As a sale and recognize the gain of $10,000 upon repurchase"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-70, when an entity has a forward obligation to repurchase the asset at a price equal to or greater than the original selling price, the contract is accounted for as a financing arrangement. The entity continues to recognize the asset and records a financial liability for the $100,000 received. The $10,000 difference is recognized as interest expense over the 12 months.",
+      "explanationJa": "ASC 606-10-55-70により、企業が当初販売価格以上の価格で資産を買い戻す先渡義務を有する場合、金融取引として処理する。資産の認識を継続し、受領した$100,000を金融負債として計上する。$10,000の差額は12ヶ月にわたり支払利息として認識する。",
+      "references": ["ASC 606-10-55-70", "ASC 606-10-55-71"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-026",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Nonrefundable Upfront Fees",
+      "stem": "A gym charges a nonrefundable joining fee of $500 and a monthly membership fee of $50. The joining fee does not relate to any transfer of a promised good or service but compensates for administrative costs. Under ASC 606, how should the gym account for the $500 fee?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize as revenue when received since it is nonrefundable"
+        },
+        {
+          "label": "B",
+          "text": "Recognize as revenue over the expected membership period"
+        },
+        { "label": "C", "text": "Recognize as a reduction of future revenue" },
+        { "label": "D", "text": "Record as a liability indefinitely" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-51, nonrefundable upfront fees that do not relate to the transfer of a promised good or service are advance payments for future goods or services. The fee should be included in the transaction price and recognized as revenue over the period during which services are provided (the expected membership period).",
+      "explanationJa": "ASC 606-10-55-51により、約束した財・サービスの移転に関連しない返金不能の前払料金は、将来の財・サービスに対する前払金である。料金は取引価格に含め、サービス提供期間（予想される会員期間）にわたり収益として認識する。",
+      "references": ["ASC 606-10-55-51"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-027",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Royalties - Sales/Usage Based",
+      "stem": "Publisher E licenses intellectual property to Customer F. The license is the predominant item in the contract. Customer F agrees to pay a 5% royalty based on its sales of products using the IP. When should Publisher E recognize royalty revenue?",
+      "choices": [
+        { "label": "A", "text": "When the license is granted" },
+        {
+          "label": "B",
+          "text": "When the subsequent sale or usage occurs, or when the performance obligation is satisfied, whichever is later"
+        },
+        { "label": "C", "text": "Ratably over the license period" },
+        { "label": "D", "text": "When cash is collected from Customer F" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 606-10-55-65A provides a sales-based or usage-based royalty exception for licenses of IP. Revenue is recognized at the later of (1) the subsequent sale or usage occurring, or (2) the performance obligation to which some or all of the royalty has been allocated has been partially or fully satisfied.",
+      "explanationJa": "ASC 606-10-55-65Aは知的財産のライセンスに係る売上高・使用量ベースのロイヤルティの例外を規定する。(1) その後の売上または使用が発生した時点と、(2) ロイヤルティが配分された履行義務が部分的または全部充足された時点のいずれか遅い方で収益を認識する。",
+      "references": ["ASC 606-10-55-65A"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-028",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Contract Liability (Deferred Revenue)",
+      "stem": "On November 1, Year 1, Entity G receives $120,000 from a customer for a 12-month service contract beginning on that date. As of December 31, Year 1, what amount should Entity G report as a contract liability?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$20,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Entity G has received $120,000 and has provided 2 months of service (November and December). Revenue recognized = $120,000 × 2/12 = $20,000. The remaining $100,000 ($120,000 − $20,000) represents the entity's obligation to provide future services and is reported as a contract liability (deferred revenue).",
+      "explanationJa": "Entity Gは$120,000を受領し、2ヶ月分のサービスを提供済み。認識済み収益 = $120,000 × 2/12 = $20,000。残りの$100,000（$120,000 − $20,000）は将来のサービス提供義務を表し、契約負債（繰延収益）として報告する。",
+      "references": ["ASC 606-10-45-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-029",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Constraining Variable Consideration",
+      "stem": "Entity H enters into a contract with a performance bonus of $200,000 if a project is completed by a specified date. Based on experience with similar contracts, Entity H estimates a 70% probability of earning the bonus. Entity H applies the most likely amount method. Under the constraint guidance, how much variable consideration should Entity H include in the transaction price?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$140,000" },
+        { "label": "C", "text": "$0" },
+        {
+          "label": "D",
+          "text": "$200,000, but only if it is probable that a significant reversal will not occur"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 606-10-32-11, variable consideration is included in the transaction price only to the extent that it is probable that a significant reversal of cumulative revenue recognized will not occur when the uncertainty is resolved. Using the most likely amount method, the estimate is $200,000 (the binary outcome with >50% probability), but this amount is included only if the constraint is met.",
+      "explanationJa": "ASC 606-10-32-11により、変動対価は不確実性が解消された際に認識済み累積収益の重大な戻入れが発生しない可能性が高い範囲でのみ取引価格に含める。最頻値法では見積額は$200,000（確率70%）だが、制約要件を満たす場合にのみこの金額を含める。",
+      "references": ["ASC 606-10-32-11", "ASC 606-10-32-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-030",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Standalone Selling Price - Adjusted Market Assessment",
+      "stem": "Entity J sells Product X (standalone selling price: $80) and Service Y (no observable standalone price) together for $100. Entity J estimates the market would pay $40 for Service Y based on competitor pricing with adjustments for its own margins. What is the allocated transaction price for Product X?",
+      "choices": [
+        { "label": "A", "text": "$80" },
+        { "label": "B", "text": "$66.67" },
+        { "label": "C", "text": "$60" },
+        { "label": "D", "text": "$100" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-32-33, the adjusted market assessment approach estimates standalone selling price by evaluating the market and estimating the price customers would pay. SSP for Product X = $80, SSP for Service Y = $40, total SSP = $120. Allocated to Product X = $100 × ($80 / $120) = $66.67.",
+      "explanationJa": "調整後市場評価アプローチでは、市場を評価し顧客が支払う価格を見積もる。Product Xの独立販売価格 = $80、Service Yの独立販売価格 = $40、合計 = $120。Product Xへの配分額 = $100 × ($80 / $120) = $66.67。",
+      "references": ["ASC 606-10-32-33", "ASC 606-10-32-34"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-031",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Series Guidance (Distinct Services)",
+      "stem": "Entity K enters into a contract to provide daily cleaning services for 2 years. Each day of cleaning service is distinct and substantially the same. Under the series guidance in ASC 606, how should Entity K account for these services?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As 730 separate performance obligations (one per day)"
+        },
+        {
+          "label": "B",
+          "text": "As a single performance obligation satisfied over time"
+        },
+        {
+          "label": "C",
+          "text": "As two performance obligations (one per year)"
+        },
+        {
+          "label": "D",
+          "text": "As a single performance obligation satisfied at a point in time"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-25-14(b), a series of distinct goods or services that are substantially the same and have the same pattern of transfer is accounted for as a single performance obligation satisfied over time. Each day's cleaning is distinct, substantially the same, and transferred over time using the same measure of progress.",
+      "explanationJa": "ASC 606-10-25-14(b)により、実質的に同一で移転パターンが同じである一連の別個の財・サービスは、一定期間にわたり充足される単一の履行義務として会計処理する。各日の清掃は別個で実質的に同一であり、同じ進捗度の測定基準で移転される。",
+      "references": ["ASC 606-10-25-14"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-032",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Customer Options for Additional Goods",
+      "stem": "Entity L sells a product for $1,000 and grants the customer an option to purchase additional products at a 40% discount within the next year. The standalone selling price of the option, considering the likelihood of exercise and the discount, is $100. How should Entity L account for the option?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ignore the option since the customer has not exercised it"
+        },
+        {
+          "label": "B",
+          "text": "Allocate a portion of the $1,000 transaction price to the option as a separate performance obligation"
+        },
+        {
+          "label": "C",
+          "text": "Record a contingent liability for the expected discount"
+        },
+        { "label": "D", "text": "Disclose the option in the footnotes only" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-42, a customer option to acquire additional goods or services at a discount that provides a material right is accounted for as a separate performance obligation. Entity L should allocate a portion of the $1,000 transaction price to the option based on relative standalone selling prices.",
+      "explanationJa": "ASC 606-10-55-42により、重要な権利を提供する追加の財・サービスを取得する顧客オプションは、独立した履行義務として会計処理する。Entity Lは$1,000の取引価格の一部を独立販売価格の比率に基づきオプションに配分する。",
+      "references": ["ASC 606-10-55-42", "ASC 606-10-55-43"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-033",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Breakage (Gift Cards)",
+      "stem": "Entity M sells $500,000 of gift cards during December. Based on historical data, Entity M expects 8% of the gift cards will never be redeemed (breakage). Entity M expects to be entitled to the breakage amount and can reasonably estimate it. In Year 1, 60% of the gift cards are redeemed. How much breakage revenue should Entity M recognize in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$24,000" },
+        { "label": "C", "text": "$26,087" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 606-10-55-49, when an entity expects to be entitled to breakage and can reasonably estimate it, breakage is recognized in proportion to the pattern of rights exercised. Total breakage = $500,000 × 8% = $40,000. Estimated total redemption = 92%. In Year 1, 60% redeemed out of 92% expected = 60/92 = 65.22%. Breakage in Year 1 = $40,000 × 65.22% = $26,087.",
+      "explanationJa": "ASC 606-10-55-49により、企業が未行使分の権利を得ると見込み合理的に見積もれる場合、権利行使のパターンに比例して認識する。非行使見込み = $500,000 × 8% = $40,000。推定総行使率 = 92%。Year 1行使率60% ÷ 推定行使率92% = 65.22%。Year 1の非行使収益 = $40,000 × 65.22% = $26,087。",
+      "references": ["ASC 606-10-55-49"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-034",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Significant Integration Service",
+      "stem": "A construction company enters into a contract to build a custom building. The contract involves land preparation, foundation, structural framing, and finishing. None of these services are separately identifiable because the company provides a significant integration service. How many performance obligations exist?",
+      "choices": [
+        { "label": "A", "text": "Four - one for each phase of construction" },
+        {
+          "label": "B",
+          "text": "One - the combined output (completed building)"
+        },
+        { "label": "C", "text": "Two - pre-construction and construction" },
+        { "label": "D", "text": "It depends on the contract terms" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-25-21(a), goods or services are not distinct when the entity provides a significant service of integrating those goods or services with other goods or services promised in the contract. The integration service means the individual construction activities are inputs to the combined output (completed building), resulting in a single performance obligation.",
+      "explanationJa": "ASC 606-10-25-21(a)により、企業が契約内の他の財・サービスと統合する重要なサービスを提供する場合、個々の財・サービスは別個ではない。統合サービスにより個々の建設活動は結合されたアウトプット（完成した建物）へのインプットとなり、単一の履行義務となる。",
+      "references": ["ASC 606-10-25-21"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-035",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Customer Unexercised Rights",
+      "stem": "Entity N operates a subscription service at $100/month. Customers prepay for 12 months ($1,200). Based on history, 15% of customers cancel after 6 months and receive no refund. Entity N does NOT expect to be entitled to the breakage amount. How should Entity N account for the unexercised rights upon cancellation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize the remaining balance as revenue immediately upon cancellation"
+        },
+        {
+          "label": "B",
+          "text": "Recognize the remaining balance as revenue proportionally over the remaining period"
+        },
+        {
+          "label": "C",
+          "text": "Recognize the remaining balance as revenue when the likelihood of the customer exercising remaining rights becomes remote"
+        },
+        { "label": "D", "text": "Return the unearned portion to the customer" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 606-10-55-48, if an entity does not expect to be entitled to the breakage amount, the entity recognizes the unexercised portion as revenue when the likelihood that the customer will exercise its remaining rights becomes remote. This is the alternative approach when breakage cannot be reasonably estimated or is not expected.",
+      "explanationJa": "ASC 606-10-55-48により、企業が未行使分の権利を得ると見込まない場合、顧客が残存する権利を行使する可能性がほとんどなくなった時点で未行使分を収益として認識する。これは非行使分を合理的に見積もれない場合の代替的アプローチである。",
+      "references": ["ASC 606-10-55-48"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-036",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Returns - Refund Liability",
+      "stem": "Entity P sells 1,000 units at $50 each on December 15, Year 1. Based on historical experience, Entity P expects 5% returns. The cost of each unit is $30. What is the refund liability Entity P should record at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$2,500" },
+        { "label": "B", "text": "$1,500" },
+        { "label": "C", "text": "$1,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-55-23, Entity P should recognize revenue of $47,500 (950 units × $50), a refund liability of $2,500 (50 units × $50) for expected returns, and an asset of $1,500 (50 units × $30) for the right to recover products from customers. The refund liability is $2,500.",
+      "explanationJa": "ASC 606-10-55-23により、Entity Pは収益$47,500（950個 × $50）、返品見込みに対する返金負債$2,500（50個 × $50）、顧客から製品を回収する権利としての資産$1,500（50個 × $30）を認識する。返金負債は$2,500。",
+      "references": ["ASC 606-10-55-23", "ASC 606-10-55-25"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-037",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Noncash Consideration",
+      "stem": "Entity Q provides consulting services to Client R. Instead of cash payment, Client R transfers 1,000 shares of its publicly traded stock (fair value: $25 per share at contract inception). How should Entity Q measure the transaction price?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "At the fair value of the shares when the services are completed"
+        },
+        {
+          "label": "B",
+          "text": "At the fair value of the shares at contract inception ($25,000)"
+        },
+        { "label": "C", "text": "At the par value of the shares" },
+        { "label": "D", "text": "At the cost of services provided" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-32-21, noncash consideration is measured at fair value at contract inception. The transaction price for Entity Q's services is $25,000 (1,000 shares × $25 fair value at contract inception). Subsequent changes in fair value due to reasons other than the form of consideration are not reflected in the transaction price.",
+      "explanationJa": "ASC 606-10-32-21により、非現金対価は契約開始時の公正価値で測定する。Entity Qのサービスの取引価格は$25,000（1,000株 × 契約開始時の公正価値$25）。対価の形態以外の理由による公正価値の事後的変動は取引価格に反映しない。",
+      "references": ["ASC 606-10-32-21", "ASC 606-10-32-22"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-038",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Consideration Payable to Customer",
+      "stem": "Entity S, a consumer goods manufacturer, pays $50,000 to Retailer T for preferred shelf space in Retailer T's stores. Entity S does not receive a distinct good or service in exchange. How should Entity S account for this payment?",
+      "choices": [
+        { "label": "A", "text": "As selling expense in the period paid" },
+        {
+          "label": "B",
+          "text": "As a reduction of the transaction price (revenue)"
+        },
+        {
+          "label": "C",
+          "text": "As an intangible asset amortized over the shelf space period"
+        },
+        { "label": "D", "text": "As cost of goods sold" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-32-25, consideration payable to a customer is accounted for as a reduction of the transaction price unless the payment is in exchange for a distinct good or service. Since Entity S does not receive a distinct good or service from Retailer T, the $50,000 reduces Entity S's revenue.",
+      "explanationJa": "ASC 606-10-32-25により、顧客に支払う対価は、別個の財・サービスとの交換でない限り、取引価格の減額として処理する。Entity SはRetailer Tから別個の財・サービスを受け取らないため、$50,000はEntity Sの収益を減額する。",
+      "references": ["ASC 606-10-32-25", "ASC 606-10-32-26"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-039",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Disclosure - Disaggregation of Revenue",
+      "stem": "Under ASC 606, which of the following is a required category for disaggregation of revenue disclosures?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Revenue must be disaggregated by individual customer"
+        },
+        {
+          "label": "B",
+          "text": "Revenue should be disaggregated into categories that depict how the nature, amount, timing, and uncertainty of revenue are affected by economic factors"
+        },
+        {
+          "label": "C",
+          "text": "Revenue must be disaggregated by product line only"
+        },
+        {
+          "label": "D",
+          "text": "Disaggregation is not required if the entity has only one reportable segment"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 606-10-50-5 requires an entity to disaggregate revenue into categories that depict how the nature, amount, timing, and uncertainty of revenue and cash flows are affected by economic factors. Examples include type of good or service, geography, market or customer type, contract type, and timing of transfer.",
+      "explanationJa": "ASC 606-10-50-5は、収益及びキャッシュ・フローの性質、金額、時期、不確実性が経済的要因によってどのように影響を受けるかを描写するカテゴリーに収益を分解することを要求する。例として、財・サービスの種類、地域、市場・顧客タイプ、契約タイプ、移転の時期がある。",
+      "references": ["ASC 606-10-50-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-040",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Transition - Modified Retrospective Method",
+      "stem": "Entity U adopted ASC 606 using the modified retrospective method. Which of the following correctly describes this transition approach?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "All prior period financial statements are restated"
+        },
+        {
+          "label": "B",
+          "text": "The cumulative effect of applying the new standard is recognized as an adjustment to opening retained earnings in the period of adoption"
+        },
+        {
+          "label": "C",
+          "text": "No adjustment is made; the new standard is applied prospectively only to new contracts"
+        },
+        {
+          "label": "D",
+          "text": "Prior period comparatives are restated, and any difference is recognized in other comprehensive income"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-65-1(d)(2), the modified retrospective method recognizes the cumulative effect of initially applying ASC 606 as an adjustment to the opening balance of retained earnings in the period of adoption. Prior periods are not restated, but additional disclosures are required comparing results under the new and old standards.",
+      "explanationJa": "ASC 606-10-65-1(d)(2)により、修正遡及法では、ASC 606の適用開始による累積的影響額を適用開始期間の期首利益剰余金の調整として認識する。過年度は修正再表示しないが、新旧基準の比較に関する追加開示が必要となる。",
+      "references": ["ASC 606-10-65-1"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }

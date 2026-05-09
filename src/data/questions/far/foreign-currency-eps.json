@@ -2,7 +2,7 @@
   "id": "far-foreign-currency-eps",
   "name": "Foreign Currency & EPS",
   "topic": "Foreign Currency & EPS",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "fx-001",
@@ -181,6 +181,474 @@
       "explanation": "Under ASC 260-10-55-12, stock dividends and stock splits are applied retroactively to all prior periods presented for EPS calculations. Adjusted shares = 200,000 × 1.10 = 220,000. Restated Year 1 EPS = $800,000 / 220,000 = $3.636 ≈ $3.64.",
       "explanationJa": "株式配当・株式分割はEPS計算で全ての過去期間に遡及適用する。調整後株数 = 200,000 × 1.10 = 220,000株。修正再表示後のYear 1 EPS = $800,000 / 220,000 = $3.64。",
       "references": ["ASC 260-10-55-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-011",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Functional Currency Determination",
+      "stem": "Under ASC 830, which of the following factors is most relevant in determining a foreign subsidiary's functional currency?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The currency in which the subsidiary primarily generates and expends cash"
+        },
+        { "label": "B", "text": "The currency of the parent company" },
+        {
+          "label": "C",
+          "text": "The currency in which the subsidiary's stock is traded"
+        },
+        { "label": "D", "text": "The currency with the lowest inflation rate" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-10-55-5, the functional currency is determined by analyzing the economic environment in which the entity primarily generates and expends cash. Key indicators include: currency of sales prices, markets, labor costs, materials, financing, and intercompany transactions. It is a factual determination, not a free choice.",
+      "explanationJa": "機能通貨は、企業が主にキャッシュを生成・支出する経済環境を分析して決定する。主な判定指標は、販売価格の通貨、市場、人件費、原材料費、資金調達、会社間取引の通貨である。事実に基づく判定であり、自由に選択できるものではない。",
+      "references": ["ASC 830-10-55-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-012",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Highly Inflationary Economy",
+      "stem": "Under ASC 830, if a foreign subsidiary operates in a highly inflationary economy (cumulative inflation of approximately 100% or more over 3 years), which reporting currency method is required?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The reporting currency (U.S. dollar) is used as the functional currency, requiring remeasurement"
+        },
+        {
+          "label": "B",
+          "text": "The local currency remains the functional currency with translation"
+        },
+        {
+          "label": "C",
+          "text": "A stable third-party currency must be designated as the functional currency"
+        },
+        {
+          "label": "D",
+          "text": "Financial statements are presented in the local currency without conversion"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-10-45-11, if a foreign entity operates in a highly inflationary environment (approximately 100% cumulative inflation over 3 years), the financial statements must be remeasured as if the functional currency were the reporting currency (USD). This prevents distortion from using a rapidly depreciating currency.",
+      "explanationJa": "高インフレ経済（3年間の累積インフレ率が約100%以上）で活動する在外事業体は、報告通貨（USD）を機能通貨として再測定する必要がある。急速に減価する通貨の使用による歪みを防止するための措置。",
+      "references": ["ASC 830-10-45-11"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-013",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Foreign Currency Transaction - Hedged vs Unhedged",
+      "stem": "On September 1, a U.S. company purchases inventory from a Japanese supplier for ¥10,000,000 on account (spot rate $0.0090/¥). The company hedges with a forward contract at $0.0092/¥. At December 31, the spot rate is $0.0095/¥. What exchange loss does the company report on the unhedged payable at year-end?",
+      "choices": [
+        { "label": "A", "text": "$5,000" },
+        { "label": "B", "text": "$2,000" },
+        { "label": "C", "text": "$3,000" },
+        { "label": "D", "text": "$0 because the payable is hedged" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The payable is remeasured at the spot rate regardless of hedging. Payable at transaction date = ¥10,000,000 × $0.0090 = $90,000. Payable at year-end = ¥10,000,000 × $0.0095 = $95,000. Exchange loss = $95,000 − $90,000 = $5,000. The hedge gain on the forward contract would offset this loss, but the payable remeasurement itself shows a $5,000 loss.",
+      "explanationJa": "買掛金はヘッジの有無に関係なくスポットレートで再測定する。取引日の買掛金 = ¥10,000,000 × $0.0090 = $90,000。年末の買掛金 = ¥10,000,000 × $0.0095 = $95,000。為替差損 = $95,000 - $90,000 = $5,000。先渡契約のヘッジ利益がこの損失を相殺するが、買掛金自体の再測定では$5,000の損失が生じる。",
+      "references": ["ASC 830-20-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-014",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Translation - Balance Sheet Items",
+      "stem": "Under the current rate method, at which exchange rate are the following items translated: (1) land acquired 5 years ago, (2) accounts payable, and (3) common stock issued at incorporation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Land: current rate; A/P: current rate; Common stock: historical rate"
+        },
+        {
+          "label": "B",
+          "text": "Land: historical rate; A/P: current rate; Common stock: historical rate"
+        },
+        {
+          "label": "C",
+          "text": "Land: current rate; A/P: historical rate; Common stock: current rate"
+        },
+        { "label": "D", "text": "All three at the current rate" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the current rate method (ASC 830-10-45-3): All assets (including land) and all liabilities are translated at the current (year-end) exchange rate. Equity accounts (common stock, APIC) are translated at historical rates. This differs from the temporal method, where nonmonetary assets like land use historical rates.",
+      "explanationJa": "カレントレート法では、土地を含むすべての資産とすべての負債を決算日レートで換算する。資本勘定（普通株式、APIC）は取得日レートを使用。テンポラル法では土地のような非貨幣性資産に取得日レートを使うが、カレントレート法とは異なる。",
+      "references": ["ASC 830-10-45-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-015",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Remeasurement - Monetary vs Nonmonetary",
+      "stem": "Under the temporal method (remeasurement), a foreign subsidiary has the following balances in local currency: Cash LC 500,000; Inventory (cost) LC 800,000; Land LC 1,200,000; Accounts Payable LC 600,000. Which items are remeasured at the current exchange rate?",
+      "choices": [
+        { "label": "A", "text": "Cash and Accounts Payable only" },
+        { "label": "B", "text": "All four items" },
+        { "label": "C", "text": "Cash, Inventory, and Accounts Payable" },
+        { "label": "D", "text": "Cash and Land only" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the temporal method, monetary items (cash, receivables, payables) are remeasured at the current rate. Nonmonetary items carried at cost (inventory at cost, land, PPE) are remeasured at historical rates. Nonmonetary items carried at fair value (e.g., inventory at NRV) would use the rate when fair value was determined.",
+      "explanationJa": "テンポラル法では、貨幣性項目（現金、売掛金、買掛金）は決算日レートで再測定する。原価で計上される非貨幣性項目（原価ベースの在庫、土地、有形固定資産）は取得日レートを使用する。公正価値で計上される非貨幣性項目は公正価値決定時のレートを使用する。",
+      "references": ["ASC 830-10-45-17", "ASC 830-10-45-18"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-016",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Intercompany Foreign Currency Transaction",
+      "stem": "A U.S. parent has a long-term intercompany loan receivable from its foreign subsidiary denominated in the subsidiary's local currency. The loan is considered part of the net investment. How is the exchange gain/loss on this loan reported in the parent's consolidated financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "In the cumulative translation adjustment (CTA) within OCI"
+        },
+        { "label": "B", "text": "In current period earnings" },
+        { "label": "C", "text": "As an adjustment to goodwill" },
+        { "label": "D", "text": "Not recognized until settlement" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-20-35-3, foreign currency transaction gains/losses on intercompany transactions that are of a long-term investment nature (i.e., settlement is not planned or anticipated) are reported in the CTA component of OCI in the consolidated statements, similar to translation adjustments.",
+      "explanationJa": "長期投資的性格のグループ間外貨建取引（決済の予定がない）の為替差損益は、連結財務諸表上でOCIの累積換算調整勘定（CTA）に計上する。換算調整額と同じ扱い。",
+      "references": ["ASC 830-20-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-017",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Forward Contract - Hedge of Net Investment",
+      "stem": "A U.S. parent enters a forward contract to sell £5,000,000 to hedge its net investment in a British subsidiary. At year-end, the forward contract has a gain of $120,000 (effective portion $115,000, ineffective portion $5,000). Under ASC 815, how are these amounts reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Effective portion $115,000 in CTA (OCI); ineffective portion $5,000 in earnings"
+        },
+        { "label": "B", "text": "Entire $120,000 in CTA (OCI)" },
+        { "label": "C", "text": "Entire $120,000 in earnings" },
+        {
+          "label": "D",
+          "text": "Effective portion $115,000 in earnings; ineffective portion $5,000 in OCI"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-35-35-1, for a net investment hedge using a derivative, the effective portion ($115,000) is recorded in CTA within OCI. The ineffective portion ($5,000) is recognized immediately in earnings. This is consistent with the treatment of other hedging relationships.",
+      "explanationJa": "デリバティブによる純投資ヘッジでは、有効部分$115,000はOCIのCTAに計上し、非有効部分$5,000は即時に損益認識する。他のヘッジ関係と同様の取扱い。",
+      "references": ["ASC 815-35-35-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-018",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Foreign Currency - Deferred Tax Effect",
+      "stem": "A U.S. parent recognizes a $200,000 cumulative translation loss in OCI from translating a foreign subsidiary. The tax rate is 25%. What is the deferred tax effect?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A deferred tax asset of $50,000 recognized in OCI"
+        },
+        {
+          "label": "B",
+          "text": "No deferred tax effect because translation adjustments are permanent"
+        },
+        {
+          "label": "C",
+          "text": "A deferred tax liability of $50,000 in earnings"
+        },
+        { "label": "D", "text": "A deferred tax asset of $50,000 in earnings" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Translation adjustments in OCI create temporary differences that result in deferred tax effects. A CTA loss creates a deferred tax asset = $200,000 × 25% = $50,000. Under ASC 740-20-45-11, the deferred tax effect of items in OCI is also reported in OCI (intraperiod tax allocation).",
+      "explanationJa": "OCIの換算調整額は一時差異を生じ、繰延税金効果が発生する。CTA損失による繰延税金資産 = $200,000 × 25% = $50,000。期間内税効果配分により、OCI項目の繰延税金効果もOCIに計上する。",
+      "references": ["ASC 740-20-45-11", "ASC 830-10-45-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-019",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Diluted EPS - Options Anti-Dilution Test",
+      "stem": "A company has 300,000 weighted-average shares, net income of $600,000, and 20,000 stock options with an exercise price of $60. The average market price is $45. What effect do the options have on diluted EPS?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The options are anti-dilutive and excluded from diluted EPS"
+        },
+        {
+          "label": "B",
+          "text": "The options add 20,000 shares to the denominator"
+        },
+        {
+          "label": "C",
+          "text": "The options add 6,667 shares to the denominator"
+        },
+        {
+          "label": "D",
+          "text": "The options reduce net income by the option premium"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the treasury stock method, options are anti-dilutive when the exercise price exceeds the average market price (out-of-the-money). Here, exercise price $60 > market price $45, so the assumed repurchase of shares would exceed shares issued, resulting in a net decrease in shares (anti-dilutive). Anti-dilutive securities are excluded from diluted EPS.",
+      "explanationJa": "自己株式法では、行使価格が平均市場価格を上回る（アウト・オブ・ザ・マネー）オプションは逆希薄化的。行使価格$60 > 市場価格$45のため、買戻し株数が発行株数を上回り、株数が純減する。逆希薄化的な証券は希薄化EPSから除外する。",
+      "references": ["ASC 260-10-45-17"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-020",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Two-Class Method for EPS",
+      "stem": "A company has 100,000 common shares and 20,000 participating preferred shares that participate in dividends on a 1:1 basis with common. Net income is $360,000 and no dividends are declared. Under the two-class method, what is basic EPS?",
+      "choices": [
+        { "label": "A", "text": "$3.00" },
+        { "label": "B", "text": "$3.60" },
+        { "label": "C", "text": "$2.57" },
+        { "label": "D", "text": "$4.50" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the two-class method (ASC 260-10-45-60A), undistributed earnings are allocated to each class based on participation rights. Total shares = 100,000 + 20,000 = 120,000. Common allocation = $360,000 × (100,000/120,000) = $300,000. Basic EPS = $300,000 / 100,000 = $3.00.",
+      "explanationJa": "二クラス法では、未分配利益を参加権に基づき各クラスに配分する。総株式数 = 100,000 + 20,000 = 120,000。普通株式への配分 = $360,000 × (100,000/120,000) = $300,000。基本EPS = $300,000 / 100,000 = $3.00。",
+      "references": ["ASC 260-10-45-60A"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-021",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "EPS - Preferred Dividends Deduction",
+      "stem": "A company has net income of $500,000 and 200,000 weighted-average common shares. It has 10,000 shares of noncumulative preferred stock ($100 par, 5% dividend). No preferred dividends were declared during the year. What is basic EPS?",
+      "choices": [
+        { "label": "A", "text": "$2.50" },
+        { "label": "B", "text": "$2.25" },
+        { "label": "C", "text": "$2.00" },
+        { "label": "D", "text": "$2.75" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "For noncumulative preferred stock, only declared dividends are subtracted from net income in the EPS calculation. Since no dividends were declared, the full net income is available to common shareholders. Basic EPS = $500,000 / 200,000 = $2.50. This differs from cumulative preferred, where dividends are deducted regardless of declaration.",
+      "explanationJa": "非累積的優先株の場合、宣言された配当金のみをEPS計算で純利益から控除する。配当未宣言のため、純利益全額が普通株主に帰属する。基本EPS = $500,000 / 200,000 = $2.50。累積的優先株とは異なり、宣言の有無に関係なく控除する点に注意。",
+      "references": ["ASC 260-10-45-11"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-022",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Diluted EPS - Warrants",
+      "stem": "A company has net income of $1,200,000 and 500,000 weighted-average shares. It has 50,000 warrants with an exercise price of $30. The average market price is $50. What are the incremental shares from the warrants?",
+      "choices": [
+        { "label": "A", "text": "20,000 shares" },
+        { "label": "B", "text": "50,000 shares" },
+        { "label": "C", "text": "30,000 shares" },
+        { "label": "D", "text": "15,000 shares" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Treasury stock method: Proceeds = 50,000 × $30 = $1,500,000. Shares repurchased = $1,500,000 / $50 = 30,000. Incremental shares = 50,000 − 30,000 = 20,000. Since exercise price ($30) < market price ($50), the warrants are dilutive.",
+      "explanationJa": "自己株式法：払込金 = 50,000 × $30 = $1,500,000。買戻し株数 = $1,500,000 / $50 = 30,000株。増加株数 = 50,000 - 30,000 = 20,000株。行使価格$30 < 市場価格$50のため希薄化効果あり。",
+      "references": ["ASC 260-10-45-22"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-023",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Complex Capital Structure Disclosure",
+      "stem": "Under ASC 260, which companies are required to present diluted EPS on the face of the income statement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Public companies with complex capital structures (those with potentially dilutive securities)"
+        },
+        { "label": "B", "text": "All companies, whether public or private" },
+        {
+          "label": "C",
+          "text": "Only companies with market capitalization above $100 million"
+        },
+        {
+          "label": "D",
+          "text": "Only companies with outstanding convertible debt"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 260-10-45-2, entities with publicly traded common stock or potential common stock must present both basic and diluted EPS on the face of the income statement. Private companies are not required to present EPS. A complex capital structure includes convertible securities, options, warrants, or other potentially dilutive instruments.",
+      "explanationJa": "普通株式または潜在的普通株式が公開取引されている企業は、損益計算書上に基本EPSと希薄化EPSの両方を表示する必要がある。非公開企業にはEPS表示義務はない。複雑な資本構成には転換証券、オプション、ワラント等が含まれる。",
+      "references": ["ASC 260-10-45-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-024",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "EPS - Discontinued Operations",
+      "stem": "A company reports income from continuing operations of $800,000 and a loss from discontinued operations of $200,000. It has 400,000 weighted-average shares and no preferred stock. How should EPS be presented?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "EPS from continuing operations $2.00; EPS from discontinued operations $(0.50); total EPS $1.50"
+        },
+        { "label": "B", "text": "Only total EPS of $1.50" },
+        { "label": "C", "text": "EPS from continuing operations $2.00 only" },
+        {
+          "label": "D",
+          "text": "EPS from continuing operations $1.50; no separate discontinued operations EPS"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 260-10-45-3, EPS must be presented for income from continuing operations AND for net income on the face of the income statement. EPS for discontinued operations must also be presented either on the face or in the notes. Continuing: $800,000/400,000 = $2.00. Discontinued: -$200,000/400,000 = -$0.50. Total: $1.50.",
+      "explanationJa": "EPSは継続事業からの利益と純利益の両方について損益計算書上に表示する。非継続事業のEPSも損益計算書上または注記に表示が必要。継続事業：$800,000/400,000 = $2.00。非継続事業：-$200,000/400,000 = -$0.50。合計：$1.50。",
+      "references": ["ASC 260-10-45-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-025",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Foreign Currency - Intra-Entity Transaction",
+      "stem": "A U.S. parent sells inventory to its British subsidiary for £500,000 when the rate is $1.30/£. This is a short-term trade receivable (settlement expected within 60 days). At year-end, the rate is $1.35/£. How is the exchange gain/loss reported in the consolidated statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Exchange gain of $25,000 in earnings (the intra-entity balance is eliminated but the exchange effect is retained)"
+        },
+        {
+          "label": "B",
+          "text": "No exchange effect because intra-entity transactions are eliminated"
+        },
+        { "label": "C", "text": "Exchange gain of $25,000 in OCI" },
+        {
+          "label": "D",
+          "text": "Exchange gain deferred until the inventory is sold to third parties"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-20-35-1, exchange gains/losses on intercompany foreign currency transactions that are of a trading nature (short-term) are included in earnings even in consolidated statements. The intercompany balances are eliminated, but the exchange gain/loss is real and remains. Gain = £500,000 × ($1.35 − $1.30) = $25,000.",
+      "explanationJa": "短期的な取引性のグループ間外貨建取引の為替差損益は、連結財務諸表でも損益に含める。グループ間残高は消去されるが、為替差損益は実在するため残る。利益 = £500,000 × ($1.35 - $1.30) = $25,000。",
+      "references": ["ASC 830-20-35-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-026",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Translation - Equity Method Investee",
+      "stem": "A U.S. company has a 30% equity method investment in a Japanese company (functional currency = yen). How does the U.S. company report the translation adjustment from the investee?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The investor's proportionate share of the investee's CTA is reported in the investor's OCI"
+        },
+        {
+          "label": "B",
+          "text": "The translation adjustment is reported in the investor's earnings"
+        },
+        {
+          "label": "C",
+          "text": "No translation adjustment is reported; the investment is carried at cost"
+        },
+        {
+          "label": "D",
+          "text": "The full CTA of the investee is included in the investor's OCI"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-10-45-19, when an investor applies the equity method to a foreign investee, the investor recognizes its proportionate share of the investee's translation adjustment in OCI. Only the investor's percentage (30%) of the CTA is included, not the full amount.",
+      "explanationJa": "持分法適用の外国投資先がある場合、投資者は被投資者の換算調整額のうち持分割合（30%）をOCIに認識する。被投資者のCTAの全額ではなく、投資者の持分割合分のみ含める。",
+      "references": ["ASC 830-10-45-19"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-027",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Remeasurement Gain/Loss - Income Statement Location",
+      "stem": "Where are remeasurement gains and losses reported on the income statement under ASC 830?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Included in determining net income for the period, typically in other income/expense"
+        },
+        { "label": "B", "text": "In other comprehensive income (OCI)" },
+        { "label": "C", "text": "Below net income as a separate item" },
+        { "label": "D", "text": "As an extraordinary item" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-10-45-17, remeasurement gains and losses (from the temporal method) are included in determining net income for the period. They are typically reported in other income/expense or as a separate line item within the income statement, not in OCI.",
+      "explanationJa": "再測定損益（テンポラル法による）は当期の純利益の決定に含まれる。通常は営業外収益・費用または損益計算書上の独立項目として報告し、OCIには計上しない。",
+      "references": ["ASC 830-10-45-17"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-028",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Basic EPS - Multiple Classes of Common",
+      "stem": "A company has two classes of common stock: Class A (400,000 shares, full voting and dividend rights) and Class B (100,000 shares, entitled to 50% of per-share dividends of Class A). Net income is $600,000. No dividends are declared. What is Class A basic EPS under the two-class method?",
+      "choices": [
+        { "label": "A", "text": "$1.33" },
+        { "label": "B", "text": "$1.50" },
+        { "label": "C", "text": "$1.20" },
+        { "label": "D", "text": "$1.00" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the two-class method, undistributed earnings are allocated based on participation rights. Class B gets 50% per share vs Class A: equivalent shares = 100,000 × 0.5 = 50,000. Total equivalent shares = 400,000 + 50,000 = 450,000. Class A allocation = $600,000 × (400,000/450,000) = $533,333. EPS = $533,333/400,000 = $1.33.",
+      "explanationJa": "二クラス法では、未分配利益を参加権に基づき配分する。B種はA種の50%の配当権を持つため、等価株数 = 100,000 × 0.5 = 50,000。等価総株数 = 400,000 + 50,000 = 450,000。A種配分 = $600,000 × (400,000/450,000) = $533,333。EPS = $533,333/400,000 = $1.33。",
+      "references": ["ASC 260-10-45-60A"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-029",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "EPS - Retrospective Adjustment for Stock Split",
+      "stem": "A company had 200,000 shares outstanding all of Year 1 and reported EPS of $5.00. On July 1, Year 2, the company executes a 2-for-1 stock split. How is Year 1 EPS restated for comparative presentation?",
+      "choices": [
+        { "label": "A", "text": "$2.50" },
+        { "label": "B", "text": "$5.00" },
+        { "label": "C", "text": "$10.00" },
+        { "label": "D", "text": "$3.33" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 260-10-55-12, stock splits are applied retroactively to all prior periods for EPS computation. Year 1 adjusted shares = 200,000 × 2 = 400,000. Restated Year 1 EPS = $1,000,000 (net income) / 400,000 = $2.50. The net income numerator does not change.",
+      "explanationJa": "株式分割はEPS計算で全ての過去期間に遡及適用する。Year 1の調整後株数 = 200,000 × 2 = 400,000株。修正再表示後のEPS = $1,000,000（純利益）/ 400,000 = $2.50。分子の純利益は変更しない。",
+      "references": ["ASC 260-10-55-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-030",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Functional Currency Change",
+      "stem": "A foreign subsidiary's functional currency changes from the local currency to the U.S. dollar due to a change in economic circumstances. Under ASC 830, how is this change accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Prospectively from the date of change; translated balances at the change date become the new accounting basis"
+        },
+        {
+          "label": "B",
+          "text": "Retroactively by restating all prior periods"
+        },
+        {
+          "label": "C",
+          "text": "The CTA balance is immediately reclassified to earnings"
+        },
+        {
+          "label": "D",
+          "text": "The subsidiary must prepare completely new opening balances"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-10-45-7, a change in functional currency is accounted for prospectively. The translated amounts for nonmonetary assets at the date of change become the historical cost basis for subsequent remeasurement. The CTA balance in AOCI at the change date remains in equity until disposal of the subsidiary.",
+      "explanationJa": "機能通貨の変更は変更日から将来に向けて適用する。変更日時点の換算後の非貨幣性資産の金額が、以後の再測定における取得原価となる。変更日のAOCIのCTA残高は、子会社の処分まで資本に残る。過去期間の修正再表示は行わない。",
+      "references": ["ASC 830-10-45-7"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }

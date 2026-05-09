@@ -2,7 +2,7 @@
   "id": "far-liabilities",
   "name": "Liabilities",
   "topic": "Liabilities",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "liab-001",
@@ -409,6 +409,444 @@
       "explanation": "Under ASC 450-20-30-1, when a loss is probable and a range of loss exists, the best estimate within the range should be accrued. If no amount within the range is a better estimate than any other, the minimum of the range is accrued. Here, a best estimate of $350,000 exists, so $350,000 is accrued.",
       "explanationJa": "損失がprobableで損失の範囲が存在する場合、範囲内の最善の見積額を計上する。範囲内のいずれの金額も他より適切な見積もりでない場合は、範囲の最小値を計上する。本問では最善の見積もり$350,000が存在するため、$350,000を計上する。",
       "references": ["ASC 450-20-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-021",
+      "topic": "Liabilities",
+      "subtopic": "Fair Value Option for Liabilities",
+      "stem": "Entity A elects the fair value option under ASC 825 for a $1,000,000 note payable. At year-end, the note's fair value is $950,000 due to changes in Entity A's own credit risk. Under ASU 2016-01, where is the $50,000 change recognized?",
+      "choices": [
+        { "label": "A", "text": "In net income as a gain" },
+        { "label": "B", "text": "In other comprehensive income (OCI)" },
+        {
+          "label": "C",
+          "text": "As a reduction to the liability with no income effect"
+        },
+        { "label": "D", "text": "In retained earnings directly" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASU 2016-01 (ASC 825-10-45-5), for liabilities measured at fair value under the fair value option, changes in fair value attributable to instrument-specific credit risk are recognized in OCI, not net income. Other changes in fair value (e.g., from market interest rate changes) continue to be recognized in net income.",
+      "explanationJa": "ASU 2016-01（ASC 825-10-45-5）により、公正価値オプションで測定される負債について、金融商品固有の信用リスクに起因する公正価値変動はOCIで認識し、純利益では認識しない。市場金利変動等によるその他の公正価値変動は引き続き純利益で認識する。",
+      "references": ["ASC 825-10-45-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-022",
+      "topic": "Liabilities",
+      "subtopic": "Gain Contingency",
+      "stem": "Entity B has filed a lawsuit against a competitor for patent infringement. Legal counsel advises that a favorable outcome is probable and the expected recovery is $2,000,000. Under ASC 450, how should Entity B account for this gain contingency?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a receivable and gain of $2,000,000"
+        },
+        {
+          "label": "B",
+          "text": "Recognize a receivable of $2,000,000 and credit OCI"
+        },
+        {
+          "label": "C",
+          "text": "Do not recognize the gain; disclose the contingency in the footnotes"
+        },
+        { "label": "D", "text": "Recognize $2,000,000 as deferred revenue" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 450-30-25-1, gain contingencies are not recognized until realized. Even when a favorable outcome is probable, the gain should not be recorded. The entity should disclose the nature of the contingency in the notes, but avoid misleading implications about the likelihood of realization. Gain contingencies follow a more conservative approach than loss contingencies.",
+      "explanationJa": "ASC 450-30-25-1により、利得の偶発事象は実現するまで認識しない。有利な結果がprobableであっても利得を計上してはならない。偶発事象の性質を注記で開示するが、実現の可能性について誤解を招く表現を避ける。利得の偶発事象は損失の偶発事象より保守的なアプローチに従う。",
+      "references": ["ASC 450-30-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-023",
+      "topic": "Liabilities",
+      "subtopic": "Convertible Debt - If-Converted Method",
+      "stem": "Entity C issues convertible bonds with a face value of $5,000,000 at par, paying 4% interest. Each $1,000 bond converts into 20 common shares. Entity C has 500,000 shares outstanding and net income of $2,000,000. The tax rate is 25%. What is diluted EPS?",
+      "choices": [
+        { "label": "A", "text": "$3.63" },
+        { "label": "B", "text": "$4.00" },
+        { "label": "C", "text": "$3.75" },
+        { "label": "D", "text": "$3.50" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "If-converted method: Add back after-tax interest = $5,000,000 × 4% × (1 − 25%) = $150,000. Adjusted income = $2,000,000 + $150,000 = $2,150,000. Additional shares = 5,000 bonds × 20 = 100,000 shares. Diluted EPS = $2,150,000 / (500,000 + 100,000) = $2,150,000 / 600,000 = $3.583. Since this is less than basic EPS ($4.00), the bonds are dilutive. Diluted EPS ≈ $3.58.",
+      "explanationJa": "転換仮定法：税引後利息を加算 = $5,000,000 × 4% × (1 − 25%) = $150,000。調整後利益 = $2,000,000 + $150,000 = $2,150,000。追加株式数 = 5,000社債 × 20 = 100,000株。希薄化後EPS = $2,150,000 / 600,000 = $3.58。基本EPS($4.00)未満のため希薄化効果あり。",
+      "references": ["ASC 260-10-45-40"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-024",
+      "topic": "Liabilities",
+      "subtopic": "Notes Payable - Imputed Interest",
+      "stem": "Entity D issues a $500,000, 3-year, non-interest-bearing note payable for equipment. The market interest rate for similar notes is 6%. What is the present value of the note and the initial discount?",
+      "choices": [
+        { "label": "A", "text": "PV: $419,810; Discount: $80,190" },
+        { "label": "B", "text": "PV: $500,000; Discount: $0" },
+        { "label": "C", "text": "PV: $470,000; Discount: $30,000" },
+        { "label": "D", "text": "PV: $450,000; Discount: $50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 835-30-25-2, when a note does not bear a stated interest rate (or the rate is unreasonable), interest must be imputed at the market rate. PV = $500,000 × PV factor (6%, 3 years) = $500,000 × 0.83962 = $419,810. Discount = $500,000 − $419,810 = $80,190. The equipment is recorded at the PV amount.",
+      "explanationJa": "ASC 835-30-25-2により、約束手形に利率が記載されていない場合（または利率が不合理な場合）、市場利率で利息を帰属させる。PV = $500,000 × PV係数(6%, 3年) = $500,000 × 0.83962 = $419,810。割引 = $500,000 − $419,810 = $80,190。設備はPV額で計上する。",
+      "references": ["ASC 835-30-25-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-025",
+      "topic": "Liabilities",
+      "subtopic": "Serial Bonds - Bonds-Outstanding Method",
+      "stem": "Entity E issues $3,000,000 of serial bonds maturing $1,000,000 per year for 3 years. Total premium is $90,000. Using the bonds-outstanding method, what is the premium amortization in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$45,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$15,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bonds-outstanding method allocates premium based on the ratio of bonds outstanding each year. Year 1: $3,000,000; Year 2: $2,000,000; Year 3: $1,000,000. Total = $6,000,000. Year 1 amortization = $90,000 × ($3,000,000 / $6,000,000) = $90,000 × 50% = $45,000.",
+      "explanationJa": "社債残高法は各年の社債残高の比率に基づきプレミアムを配分する。Year 1: $3,000,000; Year 2: $2,000,000; Year 3: $1,000,000。合計 = $6,000,000。Year 1の償却 = $90,000 × ($3,000,000 / $6,000,000) = $90,000 × 50% = $45,000。",
+      "references": ["ASC 835-30-35"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-026",
+      "topic": "Liabilities",
+      "subtopic": "Callable Debt - Balance Sheet Classification",
+      "stem": "Entity F has a $2,000,000 long-term note payable with a call provision allowing the lender to demand repayment at any time. At December 31, Year 1, the lender has not called the note. How should Entity F classify this debt?",
+      "choices": [
+        { "label": "A", "text": "As a current liability" },
+        { "label": "B", "text": "As a long-term liability" },
+        { "label": "C", "text": "Split between current and long-term" },
+        {
+          "label": "D",
+          "text": "As a current liability unless a waiver is obtained"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 470-10-45-2, debt that is callable by the creditor at any time (demand loans) must be classified as a current liability, regardless of the lender's stated intention or the probability of the call being exercised. The entity cannot assume the debt will remain outstanding when the lender has the contractual right to demand repayment.",
+      "explanationJa": "ASC 470-10-45-2により、債権者がいつでも償還請求可能な債務（デマンドローン）は、貸し手の意図や請求行使の可能性にかかわらず流動負債に分類しなければならない。貸し手が契約上の償還請求権を有する場合、債務が存続すると仮定することはできない。",
+      "references": ["ASC 470-10-45-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-027",
+      "topic": "Liabilities",
+      "subtopic": "Debt Modification vs Extinguishment (10% Test)",
+      "stem": "Entity G restructures a $1,000,000 loan. The original loan had a 5% interest rate with 5 years remaining. The modified loan has a 4% interest rate with 5 years remaining. The present value of cash flows under the modified terms differs from the original by 8%. How should this be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a debt extinguishment with gain/loss recognition"
+        },
+        {
+          "label": "B",
+          "text": "As a debt modification — adjust the effective interest rate prospectively"
+        },
+        {
+          "label": "C",
+          "text": "As a debt extinguishment only if the creditor changes"
+        },
+        { "label": "D", "text": "No accounting treatment is required" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 470-50-40-10 (the 10% test), if the present value of cash flows under the new terms differs by less than 10% from the original, the transaction is a modification, not an extinguishment. Since 8% < 10%, Entity G accounts for this as a modification. Any fees paid are amortized as an adjustment to the effective interest rate.",
+      "explanationJa": "ASC 470-50-40-10（10%テスト）により、新条件のキャッシュ・フローの現在価値が原条件と10%未満の差異であれば、取引は消滅ではなく修正である。8% < 10%のため、Entity Gはこれを修正として処理する。支払手数料は実効金利の調整として償却する。",
+      "references": ["ASC 470-50-40-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-028",
+      "topic": "Liabilities",
+      "subtopic": "Compensated Absences",
+      "stem": "Entity H's employees accumulate unused vacation days that vest (employees are paid for unused vacation upon termination). At year-end, employees have accumulated 2,000 unused hours at an average rate of $30 per hour. What liability should Entity H accrue?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$0 because the vacation has not been taken" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "The amount depends on expected turnover" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 710-10-25-1, an employer must accrue a liability for compensated absences when: (1) the obligation is attributable to services already rendered, (2) the rights vest or accumulate, (3) payment is probable, and (4) the amount can be reasonably estimated. Liability = 2,000 hours × $30 = $60,000.",
+      "explanationJa": "ASC 710-10-25-1により、(1) 義務が既に提供されたサービスに帰属、(2) 権利が確定または累積、(3) 支払いがprobable、(4) 金額が合理的に見積可能な場合、有給休暇の負債を計上する。負債 = 2,000時間 × $30 = $60,000。",
+      "references": ["ASC 710-10-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-029",
+      "topic": "Liabilities",
+      "subtopic": "Unasserted Claims",
+      "stem": "Entity J's legal counsel advises that a regulatory agency is likely to assert a claim for environmental violations, and if asserted, a loss is probable. The estimated loss is $500,000. Under ASC 450, should Entity J accrue a liability?",
+      "choices": [
+        { "label": "A", "text": "No, because the claim has not been asserted" },
+        {
+          "label": "B",
+          "text": "Yes, if assertion is probable and the loss is probable and estimable"
+        },
+        {
+          "label": "C",
+          "text": "Yes, but only disclose in footnotes without accruing"
+        },
+        {
+          "label": "D",
+          "text": "No, until the regulatory agency takes formal action"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 450-20-25-3, for unasserted claims, the entity must first assess the probability that the claim will be asserted. If assertion is probable, the entity then applies the normal loss contingency criteria (probable and estimable). Since both conditions are met, Entity J should accrue $500,000.",
+      "explanationJa": "ASC 450-20-25-3により、未主張の請求については、まず請求が主張される可能性を評価する。主張がprobableであれば、通常の損失偶発事象の基準（probableかつ見積可能）を適用する。両条件が満たされるため、Entity Jは$500,000を計上すべきである。",
+      "references": ["ASC 450-20-25-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-030",
+      "topic": "Liabilities",
+      "subtopic": "Premium Liability (Customer Loyalty Programs)",
+      "stem": "Entity K sells cereal boxes for $5 each and includes a coupon. Customers can redeem 10 coupons for a toy costing Entity K $3. Entity K estimates 60% of coupons will be redeemed. In Year 1, Entity K sells 100,000 boxes. How many toys should Entity K expect to distribute, and what premium liability should be recorded?",
+      "choices": [
+        { "label": "A", "text": "6,000 toys; Liability of $18,000" },
+        { "label": "B", "text": "10,000 toys; Liability of $30,000" },
+        { "label": "C", "text": "6,000 toys; Liability of $30,000" },
+        { "label": "D", "text": "10,000 toys; Liability of $18,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Coupons issued = 100,000. Expected redemptions = 100,000 × 60% = 60,000 coupons. Toys expected = 60,000 / 10 = 6,000 toys. Premium liability = 6,000 × $3 = $18,000. The liability is adjusted as coupons are redeemed and estimates are revised.",
+      "explanationJa": "発行クーポン = 100,000枚。予想行使 = 100,000 × 60% = 60,000枚。予想おもちゃ数 = 60,000 / 10 = 6,000個。景品負債 = 6,000 × $3 = $18,000。負債はクーポンの行使と見積りの改訂に応じて調整する。",
+      "references": ["ASC 605-50"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-031",
+      "topic": "Liabilities",
+      "subtopic": "Restructuring Reserve",
+      "stem": "Entity L announces a plan to close a facility and terminate 200 employees. Under ASC 420, when should Entity L recognize the one-time termination benefit liability?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "When the plan is approved by the board of directors"
+        },
+        {
+          "label": "B",
+          "text": "When the plan is communicated to affected employees and meets the ASC 420 criteria"
+        },
+        { "label": "C", "text": "When the employees are actually terminated" },
+        { "label": "D", "text": "When severance payments begin" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 420-10-25-4, a liability for one-time termination benefits is recognized when the plan of termination has been communicated to the employees and the plan meets all criteria (management commits, identifies employees, establishes benefits, communicates the plan, and it is unlikely the plan will be significantly changed or withdrawn).",
+      "explanationJa": "ASC 420-10-25-4により、一時的な終了給付の負債は、終了計画が従業員に通知され、すべての基準を満たした時点（経営者がコミットし、従業員を特定し、給付を設定し、計画を通知し、計画の大幅な変更・撤回の可能性が低い）で認識する。",
+      "references": ["ASC 420-10-25-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-032",
+      "topic": "Liabilities",
+      "subtopic": "Bond Issuance Between Interest Dates",
+      "stem": "On April 1, Entity M issues $1,000,000 face value bonds dated January 1, with a 6% stated rate and semiannual interest payments on June 30 and December 31. The bonds are issued at par plus accrued interest. What total cash does Entity M receive on April 1?",
+      "choices": [
+        { "label": "A", "text": "$1,000,000" },
+        { "label": "B", "text": "$1,015,000" },
+        { "label": "C", "text": "$1,030,000" },
+        { "label": "D", "text": "$985,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bonds issued at par = $1,000,000. Accrued interest from January 1 to April 1 = 3 months = $1,000,000 × 6% × 3/12 = $15,000. Total cash received = $1,000,000 + $15,000 = $1,015,000. On June 30, Entity M will pay the full semiannual interest of $30,000 but will have only earned 3 months of interest since issuance.",
+      "explanationJa": "額面での発行 = $1,000,000。1月1日から4月1日までの経過利息 = 3ヶ月 = $1,000,000 × 6% × 3/12 = $15,000。受取現金合計 = $1,000,000 + $15,000 = $1,015,000。6月30日にEntity Mは半期利息$30,000全額を支払うが、発行後の利息は3ヶ月分のみ発生。",
+      "references": ["ASC 835-30-25"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-033",
+      "topic": "Liabilities",
+      "subtopic": "Variable-Rate Debt",
+      "stem": "Entity N has a $5,000,000 variable-rate note payable that resets quarterly based on SOFR + 2%. At the beginning of Q1, SOFR is 4%. During Q1, Entity N accrues interest of $75,000. What is the annualized interest rate used?",
+      "choices": [
+        { "label": "A", "text": "6%" },
+        { "label": "B", "text": "4%" },
+        { "label": "C", "text": "2%" },
+        { "label": "D", "text": "8%" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Interest for Q1 = $5,000,000 × rate × 1/4 = $75,000. Solving: rate = $75,000 × 4 / $5,000,000 = 6%. This equals SOFR (4%) + spread (2%) = 6%. Variable-rate debt is typically measured at the current rate each reset period without fair value adjustments (unless the fair value option is elected).",
+      "explanationJa": "Q1の利息 = $5,000,000 × 利率 × 1/4 = $75,000。利率 = $75,000 × 4 / $5,000,000 = 6%。SOFR(4%) + スプレッド(2%) = 6%。変動金利債務は通常、各リセット期間の現行利率で測定し、公正価値調整は行わない（公正価値オプションを選択しない限り）。",
+      "references": ["ASC 835-30-25"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-034",
+      "topic": "Liabilities",
+      "subtopic": "Loss Contingency Range Estimate",
+      "stem": "Entity P is involved in litigation where a loss is probable. The estimated range of loss is $100,000 to $400,000, with no amount in the range being a better estimate than any other. Under ASC 450, what amount should Entity P accrue?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$400,000" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 450-20-30-1, when a range of loss is estimated and no single amount within the range is a better estimate than any other, the minimum amount of the range ($100,000) is accrued. The entity should also disclose the nature of the contingency and that the loss could be as high as $400,000.",
+      "explanationJa": "ASC 450-20-30-1により、損失の範囲が見積もられ、範囲内のいずれの金額も他より適切な見積もりでない場合、範囲の最小値($100,000)を計上する。偶発事象の性質と損失が最大$400,000に達する可能性も開示すべきである。",
+      "references": ["ASC 450-20-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-035",
+      "topic": "Liabilities",
+      "subtopic": "Decommissioning Liability",
+      "stem": "Entity Q constructs a nuclear power plant and has a legal obligation to decommission it in 30 years. The estimated decommissioning cost in 30 years is $50,000,000. The credit-adjusted risk-free rate is 5%. Under ASC 410, at what amount is the asset retirement obligation (ARO) initially recorded?",
+      "choices": [
+        { "label": "A", "text": "$50,000,000" },
+        { "label": "B", "text": "$11,569,000 (approximate PV)" },
+        { "label": "C", "text": "$25,000,000" },
+        { "label": "D", "text": "$0 until decommissioning begins" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 410-20-25-1, an ARO is recognized at fair value when incurred (when the legal obligation arises). Fair value is estimated as the present value of expected future costs. PV = $50,000,000 / (1.05)^30 ≈ $11,569,000. The offsetting debit is to the related long-lived asset. The ARO accretes over time using the credit-adjusted risk-free rate.",
+      "explanationJa": "ASC 410-20-25-1により、AROは発生時（法的義務が生じた時点）に公正価値で認識する。公正価値は予想将来コストの現在価値として見積もる。PV = $50,000,000 / (1.05)^30 ≈ $11,569,000。対応する借方は関連する長期性資産に計上。AROは信用調整リスクフリーレートで増加する。",
+      "references": ["ASC 410-20-25-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-036",
+      "topic": "Liabilities",
+      "subtopic": "Debt Covenant Violation - Current Classification",
+      "stem": "Entity R has a $3,000,000 long-term loan with a debt covenant requiring a current ratio of at least 2.0. At December 31, Year 1, Entity R's current ratio is 1.8, violating the covenant. The lender has not waived the violation. How should Entity R classify the loan?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As long-term because the violation may be cured"
+        },
+        {
+          "label": "B",
+          "text": "As current unless a waiver is obtained from the lender before the financial statements are issued"
+        },
+        { "label": "C", "text": "Split between current and long-term" },
+        {
+          "label": "D",
+          "text": "As long-term with disclosure of the violation"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 470-10-45-1, if a debt covenant is violated at the balance sheet date and the debt becomes callable, the debt must be classified as current unless the creditor waives the violation for a period of at least one year (or operating cycle) from the balance sheet date before the financial statements are issued.",
+      "explanationJa": "ASC 470-10-45-1により、決算日に債務契約違反がありその債務が償還請求可能になった場合、貸借対照表日から少なくとも1年間（または営業循環期間）の権利放棄（ウェーバー）を財務諸表発行前に債権者から取得しない限り、流動負債に分類しなければならない。",
+      "references": ["ASC 470-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-037",
+      "topic": "Liabilities",
+      "subtopic": "Zero-Coupon Bond Carrying Value",
+      "stem": "Entity S issues a 10-year zero-coupon bond with a face value of $1,000,000 for $558,395. The effective interest rate is 6%. What is the carrying value of the bond at the end of Year 2?",
+      "choices": [
+        { "label": "A", "text": "$627,412" },
+        { "label": "B", "text": "$591,900" },
+        { "label": "C", "text": "$558,395" },
+        { "label": "D", "text": "$670,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Year 1: Interest expense = $558,395 × 6% = $33,504. No cash payment (zero-coupon). Carrying value Year 1 = $558,395 + $33,504 = $591,899. Year 2: Interest expense = $591,899 × 6% = $35,514. Carrying value Year 2 = $591,899 + $35,514 = $627,413 ≈ $627,412.",
+      "explanationJa": "Year 1：支払利息 = $558,395 × 6% = $33,504。現金支払いなし（ゼロクーポン）。Year 1末帳簿価額 = $558,395 + $33,504 = $591,899。Year 2：支払利息 = $591,899 × 6% = $35,514。Year 2末帳簿価額 = $591,899 + $35,514 = $627,413 ≈ $627,412。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-038",
+      "topic": "Liabilities",
+      "subtopic": "Warranty - Extended Service Contract",
+      "stem": "Entity T sells a product for $1,000 with a standard 1-year warranty (included) and an optional 2-year extended warranty for $200. How should the extended warranty revenue be recognized?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize $200 when the extended warranty is sold"
+        },
+        {
+          "label": "B",
+          "text": "Recognize $200 ratably over the 2-year extended warranty period"
+        },
+        {
+          "label": "C",
+          "text": "Recognize $200 at the end of the standard warranty period"
+        },
+        { "label": "D", "text": "Include the $200 in the product revenue" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-25-19, a separately priced extended warranty is a service-type warranty that represents a distinct performance obligation. The $200 is deferred and recognized as revenue ratably over the 2-year extended warranty period, as the entity stands ready to perform over that period.",
+      "explanationJa": "ASC 606-10-25-19により、別途価格設定された延長保証はサービス型保証であり、独立した履行義務を表す。$200は繰り延べられ、2年間の延長保証期間にわたり均等に収益として認識する。企業はその期間にわたり履行の準備ができている状態にあるためである。",
+      "references": ["ASC 606-10-25-19"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-039",
+      "topic": "Liabilities",
+      "subtopic": "Environmental Liability - Discounting",
+      "stem": "Entity U has an environmental cleanup obligation with estimated future cash flows of $10,000,000 expected to be paid in 5 years. The credit-adjusted risk-free rate is 4%. Under ASC 410, can Entity U discount this liability to present value?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, the ARO must be discounted to present value"
+        },
+        {
+          "label": "B",
+          "text": "No, environmental liabilities under ASC 450 are not discounted unless specified by other guidance"
+        },
+        {
+          "label": "C",
+          "text": "It depends on whether the obligation qualifies as an ARO under ASC 410"
+        },
+        {
+          "label": "D",
+          "text": "Yes, all contingent liabilities are discounted"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "If the environmental obligation meets the definition of an asset retirement obligation under ASC 410-20, it is measured at fair value (present value). If it is a contingent liability under ASC 450 (loss contingency), discounting is generally not permitted unless the timing is fixed or determinable and the liability is also addressed by ASC 410. The classification determines the measurement approach.",
+      "explanationJa": "環境上の義務がASC 410-20の資産除去債務の定義を満たす場合、公正価値（現在価値）で測定する。ASC 450の偶発負債（損失偶発事象）の場合、タイミングが固定または確定可能でASC 410の対象でもない限り、割引は一般に認められない。分類により測定アプローチが決まる。",
+      "references": ["ASC 410-20-25-1", "ASC 450-20-30"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-040",
+      "topic": "Liabilities",
+      "subtopic": "Commitment Disclosure Requirements",
+      "stem": "Entity V has a non-cancelable purchase commitment to buy raw materials at a fixed price of $2,000,000 over the next 3 years. At year-end, the market value of the committed purchases has declined to $1,700,000. What is required under US GAAP?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a loss of $300,000 and accrue a liability"
+        },
+        {
+          "label": "B",
+          "text": "Disclose the commitment in the footnotes only; no loss is recognized"
+        },
+        {
+          "label": "C",
+          "text": "Recognize a loss of $300,000 and disclose the commitment"
+        },
+        { "label": "D", "text": "No disclosure or recognition is needed" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 330-10-35-17, when a firm, non-cancelable purchase commitment exists and the market price has declined below the committed price, a loss should be recognized in the current period. The loss of $300,000 ($2,000,000 − $1,700,000) is accrued. Additionally, the nature of the commitment and the loss must be disclosed.",
+      "explanationJa": "ASC 330-10-35-17により、確定した解約不能の購入コミットメントが存在し、市場価格がコミットメント価格を下回った場合、当期に損失を認識する。損失$300,000（$2,000,000 − $1,700,000）を計上する。さらに、コミットメントの性質と損失を開示しなければならない。",
+      "references": ["ASC 330-10-35-17"],
       "difficulty": "intermediate",
       "source": "Original - CPA Exam Practice"
     }

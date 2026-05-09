@@ -2,7 +2,7 @@
   "id": "far-receivables",
   "name": "Receivables",
   "topic": "Receivables",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "rec-001",
@@ -416,6 +416,456 @@
       "explanationJa": "満期金額 = $100,000 + ($100,000 x 6% x 90/360) = $101,500。残り割引期間 = 90 - 30 = 60日。銀行割引 = $101,500 x 9% x 60/360 = $1,522.50（四捨五入$1,523）。受取額 = $101,500 - $1,523 = $99,978。",
       "references": ["ASC 835-30-35-2", "ASC 860-10-40-5"],
       "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-021",
+      "topic": "Receivables",
+      "subtopic": "Trade Receivables - Revenue Recognition Timing",
+      "stem": "Entity A ships goods FOB shipping point on December 28, Year 1. The customer receives the goods on January 3, Year 2. Payment terms are net 30 days. When should Entity A recognize the trade receivable?",
+      "choices": [
+        { "label": "A", "text": "December 28, Year 1" },
+        { "label": "B", "text": "January 3, Year 2" },
+        { "label": "C", "text": "January 27, Year 2 (30 days after receipt)" },
+        { "label": "D", "text": "December 31, Year 1" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under FOB shipping point, control transfers to the buyer when the goods are shipped. Revenue is recognized and a trade receivable is recorded on December 28, Year 1. The buyer bears the risk of loss during transit. The 30-day payment term begins from the invoice date.",
+      "explanationJa": "FOB出荷地点では、商品が出荷された時点で支配が買い手に移転する。12月28日（Year 1）に収益を認識し、売掛金を計上する。輸送中の損失リスクは買い手が負担する。30日の支払期限は請求日から起算する。",
+      "references": ["ASC 606-10-25-30"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-022",
+      "topic": "Receivables",
+      "subtopic": "Non-Trade Receivables Classification",
+      "stem": "Which of the following is classified as a non-trade receivable?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amounts due from customers for goods sold on credit"
+        },
+        { "label": "B", "text": "Advances to employees" },
+        {
+          "label": "C",
+          "text": "Accounts receivable from normal business operations"
+        },
+        { "label": "D", "text": "Credit card receivables from sales" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Non-trade receivables arise from transactions other than the normal sale of goods or services. Employee advances, interest receivable, insurance claims, tax refunds, and loans to officers are non-trade receivables. Trade receivables arise from the entity's primary revenue-generating activities.",
+      "explanationJa": "非貿易債権は通常の商品・サービスの販売以外の取引から生じる。従業員への前渡金、未収利息、保険金請求、税金還付、役員への貸付金は非貿易債権である。売掛金（貿易債権）は企業の主要な収益活動から生じる。",
+      "references": ["ASC 310-10-05"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-023",
+      "topic": "Receivables",
+      "subtopic": "Factoring Without Recourse",
+      "stem": "Entity B factors $500,000 of accounts receivable without recourse. The factor charges a 3% fee and withholds 5% as a holdback. What are the proceeds Entity B receives?",
+      "choices": [
+        { "label": "A", "text": "$460,000" },
+        { "label": "B", "text": "$475,000" },
+        { "label": "C", "text": "$485,000" },
+        { "label": "D", "text": "$500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Factoring fee = $500,000 × 3% = $15,000 (loss on sale). Holdback = $500,000 × 5% = $25,000 (recorded as a receivable from factor). Cash received = $500,000 − $15,000 − $25,000 = $460,000. Without recourse, Entity B has no further obligation if customers default, so the transfer qualifies as a sale (derecognition) under ASC 860.",
+      "explanationJa": "ファクタリング手数料 = $500,000 × 3% = $15,000（売却損）。リテンション = $500,000 × 5% = $25,000（ファクターからの債権として計上）。受取現金 = $500,000 − $15,000 − $25,000 = $460,000。ノンリコースのため、顧客がデフォルトしてもEntity Bに追加義務はなく、ASC 860に基づき売却（認識の中止）として処理する。",
+      "references": ["ASC 860-10-40-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-024",
+      "topic": "Receivables",
+      "subtopic": "Percentage of Sales Method",
+      "stem": "Entity C uses the percentage-of-sales method to estimate bad debt expense. Credit sales for the year are $4,000,000 and the historical bad debt rate is 1.5%. The beginning allowance balance is $45,000 and write-offs during the year were $50,000. What is the ending allowance balance?",
+      "choices": [
+        { "label": "A", "text": "$55,000" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$45,000" },
+        { "label": "D", "text": "$95,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bad debt expense = $4,000,000 × 1.5% = $60,000. Ending allowance = Beginning balance + Expense − Write-offs = $45,000 + $60,000 − $50,000 = $55,000. The percentage-of-sales method focuses on the income statement (matching expense to revenue) rather than the balance sheet allowance amount.",
+      "explanationJa": "貸倒費用 = $4,000,000 × 1.5% = $60,000。期末引当金残高 = 期首残高 + 費用 − 償却 = $45,000 + $60,000 − $50,000 = $55,000。売上高百分率法は貸借対照表の引当金額ではなく損益計算書（収益と費用の対応）に焦点を当てる。",
+      "references": ["ASC 326-20-30"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-025",
+      "topic": "Receivables",
+      "subtopic": "Transfer of Receivables - Control Criteria",
+      "stem": "Under ASC 860, which of the following conditions must be met for a transfer of receivables to qualify as a sale?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The transferor retains effective control over the transferred assets"
+        },
+        {
+          "label": "B",
+          "text": "The transferred assets are isolated from the transferor, the transferee has the right to pledge or exchange, and the transferor does not maintain effective control"
+        },
+        { "label": "C", "text": "The transfer is for cash consideration only" },
+        {
+          "label": "D",
+          "text": "The transferor guarantees collection of all receivables"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 860-10-40-5, a transfer qualifies as a sale when: (1) the assets are isolated from the transferor (even in bankruptcy), (2) the transferee has the right to pledge or exchange the assets, and (3) the transferor does not maintain effective control. If all three are met, the transferor derecognizes the receivables.",
+      "explanationJa": "ASC 860-10-40-5により、譲渡が売却として認められるには：(1) 資産が譲渡人から隔離（破産時でも）、(2) 譲受人が資産を担保提供または交換する権利を有する、(3) 譲渡人が実効的な支配を維持しない。3つすべてを満たす場合、譲渡人は売掛金の認識を中止する。",
+      "references": ["ASC 860-10-40-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-026",
+      "topic": "Receivables",
+      "subtopic": "Installment Receivables",
+      "stem": "Entity D sells land with a book value of $300,000 for $500,000, receiving $100,000 down and a $400,000 note payable in 4 annual installments. Entity D uses the installment method because collectibility is uncertain. What gross profit is recognized in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$80,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gross profit rate = ($500,000 − $300,000) / $500,000 = 40%. Year 1 collections = Down payment $100,000. Gross profit recognized = $100,000 × 40% = $40,000. Under the installment method, gross profit is deferred and recognized proportionally as cash is collected.",
+      "explanationJa": "粗利益率 = ($500,000 − $300,000) / $500,000 = 40%。Year 1の回収額 = 頭金$100,000。認識する粗利益 = $100,000 × 40% = $40,000。割賦販売法では粗利益は繰り延べられ、現金回収に比例して認識する。",
+      "references": ["ASC 606-10-55-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-027",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Below Market Rate",
+      "stem": "Entity E lends $200,000 to a customer at 2% interest (below market rate of 8%) for 3 years. Interest is paid annually. What is the initial carrying amount of the note receivable?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$169,039 (approximate PV at 8%)" },
+        { "label": "C", "text": "$188,000" },
+        { "label": "D", "text": "$212,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 835-30-25-2, when a note's stated rate is below market, the note is recorded at present value using the market rate. Annual cash payment = $200,000 × 2% = $4,000. PV of annuity ($4,000 for 3 years at 8%) + PV of principal ($200,000 at 8% for 3 years) ≈ $10,308 + $158,731 = $169,039. The $30,961 discount represents the below-market element.",
+      "explanationJa": "ASC 835-30-25-2により、約束手形の記載利率が市場利率を下回る場合、市場利率を使用した現在価値で計上する。年間現金受取 = $200,000 × 2% = $4,000。年金のPV（$4,000、3年、8%）+ 元本のPV（$200,000、8%、3年）≈ $10,308 + $158,731 = $169,039。$30,961の割引は低利率部分を表す。",
+      "references": ["ASC 835-30-25-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-028",
+      "topic": "Receivables",
+      "subtopic": "Securitization of Receivables",
+      "stem": "Entity F transfers $10,000,000 of receivables to a special purpose entity (SPE) and receives $9,500,000 in cash. Entity F retains a subordinated interest of $500,000 and a servicing asset of $100,000. The fair value of the receivables transferred was $10,000,000. What gain or loss does Entity F recognize?",
+      "choices": [
+        { "label": "A", "text": "Gain of $100,000" },
+        { "label": "B", "text": "Loss of $500,000" },
+        { "label": "C", "text": "No gain or loss" },
+        { "label": "D", "text": "Gain of $600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Proceeds = Cash ($9,500,000) + Retained subordinated interest ($500,000) + Servicing asset ($100,000) = $10,100,000. Carrying amount of receivables = $10,000,000. Gain = $10,100,000 − $10,000,000 = $100,000. The gain arises from the servicing asset, which has value due to the servicing fee exceeding adequate compensation.",
+      "explanationJa": "受取対価 = 現金($9,500,000) + 劣後持分($500,000) + サービシング資産($100,000) = $10,100,000。売掛金の帳簿価額 = $10,000,000。利得 = $10,100,000 − $10,000,000 = $100,000。利得はサービシング手数料が適切な報酬を超えることにより価値を有するサービシング資産から生じる。",
+      "references": ["ASC 860-20-40-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-029",
+      "topic": "Receivables",
+      "subtopic": "Concentration of Credit Risk Disclosure",
+      "stem": "Entity G derives 35% of its revenue from a single customer. Under ASC 825, what is required regarding concentration of credit risk?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No disclosure is required unless the customer defaults"
+        },
+        {
+          "label": "B",
+          "text": "Disclose the concentration, including the customer's identity and the amount of receivable at risk"
+        },
+        {
+          "label": "C",
+          "text": "Disclose the existence and nature of the concentration of credit risk but not necessarily the specific customer"
+        },
+        { "label": "D", "text": "Write down the receivable by 35%" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 825-10-50-20, entities must disclose concentrations of credit risk arising from all financial instruments. The disclosure should include information about the shared characteristic that identifies the concentration and the maximum amount of loss. The specific customer need not be identified, but the nature and extent of concentration must be disclosed.",
+      "explanationJa": "ASC 825-10-50-20により、すべての金融商品から生じる信用リスクの集中を開示しなければならない。集中を識別する共通の特性と損失の最大額に関する情報を含む。特定の顧客名を識別する必要はないが、集中の性質と範囲を開示しなければならない。",
+      "references": ["ASC 825-10-50-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-030",
+      "topic": "Receivables",
+      "subtopic": "Impaired Loan - Present Value Method",
+      "stem": "Entity H holds a loan with a carrying amount of $800,000 and a contractual interest rate of 10%. The loan is impaired, and Entity H expects to receive only $600,000 in 2 years. Using the present value method, what impairment loss should Entity H recognize?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$304,132" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$800,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 310-10-35-22, the impairment is measured as the difference between the loan's carrying amount and the present value of expected future cash flows discounted at the loan's original effective interest rate. PV = $600,000 / (1.10)^2 = $600,000 / 1.21 = $495,868. Impairment loss = $800,000 − $495,868 = $304,132.",
+      "explanationJa": "ASC 310-10-35-22により、減損はローンの帳簿価額と予想将来キャッシュ・フローの現在価値（ローンの当初実効金利で割引）の差額として測定する。PV = $600,000 / (1.10)^2 = $495,868。減損損失 = $800,000 − $495,868 = $304,132。",
+      "references": ["ASC 310-10-35-22"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-031",
+      "topic": "Receivables",
+      "subtopic": "Direct Write-Off vs Allowance Method",
+      "stem": "Under US GAAP, when is the direct write-off method acceptable for bad debt accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It is always acceptable as an alternative to the allowance method"
+        },
+        {
+          "label": "B",
+          "text": "Only when bad debts are immaterial to the financial statements"
+        },
+        {
+          "label": "C",
+          "text": "When the entity has fewer than 100 customers"
+        },
+        {
+          "label": "D",
+          "text": "The direct write-off method is never acceptable under US GAAP"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The direct write-off method is generally not acceptable under US GAAP because it violates the matching principle and may overstate receivables. However, when bad debts are immaterial relative to the entity's financial statements, the direct write-off method may be used as a practical accommodation. The allowance method is required when bad debts are material.",
+      "explanationJa": "直接償却法はUS GAAPでは対応原則に反し売掛金を過大計上する可能性があるため、一般に認められない。ただし、貸倒れが財務諸表に対して重要でない場合、実務上の便宜として直接償却法を使用できる。貸倒れが重要な場合は引当金法が必要である。",
+      "references": ["ASC 326-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-032",
+      "topic": "Receivables",
+      "subtopic": "Net Receivables Reporting",
+      "stem": "Entity J has gross accounts receivable of $1,500,000 and an allowance for doubtful accounts of $75,000. How should the receivables be presented on the balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gross receivables of $1,500,000 in current assets with the allowance shown separately"
+        },
+        {
+          "label": "B",
+          "text": "Net receivables of $1,425,000 in current assets"
+        },
+        { "label": "C", "text": "Either A or B is acceptable" },
+        {
+          "label": "D",
+          "text": "Gross receivables of $1,500,000 with no reference to the allowance"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 210-10-45, receivables may be presented either at gross amount with the allowance shown as a deduction, or at the net amount. Both presentations are acceptable. However, the allowance must be disclosed either on the face of the balance sheet or in the notes to the financial statements.",
+      "explanationJa": "ASC 210-10-45により、売掛金は総額で引当金を控除項目として表示するか、純額で表示するかのいずれも可能。両方の表示が認められる。ただし、引当金は貸借対照表の表面または財務諸表の注記のいずれかで開示しなければならない。",
+      "references": ["ASC 210-10-45"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-033",
+      "topic": "Receivables",
+      "subtopic": "Receivable from Related Party",
+      "stem": "Entity K has a $300,000 receivable from its CEO for a personal loan. Under US GAAP, how should this be reported?",
+      "choices": [
+        { "label": "A", "text": "As a trade receivable in current assets" },
+        {
+          "label": "B",
+          "text": "As a separate line item with related-party disclosure"
+        },
+        { "label": "C", "text": "Netted against the CEO's compensation" },
+        { "label": "D", "text": "As an investment" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 850-10-50-1, related-party transactions must be disclosed in the financial statements. A receivable from a related party (such as an officer or director) should be separately classified and not combined with trade receivables. The nature of the relationship, the amount, and terms must be disclosed.",
+      "explanationJa": "ASC 850-10-50-1により、関連当事者取引は財務諸表で開示しなければならない。関連当事者（役員や取締役等）からの債権は売掛金と合算せず、個別に分類する。関係の性質、金額、条件を開示しなければならない。",
+      "references": ["ASC 850-10-50-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-034",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Imputed Interest Rate",
+      "stem": "Entity L sells equipment with a fair value of $150,000 in exchange for a $180,000, 3-year, non-interest-bearing note. What is the approximate imputed interest rate?",
+      "choices": [
+        { "label": "A", "text": "6.3%" },
+        { "label": "B", "text": "10.0%" },
+        { "label": "C", "text": "16.7%" },
+        { "label": "D", "text": "20.0%" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 835-30-25-7, when the fair value of the consideration is known, the discount rate is imputed. PV factor = $150,000 / $180,000 = 0.8333. For 3 years: (1 + r)^3 = 1 / 0.8333 = 1.2. r = 1.2^(1/3) − 1 ≈ 0.0627 ≈ 6.3%. The note is recorded at $150,000 and the discount of $30,000 is amortized over 3 years.",
+      "explanationJa": "ASC 835-30-25-7により、対価の公正価値が既知の場合、割引率を帰属させる。PV係数 = $150,000 / $180,000 = 0.8333。3年間：(1 + r)^3 = 1 / 0.8333 = 1.2。r = 1.2^(1/3) − 1 ≈ 6.3%。手形は$150,000で計上し、$30,000のディスカウントを3年にわたり償却する。",
+      "references": ["ASC 835-30-25-7"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-035",
+      "topic": "Receivables",
+      "subtopic": "Customer Deposit Offset",
+      "stem": "Entity M receives a $50,000 advance deposit from a customer before delivering goods. After delivery, the total invoice is $200,000. What is the net accounts receivable from this customer?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$250,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The $50,000 advance was initially recorded as a contract liability (unearned revenue). Upon delivery and revenue recognition of $200,000, the contract liability of $50,000 is applied against the receivable. Net accounts receivable = $200,000 − $50,000 = $150,000.",
+      "explanationJa": "$50,000の前受金は当初、契約負債（前受収益）として計上。商品引渡しと$200,000の収益認識時に、契約負債$50,000を売掛金と相殺する。正味売掛金 = $200,000 − $50,000 = $150,000。",
+      "references": ["ASC 606-10-45-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-036",
+      "topic": "Receivables",
+      "subtopic": "Receivable Turnover Ratio",
+      "stem": "Entity N has net credit sales of $6,000,000. Average accounts receivable is $500,000. What is the receivable turnover ratio and the average collection period?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Turnover: 12 times; Collection period: 30.4 days"
+        },
+        {
+          "label": "B",
+          "text": "Turnover: 10 times; Collection period: 36.5 days"
+        },
+        {
+          "label": "C",
+          "text": "Turnover: 12 times; Collection period: 45 days"
+        },
+        {
+          "label": "D",
+          "text": "Turnover: 6 times; Collection period: 60.8 days"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Receivable turnover = Net credit sales / Average AR = $6,000,000 / $500,000 = 12 times. Average collection period = 365 / 12 = 30.4 days. A higher turnover ratio indicates more efficient collection of receivables.",
+      "explanationJa": "売掛金回転率 = 正味掛売上高 / 平均売掛金 = $6,000,000 / $500,000 = 12回。平均回収期間 = 365 / 12 = 30.4日。回転率が高いほど売掛金の回収が効率的であることを示す。",
+      "references": ["Financial analysis ratios"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-037",
+      "topic": "Receivables",
+      "subtopic": "Bad Debt Recovery",
+      "stem": "Entity P previously wrote off a $15,000 receivable from Customer Q. In the current year, Customer Q pays $10,000. Entity P uses the allowance method. What is the journal entry for the recovery?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Cash $10,000; Credit Bad Debt Expense $10,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Accounts Receivable $10,000; Credit Allowance for Doubtful Accounts $10,000; then Debit Cash $10,000; Credit Accounts Receivable $10,000"
+        },
+        { "label": "C", "text": "Debit Cash $10,000; Credit Revenue $10,000" },
+        {
+          "label": "D",
+          "text": "Debit Cash $10,000; Credit Accounts Receivable $15,000; Debit Bad Debt Expense $5,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the allowance method, recovery of a written-off receivable requires two entries: (1) reverse the write-off to the extent of recovery — Debit AR $10,000, Credit Allowance $10,000; (2) record the cash collection — Debit Cash $10,000, Credit AR $10,000. This restores the allowance and properly reflects the collection.",
+      "explanationJa": "引当金法では、償却済み債権の回収には2つの仕訳が必要：(1) 回収額分の償却の取消 — 借方 売掛金$10,000、貸方 引当金$10,000。(2) 現金回収の記録 — 借方 現金$10,000、貸方 売掛金$10,000。これにより引当金が復元され、回収が適切に反映される。",
+      "references": ["ASC 326-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-038",
+      "topic": "Receivables",
+      "subtopic": "Pledging - Proceeds Journal Entry",
+      "stem": "Entity R pledges $400,000 of accounts receivable as collateral for a $300,000 bank loan at 8% interest. How should Entity R account for the pledging?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Derecognize the receivables and record a loss"
+        },
+        {
+          "label": "B",
+          "text": "Continue to report the receivables; record the loan as a liability; disclose the pledging arrangement"
+        },
+        {
+          "label": "C",
+          "text": "Transfer the receivables to a separate account and record a sale"
+        },
+        { "label": "D", "text": "Reduce accounts receivable by $300,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Pledging (assignment as collateral) does not transfer ownership or control of the receivables. Entity R continues to report the receivables and records the loan proceeds as a liability (Notes Payable $300,000). The pledging arrangement and the amount of receivables pledged must be disclosed in the notes to the financial statements.",
+      "explanationJa": "担保差入（担保としての譲渡）は売掛金の所有権や支配を移転しない。Entity Rは売掛金の報告を継続し、ローンの収入を負債（借入金$300,000）として計上する。担保差入契約と差し入れた売掛金の金額を財務諸表の注記で開示しなければならない。",
+      "references": ["ASC 860-30-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-039",
+      "topic": "Receivables",
+      "subtopic": "CECL - Reasonable and Supportable Forecast",
+      "stem": "Under ASC 326 (CECL), which of the following best describes the forecast requirement for estimating expected credit losses?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Entities must forecast losses for the entire contractual life using only historical data"
+        },
+        {
+          "label": "B",
+          "text": "Entities incorporate reasonable and supportable forecasts, then revert to historical loss experience for periods beyond the forecast horizon"
+        },
+        {
+          "label": "C",
+          "text": "Entities use only current conditions to estimate losses"
+        },
+        {
+          "label": "D",
+          "text": "Entities must forecast losses for a maximum of 2 years"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-30-8, the CECL model requires entities to consider past events, current conditions, and reasonable and supportable forecasts. For periods beyond the entity's ability to make reasonable forecasts, the entity reverts to historical loss experience. There is no specific time limit on the forecast period.",
+      "explanationJa": "ASC 326-20-30-8により、CECLモデルは過去の事象、現在の状況、合理的かつ裏付け可能な予測を考慮することを要求する。合理的な予測が可能な期間を超える期間については、過去の損失経験に回帰する。予測期間に特定の時間制限はない。",
+      "references": ["ASC 326-20-30-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-040",
+      "topic": "Receivables",
+      "subtopic": "Accounts Receivable Confirmation",
+      "stem": "From an auditing perspective, which form of accounts receivable confirmation provides the most reliable evidence?",
+      "choices": [
+        { "label": "A", "text": "Negative confirmation" },
+        { "label": "B", "text": "Positive confirmation" },
+        { "label": "C", "text": "Both provide equal reliability" },
+        { "label": "D", "text": "Neither provides reliable evidence" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A positive confirmation requests the customer to respond regardless of whether the balance is agreed or disputed. A negative confirmation requests a response only if the customer disagrees. Positive confirmations provide more reliable evidence because they require a response in all cases, whereas non-response to a negative confirmation is often ambiguous.",
+      "explanationJa": "積極的確認は残高の一致・不一致にかかわらず顧客に回答を求める。消極的確認は顧客が不同意の場合のみ回答を求める。積極的確認はすべての場合に回答を要求するため、より信頼性の高い証拠を提供する。消極的確認への無回答はしばしば曖昧である。",
+      "references": ["AU-C 505"],
+      "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }
   ]

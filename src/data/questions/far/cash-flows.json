@@ -2,7 +2,7 @@
   "id": "far-cash-flows",
   "name": "Statement of Cash Flows",
   "topic": "Statement of Cash Flows",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "cf-001",
@@ -392,6 +392,432 @@
       "explanationJa": "キャッシュ・フロー計算書には実際に支払った配当のみを計上する。支払配当 = 宣言配当 - 未払配当の増加 = $35,000 - ($8,000 - $0) = $27,000。未払分$8,000は将来の支払時に計上される。配当の宣言自体は現金の動きを伴わないためCFには影響しない。",
       "references": ["ASC 230-10-45-15"],
       "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-021",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Interest Paid Classification",
+      "stem": "Under US GAAP (ASC 230), how are cash payments for interest classified on the statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Operating activities" },
+        { "label": "B", "text": "Financing activities" },
+        { "label": "C", "text": "Investing activities" },
+        {
+          "label": "D",
+          "text": "Either operating or financing, at the entity's election"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under US GAAP (ASC 230-10-45-17), interest paid is classified as an operating activity. This differs from IFRS (IAS 7), which allows interest paid to be classified as either operating or financing activities. The rationale is that interest expense enters into the determination of net income.",
+      "explanationJa": "US GAAP（ASC 230-10-45-17）では、支払利息は営業活動に分類する。これはIFRS（IAS 7）が支払利息を営業活動または財務活動のいずれかに分類することを認めるのとは異なる。利息費用が純利益の決定に含まれることが理由である。",
+      "references": ["ASC 230-10-45-17"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-022",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Income Taxes Paid Classification",
+      "stem": "Entity A pays income taxes of $300,000 during the year, of which $50,000 relates to a gain on the sale of equipment. Under US GAAP, how should the $300,000 be classified?",
+      "choices": [
+        { "label": "A", "text": "$250,000 operating; $50,000 investing" },
+        { "label": "B", "text": "$300,000 entirely in operating activities" },
+        { "label": "C", "text": "$300,000 entirely in financing activities" },
+        { "label": "D", "text": "$250,000 operating; $50,000 financing" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-45-17, income tax payments are classified as operating activities, regardless of the nature of the transaction that generated the tax. Even though $50,000 relates to an investing transaction (equipment sale), the entire $300,000 is classified as operating. This is a practical expedient since allocating taxes to specific activities would be impracticable.",
+      "explanationJa": "ASC 230-10-45-17により、法人税の支払いは税金を生じさせた取引の性質にかかわらず営業活動に分類する。$50,000が投資取引（設備売却）に関連していても、$300,000全額が営業活動に分類される。税金を特定の活動に配分することは実務上困難であるためである。",
+      "references": ["ASC 230-10-45-17"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-023",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Dividends Received Classification",
+      "stem": "Entity B receives dividends of $80,000 from an equity method investee. Under US GAAP, how should these dividends be classified on Entity B's statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Operating activities" },
+        { "label": "B", "text": "Investing activities" },
+        {
+          "label": "C",
+          "text": "Operating or investing, depending on the nature of the distribution"
+        },
+        { "label": "D", "text": "Financing activities" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 230-10-45-21A (ASU 2016-15), an entity may elect to classify distributions from equity method investees using either (1) the cumulative earnings approach (classify as operating until cumulative distributions exceed cumulative equity earnings) or (2) the nature of the distribution approach (based on the nature of the investee's activity). This is an accounting policy election.",
+      "explanationJa": "ASC 230-10-45-21A（ASU 2016-15）により、持分法投資先からの分配は(1) 累積利益アプローチ（累積分配が累積持分法利益を超えるまで営業活動に分類）または(2) 分配の性質アプローチ（投資先の活動の性質に基づく）のいずれかで分類する会計方針の選択ができる。",
+      "references": ["ASC 230-10-45-21A"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-024",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Insurance Proceeds Classification",
+      "stem": "Entity C receives $500,000 from an insurance company for a building destroyed by fire. The building had a carrying value of $350,000. Under ASU 2016-15, how should the insurance proceeds be classified?",
+      "choices": [
+        { "label": "A", "text": "$350,000 investing; $150,000 operating" },
+        { "label": "B", "text": "$500,000 investing" },
+        { "label": "C", "text": "$500,000 operating" },
+        {
+          "label": "D",
+          "text": "Based on the nature of the loss event and the related insurance claim"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 230-10-45-21B (ASU 2016-15), insurance proceeds should be classified on the basis of the nature of the loss event. For insurance proceeds from the destruction of a building (a long-lived asset), the proceeds would be classified as investing activities. If the proceeds were from a business interruption claim, they would be operating activities.",
+      "explanationJa": "ASC 230-10-45-21B（ASU 2016-15）により、保険金は損失事象の性質に基づき分類する。建物（長期性資産）の滅失による保険金は投資活動に分類。事業中断による保険金は営業活動に分類する。",
+      "references": ["ASC 230-10-45-21B"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-025",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Factoring of Receivables - Cash Flow Impact",
+      "stem": "Entity D factors $200,000 of accounts receivable without recourse and receives $185,000 (after a $15,000 factoring fee). The transfer qualifies as a sale under ASC 860. How should the $185,000 be classified?",
+      "choices": [
+        { "label": "A", "text": "Operating activity" },
+        { "label": "B", "text": "Investing activity" },
+        { "label": "C", "text": "Financing activity" },
+        { "label": "D", "text": "Not reported on the cash flow statement" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When receivables are factored in a transaction that qualifies as a sale (derecognition under ASC 860), the cash received is classified as an operating activity because it relates to the collection of trade receivables. The $15,000 loss on sale is also an operating item. If the transfer did not qualify as a sale, proceeds would be financing (a secured borrowing).",
+      "explanationJa": "売掛金のファクタリングがASC 860に基づく売却（認識の中止）に該当する場合、受取現金は売掛金の回収に関連するため営業活動に分類する。$15,000の売却損も営業項目。売却に該当しない場合、受取額は財務活動（担保付借入）に分類される。",
+      "references": ["ASC 230-10-45-12", "ASC 860-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-026",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Capital Lease Payments Classification",
+      "stem": "Entity E makes a finance lease payment of $50,000, of which $15,000 is interest and $35,000 is principal reduction. How should this payment be classified on the cash flow statement?",
+      "choices": [
+        { "label": "A", "text": "$50,000 in financing activities" },
+        {
+          "label": "B",
+          "text": "$15,000 in operating activities; $35,000 in financing activities"
+        },
+        { "label": "C", "text": "$50,000 in operating activities" },
+        {
+          "label": "D",
+          "text": "$15,000 in financing activities; $35,000 in operating activities"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-20-45-5, for a finance lease, the interest portion of the payment ($15,000) is classified as operating (consistent with interest paid classification under US GAAP), and the principal portion ($35,000) is classified as financing. For operating leases, all cash payments are operating activities.",
+      "explanationJa": "ASC 842-20-45-5により、ファイナンスリースでは支払いの利息部分($15,000)は営業活動（US GAAPの支払利息の分類と整合）に、元本部分($35,000)は財務活動に分類する。オペレーティング・リースでは全ての現金支払が営業活動となる。",
+      "references": ["ASC 842-20-45-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-027",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Acquisition of Business - Net Cash",
+      "stem": "Entity F acquires Entity G for $8,000,000 cash. At acquisition, Entity G has cash of $1,200,000 and a bank loan of $3,000,000 that Entity F assumes. What is the net cash outflow from investing activities?",
+      "choices": [
+        { "label": "A", "text": "$8,000,000" },
+        { "label": "B", "text": "$6,800,000" },
+        { "label": "C", "text": "$9,800,000" },
+        { "label": "D", "text": "$4,800,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-45-21, the acquisition is reported as an investing activity, net of cash acquired. Cash paid = $8,000,000. Cash acquired = $1,200,000. Net investing outflow = $8,000,000 − $1,200,000 = $6,800,000. The assumed debt is a non-cash financing/investing activity disclosed in supplemental information.",
+      "explanationJa": "ASC 230-10-45-21により、企業取得は取得した現金を控除して投資活動として報告する。支払現金 = $8,000,000。取得現金 = $1,200,000。投資活動の正味流出 = $8,000,000 − $1,200,000 = $6,800,000。引き受けた債務は補足情報で開示する非現金の財務/投資活動である。",
+      "references": ["ASC 230-10-45-21"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-028",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Cash Flow per Share (Prohibited Disclosure)",
+      "stem": "Under US GAAP, which of the following is true regarding cash flow per share?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cash flow per share must be disclosed on the face of the cash flow statement"
+        },
+        {
+          "label": "B",
+          "text": "Cash flow per share may be disclosed in the footnotes"
+        },
+        {
+          "label": "C",
+          "text": "Cash flow per share is prohibited from being reported"
+        },
+        {
+          "label": "D",
+          "text": "Cash flow per share is required only for public companies"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 230-10-45-3, entities are prohibited from reporting cash flow per share amounts. The FASB believes that reporting cash flow per share could mislead users by implying that cash flow is an appropriate measure of performance, potentially diverting attention from earnings per share.",
+      "explanationJa": "ASC 230-10-45-3により、1株当たりキャッシュ・フローの開示は禁止されている。FASBはキャッシュ・フローが業績の適切な指標であるとの誤解を与え、1株当たり利益から注意をそらす可能性があると考えている。",
+      "references": ["ASC 230-10-45-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-029",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Supplemental Disclosures",
+      "stem": "Which of the following must be disclosed as supplemental information to the statement of cash flows under US GAAP?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Total amount of cash and cash equivalents at the end of the period"
+        },
+        {
+          "label": "B",
+          "text": "Cash paid for interest and income taxes during the period"
+        },
+        { "label": "C", "text": "Total depreciation and amortization expense" },
+        { "label": "D", "text": "Details of all investing activities" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-50-2, entities must disclose the amount of cash paid for interest (net of amounts capitalized) and income taxes during the period. These supplemental disclosures are required whether the entity uses the direct or indirect method. This helps users understand the cash impact of these significant expenses.",
+      "explanationJa": "ASC 230-10-50-2により、期間中に支払った利息（資産計上額控除後）と法人税の金額を開示しなければならない。これらの補足開示は直接法・間接法のいずれを使用する場合でも必要である。利用者がこれら重要な費用の現金影響を理解するのに役立つ。",
+      "references": ["ASC 230-10-50-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-030",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Derivative Settlements Classification",
+      "stem": "Entity H enters into an interest rate swap designated as a cash flow hedge. During the year, Entity H receives net settlements of $40,000 from the swap. How should the settlements be classified?",
+      "choices": [
+        { "label": "A", "text": "Operating activities" },
+        { "label": "B", "text": "Investing activities" },
+        { "label": "C", "text": "Financing activities" },
+        { "label": "D", "text": "Same classification as the hedged item" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 230-10-45-27, cash flows from derivative instruments that are designated and qualify as hedges are classified in the same category as the cash flows of the hedged item. If the swap hedges interest on debt (operating), the settlements are operating. If it hedges a forecasted purchase (operating or investing), it follows that classification.",
+      "explanationJa": "ASC 230-10-45-27により、ヘッジとして指定され適格なデリバティブのキャッシュ・フローはヘッジ対象項目のキャッシュ・フローと同じ区分に分類する。スワップが債務の利息（営業）をヘッジする場合、決済額は営業。予定購入（営業または投資）をヘッジする場合、その分類に従う。",
+      "references": ["ASC 230-10-45-27"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-031",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Short-Term Investment Classification",
+      "stem": "Entity J purchases 90-day Treasury bills for $500,000. Under ASC 230, how should this purchase be classified?",
+      "choices": [
+        { "label": "A", "text": "Investing activity" },
+        {
+          "label": "B",
+          "text": "No classification needed — it is a cash equivalent"
+        },
+        { "label": "C", "text": "Financing activity" },
+        { "label": "D", "text": "Operating activity" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-20 (Glossary), cash equivalents are short-term, highly liquid investments with original maturities of three months or less. Treasury bills with 90-day maturity qualify as cash equivalents. Purchases and sales of cash equivalents are not reported as investing activities but are included in the cash and cash equivalents balance.",
+      "explanationJa": "ASC 230-10-20（用語集）により、現金同等物は当初満期が3ヶ月以内の短期・高流動性投資である。満期90日の財務省短期証券は現金同等物に該当する。現金同等物の購入・売却は投資活動として報告せず、現金及び現金同等物残高に含める。",
+      "references": ["ASC 230-10-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-032",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Contingent Consideration Payments",
+      "stem": "Entity K acquired a business and recorded contingent consideration of $1,000,000 at the acquisition date. In Year 2, Entity K pays $1,200,000 to settle the contingent consideration. Under ASU 2016-15, how should the payment be classified?",
+      "choices": [
+        { "label": "A", "text": "$1,200,000 in financing activities" },
+        {
+          "label": "B",
+          "text": "$1,000,000 in financing activities; $200,000 in operating activities"
+        },
+        { "label": "C", "text": "$1,200,000 in operating activities" },
+        {
+          "label": "D",
+          "text": "$1,000,000 in investing activities; $200,000 in operating activities"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-45-21C (ASU 2016-15), payments of contingent consideration made after a business combination are classified as financing up to the amount recognized at acquisition ($1,000,000), and any excess ($200,000) is classified as operating. This ensures consistent classification regardless of when the contingency is resolved.",
+      "explanationJa": "ASC 230-10-45-21C（ASU 2016-15）により、企業結合後の条件付対価の支払いは取得日に認識した金額（$1,000,000）まで財務活動に、超過額（$200,000）は営業活動に分類する。偶発事象がいつ解決されるかにかかわらず一貫した分類を確保する。",
+      "references": ["ASC 230-10-45-21C"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-033",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Equity Method Investment - Cash Flows",
+      "stem": "Entity L reports equity method income of $120,000 from its 30% investment in Entity M. Entity L received dividends of $45,000 from Entity M. Using the indirect method, what adjustment is made to net income in the operating section?",
+      "choices": [
+        { "label": "A", "text": "Subtract $120,000 and add $45,000" },
+        { "label": "B", "text": "Subtract $75,000" },
+        { "label": "C", "text": "Add $120,000" },
+        { "label": "D", "text": "Both A and B produce the same result" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under the indirect method, equity method income ($120,000) is subtracted from net income because it exceeds the cash received. Dividends received ($45,000) are added back as they represent actual cash inflows. The net adjustment is a subtraction of $75,000 ($120,000 − $45,000). Both approaches yield the same result.",
+      "explanationJa": "間接法では、持分法利益($120,000)は受取現金を上回るため純利益から減算する。受取配当($45,000)は実際の現金流入を表すため加算する。正味調整は$75,000の減算($120,000 − $45,000)。いずれのアプローチでも同じ結果となる。",
+      "references": ["ASC 230-10-45-28", "ASC 323-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-034",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Debt Conversion - Noncash",
+      "stem": "Entity N converts $2,000,000 of convertible bonds into 50,000 shares of common stock. No cash is exchanged. How should this be reported on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a financing activity — retirement of debt"
+        },
+        { "label": "B", "text": "As a financing activity — issuance of stock" },
+        {
+          "label": "C",
+          "text": "Not on the statement of cash flows, but disclosed as a significant noncash investing and financing activity"
+        },
+        { "label": "D", "text": "As both investing and financing activities" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 230-10-50-3, noncash investing and financing transactions (such as conversion of debt to equity) are excluded from the statement of cash flows but must be disclosed either in a supplemental schedule or in the notes to the financial statements. The conversion involves no cash and thus does not appear on the cash flow statement.",
+      "explanationJa": "ASC 230-10-50-3により、非現金の投資・財務活動（社債の株式への転換等）はキャッシュ・フロー計算書から除外されるが、補足スケジュールまたは財務諸表の注記で開示しなければならない。転換は現金を伴わないためキャッシュ・フロー計算書には表示されない。",
+      "references": ["ASC 230-10-50-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-035",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Cash Flow Hedge - OCI Reclassification",
+      "stem": "Entity P has a cash flow hedge on a forecasted purchase. During Year 1, $30,000 of gain is recognized in OCI. In Year 2, the hedged purchase occurs and $30,000 is reclassified from OCI to cost of goods sold. Using the indirect method, what is the Year 2 operating cash flow adjustment for the reclassification?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Add $30,000 to net income in operating activities"
+        },
+        {
+          "label": "B",
+          "text": "No adjustment needed — the reclassification affects net income and is already in operations"
+        },
+        { "label": "C", "text": "Subtract $30,000 from net income" },
+        { "label": "D", "text": "Report $30,000 in investing activities" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When the reclassification from OCI to earnings occurs (e.g., as part of COGS), it is already reflected in net income. Under the indirect method, no additional adjustment is needed for the reclassification itself. The cash settlement of the hedge was classified when the settlement occurred, and the reclassification is a non-cash adjustment within the income statement.",
+      "explanationJa": "OCIから損益への再分類（例：売上原価の一部として）が行われた場合、既に純利益に反映されている。間接法では再分類自体について追加の調整は不要。ヘッジの現金決済は決済時に分類済みであり、再分類は損益計算書内の非現金の調整である。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-036",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Operating to Free Cash Flow Reconciliation",
+      "stem": "Entity Q has cash from operating activities of $800,000, capital expenditures of $200,000, proceeds from sale of equipment of $50,000, and dividends paid of $100,000. What is Entity Q's free cash flow (FCF)?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$550,000" },
+        { "label": "C", "text": "$650,000" },
+        { "label": "D", "text": "$500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Free cash flow is a non-GAAP measure commonly calculated as: Operating cash flow − Capital expenditures. FCF = $800,000 − $200,000 = $600,000. Some analysts include proceeds from asset sales or subtract dividends, but the most common definition is operating cash flow minus capex. FCF is not defined under GAAP and must be reconciled to the nearest GAAP measure.",
+      "explanationJa": "フリーキャッシュフローは非GAAP指標で一般に営業キャッシュフロー − 資本的支出で計算する。FCF = $800,000 − $200,000 = $600,000。資産売却収入の加算や配当の控除を含むアナリストもいるが、最も一般的な定義は営業CF − 設備投資。FCFはGAAPで定義されず、最も近いGAAP指標との調整表示が必要。",
+      "references": ["SEC Regulation G"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-037",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Receivable Securitization - Cash Flow",
+      "stem": "Entity R securitizes $5,000,000 of receivables through a special purpose entity and receives $4,800,000 in cash. The transfer qualifies as a sale under ASC 860. Entity R retains a servicing asset of $100,000 and a subordinated interest of $200,000. How is the $4,800,000 classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating activities — it represents collection of receivables"
+        },
+        {
+          "label": "B",
+          "text": "Investing activities — sale of financial assets"
+        },
+        { "label": "C", "text": "Financing activities — it is a borrowing" },
+        {
+          "label": "D",
+          "text": "Split between operating and investing activities"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When a securitization qualifies as a sale under ASC 860, the cash received from the transfer of receivables that originated from operating activities (such as trade receivables) is classified as operating activities. The servicing asset and retained interest are non-cash items. If the receivables were originated as investing activities, the cash would be classified as investing.",
+      "explanationJa": "ASC 860に基づく売却に該当する場合、営業活動から生じた売掛金の譲渡による受取現金は営業活動に分類する。サービシング資産と劣後持分は非現金項目。売掛金が投資活動として組成された場合、現金は投資活動に分類される。",
+      "references": ["ASC 230-10-45-12", "ASC 860-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-038",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Working Capital Changes Analysis",
+      "stem": "Entity S's balance sheet shows: Accounts Receivable decreased by $25,000; Inventory increased by $40,000; Accounts Payable increased by $15,000; Accrued Liabilities decreased by $10,000. Using the indirect method, what is the net working capital adjustment to operating cash flows?",
+      "choices": [
+        { "label": "A", "text": "$(10,000)" },
+        { "label": "B", "text": "$10,000" },
+        { "label": "C", "text": "$(30,000)" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "AR decrease: +$25,000 (cash collected exceeded revenue). Inventory increase: −$40,000 (cash spent on inventory exceeded COGS). AP increase: +$15,000 (expenses incurred but not yet paid). Accrued liabilities decrease: −$10,000 (paid more than incurred). Net adjustment = $25,000 − $40,000 + $15,000 − $10,000 = −$10,000.",
+      "explanationJa": "AR減少：+$25,000（現金回収が収益を上回る）。棚卸資産増加：−$40,000（棚卸資産の現金支出がCOGSを上回る）。AP増加：+$15,000（発生したが未払い）。未払費用減少：−$10,000（発生額を超えて支払い）。正味調整 = $25,000 − $40,000 + $15,000 − $10,000 = −$10,000。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-039",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Foreign Currency Impact on Cash",
+      "stem": "Entity T has a foreign subsidiary with a functional currency of the euro. The subsidiary's cash balance is €1,000,000. The exchange rate was $1.10 at the beginning of the year and $1.15 at year-end. What is the effect of exchange rate changes on cash?",
+      "choices": [
+        { "label": "A", "text": "$50,000 increase in cash" },
+        { "label": "B", "text": "$50,000 decrease in cash" },
+        { "label": "C", "text": "$0 — exchange rate effects are not reported" },
+        { "label": "D", "text": "$50,000 reported as OCI" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-230-45-1, the effect of exchange rate changes on cash and cash equivalents is reported as a separate line item on the statement of cash flows. The subsidiary's cash = €1,000,000 × ($1.15 − $1.10) = $50,000 increase. This is shown separately from operating, investing, and financing activities.",
+      "explanationJa": "ASC 830-230-45-1により、為替レート変動が現金及び現金同等物に与える影響はキャッシュ・フロー計算書で別個の項目として報告する。子会社の現金 = €1,000,000 × ($1.15 − $1.10) = $50,000の増加。これは営業・投資・財務活動とは別に表示する。",
+      "references": ["ASC 830-230-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-040",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Government Grants - Cash Flow",
+      "stem": "Entity U receives a $1,000,000 government grant for the purchase of pollution control equipment. Under US GAAP (IAS 20 is not applicable), how should the grant receipt be classified?",
+      "choices": [
+        { "label": "A", "text": "Operating activities as grant income" },
+        { "label": "B", "text": "Investing activities" },
+        { "label": "C", "text": "Financing activities" },
+        {
+          "label": "D",
+          "text": "Based on the nature of the grant — in this case, investing activities since it relates to equipment purchase"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under US GAAP, there is no specific comprehensive standard for government grants (unlike IFRS/IAS 20). However, ASU 2021-10 requires disclosures. For cash flow classification, the grant proceeds should be classified based on the nature of the activity — since this grant is for equipment purchase (a capital expenditure), it would be classified as investing activities.",
+      "explanationJa": "US GAAPには政府補助金に関する包括的な基準がない（IFRS/IAS 20とは異なる）。ただしASU 2021-10で開示が要求される。キャッシュ・フロー分類では、補助金の受取額は活動の性質に基づき分類する。この補助金は設備購入（資本的支出）のためであり、投資活動に分類される。",
+      "references": ["ASC 230-10-45", "ASU 2021-10"],
+      "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }
   ]

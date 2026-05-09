@@ -2,7 +2,7 @@
   "id": "far-derivatives-hedging",
   "name": "Derivatives & Hedging",
   "topic": "Derivatives & Hedging",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "deriv-001",
@@ -218,6 +218,501 @@
       "explanationJa": "ヘッジ指定のないデリバティブは各報告日に公正価値で評価し損益に計上する。ユーロ売りの先渡契約は、ユーロ下落（スポット$1.10 < 先渡レート$1.12）により価値が上昇した。公正価値利益$9,800を認識する。仕訳：借方 先渡契約資産 $9,800 / 貸方 為替差益 $9,800。",
       "references": ["ASC 815-10-35-2", "ASC 830-20-35-1"],
       "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-011",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Interest Rate Swap - Fair Value Hedge",
+      "stem": "A company holds a fixed-rate bond investment with a carrying value of $1,000,000 and designates a pay-fixed/receive-variable interest rate swap as a fair value hedge. At year-end, the swap has a fair value loss of $35,000 and the bond's fair value increased by $33,000 due to the hedged risk. What is the net effect on earnings?",
+      "choices": [
+        { "label": "A", "text": "Loss of $2,000" },
+        { "label": "B", "text": "Loss of $35,000" },
+        { "label": "C", "text": "Gain of $33,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In a fair value hedge, both the derivative's gain/loss and the hedged item's offsetting gain/loss are recognized in earnings. Swap loss = $35,000; Bond gain (hedged risk) = $33,000. Net = −$35,000 + $33,000 = −$2,000 loss. The $2,000 represents hedge ineffectiveness.",
+      "explanationJa": "公正価値ヘッジでは、デリバティブの損益$-35,000とヘッジ対象の損益$+33,000の両方を損益に認識する。純影響 = -$35,000 + $33,000 = -$2,000の損失。$2,000がヘッジ非有効部分。",
+      "references": ["ASC 815-25-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-012",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge - Forecasted Transaction",
+      "stem": "A company designates a derivative as a cash flow hedge of a highly probable forecasted purchase of raw materials expected in 6 months. What condition must be met for the forecasted transaction to qualify for hedge accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The forecasted transaction must be probable of occurring"
+        },
+        {
+          "label": "B",
+          "text": "The forecasted transaction must have already been contractually committed"
+        },
+        {
+          "label": "C",
+          "text": "The transaction must occur within 30 days of designation"
+        },
+        { "label": "D", "text": "The transaction must be with a related party" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-20-25-15(b), a forecasted transaction must be probable of occurring to qualify as a hedged item in a cash flow hedge. It does not need to be a firm commitment—a firm commitment would qualify for a fair value hedge instead. The assessment considers the entity's history and business practices.",
+      "explanationJa": "キャッシュフローヘッジの対象となるには、予定取引が発生する蓋然性が高い（probable）ことが要件。確定約定（firm commitment）である必要はない。確定約定は公正価値ヘッジの対象となる。",
+      "references": ["ASC 815-20-25-15"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-013",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedge Effectiveness Testing",
+      "stem": "Under ASC 815 (as amended by ASU 2017-12), which of the following is true regarding hedge effectiveness assessment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Entities may perform only a qualitative assessment of hedge effectiveness if certain conditions are met"
+        },
+        {
+          "label": "B",
+          "text": "A quantitative assessment using the dollar-offset method is always required every quarter"
+        },
+        {
+          "label": "C",
+          "text": "Hedge effectiveness testing was eliminated entirely by ASU 2017-12"
+        },
+        {
+          "label": "D",
+          "text": "Only retrospective testing is required; prospective testing was eliminated"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2017-12 simplified hedge effectiveness requirements. Entities may elect to perform only a qualitative (rather than quantitative) assessment of hedge effectiveness after initial quantitative testing, if they can reasonably support that the hedge relationship will be highly effective. The 80-125% bright-line test was eliminated.",
+      "explanationJa": "ASU 2017-12はヘッジ有効性の要件を簡素化した。当初の定量テスト後、ヘッジ関係が高度に有効であると合理的に裏付けられる場合、定性的な評価のみを選択できる。80-125%のブライトライン基準は廃止された。",
+      "references": ["ASC 815-20-25-3B"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-014",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Option - Time Value Exclusion",
+      "stem": "A company purchases a put option for $20,000 to hedge the fair value of an inventory position. The company elects to exclude the option's time value from the hedge effectiveness assessment. At year-end, the option's intrinsic value increased by $15,000 and the time value decreased by $8,000. How is the $8,000 time value decline reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amortized to earnings on a systematic and rational basis over the hedge period"
+        },
+        {
+          "label": "B",
+          "text": "Recognized immediately in earnings as hedge ineffectiveness"
+        },
+        { "label": "C", "text": "Recognized in OCI permanently" },
+        { "label": "D", "text": "Ignored and not recorded" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-20-25-83A (as amended by ASU 2017-12), when an entity excludes time value from the assessment of effectiveness, the initial value of the excluded component may be amortized to earnings on a systematic and rational basis over the life of the hedging instrument. Changes in fair value of the excluded component are recorded in OCI initially.",
+      "explanationJa": "オプションの時間価値をヘッジ有効性評価から除外する場合、除外部分の当初価値をヘッジ手段の存続期間にわたり体系的・合理的にに損益に償却できる。除外部分の公正価値変動は当初OCIに計上する。",
+      "references": ["ASC 815-20-25-83A"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-015",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cross-Currency Swap",
+      "stem": "A U.S. company enters into a cross-currency interest rate swap to hedge the foreign currency risk of a euro-denominated fixed-rate bond payable. The swap is designated as a cash flow hedge. At year-end, the effective portion of the swap gain is $45,000. Where is this gain reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "In OCI (AOCI), to be reclassified to earnings when the hedged interest payments affect earnings"
+        },
+        { "label": "B", "text": "In current earnings as interest expense" },
+        {
+          "label": "C",
+          "text": "As a reduction to the carrying value of the bond"
+        },
+        { "label": "D", "text": "In the cumulative translation adjustment" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "For a cash flow hedge, the effective portion of the hedging instrument's gain/loss is reported in OCI. It is reclassified from AOCI to earnings in the period(s) the hedged forecasted transactions (interest payments) affect earnings. A cross-currency swap hedging foreign currency risk on debt is treated as a cash flow hedge.",
+      "explanationJa": "キャッシュフローヘッジの有効部分はOCIに計上し、ヘッジ対象の予定取引（利払い）が損益に影響する期間にAOCIから損益へ振り替える。外貨建て負債の為替リスクを通貨スワップでヘッジする場合、キャッシュフローヘッジとして処理される。",
+      "references": ["ASC 815-30-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-016",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedge Discontinuation",
+      "stem": "A company discontinues a cash flow hedge because the forecasted transaction is no longer probable of occurring. At the time of discontinuation, $50,000 of gain is in AOCI. How should this amount be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reclassified immediately from AOCI to earnings"
+        },
+        {
+          "label": "B",
+          "text": "Remain in AOCI until the original forecasted date"
+        },
+        { "label": "C", "text": "Charged to equity permanently" },
+        { "label": "D", "text": "Returned to the counterparty" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-30-40-4, if a hedged forecasted transaction is no longer probable of occurring, amounts accumulated in AOCI must be reclassified immediately to earnings. If the hedge is discontinued but the forecasted transaction is still probable, AOCI amounts remain until the transaction occurs.",
+      "explanationJa": "ヘッジ対象の予定取引が発生する蓋然性が低下した場合、AOCIの累積額を即時に損益へ振り替える。予定取引がなお蓋然性を保つ場合はAOCIに残し、取引発生時に振り替える。",
+      "references": ["ASC 815-30-40-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-017",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Derivative Scope Exceptions",
+      "stem": "Which of the following contracts is specifically excluded from the scope of ASC 815 (Derivatives and Hedging)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Regular-way security trades (normal purchases and sales with delivery within the standard settlement period)"
+        },
+        { "label": "B", "text": "Interest rate swaps on variable-rate debt" },
+        { "label": "C", "text": "Foreign currency forward contracts" },
+        { "label": "D", "text": "Commodity futures traded on an exchange" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 815-10-15-141 provides a scope exception for regular-way security trades—contracts to purchase or sell securities that require delivery within the period generally established by regulations or conventions in the marketplace. Interest rate swaps, foreign currency forwards, and commodity futures are within scope.",
+      "explanationJa": "通常の有価証券売買取引（市場の規制や慣行で定められた決済期間内に引渡しが行われる取引）はASC 815の適用範囲から除外される。金利スワップ、為替先渡、商品先物は適用範囲内。",
+      "references": ["ASC 815-10-15-141"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-018",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Fair Value Hedge - Inventory",
+      "stem": "A coffee roaster designates a futures contract as a fair value hedge of 100,000 pounds of coffee inventory. At year-end, the futures gain is $18,000 and the inventory fair value decreased by $17,500 due to the hedged commodity price risk. What is the carrying value adjustment to the inventory?",
+      "choices": [
+        { "label": "A", "text": "Decrease of $17,500" },
+        { "label": "B", "text": "Increase of $18,000" },
+        {
+          "label": "C",
+          "text": "No adjustment; the inventory remains at cost"
+        },
+        { "label": "D", "text": "Decrease of $500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In a fair value hedge of inventory, the hedged item's carrying value is adjusted for the gain or loss attributable to the hedged risk. The inventory carrying value decreases by $17,500 (the loss on the hedged item). Both amounts go to earnings: Futures gain $18,000 and Inventory loss $17,500, resulting in net earnings of $500.",
+      "explanationJa": "在庫の公正価値ヘッジでは、ヘッジリスクに帰属する損益分だけ在庫の帳簿価額を調整する。在庫は$17,500減少し、先物利益$18,000と在庫損失$17,500の両方が損益に計上される。純影響は$500の利益。",
+      "references": ["ASC 815-25-35-1", "ASC 815-25-35-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-019",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge - Basis Adjustment",
+      "stem": "Under ASU 2017-12, a company designates a cash flow hedge of a forecasted purchase of equipment. Upon purchase, $30,000 of gain is accumulated in AOCI. The company elects the basis adjustment approach. How does this affect the equipment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The cost basis of the equipment is reduced by $30,000"
+        },
+        {
+          "label": "B",
+          "text": "The $30,000 remains in AOCI and is amortized over the equipment's useful life"
+        },
+        {
+          "label": "C",
+          "text": "The $30,000 is immediately recognized in earnings"
+        },
+        {
+          "label": "D",
+          "text": "The cost basis of the equipment is increased by $30,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the basis adjustment approach permitted by ASU 2017-12, AOCI amounts from a cash flow hedge of a forecasted purchase of a nonfinancial asset are reclassified from AOCI to adjust the cost basis of the asset when it is recognized. A $30,000 gain reduces the asset's initial cost, which then affects future depreciation.",
+      "explanationJa": "ASU 2017-12で認められた基礎調整アプローチでは、非金融資産の予定購入に対するキャッシュフローヘッジのAOCI累積額を、資産認識時に取得原価の調整として振り替える。$30,000の利益は設備の取得原価を減少させ、将来の減価償却に影響する。",
+      "references": ["ASC 815-30-35-38"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-020",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Derivative Initial Recognition",
+      "stem": "At what amount should a derivative instrument be initially recognized on the balance sheet under ASC 815?",
+      "choices": [
+        { "label": "A", "text": "Fair value" },
+        { "label": "B", "text": "Notional amount" },
+        { "label": "C", "text": "Intrinsic value only" },
+        { "label": "D", "text": "Cost or amortized cost" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-10-30-1, all derivative instruments are recognized as either assets or liabilities at fair value on the balance sheet. This applies at initial recognition and at each subsequent reporting date. The notional amount is not the carrying value—it is used to calculate payments.",
+      "explanationJa": "デリバティブは当初認識時に公正価値で資産または負債として貸借対照表に計上する。これは当初認識時および以後の各報告日に適用される。想定元本は帳簿価額ではなく、支払計算に使用される。",
+      "references": ["ASC 815-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-021",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Freestanding vs Embedded Derivative",
+      "stem": "A company issues a bond denominated in a foreign currency with a principal-indexed provision that adjusts the repayment amount based on a commodity price index. The commodity index is not clearly and closely related to the debt host. Which statement is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The commodity-indexed provision must be bifurcated and accounted for as a separate derivative"
+        },
+        {
+          "label": "B",
+          "text": "The entire bond is accounted for as a derivative"
+        },
+        {
+          "label": "C",
+          "text": "No bifurcation is needed because it is a debt instrument"
+        },
+        {
+          "label": "D",
+          "text": "The provision is recognized only at settlement"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-15-25-1, an embedded derivative must be bifurcated when (1) it is not clearly and closely related to the host, (2) the hybrid is not measured at fair value through earnings, and (3) the embedded feature meets the derivative definition. A commodity index in a debt host is not clearly and closely related, so bifurcation is required.",
+      "explanationJa": "商品価格連動条項は負債のホスト契約と明確かつ密接に関連しないため、分離が必要。混合商品が損益を通じて公正価値で測定されておらず、組込部分がデリバティブの定義を満たす場合に分離する。",
+      "references": ["ASC 815-15-25-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-022",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Fair Value Hedge - Gain/Loss Recognition",
+      "stem": "Under a fair value hedge, the carrying value of the hedged item is adjusted for the change in fair value attributable to the hedged risk. If the hedged item is an AFS debt security, where is the hedge-related adjustment recognized?",
+      "choices": [
+        { "label": "A", "text": "In earnings, not in OCI" },
+        { "label": "B", "text": "In OCI, consistent with AFS treatment" },
+        { "label": "C", "text": "Partially in earnings and partially in OCI" },
+        { "label": "D", "text": "As a direct adjustment to retained earnings" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-25-35-1, for a fair value hedge, the gain or loss on the hedged item attributable to the hedged risk is recognized in earnings (not OCI), even if the hedged item is an AFS security that would otherwise report unrealized gains/losses in OCI. This ensures the offset with the derivative gain/loss occurs in earnings.",
+      "explanationJa": "公正価値ヘッジでは、ヘッジ対象がAFS証券であっても、ヘッジリスクに帰属する損益は損益計算書に認識する（OCIではない）。これにより、デリバティブの損益との相殺が損益計算書上で実現する。",
+      "references": ["ASC 815-25-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-023",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedging Instrument Criteria",
+      "stem": "Which of the following can be designated as a hedging instrument under ASC 815?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A derivative instrument such as a swap, forward, future, or purchased option"
+        },
+        {
+          "label": "B",
+          "text": "A nonderivative financial instrument such as a receivable"
+        },
+        {
+          "label": "C",
+          "text": "An entity's own equity shares held in treasury"
+        },
+        { "label": "D", "text": "A written option with no intrinsic value" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-20-25, a hedging instrument must generally be a derivative. Nonderivative instruments may only serve as hedging instruments in limited circumstances (e.g., foreign currency hedges of net investments). Written options alone generally cannot be hedging instruments because they provide limited offset potential.",
+      "explanationJa": "ヘッジ手段は原則としてデリバティブでなければならない。非デリバティブは限定的な場合（例：純投資の外貨ヘッジ）のみ使用可能。売建オプション単独は相殺能力が限定的なためヘッジ手段として認められない。",
+      "references": ["ASC 815-20-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-024",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Net Investment Hedge - CTA",
+      "stem": "A U.S. parent designates a €10,000,000 euro-denominated borrowing as a hedge of its net investment in a European subsidiary. During the year, the euro weakens, resulting in a $200,000 foreign exchange gain on the borrowing. The effective portion of the gain is $200,000. How is this reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$200,000 gain in the cumulative translation adjustment within OCI"
+        },
+        {
+          "label": "B",
+          "text": "$200,000 gain in earnings as foreign exchange gain"
+        },
+        {
+          "label": "C",
+          "text": "$200,000 gain as a reduction of the investment in the subsidiary"
+        },
+        {
+          "label": "D",
+          "text": "$200,000 gain deferred until the subsidiary is sold"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-35-35-1, for a net investment hedge, the effective portion of the hedging instrument's gain/loss is recorded in the CTA component of OCI. For a nonderivative hedging instrument (like foreign-currency debt), the entire foreign exchange gain/loss goes to CTA. It is reclassified to earnings only upon sale/liquidation of the subsidiary.",
+      "explanationJa": "純投資ヘッジの有効部分は、OCIの累積換算調整勘定（CTA）に計上する。非デリバティブのヘッジ手段（外貨建負債など）では、為替損益全額がCTAに計上される。子会社の売却・清算時にのみ損益へ振り替える。",
+      "references": ["ASC 815-35-35-1", "ASC 830-20-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-025",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Forward Contract - Premium/Discount",
+      "stem": "A company enters into a 6-month forward contract to purchase British pounds at a forward rate of $1.28/£ when the spot rate is $1.25/£. The $0.03 difference represents the forward premium. If designated as a cash flow hedge with the forward points excluded, how are the forward points accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amortized to earnings ratably over the 6-month life or recognized in OCI with changes in fair value"
+        },
+        {
+          "label": "B",
+          "text": "Recognized entirely in earnings at inception"
+        },
+        {
+          "label": "C",
+          "text": "Capitalized as part of the hedged item's cost"
+        },
+        { "label": "D", "text": "Ignored and not recorded" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-20-25-82A (ASU 2017-12), when forward points are excluded from hedge effectiveness assessment, the entity may elect to amortize the initial value of the excluded component (the forward points) to earnings on a systematic basis, or recognize changes in the excluded component's fair value in earnings through OCI initially.",
+      "explanationJa": "先渡ポイント（プレミアム/ディスカウント）をヘッジ有効性評価から除外する場合、除外部分の当初価値を体系的に損益に償却するか、公正価値変動をまずOCIに認識してから損益に計上する方法を選択できる。",
+      "references": ["ASC 815-20-25-82A"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-026",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge - Probability Assessment",
+      "stem": "A company has a cash flow hedge of a forecasted export sale expected in 3 months. Two months into the hedge, the probability of the transaction drops from 'probable' to 'reasonably possible.' What accounting action is required?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The hedge must be de-designated, but AOCI amounts remain until it is probable the transaction will not occur"
+        },
+        {
+          "label": "B",
+          "text": "The hedge continues with no change in accounting"
+        },
+        {
+          "label": "C",
+          "text": "AOCI amounts are immediately reclassified to earnings"
+        },
+        { "label": "D", "text": "The derivative must be settled immediately" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-30-40-3, if the forecasted transaction is no longer probable but is still reasonably possible, the hedge is de-designated prospectively. However, amounts already in AOCI remain there and are not reclassified to earnings until it is probable the transaction will not occur within the originally specified time period.",
+      "explanationJa": "予定取引の蓋然性が「probable」から「reasonably possible」に低下した場合、ヘッジ指定を将来に向けて解除する。ただし、AOCIの累積額は取引が当初の時期に発生しないことがprobableになるまで残置し、その時点で損益へ振り替える。",
+      "references": ["ASC 815-30-40-3", "ASC 815-30-40-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-027",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Derivative Fair Value Measurement",
+      "stem": "A company holds an interest rate swap with a notional amount of $5,000,000. The swap has no quoted market price. How should the company determine the fair value of the swap?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Using a valuation model based on the present value of expected future net cash flows (Level 2 or Level 3 inputs)"
+        },
+        { "label": "B", "text": "At the notional amount of the swap" },
+        {
+          "label": "C",
+          "text": "At zero, since swaps have no initial investment"
+        },
+        { "label": "D", "text": "At the cumulative net cash settled to date" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 820, derivatives without quoted prices are valued using valuation techniques, typically discounted cash flow models using observable market inputs (Level 2) such as yield curves and credit spreads. The notional amount is not the fair value—it is only used to calculate cash flow exchanges.",
+      "explanationJa": "市場価格がないデリバティブは、利回り曲線や信用スプレッドなどの観察可能な市場データ（レベル2）を用いた割引キャッシュフロー法等で公正価値を算定する。想定元本は公正価値ではなく、キャッシュフロー交換の計算にのみ使用される。",
+      "references": ["ASC 820-10-35-2", "ASC 815-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-028",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedge of Foreign Currency Firm Commitment",
+      "stem": "A U.S. company enters a firm commitment to purchase equipment from a German supplier for €2,000,000 in 6 months. The company designates a forward contract as a fair value hedge of the foreign currency risk. At year-end, the forward contract has a gain of $40,000 and the firm commitment has a loss of $40,000. What is recorded?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A firm commitment asset/liability of $40,000 and derivative asset of $40,000, with offsetting gains/losses in earnings"
+        },
+        {
+          "label": "B",
+          "text": "Only the derivative gain of $40,000 in earnings"
+        },
+        { "label": "C", "text": "Both amounts in OCI" },
+        { "label": "D", "text": "No entry until settlement" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 815-25-35-9, in a fair value hedge of a foreign currency firm commitment, the firm commitment is recognized as an asset or liability for the change attributable to the hedged risk. Both the derivative gain ($40,000) and firm commitment loss ($40,000) are recognized in earnings, offsetting each other.",
+      "explanationJa": "外貨建確定約定の公正価値ヘッジでは、確定約定をヘッジリスクの変動額として資産/負債に認識する。デリバティブ利益$40,000と確定約定損失$40,000の両方を損益に認識し、相殺される。",
+      "references": ["ASC 815-25-35-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-029",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Last-of-Layer Hedge (Portfolio Layer Method)",
+      "stem": "Under ASU 2022-01, a bank designates a portfolio layer method hedge for a closed portfolio of fixed-rate loans totaling $100,000,000. The designated hedged layer is the last $30,000,000. What is the primary benefit of this method?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It allows the entity to hedge a stated amount of the portfolio without being impacted by prepayments up to $70,000,000"
+        },
+        { "label": "B", "text": "It eliminates all hedge ineffectiveness" },
+        { "label": "C", "text": "It allows hedging of variable-rate loans" },
+        {
+          "label": "D",
+          "text": "It permits hedging without designation documentation"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the portfolio layer method (ASU 2022-01, codified in ASC 815-20-25-12A), an entity can designate a hedged layer (e.g., last $30M of a $100M portfolio). Prepayments reduce the portfolio from the top, so the hedged bottom layer is protected from prepayment risk as long as the portfolio exceeds the layer amount.",
+      "explanationJa": "ポートフォリオレイヤー法では、$100Mのポートフォリオの最後の$30Mをヘッジ対象として指定できる。期限前返済はポートフォリオの上層から減少するため、ポートフォリオ残高がレイヤー額を超える限り、ヘッジ対象は期限前返済リスクから保護される。",
+      "references": ["ASC 815-20-25-12A"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-030",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Derivative Disclosures",
+      "stem": "Under ASC 815-10-50, which of the following disclosures is required for derivative instruments?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The fair value of derivative instruments, their gains and losses, and information about credit-risk-related contingent features"
+        },
+        {
+          "label": "B",
+          "text": "Only the notional amounts of all derivatives"
+        },
+        { "label": "C", "text": "Only the names of the counterparties" },
+        {
+          "label": "D",
+          "text": "Disclosures are required only for derivatives designated as hedges"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 815-10-50 requires comprehensive disclosures including: fair values and balance sheet locations of derivatives (segregated between those designated as hedges and those not), gains and losses recognized, notional amounts, and information about credit-risk-related contingent features. These apply to all derivatives, not just those in hedging relationships.",
+      "explanationJa": "デリバティブの開示要件は包括的で、ヘッジ指定の有無に関係なくすべてのデリバティブに適用される。公正価値と貸借対照表上の位置、認識された損益、想定元本、信用リスク関連の偶発条件に関する情報の開示が求められる。",
+      "references": ["ASC 815-10-50-1", "ASC 815-10-50-4A"],
+      "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }
   ]

@@ -2,7 +2,7 @@
   "id": "far-investments",
   "name": "Investments",
   "topic": "Investments",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "inv-i-001",
@@ -395,6 +395,453 @@
       "explanationJa": "ASC 326-20に基づき、HTM証券は償却原価から信用損失引当金を控除して測定する。引当金 = $5,000。正味帳簿価額 = $100,000 - $5,000 = $95,000。残りの下落$3,000は信用以外の市場要因によるもので、HTMでは認識しない。",
       "references": ["ASC 326-20-30-1"],
       "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-021",
+      "topic": "Investments",
+      "subtopic": "NAV Practical Expedient (ASC 820)",
+      "stem": "Entity A invests $2,000,000 in a private equity fund that reports net asset value (NAV) per share. The fund has no unfunded commitments and a redemption period of 90 days. Under ASC 820, can Entity A use NAV as a practical expedient for fair value measurement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, if the investment meets the criteria for the NAV practical expedient"
+        },
+        {
+          "label": "B",
+          "text": "No, all investments must use Level 1, 2, or 3 inputs"
+        },
+        {
+          "label": "C",
+          "text": "Yes, but only if the fund is publicly traded"
+        },
+        {
+          "label": "D",
+          "text": "No, because private equity funds are always Level 3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 820-10-35-59, entities may use NAV per share as a practical expedient to estimate the fair value of certain investments in funds (including private equity, hedge funds, and real estate funds) that calculate NAV per share consistent with ASC 946. Investments measured using the NAV practical expedient are not categorized within the fair value hierarchy levels.",
+      "explanationJa": "ASC 820-10-35-59により、ASC 946に準拠してNAVを算出するファンド（プライベートエクイティ、ヘッジファンド、不動産ファンド等）への投資の公正価値を見積もるため、1株当たりNAVを実務上の便法として使用できる。NAV便法で測定された投資は公正価値ヒエラルキーのレベルに分類されない。",
+      "references": ["ASC 820-10-35-59"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-022",
+      "topic": "Investments",
+      "subtopic": "Equity Securities Without Readily Determinable FV",
+      "stem": "Entity B acquires equity securities of a private company for $500,000. The securities do not have a readily determinable fair value. Entity B does not elect the fair value option. Under ASC 321, how should Entity B measure these securities?",
+      "choices": [
+        { "label": "A", "text": "At cost, with no subsequent adjustments" },
+        {
+          "label": "B",
+          "text": "At cost minus impairment, plus or minus changes resulting from observable price changes in orderly transactions for identical or similar investments"
+        },
+        {
+          "label": "C",
+          "text": "At fair value through net income using Level 3 inputs"
+        },
+        { "label": "D", "text": "At lower of cost or market" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 321-10-35-2, equity securities without readily determinable fair values may use the measurement alternative: cost minus impairment, plus or minus changes resulting from observable price changes in orderly transactions for identical or similar investments of the same issuer. This is an election made on an instrument-by-instrument basis.",
+      "explanationJa": "ASC 321-10-35-2により、容易に決定可能な公正価値のない株式証券は測定代替法を使用できる：取得原価 − 減損 ± 同一発行者の同一または類似投資に関する秩序ある取引における観察可能な価格変動。この選択は金融商品ごとに行う。",
+      "references": ["ASC 321-10-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-023",
+      "topic": "Investments",
+      "subtopic": "AFS - Unrealized Gain/Loss in OCI",
+      "stem": "Entity C purchases available-for-sale (AFS) debt securities for $200,000. At year-end, the fair value is $215,000. There is no credit loss. What journal entry should Entity C record?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Investment $15,000; Credit Unrealized Gain - Net Income $15,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Investment $15,000; Credit Unrealized Gain - OCI $15,000"
+        },
+        { "label": "C", "text": "No entry; AFS securities are held at cost" },
+        {
+          "label": "D",
+          "text": "Debit Investment $15,000; Credit Revenue $15,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 320-10-35-1, AFS debt securities are reported at fair value with unrealized gains and losses (excluding credit losses) reported in other comprehensive income (OCI). The $15,000 unrealized gain ($215,000 − $200,000) is recorded as a credit to OCI, not net income.",
+      "explanationJa": "ASC 320-10-35-1により、AFS負債証券は公正価値で報告し、未実現損益（信用損失を除く）はその他の包括利益（OCI）で報告する。未実現利益$15,000（$215,000 − $200,000）はOCIの貸方に計上し、純利益ではない。",
+      "references": ["ASC 320-10-35-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-024",
+      "topic": "Investments",
+      "subtopic": "Trading Securities - Unrealized vs Realized Gain",
+      "stem": "Entity D purchases trading securities for $80,000 on March 1. At December 31, the fair value is $95,000. On February 15 of the next year, Entity D sells the securities for $100,000. What gain does Entity D recognize in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$20,000" },
+        { "label": "B", "text": "$5,000" },
+        { "label": "C", "text": "$15,000" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trading securities are marked to fair value through net income. In Year 1, Entity D recognized $15,000 unrealized gain ($95,000 − $80,000) in net income. The carrying value at January 1, Year 2 is $95,000. Upon sale in Year 2, gain = $100,000 − $95,000 = $5,000 recognized in net income.",
+      "explanationJa": "売買目的有価証券は公正価値で測定し変動を純利益に認識する。Year 1に未実現利益$15,000（$95,000 − $80,000）を純利益で認識。Year 2期首の帳簿価額は$95,000。Year 2の売却時の利益 = $100,000 − $95,000 = $5,000を純利益で認識。",
+      "references": ["ASC 321-10-35-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-025",
+      "topic": "Investments",
+      "subtopic": "Equity Method - Intercompany Profit Elimination",
+      "stem": "Investor E owns 40% of Investee F. Investee F sells inventory to Investor E for $500,000 (cost to F: $300,000). At year-end, 30% of the inventory remains unsold by Investor E. What is the intercompany profit that Investor E must eliminate from its equity method income?",
+      "choices": [
+        { "label": "A", "text": "$24,000" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$80,000" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Intercompany profit = $500,000 − $300,000 = $200,000. Unsold portion = 30% × $200,000 = $60,000 unrealized profit remaining in inventory. Investor E's share = 40% × $60,000 = $24,000. This $24,000 is eliminated from the investor's share of investee income under the equity method.",
+      "explanationJa": "グループ間利益 = $500,000 − $300,000 = $200,000。未販売部分 = 30% × $200,000 = $60,000の未実現利益が棚卸資産に残存。Investor Eの持分 = 40% × $60,000 = $24,000。この$24,000は持分法による投資先利益から消去する。",
+      "references": ["ASC 323-10-35-7"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-026",
+      "topic": "Investments",
+      "subtopic": "HTM - Effective Interest Discount Amortization",
+      "stem": "Entity G purchases a 5-year, $1,000,000 face value bond classified as HTM at $950,000 (discount of $50,000). The stated rate is 6% and the effective rate is 7.1%. What is the interest income in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$67,450" },
+        { "label": "C", "text": "$71,000" },
+        { "label": "D", "text": "$10,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the effective interest method (ASC 835-30-35-2), interest income = Carrying amount × Effective rate. Year 1 interest income = $950,000 × 7.1% = $67,450. Cash received = $1,000,000 × 6% = $60,000. Discount amortization = $67,450 − $60,000 = $7,450. New carrying amount = $950,000 + $7,450 = $957,450.",
+      "explanationJa": "実効金利法（ASC 835-30-35-2）により、利息収益 = 帳簿価額 × 実効利率。Year 1の利息収益 = $950,000 × 7.1% = $67,450。現金受取額 = $1,000,000 × 6% = $60,000。割引償却 = $67,450 − $60,000 = $7,450。新帳簿価額 = $950,000 + $7,450 = $957,450。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-027",
+      "topic": "Investments",
+      "subtopic": "Debt Security Reclassification - AFS to HTM",
+      "stem": "Entity H reclassifies a debt security from AFS to HTM. At the reclassification date, the amortized cost is $100,000, the fair value is $105,000, and there is $5,000 of unrealized gain in AOCI. How is the unrealized gain treated?",
+      "choices": [
+        { "label": "A", "text": "Recognized immediately in net income" },
+        {
+          "label": "B",
+          "text": "Remains in AOCI and amortized over the remaining life as a yield adjustment"
+        },
+        { "label": "C", "text": "Eliminated against retained earnings" },
+        { "label": "D", "text": "Transferred to a valuation allowance" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 320-10-35-10(c), when AFS securities are reclassified to HTM, the security is transferred at fair value ($105,000), which becomes the new amortized cost basis. The unrealized gain ($5,000) in AOCI is not immediately recognized in income but is amortized over the remaining life of the security as a yield adjustment, similar to a premium.",
+      "explanationJa": "ASC 320-10-35-10(c)により、AFS証券をHTMに再分類する場合、公正価値($105,000)で移管し、それが新たな償却原価基準となる。AOCIの未実現利益($5,000)は即時に純利益で認識せず、証券の残存期間にわたりプレミアムと同様に利回り調整として償却する。",
+      "references": ["ASC 320-10-35-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-028",
+      "topic": "Investments",
+      "subtopic": "Equity Method - Investee Loss Exceeding Investment",
+      "stem": "Investor J owns 30% of Investee K. Investor J's equity method investment balance is $100,000. Investee K reports a loss of $500,000 for the year. Investor J has no other investments in or commitments to Investee K. What should Investor J recognize?",
+      "choices": [
+        { "label": "A", "text": "Loss of $150,000 (full 30% share)" },
+        {
+          "label": "B",
+          "text": "Loss of $100,000 (reduce investment to zero)"
+        },
+        { "label": "C", "text": "Loss of $50,000" },
+        { "label": "D", "text": "No loss; the investment is already at zero" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 323-10-35-19, if the investor's share of losses ($500,000 × 30% = $150,000) exceeds the carrying amount of the investment ($100,000), the investor recognizes losses only up to the carrying amount, reducing the investment to zero. The investor discontinues applying the equity method. The remaining $50,000 is not recognized unless the investor has guaranteed obligations or is otherwise committed.",
+      "explanationJa": "ASC 323-10-35-19により、投資先損失の持分（$500,000 × 30% = $150,000）が投資の帳簿価額($100,000)を超える場合、投資を零にするまでの損失のみ認識する。残りの$50,000は投資者が債務保証等のコミットメントがない限り認識しない。持分法の適用を中止する。",
+      "references": ["ASC 323-10-35-19"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-029",
+      "topic": "Investments",
+      "subtopic": "Fair Value Hierarchy (Level 1/2/3)",
+      "stem": "Entity L holds a corporate bond that is not actively traded. The fair value is estimated using observable market data for similar bonds, adjusted for differences in credit quality and maturity. Under ASC 820, what level in the fair value hierarchy would this bond be classified?",
+      "choices": [
+        { "label": "A", "text": "Level 1" },
+        { "label": "B", "text": "Level 2" },
+        { "label": "C", "text": "Level 3" },
+        { "label": "D", "text": "Not categorized" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 820-10-35-47, Level 2 inputs include quoted prices for similar assets in active markets or quoted prices for identical assets in markets that are not active. Observable inputs adjusted for differences (like credit quality and maturity) also fall within Level 2. Level 1 requires quoted prices for identical assets in active markets. Level 3 uses unobservable inputs.",
+      "explanationJa": "ASC 820-10-35-47により、レベル2のインプットには活発な市場での類似資産の相場価格や活発でない市場での同一資産の相場価格が含まれる。差異（信用度、満期等）について調整された観察可能なインプットもレベル2に該当する。レベル1は活発な市場での同一資産の相場価格、レベル3は観察不能なインプットを使用する。",
+      "references": ["ASC 820-10-35-47"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-030",
+      "topic": "Investments",
+      "subtopic": "Equity Securities - Measurement Alternative",
+      "stem": "Entity M holds equity securities of a private company measured using the measurement alternative (cost minus impairment ± observable price changes). In Year 2, Entity M observes an orderly transaction for similar securities of the same issuer at $30 per share. Entity M's cost was $25 per share for 10,000 shares. What adjustment should Entity M record?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Increase investment by $50,000 with a gain in net income"
+        },
+        {
+          "label": "B",
+          "text": "Increase investment by $50,000 with a credit to OCI"
+        },
+        {
+          "label": "C",
+          "text": "No adjustment; the measurement alternative does not allow upward adjustments"
+        },
+        {
+          "label": "D",
+          "text": "Increase investment by $50,000 with a credit to retained earnings"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 321-10-35-2, the measurement alternative allows both upward and downward adjustments based on observable price changes. Entity M increases the investment by ($30 − $25) × 10,000 = $50,000 and recognizes a gain of $50,000 in net income. Observable price changes are recognized through earnings, not OCI.",
+      "explanationJa": "ASC 321-10-35-2により、測定代替法は観察可能な価格変動に基づく上方・下方の両方の調整を認める。Entity Mは投資を($30 − $25) × 10,000 = $50,000増額し、$50,000の利得を純利益で認識する。観察可能な価格変動はOCIではなく損益を通じて認識する。",
+      "references": ["ASC 321-10-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-031",
+      "topic": "Investments",
+      "subtopic": "Debt Securities - Purchased at Discount",
+      "stem": "Entity N purchases a $500,000 face value AFS debt security at $470,000 (discount of $30,000). The security has 3 years to maturity and the effective interest rate is 8.5%. After Year 1, what is the amortized cost?",
+      "choices": [
+        { "label": "A", "text": "$479,950" },
+        { "label": "B", "text": "$480,000" },
+        { "label": "C", "text": "$470,000" },
+        { "label": "D", "text": "$500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Interest income = $470,000 × 8.5% = $39,950. Cash received (assuming annual coupon at stated rate that yields $30,000 discount over 3 years) needs to be determined. With effective rate 8.5%: Interest income = $39,950. Stated coupon = approximately $500,000 × 6% = $30,000. Discount amortization = $39,950 − $30,000 = $9,950. Amortized cost = $470,000 + $9,950 = $479,950.",
+      "explanationJa": "利息収益 = $470,000 × 8.5% = $39,950。表面利率による現金受取額 ≈ $500,000 × 6% = $30,000。割引償却 = $39,950 − $30,000 = $9,950。償却原価 = $470,000 + $9,950 = $479,950。",
+      "references": ["ASC 835-30-35-2", "ASC 320-10-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-032",
+      "topic": "Investments",
+      "subtopic": "Equity Method - Additional Investment",
+      "stem": "Investor P initially owns 10% of Investee Q (reported at FV through NI). Investor P acquires an additional 20%, bringing ownership to 30%. The equity method now applies. How should the transition be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Apply the equity method retroactively from the original investment date"
+        },
+        {
+          "label": "B",
+          "text": "Apply the equity method prospectively from the date significant influence is obtained; adjust the existing investment to the new basis"
+        },
+        {
+          "label": "C",
+          "text": "Continue reporting the entire investment at fair value"
+        },
+        {
+          "label": "D",
+          "text": "Write off the original 10% investment and start fresh"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 323-10-35-33, when an investor increases its ownership to a level requiring the equity method, the equity method is applied prospectively from the date significant influence is obtained. The carrying amount of the previously held investment becomes part of the equity method investment basis. Any difference between the new cost and the underlying equity is treated as basis differences.",
+      "explanationJa": "ASC 323-10-35-33により、投資者が持分法が必要な水準まで所有率を増加させた場合、重要な影響力を獲得した日から将来に向けて持分法を適用する。従前保有していた投資の帳簿価額が持分法投資の基礎の一部となる。新たな取得原価と基礎的持分の差額は基礎差額として処理する。",
+      "references": ["ASC 323-10-35-33"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-033",
+      "topic": "Investments",
+      "subtopic": "Consolidated vs Equity Method Threshold",
+      "stem": "Entity R owns 45% of Entity S's voting stock. Entity S has no other significant shareholders, and Entity R does not control Entity S's board. Under ASC 810, should Entity R consolidate Entity S?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because 45% ownership represents a controlling interest"
+        },
+        {
+          "label": "B",
+          "text": "No; Entity R should use the equity method because it has significant influence but not control"
+        },
+        { "label": "C", "text": "Yes, because ownership exceeds 20%" },
+        {
+          "label": "D",
+          "text": "No; Entity R should report the investment at fair value"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-15-8, consolidation is required when a parent has a controlling financial interest, generally through ownership of more than 50% of outstanding voting shares (for a voting interest entity). With 45% and no board control, Entity R has significant influence but not control. The equity method (ASC 323) applies for investments of 20-50% with significant influence.",
+      "explanationJa": "ASC 810-10-15-8により、支配的財務持分を有する場合（一般に議決権の50%超の所有）に連結が必要。45%で取締役会の支配がない場合、Entity Rは重要な影響力を有するが支配はしていない。20-50%で重要な影響力がある投資には持分法（ASC 323）が適用される。",
+      "references": ["ASC 810-10-15-8", "ASC 323-10-15-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-034",
+      "topic": "Investments",
+      "subtopic": "Trading Securities - Dividend Income",
+      "stem": "Entity T holds trading equity securities with a fair value of $300,000 at the beginning of the year. During the year, Entity T receives cash dividends of $12,000. At year-end, the fair value is $320,000. What total amount should Entity T recognize in net income related to these securities?",
+      "choices": [
+        { "label": "A", "text": "$32,000" },
+        { "label": "B", "text": "$20,000" },
+        { "label": "C", "text": "$12,000" },
+        { "label": "D", "text": "$8,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "For trading securities, both dividend income and unrealized gains/losses are recognized in net income. Dividend income = $12,000. Unrealized gain = $320,000 − $300,000 = $20,000. Total in net income = $12,000 + $20,000 = $32,000. Dividends and fair value changes are presented separately or together depending on the entity's policy.",
+      "explanationJa": "売買目的有価証券では、配当収入と未実現損益の両方が純利益で認識される。配当収入 = $12,000。未実現利益 = $320,000 − $300,000 = $20,000。純利益の合計 = $12,000 + $20,000 = $32,000。配当と公正価値変動は企業の方針により別個にまたは合算して表示する。",
+      "references": ["ASC 321-10-35-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-035",
+      "topic": "Investments",
+      "subtopic": "AFS Credit Loss vs Non-Credit Loss",
+      "stem": "Entity U holds an AFS debt security with amortized cost of $200,000 and fair value of $170,000 (decline of $30,000). Entity U determines that $10,000 of the decline is due to credit deterioration and $20,000 is due to changes in interest rates. How should Entity U record this?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Credit loss of $10,000 through an allowance (charged to income); non-credit loss of $20,000 in OCI"
+        },
+        {
+          "label": "B",
+          "text": "Total impairment of $30,000 charged to income"
+        },
+        { "label": "C", "text": "Total decline of $30,000 recorded in OCI" },
+        { "label": "D", "text": "No recognition until the security is sold" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-30-35-3, for AFS debt securities, credit losses are recognized through an allowance for credit losses (charged to credit loss expense in income), limited to the amount that fair value is below amortized cost. The non-credit portion of the decline ($20,000) is recognized in OCI. Allowance = $10,000; OCI loss = $20,000.",
+      "explanationJa": "ASC 326-30-35-3により、AFS負債証券の信用損失は信用損失引当金（損益での信用損失費用）を通じて認識し、公正価値が償却原価を下回る金額を上限とする。下落の非信用部分($20,000)はOCIで認識する。引当金 = $10,000、OCI損失 = $20,000。",
+      "references": ["ASC 326-30-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-036",
+      "topic": "Investments",
+      "subtopic": "Investment in Joint Venture",
+      "stem": "Entity V and Entity W each contribute $1,000,000 to form a 50/50 joint venture (JV). The JV is a separate legal entity and neither party has unilateral control. How should Entity V account for its investment in the JV?",
+      "choices": [
+        { "label": "A", "text": "Consolidate the JV proportionately" },
+        {
+          "label": "B",
+          "text": "Account for the investment using the equity method"
+        },
+        {
+          "label": "C",
+          "text": "Report the investment at fair value through net income"
+        },
+        { "label": "D", "text": "Account for the investment at cost" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under US GAAP (ASC 323-10-15-4), corporate joint ventures in which the investor has significant influence (typically 20-50% ownership) are accounted for using the equity method. Proportionate consolidation is not permitted under US GAAP (though it is allowed under IFRS in limited circumstances). Neither party controls the JV, so full consolidation is not appropriate.",
+      "explanationJa": "US GAAP（ASC 323-10-15-4）では、投資者が重要な影響力を有する共同事業体（通常20-50%の所有）は持分法で会計処理する。US GAAPでは比例連結は認められない（IFRSでは限定的に許容）。いずれの当事者もJVを支配していないため、完全連結は適切でない。",
+      "references": ["ASC 323-10-15-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-037",
+      "topic": "Investments",
+      "subtopic": "Equity Method - Goodwill Impairment",
+      "stem": "Investor X paid $2,000,000 for a 25% interest in Investee Y. Investee Y's identifiable net assets at acquisition had a fair value of $6,000,000. The implied goodwill in the equity method investment is being reviewed. What is the goodwill embedded in Investor X's investment?",
+      "choices": [
+        { "label": "A", "text": "$500,000" },
+        { "label": "B", "text": "$2,000,000" },
+        { "label": "C", "text": "$1,500,000" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Investor X's share of identifiable net assets = 25% × $6,000,000 = $1,500,000. Cost of investment = $2,000,000. Goodwill embedded in the investment = $2,000,000 − $1,500,000 = $500,000. Under the equity method, goodwill is not separately tested for impairment; instead, the entire investment is tested under ASC 323-10-35-32.",
+      "explanationJa": "Investor Xの識別可能純資産の持分 = 25% × $6,000,000 = $1,500,000。投資の取得原価 = $2,000,000。投資に含まれるのれん = $2,000,000 − $1,500,000 = $500,000。持分法では、のれんは個別に減損テストせず、投資全体をASC 323-10-35-32に基づきテストする。",
+      "references": ["ASC 323-10-35-32"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-038",
+      "topic": "Investments",
+      "subtopic": "Debt Security Interest Income at Acquisition",
+      "stem": "Entity Z purchases a bond between interest dates on April 1 for $1,030,000, which includes $30,000 of accrued interest. The face value is $1,000,000. What is the cost basis of the bond?",
+      "choices": [
+        { "label": "A", "text": "$1,030,000" },
+        { "label": "B", "text": "$1,000,000" },
+        { "label": "C", "text": "$970,000" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When purchasing a bond between interest dates, the buyer pays the seller for accrued interest since the last interest payment date. The accrued interest ($30,000) is recorded as interest receivable, not as part of the bond's cost. The cost basis of the bond = $1,030,000 − $30,000 = $1,000,000 (at par in this case).",
+      "explanationJa": "利払日の間に社債を購入する場合、買い手は前回の利払日からの経過利息を売り手に支払う。経過利息($30,000)は未収利息として計上し、社債の取得原価には含めない。社債の取得原価 = $1,030,000 − $30,000 = $1,000,000（この場合は額面価額）。",
+      "references": ["ASC 320-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-039",
+      "topic": "Investments",
+      "subtopic": "Transfer AFS to Trading",
+      "stem": "Entity A reclassifies a debt security from AFS to trading. At the reclassification date, the amortized cost is $90,000 and the fair value is $95,000. There is $5,000 of unrealized gain in AOCI. How is the transfer accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The $5,000 unrealized gain in AOCI is reclassified to net income immediately"
+        },
+        { "label": "B", "text": "The $5,000 remains in AOCI and is amortized" },
+        {
+          "label": "C",
+          "text": "The security is transferred at amortized cost; no gain recognized"
+        },
+        {
+          "label": "D",
+          "text": "The $5,000 is recorded as a direct adjustment to retained earnings"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 320-10-35-10(b), when AFS securities are transferred to trading, the unrealized gain or loss in AOCI at the date of transfer is immediately reclassified and recognized in net income. The security is carried at fair value ($95,000) in the trading portfolio going forward. The $5,000 AOCI gain is recognized in earnings.",
+      "explanationJa": "ASC 320-10-35-10(b)により、AFS証券をトレーディングに移管する場合、移管日時点のAOCIの未実現損益は即時に純利益に再分類して認識する。証券は今後トレーディング・ポートフォリオで公正価値($95,000)で計上する。AOCIの$5,000の利得は損益で認識する。",
+      "references": ["ASC 320-10-35-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-i-040",
+      "topic": "Investments",
+      "subtopic": "Fair Value Through Net Income Election",
+      "stem": "Entity B has a debt instrument that would normally be classified as AFS. Entity B elects the fair value option under ASC 825 at initial recognition. How are subsequent changes in fair value reported?",
+      "choices": [
+        { "label": "A", "text": "In other comprehensive income" },
+        { "label": "B", "text": "In net income" },
+        { "label": "C", "text": "In retained earnings directly" },
+        { "label": "D", "text": "No subsequent measurement is required" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 825-10-45-2, when the fair value option is elected, subsequent changes in fair value are recognized in net income. This is the case regardless of the original classification. The election is irrevocable and made on an instrument-by-instrument basis. The entity must disclose the reasons for electing the fair value option.",
+      "explanationJa": "ASC 825-10-45-2により、公正価値オプションを選択した場合、その後の公正価値変動は純利益で認識する。これは当初の分類にかかわらず適用される。選択は取消不能で金融商品ごとに行う。企業は公正価値オプション選択の理由を開示しなければならない。",
+      "references": ["ASC 825-10-45-2"],
+      "difficulty": "intermediate",
       "source": "Original - CPA Exam Practice"
     }
   ]

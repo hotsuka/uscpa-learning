@@ -2,7 +2,7 @@
   "id": "far-inventory",
   "name": "Inventory",
   "topic": "Inventory",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "inv-001",
@@ -379,6 +379,450 @@
       "explanation": "Year 3 at base prices = $216,000 / 1.20 = $180,000. Cumulative base through Year 2 = $150,000 + $30,000 + $20,000 = $200,000. Since $180,000 < $200,000, liquidation occurs. Layers erode from top: Year 2 layer ($20,000) fully eliminated. Remaining base equivalent = $180,000 - $150,000 = $30,000 for Year 1 (intact). DV-LIFO = $150,000 × 1.00 + $30,000 × 1.08 = $150,000 + $32,400 = $182,400.",
       "explanationJa": "第3年度基準価格 = $216,000 / 1.20 = $180,000。Y2末累積基準 = $200,000。$180,000 < $200,000のため清算発生。Y2層（$20,000）全額消滅。Y1層は$30,000のまま残存（$180,000 - $150,000 = $30,000）。DV-LIFO = $150,000×1.00 + $30,000×1.08 = $182,400。",
       "references": ["ASC 330-10-30-18"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-021",
+      "topic": "Inventory",
+      "subtopic": "Moving Average Method",
+      "stem": "Company M uses a perpetual inventory system with the moving average cost method. Beginning inventory is 200 units at $10 each. On March 5, 300 units are purchased at $12 each. On March 15, 250 units are sold. What is the cost of goods sold for the March 15 sale?",
+      "choices": [
+        { "label": "A", "text": "$2,500" },
+        { "label": "B", "text": "$2,800" },
+        { "label": "C", "text": "$3,000" },
+        { "label": "D", "text": "$2,750" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "After the March 5 purchase, total inventory = (200 × $10) + (300 × $12) = $2,000 + $3,600 = $5,600, and total units = 500. Moving average cost = $5,600 / 500 = $11.20 per unit. COGS for 250 units = 250 × $11.20 = $2,800.",
+      "explanationJa": "3/5の仕入後、在庫合計 = (200×$10) + (300×$12) = $5,600、合計500単位。移動平均単価 = $5,600 / 500 = $11.20。250単位の売上原価 = 250×$11.20 = $2,800。",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-022",
+      "topic": "Inventory",
+      "subtopic": "Specific Identification",
+      "stem": "Which of the following is a requirement for using the specific identification method for inventory valuation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The entity must use a periodic inventory system"
+        },
+        {
+          "label": "B",
+          "text": "Individual items must be identifiable and tracked from purchase through sale"
+        },
+        {
+          "label": "C",
+          "text": "The method is limited to entities with fewer than 1,000 inventory items"
+        },
+        {
+          "label": "D",
+          "text": "All items must be fungible and interchangeable"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Specific identification requires that individual units of inventory be identifiable and that the cost of each specific item sold and on hand can be determined. It is appropriate for unique, high-value, or non-fungible items such as automobiles or jewelry. It is not limited by system type (periodic or perpetual) or inventory count.",
+      "explanationJa": "個別法では、各在庫品目が識別可能であり、販売された品目および手持ち品目の原価が個別に判定できることが要件となる。自動車や宝飾品のようなユニークで高価値の品目に適している。棚卸方法（期末・継続）や品目数による制限はない。",
+      "references": ["ASC 330-10-30-7"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-023",
+      "topic": "Inventory",
+      "subtopic": "Inventory Errors - Impact on COGS",
+      "stem": "If ending inventory is overstated by $15,000 at the end of Year 1, what is the effect on Year 1 and Year 2 cost of goods sold (assuming the error is not detected)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Year 1 COGS understated by $15,000; Year 2 COGS overstated by $15,000"
+        },
+        {
+          "label": "B",
+          "text": "Year 1 COGS overstated by $15,000; Year 2 COGS understated by $15,000"
+        },
+        {
+          "label": "C",
+          "text": "Year 1 COGS understated by $15,000; Year 2 COGS unaffected"
+        },
+        {
+          "label": "D",
+          "text": "Both Year 1 and Year 2 COGS understated by $15,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "COGS = Beginning Inventory + Purchases − Ending Inventory. If ending inventory is overstated, Year 1 COGS is understated (higher subtraction). This overstated ending inventory becomes Year 2's beginning inventory, causing Year 2 COGS to be overstated. The errors are self-correcting over the two-year period.",
+      "explanationJa": "売上原価 = 期首在庫 + 仕入 − 期末在庫。期末在庫が過大計上されると、Year 1のCOGSは過小（控除額増加）。過大な期末在庫がYear 2の期首在庫となるため、Year 2のCOGSは過大となる。この誤りは2年間で自動修正される。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-024",
+      "topic": "Inventory",
+      "subtopic": "Goods in Transit - FOB Shipping/Destination",
+      "stem": "On December 31, Year 1, goods costing $40,000 shipped FOB shipping point are in transit to the buyer. Separately, goods costing $25,000 shipped FOB destination are also in transit to the buyer. Which amount should the buyer include in its December 31 inventory?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$25,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$65,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "FOB shipping point means title passes to the buyer when goods leave the seller's dock. The buyer should include these $40,000 goods in inventory. FOB destination means title does not pass until goods reach the buyer. Since these $25,000 goods are still in transit, they remain the seller's inventory. Therefore, the buyer includes only $40,000.",
+      "explanationJa": "FOB出荷地点では、商品が売主の倉庫を出た時点で所有権が買主に移転するため、$40,000を買主の在庫に含める。FOB仕向地では、商品が買主に到着するまで所有権は移転しない。$25,000は輸送中のため売主の在庫のまま。したがって買主は$40,000のみを含める。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-025",
+      "topic": "Inventory",
+      "subtopic": "Basket Purchase Allocation",
+      "stem": "A retailer purchases a lot of mixed inventory for $90,000. The lot contains Product X (fair value $50,000), Product Y (fair value $30,000), and Product Z (fair value $20,000). What cost should be allocated to Product X?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$45,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a basket (lump-sum) purchase, cost is allocated based on relative fair values. Total FV = $50,000 + $30,000 + $20,000 = $100,000. Product X allocation = ($50,000 / $100,000) × $90,000 = $45,000.",
+      "explanationJa": "一括購入では、各品目の相対的公正価値に基づいて原価を配分する。公正価値合計 = $100,000。Product Xへの配分 = ($50,000 / $100,000) × $90,000 = $45,000。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-026",
+      "topic": "Inventory",
+      "subtopic": "Retail Method - Conventional vs Cost",
+      "stem": "Under the conventional retail inventory method (lower of cost or market), how are net markdowns treated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Included in both the cost and retail columns"
+        },
+        {
+          "label": "B",
+          "text": "Excluded from the cost-to-retail ratio but included in the retail column for ending inventory"
+        },
+        {
+          "label": "C",
+          "text": "Included in both the numerator and denominator of the cost-to-retail ratio"
+        },
+        { "label": "D", "text": "Excluded from all calculations" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the conventional (lower of cost or market) retail method, net markdowns are excluded from the cost-to-retail percentage calculation. This produces a lower ratio, resulting in a lower (more conservative) inventory valuation. Net markdowns are then deducted in the retail column to determine ending inventory at retail. Under the cost retail method, markdowns are included in the ratio.",
+      "explanationJa": "低価法に基づく従来の小売棚卸法では、値下額は原価率の計算から除外される。これにより低い比率が算出され、より保守的な在庫評価となる。値下額は期末在庫の小売価格計算時には控除する。原価ベースの小売棚卸法では、値下額を原価率の計算に含める。",
+      "references": ["ASC 330-10-30-22"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-027",
+      "topic": "Inventory",
+      "subtopic": "LIFO to FIFO Conversion",
+      "stem": "Company L uses LIFO and reports inventory of $280,000 with a LIFO reserve of $45,000. The tax rate is 25%. What is the after-tax effect on retained earnings if Company L retrospectively changes to FIFO?",
+      "choices": [
+        { "label": "A", "text": "Increase of $45,000" },
+        { "label": "B", "text": "Increase of $33,750" },
+        { "label": "C", "text": "Increase of $11,250" },
+        { "label": "D", "text": "Decrease of $33,750" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Changing from LIFO to FIFO increases inventory by the LIFO reserve ($45,000). The after-tax effect on retained earnings = $45,000 × (1 − 0.25) = $33,750 increase. The remaining $11,250 represents the additional tax liability (deferred tax liability).",
+      "explanationJa": "LIFOからFIFOへの変更では、LIFO準備金（$45,000）分だけ在庫が増加する。利益剰余金への税引後影響 = $45,000 × (1 − 0.25) = $33,750の増加。残り$11,250は追加の繰延税金負債となる。",
+      "references": ["ASC 250-10-45-5", "ASC 330-10-30"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-028",
+      "topic": "Inventory",
+      "subtopic": "Standard Cost System Variance",
+      "stem": "A manufacturer uses a standard cost system. At year-end, the materials price variance is $12,000 unfavorable and the materials quantity variance is $8,000 favorable. Total inventory and COGS at standard cost are $200,000 and $800,000, respectively. If the net variance is considered material, how should the net $4,000 unfavorable variance be allocated?",
+      "choices": [
+        { "label": "A", "text": "Entirely to COGS" },
+        { "label": "B", "text": "$800 to inventory and $3,200 to COGS" },
+        { "label": "C", "text": "$2,000 to inventory and $2,000 to COGS" },
+        { "label": "D", "text": "$3,200 to inventory and $800 to COGS" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When standard cost variances are material, they must be allocated proportionally between inventory and COGS. Net variance = $12,000 − $8,000 = $4,000 unfavorable. Total base = $200,000 + $800,000 = $1,000,000. Inventory share = ($200,000 / $1,000,000) × $4,000 = $800. COGS share = ($800,000 / $1,000,000) × $4,000 = $3,200.",
+      "explanationJa": "標準原価差異が重要な場合、在庫とCOGSに比例配分する。純差異 = $12,000 − $8,000 = $4,000（不利）。配分基礎合計 = $1,000,000。在庫への配分 = ($200,000 / $1,000,000) × $4,000 = $800。COGSへの配分 = ($800,000 / $1,000,000) × $4,000 = $3,200。",
+      "references": ["ASC 330-10-30-16"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-029",
+      "topic": "Inventory",
+      "subtopic": "Periodic FIFO Ending Inventory",
+      "stem": "Under a periodic inventory system using FIFO, a company has: Beginning inventory 100 units at $20; Purchase 1: 150 units at $22; Purchase 2: 200 units at $25. A physical count shows 180 units on hand. What is ending inventory?",
+      "choices": [
+        { "label": "A", "text": "$4,400" },
+        { "label": "B", "text": "$4,340" },
+        { "label": "C", "text": "$4,500" },
+        { "label": "D", "text": "$4,100" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under FIFO, ending inventory consists of the most recent purchases. The 180 units on hand come from: Purchase 2 (all 200 available, take 180 units at $25 each). Since 180 ≤ 200, all 180 units are from Purchase 2. Ending inventory = 180 × $25 = $4,500.",
+      "explanationJa": "FIFOでは期末在庫は最新の仕入から構成される。手持ち180単位：Purchase 2（200単位@$25が利用可能）から180単位を充当。180 ≤ 200のため全て Purchase 2から。期末在庫 = 180 × $25 = $4,500。",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-030",
+      "topic": "Inventory",
+      "subtopic": "NRV Write-Down Reversal (IFRS vs GAAP)",
+      "stem": "A company writes down inventory from cost of $100,000 to NRV of $85,000. In the following period, market conditions improve and NRV increases to $95,000. Under U.S. GAAP, what is the appropriate treatment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reverse the write-down and record inventory at $95,000"
+        },
+        {
+          "label": "B",
+          "text": "Reverse the write-down up to the original cost of $100,000"
+        },
+        {
+          "label": "C",
+          "text": "No reversal is permitted; inventory remains at $85,000"
+        },
+        { "label": "D", "text": "Reverse the write-down but only in OCI" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under U.S. GAAP (ASC 330), once inventory is written down to NRV, the reduced amount becomes the new cost basis. Subsequent reversals of write-downs are prohibited. This differs from IFRS (IAS 2), which permits reversal of inventory write-downs up to original cost when circumstances change.",
+      "explanationJa": "米国GAAP（ASC 330）では、NRVに評価減した後の金額が新たな原価基準となり、その後の戻入れは禁止されている。在庫は$85,000のまま据え置く。IFRS（IAS 2）では状況変化時に元の原価まで戻入れが認められる点で異なる。",
+      "references": ["ASC 330-10-35-1B", "ASC 330-10-35-14"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-031",
+      "topic": "Inventory",
+      "subtopic": "Inventory Estimation - Fire Loss",
+      "stem": "A fire destroyed all inventory on March 15. Records show: beginning inventory $120,000; purchases through March 15 $280,000; sales through March 15 $500,000; historical gross profit margin 35%. What is the estimated inventory loss?",
+      "choices": [
+        { "label": "A", "text": "$75,000" },
+        { "label": "B", "text": "$400,000" },
+        { "label": "C", "text": "$75,000" },
+        { "label": "D", "text": "$75,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Using the gross profit method: Estimated COGS = Sales × (1 − GP%) = $500,000 × 0.65 = $325,000. Goods available for sale = $120,000 + $280,000 = $400,000. Estimated inventory at fire date = $400,000 − $325,000 = $75,000. Since all inventory was destroyed, the loss is $75,000.",
+      "explanationJa": "売上総利益法で推定：推定COGS = $500,000 × (1 − 0.35) = $325,000。販売可能商品 = $120,000 + $280,000 = $400,000。火災時推定在庫 = $400,000 − $325,000 = $75,000。全在庫が焼失したため損失は$75,000。",
+      "references": ["ASC 330-10-30-18"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-032",
+      "topic": "Inventory",
+      "subtopic": "Relative Sales Value Method",
+      "stem": "A real estate developer purchases a tract of land for $600,000 and divides it into 100 lots. Group A (40 lots) has a total sales value of $400,000. Group B (60 lots) has a total sales value of $800,000. What cost should be assigned to each Group A lot?",
+      "choices": [
+        { "label": "A", "text": "$5,000" },
+        { "label": "B", "text": "$6,000" },
+        { "label": "C", "text": "$4,000" },
+        { "label": "D", "text": "$15,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the relative sales value method, cost is allocated proportionally. Total sales value = $400,000 + $800,000 = $1,200,000. Group A allocation = ($400,000 / $1,200,000) × $600,000 = $200,000. Cost per Group A lot = $200,000 / 40 = $5,000.",
+      "explanationJa": "相対売価法では、原価を各グループの売価比率で配分する。売価合計 = $1,200,000。Group A配分 = ($400,000 / $1,200,000) × $600,000 = $200,000。Group A 1区画あたり = $200,000 / 40 = $5,000。",
+      "references": ["ASC 970-340-25-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-033",
+      "topic": "Inventory",
+      "subtopic": "Raw Materials vs Finished Goods Classification",
+      "stem": "Raw materials that will be used in the production of finished goods should be reported at the lower of cost or NRV only when:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The finished goods in which they will be incorporated are expected to be sold above cost"
+        },
+        {
+          "label": "B",
+          "text": "The finished goods in which they will be incorporated are expected to be sold below cost"
+        },
+        {
+          "label": "C",
+          "text": "The raw materials have been held for more than one year"
+        },
+        {
+          "label": "D",
+          "text": "The replacement cost of raw materials has increased"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 330, raw materials need not be written down below cost if the finished goods in which they will be incorporated are expected to sell at or above cost. However, if the decline in raw material prices indicates that the cost of finished goods will exceed NRV, then the raw materials should be measured at NRV (replacement cost for raw materials).",
+      "explanationJa": "ASC 330では、原材料が組み込まれる完成品が原価以上で販売される見込みがある場合、原材料を原価以下に評価減する必要はない。ただし、原材料価格の下落により完成品の原価がNRVを超える場合は、原材料をNRV（原材料の場合は再調達原価）で評価する。",
+      "references": ["ASC 330-10-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-034",
+      "topic": "Inventory",
+      "subtopic": "Consignment Inventory - Revenue Recognition",
+      "stem": "Company P ships inventory with a cost of $50,000 to a consignee. Shipping costs paid by Company P are $2,000. At the end of the period, the consignee has not sold any of the goods. How should Company P report this inventory?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Remove from inventory and recognize a $50,000 receivable"
+        },
+        {
+          "label": "B",
+          "text": "Report as inventory at $52,000 (cost plus shipping)"
+        },
+        {
+          "label": "C",
+          "text": "Report as inventory at $50,000 and expense the shipping"
+        },
+        { "label": "D", "text": "Report as a prepaid expense of $52,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Consignment inventory remains the property of the consignor until sold by the consignee. Company P should continue to report the goods as inventory. The shipping costs to deliver goods to the consignee are inventoriable costs added to the carrying amount, resulting in inventory reported at $52,000.",
+      "explanationJa": "委託販売品は受託者が販売するまで委託者の所有物のまま。Company Pは引き続き棚卸資産として報告する。受託者への配送費用は棚卸資産に含めるべき費用であり、$50,000 + $2,000 = $52,000として報告する。",
+      "references": ["ASC 330-10-30-1", "ASC 606-10-55-80"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-035",
+      "topic": "Inventory",
+      "subtopic": "Purchase Commitment Loss Accrual",
+      "stem": "On November 1, Year 1, a company enters into a noncancelable purchase commitment for 10,000 units at $15 per unit, for delivery in February Year 2. At December 31, Year 1, the market price is $12 per unit. What journal entry should be recorded at year-end?",
+      "choices": [
+        { "label": "A", "text": "No entry is required until delivery" },
+        {
+          "label": "B",
+          "text": "Debit Loss on Purchase Commitment $30,000; Credit Accrued Loss on Purchase Commitment $30,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Inventory $150,000; Credit Accounts Payable $150,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Loss on Purchase Commitment $30,000; Credit Inventory $30,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When the market price of goods subject to a noncancelable purchase commitment falls below the contract price, the expected loss must be recognized in the period the decline occurs. Loss = (Contract price − Market price) × Units = ($15 − $12) × 10,000 = $30,000. The entry debits a loss account and credits an accrued liability.",
+      "explanationJa": "取消不能購買契約の対象商品の市場価格が契約価格を下回った場合、その下落期間に見込損失を認識する。損失 = ($15 − $12) × 10,000 = $30,000。損失勘定の借方と未払損失負債の貸方に記録する。",
+      "references": ["ASC 330-10-35-17"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-036",
+      "topic": "Inventory",
+      "subtopic": "Inventory Turnover Ratio",
+      "stem": "A company reports the following: beginning inventory $180,000; ending inventory $220,000; cost of goods sold $800,000; net sales $1,200,000. What is the inventory turnover ratio?",
+      "choices": [
+        { "label": "A", "text": "3.64 times" },
+        { "label": "B", "text": "4.00 times" },
+        { "label": "C", "text": "6.00 times" },
+        { "label": "D", "text": "5.45 times" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Inventory turnover = COGS / Average Inventory. Average inventory = ($180,000 + $220,000) / 2 = $200,000. Inventory turnover = $800,000 / $200,000 = 4.00 times. Note: Net sales (not COGS) in the numerator would be incorrect.",
+      "explanationJa": "棚卸資産回転率 = COGS / 平均在庫。平均在庫 = ($180,000 + $220,000) / 2 = $200,000。回転率 = $800,000 / $200,000 = 4.00回。分子に純売上高ではなくCOGSを使用することに注意。",
+      "references": ["ASC 330-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-037",
+      "topic": "Inventory",
+      "subtopic": "Cost Formula Selection Criteria",
+      "stem": "Under U.S. GAAP, which of the following cost flow assumptions is NOT permitted for inventory valuation?",
+      "choices": [
+        { "label": "A", "text": "Last-in, first-out (LIFO)" },
+        { "label": "B", "text": "First-in, first-out (FIFO)" },
+        { "label": "C", "text": "Weighted average cost" },
+        { "label": "D", "text": "Next-in, first-out (NIFO)" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "U.S. GAAP permits FIFO, LIFO, weighted average, and specific identification. NIFO (next-in, first-out) uses replacement cost for COGS and is not an accepted cost flow assumption under GAAP. NIFO would result in unrealized gains/losses being recognized in current income.",
+      "explanationJa": "米国GAAPではFIFO、LIFO、加重平均法、個別法が認められる。NIFO（次入先出法）はCOGSに再調達原価を使用するもので、GAAPで認められた原価配分方法ではない。NIFOは未実現損益を当期利益に計上することになる。",
+      "references": ["ASC 330-10-30-9", "ASC 330-10-30-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-038",
+      "topic": "Inventory",
+      "subtopic": "Absorption vs Variable Costing",
+      "stem": "A manufacturer produced 10,000 units and sold 8,000 units. Fixed manufacturing overhead is $100,000. Variable manufacturing cost per unit is $15. Under absorption costing, what amount of fixed overhead is included in ending inventory?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$20,000" },
+        { "label": "C", "text": "$80,000" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under absorption costing (required by GAAP for external reporting), fixed manufacturing overhead is allocated to all units produced. Fixed overhead per unit = $100,000 / 10,000 = $10. Ending inventory = 10,000 − 8,000 = 2,000 units. Fixed overhead in ending inventory = 2,000 × $10 = $20,000. Under variable costing, no fixed overhead would be in ending inventory.",
+      "explanationJa": "全部原価計算（外部報告ではGAAPで必須）では、固定製造間接費を全生産単位に配分する。単位あたり固定間接費 = $100,000 / 10,000 = $10。期末在庫 = 2,000単位。期末在庫の固定間接費 = 2,000 × $10 = $20,000。直接原価計算では期末在庫に固定間接費は含まれない。",
+      "references": ["ASC 330-10-30-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-039",
+      "topic": "Inventory",
+      "subtopic": "Interim Reporting - LIFO Liquidation",
+      "stem": "A LIFO company experiences a temporary LIFO layer liquidation at the end of the first quarter but expects to replace the inventory by year-end. How should the company report this in its first-quarter interim financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize the LIFO liquidation profit in the interim period"
+        },
+        {
+          "label": "B",
+          "text": "Include the expected cost of replacing the liquidated LIFO layer in cost of goods sold"
+        },
+        { "label": "C", "text": "Ignore the temporary liquidation entirely" },
+        { "label": "D", "text": "Disclose the liquidation in notes only" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 270, if a LIFO layer is liquidated in an interim period but is expected to be replaced by year-end, the company should not recognize the lower-cost LIFO liquidation profit. Instead, COGS should be charged at the expected replacement cost. This prevents distortion of interim results from temporary fluctuations.",
+      "explanationJa": "ASC 270に基づき、中間期にLIFO層が一時的に清算されても年度末までに補充が見込まれる場合、低い原価でのLIFO清算利益を認識すべきではない。COGSには予想される補充原価を計上する。これにより一時的な変動による中間決算の歪みを防止する。",
+      "references": ["ASC 270-10-45-6"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-040",
+      "topic": "Inventory",
+      "subtopic": "Agriculture Inventory (ASC 905)",
+      "stem": "Under ASC 905, agricultural produce may be stated at an amount above cost when which of the following conditions are met?",
+      "choices": [
+        { "label": "A", "text": "The entity uses the LIFO method" },
+        {
+          "label": "B",
+          "text": "The product has a quoted market price, is available for immediate delivery, and units are interchangeable"
+        },
+        { "label": "C", "text": "The entity is publicly traded" },
+        {
+          "label": "D",
+          "text": "The product has been processed and packaged for retail sale"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 905 (Agriculture) permits inventories of certain agricultural products to be stated above cost at NRV when: (1) there is a reliable, readily determinable market price, (2) the product is available for immediate delivery, and (3) units are interchangeable (fungible). This is an exception to the general lower of cost or NRV rule in ASC 330.",
+      "explanationJa": "ASC 905（農業）では、特定の農産物在庫をNRVで原価以上に表示することが認められる。条件：(1) 信頼できる市場価格が容易に決定可能、(2) 即時引渡しが可能、(3) 単位が代替可能（同質的）。これはASC 330の低価法の例外規定である。",
+      "references": ["ASC 905-330-25-1"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }

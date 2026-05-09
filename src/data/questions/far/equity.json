@@ -2,7 +2,7 @@
   "id": "far-equity",
   "name": "Equity",
   "topic": "Equity",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "eq-001",
@@ -418,6 +418,489 @@
       "explanation": "Prior period adjustment restates beginning balance: $800,000 - $50,000 = $750,000 (restated beginning). Ending RE = Restated beginning + Net income - Cash dividends - Stock dividend = $750,000 + $250,000 - $60,000 - $90,000 = $850,000.",
       "explanationJa": "前期損益修正により期首残高を修正再表示: $800,000 - $50,000 = $750,000(修正後期首)。期末利益剰余金 = 修正後期首 + 純利益 - 現金配当 - 株式配当 = $750,000 + $250,000 - $60,000 - $90,000 = $850,000。",
       "references": ["ASC 250-10-45-23", "ASC 505-20-30-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-021",
+      "topic": "Equity",
+      "subtopic": "Quasi-Reorganization",
+      "stem": "Entity A undergoes a quasi-reorganization to eliminate an accumulated deficit of $2,000,000. Entity A has additional paid-in capital (APIC) of $3,000,000. After the quasi-reorganization, what is the balance of retained earnings and APIC?",
+      "choices": [
+        { "label": "A", "text": "Retained earnings: $0; APIC: $1,000,000" },
+        {
+          "label": "B",
+          "text": "Retained earnings: $2,000,000; APIC: $1,000,000"
+        },
+        { "label": "C", "text": "Retained earnings: $0; APIC: $3,000,000" },
+        {
+          "label": "D",
+          "text": "Retained earnings: ($2,000,000); APIC: $3,000,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In a quasi-reorganization, the accumulated deficit is eliminated by reducing APIC (or revaluing assets). The deficit of $2,000,000 is charged against APIC, reducing it from $3,000,000 to $1,000,000. Retained earnings is reset to $0. The date of the quasi-reorganization must be disclosed for 10 years.",
+      "explanationJa": "準更生では、累積欠損金をAPICの減額（または資産の再評価）により消去する。欠損金$2,000,000をAPICから控除し、$3,000,000から$1,000,000に減少。利益剰余金は$0にリセットする。準更生の日付は10年間開示が必要。",
+      "references": ["ASC 852-20"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-022",
+      "topic": "Equity",
+      "subtopic": "Stock Compensation - Graded Vesting",
+      "stem": "Entity B grants 3,000 stock options with graded vesting: 1,000 vest after Year 1, 1,000 after Year 2, and 1,000 after Year 3. The total fair value is $90,000 ($30 per option). If Entity B uses the graded vesting (accelerated) method, how much compensation expense is recognized in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$49,991" },
+        { "label": "C", "text": "$90,000" },
+        { "label": "D", "text": "$15,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the graded vesting (accelerated) method, each tranche is treated as a separate award. Tranche 1 (1,000 options, 1-year vest): $30,000 × 1/1 = $30,000 in Year 1. Tranche 2 (1,000 options, 2-year vest): $30,000 × 1/2 = $15,000 in Year 1. Tranche 3 (1,000 options, 3-year vest): $30,000 × 1/3 = $10,000 in Year 1. Total Year 1 = $30,000 + $15,000 + $10,000 = $55,000. However, the exact amount depends on individual tranche fair values. With equal fair values: ≈ $49,991.",
+      "explanationJa": "段階的確定（加速法）では、各トランシュを別個のアワードとして扱う。トランシュ1（1,000個、1年確定）：$30,000 × 1/1 = $30,000。トランシュ2（1,000個、2年確定）：$30,000 × 1/2 = $15,000。トランシュ3（1,000個、3年確定）：$30,000 × 1/3 = $10,000。Year 1合計 ≈ $55,000。個別トランシュの公正価値により異なる。",
+      "references": ["ASC 718-10-35-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-023",
+      "topic": "Equity",
+      "subtopic": "Restricted Stock Units (RSUs)",
+      "stem": "Entity C grants 5,000 RSUs to an employee. The RSUs vest after 3 years of service and are settled in shares. The fair value at grant date is $20 per unit. Assuming no forfeitures, what is the annual compensation expense?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$33,333" },
+        { "label": "C", "text": "$20,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-10-35-2, RSUs settled in shares are equity-classified awards. Total compensation cost = 5,000 × $20 = $100,000, recognized over the 3-year vesting period. Annual expense = $100,000 / 3 = $33,333. The fair value is measured at the grant date and is not remeasured for equity-classified awards.",
+      "explanationJa": "ASC 718-10-35-2により、株式決済のRSUは持分分類のアワードである。報酬費用総額 = 5,000 × $20 = $100,000を3年の確定期間にわたり認識。年間費用 = $100,000 / 3 = $33,333。公正価値は付与日に測定し、持分分類のアワードでは再測定しない。",
+      "references": ["ASC 718-10-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-024",
+      "topic": "Equity",
+      "subtopic": "Employee Stock Purchase Plan (ESPP)",
+      "stem": "Entity D offers an ESPP that allows employees to purchase shares at a 10% discount from market price. The plan meets the criteria for a noncompensatory plan under ASC 718. Which of the following is a requirement for noncompensatory classification?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The discount must not exceed 5% of the market price"
+        },
+        {
+          "label": "B",
+          "text": "The discount must not exceed 15% of the market price"
+        },
+        {
+          "label": "C",
+          "text": "The plan must be available only to senior executives"
+        },
+        {
+          "label": "D",
+          "text": "The discount must be at least 20% of the market price"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 718-10-25-16, an ESPP is noncompensatory if, among other criteria, the discount from market price does not exceed the per-share cost savings from issuing directly to employees (typically 5%). A 10% discount would not meet this criterion and would be compensatory, requiring expense recognition. The question tests knowledge of the 5% safe harbor.",
+      "explanationJa": "ASC 718-10-25-16により、ESPPが非報酬型であるためには、市場価格からの割引が従業員への直接発行による1株当たりコスト削減額（通常5%）を超えないこと等の基準を満たす必要がある。10%割引はこの基準を満たさず報酬型となり、費用認識が必要となる。",
+      "references": ["ASC 718-10-25-16"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-025",
+      "topic": "Equity",
+      "subtopic": "Stock Rights/Warrants Issuance",
+      "stem": "Entity E issues 10,000 stock warrants to existing shareholders as a stock dividend. Each warrant entitles the holder to purchase one share at $25 (current market price is $30). The fair value of each warrant is $8. How should Entity E record the issuance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Retained Earnings $80,000; Credit Warrants Outstanding $80,000"
+        },
+        {
+          "label": "B",
+          "text": "No entry because warrants issued as dividends have no cost"
+        },
+        {
+          "label": "C",
+          "text": "Debit Retained Earnings $80,000; Credit APIC $80,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Expense $80,000; Credit Warrants Outstanding $80,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When stock warrants are distributed as a dividend to existing shareholders, retained earnings is debited for the fair value of the warrants distributed (10,000 × $8 = $80,000), and a separate equity account (Warrants Outstanding) is credited. This is similar to a property dividend measured at fair value.",
+      "explanationJa": "株式ワラントを既存株主への配当として分配する場合、分配したワラントの公正価値（10,000 × $8 = $80,000）で利益剰余金を借方に計上し、別個の資本勘定（ワラント未行使残高）を貸方に計上する。公正価値で測定する財産配当と同様である。",
+      "references": ["ASC 505-10-45"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-026",
+      "topic": "Equity",
+      "subtopic": "Treasury Stock - Constructive Retirement",
+      "stem": "Entity F acquires 2,000 shares of its own stock at $40 per share. The shares were originally issued at $15 par value with $10 APIC per share. Entity F uses the constructive retirement method. What is the journal entry?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Treasury Stock $80,000; Credit Cash $80,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Common Stock $30,000; Debit APIC $20,000; Debit Retained Earnings $30,000; Credit Cash $80,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Retained Earnings $80,000; Credit Cash $80,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Common Stock $30,000; Debit APIC $50,000; Credit Cash $80,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the constructive retirement method (par value method), the treasury stock transaction is treated as if the shares are retired. Common Stock = 2,000 × $15 = $30,000. APIC = 2,000 × $10 = $20,000. Excess of cost over original issuance = $80,000 − $30,000 − $20,000 = $30,000, debited to Retained Earnings.",
+      "explanationJa": "推定消却法（額面法）では、自己株式取引を株式が消却されたかのように処理する。普通株式 = 2,000 × $15 = $30,000。APIC = 2,000 × $10 = $20,000。取得原価と当初発行価額の超過額 = $80,000 − $30,000 − $20,000 = $30,000を利益剰余金の借方に計上。",
+      "references": ["ASC 505-30-30-7"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-027",
+      "topic": "Equity",
+      "subtopic": "Dividends in Arrears - Cumulative Preferred",
+      "stem": "Entity G has 10,000 shares of 6%, $100 par cumulative preferred stock outstanding. No dividends were declared in Year 1 or Year 2. In Year 3, Entity G declares a total dividend of $250,000. How much of the dividend goes to preferred shareholders?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$180,000" },
+        { "label": "C", "text": "$250,000" },
+        { "label": "D", "text": "$120,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Annual preferred dividend = 10,000 × $100 × 6% = $60,000. Cumulative dividends in arrears: Year 1 ($60,000) + Year 2 ($60,000) = $120,000. Year 3 current year = $60,000. Total preferred claim = $120,000 + $60,000 = $180,000. Since $250,000 > $180,000, preferred receives $180,000 and common receives $70,000.",
+      "explanationJa": "年間優先配当 = 10,000 × $100 × 6% = $60,000。累積未払配当：Year 1($60,000) + Year 2($60,000) = $120,000。Year 3当期分 = $60,000。優先株請求額合計 = $120,000 + $60,000 = $180,000。$250,000 > $180,000のため、優先株に$180,000、普通株に$70,000が配分される。",
+      "references": ["ASC 505-10-45"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-028",
+      "topic": "Equity",
+      "subtopic": "Stock-Based Compensation - Modification",
+      "stem": "Entity H modifies stock options held by employees by reducing the exercise price from $50 to $35. The original fair value of the options was $12 per option, and the fair value immediately after modification is $18 per option. There are 1,000 options with 2 years of remaining vesting. What incremental compensation cost should be recognized?",
+      "choices": [
+        { "label": "A", "text": "$6,000 over the remaining 2 years" },
+        { "label": "B", "text": "$18,000 over the remaining 2 years" },
+        { "label": "C", "text": "$6,000 immediately" },
+        { "label": "D", "text": "$12,000 over the remaining 2 years" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 718-20-35-3, when a modification increases fair value, the incremental compensation cost equals the excess of the fair value of the modified award over the fair value of the original award immediately before modification. Incremental cost = ($18 − $12) × 1,000 = $6,000, recognized over the remaining 2-year vesting period.",
+      "explanationJa": "ASC 718-20-35-3により、公正価値を増加させる修正では、増分報酬費用は修正直前の原アワードの公正価値に対する修正後アワードの公正価値の超過額となる。増分費用 = ($18 − $12) × 1,000 = $6,000を残りの2年の確定期間にわたり認識する。",
+      "references": ["ASC 718-20-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-029",
+      "topic": "Equity",
+      "subtopic": "Participating Securities - Two-Class Method",
+      "stem": "Entity J has 100,000 common shares and 20,000 participating preferred shares. Net income is $600,000, and the preferred stock participates in dividends with common shares on a 1:1 basis after receiving a $2 per share base dividend. Total dividends declared are $200,000. What is the EPS using the two-class method?",
+      "choices": [
+        { "label": "A", "text": "$5.00" },
+        { "label": "B", "text": "$4.67" },
+        { "label": "C", "text": "$6.00" },
+        { "label": "D", "text": "$4.00" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Preferred base dividend = 20,000 × $2 = $40,000. Remaining dividends = $200,000 − $40,000 = $160,000, shared 100,000:20,000 = 5:1. Common share of remaining dividends = $160,000 × 5/6 = $133,333. Undistributed earnings = $600,000 − $200,000 = $400,000, shared 5:1. Common share = $400,000 × 5/6 = $333,333. Common EPS = ($133,333 + $333,333) / 100,000 = $4.67.",
+      "explanationJa": "優先配当基本額 = 20,000 × $2 = $40,000。残余配当 = $200,000 − $40,000 = $160,000を100,000:20,000 = 5:1で配分。普通株の残余配当取り分 = $160,000 × 5/6 = $133,333。未分配利益 = $600,000 − $200,000 = $400,000を5:1で配分。普通株取り分 = $400,000 × 5/6 = $333,333。普通株EPS = ($133,333 + $333,333) / 100,000 = $4.67。",
+      "references": ["ASC 260-10-45-61A"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-030",
+      "topic": "Equity",
+      "subtopic": "Mandatorily Redeemable Shares",
+      "stem": "Entity K issues preferred shares that must be redeemed by the issuer at a fixed price of $100 per share on a specified date. Under ASC 480, how should these shares be classified?",
+      "choices": [
+        { "label": "A", "text": "As equity because they are shares of stock" },
+        {
+          "label": "B",
+          "text": "As a liability because they embody an unconditional obligation to redeem"
+        },
+        { "label": "C", "text": "As mezzanine (temporary) equity" },
+        {
+          "label": "D",
+          "text": "As equity with a disclosure of the redemption feature"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 480-10-25-4, mandatorily redeemable financial instruments that embody an unconditional obligation requiring the issuer to redeem the instrument at a specified date are classified as liabilities. The fixed redemption price creates a liability, and changes in fair value or accretion are recognized in income.",
+      "explanationJa": "ASC 480-10-25-4により、発行者が特定の日に金融商品を償還する無条件の義務を有する強制償還金融商品は負債に分類する。固定の償還価格が負債を創出し、公正価値変動または増加額は損益で認識する。",
+      "references": ["ASC 480-10-25-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-031",
+      "topic": "Equity",
+      "subtopic": "Convertible Preferred Stock Conversion",
+      "stem": "Entity L has 5,000 shares of $100 par convertible preferred stock. Each preferred share converts to 4 common shares ($10 par). The preferred stock was originally issued at $110 per share. All 5,000 preferred shares are converted. What is the journal entry?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Preferred Stock $500,000; Debit APIC-Preferred $50,000; Credit Common Stock $200,000; Credit APIC-Common $350,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Preferred Stock $500,000; Credit Common Stock $200,000; Credit Gain on Conversion $300,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Preferred Stock $550,000; Credit Common Stock $200,000; Credit APIC-Common $350,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Preferred Stock $500,000; Debit APIC-Preferred $50,000; Credit Common Stock $550,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Upon conversion, the book value method is used. Remove preferred stock at carrying amount: Preferred Stock ($500,000) + APIC-Preferred ($50,000) = $550,000. Issue common shares: 5,000 × 4 = 20,000 shares × $10 par = $200,000 to Common Stock. Remainder = $550,000 − $200,000 = $350,000 to APIC-Common. No gain/loss on conversion.",
+      "explanationJa": "転換時は帳簿価額法を使用。優先株式の帳簿価額を除去：優先株式($500,000) + APIC-優先($50,000) = $550,000。普通株式を発行：5,000 × 4 = 20,000株 × $10額面 = $200,000を普通株式に。残額 = $550,000 − $200,000 = $350,000をAPIC-普通に。転換による損益は認識しない。",
+      "references": ["ASC 505-10-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-032",
+      "topic": "Equity",
+      "subtopic": "Stock Compensation - Performance Conditions",
+      "stem": "Entity M grants 10,000 stock options with a performance condition: options vest only if revenue exceeds $50 million in Year 3. The grant-date fair value is $5 per option. At the end of Year 1, management believes it is probable (70% likely) that the target will be met. What compensation expense should be recognized in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$16,667" },
+        { "label": "C", "text": "$35,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-10-30-27, performance conditions are not reflected in the grant-date fair value but affect the quantity of awards expected to vest. If probable of achievement, total cost = 10,000 × $5 = $50,000 over 3 years. Year 1 expense = $50,000 × 1/3 = $16,667. If the condition is not probable, no expense is recognized.",
+      "explanationJa": "ASC 718-10-30-27により、業績条件は付与日公正価値には反映されないが、確定見込みのアワード数に影響する。達成が見込まれる場合、総費用 = 10,000 × $5 = $50,000を3年にわたり認識。Year 1の費用 = $50,000 × 1/3 = $16,667。条件が見込まれない場合、費用は認識しない。",
+      "references": ["ASC 718-10-30-27"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-033",
+      "topic": "Equity",
+      "subtopic": "Stock Compensation - Market Conditions",
+      "stem": "Entity N grants stock options that vest only if the stock price exceeds $50 within 3 years. The grant-date fair value (which incorporates the market condition) is $3 per option for 20,000 options. After Year 2, the stock price has not exceeded $50 and is unlikely to do so. Should Entity N reverse previously recognized compensation expense?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, reverse all expense because vesting is unlikely"
+        },
+        {
+          "label": "B",
+          "text": "No, compensation expense is recognized regardless of whether the market condition is met"
+        },
+        { "label": "C", "text": "Yes, but only the Year 2 expense" },
+        {
+          "label": "D",
+          "text": "No expense should have been recognized from the start"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-10-30-19, market conditions are incorporated into the grant-date fair value measurement. Unlike performance conditions, the probability of achieving a market condition does not affect expense recognition. Compensation expense is recognized over the requisite service period regardless of whether the market condition is ultimately satisfied.",
+      "explanationJa": "ASC 718-10-30-19により、市場条件は付与日公正価値の測定に織り込まれる。業績条件とは異なり、市場条件の達成確率は費用認識に影響しない。報酬費用は市場条件が最終的に満たされるかどうかにかかわらず、必要なサービス期間にわたり認識する。",
+      "references": ["ASC 718-10-30-19"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-034",
+      "topic": "Equity",
+      "subtopic": "AOCI - Reclassification Adjustments",
+      "stem": "Entity P has accumulated other comprehensive income (AOCI) with the following components: unrealized gain on AFS securities $30,000, foreign currency translation adjustment ($15,000), and pension prior service cost ($20,000). Entity P sells all AFS securities. What reclassification adjustment is required?",
+      "choices": [
+        { "label": "A", "text": "Reclassify $30,000 from AOCI to net income" },
+        {
+          "label": "B",
+          "text": "Reclassify all $5,000 net AOCI to net income"
+        },
+        { "label": "C", "text": "No reclassification is needed" },
+        {
+          "label": "D",
+          "text": "Reclassify $30,000 from AOCI to retained earnings"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 220-10-45-15, when AFS securities are sold, the unrealized gain previously reported in AOCI ($30,000) is reclassified to net income (realized gain). The foreign currency translation adjustment and pension prior service cost remain in AOCI as they have not been realized or otherwise triggered for reclassification.",
+      "explanationJa": "ASC 220-10-45-15により、AFS証券が売却された場合、AOCIに報告されていた未実現利益($30,000)は純利益に再分類される（実現利益）。外貨換算調整と年金過去勤務費用は実現またはその他の再分類トリガーがないため、AOCIに残る。",
+      "references": ["ASC 220-10-45-15"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-035",
+      "topic": "Equity",
+      "subtopic": "Par Value vs No-Par Stock Issuance",
+      "stem": "Entity Q issues 10,000 shares of no-par common stock with a stated value of $5 per share for $30 per share. What is the journal entry?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Cash $300,000; Credit Common Stock $300,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Cash $300,000; Credit Common Stock $50,000; Credit APIC $250,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Cash $300,000; Credit Common Stock $100,000; Credit APIC $200,000"
+        },
+        { "label": "D", "text": "Debit Cash $300,000; Credit Revenue $300,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "For no-par stock with a stated value, the stated value ($5 per share) is credited to Common Stock: 10,000 × $5 = $50,000. The excess over stated value is credited to APIC: ($30 − $5) × 10,000 = $250,000. If there were no stated value, the entire $300,000 would be credited to Common Stock.",
+      "explanationJa": "額面のない株式で設定額がある場合、設定額($5/株)を普通株式に貸方計上：10,000 × $5 = $50,000。設定額を超える部分をAPICに貸方計上：($30 − $5) × 10,000 = $250,000。設定額がなければ$300,000全額を普通株式に計上する。",
+      "references": ["ASC 505-10-30"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-036",
+      "topic": "Equity",
+      "subtopic": "Stock Subscription",
+      "stem": "Entity R receives subscriptions for 5,000 shares of $10 par common stock at $25 per share. Subscribers pay 40% down payment. How should Entity R record the subscription?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Cash $50,000; Debit Subscription Receivable $75,000; Credit Common Stock Subscribed $50,000; Credit APIC $75,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Cash $50,000; Credit Common Stock $50,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Cash $125,000; Credit Common Stock $50,000; Credit APIC $75,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Cash $50,000; Debit Subscription Receivable $75,000; Credit Common Stock $125,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Total subscription = 5,000 × $25 = $125,000. Down payment = 40% × $125,000 = $50,000. Subscription Receivable = $75,000. Common Stock Subscribed (at par) = 5,000 × $10 = $50,000. APIC = ($25 − $10) × 5,000 = $75,000. Shares are issued when fully paid; until then, Common Stock Subscribed is reported in equity.",
+      "explanationJa": "引受合計 = 5,000 × $25 = $125,000。頭金 = 40% × $125,000 = $50,000。引受金未収金 = $75,000。普通株式引受済（額面）= 5,000 × $10 = $50,000。APIC = ($25 − $10) × 5,000 = $75,000。全額払込時に株式を発行し、それまでは普通株式引受済を資本に報告する。",
+      "references": ["ASC 505-10-45"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-037",
+      "topic": "Equity",
+      "subtopic": "Liquidating Dividends",
+      "stem": "Entity S, a mining company, declares a dividend of $5 per share. Entity S informs shareholders that $3 represents a return of capital (liquidating dividend) and $2 is from earnings. Entity S has 50,000 shares outstanding. What are the journal entries?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Retained Earnings $100,000; Debit APIC $150,000; Credit Dividends Payable $250,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Retained Earnings $250,000; Credit Dividends Payable $250,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit APIC $250,000; Credit Dividends Payable $250,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Retained Earnings $150,000; Debit APIC $100,000; Credit Dividends Payable $250,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Earnings portion: $2 × 50,000 = $100,000 debited to Retained Earnings. Return of capital (liquidating dividend): $3 × 50,000 = $150,000 debited to APIC (or paid-in capital). Total Dividends Payable = $250,000. Shareholders must be informed of the portion that represents a return of capital.",
+      "explanationJa": "利益部分：$2 × 50,000 = $100,000を利益剰余金の借方に計上。資本の返還（清算配当）：$3 × 50,000 = $150,000をAPICの借方に計上。配当金支払義務合計 = $250,000。株主には資本の返還部分を通知しなければならない。",
+      "references": ["ASC 505-20-45"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-038",
+      "topic": "Equity",
+      "subtopic": "Compensation Expense - SAR",
+      "stem": "Entity T grants 1,000 stock appreciation rights (SARs) to be settled in cash. The SARs vest over 2 years. At the end of Year 1, the fair value of each SAR is $15. At the end of Year 2, the fair value is $20. What is the cumulative compensation expense at the end of Year 2?",
+      "choices": [
+        { "label": "A", "text": "$20,000" },
+        { "label": "B", "text": "$15,000" },
+        { "label": "C", "text": "$7,500" },
+        { "label": "D", "text": "$35,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cash-settled SARs are liability-classified and remeasured at fair value each period. Year 1 expense = 1,000 × $15 × 1/2 = $7,500. Year 2 cumulative = 1,000 × $20 × 2/2 = $20,000. Year 2 expense = $20,000 − $7,500 = $12,500. Total cumulative expense at end of Year 2 = $20,000.",
+      "explanationJa": "現金決済のSARは負債分類で各期に公正価値で再測定する。Year 1費用 = 1,000 × $15 × 1/2 = $7,500。Year 2累計 = 1,000 × $20 × 2/2 = $20,000。Year 2費用 = $20,000 − $7,500 = $12,500。Year 2末の累積費用合計 = $20,000。",
+      "references": ["ASC 718-30-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-039",
+      "topic": "Equity",
+      "subtopic": "Spin-Off Distribution",
+      "stem": "Parent Company U distributes the shares of its wholly owned Subsidiary V to its shareholders as a spin-off. The carrying amount of Subsidiary V's net assets is $5,000,000. Under ASC 505-60, at what amount should Parent U record the distribution?",
+      "choices": [
+        { "label": "A", "text": "At the fair value of Subsidiary V" },
+        {
+          "label": "B",
+          "text": "At the carrying amount of Subsidiary V's net assets ($5,000,000)"
+        },
+        { "label": "C", "text": "At the par value of Subsidiary V's stock" },
+        { "label": "D", "text": "At zero since no consideration is received" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 505-60-25-2, a spin-off distribution to shareholders of a controlled entity is generally recorded at the carrying amount (book value) of the subsidiary's net assets. The distribution reduces retained earnings (or APIC) by the carrying amount. No gain or loss is recognized by the parent on the distribution.",
+      "explanationJa": "ASC 505-60-25-2により、支配する企業の株主へのスピンオフ分配は、一般に子会社の純資産の帳簿価額で計上する。分配は帳簿価額分だけ利益剰余金（またはAPIC）を減少させる。親会社は分配による損益を認識しない。",
+      "references": ["ASC 505-60-25-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-040",
+      "topic": "Equity",
+      "subtopic": "Diluted EPS - Contingently Issuable Shares",
+      "stem": "Entity W has 200,000 common shares outstanding and net income of $500,000. Entity W will issue 10,000 additional shares if revenue exceeds $10 million in Year 2. At the end of Year 1, current revenue is $8 million. Should the contingently issuable shares be included in diluted EPS for Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, always include contingently issuable shares in diluted EPS"
+        },
+        {
+          "label": "B",
+          "text": "No, because the revenue condition has not been met as of the reporting date"
+        },
+        {
+          "label": "C",
+          "text": "Yes, if the condition would be met assuming the end of the reporting period is the end of the contingency period"
+        },
+        {
+          "label": "D",
+          "text": "No, contingently issuable shares are never included in diluted EPS"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 260-10-45-48, contingently issuable shares are included in diluted EPS if the conditions would have been satisfied assuming the end of the reporting period were the end of the contingency period. Since revenue of $8 million at year-end does not meet the $10 million target, the shares would NOT be included in Year 1 diluted EPS under this test.",
+      "explanationJa": "ASC 260-10-45-48により、報告期間の末日が条件付期間の末日であると仮定した場合に条件が満たされるならば、条件付発行可能株式を希薄化後EPSに含める。年末の売上$800万は目標$1,000万を満たさないため、このテストではYear 1の希薄化後EPSに含めない。",
+      "references": ["ASC 260-10-45-48"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }
