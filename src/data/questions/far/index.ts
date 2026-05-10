@@ -1,5 +1,6 @@
 import type { QuestionSet } from "@/types/questions";
 
+import cashEquivalents from "./cash-equivalents.json";
 import cashFlows from "./cash-flows.json";
 import receivables from "./receivables.json";
 import inventory from "./inventory.json";
@@ -19,8 +20,10 @@ import derivativesHedging from "./derivatives-hedging.json";
 import foreignCurrencyEps from "./foreign-currency-eps.json";
 import partnerships from "./partnerships.json";
 import creditLossCecl from "./credit-loss-cecl.json";
+import stockCompensation from "./stock-compensation.json";
 
 export const farQuestionSets: QuestionSet[] = [
+  cashEquivalents,
   cashFlows,
   receivables,
   inventory,
@@ -32,6 +35,7 @@ export const farQuestionSets: QuestionSet[] = [
   leases,
   incomeTaxes,
   pensions,
+  stockCompensation,
   consolidations,
   governmentAccounting,
   nonprofitAccounting,
