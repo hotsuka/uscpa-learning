@@ -100,10 +100,11 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 1,
+      version: 2,
       migrate: (persisted, version) => {
         const state = persisted as { attempts: QuestionAttempt[] };
-        if (version === 0) {
+        // 問題データの正解が変更された場合に isCorrect を再計算する共通処理
+        const recalculate = () => {
           const answerMap = new Map<string, string>();
           for (const set of farQuestionSets) {
             for (const q of set.questions) {
@@ -117,7 +118,10 @@ export const useQuestionBankStore = create<QuestionBankState>()(
             }
             return a;
           });
-        }
+        };
+        if (version === 0) recalculate();
+        // v1→v2: tax-021 の正解修正（A→B）に伴い isCorrect を再計算
+        if (version === 1) recalculate();
         return state;
       },
     },
