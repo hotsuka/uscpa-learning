@@ -74,13 +74,15 @@ export default function QuestionsPage() {
 
     const stats: Record<string, { correct: number; total: number; rate: number }> = {}
     for (const attempt of latestAttempts.values()) {
+      // 正誤不明(null)は分母から除外
+      if (attempt.isCorrect === null) continue
       const setTopic = questionSetTopicMap.get(attempt.questionId) ?? attempt.topic
       if (!stats[setTopic]) stats[setTopic] = { correct: 0, total: 0, rate: 0 }
       stats[setTopic].total++
-      if (attempt.isCorrect) stats[setTopic].correct++
+      if (attempt.isCorrect === true) stats[setTopic].correct++
     }
     for (const topic of Object.keys(stats)) {
-      stats[topic].rate = Math.round((stats[topic].correct / stats[topic].total) * 100)
+      stats[topic].rate = stats[topic].total > 0 ? Math.round((stats[topic].correct / stats[topic].total) * 100) : 0
     }
     return stats
   }, [attempts, questionSetTopicMap])
@@ -103,11 +105,11 @@ export default function QuestionsPage() {
       .map(([topic]) => topic)
   }, [records])
 
-  // 1回でも正解したことがある問題IDのセット
+  // 1回でも正解したことがある問題IDのセット (isCorrect===true のみ。null は正解判定不可)
   const everCorrectIds = useMemo(() => {
     const ids = new Set<string>()
     for (const a of attempts) {
-      if (a.isCorrect) ids.add(a.questionId)
+      if (a.isCorrect === true) ids.add(a.questionId)
     }
     return ids
   }, [attempts])
@@ -241,11 +243,21 @@ export default function QuestionsPage() {
     setCurrentIndex(0)
   }
 
-  // 問題ごとの解答状態マップ（未解答/最終正解/最終不正解）
+  // 問題ごとの解答状態マップ（未解答/最終正解/最終不正解/解答済み・正誤不明）
+  // 各 questionId の最新 attempt で判定する
   const questionStatusMap = useMemo(() => {
-    const map = new Map<string, "correct" | "incorrect">()
+    const latestByQuestion = new Map<string, (typeof attempts)[0]>()
     for (const a of attempts) {
-      map.set(a.questionId, a.isCorrect ? "correct" : "incorrect")
+      const existing = latestByQuestion.get(a.questionId)
+      if (!existing || new Date(a.attemptedAt) > new Date(existing.attemptedAt)) {
+        latestByQuestion.set(a.questionId, a)
+      }
+    }
+    const map = new Map<string, "correct" | "incorrect" | "unknown">()
+    for (const [qid, a] of latestByQuestion) {
+      if (a.isCorrect === true) map.set(qid, "correct")
+      else if (a.isCorrect === false) map.set(qid, "incorrect")
+      else map.set(qid, "unknown")
     }
     return map
   }, [attempts])
@@ -447,9 +459,10 @@ export default function QuestionsPage() {
             {showGrid && (
               <Card className="mt-3">
                 <CardContent className="p-3">
-                  <div className="flex items-center gap-3 mb-2 text-xs text-muted-foreground">
+                  <div className="flex flex-wrap items-center gap-3 mb-2 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-green-500 inline-block" /> 正解</span>
                     <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" /> 不正解</span>
+                    <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-slate-400 inline-block" /> 解答済み・正誤不明</span>
                     <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30 inline-block" /> 未解答</span>
                   </div>
                   <div className="flex flex-wrap gap-1">
@@ -465,6 +478,7 @@ export default function QuestionsPage() {
                             isCurrent && "ring-2 ring-primary ring-offset-1",
                             status === "correct" && "bg-green-100 text-green-800 hover:bg-green-200",
                             status === "incorrect" && "bg-red-100 text-red-800 hover:bg-red-200",
+                            status === "unknown" && "bg-slate-200 text-slate-700 hover:bg-slate-300",
                             !status && "bg-muted text-muted-foreground hover:bg-muted/80",
                           )}
                         >

@@ -46,8 +46,12 @@ export const useQuestionBankStore = create<QuestionBankState>()(
             latestByQuestion.set(a.questionId, a);
           }
         }
-        const latest = Array.from(latestByQuestion.values());
-        const correct = latest.filter((a) => a.isCorrect).length;
+        // 正誤不明(null)は分母から除外
+        const latest = Array.from(latestByQuestion.values()).filter(
+          (a) => a.isCorrect !== null,
+        );
+        if (latest.length === 0) return { correct: 0, total: 0, rate: 0 };
+        const correct = latest.filter((a) => a.isCorrect === true).length;
         return {
           correct,
           total: latest.length,
@@ -77,16 +81,19 @@ export const useQuestionBankStore = create<QuestionBankState>()(
           { correct: number; total: number; rate: number }
         > = {};
         for (const attempt of latestByQuestion.values()) {
+          // 正誤不明(null)は分母にカウントしない
+          if (attempt.isCorrect === null) continue;
           if (!stats[attempt.topic]) {
             stats[attempt.topic] = { correct: 0, total: 0, rate: 0 };
           }
           stats[attempt.topic].total++;
-          if (attempt.isCorrect) stats[attempt.topic].correct++;
+          if (attempt.isCorrect === true) stats[attempt.topic].correct++;
         }
         for (const topic of Object.keys(stats)) {
-          stats[topic].rate = Math.round(
-            (stats[topic].correct / stats[topic].total) * 100,
-          );
+          stats[topic].rate =
+            stats[topic].total > 0
+              ? Math.round((stats[topic].correct / stats[topic].total) * 100)
+              : 0;
         }
         return stats;
       },
@@ -101,7 +108,7 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 3,
+      version: 4,
       migrate: (persisted, version) => {
         // 破壊的処理の前に現在の localStorage 値を退避する
         backupBeforeMigrate("uscpa-question-bank", version);
@@ -127,6 +134,27 @@ export const useQuestionBankStore = create<QuestionBankState>()(
         if (version === 1) recalculate();
         // v2: selectedAnswer がシャッフル後ラベルで保存されていたため recalculate 不可
         // v2→v3 はデータをそのまま保持（ユーザーが解き直すと正しいデータに更新される）
+
+        // v3→v4: バグ混入コミット (073a2bb, 2026-05-11T07:28:48+09:00) 以前の
+        // attempts は recalculate により isCorrect が信頼できない状態にあるため、
+        // 「設問単位」で境界以降の回答が1件もない場合は isCorrect=null にリセットする。
+        // 解答済みフラグ自体は保持（UI で「解答済み・正誤不明」として表示）。
+        if (version === 3) {
+          const BOUNDARY = new Date("2026-05-11T07:28:48+09:00").getTime();
+          // questionId ごとに「境界以降の attempt が1件でもあるか」を判定
+          const hasTrustedAttempt = new Set<string>();
+          for (const a of state.attempts) {
+            if (new Date(a.attemptedAt).getTime() >= BOUNDARY) {
+              hasTrustedAttempt.add(a.questionId);
+            }
+          }
+          state.attempts = state.attempts.map((a) => {
+            if (hasTrustedAttempt.has(a.questionId)) return a;
+            // 境界より前の回答しかない設問 → isCorrect をリセット
+            return { ...a, isCorrect: null };
+          });
+        }
+
         return state;
       },
     },

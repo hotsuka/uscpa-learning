@@ -24,6 +24,7 @@ export interface QuestionAttempt {
   questionId: string;
   topic: string;
   selectedAnswer: string;
-  isCorrect: boolean;
+  // null は「正誤不明」を示す（v2 migrate の recalculate バグでデータが壊れた回答に対するリカバリ用）
+  isCorrect: boolean | null;
   attemptedAt: string;
 }

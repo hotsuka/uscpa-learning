@@ -4,7 +4,7 @@ import { useState, useMemo, useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle2, XCircle, ChevronDown, ChevronUp, History, Clock } from "lucide-react"
+import { CheckCircle2, XCircle, ChevronDown, ChevronUp, History, Clock, HelpCircle } from "lucide-react"
 import type { FARQuestion, QuestionAttempt } from "@/types/questions"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { cn } from "@/lib/utils"
@@ -54,8 +54,10 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
       .sort((a, b) => new Date(b.attemptedAt).getTime() - new Date(a.attemptedAt).getTime())
   }, [attempts, question.id])
 
-  const pastCorrectCount = pastAttempts.filter((a) => a.isCorrect).length
-  const pastAccuracy = pastAttempts.length > 0 ? Math.round((pastCorrectCount / pastAttempts.length) * 100) : null
+  // 正誤不明(null)は正答率の分母から除外
+  const pastValidAttempts = pastAttempts.filter((a) => a.isCorrect !== null)
+  const pastCorrectCount = pastValidAttempts.filter((a) => a.isCorrect === true).length
+  const pastAccuracy = pastValidAttempts.length > 0 ? Math.round((pastCorrectCount / pastValidAttempts.length) * 100) : null
 
   const handleSubmit = () => {
     if (!selectedAnswer) return
@@ -131,10 +133,10 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
                   pastAccuracy !== null && pastAccuracy >= 50 && pastAccuracy < 80 && "text-yellow-600",
                   pastAccuracy !== null && pastAccuracy < 50 && "text-red-600",
                 )}>
-                  正答率 {pastAccuracy}%
+                  正答率 {pastAccuracy !== null ? `${pastAccuracy}%` : "—"}
                 </span>
                 <span>·</span>
-                <span>直近: {pastAttempts[0].isCorrect ? "○" : "✕"}</span>
+                <span>直近: {pastAttempts[0].isCorrect === true ? "○" : pastAttempts[0].isCorrect === false ? "✕" : "？"}</span>
               </div>
               {showHistory ? <ChevronUp className="w-3.5 h-3.5 text-muted-foreground" /> : <ChevronDown className="w-3.5 h-3.5 text-muted-foreground" />}
             </button>
@@ -143,13 +145,26 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
                 {pastAttempts.map((a, i) => (
                   <div key={a.attemptedAt} className="flex items-center gap-2 text-xs px-2 py-1 rounded bg-muted/30">
                     <span className="text-muted-foreground w-5 text-right">{pastAttempts.length - i}</span>
-                    {a.isCorrect ? (
+                    {a.isCorrect === true ? (
                       <CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" />
-                    ) : (
+                    ) : a.isCorrect === false ? (
                       <XCircle className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                    ) : (
+                      <HelpCircle className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
                     )}
-                    <span className={a.isCorrect ? "text-green-700" : "text-red-700"}>
+                    <span
+                      className={
+                        a.isCorrect === true
+                          ? "text-green-700"
+                          : a.isCorrect === false
+                            ? "text-red-700"
+                            : "text-muted-foreground"
+                      }
+                    >
                       {a.selectedAnswer}
+                      {a.isCorrect === null && (
+                        <span className="ml-1 text-[10px]">(正誤不明)</span>
+                      )}
                     </span>
                     <span className="text-muted-foreground ml-auto flex items-center gap-1">
                       <Clock className="w-3 h-3" />
