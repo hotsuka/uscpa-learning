@@ -36,6 +36,7 @@ import {
   getThisWeekHolidays,
   getThisWeekMonday,
 } from "@/lib/holidays"
+import { BackupRestoreCard } from "@/components/settings/BackupRestoreCard"
 
 export default function SettingsPage() {
   // 設定ストアから値を取得
@@ -716,6 +717,9 @@ export default function SettingsPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* バックアップ・復元 */}
+        <BackupRestoreCard />
 
         {/* 設定は自動保存されることを表示 */}
         <div className="text-center text-sm text-muted-foreground">

@@ -21,7 +21,7 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
   const [showExplanation, setShowExplanation] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
   // 選択肢テキストのみシャッフル（ラベルA～Dは固定）
-  const { choices: shuffledChoices, correctAnswer: shuffledCorrectAnswer } = useRef(
+  const { choices: shuffledChoices, correctAnswer: shuffledCorrectAnswer, shuffledToOriginalLabel } = useRef(
     (() => {
       const labels = question.choices.map((c) => c.label)
       const correctText = question.choices.find((c) => c.label === question.correctAnswer)!.text
@@ -31,9 +31,16 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
         const j = Math.floor(Math.random() * (i + 1))
         ;[texts[i], texts[j]] = [texts[j], texts[i]]
       }
+      // シャッフル後ラベル→元ラベルの変換マップ（recalculateとの整合性を保つため）
+      const shuffledToOriginalLabel: Record<string, string> = {}
+      labels.forEach((label, i) => {
+        const originalLabel = question.choices.find((c) => c.text === texts[i])?.label ?? label
+        shuffledToOriginalLabel[label] = originalLabel
+      })
       return {
         choices: labels.map((label, i) => ({ label, text: texts[i] })),
         correctAnswer: labels[texts.indexOf(correctText)],
+        shuffledToOriginalLabel,
       }
     })()
   ).current
@@ -58,7 +65,7 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
     addAttempt({
       questionId: question.id,
       topic: question.topic,
-      selectedAnswer,
+      selectedAnswer: shuffledToOriginalLabel[selectedAnswer] ?? selectedAnswer,
       isCorrect,
       attemptedAt: new Date().toISOString(),
     })

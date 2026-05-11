@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { QuestionAttempt } from "@/types/questions";
 import { farQuestionSets } from "@/data/questions/far";
+import { backupBeforeMigrate } from "@/lib/backup/utils";
 
 interface QuestionBankState {
   attempts: QuestionAttempt[];
@@ -100,10 +101,13 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 2,
+      version: 3,
       migrate: (persisted, version) => {
+        // 破壊的処理の前に現在の localStorage 値を退避する
+        backupBeforeMigrate("uscpa-question-bank", version);
         const state = persisted as { attempts: QuestionAttempt[] };
         // 問題データの正解が変更された場合に isCorrect を再計算する共通処理
+        // 注意: selectedAnswer はシャッフル前の元ラベルで保存されている前提（v3以降）
         const recalculate = () => {
           const answerMap = new Map<string, string>();
           for (const set of farQuestionSets) {
@@ -120,8 +124,9 @@ export const useQuestionBankStore = create<QuestionBankState>()(
           });
         };
         if (version === 0) recalculate();
-        // v1→v2: tax-021 の正解修正（A→B）に伴い isCorrect を再計算
         if (version === 1) recalculate();
+        // v2: selectedAnswer がシャッフル後ラベルで保存されていたため recalculate 不可
+        // v2→v3 はデータをそのまま保持（ユーザーが解き直すと正しいデータに更新される）
         return state;
       },
     },
