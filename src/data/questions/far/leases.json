@@ -2,7 +2,7 @@
   "id": "far-leases",
   "name": "Leases (ASC 842)",
   "topic": "Leases (ASC 842)",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "lease-001",
@@ -916,6 +916,492 @@
       "explanation": "Under ASC 842-10-65-1(cc), leveraged leases that commenced before the effective date of ASC 842 are grandfathered. Lessors continue to apply the leveraged lease accounting model from ASC 840 until the lease expires, is modified, or the lessor otherwise derecognizes it. New leveraged leases are not permitted under ASC 842.",
       "explanationJa": "ASC 842-10-65-1(cc)により、ASC 842の発効日前に開始したレバレッジド・リースは既存のまま適用が継続される。レッサーはリースが満了、変更、またはその他の理由で認識中止されるまでASC 840のレバレッジド・リース会計モデルを適用し続ける。ASC 842では新たなレバレッジド・リースは認められない。",
       "references": ["ASC 842-10-65-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-041",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Finance Lease Classification Criteria",
+      "stem": "Under ASC 842, which of the following criteria, if met, would classify a lease as a finance lease for the lessee?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The lease term is for 60% of the remaining economic life of the underlying asset"
+        },
+        {
+          "label": "B",
+          "text": "The present value of lease payments equals 85% of the fair value of the underlying asset"
+        },
+        {
+          "label": "C",
+          "text": "The lease transfers ownership of the underlying asset to the lessee by the end of the lease term"
+        },
+        {
+          "label": "D",
+          "text": "The lease contains an option to extend that is reasonably certain to be exercised"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 842-10-25-2, a lessee classifies a lease as a finance lease if ANY of the following criteria is met: (1) ownership transfers by end of lease, (2) purchase option reasonably certain to be exercised, (3) lease term is for major part (generally 75%+) of remaining economic life, (4) PV of payments amounts to substantially all (generally 90%+) of fair value, or (5) the asset is specialized with no alternative use. Option A (60%) and B (85%) do not meet the thresholds. Option D (extension option) is not itself a classification criterion.",
+      "explanationJa": "ASC 842-10-25-2により、ファイナンスリースの分類基準：(1)所有権移転、(2)購入オプション行使がほぼ確実、(3)リース期間が経済的耐用年数の大部分（75%以上）、(4)支払現在価値が公正価値のほぼ全て（90%以上）、(5)特殊資産。60%や85%は基準未達。",
+      "references": ["ASC 842-10-25-2"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-042",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Operating Lease - Lessee Balance Sheet",
+      "stem": "Lessee Corp. enters a 5-year operating lease with annual payments of $100,000 due at the end of each year. The lessee's incremental borrowing rate is 6%. What is the initial right-of-use asset and lease liability (rounded)? (PV of annuity at 6%, 5 years = 4.2124)",
+      "choices": [
+        { "label": "A", "text": "$421,236 each" },
+        { "label": "B", "text": "$500,000 each" },
+        { "label": "C", "text": "$421,236 asset and $500,000 liability" },
+        { "label": "D", "text": "$400,000 each" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-30-1, the lease liability is measured at the present value of lease payments not yet paid, discounted at the rate implicit in the lease (or the lessee's incremental borrowing rate if not readily determinable). PV = $100,000 × 4.2124 = $421,236. Under ASC 842-20-30-5, the ROU asset is initially measured at the amount of the lease liability, adjusted for prepayments, lease incentives, and initial direct costs. With no adjustments, the ROU asset equals the liability: $421,236.",
+      "explanationJa": "ASC 842-20-30-1により、リース負債は未払リース料の現在価値。$100,000 × 4.2124 = $421,236。ASC 842-20-30-5により、使用権資産は初期測定でリース負債と同額（調整項目なしの場合）。両方$421,236。",
+      "references": ["ASC 842-20-30-1", "ASC 842-20-30-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-043",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease Incentives - Tenant Improvement Allowance",
+      "stem": "Lessee A signs a 10-year operating lease. The lessor provides a $50,000 tenant improvement allowance (TIA) payable at lease commencement. How does the TIA affect the lessee's initial measurement?",
+      "choices": [
+        { "label": "A", "text": "Reduces the initial ROU asset by $50,000" },
+        {
+          "label": "B",
+          "text": "Recognized as deferred revenue and amortized over 10 years"
+        },
+        {
+          "label": "C",
+          "text": "Recognized as a reduction of rent expense in the first year"
+        },
+        { "label": "D", "text": "Increases the initial ROU asset by $50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-30-5(c), lease incentives received by the lessee reduce the measurement of the ROU asset. When the lessor pays a TIA at commencement, the lessee records: debit Cash $50,000, credit Lease Liability $0 (no change if already reflected in payments), and the ROU asset is reduced by the $50,000 incentive. The lower ROU asset results in lower amortization expense over the lease term.",
+      "explanationJa": "ASC 842-20-30-5(c)により、リースインセンティブは使用権資産の測定を減額する。TIA$50,000を受領すると、使用権資産が$50,000減少する。これにより、リース期間にわたる償却費用が低くなる。",
+      "references": ["ASC 842-20-30-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-044",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor - Sales-Type Lease Profit Recognition",
+      "stem": "Lessor Corp. (a manufacturer) leases equipment with a fair value of $500,000 and a carrying amount of $350,000. The lease qualifies as a sales-type lease. Annual lease payments are $120,000 for 5 years at an implicit rate of 6% (PV factor = 4.2124). What profit does the lessor recognize at lease commencement?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$155,488" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$250,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-30-25-1, at commencement of a sales-type lease, the lessor derecognizes the underlying asset, recognizes a net investment in the lease, and recognizes selling profit or loss. The net investment = PV of lease payments = $120,000 × 4.2124 = $505,488. Selling profit = net investment (capped at fair value for revenue) minus carrying amount. Revenue = fair value = $500,000. Cost of goods sold = $350,000. Selling profit = $500,000 − $350,000 = $150,000.",
+      "explanationJa": "ASC 842-30-25-1により、セールス型リース開始時に売上利益を認識。収益 = 公正価値$500,000（純投資額ではなく）。売上原価 = $350,000。売上利益 = $150,000。",
+      "references": ["ASC 842-30-25-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-045",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Embedded Lease in Service Contract",
+      "stem": "Company B contracts with a data center provider for dedicated server space. The contract specifies a particular floor and rack location that only Company B can use. Company B directs how and for what purpose the servers are used. Does this arrangement contain a lease?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because there is an identified asset and Company B has the right to control its use"
+        },
+        { "label": "B", "text": "No, because it is a service contract" },
+        {
+          "label": "C",
+          "text": "Yes, but only if the contract term exceeds 12 months"
+        },
+        {
+          "label": "D",
+          "text": "No, because the data center provider maintains the servers"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-10-15-2, a contract contains a lease if it conveys the right to control the use of an identified asset for a period of time in exchange for consideration. An identified asset exists (specific floor and rack), and Company B has the right to direct the use. Under ASC 842-10-15-3, the right to direct use exists when the customer directs how and for what purpose the asset is used. The supplier's maintenance does not negate the lease.",
+      "explanationJa": "ASC 842-10-15-2により、特定された資産の使用を支配する権利を移転する契約はリースを含む。特定のフロアとラックが識別され、Company Bが使用方法と目的を指示できるため、リースに該当する。供給者のメンテナンスはリースを否定しない。",
+      "references": ["ASC 842-10-15-2", "ASC 842-10-15-3"],
+      "difficulty": "intermediate",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "lease-046",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Sale-Leaseback - Failed Sale",
+      "stem": "Seller-Lessee Corp. sells a building to Buyer-Lessor Corp. and simultaneously leases it back. The leaseback is for 95% of the building's remaining economic life. Under ASC 842, how should this transaction be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a sale and finance leaseback, with gain recognition"
+        },
+        {
+          "label": "B",
+          "text": "As a failed sale — a financing transaction for both parties"
+        },
+        {
+          "label": "C",
+          "text": "As a sale and operating leaseback with deferred gain"
+        },
+        {
+          "label": "D",
+          "text": "As a sale with immediate full gain recognition"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-40-25-1, for a sale-leaseback to qualify as a sale, the transfer must qualify as a sale under ASC 606. Additionally, ASC 842-40-25-3 states that if the leaseback would be classified as a finance lease, the transfer does not qualify as a sale. Since the leaseback covers 95% of the economic life, it meets the finance lease criterion. Therefore, the transaction is accounted for as a financing: the seller-lessee keeps the asset and records a financial liability; the buyer-lessor records a financial receivable.",
+      "explanationJa": "ASC 842-40-25-3により、リースバックがファイナンスリースに分類される場合、資産の移転は売却として認められない。リースバックが経済的耐用年数の95%をカバーするためファイナンスリース基準を満たし、金融取引として処理する。",
+      "references": ["ASC 842-40-25-1", "ASC 842-40-25-3"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-047",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease Component Separation - Lessee",
+      "stem": "Lessee C signs a lease for office space that includes both the use of the space (lease component) and common area maintenance (non-lease component). Total annual payment is $150,000. The SSP of the lease component is $120,000 and CAM is $40,000. If Lessee C does NOT elect the practical expedient, how much is allocated to the lease component?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$112,500" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-15-33, if the practical expedient is not elected, the lessee allocates consideration based on relative standalone prices. Total SSP = $120,000 + $40,000 = $160,000. Lease component allocation = ($120,000 / $160,000) × $150,000 = $112,500. If the practical expedient were elected, the entire $150,000 would be treated as the lease component.",
+      "explanationJa": "ASC 842-10-15-33により、実務上の便法を選択しない場合、相対的独立価格で配分する。リース要素 = ($120,000 ÷ $160,000) × $150,000 = $112,500。便法を選択すれば$150,000全額がリース要素。",
+      "references": ["ASC 842-10-15-33"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-048",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Finance Lease - Interest and Amortization Pattern",
+      "stem": "How does the total periodic expense pattern differ between a finance lease and an operating lease for a lessee under ASC 842?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Finance lease has higher expense in early years (front-loaded); operating lease has straight-line expense"
+        },
+        { "label": "B", "text": "Both have straight-line expense patterns" },
+        {
+          "label": "C",
+          "text": "Operating lease has higher expense in early years"
+        },
+        {
+          "label": "D",
+          "text": "Finance lease has lower expense in early years (back-loaded)"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842, a finance lease recognizes interest expense on the lease liability (which decreases over time) separately from amortization of the ROU asset (typically straight-line). Total expense = interest + amortization is front-loaded because interest is higher in early periods. An operating lease recognizes a single lease cost on a straight-line basis over the lease term (ASC 842-20-25-6), resulting in level expense each period.",
+      "explanationJa": "ASC 842では、ファイナンスリースは利息費用（減少）と償却費（定額）を別々に認識し、合計費用は初期に偏る（前倒し型）。オペレーティングリースはASC 842-20-25-6により、リース期間にわたり定額でリース費用を認識する。",
+      "references": ["ASC 842-20-25-6", "ASC 842-20-25-5"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-049",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Modification - Partial Termination",
+      "stem": "Lessee D has a lease for 10,000 square feet. After 3 years, the lease is modified to reduce the space to 6,000 square feet (a 40% reduction) with a proportional decrease in rent. How should the partial termination be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Decrease the ROU asset and lease liability proportionally (40%), and recognize any difference as a gain or loss"
+        },
+        { "label": "B", "text": "Remeasure the entire lease as a new lease" },
+        {
+          "label": "C",
+          "text": "No adjustment until the original lease term ends"
+        },
+        {
+          "label": "D",
+          "text": "Write off the entire ROU asset and record a new one"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-25-8(a), a modification that decreases the scope of a lease (partial termination) requires the lessee to decrease the carrying amount of the ROU asset proportionally (based on the reduction in use — here 40%). The lease liability is remeasured using a revised discount rate. Any difference between the proportional decrease in the ROU asset and the decrease in the lease liability is recognized as a gain or loss in the period of modification.",
+      "explanationJa": "ASC 842-20-25-8(a)により、リース範囲を縮小する変更（一部解約）では、使用権資産を使用減少に比例して減額（40%）。リース負債は新割引率で再測定。使用権資産の減額とリース負債の減額の差額は損益として認識。",
+      "references": ["ASC 842-20-25-8"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-050",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Variable Payments - CPI Adjustment",
+      "stem": "Lessee E has a 10-year lease with annual payments of $50,000, adjusted annually for changes in the Consumer Price Index (CPI). At commencement, CPI is 250. At the beginning of Year 3, CPI increases to 260. What annual payment is used to remeasure the lease liability at the beginning of Year 3?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$50,000 (no remeasurement for index changes)"
+        },
+        { "label": "B", "text": "$52,000" },
+        {
+          "label": "C",
+          "text": "$50,000 remeasured only at lease commencement"
+        },
+        { "label": "D", "text": "$54,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-20-35-5, when variable lease payments depend on an index or rate, the lease liability is remeasured when there is a change in the payments resulting from a change in the index or rate. The new payment = $50,000 × (260/250) = $52,000. The lease liability is remeasured using the remaining 8 years of payments at $52,000, discounted at the original (or revised if applicable) discount rate.",
+      "explanationJa": "ASC 842-20-35-5により、指数に連動する変動リース料は、指数の変動による支払変更時にリース負債を再測定する。新支払額 = $50,000 × (260/250) = $52,000。残り8年間の$52,000を割引率で再測定。",
+      "references": ["ASC 842-20-35-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "lease-051",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor - Direct Financing Lease Initial Measurement",
+      "stem": "Lessor F leases equipment with a carrying amount of $400,000 and fair value of $400,000. Annual lease payments are $95,000 for 5 years. The unguaranteed residual value is estimated at $30,000. The implicit rate is 7%. Under a direct financing lease, what is the initial net investment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PV of lease payments plus PV of unguaranteed residual value"
+        },
+        { "label": "B", "text": "PV of lease payments only" },
+        { "label": "C", "text": "Fair value of the asset" },
+        { "label": "D", "text": "Carrying amount of the asset" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-30-30-1, the lessor's net investment in a direct financing lease is the sum of: (1) the lease receivable (PV of lease payments) and (2) the unguaranteed residual asset (PV of the unguaranteed residual value). In a direct financing lease, no selling profit is recognized at commencement because the fair value equals the carrying amount (or any profit is deferred). Revenue is recognized as interest income over the lease term.",
+      "explanationJa": "ASC 842-30-30-1により、ダイレクト・ファイナンシング・リースの純投資 = リース債権（リース料のPV）+ 無保証残存価値資産（無保証残存のPV）。ダイレクト・ファイナンシングでは開始時に売上利益を認識しない。",
+      "references": ["ASC 842-30-30-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-052",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease Term - Purchase Option",
+      "stem": "Lessee G signs a 7-year lease for equipment with an option to purchase the equipment at the end of the lease term for $5,000. The estimated fair value at that time is $50,000. What effect does this purchase option have?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The purchase option is reasonably certain to be exercised and is included in the lease payments"
+        },
+        {
+          "label": "B",
+          "text": "The purchase option is excluded because it is not mandatory"
+        },
+        {
+          "label": "C",
+          "text": "The purchase option is included only if the lessee formally commits"
+        },
+        {
+          "label": "D",
+          "text": "The purchase option has no effect on lease classification"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-10-55-26, a purchase option is considered reasonably certain to be exercised when there is a significant economic incentive to do so. An option to purchase for $5,000 when the expected fair value is $50,000 represents a bargain purchase option. The exercise is reasonably certain, so the $5,000 is included in the lease payments for measurement purposes and the lease is classified as a finance lease (transfer of ownership criterion).",
+      "explanationJa": "ASC 842-10-55-26により、購入オプションは行使に重要な経済的インセンティブがある場合に行使がほぼ確実とみなされる。$5,000で$50,000相当の資産を購入できるバーゲン購入オプションは行使確実。$5,000をリース料に含め、ファイナンスリースに分類。",
+      "references": ["ASC 842-10-55-26"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-053",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "ROU Asset Impairment Testing",
+      "stem": "Under ASC 842, how should a lessee test the right-of-use asset for impairment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Using the long-lived asset impairment model under ASC 360"
+        },
+        {
+          "label": "B",
+          "text": "Using the goodwill impairment model under ASC 350"
+        },
+        {
+          "label": "C",
+          "text": "ROU assets are not subject to impairment testing"
+        },
+        {
+          "label": "D",
+          "text": "Using the indefinite-lived intangible asset model under ASC 350"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-35-9, the ROU asset is subject to impairment testing in accordance with ASC 360-10 (impairment of long-lived assets). The lessee tests for impairment when events or circumstances indicate that the carrying amount may not be recoverable. The recoverability test compares the carrying amount to the sum of undiscounted future cash flows. If not recoverable, the impairment loss is the excess of carrying amount over fair value.",
+      "explanationJa": "ASC 842-20-35-9により、使用権資産はASC 360-10（長期性資産の減損）に従い減損テストを行う。帳簿価額が回収不能の可能性がある事象が発生した場合にテスト。回収可能性テストは帳簿価額と割引前キャッシュフローを比較。",
+      "references": ["ASC 842-20-35-9", "ASC 360-10-35-17"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-054",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Residual Value Guarantee - Lessee Measurement",
+      "stem": "Lessee H guarantees a residual value of $40,000 to the lessor. At lease commencement, the expected residual value is $25,000. What amount of the residual value guarantee is included in the lessee's lease payments for measurement?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$15,000" },
+        { "label": "C", "text": "$25,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-20-30-5(d), the lessee includes in lease payments amounts probable of being owed under a residual value guarantee. The expected deficiency = guaranteed amount ($40,000) − expected residual value ($25,000) = $15,000. This $15,000 is included in the lease liability measurement. If the expected residual value equaled or exceeded the guarantee, no amount would be included.",
+      "explanationJa": "ASC 842-20-30-5(d)により、残存価値保証の下で支払が見込まれる金額をリース料に含める。予想不足額 = 保証額$40,000 − 予想残存価値$25,000 = $15,000。この$15,000をリース負債の測定に含める。",
+      "references": ["ASC 842-20-30-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-055",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Sale-Leaseback - Gain Recognition",
+      "stem": "Seller-Lessee Corp. sells a building (carrying value $600,000, fair value $1,000,000) for $1,000,000 and leases it back under a 3-year operating lease (building has 20 years remaining useful life). The present value of lease payments is $150,000. How much gain is recognized at the transaction date?",
+      "choices": [
+        { "label": "A", "text": "$400,000" },
+        { "label": "B", "text": "$340,000" },
+        { "label": "C", "text": "$0 — the gain is deferred" },
+        { "label": "D", "text": "$250,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-40-25-4, when a sale-leaseback qualifies as a sale, the seller-lessee recognizes only the gain that relates to the rights transferred to the buyer-lessor. Gain = (Fair value − Carrying value) × (1 − PV of leaseback payments / Fair value). Total gain = $1,000,000 − $600,000 = $400,000. Retained portion = $150,000 / $1,000,000 = 15%. Gain recognized = $400,000 × (1 − 0.15) = $400,000 × 0.85 = $340,000. The remaining $60,000 is an adjustment to the ROU asset.",
+      "explanationJa": "ASC 842-40-25-4により、売却リースバックが売却要件を満たす場合、買手・貸手に移転した権利に関する利益のみ認識。利益 = $400,000 × (1 − $150,000/$1,000,000) = $400,000 × 85% = $340,000。残り$60,000は使用権資産の調整。",
+      "references": ["ASC 842-40-25-4"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "lease-056",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Short-Term Lease - Recognition Exemption",
+      "stem": "Company J enters a 10-month lease with no renewal option. The lease has a purchase option that is not reasonably certain to be exercised. Can Company J elect the short-term lease exemption?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because the lease term is 12 months or less and there is no purchase option reasonably certain to be exercised"
+        },
+        { "label": "B", "text": "No, because the lease has a purchase option" },
+        {
+          "label": "C",
+          "text": "Yes, but only if the lease payment is below a materiality threshold"
+        },
+        {
+          "label": "D",
+          "text": "No, the short-term exemption only applies to month-to-month leases"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-25-2, a short-term lease is a lease that, at commencement, has a lease term of 12 months or less AND does not include a purchase option that the lessee is reasonably certain to exercise. This 10-month lease meets both criteria (term ≤ 12 months, purchase option not reasonably certain). The lessee may elect to recognize lease payments on a straight-line basis without recording a ROU asset or lease liability.",
+      "explanationJa": "ASC 842-20-25-2により、短期リースとは開始時にリース期間が12ヶ月以下で、行使がほぼ確実な購入オプションを含まないリース。10ヶ月で購入オプション行使が確実でないため、両条件を満たし短期リース免除を選択可能。",
+      "references": ["ASC 842-20-25-2"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-057",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Prepaid Rent Effect on ROU Asset",
+      "stem": "Lessee K enters a 5-year operating lease and makes a prepayment of $20,000 at lease commencement. The present value of remaining lease payments (excluding the prepayment) is $300,000. What is the initial ROU asset?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$320,000" },
+        { "label": "C", "text": "$280,000" },
+        { "label": "D", "text": "$310,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-20-30-5, the initial ROU asset is measured as the lease liability ($300,000) plus any lease payments made at or before commencement ($20,000) minus any lease incentives received, plus any initial direct costs. With no incentives or initial direct costs: ROU asset = $300,000 + $20,000 = $320,000.",
+      "explanationJa": "ASC 842-20-30-5により、使用権資産 = リース負債($300,000) + 開始時の前払リース料($20,000) − リースインセンティブ + 初期直接コスト。インセンティブと初期直接コストがないため、$300,000 + $20,000 = $320,000。",
+      "references": ["ASC 842-20-30-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-058",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease vs Service - Substitution Rights",
+      "stem": "Entity L contracts for the use of a specific piece of equipment. The supplier has a substantive right to substitute the equipment with an alternative asset at any time during the contract period. Does this arrangement contain a lease?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because the equipment is specified in the contract"
+        },
+        {
+          "label": "B",
+          "text": "No, because the supplier has a substantive substitution right, so there is no identified asset"
+        },
+        {
+          "label": "C",
+          "text": "Yes, if the customer controls the equipment during use"
+        },
+        {
+          "label": "D",
+          "text": "No, because substitution rights always negate a lease"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-10-15-10, an asset is not identified if the supplier has a substantive right to substitute the asset throughout the period of use. A substitution right is substantive if the supplier has the practical ability to substitute alternative assets AND would benefit economically from the substitution. Since the supplier has a substantive substitution right, there is no identified asset and therefore no lease.",
+      "explanationJa": "ASC 842-10-15-10により、供給者が使用期間を通じて実質的な代替権を有する場合、資産は識別されない。代替権が実質的とは、供給者が代替可能な能力を持ち代替から経済的便益を得る場合。実質的代替権があるため、リースに該当しない。",
+      "references": ["ASC 842-10-15-10"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-059",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor - Operating Lease Depreciation",
+      "stem": "Lessor M classifies a lease as an operating lease. The underlying asset has a cost of $1,200,000, an estimated useful life of 15 years, and an estimated residual value of $120,000. The lease term is 5 years. How should Lessor M depreciate the asset during the lease term?",
+      "choices": [
+        { "label": "A", "text": "Depreciate over 5 years (the lease term)" },
+        {
+          "label": "B",
+          "text": "Depreciate over 15 years (the useful life) on a straight-line basis"
+        },
+        { "label": "C", "text": "No depreciation during the lease term" },
+        {
+          "label": "D",
+          "text": "Depreciate over 15 years using an accelerated method"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 842-30-25-11, in an operating lease, the lessor retains the underlying asset on its balance sheet and depreciates it in accordance with ASC 360 (property, plant, and equipment). The asset is depreciated over its useful life (15 years), not the lease term, using a method consistent with the lessor's normal depreciation policy (generally straight-line). Annual depreciation = ($1,200,000 − $120,000) / 15 = $72,000.",
+      "explanationJa": "ASC 842-30-25-11により、オペレーティングリースでは貸手が資産を保有し、ASC 360に従い耐用年数（15年）で減価償却する。リース期間（5年）ではない。年間減価償却 = ($1,200,000 − $120,000) ÷ 15 = $72,000。",
+      "references": ["ASC 842-30-25-11"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "lease-060",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Subleasing - Classification by Intermediate Lessor",
+      "stem": "Lessee-Sublessor N has a 10-year head lease for office space classified as an operating lease. N subleases the space to a third party for 7 years. When classifying the sublease, what asset does Sublessor N use as the reference?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The right-of-use asset arising from the head lease"
+        },
+        { "label": "B", "text": "The underlying asset (the office space)" },
+        {
+          "label": "C",
+          "text": "The remaining lease payments under the head lease"
+        },
+        {
+          "label": "D",
+          "text": "The fair value of a new direct lease of similar space"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-10-25-2(b), an intermediate lessor (sublessor) classifies a sublease by reference to the underlying right-of-use asset arising from the head lease, not the underlying asset itself. This means the sublease classification is based on the ROU asset's remaining term and other factors. Since the sublease term (7 years) relative to the ROU asset's remaining term (10 years) is 70%, additional analysis is needed to determine if it meets the 'major part' threshold.",
+      "explanationJa": "ASC 842-10-25-2(b)により、中間貸手（転貸人）はヘッドリースから生じる使用権資産を基準にサブリースを分類する。原資産そのものではない。サブリース期間（7年）を使用権資産の残存期間（10年）との関係で分類判定する。",
+      "references": ["ASC 842-10-25-2"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }

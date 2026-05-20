@@ -2,7 +2,7 @@
   "id": "far-liabilities",
   "name": "Liabilities",
   "topic": "Liabilities",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "liab-001",
@@ -849,6 +849,477 @@
       "references": ["ASC 330-10-35-17"],
       "difficulty": "intermediate",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-041",
+      "topic": "Liabilities",
+      "subtopic": "Asset Retirement Obligation - Initial Recognition",
+      "stem": "On January 1, Year 1, Titan Corp. placed a specialized manufacturing facility into service. The facility has a legal obligation to be dismantled at the end of its 20-year useful life. The estimated cost of dismantlement at that time is $5,000,000. The credit-adjusted risk-free rate is 6%. What amount should Titan record as the asset retirement obligation on January 1, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$1,559,023" },
+        { "label": "B", "text": "$5,000,000" },
+        { "label": "C", "text": "$250,000" },
+        { "label": "D", "text": "$3,118,047" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 410-20-25-4, an asset retirement obligation is recognized at fair value, which is the present value of the estimated future retirement cost. PV = $5,000,000 / (1.06)^20 = $5,000,000 / 3.2071 = $1,559,023. The obligation is not recorded at the undiscounted amount ($5,000,000) nor on a straight-line basis ($250,000 = $5,000,000/20).",
+      "explanationJa": "ASC 410-20-25-4により、資産除去債務は公正価値（将来の除去費用の現在価値）で認識する。PV = $5,000,000 ÷ (1.06)^20 = $1,559,023。割引前の金額や定額按分ではない。",
+      "references": ["ASC 410-20-25-4"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-042",
+      "topic": "Liabilities",
+      "subtopic": "Bonds - Effective Interest vs Straight-Line",
+      "stem": "On January 1, Year 1, Bravo Inc. issued $1,000,000 face value, 8% bonds at 95. The bonds mature in 5 years and pay interest semiannually. Under the effective interest method, the interest expense for the first semiannual period is $41,200 (effective rate = 4.12% semiannually). Under the straight-line method, what would the interest expense be for the first semiannual period?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$41,200" },
+        { "label": "C", "text": "$45,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the straight-line method, the discount is amortized equally over all periods. Total discount = $1,000,000 × 5% = $50,000. Semiannual amortization = $50,000 / 10 periods = $5,000. Interest expense = cash interest ($1,000,000 × 4% = $40,000) + discount amortization ($5,000) = $45,000 per period. The effective interest method yields $41,200 in the first period, which differs from straight-line.",
+      "explanationJa": "定額法では、割引額を均等に償却する。割引合計 = $50,000。半年ごとの償却 = $50,000 ÷ 10期 = $5,000。利息費用 = 現金利息$40,000 + 償却$5,000 = $45,000。実効金利法の$41,200とは異なる。",
+      "references": ["ASC 835-30-35-4"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-043",
+      "topic": "Liabilities",
+      "subtopic": "Troubled Debt Restructuring - Creditor",
+      "stem": "Lender Bank restructures a $500,000 loan to Borrower Corp. by reducing the interest rate from 10% to 4% and extending the maturity by 3 years (new total remaining term: 5 years). After ASU 2022-02, how should Lender Bank account for this modification?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Apply the general loan modification guidance and assess whether terms are substantially different using a 10% cash flow test"
+        },
+        {
+          "label": "B",
+          "text": "Recognize an immediate loss equal to the difference in present values"
+        },
+        {
+          "label": "C",
+          "text": "Continue to apply the legacy TDR creditor guidance under ASC 310-40"
+        },
+        {
+          "label": "D",
+          "text": "Write off the loan and recognize a new loan at fair value"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2022-02 eliminated the legacy TDR designation for creditors (effective for fiscal years beginning after December 15, 2022 for SEC filers). Creditors now apply the general loan modification guidance under ASC 310-20, which uses a 10% present value of cash flows test to determine whether a modification is substantially different. If not substantially different, the creditor adjusts the effective interest rate prospectively.",
+      "explanationJa": "ASU 2022-02により、債権者のTDR指定は廃止された。債権者はASC 310-20の一般的なローン修正ガイダンスを適用し、キャッシュフロー現在価値の10%テストで実質的に異なるか判定する。",
+      "references": ["ASC 310-20-35-10", "ASU 2022-02"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-044",
+      "topic": "Liabilities",
+      "subtopic": "Convertible Bonds - Induced Conversion",
+      "stem": "Delta Corp. has $2,000,000 of convertible bonds outstanding with a book value of $1,950,000. To induce conversion, Delta offers bondholders additional consideration of $100,000 in cash beyond the original conversion terms. All bondholders convert. What expense does Delta recognize related to the inducement?",
+      "choices": [
+        { "label": "A", "text": "$100,000 inducement expense" },
+        { "label": "B", "text": "$150,000 loss on conversion" },
+        { "label": "C", "text": "$50,000 loss on extinguishment" },
+        {
+          "label": "D",
+          "text": "No expense; the $100,000 is charged to equity"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 470-20-40-16, when an issuer offers additional consideration to induce prompt conversion of convertible debt, the fair value of the additional consideration (here, $100,000 cash) is recognized as an expense in the period of conversion. This is separate from the normal conversion accounting, which would use the book value method with no gain or loss.",
+      "explanationJa": "ASC 470-20-40-16により、転換社債の転換を促すために追加対価を提供した場合、追加対価の公正価値（$100,000）を転換時の費用として認識する。通常の転換処理（帳簿価額法）とは別の処理である。",
+      "references": ["ASC 470-20-40-16"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-045",
+      "topic": "Liabilities",
+      "subtopic": "Loss Contingency - Subsequent Event",
+      "stem": "Ace Corp.'s fiscal year ends December 31, Year 1. On February 15, Year 2, before the financial statements are issued, Ace learns that a lawsuit filed against it in Year 1 will likely result in a $3 million unfavorable judgment. The range of loss is $2 million to $4 million. How should Ace report this in its Year 1 financial statements?",
+      "choices": [
+        { "label": "A", "text": "Accrue $2,000,000 and disclose the range" },
+        { "label": "B", "text": "Accrue $3,000,000 and disclose the range" },
+        { "label": "C", "text": "Disclose the contingency without accrual" },
+        {
+          "label": "D",
+          "text": "No recognition or disclosure because the event occurred after year-end"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 450-20-25-2, when a loss is probable and can be reasonably estimated, it should be accrued. When the estimate is a range and no amount within the range is a better estimate, the minimum of the range ($2,000,000) is accrued per ASC 450-20-30-1. Since the lawsuit was filed in Year 1, the subsequent event (learning of the likely outcome) is a recognized subsequent event under ASC 855-10-25-1, requiring adjustment of Year 1 financials.",
+      "explanationJa": "ASC 450-20-25-2により、損失が発生可能性が高く合理的に見積可能な場合は引当計上する。見積りが範囲で最善の見積りがない場合、ASC 450-20-30-1により範囲の最小値$2,000,000を計上する。訴訟はYear 1に提起されており、認識後発事象に該当する。",
+      "references": ["ASC 450-20-25-2", "ASC 450-20-30-1", "ASC 855-10-25-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-046",
+      "topic": "Liabilities",
+      "subtopic": "Debt Modification vs Extinguishment",
+      "stem": "Omega Corp. modifies the terms of a $10,000,000 note payable with its lender. The present value of the cash flows under the new terms is $8,800,000, compared to $10,000,000 under the old terms. How should Omega account for this modification?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Treat as an extinguishment; recognize a $1,200,000 gain"
+        },
+        {
+          "label": "B",
+          "text": "Treat as a modification; adjust the effective interest rate prospectively"
+        },
+        {
+          "label": "C",
+          "text": "Treat as an extinguishment; recognize a $1,200,000 loss"
+        },
+        {
+          "label": "D",
+          "text": "Treat as a modification; amortize the $1,200,000 over the remaining term"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 470-50-40-10, if the present value of the cash flows under the new terms differs by more than 10% from the present value under the old terms, the modification is treated as an extinguishment of the old debt and issuance of new debt. Here, ($10,000,000 − $8,800,000) / $10,000,000 = 12%, which exceeds 10%. A gain of $1,200,000 is recognized on extinguishment.",
+      "explanationJa": "ASC 470-50-40-10により、新条件のキャッシュフロー現在価値が旧条件と10%超異なる場合、旧債務の消滅と新債務の発行として処理する。差額12%は10%超なので、$1,200,000の利益を認識する。",
+      "references": ["ASC 470-50-40-10"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-047",
+      "topic": "Liabilities",
+      "subtopic": "Guarantee Obligations",
+      "stem": "Parent Corp. guarantees a $5,000,000 bank loan made to its subsidiary on January 1, Year 1. At inception, the fair value of the guarantee obligation is estimated at $150,000. How should Parent Corp. initially record this guarantee in its separate (parent-only) financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit investment in subsidiary $150,000; credit guarantee obligation $150,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit guarantee expense $150,000; credit guarantee obligation $150,000"
+        },
+        {
+          "label": "C",
+          "text": "No entry is required since it is an intercompany transaction"
+        },
+        {
+          "label": "D",
+          "text": "Disclose the guarantee but record no liability"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 460-10-25-4, a guarantor must recognize a liability at the inception of the guarantee at fair value. When a parent guarantees a subsidiary's debt, the guarantee is effectively additional investment in the subsidiary. The entry is: debit Investment in Subsidiary $150,000, credit Guarantee Obligation $150,000. This is not expensed at inception because it represents value conveyed to the subsidiary.",
+      "explanationJa": "ASC 460-10-25-4により、保証人は保証開始時に公正価値で負債を認識する。親会社が子会社の債務を保証する場合、保証は子会社への追加投資に相当する。投資勘定を借方、保証債務を貸方に計上する。",
+      "references": ["ASC 460-10-25-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-048",
+      "topic": "Liabilities",
+      "subtopic": "Bonds - Issuance Costs",
+      "stem": "River Corp. issued $5,000,000 of 10-year bonds at par on January 1, Year 1. Bond issuance costs totaled $200,000. Under current GAAP, how should the issuance costs be presented on the balance sheet immediately after issuance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a direct deduction from the carrying amount of the bonds, resulting in a net liability of $4,800,000"
+        },
+        { "label": "B", "text": "As a deferred charge (asset) of $200,000" },
+        {
+          "label": "C",
+          "text": "Expensed immediately in the period of issuance"
+        },
+        { "label": "D", "text": "As a reduction of additional paid-in capital" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 835-30-45-1A (as updated by ASU 2015-03), debt issuance costs are presented as a direct deduction from the carrying amount of the associated debt liability, similar to a debt discount. The net carrying amount is $5,000,000 − $200,000 = $4,800,000. The costs are amortized over the life of the bonds using the effective interest method.",
+      "explanationJa": "ASC 835-30-45-1A（ASU 2015-03）により、社債発行費用は関連する債務の帳簿価額から直接控除して表示する。純帳簿価額 = $5,000,000 − $200,000 = $4,800,000。繰延資産としての表示は不可。",
+      "references": ["ASC 835-30-45-1A", "ASU 2015-03"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-049",
+      "topic": "Liabilities",
+      "subtopic": "Contingent Consideration in Business Combination",
+      "stem": "Apex Corp. acquires Beta Corp. and agrees to pay former Beta shareholders an additional $2,000,000 if Beta's revenue exceeds $10,000,000 in the year following the acquisition. At the acquisition date, the fair value of this contingent consideration is $800,000. One year later, Beta's revenue is $11,500,000 and the fair value of the obligation is now $2,000,000. How is the $1,200,000 increase reported?",
+      "choices": [
+        { "label": "A", "text": "As an adjustment to goodwill" },
+        { "label": "B", "text": "As a loss in earnings" },
+        {
+          "label": "C",
+          "text": "As an adjustment to additional paid-in capital"
+        },
+        { "label": "D", "text": "As an other comprehensive income item" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-30-35-1, contingent consideration classified as a liability is remeasured to fair value at each reporting date, with changes recognized in earnings. The initial recognition at the acquisition date was $800,000, recorded as a liability with a corresponding increase in the purchase price (goodwill). Subsequent changes in fair value ($1,200,000 increase) are reported in earnings, not as adjustments to goodwill (which is only adjusted during the measurement period for new information about facts existing at the acquisition date).",
+      "explanationJa": "ASC 805-30-35-1により、負債に分類された条件付対価は各報告日に公正価値で再測定し、変動は損益に認識する。取得日以降の公正価値変動$1,200,000は損益として報告し、のれんの修正にはならない。",
+      "references": ["ASC 805-30-35-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "liab-050",
+      "topic": "Liabilities",
+      "subtopic": "Accrued Severance - Ongoing Benefit Arrangement",
+      "stem": "Which of the following conditions must be met to accrue a termination benefit liability under an ongoing benefit arrangement (not a one-time termination benefit)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The obligation is attributable to employees' services already rendered, payment is probable, and the amount can be reasonably estimated"
+        },
+        {
+          "label": "B",
+          "text": "A formal plan of termination has been communicated to employees"
+        },
+        {
+          "label": "C",
+          "text": "The employees have accepted the termination offer"
+        },
+        {
+          "label": "D",
+          "text": "The employer has made an irrevocable commitment to pay"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 712-10-25-1, termination benefits that are part of an ongoing benefit arrangement (such as a severance policy) are accrued when three conditions are met: (1) the obligation is attributable to services already rendered, (2) payment is probable, and (3) the amount can be reasonably estimated. This follows the general contingency guidance. Options B, C, and D relate to one-time termination benefits under ASC 420.",
+      "explanationJa": "ASC 712-10-25-1により、継続的な福利厚生制度に基づく解雇給付は、(1)すでに提供されたサービスに帰属する、(2)支払が確実である、(3)金額が合理的に見積可能な場合に引当計上する。選択肢B〜DはASC 420の一時的解雇給付の要件。",
+      "references": ["ASC 712-10-25-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-051",
+      "topic": "Liabilities",
+      "subtopic": "Bonds - Detachable Stock Warrants",
+      "stem": "Phoenix Corp. issues $10,000,000 face value bonds with detachable stock warrants. The bonds without warrants would sell at 98, and the warrants have a fair value of $500,000. What amount should be allocated to the warrants?",
+      "choices": [
+        { "label": "A", "text": "$500,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$476,190" },
+        { "label": "D", "text": "$300,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 470-20-25-2, when bonds are issued with detachable warrants, the proceeds are allocated between the bonds and the warrants based on their relative fair values. Bond FV = $9,800,000, Warrant FV = $500,000, Total FV = $10,300,000. Allocation to warrants = ($500,000 / $10,300,000) × $10,000,000 = $485,437. Using the proportional method: $500,000 / ($9,800,000 + $500,000) × $10,000,000 = $476,190 (allocated to APIC - Warrants).",
+      "explanationJa": "ASC 470-20-25-2により、分離可能なワラント付社債の発行手取金は相対的公正価値で配分する。ワラントへの配分 = $500,000 ÷ ($9,800,000 + $500,000) × $10,000,000 = $476,190。APIC-ワラントに計上する。",
+      "references": ["ASC 470-20-25-2"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-052",
+      "topic": "Liabilities",
+      "subtopic": "Short-Term Obligations Expected to Be Refinanced",
+      "stem": "On December 31, Year 1, Star Corp. has $3,000,000 of short-term debt maturing in March Year 2. On February 10, Year 2 (before the financial statements are issued), Star enters into a non-cancelable agreement with a bank to refinance the debt on a long-term basis. How should the $3,000,000 be classified in the Year 1 balance sheet?",
+      "choices": [
+        { "label": "A", "text": "As a noncurrent liability" },
+        { "label": "B", "text": "As a current liability" },
+        { "label": "C", "text": "Partly current and partly noncurrent" },
+        {
+          "label": "D",
+          "text": "As a current liability with disclosure of the refinancing agreement"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 470-10-45-14, short-term obligations may be excluded from current liabilities if the entity intends to refinance the obligation on a long-term basis AND demonstrates the ability to do so. The ability is demonstrated by either (a) actually refinancing before the financial statements are issued, or (b) entering into a non-cancelable financing agreement. Since Star entered into the agreement before issuance of Year 1 financials, the entire $3,000,000 is classified as noncurrent.",
+      "explanationJa": "ASC 470-10-45-14により、短期債務は長期借換の意図と能力が立証された場合、流動負債から除外できる。財務諸表発行前に解約不能な借換契約を締結しているため、$3,000,000全額を非流動負債に分類する。",
+      "references": ["ASC 470-10-45-14"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-053",
+      "topic": "Liabilities",
+      "subtopic": "Deferred Revenue - Gift Cards",
+      "stem": "Retail Corp. sells $500,000 of gift cards during December Year 1. Historical experience shows that 8% of gift cards are never redeemed (breakage). Retail Corp. uses the proportional method for breakage recognition. If $100,000 of gift cards are redeemed in January Year 2, how much total revenue should Retail Corp. recognize in January Year 2?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$108,696" },
+        { "label": "C", "text": "$140,000" },
+        { "label": "D", "text": "$108,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-49, when an entity expects to be entitled to breakage, it recognizes the expected breakage in proportion to the pattern of rights exercised by the customer. Expected redemptions = $500,000 × 92% = $460,000. Breakage ratio = 8%. For $100,000 redeemed: Redemption revenue = $100,000. Proportional breakage = $100,000 / $460,000 × ($500,000 × 8%) = $100,000 / $460,000 × $40,000 = $8,696. Total revenue = $100,000 + $8,696 = $108,696.",
+      "explanationJa": "ASC 606-10-55-49により、非行使部分（breakage）は顧客の権利行使パターンに比例して認識する。予想行使額 = $460,000。$100,000行使時のbreakage = $100,000 ÷ $460,000 × $40,000 = $8,696。合計収益 = $108,696。",
+      "references": ["ASC 606-10-55-49"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "liab-054",
+      "topic": "Liabilities",
+      "subtopic": "Provisions - Onerous Contract",
+      "stem": "Under U.S. GAAP, how should an entity account for an onerous (loss) contract that is NOT related to the purchase of inventory or a lease?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a provision for the unavoidable costs of meeting the obligations under the contract less the expected economic benefits"
+        },
+        {
+          "label": "B",
+          "text": "No provision is recognized; U.S. GAAP does not have a general onerous contract provision requirement"
+        },
+        {
+          "label": "C",
+          "text": "Recognize a provision only if the contract is non-cancelable"
+        },
+        {
+          "label": "D",
+          "text": "Disclose the contract terms but do not recognize a liability"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Unlike IFRS (IAS 37), U.S. GAAP does not have a general requirement to recognize provisions for onerous contracts. Specific guidance exists for certain types (e.g., purchase commitments for inventory under ASC 330, operating leases under ASC 842), but there is no broad onerous contract standard. This is a significant GAAP vs. IFRS difference frequently tested on the CPA exam.",
+      "explanationJa": "IFRSと異なり、U.S. GAAPには不利な契約に対する一般的な引当金計上の要求はない。棚卸資産の購入コミットメント（ASC 330）やリース（ASC 842）等の特定の規定はあるが、包括的な不利契約基準は存在しない。GAAP vs IFRS差異として頻出。",
+      "references": ["ASC 420-10-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-055",
+      "topic": "Liabilities",
+      "subtopic": "Debt Covenant Violation - Current Classification",
+      "stem": "On December 31, Year 1, Metro Corp. violates a debt covenant on its $8,000,000 long-term note payable. The lender does not waive the violation by the date the financial statements are issued. However, the lender grants a waiver on March 15, Year 2 (after issuance of Year 1 statements). How should the note be classified at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "As a current liability of $8,000,000" },
+        {
+          "label": "B",
+          "text": "As a noncurrent liability because the waiver was obtained"
+        },
+        {
+          "label": "C",
+          "text": "As a current liability, but only to the extent of the next 12 months' payments"
+        },
+        {
+          "label": "D",
+          "text": "As a noncurrent liability because violation is expected to be cured"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 470-10-45-1, when a debtor violates a debt covenant that makes the debt callable, the obligation must be classified as current unless the creditor waives the right to demand payment for more than one year from the balance sheet date BEFORE the financial statements are issued. Since the waiver was obtained after the Year 1 financial statements were issued, it is a nonrecognized subsequent event and cannot be used to reclassify the debt.",
+      "explanationJa": "ASC 470-10-45-1により、債務契約違反で期限の利益を喪失した場合、債権者が財務諸表発行前に1年超の支払猶予を認めない限り、流動負債に分類する。免除は財務諸表発行後のため、Year 1では流動負債$8,000,000として分類する。",
+      "references": ["ASC 470-10-45-1", "ASC 470-10-45-11"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-056",
+      "topic": "Liabilities",
+      "subtopic": "Expected Litigation Costs",
+      "stem": "In Year 1, Global Corp. was sued for patent infringement. Global's attorneys estimate that it is probable the company will lose the lawsuit and the expected loss is $5,000,000. Legal fees to defend the case are expected to be $400,000. What amount should Global accrue as a liability at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$5,000,000" },
+        { "label": "B", "text": "$5,400,000" },
+        { "label": "C", "text": "$400,000" },
+        { "label": "D", "text": "$0 until the case is settled" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 450-20-25-2, the probable loss of $5,000,000 should be accrued because the loss is probable and can be reasonably estimated. However, future legal defense costs are generally expensed as incurred and not accrued in advance, as they represent future services to be received. Therefore, only the $5,000,000 judgment loss is accrued, not the $400,000 in anticipated legal fees.",
+      "explanationJa": "ASC 450-20-25-2により、確実な損失$5,000,000を引当計上する。一方、将来の訴訟防御費用$400,000は将来受けるサービスの対価であり、発生時に費用処理するため事前に引当計上しない。引当額は$5,000,000のみ。",
+      "references": ["ASC 450-20-25-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-057",
+      "topic": "Liabilities",
+      "subtopic": "Convertible Debt - Cash Conversion Feature",
+      "stem": "Under ASU 2020-06, how should an issuer account for a convertible note with a cash conversion feature (where the conversion can be settled in cash, stock, or a combination)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a single liability measured at amortized cost, with no separation of equity component"
+        },
+        {
+          "label": "B",
+          "text": "Separate the conversion feature as an equity component using the residual method"
+        },
+        {
+          "label": "C",
+          "text": "Bifurcate the conversion feature as a derivative liability at fair value"
+        },
+        {
+          "label": "D",
+          "text": "Record entirely at fair value through earnings"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2020-06 simplified the accounting for convertible instruments by eliminating the beneficial conversion feature (BCF) and cash conversion feature models. Under the updated guidance in ASC 470-20, most convertible debt is accounted for as a single liability at amortized cost, with no separate equity component. The only exceptions requiring separation are (1) convertible debt with embedded features that require bifurcation as derivatives under ASC 815, and (2) convertible debt issued at a substantial premium.",
+      "explanationJa": "ASU 2020-06により、有利転換特性（BCF）とキャッシュ転換特性モデルが廃止された。大部分の転換社債はASC 470-20の下で単一の負債として償却原価で計上し、資本部分の分離は不要。例外はASC 815でのデリバティブ分離が必要な場合等に限られる。",
+      "references": ["ASC 470-20-25-12", "ASU 2020-06"],
+      "difficulty": "intermediate",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "liab-058",
+      "topic": "Liabilities",
+      "subtopic": "Capped Warranty Accrual",
+      "stem": "Tech Corp. sells electronic devices with a 2-year warranty. In Year 1, sales were $20,000,000. Based on historical data, Tech estimates warranty costs at 3% of sales. However, the warranty contract limits total claims to $400,000 per year. What warranty liability should Tech accrue for Year 1 sales?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$400,000" },
+        { "label": "C", "text": "$800,000" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 460-10-25-5, warranty obligations are accrued based on the estimated amount of future claims. The estimated warranty cost is $20,000,000 × 3% = $600,000 for the 2-year warranty period. The $400,000 annual cap would limit actual payouts per year but does not reduce the total accrued liability. Over 2 years, up to $800,000 could be paid, so the full estimate of $600,000 is within the cap total and should be accrued.",
+      "explanationJa": "ASC 460-10-25-5により、保証債務は将来のクレーム見積額に基づき引当計上する。見積保証費用 = $20,000,000 × 3% = $600,000（2年間）。年間上限$400,000は実際の支払を制限するが、2年間の合計上限$800,000以内のため、見積全額$600,000を引当計上する。",
+      "references": ["ASC 460-10-25-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-059",
+      "topic": "Liabilities",
+      "subtopic": "Employer Payroll Tax Obligations",
+      "stem": "Which of the following employer payroll obligations should be classified as a current liability at year-end?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Accrued employer FICA matching, FUTA, and SUTA taxes payable"
+        },
+        { "label": "B", "text": "Only the employee-withheld portion of FICA" },
+        { "label": "C", "text": "Only FUTA and SUTA, not FICA" },
+        {
+          "label": "D",
+          "text": "Payroll taxes are not accrued; they are expensed when paid"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The employer's share of FICA (Social Security and Medicare taxes), Federal Unemployment Tax (FUTA), and State Unemployment Tax (SUTA) are obligations of the employer that accrue as employees earn wages. These amounts should be accrued as current liabilities at year-end when wages have been earned but the related payroll taxes have not yet been remitted. Both the employee-withheld amounts (held in trust) and the employer's matching portion are liabilities until remitted.",
+      "explanationJa": "雇用主負担のFICA（社会保障税・メディケア税）、FUTA（連邦失業税）、SUTA（州失業税）は従業員の勤務に応じて発生する。年度末に未納の場合、流動負債として引当計上する。従業員から源泉徴収した分と雇用主負担分の両方が送金まで負債となる。",
+      "references": ["ASC 710-10-25-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-060",
+      "topic": "Liabilities",
+      "subtopic": "Dividends Payable Classification",
+      "stem": "On December 15, Year 1, a company's board of directors declares a cash dividend of $2.00 per share on 1,000,000 shares outstanding, payable on January 20, Year 2, to shareholders of record on January 5, Year 2. What liability, if any, should be recorded at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$2,000,000 current liability" },
+        {
+          "label": "B",
+          "text": "$0 because the record date has not yet passed"
+        },
+        {
+          "label": "C",
+          "text": "$0 because the payment date is in the next year"
+        },
+        { "label": "D", "text": "$2,000,000 noncurrent liability" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When a cash dividend is declared by the board of directors, a legal obligation is created on the declaration date. At December 31, Year 1, the company should debit Retained Earnings and credit Dividends Payable for $2,000,000 ($2.00 × 1,000,000 shares). The liability is classified as current because it is payable within one year. The record date determines which shareholders receive the dividend but does not affect the recognition date of the liability.",
+      "explanationJa": "現金配当は取締役会の宣言日に法的義務が生じる。12月31日時点で利益剰余金を借方、未払配当金$2,000,000を貸方に計上する。支払は1年以内のため流動負債に分類。基準日は配当を受ける株主を決定するが、負債の認識日には影響しない。",
+      "references": ["ASC 505-20-25-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
     }
   ]
 }

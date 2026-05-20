@@ -2,7 +2,7 @@
   "id": "far-cash-equivalents",
   "name": "Cash and Cash Equivalents",
   "topic": "Cash and Cash Equivalents",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "cce-001",
@@ -459,6 +459,558 @@
       "references": ["ASC 210-10-45-4"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-021",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Money Market Funds",
+      "stem": "A company invests $150,000 in a money market fund that provides daily liquidity and maintains a stable net asset value of $1 per share. How should this investment be classified on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "Short-term investments" },
+        { "label": "B", "text": "Cash equivalents" },
+        { "label": "C", "text": "Trading securities" },
+        { "label": "D", "text": "Available-for-sale securities" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Money market funds that maintain a stable net asset value (typically $1 per share) and provide daily liquidity generally qualify as cash equivalents under ASC 305-10-20, because they are short-term, highly liquid investments readily convertible to known amounts of cash with insignificant risk of changes in value.",
+      "explanationJa": "安定したNAV（通常$1/口）を維持し日次流動性を持つMMFは、短期・高流動性で既知の現金額に容易に転換可能なため、ASC 305-10-20に基づき現金同等物に分類される。",
+      "references": ["ASC 305-10-20"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-022",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Postdated Checks",
+      "stem": "On December 31, a company holds a $5,000 check from a customer that is dated January 15 of the following year. How should this postdated check be classified?",
+      "choices": [
+        { "label": "A", "text": "Cash" },
+        { "label": "B", "text": "Receivable" },
+        { "label": "C", "text": "Cash equivalent" },
+        { "label": "D", "text": "Prepaid asset" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A postdated check cannot be deposited or cashed until the date shown on the check. Since it is not available for immediate use at the balance sheet date, it does not meet the definition of cash. It should be classified as a receivable until the date it becomes negotiable.",
+      "explanationJa": "先日付小切手は記載日まで換金できないため、B/S日時点で即時利用可能な現金には該当しない。換金可能日まで受取勘定（receivable）として分類する。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-023",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "IOUs and Advances",
+      "stem": "While counting the petty cash fund, the custodian finds $60 in currency, $15 in coins, a $25 IOU from an employee, and $390 in expense receipts from a $500 imprest fund. What amount should be reported as petty cash?",
+      "choices": [
+        { "label": "A", "text": "$500" },
+        { "label": "B", "text": "$100" },
+        { "label": "C", "text": "$75" },
+        { "label": "D", "text": "$465" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Only currency and coins qualify as cash in the petty cash fund. The $60 in currency plus $15 in coins equals $75 of actual cash. The $25 IOU is a receivable from the employee, not cash. The $390 in receipts represent expenses already incurred. The imprest amount ($500) is the authorized fund size, not the actual cash on hand.",
+      "explanationJa": "小口現金として報告できるのは通貨と硬貨のみ。$60 + $15 = $75が実際の現金。従業員IOU $25は受取勘定、レシート$390は既発生費用であり現金ではない。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-024",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Petty Cash Fund Establishment",
+      "stem": "A company establishes a petty cash fund of $300. What is the correct journal entry to record this transaction?",
+      "choices": [
+        { "label": "A", "text": "Debit Petty Cash $300, Credit Cash $300" },
+        {
+          "label": "B",
+          "text": "Debit Miscellaneous Expense $300, Credit Cash $300"
+        },
+        {
+          "label": "C",
+          "text": "Debit Petty Cash $300, Credit Accounts Payable $300"
+        },
+        { "label": "D", "text": "Debit Cash $300, Credit Petty Cash $300" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When establishing a petty cash fund, the entry debits Petty Cash (an asset account) and credits Cash (the general checking account). This merely transfers cash from one location to another. No expense is recognized at the time of establishment — expenses are recorded when the fund is replenished.",
+      "explanationJa": "小口現金設立時は、Petty Cash（資産）を借方、Cash（当座預金）を貸方に計上する。現金の保管場所が変わるだけで費用は発生しない。費用は補充時に計上する。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-025",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Statement Timing Items",
+      "stem": "Which of the following items requires an adjustment to the BOOK balance in a bank reconciliation?",
+      "choices": [
+        { "label": "A", "text": "Outstanding checks" },
+        { "label": "B", "text": "Deposits in transit" },
+        {
+          "label": "C",
+          "text": "A note collected by the bank on the company's behalf"
+        },
+        { "label": "D", "text": "A certified check issued by the company" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A note collected by the bank on the company's behalf has been recorded by the bank but not yet by the company, so it requires an adjustment to the book balance. Outstanding checks and deposits in transit are timing differences that adjust the bank balance. A certified check has already been deducted from both the bank and book balances.",
+      "explanationJa": "銀行が代理回収した手形は銀行側で記帳済みだが帳簿未記帳のため、帳簿残高の修正が必要。未取立小切手と未達預入は銀行残高の修正項目。認証小切手(certified check)は銀行・帳簿の双方で既に控除済み。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-026",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Cash on Hand - Inclusion Criteria",
+      "stem": "Which of the following should be included in the Cash and Cash Equivalents line on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "Customer postdated checks" },
+        { "label": "B", "text": "Stamps on hand" },
+        { "label": "C", "text": "Coins and currency in the cash register" },
+        { "label": "D", "text": "Travel advances to employees" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Coins and currency in the cash register represent cash on hand and are included in Cash and Cash Equivalents. Postdated checks are receivables (not yet negotiable). Stamps on hand are prepaid expenses. Travel advances are receivables from employees.",
+      "explanationJa": "レジスター内の硬貨・紙幣は手許現金として「現金及び現金同等物」に含める。先日付小切手は受取勘定、切手は前払費用、旅費前渡金は従業員からの受取勘定である。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-027",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Certificate of Deposit - Maturity Criteria",
+      "stem": "On November 1, a company purchases a 6-month certificate of deposit (CD) for $100,000. On December 31, the remaining maturity is approximately 4 months. Should this CD be classified as a cash equivalent at December 31?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because the remaining maturity is less than 6 months"
+        },
+        {
+          "label": "B",
+          "text": "No, because the original maturity from the purchase date exceeds three months"
+        },
+        {
+          "label": "C",
+          "text": "Yes, because CDs are always cash equivalents"
+        },
+        {
+          "label": "D",
+          "text": "No, because CDs never qualify as cash equivalents"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 305-10-20, cash equivalents must have an original maturity of three months or less from the date of purchase. This CD had an original maturity of 6 months at the purchase date (November 1), so it does not qualify as a cash equivalent regardless of the remaining maturity at December 31. It should be classified as a short-term investment.",
+      "explanationJa": "ASC 305-10-20では取得日時点の当初満期3か月以内が要件。取得日(11/1)で6か月満期のCDは、B/S日の残存期間にかかわらず現金同等物に該当しない。短期投資として分類する。",
+      "references": ["ASC 305-10-20"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-028",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Required Journal Entries",
+      "stem": "A bank reconciliation reveals the following: bank service charges of $45, interest earned of $120, and an NSF check from a customer of $800. What is the net adjustment to the company's book balance?",
+      "choices": [
+        { "label": "A", "text": "$725 decrease" },
+        { "label": "B", "text": "$725 increase" },
+        { "label": "C", "text": "$965 decrease" },
+        { "label": "D", "text": "$675 decrease" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "All three items require adjustments to the book balance because the bank has already recorded them but the company has not. Service charges decrease the balance by $45, interest earned increases it by $120, and the NSF check decreases it by $800. Net adjustment: +$120 - $45 - $800 = -$725, a decrease of $725.",
+      "explanationJa": "3項目とも銀行記帳済み・帳簿未記帳のため帳簿修正が必要。利息+$120、手数料-$45、NSF-$800 → 純修正額 = -$725（減少）。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-029",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Sweep Accounts",
+      "stem": "A company maintains a sweep account that automatically transfers excess cash into an overnight repurchase agreement at the end of each business day. How should the balance in this sweep arrangement be classified?",
+      "choices": [
+        { "label": "A", "text": "Short-term investment in debt securities" },
+        {
+          "label": "B",
+          "text": "Cash equivalent, if the arrangement has overnight maturity"
+        },
+        { "label": "C", "text": "Restricted cash" },
+        { "label": "D", "text": "Other assets" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Sweep accounts that invest in overnight repurchase agreements generally qualify as cash equivalents because the arrangement has an original maturity of one day, well within the three-month criterion of ASC 305-10-20. The funds are highly liquid and readily convertible to known amounts of cash. If the underlying investments had longer maturities, the classification could differ.",
+      "explanationJa": "翌日物レポに投資するスイープ口座は、当初満期が1日で3か月以内のため現金同等物に該当する。高い流動性があり既知の現金額に容易に転換可能。基礎となる投資の満期が長い場合は分類が異なりうる。",
+      "references": ["ASC 305-10-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-030",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Petty Cash - Fund Increase",
+      "stem": "A company decides to increase its petty cash fund from $200 to $500. The fund currently contains $40 in cash and $160 in receipts. What journal entry is required to both replenish and increase the fund?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Various Expenses $160, Debit Petty Cash $300, Credit Cash $460"
+        },
+        { "label": "B", "text": "Debit Petty Cash $300, Credit Cash $300" },
+        {
+          "label": "C",
+          "text": "Debit Various Expenses $160, Credit Cash $160; then Debit Petty Cash $300, Credit Cash $300"
+        },
+        { "label": "D", "text": "Debit Petty Cash $500, Credit Cash $500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "This transaction combines replenishment and a fund increase. The receipts ($160) are expensed, and the Petty Cash account is increased by $300 (from $200 to $500). Total cash disbursed: $160 (to replenish) + $300 (to increase) = $460. A single compound entry is acceptable: Debit Expenses $160, Debit Petty Cash $300, Credit Cash $460.",
+      "explanationJa": "補充と増額を同時に行う。レシート$160を費用計上、Petty Cash勘定を$300増額（$200→$500）。支出現金合計: $160 + $300 = $460。複合仕訳: 費用$160(Dr)、小口現金$300(Dr)、現金$460(Cr)。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-031",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Sinking Fund Cash",
+      "stem": "A company sets aside $500,000 in a separate bank account to be used exclusively for the repayment of bonds maturing in 5 years. How should this cash be classified on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "Cash and cash equivalents (current asset)" },
+        { "label": "B", "text": "Restricted cash (current asset)" },
+        { "label": "C", "text": "Other noncurrent assets" },
+        { "label": "D", "text": "Investments" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cash set aside in a sinking fund for the repayment of long-term debt is restricted for a specific purpose and is not available for current operations. Because the bonds mature in 5 years, the sinking fund is classified as a noncurrent asset (other assets or long-term investments). It would only be current if the debt matures within one year.",
+      "explanationJa": "長期社債の償還用に積み立てた現金は使途制限があり通常営業に使用不可。社債満期が5年後のため固定資産（その他投資等）に分類。債務が1年以内に満期の場合のみ流動資産となる。",
+      "references": ["ASC 210-10-45-4"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-032",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Electronic Funds Transfer in Reconciliation",
+      "stem": "A company's December bank statement includes an electronic funds transfer (EFT) payment of $3,200 to a supplier that the company has not yet recorded. In the bank reconciliation, this EFT should be treated as:",
+      "choices": [
+        { "label": "A", "text": "A deduction from the bank balance" },
+        { "label": "B", "text": "An addition to the bank balance" },
+        { "label": "C", "text": "A deduction from the book balance" },
+        { "label": "D", "text": "No adjustment needed" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The EFT payment has already been processed by the bank (reducing the bank balance) but has not been recorded by the company. Therefore, the company's book balance must be reduced by $3,200 to reflect this payment. Unlike outstanding checks, which are written but not yet cleared by the bank, EFT payments are processed immediately.",
+      "explanationJa": "EFT支払は銀行で処理済み（銀行残高は既に減少）だが会社帳簿に未記帳。帳簿残高を$3,200減額する。未取立小切手と異なり、EFTは即時処理されるため帳簿側の修正となる。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-033",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Equity Securities Exclusion",
+      "stem": "A company invests $50,000 in publicly traded common stock of a large-cap company that could be sold within one day. Does this investment qualify as a cash equivalent?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because it is highly liquid and readily convertible to cash"
+        },
+        {
+          "label": "B",
+          "text": "Yes, because it can be sold within three months"
+        },
+        {
+          "label": "C",
+          "text": "No, because equity securities are generally excluded from cash equivalents"
+        },
+        { "label": "D", "text": "No, because the investment exceeds $25,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 305-10-20, investments in equity securities are generally excluded from cash equivalents because they carry significant risk of changes in value. Cash equivalents must have insignificant risk of changes in value, which equity securities cannot satisfy due to market price fluctuations. Only preferred stock acquired within three months of its redemption date may qualify.",
+      "explanationJa": "ASC 305-10-20に基づき、株式投資は価値変動リスクが大きいため現金同等物から除外される。現金同等物は価値変動リスクが僅少であることが必要。償還日3か月以内に取得した優先株のみ例外的に適格となりうる。",
+      "references": ["ASC 305-10-20"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-034",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Error in Reconciliation",
+      "stem": "During a bank reconciliation, a company discovers that the bank incorrectly charged its account $1,500 for another company's check. This bank error should be:",
+      "choices": [
+        { "label": "A", "text": "Added to the book balance" },
+        { "label": "B", "text": "Added to the bank balance" },
+        { "label": "C", "text": "Deducted from the book balance" },
+        { "label": "D", "text": "Ignored until the bank corrects it" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A bank error that incorrectly charged the company's account reduces the reported bank balance. To correct this in the reconciliation, $1,500 must be added back to the bank balance. The company should also notify the bank to reverse the erroneous charge. No adjustment to the book balance is needed because the company's records are correct.",
+      "explanationJa": "銀行が他社の小切手を誤って引き落としたため、銀行残高が過少。銀行残高に$1,500を加算して修正する。帳簿残高は正しいため帳簿側の修正は不要。銀行に誤引落の訂正を依頼する。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-035",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Repurchase Agreements",
+      "stem": "A company enters into an overnight repurchase agreement (repo) in which it purchases U.S. Treasury securities with an agreement to resell them the next business day. How should this be classified?",
+      "choices": [
+        { "label": "A", "text": "Trading securities" },
+        { "label": "B", "text": "Cash equivalents" },
+        { "label": "C", "text": "Held-to-maturity securities" },
+        { "label": "D", "text": "Collateralized loan" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Overnight repurchase agreements backed by U.S. government securities are highly liquid, have a maturity of one day (well within three months), and carry minimal risk. They meet all criteria of ASC 305-10-20 for cash equivalents. Term repos with longer maturities may not qualify if they exceed the three-month criterion.",
+      "explanationJa": "米国債を裏付けとする翌日物レポは高流動性・1日満期・リスク僅少で、ASC 305-10-20の現金同等物の要件を全て満たす。3か月超の長期レポは現金同等物に該当しない場合がある。",
+      "references": ["ASC 305-10-20", "ASC 860-10-05"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-036",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Compensating Balance - Disclosure",
+      "stem": "A company has a $1,000,000 line of credit that requires a compensating balance of 10%. The company maintains $200,000 in its account at the lending bank. Which amount should be reported as unrestricted cash?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$0" },
+        {
+          "label": "D",
+          "text": "$200,000, with disclosure of the compensating balance arrangement"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 210-10-45 and SEC guidance, when a compensating balance is not legally restricted, the full amount remains classified as cash. However, the entity must disclose the compensating balance arrangement, including the amount and terms. If the balance were legally restricted, it would be separately classified as restricted cash.",
+      "explanationJa": "補償性預金が法的に拘束されていない場合、全額を現金として分類するが、補償性預金の取決め（金額・条件）の開示が必要。法的拘束がある場合は制限付き現金として区分表示する。",
+      "references": ["ASC 210-10-45-4", "ASC 210-10-50"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-037",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Check Kiting",
+      "stem": "On December 30, Company A writes a $50,000 check on Bank X and deposits it into Bank Y. As of December 31, the check has not yet cleared Bank X. The company records the transfer as a debit to Bank Y and a credit to Bank X on December 30. Which of the following best describes this situation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A proper interbank transfer recorded correctly"
+        },
+        {
+          "label": "B",
+          "text": "Check kiting, because the deposit is recorded before the disbursement clears"
+        },
+        { "label": "C", "text": "A timing difference requiring no adjustment" },
+        {
+          "label": "D",
+          "text": "A deposit in transit that should be added to Bank X balance"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "This is a legitimate interbank transfer properly recorded on the company's books. The company debited the receiving bank (Y) and credited the sending bank (X) on the same date. Check kiting would involve recording the deposit in Bank Y without reducing the balance in Bank X, thereby inflating total cash. Here, the company reduced Bank X simultaneously, so there is no inflation of cash.",
+      "explanationJa": "これは正当な銀行間振替。会社は同日にBank Yを借方・Bank Xを貸方に記帳。チェックカイティングはBank Yへの預入を記帳しつつBank Xの残高を減額しない（現金総額の水増し）場合に発生。本件では同時に両方を記帳しており問題ない。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-038",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Money Market Fund with Restrictions",
+      "stem": "A company invests $200,000 in a money market fund with a stable NAV. However, the fund imposes a 2% liquidity fee and a 10-day redemption gate during periods of market stress. During normal market conditions, should this investment be classified as a cash equivalent?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No, because any potential restriction disqualifies it"
+        },
+        {
+          "label": "B",
+          "text": "Yes, because it maintains a stable NAV and restrictions are not currently in effect"
+        },
+        {
+          "label": "C",
+          "text": "No, because money market funds are never cash equivalents"
+        },
+        {
+          "label": "D",
+          "text": "Yes, but only if disclosed as restricted cash"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under SEC Rule 2a-7 reforms, certain money market funds may impose liquidity fees or redemption gates during stress periods. When these restrictions are not in effect, the fund maintains its characteristics as a highly liquid, stable-value investment. The entity should evaluate classification based on current conditions and its own investment policy, considering whether the potential for restrictions creates significant risk of value change.",
+      "explanationJa": "SEC Rule 2a-7改正により、一部MMFはストレス時に流動性手数料や換金制限を課しうる。制限が発動されていない通常時は、高流動性・安定価値の特性を維持するため現金同等物として分類可能。企業は自社の投資方針と現在の状況に基づき判断する。",
+      "references": ["ASC 305-10-20", "SEC Rule 2a-7"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-039",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Comprehensive Multi-Adjustment",
+      "stem": "Company B has a December 31 book balance of $62,000. The bank reconciliation reveals: (1) a customer's NSF check of $2,400, (2) bank service charges of $150, (3) interest earned of $80, (4) a note receivable collected by the bank of $5,000 plus interest of $250, and (5) an error where the company recorded a check for $720 as $270. What is the adjusted book balance?",
+      "choices": [
+        { "label": "A", "text": "$64,330" },
+        { "label": "B", "text": "$64,780" },
+        { "label": "C", "text": "$64,330" },
+        { "label": "D", "text": "$64,780" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Starting with book balance $62,000: (1) NSF check -$2,400; (2) service charges -$150; (3) interest +$80; (4) note collected +$5,000, interest +$250; (5) the company recorded $720 payment as $270, so the books show $450 more than they should — deduct $450. Adjusted balance: $62,000 - $2,400 - $150 + $80 + $5,000 + $250 - $450 = $64,330.",
+      "explanationJa": "帳簿残高$62,000から: NSF -$2,400、手数料 -$150、利息 +$80、手形回収 +$5,000+$250、記帳誤り($720を$270と記帳→$450過大) -$450。修正後残高 = $62,000 - 2,400 - 150 + 80 + 5,250 - 450 = $64,330。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-040",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Restricted Cash - Debt Covenant",
+      "stem": "Under a loan agreement, Company C must maintain a minimum cash balance of $75,000 in a separate escrow account until the loan is fully repaid in 3 years. At December 31, the escrow account holds $80,000. How should the $80,000 be classified?",
+      "choices": [
+        { "label": "A", "text": "Current asset — restricted cash" },
+        { "label": "B", "text": "Noncurrent asset — restricted cash" },
+        {
+          "label": "C",
+          "text": "$75,000 as noncurrent restricted cash and $5,000 as current cash"
+        },
+        {
+          "label": "D",
+          "text": "Cash and cash equivalents with footnote disclosure"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The entire $80,000 is held in an escrow account that is restricted by the loan covenant. Since the loan does not mature for 3 years, the restriction is long-term, and the full balance should be classified as noncurrent restricted cash. Even though $5,000 exceeds the minimum requirement, it remains in the restricted escrow account and is not available for current operations.",
+      "explanationJa": "$80,000全額がローン契約により拘束されたエスクロー口座にある。ローン満期が3年後のため長期の制限であり、全額を固定資産（制限付き現金）に分類する。最低要件$75,000を$5,000超過していても、エスクロー口座内にあり通常営業に使用不可。",
+      "references": ["ASC 210-10-45-4", "ASC 230-10-50-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-041",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Variable Rate Demand Notes",
+      "stem": "A company purchases a variable rate demand note (VRDN) that has a stated maturity of 20 years but can be redeemed at par on demand with 7 days' notice. Should this instrument be classified as a cash equivalent?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because it is redeemable on demand within 7 days"
+        },
+        { "label": "B", "text": "No, because the stated maturity is 20 years" },
+        { "label": "C", "text": "Yes, but only if held for less than 90 days" },
+        {
+          "label": "D",
+          "text": "No, because variable rate instruments carry interest rate risk"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 305-10-20 indicates that for instruments with demand features, the relevant maturity for classification purposes is the demand period, not the stated maturity. A VRDN redeemable on demand within 7 days effectively has a maturity well within three months, qualifies as highly liquid, and typically carries insignificant risk of value change due to the variable rate resetting mechanism.",
+      "explanationJa": "ASC 305-10-20に基づき、デマンド条項付き商品は要求払い期間が判定基準であり、表面上の満期ではない。7日前通知で額面償還可能なVRDNは実質満期が3か月以内で、変動金利によるリセット機能で価値変動リスクも僅少なため現金同等物に分類できる。",
+      "references": ["ASC 305-10-20"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-042",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Multiple Foreign Currency Balances",
+      "stem": "A U.S. company holds cash in three currencies at December 31: ¥10,000,000 (rate: $0.0067/¥), £50,000 (rate: $1.27/£), and CAD 80,000 (rate: $0.74/CAD). What total amount should be reported as cash on the U.S. dollar balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$67,000 + $63,500 + $59,200 = $189,700" },
+        {
+          "label": "B",
+          "text": "The original transaction amounts, with translation adjustments in OCI"
+        },
+        {
+          "label": "C",
+          "text": "$189,700, with any remeasurement gains or losses in income"
+        },
+        { "label": "D", "text": "The amounts cannot be combined on one line" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 830-10-45-17, all foreign currency monetary assets (including cash) are remeasured at the current spot rate at the balance sheet date. ¥10M × $0.0067 = $67,000; £50K × $1.27 = $63,500; CAD 80K × $0.74 = $59,200. Total = $189,700. Any remeasurement gains or losses from changes in exchange rates are recognized in the income statement, not in OCI.",
+      "explanationJa": "ASC 830-10-45-17により外貨建て現金はB/S日の直物レートで再測定。¥10M×$0.0067=$67,000、£50K×$1.27=$63,500、CAD80K×$0.74=$59,200、合計$189,700。為替差損益は損益計算書に計上（OCIではない）。",
+      "references": ["ASC 830-10-45-17"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-043",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Cash Overdraft - Same Bank Offset",
+      "stem": "A company has two accounts at the same bank: a checking account with a $35,000 balance and a payroll account with a ($10,000) overdraft. The company has a master netting agreement with the bank. How should these be reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cash $35,000 in current assets and overdraft $10,000 in current liabilities"
+        },
+        { "label": "B", "text": "Cash $25,000 in current assets" },
+        {
+          "label": "C",
+          "text": "Cash $35,000 with separate disclosure of the overdraft"
+        },
+        {
+          "label": "D",
+          "text": "Net cash $25,000 in current assets and overdraft $10,000 in current liabilities"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When a company has a legal right of offset (such as a master netting agreement) for accounts at the same bank, overdrafts may be netted against positive balances. The checking account ($35,000) offset by the payroll overdraft ($10,000) results in a net cash balance of $25,000, reported as a single amount in current assets.",
+      "explanationJa": "同一銀行でマスターネッティング契約（法的相殺権）がある場合、当座借越と預金残高を相殺できる。$35,000 - $10,000 = $25,000を流動資産の現金として一括表示する。",
+      "references": ["ASC 210-20-45-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cce-044",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Proof of Cash",
+      "stem": "A four-column proof of cash for November shows: beginning bank balance $40,000, November deposits per bank $95,000, November disbursements per bank $88,000, and ending bank balance $47,000. If deposits in transit were $6,000 at October 31 and $8,500 at November 30, what are the adjusted November deposits?",
+      "choices": [
+        { "label": "A", "text": "$97,500" },
+        { "label": "B", "text": "$92,500" },
+        { "label": "C", "text": "$95,000" },
+        { "label": "D", "text": "$101,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The proof of cash reconciles both beginning and ending balances plus activity during the period. Adjusted deposits = Bank deposits + ending deposits in transit - beginning deposits in transit = $95,000 + $8,500 - $6,000 = $97,500. The beginning deposits in transit ($6,000) were included in November bank deposits, so they are subtracted. The ending deposits in transit ($8,500) are added because the bank has not yet recorded them.",
+      "explanationJa": "修正後預入額 = 銀行記録預入 + 期末未達預入 - 期首未達預入 = $95,000 + $8,500 - $6,000 = $97,500。期首の未達預入$6,000は11月の銀行記録に含まれるため控除、期末の未達預入$8,500は銀行未記帳のため加算。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-045",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Cash Equivalents Policy Disclosure",
+      "stem": "Under U.S. GAAP, which of the following disclosures is required regarding a company's accounting policy for cash equivalents?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The company must disclose its policy for determining which items are treated as cash equivalents"
+        },
+        {
+          "label": "B",
+          "text": "No disclosure is required because the definition is standardized"
+        },
+        {
+          "label": "C",
+          "text": "Only the total amount of cash equivalents must be disclosed"
+        },
+        {
+          "label": "D",
+          "text": "Disclosure is required only when cash equivalents exceed 10% of total assets"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 305-10-50-1 requires entities to disclose their policy for determining which items are treated as cash equivalents. Because entities have some latitude in defining cash equivalents (e.g., whether to include money market funds, Treasury bills, or commercial paper), this policy disclosure helps financial statement users understand the composition of the reported Cash and Cash Equivalents balance.",
+      "explanationJa": "ASC 305-10-50-1により、現金同等物の判定方針の開示が要求される。企業にはMMF・T-Bill・CP等を含めるかの裁量があるため、方針開示により財務諸表利用者が残高の構成を理解できるようにする。",
+      "references": ["ASC 305-10-50-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
     }
   ]
 }

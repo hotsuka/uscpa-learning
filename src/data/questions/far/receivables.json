@@ -2,7 +2,7 @@
   "id": "far-receivables",
   "name": "Receivables",
   "topic": "Receivables",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "rec-001",
@@ -870,6 +870,516 @@
       "references": ["AU-C 505"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-041",
+      "topic": "Receivables",
+      "subtopic": "Loan Origination Fees - ASC 310",
+      "stem": "A bank originates a $500,000 loan and charges the borrower a $10,000 nonrefundable origination fee. The bank also incurs $3,000 in direct origination costs. Under ASC 310-20, how should the net fee be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize the $10,000 fee as revenue immediately"
+        },
+        {
+          "label": "B",
+          "text": "Defer the net fee of $7,000 and amortize it over the life of the loan as a yield adjustment"
+        },
+        {
+          "label": "C",
+          "text": "Expense the $3,000 costs and recognize $10,000 as revenue immediately"
+        },
+        {
+          "label": "D",
+          "text": "Defer the $10,000 fee and expense the $3,000 costs separately"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 310-20-25, loan origination fees and direct origination costs are offset and the net amount ($10,000 - $3,000 = $7,000) is deferred and recognized over the life of the loan as an adjustment to the loan's yield (effective interest rate). This net fee becomes part of the loan's carrying amount.",
+      "explanationJa": "ASC 310-20-25に基づき、融資組成手数料と直接組成費用を相殺し、純額（$10,000 - $3,000 = $7,000）をローン期間にわたり利回り調整として繰延認識する。純手数料はローンの帳簿価額の一部となる。",
+      "references": ["ASC 310-20-25"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-042",
+      "topic": "Receivables",
+      "subtopic": "Healthcare Receivables - Implicit Price Concessions",
+      "stem": "A hospital bills patients $2,000,000 for services. Based on historical data, the hospital expects to collect only $1,400,000 due to charity care and uninsured patient write-offs. Under ASC 606, how should the hospital report revenue?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$2,000,000 revenue with $600,000 bad debt expense"
+        },
+        {
+          "label": "B",
+          "text": "$1,400,000 revenue (net of implicit price concession)"
+        },
+        {
+          "label": "C",
+          "text": "$2,000,000 revenue with $600,000 contra-revenue"
+        },
+        {
+          "label": "D",
+          "text": "$1,400,000 revenue with $600,000 deferred revenue"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-32-7, implicit price concessions are a form of variable consideration. Healthcare entities should estimate the transaction price considering amounts they do not expect to collect from patients. Revenue is recognized at the estimated collectible amount ($1,400,000), not the gross billing amount. The uncollectible portion is not bad debt expense — it is a reduction of the transaction price.",
+      "explanationJa": "ASC 606-10-32-7に基づき、暗黙的価格譲歩は変動対価の一形態。医療機関は患者から回収不能と見込まれる金額を考慮して取引価格を見積もる。収益は回収見込額$1,400,000で認識し、回収不能部分は貸倒費用ではなく取引価格の減額として処理する。",
+      "references": ["ASC 606-10-32-7", "ASC 606-10-32-8"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-043",
+      "topic": "Receivables",
+      "subtopic": "CECL - Collateral-Dependent Financial Assets",
+      "stem": "A bank holds a loan secured by real estate. The borrower is experiencing financial difficulty and repayment is expected to be provided substantially through the sale of the collateral. Under CECL, how should the expected credit loss be measured?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Based on historical loss rates for similar loans"
+        },
+        {
+          "label": "B",
+          "text": "Based on the fair value of the collateral less costs to sell"
+        },
+        {
+          "label": "C",
+          "text": "Based on the present value of expected future cash flows"
+        },
+        {
+          "label": "D",
+          "text": "No loss recognition is needed because the loan is collateralized"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-35-4, when a financial asset is collateral-dependent (repayment is expected substantially through the sale of the collateral), the entity may measure the expected credit loss as the difference between the amortized cost and the fair value of the collateral, less costs to sell. This practical expedient avoids the need for complex cash flow projections.",
+      "explanationJa": "ASC 326-20-35-4により、担保依存型の金融資産（返済が担保の売却により実質的に行われる場合）は、償却原価と担保の公正価値（売却費用控除後）の差額で予想信用損失を測定できる。複雑なキャッシュフロー予測を不要とする実務上の簡便法である。",
+      "references": ["ASC 326-20-35-4"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-044",
+      "topic": "Receivables",
+      "subtopic": "Factoring - Gain/Loss on Sale",
+      "stem": "Company A factors $200,000 of accounts receivable without recourse. The factor charges a 3% fee and retains 5% as a holdback. What is the loss on the factoring?",
+      "choices": [
+        { "label": "A", "text": "$6,000" },
+        { "label": "B", "text": "$16,000" },
+        { "label": "C", "text": "$10,000" },
+        {
+          "label": "D",
+          "text": "$6,000, with $10,000 recorded as a receivable from the factor"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The factor's fee is 3% × $200,000 = $6,000, which is the loss on the sale. The holdback of 5% × $200,000 = $10,000 is not a loss — it is retained by the factor as security and will be returned after collection. Company A records: Debit Cash $184,000, Debit Receivable from Factor $10,000, Credit Accounts Receivable $200,000, and recognizes a $6,000 loss.",
+      "explanationJa": "ファクタリング手数料 3% × $200,000 = $6,000 が売却損。保留金 5% × $200,000 = $10,000は損失ではなく、回収後に返還される保証金でファクターからの受取勘定。現金$184,000(Dr)、受取勘定$10,000(Dr)、売却損$6,000(Dr)、売掛金$200,000(Cr)。",
+      "references": ["ASC 860-20-40"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-045",
+      "topic": "Receivables",
+      "subtopic": "ASU 2022-02 - Loan Modifications",
+      "stem": "Under ASU 2022-02, which eliminated the TDR recognition and measurement guidance, how should a creditor account for a loan modification to a borrower experiencing financial difficulty?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Continue to apply legacy TDR concession measurement"
+        },
+        {
+          "label": "B",
+          "text": "Apply the general loan modification framework and evaluate the CECL allowance based on the modified terms"
+        },
+        { "label": "C", "text": "Write off the loan immediately" },
+        {
+          "label": "D",
+          "text": "Recognize a gain equal to the concession granted"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASU 2022-02 eliminated the TDR accounting model for creditors. Loan modifications to borrowers experiencing financial difficulty are now evaluated under the general loan modification framework in ASC 310-20. The creditor assesses whether the modification is a new loan or continuation of the existing loan, and updates the CECL allowance to reflect the modified terms and the borrower's financial condition.",
+      "explanationJa": "ASU 2022-02はTDR会計モデルを廃止。財政困難な借手への貸付条件変更はASC 310-20の一般的なローン修正フレームワークで評価する。新規ローンか既存ローンの継続かを判定し、修正条件と借手の財務状況を反映してCECL引当金を更新する。",
+      "references": ["ASU 2022-02", "ASC 310-20"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-046",
+      "topic": "Receivables",
+      "subtopic": "Receivable from Officers",
+      "stem": "A company has a $50,000 loan receivable from its CEO that is due in 6 months. How should this receivable be classified and disclosed?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Current asset — trade receivables, with no special disclosure"
+        },
+        {
+          "label": "B",
+          "text": "Current asset — separately classified as related party receivable, with required disclosure"
+        },
+        { "label": "C", "text": "Noncurrent asset — other receivables" },
+        {
+          "label": "D",
+          "text": "Contra-equity, deducted from stockholders' equity"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 850-10-50, loans to officers and directors are related party transactions requiring separate disclosure of the nature, amounts, and terms. The receivable should be classified separately from trade receivables. Since it is due in 6 months, it is a current asset. SEC registrants may have additional restrictions under Sarbanes-Oxley Section 402(a) which generally prohibits personal loans to officers and directors.",
+      "explanationJa": "ASC 850-10-50により、役員への貸付は関連当事者取引として性質・金額・条件の個別開示が必要。営業債権とは区分して表示する。6か月以内に期限到来のため流動資産。SEC登録企業はサーベンス・オクスリー法402条により役員個人への貸付が原則禁止。",
+      "references": ["ASC 850-10-50", "SOX Section 402(a)"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-047",
+      "topic": "Receivables",
+      "subtopic": "CECL - Weighted Average Remaining Maturity",
+      "stem": "A company uses the weighted-average remaining maturity (WARM) method to estimate expected credit losses on a pool of receivables. The pool has a weighted-average remaining life of 3 years and an average annual loss rate of 2%. What is the estimated lifetime expected credit loss rate?",
+      "choices": [
+        { "label": "A", "text": "2%" },
+        { "label": "B", "text": "6%" },
+        { "label": "C", "text": "4%" },
+        { "label": "D", "text": "3%" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The WARM method estimates lifetime expected credit losses by multiplying the average annual loss rate by the weighted-average remaining maturity. Estimated lifetime loss rate = 2% × 3 years = 6%. This is a simplified method appropriate for less complex financial asset pools. Adjustments for current conditions and reasonable forecasts should also be incorporated.",
+      "explanationJa": "WARM法は平均年間損失率に加重平均残存期間を乗じて生涯予想信用損失を見積もる。生涯損失率 = 2% × 3年 = 6%。複雑でない金融資産プールに適した簡便法。現在の状況と合理的な予測の調整も加えるべき。",
+      "references": ["ASC 326-20-30-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-048",
+      "topic": "Receivables",
+      "subtopic": "Contra Accounts - Returns and Allowances",
+      "stem": "A company has gross accounts receivable of $800,000, an allowance for credit losses of $24,000, and an allowance for sales returns of $16,000. What is the net realizable value of accounts receivable?",
+      "choices": [
+        { "label": "A", "text": "$760,000" },
+        { "label": "B", "text": "$776,000" },
+        { "label": "C", "text": "$784,000" },
+        { "label": "D", "text": "$800,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net realizable value of accounts receivable equals gross receivables minus all contra accounts. NRV = $800,000 - $24,000 (credit losses) - $16,000 (returns) = $760,000. Both the allowance for credit losses and the allowance for sales returns are contra-asset accounts that reduce the carrying amount of receivables.",
+      "explanationJa": "売掛金の正味実現可能価額 = 総額 - 全評価性引当金。NRV = $800,000 - $24,000(貸倒引当金) - $16,000(返品引当金) = $760,000。両引当金とも売掛金の帳簿価額を減額する評価勘定。",
+      "references": ["ASC 310-10-45", "ASC 326-20"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-049",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Variable Rate",
+      "stem": "A company holds a $100,000 variable-rate note receivable that resets quarterly based on SOFR + 2%. At the beginning of the quarter, SOFR is 4.5%. What is the quarterly interest income?",
+      "choices": [
+        { "label": "A", "text": "$1,625" },
+        { "label": "B", "text": "$6,500" },
+        { "label": "C", "text": "$1,125" },
+        { "label": "D", "text": "$4,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The variable rate is SOFR + 2% = 4.5% + 2% = 6.5% per annum. Quarterly interest income = $100,000 × 6.5% × 3/12 = $1,625. Variable-rate notes reprice at each reset date, so there is no premium or discount amortization between reset dates (the carrying amount remains at par).",
+      "explanationJa": "変動金利 = SOFR + 2% = 4.5% + 2% = 年6.5%。四半期利息収入 = $100,000 × 6.5% × 3/12 = $1,625。変動金利手形はリセット日ごとに金利が改定されるため、リセット間のプレミアム/ディスカウント償却は発生しない。",
+      "references": ["ASC 310-10-35"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-050",
+      "topic": "Receivables",
+      "subtopic": "Credit Card Receivables",
+      "stem": "A retailer accepts credit card payments and the credit card company charges a 2.5% processing fee. If total credit card sales for the month are $400,000, what should the retailer record?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Receivable $400,000 and processing fee expense when collected"
+        },
+        {
+          "label": "B",
+          "text": "Cash/Receivable $390,000 and credit card fee expense $10,000"
+        },
+        { "label": "C", "text": "Revenue $390,000 only" },
+        {
+          "label": "D",
+          "text": "Receivable $400,000 and contra-revenue $10,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The retailer recognizes gross revenue of $400,000 and a credit card processing fee expense of $400,000 × 2.5% = $10,000. The net amount received (or receivable) from the credit card company is $390,000. The processing fee is an operating expense, not a reduction of revenue, because it is a fee for a service provided by the card company.",
+      "explanationJa": "小売業者は売上$400,000を総額で認識し、クレジットカード手数料$10,000（$400,000 × 2.5%）を費用計上。カード会社からの受取額は$390,000。手数料はカード会社のサービス対価であり収益の減額ではなく営業費用。",
+      "references": ["ASC 606-10-32"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-051",
+      "topic": "Receivables",
+      "subtopic": "Revolving Credit - Commitment Fees",
+      "stem": "A bank extends a $5,000,000 revolving credit facility to a borrower and charges an annual commitment fee of 0.25% on the unused portion. The borrower draws $2,000,000. How should the bank account for the commitment fee?",
+      "choices": [
+        { "label": "A", "text": "Recognize $12,500 as fee income immediately" },
+        {
+          "label": "B",
+          "text": "Defer $12,500 and recognize over the commitment period"
+        },
+        {
+          "label": "C",
+          "text": "Recognize $7,500 as fee income based on the unused $3,000,000"
+        },
+        {
+          "label": "D",
+          "text": "Recognize $7,500 as fee income on the unused portion, accrued over the period"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 310-20-25-2, commitment fees on revolving credit facilities are generally recognized over the commitment period. The fee is based on the unused portion: ($5,000,000 - $2,000,000) × 0.25% = $7,500 per year. Since utilization may fluctuate, the fee is typically recognized on a straight-line basis over the period, adjusted for changes in the unused balance.",
+      "explanationJa": "ASC 310-20-25-2により、リボルビング与信枠のコミットメント手数料は約定期間にわたり認識。未使用額ベース: ($5M - $2M) × 0.25% = 年$7,500。利用額は変動しうるため、未使用残高の変動を考慮し期間按分で認識する。",
+      "references": ["ASC 310-20-25-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-052",
+      "topic": "Receivables",
+      "subtopic": "Sale of Receivables - Control Criteria",
+      "stem": "Under ASC 860, which of the following conditions must be met for a transfer of receivables to be accounted for as a sale?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The transferred assets are isolated from the transferor, even in bankruptcy"
+        },
+        {
+          "label": "B",
+          "text": "The transferor must retain at least partial control"
+        },
+        { "label": "C", "text": "The transfer must be to a related party" },
+        {
+          "label": "D",
+          "text": "The receivables must be fully collected before transfer"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 860-10-40-5, a transfer qualifies as a sale when three conditions are met: (1) the transferred assets have been isolated from the transferor (beyond the reach of the transferor and its creditors, even in bankruptcy), (2) the transferee has the right to pledge or exchange the assets, and (3) the transferor does not maintain effective control over the assets. Condition A describes the isolation criterion.",
+      "explanationJa": "ASC 860-10-40-5に基づき、売却処理には3条件が必要: (1) 譲渡資産が譲渡人から隔離（破産時も債権者の手が届かない）、(2) 譲受人が資産を担保差入・交換する権利を有する、(3) 譲渡人が実効的支配を保持しない。選択肢Aは隔離基準を記述。",
+      "references": ["ASC 860-10-40-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-053",
+      "topic": "Receivables",
+      "subtopic": "Insurance Claims Receivable",
+      "stem": "A company suffers a fire that destroys inventory with a carrying value of $300,000. The company files an insurance claim and expects to recover $250,000 based on the policy terms. When should the insurance receivable be recognized?",
+      "choices": [
+        { "label": "A", "text": "When the claim is filed" },
+        { "label": "B", "text": "When recovery is deemed probable" },
+        { "label": "C", "text": "Only when the cash is received" },
+        { "label": "D", "text": "At the date of the loss event" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 450-30-25-1, a gain contingency (including insurance recoveries) should not be recognized until recovery is probable. The insurance receivable of $250,000 is recognized when recovery is deemed probable, which typically occurs when the insurer acknowledges the claim. The loss on inventory ($300,000) and the insurance recovery ($250,000) should be separately presented, not netted.",
+      "explanationJa": "ASC 450-30-25-1により、偶発利得（保険回収を含む）は回収が probable になるまで認識しない。保険受取勘定$250,000は回収が probable と判断された時点（通常、保険会社が請求を承認した時）に認識。棚卸資産損失$300,000と保険回収$250,000は相殺せず別表示。",
+      "references": ["ASC 450-30-25-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-054",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Nonaccrual Status",
+      "stem": "A bank places a $1,000,000 loan on nonaccrual status because the borrower has missed payments for 90 days. Prior to nonaccrual, $25,000 of interest had been accrued but not collected. What accounting treatment is required?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Continue to accrue interest but increase the allowance"
+        },
+        {
+          "label": "B",
+          "text": "Reverse the $25,000 accrued interest and stop recognizing further interest income"
+        },
+        { "label": "C", "text": "Write off the entire loan balance" },
+        {
+          "label": "D",
+          "text": "Recognize interest income only when cash is received (cash basis)"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When a loan is placed on nonaccrual status, any previously accrued but uncollected interest is reversed (typically against interest income). Further interest recognition is suspended. Any cash payments received are generally applied to reduce the loan principal. Interest income is recognized only to the extent that cash payments exceed the principal balance due.",
+      "explanationJa": "ノンアクルーアル状態では、計上済み未収利息$25,000を取消（通常は利息収入の減額）し、以降の利息認識を停止する。現金受領はローン元本の回収に充当。利息収入は現金支払が元本残高を超える範囲でのみ認識する。",
+      "references": ["ASC 310-10-35-8", "FRB Nonaccrual Guidance"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-055",
+      "topic": "Receivables",
+      "subtopic": "CECL - Financial Guarantees",
+      "stem": "A parent company guarantees a $2,000,000 loan of its subsidiary. Under CECL, how should the parent measure the expected credit loss on this off-balance-sheet financial guarantee?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No liability is required because the guarantee is to a related party"
+        },
+        {
+          "label": "B",
+          "text": "Record a liability for expected credit losses over the remaining contractual period of the guarantee"
+        },
+        {
+          "label": "C",
+          "text": "Record a liability only when a loss is probable and estimable"
+        },
+        {
+          "label": "D",
+          "text": "Recognize a liability equal to 100% of the guaranteed amount"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-30-10, off-balance-sheet credit exposures such as financial guarantees (other than those accounted for as insurance or derivatives) are subject to the CECL model. The entity must estimate expected credit losses over the contractual period and record a liability. This replaces the legacy probable-and-estimable threshold with a current expected loss model.",
+      "explanationJa": "ASC 326-20-30-10により、金融保証等のオフバランスの信用エクスポージャーはCECLモデルの対象。契約期間にわたる予想信用損失を見積もり負債を計上する。従来の「probable and estimable」基準は現在予想損失モデルに置き換えられた。",
+      "references": ["ASC 326-20-30-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-056",
+      "topic": "Receivables",
+      "subtopic": "Factoring - Servicing Asset",
+      "stem": "Company B factors $500,000 of receivables without recourse and agrees to continue servicing the receivables for a fee that is below market rate. Before the transfer, what should Company B recognize related to servicing?",
+      "choices": [
+        { "label": "A", "text": "No separate recognition of servicing" },
+        {
+          "label": "B",
+          "text": "A servicing liability for the below-market servicing obligation"
+        },
+        {
+          "label": "C",
+          "text": "A servicing asset based on the present value of future servicing fees"
+        },
+        {
+          "label": "D",
+          "text": "Deferred revenue for the servicing commitment"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 860-50-25-1, when a transferor retains servicing responsibilities and the servicing fee is below adequate compensation, a servicing liability is recognized. The liability is measured at fair value at the transfer date. It represents the obligation to perform servicing at below-market rates. If the fee were above adequate compensation, a servicing asset would be recognized instead.",
+      "explanationJa": "ASC 860-50-25-1により、サービシング手数料が適正報酬以下の場合、サービシング負債を認識する。譲渡日の公正価値で測定し、市場レート以下でサービシングを行う義務を表す。手数料が適正報酬超の場合はサービシング資産を認識。",
+      "references": ["ASC 860-50-25-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-057",
+      "topic": "Receivables",
+      "subtopic": "Loan Modification - Principal Forgiveness",
+      "stem": "A bank modifies a $1,000,000 loan for a borrower experiencing financial difficulty by forgiving $200,000 of principal and reducing the interest rate from 8% to 4% on the remaining $800,000 balance for the remaining 5 years. How should the bank account for this modification under ASU 2022-02?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Write off $200,000 against the allowance and maintain the loan at $800,000 with original terms"
+        },
+        {
+          "label": "B",
+          "text": "Write off $200,000 against the allowance and adjust the CECL allowance for the modified loan at $800,000 with new terms"
+        },
+        {
+          "label": "C",
+          "text": "Recognize a $200,000 loss in income and a new loan at $800,000"
+        },
+        {
+          "label": "D",
+          "text": "Derecognize the entire loan and record a new $800,000 loan at fair value"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASU 2022-02, the principal forgiveness of $200,000 is written off against the allowance for credit losses (or charged to expense if insufficient allowance exists). The loan continues at the modified terms ($800,000 at 4%). The CECL allowance is then updated to reflect expected credit losses under the modified terms, considering the borrower's financial condition.",
+      "explanationJa": "ASU 2022-02に基づき、元本免除$200,000は貸倒引当金から償却（引当金不足の場合は費用計上）。ローンは修正条件（$800,000、4%）で継続。修正条件と借手の財務状況を考慮し、CECL引当金を更新する。",
+      "references": ["ASU 2022-02", "ASC 326-20-35"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-058",
+      "topic": "Receivables",
+      "subtopic": "CECL - Zero Expected Credit Loss",
+      "stem": "Under what circumstances can an entity estimate zero expected credit losses under the CECL model?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "When the receivable is collateralized by U.S. Treasury securities"
+        },
+        {
+          "label": "B",
+          "text": "When the receivable has never experienced a loss historically"
+        },
+        {
+          "label": "C",
+          "text": "When the receivable is due from a related party"
+        },
+        {
+          "label": "D",
+          "text": "Zero expected loss is never permitted under CECL"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 326-20-30-2 acknowledges that zero expected credit losses may be appropriate in certain limited circumstances, such as when financial assets are secured by collateral of high credit quality (e.g., U.S. Treasury securities) and the fair value of the collateral is expected to equal or exceed the amortized cost. Zero loss is not justified merely by historical performance or related party status.",
+      "explanationJa": "ASC 326-20-30-2は、高信用品質の担保（米国債等）で保全され担保の公正価値が償却原価以上と見込まれる場合など、限定的な状況でゼロの予想信用損失が適切でありうると認めている。単に過去に損失がないことや関連当事者であることでは正当化されない。",
+      "references": ["ASC 326-20-30-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-059",
+      "topic": "Receivables",
+      "subtopic": "Intercompany Receivables - Elimination",
+      "stem": "Parent Company has a $150,000 receivable from its wholly-owned subsidiary. On the consolidated balance sheet, how should this receivable be reported?",
+      "choices": [
+        { "label": "A", "text": "$150,000 as a current asset" },
+        {
+          "label": "B",
+          "text": "$150,000 as a noncurrent asset with related party disclosure"
+        },
+        { "label": "C", "text": "Eliminated in consolidation — not reported" },
+        { "label": "D", "text": "$150,000 reduced by a CECL allowance" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 810-10-45-1, intercompany receivables and payables between a parent and its consolidated subsidiaries must be eliminated in the preparation of consolidated financial statements. From the consolidated entity's perspective, the parent's receivable and the subsidiary's payable are internal transactions that do not represent amounts owed to or by external parties.",
+      "explanationJa": "ASC 810-10-45-1により、親会社と連結子会社間の内部取引（売掛金・買掛金）は連結財務諸表の作成時に消去する。連結実体の観点では、内部の債権債務は外部との取引ではないため報告しない。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-060",
+      "topic": "Receivables",
+      "subtopic": "Sales Returns - Refund Liability and Asset",
+      "stem": "A company sells $1,000,000 of products and estimates a 5% return rate based on historical data. Under ASC 606, how should the expected returns be recorded at the time of sale?",
+      "choices": [
+        { "label": "A", "text": "Revenue $950,000 only" },
+        {
+          "label": "B",
+          "text": "Revenue $1,000,000, refund liability $50,000, and a right-of-return asset for the cost of expected returns"
+        },
+        {
+          "label": "C",
+          "text": "Revenue $1,000,000 and an allowance for sales returns $50,000"
+        },
+        {
+          "label": "D",
+          "text": "Revenue $950,000 and deferred revenue $50,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-22, when a right of return exists, the entity recognizes revenue for the amount expected to be retained ($950,000), a refund liability for the amount expected to be refunded ($50,000), and a right-of-return asset for the right to recover products from customers. The gross revenue is $1,000,000 with a separate refund liability of $50,000.",
+      "explanationJa": "ASC 606-10-55-22により、返品権がある場合、保持見込額で収益認識し($950,000)、返金見込額($50,000)を返金負債として計上し、返品予想分の製品回収権を返品権資産として認識する。総額$1,000,000の売上と返金負債$50,000を別表示する。",
+      "references": ["ASC 606-10-55-22", "ASC 606-10-55-27"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
     }
   ]
 }

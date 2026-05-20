@@ -2,7 +2,7 @@
   "id": "far-cash-flows",
   "name": "Statement of Cash Flows",
   "topic": "Statement of Cash Flows",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "cf-001",
@@ -822,6 +822,507 @@
       "references": ["ASC 230-10-45", "ASU 2021-10"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-041",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Interest Paid Classification",
+      "stem": "Under U.S. GAAP (ASC 230), how is cash paid for interest classified on the statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Operating activities" },
+        { "label": "B", "text": "Financing activities" },
+        { "label": "C", "text": "Investing activities" },
+        {
+          "label": "D",
+          "text": "Either operating or financing, at the entity's election"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under U.S. GAAP (ASC 230-10-45-17), cash paid for interest is classified as an operating activity. This differs from IFRS, which permits interest paid to be classified as either operating or financing. Under U.S. GAAP, the classification is mandatory—there is no election. Cash paid for interest must also be disclosed as supplemental information when using the indirect method.",
+      "explanationJa": "US GAAPでは利息の支払いは営業活動に分類される（選択の余地なし）。IFRSでは営業または財務活動の選択が認められるが、US GAAPでは強制的に営業活動となる。間接法使用時には補足情報として開示が必要。",
+      "references": ["ASC 230-10-45-17"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-042",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method Depreciation Addback",
+      "stem": "Hart Corp. reported net income of $500,000. During the year, depreciation expense was $80,000, accounts receivable increased by $30,000, and accounts payable decreased by $20,000. Using the indirect method, what is cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$530,000" },
+        { "label": "B", "text": "$570,000" },
+        { "label": "C", "text": "$630,000" },
+        { "label": "D", "text": "$430,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Indirect method starts with net income and adjusts for non-cash items and working capital changes: $500,000 + $80,000 (add back depreciation) − $30,000 (increase in A/R reduces cash) − $20,000 (decrease in A/P reduces cash) = $530,000. An increase in a current asset is a use of cash; a decrease in a current liability is also a use of cash.",
+      "explanationJa": "間接法：純利益$500,000＋減価償却費$80,000（加算）−売掛金増加$30,000（減算）−買掛金減少$20,000（減算）＝$530,000。流動資産の増加と流動負債の減少は資金の使用を意味する。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-043",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Sale of Equipment Cash Flow",
+      "stem": "Lee Co. sold equipment with a book value of $120,000 for $145,000 cash. Where is the $145,000 cash proceeds reported on the statement of cash flows, and how is the $25,000 gain treated under the indirect method?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$145,000 as investing inflow; deduct the $25,000 gain from operating activities"
+        },
+        {
+          "label": "B",
+          "text": "$120,000 as investing inflow and $25,000 as operating inflow"
+        },
+        {
+          "label": "C",
+          "text": "$145,000 as operating inflow; no adjustment needed"
+        },
+        {
+          "label": "D",
+          "text": "$145,000 as investing inflow; add the $25,000 gain to operating activities"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The full cash proceeds of $145,000 are reported as an investing activity inflow (ASC 230-10-45-12). Under the indirect method, the $25,000 gain is deducted from net income in the operating section to avoid double-counting—it is already included in net income but belongs in investing, not operating. The gain is not a separate cash flow; only the total proceeds are.",
+      "explanationJa": "売却代金$145,000全額を投資活動のキャッシュ・インフローとして報告。間接法では$25,000の利益を営業活動から控除する（純利益に含まれているが、投資活動に属するため二重計上を回避）。",
+      "references": ["ASC 230-10-45-12", "ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-044",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Dividends Received Classification",
+      "stem": "Under U.S. GAAP, how are cash dividends received from an equity method investee classified on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating activities, unless they represent a return of investment (liquidating dividends), which are investing"
+        },
+        {
+          "label": "B",
+          "text": "Always investing activities since they relate to an investment"
+        },
+        {
+          "label": "C",
+          "text": "Always operating activities regardless of the nature"
+        },
+        {
+          "label": "D",
+          "text": "Financing activities as a return to shareholders"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-21, dividends received from equity method investees are generally classified as operating activities because they represent a return on investment (analogous to interest income). However, cumulative distributions received in excess of the investor's cumulative equity in earnings since the date of investment (i.e., returns of investment or liquidating dividends) are classified as investing activities.",
+      "explanationJa": "持分法適用投資先からの受取配当金は、原則として営業活動に分類される（投資収益の回収）。ただし、投資日以降の累積持分利益を超える累積配当額（投資の回収・清算配当）は投資活動に分類される。",
+      "references": ["ASC 230-10-45-21"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-045",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Noncash Investing and Financing",
+      "stem": "Wynn Corp. acquired a building by issuing a $2,000,000 mortgage note directly to the seller. How should this transaction be reported on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Disclosed as a noncash investing and financing activity in a supplemental schedule"
+        },
+        {
+          "label": "B",
+          "text": "Reported as a $2,000,000 investing outflow and a $2,000,000 financing inflow"
+        },
+        {
+          "label": "C",
+          "text": "Reported only as a $2,000,000 financing inflow"
+        },
+        {
+          "label": "D",
+          "text": "Not reported on the statement of cash flows or in supplemental disclosures"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Noncash investing and financing activities that do not involve cash flows are excluded from the body of the cash flow statement but must be disclosed in a supplemental schedule or narrative (ASC 230-10-50-3 through 50-6). The acquisition of an asset by assuming a liability directly is a noncash transaction. It is not reported as if two separate cash flows occurred.",
+      "explanationJa": "現金の収支を伴わない投資・財務活動は、キャッシュ・フロー計算書の本体には含めず、補足スケジュールで開示する。建物の取得と引き換えの住宅ローン発行は非現金取引であり、2つの独立したキャッシュ・フローとして報告しない。",
+      "references": ["ASC 230-10-50-3", "ASC 230-10-50-6"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-046",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Restricted Cash Presentation",
+      "stem": "Under ASU 2016-18, how should changes in restricted cash be presented on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Restricted cash is included in the beginning and ending cash balances; transfers between cash and restricted cash are not shown as separate line items"
+        },
+        {
+          "label": "B",
+          "text": "Changes in restricted cash are shown as investing activities"
+        },
+        {
+          "label": "C",
+          "text": "Changes in restricted cash are shown as financing activities"
+        },
+        {
+          "label": "D",
+          "text": "Restricted cash is excluded from the reconciliation of cash and only disclosed in notes"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2016-18 (ASC 230-10-45-4) requires that the statement of cash flows explain the change in the total of cash, cash equivalents, and restricted cash. Restricted cash is included in both the beginning and ending balances. Transfers between cash and restricted cash are no longer presented as separate investing or financing activities—they are eliminated from the statement because both are included in the total.",
+      "explanationJa": "ASU 2016-18により、制限付き現金はキャッシュ・フロー計算書の期首・期末残高に含める。現金と制限付き現金間の振替は、両方が合計に含まれるため独立した項目として表示しない。",
+      "references": ["ASC 230-10-45-4", "ASU 2016-18"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-047",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Income Tax Paid Classification",
+      "stem": "Under U.S. GAAP, how are cash payments for income taxes classified on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating activities, unless specifically identifiable with investing or financing activities"
+        },
+        {
+          "label": "B",
+          "text": "Always operating activities without exception"
+        },
+        {
+          "label": "C",
+          "text": "Allocated among operating, investing, and financing based on a proration formula"
+        },
+        {
+          "label": "D",
+          "text": "Financing activities because taxes are a government obligation"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-17, income tax payments are generally classified as operating activities. However, ASC 230-10-45-17A (per ASU 2016-15) clarifies that if the tax payment is directly attributable to a specific investing or financing activity (such as tax on a gain from sale of a business), it may be classified accordingly. The total amount of income taxes paid must be disclosed.",
+      "explanationJa": "法人税の支払いは原則として営業活動に分類される。ただし、特定の投資・財務活動に直接帰属できる場合（事業売却益に対する税金など）は、その活動に分類できる。支払法人税額の総額は開示が必要。",
+      "references": ["ASC 230-10-45-17", "ASU 2016-15"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-048",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Debt Issuance Costs Cash Flow",
+      "stem": "Blake Corp. issues bonds and pays $150,000 in debt issuance costs. How should the $150,000 be classified on the statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Financing activities" },
+        { "label": "B", "text": "Operating activities" },
+        { "label": "C", "text": "Investing activities" },
+        {
+          "label": "D",
+          "text": "Deducted from the bond proceeds as a noncash item"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Debt issuance costs are directly related to the issuance of debt and are classified as financing activities on the statement of cash flows (ASC 230-10-45-15). They are typically presented as a separate financing outflow or as a reduction of the bond proceeds inflow. The costs are not operating expenses for cash flow purposes even though they may be amortized to interest expense over the life of the debt.",
+      "explanationJa": "社債発行費は債務の発行に直接関連するため、財務活動に分類される。社債発行代金とは別の財務活動の支出として、または社債収入からの控除として表示される。損益計算書上は支払利息として償却されるが、キャッシュ・フロー上は財務活動である。",
+      "references": ["ASC 230-10-45-15"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-049",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method Operating Section",
+      "stem": "Under the direct method of presenting operating activities, which of the following is reported as a separate line item?",
+      "choices": [
+        { "label": "A", "text": "Cash received from customers" },
+        { "label": "B", "text": "Depreciation expense" },
+        { "label": "C", "text": "Gain on sale of equipment" },
+        { "label": "D", "text": "Increase in accounts receivable" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The direct method (ASC 230-10-45-25) presents major classes of gross cash receipts and payments in the operating section. Cash received from customers is a primary line item. Depreciation is a non-cash charge (not shown under direct method). Gain on sale of equipment is an investing-related item. Changes in accounts receivable are adjustments shown under the indirect method, not the direct method.",
+      "explanationJa": "直接法では営業活動の主要な現金収入・支出の総額を表示する。「顧客からの現金受取額」が主要項目。減価償却費は非現金項目のため直接法では表示しない。売掛金の増減は間接法の調整項目である。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-050",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Proceeds from Insurance Settlement",
+      "stem": "A fire destroys Dorr Corp.'s warehouse (book value $800,000). Dorr receives insurance proceeds of $1,200,000. Under ASU 2016-15, how should the insurance proceeds be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Investing activities for the amount that is a recovery of the asset ($800,000) and operating or investing for the excess ($400,000)"
+        },
+        {
+          "label": "B",
+          "text": "Entirely as operating activities because insurance is an operating expense"
+        },
+        { "label": "C", "text": "Entirely as investing activities" },
+        {
+          "label": "D",
+          "text": "Financing activities because the insurance company is providing funds"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2016-15 (ASC 230-10-45-21B) clarifies that insurance proceeds received for the destruction of a long-lived asset should be classified based on the nature of the loss event. The portion that represents recovery of the carrying amount of the asset ($800,000) is classified as investing. The excess ($400,000 gain portion) may be classified as investing or operating depending on the entity's policy, but must be consistently applied.",
+      "explanationJa": "ASU 2016-15により、長期性資産の滅失に対する保険金は、帳簿価額の回収分（$800,000）を投資活動に分類する。超過分（$400,000）は事業体の方針により投資または営業活動に分類するが、一貫した適用が必要。",
+      "references": ["ASC 230-10-45-21B", "ASU 2016-15"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-051",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Accounts Receivable Factoring",
+      "stem": "Finn Corp. factors $500,000 of accounts receivable without recourse for $475,000 cash. The factor retains $25,000 as its fee. How does Finn classify the $475,000 on its cash flow statement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating activities because the receivables arise from the sale of goods"
+        },
+        {
+          "label": "B",
+          "text": "Investing activities as a sale of financial assets"
+        },
+        {
+          "label": "C",
+          "text": "Financing activities as a borrowing arrangement"
+        },
+        {
+          "label": "D",
+          "text": "Operating activities for $450,000 and financing for $25,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When receivables are factored without recourse and the transaction qualifies as a sale under ASC 860, the cash received is classified as operating activities because the underlying receivables arose from the entity's revenue-generating activities (ASC 230-10-45-16(c)). The factoring fee reduces operating cash receipts. If the factoring were with recourse and treated as a secured borrowing, it would be a financing activity.",
+      "explanationJa": "リコースなしのファクタリングが売却として適格な場合、受取現金は営業活動に分類される（売掛金が収益活動から生じたため）。リコース付きで担保付借入として扱われる場合は財務活動となる。",
+      "references": ["ASC 230-10-45-16", "ASC 860-10-40-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-052",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Stock-Based Compensation Adjustment",
+      "stem": "Hale Corp. reported net income of $900,000. Stock-based compensation expense for the year was $60,000. No stock options were exercised. Under the indirect method, how is the stock-based compensation treated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Added back to net income as a non-cash expense in operating activities"
+        },
+        { "label": "B", "text": "Reported as a financing activity outflow" },
+        {
+          "label": "C",
+          "text": "No adjustment needed since it is already reflected in net income"
+        },
+        {
+          "label": "D",
+          "text": "Subtracted from net income in operating activities"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Stock-based compensation expense is a non-cash charge that reduces net income but does not use cash. Under the indirect method (ASC 230-10-45-28), non-cash expenses are added back to net income to arrive at cash from operations. The $60,000 is added back to the $900,000 net income. Cash flow effects from stock compensation only arise when options are actually exercised.",
+      "explanationJa": "株式報酬費用は純利益を減少させるが現金支出を伴わない非現金費用であるため、間接法では純利益に加算する。$60,000を$900,000の純利益に加算する。現金効果はオプションが実際に行使された時にのみ生じる。",
+      "references": ["ASC 230-10-45-28", "ASC 718-10-50-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-053",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Capital Lease Payments Allocation",
+      "stem": "Mead Inc. makes a $50,000 payment on its finance lease obligation, of which $12,000 represents interest and $38,000 represents principal reduction. How should this payment be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$12,000 as operating activities and $38,000 as financing activities"
+        },
+        { "label": "B", "text": "Entire $50,000 as financing activities" },
+        { "label": "C", "text": "Entire $50,000 as operating activities" },
+        {
+          "label": "D",
+          "text": "$38,000 as investing activities and $12,000 as operating activities"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-45-5, for a finance lease, the interest portion of the lease payment is classified as operating activities (consistent with the treatment of interest on debt), while the principal portion is classified as financing activities. This split classification applies specifically to finance leases. Operating lease payments, by contrast, are typically all classified as operating activities.",
+      "explanationJa": "ファイナンス・リースの支払いは、利息部分（$12,000）を営業活動に、元本返済部分（$38,000）を財務活動に分類する。オペレーティング・リースの支払いは原則すべて営業活動に分類される点と対照的である。",
+      "references": ["ASC 842-20-45-5", "ASC 230-10-45-17"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-054",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Business Acquisition Cash Flow",
+      "stem": "Platt Corp. acquires 100% of Sark Inc. for $5,000,000 cash. At the acquisition date, Sark has $300,000 of cash on hand. What amount is reported as an investing activity for this acquisition?",
+      "choices": [
+        { "label": "A", "text": "$4,700,000 net cash outflow" },
+        { "label": "B", "text": "$5,000,000 cash outflow" },
+        { "label": "C", "text": "$5,300,000 cash outflow" },
+        { "label": "D", "text": "$300,000 cash inflow" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-21(d), when a business is acquired for cash, the payment is classified as an investing activity. The cash acquired with the subsidiary ($300,000) offsets the acquisition price, resulting in a net investing outflow of $5,000,000 − $300,000 = $4,700,000. The acquiree's cash becomes part of the consolidated cash balance from the acquisition date.",
+      "explanationJa": "企業買収の現金支払いは投資活動に分類される。被取得企業が保有する現金$300,000が相殺され、純投資活動キャッシュ・アウトフローは$5,000,000−$300,000=$4,700,000となる。",
+      "references": ["ASC 230-10-45-21"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-055",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Deferred Revenue Cash Flow Impact",
+      "stem": "Opus Corp. received $200,000 in customer prepayments during the year. By year-end, $150,000 had been recognized as revenue. Under the indirect method, what adjustment is made for the $50,000 increase in deferred revenue?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Added to net income in the operating section"
+        },
+        {
+          "label": "B",
+          "text": "Subtracted from net income in the operating section"
+        },
+        { "label": "C", "text": "Reported as a financing inflow" },
+        { "label": "D", "text": "No adjustment needed" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An increase in deferred revenue (a current liability) means that cash was received but not yet recognized as revenue. Under the indirect method, increases in current liabilities are added to net income because the cash collected exceeded the revenue recognized. The $50,000 increase ($200,000 received − $150,000 recognized) is added to net income to reflect the actual operating cash inflow.",
+      "explanationJa": "繰延収益（流動負債）の増加は、現金を受け取ったが収益として認識されていないことを意味する。間接法では流動負債の増加は純利益に加算する。$50,000の増加分を加算して実際の営業キャッシュ・インフローを反映する。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-056",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Debt Conversion Noncash Treatment",
+      "stem": "Rowe Corp. converts $3,000,000 of convertible bonds into 150,000 shares of common stock. How is this reported on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a noncash investing and financing activity in the supplemental schedule"
+        },
+        {
+          "label": "B",
+          "text": "$3,000,000 financing outflow for bond retirement and $3,000,000 financing inflow for stock issuance"
+        },
+        { "label": "C", "text": "Only as a financing outflow of $3,000,000" },
+        {
+          "label": "D",
+          "text": "Not reported anywhere since it involves only equity accounts"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The conversion of debt to equity is a significant noncash transaction that does not involve any cash flows. Under ASC 230-10-50-3, it must be disclosed in a supplemental schedule of noncash investing and financing activities. It cannot be reported as if two separate cash flows occurred (a retirement and an issuance), because no cash changed hands.",
+      "explanationJa": "社債の株式への転換は現金の収支を伴わない重要な非現金取引であり、非現金投資・財務活動の補足スケジュールで開示する。現金が動いていないため、2つの独立したキャッシュ・フローとしては報告しない。",
+      "references": ["ASC 230-10-50-3", "ASC 230-10-50-4"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-057",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Contingent Consideration Payment",
+      "stem": "Two years after acquiring a subsidiary, Zane Corp. pays $500,000 of contingent consideration to the former owners. The original acquisition-date fair value of the contingent consideration was $400,000. Under ASU 2016-15, how should the $500,000 payment be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$400,000 as financing activities and $100,000 as operating activities"
+        },
+        { "label": "B", "text": "Entirely as investing activities" },
+        { "label": "C", "text": "Entirely as financing activities" },
+        {
+          "label": "D",
+          "text": "$400,000 as investing activities and $100,000 as financing activities"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2016-15 (ASC 230-10-45-21C through 21D) clarifies that contingent consideration payments made after a business combination should be bifurcated: the portion up to the acquisition-date fair value ($400,000) is classified as financing activities, and any excess ($100,000) is classified as operating activities. This reflects the view that the original amount is akin to deferred purchase price (financing), while the excess represents a period cost.",
+      "explanationJa": "ASU 2016-15により、条件付対価の支払いは二分される：取得日公正価値までの金額（$400,000）は財務活動、超過分（$100,000）は営業活動に分類する。原額は繰延購入代金（財務）、超過分は期間費用と見なされる。",
+      "references": ["ASC 230-10-45-21C", "ASU 2016-15"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "cf-058",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Working Capital Adjustment Prepaid Expenses",
+      "stem": "Under the indirect method, how does a $15,000 decrease in prepaid expenses affect cash from operating activities?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Added to net income (increases operating cash flow)"
+        },
+        {
+          "label": "B",
+          "text": "Subtracted from net income (decreases operating cash flow)"
+        },
+        { "label": "C", "text": "No effect on operating cash flow" },
+        { "label": "D", "text": "Reported as an investing activity" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A decrease in prepaid expenses (a current asset) means the company used more of its prepaid balance than it replenished—expense was recognized without a corresponding cash payment in the current period. Under the indirect method, decreases in current assets are added to net income because operating cash flow exceeded the expense recognized. The $15,000 is added to net income.",
+      "explanationJa": "前払費用（流動資産）の減少は、当期に前払残高の消費が補充を上回ったことを意味する。間接法では流動資産の減少は純利益に加算する。$15,000は営業キャッシュ・フローの増加として加算される。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-059",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Distributions to Shareholders Classification",
+      "stem": "Drake Corp. pays $200,000 in cash dividends to its common shareholders. How are these dividends classified on the statement of cash flows under U.S. GAAP?",
+      "choices": [
+        { "label": "A", "text": "Financing activities" },
+        { "label": "B", "text": "Operating activities" },
+        {
+          "label": "C",
+          "text": "Either operating or financing, at the entity's election"
+        },
+        { "label": "D", "text": "Not reported on the cash flow statement" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under U.S. GAAP (ASC 230-10-45-15), cash dividends paid to shareholders are classified as financing activities. This is because dividends represent a distribution to the owners of the company—a return of capital or earnings to equity holders. Under IFRS, there is a choice between operating and financing, but U.S. GAAP mandates financing classification.",
+      "explanationJa": "US GAAPでは、株主への現金配当の支払いは財務活動に分類される（選択不可）。配当は株主（資本提供者）への分配であり、財務活動に該当する。IFRSでは営業または財務の選択が認められるがUS GAAPでは強制。",
+      "references": ["ASC 230-10-45-15"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-060",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Foreign Currency Impact on Cash",
+      "stem": "A U.S. parent has a foreign subsidiary whose functional currency is the euro. When preparing consolidated cash flows, how is the effect of exchange rate changes on the subsidiary's cash balances reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a separate reconciling item between beginning and ending cash balances, distinct from operating, investing, and financing activities"
+        },
+        { "label": "B", "text": "As an operating activity adjustment" },
+        {
+          "label": "C",
+          "text": "Included within each activity section proportionally"
+        },
+        {
+          "label": "D",
+          "text": "Not reported; only the translated amounts are shown"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-230-45-1, the effect of exchange rate changes on cash held in foreign currencies is reported as a separate item in reconciling the change in cash, cash equivalents, and restricted cash during the period. This line item is presented separately from operating, investing, and financing activities. It explains the difference between the sum of the three activity sections and the actual change in reported cash balances.",
+      "explanationJa": "為替レート変動が外貨建て現金残高に与える影響は、営業・投資・財務活動とは別の独立した調整項目として報告する。3つの活動区分の合計と実際の現金残高変動額の差異を説明する項目である。",
+      "references": ["ASC 830-230-45-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
     }
   ]
 }

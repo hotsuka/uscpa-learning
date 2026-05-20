@@ -2,7 +2,7 @@
   "id": "far-consolidations",
   "name": "Consolidations",
   "topic": "Consolidations",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "con-001",
@@ -918,6 +918,462 @@
       "references": ["ASC 810-10-45"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-041",
+      "topic": "Consolidations",
+      "subtopic": "Full Goodwill vs Partial Goodwill",
+      "stem": "Parent acquires 70% of Sub for $7,000,000. Sub's identifiable net assets have a fair value of $8,000,000. The fair value of the 30% NCI is $3,200,000. Under U.S. GAAP (full goodwill method), what is goodwill?",
+      "choices": [
+        { "label": "A", "text": "$2,200,000" },
+        { "label": "B", "text": "$1,400,000" },
+        { "label": "C", "text": "$2,000,000" },
+        { "label": "D", "text": "$1,600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-20-30-1 (full goodwill method required by U.S. GAAP), Goodwill = (Consideration + NCI fair value) − Fair value of net assets = ($7,000,000 + $3,200,000) − $8,000,000 = $2,200,000. Under the partial goodwill method (permitted under IFRS), goodwill would be only $7,000,000 − (70% × $8,000,000) = $1,400,000.",
+      "explanationJa": "ASC 805-20-30-1（U.S. GAAP必須の全額のれん法）により、のれん = (移転対価 + NCI公正価値) − 純資産公正価値 = ($7,000,000 + $3,200,000) − $8,000,000 = $2,200,000。IFRS部分のれん法では$1,400,000。",
+      "references": ["ASC 805-20-30-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-042",
+      "topic": "Consolidations",
+      "subtopic": "NCI Presentation on Balance Sheet",
+      "stem": "How should the noncontrolling interest (NCI) be presented on the consolidated balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "In the equity section, separately from the parent's equity"
+        },
+        { "label": "B", "text": "As a liability" },
+        {
+          "label": "C",
+          "text": "As mezzanine equity between liabilities and equity"
+        },
+        { "label": "D", "text": "As a deduction from consolidated assets" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45-16, the noncontrolling interest is reported in the equity section of the consolidated balance sheet, separately from the parent's equity. It is labeled clearly as 'noncontrolling interest' or 'minority interest.' NCI is not a liability because it represents ownership interests, not obligations. The requirement for equity classification was established by SFAS 160 (now ASC 810).",
+      "explanationJa": "ASC 810-10-45-16により、非支配持分は連結BS の資本の部に、親会社の資本とは別に表示する。負債ではなく所有持分を表すため資本に分類。SFAS 160（現ASC 810）で資本分類が確立。",
+      "references": ["ASC 810-10-45-16"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-043",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Profit - Fixed Assets Downstream",
+      "stem": "Parent sells equipment (carrying amount $200,000) to its 80%-owned Subsidiary for $300,000 on January 1, Year 1. Subsidiary depreciates it over 5 years, straight-line. What consolidation elimination entry is needed at December 31, Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Eliminate $100,000 gain and adjust depreciation by $20,000"
+        },
+        {
+          "label": "B",
+          "text": "Eliminate $80,000 gain (parent's 80% share only)"
+        },
+        {
+          "label": "C",
+          "text": "Eliminate $100,000 gain only; no depreciation adjustment"
+        },
+        { "label": "D", "text": "No elimination needed for downstream sales" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45-1, all intercompany profits (both upstream and downstream) must be fully eliminated in consolidation. The $100,000 gain on the sale is eliminated. The subsidiary is depreciating based on $300,000 (excess depreciation = $100,000/5 = $20,000/year). The depreciation adjustment restores $20,000 in Year 1, reducing the unrealized gain to $80,000 at year-end. NCI allocation is not needed for downstream sales — the full elimination is against the parent's income.",
+      "explanationJa": "ASC 810-10-45-1により、会社間利益は全額消去する。$100,000の売却益を消去。子会社は$300,000で減価償却（超過額 = $20,000/年）。Year 1に$20,000の減価償却調整で未実現利益は$80,000に減少。下流取引のため親会社の利益に対して全額消去。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-044",
+      "topic": "Consolidations",
+      "subtopic": "VIE - Kick-Out Rights",
+      "stem": "Entity A holds a variable interest in Entity B (a VIE). Entity A has the power to direct the activities that most significantly impact Entity B's economic performance. However, Entity C (an unrelated party) holds kick-out rights that allow it to remove Entity A as the decision-maker. Are these kick-out rights substantive?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, if the rights are exercisable by a single party without cause"
+        },
+        {
+          "label": "B",
+          "text": "No, kick-out rights are never considered substantive"
+        },
+        {
+          "label": "C",
+          "text": "Yes, only if exercisable by a majority of related parties"
+        },
+        {
+          "label": "D",
+          "text": "Substantiveness is irrelevant in VIE analysis"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-25-38D, kick-out rights are considered in determining the primary beneficiary of a VIE. Kick-out rights are substantive if they are exercisable by a single party without cause (i.e., the holder can remove the decision-maker unilaterally without requiring a reason). If Entity C has substantive kick-out rights, Entity A may not be the primary beneficiary despite having power, because the power can be removed.",
+      "explanationJa": "ASC 810-10-25-38Dにより、キックアウト権はVIEの主たる受益者の判定で考慮される。単一の当事者が理由なく行使できる場合（一方的に意思決定者を解任可能）、キックアウト権は実質的。実質的キックアウト権がある場合、Entity Aは主たる受益者でない可能性がある。",
+      "references": ["ASC 810-10-25-38D"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-045",
+      "topic": "Consolidations",
+      "subtopic": "Bargain Purchase - Negative Goodwill",
+      "stem": "Acquirer pays $3,000,000 for 100% of Target. The fair value of Target's identifiable net assets is $3,500,000. The NCI is $0 (100% acquired). What is the accounting treatment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a $500,000 gain from bargain purchase in the income statement"
+        },
+        {
+          "label": "B",
+          "text": "Record negative goodwill of $500,000 on the balance sheet"
+        },
+        {
+          "label": "C",
+          "text": "Reduce the fair values of noncurrent assets proportionally"
+        },
+        {
+          "label": "D",
+          "text": "Defer the $500,000 and amortize over 10 years"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-30-25-2, if the fair value of identifiable net assets exceeds the consideration transferred (plus NCI and previously held equity interests), the acquirer first reassesses whether all assets and liabilities have been properly identified and measured. If the excess remains after reassessment, the acquirer recognizes the excess as a gain (bargain purchase gain) in earnings on the acquisition date.",
+      "explanationJa": "ASC 805-30-25-2により、識別可能純資産の公正価値が移転対価を超過する場合、まず全ての資産・負債の識別と測定を再評価。超過が残る場合、取得日の損益に利得（バーゲンパーチェス利得）$500,000を認識。負ののれんのBS計上や繰延は認められない。",
+      "references": ["ASC 805-30-25-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-046",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Bond Elimination",
+      "stem": "Parent Co. issued bonds at par ($1,000,000). Subsidiary purchases $400,000 face value of these bonds on the open market for $380,000. In the consolidation, what elimination entry is required?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Eliminate $400,000 of bonds payable and the $380,000 investment, recognizing a $20,000 gain"
+        },
+        {
+          "label": "B",
+          "text": "Eliminate $380,000 of bonds payable and the $380,000 investment"
+        },
+        {
+          "label": "C",
+          "text": "No elimination because the subsidiary purchased on the open market"
+        },
+        {
+          "label": "D",
+          "text": "Eliminate $400,000 of bonds payable and recognize a $20,000 loss"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When a subsidiary purchases the parent's bonds on the open market, the bonds are effectively retired from the consolidated entity's perspective. The consolidation eliminates the $400,000 bonds payable (parent's books) against the $380,000 investment in bonds (subsidiary's books). The $20,000 difference is recognized as a constructive gain on retirement of debt in the consolidated income statement.",
+      "explanationJa": "子会社が親会社の社債を市場で購入した場合、連結上は社債が実質的に消却される。社債$400,000（親）と投資$380,000（子）を消去。差額$20,000を連結損益計算書で建設的消却利得として認識。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-047",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition Date Determination",
+      "stem": "Company P and Company S sign a merger agreement on March 15. Regulatory approval is received on May 1. The transaction closes and control transfers on June 1. What is the acquisition date?",
+      "choices": [
+        { "label": "A", "text": "March 15 (agreement date)" },
+        { "label": "B", "text": "May 1 (regulatory approval date)" },
+        {
+          "label": "C",
+          "text": "June 1 (closing date when control is obtained)"
+        },
+        { "label": "D", "text": "The earliest of the three dates" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 805-10-25-6, the acquisition date is the date on which the acquirer obtains control of the acquiree. This is generally the closing date when the consideration is transferred, assets are acquired, and liabilities are assumed. The agreement date and regulatory approval date are not the acquisition date because control has not yet transferred. All measurements (fair values, goodwill) are determined as of the acquisition date.",
+      "explanationJa": "ASC 805-10-25-6により、取得日は取得企業が被取得企業の支配を獲得した日。通常はクロージング日（対価移転、資産取得、負債引受の日）。合意日や規制承認日は支配移転前のため取得日ではない。全ての測定は取得日時点で行う。",
+      "references": ["ASC 805-10-25-6"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-048",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Net Income Attribution",
+      "stem": "Parent owns 80% of Sub. Consolidated net income before NCI allocation is $1,000,000. Sub's net income is $300,000 (already included). What is net income attributable to the parent?",
+      "choices": [
+        { "label": "A", "text": "$940,000" },
+        { "label": "B", "text": "$1,000,000" },
+        { "label": "C", "text": "$700,000" },
+        { "label": "D", "text": "$760,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45-20, consolidated net income is allocated between the parent and the NCI based on ownership percentages. NCI's share = $300,000 × 20% = $60,000. Net income attributable to parent = $1,000,000 − $60,000 = $940,000. The consolidated income statement shows total net income of $1,000,000 with a deduction for NCI of $60,000.",
+      "explanationJa": "ASC 810-10-45-20により、連結純利益は所有比率に基づき親会社とNCIに配分。NCI持分 = $300,000 × 20% = $60,000。親会社帰属純利益 = $1,000,000 − $60,000 = $940,000。",
+      "references": ["ASC 810-10-45-20"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-049",
+      "topic": "Consolidations",
+      "subtopic": "Push-Down Accounting - Election",
+      "stem": "Company A acquires 100% of Company B. Under ASC 805-50, when may Company B elect to apply push-down accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "When a change-in-control event occurs (an entity obtains control)"
+        },
+        {
+          "label": "B",
+          "text": "Only when the acquirer owns more than 90% of the target"
+        },
+        {
+          "label": "C",
+          "text": "Push-down accounting is always required, not elective"
+        },
+        { "label": "D", "text": "Only for SEC registrants" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-50-25-4 (ASU 2014-17), an acquired entity may elect to apply push-down accounting in its separate financial statements when a change-in-control event occurs. The election is available regardless of whether the acquired entity is a public or nonpublic entity. The election can be made at the time of the change-in-control event or in a subsequent period. It is an election, not a requirement.",
+      "explanationJa": "ASC 805-50-25-4（ASU 2014-17）により、支配の変更が発生した場合、被取得企業は個別財務諸表でプッシュダウン会計を選択適用できる。公開・非公開企業を問わず利用可能。支配変更時またはその後の期間に選択可能。要件ではなく選択。",
+      "references": ["ASC 805-50-25-4", "ASU 2014-17"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-050",
+      "topic": "Consolidations",
+      "subtopic": "Goodwill Impairment - Reporting Unit",
+      "stem": "Under ASC 350, at what level is goodwill tested for impairment?",
+      "choices": [
+        { "label": "A", "text": "At the reporting unit level" },
+        { "label": "B", "text": "At the consolidated entity level" },
+        { "label": "C", "text": "At the individual asset level" },
+        { "label": "D", "text": "At the legal entity level" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 350-20-35-33, goodwill is tested for impairment at the reporting unit level. A reporting unit is an operating segment or one level below an operating segment. Goodwill is assigned to reporting units at the acquisition date based on which reporting units are expected to benefit from the synergies of the business combination. The impairment test compares the fair value of the reporting unit to its carrying amount (including goodwill).",
+      "explanationJa": "ASC 350-20-35-33により、のれんは報告単位レベルで減損テストを行う。報告単位は事業セグメントまたはその1つ下のレベル。のれんは企業結合のシナジーから便益を受ける報告単位に取得日に配分。減損テストは報告単位の公正価値と帳簿価額を比較。",
+      "references": ["ASC 350-20-35-33"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-051",
+      "topic": "Consolidations",
+      "subtopic": "Measurement Period - Maximum Duration",
+      "stem": "After a business combination, Acquirer Corp. discovers additional information about a preexisting contingent liability of the acquiree. The acquisition occurred 14 months ago. Can Acquirer adjust the provisional amounts?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No, because the measurement period cannot exceed one year from the acquisition date"
+        },
+        {
+          "label": "B",
+          "text": "Yes, because the measurement period has no maximum limit"
+        },
+        {
+          "label": "C",
+          "text": "Yes, but the adjustment is recognized prospectively"
+        },
+        {
+          "label": "D",
+          "text": "No, because contingent liabilities cannot be adjusted"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-10-25-17, the measurement period is the period after the acquisition date during which the acquirer may adjust provisional amounts recognized at the acquisition date. The measurement period ends as soon as the acquirer receives the information needed, but shall not exceed one year from the acquisition date. Since 14 months have passed, the measurement period has ended and no retroactive adjustment can be made. Any changes must be recognized in current-period earnings.",
+      "explanationJa": "ASC 805-10-25-17により、測定期間は取得日から最長1年。14ヶ月経過しているため測定期間は終了し、遡及調整は不可。変更は当期の損益で認識する。",
+      "references": ["ASC 805-10-25-17"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-052",
+      "topic": "Consolidations",
+      "subtopic": "Loss of Control - Retained Investment",
+      "stem": "Parent owns 80% of Sub and sells 50% (reducing ownership to 30%). Parent loses control. At the date of sale, Sub's net assets have a carrying amount of $5,000,000. The fair value of the 30% retained investment is $1,800,000. The sale price for the 50% is $3,000,000. What gain does Parent recognize?",
+      "choices": [
+        { "label": "A", "text": "$2,800,000" },
+        { "label": "B", "text": "$1,000,000" },
+        { "label": "C", "text": "$800,000" },
+        { "label": "D", "text": "$3,000,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 810-10-40-5, when a parent loses control, it derecognizes all of the subsidiary's assets and liabilities, recognizes the fair value of the retained investment and any consideration received, and recognizes a gain or loss. Gain = Sale proceeds + FV of retained investment − Carrying amount of former subsidiary's net assets − NCI carrying amount. Parent's share of net assets = 80% × $5,000,000 = $4,000,000. Gain = $3,000,000 + $1,800,000 − $4,000,000 = $800,000.",
+      "explanationJa": "ASC 810-10-40-5により、支配喪失時に子会社の全資産・負債を認識中止し、残存投資の公正価値と受取対価を認識。利得 = 売却代金$3,000,000 + 残存投資FV$1,800,000 − 親会社持分$4,000,000 = $800,000。",
+      "references": ["ASC 810-10-40-5"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "con-053",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Inventory - Upstream Year 2",
+      "stem": "In Year 1, Sub (80%-owned) sold inventory to Parent for $500,000 (cost to Sub: $350,000). By December 31, Year 1, Parent had not resold the inventory. In Year 2, Parent sells all the inventory to outside parties. What consolidation adjustment is needed in Year 2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Decrease beginning retained earnings by $150,000 and increase cost of goods sold by $150,000"
+        },
+        {
+          "label": "B",
+          "text": "Decrease beginning retained earnings by $120,000 (Parent's 80% share) and adjust COGS"
+        },
+        {
+          "label": "C",
+          "text": "Decrease beginning retained earnings by $150,000 and decrease cost of goods sold by $150,000"
+        },
+        { "label": "D", "text": "No adjustment needed in Year 2" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "In Year 2, the unrealized profit from Year 1 ($150,000) is realized because the inventory was sold to outside parties. The consolidation entry adjusts the opening balance: Debit Beginning Retained Earnings $120,000 (Parent's share of $150,000 × 80%), Debit NCI $30,000 (20% share — upstream sale), Credit COGS $150,000. This effectively decreases COGS (realizing the previously deferred profit) and adjusts opening equity for the prior-year elimination.",
+      "explanationJa": "Year 2に在庫が外部に販売され、Year 1の未実現利益$150,000が実現。連結仕訳：期首RE$120,000借方（親80%分）、NCI$30,000借方（20%分—上流取引）、売上原価$150,000貸方。以前繰延した利益を実現させる。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-054",
+      "topic": "Consolidations",
+      "subtopic": "Voting Interest Model - Control Threshold",
+      "stem": "Under the voting interest model, what level of ownership generally requires consolidation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "More than 50% of the outstanding voting interests"
+        },
+        {
+          "label": "B",
+          "text": "20% or more of the outstanding voting interests"
+        },
+        {
+          "label": "C",
+          "text": "Any ownership interest if significant influence exists"
+        },
+        {
+          "label": "D",
+          "text": "More than 25% of the outstanding voting interests"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-15-8, the voting interest model requires consolidation when one entity owns more than 50% of the outstanding voting interests of another entity, giving it a controlling financial interest. Ownership of 20-50% typically indicates significant influence (equity method), while less than 20% generally means no significant influence. The 50% threshold can be overcome in rare circumstances where control exists without majority ownership.",
+      "explanationJa": "ASC 810-10-15-8により、議決権モデルでは、議決権の50%超を所有する場合に連結が必要。支配的財務持分を有する。20-50%は通常重要な影響力（持分法）。50%以下でも支配がある稀なケースは例外。",
+      "references": ["ASC 810-10-15-8"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-055",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition Costs Treatment",
+      "stem": "Acquirer Corp. incurs $500,000 in legal fees and $200,000 in finder's fees directly related to a business combination. How should these costs be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Expensed as incurred in the periods in which the costs are incurred"
+        },
+        {
+          "label": "B",
+          "text": "Capitalized as part of the cost of the acquisition (added to goodwill)"
+        },
+        { "label": "C", "text": "Charged directly to retained earnings" },
+        { "label": "D", "text": "Amortized over the expected benefit period" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-10-25-23, acquisition-related costs (such as finder's fees, advisory fees, legal fees, accounting fees, valuation fees, and other professional or consulting fees) are costs that the acquirer incurs to effect a business combination. These costs are expensed in the periods in which they are incurred and the services are received. They are NOT capitalized as part of the business combination. The only exception is costs to issue debt or equity securities, which are accounted for under ASC 470 or ASC 505.",
+      "explanationJa": "ASC 805-10-25-23により、企業結合に関連する取得費用（法務、助言、ファインダーズフィー等）は発生期間に費用処理する。企業結合の一部として資本化しない。例外は債務・持分証券の発行費用のみ（ASC 470/505に従う）。",
+      "references": ["ASC 805-10-25-23"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-056",
+      "topic": "Consolidations",
+      "subtopic": "Ownership Change Without Loss of Control",
+      "stem": "Parent owns 80% of Sub. Parent purchases an additional 10% from NCI for $1,500,000. The carrying amount of the 10% NCI on the consolidated balance sheet is $1,200,000. How is this transaction recorded?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Decrease NCI by $1,200,000, decrease APIC by $300,000, debit cash $1,500,000"
+        },
+        { "label": "B", "text": "Increase goodwill by $300,000" },
+        {
+          "label": "C",
+          "text": "Recognize a loss of $300,000 in the income statement"
+        },
+        { "label": "D", "text": "Decrease NCI by $1,500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45-23, when a parent acquires additional ownership in a subsidiary without a change in control, the transaction is accounted for as an equity transaction. The difference between the consideration paid ($1,500,000) and the carrying amount of the NCI acquired ($1,200,000) = $300,000 is charged to the parent's equity (typically APIC or retained earnings). No gain, loss, or goodwill adjustment is recognized.",
+      "explanationJa": "ASC 810-10-45-23により、支配の変更なく追加持分を取得する場合は資本取引として処理。対価$1,500,000とNCI帳簿価額$1,200,000の差額$300,000は親会社の資本（APIC等）から控除。損益やのれん調整は認識しない。",
+      "references": ["ASC 810-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-057",
+      "topic": "Consolidations",
+      "subtopic": "Consolidation of Sub with Different Year-End",
+      "stem": "Parent has a December 31 fiscal year-end. Sub has a September 30 fiscal year-end. Under ASC 810, how should the consolidation be handled?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sub must prepare financial statements as of December 31 for consolidation purposes, or use its September 30 statements if the difference is 3 months or less with disclosure of significant intervening events"
+        },
+        {
+          "label": "B",
+          "text": "Sub's September 30 financial statements are always used without adjustment"
+        },
+        {
+          "label": "C",
+          "text": "Consolidation is not possible when fiscal years differ"
+        },
+        {
+          "label": "D",
+          "text": "Parent must change its fiscal year to match the subsidiary"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45-12, when a parent and subsidiary have different reporting periods, the subsidiary should prepare financial statements as of the parent's reporting date for consolidation. However, if the difference is three months or less, the subsidiary's existing financial statements may be used, provided that significant events occurring between the subsidiary's and parent's reporting dates are disclosed and recognized as appropriate.",
+      "explanationJa": "ASC 810-10-45-12により、親子会社の報告期間が異なる場合、子会社は親会社の報告日の財務諸表を作成すべき。ただし差異が3ヶ月以内であれば、子会社の既存の財務諸表を使用可能。重要な中間事象の開示・認識が必要。",
+      "references": ["ASC 810-10-45-12"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-058",
+      "topic": "Consolidations",
+      "subtopic": "NCI - Losses Exceeding NCI Balance",
+      "stem": "Sub has cumulative losses that cause the NCI balance to become negative (deficit). Under current GAAP, how are the subsidiary's losses allocated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Losses continue to be allocated to the NCI, even if it creates a deficit balance"
+        },
+        {
+          "label": "B",
+          "text": "Losses in excess of the NCI balance are allocated entirely to the parent"
+        },
+        {
+          "label": "C",
+          "text": "The subsidiary is deconsolidated when NCI reaches zero"
+        },
+        {
+          "label": "D",
+          "text": "Losses are allocated to the NCI only up to its positive balance"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45-21, comprehensive income (including losses) is attributed to the parent and the NCI, even if that attribution results in a deficit NCI balance. This is a change from prior GAAP, which stopped allocating losses to NCI once the NCI balance reached zero. The current standard ensures that the NCI reflects its true proportionate share of the subsidiary's net assets (or deficit).",
+      "explanationJa": "ASC 810-10-45-21により、包括利益（損失を含む）はNCI残高が赤字になっても親会社とNCIに帰属させる。以前のGAAPではNCI残高がゼロになると損失配分を停止したが、現行基準ではNCIの真の比例持分を反映する。",
+      "references": ["ASC 810-10-45-21"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "id": "far-credit-loss-cecl",
   "name": "Credit Loss (CECL)",
   "topic": "Credit Loss - Current Expected Credit Losses (ASC 326)",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "cecl-001",
@@ -681,6 +681,513 @@
       "references": ["ASC 326-20-50-11"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-031",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "CECL vs Incurred Loss Model",
+      "stem": "What is the fundamental conceptual difference between the CECL model under ASC 326 and the previous incurred loss model?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CECL requires recognition of lifetime expected credit losses at inception, while the incurred loss model recognized losses only when a loss event had occurred"
+        },
+        {
+          "label": "B",
+          "text": "CECL applies only to banks, while the incurred loss model applied to all entities"
+        },
+        {
+          "label": "C",
+          "text": "CECL uses fair value measurement, while the incurred loss model used amortized cost"
+        },
+        {
+          "label": "D",
+          "text": "CECL prohibits the use of historical loss data"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The CECL model (ASC 326-20) requires entities to recognize an allowance for expected credit losses over the remaining contractual life of financial assets at the time of origination or purchase. This is forward-looking and considers historical experience, current conditions, and reasonable and supportable forecasts. The previous incurred loss model (ASC 450/ASC 310) recognized losses only after a loss event had occurred (a 'probable' threshold).",
+      "explanationJa": "CECLモデル（ASC 326-20）は、取得時に金融資産の残存契約期間にわたる期待信用損失の引当金を認識する。過去の実績、現在の状況、合理的な予測を考慮する前向きなモデル。従前の発生損失モデルは損失事象発生後にのみ認識（「probable」基準）。",
+      "references": ["ASC 326-20-30-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-032",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Pool-Level vs Individual Assessment",
+      "stem": "Under ASC 326, when must a financial asset be assessed for credit losses on an individual basis rather than on a pool basis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "When the asset does not share similar risk characteristics with other assets in the portfolio"
+        },
+        {
+          "label": "B",
+          "text": "When the asset has a balance exceeding $1,000,000"
+        },
+        {
+          "label": "C",
+          "text": "When the asset is classified as held-to-maturity"
+        },
+        {
+          "label": "D",
+          "text": "Individual assessment is never required under CECL"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-30-2, an entity may assess credit losses on a collective (pool) basis when financial assets share similar risk characteristics. When a financial asset does not share risk characteristics with other assets, it must be evaluated individually. Examples include a uniquely structured loan or a loan with borrower-specific circumstances that differentiate it from the pool.",
+      "explanationJa": "ASC 326-20-30-2により、類似のリスク特性を共有する金融資産はプール単位で信用損失を評価できる。他の資産とリスク特性を共有しない場合は個別評価が必要。独自の構造のローンや借り手固有の状況がある場合など。",
+      "references": ["ASC 326-20-30-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-033",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "AFS - Comparison to Amortized Cost CECL",
+      "stem": "How does the credit loss model for available-for-sale (AFS) debt securities under ASC 326-30 differ from the CECL model for amortized cost assets under ASC 326-20?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "AFS uses an allowance limited to the amount by which fair value is below amortized cost; CECL has no such cap"
+        },
+        {
+          "label": "B",
+          "text": "AFS uses lifetime expected losses; CECL uses 12-month expected losses"
+        },
+        {
+          "label": "C",
+          "text": "There is no difference; both use the same measurement approach"
+        },
+        {
+          "label": "D",
+          "text": "AFS credit losses are recorded directly in equity; CECL losses are in income"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-30-35-2, for AFS debt securities, the allowance for credit losses is limited to the amount by which fair value is below amortized cost. This means no allowance is recorded when fair value exceeds amortized cost. In contrast, under ASC 326-20 (CECL for amortized cost assets), there is no such cap — the allowance reflects lifetime expected credit losses regardless of the relationship between fair value and amortized cost.",
+      "explanationJa": "ASC 326-30-35-2により、AFS債務証券の信用損失引当金は公正価値が償却原価を下回る金額を上限とする。公正価値が償却原価以上の場合は引当金を計上しない。一方、ASC 326-20のCECLにはそのような上限がなく、生涯期待信用損失を反映。",
+      "references": ["ASC 326-30-35-2", "ASC 326-20-30-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-034",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Probability of Default / Loss Given Default",
+      "stem": "Bank A uses a probability-of-default / loss-given-default (PD/LGD) methodology under CECL. For a loan pool with a principal of $10,000,000, the estimated PD over the remaining life is 5% and the LGD is 40%. What is the expected credit loss?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$400,000" },
+        { "label": "D", "text": "$2,000,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the PD/LGD methodology, expected credit loss = Exposure at Default × Probability of Default × Loss Given Default. ECL = $10,000,000 × 5% × 40% = $200,000. This approach estimates the likelihood that a borrower will default (PD) and the percentage of the exposure that will be lost if default occurs (LGD). It is one of several acceptable methods under ASC 326.",
+      "explanationJa": "PD/LGD法による期待信用損失 = デフォルト時エクスポージャー × デフォルト確率 × デフォルト時損失率。ECL = $10,000,000 × 5% × 40% = $200,000。ASC 326で認められる手法の一つ。",
+      "references": ["ASC 326-20-30-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-035",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Trade Receivables - Aging Schedule",
+      "stem": "Company B uses the aging schedule approach for trade receivables under the CECL practical expedient. At year-end, the aging analysis shows: Current $400,000 (1% loss rate), 31-60 days $100,000 (5% loss rate), 61-90 days $50,000 (15% loss rate), Over 90 days $30,000 (40% loss rate). What is the allowance for credit losses?",
+      "choices": [
+        { "label": "A", "text": "$28,500" },
+        { "label": "B", "text": "$16,000" },
+        { "label": "C", "text": "$23,000" },
+        { "label": "D", "text": "$58,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-30-5A, entities may use a provision matrix (aging schedule) as a practical expedient for trade receivables. Allowance = ($400,000 × 1%) + ($100,000 × 5%) + ($50,000 × 15%) + ($30,000 × 40%) = $4,000 + $5,000 + $7,500 + $12,000 = $28,500.",
+      "explanationJa": "ASC 326-20-30-5Aにより、売掛金には引当マトリクス（エイジングスケジュール）を実務上の便法として使用可能。引当金 = $4,000 + $5,000 + $7,500 + $12,000 = $28,500。",
+      "references": ["ASC 326-20-30-5A"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-036",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Prepayment Assumption Effect",
+      "stem": "How do prepayment expectations affect the CECL allowance calculation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Higher expected prepayments reduce the contractual term used in the CECL estimate, potentially lowering the allowance"
+        },
+        {
+          "label": "B",
+          "text": "Prepayment expectations are excluded from CECL calculations"
+        },
+        {
+          "label": "C",
+          "text": "Higher prepayments always increase the allowance"
+        },
+        {
+          "label": "D",
+          "text": "Prepayments only affect the allowance for variable-rate loans"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-30-6, the estimate of expected credit losses should reflect the contractual term of the financial asset, adjusted for expected prepayments when appropriate. Higher expected prepayments effectively shorten the period over which credit losses are estimated, which generally reduces the allowance (less time for default to occur). However, ASC 326-20-30-6 prohibits extending the contractual term for expected extensions, renewals, or modifications unless a reasonably expected TDR exists.",
+      "explanationJa": "ASC 326-20-30-6により、期待信用損失の見積りは期限前償還の予想で調整された契約期間を反映する。高い期限前償還の予想は信用損失見積期間を短縮し、引当金を減少させる可能性がある。ただし、期待される延長・更新による契約期間の延長は禁止。",
+      "references": ["ASC 326-20-30-6"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-037",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "HTM Securities - Portfolio Level",
+      "stem": "Bank C holds a portfolio of held-to-maturity municipal bonds. Under CECL, at what level must the expected credit loss allowance be measured?",
+      "choices": [
+        { "label": "A", "text": "At the individual security level only" },
+        {
+          "label": "B",
+          "text": "On a collective (pool) basis when securities share similar risk characteristics, or individually when they do not"
+        },
+        {
+          "label": "C",
+          "text": "No allowance is required for HTM securities under CECL"
+        },
+        {
+          "label": "D",
+          "text": "At the total portfolio level as a single pool"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-30-2, HTM debt securities are subject to the CECL model and can be measured on a collective basis when they share similar risk characteristics (e.g., same credit rating, industry, geographic region). When individual securities have unique risk profiles, they must be assessed individually. The entity has flexibility in determining the level of aggregation as long as the pools share similar risk characteristics.",
+      "explanationJa": "ASC 326-20-30-2により、HTM債務証券はCECLモデルの対象で、類似リスク特性を共有する場合は集団ベースで測定可能。固有のリスクプロファイルを持つ証券は個別評価。プールは類似リスク特性を共有する限り集約レベルに柔軟性あり。",
+      "references": ["ASC 326-20-30-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-038",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Net Realizable Value - Collateral",
+      "stem": "Bank D has a collateral-dependent loan with a carrying amount of $1,000,000. The fair value of the collateral is $750,000 and estimated selling costs are $50,000. If Bank D uses the practical expedient for collateral-dependent assets, what is the expected credit loss?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$1,000,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-35-4, for a financial asset for which the repayment is expected to be provided substantially through the operation or sale of the collateral, the entity may measure expected credit losses based on the fair value of the collateral less selling costs. Expected credit loss = Carrying amount − (Fair value of collateral − Selling costs) = $1,000,000 − ($750,000 − $50,000) = $1,000,000 − $700,000 = $300,000.",
+      "explanationJa": "ASC 326-20-35-4により、担保依存資産には担保の公正価値から売却費用を差し引いた額に基づき期待信用損失を測定できる。ECL = $1,000,000 − ($750,000 − $50,000) = $300,000。",
+      "references": ["ASC 326-20-35-4"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-039",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Purchased Financial Assets with Credit Deterioration",
+      "stem": "Bank E purchases a loan portfolio for $8,000,000. The unpaid principal balance is $10,000,000 and the expected credit losses at acquisition are $1,500,000. Under ASC 326, what is the initial amortized cost basis?",
+      "choices": [
+        { "label": "A", "text": "$8,000,000" },
+        { "label": "B", "text": "$9,500,000" },
+        { "label": "C", "text": "$10,000,000" },
+        { "label": "D", "text": "$8,500,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-30-13 (purchased credit-deteriorated or PCD assets), the initial allowance for expected credit losses is added to the purchase price to determine the initial amortized cost basis. Initial amortized cost = Purchase price + Initial ACL = $8,000,000 + $1,500,000 = $9,500,000. The non-credit discount = $10,000,000 − $9,500,000 = $500,000, which is accreted into interest income over the life of the loans.",
+      "explanationJa": "ASC 326-20-30-13（PCD資産）により、初期信用損失引当金を購入価格に加算して初期償却原価を算定。初期償却原価 = $8,000,000 + $1,500,000 = $9,500,000。非信用ディスカウント$500,000はローン期間にわたり利息収入に計上。",
+      "references": ["ASC 326-20-30-13"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-040",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Forecast Period and Reversion",
+      "stem": "Bank F uses a 2-year reasonable and supportable forecast period for its CECL estimate on a 10-year loan portfolio. For the remaining 8 years beyond the forecast period, how should Bank F estimate expected credit losses?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Assume zero losses beyond the forecast period"
+        },
+        {
+          "label": "B",
+          "text": "Revert to historical loss experience on a straight-line or immediate basis"
+        },
+        {
+          "label": "C",
+          "text": "Use the same forecast assumptions for all 10 years"
+        },
+        {
+          "label": "D",
+          "text": "Apply the most recent quarter's loss rate for the remaining 8 years"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-30-9, for periods beyond which the entity is able to make or obtain reasonable and supportable forecasts, the entity reverts to historical loss information (unadjusted or adjusted). The reversion can be on an immediate basis (directly to historical) or on a straight-line (gradual) basis. Assuming zero losses or simply extending the forecast would not comply with the standard.",
+      "explanationJa": "ASC 326-20-30-9により、合理的で裏付け可能な予測期間を超える期間は、過去の損失実績に回帰する。回帰は即時的（直接過去実績へ）または定額的（段階的）に行える。損失ゼロの仮定や予測の単純延長は基準に適合しない。",
+      "references": ["ASC 326-20-30-9"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-041",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "AFS - Intent to Sell Assessment",
+      "stem": "Entity G holds an AFS debt security with a fair value of $80,000 and amortized cost of $100,000. Entity G intends to sell the security. How should the $20,000 decline be recorded?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Record a $20,000 allowance for credit losses with a charge to income"
+        },
+        {
+          "label": "B",
+          "text": "Write down the security to $80,000 with a $20,000 loss in income; no allowance is used"
+        },
+        { "label": "C", "text": "Record $20,000 in OCI" },
+        {
+          "label": "D",
+          "text": "No entry because the intent to sell is not a triggering event"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-30-35-10, if an entity intends to sell an AFS debt security (or more likely than not will be required to sell before recovery), the entity writes down the amortized cost basis to fair value and recognizes the entire difference ($20,000) as a loss in net income. The entity does NOT use the allowance mechanism — it directly adjusts the amortized cost basis. Any existing unrealized loss in AOCI is reclassified to income.",
+      "explanationJa": "ASC 326-30-35-10により、AFS債務証券の売却意図がある場合（または回復前に売却が要求される可能性が高い場合）、償却原価を公正価値に直接切り下げ、差額$20,000を損失として純利益に認識。引当金メカニズムは使用しない。",
+      "references": ["ASC 326-30-35-10"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-042",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Gross Write-Off Policy",
+      "stem": "Under ASC 326, when should a financial asset measured at amortized cost be written off (charged against the allowance)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "When the entity determines the financial asset (or portion) is uncollectible"
+        },
+        {
+          "label": "B",
+          "text": "Only after formal legal proceedings to collect have been exhausted"
+        },
+        {
+          "label": "C",
+          "text": "At the end of the contractual term if not collected"
+        },
+        {
+          "label": "D",
+          "text": "When the allowance equals the carrying amount"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-35-8, an entity shall write off a financial asset (or a portion thereof) in the period in which the entity determines the amount is uncollectible based on its assessment of the relevant information. The write-off is a charge against the allowance (debit Allowance, credit Receivable). The standard does not require exhaustion of legal remedies — the entity uses judgment based on available information.",
+      "explanationJa": "ASC 326-20-35-8により、回収不能と判断した期間に金融資産（またはその一部）を償却する。引当金から充当（引当金借方、債権貸方）。法的手続の完了は要求されず、利用可能な情報に基づき判断する。",
+      "references": ["ASC 326-20-35-8"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-043",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Unfunded Commitments - Separate Liability",
+      "stem": "Bank H has $5,000,000 in unfunded loan commitments that are not unconditionally cancellable. Under CECL, how should the expected credit loss on these commitments be reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a separate liability (not as part of the allowance for credit losses on funded loans)"
+        },
+        {
+          "label": "B",
+          "text": "As an addition to the allowance for credit losses on the existing loan portfolio"
+        },
+        { "label": "C", "text": "Disclosed in the notes but not recognized" },
+        {
+          "label": "D",
+          "text": "As a deduction from the unfunded commitment balance"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-30-11, expected credit losses on off-balance-sheet credit exposures (such as unfunded loan commitments that are not unconditionally cancellable) are recognized as a separate liability, not as part of the allowance for credit losses on funded loans. The liability is typically presented as 'liability for off-balance-sheet credit exposures' or similar. The provision is charged to credit loss expense.",
+      "explanationJa": "ASC 326-20-30-11により、無条件に取消不能でない未実行貸出約定等のオフバランスシート信用エクスポージャーの期待信用損失は、融資済みローンの引当金とは別の負債として認識する。信用損失費用に計上。",
+      "references": ["ASC 326-20-30-11"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-044",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "AFS - Credit vs Non-Credit Split Mechanics",
+      "stem": "Entity J holds an AFS bond with amortized cost of $100,000 and fair value of $85,000. Using a DCF analysis, Entity J determines the present value of expected cash flows is $92,000. Entity J does not intend to sell. What is the credit loss allowance?",
+      "choices": [
+        { "label": "A", "text": "$8,000" },
+        { "label": "B", "text": "$15,000" },
+        { "label": "C", "text": "$7,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-30-35-4, for AFS securities, credit losses are measured as the difference between amortized cost and the present value of expected cash flows. Credit loss = $100,000 − $92,000 = $8,000 (recognized through allowance, charged to income). The remaining decline of $7,000 ($92,000 − $85,000) is the non-credit portion, recognized in OCI. The total allowance cannot exceed the amount by which FV < amortized cost ($15,000).",
+      "explanationJa": "ASC 326-30-35-4により、AFS証券の信用損失 = 償却原価 − 期待キャッシュフローの現在価値 = $100,000 − $92,000 = $8,000（引当金・損益計上）。残りの下落$7,000はOCIに認識。引当金は公正価値と償却原価の差額$15,000が上限。",
+      "references": ["ASC 326-30-35-4"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-045",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Day 1 Provision on New Origination",
+      "stem": "Bank K originates a new $1,000,000 loan. Under CECL, what must Bank K do at origination?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Record the loan at $1,000,000 and simultaneously record a Day 1 provision for expected credit losses"
+        },
+        {
+          "label": "B",
+          "text": "Record the loan at fair value and no provision is needed"
+        },
+        { "label": "C", "text": "No provision until a loss event occurs" },
+        {
+          "label": "D",
+          "text": "Record the loan net of expected losses at a discounted amount"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the CECL model (ASC 326-20-30-1), expected credit losses are recognized at origination for the remaining contractual life of the financial asset. This means a 'Day 1' provision is recorded immediately upon origination, even for newly originated loans with strong credit quality. The provision is charged to credit loss expense, and the allowance is established on the balance sheet. This is a fundamental change from the incurred loss model.",
+      "explanationJa": "CECLモデル（ASC 326-20-30-1）では、金融資産の取得時にその残存契約期間にわたる期待信用損失を認識する。信用品質が高い新規融資でもDay 1引当が必要。信用損失費用に計上し引当金を設定。発生損失モデルとの根本的な違い。",
+      "references": ["ASC 326-20-30-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-046",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Multiple Economic Scenarios",
+      "stem": "Bank L uses three economic scenarios (base, optimistic, pessimistic) with probability weights of 50%, 20%, and 30% respectively. Expected losses under each scenario are: base $500,000, optimistic $200,000, pessimistic $900,000. What is the probability-weighted expected credit loss?",
+      "choices": [
+        { "label": "A", "text": "$560,000" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$533,333" },
+        { "label": "D", "text": "$600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-30-3, the estimate of expected credit losses should consider available relevant information, which may include the use of probability-weighted scenarios. Probability-weighted ECL = ($500,000 × 50%) + ($200,000 × 20%) + ($900,000 × 30%) = $250,000 + $40,000 + $270,000 = $560,000. While ASC 326 does not mandate this specific approach, it is one acceptable methodology.",
+      "explanationJa": "ASC 326-20-30-3により、期待信用損失の見積りには確率加重シナリオの使用が認められる。確率加重ECL = ($500,000 × 50%) + ($200,000 × 20%) + ($900,000 × 30%) = $560,000。ASC 326はこの特定の手法を義務付けないが、認められる方法の一つ。",
+      "references": ["ASC 326-20-30-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-047",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Accrued Interest Receivable - Presentation Election",
+      "stem": "Under ASC 326, what presentation option is available for the accrued interest receivable component of a financial asset?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Present accrued interest separately from the amortized cost basis and elect to not measure an allowance on it"
+        },
+        {
+          "label": "B",
+          "text": "Accrued interest must always be included in the allowance calculation"
+        },
+        { "label": "C", "text": "Accrued interest is never subject to CECL" },
+        { "label": "D", "text": "Present accrued interest at fair value" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-30-5, an entity may elect to present accrued interest receivable separately from the associated financial asset's amortized cost basis. If presented separately, the entity may also elect to not measure an allowance for credit losses on accrued interest if uncollectible accrued interest is written off in a timely manner. This policy election must be consistently applied and disclosed.",
+      "explanationJa": "ASC 326-20-30-5により、未収利息を金融資産の償却原価から分離表示する選択が可能。分離表示する場合、回収不能な未収利息を適時に償却することを条件に、未収利息の引当金を測定しない選択もできる。方針は一貫適用・開示が必要。",
+      "references": ["ASC 326-20-30-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-048",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "CECL Transition - SEC Filer Timeline",
+      "stem": "For SEC filers that are smaller reporting companies (SRCs), when was ASC 326 (CECL) effective?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fiscal years beginning after December 15, 2019"
+        },
+        {
+          "label": "B",
+          "text": "Fiscal years beginning after December 15, 2022"
+        },
+        {
+          "label": "C",
+          "text": "Fiscal years beginning after December 15, 2020"
+        },
+        {
+          "label": "D",
+          "text": "Fiscal years beginning after December 15, 2024"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "CECL had staggered effective dates. For SEC filers that are public business entities (excluding SRCs): fiscal years beginning after December 15, 2019. For SRCs and other public entities: fiscal years beginning after December 15, 2022 (as extended by multiple ASUs including the CARES Act and ASU 2019-10/2019-11). For all other entities (including private companies): also fiscal years beginning after December 15, 2022.",
+      "explanationJa": "CECLの適用開始日は段階的。大規模SEC報告企業：2019年12月15日以降開始事業年度。SRC及びその他の公開企業：2022年12月15日以降（CARES法やASU 2019-10等で延期）。非公開企業：同じく2022年12月15日以降。",
+      "references": ["ASC 326-10-65-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cecl-049",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Held-to-Maturity - Effective Interest on Impaired",
+      "stem": "Bank M has a held-to-maturity bond with an amortized cost of $950,000 and a CECL allowance of $50,000. How should Bank M recognize interest income?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Based on the gross amortized cost of $950,000 using the effective interest method"
+        },
+        {
+          "label": "B",
+          "text": "Based on the net carrying amount of $900,000"
+        },
+        {
+          "label": "C",
+          "text": "Interest income is suspended when an allowance exists"
+        },
+        { "label": "D", "text": "Based on the fair value of the bond" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-35-1, interest income on financial assets measured at amortized cost continues to be recognized based on the gross amortized cost basis, not the net carrying amount (amortized cost less allowance). The allowance for credit losses is a contra-asset but does not affect the interest income calculation. However, the entity should consider whether to place the asset on nonaccrual status if the expectation of recovery is significantly reduced.",
+      "explanationJa": "ASC 326-20-35-1により、償却原価で測定する金融資産の利息収入は、純帳簿価額ではなく総償却原価に基づき認識し続ける。引当金は対照資産だが利息収入計算には影響しない。ただし、回収見込みが著しく低下した場合は非発生ステータスを検討。",
+      "references": ["ASC 326-20-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-050",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "CECL - Subsequent Recovery",
+      "stem": "Bank N previously wrote off a $200,000 loan against the allowance. In the current period, Bank N recovers $50,000 of the written-off amount. What is the journal entry for the recovery?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Cash $50,000; credit Allowance for Credit Losses $50,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Cash $50,000; credit Credit Loss Expense $50,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Cash $50,000; credit Bad Debt Recovery (revenue) $50,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Cash $50,000; credit Loan Receivable $50,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-35-8, when a previously written-off amount is recovered, the recovery is credited to the allowance for credit losses (restoring the allowance), not directly to income. Entry: Debit Cash $50,000, Credit Allowance for Credit Losses $50,000. The effect on income occurs through the subsequent period's provision calculation — the higher allowance may result in a lower provision needed.",
+      "explanationJa": "ASC 326-20-35-8により、以前償却した金額の回収は引当金に貸方計上する（引当金の回復）。直接損益には計上しない。仕訳：現金$50,000借方、引当金$50,000貸方。損益への影響は次期の引当金繰入計算を通じて反映。",
+      "references": ["ASC 326-20-35-8"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
     }
   ]
 }

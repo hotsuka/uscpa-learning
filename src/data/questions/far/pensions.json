@@ -2,7 +2,7 @@
   "id": "far-pensions",
   "name": "Pensions",
   "topic": "Pensions",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "pen-001",
@@ -858,6 +858,405 @@
       "references": ["ASC 715-20-50-1"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-041",
+      "topic": "Pensions",
+      "subtopic": "Components of Net Periodic Pension Cost",
+      "stem": "Which of the following is NOT a component of net periodic pension cost under ASC 715?",
+      "choices": [
+        { "label": "A", "text": "Service cost" },
+        { "label": "B", "text": "Interest cost" },
+        { "label": "C", "text": "Contributions to the plan" },
+        { "label": "D", "text": "Amortization of prior service cost" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 715-30-35-4, the components of net periodic pension cost are: (1) service cost, (2) interest cost, (3) expected return on plan assets, (4) amortization of prior service cost, (5) amortization of net actuarial gain or loss, and (6) amortization of transition obligation/asset. Employer contributions are cash flows TO the plan that increase plan assets but are NOT a component of pension expense.",
+      "explanationJa": "ASC 715-30-35-4により、正味年金費用の構成要素は：(1)勤務費用、(2)利息費用、(3)期待運用収益、(4)過去勤務費用の償却、(5)数理差異の償却、(6)移行時債務の償却。掛金拠出は制度資産を増加させるキャッシュフローであり、年金費用の構成要素ではない。",
+      "references": ["ASC 715-30-35-4"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-042",
+      "topic": "Pensions",
+      "subtopic": "Service Cost - Income Statement Classification",
+      "stem": "Under ASU 2017-07, where should the components of net periodic pension cost be presented in the income statement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Service cost in operating income; all other components outside of operating income (or in a separately disclosed line)"
+        },
+        { "label": "B", "text": "All components in operating income" },
+        { "label": "C", "text": "All components below operating income" },
+        {
+          "label": "D",
+          "text": "Service cost in COGS; other components in SG&A"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASU 2017-07 (ASC 715-30-45-3A), only the service cost component of net periodic pension cost is presented in the same line item as other employee compensation costs (typically within operating income). All other components (interest cost, expected return, amortizations, etc.) are presented outside of operating income or in a separately identified line item, unless they are eligible for capitalization.",
+      "explanationJa": "ASU 2017-07（ASC 715-30-45-3A）により、勤務費用のみが他の従業員報酬と同じ項目（通常は営業利益内）に表示される。その他の構成要素（利息費用、期待収益、償却等）は営業利益外に表示する。",
+      "references": ["ASC 715-30-45-3A", "ASU 2017-07"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-043",
+      "topic": "Pensions",
+      "subtopic": "Actual vs Expected Return - Asset Gain/Loss",
+      "stem": "Plan assets have a beginning balance of $8,000,000. The expected return is 7%, and the actual return for the year is 10%. What is the asset gain or loss recognized in OCI?",
+      "choices": [
+        { "label": "A", "text": "$240,000 gain in OCI" },
+        { "label": "B", "text": "$240,000 loss in OCI" },
+        { "label": "C", "text": "$800,000 gain in OCI" },
+        { "label": "D", "text": "$560,000 gain in OCI" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-22, the difference between actual return and expected return on plan assets is the asset gain or loss. Expected return = $8,000,000 × 7% = $560,000. Actual return = $8,000,000 × 10% = $800,000. Asset gain = $800,000 − $560,000 = $240,000. This gain is recognized in OCI (not in pension expense), and is subsequently subject to amortization from AOCI into pension expense using the corridor approach.",
+      "explanationJa": "ASC 715-30-35-22により、実際収益と期待収益の差額が資産損益。期待収益 = $560,000。実際収益 = $800,000。資産利得 = $240,000。OCIに認識し、その後コリドー法を通じてAOCIから年金費用に償却される。",
+      "references": ["ASC 715-30-35-22"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-044",
+      "topic": "Pensions",
+      "subtopic": "Corridor Amortization Calculation",
+      "stem": "At the beginning of Year 3, Entity A has: PBO $12,000,000, Plan Assets $10,000,000, Net actuarial loss in AOCI $2,500,000. Average remaining service period of active employees is 10 years. What is the minimum amortization of net actuarial loss in Year 3?",
+      "choices": [
+        { "label": "A", "text": "$130,000" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$150,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-24, the corridor equals 10% of the greater of the PBO or plan assets at the beginning of the year. Corridor = 10% × max($12,000,000, $10,000,000) = $1,200,000. Net actuarial loss ($2,500,000) exceeds the corridor by $2,500,000 − $1,200,000 = $1,300,000. Minimum amortization = $1,300,000 / 10 years = $130,000.",
+      "explanationJa": "ASC 715-30-35-24により、コリドー = 10% × max(PBO, 制度資産) = $1,200,000。数理損失$2,500,000がコリドーを$1,300,000超過。最低償却額 = $1,300,000 ÷ 10年 = $130,000。",
+      "references": ["ASC 715-30-35-24"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-045",
+      "topic": "Pensions",
+      "subtopic": "Prior Service Cost - Plan Amendment",
+      "stem": "Entity B amends its pension plan on January 1, Year 1, granting retroactive benefits that increase the PBO by $600,000. The average remaining service period of affected employees is 12 years. What is the amortization of prior service cost in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$600,000" },
+        { "label": "C", "text": "$0 — prior service cost is not amortized" },
+        { "label": "D", "text": "$300,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-12, prior service cost from a plan amendment is recognized in OCI at the amendment date and then amortized into net periodic pension cost over the average remaining service period of affected employees. Annual amortization = $600,000 / 12 years = $50,000. Alternatively, entities may use a years-of-service method if more representative.",
+      "explanationJa": "ASC 715-30-35-12により、制度変更による過去勤務費用は変更日にOCIに認識し、影響を受ける従業員の平均残存勤務期間で年金費用に償却。年間償却 = $600,000 ÷ 12年 = $50,000。",
+      "references": ["ASC 715-30-35-12"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-046",
+      "topic": "Pensions",
+      "subtopic": "Settlement - Full vs Partial",
+      "stem": "Entity C settles its pension obligation for a group of retirees by purchasing annuity contracts. The PBO for the settled group is $3,000,000 (out of total PBO of $15,000,000). The settlement cost (annuity purchase price) is $3,200,000. The unrecognized net actuarial loss in AOCI is $1,500,000. What gain or loss is recognized from the settlement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize proportionate AOCI loss of $300,000 plus settlement loss of $200,000 = $500,000 total loss"
+        },
+        { "label": "B", "text": "$200,000 loss only" },
+        { "label": "C", "text": "$300,000 loss only" },
+        { "label": "D", "text": "$0 because settlements are recognized in OCI" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-68, settlement accounting requires recognition of a proportionate share of the unrecognized net gain or loss from AOCI. Proportion settled = $3,000,000 / $15,000,000 = 20%. AOCI reclassified = $1,500,000 × 20% = $300,000. Additionally, if the settlement cost ($3,200,000) exceeds the PBO settled ($3,000,000), a settlement loss of $200,000 is recognized. Total loss = $300,000 + $200,000 = $500,000.",
+      "explanationJa": "ASC 715-30-35-68により、決済会計ではAOCIの未認識損益の比例部分を認識。決済比率 = 20%。AOCI振替 = $1,500,000 × 20% = $300,000。決済費用がPBOを超過：$200,000。合計損失 = $500,000。",
+      "references": ["ASC 715-30-35-68"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "pen-047",
+      "topic": "Pensions",
+      "subtopic": "OPEB - Measurement Differences",
+      "stem": "Which of the following is a key difference between pension (ASC 715-30) and other postretirement benefit (OPEB) (ASC 715-60) accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "OPEB plans are typically unfunded and use an Accumulated Postretirement Benefit Obligation (APBO) instead of PBO"
+        },
+        { "label": "B", "text": "OPEB plans do not recognize service cost" },
+        { "label": "C", "text": "OPEB plans are always funded through trusts" },
+        {
+          "label": "D",
+          "text": "OPEB does not require balance sheet recognition of funded status"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A key difference is that OPEB plans (such as retiree health insurance) are typically unfunded or significantly underfunded. The obligation is measured as the Accumulated Postretirement Benefit Obligation (APBO), which is conceptually similar to PBO but incorporates healthcare cost trends. Both pension and OPEB plans require funded status recognition on the balance sheet (ASC 715-60-25), both recognize service cost, but OPEB often has more complex trend rate assumptions.",
+      "explanationJa": "主な違いは、OPEB制度（退職者医療保険等）は通常未積立または大幅に積立不足であること。債務はAPBO（累積退職後給付債務）で測定され、医療費トレンドを反映する点でPBOと異なる。両方とも積立状態のBS認識が必要。",
+      "references": ["ASC 715-60-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-048",
+      "topic": "Pensions",
+      "subtopic": "PBO Rollforward Components",
+      "stem": "Entity D's PBO at the beginning of the year is $20,000,000. During the year: service cost $800,000, interest cost $1,000,000, benefits paid $1,500,000, actuarial loss $400,000, and plan amendment increasing PBO by $300,000. What is the ending PBO?",
+      "choices": [
+        { "label": "A", "text": "$21,000,000" },
+        { "label": "B", "text": "$20,000,000" },
+        { "label": "C", "text": "$21,500,000" },
+        { "label": "D", "text": "$22,000,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "PBO rollforward: Beginning PBO $20,000,000 + Service cost $800,000 + Interest cost $1,000,000 − Benefits paid ($1,500,000) + Actuarial loss $400,000 + Prior service cost (plan amendment) $300,000 = Ending PBO $21,000,000. Benefits paid reduce the PBO because the obligation to those retirees has been settled.",
+      "explanationJa": "PBO増減：期首$20,000,000 + 勤務費用$800,000 + 利息費用$1,000,000 − 給付支払($1,500,000) + 数理損失$400,000 + 過去勤務費用$300,000 = 期末PBO $21,000,000。",
+      "references": ["ASC 715-20-50-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-049",
+      "topic": "Pensions",
+      "subtopic": "Plan Assets - Acceptable Investments",
+      "stem": "Which of the following is required regarding the measurement of pension plan assets under ASC 715?",
+      "choices": [
+        { "label": "A", "text": "Plan assets are measured at fair value" },
+        { "label": "B", "text": "Plan assets are measured at amortized cost" },
+        {
+          "label": "C",
+          "text": "Plan assets are measured at the lower of cost or market"
+        },
+        {
+          "label": "D",
+          "text": "Plan assets are measured at historical cost plus accumulated earnings"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-60, plan assets used to fund a defined benefit pension obligation are measured at fair value at the measurement date. Fair value is determined in accordance with ASC 820. This measurement is used both for the funded status calculation on the balance sheet and for determining the expected return on plan assets component of pension expense.",
+      "explanationJa": "ASC 715-30-35-60により、確定給付年金制度の制度資産は測定日の公正価値で測定する。公正価値はASC 820に従い決定。この測定はBS上の積立状態の計算と年金費用の期待収益率の計算の両方に使用される。",
+      "references": ["ASC 715-30-35-60"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-050",
+      "topic": "Pensions",
+      "subtopic": "Curtailment - Elimination of Future Service",
+      "stem": "Entity E closes a division, eliminating the future service of 200 employees under its defined benefit plan. The PBO reduction from the curtailment is $1,500,000. The unrecognized prior service cost attributable to the eliminated employees is $400,000. What is the curtailment gain or loss?",
+      "choices": [
+        { "label": "A", "text": "Curtailment gain of $1,100,000" },
+        { "label": "B", "text": "Curtailment gain of $1,500,000" },
+        { "label": "C", "text": "Curtailment loss of $400,000" },
+        {
+          "label": "D",
+          "text": "Curtailment gain of $1,500,000 and recognition of $400,000 prior service cost"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-92, a curtailment results in: (1) recognition of the unrecognized prior service cost associated with years of service no longer expected ($400,000 loss recognized from AOCI), and (2) a gain or loss from the change in PBO ($1,500,000 gain from PBO reduction). Net curtailment gain = $1,500,000 − $400,000 = $1,100,000.",
+      "explanationJa": "ASC 715-30-35-92により、縮小会計では：(1)もはや期待されない勤務年数に関連する未認識過去勤務費用を認識（$400,000損失）、(2)PBO変動による損益（$1,500,000利得）。純縮小利得 = $1,500,000 − $400,000 = $1,100,000。",
+      "references": ["ASC 715-30-35-92"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-051",
+      "topic": "Pensions",
+      "subtopic": "Defined Contribution - Employer Matching",
+      "stem": "Entity F has a defined contribution (401(k)) plan where it matches 50% of employee contributions up to 6% of salary. An employee with a $100,000 salary contributes 8% ($8,000). What is Entity F's matching expense?",
+      "choices": [
+        { "label": "A", "text": "$3,000" },
+        { "label": "B", "text": "$4,000" },
+        { "label": "C", "text": "$6,000" },
+        { "label": "D", "text": "$8,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The employer matches 50% of employee contributions up to 6% of salary. The employee contributes 8%, but the match only applies to the first 6% = $6,000. Employer match = 50% × $6,000 = $3,000. The additional 2% ($2,000) contributed by the employee above the 6% threshold receives no match. For defined contribution plans, the employer's expense equals its required contribution for the period.",
+      "explanationJa": "雇用主は従業員拠出の給与6%分までの50%をマッチング。6%分 = $6,000。マッチング = 50% × $6,000 = $3,000。6%超の拠出にはマッチングなし。確定拠出制度では、雇用主の費用 = 当期の必要拠出額。",
+      "references": ["ASC 715-70-25-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-052",
+      "topic": "Pensions",
+      "subtopic": "Measurement Date",
+      "stem": "Under ASC 715, what date must be used to measure the plan assets and benefit obligations of a defined benefit pension plan?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The date of the employer's fiscal year-end statement of financial position"
+        },
+        {
+          "label": "B",
+          "text": "Any date within three months of the fiscal year-end"
+        },
+        {
+          "label": "C",
+          "text": "The anniversary date of the plan's inception"
+        },
+        {
+          "label": "D",
+          "text": "December 31 of each year, regardless of fiscal year-end"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-63, the measurement date for plan assets and benefit obligations is the date of the employer's statement of financial position (the fiscal year-end date). Prior to ASC 715's update (ASU 2006-12), entities could use earlier measurement dates, but this is no longer permitted. The measurement date aligns with the balance sheet date to ensure the funded status reflects current conditions.",
+      "explanationJa": "ASC 715-30-35-63により、制度資産と給付債務の測定日は雇用主の財政状態報告書の日付（事業年度末）。以前は早い測定日も認められていたが、現在は不可。測定日はBS日と一致し、積立状態が現在の状況を反映。",
+      "references": ["ASC 715-30-35-63"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-053",
+      "topic": "Pensions",
+      "subtopic": "Expected Return vs Actual Return - Pension Expense Effect",
+      "stem": "Entity G's pension plan has beginning plan assets of $5,000,000. The expected long-term rate of return is 8%. During the year, the actual return on plan assets was $600,000. What amount is used in calculating net periodic pension cost?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$400,000 expected return (reduces pension cost)"
+        },
+        {
+          "label": "B",
+          "text": "$600,000 actual return (reduces pension cost)"
+        },
+        {
+          "label": "C",
+          "text": "$200,000 difference (increases pension cost)"
+        },
+        { "label": "D", "text": "$500,000 (average of expected and actual)" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-22, the expected return on plan assets (not the actual return) is used in calculating net periodic pension cost. Expected return = $5,000,000 × 8% = $400,000, which reduces pension expense. The difference between actual return ($600,000) and expected return ($400,000) = $200,000 asset gain, which is recognized in OCI and subject to the corridor amortization approach.",
+      "explanationJa": "ASC 715-30-35-22により、正味年金費用の計算には期待収益（実際収益ではなく）を使用する。期待収益 = $5,000,000 × 8% = $400,000（年金費用を減額）。実際収益$600,000との差額$200,000はOCIに認識。",
+      "references": ["ASC 715-30-35-22"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-054",
+      "topic": "Pensions",
+      "subtopic": "Multi-Employer Plan - Withdrawal Liability",
+      "stem": "Entity H participates in a multi-employer pension plan. Entity H decides to withdraw from the plan. Under ERISA, what financial obligation may Entity H face?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Withdrawal liability equal to Entity H's proportionate share of the plan's unfunded vested benefits"
+        },
+        {
+          "label": "B",
+          "text": "No liability because multi-employer plans are the union's responsibility"
+        },
+        {
+          "label": "C",
+          "text": "A liability limited to the contributions paid in the last 3 years"
+        },
+        { "label": "D", "text": "Only future contribution obligations" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ERISA and ASC 715-80-35-3, when an employer withdraws from a multi-employer plan, it may be assessed a withdrawal liability equal to its proportionate share of the plan's unfunded vested benefits. This can be a significant amount and must be recognized as a liability when the withdrawal occurs or when it becomes probable. The withdrawal liability is calculated based on contribution history and the plan's funded status.",
+      "explanationJa": "ERISAおよびASC 715-80-35-3により、複数事業主制度から脱退する場合、制度の未積立確定給付の比例持分に相当する脱退負債が課される可能性がある。脱退時または確実となった時点で負債を認識。拠出履歴と積立状態に基づき算定。",
+      "references": ["ASC 715-80-35-3"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-055",
+      "topic": "Pensions",
+      "subtopic": "Negative Plan Amendment",
+      "stem": "Entity J amends its pension plan to reduce future benefits, decreasing the PBO by $800,000. The unrecognized prior service cost in AOCI from a previous plan amendment is $200,000 (debit balance). How is the negative plan amendment accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "First reduce the AOCI prior service cost debit by $200,000, then recognize the remaining $600,000 as a credit to AOCI (negative prior service cost)"
+        },
+        {
+          "label": "B",
+          "text": "Recognize $800,000 gain immediately in income"
+        },
+        {
+          "label": "C",
+          "text": "No accounting entry; negative amendments are not recognized"
+        },
+        {
+          "label": "D",
+          "text": "Record $800,000 as a credit to Retained Earnings"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-11, a negative plan amendment (reducing benefits) first reduces any existing prior service cost (debit) in AOCI from previous amendments. The $200,000 existing debit is eliminated. The remaining $600,000 ($800,000 − $200,000) is recognized as negative prior service cost (credit) in AOCI. This credit is amortized into pension cost as a reduction to pension expense over the remaining service period.",
+      "explanationJa": "ASC 715-30-35-11により、給付減額の制度変更（負の制度変更）は、まずAOCIの既存の過去勤務費用（借方$200,000）を減額。残り$600,000は負の過去勤務費用（AOCI貸方）として認識し、残存勤務期間で年金費用の減額として償却。",
+      "references": ["ASC 715-30-35-11"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-056",
+      "topic": "Pensions",
+      "subtopic": "Special Termination Benefits",
+      "stem": "Entity K offers enhanced retirement benefits to employees who voluntarily retire within the next 60 days. The additional cost is estimated at $2,000,000. When should Entity K recognize the cost of these special termination benefits?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "When the offer is accepted by the employees and the amount can be reasonably estimated"
+        },
+        {
+          "label": "B",
+          "text": "Over the remaining expected service period of the employees"
+        },
+        { "label": "C", "text": "When the employees actually retire" },
+        { "label": "D", "text": "Ratably over the 60-day offer period" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-25-8, special termination benefits (those offered for a short period to encourage voluntary termination) are recognized as a liability and a loss when the employees accept the offer and the amount can be reasonably estimated. Unlike regular termination benefits, special termination benefits are event-driven and recognized upon acceptance, not over a service period.",
+      "explanationJa": "ASC 715-30-25-8により、特別解雇給付（自発的退職を促すための短期間のオファー）は、従業員がオファーを受諾し金額が合理的に見積可能な時点で負債と損失を認識する。通常の解雇給付と異なり、事象発生型で受諾時に認識。",
+      "references": ["ASC 715-30-25-8"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-057",
+      "topic": "Pensions",
+      "subtopic": "OPEB - Health Care Cost Trend Rate",
+      "stem": "Entity L's OPEB plan provides retiree health benefits. The initial health care cost trend rate is 7%, declining 0.5% per year to an ultimate rate of 4.5%. In Year 1, the per capita health care cost is $10,000. What is the estimated per capita cost in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$10,700" },
+        { "label": "B", "text": "$10,650" },
+        { "label": "C", "text": "$10,500" },
+        { "label": "D", "text": "$10,450" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The health care cost trend rate in Year 1 is 7% (the initial rate). Year 2 cost = Year 1 cost × (1 + trend rate) = $10,000 × 1.07 = $10,700. In Year 2, the trend rate would decline to 6.5% for projecting Year 3 costs. The trend rate eventually reaches the ultimate rate of 4.5% and remains there. The assumed health care cost trend rate is a critical assumption in measuring OPEB obligations.",
+      "explanationJa": "Year 1の医療費トレンド率は7%（初期レート）。Year 2コスト = $10,000 × 1.07 = $10,700。Year 2ではトレンド率は6.5%に低下（Year 3以降に適用）。最終的に4.5%に達し一定となる。医療費トレンド率はOPEB債務測定の重要な仮定。",
+      "references": ["ASC 715-60-35-38"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-058",
+      "topic": "Pensions",
+      "subtopic": "Funded Status - Overfunded Plan",
+      "stem": "Entity M has a defined benefit plan with PBO of $15,000,000 and fair value of plan assets of $17,000,000. How is the funded status reported on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "As a noncurrent asset of $2,000,000" },
+        { "label": "B", "text": "As a current asset of $2,000,000" },
+        { "label": "C", "text": "Netted against other pension liabilities" },
+        {
+          "label": "D",
+          "text": "Disclosed in the notes but not on the balance sheet"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-25-1, the funded status of a defined benefit plan (fair value of plan assets minus PBO) is recognized on the balance sheet. When plan assets exceed PBO, the plan is overfunded, and the excess ($17,000,000 − $15,000,000 = $2,000,000) is reported as a noncurrent asset (prepaid pension benefit). An overfunded plan is presented separately from any underfunded plans — netting is not permitted across separate plans.",
+      "explanationJa": "ASC 715-30-25-1により、確定給付制度の積立状態（制度資産 − PBO）をBSに認識。制度資産がPBOを超過する場合、超過額$2,000,000を非流動資産（前払年金給付）として報告。過剰積立と不足積立の制度間の相殺は認められない。",
+      "references": ["ASC 715-30-25-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "id": "far-foreign-currency-eps",
   "name": "Foreign Currency & EPS",
   "topic": "Foreign Currency & EPS",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "fx-001",
@@ -651,6 +651,402 @@
       "references": ["ASC 830-10-45-7"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-031",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Translation Rate Selection",
+      "stem": "When translating the financial statements of a foreign subsidiary whose functional currency is the local currency, which exchange rate is used for fixed assets on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "Current rate at the balance sheet date" },
+        { "label": "B", "text": "Historical rate at the date of acquisition" },
+        { "label": "C", "text": "Average rate for the current period" },
+        { "label": "D", "text": "Forward rate for the next reporting period" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the current rate method (ASC 830-10-45-3), when the functional currency is the local currency, ALL assets and liabilities are translated at the current exchange rate at the balance sheet date. This includes fixed assets. The historical rate method applies only under remeasurement (when the functional currency differs from the local currency), where nonmonetary assets like fixed assets use historical rates.",
+      "explanationJa": "機能通貨が現地通貨の場合、換算法（カレントレート法）では、固定資産を含むすべての資産・負債を期末日の為替レートで換算する。取得日レートを使用するのは再測定（機能通貨が現地通貨と異なる場合）のみである。",
+      "references": ["ASC 830-10-45-3"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-032",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Remeasurement vs Translation Decision",
+      "stem": "A U.S. parent has a subsidiary in Brazil. The subsidiary's books are maintained in Brazilian reais, but its functional currency is the U.S. dollar. Which method should be used to convert the subsidiary's financial statements?",
+      "choices": [
+        { "label": "A", "text": "Remeasurement (temporal method)" },
+        { "label": "B", "text": "Translation (current rate method)" },
+        { "label": "C", "text": "Either method, at the parent's election" },
+        {
+          "label": "D",
+          "text": "No conversion is needed since the parent reports in USD"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When the functional currency differs from the local currency (books in reais but functional currency is USD), remeasurement using the temporal method is required (ASC 830-10-45-17). Monetary items are remeasured at current rates, nonmonetary items at historical rates, and the resulting gains/losses are reported in earnings. Translation (current rate method) is used only when the functional currency IS the local currency.",
+      "explanationJa": "機能通貨が現地通貨と異なる場合（帳簿はレアル、機能通貨はUSD）、テンポラル法による再測定が必要。貨幣性項目は期末レート、非貨幣性項目は取得日レートで換算し、差損益は損益計上される。",
+      "references": ["ASC 830-10-45-17", "ASC 830-10-45-18"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-033",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "CTA Disposal Recognition",
+      "stem": "Orion Corp. has a cumulative translation adjustment (CTA) balance of $250,000 related to its German subsidiary. Orion sells 100% of the subsidiary. How should Orion account for the CTA?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reclassify the entire $250,000 from AOCI to earnings as part of the gain or loss on disposal"
+        },
+        { "label": "B", "text": "Leave the $250,000 in AOCI permanently" },
+        {
+          "label": "C",
+          "text": "Amortize the $250,000 over 5 years beginning from the sale date"
+        },
+        {
+          "label": "D",
+          "text": "Transfer the $250,000 directly to retained earnings"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-30-40-1, upon the sale or substantially complete liquidation of an investment in a foreign entity, the CTA balance associated with that entity is reclassified from AOCI into earnings as part of the gain or loss on disposal. A complete sale of 100% of the subsidiary triggers full release of the CTA to earnings.",
+      "explanationJa": "外国子会社を100%売却した場合、当該子会社に関連するCTA残高全額をAOCIから損益に振り替え、処分損益の一部として認識する。",
+      "references": ["ASC 830-30-40-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-034",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Remeasurement Gain/Loss Income Statement",
+      "stem": "Under the temporal method of remeasurement, where are foreign currency remeasurement gains and losses reported?",
+      "choices": [
+        { "label": "A", "text": "In current period earnings" },
+        { "label": "B", "text": "In other comprehensive income (OCI)" },
+        {
+          "label": "C",
+          "text": "As a direct adjustment to stockholders' equity"
+        },
+        {
+          "label": "D",
+          "text": "Deferred and amortized over the remaining asset life"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the temporal method (remeasurement), gains and losses arising from the remeasurement process are reported in current period earnings (ASC 830-10-45-18). This contrasts with translation under the current rate method, where the translation adjustment (CTA) is reported in OCI. The distinction is fundamental: remeasurement gains/losses go to earnings; translation adjustments go to OCI.",
+      "explanationJa": "テンポラル法（再測定）による為替差損益は当期損益に計上される。これはカレントレート法（換算）の換算調整額がOCIに計上されるのとは対照的である。再測定＝損益、換算＝OCIが基本的な区別である。",
+      "references": ["ASC 830-10-45-18"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-035",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Highly Inflationary Remeasurement",
+      "stem": "A foreign subsidiary operates in a highly inflationary economy (cumulative inflation exceeding 100% over 3 years). Regardless of the subsidiary's actual functional currency, how must the parent account for the subsidiary's financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Remeasure the statements as if the functional currency were the parent's reporting currency"
+        },
+        {
+          "label": "B",
+          "text": "Translate using the current rate method with an inflation adjustment"
+        },
+        {
+          "label": "C",
+          "text": "Use historical cost financial statements without any currency conversion"
+        },
+        {
+          "label": "D",
+          "text": "Restate the subsidiary's statements for inflation before translating"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 830-10-45-11, if a foreign entity operates in a highly inflationary economy (cumulative inflation of approximately 100% or more over a 3-year period), its financial statements must be remeasured as if the functional currency were the reporting currency of the parent (e.g., USD). This effectively treats the parent's currency as the functional currency, using the temporal method. The rationale is that translation at current rates in a highly inflationary environment would produce meaningless results.",
+      "explanationJa": "高度インフレ経済（3年間の累積インフレ率約100%以上）では、実際の機能通貨に関係なく、親会社の報告通貨を機能通貨とみなして再測定する。カレントレート法による換算では意味のある結果が得られないためである。",
+      "references": ["ASC 830-10-45-11", "ASC 830-10-45-12"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-036",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Foreign Currency Transaction Journal Entry",
+      "stem": "On November 1, Year 1, Mason Corp. (USD functional currency) purchases goods from a UK supplier for £100,000, payable on January 31, Year 2. The exchange rates are: Nov 1 = $1.30/£, Dec 31 = $1.35/£, Jan 31 = $1.32/£. What is the foreign currency transaction gain or loss recognized in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$5,000 loss" },
+        { "label": "B", "text": "$5,000 gain" },
+        { "label": "C", "text": "$2,000 gain" },
+        { "label": "D", "text": "$3,000 loss" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "At November 1, the payable is recorded at £100,000 × $1.30 = $130,000. At December 31 (year-end), the payable is remeasured at £100,000 × $1.35 = $135,000. The increase in the USD-equivalent payable of $5,000 ($135,000 − $130,000) is a foreign currency transaction loss recognized in Year 1 earnings, because it will cost more dollars to settle the liability.",
+      "explanationJa": "11/1の買掛金は£100,000×$1.30=$130,000。12/31の期末レートで£100,000×$1.35=$135,000に再測定。買掛金の増加$5,000（$135,000−$130,000）はYear 1の為替差損として損益認識される。",
+      "references": ["ASC 830-20-35-1", "ASC 830-20-35-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-037",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Basic EPS Treasury Stock Method",
+      "stem": "Pine Corp. had 500,000 shares of common stock outstanding for the entire year. On July 1, Pine repurchased 40,000 shares of treasury stock. Net income was $1,200,000. What is Pine's basic EPS?",
+      "choices": [
+        { "label": "A", "text": "$2.50" },
+        { "label": "B", "text": "$2.40" },
+        { "label": "C", "text": "$2.61" },
+        { "label": "D", "text": "$2.67" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Basic EPS = Net income ÷ Weighted-average shares outstanding. The weighted-average shares: 500,000 for Jan–Jun (6/12) + 460,000 for Jul–Dec (6/12) = 250,000 + 230,000 = 480,000. Basic EPS = $1,200,000 ÷ 480,000 = $2.50. Treasury stock repurchases reduce the shares outstanding from the repurchase date, weighted for the fraction of the year.",
+      "explanationJa": "加重平均株式数：500,000×6/12 + 460,000×6/12 = 480,000株。基本EPS = $1,200,000÷480,000 = $2.50。自己株式取得は取得日から発行済株式数を減少させ、期間按分する。",
+      "references": ["ASC 260-10-45-10", "ASC 260-10-45-12"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-038",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Diluted EPS Convertible Preferred",
+      "stem": "Sage Inc. has 200,000 shares of common stock outstanding and 10,000 shares of convertible preferred stock. Each preferred share is convertible into 3 common shares and pays an annual dividend of $5 per share. Net income is $800,000. What is diluted EPS using the if-converted method?",
+      "choices": [
+        { "label": "A", "text": "$3.48" },
+        { "label": "B", "text": "$3.47" },
+        { "label": "C", "text": "$4.00" },
+        { "label": "D", "text": "$3.25" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "If-converted method: Numerator = Net income (no preferred dividend deduction since assumed converted) = $800,000. Denominator = 200,000 + (10,000 × 3) = 230,000 shares. Diluted EPS = $800,000 ÷ 230,000 = $3.478, rounded to $3.48. Compare with basic EPS = ($800,000 − $50,000) ÷ 200,000 = $3.75. Since diluted EPS ($3.48) < basic EPS ($3.75), the conversion is dilutive and is included.",
+      "explanationJa": "if-converted法：分子=$800,000（転換前提のため優先配当控除なし）、分母=200,000+30,000=230,000株。希薄化EPS=$800,000÷230,000=$3.48。基本EPS$3.75より低いため希薄化効果あり。",
+      "references": ["ASC 260-10-45-21", "ASC 260-10-45-40"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-039",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Anti-Dilution Test",
+      "stem": "Fern Corp. has basic EPS of $3.00. Fern has outstanding convertible bonds that, if converted, would increase the numerator by $120,000 (after-tax interest) and the denominator by 50,000 shares. Fern also has stock options that would add 10,000 incremental shares under the treasury stock method. In what order should these securities be evaluated for inclusion in diluted EPS?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Stock options first (most dilutive per-share impact), then convertible bonds"
+        },
+        {
+          "label": "B",
+          "text": "Convertible bonds first because they affect the numerator"
+        },
+        { "label": "C", "text": "Both simultaneously in a single computation" },
+        { "label": "D", "text": "In reverse chronological order of issuance" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 260-10-45-21 through 45-44 requires potentially dilutive securities to be evaluated in order from most dilutive to least dilutive (the incremental approach). Options/warrants (which have no numerator impact, so per-share effect = $0/share) are always the most dilutive and are entered first. Then convertible securities are ranked by their incremental EPS effect ($120,000 ÷ 50,000 = $2.40/share). Each security is included only if it is dilutive relative to the cumulative diluted EPS at that point.",
+      "explanationJa": "希薄化証券は最も希薄化効果が大きい順に評価する。ストックオプション（分子への影響$0＝1株当たり効果$0）が最も希薄化的なため先に算入し、次に転換社債（$120,000÷50,000=$2.40/株）を評価する。",
+      "references": ["ASC 260-10-45-21", "ASC 260-10-45-44"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-040",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "EPS Stock Dividend Retroactive Adjustment",
+      "stem": "Lux Corp. reported basic EPS of $4.00 for Year 1 based on 100,000 weighted-average shares. In March of Year 2, Lux declares a 10% stock dividend. What is the restated basic EPS for Year 1 in comparative financial statements?",
+      "choices": [
+        { "label": "A", "text": "$3.64" },
+        { "label": "B", "text": "$4.00" },
+        { "label": "C", "text": "$4.40" },
+        { "label": "D", "text": "$3.60" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 260-10-55-12, stock dividends and stock splits are given retroactive treatment for all periods presented. The Year 1 weighted-average shares must be adjusted: 100,000 × 1.10 = 110,000. Restated EPS = $400,000 (original net income: $4.00 × 100,000) ÷ 110,000 = $3.636, rounded to $3.64. This ensures comparability across periods.",
+      "explanationJa": "株式配当はすべての表示期間に遡及適用される。Year 1の加重平均株式数を調整：100,000×1.10=110,000株。修正再表示後EPS=$400,000÷110,000=$3.64。期間比較可能性を確保するための処理。",
+      "references": ["ASC 260-10-55-12"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-041",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Translation Income Statement Rate",
+      "stem": "Under the current rate method (ASC 830), which exchange rate is used to translate revenue and expense items of a foreign subsidiary?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The weighted-average exchange rate for the period"
+        },
+        { "label": "B", "text": "The current rate at the balance sheet date" },
+        {
+          "label": "C",
+          "text": "The historical rate at the date of each transaction"
+        },
+        { "label": "D", "text": "The spot rate at the beginning of the period" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the current rate method (ASC 830-10-45-3), revenues and expenses are translated at the exchange rate at the dates those items were recognized, but for practical purposes, a weighted-average rate for the period is commonly used as an approximation. The current (closing) rate is used only for balance sheet items.",
+      "explanationJa": "カレントレート法では、収益・費用項目は取引認識日のレートで換算するが、実務上は期間の加重平均レートを使用する。期末レートは貸借対照表項目にのみ使用される。",
+      "references": ["ASC 830-10-45-3"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-042",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Remeasurement Inventory Rate",
+      "stem": "A foreign subsidiary has a functional currency that differs from its local currency. Under the temporal method, at what rate should inventory carried at cost be remeasured?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Historical rate when the inventory was acquired"
+        },
+        { "label": "B", "text": "Current rate at the balance sheet date" },
+        { "label": "C", "text": "Average rate for the period" },
+        { "label": "D", "text": "Forward rate as of the expected sale date" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the temporal method (ASC 830-10-45-18), nonmonetary assets carried at historical cost—including inventory at cost—are remeasured using the historical exchange rate at the date of acquisition. If inventory is carried at market (NRV under lower of cost or market), the current rate would be used. The key principle is that the rate matches the measurement basis of the item.",
+      "explanationJa": "テンポラル法では、原価で計上されている棚卸資産は取得日の為替レートで再測定する。市場価格（正味実現可能価額）で計上されている場合は期末レートを使用する。レートは測定基準に対応する。",
+      "references": ["ASC 830-10-45-18"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-043",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Intra-Entity Foreign Currency Profit Elimination",
+      "stem": "A U.S. parent sells inventory to its Canadian subsidiary (functional currency: Canadian dollar) for C$500,000 when the exchange rate is $0.80/C$. The parent's cost was US$350,000. In preparing consolidated financial statements, what amount of intercompany profit must be eliminated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$50,000 (the parent's profit measured in USD)"
+        },
+        {
+          "label": "B",
+          "text": "C$62,500 (the profit measured in Canadian dollars)"
+        },
+        { "label": "C", "text": "$400,000 (the total selling price in USD)" },
+        {
+          "label": "D",
+          "text": "No elimination is needed for foreign currency transactions"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The intercompany profit is computed in the selling entity's currency (USD). The parent sold for C$500,000 × $0.80 = US$400,000, with a cost of US$350,000, yielding profit of US$50,000. This profit is eliminated in consolidation. The elimination is measured in the parent's functional currency (USD) because that is the currency in which the profit was generated.",
+      "explanationJa": "連結上の内部利益は売り手の機能通貨（USD）で計算する。販売額C$500,000×$0.80=US$400,000、原価US$350,000、利益US$50,000を消去する。",
+      "references": ["ASC 830-20-35-4", "ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "fx-044",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Diluted EPS Treasury Stock Method Calculation",
+      "stem": "Nova Inc. has 300,000 shares outstanding and net income of $600,000. Nova has 20,000 stock options with an exercise price of $15. The average market price during the year was $25. What is diluted EPS?",
+      "choices": [
+        { "label": "A", "text": "$1.94" },
+        { "label": "B", "text": "$2.00" },
+        { "label": "C", "text": "$1.88" },
+        { "label": "D", "text": "$1.92" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Treasury stock method: Proceeds = 20,000 × $15 = $300,000. Shares repurchased at market = $300,000 ÷ $25 = 12,000. Incremental shares = 20,000 − 12,000 = 8,000. Diluted shares = 300,000 + 8,000 = 308,000. Diluted EPS = $600,000 ÷ 308,000 = $1.948, rounded to $1.94. Since the exercise price ($15) is below the market price ($25), the options are dilutive.",
+      "explanationJa": "自己株式法：払込金額=20,000×$15=$300,000。市場価格で買戻し=$300,000÷$25=12,000株。増加株式数=20,000−12,000=8,000株。希薄化後株式数=308,000株。希薄化EPS=$600,000÷308,000=$1.94。",
+      "references": ["ASC 260-10-45-22", "ASC 260-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-045",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "EPS Preferred Dividend Deduction",
+      "stem": "West Corp. has net income of $500,000. It has 10,000 shares of cumulative preferred stock ($100 par, 6% dividend rate) and 200,000 shares of common stock outstanding. No preferred dividends were declared in the current year. What is basic EPS?",
+      "choices": [
+        { "label": "A", "text": "$2.20" },
+        { "label": "B", "text": "$2.50" },
+        { "label": "C", "text": "$2.00" },
+        { "label": "D", "text": "$2.30" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "For cumulative preferred stock, preferred dividends are deducted from net income in computing basic EPS regardless of whether declared. Preferred dividend = 10,000 × $100 × 6% = $60,000. Basic EPS = ($500,000 − $60,000) ÷ 200,000 = $440,000 ÷ 200,000 = $2.20. For noncumulative preferred, only declared dividends are deducted.",
+      "explanationJa": "累積的優先株式の場合、配当が宣言されていなくても基本EPS計算では優先配当を控除する。優先配当=10,000×$100×6%=$60,000。基本EPS=($500,000−$60,000)÷200,000=$2.20。",
+      "references": ["ASC 260-10-45-11"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-046",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Translation Equity Accounts Rate",
+      "stem": "Under the current rate method, at what rate are equity accounts (other than retained earnings) translated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Historical rates at the dates of the respective equity transactions"
+        },
+        { "label": "B", "text": "Current rate at the balance sheet date" },
+        { "label": "C", "text": "Average rate for the period" },
+        {
+          "label": "D",
+          "text": "A blended rate based on the weighted-average of all equity issuances"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the current rate method (ASC 830-10-45-3), equity accounts such as common stock and additional paid-in capital are translated at historical rates—the exchange rates in effect at the dates of the equity transactions (issuance of stock, etc.). Retained earnings is a derived amount (beginning retained earnings plus translated net income minus translated dividends). The cumulative translation adjustment (CTA) captures the residual balancing amount.",
+      "explanationJa": "カレントレート法では、普通株式や追加払込資本金などの資本項目は、それぞれの取引日（株式発行日等）の取得日レートで換算する。利益剰余金は導出値であり、CTAが調整差額となる。",
+      "references": ["ASC 830-10-45-3"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-047",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Diluted EPS Contingently Issuable Shares",
+      "stem": "Grant Corp.'s compensation agreement provides that its CEO will receive 50,000 additional shares if the company's net income exceeds $10 million for any year. Year 1 net income is $12 million with 1,000,000 shares outstanding. How are these contingently issuable shares treated in diluted EPS?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Include the 50,000 shares in the denominator because the condition is currently met"
+        },
+        {
+          "label": "B",
+          "text": "Exclude them because the shares have not been issued"
+        },
+        {
+          "label": "C",
+          "text": "Include them only if the CEO has exercised the option"
+        },
+        {
+          "label": "D",
+          "text": "Include half the shares as a probability-weighted estimate"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 260-10-45-48, contingently issuable shares are included in the computation of diluted EPS if the conditions for their issuance are currently satisfied (i.e., all necessary conditions have been met as of the end of the period). Since Year 1 net income of $12 million exceeds the $10 million threshold, the condition is met, and the 50,000 shares are included in the denominator.",
+      "explanationJa": "条件付発行可能株式は、発行条件が報告期間末時点で満たされている場合、希薄化EPS計算の分母に含める。Year 1の純利益$12Mが閾値$10Mを超えているため、50,000株を分母に算入する。",
+      "references": ["ASC 260-10-45-48", "ASC 260-10-45-49"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "fx-048",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Two-Class Method EPS",
+      "stem": "Marsh Inc. has 100,000 common shares and 20,000 participating preferred shares. The preferred shares participate equally with common in undistributed earnings. Net income is $360,000 and preferred dividends of $40,000 are declared. What is basic EPS for common shareholders using the two-class method?",
+      "choices": [
+        { "label": "A", "text": "$2.67" },
+        { "label": "B", "text": "$3.20" },
+        { "label": "C", "text": "$3.60" },
+        { "label": "D", "text": "$2.00" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Two-class method: (1) Deduct preferred dividends: $360,000 − $40,000 = $320,000 undistributed. (2) Allocate undistributed earnings based on participation rights: Common gets 100,000/(100,000+20,000) × $320,000 = $266,667. (3) Basic EPS = $266,667 ÷ 100,000 = $2.667, rounded to $2.67. The two-class method is required when securities participate in dividends with common stock.",
+      "explanationJa": "2クラス法：①優先配当控除後の未分配利益=$360,000−$40,000=$320,000。②普通株式への配分=100,000/(100,000+20,000)×$320,000=$266,667。③基本EPS=$266,667÷100,000=$2.67。参加型証券がある場合に使用。",
+      "references": ["ASC 260-10-45-59A", "ASC 260-10-45-61B"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
     }
   ]
 }

@@ -108,7 +108,7 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 4,
+      version: 5,
       migrate: (persisted, version) => {
         // 破壊的処理の前に現在の localStorage 値を退避する
         backupBeforeMigrate("uscpa-question-bank", version);
@@ -152,6 +152,26 @@ export const useQuestionBankStore = create<QuestionBankState>()(
             if (hasTrustedAttempt.has(a.questionId)) return a;
             // 境界より前の回答しかない設問 → isCorrect をリセット
             return { ...a, isCorrect: null };
+          });
+        }
+
+        // v4→v5: inv-031 の選択肢バグ（C・D が $75,000 に重複）修正に伴い、
+        // selectedAnswer="A" かつ isCorrect=false の attempt を正解に補正する。
+        // シャッフルマップのバグで B 選択が A に変換されて保存されていたため。
+        if (version === 4) {
+          const answerMap = new Map<string, string>();
+          for (const set of farQuestionSets) {
+            for (const q of set.questions) {
+              answerMap.set(q.id, q.correctAnswer);
+            }
+          }
+          state.attempts = state.attempts.map((a) => {
+            if (a.questionId !== "inv-031") return a;
+            const correct = answerMap.get("inv-031");
+            if (correct && a.selectedAnswer === correct) {
+              return { ...a, isCorrect: true };
+            }
+            return a;
           });
         }
 

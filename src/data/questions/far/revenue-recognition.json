@@ -2,7 +2,7 @@
   "id": "far-revenue-recognition",
   "name": "Revenue Recognition (ASC 606)",
   "topic": "Revenue Recognition (ASC 606)",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "rev-001",
@@ -903,6 +903,483 @@
       "references": ["ASC 606-10-65-1"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-041",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Multiple Performance Obligations - Allocation",
+      "stem": "Tech Corp. enters a contract to deliver software, installation services, and 2 years of post-contract support (PCS) for a total price of $500,000. The standalone selling prices are: software $300,000, installation $50,000, and PCS $200,000. How much of the transaction price is allocated to the software?",
+      "choices": [
+        { "label": "A", "text": "$272,727" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$250,000" },
+        { "label": "D", "text": "$227,273" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-32-31, the transaction price is allocated to each performance obligation based on relative standalone selling prices (SSPs). Total SSP = $300,000 + $50,000 + $200,000 = $550,000. Software allocation = ($300,000 / $550,000) × $500,000 = $272,727. The discount of $50,000 is spread proportionally across all obligations.",
+      "explanationJa": "ASC 606-10-32-31により、取引価格は相対的な独立販売価格に基づいて各履行義務に配分する。合計SSP = $550,000。ソフトウェアへの配分 = ($300,000 ÷ $550,000) × $500,000 = $272,727。",
+      "references": ["ASC 606-10-32-31"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-042",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Contract Modification - Separate Contract",
+      "stem": "Builder Corp. has a contract to construct a building for $1,000,000. After construction begins, the customer requests additional work that is distinct from the original scope. The modification price of $250,000 reflects the standalone selling price of the additional work. How should this modification be accounted for?",
+      "choices": [
+        { "label": "A", "text": "As a separate contract" },
+        {
+          "label": "B",
+          "text": "As a cumulative catch-up adjustment on the existing contract"
+        },
+        {
+          "label": "C",
+          "text": "As a termination of the old contract and creation of a new contract"
+        },
+        {
+          "label": "D",
+          "text": "Prospectively as part of the remaining performance obligations"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-25-12, a contract modification is treated as a separate contract when both conditions are met: (1) the scope of the contract increases because of the addition of promised goods or services that are distinct, and (2) the price of the contract increases by an amount that reflects the entity's standalone selling prices. Both conditions are met here.",
+      "explanationJa": "ASC 606-10-25-12により、(1)追加される財・サービスが区別可能で契約の範囲が拡大し、(2)価格が独立販売価格を反映した金額で増加する場合、別個の契約として処理する。両条件を満たすため別契約。",
+      "references": ["ASC 606-10-25-12"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-043",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Variable Consideration - Most Likely Amount",
+      "stem": "Pharma Corp. enters a contract to sell a drug to a distributor. The contract price is $1,000,000, but a $200,000 rebate is payable if the distributor's sales volume exceeds a threshold. Pharma estimates a 70% probability that the threshold will be met and 30% that it will not. Using the most likely amount method, what transaction price should Pharma recognize?",
+      "choices": [
+        { "label": "A", "text": "$800,000" },
+        { "label": "B", "text": "$1,000,000" },
+        { "label": "C", "text": "$860,000" },
+        { "label": "D", "text": "$940,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-32-8, when there are only two possible outcomes, the most likely amount method is more predictive. Since there is a 70% probability that the rebate will be owed, the most likely amount is $800,000 ($1,000,000 − $200,000 rebate). The expected value method would yield $860,000 (70% × $800,000 + 30% × $1,000,000), but the most likely amount method considers only the single most likely outcome.",
+      "explanationJa": "ASC 606-10-32-8により、結果が2つしかない場合、最頻値法がより予測に適する。リベート支払の確率70%なので、最頻値は$800,000（$1,000,000 − $200,000）。期待値法なら$860,000だが、最頻値法では最も可能性の高い単一の結果のみ考慮。",
+      "references": ["ASC 606-10-32-8"],
+      "difficulty": "intermediate",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "rev-044",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Contract Costs - Incremental Costs of Obtaining",
+      "stem": "Sales Corp. pays its salespeople a 5% commission on each new contract signed. The commission is paid only for new contracts, not renewals. A salesperson signs a 3-year contract worth $600,000. How should the $30,000 commission be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Capitalized as a contract asset and amortized over 3 years"
+        },
+        { "label": "B", "text": "Expensed immediately when paid" },
+        {
+          "label": "C",
+          "text": "Capitalized and amortized over the expected customer relationship period if longer than 3 years"
+        },
+        { "label": "D", "text": "Deducted from the transaction price" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 340-40-25-1, incremental costs of obtaining a contract (costs that would not have been incurred but for the contract, such as sales commissions) are capitalized if the entity expects to recover them. Under ASC 340-40-35-1, the asset is amortized on a systematic basis consistent with the pattern of transfer of goods or services. If the commission relates to a contract that is expected to result in renewals, the amortization period should be the expected customer relationship period, which may exceed the initial contract term.",
+      "explanationJa": "ASC 340-40-25-1により、契約獲得の増分コスト（契約がなければ発生しなかったコスト）は回収見込みがあれば資産計上する。更新が見込まれる場合、ASC 340-40-35-1により初回契約期間ではなく顧客との関係期間で償却する。",
+      "references": ["ASC 340-40-25-1", "ASC 340-40-35-1"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-045",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Satisfaction Over Time - Control Transfer Criteria",
+      "stem": "Which of the following is NOT one of the three criteria under ASC 606 for recognizing revenue over time?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The customer simultaneously receives and consumes the benefits as the entity performs"
+        },
+        {
+          "label": "B",
+          "text": "The entity's performance creates or enhances an asset that the customer controls as it is created"
+        },
+        {
+          "label": "C",
+          "text": "The entity's performance creates an asset with an alternative use to the entity, and the entity has an enforceable right to payment"
+        },
+        {
+          "label": "D",
+          "text": "The entity's performance does not create an asset with alternative use, and the entity has an enforceable right to payment for performance completed to date"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 606-10-25-27, revenue is recognized over time if ANY of the following criteria is met: (a) the customer simultaneously receives and consumes the benefits, (b) the entity's performance creates or enhances an asset that the customer controls, or (c) the entity's performance does NOT create an asset with an alternative use AND the entity has an enforceable right to payment for performance completed to date. Option C incorrectly states the asset HAS alternative use, which is the opposite of criterion (c).",
+      "explanationJa": "ASC 606-10-25-27により、一定期間にわたる収益認識の3基準は：(a)顧客が便益を同時に受領・消費、(b)企業の履行が顧客が支配する資産を創出、(c)資産に代替用途がなく完了部分の支払請求権がある。Cは「代替用途がある」と誤記しており正しくない。",
+      "references": ["ASC 606-10-25-27"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-046",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Licensing - Functional vs Symbolic IP",
+      "stem": "Music Corp. licenses a music catalog to a streaming service for 5 years. The music catalog represents the entity's completed works, and Music Corp. does not undertake activities that significantly affect the catalog during the license period. Is this a right to access (symbolic) or right to use (functional) intellectual property?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Right to use (functional IP) — recognize revenue at a point in time when the license is transferred"
+        },
+        {
+          "label": "B",
+          "text": "Right to access (symbolic IP) — recognize revenue over the 5-year license period"
+        },
+        {
+          "label": "C",
+          "text": "Right to access — because all IP licenses are recognized over time"
+        },
+        {
+          "label": "D",
+          "text": "Right to use — but recognize revenue over time because the license period exceeds one year"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-55-60, IP is classified as symbolic (right to access) when the entity undertakes activities that significantly affect the IP, and the customer is exposed to effects of those activities. If the entity does NOT undertake such activities, the IP is functional (right to use), and revenue is recognized at the point in time when the customer can use and benefit from the license. A completed music catalog with no ongoing activities is functional IP.",
+      "explanationJa": "ASC 606-10-55-60により、企業がIPに重大な影響を与える活動を行わない場合、機能的IP（使用権）であり、ライセンス移転時に一時点で収益認識する。完成した音楽カタログで継続的活動がないため機能的IP。",
+      "references": ["ASC 606-10-55-60"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-047",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Significant Financing Component - Practical Expedient",
+      "stem": "Under ASC 606, when can an entity elect NOT to adjust the transaction price for the effects of a significant financing component?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "When the period between payment and transfer of goods/services is one year or less"
+        },
+        {
+          "label": "B",
+          "text": "When the interest rate is below the market rate"
+        },
+        { "label": "C", "text": "When the customer pays in advance" },
+        {
+          "label": "D",
+          "text": "When the contract duration is less than 3 years"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-32-18, as a practical expedient, an entity need not adjust the promised amount of consideration for the effects of a significant financing component if the entity expects, at contract inception, that the period between when the entity transfers a promised good or service to the customer and when the customer pays for it will be one year or less. This simplifies accounting for short-term financing arrangements.",
+      "explanationJa": "ASC 606-10-32-18により、実務上の便法として、企業が契約開始時に移転と支払の間の期間が1年以内と見込む場合、重大な金融要素の調整は不要。短期の金融取り決めの会計処理を簡素化するもの。",
+      "references": ["ASC 606-10-32-18"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-048",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Contract Asset vs Receivable",
+      "stem": "Consulting Corp. provides services under a fixed-fee contract. At the end of Year 1, Consulting has completed 60% of the work (measured by input method) but has only billed for 40%. The unbilled amount represents $100,000. How should this be classified?",
+      "choices": [
+        { "label": "A", "text": "As a contract asset" },
+        { "label": "B", "text": "As accounts receivable" },
+        { "label": "C", "text": "As a contract liability" },
+        { "label": "D", "text": "As deferred revenue" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-45-3, a contract asset is an entity's right to consideration in exchange for goods or services that the entity has transferred to a customer when that right is conditioned on something other than the passage of time. Since the billing is contingent on further performance (not merely the passage of time), the $100,000 is a contract asset. If the right to payment were unconditional (conditioned only on time), it would be classified as a receivable.",
+      "explanationJa": "ASC 606-10-45-3により、対価の権利が時間の経過以外の条件に依存する場合、契約資産に分類する。請求が追加履行に依存しているため$100,000は契約資産。無条件の支払請求権であれば売掛金。",
+      "references": ["ASC 606-10-45-3"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-049",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Repurchase Agreement - Forward",
+      "stem": "Manufacturer Corp. sells inventory to a customer for $500,000 and simultaneously enters a forward agreement to repurchase the inventory in 6 months for $520,000. The repurchase price exceeds the original selling price. How should this transaction be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a financing arrangement — no revenue recognized"
+        },
+        { "label": "B", "text": "As a sale with right of return" },
+        { "label": "C", "text": "As a lease" },
+        { "label": "D", "text": "As a regular sale with revenue of $500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-55-70, when an entity has an obligation to repurchase an asset (a forward), and the repurchase price is equal to or greater than the original selling price, the transaction is accounted for as a financing arrangement. The entity does not derecognize the asset and records a financial liability of $500,000. The $20,000 difference between the repurchase and sale prices is recognized as interest expense over the 6-month period.",
+      "explanationJa": "ASC 606-10-55-70により、買戻義務（先渡契約）があり買戻価格が販売価格以上の場合、金融取引として処理する。資産を認識解除せず、金融負債$500,000を計上。差額$20,000は6ヶ月にわたり利息費用として認識。",
+      "references": ["ASC 606-10-55-70"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "rev-050",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Warranties - Service-Type Separate Obligation",
+      "stem": "Auto Corp. sells a vehicle for $40,000 and offers an optional 5-year extended warranty for $3,000. The extended warranty is sold separately in the market. How should Auto Corp. account for the extended warranty?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Allocate a portion of the $40,000 to the warranty and recognize over 5 years"
+        },
+        {
+          "label": "B",
+          "text": "Recognize $3,000 as a separate performance obligation and defer revenue over 5 years"
+        },
+        {
+          "label": "C",
+          "text": "Accrue estimated warranty costs at the time of sale"
+        },
+        {
+          "label": "D",
+          "text": "Recognize the $3,000 warranty revenue immediately at the time of sale"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-34, a service-type warranty that provides a service beyond fixing defects existing at the time of sale is a separate performance obligation. Since the extended warranty is priced separately ($3,000) and sold independently, it is a distinct performance obligation. The $3,000 is deferred and recognized as revenue over the 5-year warranty period as the entity satisfies the obligation over time.",
+      "explanationJa": "ASC 606-10-55-34により、販売時の欠陥修理以上のサービスを提供するサービス型保証は別個の履行義務。延長保証は個別に価格設定・販売されており、$3,000を繰延べて5年間にわたり収益認識する。",
+      "references": ["ASC 606-10-55-34"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-051",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Percentage of Completion - Loss Contract",
+      "stem": "Construction Corp. has a $5,000,000 fixed-price contract. At the end of Year 1, costs incurred are $2,000,000, estimated costs to complete are $4,000,000, and total estimated costs are now $6,000,000. What should Construction Corp. recognize in Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Revenue of $1,666,667 and a total loss provision of $1,000,000"
+        },
+        { "label": "B", "text": "Revenue of $2,000,000 and no loss" },
+        {
+          "label": "C",
+          "text": "Revenue of $1,666,667 and an additional loss of $666,667"
+        },
+        { "label": "D", "text": "No revenue and a loss of $1,000,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-25-27 (over time recognition using cost-to-cost), percentage complete = $2,000,000 / $6,000,000 = 33.33%. Revenue = $5,000,000 × 33.33% = $1,666,667. Costs = $2,000,000. However, the contract is expected to generate a total loss of $1,000,000 ($5,000,000 − $6,000,000). Under ASC 605-35-25-45 (now within ASC 606 guidance), the entire anticipated loss must be recognized immediately. The loss recognized in Year 1 includes the excess of costs over revenue ($333,333) plus the remaining expected loss ($666,667) = $1,000,000 total.",
+      "explanationJa": "原価比率法で進捗度 = 33.33%。収益 = $1,666,667。契約全体の予想損失$1,000,000は即座に全額認識する。Year 1の損失 = 費用超過$333,333 + 残余予想損失$666,667 = $1,000,000。",
+      "references": ["ASC 606-10-25-27"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-052",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Step 1 - Contract Existence Criteria",
+      "stem": "Which of the following is NOT a requirement for a contract to exist under Step 1 of ASC 606?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The contract has been approved by the parties and they are committed to perform"
+        },
+        {
+          "label": "B",
+          "text": "The entity can identify each party's rights regarding goods or services to be transferred"
+        },
+        { "label": "C", "text": "The contract must be in writing" },
+        { "label": "D", "text": "Collection of the consideration is probable" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 606-10-25-1, five criteria must be met for a contract to exist: (a) approval and commitment, (b) identification of each party's rights, (c) identification of payment terms, (d) the contract has commercial substance, and (e) collection is probable. A contract does not need to be in writing — ASC 606 explicitly recognizes that contracts can be written, oral, or implied by customary business practices.",
+      "explanationJa": "ASC 606-10-25-1により、契約の5要件は：(a)承認と履行の約束、(b)各当事者の権利の識別、(c)支払条件の識別、(d)商業的実質、(e)対価の回収可能性。契約は書面である必要はなく、口頭や慣行によるものも認められる。",
+      "references": ["ASC 606-10-25-1"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-053",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Distinct Goods or Services - Bundled",
+      "stem": "Software Corp. sells a software license bundled with a mandatory implementation service. The software cannot function without the implementation. Are these two distinct performance obligations?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because they are separately identifiable"
+        },
+        {
+          "label": "B",
+          "text": "No, because the software and implementation are not distinct within the context of the contract"
+        },
+        {
+          "label": "C",
+          "text": "Yes, because the software has standalone functionality"
+        },
+        {
+          "label": "D",
+          "text": "No, because implementation services are never a separate obligation"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-25-21, a good or service is distinct if it is (1) capable of being distinct (the customer can benefit from it alone or together with readily available resources) AND (2) distinct within the context of the contract (separately identifiable from other promises). While software may be capable of being distinct, if it cannot function without the implementation service, they are highly interrelated and not separately identifiable within the contract — they form a single performance obligation.",
+      "explanationJa": "ASC 606-10-25-21により、財・サービスが区別可能であるには、(1)単独で便益を得られ、(2)契約の文脈で別個に識別可能であることが必要。ソフトウェアが実装なしに機能しない場合、高度に相互関連しており、単一の履行義務を構成する。",
+      "references": ["ASC 606-10-25-21"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-054",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "SSP Estimation - Expected Cost Plus Margin",
+      "stem": "Service Corp. cannot directly observe the standalone selling price of a customized service. Historical data shows the expected cost is $80,000 and the entity's typical margin on similar services is 25%. Using the expected cost plus margin approach, what is the estimated SSP?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$80,000" },
+        { "label": "C", "text": "$106,667" },
+        { "label": "D", "text": "$120,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-32-34, when an entity cannot directly observe the SSP, it may use the expected cost plus a margin approach. SSP = Expected cost + Margin = $80,000 + ($80,000 × 25%) = $80,000 + $20,000 = $100,000. This approach forecasts the expected costs of satisfying the performance obligation and adds an appropriate margin for that good or service.",
+      "explanationJa": "ASC 606-10-32-34により、SSPを直接観察できない場合、予想原価プラスマージン法を使用できる。SSP = $80,000 + ($80,000 × 25%) = $100,000。履行義務充足の予想原価に適切なマージンを加算する。",
+      "references": ["ASC 606-10-32-34"],
+      "difficulty": "basic",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-055",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Customer Options - Material Right",
+      "stem": "Retailer Corp. offers a loyalty program where customers earn 1 point per $10 spent. Each point can be redeemed for a $1 discount on future purchases. A customer spends $1,000 and earns 100 points. The SSP of the points is estimated at $80 (considering the likelihood of redemption). How much revenue should be recognized from the $1,000 sale?",
+      "choices": [
+        { "label": "A", "text": "$1,000" },
+        { "label": "B", "text": "$925.93" },
+        { "label": "C", "text": "$920.00" },
+        { "label": "D", "text": "$900.00" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-42, customer options that provide a material right (such as loyalty points) are treated as separate performance obligations. The transaction price ($1,000) is allocated based on relative SSPs. SSP of goods = $1,000 (assumed), SSP of points = $80. Total SSP = $1,080. Revenue from sale = ($1,000 / $1,080) × $1,000 = $925.93. The remaining $74.07 is deferred as a contract liability until points are redeemed or expire.",
+      "explanationJa": "ASC 606-10-55-42により、重要な権利を提供する顧客オプション（ポイント）は別個の履行義務として扱う。取引価格$1,000を相対的SSPで配分。商品 = $1,000 ÷ $1,080 × $1,000 = $925.93。残り$74.07はポイント行使まで契約負債。",
+      "references": ["ASC 606-10-55-42"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "rev-056",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Collectibility Threshold - Step 1",
+      "stem": "Entity M enters a contract to sell goods for $100,000 to a customer with significant credit risk. Entity M determines it is NOT probable that it will collect the consideration. Entity M delivers the goods and receives a nonrefundable payment of $30,000. When should Entity M recognize revenue?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize $100,000 revenue when goods are delivered"
+        },
+        {
+          "label": "B",
+          "text": "Recognize $30,000 revenue when received, as it is nonrefundable"
+        },
+        {
+          "label": "C",
+          "text": "Recognize revenue only when the collectibility criterion is met or the contract is terminated and payments are nonrefundable"
+        },
+        { "label": "D", "text": "Never recognize revenue from this contract" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 606-10-25-7, when the criteria for a contract under Step 1 are not met (including collectibility), consideration received is recognized as revenue only when (a) the entity has no remaining obligation to transfer goods/services and all or substantially all consideration has been received and is nonrefundable, or (b) the contract has been terminated and the consideration is nonrefundable. Until then, payments received are recorded as a deposit liability.",
+      "explanationJa": "ASC 606-10-25-7により、ステップ1の要件（回収可能性を含む）を満たさない場合、受領した対価は(a)残余義務がなく対価の大部分が返金不能、または(b)契約が終了し対価が返金不能の場合にのみ収益認識。それまでは預り金として計上。",
+      "references": ["ASC 606-10-25-7"],
+      "difficulty": "advanced",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-057",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Principal vs Agent - Indicators Revised",
+      "stem": "Travel Corp. arranges hotel bookings for customers. The hotel sets the room rate, accepts the credit risk, and is responsible for the guest experience. Travel Corp. earns a 15% commission. Travel Corp. collects $1,000 from the customer and remits $850 to the hotel. How much revenue should Travel Corp. recognize?",
+      "choices": [
+        { "label": "A", "text": "$1,000 (gross)" },
+        { "label": "B", "text": "$150 (net)" },
+        { "label": "C", "text": "$850" },
+        { "label": "D", "text": "$0 until the customer completes the stay" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-39, the key indicator for principal vs. agent is whether the entity controls the good or service before it is transferred to the customer. Since the hotel controls the room (sets the price, bears credit risk, and is responsible for service), Travel Corp. is an agent. An agent recognizes revenue on a net basis — only the commission of $150 ($1,000 × 15%). Gross reporting of $1,000 would be incorrect.",
+      "explanationJa": "ASC 606-10-55-39により、本人対代理人の判定は、財・サービスの移転前に企業が支配しているかがポイント。ホテルが部屋を支配しているため、Travel Corp.は代理人。手数料$150のみを純額で収益認識する。",
+      "references": ["ASC 606-10-55-39"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rev-058",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Modification - Prospective Treatment",
+      "stem": "Builder Corp. has a contract to build 100 units for $10,000 each ($1,000,000 total). After delivering 60 units, the contract is modified to reduce the price of the remaining 40 units to $8,000 each. The modification does not add distinct goods. The standalone selling price of the remaining units is $9,500 each at the modification date. How should Builder account for the modification?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a separate contract for the remaining 40 units"
+        },
+        {
+          "label": "B",
+          "text": "Prospectively, by adjusting the transaction price and measure of progress for the remaining 40 units"
+        },
+        {
+          "label": "C",
+          "text": "As a cumulative catch-up on the entire contract"
+        },
+        {
+          "label": "D",
+          "text": "As a termination of the old contract and creation of a new contract"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-25-13(b), when the remaining goods or services are distinct from those already transferred, and the modification does not qualify as a separate contract (because $8,000 < $9,500 SSP), it is treated as a termination of the old contract and creation of a new one. Effectively, for remaining goods that are distinct, the entity accounts for the modification prospectively. Revenue for the remaining 40 units = 40 × $8,000 = $320,000 recognized as units are delivered.",
+      "explanationJa": "ASC 606-10-25-13(b)により、残余の財・サービスが移転済みのものと区別可能で、別契約の要件を満たさない場合、旧契約の終了と新契約の開始として処理する。残り40ユニットの収益 = 40 × $8,000 = $320,000を将来に向かって認識。",
+      "references": ["ASC 606-10-25-13"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rev-059",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Constraint on Variable Consideration",
+      "stem": "Biotech Corp. enters a licensing agreement with a $2,000,000 upfront fee and a $5,000,000 milestone payment contingent on FDA approval. Biotech estimates a 40% probability of FDA approval. Under the constraint guidance, how much of the milestone should be included in the transaction price?",
+      "choices": [
+        { "label": "A", "text": "$5,000,000" },
+        {
+          "label": "B",
+          "text": "$2,000,000 (milestone excluded due to constraint)"
+        },
+        { "label": "C", "text": "$3,000,000" },
+        {
+          "label": "D",
+          "text": "$0 for the milestone; only the $2,000,000 upfront fee"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 606-10-32-11, variable consideration is included in the transaction price only to the extent that it is highly probable that a significant reversal in the amount of cumulative revenue recognized will NOT occur. A binary outcome (FDA approval with only 40% probability) involves high uncertainty — if the milestone is included and FDA approval is not obtained, a significant revenue reversal would occur. Therefore, the constraint prevents inclusion of the $5,000,000 milestone until the uncertainty is resolved. Only the $2,000,000 upfront fee is included.",
+      "explanationJa": "ASC 606-10-32-11により、変動対価は累積収益の重大な戻入が起きない可能性が非常に高い範囲でのみ取引価格に含める。FDA承認確率40%の二値的結果は高い不確実性があり、マイルストーン$5,000,000は制約により除外。前払金$2,000,000のみを含める。",
+      "references": ["ASC 606-10-32-11"],
+      "difficulty": "advanced",
+      "source": "AICPA Practice Exam"
+    },
+    {
+      "id": "rev-060",
+      "topic": "Revenue Recognition (ASC 606)",
+      "subtopic": "Sales-Based Royalty Exception",
+      "stem": "Publisher Corp. licenses its brand name to a retailer. The royalty is 5% of the retailer's sales. In Q1, the retailer reports sales of $2,000,000. When should Publisher Corp. recognize the $100,000 royalty revenue?",
+      "choices": [
+        { "label": "A", "text": "When the license is granted" },
+        {
+          "label": "B",
+          "text": "When the subsequent sales occur (i.e., as Q1 sales are made)"
+        },
+        { "label": "C", "text": "At the end of the contract period" },
+        { "label": "D", "text": "When cash is received from the retailer" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-55-65, for licenses of intellectual property, sales-based or usage-based royalties are recognized as revenue at the later of (1) when the subsequent sale or usage occurs, or (2) when the performance obligation to which the royalty is allocated has been satisfied. Since the license has been granted (obligation satisfied) and sales occurred in Q1, revenue is recognized as the underlying sales are made — $100,000 in Q1.",
+      "explanationJa": "ASC 606-10-55-65により、IP ライセンスの売上ベースロイヤルティは、(1)売上の発生時、または(2)関連する履行義務の充足時のいずれか遅い方で認識する。ライセンスは付与済みでQ1に売上発生のため、Q1に$100,000を認識。",
+      "references": ["ASC 606-10-55-65"],
+      "difficulty": "intermediate",
+      "source": "AICPA Released Questions"
     }
   ]
 }
