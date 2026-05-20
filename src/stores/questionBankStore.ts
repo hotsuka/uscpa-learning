@@ -108,7 +108,7 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 5,
+      version: 6,
       migrate: (persisted, version) => {
         // 破壊的処理の前に現在の localStorage 値を退避する
         backupBeforeMigrate("uscpa-question-bank", version);
@@ -170,6 +170,20 @@ export const useQuestionBankStore = create<QuestionBankState>()(
             const correct = answerMap.get("inv-031");
             if (correct && a.selectedAnswer === correct) {
               return { ...a, isCorrect: true };
+            }
+            return a;
+          });
+        }
+
+        // v5→v6: sc-016 の選択肢バグ（B・D が共に $80,000 に重複）修正に伴い、
+        // selectedAnswer="B" の attempt を "D" に補正し正解扱いにする。
+        // ユーザーは正解値 $80,000 を選んでいたが、シャッフルにより重複側の B に
+        // マッピングされ不正解として記録されていたため。
+        if (version === 5) {
+          state.attempts = state.attempts.map((a) => {
+            if (a.questionId !== "sc-016") return a;
+            if (a.selectedAnswer === "B" && a.isCorrect === false) {
+              return { ...a, selectedAnswer: "D", isCorrect: true };
             }
             return a;
           });
