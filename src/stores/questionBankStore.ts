@@ -108,7 +108,7 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 9,
+      version: 10,
       migrate: (persisted, version) => {
         // 破壊的処理の前に現在の localStorage 値を退避する
         backupBeforeMigrate("uscpa-question-bank", version);
@@ -220,6 +220,18 @@ export const useQuestionBankStore = create<QuestionBankState>()(
           state.attempts = state.attempts.map((a) => {
             if (a.questionId !== "inv-i-041") return a;
             return { ...a, isCorrect: true };
+          });
+        }
+
+        // v9→v10: inv-i-052 の correctAnswer バグ（"B" $500 → 正解は "A" $440）修正に伴い、
+        // selectedAnswer="A" かつ isCorrect=false の attempt を正解に補正する。
+        if (version === 9) {
+          state.attempts = state.attempts.map((a) => {
+            if (a.questionId !== "inv-i-052") return a;
+            if (a.selectedAnswer === "A" && a.isCorrect === false) {
+              return { ...a, isCorrect: true };
+            }
+            return a;
           });
         }
 
