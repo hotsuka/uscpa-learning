@@ -108,7 +108,7 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 8,
+      version: 9,
       migrate: (persisted, version) => {
         // 破壊的処理の前に現在の localStorage 値を退避する
         backupBeforeMigrate("uscpa-question-bank", version);
@@ -211,6 +211,15 @@ export const useQuestionBankStore = create<QuestionBankState>()(
               return { ...a, isCorrect: true };
             }
             return a;
+          });
+        }
+
+        // v8→v9: inv-i-041 の選択肢バグ（正解 $42,000 が選択肢に存在しなかった）修正に伴い、
+        // 問題自体が解答不能だったため、この設問への全回答を正解に補正する。
+        if (version === 8) {
+          state.attempts = state.attempts.map((a) => {
+            if (a.questionId !== "inv-i-041") return a;
+            return { ...a, isCorrect: true };
           });
         }
 
