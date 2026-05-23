@@ -15,7 +15,7 @@ const SUSPICIOUS = [
   { re: /but i wrote/i,                  label: 'but-i-wrote' },
   { re: /answer should be [A-D][. ]/i,   label: 'answer-should-be' },
   { re: /closest answer is/i,            label: 'closest-answer' },
-  { re: /alternative approach/i,         label: 'alternative-approach' },
+  // 「alternative approach」は ASC 606 等の会計基準の正式用語のため除外
   { re: /doesn.t match|do not match/i,   label: 'doesnt-match' },
   { re: /that gives [A-D][.,]/i,         label: 'that-gives' },
   { re: /so the answer should be [A-D]/i,label: 'so-answer-should-be' },
@@ -93,5 +93,10 @@ if (issues.SUSPICIOUS_EXPLANATION.length) {
 }
 
 const totalIssues = Object.values(issues).reduce((s, a) => s + a.length, 0);
-if (totalIssues === 0) console.log('問題なし — すべて正常です。');
-else console.log(`合計 ${totalIssues} 件の問題を検出。`);
+if (totalIssues === 0) {
+  console.log('問題なし — すべて正常です。');
+  process.exit(0);
+} else {
+  console.log(`合計 ${totalIssues} 件の問題を検出。コミット前に修正してください。`);
+  process.exit(1);
+}
