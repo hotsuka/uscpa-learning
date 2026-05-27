@@ -2,7 +2,7 @@
   "id": "far-cash-flows",
   "name": "Statement of Cash Flows",
   "topic": "Statement of Cash Flows",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "questions": [
     {
       "id": "cf-001",
@@ -1323,6 +1323,714 @@
       "references": ["ASC 830-230-45-1"],
       "difficulty": "advanced",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "cf-061",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash Paid to Suppliers",
+      "stem": "Company F reports cost of goods sold of $640,000. During the year, inventory increased by $25,000 and accounts payable to suppliers decreased by $18,000. Under the direct method, what is cash paid to suppliers?",
+      "choices": [
+        { "label": "A", "text": "$683,000" },
+        { "label": "B", "text": "$597,000" },
+        { "label": "C", "text": "$647,000" },
+        { "label": "D", "text": "$633,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Step 1: Purchases = COGS + Increase in inventory = $640,000 + $25,000 = $665,000. Step 2: Cash paid to suppliers = Purchases + Decrease in AP = $665,000 + $18,000 = $683,000. An increase in inventory means more was purchased than sold, and a decrease in AP means more cash was paid than purchases recorded on credit. The correct answer is A.",
+      "explanationJa": "ステップ1：仕入高 = COGS + 棚卸資産増加 = $640,000 + $25,000 = $665,000。ステップ2：仕入先への支払額 = 仕入高 + AP減少額 = $665,000 + $18,000 = $683,000。棚卸資産増加は売上以上の仕入を意味し、AP減少は掛仕入以上の現金支払を意味する。正解はA。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-062",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash Collected from Customers",
+      "stem": "Entity G reports sales revenue of $950,000 for the year. Accounts receivable was $120,000 at the beginning of the year and $105,000 at year-end. No accounts were written off during the year. Under the direct method, how much cash was collected from customers?",
+      "choices": [
+        { "label": "A", "text": "$935,000" },
+        { "label": "B", "text": "$965,000" },
+        { "label": "C", "text": "$950,000" },
+        { "label": "D", "text": "$1,070,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cash collected from customers = Sales revenue + Decrease in accounts receivable = $950,000 + ($120,000 - $105,000) = $950,000 + $15,000 = $965,000. A decrease in AR means the company collected more cash than it recognized as revenue during the period. The correct answer is B.",
+      "explanationJa": "顧客からの現金回収額 = 売上高 + 売掛金減少額 = $950,000 + ($120,000 - $105,000) = $950,000 + $15,000 = $965,000。売掛金の減少は、期中の売上高以上に現金を回収したことを意味する。正解はB。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-063",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Gain on Sale Adjustment",
+      "stem": "Company H sold a piece of land with a carrying value of $200,000 for $275,000 cash. Net income for the year was $400,000 and depreciation was $50,000. There were no other adjustments. Under the indirect method, what is cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$525,000" },
+        { "label": "B", "text": "$375,000" },
+        { "label": "C", "text": "$450,000" },
+        { "label": "D", "text": "$325,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The gain on sale of land = $275,000 - $200,000 = $75,000. Under the indirect method, the gain is subtracted from net income because the entire $275,000 cash proceeds are reported as an investing inflow. Operating cash flow = $400,000 + $50,000 (depreciation) - $75,000 (gain) = $375,000. The correct answer is B.",
+      "explanationJa": "土地売却益 = $275,000 - $200,000 = $75,000。間接法では、現金収入$275,000の全額が投資活動に計上されるため、売却益を純利益から減算する。営業CF = $400,000 + $50,000（減価償却費）- $75,000（売却益）= $375,000。正解はB。",
+      "references": ["ASC 230-10-45-28", "ASC 230-10-45-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-064",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Loss on Sale Adjustment",
+      "stem": "Entity J sold equipment with an original cost of $180,000 and accumulated depreciation of $110,000 for $50,000 cash. When preparing the operating section using the indirect method, how should the loss on this sale be treated?",
+      "choices": [
+        { "label": "A", "text": "Subtracted from net income" },
+        { "label": "B", "text": "Added back to net income" },
+        { "label": "C", "text": "Reported as an investing outflow" },
+        { "label": "D", "text": "No adjustment is needed" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Book value = $180,000 - $110,000 = $70,000. Sale price = $50,000. Loss = $70,000 - $50,000 = $20,000. The loss reduced net income but did not use cash (the cash effect is the $50,000 investing inflow). Under the indirect method, the loss is added back to net income to remove its non-cash effect from operating activities. The correct answer is B.",
+      "explanationJa": "簿価 = $180,000 - $110,000 = $70,000。売却価格 = $50,000。売却損 = $70,000 - $50,000 = $20,000。売却損は純利益を減少させたが現金は使用していない（現金効果は投資活動の$50,000流入）。間接法では、営業活動から非現金効果を除くため売却損を純利益に加算する。正解はB。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-065",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Accounts Payable Change",
+      "stem": "A company's accounts payable increased from $85,000 to $102,000 during the year. When preparing the operating section under the indirect method, this change is:",
+      "choices": [
+        { "label": "A", "text": "Added to net income as a $17,000 adjustment" },
+        {
+          "label": "B",
+          "text": "Subtracted from net income as a $17,000 adjustment"
+        },
+        { "label": "C", "text": "Reported as a financing activity" },
+        { "label": "D", "text": "Disclosed as a noncash activity" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An increase in accounts payable of $17,000 ($102,000 - $85,000) means the company paid less cash to suppliers than the expenses recorded. Under the indirect method, an increase in a current operating liability is added to net income because it represents cash that was saved relative to the expenses recognized. The correct answer is A.",
+      "explanationJa": "買掛金の$17,000増加（$102,000 - $85,000）は、計上された費用よりも仕入先への支払が少なかったことを意味する。間接法では、流動営業負債の増加は、認識された費用に対して節約された現金を表すため、純利益に加算する。正解はA。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-066",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Inventory Change",
+      "stem": "During the year, Company K's inventory increased from $140,000 to $175,000. All other working capital accounts remained unchanged. Net income was $220,000 and depreciation was $30,000. What is cash provided by operating activities under the indirect method?",
+      "choices": [
+        { "label": "A", "text": "$215,000" },
+        { "label": "B", "text": "$285,000" },
+        { "label": "C", "text": "$225,000" },
+        { "label": "D", "text": "$255,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Inventory increase = $175,000 - $140,000 = $35,000. Under the indirect method, an increase in inventory is subtracted from net income because the company spent more cash on inventory than was expensed as COGS. Operating cash flow = $220,000 + $30,000 (depreciation) - $35,000 (inventory increase) = $215,000. The correct answer is A.",
+      "explanationJa": "棚卸資産増加 = $175,000 - $140,000 = $35,000。間接法では、棚卸資産の増加はCOGSとして費用計上された以上に現金を支出したことを意味するため、純利益から減算する。営業CF = $220,000 + $30,000（減価償却費）- $35,000（棚卸資産増加）= $215,000。正解はA。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-067",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Amortization Addback",
+      "stem": "Entity L has the following items: net income $310,000; depreciation of buildings $45,000; amortization of a patent $12,000; amortization of bond discount $4,000; increase in accounts receivable $20,000. What is cash provided by operating activities using the indirect method?",
+      "choices": [
+        { "label": "A", "text": "$351,000" },
+        { "label": "B", "text": "$347,000" },
+        { "label": "C", "text": "$363,000" },
+        { "label": "D", "text": "$371,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net income $310,000 + depreciation $45,000 + patent amortization $12,000 + bond discount amortization $4,000 - increase in AR $20,000 = $351,000. All three non-cash items (depreciation, patent amortization, bond discount amortization) are added back. Bond discount amortization increases interest expense without a cash outflow. The increase in AR is subtracted. The correct answer is A.",
+      "explanationJa": "純利益$310,000 + 建物減価償却費$45,000 + 特許権償却$12,000 + 社債割引償却$4,000 - 売掛金増加$20,000 = $351,000。3つの非現金項目（減価償却費、特許権償却、社債割引償却）はすべて加算する。社債割引償却は現金流出を伴わず利息費用を増加させる。売掛金増加は減算する。正解はA。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-068",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Operating vs Investing - Equipment Trade-In",
+      "stem": "Company M trades in old equipment (cost $100,000, accumulated depreciation $65,000) and pays $90,000 cash to acquire new equipment with a fair value of $125,000. The trade has commercial substance. How is this transaction reported on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$90,000 cash outflow in investing activities"
+        },
+        {
+          "label": "B",
+          "text": "$125,000 cash outflow in investing activities"
+        },
+        {
+          "label": "C",
+          "text": "$90,000 cash outflow in investing; $35,000 noncash disclosure"
+        },
+        { "label": "D", "text": "$90,000 cash outflow in financing activities" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Only the cash portion ($90,000) of the exchange is reported on the statement of cash flows as an investing outflow. The trade-in of old equipment for new equipment is a single investing transaction. Since the trade has commercial substance, a gain of $125,000 - $90,000 - ($100,000 - $65,000) = $0 is recognized. No separate noncash disclosure is needed because the $35,000 book value of the traded asset is not a noncash investing/financing activity — it is simply part of the exchange. The correct answer is A.",
+      "explanationJa": "交換の現金部分（$90,000）のみがCF計算書上の投資活動の流出として報告される。旧設備と新設備の交換は単一の投資取引である。商業的実質があるため、利益 = $125,000 - $90,000 - ($100,000 - $65,000) = $0が認識される。旧資産の簿価$35,000は非現金の投資・財務活動の開示対象ではなく、交換取引の一部にすぎない。正解はA。",
+      "references": ["ASC 230-10-45-12", "ASC 360-10-40-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-069",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Treasury Stock Purchase Classification",
+      "stem": "Entity N purchases 10,000 shares of its own common stock on the open market for $45 per share. How is this transaction classified on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating activity — cash outflow of $450,000"
+        },
+        {
+          "label": "B",
+          "text": "Financing activity — cash outflow of $450,000"
+        },
+        {
+          "label": "C",
+          "text": "Investing activity — cash outflow of $450,000"
+        },
+        { "label": "D", "text": "Noncash financing activity" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-45-15, payments to acquire the entity's own equity instruments (treasury stock) are classified as financing activities. The total cash outflow is 10,000 shares x $45 = $450,000, reported as a financing outflow. The correct answer is B.",
+      "explanationJa": "自己株式の取得（10,000株 × $45 = $450,000）は財務活動の現金流出として分類される。ASC 230-10-45-15に基づき、自社の持分証券の取得のための支払は財務活動に該当する。正解はB。",
+      "references": ["ASC 230-10-45-15"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-070",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Dividend Paid - Financing Activity",
+      "stem": "Company P declared a $2.00 per share cash dividend on its 50,000 outstanding shares on December 1. The dividend was paid on December 28. How does this dividend affect the statement of cash flows for the year?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$100,000 financing outflow"
+        },
+        {
+          "label": "B",
+          "text": "$100,000 operating outflow"
+        },
+        {
+          "label": "C",
+          "text": "No cash flow effect since it was only declared"
+        },
+        {
+          "label": "D",
+          "text": "$100,000 investing outflow"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The dividend was both declared and paid during the year. Cash paid = 50,000 shares x $2.00 = $100,000. Under ASC 230-10-45-15, dividends paid to shareholders are classified as financing activities. Since the dividend was actually paid (not merely declared), there is a $100,000 cash outflow in financing activities. The correct answer is A.",
+      "explanationJa": "配当は宣言と支払の両方が年度内に行われた。支払現金 = 50,000株 × $2.00 = $100,000。ASC 230-10-45-15に基づき、株主への配当支払は財務活動に分類される。配当は実際に支払われたため、財務活動の現金流出$100,000が計上される。正解はA。",
+      "references": ["ASC 230-10-45-15"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-071",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Interest Received - Operating Classification",
+      "stem": "Entity Q holds a $500,000 corporate bond investment and received $25,000 in interest payments during the year. Under U.S. GAAP, how is the interest received classified on the statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Operating activities" },
+        { "label": "B", "text": "Investing activities" },
+        { "label": "C", "text": "Financing activities" },
+        {
+          "label": "D",
+          "text": "Either operating or investing at the entity's election"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-16, interest received is classified as an operating activity under U.S. GAAP, regardless of whether the underlying investment is classified as investing. This is consistent with the treatment of interest paid, which is also operating. IFRS allows interest received to be classified as either operating or investing, but U.S. GAAP does not provide this election. The correct answer is A.",
+      "explanationJa": "US GAAPでは、受取利息は営業活動に分類される。投資対象が投資活動に分類されるかどうかに関係なく、利息の受取は営業活動である。これは支払利息も営業活動に分類されることと整合している。IFRSでは営業または投資の選択が認められるが、US GAAPでは選択できない。正解はA。",
+      "references": ["ASC 230-10-45-16"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-072",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Lease Payment - Operating vs Finance Split",
+      "stem": "Company R makes a $12,000 monthly payment on a finance lease. Of each payment, $3,500 represents interest and $8,500 represents principal reduction. How are these payments classified on the statement of cash flows under U.S. GAAP?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Interest portion ($3,500) as operating; principal portion ($8,500) as financing"
+        },
+        { "label": "B", "text": "Entire $12,000 as operating activities" },
+        { "label": "C", "text": "Entire $12,000 as financing activities" },
+        {
+          "label": "D",
+          "text": "Interest portion ($3,500) as financing; principal portion ($8,500) as investing"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "For a finance lease under ASC 842, the lease payment is split between interest and principal. Under ASC 230-10-45-17, interest paid is classified as an operating activity ($3,500). Under ASC 230-10-45-15, the principal repayment portion is classified as a financing activity ($8,500). This is analogous to how debt repayments are classified. The correct answer is A.",
+      "explanationJa": "ファイナンスリースの支払は利息部分と元本部分に分けられる。ASC 230-10-45-17に基づき利息部分（$3,500）は営業活動、ASC 230-10-45-15に基づき元本返済部分（$8,500）は財務活動に分類される。これは借入金の返済と同様の分類である。正解はA。",
+      "references": ["ASC 230-10-45-17", "ASC 230-10-45-15", "ASC 842-20-45-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-073",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Proceeds from Bond Issuance - Premium",
+      "stem": "Entity S issues $1,000,000 face value, 8% bonds at 104. The total cash received is $1,040,000. How is this reported on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$1,040,000 financing inflow"
+        },
+        {
+          "label": "B",
+          "text": "$1,000,000 financing inflow and $40,000 operating inflow"
+        },
+        {
+          "label": "C",
+          "text": "$1,000,000 financing inflow with $40,000 premium disclosed separately"
+        },
+        {
+          "label": "D",
+          "text": "$1,040,000 investing inflow"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-14, proceeds from issuing bonds are classified as financing activities. The entire cash received of $1,040,000 (face value plus premium) is reported as a single financing inflow. The premium is not separated from the principal for cash flow classification purposes — the total cash received is what matters. The correct answer is A.",
+      "explanationJa": "社債発行による収入は財務活動に分類される。受取現金の全額$1,040,000（額面＋プレミアム）が単一の財務活動の流入として報告される。CF計算書ではプレミアムを元本から分離する必要はなく、受取った現金総額が重要である。正解はA。",
+      "references": ["ASC 230-10-45-14"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-074",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Repayment of Long-Term Debt",
+      "stem": "Company T repays a $300,000 bank loan that was originally classified as long-term debt. Of the $300,000 repayment, $280,000 represents principal and $20,000 represents accrued interest. How are these amounts classified on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Principal ($280,000) as financing; interest ($20,000) as operating"
+        },
+        {
+          "label": "B",
+          "text": "Entire $300,000 as financing activities"
+        },
+        {
+          "label": "C",
+          "text": "Entire $300,000 as operating activities"
+        },
+        {
+          "label": "D",
+          "text": "Principal ($280,000) as investing; interest ($20,000) as operating"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under U.S. GAAP, the principal repayment of $280,000 on a borrowing is classified as a financing activity per ASC 230-10-45-15. The interest payment of $20,000 is classified as an operating activity per ASC 230-10-45-17. The two components are reported in separate sections of the cash flow statement. The correct answer is A.",
+      "explanationJa": "US GAAPでは、借入金の元本返済$280,000はASC 230-10-45-15に基づき財務活動に分類される。利息支払$20,000はASC 230-10-45-17に基づき営業活動に分類される。2つの構成要素はCF計算書の異なるセクションで報告される。正解はA。",
+      "references": ["ASC 230-10-45-15", "ASC 230-10-45-17"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-075",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Capital Expenditure Classification",
+      "stem": "Entity U spent $400,000 to construct a new warehouse on its own property. The construction costs included $320,000 for materials and labor and $80,000 for capitalized interest. How is the $400,000 classified on the statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Entire $400,000 as investing activities" },
+        {
+          "label": "B",
+          "text": "$320,000 as investing and $80,000 as operating"
+        },
+        {
+          "label": "C",
+          "text": "$320,000 as investing and $80,000 as financing"
+        },
+        { "label": "D", "text": "Entire $400,000 as operating activities" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-12, cash payments for the acquisition or construction of property, plant, and equipment are classified as investing activities. Capitalized interest is part of the asset's cost and the total cash spent ($400,000) is reported as an investing outflow. ASC 230-10-45-13 states that the capitalized interest portion is classified as investing, not operating. The correct answer is A.",
+      "explanationJa": "有形固定資産の取得・建設のための現金支出は投資活動に分類される。資産化利息は資産原価の一部であり、支出した現金の総額（$400,000）が投資活動の流出として報告される。ASC 230-10-45-13に基づき、資産化利息部分は営業活動ではなく投資活動に分類される。正解はA。",
+      "references": ["ASC 230-10-45-12", "ASC 230-10-45-13"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-076",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Intangible Asset Purchase",
+      "stem": "Company V purchased a patent from an unrelated third party for $250,000 cash. How is this transaction classified on the statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Operating activity" },
+        { "label": "B", "text": "Investing activity" },
+        { "label": "C", "text": "Financing activity" },
+        { "label": "D", "text": "Noncash investing activity" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-45-12, cash payments to acquire productive assets (including intangible assets such as patents) are classified as investing activities. The $250,000 cash payment for the patent is an investing outflow. Only internally generated intangible costs might have a different classification depending on the nature of the expenditure. The correct answer is B.",
+      "explanationJa": "特許権などの無形資産を含む生産的資産の取得のための現金支出は、投資活動に分類される。特許権取得のための$250,000の現金支払は投資活動の流出である。自社開発の無形資産コストのみ支出の性質によって異なる分類となる可能性がある。正解はB。",
+      "references": ["ASC 230-10-45-12"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-077",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Loan to Related Party",
+      "stem": "Entity W lends $150,000 cash to a subsidiary. How does the parent company classify this transaction on its separate-entity statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Operating activity — cash outflow" },
+        { "label": "B", "text": "Investing activity — cash outflow" },
+        { "label": "C", "text": "Financing activity — cash outflow" },
+        { "label": "D", "text": "Not reported — intercompany transaction" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-45-12, loans made to other entities (including related parties) are classified as investing activities. The $150,000 loan to the subsidiary is an investing cash outflow on the parent's separate-entity statement of cash flows. In consolidated statements, this intercompany loan would be eliminated. The correct answer is B.",
+      "explanationJa": "関連当事者を含む他の企業への貸付は投資活動に分類される。子会社への$150,000の貸付は、親会社の個別CF計算書上の投資活動の流出である。連結財務諸表では、この会社間貸付は消去される。正解はB。",
+      "references": ["ASC 230-10-45-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-078",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Proceeds from Sale of Investment",
+      "stem": "Company X sold an available-for-sale debt security with a carrying value of $180,000 (amortized cost $170,000) for $195,000. The unrealized gain of $10,000 had previously been recorded in AOCI. What is the investing cash inflow reported on the statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "$195,000" },
+        { "label": "B", "text": "$185,000" },
+        { "label": "C", "text": "$170,000" },
+        { "label": "D", "text": "$25,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The entire cash proceeds of $195,000 are reported as an investing inflow on the statement of cash flows. The cash flow statement reports actual cash received, regardless of whether the investment had unrealized gains in AOCI or what the amortized cost was. The realized gain of $25,000 ($195,000 - $170,000 amortized cost) would be reclassified from AOCI and reported in net income, then removed from operating activities under the indirect method. The correct answer is A.",
+      "explanationJa": "売却収入の全額$195,000が投資活動の流入として報告される。CF計算書は実際に受け取った現金を報告するため、AOCIの未実現利益や償却原価に関係なく、受取現金総額が投資活動に計上される。実現利益$25,000（$195,000 - 償却原価$170,000）はAOCIから組替えられ純利益に計上後、間接法では営業活動から除外される。正解はA。",
+      "references": ["ASC 230-10-45-12", "ASC 320-10-45-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-079",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Cash and Cash Equivalents - Definition Application",
+      "stem": "Which of the following would NOT be classified as a cash equivalent under ASC 230?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A 60-day U.S. Treasury bill purchased at original issuance"
+        },
+        {
+          "label": "B",
+          "text": "A money market fund with daily liquidity"
+        },
+        {
+          "label": "C",
+          "text": "A 6-month certificate of deposit"
+        },
+        {
+          "label": "D",
+          "text": "A 90-day commercial paper purchased at original issuance"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 230-10-45-5, cash equivalents are short-term, highly liquid investments with original maturities of three months or less from the date of purchase by the entity. A 6-month certificate of deposit has an original maturity exceeding three months and therefore does not qualify as a cash equivalent. Treasury bills (60-day), money market funds, and commercial paper (90-day) with original maturities of three months or less all qualify. The correct answer is C.",
+      "explanationJa": "ASC 230-10-45-5では、現金同等物は取得日から当初満期が3ヶ月以内の短期で流動性の高い投資と定義される。6ヶ月の定期預金は当初満期が3ヶ月を超えるため現金同等物に該当しない。60日の米国財務省短期証券、マネーマーケットファンド、90日のコマーシャルペーパーはすべて該当する。正解はC。",
+      "references": ["ASC 230-10-45-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-080",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Bank Overdraft - Financing Classification",
+      "stem": "Company Y has a bank overdraft of $35,000 at year-end. The company does not have a right of offset with other bank accounts at the same institution. How should this overdraft be classified on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Included in the ending cash and cash equivalents balance"
+        },
+        {
+          "label": "B",
+          "text": "Reported as a financing activity"
+        },
+        {
+          "label": "C",
+          "text": "Reported as an operating activity"
+        },
+        {
+          "label": "D",
+          "text": "Disclosed as a noncash financing activity"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-45-4, bank overdrafts that are repayable on demand and form an integral part of an entity's cash management may be included as a component of cash and cash equivalents. However, when no right of offset exists, the overdraft is classified as a short-term borrowing. Changes in such overdrafts are reported as financing activities because they represent borrowings from the bank. The correct answer is B.",
+      "explanationJa": "相殺の権利がない場合、銀行当座貸越は短期借入として分類される。このような当座貸越の変動は銀行からの借入を表すため、財務活動として報告される。相殺の権利がある場合は現金及び現金同等物の構成要素として含められる場合がある。正解はB。",
+      "references": ["ASC 230-10-45-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-081",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Working Capital - Accrued Liabilities Change",
+      "stem": "During the year, Company Z's net income was $500,000. Depreciation was $60,000, accrued salaries payable increased by $22,000, prepaid insurance decreased by $8,000, and deferred revenue increased by $15,000. Assuming no other adjustments, what is cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$605,000" },
+        { "label": "B", "text": "$575,000" },
+        { "label": "C", "text": "$565,000" },
+        { "label": "D", "text": "$555,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net income $500,000 + depreciation $60,000 + increase in accrued salaries $22,000 + decrease in prepaid insurance $8,000 + increase in deferred revenue $15,000 = $605,000. Increases in current liabilities (accrued salaries, deferred revenue) are added because more expenses were accrued than paid. A decrease in prepaid insurance (a current asset) is added because cash was not spent on insurance as much as the expense recognized. The correct answer is A.",
+      "explanationJa": "純利益$500,000 + 減価償却費$60,000 + 未払給与増加$22,000 + 前払保険料減少$8,000 + 前受収益増加$15,000 = $605,000。流動負債の増加（未払給与、前受収益）は費用計上額以上に支払が少なかったため加算。前払保険料の減少（流動資産）は認識した費用ほど現金を支出しなかったため加算。正解はA。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-082",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Comprehensive Reconciliation",
+      "stem": "Entity AA reported the following: net income $275,000; depreciation $38,000; amortization of goodwill impairment loss $0; stock-based compensation expense $18,000; gain on sale of building $42,000; increase in AR $31,000; decrease in inventory $16,000; increase in AP $9,000; decrease in accrued expenses $7,000; increase in income taxes payable $5,000. What is cash from operating activities?",
+      "choices": [
+        { "label": "A", "text": "$281,000" },
+        { "label": "B", "text": "$323,000" },
+        { "label": "C", "text": "$267,000" },
+        { "label": "D", "text": "$295,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net income $275,000 + depreciation $38,000 + stock-based compensation $18,000 - gain on sale $42,000 - increase in AR $31,000 + decrease in inventory $16,000 + increase in AP $9,000 - decrease in accrued expenses $7,000 + increase in income taxes payable $5,000 = $281,000. Non-cash charges (depreciation, SBC) are added. The gain is subtracted (cash is in investing). Working capital: asset increases subtracted, decreases added; liability increases added, decreases subtracted. The correct answer is A.",
+      "explanationJa": "純利益$275,000 + 減価償却費$38,000 + 株式報酬費用$18,000 - 建物売却益$42,000 - AR増加$31,000 + 棚卸資産減少$16,000 + AP増加$9,000 - 未払費用減少$7,000 + 未払法人税増加$5,000 = $281,000。非現金費用（減価償却費、SBC）は加算。売却益は減算（現金は投資活動に計上）。運転資本：資産増加は減算、減少は加算。負債増加は加算、減少は減算。正解はA。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-083",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Investment in Available-for-Sale Securities",
+      "stem": "Company BB purchased available-for-sale debt securities for $200,000 during the year and received $15,000 in interest income. At year-end, the securities had a fair value of $210,000. How are these transactions reported on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Purchase of $200,000 as investing outflow; interest of $15,000 as operating inflow; unrealized gain not reported"
+        },
+        {
+          "label": "B",
+          "text": "Purchase of $200,000 as investing outflow; interest and unrealized gain totaling $25,000 as operating inflow"
+        },
+        {
+          "label": "C",
+          "text": "Purchase of $210,000 as investing outflow; interest of $15,000 as operating inflow"
+        },
+        {
+          "label": "D",
+          "text": "Purchase of $200,000 as operating outflow; interest of $15,000 as operating inflow"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The purchase of AFS debt securities for $200,000 is reported as an investing outflow at the cash amount paid. Interest income received of $15,000 is an operating inflow. The $10,000 unrealized gain ($210,000 - $200,000) does not appear on the cash flow statement because it is not a cash transaction — it is recorded in other comprehensive income. Only cash transactions are reflected. The correct answer is A.",
+      "explanationJa": "AFS有価証券の購入$200,000は支払った現金額で投資活動の流出として報告。受取利息$15,000は営業活動の流入。未実現利益$10,000（$210,000 - $200,000）はCF計算書に表示されない（現金取引ではなくOCIに計上）。CF計算書は現金取引のみを反映する。正解はA。",
+      "references": ["ASC 230-10-45-12", "ASC 230-10-45-16", "ASC 320-10-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-084",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Capitalized Software Development Costs",
+      "stem": "Entity CC spent $180,000 on software development during the year. Of this amount, $50,000 was for preliminary project stage costs (expensed) and $130,000 was for application development stage costs (capitalized). How are these amounts classified on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$50,000 as operating outflow; $130,000 as investing outflow"
+        },
+        {
+          "label": "B",
+          "text": "Entire $180,000 as operating outflow"
+        },
+        {
+          "label": "C",
+          "text": "Entire $180,000 as investing outflow"
+        },
+        {
+          "label": "D",
+          "text": "$50,000 as investing outflow; $130,000 as operating outflow"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 350-40, internal-use software costs incurred during the preliminary project stage are expensed and classified as operating outflows ($50,000). Costs incurred during the application development stage that meet capitalization criteria are capitalized as an intangible asset, and the cash outflow is classified as an investing activity ($130,000). The classification follows the accounting treatment. The correct answer is A.",
+      "explanationJa": "ASC 350-40に基づき、予備プロジェクト段階のコスト$50,000は費用処理され営業活動の流出に分類。アプリケーション開発段階のコスト$130,000は無形資産として資産化され、投資活動の流出に分類。CF計算書の分類は会計処理に従う。正解はA。",
+      "references": ["ASC 350-40-25-2", "ASC 230-10-45-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-085",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Non-Cash Activity - Stock Dividend",
+      "stem": "Company DD declared and distributed a 10% stock dividend on its 200,000 outstanding shares when the market price was $30 per share. How is this transaction reported on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Not reported on the cash flow statement and not disclosed as a noncash activity"
+        },
+        {
+          "label": "B",
+          "text": "Disclosed as a noncash investing and financing activity"
+        },
+        {
+          "label": "C",
+          "text": "$600,000 financing outflow"
+        },
+        {
+          "label": "D",
+          "text": "$600,000 operating outflow"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A stock dividend involves no cash exchange and no transfer between parties — it is a reclassification within equity (from retained earnings to common stock and APIC). Unlike a noncash investing/financing activity (e.g., converting debt to equity), a stock dividend does not qualify for noncash disclosure under ASC 230-10-50-3 because it does not involve an investing or financing transaction. It is simply excluded from the cash flow statement entirely. The correct answer is A.",
+      "explanationJa": "株式配当は現金の授受がなく、当事者間の移転もない。資本内の組替（利益剰余金から資本金・資本剰余金へ）にすぎない。ASC 230-10-50-3の非現金の投資・財務活動の開示は、投資・財務取引に該当する場合のみ要求される。株式配当は投資・財務取引ではないため、CF計算書には一切表示されない。正解はA。",
+      "references": ["ASC 230-10-50-3", "ASC 505-20-25-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-086",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Tax Refund Received Classification",
+      "stem": "Entity EE received a $75,000 income tax refund during the year relating to an amended prior-year return. How is this transaction classified on the statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Operating activities — cash inflow" },
+        { "label": "B", "text": "Investing activities — cash inflow" },
+        { "label": "C", "text": "Financing activities — cash inflow" },
+        { "label": "D", "text": "Noncash operating activity" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-17, income tax payments and refunds are classified as operating activities. The $75,000 tax refund is an operating cash inflow, regardless of which prior year it relates to. U.S. GAAP does not allocate taxes to investing or financing activities except in specific situations (e.g., excess tax benefits prior to ASU 2016-09). The correct answer is A.",
+      "explanationJa": "ASC 230-10-45-17に基づき、法人税の支払及び還付は営業活動に分類される。$75,000の税金還付は、どの過年度に関連するかに関係なく、営業活動の現金流入である。特定の場合を除き、US GAAPでは税金を投資・財務活動に配分しない。正解はA。",
+      "references": ["ASC 230-10-45-17"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-087",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Cash Flow Statement - Two-Year Comparative",
+      "stem": "When presenting comparative statements of cash flows, which of the following is correct under ASC 230?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cash flows from all three activity sections must be presented for each period shown"
+        },
+        {
+          "label": "B",
+          "text": "Only the current year's cash flows must be presented in detail; prior year may be summarized"
+        },
+        {
+          "label": "C",
+          "text": "Only operating cash flows are required for the comparative period"
+        },
+        {
+          "label": "D",
+          "text": "Comparative cash flow statements are not required under U.S. GAAP"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-1, a statement of cash flows is required for each period for which an income statement is presented. When comparative financial statements are presented, the statement of cash flows must include all three sections (operating, investing, and financing) for each period. There is no provision to abbreviate or summarize prior period cash flows. The correct answer is A.",
+      "explanationJa": "ASC 230-10-45-1に基づき、損益計算書が表示される各期間についてCF計算書が必要。比較財務諸表を表示する場合、CF計算書は各期間について3つのセクション（営業、投資、財務）をすべて含める必要がある。過年度のCFを簡略化・要約する規定はない。正解はA。",
+      "references": ["ASC 230-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-088",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Operating Cash Flow Ratio",
+      "stem": "Company FF has the following data: cash from operating activities $360,000; current liabilities at year-end $240,000; total liabilities $800,000; net income $300,000. What is the operating cash flow ratio (operating cash flow to current liabilities)?",
+      "choices": [
+        { "label": "A", "text": "1.50" },
+        { "label": "B", "text": "0.45" },
+        { "label": "C", "text": "1.20" },
+        { "label": "D", "text": "0.75" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The operating cash flow ratio = Cash from operating activities / Current liabilities = $360,000 / $240,000 = 1.50. This ratio measures a company's ability to cover its current liabilities with cash generated from operations. A ratio above 1.0 indicates that operating cash flows are sufficient to cover current obligations. The correct answer is A.",
+      "explanationJa": "営業CFカバレッジ比率 = 営業活動によるCF / 流動負債 = $360,000 / $240,000 = 1.50。この比率は営業活動から生み出される現金で流動負債をカバーする能力を測定する。1.0を超える比率は、営業CFが流動負債を十分にカバーしていることを示す。正解はA。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-089",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Cash Flow from Discontinued Operations",
+      "stem": "Company GG reported total operating cash flow of $520,000, including $80,000 from a component that was classified as a discontinued operation during the year. Under ASC 230, how should the cash flows from the discontinued operation be presented?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cash flows may be reported within each category (operating, investing, financing) or disclosed in the notes"
+        },
+        {
+          "label": "B",
+          "text": "Cash flows must be reported as a single line item in investing activities"
+        },
+        {
+          "label": "C",
+          "text": "Cash flows must be excluded from the statement entirely"
+        },
+        {
+          "label": "D",
+          "text": "Cash flows must be reported in a separate fourth section of the statement"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-24, cash flows from discontinued operations may be presented separately within each cash flow category (operating, investing, and financing) on the face of the statement, or the information may be disclosed in the notes. There is no requirement to create a separate fourth section, nor to exclude them. The entity has flexibility in how to present this information. The correct answer is A.",
+      "explanationJa": "ASC 230-10-45-24に基づき、非継続事業からのCFは、CF計算書の各区分（営業、投資、財務）内で区分表示するか、注記で開示することができる。第4のセクションを作成する要件も、除外する要件もない。表示方法には柔軟性がある。正解はA。",
+      "references": ["ASC 230-10-45-24", "ASC 205-20-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-090",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Investing - Collection of Note Receivable",
+      "stem": "Entity HH collected $120,000 on a note receivable from a customer. The original $100,000 loan was made two years ago, and $20,000 represents interest. How are these amounts classified on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Principal of $100,000 as investing inflow; interest of $20,000 as operating inflow"
+        },
+        {
+          "label": "B",
+          "text": "Entire $120,000 as investing inflow"
+        },
+        {
+          "label": "C",
+          "text": "Entire $120,000 as operating inflow"
+        },
+        {
+          "label": "D",
+          "text": "Principal of $100,000 as operating inflow; interest of $20,000 as investing inflow"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230-10-45-12, the collection of a loan (principal of $100,000) is classified as an investing inflow — it is the return of an investing activity. Under ASC 230-10-45-16, the interest collected ($20,000) is classified as an operating inflow under U.S. GAAP. The two components are reported in different sections of the cash flow statement. The correct answer is A.",
+      "explanationJa": "ASC 230-10-45-12に基づき、貸付金の回収（元本$100,000）は投資活動の流入に分類される。ASC 230-10-45-16に基づき、回収した利息（$20,000）はUS GAAPでは営業活動の流入に分類される。2つの構成要素はCF計算書の異なるセクションで報告される。正解はA。",
+      "references": ["ASC 230-10-45-12", "ASC 230-10-45-16"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

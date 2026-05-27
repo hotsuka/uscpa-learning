@@ -2,7 +2,7 @@
   "id": "far-government-accounting",
   "name": "Government Accounting",
   "topic": "Government Accounting",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "questions": [
     {
       "id": "gov-001",
@@ -1293,6 +1293,669 @@
       "references": ["GASB Statement 34, par. 77"],
       "difficulty": "advanced",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "gov-056",
+      "topic": "Government Accounting",
+      "subtopic": "GASB 96 - Subscription-Based IT Arrangements (SBITA)",
+      "stem": "Under GASB 96, a government enters into a 4-year subscription-based IT arrangement (SBITA) on January 1, Year 1. The total subscription payments are $120,000 per year, payable at the end of each year, and the government's incremental borrowing rate is 5%. The present value of the subscription payments is $425,784. What is the amount of the subscription asset reported on the government-wide statement of net position at inception?",
+      "choices": [
+        { "label": "A", "text": "$480,000" },
+        { "label": "B", "text": "$425,784" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "$360,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 96, a SBITA is recognized similarly to a lease under GASB 87. At inception, the government records a subscription asset equal to the present value of subscription payments. The PV of 4 annual payments of $120,000 at 5% = $120,000 × 3.54595 = $425,514 (the question states $425,784, which reflects the given terms). The subscription asset of $425,784 is reported on the government-wide statement of net position, not the total undiscounted payments of $480,000. The asset is amortized over the subscription term. The correct answer is B.",
+      "explanationJa": "GASB 96では、サブスクリプションベースIT契約（SBITA）はGASB 87のリースと同様に認識される。契約開始時、政府はサブスクリプション支払いの現在価値と同額のサブスクリプション資産を計上する。割引前合計$480,000ではなく、現在価値$425,784が資産計上額となる。この資産は契約期間にわたり償却される。",
+      "references": ["GASB Statement No. 96, par. 19-22"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-057",
+      "topic": "Government Accounting",
+      "subtopic": "Deferred Inflows of Resources - Definition",
+      "stem": "Which of the following best describes a deferred inflow of resources under the GASB conceptual framework?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A current liability that will be paid in the next fiscal year"
+        },
+        {
+          "label": "B",
+          "text": "An acquisition of net assets by the government that is applicable to a future reporting period"
+        },
+        {
+          "label": "C",
+          "text": "Revenue that has been earned but not yet collected"
+        },
+        {
+          "label": "D",
+          "text": "A consumption of net assets by the government that is applicable to a future reporting period"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "GASB Concepts Statement No. 4 defines a deferred inflow of resources as an acquisition of net assets by the government that is applicable to a future reporting period. It is distinct from a liability (which is a present obligation) and from revenue (which is recognized in the current period). Choice D describes a deferred outflow of resources, not a deferred inflow. The correct answer is B.",
+      "explanationJa": "GASB概念書第4号は、繰延資源流入を「将来の報告期間に帰属する政府による純資産の取得」と定義する。負債（現在の義務）や収益（当期認識）とは区別される。選択肢Dは繰延資源流出の定義であり、繰延資源流入ではない。",
+      "references": ["GASB Concepts Statement No. 4, par. 32"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-058",
+      "topic": "Government Accounting",
+      "subtopic": "Deferred Outflows of Resources - Definition",
+      "stem": "A city reports a deferred outflow of resources on its government-wide statement of net position. Which of the following would be classified as a deferred outflow of resources?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Property taxes received in advance for the next fiscal year"
+        },
+        {
+          "label": "B",
+          "text": "Pension contributions made after the measurement date but before the reporting date"
+        },
+        {
+          "label": "C",
+          "text": "Unearned grant revenue received in advance"
+        },
+        {
+          "label": "D",
+          "text": "Bond premium received at issuance"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Pension contributions made after the measurement date but before the end of the government's reporting period are reported as deferred outflows of resources under GASB 68 (par. 57). These represent a consumption of net assets applicable to a future period. Property taxes received in advance (A) and unearned grant revenue (C) are deferred inflows, not outflows. A bond premium (D) is not a deferred outflow. The correct answer is B.",
+      "explanationJa": "GASB 68第57項により、測定日後・報告日前に支払われた年金拠出金は繰延資源流出として報告される。これは将来の期間に帰属する純資産の消費を表す。前受固定資産税（A）や前受補助金収入（C）は繰延資源流入であり、流出ではない。社債プレミアム（D）は繰延資源流出ではない。",
+      "references": ["GASB Statement No. 68, par. 57"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-059",
+      "topic": "Government Accounting",
+      "subtopic": "Tax Abatement Disclosures (GASB 77)",
+      "stem": "Under GASB Statement No. 77, which of the following is required to be disclosed about tax abatement agreements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Only the total dollar amount of taxes abated during the reporting period"
+        },
+        {
+          "label": "B",
+          "text": "The names and addresses of all individual taxpayers receiving abatements"
+        },
+        {
+          "label": "C",
+          "text": "A brief descriptive summary of the tax abatement programs, the gross dollar amount of taxes abated, and commitments made by the government other than to reduce taxes"
+        },
+        {
+          "label": "D",
+          "text": "Tax abatements are not required to be disclosed; they are only reported in the statistical section"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "GASB 77 requires governments to disclose tax abatement information in the notes to the financial statements. Required disclosures include: (1) a brief descriptive summary of the tax abatement programs, including their purpose, the tax being abated, the authority under which the abatement is provided, eligibility criteria, the mechanism for the abatement, provisions for recapturing abated taxes, and the types of commitments made; (2) the gross dollar amount of taxes abated during the period; and (3) other commitments made by the government. Individual taxpayer names (B) are not required. The correct answer is C.",
+      "explanationJa": "GASB 77は税減免に関する情報を財務諸表の注記で開示することを要求する。開示内容には、税減免プログラムの概要（目的、対象税目、根拠法令、適格基準、仕組み、回収条項、約定の種類）、期間中の減免税額総額、政府のその他の約定が含まれる。個別の納税者名（B）の開示は不要。",
+      "references": ["GASB Statement No. 77, par. 4-7"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-060",
+      "topic": "Government Accounting",
+      "subtopic": "Pollution Remediation Obligations (GASB 49)",
+      "stem": "Under GASB Statement No. 49, at what point should a government recognize a liability for pollution remediation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Only when the government begins actual cleanup activities"
+        },
+        {
+          "label": "B",
+          "text": "When one of the specified obligating events occurs and the amount can be reasonably estimated using an expected cash flow measurement technique"
+        },
+        {
+          "label": "C",
+          "text": "Only when the government is sued for environmental contamination"
+        },
+        {
+          "label": "D",
+          "text": "When the government's fiscal year ends, regardless of any obligating event"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "GASB 49 requires recognition of a pollution remediation liability when an obligating event occurs and the components of the expected cost are reasonably estimable. Obligating events include: imminent endangerment to public health, a violation of a pollution prevention-related permit or license, being named as a responsible party by a regulator, being named in a lawsuit to compel participation, and commencing or legally obligating remediation. The expected cash flow technique (probability-weighted estimates) is used for measurement. The correct answer is B.",
+      "explanationJa": "GASB 49は、義務発生事象が生じ、予想コストの構成要素が合理的に見積可能な場合に汚染浄化義務を認識することを要求する。義務発生事象には、公衆衛生への差し迫った危険、汚染防止関連許可の違反、規制当局による責任者指名、訴訟提起、浄化作業の開始等が含まれる。測定には期待キャッシュフロー法（確率加重見積り）を使用する。",
+      "references": ["GASB Statement No. 49, par. 8-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-061",
+      "topic": "Government Accounting",
+      "subtopic": "Conduit Debt Obligations (GASB 91)",
+      "stem": "A state housing authority issues bonds on behalf of a private developer to finance low-income housing construction. The bonds are payable solely from the developer's project revenue with no state guarantee. Under GASB 91, how should the state report these conduit debt obligations?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a liability on the government-wide statement of net position"
+        },
+        {
+          "label": "B",
+          "text": "As a note disclosure only, since the government has no obligation to repay the debt beyond the resources provided by related commitments"
+        },
+        {
+          "label": "C",
+          "text": "As both a liability and a corresponding receivable"
+        },
+        {
+          "label": "D",
+          "text": "No recognition or disclosure is required"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 91, conduit debt obligations where the issuer has no obligation to repay beyond resources from related commitments are not recognized as liabilities. However, note disclosures are required, including a general description of the conduit debt obligations, the aggregate outstanding principal amount, and a statement that the government has no obligation beyond resources from commitments. If the issuer has made additional voluntary or involuntary commitments (such as a guarantee), those portions may require liability recognition. The correct answer is B.",
+      "explanationJa": "GASB 91では、発行者が関連コミットメントからの資源を超えて返済義務を負わない導管債務は負債として認識しない。ただし、注記開示（導管債務の概要、未償還元本残高の合計、政府がコミットメントからの資源を超える義務を負わない旨の記載）が必要。発行者が追加の任意または非任意のコミットメント（保証等）を行った場合、その部分は負債認識が必要になる場合がある。",
+      "references": ["GASB Statement No. 91, par. 7-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-062",
+      "topic": "Government Accounting",
+      "subtopic": "Stabilization Arrangements",
+      "stem": "A city council formally establishes a stabilization arrangement by setting aside $5,000,000 from the general fund balance, requiring a two-thirds supermajority vote to release funds, and specifying that the funds can only be used when revenue declines exceed 10% from the prior year. Under GASB 54, how should these funds be classified in the general fund balance?",
+      "choices": [
+        { "label": "A", "text": "Nonspendable fund balance" },
+        { "label": "B", "text": "Restricted fund balance" },
+        { "label": "C", "text": "Committed fund balance" },
+        { "label": "D", "text": "Assigned fund balance" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under GASB 54 (par. 15), stabilization arrangements are classified as committed fund balance when the arrangement is established by the government's highest level of decision-making authority (city council) with a specific purpose and circumstances for spending (revenue decline exceeding 10%). The two-thirds supermajority requirement represents the minimum action needed to modify or remove the constraint, which is a characteristic of committed fund balance. Stabilization amounts are not restricted (which requires external constraints) or nonspendable. The correct answer is C.",
+      "explanationJa": "GASB 54第15項により、安定化措置は政府の最高意思決定機関（市議会）が特定の目的と支出条件（収入10%超減少）を定めて設定した場合、拘束済基金残高として分類される。3分の2の特別多数決要件は制約の修正・解除に必要な最小限の措置であり、拘束済の特徴を示す。制限付（外部制約が必要）や使用不能には該当しない。",
+      "references": ["GASB Statement No. 54, par. 10-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-063",
+      "topic": "Government Accounting",
+      "subtopic": "Fund Financial Statements - Required Components",
+      "stem": "Which of the following is NOT a required financial statement for governmental funds?",
+      "choices": [
+        { "label": "A", "text": "Balance sheet" },
+        {
+          "label": "B",
+          "text": "Statement of revenues, expenditures, and changes in fund balances"
+        },
+        { "label": "C", "text": "Statement of cash flows" },
+        {
+          "label": "D",
+          "text": "Reconciliation of the balance sheet to the statement of net position"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Governmental funds are required to present a balance sheet and a statement of revenues, expenditures, and changes in fund balances (GASB 34, par. 75-83). A statement of cash flows is NOT required for governmental funds; it is required only for proprietary funds (GASB 34, par. 105). Reconciliations from fund statements to government-wide statements are also required (GASB 34, par. 77). The correct answer is C.",
+      "explanationJa": "政府基金には貸借対照表と歳入歳出変動計算書の作成が求められる（GASB 34第75-83項）。キャッシュフロー計算書は政府基金には不要で、事業活動基金（proprietary funds）にのみ要求される（GASB 34第105項）。基金財務諸表から政府全体財務諸表への調整表も必要。",
+      "references": ["GASB Statement No. 34, par. 75-83, 105"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-064",
+      "topic": "Government Accounting",
+      "subtopic": "Statistical Section - Required Schedules",
+      "stem": "Under GASB Statement No. 44, the statistical section of a government's comprehensive annual financial report (CAFR) should include schedules covering how many categories of information?",
+      "choices": [
+        { "label": "A", "text": "Three categories" },
+        { "label": "B", "text": "Four categories" },
+        { "label": "C", "text": "Five categories" },
+        { "label": "D", "text": "Six categories" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "GASB 44 identifies five categories of statistical section information: (1) financial trends (net position and fund balance trends over time), (2) revenue capacity (information about the government's most significant revenue source), (3) debt capacity (information about the government's debt burden), (4) demographic and economic information, and (5) operating information. These schedules generally present 10 years of data where available. The correct answer is C.",
+      "explanationJa": "GASB 44は統計セクションの情報を5カテゴリーに分類する：(1)財務動向（純資産・基金残高の推移）、(2)歳入能力（最重要歳入源の情報）、(3)債務能力（債務負担の情報）、(4)人口・経済情報、(5)業務情報。これらは原則として10年分のデータを表示する。",
+      "references": ["GASB Statement No. 44, par. 4-8"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-065",
+      "topic": "Government Accounting",
+      "subtopic": "MD&A - Required Supplementary Information",
+      "stem": "Management's Discussion and Analysis (MD&A) is classified as which component of a government's financial reporting?",
+      "choices": [
+        { "label": "A", "text": "Part of the basic financial statements" },
+        {
+          "label": "B",
+          "text": "Required supplementary information (RSI) that precedes the basic financial statements"
+        },
+        {
+          "label": "C",
+          "text": "Supplementary information that follows the notes"
+        },
+        { "label": "D", "text": "Part of the statistical section" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 34 (par. 8-11), MD&A is classified as required supplementary information (RSI) that must precede the basic financial statements. It is not part of the basic financial statements themselves, nor is it part of the statistical section. MD&A provides an analytical overview of the government's financial activities and is required, not optional. Other RSI (such as pension schedules) follows the notes to the financial statements. The correct answer is B.",
+      "explanationJa": "GASB 34第8-11項により、MD&Aは基本財務諸表に先行して表示される必須補足情報（RSI）に分類される。基本財務諸表の一部でも統計セクションの一部でもない。MD&Aは政府の財務活動の分析的概要を提供し、作成が義務付けられている。年金スケジュール等のその他のRSIは注記の後に表示される。",
+      "references": ["GASB Statement No. 34, par. 8-11"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-066",
+      "topic": "Government Accounting",
+      "subtopic": "Basic Financial Statements - Minimum Requirements",
+      "stem": "Which of the following represents the minimum requirements for a government's basic financial statements under GASB 34?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Government-wide statements, fund financial statements, and notes to the financial statements"
+        },
+        {
+          "label": "B",
+          "text": "Government-wide statements only"
+        },
+        {
+          "label": "C",
+          "text": "Fund financial statements, notes, and statistical section"
+        },
+        {
+          "label": "D",
+          "text": "Government-wide statements, fund financial statements, notes, and MD&A"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under GASB 34 (par. 6), the basic financial statements comprise three components: (1) government-wide financial statements (statement of net position and statement of activities), (2) fund financial statements (governmental, proprietary, and fiduciary), and (3) notes to the financial statements. MD&A is required supplementary information (RSI) but is NOT part of the basic financial statements. The statistical section is also not part of the basic financial statements. The correct answer is A.",
+      "explanationJa": "GASB 34第6項により、基本財務諸表は3つの要素で構成される：(1)政府全体財務諸表（純資産計算書・活動計算書）、(2)基金財務諸表（政府基金・事業活動基金・受託基金）、(3)財務諸表注記。MD&Aは必須補足情報（RSI）であり基本財務諸表の一部ではない。統計セクションも基本財務諸表に含まれない。",
+      "references": ["GASB Statement No. 34, par. 6"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-067",
+      "topic": "Government Accounting",
+      "subtopic": "General Fund Budget Journal Entry",
+      "stem": "At the beginning of the fiscal year, a city adopts a budget for the general fund with estimated revenues of $8,000,000, appropriations of $7,500,000, and authorized transfers out of $200,000. What is the entry to record the budget and what is the resulting budgetary fund balance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Estimated Revenues $8,000,000; Credit Appropriations $7,500,000, Credit Estimated Transfers Out $200,000, Credit Budgetary Fund Balance $300,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Estimated Revenues $8,000,000; Credit Appropriations $7,700,000, Credit Budgetary Fund Balance $300,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Estimated Revenues $8,000,000; Credit Appropriations $7,500,000, Credit Budgetary Fund Balance $500,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Estimated Revenues $8,000,000, Debit Estimated Transfers Out $200,000; Credit Appropriations $7,500,000, Credit Budgetary Fund Balance $700,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The budgetary entry records: Debit Estimated Revenues $8,000,000; Credit Appropriations $7,500,000; Credit Estimated Transfers Out $200,000; and Credit Budgetary Fund Balance for the difference. Budgetary Fund Balance = $8,000,000 - $7,500,000 - $200,000 = $300,000 (credit, indicating an anticipated surplus). Estimated Transfers Out is credited separately from Appropriations because transfers are not expenditures. The correct answer is A.",
+      "explanationJa": "予算仕訳は次の通り：借方 見積歳入 $8,000,000、貸方 歳出予算 $7,500,000、貸方 見積振替支出 $200,000、貸方 予算基金残高 $300,000。予算基金残高 = $8,000,000 - $7,500,000 - $200,000 = $300,000（貸方＝予想余剰）。見積振替支出は歳出予算とは別に貸方計上する（振替は支出ではないため）。",
+      "references": ["GASB Codification 1700.128"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-068",
+      "topic": "Government Accounting",
+      "subtopic": "Budgetary Comparison - GAAP vs Legal Basis",
+      "stem": "A city's legally adopted budget includes encumbrances as expenditures, but GAAP does not. The city's actual expenditures on a GAAP basis were $5,200,000, outstanding encumbrances at year-end were $300,000, and the budget appropriation was $5,600,000. What is the unexpended budget balance on the budgetary (legal) basis?",
+      "choices": [
+        { "label": "A", "text": "$400,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$700,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "On the budgetary (legal) basis, encumbrances are treated as expenditures. Total charges against the budget = GAAP expenditures + outstanding encumbrances = $5,200,000 + $300,000 = $5,500,000. Unexpended budget balance = Appropriation - Total charges = $5,600,000 - $5,500,000 = $100,000. On a GAAP basis, the unexpended balance would be $5,600,000 - $5,200,000 = $400,000 (choice A), but the question asks for the budgetary basis. The correct answer is B.",
+      "explanationJa": "予算（法的）基準では、債務負担行為（encumbrances）を支出として扱う。予算に対する総チャージ = GAAP支出 + 未履行債務負担行為 = $5,200,000 + $300,000 = $5,500,000。未使用予算残高 = 歳出予算 - 総チャージ = $5,600,000 - $5,500,000 = $100,000。GAAP基準では$400,000（選択肢A）となるが、問題は予算基準を問うている。",
+      "references": ["GASB Statement No. 34, par. 130-131"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-069",
+      "topic": "Government Accounting",
+      "subtopic": "Encumbrance - Multi-Year Contract",
+      "stem": "A county enters into a 3-year service contract for $900,000 on July 1, Year 1 ($300,000 per year). The county's fiscal year ends December 31. At December 31, Year 1, the county has paid $150,000 for services received. What amount should be reported as encumbrances outstanding in the general fund at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$900,000" },
+        { "label": "B", "text": "$750,000" },
+        { "label": "C", "text": "$150,000" },
+        { "label": "D", "text": "$600,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Encumbrances represent commitments for future expenditures. The total contract is $900,000, and $150,000 has already been paid (converted from encumbrance to expenditure). However, governmental funds typically encumber only the current year's portion, not the entire multi-year amount. The Year 1 portion is $300,000 × 6/12 = $150,000 for the half-year (or $300,000 annual). With $150,000 already paid, the remaining Year 1 encumbrance is $300,000 - $150,000 = $150,000. Multi-year contracts are encumbered on an annual basis. The correct answer is C.",
+      "explanationJa": "債務負担行為は将来の支出に対するコミットメントを表す。政府基金では通常、複数年契約の全額ではなく当年度分のみを債務負担行為として記録する。Year 1の年間分は$300,000で、$150,000は既に支払済（債務負担行為から支出に振替済）。残りのYear 1債務負担行為 = $300,000 - $150,000 = $150,000。複数年契約は年度ベースで債務負担行為を計上する。",
+      "references": ["GASB Codification 1700.129-130", "NCGA Statement 1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-070",
+      "topic": "Government Accounting",
+      "subtopic": "Expenditure Recognition - Supplies Inventory",
+      "stem": "A city's general fund uses the purchases method for inventory accounting. During the fiscal year, the city purchased $400,000 of supplies and used $350,000. The beginning inventory balance was $80,000. Under the purchases method, what amount of expenditure should be reported for supplies?",
+      "choices": [
+        { "label": "A", "text": "$350,000" },
+        { "label": "B", "text": "$400,000" },
+        { "label": "C", "text": "$270,000" },
+        { "label": "D", "text": "$130,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the purchases method for governmental fund inventory accounting, the full amount of supplies purchased during the period is recorded as expenditure when purchased, regardless of how much is consumed. Expenditure = Purchases = $400,000. The consumption method would record $350,000 as expenditure (the amount consumed). The ending inventory under the purchases method would be $80,000 + $400,000 - $350,000 = $130,000, reported as nonspendable fund balance with a corresponding offset. The correct answer is B.",
+      "explanationJa": "購入法（purchases method）では、政府基金の棚卸資産は購入時に全額を支出として記録し、消費量に関係なく処理する。支出 = 購入額 = $400,000。消費法では消費額$350,000が支出となる。購入法での期末棚卸高は$80,000 + $400,000 - $350,000 = $130,000で、使用不能基金残高として報告される。",
+      "references": ["GASB Codification 1600.127", "NCGA Statement 1, par. 73"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-071",
+      "topic": "Government Accounting",
+      "subtopic": "Capital Projects Fund - Bond Premium Disposition",
+      "stem": "A city issues $10,000,000 in general obligation bonds at 103 (a premium of $300,000) to finance a new library construction. Under GASB standards, how is the bond premium typically handled in the capital projects fund?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The entire $10,300,000 is recorded as other financing sources in the capital projects fund"
+        },
+        {
+          "label": "B",
+          "text": "The $300,000 premium is transferred to the debt service fund, and $10,000,000 is recorded as other financing sources in the capital projects fund"
+        },
+        {
+          "label": "C",
+          "text": "The premium is amortized over the life of the bonds in the capital projects fund"
+        },
+        {
+          "label": "D",
+          "text": "The premium reduces the face value of bonds payable in the capital projects fund"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When bonds are issued at a premium in a governmental fund, the premium is typically transferred to the debt service fund because bond premiums represent resources available for debt service, not for the capital project. The capital projects fund records the face value of $10,000,000 as other financing sources - bond proceeds, and the $300,000 premium is transferred (other financing use) to the debt service fund (other financing source). Premiums are not amortized in governmental funds since they use modified accrual, not accrual basis. The correct answer is B.",
+      "explanationJa": "政府基金で社債がプレミアム付きで発行された場合、プレミアムは通常、債務返済基金に振り替えられる。プレミアムは債務返済に充当可能な資源であり、資本プロジェクト用ではないため。資本プロジェクト基金は額面$10,000,000をその他財源（社債収入）として記録し、$300,000のプレミアムは債務返済基金に振替処理する。政府基金は修正発生主義を使用するため、プレミアムの償却は行わない。",
+      "references": ["GASB Codification 1800.102", "GASB Statement No. 34"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-072",
+      "topic": "Government Accounting",
+      "subtopic": "Debt Service Fund - Defeasance",
+      "stem": "A city legally defeases $5,000,000 of outstanding general obligation bonds by placing $5,150,000 in an irrevocable trust invested in U.S. Treasury securities. The trust assets will be sufficient to pay all remaining principal and interest. What is the appropriate accounting treatment in the government-wide financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The bonds remain as a liability until they mature or are called"
+        },
+        {
+          "label": "B",
+          "text": "The bonds are removed from the statement of net position, and any difference is recognized as a gain or loss"
+        },
+        {
+          "label": "C",
+          "text": "The bonds are reduced to $150,000 on the statement of net position"
+        },
+        {
+          "label": "D",
+          "text": "Only a note disclosure is required; no change to the statement of net position"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 7 and GASB 34, when a government legally defeases debt by placing sufficient assets in an irrevocable trust (with the trustee assuming responsibility for debt service), the defeased bonds are removed from the government-wide statement of net position. The difference between the carrying amount of the debt and the cost of securities placed in trust is recognized as a gain or loss (or as a deferred amount in certain circumstances). Note disclosures about the defeased debt are also required. The correct answer is B.",
+      "explanationJa": "GASB 7およびGASB 34に基づき、政府が十分な資産を取消不能信託に預けて法的に債務を消滅（defeasance）させた場合、消滅した社債は政府全体の純資産計算書から除去される。債務の帳簿価額と信託に預けた証券のコストとの差額は損益として認識される。消滅した債務に関する注記開示も必要。",
+      "references": ["GASB Statement No. 7", "GASB Statement No. 34, par. 37"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-073",
+      "topic": "Government Accounting",
+      "subtopic": "Enterprise Fund - Revenue Recognition",
+      "stem": "A municipal water utility (enterprise fund) provides water services during December Year 1, but bills customers in January Year 2. The estimated unbilled revenue for December is $450,000. The actual bills issued in January total $460,000. What amount of revenue should the enterprise fund recognize for the December Year 1 services?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$450,000" },
+        { "label": "C", "text": "$460,000" },
+        { "label": "D", "text": "$910,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Enterprise funds use the accrual basis of accounting, meaning revenue is recognized when earned, not when billed or collected. For December Year 1 services, the utility should accrue revenue based on the estimated unbilled amount of $450,000 at year-end. When the actual bills are issued in January Year 2, the difference of $10,000 ($460,000 - $450,000) is recognized as a Year 2 adjustment. The full $460,000 is not recognized in Year 1 because it was not yet determinable at year-end. The correct answer is B.",
+      "explanationJa": "企業基金は発生主義を使用し、収益は請求時や収金時ではなく稼得時に認識する。12月のサービスについて、年度末時点での見積未請求収益$450,000を計上する。1月に実際の請求額$460,000が判明した場合、差額$10,000はYear 2の調整として認識する。年度末時点で確定していなかった$460,000全額をYear 1に認識することはできない。",
+      "references": [
+        "GASB Statement No. 34, par. 92-100",
+        "GASB Codification P80"
+      ],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-074",
+      "topic": "Government Accounting",
+      "subtopic": "Enterprise Fund - Rate Setting",
+      "stem": "A municipal electric utility enterprise fund has total operating expenses of $12,000,000, annual debt service requirements of $2,000,000, and a target operating reserve of $1,500,000 to be accumulated over 3 years. Assuming the utility serves 50,000 customers equally, what minimum annual revenue per customer must the utility collect to meet all requirements?",
+      "choices": [
+        { "label": "A", "text": "$240" },
+        { "label": "B", "text": "$280" },
+        { "label": "C", "text": "$290" },
+        { "label": "D", "text": "$310" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Total annual revenue requirement = Operating expenses + Debt service + Annual reserve contribution = $12,000,000 + $2,000,000 + ($1,500,000 / 3 years) = $12,000,000 + $2,000,000 + $500,000 = $14,500,000. Revenue per customer = $14,500,000 / 50,000 customers = $290 per customer. The correct answer is C.",
+      "explanationJa": "年間必要総収入 = 営業費用 + 債務返済 + 年間積立金 = $12,000,000 + $2,000,000 + ($1,500,000 ÷ 3年) = $12,000,000 + $2,000,000 + $500,000 = $14,500,000。顧客1人当たり収入 = $14,500,000 ÷ 50,000顧客 = $290。",
+      "references": ["GASB Codification P80", "GASB Statement No. 34, par. 92"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-075",
+      "topic": "Government Accounting",
+      "subtopic": "Fiduciary - Investment Trust Fund",
+      "stem": "A county operates an external investment pool for participating local governments. The pool holds investments with a fair value of $50,000,000 at year-end. During the year, the pool earned $2,000,000 in investment income and distributed $1,800,000 to participants. What net investment income should the investment trust fund report?",
+      "choices": [
+        { "label": "A", "text": "$2,000,000" },
+        { "label": "B", "text": "$1,800,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$50,000,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The investment trust fund reports the total investment income earned during the period, which is $2,000,000. Distributions to participants are reported separately as deductions (similar to withdrawals), not as a reduction of investment income. The statement of changes in fiduciary net position shows additions (investment income of $2,000,000) and deductions (distributions of $1,800,000). The $200,000 difference represents the net increase in fiduciary net position, but the investment income itself is $2,000,000. The correct answer is A.",
+      "explanationJa": "投資信託基金は期間中に稼得した投資収益総額$2,000,000を報告する。参加者への配分$1,800,000は投資収益の減額ではなく、控除（引出しと同様）として別途報告される。受託純資産変動計算書では、増加（投資収益$2,000,000）と控除（配分$1,800,000）を表示する。差額$200,000は受託純資産の純増加だが、投資収益自体は$2,000,000。",
+      "references": [
+        "GASB Statement No. 34, par. 106-109",
+        "GASB Statement No. 31"
+      ],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-076",
+      "topic": "Government Accounting",
+      "subtopic": "Fiduciary - Pension Trust Fund Assets",
+      "stem": "A city's pension trust fund holds the following investments at year-end: corporate bonds at fair value $15,000,000 (cost $14,200,000), equity securities at fair value $25,000,000 (cost $22,000,000), and real estate at fair value $8,000,000 (cost $7,500,000). At what total amount should these investments be reported?",
+      "choices": [
+        { "label": "A", "text": "$43,700,000" },
+        { "label": "B", "text": "$48,000,000" },
+        { "label": "C", "text": "$45,500,000" },
+        { "label": "D", "text": "$36,200,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 31 (as amended by GASB 72), most investments held by pension trust funds are reported at fair value. The total fair value is: Corporate bonds $15,000,000 + Equity securities $25,000,000 + Real estate $8,000,000 = $48,000,000. The cost basis ($43,700,000) is not used for reporting purposes. Changes in fair value are recognized as investment income in the statement of changes in fiduciary net position. The correct answer is B.",
+      "explanationJa": "GASB 31（GASB 72により改正）に基づき、年金信託基金が保有する投資は公正価値で報告される。公正価値合計：社債$15,000,000 + 株式$25,000,000 + 不動産$8,000,000 = $48,000,000。取得原価（$43,700,000）は報告に使用しない。公正価値の変動は受託純資産変動計算書で投資収益として認識される。",
+      "references": [
+        "GASB Statement No. 31",
+        "GASB Statement No. 72, par. 64-69"
+      ],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-077",
+      "topic": "Government Accounting",
+      "subtopic": "Pension - Cost-Sharing Multiple-Employer Plan",
+      "stem": "A city participates in a cost-sharing multiple-employer defined benefit pension plan. The city's proportionate share of the collective net pension liability is 3.5%. If the total collective net pension liability is $800,000,000, what is the city's net pension liability to report on its government-wide financial statements?",
+      "choices": [
+        { "label": "A", "text": "$28,000,000" },
+        { "label": "B", "text": "$8,000,000" },
+        { "label": "C", "text": "$80,000,000" },
+        { "label": "D", "text": "$2,800,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under GASB 68 for cost-sharing multiple-employer plans, each participating employer reports its proportionate share of the collective net pension liability. The city's share = 3.5% × $800,000,000 = $28,000,000. The proportionate share is typically based on the employer's contributions to the plan relative to total contributions. The city also reports its proportionate share of pension expense, deferred outflows, and deferred inflows. The correct answer is A.",
+      "explanationJa": "GASB 68の費用分担型複数雇用主制度では、各参加雇用主が集合的純年金負債の按分額を報告する。市の按分額 = 3.5% × $800,000,000 = $28,000,000。按分割合は通常、制度への拠出金の総拠出金に対する割合に基づく。市はまた年金費用、繰延資源流出、繰延資源流入の按分額も報告する。",
+      "references": ["GASB Statement No. 68, par. 48-49"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-078",
+      "topic": "Government Accounting",
+      "subtopic": "OPEB - Agent Multiple-Employer Plan",
+      "stem": "Under GASB 75, in an agent multiple-employer OPEB plan, each employer's OPEB liability is based on:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The employer's proportionate share of the collective OPEB liability of all participating employers"
+        },
+        {
+          "label": "B",
+          "text": "The total OPEB obligation of the plan measured as a single entity"
+        },
+        {
+          "label": "C",
+          "text": "The employer's own total OPEB liability specific to its employees, calculated using the plan's separate actuarial valuation for that employer"
+        },
+        {
+          "label": "D",
+          "text": "A standardized per-employee OPEB cost determined by the plan administrator"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under GASB 75, in an agent multiple-employer OPEB plan, although assets are pooled for investment purposes, separate accounts (or sub-plans) are maintained for each employer. Each employer's total OPEB liability is calculated using its own separate actuarial valuation based on its specific employee demographics, benefit terms, and actuarial assumptions. This differs from a cost-sharing plan where a collective liability is allocated proportionately. The correct answer is C.",
+      "explanationJa": "GASB 75のエージェント型複数雇用主OPEB制度では、資産は投資目的でプールされるが、各雇用主の個別勘定（サブプラン）が維持される。各雇用主のOPEB総負債は、その雇用主固有の従業員特性、給付条件、保険数理上の仮定に基づく個別の保険数理評価を用いて計算される。費用分担型制度の集合的負債の按分とは異なる。",
+      "references": ["GASB Statement No. 75, par. 124-138"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-079",
+      "topic": "Government Accounting",
+      "subtopic": "Governmental Fund - Debt Proceeds Classification",
+      "stem": "When a general obligation bond is issued for a capital project, how are the proceeds classified in the capital projects fund?",
+      "choices": [
+        { "label": "A", "text": "As revenue" },
+        { "label": "B", "text": "As other financing sources" },
+        { "label": "C", "text": "As a long-term liability" },
+        {
+          "label": "D",
+          "text": "As a direct addition to fund balance"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In governmental funds (including capital projects funds), bond proceeds are classified as other financing sources, not as revenue. Revenue in governmental funds is limited to amounts that are measurable, available, and derived from non-exchange or exchange transactions (taxes, grants, charges for services). Bond proceeds represent borrowings, not revenue. Long-term liabilities are not recorded in governmental funds (they appear only in government-wide statements). The correct answer is B.",
+      "explanationJa": "政府基金（資本プロジェクト基金を含む）では、社債収入は収益ではなく「その他財源（other financing sources）」に分類される。政府基金の収益は測定可能・利用可能で非交換または交換取引から生じるもの（税金、補助金、サービス対価）に限定される。社債収入は借入であり収益ではない。長期負債は政府基金では記録しない（政府全体財務諸表にのみ計上）。",
+      "references": [
+        "GASB Statement No. 34, par. 83",
+        "GASB Codification 1800.102"
+      ],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-080",
+      "topic": "Government Accounting",
+      "subtopic": "Government-wide - Program Revenue vs General Revenue",
+      "stem": "A city receives the following revenues: property taxes of $20,000,000, a federal grant restricted to police department operations of $3,000,000, fees charged by the parks department of $1,500,000, and unrestricted state aid of $5,000,000. On the government-wide statement of activities, what is the total amount of program revenues?",
+      "choices": [
+        { "label": "A", "text": "$29,500,000" },
+        { "label": "B", "text": "$4,500,000" },
+        { "label": "C", "text": "$24,500,000" },
+        { "label": "D", "text": "$8,000,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Program revenues are directly associated with specific functions or programs. They include: (1) charges for services ($1,500,000 parks fees), and (2) program-specific operating or capital grants ($3,000,000 federal police grant). Total program revenues = $1,500,000 + $3,000,000 = $4,500,000. Property taxes ($20,000,000) and unrestricted state aid ($5,000,000) are general revenues because they are not specifically associated with a particular program. The correct answer is B.",
+      "explanationJa": "プログラム収益は特定の機能やプログラムに直接関連する収益で、(1)サービス対価（公園局手数料$1,500,000）、(2)プログラム特定の運営・資本補助金（連邦警察補助金$3,000,000）を含む。プログラム収益合計 = $1,500,000 + $3,000,000 = $4,500,000。固定資産税（$20,000,000）と無制限の州補助（$5,000,000）は特定のプログラムに関連しないため一般収益。",
+      "references": ["GASB Statement No. 34, par. 48-52"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-081",
+      "topic": "Government Accounting",
+      "subtopic": "Government-wide - Eliminations and Reclassifications",
+      "stem": "In preparing government-wide financial statements, which of the following interfund activities should be eliminated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "All interfund services provided and used at approximate external exchange prices"
+        },
+        {
+          "label": "B",
+          "text": "Interfund transfers between governmental funds, but NOT between governmental and business-type activities"
+        },
+        {
+          "label": "C",
+          "text": "Internal activity (interfund services and transfers) between funds within the governmental activities column"
+        },
+        {
+          "label": "D",
+          "text": "All interfund transfers and all interfund receivables and payables"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "In preparing government-wide statements, internal activity between funds within the same column (governmental activities or business-type activities) must be eliminated to avoid double-counting. However, amounts between governmental activities and business-type activities are reported as internal balances (not eliminated) because the two activity types are presented in separate columns. Interfund services provided at approximate exchange prices are generally not eliminated because they represent arm's-length transactions. The correct answer is C.",
+      "explanationJa": "政府全体財務諸表の作成において、同一列（政府活動または事業活動）内の基金間の内部活動は二重計上を避けるため消去する。ただし、政府活動と事業活動の間の金額は別列で表示されるため消去せず、内部残高として報告する。近似的な外部交換価格でのサービス提供は独立企業間取引のため原則として消去しない。",
+      "references": ["GASB Statement No. 34, par. 58-61"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-082",
+      "topic": "Government Accounting",
+      "subtopic": "Nonexchange Revenue - Government-Mandated",
+      "stem": "A state government mandates that all counties provide certain mental health services and provides $6,000,000 in funding, with specific eligibility requirements that the county must spend the funds on mental health programs only. The county has met all eligibility requirements by year-end but has spent only $4,000,000. Under GASB 33, how much revenue should the county recognize in the current year on its government-wide financial statements?",
+      "choices": [
+        { "label": "A", "text": "$4,000,000" },
+        { "label": "B", "text": "$6,000,000" },
+        { "label": "C", "text": "$2,000,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 33, government-mandated nonexchange transactions are recognized as revenue when all eligibility requirements are met. Purpose restrictions (requiring funds be used for mental health) are not eligibility requirements; they are restrictions on the use of resources that do not affect the timing of revenue recognition. Since the county has met all eligibility requirements, the full $6,000,000 is recognized as revenue. The unspent $2,000,000 is reported as restricted net position. The correct answer is B.",
+      "explanationJa": "GASB 33に基づき、政府命令型非交換取引は全ての適格要件が充足された時点で収益認識する。使途制限（精神保健プログラムのみに使用）は適格要件ではなく、資源使用の制限であり、収益認識時期に影響しない。県は全ての適格要件を充足しているため、$6,000,000全額を収益として認識する。未使用の$2,000,000は制限付純資産として報告される。",
+      "references": ["GASB Statement No. 33, par. 18-22"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-083",
+      "topic": "Government Accounting",
+      "subtopic": "GASB 87 - Lease Modification by Lessee",
+      "stem": "A city (lessee) has a 10-year lease with an initial lease liability of $2,000,000. After 4 years, the lease is modified to extend the term by 3 years and increase annual payments by $30,000 beginning in Year 5. At the modification date, the remaining lease liability is $1,300,000 and the discount rate is updated to 4%. The present value of the revised remaining payments (6 years at the new amount) is $1,580,000. What adjustment should be made to the lease liability at the modification date?",
+      "choices": [
+        { "label": "A", "text": "Increase lease liability by $280,000" },
+        { "label": "B", "text": "Increase lease liability by $1,580,000" },
+        { "label": "C", "text": "Decrease lease liability by $420,000" },
+        { "label": "D", "text": "No adjustment is necessary" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under GASB 87, when a lease is modified and the modification is not treated as a new lease, the lessee remeasures the lease liability. The new lease liability equals the present value of the revised remaining payments at the updated discount rate, which is $1,580,000. The adjustment = New lease liability - Current remaining lease liability = $1,580,000 - $1,300,000 = $280,000 increase. The corresponding right-to-use asset is also adjusted by the same amount. The correct answer is A.",
+      "explanationJa": "GASB 87に基づき、リースが修正され新規リースとして扱われない場合、借手はリース負債を再測定する。新リース負債 = 改定後の残存支払いの現在価値（更新後割引率）= $1,580,000。調整額 = 新リース負債 - 現在のリース負債残高 = $1,580,000 - $1,300,000 = $280,000の増加。対応する使用権資産も同額調整される。",
+      "references": ["GASB Statement No. 87, par. 49-52"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

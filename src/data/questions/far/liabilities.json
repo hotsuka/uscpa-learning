@@ -2,7 +2,7 @@
   "id": "far-liabilities",
   "name": "Liabilities",
   "topic": "Liabilities",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "questions": [
     {
       "id": "liab-001",
@@ -1320,6 +1320,732 @@
       "references": ["ASC 505-20-25-1"],
       "difficulty": "basic",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "liab-061",
+      "topic": "Liabilities",
+      "subtopic": "Bond Premium Amortization - Effective Interest Year 2",
+      "stem": "On January 1, Year 1, a company issues $1,000,000 face value, 7% bonds (interest paid annually on December 31) at a price of $1,054,465 to yield 5%. The bonds mature in 3 years. Using the effective interest method, what is the carrying amount of the bonds at December 31, Year 2?",
+      "choices": [
+        { "label": "A", "text": "$1,037,188" },
+        { "label": "B", "text": "$1,054,465" },
+        { "label": "C", "text": "$1,019,047" },
+        { "label": "D", "text": "$1,025,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Year 1: Interest expense = $1,054,465 x 5% = $52,723. Cash interest paid = $1,000,000 x 7% = $70,000. Premium amortization = $70,000 - $52,723 = $17,277. Carrying amount at end of Year 1 = $1,054,465 - $17,277 = $1,037,188. Year 2: Interest expense = $1,037,188 x 5% = $51,859. Cash interest paid = $70,000. Premium amortization = $70,000 - $51,859 = $18,141. Carrying amount at end of Year 2 = $1,037,188 - $18,141 = $1,019,047. The answer is C.",
+      "explanationJa": "Year 1: 利息費用 = $1,054,465 x 5% = $52,723。現金利息 = $70,000。プレミアム償却 = $17,277。帳簿価額 = $1,037,188。Year 2: 利息費用 = $1,037,188 x 5% = $51,859。プレミアム償却 = $18,141。帳簿価額 = $1,037,188 - $18,141 = $1,019,047。正解はC。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-062",
+      "topic": "Liabilities",
+      "subtopic": "Bond Discount - Straight-Line Method",
+      "stem": "On January 1, Year 1, a company issues $1,000,000 face value, 5-year, 6% bonds at 95. Interest is paid semiannually. Using the straight-line method, what is the bond interest expense for the first semiannual period?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$35,000" },
+        { "label": "C", "text": "$25,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The bonds were issued at 95, so the discount is $1,000,000 × (1 − 0.95) = $50,000. With 5-year bonds paying semiannually, there are 10 periods. Straight-line amortization per period = $50,000 / 10 = $5,000. Cash interest per semiannual period = $1,000,000 × 6% / 2 = $30,000. Total interest expense = $30,000 + $5,000 = $35,000. The answer is B.",
+      "explanationJa": "発行価格95なのでディスカウント = $1,000,000 × 5% = $50,000。半年払い5年で10期間。定額法による各期の償却額 = $50,000 / 10 = $5,000。半年ごとの現金利息 = $1,000,000 × 6% / 2 = $30,000。利息費用合計 = $30,000 + $5,000 = $35,000。正解はB。",
+      "references": ["ASC 835-30-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-063",
+      "topic": "Liabilities",
+      "subtopic": "Bonds Payable - Fair Value Disclosure",
+      "stem": "Under ASC 825, which of the following statements about fair value disclosure of financial liabilities is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fair value disclosure is only required for publicly traded debt instruments"
+        },
+        {
+          "label": "B",
+          "text": "All entities must disclose the fair value of financial instruments, including liabilities, unless a specific scope exception applies"
+        },
+        {
+          "label": "C",
+          "text": "Fair value disclosure is optional for all entities"
+        },
+        {
+          "label": "D",
+          "text": "Fair value disclosure is required only when the carrying amount differs from fair value by more than 10%"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 825-10-50-10 requires all entities to disclose the fair value of financial instruments, both assets and liabilities, for which it is practicable to estimate fair value. Certain scope exceptions exist (e.g., leases, pension obligations, equity method investments), but the general requirement applies broadly to all entities, not just those with publicly traded debt. The answer is B.",
+      "explanationJa": "ASC 825-10-50-10は、公正価値の見積もりが実務上可能なすべての金融商品（資産・負債）について公正価値の開示を要求している。リースや年金債務など特定の適用除外はあるが、一般的にすべての企業に適用される。上場債務のみに限定されるものではない。正解はB。",
+      "references": ["ASC 825-10-50-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-064",
+      "topic": "Liabilities",
+      "subtopic": "Convertible Debt - ASU 2020-06 Accounting",
+      "stem": "Under ASU 2020-06 (codified in ASC 470-20), how should a company account for a convertible bond that does not contain a cash conversion feature or a beneficial conversion feature?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Separate the instrument into a liability component and an equity component"
+        },
+        {
+          "label": "B",
+          "text": "Account for the instrument entirely as a liability at amortized cost"
+        },
+        {
+          "label": "C",
+          "text": "Record the instrument at fair value through net income"
+        },
+        {
+          "label": "D",
+          "text": "Record the conversion option as a derivative liability"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASU 2020-06 simplified the accounting for convertible instruments by eliminating the beneficial conversion feature (BCF) and cash conversion feature (CCF) models. Under the updated guidance in ASC 470-20, most convertible debt instruments are accounted for as a single liability measured at amortized cost, unless the instrument contains a feature that requires bifurcation as a derivative under ASC 815. The answer is B.",
+      "explanationJa": "ASU 2020-06はBCF（有利転換権）およびCCF（現金転換機能）モデルを廃止し、転換社債の会計を簡素化した。更新されたASC 470-20では、ASC 815でデリバティブとしての分離が必要な特徴を含まない限り、ほとんどの転換社債は償却原価で測定される単一の負債として会計処理される。正解はB。",
+      "references": ["ASC 470-20-25-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-065",
+      "topic": "Liabilities",
+      "subtopic": "Bond Sinking Fund Requirements",
+      "stem": "A company has a $10,000,000 bond payable with a sinking fund requirement to retire $2,000,000 of bonds annually starting in Year 3. At the end of Year 1, how should the sinking fund requirement affect the balance sheet classification of the bonds?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The entire $10,000,000 should be classified as a current liability"
+        },
+        {
+          "label": "B",
+          "text": "The entire $10,000,000 should be classified as a noncurrent liability"
+        },
+        {
+          "label": "C",
+          "text": "$2,000,000 should be classified as current and $8,000,000 as noncurrent"
+        },
+        {
+          "label": "D",
+          "text": "No reclassification is necessary; the full amount remains noncurrent"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A sinking fund requirement to retire debt does not require current classification until the payment is due within one year (or the operating cycle, if longer) from the balance sheet date. At the end of Year 1, the first sinking fund payment is not due until Year 3 (more than 12 months away). Therefore, the entire $10,000,000 remains classified as noncurrent. Reclassification to current would occur at the end of Year 2, when the Year 3 payment becomes due within 12 months. The answer is D.",
+      "explanationJa": "減債基金による返済義務は、貸借対照表日から1年以内（または営業循環期間が長い場合はその期間内）に支払期限が到来するまで流動負債への振替は不要である。Year 1末時点では最初の返済はYear 3であり12ヶ月以上先のため、$10,000,000全額が非流動負債のままとなる。Year 2末にYear 3分の$2,000,000を流動負債に振り替える。正解はD。",
+      "references": ["ASC 470-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-066",
+      "topic": "Liabilities",
+      "subtopic": "Bonds - Between Interest Date Issuance (Accrued Interest)",
+      "stem": "On April 1, Year 1, a company issues $800,000 face value, 9% bonds dated January 1, Year 1, at 102 plus accrued interest. Interest is payable semiannually on July 1 and January 1. What total cash does the company receive on the issuance date?",
+      "choices": [
+        { "label": "A", "text": "$816,000" },
+        { "label": "B", "text": "$834,000" },
+        { "label": "C", "text": "$818,000" },
+        { "label": "D", "text": "$836,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The bonds are issued at 102, so the bond proceeds = $800,000 × 1.02 = $816,000. Additionally, accrued interest from January 1 to April 1 (3 months) must be collected from the buyer: $800,000 × 9% × 3/12 = $18,000. Total cash received = $816,000 + $18,000 = $834,000. The answer is B.",
+      "explanationJa": "社債は102で発行されるため、発行代金 = $800,000 × 1.02 = $816,000。加えて、1月1日から4月1日までの3ヶ月分の経過利息を買い手から受け取る：$800,000 × 9% × 3/12 = $18,000。受取現金合計 = $816,000 + $18,000 = $834,000。正解はB。",
+      "references": ["ASC 835-30-25-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-067",
+      "topic": "Liabilities",
+      "subtopic": "Term Loan - Amortization Schedule",
+      "stem": "A company borrows $600,000 on a 3-year term loan at 8% annual interest, with equal annual payments at the end of each year. The annual payment is $232,755. What is the principal portion of the second annual payment?",
+      "choices": [
+        { "label": "A", "text": "$184,755" },
+        { "label": "B", "text": "$199,535" },
+        { "label": "C", "text": "$203,452" },
+        { "label": "D", "text": "$215,498" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Year 1: Interest = $600,000 × 8% = $48,000. Principal = $232,755 − $48,000 = $184,755. Remaining balance = $600,000 − $184,755 = $415,245. Year 2: Interest = $415,245 × 8% = $33,220 (rounded). Principal = $232,755 − $33,220 = $199,535. The answer is B.",
+      "explanationJa": "Year 1: 利息 = $600,000 × 8% = $48,000。元本 = $232,755 − $48,000 = $184,755。残高 = $415,245。Year 2: 利息 = $415,245 × 8% = $33,220（四捨五入）。元本 = $232,755 − $33,220 = $199,535。正解はB。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-068",
+      "topic": "Liabilities",
+      "subtopic": "Line of Credit - Commitment Fee",
+      "stem": "A company enters into a $5,000,000 revolving line of credit agreement. The bank charges a 0.5% annual commitment fee on the unused portion of the line. During Year 1, the company had an average outstanding balance of $2,000,000. What is the commitment fee expense for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$10,000" },
+        { "label": "B", "text": "$15,000" },
+        { "label": "C", "text": "$25,000" },
+        { "label": "D", "text": "$20,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The unused portion of the line of credit = $5,000,000 − $2,000,000 = $3,000,000. The commitment fee = $3,000,000 × 0.5% = $15,000. Commitment fees on unused lines of credit are recognized as a financing cost over the commitment period. The answer is B.",
+      "explanationJa": "未使用部分 = $5,000,000 − $2,000,000 = $3,000,000。コミットメントフィー = $3,000,000 × 0.5% = $15,000。未使用与信枠に対するコミットメントフィーはコミットメント期間にわたり資金調達コストとして認識される。正解はB。",
+      "references": ["ASC 470-50-40-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-069",
+      "topic": "Liabilities",
+      "subtopic": "ARO - Change in Estimated Cash Flows",
+      "stem": "A company initially recognized an asset retirement obligation (ARO) of $200,000, using a credit-adjusted risk-free rate of 5%. At the end of Year 2, the company revises the estimated future cash flows upward by $50,000 (undiscounted). The current credit-adjusted risk-free rate is 6%. What amount should be added to the ARO liability for this upward revision?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$44,500" },
+        { "label": "C", "text": "$47,170" },
+        { "label": "D", "text": "$42,500" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 410-20-35-8, when estimated cash flows increase (upward revision), the additional liability is discounted using the current credit-adjusted risk-free rate at the time of the revision. Assuming the revised cash flows are expected to be settled in 2 years from the revision date: Additional ARO = $50,000 / (1.06)^2 = $50,000 / 1.1236 = $44,500 (rounded). The new layer of ARO uses the current rate of 6%, not the original 5% rate. The answer is B.",
+      "explanationJa": "ASC 410-20-35-8に基づき、見積キャッシュ・フローが増加（上方修正）する場合、追加の負債は修正時点の信用調整済みリスクフリーレートで割り引く。修正日から2年後に決済される前提で：追加ARO = $50,000 / (1.06)^2 = $50,000 / 1.1236 = $44,500（四捨五入）。新しい層のAROは当初の5%ではなく現在の6%を使用する。正解はB。",
+      "references": ["ASC 410-20-35-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-070",
+      "topic": "Liabilities",
+      "subtopic": "ARO - Upward Revision Adjustment",
+      "stem": "Under ASC 410-20, when the estimated undiscounted cash flows for an asset retirement obligation are revised upward, which discount rate should be used to measure the incremental increase in the liability?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The original credit-adjusted risk-free rate when the ARO was first recognized"
+        },
+        {
+          "label": "B",
+          "text": "The current credit-adjusted risk-free rate at the date of the upward revision"
+        },
+        {
+          "label": "C",
+          "text": "The entity's weighted average cost of capital"
+        },
+        {
+          "label": "D",
+          "text": "The risk-free rate on U.S. Treasury securities"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 410-20-35-8 specifies that upward revisions in estimated undiscounted cash flows are discounted using the current credit-adjusted risk-free rate. This contrasts with downward revisions, which use the original rate when the related layer of liability was recognized. This layered approach means different portions of an ARO may use different discount rates. The answer is B.",
+      "explanationJa": "ASC 410-20-35-8は、見積キャッシュ・フローの上方修正に対しては現在の信用調整済みリスクフリーレートで割り引くことを規定している。下方修正の場合は関連する負債の層が認識された時点の当初レートを使用する。このレイヤー方式により、AROの異なる部分が異なる割引率を使用し得る。正解はB。",
+      "references": ["ASC 410-20-35-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-071",
+      "topic": "Liabilities",
+      "subtopic": "Contingent Liability - Probable Range with Best Estimate",
+      "stem": "A company is involved in litigation. Management determines that a loss is probable and estimates the loss to be in the range of $300,000 to $700,000, with a best estimate of $450,000 within that range. Under ASC 450, what amount should the company accrue as a loss contingency?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$450,000" },
+        { "label": "C", "text": "$500,000" },
+        { "label": "D", "text": "$700,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 450-20-30-1, when a loss contingency is probable and the amount can be estimated within a range, the best estimate within the range should be accrued. If no amount within the range is a better estimate than any other, the minimum of the range is accrued. Here, management has identified $450,000 as the best estimate, so that amount is accrued. The answer is B.",
+      "explanationJa": "ASC 450-20-30-1に基づき、偶発損失が発生の可能性が高く、損失額が範囲で見積もられる場合、範囲内の最善の見積額を引当計上する。範囲内のどの金額も他より良い見積もりでない場合は最小額を計上する。ここでは経営者が$450,000を最善の見積額としているため、その金額を計上する。正解はB。",
+      "references": ["ASC 450-20-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-072",
+      "topic": "Liabilities",
+      "subtopic": "Loss Contingency - Remote Disclosure",
+      "stem": "Under ASC 450, which of the following loss contingencies must be disclosed in the notes to the financial statements even when the likelihood of loss is remote?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A pending lawsuit from a customer alleging breach of contract"
+        },
+        {
+          "label": "B",
+          "text": "A guarantee of the indebtedness of another entity"
+        },
+        { "label": "C", "text": "An estimated product warranty obligation" },
+        {
+          "label": "D",
+          "text": "An assessment of additional income taxes by the IRS"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 450-20-50-1 generally requires disclosure of loss contingencies when the chance of loss is at least reasonably possible. However, certain guarantees of indebtedness of others require disclosure regardless of the probability of loss, even when remote. This is an exception to the general rule that remote contingencies need not be disclosed. The answer is B.",
+      "explanationJa": "ASC 450-20-50-1は一般に、損失の可能性が少なくとも合理的に起こり得る場合に偶発損失の開示を要求する。しかし、他者の債務の保証は損失の可能性に関係なく、たとえ可能性が低い（remote）場合でも開示が必要である。これはremoteの偶発損失は開示不要という一般ルールの例外である。正解はB。",
+      "references": ["ASC 450-20-50-1", "ASC 460-10-50-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-073",
+      "topic": "Liabilities",
+      "subtopic": "Restructuring Costs - One-Time Termination Benefits",
+      "stem": "On October 15, Year 1, a company's management approves and communicates a plan to terminate 200 employees. The one-time termination benefits total $3,000,000, and employees are not required to render service beyond a minimum retention period. All employees are expected to be terminated by March 31, Year 2. Under ASC 420, when should the company recognize the termination benefits liability?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ratably over the future service period through March 31, Year 2"
+        },
+        {
+          "label": "B",
+          "text": "On the date the plan is communicated to employees and all recognition criteria are met"
+        },
+        {
+          "label": "C",
+          "text": "On March 31, Year 2, when all terminations are completed"
+        },
+        { "label": "D", "text": "On December 31, Year 1, at year-end only" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 420-10-25-4, one-time termination benefits that require employees to render service beyond a minimum retention period to receive the benefits are recognized ratably over the service period. However, when employees are not required to render future service beyond a minimum retention period, the liability is recognized at the communication date, provided all recognition criteria are met. The answer is B.",
+      "explanationJa": "ASC 420-10-25-4に基づき、最低保持期間を超える将来の勤務が不要な一時解雇給付金は、すべての認識基準が満たされた時点、すなわち計画が従業員に伝達された日に負債として認識される。将来勤務が必要な場合は勤務期間にわたって均等に認識する。正解はB。",
+      "references": ["ASC 420-10-25-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-074",
+      "topic": "Liabilities",
+      "subtopic": "Exit Activities - Lease Termination Costs",
+      "stem": "As part of an exit plan under ASC 420, a company ceases using a leased facility on September 30, Year 1. The remaining lease term runs through December 31, Year 3, with monthly payments of $20,000. The company cannot sublease the facility. Under ASC 420, when should the company recognize the lease termination costs?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "On the date the exit plan is approved by management"
+        },
+        {
+          "label": "B",
+          "text": "On September 30, Year 1, when the company ceases using the facility"
+        },
+        {
+          "label": "C",
+          "text": "Ratably over the remaining lease term through December 31, Year 3"
+        },
+        { "label": "D", "text": "On December 31, Year 1, at year-end" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 420-10-25-15, costs to terminate a contract that is not a capital lease are recognized at the cease-use date (i.e., the date the entity ceases using the right conveyed by the contract). The fair value of the liability at the cease-use date reflects the remaining lease payments reduced by estimated sublease rentals. Since the company cannot sublease, the full remaining obligation is recognized on September 30, Year 1. The answer is B.",
+      "explanationJa": "ASC 420-10-25-15に基づき、キャピタル・リースではない契約の解約コストは使用中止日に認識される。使用中止日の負債の公正価値は、残りのリース支払額からサブリース収入見込額を控除した金額を反映する。サブリースができないため、9月30日に残りの全義務を認識する。正解はB。",
+      "references": ["ASC 420-10-25-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-075",
+      "topic": "Liabilities",
+      "subtopic": "Deferred Revenue - Subscription Services",
+      "stem": "On November 1, Year 1, a software company receives $120,000 for a 12-month subscription service beginning on that date. The company has a December 31 fiscal year-end. What amount of deferred revenue should be reported on the December 31, Year 1, balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$20,000" },
+        { "label": "D", "text": "$80,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The subscription covers 12 months from November 1, Year 1 through October 31, Year 2. Monthly revenue = $120,000 / 12 = $10,000. By December 31, Year 1, two months have been earned (November and December) = $10,000 × 2 = $20,000. Deferred revenue = $120,000 − $20,000 = $100,000. The answer is B.",
+      "explanationJa": "サブスクリプションはYear 1の11月1日からYear 2の10月31日までの12ヶ月間。月額収益 = $120,000 / 12 = $10,000。12月31日までに2ヶ月分が稼得済み = $20,000。繰延収益 = $120,000 − $20,000 = $100,000。正解はB。",
+      "references": ["ASC 606-10-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-076",
+      "topic": "Liabilities",
+      "subtopic": "Deferred Revenue - Loyalty Points Allocation",
+      "stem": "A retailer sells a product for $200 cash and awards 500 loyalty points. Each point has a standalone selling price of $0.10, and the standalone selling price of the product is $200. Under ASC 606, how much of the $200 transaction price should be allocated to the loyalty points and recognized as deferred revenue at the time of sale?",
+      "choices": [
+        { "label": "A", "text": "$50" },
+        { "label": "B", "text": "$40" },
+        { "label": "C", "text": "$20" },
+        { "label": "D", "text": "$25" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606, the transaction price is allocated to each performance obligation based on relative standalone selling prices (SSP). Product SSP = $200. Loyalty points SSP = 500 x $0.10 = $50. Total SSP = $200 + $50 = $250. Allocation to loyalty points = ($50 / $250) x $200 = $40. This $40 is recognized as deferred revenue (contract liability) until the points are redeemed. Allocation to the product = ($200 / $250) x $200 = $160. The answer is B.",
+      "explanationJa": "ASC 606に基づき、取引価格は各履行義務に独立販売価格の比率で配分される。商品SSP = $200。ポイントSSP = 500 x $0.10 = $50。合計SSP = $250。ポイントへの配分 = ($50 / $250) x $200 = $40。この$40はポイント交換まで繰延収益（契約負債）として認識される。正解はB。",
+      "references": ["ASC 606-10-32-28"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-077",
+      "topic": "Liabilities",
+      "subtopic": "Sales Tax Liability",
+      "stem": "A retailer collects 7% sales tax on all taxable sales. During December, the retailer had total taxable sales of $400,000. The sales tax collected is remitted to the state in January. What liability should the retailer report at December 31?",
+      "choices": [
+        { "label": "A", "text": "$28,000 sales tax payable" },
+        { "label": "B", "text": "$400,000 deferred revenue" },
+        { "label": "C", "text": "$428,000 combined liability" },
+        { "label": "D", "text": "$0 because tax is remitted in January" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sales tax collected from customers is held in trust for the government and represents a liability until remitted. The sales tax liability at December 31 = $400,000 × 7% = $28,000. This is reported as sales tax payable, a current liability. The retailer acts as a collection agent and the sales tax is not revenue. The answer is A.",
+      "explanationJa": "顧客から徴収した消費税は政府への預り金であり、納付するまで負債となる。12月31日の消費税未払額 = $400,000 × 7% = $28,000。流動負債として消費税未払金を計上する。小売業者は徴収代行者であり、消費税は収益ではない。正解はA。",
+      "references": ["ASC 605-45-50-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-078",
+      "topic": "Liabilities",
+      "subtopic": "Payroll Liabilities - Accrued Wages",
+      "stem": "A company has a weekly payroll of $350,000 for a 5-day work week. The fiscal year-end is Wednesday, December 31. Payday is the following Friday. What amount of accrued wages payable should be recorded at December 31?",
+      "choices": [
+        { "label": "A", "text": "$210,000" },
+        { "label": "B", "text": "$140,000" },
+        { "label": "C", "text": "$280,000" },
+        { "label": "D", "text": "$350,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The weekly payroll is $350,000 for 5 days, so the daily rate = $350,000 / 5 = $70,000. December 31 is Wednesday, so 3 days of the workweek (Monday, Tuesday, Wednesday) have been worked but not yet paid. Accrued wages = $70,000 × 3 = $210,000. The answer is A.",
+      "explanationJa": "週給$350,000を5日で割ると日給 = $70,000。12月31日は水曜日なので、月・火・水の3日分が未払い。未払賃金 = $70,000 × 3 = $210,000。正解はA。",
+      "references": ["ASC 710-10-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-079",
+      "topic": "Liabilities",
+      "subtopic": "Accrued Interest Payable",
+      "stem": "On October 1, Year 1, a company borrows $1,200,000 at an annual interest rate of 9%. Interest is payable semiannually on April 1 and October 1. What amount of accrued interest payable should be reported at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$27,000" },
+        { "label": "B", "text": "$54,000" },
+        { "label": "C", "text": "$36,000" },
+        { "label": "D", "text": "$108,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Interest accrues from October 1 to December 31, which is 3 months. Accrued interest = $1,200,000 × 9% × 3/12 = $1,200,000 × 0.0225 = $27,000. The answer is A.",
+      "explanationJa": "利息は10月1日から12月31日までの3ヶ月間発生する。未払利息 = $1,200,000 × 9% × 3/12 = $27,000。正解はA。",
+      "references": ["ASC 835-30-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-080",
+      "topic": "Liabilities",
+      "subtopic": "Product Liability Contingency",
+      "stem": "A manufacturer has been notified that 50 product liability lawsuits have been filed, each claiming $100,000 in damages. Based on historical experience, the company's attorneys estimate that the company will lose approximately 30% of the cases and the average settlement will be $60,000 per case. Under ASC 450, what amount should the company accrue?",
+      "choices": [
+        { "label": "A", "text": "$5,000,000" },
+        { "label": "B", "text": "$1,500,000" },
+        { "label": "C", "text": "$3,000,000" },
+        { "label": "D", "text": "$900,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Based on historical experience, the company expects to lose 30% of 50 cases = 15 cases. The estimated average settlement is $60,000 per case. Total accrual = 15 × $60,000 = $900,000. Under ASC 450-20-25-2, when a loss is probable and can be reasonably estimated (here, using historical experience with a large population of similar claims), the estimated loss should be accrued. The answer is D.",
+      "explanationJa": "過去の経験から50件のうち30%（15件）で敗訴が見込まれ、平均和解金額は$60,000。引当額 = 15 × $60,000 = $900,000。ASC 450-20-25-2に基づき、類似の多数の訴訟に対する過去の経験から損失額を合理的に見積もれる場合、その金額を引当計上する。正解はD。",
+      "references": ["ASC 450-20-25-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-081",
+      "topic": "Liabilities",
+      "subtopic": "Contingent Liability - Guarantee FV Recognition",
+      "stem": "Under ASC 460, when a company issues a guarantee of another entity's debt, how should the guarantor initially recognize the guarantee?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No liability is recorded until a payment under the guarantee becomes probable"
+        },
+        {
+          "label": "B",
+          "text": "Record a liability at the fair value of the guarantee obligation at inception"
+        },
+        {
+          "label": "C",
+          "text": "Record a liability equal to the face amount of the guaranteed debt"
+        },
+        {
+          "label": "D",
+          "text": "Record a liability only if the guaranteed entity has a credit rating below investment grade"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 460-10-25-4 requires the guarantor to recognize, at inception, a liability at the fair value of the obligation undertaken in issuing the guarantee. This initial recognition is required regardless of the probability of the guarantor having to make any payments under the guarantee. The fair value typically reflects the premium the guarantor would charge for providing the guarantee. The answer is B.",
+      "explanationJa": "ASC 460-10-25-4は、保証人が保証発行時にその義務の公正価値で負債を認識することを要求している。この初期認識は保証に基づく支払の可能性に関係なく必要である。公正価値は通常、保証人が保証提供に対して請求するプレミアムを反映する。正解はB。",
+      "references": ["ASC 460-10-25-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-082",
+      "topic": "Liabilities",
+      "subtopic": "Bonds - Issuance at Par Journal Entry",
+      "stem": "When a company issues bonds at par value, which of the following journal entries is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Cash, credit Bonds Payable for the face amount"
+        },
+        {
+          "label": "B",
+          "text": "Debit Cash, credit Bonds Payable and Premium on Bonds Payable"
+        },
+        {
+          "label": "C",
+          "text": "Debit Cash and Discount on Bonds Payable, credit Bonds Payable"
+        },
+        {
+          "label": "D",
+          "text": "Debit Cash, credit Bonds Payable and Interest Expense"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When bonds are issued at par (face value), the company receives cash equal to the face amount. The entry is simply: Debit Cash for the face amount, Credit Bonds Payable for the face amount. There is no premium or discount because the stated rate equals the market rate. The answer is A.",
+      "explanationJa": "社債が額面（par value）で発行される場合、受取現金は額面金額と同額である。仕訳は：借方に現金（額面金額）、貸方に社債（額面金額）。表面利率と市場利率が等しいため、プレミアムやディスカウントは発生しない。正解はA。",
+      "references": ["ASC 835-30-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-083",
+      "topic": "Liabilities",
+      "subtopic": "Bond Refunding - New Issue to Retire Old",
+      "stem": "A company issues new 10-year, 5% bonds at par ($2,000,000) to retire outstanding 6% bonds with a carrying amount of $1,950,000 and a call price of 103. What gain or loss should the company recognize on the retirement?",
+      "choices": [
+        { "label": "A", "text": "$110,000 loss" },
+        { "label": "B", "text": "$50,000 loss" },
+        { "label": "C", "text": "$60,000 gain" },
+        { "label": "D", "text": "$110,000 gain" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The call price to retire the old bonds = $2,000,000 × 1.03 = $2,060,000 (assuming face value of old bonds is $2,000,000). The carrying amount of the old bonds = $1,950,000 (reflecting an unamortized discount of $50,000). Loss on retirement = Call price − Carrying amount = $2,060,000 − $1,950,000 = $110,000. The issuance of the new bonds is a separate transaction. The answer is A.",
+      "explanationJa": "旧社債のコール価格 = $2,000,000 × 1.03 = $2,060,000（旧社債の額面は$2,000,000と仮定）。帳簿価額 = $1,950,000（未償却ディスカウント$50,000反映）。償還損失 = $2,060,000 − $1,950,000 = $110,000。新社債の発行は別個の取引。正解はA。",
+      "references": ["ASC 470-50-40-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-084",
+      "topic": "Liabilities",
+      "subtopic": "Debt Issuance Costs - Balance Sheet Presentation",
+      "stem": "Under ASC 835-30, how should debt issuance costs associated with a term loan be presented on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "As an asset under Other Assets" },
+        {
+          "label": "B",
+          "text": "As a direct deduction from the carrying amount of the related debt liability"
+        },
+        { "label": "C", "text": "As an expense in the period incurred" },
+        { "label": "D", "text": "As a component of stockholders' equity" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASU 2015-03 (codified in ASC 835-30-45-1A) requires that debt issuance costs related to a recognized debt liability be presented in the balance sheet as a direct deduction from the carrying amount of that debt liability, consistent with debt discounts. This contrasts with the prior treatment of presenting them as a deferred charge (asset). An exception exists for line-of-credit arrangements, where costs may be presented as an asset. The answer is B.",
+      "explanationJa": "ASU 2015-03（ASC 835-30-45-1Aに集約）は、認識された債務負債に関連する発行コストを、その債務負債の帳簿価額からの直接控除として貸借対照表に表示することを要求している。これは社債ディスカウントと同様の表示である。ただし、リボルビングクレジット枠のコストは資産として表示できる例外がある。正解はB。",
+      "references": ["ASC 835-30-45-1A"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-085",
+      "topic": "Liabilities",
+      "subtopic": "Long-Term Debt - Current Portion Classification",
+      "stem": "On December 31, Year 1, a company has a $5,000,000 long-term note payable with scheduled principal payments of $1,000,000 per year for the next 5 years. The company intends to refinance the first $1,000,000 payment but has not entered into any refinancing agreement. How should the note be classified at December 31, Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$5,000,000 noncurrent because the company intends to refinance"
+        },
+        {
+          "label": "B",
+          "text": "$1,000,000 current and $4,000,000 noncurrent"
+        },
+        {
+          "label": "C",
+          "text": "$2,000,000 current and $3,000,000 noncurrent"
+        },
+        {
+          "label": "D",
+          "text": "$5,000,000 current because the entire amount is being repaid"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 470-10-45-2, the portion of long-term debt due within one year should be classified as a current liability. Intent to refinance is not sufficient; the entity must have the ability to refinance, demonstrated by a post-balance-sheet refinancing or an existing refinancing agreement. Since the company only intends to refinance but has no agreement, the $1,000,000 due within one year is classified as current and the remaining $4,000,000 as noncurrent. The answer is B.",
+      "explanationJa": "ASC 470-10-45-2に基づき、1年以内に返済期限が到来する長期債務は流動負債に分類する。リファイナンスの意図だけでは不十分で、実際のリファイナンス能力（期末後の実行またはリファイナンス契約の締結）の証明が必要。契約未締結のため、1年以内返済分$1,000,000は流動、残り$4,000,000は非流動に分類。正解はB。",
+      "references": ["ASC 470-10-45-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-086",
+      "topic": "Liabilities",
+      "subtopic": "Mortgage Payable - Amortization",
+      "stem": "A company takes out a $2,000,000, 20-year mortgage at 6% annual interest, with monthly payments of $14,328. After the first monthly payment, what is the remaining mortgage balance?",
+      "choices": [
+        { "label": "A", "text": "$1,995,672" },
+        { "label": "B", "text": "$1,990,000" },
+        { "label": "C", "text": "$1,985,672" },
+        { "label": "D", "text": "$1,998,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "First month interest = $2,000,000 × (6% / 12) = $2,000,000 × 0.005 = $10,000. Principal portion of first payment = $14,328 − $10,000 = $4,328. Remaining balance = $2,000,000 − $4,328 = $1,995,672. The answer is A.",
+      "explanationJa": "初月利息 = $2,000,000 × (6% / 12) = $10,000。初回返済の元本部分 = $14,328 − $10,000 = $4,328。残高 = $2,000,000 − $4,328 = $1,995,672。正解はA。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-087",
+      "topic": "Liabilities",
+      "subtopic": "Installment Notes Payable",
+      "stem": "A company purchases equipment by issuing a $300,000, 3-year note payable with 6% annual interest. The note requires annual payments of $112,098 at the end of each year. What is the total interest expense over the life of the note?",
+      "choices": [
+        { "label": "A", "text": "$36,294" },
+        { "label": "B", "text": "$54,000" },
+        { "label": "C", "text": "$18,000" },
+        { "label": "D", "text": "$24,294" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Total payments over 3 years = $112,098 × 3 = $336,294. Total principal repaid = $300,000. Total interest expense = $336,294 − $300,000 = $36,294. The answer is A.",
+      "explanationJa": "3年間の支払合計 = $112,098 × 3 = $336,294。元本返済合計 = $300,000。総利息費用 = $336,294 − $300,000 = $36,294。正解はA。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-088",
+      "topic": "Liabilities",
+      "subtopic": "Advances from Customers",
+      "stem": "A custom furniture manufacturer receives a $50,000 advance payment from a customer on December 1, Year 1, for furniture to be delivered in March Year 2. How should the $50,000 be reported on the December 31, Year 1, balance sheet?",
+      "choices": [
+        { "label": "A", "text": "Revenue of $50,000" },
+        { "label": "B", "text": "Current liability of $50,000" },
+        { "label": "C", "text": "Noncurrent liability of $50,000" },
+        { "label": "D", "text": "Reduction of accounts receivable" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Advance payments from customers represent unearned revenue, which is a liability because the company has an obligation to deliver goods or refund the payment. Since delivery is expected within the next year (March Year 2), the advance is classified as a current liability. Revenue cannot be recognized until the performance obligation is satisfied. The answer is B.",
+      "explanationJa": "顧客からの前受金は未稼得収益であり、商品を引き渡すか返金する義務があるため負債である。引渡しが翌年3月に予定されているため流動負債に分類。履行義務が充足されるまで収益は認識できない。正解はB。",
+      "references": ["ASC 606-10-25-1", "ASC 210-10-45-6"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-089",
+      "topic": "Liabilities",
+      "subtopic": "Contingent Liability - Environmental Cleanup Order",
+      "stem": "A company receives an EPA order requiring cleanup of a contaminated site. Environmental engineers estimate the total cleanup cost at $8,000,000, to be incurred over 4 years. The company expects to pay $2,000,000 per year. The discount rate is 5%. Under ASC 410, what amount should be recognized as the environmental liability at the date of the EPA order?",
+      "choices": [
+        { "label": "A", "text": "$8,000,000" },
+        { "label": "B", "text": "$7,091,900" },
+        { "label": "C", "text": "$6,400,000" },
+        { "label": "D", "text": "$6,000,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The environmental liability is recognized at the present value of the estimated future cash flows when the timing and amounts are reliably estimable. PV = $2,000,000 / 1.05 + $2,000,000 / 1.05^2 + $2,000,000 / 1.05^3 + $2,000,000 / 1.05^4 = $1,904,762 + $1,814,059 + $1,727,675 + $1,645,405 = $7,091,901 (approximately $7,091,900). The answer is B.",
+      "explanationJa": "環境負債は、時期と金額が信頼性をもって見積もれる場合、将来キャッシュ・フローの現在価値で認識する。PV = $2,000,000/1.05 + $2,000,000/1.05^2 + $2,000,000/1.05^3 + $2,000,000/1.05^4 = $1,904,762 + $1,814,059 + $1,727,675 + $1,645,405 = $7,091,901（約$7,091,900）。正解はB。",
+      "references": ["ASC 410-30-25-1", "ASC 410-30-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-090",
+      "topic": "Liabilities",
+      "subtopic": "Debt Covenant Waiver - Classification Impact",
+      "stem": "At December 31, Year 1, a company is in violation of a debt covenant on its $4,000,000 long-term loan. Before the financial statements are issued, the lender grants a waiver for a period of 12 months from the balance sheet date. How should the debt be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$4,000,000 as a current liability despite the waiver"
+        },
+        {
+          "label": "B",
+          "text": "$4,000,000 as a noncurrent liability because the waiver was obtained"
+        },
+        {
+          "label": "C",
+          "text": "$4,000,000 as a current liability because the waiver does not exceed 12 months"
+        },
+        {
+          "label": "D",
+          "text": "No reclassification needed; the violation is cured by the waiver"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 470-10-45-1, when a debt covenant violation has occurred that would otherwise require current classification, the debt can be classified as noncurrent if the creditor waives the right to demand repayment for a period greater than one year from the balance sheet date. Here, the waiver covers 12 months from the balance sheet date. If the waiver period is at least one year, the debt remains noncurrent. The answer is B.",
+      "explanationJa": "ASC 470-10-45-1に基づき、債務契約違反が発生し本来は流動分類が必要な場合でも、債権者が貸借対照表日から1年超の期間にわたり返済請求権を放棄した場合は非流動のまま分類できる。ここではウェイバーが12ヶ月間適用されるため、非流動負債のままとなる。正解はB。",
+      "references": ["ASC 470-10-45-1", "ASC 470-10-45-11"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-091",
+      "topic": "Liabilities",
+      "subtopic": "Troubled Debt - Modification Under ASU 2022-02",
+      "stem": "Under ASU 2022-02 (effective for fiscal years beginning after December 15, 2022), how does a creditor account for a modification of a loan to a borrower experiencing financial difficulty?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Apply the previous TDR guidance under ASC 310-40 and measure a new impairment"
+        },
+        {
+          "label": "B",
+          "text": "Recognize a new loan at fair value and derecognize the old loan"
+        },
+        {
+          "label": "C",
+          "text": "Apply the general loan modification guidance in ASC 310-20 and evaluate whether the modification represents a new loan or a continuation of the existing loan"
+        },
+        {
+          "label": "D",
+          "text": "Write off the loan immediately and record a recovery when payments resume"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASU 2022-02 eliminated the TDR recognition and measurement guidance for creditors. Instead of applying the previous TDR model under ASC 310-40, creditors now apply the general loan modification guidance in ASC 310-20. The creditor evaluates whether the modification represents a new loan or a continuation of the existing loan based on the terms of the modification. Enhanced disclosures about modifications to borrowers experiencing financial difficulty are required. The answer is C.",
+      "explanationJa": "ASU 2022-02は債権者向けのTDR（債務不履行再構築）の認識・測定ガイダンスを廃止した。従来のASC 310-40のTDRモデルに代わり、債権者はASC 310-20の一般的なローン変更ガイダンスを適用する。変更が新規ローンか既存ローンの継続かを評価し、財務困難を経験する借り手への変更について強化された開示が求められる。正解はC。",
+      "references": ["ASC 310-20-35-10", "ASU 2022-02"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-092",
+      "topic": "Liabilities",
+      "subtopic": "Capital Lease Obligation (Legacy)",
+      "stem": "Under legacy ASC 840 (prior to ASC 842), a lease is classified as a capital lease by the lessee if it meets any one of four criteria. Which of the following is NOT one of these criteria?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The lease transfers ownership of the asset to the lessee by the end of the lease term"
+        },
+        {
+          "label": "B",
+          "text": "The lease contains a bargain purchase option"
+        },
+        {
+          "label": "C",
+          "text": "The lease term is equal to 50% or more of the estimated economic life of the asset"
+        },
+        {
+          "label": "D",
+          "text": "The present value of minimum lease payments equals or exceeds 90% of the fair value of the leased asset"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under legacy ASC 840, the four criteria for capital lease classification by the lessee are: (1) transfer of ownership, (2) bargain purchase option, (3) lease term is 75% or more (not 50%) of the estimated economic life, and (4) present value of minimum lease payments is 90% or more of fair value. Choice C states 50%, which is incorrect; the threshold is 75%. The answer is C.",
+      "explanationJa": "旧ASC 840では、借手のキャピタル・リースの4基準は：(1)所有権移転、(2)割安購入オプション、(3)リース期間が経済的耐用年数の75%以上（50%ではない）、(4)最低リース料の現在価値が公正価値の90%以上。選択肢Cは50%としており誤り。閾値は75%。正解はC。",
+      "references": ["ASC 840-10-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

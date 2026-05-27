@@ -2,7 +2,7 @@
   "id": "far-receivables",
   "name": "Receivables",
   "topic": "Receivables",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "questions": [
     {
       "id": "rec-001",
@@ -1380,6 +1380,600 @@
       "references": ["ASC 606-10-55-22", "ASC 606-10-55-27"],
       "difficulty": "advanced",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "rec-061",
+      "topic": "Receivables",
+      "subtopic": "Accounts Receivable - Gross vs Net Presentation",
+      "stem": "Company A has gross accounts receivable of $800,000 and an allowance for credit losses of $24,000. Under ASC 310-10-45, how should these receivables be presented on the balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Accounts receivable of $776,000 with no additional disclosure"
+        },
+        {
+          "label": "B",
+          "text": "Accounts receivable of $800,000 gross, less allowance of $24,000, for a net of $776,000"
+        },
+        {
+          "label": "C",
+          "text": "Accounts receivable of $800,000 with the allowance disclosed only in footnotes"
+        },
+        {
+          "label": "D",
+          "text": "Accounts receivable of $824,000 including the allowance"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 310-10-45-1 requires that receivables be reported at their gross amount on the balance sheet with the related allowance for credit losses presented as a deduction (contra-asset). This gross-to-net presentation ($800,000 - $24,000 = $776,000) provides users with information about both the total amount owed and the estimated uncollectible portion. The answer is B.",
+      "explanationJa": "ASC 310-10-45-1により、売掛金は総額で表示し、貸倒引当金を控除項目（contra-asset）として差し引いて純額を示す。$800,000（総額）- $24,000（引当金）= $776,000（純額）。この表示方法により、債権総額と回収不能見込額の両方の情報が提供される。",
+      "references": ["ASC 310-10-45-1", "ASC 326-20-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-062",
+      "topic": "Receivables",
+      "subtopic": "Bad Debt Expense - Percentage of AR Method",
+      "stem": "At year-end, Entity B has accounts receivable of $600,000 and estimates that 3% of outstanding receivables will be uncollectible. The allowance for credit losses has an existing credit balance of $4,000 before adjustment. What amount of bad debt expense should Entity B record?",
+      "choices": [
+        { "label": "A", "text": "$18,000" },
+        { "label": "B", "text": "$14,000" },
+        { "label": "C", "text": "$22,000" },
+        { "label": "D", "text": "$4,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the percentage of receivables method, the target allowance balance is 3% × $600,000 = $18,000. Since the allowance already has a credit balance of $4,000, the required adjustment (bad debt expense) is $18,000 - $4,000 = $14,000. The answer is B.",
+      "explanationJa": "売掛金残高比率法では、引当金の目標残高は$600,000 × 3% = $18,000。既存の引当金貸方残高$4,000を差し引くと、必要な貸倒費用は$18,000 - $4,000 = $14,000となる。",
+      "references": ["ASC 326-20-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-063",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Effective Interest Year 2",
+      "stem": "On January 1, Year 1, Entity C accepts a 2-year, $100,000 note receivable with a stated rate of 6% (interest paid annually) when the market rate is 8%. The note's initial carrying value is $96,432 (PV at 8%). What is the interest income recognized in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$6,000" },
+        { "label": "B", "text": "$7,715" },
+        { "label": "C", "text": "$7,853" },
+        { "label": "D", "text": "$8,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the effective interest method, Year 1 interest income = $96,432 × 8% = $7,715 (rounded). Cash received in Year 1 = $100,000 × 6% = $6,000. Discount amortization in Year 1 = $7,715 - $6,000 = $1,715. Carrying value at end of Year 1 = $96,432 + $1,715 = $98,147. In the final year (Year 2), the remaining discount is amortized to bring the carrying value to face value: Amortization = $100,000 - $98,147 = $1,853. Year 2 interest income = Cash interest $6,000 + Amortization $1,853 = $7,853. The answer is C.",
+      "explanationJa": "実効金利法によるYear 2の利息収益を計算する。Year 1: 利息収益 = $96,432 × 8% = $7,715（四捨五入）、現金受取 = $6,000、割引償却 = $1,715。Year 1末帳簿価額 = $96,432 + $1,715 = $98,147。Year 2（最終年度）: 残余割引を全額償却し帳簿価額を額面に合わせる。償却額 = $100,000 - $98,147 = $1,853。Year 2利息収益 = $6,000 + $1,853 = $7,853。",
+      "references": ["ASC 835-30-35-2", "ASC 310-10-35-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-064",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Lump Sum Due at Maturity",
+      "stem": "On January 1, Entity D lends $200,000 in exchange for a 3-year, zero-coupon note receivable. The market rate of interest is 5%. What is the initial carrying value of the note receivable? (Round to nearest dollar.)",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$172,768" },
+        { "label": "C", "text": "$190,000" },
+        { "label": "D", "text": "$181,406" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A zero-coupon note paying $200,000 at maturity in 3 years is recorded at its present value using the market rate. PV = $200,000 / (1.05)³ = $200,000 / 1.157625 = $172,768 (rounded). The difference of $27,232 is a discount that will be amortized to interest income over the 3-year term. The answer is B.",
+      "explanationJa": "ゼロクーポン手形は市場金利で割り引いた現在価値で計上する。PV = $200,000 ÷ (1.05)³ = $200,000 ÷ 1.157625 = $172,768（四捨五入）。差額$27,232は割引であり、3年間で利息収益として償却される。",
+      "references": ["ASC 835-30-25-1", "ASC 835-30-15-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-065",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Serial Payment Schedule",
+      "stem": "Entity E holds a $120,000 note receivable that requires three equal annual principal payments of $40,000 plus interest at 6% on the outstanding balance. What is the total cash received in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$44,800" },
+        { "label": "B", "text": "$47,200" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$42,400" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "After Year 1 payment of $40,000 principal, the outstanding balance at the start of Year 2 is $120,000 - $40,000 = $80,000. Year 2 interest = $80,000 × 6% = $4,800. Year 2 principal payment = $40,000. Total cash received in Year 2 = $40,000 + $4,800 = $44,800. The answer is A.",
+      "explanationJa": "Year 1に元金$40,000を返済後、Year 2期首の残高は$120,000 - $40,000 = $80,000。Year 2の利息 = $80,000 × 6% = $4,800。元金返済 = $40,000。Year 2の受取総額 = $40,000 + $4,800 = $44,800。",
+      "references": ["ASC 310-10-35-1", "ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-066",
+      "topic": "Receivables",
+      "subtopic": "Factoring - Recourse Obligation Measurement",
+      "stem": "Entity F factors $500,000 of receivables with recourse. The factor charges a 3% fee and withholds 5% as a holdback. Entity F estimates the fair value of the recourse obligation at $8,000. What is the loss on sale of receivables?",
+      "choices": [
+        { "label": "A", "text": "$15,000" },
+        { "label": "B", "text": "$23,000" },
+        { "label": "C", "text": "$33,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Proceeds received = $500,000 - 3% fee ($15,000) - 5% holdback ($25,000) = $460,000. The holdback of $25,000 is recognized as a receivable from the factor. Total consideration = $460,000 cash + $25,000 holdback receivable = $485,000. Loss on sale = Carrying value - Total consideration + Recourse obligation = $500,000 - $485,000 + $8,000 = $23,000. The answer is B.",
+      "explanationJa": "受取額 = $500,000 - 手数料$15,000 - 留保金$25,000 = $460,000。留保金$25,000はファクターからの未収金として認識。対価合計 = $460,000 + $25,000 = $485,000。売却損 = 帳簿価額 - 対価合計 + 遡及義務 = $500,000 - $485,000 + $8,000 = $23,000。",
+      "references": ["ASC 860-20-25-1", "ASC 860-20-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-067",
+      "topic": "Receivables",
+      "subtopic": "Factoring - Holdback Reserve",
+      "stem": "Entity G factors $300,000 of receivables without recourse. The factor charges a 2% fee and holds back 10% until collections are complete. How much cash does Entity G receive at the time of the factoring?",
+      "choices": [
+        { "label": "A", "text": "$264,000" },
+        { "label": "B", "text": "$270,000" },
+        { "label": "C", "text": "$294,000" },
+        { "label": "D", "text": "$300,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cash received = Face amount - Fee - Holdback = $300,000 - ($300,000 × 2%) - ($300,000 × 10%) = $300,000 - $6,000 - $30,000 = $264,000. The holdback of $30,000 will be returned to Entity G as collections are made by the factor. The $30,000 is recorded as a receivable from the factor, not as a loss. The answer is A.",
+      "explanationJa": "受取現金 = 額面 - 手数料 - 留保金 = $300,000 - $6,000 - $30,000 = $264,000。留保金$30,000は回収完了後にファクターから返還されるため、ファクターからの未収金として計上する。損失ではない。",
+      "references": ["ASC 860-20-25-1", "ASC 860-20-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-068",
+      "topic": "Receivables",
+      "subtopic": "Securitization - Beneficial Interest Retained",
+      "stem": "Entity H securitizes $5,000,000 of receivables by transferring them to a qualifying special-purpose entity (SPE). Entity H retains a subordinated interest with a fair value of $400,000 and receives $4,500,000 in cash. The fair value of the transferred receivables is $5,000,000. What gain or loss does Entity H recognize on the transfer?",
+      "choices": [
+        { "label": "A", "text": "$0 gain or loss" },
+        { "label": "B", "text": "$100,000 loss" },
+        { "label": "C", "text": "$400,000 gain" },
+        { "label": "D", "text": "$500,000 loss" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 860-20-40, when a transfer qualifies as a sale, the transferor derecognizes the transferred assets, recognizes the assets received (cash and retained interest), and recognizes any gain or loss. Total consideration = Cash $4,500,000 + Fair value of retained interest $400,000 = $4,900,000. Loss = Carrying value $5,000,000 - Total consideration $4,900,000 = $100,000 loss. The answer is B.",
+      "explanationJa": "ASC 860-20-40に基づき、売却として適格な譲渡の場合、譲渡者は譲渡資産を認識中止し、受領した資産を認識する。受取対価合計 = 現金$4,500,000 + 残存持分$400,000 = $4,900,000。帳簿価額$5,000,000との差額$100,000が売却損となる。",
+      "references": ["ASC 860-20-40-1", "ASC 860-20-25-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-069",
+      "topic": "Receivables",
+      "subtopic": "Pledging vs Factoring - Key Differences",
+      "stem": "Which of the following best describes the key accounting difference between pledging receivables as collateral and factoring receivables without recourse?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pledging removes receivables from the balance sheet while factoring does not"
+        },
+        {
+          "label": "B",
+          "text": "Factoring without recourse results in derecognition of receivables while pledging retains them on the balance sheet"
+        },
+        {
+          "label": "C",
+          "text": "Both pledging and factoring remove receivables from the balance sheet"
+        },
+        {
+          "label": "D",
+          "text": "Neither pledging nor factoring affects the balance sheet presentation of receivables"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When receivables are pledged as collateral for a borrowing, the receivables remain on the borrower's balance sheet and the borrowing is recorded as a liability (ASC 860-30). When receivables are factored without recourse and the transfer meets the sale criteria under ASC 860-10-40, the receivables are derecognized from the seller's balance sheet and a gain or loss is recognized. The answer is B.",
+      "explanationJa": "売掛金を担保に供する場合（pledging）、債権はB/Sに残り借入金を負債として計上する。一方、遡及なしファクタリングでASC 860の売却要件を満たす場合、債権はB/Sから除去（derecognition）され、売却損益を認識する。",
+      "references": ["ASC 860-10-40-5", "ASC 860-30-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-070",
+      "topic": "Receivables",
+      "subtopic": "Assignment - Equity in Assigned Receivables",
+      "stem": "Entity J assigns $400,000 of accounts receivable to a finance company and borrows $320,000 at 9% annual interest. During the period, $250,000 of assigned receivables are collected. After remitting $250,000 to the finance company (which includes $28,800 of interest), what is Entity J's equity in assigned receivables?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$301,200" },
+        { "label": "C", "text": "$248,800" },
+        { "label": "D", "text": "$51,200" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Assigned receivables remaining = $400,000 - $250,000 collected = $150,000. The remittance of $250,000 includes interest of $28,800 ($320,000 × 9%), so the principal reduction = $250,000 - $28,800 = $221,200. Remaining loan balance = $320,000 - $221,200 = $98,800. Equity in assigned receivables = Remaining assigned receivables - Remaining loan balance = $150,000 - $98,800 = $51,200. The answer is D.",
+      "explanationJa": "譲渡債権残高 = $400,000 - 回収$250,000 = $150,000。$250,000の送金のうち利息$28,800（$320,000 × 9%）を差し引いた元金返済額 = $221,200。借入残高 = $320,000 - $221,200 = $98,800。譲渡債権に対する持分（equity） = 残存債権$150,000 - 借入残高$98,800 = $51,200。",
+      "references": ["ASC 860-30-25-1", "ASC 310-10-45-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-071",
+      "topic": "Receivables",
+      "subtopic": "CECL - Historical Loss Rate Adjustment",
+      "stem": "Entity K uses the loss-rate method under CECL. Historical loss rates for trade receivables average 2.5%. Current economic conditions suggest deterioration, and Entity K applies a qualitative adjustment of +0.8%. On a receivable pool of $1,200,000, what is the estimated allowance for credit losses?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$39,600" },
+        { "label": "C", "text": "$9,600" },
+        { "label": "D", "text": "$33,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the CECL loss-rate method, the entity starts with a historical loss rate and adjusts for current conditions and reasonable forecasts. Adjusted loss rate = 2.5% + 0.8% = 3.3%. Allowance = $1,200,000 × 3.3% = $39,600. The answer is B.",
+      "explanationJa": "CECL損失率法では、過去の損失率に現在の経済状況を反映する定性的調整を加える。調整後損失率 = 2.5% + 0.8% = 3.3%。引当金 = $1,200,000 × 3.3% = $39,600。",
+      "references": ["ASC 326-20-30-2", "ASC 326-20-55-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-072",
+      "topic": "Receivables",
+      "subtopic": "CECL - Transition Cumulative Effect",
+      "stem": "On January 1, Year 1, Entity L adopts ASC 326 (CECL). Under the previous incurred loss model, its allowance for credit losses was $45,000. Under CECL, the estimated lifetime expected losses are $72,000. Entity L's tax rate is 25%. What is the cumulative-effect adjustment to retained earnings upon adoption?",
+      "choices": [
+        { "label": "A", "text": "$27,000 decrease" },
+        { "label": "B", "text": "$20,250 decrease" },
+        { "label": "C", "text": "$72,000 decrease" },
+        { "label": "D", "text": "$54,000 decrease" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The transition from incurred loss to CECL is recognized as a cumulative-effect adjustment to retained earnings (ASC 326-10-65-1). The increase in allowance = $72,000 - $45,000 = $27,000 (pre-tax). The tax effect = $27,000 × 25% = $6,750, creating a deferred tax asset. Net after-tax impact on retained earnings = $27,000 - $6,750 = $20,250 decrease. The answer is B.",
+      "explanationJa": "CECL移行時は累積的影響額を利益剰余金で調整する。引当金増加額 = $72,000 - $45,000 = $27,000（税引前）。税効果 = $27,000 × 25% = $6,750（繰延税金資産）。利益剰余金への税引後影響 = $27,000 - $6,750 = $20,250の減少。",
+      "references": ["ASC 326-10-65-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-073",
+      "topic": "Receivables",
+      "subtopic": "CECL - Intercompany Receivable Scope",
+      "stem": "A parent company has an intercompany receivable of $500,000 from its wholly-owned subsidiary. In preparing consolidated financial statements, how should this receivable be treated under CECL (ASC 326)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "An allowance for credit losses must be recorded based on the subsidiary's creditworthiness"
+        },
+        {
+          "label": "B",
+          "text": "The receivable is eliminated in consolidation and is not subject to CECL measurement"
+        },
+        {
+          "label": "C",
+          "text": "CECL applies and the parent must estimate lifetime expected losses"
+        },
+        {
+          "label": "D",
+          "text": "The receivable is reclassified as an equity investment"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810, intercompany receivables and payables between a parent and its consolidated subsidiaries are eliminated in the preparation of consolidated financial statements. Since the receivable does not exist from the consolidated entity's perspective, CECL measurement under ASC 326 is not applicable at the consolidated level. In the parent's separate financial statements, however, the receivable would be subject to CECL. The answer is B.",
+      "explanationJa": "ASC 810に基づき、親会社と連結子会社間の内部取引債権・債務は連結財務諸表上で相殺消去される。連結ベースでは債権が存在しないため、CECL（ASC 326）の測定対象外となる。ただし親会社の個別財務諸表ではCECLの対象となる。",
+      "references": ["ASC 810-10-45-1", "ASC 326-20-15-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-074",
+      "topic": "Receivables",
+      "subtopic": "Receivable Reclassification - Held for Sale",
+      "stem": "Entity M decides to sell a portfolio of loans that were previously classified as held for investment. At the date of reclassification, the loans have a carrying value of $2,000,000 and a fair value of $1,850,000. How should Entity M account for the reclassification?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Continue to carry the loans at $2,000,000 until sold"
+        },
+        {
+          "label": "B",
+          "text": "Write down the loans to $1,850,000 and recognize a $150,000 valuation allowance"
+        },
+        {
+          "label": "C",
+          "text": "Immediately recognize a $150,000 realized loss"
+        },
+        {
+          "label": "D",
+          "text": "Transfer the loans at $2,000,000 and recognize any loss only at the time of sale"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 310-10-35-47, when loans are transferred from held for investment to held for sale, they are reclassified at the lower of cost or fair value. If the fair value is below carrying value, a valuation allowance is established. The loans are written down to $1,850,000 by recording a $150,000 valuation allowance, which is charged against earnings. The answer is B.",
+      "explanationJa": "ASC 310-10-35-47により、保有目的投資から売却目的に振り替えるローンは、原価と公正価値の低い方で再分類する。帳簿価額$2,000,000に対し公正価値$1,850,000が低いため、$150,000の評価引当金を計上して損益に反映する。",
+      "references": ["ASC 310-10-35-47", "ASC 310-10-35-48"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-075",
+      "topic": "Receivables",
+      "subtopic": "Allowance - Direct Write-Off Impact on Financial Statements",
+      "stem": "Company N uses the direct write-off method for a $12,000 uncollectible receivable. Under GAAP, which of the following is the primary reason the direct write-off method is generally NOT acceptable?",
+      "choices": [
+        { "label": "A", "text": "It overstates cash flows from operations" },
+        {
+          "label": "B",
+          "text": "It violates the matching principle by recognizing the expense in a period different from the related revenue"
+        },
+        {
+          "label": "C",
+          "text": "It understates total liabilities on the balance sheet"
+        },
+        {
+          "label": "D",
+          "text": "It requires more complex accounting procedures than the allowance method"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The direct write-off method is generally not acceptable under GAAP because it violates the matching principle (expense recognition). Revenue is recognized in one period, but the related bad debt expense may not be recognized until a later period when the specific receivable is deemed uncollectible. The allowance method, required under ASC 326 (CECL), estimates expected losses at inception and matches the expense with the related revenue. The answer is B.",
+      "explanationJa": "直接償却法はGAAPで原則認められない。その主な理由は、費用認識が対応原則（matching principle）に違反するためである。収益は一つの期に認識されるが、貸倒費用は特定の債権が回収不能と判断された別の期に認識される。引当金法（CECL）は取得時に予想損失を見積もり、収益と費用を適切に対応させる。",
+      "references": ["ASC 326-20-30-1", "ASC 310-10-35-7"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-076",
+      "topic": "Receivables",
+      "subtopic": "Accounts Receivable Aging Schedule Preparation",
+      "stem": "Entity P prepares an aging schedule for its $800,000 of accounts receivable at year-end. The aging categories and estimated uncollectible percentages are: Current (60% of AR) at 1%, 31-60 days (20% of AR) at 3%, 61-90 days (12% of AR) at 8%, and over 90 days (8% of AR) at 20%. What is the required allowance for credit losses?",
+      "choices": [
+        { "label": "A", "text": "$30,080" },
+        { "label": "B", "text": "$25,600" },
+        { "label": "C", "text": "$37,600" },
+        { "label": "D", "text": "$22,400" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Current: $800,000 × 60% = $480,000 × 1% = $4,800. 31-60 days: $800,000 × 20% = $160,000 × 3% = $4,800. 61-90 days: $800,000 × 12% = $96,000 × 8% = $7,680. Over 90 days: $800,000 × 8% = $64,000 × 20% = $12,800. Total required allowance = $4,800 + $4,800 + $7,680 + $12,800 = $30,080. The answer is A.",
+      "explanationJa": "エイジングスケジュールによる引当金計算: Current: $480,000 × 1% = $4,800。31-60日: $160,000 × 3% = $4,800。61-90日: $96,000 × 8% = $7,680。90日超: $64,000 × 20% = $12,800。合計 = $4,800 + $4,800 + $7,680 + $12,800 = $30,080。",
+      "references": ["ASC 326-20-55-4", "ASC 326-20-30-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-077",
+      "topic": "Receivables",
+      "subtopic": "Customer Financing Receivable",
+      "stem": "Entity Q sells equipment for $150,000 and provides customer financing with a 3-year note at 4% interest (market rate is 7%). Annual payments are $54,053 at the 4% stated rate. What amount should Entity Q recognize as revenue at the time of sale? (PV of ordinary annuity at 7%, 3 periods = 2.6243)",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$141,846" },
+        { "label": "C", "text": "$54,053" },
+        { "label": "D", "text": "$162,159" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When the stated rate on a note is below the market rate, the note receivable is recorded at its present value using the market rate (ASC 835-30). PV of annuity = $54,053 × PV annuity factor (7%, 3 years) = $54,053 × 2.6243 = $141,846. Revenue is recognized at the present value of the total consideration, which is $141,846. The difference of $8,154 ($150,000 - $141,846) represents a discount that will be amortized as interest income over the 3-year note term. The answer is B.",
+      "explanationJa": "表面金利が市場金利より低い手形は、市場金利で割り引いた現在価値で計上する（ASC 835-30）。PV = $54,053 × 年金現価係数(7%, 3年: 2.6243) = $141,846。収益は対価の現在価値$141,846で認識する。差額$8,154は3年間で利息収益として償却する。",
+      "references": ["ASC 835-30-25-1", "ASC 606-10-32-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-078",
+      "topic": "Receivables",
+      "subtopic": "Receivable Impairment - Restructured Loan",
+      "stem": "Bank R holds a $500,000 loan receivable with a contractual interest rate of 8%. The borrower is experiencing financial difficulty, and the bank agrees to reduce the interest rate to 4% for the remaining 3 years. The principal remains $500,000. Under ASC 310-10, what is the impairment loss? (PV of annuity at 8%, 3 years = 2.5771; PV of $1 at 8%, 3 years = 0.7938)",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$51,542" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$103,100" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The impairment is measured as the difference between the carrying value and the PV of expected future cash flows discounted at the loan's original effective rate. Modified cash flows: Annual interest = $500,000 × 4% = $20,000 for 3 years, plus principal of $500,000 at maturity. PV of interest payments = $20,000 × 2.5771 = $51,542. PV of principal = $500,000 × 0.7938 = $396,900. Total PV = $51,542 + $396,900 = $448,442. Impairment loss = $500,000 - $448,442 = $51,558. Rounded to the nearest answer: $51,542. The answer is B.",
+      "explanationJa": "減損額 = 帳簿価額 - 将来キャッシュフローの現在価値（元の実効金利で割引）。修正後CF: 年間利息 = $500,000 × 4% = $20,000（3年間）、満期元金 = $500,000。利息のPV = $20,000 × 2.5771 = $51,542。元金のPV = $500,000 × 0.7938 = $396,900。PV合計 = $448,442。減損 = $500,000 - $448,442 = $51,558 ≈ $51,542。",
+      "references": ["ASC 310-10-35-22", "ASC 310-10-35-23"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-079",
+      "topic": "Receivables",
+      "subtopic": "Loan Commitment - Off-Balance Sheet",
+      "stem": "Entity S has an unfunded loan commitment of $1,000,000 that is not unconditionally cancellable. Under ASC 326-20, how should Entity S account for expected credit losses on this commitment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No recognition is required since the commitment is off-balance sheet"
+        },
+        {
+          "label": "B",
+          "text": "Record an allowance as a contra-asset to a receivable"
+        },
+        {
+          "label": "C",
+          "text": "Record a liability for expected credit losses on the unfunded commitment"
+        },
+        {
+          "label": "D",
+          "text": "Disclose the commitment in the footnotes only with no recognition"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 326-20-30-11 requires entities to estimate expected credit losses on off-balance-sheet credit exposures (such as loan commitments that are not unconditionally cancellable) over the contractual period. The expected credit loss is recognized as a liability (not a contra-asset, since there is no on-balance-sheet financial asset). The answer is C.",
+      "explanationJa": "ASC 326-20-30-11により、無条件に取消不能でない貸出コミットメント等のオフバランスシート信用エクスポージャーについても、契約期間にわたる予想信用損失を見積もる必要がある。B/S上の金融資産がないため、contra-assetではなく負債として認識する。",
+      "references": ["ASC 326-20-30-11", "ASC 326-20-30-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-080",
+      "topic": "Receivables",
+      "subtopic": "Government Receivable - Property Tax",
+      "stem": "A government entity levies $3,000,000 in property taxes on January 1 of the fiscal year. Historically, 4% of the levy is uncollectible. Under governmental accounting standards, what amount of property tax revenue should the government recognize?",
+      "choices": [
+        { "label": "A", "text": "$3,000,000" },
+        { "label": "B", "text": "$2,880,000" },
+        { "label": "C", "text": "$2,760,000" },
+        { "label": "D", "text": "$3,120,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB Statement No. 33, property tax revenue is recognized net of estimated uncollectible amounts when the taxes are levied (assuming availability criteria are met). Revenue = $3,000,000 - ($3,000,000 × 4%) = $3,000,000 - $120,000 = $2,880,000. The $120,000 is recorded as an allowance for uncollectible taxes. The answer is B.",
+      "explanationJa": "GASB基準第33号により、固定資産税収入は課税時に回収不能見込額を控除した純額で認識する（利用可能性基準を満たす前提）。収入 = $3,000,000 - $120,000（$3,000,000 × 4%）= $2,880,000。$120,000は回収不能税金引当金として計上。",
+      "references": ["GASB Statement No. 33, para. 17"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-081",
+      "topic": "Receivables",
+      "subtopic": "Unbilled Receivable - Construction Contract",
+      "stem": "Entity T recognizes revenue on a construction contract using the input method (percentage of completion). Total contract price is $2,000,000 and the project is 40% complete. Billings to date total $600,000. What is the unbilled receivable (contract asset)?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$600,000" },
+        { "label": "C", "text": "$800,000" },
+        { "label": "D", "text": "$1,400,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Revenue recognized to date = $2,000,000 × 40% = $800,000. Billings to date = $600,000. When revenue recognized exceeds billings, the difference is a contract asset (unbilled receivable). Contract asset = $800,000 - $600,000 = $200,000. The answer is A.",
+      "explanationJa": "認識済収益 = $2,000,000 × 40% = $800,000。請求済額 = $600,000。認識済収益が請求額を超過する場合、差額は契約資産（未請求売掛金）となる。契約資産 = $800,000 - $600,000 = $200,000。",
+      "references": ["ASC 606-10-45-3", "ASC 606-10-45-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-082",
+      "topic": "Receivables",
+      "subtopic": "Employee Advances - Balance Sheet Classification",
+      "stem": "A company has outstanding employee advances of $15,000 due within 6 months and $35,000 due in 18 months. How should these advances be classified on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$50,000 as current assets" },
+        {
+          "label": "B",
+          "text": "$15,000 as current assets and $35,000 as noncurrent assets"
+        },
+        { "label": "C", "text": "$50,000 as noncurrent assets" },
+        {
+          "label": "D",
+          "text": "$15,000 as a reduction of stockholders' equity and $35,000 as noncurrent assets"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Employee advances are classified as receivables on the balance sheet. Under ASC 210-10-45, classification as current or noncurrent depends on the expected collection period. The $15,000 due within 6 months is a current asset, and the $35,000 due in 18 months is a noncurrent asset (other receivables or other assets). The answer is B.",
+      "explanationJa": "従業員仮払金はB/S上の債権として分類する。ASC 210-10-45に基づき、回収予定期間により流動・非流動を区分する。6ヶ月以内の$15,000は流動資産、18ヶ月後の$35,000は非流動資産に分類する。",
+      "references": ["ASC 210-10-45-1", "ASC 310-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-083",
+      "topic": "Receivables",
+      "subtopic": "Receivable from Sale of Fixed Asset",
+      "stem": "Entity U sells equipment with a carrying value of $80,000 for $120,000. The buyer pays $40,000 in cash and signs a 2-year, 6% note for the $80,000 balance. What is the gain on sale of the equipment?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$80,000" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The gain on sale is calculated as the total consideration less the carrying value of the asset. Total consideration = Cash $40,000 + Note receivable $80,000 = $120,000 (assuming the stated rate of 6% is at or near market rate, so no discount is needed). Gain = $120,000 - $80,000 carrying value = $40,000. The answer is A.",
+      "explanationJa": "売却益 = 受取対価合計 - 帳簿価額。対価合計 = 現金$40,000 + 受取手形$80,000 = $120,000（表面金利6%が市場金利と同等と仮定し割引不要）。売却益 = $120,000 - $80,000 = $40,000。",
+      "references": ["ASC 360-10-40-5", "ASC 310-10-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-084",
+      "topic": "Receivables",
+      "subtopic": "Interest Receivable Accrual",
+      "stem": "On October 1, Entity V lends $240,000 at 9% annual interest with interest payable semiannually on April 1 and October 1. What amount of interest receivable should Entity V report on its December 31 balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$5,400" },
+        { "label": "B", "text": "$10,800" },
+        { "label": "C", "text": "$21,600" },
+        { "label": "D", "text": "$16,200" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Interest accrues from October 1 to December 31 = 3 months. Annual interest = $240,000 × 9% = $21,600. Monthly interest = $21,600 / 12 = $1,800. Interest receivable for 3 months = $1,800 × 3 = $5,400. The answer is A.",
+      "explanationJa": "10月1日から12月31日までの3ヶ月分の利息を計上する。年間利息 = $240,000 × 9% = $21,600。月額 = $1,800。3ヶ月分 = $1,800 × 3 = $5,400。",
+      "references": ["ASC 835-30-35-2", "ASC 310-10-35-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-085",
+      "topic": "Receivables",
+      "subtopic": "Receivable - Foreign Currency Denomination",
+      "stem": "Entity W sells goods to a foreign customer for 1,000,000 euros on November 1 when the exchange rate is $1.12/euro. At December 31, the rate is $1.08/euro. The receivable is collected on February 1 at $1.10/euro. What is the foreign currency transaction loss recognized at December 31?",
+      "choices": [
+        { "label": "A", "text": "$20,000" },
+        { "label": "B", "text": "$40,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The receivable was initially recorded at 1,000,000 × $1.12 = $1,120,000. At December 31, the receivable is remeasured at 1,000,000 × $1.08 = $1,080,000. The exchange rate decreased from $1.12 to $1.08, resulting in a foreign currency transaction loss of $1,120,000 - $1,080,000 = $40,000, recognized in the income statement for the year ended December 31 (ASC 830-20-35-1). The answer is B.",
+      "explanationJa": "売掛金は当初1,000,000ユーロ × $1.12 = $1,120,000で計上。12月31日に1,000,000ユーロ × $1.08 = $1,080,000に再測定。為替差損 = $1,120,000 - $1,080,000 = $40,000を12月31日の損益計算書で認識する。",
+      "references": ["ASC 830-20-35-1", "ASC 830-10-45-18"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-086",
+      "topic": "Receivables",
+      "subtopic": "Subscription Receivable - Equity Offset",
+      "stem": "A corporation issues 10,000 shares of $5 par value common stock for $12 per share. The subscribers pay 40% at subscription and the remainder is due in 6 months. Under SEC reporting requirements, how should the unpaid subscription receivable be presented?",
+      "choices": [
+        { "label": "A", "text": "As a current asset" },
+        {
+          "label": "B",
+          "text": "As a contra-equity item deducted from stockholders' equity"
+        },
+        { "label": "C", "text": "As a noncurrent asset" },
+        { "label": "D", "text": "As a reduction of retained earnings" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under SEC Staff Accounting Bulletin (SAB) Topic 4E and current reporting practice, subscription receivables are generally presented as a contra-equity item (deduction from stockholders' equity) rather than as an asset. This is because the receivable represents unpaid capital subscriptions, and presenting it as an asset could overstate the entity's net assets. The unpaid balance is 10,000 × $12 × 60% = $72,000, shown as a deduction from equity. The answer is B.",
+      "explanationJa": "SEC報告要件では、株式引受未収金は資産ではなく、株主資本の控除項目（contra-equity）として表示する。資産計上すると純資産が過大表示されるため。未払残高 = 10,000株 × $12 × 60% = $72,000を株主資本から控除して表示する。",
+      "references": ["SEC SAB Topic 4E", "ASC 505-10-45-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-087",
+      "topic": "Receivables",
+      "subtopic": "Derecognition of Financial Asset",
+      "stem": "Which of the following conditions must ALL be met for a transfer of receivables to qualify as a sale and result in derecognition under ASC 860?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The transferred assets are isolated from the transferor, the transferee can pledge or exchange the assets, and the transferor does not maintain effective control"
+        },
+        {
+          "label": "B",
+          "text": "The transfer is for cash consideration only and the receivables are past due"
+        },
+        {
+          "label": "C",
+          "text": "The transferee assumes all credit risk and the transfer is irrevocable"
+        },
+        {
+          "label": "D",
+          "text": "The transferred assets are fully collected within 90 days and no recourse provision exists"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 860-10-40-5 establishes three conditions that must all be met for a transfer to qualify as a sale: (1) the transferred financial assets have been isolated from the transferor (put beyond the reach of the transferor and its creditors, even in bankruptcy), (2) each transferee has the right to pledge or exchange the assets it received, and (3) the transferor does not maintain effective control over the transferred assets. The answer is A.",
+      "explanationJa": "ASC 860-10-40-5は、譲渡が売却として適格となるための3条件を規定する: (1)譲渡資産が譲渡者から隔離されている（破産時でも譲渡者・債権者の手の届かない状態）、(2)各譲受者が受領した資産を担保提供・交換する権利を有する、(3)譲渡者が譲渡資産に対する実効的支配を維持していない。",
+      "references": ["ASC 860-10-40-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-088",
+      "topic": "Receivables",
+      "subtopic": "Transferred Receivable - Continuing Involvement",
+      "stem": "Entity Y transfers $2,000,000 of receivables to a third party but agrees to service the receivables and guarantees collection of 10% of the transferred amount. The fair value of the servicing asset is $25,000 and the fair value of the guarantee obligation is $30,000. Assuming the transfer qualifies as a sale, what is the net proceeds from the transfer?",
+      "choices": [
+        { "label": "A", "text": "$2,000,000" },
+        { "label": "B", "text": "$1,995,000" },
+        { "label": "C", "text": "$1,970,000" },
+        { "label": "D", "text": "$2,025,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When a transfer qualifies as a sale with continuing involvement, the transferor must recognize the fair values of any servicing assets/liabilities and guarantee obligations. Assuming the transferor receives $2,000,000 in cash: the servicing asset of $25,000 is recognized as an asset, and the guarantee obligation of $30,000 is recognized as a liability. Net impact on gain/loss calculation: Cash $2,000,000 + Servicing asset $25,000 - Guarantee liability $30,000 - Carrying value $2,000,000 = ($5,000) loss. The net proceeds (cash + servicing asset - guarantee obligation) = $2,000,000 + $25,000 - $30,000 = $1,995,000. The answer is B.",
+      "explanationJa": "売却として適格な譲渡で継続的関与がある場合、サービシング資産/負債および保証義務の公正価値を認識する。現金受取$2,000,000、サービシング資産$25,000を資産計上、保証義務$30,000を負債計上。純受取額 = $2,000,000 + $25,000 - $30,000 = $1,995,000。",
+      "references": ["ASC 860-20-25-1", "ASC 860-50-25-1", "ASC 860-50-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

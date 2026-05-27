@@ -2,7 +2,7 @@
   "id": "far-stock-compensation",
   "name": "Stock Compensation",
   "topic": "Stock Compensation",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "questions": [
     {
       "id": "sc-001",
@@ -1353,6 +1353,756 @@
       "references": ["ASC 718-10-15-4", "ASU 2018-07"],
       "difficulty": "basic",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "sc-046",
+      "topic": "Stock Compensation",
+      "subtopic": "Stock Option - Expiration Unexercised",
+      "stem": "Entity A granted 8,000 stock options with a grant-date fair value of $10 per option. All options vested, and the company recognized total compensation expense of $80,000 (credited to APIC - Stock Options). The options expired unexercised because the stock price remained below the exercise price. What journal entry, if any, should Entity A record upon expiration?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Compensation Expense $80,000; Credit Cash $80,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit APIC - Stock Options $80,000; Credit Compensation Expense $80,000"
+        },
+        {
+          "label": "C",
+          "text": "No journal entry is required"
+        },
+        {
+          "label": "D",
+          "text": "Debit APIC - Stock Options $80,000; Credit APIC $80,000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 718-10-35-9, when fully vested equity-classified stock options expire unexercised, no journal entry is required. The compensation expense previously recognized is not reversed, because the employee fulfilled the service condition and the grant-date fair value already incorporated the probability of expiration. The APIC - Stock Options balance remains in equity. Some entities may choose to reclassify the balance within equity (from APIC - Stock Options to APIC), but this is not required and has no income statement effect. The correct answer is C.",
+      "explanationJa": "ASC 718-10-35-9により、権利確定済みの持分分類ストックオプションが未行使で失効した場合、仕訳は不要。報酬費用は従業員が勤務条件を満たしており、付与日公正価値に失効確率が反映済みのため戻し入れない。APIC残高は資本に留まる。企業によってはAPIC内で振替を行うこともあるが、必須ではなく損益影響もない。",
+      "references": ["ASC 718-10-35-9"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-047",
+      "topic": "Stock Compensation",
+      "subtopic": "Restricted Stock - Section 83(b) Election",
+      "stem": "An employee receives 5,000 shares of restricted stock on January 1, Year 1 (fair value $20/share) that vest over 4 years. The employee makes a Section 83(b) election for tax purposes. Which of the following best describes the tax and GAAP implications?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The Section 83(b) election accelerates both the tax deduction and GAAP compensation expense to the grant date"
+        },
+        {
+          "label": "B",
+          "text": "The Section 83(b) election accelerates the employee's taxable income to the grant date, but GAAP expense is still recognized over the 4-year vesting period"
+        },
+        {
+          "label": "C",
+          "text": "The Section 83(b) election has no effect on either tax or GAAP recognition"
+        },
+        {
+          "label": "D",
+          "text": "The Section 83(b) election defers both the tax deduction and GAAP expense to the vesting date"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A Section 83(b) election causes the employee to recognize taxable income at the grant date (based on the grant-date fair value of the stock) rather than waiting until the vesting date. However, ASC 718 requires that GAAP compensation expense be recognized over the requisite service period (4-year vesting period) regardless of the employee's tax election. The employer's corresponding tax deduction also occurs at the grant date when the employee makes the 83(b) election, creating a temporary difference. But the GAAP expense recognition pattern is unaffected. The correct answer is B.",
+      "explanationJa": "Section 83(b)選択により、従業員の課税所得は付与日に認識される（確定日ではなく）。しかしASC 718のGAAP上の報酬費用は83(b)選択にかかわらず、4年間の必要勤務期間にわたり認識する。雇用主の税務上の控除も付与日に発生し一時差異が生じるが、GAAP費用の認識パターンには影響しない。",
+      "references": ["ASC 718-10-35-2", "ASC 718-740-25-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-048",
+      "topic": "Stock Compensation",
+      "subtopic": "RSU - Post-Vesting Holding Period",
+      "stem": "Entity B grants 3,000 RSUs to an employee on January 1, Year 1. The RSUs vest after 2 years of service, but the employee must hold the resulting shares for an additional 1 year after vesting (a post-vesting holding period). The grant-date fair value is $25 per RSU. Over what period should compensation expense be recognized?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "3 years (vesting period plus holding period)"
+        },
+        {
+          "label": "B",
+          "text": "2 years (the vesting period only)"
+        },
+        {
+          "label": "C",
+          "text": "1 year (the holding period only)"
+        },
+        {
+          "label": "D",
+          "text": "Immediately at the grant date"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-10-25-1, compensation cost is recognized over the requisite service period. A post-vesting holding period (also called a restriction on sale) does not extend the requisite service period because the employee is not required to provide additional service during the holding period. The restriction affects only the liquidity of the shares, not the vesting. The holding period is reflected in the grant-date fair value (as a discount for illiquidity) but does not change the recognition period. The correct answer is B: 2-year vesting period.",
+      "explanationJa": "ASC 718-10-25-1により、報酬費用は必要勤務期間にわたり認識する。権利確定後の保有期間（売却制限期間）は、追加の勤務を求めるものではないため、必要勤務期間を延長しない。保有制限は株式の流動性にのみ影響し、付与日公正価値に流動性ディスカウントとして反映される。費用認識期間は2年間の権利確定期間のみ。",
+      "references": ["ASC 718-10-25-1", "ASC 718-10-55-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-049",
+      "topic": "Stock Compensation",
+      "subtopic": "Graded Vesting - Straight-Line Recognition",
+      "stem": "Entity C grants 12,000 stock options on January 1, Year 1 with a grant-date fair value of $6 per option. The options vest in three equal annual installments (4,000 each year). Entity C elects to use the straight-line method over the entire 3-year vesting period (rather than treating each tranche separately). What is the compensation expense in Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$24,000"
+        },
+        {
+          "label": "B",
+          "text": "$36,000"
+        },
+        {
+          "label": "C",
+          "text": "$72,000"
+        },
+        {
+          "label": "D",
+          "text": "$12,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Total compensation cost = 12,000 options x $6 = $72,000. When an entity elects the straight-line method for graded vesting awards (applying straight-line over the longest vesting period for the entire award), Year 1 expense = $72,000 / 3 years = $24,000. This differs from the accelerated method (treating each tranche separately), which would front-load more expense in Year 1. ASC 718-10-35-8 permits either approach as an accounting policy election, but requires at least as much expense as straight-line over the longest tranche in each interim period. The correct answer is A.",
+      "explanationJa": "報酬総額 = 12,000 x $6 = $72,000。段階的権利確定で全体に定額法を適用する場合、Year 1費用 = $72,000 ÷ 3年 = $24,000。各トランチを別個に扱う加速法ではYear 1に多く費用計上されるが、ASC 718-10-35-8はどちらの方法も会計方針として許容している（ただし各中間期で最低限の費用認識基準あり）。",
+      "references": ["ASC 718-10-35-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-050",
+      "topic": "Stock Compensation",
+      "subtopic": "Performance Share Unit - TSR Condition",
+      "stem": "Entity D grants 10,000 performance share units (PSUs) that vest based on total shareholder return (TSR) relative to a peer group over 3 years. The grant-date fair value, determined using a Monte Carlo simulation incorporating the TSR market condition, is $18 per unit. At the end of Year 3, Entity D's TSR ranks in the bottom quartile and the PSUs do not vest. What is the total compensation expense recognized over the 3-year period?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$0 because the TSR condition was not met"
+        },
+        {
+          "label": "B",
+          "text": "$180,000"
+        },
+        {
+          "label": "C",
+          "text": "$90,000"
+        },
+        {
+          "label": "D",
+          "text": "$60,000 per year, adjusted for TSR achievement"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "TSR is a market condition under ASC 718 because it depends on the entity's stock price performance. Under ASC 718-10-30-14, the effect of a market condition is incorporated into the grant-date fair value via the Monte Carlo simulation and is not subsequently revised regardless of whether the condition is met. Total compensation = 10,000 x $18 = $180,000, recognized ratably over the 3-year service period ($60,000 per year). Even though the TSR condition was not met and the PSUs did not vest, the full $180,000 is recognized because market condition outcomes do not trigger reversal. The correct answer is B.",
+      "explanationJa": "TSRは株価パフォーマンスに依存するため、ASC 718の市場条件に該当する。ASC 718-10-30-14により、市場条件はモンテカルロシミュレーションで付与日公正価値に織り込まれ、条件達成の有無にかかわらず事後修正しない。報酬総額 = 10,000 x $18 = $180,000を3年間で均等認識（年$60,000）。TSR未達でPSUが確定しなくても全額$180,000を認識する。",
+      "references": ["ASC 718-10-30-14", "ASC 718-10-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-051",
+      "topic": "Stock Compensation",
+      "subtopic": "Employee vs Nonemployee Classification (ASU 2018-07)",
+      "stem": "Before the adoption of ASU 2018-07, how did the measurement of share-based payments to nonemployees differ from those to employees under U.S. GAAP?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Nonemployee awards were measured at intrinsic value; employee awards at fair value"
+        },
+        {
+          "label": "B",
+          "text": "Nonemployee awards were measured at fair value on the performance completion date with periodic remeasurement; employee awards were measured once at the grant date"
+        },
+        {
+          "label": "C",
+          "text": "There was no difference; both were always measured at grant-date fair value"
+        },
+        {
+          "label": "D",
+          "text": "Nonemployee awards were measured at the lower of cost or fair value"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Before ASU 2018-07, nonemployee share-based payments were governed by ASC 505-50, which required measurement at fair value of the equity instruments at the earlier of (1) the date a commitment for performance was reached or (2) the date performance was complete. Awards were remeasured at each reporting date until the measurement date. ASU 2018-07 eliminated this distinction by bringing nonemployee awards into ASC 718, aligning measurement with employee awards at the grant-date fair value with no subsequent remeasurement for equity-classified awards. The correct answer is B.",
+      "explanationJa": "ASU 2018-07以前、非従業員への株式報酬はASC 505-50に基づき、業績完了日（または業績コミットメント日）の公正価値で測定し、測定日まで各報告日に再測定を要した。従業員報酬は付与日に一度測定のみ。ASU 2018-07でこの区別が廃止され、非従業員報酬もASC 718の枠組みで付与日公正価値で測定するよう統一された。",
+      "references": ["ASC 718-10-15-4", "ASU 2018-07"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-052",
+      "topic": "Stock Compensation",
+      "subtopic": "Stock Compensation - Related Tax Deduction Timing",
+      "stem": "Entity E grants nonqualified stock options (NQSOs) to an employee. For tax purposes, when does the employer receive a deduction for NQSOs?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "At the grant date"
+        },
+        {
+          "label": "B",
+          "text": "Ratably over the vesting period"
+        },
+        {
+          "label": "C",
+          "text": "At the exercise date, based on the intrinsic value at exercise"
+        },
+        {
+          "label": "D",
+          "text": "At the vesting date, based on the grant-date fair value"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "For NQSOs, the employer receives a tax deduction at the time the employee exercises the option, equal to the intrinsic value at exercise (market price minus exercise price). This creates a temporary difference with GAAP, which recognizes compensation expense based on the grant-date fair value over the vesting period. The difference between the cumulative GAAP expense and the tax deduction at exercise gives rise to either an excess tax benefit (if the tax deduction exceeds book expense) or a tax deficiency (if it is less). The correct answer is C.",
+      "explanationJa": "NQSOの場合、雇用主の税務上の控除は従業員がオプションを行使した時点で、行使時の本源的価値（市場価格−行使価格）に基づいて発生する。GAAP上は付与日公正価値を権利確定期間で認識するため、一時差異が生じる。税務控除とGAAP費用の差額により、超過税務便益または税務不足額が発生する。",
+      "references": ["ASC 718-740-25-2", "ASC 718-740-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-053",
+      "topic": "Stock Compensation",
+      "subtopic": "Compensation Expense - Quarterly Catch-Up",
+      "stem": "Entity F grants 10,000 stock options on January 1, Year 1 (grant-date fair value $9/option, 2-year cliff vest, 10% estimated forfeiture rate). At the end of Year 1, Entity F revises its forfeiture estimate to 4%. What is the total compensation expense recognized in Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$40,500"
+        },
+        {
+          "label": "B",
+          "text": "$43,200"
+        },
+        {
+          "label": "C",
+          "text": "$45,000"
+        },
+        {
+          "label": "D",
+          "text": "$36,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-10-35-3, changes in forfeiture estimates result in a cumulative catch-up adjustment. Original total compensation = 10,000 x $9 x (1 - 10%) = $81,000. Original Year 1 expense would have been $81,000 / 2 = $40,500. At Year 1 end, the revised total = 10,000 x $9 x (1 - 4%) = $86,400. Revised cumulative through Year 1 = $86,400 x (1/2) = $43,200. Since this is the first year, all $43,200 is recognized in Year 1 (cumulative catch-up from $0). Choice A ($40,500) uses the original 10% rate. Choice C ($45,000) ignores forfeitures. Choice D ($36,000) uses a 20% forfeiture rate. The correct answer is B.",
+      "explanationJa": "ASC 718-10-35-3により、没収率見積りの変更は累積的キャッチアップ調整を行う。原見積り報酬総額 = 10,000 x $9 x (1 - 10%) = $81,000。修正後報酬総額 = 10,000 x $9 x (1 - 4%) = $86,400。Year 1末までの累計 = $86,400 x 1/2 = $43,200。初年度のため$43,200全額をYear 1で認識。選択肢A($40,500)は原10%率、C($45,000)は没収率無視、D($36,000)は20%率の誤り。",
+      "references": ["ASC 718-10-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-054",
+      "topic": "Stock Compensation",
+      "subtopic": "Award Pool - Performance Achievement Level",
+      "stem": "Entity G grants performance share units (PSUs) with a target award of 10,000 shares. The payout ranges from 0% to 200% of target based on EPS achievement. The grant-date fair value is $30 per share. At the end of Year 1 (of a 3-year performance period), management estimates 150% achievement is probable. What is the Year 1 compensation expense?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$100,000"
+        },
+        {
+          "label": "B",
+          "text": "$150,000"
+        },
+        {
+          "label": "C",
+          "text": "$300,000"
+        },
+        {
+          "label": "D",
+          "text": "$200,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "EPS is a performance condition. At 150% achievement, the expected payout is 10,000 x 150% = 15,000 shares. Total expected compensation = 15,000 x $30 = $450,000. Year 1 expense = $450,000 x 1/3 = $150,000. Under ASC 718-10-25-20, compensation cost for performance conditions is recognized when the outcome is probable, based on the best estimate of the number of awards expected to vest. The correct answer is B.",
+      "explanationJa": "EPSは業績条件。150%達成見込みで、予想支給数 = 10,000 x 150% = 15,000株。予想報酬総額 = 15,000 x $30 = $450,000。Year 1費用 = $450,000 x 1/3 = $150,000。ASC 718-10-25-20により、業績条件の報酬は達成確度に基づき最良の見積りで費用認識する。",
+      "references": ["ASC 718-10-25-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-055",
+      "topic": "Stock Compensation",
+      "subtopic": "Phantom Stock - Cash Settlement Obligation",
+      "stem": "Entity H grants 4,000 phantom stock units to an employee on January 1, Year 1 with a 3-year cliff vesting period. The fair value per unit is: $20 at grant date, $25 at end of Year 1, $30 at end of Year 2, and $35 at end of Year 3 (vesting date). What is the total liability recognized at the end of Year 2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$80,000"
+        },
+        {
+          "label": "B",
+          "text": "$60,000"
+        },
+        {
+          "label": "C",
+          "text": "$53,333"
+        },
+        {
+          "label": "D",
+          "text": "$100,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Phantom stock settled in cash is liability-classified under ASC 718-30-35-3 and remeasured at fair value each reporting date. The cumulative liability at any point = fair value per unit x number of units x (elapsed service / total service period). At end of Year 2: liability = 4,000 x $30 x (2/3) = $80,000. Year 1 liability was 4,000 x $25 x (1/3) = $33,333. Year 2 expense = $80,000 - $33,333 = $46,667. The correct answer is A.",
+      "explanationJa": "現金決済のファントムストックはASC 718-30-35-3により負債分類で毎期再測定。Year 2末の累計負債 = 4,000 x $30 x (2/3) = $80,000。Year 1末の負債は4,000 x $25 x (1/3) = $33,333。Year 2費用 = $80,000 - $33,333 = $46,667。",
+      "references": ["ASC 718-30-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-056",
+      "topic": "Stock Compensation",
+      "subtopic": "Tandem Awards (SAR/Option Combination)",
+      "stem": "Entity I grants tandem awards where an employee can choose to exercise either a stock option OR a stock appreciation right (SAR), but not both. If the employee exercises the SAR, the option is cancelled, and vice versa. The SAR can be settled only in cash. How should this tandem award be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As equity, because the stock option component allows equity settlement"
+        },
+        {
+          "label": "B",
+          "text": "As a liability, because the employee has the ability to demand cash settlement through the SAR"
+        },
+        {
+          "label": "C",
+          "text": "Bifurcated: the option as equity and the SAR as a liability"
+        },
+        {
+          "label": "D",
+          "text": "As equity until the employee makes a choice, then reclassified"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-10-25-14 and ASC 718-10-25-15, when an employee has the choice between cash and equity settlement (as in a tandem SAR/option), the award is classified as a liability because the entity may be obligated to transfer cash if the employee elects the SAR. The employee's ability to demand cash settlement drives liability classification regardless of the option component. The entire tandem award is classified as a liability and remeasured at fair value each reporting period. The correct answer is B.",
+      "explanationJa": "ASC 718-10-25-14及び25-15により、従業員が現金決済（SAR）と株式決済（オプション）の選択権を持つタンデム報酬は、従業員が現金支払を要求できるため負債に分類される。従業員の現金決済選択権が負債分類を決定し、オプション要素にかかわらずタンデム報酬全体が負債として各期に公正価値で再測定される。",
+      "references": ["ASC 718-10-25-14", "ASC 718-10-25-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-057",
+      "topic": "Stock Compensation",
+      "subtopic": "Stock Compensation - Dividends on Unvested Shares",
+      "stem": "Entity J grants 6,000 shares of restricted stock to an employee. During the vesting period, the company pays dividends of $2 per share on all outstanding shares, including the unvested restricted shares. How should Entity J account for dividends paid on the unvested restricted shares?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a reduction of retained earnings (same as dividends on any other outstanding share)"
+        },
+        {
+          "label": "B",
+          "text": "As additional compensation expense"
+        },
+        {
+          "label": "C",
+          "text": "As a reduction of APIC"
+        },
+        {
+          "label": "D",
+          "text": "As a prepaid asset until the shares vest"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-10-55-47, dividends paid on unvested restricted shares that are not expected to be returned if the employee forfeits the award (nonforfeitable dividends) are charged to retained earnings like regular dividends. However, if the restricted stock award is expected to be forfeited, dividends paid are treated as additional compensation expense. More commonly, if dividends are forfeitable (returned upon forfeiture), they are treated as additional compensation expense. The standard treatment for dividends on unvested shares where the award has a service condition is to recognize them as compensation expense. The correct answer is B.",
+      "explanationJa": "ASC 718-10-55-47により、未確定の制限付株式に対する配当の処理は没収可能性に依存する。配当が没収時に返還される場合（没収可能配当）、追加の報酬費用として認識する。勤務条件付の未確定株式への配当は一般に報酬費用として処理される。",
+      "references": ["ASC 718-10-55-47"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-058",
+      "topic": "Stock Compensation",
+      "subtopic": "Stock Compensation - Interim Period Expense",
+      "stem": "Entity K grants 15,000 stock options on January 1, Year 1 with a grant-date fair value of $8 per option and a 4-year cliff vest. Entity K prepares quarterly financial statements. What compensation expense should be reported in the Q1 Year 1 interim financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$30,000"
+        },
+        {
+          "label": "B",
+          "text": "$120,000"
+        },
+        {
+          "label": "C",
+          "text": "$7,500"
+        },
+        {
+          "label": "D",
+          "text": "$15,000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Total compensation = 15,000 x $8 = $120,000 over 4 years (16 quarters). Under ASC 718-10-35-2 and ASC 270 (interim reporting), compensation expense is recognized ratably over the requisite service period, including in interim periods. Q1 Year 1 expense = $120,000 / 16 quarters = $7,500. Alternatively: annual expense = $120,000 / 4 = $30,000; quarterly = $30,000 / 4 = $7,500. The correct answer is C.",
+      "explanationJa": "報酬総額 = 15,000 x $8 = $120,000を4年間（16四半期）で認識。ASC 718-10-35-2及びASC 270（中間報告）により、必要勤務期間にわたり均等に認識。Q1 Year 1費用 = $120,000 ÷ 16四半期 = $7,500。年間費用$30,000 ÷ 4四半期 = $7,500でも同じ。",
+      "references": ["ASC 718-10-35-2", "ASC 270-10-25"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-059",
+      "topic": "Stock Compensation",
+      "subtopic": "Stock Option - Binomial/Lattice Model Overview",
+      "stem": "Which of the following is an advantage of the binomial (lattice) model over the Black-Scholes model for valuing employee stock options under ASC 718?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The binomial model requires fewer assumptions and inputs"
+        },
+        {
+          "label": "B",
+          "text": "The binomial model can incorporate the possibility of early exercise at various stock price levels over the option term"
+        },
+        {
+          "label": "C",
+          "text": "The binomial model always produces a lower fair value"
+        },
+        {
+          "label": "D",
+          "text": "The binomial model is required for all public companies"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-10-55-16, the binomial (lattice) model has the advantage of modeling the possibility of early exercise at various points during the option's life based on different stock price levels. The Black-Scholes model uses a single expected term assumption and cannot model the interaction between stock price movements and exercise behavior over time. Neither model is required — ASC 718 allows any model that meets fair value measurement objectives. The lattice model generally requires more inputs, not fewer. The correct answer is B.",
+      "explanationJa": "ASC 718-10-55-16により、二項（格子）モデルはオプション期間中の様々な株価水準での早期行使の可能性をモデル化できる利点がある。Black-Scholesモデルは単一の予想期間を使用し、株価変動と行使行動の相互作用をモデル化できない。ASC 718はどちらのモデルも要求しない。格子モデルは一般にインプットが多く必要。",
+      "references": ["ASC 718-10-55-16"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-060",
+      "topic": "Stock Compensation",
+      "subtopic": "Monte Carlo Simulation for Market Conditions",
+      "stem": "When is a Monte Carlo simulation most appropriate for valuing stock compensation awards under ASC 718?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "When the award has only a service condition"
+        },
+        {
+          "label": "B",
+          "text": "When the award has a performance condition based on revenue targets"
+        },
+        {
+          "label": "C",
+          "text": "When the award has a market condition such as a stock price target or relative TSR"
+        },
+        {
+          "label": "D",
+          "text": "When the entity is a nonpublic company with no trading history"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 718-10-55-15 and 718-10-55-16, Monte Carlo simulation is most appropriate when the award contains market conditions (such as stock price targets, relative TSR, or stock price hurdles) because it can model the probability of achieving various stock price outcomes and incorporate the correlation between the entity's stock and the market or peer group. Service conditions do not require complex modeling. Performance conditions based on operating metrics (like revenue) are not reflected in fair value — they affect the number of awards expected to vest. The correct answer is C.",
+      "explanationJa": "ASC 718-10-55-15及び55-16により、モンテカルロシミュレーションは株価目標や相対TSRなどの市場条件を含む報酬の評価に最も適している。様々な株価結果の確率と企業株価と市場/同業他社の相関をモデル化できる。勤務条件は複雑なモデルを要しない。売上高等の業績条件は公正価値に反映せず確定見込数で調整する。",
+      "references": ["ASC 718-10-55-15", "ASC 718-10-55-16"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-061",
+      "topic": "Stock Compensation",
+      "subtopic": "Compensation Expense - Total Over Vesting Period",
+      "stem": "Entity L grants 25,000 stock options on January 1, Year 1 with a grant-date fair value of $12 per option and a 5-year cliff vest. The estimated forfeiture rate is 8%. What is the TOTAL compensation expense to be recognized over the vesting period?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$276,000"
+        },
+        {
+          "label": "B",
+          "text": "$300,000"
+        },
+        {
+          "label": "C",
+          "text": "$324,000"
+        },
+        {
+          "label": "D",
+          "text": "$240,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Total compensation expense = number of options x fair value per option x (1 - forfeiture rate) = 25,000 x $12 x (1 - 0.08) = 25,000 x $12 x 0.92 = $276,000. This amount is recognized ratably over the 5-year vesting period ($55,200 per year). Choice B ($300,000) ignores forfeitures. Choice C ($324,000) incorrectly adds the forfeiture rate. Choice D ($240,000) uses a 20% forfeiture rate. The correct answer is A.",
+      "explanationJa": "報酬費用総額 = オプション数 x 1個当たり公正価値 x (1 - 没収率) = 25,000 x $12 x (1 - 0.08) = 25,000 x $12 x 0.92 = $276,000。5年間で均等認識（年$55,200）。選択肢B($300,000)は没収率無視、C($324,000)は没収率を加算、D($240,000)は20%没収率の誤り。",
+      "references": ["ASC 718-10-25-1", "ASC 718-10-35-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-062",
+      "topic": "Stock Compensation",
+      "subtopic": "Stock-Based Compensation - Disclosure Requirements",
+      "stem": "Which of the following is NOT a required disclosure under ASC 718 for share-based payment arrangements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A description of the share-based payment arrangements"
+        },
+        {
+          "label": "B",
+          "text": "The weighted-average grant-date fair value of options granted during the period"
+        },
+        {
+          "label": "C",
+          "text": "The names and positions of individual employees who received stock options"
+        },
+        {
+          "label": "D",
+          "text": "The total compensation cost recognized and the total tax benefit recognized"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 718-10-50, required disclosures include: (1) a description of the arrangements, (2) the weighted-average grant-date fair value, (3) total compensation cost and related tax benefits, (4) a rollforward of option activity, and (5) the method and assumptions used to estimate fair value. ASC 718 does NOT require disclosure of specific individual employees by name and position — this would be a proxy statement or SEC executive compensation disclosure matter, not a financial statement disclosure under ASC 718. The correct answer is C.",
+      "explanationJa": "ASC 718-10-50の開示要求は、(1)報酬制度の記述、(2)加重平均付与日公正価値、(3)報酬費用総額と税務便益、(4)オプション活動のロールフォワード、(5)公正価値見積りの方法と仮定を含む。個別従業員の氏名・役職は要求されない（これはプロキシステートメント/SEC報酬開示の範囲）。",
+      "references": ["ASC 718-10-50-1", "ASC 718-10-50-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-063",
+      "topic": "Stock Compensation",
+      "subtopic": "Reload Feature - Option Grant",
+      "stem": "Entity M grants stock options with a reload feature: when an employee exercises options by tendering previously owned shares, the employee automatically receives new replacement options equal to the number of shares tendered, at the current market price. How is the reload feature accounted for under ASC 718?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The reload feature is ignored and only the original grant is valued"
+        },
+        {
+          "label": "B",
+          "text": "The reload feature is incorporated into the fair value of the original option at the grant date"
+        },
+        {
+          "label": "C",
+          "text": "The reload option is treated as a new grant and measured at its own grant-date fair value when issued"
+        },
+        {
+          "label": "D",
+          "text": "The reload feature is treated as a modification of the original award"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 718-10-25-5, a reload option (an option automatically granted when shares are tendered to exercise an existing option) is treated as a new, separate award. The reload option is measured at its own grant-date fair value at the time it is granted (i.e., when the original options are exercised), not when the original options were granted. The reload feature is NOT incorporated into the fair value of the original award and is NOT treated as a modification. The correct answer is C.",
+      "explanationJa": "ASC 718-10-25-5により、リロードオプション（既存オプション行使時に自動付与される新オプション）は新たな独立した付与として扱われる。リロードオプションは発行時（原オプション行使時）に自身の付与日公正価値で測定される。原オプションの公正価値には含めず、修正としても扱わない。",
+      "references": ["ASC 718-10-25-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-064",
+      "topic": "Stock Compensation",
+      "subtopic": "Cliff Vesting - Forfeiture Rate Impact",
+      "stem": "Entity N grants 20,000 stock options on January 1, Year 1 (grant-date fair value $9/option, 3-year cliff vest). The initial forfeiture estimate is 5%. During Year 2, 1,500 options are forfeited and Entity N revises the total expected forfeiture rate to 12%. What is the cumulative compensation expense through Year 2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$105,600"
+        },
+        {
+          "label": "B",
+          "text": "$114,000"
+        },
+        {
+          "label": "C",
+          "text": "$120,000"
+        },
+        {
+          "label": "D",
+          "text": "$95,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the estimated forfeiture method, actual forfeitures are not tracked individually; instead, the revised forfeiture rate is applied to the total grant. Revised total compensation = 20,000 x $9 x (1 - 12%) = 20,000 x $9 x 0.88 = $158,400. Cumulative through Year 2 = $158,400 x 2/3 = $105,600. Choice B ($114,000) uses a 5% rate: 20,000 x $9 x 0.95 x 2/3 = $114,000. Choice C ($120,000) ignores forfeitures entirely. The correct answer is A.",
+      "explanationJa": "見積没収法では、実際の没収を個別追跡せず修正後の没収率を付与総数に適用する。修正後の報酬総額 = 20,000 x $9 x (1 - 12%) = 20,000 x $9 x 0.88 = $158,400。Year 2までの累計 = $158,400 x 2/3 = $105,600。選択肢B($114,000)は5%率を使用、C($120,000)は没収率無視。",
+      "references": ["ASC 718-10-35-3", "ASC 718-10-25-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-065",
+      "topic": "Stock Compensation",
+      "subtopic": "Restricted Stock Award vs RSU Comparison",
+      "stem": "Which of the following correctly distinguishes restricted stock awards (RSAs) from restricted stock units (RSUs) under ASC 718?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "RSAs are issued as actual shares at grant; RSUs represent a promise to deliver shares at vesting"
+        },
+        {
+          "label": "B",
+          "text": "RSAs are always liability-classified; RSUs are always equity-classified"
+        },
+        {
+          "label": "C",
+          "text": "RSAs vest immediately; RSUs require a service period"
+        },
+        {
+          "label": "D",
+          "text": "RSAs and RSUs are accounted for identically with no practical differences"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The key distinction is that restricted stock awards (RSAs) involve the actual issuance of shares at the grant date, subject to forfeiture if vesting conditions are not met. The employee is a shareholder of record and typically has voting and dividend rights. Restricted stock units (RSUs) are a contractual promise to deliver shares (or cash) at a future date upon vesting; no shares are issued until vesting. Both can be equity or liability classified depending on settlement terms. Both can have various vesting conditions. The correct answer is A.",
+      "explanationJa": "主な違いは、制限付株式(RSA)は付与日に実際の株式が発行され（権利確定条件未達時は没収）、従業員は記録上の株主として議決権・配当権を持つ。制限付株式ユニット(RSU)は権利確定時に株式（又は現金）を交付する契約上の約束で、確定まで株式は発行されない。どちらも決済条件により持分・負債分類がありうる。",
+      "references": ["ASC 718-10-25-1", "ASC 718-10-30-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-066",
+      "topic": "Stock Compensation",
+      "subtopic": "Share-Based Payment - Cash vs Equity Classification Test",
+      "stem": "Entity P grants SARs to an employee. The terms state that the employee chooses whether to receive cash or shares upon exercise. Under ASC 718, how should this award be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As equity, because share settlement is an option"
+        },
+        {
+          "label": "B",
+          "text": "As a liability, because the employee can demand cash"
+        },
+        {
+          "label": "C",
+          "text": "As equity if the entity expects the employee to choose shares"
+        },
+        {
+          "label": "D",
+          "text": "Bifurcated between liability and equity components"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-10-25-15, when the employee holds the right to choose between cash and equity settlement, the award is classified as a liability. This is because the entity may be required to settle in cash at the employee's election, creating an obligation. The entity's expectation of the employee's choice is irrelevant — the classification is based on the contractual terms. This contrasts with the case where the entity holds the settlement choice, which results in equity classification. The correct answer is B.",
+      "explanationJa": "ASC 718-10-25-15により、従業員が現金決済と株式決済の選択権を持つ場合、企業は従業員の要求により現金で決済する義務が生じうるため負債に分類する。企業の予想は無関係で、契約条件に基づいて分類。企業が選択権を持つ場合は持分分類となる点と対照的。",
+      "references": ["ASC 718-10-25-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-067",
+      "topic": "Stock Compensation",
+      "subtopic": "Stock Compensation - IPO or Private Company Transition",
+      "stem": "A private company that previously used the intrinsic value method for measuring equity-classified stock options goes through an IPO and becomes a public entity. What happens to its stock compensation accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The company must retrospectively restate all prior periods using fair value"
+        },
+        {
+          "label": "B",
+          "text": "The company must prospectively adopt the fair value method for new grants after the IPO, and continue intrinsic value for existing grants"
+        },
+        {
+          "label": "C",
+          "text": "The company must transition to the fair value method; existing awards are remeasured at the IPO date"
+        },
+        {
+          "label": "D",
+          "text": "No change is required; the company may continue using intrinsic value"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 718-10-35-19, when a nonpublic entity that elected the intrinsic value method becomes a public entity, it must transition to the fair value method. The entity remeasures all outstanding unvested awards at fair value as of the date it becomes public, recognizing any incremental compensation cost over the remaining vesting period. This is a change from the intrinsic value method to the fair value method triggered by the change in entity status. Previously vested awards are not adjusted. The correct answer is C.",
+      "explanationJa": "ASC 718-10-35-19により、本源的価値法を選択していた非公開企業が公開企業になった場合、公正価値法へ移行する。公開日時点で未確定の報酬を公正価値で再測定し、追加報酬費用を残存権利確定期間で認識。企業ステータス変更による方法変更。既に確定済みの報酬は調整しない。",
+      "references": ["ASC 718-10-35-19"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-068",
+      "topic": "Stock Compensation",
+      "subtopic": "Stock Option - Expected Volatility for Public Entity",
+      "stem": "Under ASC 718, which of the following may a public entity consider when estimating expected volatility for stock option valuation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Only historical volatility of the entity's own stock"
+        },
+        {
+          "label": "B",
+          "text": "Only implied volatility from traded options on the entity's stock"
+        },
+        {
+          "label": "C",
+          "text": "Either historical volatility, implied volatility, or a combination of both"
+        },
+        {
+          "label": "D",
+          "text": "A fixed volatility rate prescribed by the SEC"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 718-10-55-36, a public entity should consider both historical volatility and implied volatility (from exchange-traded options) when estimating expected volatility. The entity may use historical volatility alone, implied volatility alone, or a combination of both, depending on which approach best estimates the expected volatility over the expected term of the employee stock option. There is no prescribed rate. The correct answer is C.",
+      "explanationJa": "ASC 718-10-55-36により、公開企業は予想ボラティリティの見積りにヒストリカル・ボラティリティとインプライド・ボラティリティ（上場オプションから算出）の両方を考慮すべきである。いずれか単独または両方の組み合わせを使用でき、オプション予想期間の期待ボラティリティを最もよく見積る方法を選択する。規定税率はない。",
+      "references": ["ASC 718-10-55-36"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-069",
+      "topic": "Stock Compensation",
+      "subtopic": "Stock Compensation - Plan Modification (Vesting Acceleration)",
+      "stem": "Entity Q has 30,000 outstanding unvested stock options with a remaining vesting period of 2 years. The original grant-date fair value was $10 per option with $180,000 of unrecognized compensation. Entity Q accelerates vesting so that all options vest immediately. The fair value immediately before and after the modification is $7 per option (no change). What is the accounting effect?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No additional cost; the remaining $180,000 is recognized immediately"
+        },
+        {
+          "label": "B",
+          "text": "Additional compensation of $90,000 is recognized"
+        },
+        {
+          "label": "C",
+          "text": "The original $300,000 total is reversed and remeasured at $210,000"
+        },
+        {
+          "label": "D",
+          "text": "No accounting effect because the fair value did not change"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 718-20-35-6, when vesting is accelerated in a modification, the entity recognizes any remaining unrecognized compensation cost in the period of the modification. Since the fair value did not change (no incremental cost), there is no additional compensation beyond the original grant-date amount. The unrecognized balance of $180,000 is recognized immediately upon acceleration. Total compensation over the life of the award remains the original grant-date fair value amount ($300,000 = 30,000 x $10). The correct answer is A.",
+      "explanationJa": "ASC 718-20-35-6により、権利確定を加速する修正では、未認識残高を修正期間に即時認識する。公正価値に変更がないため（増分費用なし）、元の付与日公正価値を超える追加報酬はない。未認識残高$180,000を即時認識。報酬総額は原付与日公正価値($300,000 = 30,000 x $10)のまま。",
+      "references": ["ASC 718-20-35-6", "ASC 718-20-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-070",
+      "topic": "Stock Compensation",
+      "subtopic": "ASU 2016-09 - Simplification Amendments",
+      "stem": "Which of the following changes was introduced by ASU 2016-09 (Improvements to Employee Share-Based Payment Accounting)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Excess tax benefits and deficiencies are now recognized in APIC rather than in the income statement"
+        },
+        {
+          "label": "B",
+          "text": "Entities are now required to estimate forfeitures; the actual forfeiture method is no longer permitted"
+        },
+        {
+          "label": "C",
+          "text": "Excess tax benefits and deficiencies are now recognized in the income statement, and entities may elect to account for forfeitures as they occur"
+        },
+        {
+          "label": "D",
+          "text": "All stock compensation must now be measured at intrinsic value"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASU 2016-09 made several simplifying changes to ASC 718: (1) All excess tax benefits and deficiencies are recognized as income tax expense in the income statement (previously, excess benefits were recorded in APIC). (2) Entities may make an accounting policy election to recognize forfeitures as they occur (actual method) instead of estimating forfeitures. (3) Cash paid for tax withholding is classified as a financing activity on the statement of cash flows. (4) The threshold for liability classification due to tax withholding was raised to the maximum statutory rate. The correct answer is C.",
+      "explanationJa": "ASU 2016-09はASC 718を簡素化した：(1)超過税務便益・不足額を全額損益計算書の法人税等で認識（従前はAPIC計上）。(2)没収率の見積り法に加え、実際発生時認識法の選択が可能に。(3)源泉徴収の現金支出はキャッシュフロー計算書で財務活動に分類。(4)源泉徴収による負債分類の閾値を法定最高税率に引き上げ。",
+      "references": ["ASU 2016-09", "ASC 718-10-35-2A", "ASC 718-740-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

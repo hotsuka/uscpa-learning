@@ -2,7 +2,7 @@
   "id": "far-pensions",
   "name": "Pensions",
   "topic": "Pensions",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "questions": [
     {
       "id": "pen-001",
@@ -1257,6 +1257,778 @@
       "references": ["ASC 715-30-25-1"],
       "difficulty": "basic",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "pen-059",
+      "topic": "Pensions",
+      "subtopic": "Pension Expense - Component Ordering",
+      "stem": "Under ASC 715, which of the following correctly lists all components of net periodic pension cost?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Service cost, interest cost, expected return on plan assets, amortization of prior service cost, and gain or loss amortization"
+        },
+        {
+          "label": "B",
+          "text": "Service cost, interest cost, actual return on plan assets, and amortization of prior service cost"
+        },
+        {
+          "label": "C",
+          "text": "Service cost, interest cost, employer contributions, and amortization of net gain or loss"
+        },
+        {
+          "label": "D",
+          "text": "Service cost, interest cost, expected return on plan assets, and benefit payments to retirees"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-4, net periodic pension cost consists of the following components: (1) service cost, (2) interest cost, (3) expected return on plan assets (which reduces pension expense), (4) amortization of prior service cost, (5) amortization of net gain or loss (from the corridor), and (6) amortization of any transition obligation. The expected return (not actual return) is used. Employer contributions and benefit payments are cash flows, not expense components. Answer is A.",
+      "explanationJa": "ASC 715-30-35-4により、正味期間年金費用は(1)勤務費用、(2)利息費用、(3)制度資産の期待収益（費用を減少）、(4)過去勤務費用の償却、(5)純損益の償却（回廊方式）、(6)移行時債務の償却で構成される。実際収益ではなく期待収益を使用する。雇用主拠出金や給付支払はキャッシュフローであり費用構成要素ではない。",
+      "references": ["ASC 715-30-35-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-060",
+      "topic": "Pensions",
+      "subtopic": "Actuarial Assumption Changes - Effect on PBO",
+      "stem": "A company changes its mortality assumption to reflect longer life expectancies for plan participants. What is the most likely effect on the projected benefit obligation (PBO)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PBO decreases because fewer benefits will be paid"
+        },
+        {
+          "label": "B",
+          "text": "PBO increases because benefits will be paid over a longer period"
+        },
+        {
+          "label": "C",
+          "text": "PBO is unaffected because mortality is not an actuarial assumption under ASC 715"
+        },
+        {
+          "label": "D",
+          "text": "PBO decreases because the discount rate is adjusted upward"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 715-30-35-14, changes in actuarial assumptions (including mortality, turnover, and retirement age) result in actuarial gains or losses. If participants are expected to live longer, the plan must pay benefits for a longer period, increasing the present value of the total expected benefit payments. This increases the PBO. The change is recognized as an actuarial loss in OCI. Answer is B.",
+      "explanationJa": "ASC 715-30-35-14により、死亡率・離職率・退職年齢などの数理計算上の仮定変更は数理計算上の損益をもたらす。参加者がより長生きする見込みとなれば、給付支払期間が長くなり、予想給付支払総額の現在価値が増加するため、PBOは増加する。この変更はOCIに数理計算上の損失として認識される。",
+      "references": ["ASC 715-30-35-14"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-061",
+      "topic": "Pensions",
+      "subtopic": "Discount Rate Selection Criteria",
+      "stem": "Under ASC 715, which rate should be used as the discount rate to calculate the projected benefit obligation (PBO)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The expected long-term rate of return on plan assets"
+        },
+        {
+          "label": "B",
+          "text": "The rate at which the pension benefits could be effectively settled"
+        },
+        {
+          "label": "C",
+          "text": "The prime rate as published by the Federal Reserve"
+        },
+        {
+          "label": "D",
+          "text": "The company's weighted average cost of capital (WACC)"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 715-30-35-43 states that the discount rate should reflect the rate at which the pension benefits could be effectively settled. In practice, this is based on current rates of return on high-quality fixed-income investments (such as AA-rated corporate bonds) whose cash flows match the timing and amount of expected benefit payments. The expected return on plan assets is a different assumption used for pension expense, not discounting. Answer is B.",
+      "explanationJa": "ASC 715-30-35-43により、割引率は年金給付を実質的に決済できる利率を反映すべきとされる。実務上、予想給付支払の時期と金額に合致する高品質確定利付投資（AA格社債等）の現行利回りに基づく。制度資産の期待収益率は年金費用計算に用いる別の仮定であり、割引には使用しない。",
+      "references": ["ASC 715-30-35-43"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-062",
+      "topic": "Pensions",
+      "subtopic": "Plan Assets - Actual Return Decomposition",
+      "stem": "During 2025, a company's defined benefit plan had the following: fair value of plan assets at January 1 of $800,000, expected return on plan assets of $56,000, and actual return on plan assets of $72,000. What amount is recognized in other comprehensive income (OCI) related to the asset return?",
+      "choices": [
+        { "label": "A", "text": "$16,000 gain" },
+        { "label": "B", "text": "$72,000 gain" },
+        { "label": "C", "text": "$56,000 gain" },
+        { "label": "D", "text": "$16,000 loss" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The difference between actual return and expected return on plan assets is an asset gain or loss recognized in OCI. Actual return = $72,000, Expected return = $56,000. The difference is $72,000 − $56,000 = $16,000. Since actual exceeded expected, this is a gain in OCI. Only the expected return ($56,000) reduces net periodic pension cost; the $16,000 excess goes to OCI. Answer is A.",
+      "explanationJa": "制度資産の実際収益と期待収益の差額は、OCIに認識される資産損益である。実際収益$72,000 − 期待収益$56,000 = $16,000。実際が期待を上回ったため、OCIに$16,000の利得を認識する。正味期間年金費用を減少させるのは期待収益（$56,000）のみで、超過分$16,000はOCIに計上される。",
+      "references": ["ASC 715-30-35-22", "ASC 715-30-35-23"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-063",
+      "topic": "Pensions",
+      "subtopic": "Benefit Payments Effect on PBO and Plan Assets",
+      "stem": "During 2025, a company's pension plan paid $500,000 in benefits to retired employees. What is the effect of these benefit payments on the projected benefit obligation (PBO) and plan assets?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PBO decreases by $500,000; plan assets decrease by $500,000"
+        },
+        {
+          "label": "B",
+          "text": "PBO decreases by $500,000; plan assets are unchanged"
+        },
+        {
+          "label": "C",
+          "text": "PBO is unchanged; plan assets decrease by $500,000"
+        },
+        {
+          "label": "D",
+          "text": "PBO increases by $500,000; plan assets decrease by $500,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Benefit payments reduce both the PBO and plan assets by the same amount. When benefits are paid to retirees, the obligation to those retirees is satisfied (reducing PBO), and the cash leaves the plan trust (reducing plan assets). Therefore, benefit payments have no effect on the funded status (PBO − Plan Assets). Answer is A.",
+      "explanationJa": "給付支払はPBOと制度資産の両方を同額減少させる。退職者に給付が支払われると、その退職者に対する債務が消滅し（PBO減少）、制度信託から現金が流出する（制度資産減少）。したがって、給付支払は積立状況（PBO − 制度資産）に影響しない。",
+      "references": ["ASC 715-30-35-6"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-064",
+      "topic": "Pensions",
+      "subtopic": "Employer Contribution - Effect on Funded Status",
+      "stem": "On December 31, 2025, an employer contributes $1,200,000 to its defined benefit pension plan. Before the contribution, the PBO was $10,000,000 and plan assets were $8,000,000. What is the funded status after the contribution?",
+      "choices": [
+        { "label": "A", "text": "Underfunded by $800,000" },
+        { "label": "B", "text": "Underfunded by $2,000,000" },
+        { "label": "C", "text": "Overfunded by $1,200,000" },
+        { "label": "D", "text": "Underfunded by $1,200,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Before contribution: Funded status = Plan assets − PBO = $8,000,000 − $10,000,000 = ($2,000,000) underfunded. Employer contributions increase plan assets but do not change PBO. After contribution: Plan assets = $8,000,000 + $1,200,000 = $9,200,000. Funded status = $9,200,000 − $10,000,000 = ($800,000) underfunded. Answer is A.",
+      "explanationJa": "拠出前：積立状況 = 制度資産 − PBO = $8,000,000 − $10,000,000 = $(2,000,000)（積立不足）。雇用主拠出金は制度資産を増加させるがPBOに影響しない。拠出後：制度資産 = $8,000,000 + $1,200,000 = $9,200,000。積立状況 = $9,200,000 − $10,000,000 = $(800,000)（積立不足）。",
+      "references": ["ASC 715-30-25-1", "ASC 715-30-35-6"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-065",
+      "topic": "Pensions",
+      "subtopic": "Net Gain/Loss Amortization - Average Remaining Service Life",
+      "stem": "At January 1, 2025, a company's pension plan has an accumulated net actuarial loss in AOCI of $450,000. The PBO is $3,000,000 and plan assets are $2,800,000. The average remaining service life of active employees is 10 years. Using the corridor approach, what amount of net loss is amortized to pension expense in 2025?",
+      "choices": [
+        { "label": "A", "text": "$15,000" },
+        { "label": "B", "text": "$45,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$17,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Step 1: Determine the corridor threshold = 10% × max(PBO, Plan Assets) = 10% × max($3,000,000, $2,800,000) = 10% × $3,000,000 = $300,000. Step 2: Excess over corridor = $450,000 − $300,000 = $150,000. Step 3: Amortization = Excess / Average remaining service life = $150,000 / 10 = $15,000. The minimum amortization of net loss for 2025 is $15,000. Answer is A.",
+      "explanationJa": "ステップ1：回廊閾値 = 10% × max(PBO, 制度資産) = 10% × max($3,000,000, $2,800,000) = $300,000。ステップ2：回廊超過額 = $450,000 − $300,000 = $150,000。ステップ3：償却額 = 超過額 / 平均残存勤務期間 = $150,000 / 10 = $15,000。2025年の純損失の最低償却額は$15,000。",
+      "references": ["ASC 715-30-35-24", "ASC 715-30-35-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-066",
+      "topic": "Pensions",
+      "subtopic": "Prior Service Cost - Straight-Line Amortization",
+      "stem": "On January 1, 2025, a company amends its pension plan, creating prior service cost of $600,000. The plan has 120 active employees, and the average remaining service period is 15 years. Using straight-line amortization over the average remaining service period, what is the annual amortization of prior service cost?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$5,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$120,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-11, prior service cost is amortized over the future service periods of active employees expected to receive benefits. When using the straight-line method over the average remaining service period: Annual amortization = $600,000 / 15 years = $40,000 per year. This is an acceptable alternative to the more detailed years-of-service method. Answer is A.",
+      "explanationJa": "ASC 715-30-35-11により、過去勤務費用は給付を受ける見込みの現役従業員の将来勤務期間にわたり償却する。平均残存勤務期間にわたる定額法を使用する場合：年間償却額 = $600,000 / 15年 = $40,000。これはより詳細な勤務年数法の代替として認められている。",
+      "references": ["ASC 715-30-35-11", "ASC 715-30-35-13"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-067",
+      "topic": "Pensions",
+      "subtopic": "Pension Funded Status - Balance Sheet Classification",
+      "stem": "An employer sponsors two separate defined benefit pension plans. Plan A is overfunded by $500,000, and Plan B is underfunded by $300,000. How should these be reported on the employer's balance sheet?",
+      "choices": [
+        { "label": "A", "text": "Net asset of $200,000 in noncurrent assets" },
+        {
+          "label": "B",
+          "text": "Asset of $500,000 in noncurrent assets and liability of $300,000 in noncurrent liabilities"
+        },
+        {
+          "label": "C",
+          "text": "Liability of $300,000 only; the asset is not recognized"
+        },
+        {
+          "label": "D",
+          "text": "Netted as a single $200,000 asset or liability depending on the company's policy"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 715-30-45-1 and ASC 715-30-45-2, an employer that sponsors multiple defined benefit plans must recognize each plan's funded status separately on the balance sheet. Overfunded plans are reported as noncurrent assets, and underfunded plans are reported as liabilities (with current and noncurrent portions if applicable). Netting across separate plans is prohibited. Plan A: $500,000 noncurrent asset. Plan B: $300,000 noncurrent liability. Answer is B.",
+      "explanationJa": "ASC 715-30-45-1および45-2により、複数の確定給付制度を有する雇用主は各制度の積立状況を個別にBSに認識する。過剰積立制度は非流動資産、積立不足制度は負債として報告する。異なる制度間の相殺は禁止。制度A：$500,000の非流動資産。制度B：$300,000の非流動負債。",
+      "references": ["ASC 715-30-45-1", "ASC 715-30-45-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-068",
+      "topic": "Pensions",
+      "subtopic": "OPEB - Transition from Pay-as-You-Go",
+      "stem": "A company has been accounting for its other postretirement benefits (OPEB) on a pay-as-you-go basis. The company now must apply ASC 715-60. Which of the following best describes the accounting impact upon adoption?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The accumulated postretirement benefit obligation (APBO) must be recognized, creating a liability on the balance sheet"
+        },
+        {
+          "label": "B",
+          "text": "No change is required until the next plan amendment"
+        },
+        {
+          "label": "C",
+          "text": "Only future benefit payments need to be accrued going forward"
+        },
+        {
+          "label": "D",
+          "text": "The APBO is recognized as an intangible asset"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-60, employers must recognize the funded status of postretirement benefit plans on the balance sheet, which is the difference between the APBO and the fair value of any plan assets. When transitioning from pay-as-you-go (cash basis) to accrual accounting under ASC 715-60, the company must recognize the full APBO as a liability. Since OPEB plans are typically unfunded, this creates a significant liability. Answer is A.",
+      "explanationJa": "ASC 715-60により、雇用主は退職後給付制度の積立状況をBSに認識しなければならない。従量制（現金主義）からASC 715-60の発生主義に移行する場合、APBO全額を負債として認識する必要がある。OPEB制度は通常積立されていないため、多額の負債が計上される。",
+      "references": ["ASC 715-60-25-1", "ASC 715-60-35-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-069",
+      "topic": "Pensions",
+      "subtopic": "OPEB - APBO Calculation",
+      "stem": "A company sponsors an OPEB plan providing health benefits to retirees. At December 31, 2025, the expected postretirement benefit obligation (EPBO) for an employee aged 55 is $200,000. The employee was hired at age 30, and the full eligibility date is age 60. What is the APBO attributable to this employee at December 31, 2025?",
+      "choices": [
+        { "label": "A", "text": "$166,667" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$133,333" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The APBO is the portion of the EPBO attributed to employee service to date. Under ASC 715-60-35-5, the attribution period runs from the hire date (age 30) to the full eligibility date (age 60), a total of 30 years. Years of service to date = age 55 − age 30 = 25 years. APBO = EPBO × (years of service / total attribution period) = $200,000 × (25/30) = $200,000 × 0.83333 = $166,667. Answer is A.",
+      "explanationJa": "APBOは従業員の勤務実績に帰属するEPBOの部分である。ASC 715-60-35-5により、帰属期間は入社日（30歳）から完全受給適格日（60歳）までの30年間。勤務年数 = 55歳 − 30歳 = 25年。APBO = EPBO × (勤務年数 / 帰属期間) = $200,000 × (25/30) = $166,667。",
+      "references": ["ASC 715-60-35-5", "ASC 715-60-35-6"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-070",
+      "topic": "Pensions",
+      "subtopic": "OPEB - Expected Postretirement Benefit Obligation",
+      "stem": "Under ASC 715-60, which of the following best describes the expected postretirement benefit obligation (EPBO)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The actuarial present value of all benefits expected to be paid to the employee and dependents after retirement"
+        },
+        {
+          "label": "B",
+          "text": "The portion of expected benefits attributed to service rendered to date"
+        },
+        {
+          "label": "C",
+          "text": "The amount of benefits actually paid in the current year"
+        },
+        {
+          "label": "D",
+          "text": "The fair value of plan assets set aside for postretirement benefits"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-60-20, the EPBO is the actuarial present value of all postretirement benefits expected to be paid to an employee, the employee's beneficiaries, and covered dependents. It represents the full estimated cost of benefits from the expected retirement date through the end of coverage. The APBO (choice B) is the portion of the EPBO attributed to service to date. Answer is A.",
+      "explanationJa": "ASC 715-60-20により、EPBOは従業員、受益者、被扶養者に支払われると予想される全退職後給付の数理計算上の現在価値である。予想退職日からカバレッジ終了までの給付の全推定コストを表す。APBO（選択肢B）はEPBOのうち現在までの勤務に帰属する部分である。",
+      "references": ["ASC 715-60-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-071",
+      "topic": "Pensions",
+      "subtopic": "OPEB - Per Capita Claims Cost",
+      "stem": "An employer estimates that the per capita claims cost for retiree health benefits in 2025 is $8,000. The health care cost trend rate is 7% for 2026, declining by 0.5% per year to an ultimate rate of 5%. What is the estimated per capita claims cost for 2027?",
+      "choices": [
+        { "label": "A", "text": "$9,116" },
+        { "label": "B", "text": "$8,560" },
+        { "label": "C", "text": "$9,152" },
+        { "label": "D", "text": "$8,960" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The health care cost trend rate for 2026 is 7%, and for 2027 it is 6.5% (7% minus 0.5% decline). Per capita claims cost for 2026 = $8,000 × 1.07 = $8,560. Per capita claims cost for 2027 = $8,560 × 1.065 = $9,116.40, rounded to $9,116. Answer is A.",
+      "explanationJa": "2026年の医療費トレンド率は7%、2027年は6.5%（7% − 0.5%低下）。2026年の1人当たり請求費用 = $8,000 × 1.07 = $8,560。2027年の1人当たり請求費用 = $8,560 × 1.065 = $9,116.40、四捨五入して$9,116。",
+      "references": ["ASC 715-60-35-38", "ASC 715-60-35-39"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-072",
+      "topic": "Pensions",
+      "subtopic": "Defined Benefit Plan - Cash Balance Plan",
+      "stem": "A cash balance pension plan provides participants with a hypothetical account balance that grows with annual pay credits and interest credits. Under ASC 715, how is a cash balance plan classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a defined contribution plan because each participant has an individual account balance"
+        },
+        {
+          "label": "B",
+          "text": "As a defined benefit plan because the employer bears the investment risk"
+        },
+        {
+          "label": "C",
+          "text": "As a hybrid plan that is not subject to ASC 715"
+        },
+        {
+          "label": "D",
+          "text": "As either defined benefit or defined contribution at the employer's election"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 715-30-20, a cash balance plan is classified as a defined benefit plan. Although participants receive individual account statements showing hypothetical balances, the employer guarantees a specific rate of return (the interest credit rate) and pools plan assets, retaining the investment risk. The hypothetical account balance is a communication tool; the underlying plan structure places investment risk on the employer, meeting the definition of a defined benefit plan. Answer is B.",
+      "explanationJa": "ASC 715-30-20により、キャッシュバランスプランは確定給付制度に分類される。参加者は仮想口座残高の明細を受け取るが、雇用主が特定の利率（利息クレジット率）を保証し、制度資産をプールして投資リスクを負担する。仮想口座残高はコミュニケーションツールであり、基礎となる制度構造は投資リスクを雇用主に課しており、確定給付制度の定義を満たす。",
+      "references": ["ASC 715-30-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-073",
+      "topic": "Pensions",
+      "subtopic": "Defined Benefit vs Defined Contribution Comparison",
+      "stem": "Which of the following is a key distinction between defined benefit and defined contribution pension plans under ASC 715?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Defined benefit plans specify the employer's contribution; defined contribution plans specify the retirement benefit"
+        },
+        {
+          "label": "B",
+          "text": "In defined benefit plans, the employer bears the investment risk; in defined contribution plans, the employee bears the investment risk"
+        },
+        {
+          "label": "C",
+          "text": "Only defined contribution plans are required to be funded"
+        },
+        {
+          "label": "D",
+          "text": "Defined benefit plans are accounted for under ASC 718, not ASC 715"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The fundamental distinction is who bears the investment and actuarial risk. In a defined benefit plan (ASC 715-30), the employer promises a determinable retirement benefit and bears the risk that plan assets may not be sufficient. In a defined contribution plan (ASC 715-70), the employer's obligation is limited to the specified contribution; the employee bears the investment risk on the account balance. Choice A reverses the definitions. Answer is B.",
+      "explanationJa": "根本的な違いは投資リスクと数理計算上のリスクの負担者である。確定給付制度（ASC 715-30）では、雇用主が確定した退職給付を約束し、制度資産が不足するリスクを負う。確定拠出制度（ASC 715-70）では、雇用主の義務は定められた拠出に限定され、従業員が口座残高の投資リスクを負う。選択肢Aは定義が逆である。",
+      "references": ["ASC 715-30-20", "ASC 715-70-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-074",
+      "topic": "Pensions",
+      "subtopic": "Pension Plan - Participant Data Changes",
+      "stem": "During 2025, a company discovers that the census data used by its actuary incorrectly excluded 50 employees who are active participants in the pension plan. The correction increases the PBO by $2,000,000. How should this correction be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a prior period adjustment to retained earnings"
+        },
+        {
+          "label": "B",
+          "text": "As an actuarial loss recognized in other comprehensive income"
+        },
+        {
+          "label": "C",
+          "text": "As additional service cost in the income statement"
+        },
+        {
+          "label": "D",
+          "text": "As a plan amendment creating prior service cost"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 715-30-35-14, changes in the PBO resulting from differences between actual experience and actuarial assumptions, including corrections to participant data, are treated as actuarial gains or losses. The $2,000,000 increase in PBO is recognized as an actuarial loss in OCI. It is not a plan amendment (no change to the plan terms) and not a prior period error (it reflects a change in actuarial estimates). Answer is B.",
+      "explanationJa": "ASC 715-30-35-14により、実際の経験と数理計算上の仮定の差異（参加者データの修正を含む）によるPBOの変動は数理計算上の損益として扱われる。PBOの$2,000,000増加はOCIに数理計算上の損失として認識される。制度条項の変更がないため制度改定ではなく、数理見積りの変更を反映するものであり過年度の誤謬でもない。",
+      "references": ["ASC 715-30-35-14"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-075",
+      "topic": "Pensions",
+      "subtopic": "Pension Expense - Interim Period Allocation",
+      "stem": "How should net periodic pension cost be recognized in interim financial statements under ASC 270?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The full annual pension cost should be recognized in the first interim period"
+        },
+        { "label": "B", "text": "Pension cost is recognized only at year-end" },
+        {
+          "label": "C",
+          "text": "An aliquot portion (proportional share) of the estimated annual pension cost should be recognized each interim period"
+        },
+        {
+          "label": "D",
+          "text": "Pension cost is recognized only when employer contributions are made"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 715-30-35-62 and ASC 270-10-45-7, net periodic pension cost should be recognized ratably across interim periods. The estimated annual pension cost is divided proportionally across the interim periods (for quarterly reporting, one-quarter of the annual cost per quarter). If estimates change during the year, the remaining cost is allocated over the remaining periods. Answer is C.",
+      "explanationJa": "ASC 715-30-35-62およびASC 270-10-45-7により、正味期間年金費用は中間期間にわたり均等に認識する。推定年間年金費用を中間期間に比例配分する（四半期報告の場合、年間費用の4分の1を各四半期に計上）。年度中に見積りが変更された場合、残余費用を残りの期間に配分する。",
+      "references": ["ASC 715-30-35-62", "ASC 270-10-45-7"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-076",
+      "topic": "Pensions",
+      "subtopic": "Settlement - Annuity Purchase",
+      "stem": "A company purchases a nonparticipating annuity contract from an insurance company for $4,000,000 to settle a portion of its pension obligation. The PBO attributable to the settled participants is $4,200,000, and the unrecognized net loss in AOCI attributable to the settled portion is $300,000. What gain or loss is recognized in the income statement from this settlement?",
+      "choices": [
+        { "label": "A", "text": "$200,000 gain" },
+        { "label": "B", "text": "$100,000 loss" },
+        { "label": "C", "text": "$500,000 loss" },
+        { "label": "D", "text": "$200,000 loss" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 715-30-35-79 through 35-83, a settlement gain or loss includes both the difference between the settlement cost and the PBO settled, and the proportionate share of unrecognized items in AOCI. Difference on settlement: PBO settled − Settlement cost = $4,200,000 − $4,000,000 = $200,000 gain. Plus reclassification of AOCI net loss: $300,000 loss. Net settlement result = $200,000 gain − $300,000 loss = $100,000 loss. Answer is B.",
+      "explanationJa": "ASC 715-30-35-79〜83により、決済損益には決済コストと決済されたPBOの差額、およびAOCIの未認識項目の比例配分額が含まれる。決済差額：決済PBO $4,200,000 − 決済コスト $4,000,000 = $200,000の利得。AOCI純損失の組替：$300,000の損失。純決済結果 = $200,000利得 − $300,000損失 = $100,000の損失。",
+      "references": [
+        "ASC 715-30-35-79",
+        "ASC 715-30-35-80",
+        "ASC 715-30-35-83"
+      ],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-077",
+      "topic": "Pensions",
+      "subtopic": "Curtailment - Prior Service Cost Write-Off",
+      "stem": "A company closes a factory, eliminating future service for 200 pension plan participants. The unrecognized prior service cost in AOCI attributable to these employees is $800,000. Under ASC 715, how is this prior service cost treated upon curtailment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Continue amortizing over the original remaining service period"
+        },
+        {
+          "label": "B",
+          "text": "Recognize the $800,000 as a curtailment loss in the income statement"
+        },
+        { "label": "C", "text": "Transfer the $800,000 to goodwill" },
+        { "label": "D", "text": "Recognize the $800,000 as a gain in OCI" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 715-30-35-92, when a curtailment eliminates future service for a significant number of employees, the unrecognized prior service cost associated with years of service no longer expected to be rendered is recognized as a curtailment loss. Since the 200 employees will no longer earn future service, the $800,000 of unrecognized prior service cost attributable to them is immediately recognized as a loss in the income statement. Answer is B.",
+      "explanationJa": "ASC 715-30-35-92により、カーテイルメントが相当数の従業員の将来勤務を排除する場合、提供されなくなる勤務年数に関連する未認識過去勤務費用はカーテイルメント損失として認識される。200名の従業員が将来勤務を提供しなくなるため、帰属する$800,000の未認識過去勤務費用は損益計算書に即時損失認識される。",
+      "references": ["ASC 715-30-35-92", "ASC 715-30-35-93"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-078",
+      "topic": "Pensions",
+      "subtopic": "Multi-Employer Plan - Disclosure Requirements",
+      "stem": "Which of the following disclosures is required for an employer participating in a multi-employer pension plan under ASC 715-80?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The employer's proportionate share of the plan's PBO and plan assets"
+        },
+        {
+          "label": "B",
+          "text": "The funded status of the multi-employer plan based on the most recent available information and the employer's contributions"
+        },
+        {
+          "label": "C",
+          "text": "A complete actuarial valuation of the employer's share of the plan"
+        },
+        {
+          "label": "D",
+          "text": "The expected return on the employer's allocated portion of plan assets"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 715-80-50-2 through 50-4, an employer participating in a multi-employer plan must disclose, among other items: the plan's funded status (using the most recently available information such as the plan's Form 5500), the employer's total contributions, the nature and effect of any surcharge obligations, and whether the plan is in critical or endangered status. The employer does not separately calculate its proportionate share of PBO or plan assets. Answer is B.",
+      "explanationJa": "ASC 715-80-50-2〜50-4により、複数事業主制度に参加する雇用主は、制度の積立状況（Form 5500等の直近入手可能情報）、雇用主の拠出総額、追加負担金の内容と影響、制度が重大または危機的状態にあるかなどを開示する。雇用主はPBOや制度資産の比例配分を個別計算しない。",
+      "references": ["ASC 715-80-50-2", "ASC 715-80-50-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-079",
+      "topic": "Pensions",
+      "subtopic": "Pension Trust - Investment Strategy",
+      "stem": "Under ASC 715, which of the following is an appropriate fair value measurement for pension plan assets?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Plan assets are measured at historical cost less accumulated depreciation"
+        },
+        {
+          "label": "B",
+          "text": "Plan assets are measured at the lower of cost or market"
+        },
+        {
+          "label": "C",
+          "text": "Plan assets are measured at fair value as defined by ASC 820"
+        },
+        {
+          "label": "D",
+          "text": "Plan assets are measured at net realizable value"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 715-30-35-59, plan assets used in the funded status calculation must be measured at fair value as of the measurement date, applying the fair value hierarchy in ASC 820 (Level 1, 2, or 3 inputs). Employers must also disclose plan assets by major category (equity securities, debt securities, real estate, etc.) and the level within the fair value hierarchy. Answer is C.",
+      "explanationJa": "ASC 715-30-35-59により、積立状況の計算に用いる制度資産は測定日の公正価値で測定し、ASC 820の公正価値ヒエラルキー（レベル1, 2, 3）を適用する。雇用主は制度資産を主要カテゴリー（株式、債券、不動産等）別および公正価値ヒエラルキーのレベル別に開示しなければならない。",
+      "references": ["ASC 715-30-35-59", "ASC 820-10-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-080",
+      "topic": "Pensions",
+      "subtopic": "Projected vs Accumulated Benefit - Key Differences",
+      "stem": "How does the projected benefit obligation (PBO) differ from the accumulated benefit obligation (ABO)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PBO includes the effect of projected future salary increases; ABO is based on current salary levels"
+        },
+        { "label": "B", "text": "PBO uses a higher discount rate than ABO" },
+        {
+          "label": "C",
+          "text": "ABO includes projected future salary increases; PBO does not"
+        },
+        {
+          "label": "D",
+          "text": "PBO and ABO are identical for all types of pension plans"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-20, the PBO measures the actuarial present value of all benefits attributed to employee service to date, using assumptions about future salary levels (for pay-related plans). The ABO measures the same obligation but based on current salary levels only, without projecting future salary increases. For flat-benefit plans (not based on salary), PBO and ABO are the same. The PBO is used for pension expense calculations and funded status reporting. Answer is A.",
+      "explanationJa": "ASC 715-30-20により、PBOは将来の昇給を仮定して現在までの勤務に帰属する全給付の数理計算上の現在価値を測定する（給与連動型制度の場合）。ABOは将来の昇給を考慮せず、現在の給与水準のみに基づく同様の債務を測定する。定額給付制度（給与に基づかない）ではPBOとABOは同一。PBOは年金費用計算と積立状況の報告に使用される。",
+      "references": ["ASC 715-30-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-081",
+      "topic": "Pensions",
+      "subtopic": "ASU 2017-07 - Pension Cost Reclassification",
+      "stem": "Under ASU 2017-07, a company reports service cost of $500,000 and the following other components: interest cost of $400,000, expected return on plan assets of $(350,000), and amortization of prior service cost of $50,000. What total amount is reported outside of operating income?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$400,000" },
+        { "label": "D", "text": "$600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASU 2017-07 (ASC 715-30-45-3A), only service cost is reported in operating income. All other components are reported outside operating income. Components outside operating income: Interest cost $400,000 + Expected return on plan assets ($350,000) + Amortization of prior service cost $50,000 = $400,000 − $350,000 + $50,000 = $100,000. The $500,000 service cost is in operating income. Answer is A.",
+      "explanationJa": "ASU 2017-07（ASC 715-30-45-3A）により、勤務費用のみが営業利益に含まれる。その他の構成要素はすべて営業利益の外に報告される。営業外項目：利息費用$400,000 + 期待収益$(350,000) + 過去勤務費用償却$50,000 = $400,000 − $350,000 + $50,000 = $100,000。勤務費用$500,000は営業利益に含まれる。",
+      "references": ["ASC 715-30-45-3A"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-082",
+      "topic": "Pensions",
+      "subtopic": "Plan Freeze Effect on Service Cost",
+      "stem": "A company freezes its defined benefit pension plan effective January 1, 2025, so that no additional benefits accrue for future service. Which component of net periodic pension cost is most directly affected by the plan freeze?",
+      "choices": [
+        { "label": "A", "text": "Interest cost" },
+        { "label": "B", "text": "Service cost" },
+        { "label": "C", "text": "Expected return on plan assets" },
+        { "label": "D", "text": "Amortization of net loss" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A plan freeze eliminates future benefit accruals, which means service cost drops to zero after the freeze date. Service cost represents the actuarial present value of benefits earned by employees during the current period. When no additional benefits accrue, there is no service cost. Interest cost continues because the existing PBO still accrues interest. Expected return on plan assets continues based on asset balances. Amortization of net loss continues based on existing balances in AOCI. Answer is B.",
+      "explanationJa": "制度凍結は将来の給付発生を排除するため、凍結日以降の勤務費用はゼロになる。勤務費用は当期に従業員が稼得した給付の数理計算上の現在価値を表す。追加給付が発生しなければ勤務費用はない。利息費用は既存PBOに利息が発生するため継続する。期待収益は資産残高に基づき継続。純損失の償却はAOCIの既存残高に基づき継続する。",
+      "references": ["ASC 715-30-35-4", "ASC 715-30-35-36"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-083",
+      "topic": "Pensions",
+      "subtopic": "Lump-Sum Settlement - Remeasurement",
+      "stem": "On September 30, 2025, a company offers lump-sum payments to vested former employees to settle their pension benefits. Total lump sums paid are $3,500,000, and the settlement eliminates 40% of the PBO. Under ASC 715, what remeasurement is required?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Remeasure plan assets and PBO at September 30 before recognizing the settlement"
+        },
+        {
+          "label": "B",
+          "text": "No remeasurement is needed; use the beginning-of-year balances"
+        },
+        {
+          "label": "C",
+          "text": "Remeasure only the plan assets at September 30"
+        },
+        { "label": "D", "text": "Remeasure only the PBO at September 30" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-35-80 and ASC 715-30-35-67, a settlement requires remeasurement of both the PBO and plan assets at the settlement date (September 30, 2025). This interim remeasurement ensures that the settlement gain or loss is calculated using current values. After remeasurement, the proportionate share of unrecognized items in AOCI (40% in this case) is reclassified to income as part of the settlement gain or loss. Answer is A.",
+      "explanationJa": "ASC 715-30-35-80および35-67により、決済は決済日（2025年9月30日）にPBOと制度資産の両方の再測定を要求する。この中間再測定により、決済損益が現在の値で計算される。再測定後、AOCIの未認識項目の比例配分額（本件では40%）が決済損益の一部として損益に組替えられる。",
+      "references": ["ASC 715-30-35-67", "ASC 715-30-35-80"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-084",
+      "topic": "Pensions",
+      "subtopic": "Actuarial Gains/Losses - Immediate Recognition Election",
+      "stem": "A company elects to immediately recognize all actuarial gains and losses in pension expense rather than using the corridor approach. Under ASC 715, is this election permitted?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No, the corridor approach is the only acceptable method"
+        },
+        {
+          "label": "B",
+          "text": "Yes, as an alternative accounting policy that must be applied consistently and results in faster recognition"
+        },
+        {
+          "label": "C",
+          "text": "Yes, but only for OPEB plans, not pension plans"
+        },
+        {
+          "label": "D",
+          "text": "Yes, but only if the actuarial gain or loss exceeds 20% of the larger of PBO or plan assets"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 715-30-35-25 states that the corridor method establishes minimum amortization, but an employer may adopt any systematic method that results in faster recognition, provided it is applied consistently. Immediate recognition of all actuarial gains and losses in the income statement (rather than deferring in AOCI) is a permitted policy election. Many companies have adopted this approach for greater transparency. This must be disclosed as an accounting policy. Answer is B.",
+      "explanationJa": "ASC 715-30-35-25は、回廊法が最低償却額を定めるが、一貫して適用される限り、より早い認識をもたらす体系的な方法を採用できると規定する。全数理計算上の損益をAOCIに繰延べず損益計算書で即時認識することは許容される方針選択である。多くの企業が透明性向上のためこの方法を採用している。会計方針として開示が必要である。",
+      "references": ["ASC 715-30-35-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-085",
+      "topic": "Pensions",
+      "subtopic": "Funded Status - Multiple Plans Aggregation",
+      "stem": "An employer sponsors three defined benefit plans. Plan X is overfunded by $1,000,000, Plan Y is underfunded by $600,000, and Plan Z is underfunded by $400,000. What amounts are reported on the balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Noncurrent asset of $1,000,000 and noncurrent liability of $1,000,000"
+        },
+        {
+          "label": "B",
+          "text": "No amounts reported because the net funded status is zero"
+        },
+        {
+          "label": "C",
+          "text": "Noncurrent asset of $400,000 and noncurrent liability of $400,000"
+        },
+        { "label": "D", "text": "Noncurrent liability of $1,000,000 only" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-30-45-2, each plan's funded status must be recognized separately. Overfunded and underfunded plans cannot be netted against each other. Plan X: Noncurrent asset of $1,000,000. Plan Y: Noncurrent liability of $600,000. Plan Z: Noncurrent liability of $400,000. Total noncurrent liability = $600,000 + $400,000 = $1,000,000. The balance sheet reports a noncurrent asset of $1,000,000 and a noncurrent liability of $1,000,000. Answer is A.",
+      "explanationJa": "ASC 715-30-45-2により、各制度の積立状況は個別に認識する。過剰積立と積立不足の制度は相殺できない。制度X：非流動資産$1,000,000。制度Y：非流動負債$600,000。制度Z：非流動負債$400,000。非流動負債合計 = $600,000 + $400,000 = $1,000,000。BSには非流動資産$1,000,000と非流動負債$1,000,000を計上。",
+      "references": ["ASC 715-30-45-1", "ASC 715-30-45-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-086",
+      "topic": "Pensions",
+      "subtopic": "Pension Disclosures - Expected Cash Flows",
+      "stem": "Which of the following is a required pension disclosure under ASC 715-20-50?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Expected benefit payments for each of the next five years and in the aggregate for the following five years"
+        },
+        {
+          "label": "B",
+          "text": "Expected benefit payments for the next year only"
+        },
+        {
+          "label": "C",
+          "text": "Expected benefit payments for the remaining life of the plan"
+        },
+        {
+          "label": "D",
+          "text": "Expected employer contributions for the next 20 years"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-20-50-1(g), employers must disclose the expected benefit payments for each of the next five fiscal years individually, and in the aggregate for the five years thereafter (years 6-10). This disclosure helps financial statement users assess the timing of future cash flows from the plan. Additionally, employers must disclose expected contributions for the next fiscal year. Answer is A.",
+      "explanationJa": "ASC 715-20-50-1(g)により、雇用主は次の5会計年度それぞれの予想給付支払額を個別に、さらにその後5年間（6〜10年目）の合計額を開示しなければならない。この開示は財務諸表利用者が制度からの将来キャッシュフローのタイミングを評価するのに役立つ。また、翌会計年度の予想拠出額も開示が必要。",
+      "references": ["ASC 715-20-50-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-087",
+      "topic": "Pensions",
+      "subtopic": "OPEB - Medicare Part D Subsidy",
+      "stem": "Under ASC 715-60, how should an employer account for the federal subsidy received under Medicare Part D for providing prescription drug coverage to retirees that is actuarially equivalent to Medicare Part D?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The subsidy reduces the APBO and net periodic postretirement benefit cost"
+        },
+        {
+          "label": "B",
+          "text": "The subsidy is recognized as other income, separate from pension accounting"
+        },
+        { "label": "C", "text": "The subsidy is added to plan assets" },
+        {
+          "label": "D",
+          "text": "The subsidy has no effect on the financial statements until received in cash"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-60-35-155 through 35-158, the effects of the Medicare Part D subsidy are to be accounted for as an actuarial gain that reduces the APBO and as a reduction of net periodic postretirement benefit cost (primarily through reduced service cost and interest cost). The subsidy represents a reduction in the employer's expected cost of providing retiree prescription drug benefits and is reflected in the measurement of the obligation. Answer is A.",
+      "explanationJa": "ASC 715-60-35-155〜158により、メディケアパートD補助金の効果はAPBOを減少させる数理計算上の利得として、また正味期間退職後給付費用の減少（主に勤務費用と利息費用の減少）として会計処理される。補助金は退職者処方薬給付の予想コスト減少を表し、債務の測定に反映される。",
+      "references": ["ASC 715-60-35-155", "ASC 715-60-35-158"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-088",
+      "topic": "Pensions",
+      "subtopic": "Pension - International Plans (IAS 19 Comparison)",
+      "stem": "Which of the following is a significant difference between ASC 715 (US GAAP) and IAS 19 (IFRS) for defined benefit pension plans?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IAS 19 uses net interest on the net defined benefit liability/asset; ASC 715 uses separate interest cost on PBO and expected return on assets"
+        },
+        {
+          "label": "B",
+          "text": "IAS 19 does not require recognition of funded status on the balance sheet"
+        },
+        {
+          "label": "C",
+          "text": "ASC 715 requires immediate recognition of all remeasurements in profit or loss"
+        },
+        {
+          "label": "D",
+          "text": "IAS 19 uses the corridor approach for actuarial gains and losses"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A key difference between ASC 715 and IAS 19 (revised 2011) is the treatment of the return on plan assets. Under ASC 715, expected return on plan assets is a separate component of pension expense. Under IAS 19, there is no expected return concept; instead, net interest is calculated by applying the discount rate to the net defined benefit liability (or asset), combining interest cost on the obligation and return on assets into a single net amount. IAS 19 eliminated the corridor approach in 2011 (choice D is wrong). Both require balance sheet recognition (choice B is wrong). Answer is A.",
+      "explanationJa": "ASC 715とIAS 19（2011年改訂）の主要な差異は制度資産のリターンの扱いである。ASC 715では制度資産の期待収益が年金費用の独立した構成要素。IAS 19では期待収益の概念はなく、純確定給付負債（または資産）に割引率を適用して純利息を計算し、債務の利息と資産のリターンを単一の純額に統合する。IAS 19は2011年に回廊法を廃止した（選択肢Dは誤り）。両基準ともBS認識を要求する（選択肢Bは誤り）。",
+      "references": ["ASC 715-30-35-4", "IAS 19.123-126"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }

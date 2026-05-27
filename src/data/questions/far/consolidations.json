@@ -2,7 +2,7 @@
   "id": "far-consolidations",
   "name": "Consolidations",
   "topic": "Consolidations",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "questions": [
     {
       "id": "con-001",
@@ -1374,6 +1374,897 @@
       "references": ["ASC 810-10-45-21"],
       "difficulty": "intermediate",
       "source": "AICPA Released Questions"
+    },
+    {
+      "id": "con-059",
+      "topic": "Consolidations",
+      "subtopic": "Reverse Acquisition Accounting",
+      "stem": "Company A (legal acquirer) issues shares to acquire Company B (legal acquiree). However, former Company B shareholders hold 65% of the outstanding shares of the combined entity after the transaction. Under ASC 805, which entity is considered the acquirer for accounting purposes?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Company A, because it legally issued the shares"
+        },
+        {
+          "label": "B",
+          "text": "Company B, because its former shareholders control the combined entity"
+        },
+        {
+          "label": "C",
+          "text": "The combined entity is treated as a new entity"
+        },
+        {
+          "label": "D",
+          "text": "The determination depends on which company has the larger board of directors"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-10-55-11 through 55-15, in a reverse acquisition, the entity that issues securities (legal acquirer) is identified as the acquiree for accounting purposes. The accounting acquirer is the entity whose former owners as a group retain the largest portion of voting rights in the combined entity. Since Company B's former shareholders hold 65% of the combined entity, Company B is the accounting acquirer despite being the legal acquiree.",
+      "explanationJa": "ASC 805-10-55-11〜55-15により、逆取得では証券を発行した法的取得者が会計上の被取得者となる。会計上の取得者は、結合後の企業で最大の議決権を保持する旧株主グループの企業である。B社の旧株主が結合企業の65%を保有するため、B社が法的被取得者であっても会計上の取得者となる。",
+      "references": ["ASC 805-10-55-11", "ASC 805-10-55-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-060",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Retained Earnings Calculation",
+      "stem": "Parent Co. acquired 100% of Sub Co. on January 1, Year 1 for $500,000. At acquisition, Sub's retained earnings were $120,000. At December 31, Year 3, Parent's standalone retained earnings are $800,000, and Sub's retained earnings are $200,000. Sub paid $30,000 in dividends to Parent during Years 1-3. What is the consolidated retained earnings at December 31, Year 3?",
+      "choices": [
+        { "label": "A", "text": "$800,000" },
+        { "label": "B", "text": "$880,000" },
+        { "label": "C", "text": "$1,000,000" },
+        { "label": "D", "text": "$970,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Consolidated retained earnings equals the parent's standalone retained earnings plus the parent's share of the subsidiary's post-acquisition change in retained earnings. Sub's post-acquisition increase in retained earnings = $200,000 - $120,000 = $80,000. Since Parent owns 100%, consolidated retained earnings = $800,000 + $80,000 = $880,000. The dividends from Sub to Parent are eliminated in consolidation and do not affect consolidated retained earnings (they are already reflected in Parent's standalone retained earnings under the equity method, or the calculation above captures the net change).",
+      "explanationJa": "連結利益剰余金は、親会社の個別利益剰余金に子会社の取得後利益剰余金変動額の親会社持分を加算して算出する。子会社の取得後増加額＝$200,000−$120,000＝$80,000。親会社が100%保有のため、連結利益剰余金＝$800,000＋$80,000＝$880,000。子会社から親会社への配当は連結上消去され、連結利益剰余金に影響しない。",
+      "references": ["ASC 810-10-45-1", "ASC 810-10-25-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-061",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Dividend Elimination",
+      "stem": "Parent owns 80% of Subsidiary. During the year, Subsidiary declared and paid $100,000 in dividends. What is the effect of the intercompany dividend elimination entry on the consolidated financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dividend income of $80,000 is eliminated and NCI dividends of $20,000 are reported as a financing activity"
+        },
+        {
+          "label": "B",
+          "text": "The full $100,000 dividend is eliminated from the consolidated statements"
+        },
+        {
+          "label": "C",
+          "text": "Dividend income of $100,000 is eliminated with no other effect"
+        },
+        {
+          "label": "D",
+          "text": "Only $20,000 paid to NCI shareholders is eliminated"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45, the parent's share of dividends ($100,000 x 80% = $80,000) is eliminated as an intercompany transaction. The NCI share ($100,000 x 20% = $20,000) is paid to outside shareholders and is not eliminated. In the consolidated statement of cash flows, the $20,000 NCI dividend is reported as a financing activity under ASC 230-10-45-15. This reflects that dividends to NCI shareholders are distributions to non-parent equity holders.",
+      "explanationJa": "親会社持分の配当（$100,000×80%＝$80,000）は会社間取引として消去される。NCI持分（$100,000×20%＝$20,000）は外部株主への支払いであり消去されない。連結キャッシュ・フロー計算書では、NCIへの配当$20,000は財務活動として報告される。",
+      "references": ["ASC 810-10-45-1", "ASC 230-10-45-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-062",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Land Sale - No Depreciation",
+      "stem": "Parent sold land to its 100%-owned Subsidiary for $350,000. Parent's carrying amount of the land was $200,000. At year-end, Subsidiary still holds the land. What elimination entry is required in the consolidated working papers?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Gain on Sale $150,000; Credit Land $150,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Land $150,000; Credit Gain on Sale $150,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Gain on Sale $150,000; Credit Retained Earnings $150,000"
+        },
+        {
+          "label": "D",
+          "text": "No elimination is needed because the land was sold at fair value"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45-1, all intercompany profits must be eliminated in consolidation. Parent recorded a gain of $350,000 - $200,000 = $150,000 on the sale. Since the land is non-depreciable, the unrealized gain remains until the land is sold to an outside party. The elimination entry debits Gain on Sale for $150,000 (to remove the gain from the income statement) and credits Land for $150,000 (to reduce it from $350,000 back to the original $200,000 cost to the consolidated entity).",
+      "explanationJa": "会社間利益は全て連結上消去する。親会社は$350,000−$200,000＝$150,000の売却益を計上した。土地は非償却資産のため、外部売却まで未実現利益が残る。消去仕訳：売却益$150,000を借方（損益計算書から除去）、土地$150,000を貸方（$350,000から連結上の原価$200,000に戻す）。",
+      "references": ["ASC 810-10-45-1", "ASC 810-10-45-EI"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-063",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Depreciable Asset - Upstream Year 1",
+      "stem": "Subsidiary (80%-owned) sold equipment to Parent on January 1, Year 1 for $180,000. The equipment had a carrying value of $120,000 on Sub's books with a remaining useful life of 6 years (straight-line, no salvage). What is the net unrealized intercompany profit to be eliminated at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$48,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The intercompany gain on the sale = $180,000 - $120,000 = $60,000. Parent depreciates the equipment based on $180,000 over 6 years = $30,000/year. The correct consolidated depreciation should be based on $120,000 / 6 = $20,000/year. The excess depreciation = $30,000 - $20,000 = $10,000 per year. This excess depreciation represents the portion of the intercompany gain that is realized through use during Year 1. Net unrealized profit at December 31, Year 1 = $60,000 - $10,000 = $50,000.",
+      "explanationJa": "会社間売却益＝$180,000−$120,000＝$60,000。親会社は$180,000÷6年＝$30,000/年で減価償却。正しい連結減価償却費は$120,000÷6＝$20,000/年。過大償却額＝$30,000−$20,000＝$10,000/年。この過大償却が1年目に実現した利益分を表す。12月31日時点の未実現利益＝$60,000−$10,000＝$50,000。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-064",
+      "topic": "Consolidations",
+      "subtopic": "Downstream Intercompany Inventory - Year 1",
+      "stem": "Parent sold inventory to its 80%-owned Subsidiary for $250,000. Parent's cost was $175,000. At year-end, 40% of this inventory remains unsold by Subsidiary. What amount of unrealized intercompany profit must be eliminated in the consolidated financial statements?",
+      "choices": [
+        { "label": "A", "text": "$75,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$24,000" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Total intercompany profit = $250,000 - $175,000 = $75,000. Since 60% of the inventory has been sold to outside parties, that portion is realized. Only the profit on the remaining 40% inventory is unrealized. Unrealized profit = $75,000 x 40% = $30,000. For a downstream sale (parent to subsidiary), 100% of the unrealized profit is eliminated against the parent's income, regardless of the NCI percentage. The NCI share is not relevant for downstream eliminations.",
+      "explanationJa": "会社間利益合計＝$250,000−$175,000＝$75,000。60%が外部販売済みで実現済み。残り40%の在庫の利益が未実現。未実現利益＝$75,000×40%＝$30,000。下流取引（親→子）では、NCI持分に関係なく未実現利益の100%を親会社の利益から消去する。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-065",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Balance Sheet - Working Paper",
+      "stem": "Which of the following items would NOT appear as an elimination entry on a consolidated balance sheet working paper?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Elimination of the parent's investment in subsidiary account against subsidiary's equity"
+        },
+        {
+          "label": "B",
+          "text": "Elimination of intercompany receivables and payables"
+        },
+        {
+          "label": "C",
+          "text": "Elimination of the subsidiary's external accounts receivable"
+        },
+        {
+          "label": "D",
+          "text": "Elimination of unrealized profit in intercompany inventory transfers"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 810-10-45-1, consolidation elimination entries remove intercompany balances and transactions, not external transactions. The subsidiary's external accounts receivable are from third parties and must be included in the consolidated balance sheet. The investment in subsidiary against subsidiary equity (A), intercompany receivables/payables (B), and unrealized intercompany inventory profit (D) are all standard elimination entries.",
+      "explanationJa": "連結消去仕訳は会社間残高・取引を消去するものであり、外部取引は消去しない。子会社の外部売掛金は第三者に対するものであり、連結貸借対照表に含める。投資と子会社資本の消去（A）、会社間債権債務の消去（B）、会社間在庫未実現利益の消去（D）はいずれも標準的な消去仕訳である。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-066",
+      "topic": "Consolidations",
+      "subtopic": "NCI Valuation at Fair Value vs Proportionate Share",
+      "stem": "Parent acquires 75% of Sub for $900,000 when Sub's identifiable net assets have a fair value of $1,000,000. If NCI is measured at fair value and the fair value of the 25% NCI is $320,000, what is the goodwill recognized in the consolidated financial statements?",
+      "choices": [
+        { "label": "A", "text": "$220,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$250,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the full goodwill method (ASC 805-20-30-1), goodwill is calculated as the total implied value of the entity minus the fair value of identifiable net assets. Total implied value = Consideration transferred ($900,000) + Fair value of NCI ($320,000) = $1,220,000. Goodwill = $1,220,000 - $1,000,000 = $220,000. This method attributes goodwill to both the parent's and the NCI's portions.",
+      "explanationJa": "全額のれん法（ASC 805-20-30-1）では、のれん＝企業の推定総価値−識別可能純資産の公正価値。推定総価値＝移転対価（$900,000）＋NCIの公正価値（$320,000）＝$1,220,000。のれん＝$1,220,000−$1,000,000＝$220,000。この方法では親会社分とNCI分の両方にのれんを帰属させる。",
+      "references": ["ASC 805-20-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-067",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition - Contingent Consideration Remeasurement",
+      "stem": "On January 1, Year 1, Parent acquired Sub and agreed to pay an additional $200,000 if Sub achieves a revenue target by December 31, Year 2. The acquisition-date fair value of the contingent consideration was $140,000, classified as a liability. At December 31, Year 1, the fair value of the contingent consideration increased to $175,000. How should the $35,000 change be reported?",
+      "choices": [
+        { "label": "A", "text": "As an adjustment to goodwill" },
+        { "label": "B", "text": "As a loss in earnings for Year 1" },
+        {
+          "label": "C",
+          "text": "As an adjustment to additional paid-in capital"
+        },
+        { "label": "D", "text": "As a component of other comprehensive income" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-30-35-1, changes in the fair value of contingent consideration classified as a liability that occur after the acquisition date (and outside the measurement period adjustment criteria) are recognized in earnings. Since this is a remeasurement at December 31, Year 1 (not a measurement period adjustment based on facts existing at the acquisition date), the $35,000 increase is recognized as a loss in earnings. Contingent consideration classified as equity is not remeasured.",
+      "explanationJa": "ASC 805-30-35-1により、負債に分類された条件付対価の取得日後の公正価値変動（測定期間調整に該当しない場合）は損益に認識する。これは取得日に存在した事実に基づく測定期間調整ではなく12月31日の再測定であるため、$35,000の増加は損益として認識する。資本に分類された条件付対価は再測定しない。",
+      "references": ["ASC 805-30-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-068",
+      "topic": "Consolidations",
+      "subtopic": "Goodwill - Qualitative Assessment Option",
+      "stem": "Under ASC 350, an entity may elect to perform a qualitative assessment before testing goodwill for impairment. Which of the following best describes the purpose of the qualitative assessment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "To determine the exact amount of goodwill impairment loss"
+        },
+        {
+          "label": "B",
+          "text": "To assess whether it is more likely than not that the fair value of a reporting unit is less than its carrying amount"
+        },
+        {
+          "label": "C",
+          "text": "To compare the carrying amount of goodwill to its implied fair value"
+        },
+        {
+          "label": "D",
+          "text": "To allocate goodwill to individual assets within the reporting unit"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 350-20-35-3A through 3G, an entity has the option to first perform a qualitative assessment (often called 'Step 0') to determine whether it is more likely than not (i.e., a likelihood of more than 50%) that the fair value of a reporting unit is less than its carrying amount. If the entity concludes it is not more likely than not, no further quantitative testing is required. This simplifies the impairment testing process for entities where goodwill impairment is clearly unlikely.",
+      "explanationJa": "ASC 350-20-35-3A〜3Gにより、企業は定性的評価（「ステップ0」）を先に実施し、報告単位の公正価値がその帳簿価額を下回る可能性が50%超か否かを判断できる。50%超でないと結論すれば、追加の定量テストは不要である。のれん減損が明らかに見込まれない企業にとって、減損テストプロセスを簡素化する。",
+      "references": ["ASC 350-20-35-3A", "ASC 350-20-35-3G"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-069",
+      "topic": "Consolidations",
+      "subtopic": "Subsidiary Spin-Off Accounting",
+      "stem": "Parent Co. distributes 100% of its ownership in Subsidiary to Parent's existing shareholders as a spin-off. Immediately before the spin-off, the carrying amount of the net assets of Subsidiary on the consolidated books is $400,000. How does the parent account for the spin-off?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Record a gain or loss based on the fair value of Subsidiary"
+        },
+        {
+          "label": "B",
+          "text": "Reduce retained earnings by $400,000 (or equity if retained earnings is insufficient)"
+        },
+        {
+          "label": "C",
+          "text": "Recognize the distribution at fair value and record any difference as a gain"
+        },
+        {
+          "label": "D",
+          "text": "Reclassify the investment to a held-for-sale asset"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 505-60-25, a nonreciprocal transfer of a subsidiary to owners in a spin-off is accounted for at the carrying amount (book value) of the subsidiary's net assets. No gain or loss is recognized. The parent reduces equity (typically retained earnings) by the carrying amount of the net assets distributed. This is because the transaction is with owners in their capacity as owners, similar to a dividend.",
+      "explanationJa": "ASC 505-60-25により、スピンオフにおける子会社の株主への非相互移転は、子会社の純資産の帳簿価額で会計処理する。損益は認識しない。親会社は分配した純資産の帳簿価額で資本（通常は利益剰余金）を減額する。これは所有者としての立場での所有者との取引であり、配当と同様の性質を持つためである。",
+      "references": ["ASC 505-60-25-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-070",
+      "topic": "Consolidations",
+      "subtopic": "Control Without Majority Ownership",
+      "stem": "Entity A owns 45% of Entity B's voting stock. Entity A also has a contractual arrangement that gives it the unilateral power to direct Entity B's key operating and financial activities. Under ASC 810, should Entity A consolidate Entity B?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No, because Entity A does not own more than 50% of the voting stock"
+        },
+        {
+          "label": "B",
+          "text": "Yes, if Entity B is a variable interest entity and Entity A is the primary beneficiary"
+        },
+        { "label": "C", "text": "No, Entity A should use the equity method" },
+        {
+          "label": "D",
+          "text": "Yes, only if Entity A also has the power to appoint the majority of the board"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-15, the consolidation model includes both the voting interest model and the variable interest entity (VIE) model. Even without majority voting ownership, Entity A may be required to consolidate Entity B if Entity B is a VIE and Entity A is the primary beneficiary. The primary beneficiary is the entity with (1) power to direct the activities that most significantly impact the VIE's economic performance and (2) the obligation to absorb losses or the right to receive benefits that could potentially be significant to the VIE (ASC 810-10-25-38A).",
+      "explanationJa": "ASC 810-10-15により、連結モデルには議決権モデルとVIEモデルの両方が含まれる。過半数の議決権を保有していなくても、B社がVIEであり A社が主たる受益者であれば連結が必要となる。主たる受益者とは、(1)VIEの経済的業績に最も重要な影響を与える活動を指揮する力と、(2)VIEにとって重要となり得る損失負担義務または利益受領権を有する企業である。",
+      "references": ["ASC 810-10-15-14", "ASC 810-10-25-38A"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-071",
+      "topic": "Consolidations",
+      "subtopic": "Protective vs Participating Rights",
+      "stem": "Investor Corp. owns 40% of Target Inc. The remaining 60% is widely dispersed. The shareholder agreement gives the 60% holders the right to approve Target's annual operating budget and block asset sales exceeding $5 million, but not to unilaterally set operating or financing policies. These rights held by the 60% holders are best characterized as:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Participating rights that overcome the presumption of control by Investor Corp."
+        },
+        {
+          "label": "B",
+          "text": "Protective rights that do not overcome the presumption of control"
+        },
+        {
+          "label": "C",
+          "text": "Kick-out rights that require consolidation by the 60% holders"
+        },
+        {
+          "label": "D",
+          "text": "Substantive participating rights that prevent any party from consolidating"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-25-5, protective rights are those designed to protect the interest of the holder without giving that holder a controlling financial interest. Rights such as approving budgets or blocking large transactions are generally protective in nature. Participating rights, by contrast, allow the holder to participate in directing significant financial and operating decisions made in the ordinary course of business. Since these rights do not allow the 60% holders to unilaterally direct operating or financing policies, they are protective rights.",
+      "explanationJa": "ASC 810-10-25-5により、防御的権利は保有者の利益を保護するものであり、支配的財務持分を与えるものではない。予算承認や大規模取引の拒否権などは一般に防御的性質を持つ。参加的権利は、通常の事業運営における重要な財務・経営意思決定への参加を可能にする。60%保有者が経営・財務方針を一方的に決定できないため、これらは防御的権利である。",
+      "references": ["ASC 810-10-25-5", "ASC 810-10-25-13"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-072",
+      "topic": "Consolidations",
+      "subtopic": "VIE - Shared Power Determination",
+      "stem": "Two unrelated entities, Alpha and Beta, each have the power to direct different activities of a VIE. Alpha directs the lending decisions that most significantly impact the VIE's economic performance, while Beta directs the asset management activities. Under ASC 810-10-25-38D, which entity is the primary beneficiary?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Alpha, because it directs the most significant activities"
+        },
+        {
+          "label": "B",
+          "text": "Beta, because asset management is more continuous"
+        },
+        {
+          "label": "C",
+          "text": "Neither entity consolidates if power is shared and no single party directs the most significant activities"
+        },
+        {
+          "label": "D",
+          "text": "Both entities must consolidate their proportionate share"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-25-38A and 38D, the primary beneficiary must have the power to direct the activities that most significantly impact the VIE's economic performance. When multiple parties hold power over different activities, the entity that directs the activities that are most significant to the VIE's economic performance is the primary beneficiary (assuming the other criterion regarding significant variable interests is also met). Since Alpha directs the lending decisions that most significantly impact economic performance, Alpha is the primary beneficiary.",
+      "explanationJa": "ASC 810-10-25-38A・38Dにより、主たる受益者はVIEの経済的業績に最も重要な影響を与える活動を指揮する力を持つ必要がある。複数当事者が異なる活動に対する力を持つ場合、VIEの経済的業績に最も重要な活動を指揮する企業が主たる受益者となる。Alphaが最も重要な影響を与える融資判断を指揮するため、Alphaが主たる受益者である。",
+      "references": ["ASC 810-10-25-38A", "ASC 810-10-25-38D"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-073",
+      "topic": "Consolidations",
+      "subtopic": "VIE - Expected Losses and Expected Returns",
+      "stem": "Entity X holds a variable interest in Entity Y (a VIE). Entity X has the power to direct the significant activities of Entity Y but does not absorb any expected losses and has no right to receive expected residual returns. Under ASC 810, is Entity X the primary beneficiary?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because having power alone is sufficient"
+        },
+        {
+          "label": "B",
+          "text": "No, because Entity X must also have the obligation to absorb losses or the right to receive benefits that could be significant to the VIE"
+        },
+        {
+          "label": "C",
+          "text": "Yes, because power to direct activities always requires consolidation"
+        },
+        {
+          "label": "D",
+          "text": "No, because Entity X must absorb a majority of expected losses"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-25-38A, the primary beneficiary of a VIE must satisfy BOTH criteria: (1) power to direct the activities of the VIE that most significantly impact its economic performance, AND (2) the obligation to absorb losses or the right to receive benefits from the VIE that could potentially be significant to the VIE. Having power alone (criterion 1) without meeting criterion 2 does not make an entity the primary beneficiary.",
+      "explanationJa": "ASC 810-10-25-38Aにより、VIEの主たる受益者は両方の基準を満たす必要がある：(1)VIEの経済的業績に最も重要な影響を与える活動を指揮する力、および(2)VIEにとって重要となり得る損失負担義務または利益受領権。力のみ（基準1）を持ち、基準2を満たさない場合、主たる受益者にはならない。",
+      "references": ["ASC 810-10-25-38A"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-074",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Tax Return vs Separate Return",
+      "stem": "Parent and its 80%-owned domestic Subsidiary file a consolidated federal income tax return. Which of the following is a requirement for filing a consolidated tax return under IRC regulations?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The parent must own at least 51% of the subsidiary's voting stock"
+        },
+        {
+          "label": "B",
+          "text": "The parent must own at least 80% of the subsidiary's voting power and value of stock"
+        },
+        { "label": "C", "text": "The parent must own 100% of the subsidiary" },
+        {
+          "label": "D",
+          "text": "The parent must own more than 50% of the subsidiary's total assets"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under IRC Section 1504(a), an affiliated group eligible to file a consolidated tax return requires the common parent to own at least 80% of the total voting power and at least 80% of the total value of the stock of each includable corporation. This is distinct from the financial accounting consolidation threshold of a controlling financial interest (typically more than 50% voting interest). The 80% threshold applies to both voting power and value.",
+      "explanationJa": "IRC第1504条(a)により、連結税務申告が可能な関連グループでは、共通親会社が各対象法人の議決権総数の80%以上かつ株式価値合計の80%以上を保有する必要がある。これは財務会計上の連結基準（通常は議決権の50%超）とは異なる。80%基準は議決権と価値の両方に適用される。",
+      "references": ["IRC Section 1504(a)"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-075",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Management Fees",
+      "stem": "Parent charges its 100%-owned Subsidiary a $500,000 annual management fee. How is this fee treated in the consolidated financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reported as revenue for Parent and expense for Subsidiary"
+        },
+        { "label": "B", "text": "Completely eliminated in consolidation" },
+        {
+          "label": "C",
+          "text": "Reported net as a reduction of the Subsidiary's operating expenses"
+        },
+        { "label": "D", "text": "Reclassified as an intercompany dividend" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-45-1, all intercompany transactions must be eliminated in consolidation. The management fee of $500,000 recorded as revenue by Parent and as an expense by Subsidiary represents an intercompany transaction with no economic impact on the consolidated entity. The elimination entry debits management fee revenue for $500,000 and credits management fee expense for $500,000, resulting in no net effect on consolidated income.",
+      "explanationJa": "ASC 810-10-45-1により、全ての会社間取引は連結上消去する。親会社が収益として、子会社が費用として計上する管理報酬$500,000は、連結企業体に経済的影響のない会社間取引である。消去仕訳：管理報酬収入$500,000を借方、管理報酬費用$500,000を貸方で計上し、連結利益への影響はない。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-076",
+      "topic": "Consolidations",
+      "subtopic": "Elimination of Intercompany Loans",
+      "stem": "Parent lent $2,000,000 to its wholly-owned Subsidiary at 5% annual interest. At year-end, $100,000 of interest has accrued. Which of the following correctly describes the elimination entries needed in the consolidated working papers?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Eliminate the intercompany note receivable/payable of $2,000,000 and the accrued interest receivable/payable of $100,000, and eliminate the interest revenue and interest expense of $100,000"
+        },
+        {
+          "label": "B",
+          "text": "Eliminate only the intercompany note receivable/payable; the interest is a real expense"
+        },
+        {
+          "label": "C",
+          "text": "Eliminate only the interest revenue and expense; the loan balance is a real asset"
+        },
+        {
+          "label": "D",
+          "text": "No elimination is needed because the loan is at a market rate of interest"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45-1, all intercompany balances and transactions must be eliminated in consolidation. This includes both (1) the intercompany loan principal (note receivable on Parent's books and note payable on Subsidiary's books) and related accrued interest receivable/payable, and (2) the intercompany interest revenue recognized by Parent and the interest expense recognized by Subsidiary. Both the balance sheet items and income statement items must be eliminated.",
+      "explanationJa": "ASC 810-10-45-1により、全ての会社間残高・取引は連結上消去する。これには(1)会社間貸付元本（親会社の受取手形と子会社の支払手形）および未収・未払利息と、(2)親会社が認識した受取利息収入と子会社が認識した支払利息費用の両方が含まれる。貸借対照表項目と損益計算書項目の両方を消去する。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-077",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Lease Elimination",
+      "stem": "Parent leases a building to its 100%-owned Subsidiary under an operating lease. The annual lease payment is $120,000. On the consolidated financial statements, how should this lease be reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The lease is reported as an operating lease with right-of-use asset and lease liability"
+        },
+        {
+          "label": "B",
+          "text": "The lease revenue and expense are eliminated, and the building is reported as an owned asset of the consolidated entity"
+        },
+        {
+          "label": "C",
+          "text": "The lease is reclassified as a finance lease on consolidated statements"
+        },
+        {
+          "label": "D",
+          "text": "Only the lease payments are eliminated; the right-of-use asset remains"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-45-1, intercompany transactions are eliminated in consolidation. For an intercompany lease, the lease revenue (Parent) and lease expense (Subsidiary) are eliminated. Additionally, the right-of-use asset and lease liability recognized by the Subsidiary under ASC 842 are eliminated, and the underlying asset (building) remains on the consolidated balance sheet at its historical cost basis as if the lease never occurred. The consolidated entity effectively owns the building.",
+      "explanationJa": "ASC 810-10-45-1により、会社間取引は連結上消去する。会社間リースでは、親会社のリース収入と子会社のリース費用を消去する。さらに、子会社がASC 842に基づき認識した使用権資産とリース負債も消去し、原資産（建物）はリースが存在しなかったかのように取得原価で連結貸借対照表に残る。連結企業体は実質的に建物を所有している。",
+      "references": ["ASC 810-10-45-1", "ASC 842-10-15-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-078",
+      "topic": "Consolidations",
+      "subtopic": "Sub-Consolidation Procedures",
+      "stem": "Alpha owns 80% of Beta, and Beta owns 70% of Gamma. In preparing consolidated financial statements for Alpha, what is Alpha's effective ownership interest in Gamma?",
+      "choices": [
+        { "label": "A", "text": "70%" },
+        { "label": "B", "text": "80%" },
+        { "label": "C", "text": "56%" },
+        { "label": "D", "text": "75%" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Alpha's effective ownership in Gamma is calculated as Alpha's ownership in Beta multiplied by Beta's ownership in Gamma: 80% x 70% = 56%. Although Alpha does not directly own shares in Gamma, Alpha controls Beta, which in turn controls Gamma. The NCI in Gamma from the consolidated perspective includes both the direct NCI (30% held by outside shareholders of Gamma) and the indirect NCI through Beta's NCI holders (20% of Beta's 70% = 14%). Total NCI in Gamma = 30% + 14% = 44%, confirming Alpha's effective interest is 56%.",
+      "explanationJa": "AlphaのGammaに対する実効持分＝AlphaのBeta持分×BetaのGamma持分＝80%×70%＝56%。Alphaは直接Gamma株式を保有しないが、Betaを支配し、BetaがGammaを支配する。連結上のGammaのNCI＝直接NCI（Gamma外部株主30%）＋間接NCI（BetaのNCI保有者20%×70%＝14%）＝44%。よりAlphaの実効持分は56%。",
+      "references": ["ASC 810-10-15-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-079",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition-Date Fair Value of Equity Interests",
+      "stem": "Parent acquires Sub by issuing 100,000 shares of its common stock. On the acquisition date, Parent's stock is trading at $25 per share. What amount is used as the consideration transferred for purposes of calculating goodwill under ASC 805?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The book value of Parent's equity before the acquisition"
+        },
+        {
+          "label": "B",
+          "text": "$2,500,000, the acquisition-date fair value of the shares issued"
+        },
+        { "label": "C", "text": "The par value of the 100,000 shares issued" },
+        {
+          "label": "D",
+          "text": "The fair value of Sub's identifiable net assets"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-30-30-7, when equity interests are issued as consideration in a business combination, the consideration transferred is measured at the acquisition-date fair value. Parent issued 100,000 shares at a market price of $25 per share, so the consideration transferred = 100,000 x $25 = $2,500,000. This fair value, not par value or book value, is used to calculate goodwill (consideration transferred + NCI - fair value of identifiable net assets).",
+      "explanationJa": "ASC 805-30-30-7により、企業結合で持分証券を発行する場合、移転対価は取得日の公正価値で測定する。親会社は市場価格$25の株式を100,000株発行したため、移転対価＝100,000×$25＝$2,500,000。のれん計算（移転対価＋NCI−識別可能純資産の公正価値）には、額面や帳簿価額ではなくこの公正価値を使用する。",
+      "references": ["ASC 805-30-30-7"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-080",
+      "topic": "Consolidations",
+      "subtopic": "Subsidiary Stock Issuance to Third Party",
+      "stem": "Parent owns 90% of Sub (9,000 of 10,000 shares). Sub issues 2,500 new shares to a third party at $40 per share. The carrying amount of Sub's net assets before the issuance is $300,000. After the issuance, Parent's ownership drops to 72% (9,000/12,500). No loss of control occurs. Under ASC 810, how should Parent account for this change?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a gain or loss in earnings for the change in ownership"
+        },
+        {
+          "label": "B",
+          "text": "Record the transaction as an equity transaction with no gain or loss in earnings"
+        },
+        {
+          "label": "C",
+          "text": "Remeasure the retained investment at fair value"
+        },
+        {
+          "label": "D",
+          "text": "Deconsolidate Sub because ownership dropped below 80%"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-45-23, changes in a parent's ownership interest in a subsidiary that do not result in a loss of control are accounted for as equity transactions. No gain or loss is recognized in earnings. The difference between the adjustment to NCI and the consideration received or paid is recorded in the parent's equity (typically additional paid-in capital). Since Parent still holds 72% and maintains control, this is an equity transaction.",
+      "explanationJa": "ASC 810-10-45-23により、支配の喪失を伴わない親会社の子会社持分変動は資本取引として処理する。損益は認識しない。NCIの調整額と受領または支払った対価の差額は親会社の資本（通常は追加払込資本）に計上する。親会社は72%を保有し支配を維持するため、これは資本取引である。",
+      "references": ["ASC 810-10-45-23"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-081",
+      "topic": "Consolidations",
+      "subtopic": "Bargain Purchase - Remeasurement Requirement",
+      "stem": "Parent acquires 100% of Sub for $800,000. The fair value of Sub's identifiable net assets is $950,000. Before recognizing a bargain purchase gain, what step must the acquirer perform under ASC 805?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Immediately recognize the $150,000 bargain purchase gain in other comprehensive income"
+        },
+        {
+          "label": "B",
+          "text": "Reassess whether all assets acquired and liabilities assumed have been correctly identified and measured"
+        },
+        {
+          "label": "C",
+          "text": "Amortize the negative goodwill over the useful lives of the acquired assets"
+        },
+        {
+          "label": "D",
+          "text": "Reduce the fair values of noncurrent assets to eliminate the excess"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-30-25-4, if the acquisition results in a bargain purchase (consideration transferred is less than the net fair value of identifiable assets acquired and liabilities assumed), the acquirer must first reassess whether all assets acquired and liabilities assumed have been correctly identified and remeasure the recognized amounts. Only after this reassessment confirms the excess is a genuine bargain purchase gain should the gain be recognized in earnings on the acquisition date.",
+      "explanationJa": "ASC 805-30-25-4により、割安購入（移転対価が識別可能純資産の公正価値を下回る）が生じた場合、取得者はまず全ての取得資産・引受負債が正しく識別・測定されているか再評価する必要がある。この再評価で超過額が真の割安購入益であると確認された後にのみ、取得日に損益として認識する。",
+      "references": ["ASC 805-30-25-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-082",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Cash Flow - NCI Dividends",
+      "stem": "In the consolidated statement of cash flows, dividends paid to noncontrolling interest shareholders are classified as:",
+      "choices": [
+        { "label": "A", "text": "Operating activities" },
+        { "label": "B", "text": "Investing activities" },
+        { "label": "C", "text": "Financing activities" },
+        {
+          "label": "D",
+          "text": "These dividends are eliminated in consolidation and do not appear"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 230-10-45-15, dividends paid to noncontrolling interest (NCI) shareholders are reported as financing activities in the consolidated statement of cash flows. These dividends represent cash outflows to equity holders who are not the parent. Unlike intercompany dividends (which are eliminated), NCI dividends are paid to outside parties and must be reported. They are classified as financing activities because they are distributions to equity holders.",
+      "explanationJa": "ASC 230-10-45-15により、NCIへの配当金は連結キャッシュ・フロー計算書で財務活動に分類される。これらは親会社以外の持分保有者への現金流出である。会社間配当（消去される）と異なり、NCI配当は外部当事者への支払いであるため報告が必要である。持分保有者への分配であるため財務活動に分類する。",
+      "references": ["ASC 230-10-45-15"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-083",
+      "topic": "Consolidations",
+      "subtopic": "Step Acquisition - Equity to Consolidation",
+      "stem": "Investor held a 30% equity method investment in Target with a carrying amount of $450,000. Investor then acquires an additional 40% of Target for $700,000, obtaining control. On the date of the second acquisition, the fair value of Investor's previously held 30% interest is $520,000. Under ASC 805, what gain does Investor recognize on remeasurement of the previously held equity interest?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$70,000" },
+        { "label": "C", "text": "$250,000" },
+        { "label": "D", "text": "$520,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-10-25-10, when an acquirer obtains control through a step acquisition, the previously held equity interest must be remeasured to fair value at the acquisition date, and any resulting gain or loss is recognized in earnings. The gain = Fair value of previously held interest - Carrying amount = $520,000 - $450,000 = $70,000. This gain is recognized in the period's earnings.",
+      "explanationJa": "ASC 805-10-25-10により、段階取得で支配を獲得した場合、従前保有の持分を取得日の公正価値で再測定し、差額を損益に認識する。利益＝従前保有持分の公正価値−帳簿価額＝$520,000−$450,000＝$70,000。この利益は当期の損益に認識する。",
+      "references": ["ASC 805-10-25-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-084",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition - Deferred Tax on Fair Value Adjustments",
+      "stem": "In a taxable business combination, Parent acquires Sub and steps up Sub's building from a book value of $1,000,000 to a fair value of $1,400,000. The tax basis of the building remains at $1,000,000, and the applicable tax rate is 25%. What deferred tax liability is recognized at the acquisition date related to this building?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$250,000" },
+        { "label": "D", "text": "$350,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-740-25-2 and ASC 740-10-25-20, deferred taxes are recognized for temporary differences arising from fair value adjustments in a business combination. The fair value step-up of the building creates a taxable temporary difference = $1,400,000 (book basis) - $1,000,000 (tax basis) = $400,000. The deferred tax liability = $400,000 x 25% = $100,000. This deferred tax liability is recognized at the acquisition date and affects the calculation of goodwill.",
+      "explanationJa": "ASC 805-740-25-2およびASC 740-10-25-20により、企業結合の公正価値調整から生じる一時差異について繰延税金を認識する。建物の公正価値引上げによる課税一時差異＝$1,400,000（帳簿価額）−$1,000,000（税務基準額）＝$400,000。繰延税金負債＝$400,000×25%＝$100,000。この繰延税金負債は取得日に認識し、のれんの計算に影響する。",
+      "references": ["ASC 805-740-25-2", "ASC 740-10-25-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-085",
+      "topic": "Consolidations",
+      "subtopic": "NCI in Subsidiary with Preferred Stock",
+      "stem": "Sub has both common stock and cumulative preferred stock outstanding. Parent owns 100% of the common stock but none of the preferred stock. Sub's net income for the year is $500,000, and preferred dividends of $60,000 are declared. What amount of Sub's income is attributable to the noncontrolling interest?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$500,000" },
+        { "label": "D", "text": "$440,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When a subsidiary has preferred stock held by outside parties, the preferred shareholders represent a noncontrolling interest. The NCI preferred shareholders are entitled to their dividend claims. Since the preferred stock is cumulative and $60,000 in dividends are declared, the income attributable to NCI (preferred) is $60,000. The remaining income of $500,000 - $60,000 = $440,000 is attributable to the parent as the 100% common stockholder. Under ASC 810-10-45-20, income must be allocated between parent and NCI.",
+      "explanationJa": "子会社に外部保有の優先株がある場合、優先株主はNCIを構成する。優先株が累積型で$60,000の配当が宣言されているため、NCI（優先）に帰属する利益は$60,000。残りの$500,000−$60,000＝$440,000は100%普通株主である親会社に帰属する。ASC 810-10-45-20により、利益は親会社とNCIに配分する。",
+      "references": ["ASC 810-10-45-20", "ASC 480-10-S99-3A"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-086",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Fixed Asset - Gain Realization over Remaining Life",
+      "stem": "On January 1, Year 1, Parent sold a machine to its 100%-owned Subsidiary for $500,000. The machine had a carrying amount of $300,000 on Parent's books with a remaining useful life of 10 years (straight-line, no salvage). At December 31, Year 3 (3 years after the intercompany sale), what is the remaining unrealized intercompany gain that must be eliminated?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$140,000" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Original intercompany gain = $500,000 - $300,000 = $200,000. Subsidiary depreciates the machine at $500,000 / 10 = $50,000/year. Correct consolidated depreciation = $300,000 / 10 = $30,000/year. Excess depreciation per year = $50,000 - $30,000 = $20,000. This excess depreciation realizes $20,000 of the intercompany gain each year. After 3 years, gain realized = $20,000 x 3 = $60,000. Remaining unrealized gain = $200,000 - $60,000 = $140,000.",
+      "explanationJa": "会社間売却益＝$500,000−$300,000＝$200,000。子会社は$500,000÷10＝$50,000/年で減価償却。正しい連結減価償却費＝$300,000÷10＝$30,000/年。過大償却額/年＝$50,000−$30,000＝$20,000。毎年$20,000の利益が実現。3年後、実現利益＝$20,000×3＝$60,000。未実現利益残高＝$200,000−$60,000＝$140,000。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-087",
+      "topic": "Consolidations",
+      "subtopic": "Consolidation Scope - Majority Owned but Not Controlled",
+      "stem": "Parent owns 60% of Sub's voting stock. However, Sub is in bankruptcy and a court-appointed trustee controls all significant operating and financial decisions. Under ASC 810, should Parent consolidate Sub?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because Parent owns more than 50% of the voting stock"
+        },
+        {
+          "label": "B",
+          "text": "No, because the trustee has effective control and Parent lacks a controlling financial interest"
+        },
+        {
+          "label": "C",
+          "text": "Yes, but only the assets not under trustee control"
+        },
+        {
+          "label": "D",
+          "text": "No, but only if the bankruptcy is expected to last more than one year"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-15-10, a controlling financial interest requires the ability to direct the entity's activities. When a subsidiary is in bankruptcy and a court-appointed trustee controls the significant operating and financial decisions, the parent does not have a controlling financial interest even though it holds majority voting shares. The parent's ability to exercise control is effectively blocked by the legal authority of the trustee. The investment would be accounted for under another applicable method.",
+      "explanationJa": "ASC 810-10-15-10により、支配的財務持分には企業の活動を指揮する能力が必要である。子会社が破産し裁判所が任命した管財人が重要な経営・財務判断を支配している場合、過半数議決権を保有していても親会社は支配的財務持分を有しない。親会社の支配力は管財人の法的権限により実質的に遮断される。投資は他の適用可能な方法で会計処理する。",
+      "references": ["ASC 810-10-15-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-088",
+      "topic": "Consolidations",
+      "subtopic": "Measurement Period - Adjustment Journal Entry",
+      "stem": "Parent acquired Sub on October 1, Year 1 and provisionally recorded goodwill of $500,000. During Year 2 (within the measurement period), Parent obtained new information about a pre-acquisition contingency that existed at the acquisition date, requiring a $75,000 increase in the liability assumed. How should this adjustment be recorded?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Goodwill $75,000; Credit Liability $75,000, with retrospective adjustment of comparative prior-period amounts"
+        },
+        {
+          "label": "B",
+          "text": "Debit Loss $75,000; Credit Liability $75,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Goodwill $75,000; Credit Retained Earnings $75,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Other Comprehensive Income $75,000; Credit Liability $75,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-10-25-17, measurement period adjustments are recorded as if the accounting for the business combination had been completed at the acquisition date. The $75,000 increase in liability is offset by a $75,000 increase in goodwill. Additionally, comparative financial information for prior periods presented must be retrospectively adjusted. The effect on depreciation, amortization, or other income effects, if any, should also be calculated as though the adjustment were made at the acquisition date.",
+      "explanationJa": "ASC 805-10-25-17により、測定期間調整は取得日に企業結合の会計処理が完了していたかのように記録する。負債の$75,000増加はのれんの$75,000増加で相殺する。さらに、表示される比較財務情報は遡及的に修正する。減価償却費その他の損益影響がある場合は、取得日に調整が行われたかのように計算する。",
+      "references": ["ASC 805-10-25-17", "ASC 805-10-25-13"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-089",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition - Employee Benefit Obligations",
+      "stem": "In a business combination, the acquiree has a defined benefit pension plan with a projected benefit obligation (PBO) of $2,000,000 and plan assets at fair value of $1,800,000. How is this pension obligation recognized on the acquisition date under ASC 805?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A net pension liability of $200,000 is recognized at fair value"
+        },
+        {
+          "label": "B",
+          "text": "The PBO of $2,000,000 is recognized as a liability and plan assets of $1,800,000 are recognized as an asset, both at fair value"
+        },
+        {
+          "label": "C",
+          "text": "No pension obligation is recognized because it is an off-balance-sheet item"
+        },
+        {
+          "label": "D",
+          "text": "The unfunded status is recognized at the acquiree's book value"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-20-30-1 and ASC 715-30-35-100, in a business combination, the acquirer recognizes the net pension obligation (or net asset) at its fair value on the acquisition date. The net obligation = PBO of $2,000,000 - Plan assets of $1,800,000 = $200,000 net liability. The PBO is remeasured at fair value as of the acquisition date, and the plan assets are already at fair value. Any prior service cost or net actuarial gains/losses previously in OCI are effectively reset as they are subsumed in the fair value measurement.",
+      "explanationJa": "ASC 805-20-30-1およびASC 715-30-35-100により、企業結合では取得者が年金の純債務（または純資産）を取得日の公正価値で認識する。純債務＝PBO $2,000,000−制度資産$1,800,000＝$200,000の純負債。PBOは取得日の公正価値で再測定され、制度資産は既に公正価値である。過去のOCIの勤務費用や数理差異は公正価値測定に含まれ実質的にリセットされる。",
+      "references": ["ASC 805-20-30-1", "ASC 715-30-35-100"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-090",
+      "topic": "Consolidations",
+      "subtopic": "Subsequent Acquisition of Additional Shares",
+      "stem": "Parent owns 70% of Sub. Parent acquires an additional 10% from outside shareholders for $150,000. At the time of purchase, the carrying amount of the 10% NCI on the consolidated balance sheet is $120,000. How is the $30,000 difference treated?",
+      "choices": [
+        { "label": "A", "text": "Recognized as goodwill" },
+        { "label": "B", "text": "Recognized as a loss in earnings" },
+        {
+          "label": "C",
+          "text": "Recorded as a decrease in the parent's equity (additional paid-in capital)"
+        },
+        {
+          "label": "D",
+          "text": "Recorded as an increase in the subsidiary's retained earnings"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 810-10-45-23, when a parent acquires additional shares of a subsidiary without losing control, the transaction is treated as an equity transaction. The difference between the consideration paid ($150,000) and the carrying amount of the NCI acquired ($120,000) is $30,000. This $30,000 premium is debited to the parent's additional paid-in capital (or retained earnings if APIC is insufficient). No gain, loss, or goodwill adjustment is recognized.",
+      "explanationJa": "ASC 810-10-45-23により、親会社が支配を喪失せずに子会社の追加株式を取得する場合、資本取引として処理する。支払対価（$150,000）と取得したNCIの帳簿価額（$120,000）の差額$30,000は、親会社の追加払込資本（APICが不足する場合は利益剰余金）から減額する。損益やのれん調整は認識しない。",
+      "references": ["ASC 810-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-091",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Statement of Comprehensive Income",
+      "stem": "Parent owns 80% of Sub. During the year, Sub reports net income of $300,000 and other comprehensive income (OCI) of $50,000 from unrealized gains on available-for-sale debt securities. In the consolidated statement of comprehensive income, what amount of OCI is attributed to the noncontrolling interest?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$10,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-45-20, comprehensive income (which includes both net income and other comprehensive income) must be attributed to both the parent and the NCI. The NCI owns 20% of Sub. NCI share of OCI = $50,000 x 20% = $10,000. The remaining $40,000 of OCI is attributed to the parent. Similarly, NCI share of net income = $300,000 x 20% = $60,000.",
+      "explanationJa": "ASC 810-10-45-20により、包括利益（純利益とその他包括利益を含む）は親会社とNCIの両方に帰属させる。NCIはSub の20%を保有。NCIのOCI持分＝$50,000×20%＝$10,000。残りのOCI $40,000は親会社に帰属する。同様にNCIの純利益持分＝$300,000×20%＝$60,000。",
+      "references": ["ASC 810-10-45-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-092",
+      "topic": "Consolidations",
+      "subtopic": "Goodwill Allocation to Reporting Units Post-Acquisition",
+      "stem": "Parent acquires Sub in a business combination and recognizes goodwill of $600,000. Sub's operations are integrated into two of Parent's existing reporting units: Unit A receives 60% of Sub's operations and Unit B receives 40%. Under ASC 350, how should the goodwill be allocated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "All $600,000 is assigned to the reporting unit with the highest fair value"
+        },
+        {
+          "label": "B",
+          "text": "$360,000 to Unit A and $240,000 to Unit B, based on the relative benefit received"
+        },
+        {
+          "label": "C",
+          "text": "The goodwill remains unallocated until tested for impairment"
+        },
+        {
+          "label": "D",
+          "text": "Goodwill is allocated equally ($300,000 each) to both reporting units"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 350-20-35-41, goodwill must be assigned to reporting units at the date of acquisition. When an acquired entity is integrated into multiple reporting units, goodwill is assigned to each reporting unit that is expected to benefit from the synergies of the business combination. The allocation is based on the relative fair value of the operations assigned to each reporting unit. Unit A receives 60% x $600,000 = $360,000 and Unit B receives 40% x $600,000 = $240,000.",
+      "explanationJa": "ASC 350-20-35-41により、のれんは取得日に報告単位に配分する。被取得企業が複数の報告単位に統合される場合、企業結合のシナジーから利益を受ける各報告単位にのれんを配分する。配分は各報告単位に割り当てられた事業の相対的公正価値に基づく。Unit Aは60%×$600,000＝$360,000、Unit Bは40%×$600,000＝$240,000を受け取る。",
+      "references": ["ASC 350-20-35-41"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-093",
+      "topic": "Consolidations",
+      "subtopic": "Fresh-Start Reporting (ASC 852)",
+      "stem": "A company emerges from Chapter 11 bankruptcy. Which TWO conditions must both be met for the company to apply fresh-start reporting under ASC 852-10-45-19?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The reorganization value of the emerging entity's assets exceeds its post-petition liabilities, and existing shareholders retain more than 50% ownership"
+        },
+        {
+          "label": "B",
+          "text": "The reorganization value of the emerging entity's assets is less than the total of all post-petition liabilities and allowed claims, and existing shareholders before filing lose control of the emerging entity through the plan"
+        },
+        {
+          "label": "C",
+          "text": "The company's net income is positive for two consecutive quarters, and the court approves fresh-start reporting"
+        },
+        {
+          "label": "D",
+          "text": "All pre-petition debt is discharged, and the company has a confirmed plan of reorganization"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 852-10-45-19, fresh-start reporting is required when both of the following conditions exist: (1) the reorganization value of the emerging entity's assets immediately before the date of confirmation is less than the total of all post-petition liabilities and allowed claims, and (2) holders of existing voting shares of the entity immediately before confirmation receive less than 50% of the voting shares of the emerging entity (i.e., they lose control). When both conditions are met, a new reporting entity is created and assets are recorded at reorganization value.",
+      "explanationJa": "ASC 852-10-45-19により、フレッシュスタート報告は以下の両条件を満たす場合に要求される：(1)確認日直前の再編企業の資産の再編価値が、確認後負債と認容請求権の合計を下回る、(2)確認前の既存議決権株主が新生企業の議決権株式の50%未満を受け取る（支配を喪失する）。両条件を満たす場合、新たな報告企業が創設され、資産は再編価値で記録される。",
+      "references": ["ASC 852-10-45-19"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
     }
   ]
 }
