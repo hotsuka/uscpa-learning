@@ -9,6 +9,15 @@ import type { FARQuestion, QuestionAttempt } from "@/types/questions"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { cn } from "@/lib/utils"
 
+// 解説内のJSON元ラベル（A/B/C/D）を表示ラベルに置き換える
+function replaceExplanationLabels(text: string, labelMap: Record<string, string>): string {
+  return text
+    .replace(/The answer is ([A-D])\./g, (_, l: string) => `The answer is ${labelMap[l] ?? l}.`)
+    .replace(/正解は([A-D])。/g, (_, l: string) => `正解は${labelMap[l] ?? l}。`)
+    .replace(/\b([A-D]) is incorrect\b/g, (_, l: string) => `${labelMap[l] ?? l} is incorrect`)
+    .replace(/\b([A-D]) is correct\b/g, (_, l: string) => `${labelMap[l] ?? l} is correct`)
+}
+
 interface QuestionCardProps {
   question: FARQuestion
   questionNumber: number
@@ -21,7 +30,7 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
   const [showExplanation, setShowExplanation] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
   // 選択肢テキストのみシャッフル（ラベルA～Dは固定）
-  const { choices: shuffledChoices, correctAnswer: shuffledCorrectAnswer, shuffledToOriginalLabel } = useRef(
+  const { choices: shuffledChoices, correctAnswer: shuffledCorrectAnswer, shuffledToOriginalLabel, originalToShuffledLabel } = useRef(
     (() => {
       const labels = question.choices.map((c) => c.label)
       const correctText = question.choices.find((c) => c.label === question.correctAnswer)!.text
@@ -37,10 +46,16 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
         const originalLabel = question.choices.find((c) => c.text === texts[i])?.label ?? label
         shuffledToOriginalLabel[label] = originalLabel
       })
+      // 元ラベル→シャッフル後ラベルの逆マップ（解説内ラベル変換用）
+      const originalToShuffledLabel: Record<string, string> = {}
+      for (const [shuffled, original] of Object.entries(shuffledToOriginalLabel)) {
+        originalToShuffledLabel[original] = shuffled
+      }
       return {
         choices: labels.map((label, i) => ({ label, text: texts[i] })),
         correctAnswer: labels[texts.indexOf(correctText)],
         shuffledToOriginalLabel,
+        originalToShuffledLabel,
       }
     })()
   ).current
@@ -260,10 +275,12 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
 
             {showExplanation && (
               <div className="p-4 rounded-lg bg-muted/50 space-y-3">
-                <p className="text-sm leading-relaxed">{question.explanation}</p>
+                <p className="text-sm leading-relaxed">
+                  {replaceExplanationLabels(question.explanation, originalToShuffledLabel)}
+                </p>
                 {question.explanationJa && (
                   <p className="text-sm leading-relaxed text-muted-foreground border-t pt-2">
-                    {question.explanationJa}
+                    {replaceExplanationLabels(question.explanationJa, originalToShuffledLabel)}
                   </p>
                 )}
                 {question.references.length > 0 && (
