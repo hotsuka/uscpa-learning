@@ -108,7 +108,7 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 11,
+      version: 12,
       migrate: (persisted, version) => {
         // 破壊的処理の前に現在の localStorage 値を退避する
         backupBeforeMigrate("uscpa-question-bank", version);
@@ -241,6 +241,20 @@ export const useQuestionBankStore = create<QuestionBankState>()(
           state.attempts = state.attempts.map((a) => {
             if (a.questionId !== "eq-048") return a;
             return { ...a, isCorrect: true };
+          });
+        }
+
+        // v11→v12: cecl-054 の解説末尾に "The answer is B." と記載されていたが、
+        // シャッフルにより表示上の B が $350,000 になる場合があり誤解を招いていた。
+        // (JSON 上 correctAnswer="B"=$320,000 は正しいが、表示 B と混同されうる)
+        // isCorrect=false の attempt を正解補正し、selectedAnswer も正解ラベル "B" に統一する。
+        if (version === 11) {
+          state.attempts = state.attempts.map((a) => {
+            if (a.questionId !== "cecl-054") return a;
+            if (a.isCorrect === false) {
+              return { ...a, selectedAnswer: "B", isCorrect: true };
+            }
+            return a;
           });
         }
 
