@@ -2,7 +2,7 @@
   "id": "far-inventory",
   "name": "Inventory",
   "topic": "Inventory",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "questions": [
     {
       "id": "inv-001",
@@ -2453,6 +2453,672 @@
       "explanationJa": "ASC 606に基づく経時的収益認識（インプット法）: 進捗度=発生原価÷見積総原価=$600,000÷$1,000,000=60%。認識収益=60%×$1,400,000=$840,000。未請求の場合、契約資産は認識済収益$840,000。これは発生原価($600,000)+認識利益($240,000)で構成。",
       "references": ["ASC 606-10-45-3", "ASC 340-40-25-1"],
       "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-093",
+      "topic": "Inventory",
+      "subtopic": "Days Inventory Outstanding (DIO)",
+      "stem": "Harlow Co. reports cost of goods sold of $1,460,000 for the year. Beginning inventory was $190,000 and ending inventory was $210,000. Using a 365-day year and average inventory, what is the company's days inventory outstanding (days' sales in inventory)?",
+      "choices": [
+        { "label": "A", "text": "50.0 days" },
+        { "label": "B", "text": "52.5 days" },
+        { "label": "C", "text": "47.5 days" },
+        { "label": "D", "text": "73.0 days" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Step 1 — Average inventory = ($190,000 + $210,000) / 2 = $200,000. Step 2 — Inventory turnover = COGS / Average inventory = $1,460,000 / $200,000 = 7.3 times. Step 3 — Days inventory outstanding = 365 / Inventory turnover = 365 / 7.3 = 50.0 days.",
+      "explanationJa": "手順1：平均在庫 = ($190,000 + $210,000) / 2 = $200,000。手順2：在庫回転率 = 売上原価 / 平均在庫 = $1,460,000 / $200,000 = 7.3回。手順3：在庫保有日数 = 365 / 回転率 = 365 / 7.3 = 50.0日。",
+      "references": ["ASC 330-10-50-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-094",
+      "topic": "Inventory",
+      "subtopic": "Markup on Cost vs Gross Margin Conversion",
+      "stem": "Bristol Trading marks up all merchandise 25% on cost. During the period, net sales were $750,000. Using this markup, what is the estimated cost of goods sold?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$562,500" },
+        { "label": "C", "text": "$937,500" },
+        { "label": "D", "text": "$500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A 25% markup on cost means Selling price = Cost × 1.25. Therefore Cost = Selling price / 1.25. The gross margin as a percentage of sales = 0.25 / 1.25 = 20%. Estimated COGS = Sales × (Cost / Selling price) = $750,000 / 1.25 = $600,000. Equivalently, COGS = $750,000 × (1 − 0.20) = $600,000.",
+      "explanationJa": "原価に対する25%値入とは、売価 = 原価 × 1.25。したがって原価 = 売価 / 1.25。売上に対する売上総利益率 = 0.25 / 1.25 = 20%。推定売上原価 = $750,000 / 1.25 = $600,000。別法：$750,000 × (1 − 0.20) = $600,000。",
+      "references": ["ASC 330-10-30-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-095",
+      "topic": "Inventory",
+      "subtopic": "Lower of Cost or NRV - Category (Group) Basis",
+      "stem": "Cedar Co. groups inventory into two categories for LCNRV. Category 1: Item P (cost $30,000, NRV $26,000) and Item Q (cost $20,000, NRV $25,000). Category 2: Item R (cost $40,000, NRV $33,000) and Item S (cost $15,000, NRV $19,000). The company applies LCNRV by category. What is the total inventory write-down?",
+      "choices": [
+        { "label": "A", "text": "$3,000" },
+        { "label": "B", "text": "$11,000" },
+        { "label": "C", "text": "$7,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the category (group) approach, cost and NRV are compared by category totals, allowing gains within a category to offset losses. Category 1: cost = $30,000 + $20,000 = $50,000; NRV = $26,000 + $25,000 = $51,000 → NRV exceeds cost, no write-down. Category 2: cost = $40,000 + $15,000 = $55,000; NRV = $33,000 + $19,000 = $52,000 → write-down of $55,000 − $52,000 = $3,000. Total write-down = $0 + $3,000 = $3,000.",
+      "explanationJa": "カテゴリー（グループ）法では、カテゴリー合計で原価とNRVを比較し、同一カテゴリー内の含み益が含み損を相殺できる。カテゴリー1：原価 = $50,000、NRV = $51,000 → NRVが上回り評価減なし。カテゴリー2：原価 = $55,000、NRV = $52,000 → 評価減 $3,000。合計評価減 = $3,000。",
+      "references": ["ASC 330-10-35-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-096",
+      "topic": "Inventory",
+      "subtopic": "NRV of Finished Goods with Completion and Selling Costs",
+      "stem": "Optima Mfg. holds finished goods costing $80 per unit. Each unit can be sold for $95, but the company will incur $8 per unit in sales commissions and $5 per unit in shipping to the customer. The firm uses FIFO. At what amount per unit should the inventory be reported under ASC 330?",
+      "choices": [
+        { "label": "A", "text": "$82" },
+        { "label": "B", "text": "$80" },
+        { "label": "C", "text": "$95" },
+        { "label": "D", "text": "$87" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASU 2015-11, a FIFO entity measures inventory at the lower of cost or net realizable value. NRV = Estimated selling price − reasonably predictable costs of completion, disposal, and transportation = $95 − $8 − $5 = $82. Compare cost ($80) to NRV ($82): the lower is cost = $80. No write-down is needed because cost is below NRV, so the inventory remains at $80.",
+      "explanationJa": "ASU 2015-11により、FIFO企業は棚卸資産を原価とNRVのいずれか低い方で測定する。NRV = 見積売価 − 完成・処分・輸送の合理的見積費用 = $95 − $8 − $5 = $82。原価($80)とNRV($82)を比較し低い方は原価$80。原価がNRVを下回るため評価減は不要で、在庫は$80のまま。",
+      "references": ["ASC 330-10-35-1B"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-097",
+      "topic": "Inventory",
+      "subtopic": "Periodic FIFO - Cost of Goods Sold",
+      "stem": "Quill Co. uses a periodic FIFO system. Beginning inventory: 400 units @ $9. Purchases: 600 units @ $11 and 500 units @ $13. During the period, 1,000 units were sold. What is the cost of goods sold?",
+      "choices": [
+        { "label": "A", "text": "$10,200" },
+        { "label": "B", "text": "$10,500" },
+        { "label": "C", "text": "$12,400" },
+        { "label": "D", "text": "$9,900" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under periodic FIFO, the earliest costs are assigned to COGS. Units sold = 1,000. Layers consumed: 400 units @ $9 = $3,600, then 600 units @ $11 = $6,600. Total = 400 + 600 = 1,000 units. COGS = $3,600 + $6,600 = $10,200. (Ending inventory of 500 units @ $13 = $6,500 remains.)",
+      "explanationJa": "定期FIFO法では最も古い原価をCOGSに配分。販売 = 1,000単位。充当層：400単位@$9 = $3,600、次に600単位@$11 = $6,600。合計1,000単位。COGS = $3,600 + $6,600 = $10,200。（期末在庫500単位@$13 = $6,500が残存。）",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-098",
+      "topic": "Inventory",
+      "subtopic": "Periodic LIFO - Cost of Goods Sold",
+      "stem": "Sterling Co. uses periodic LIFO. Beginning inventory: 300 units @ $20. Purchases during the year: 400 units @ $24 and 500 units @ $27. Units sold during the year: 800. What is the cost of goods sold under periodic LIFO?",
+      "choices": [
+        { "label": "A", "text": "$20,700" },
+        { "label": "B", "text": "$16,800" },
+        { "label": "C", "text": "$19,200" },
+        { "label": "D", "text": "$21,600" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under periodic LIFO, the most recent costs are assigned to COGS. Units sold = 800. Layers consumed from newest first: 500 units @ $27 = $13,500, then 300 units @ $24 = $7,200. Total = 500 + 300 = 800 units. COGS = $13,500 + $7,200 = $20,700. (Ending inventory = 300 @ $20 + 100 @ $24 = $6,000 + $2,400 = $8,400 remains.)",
+      "explanationJa": "定期LIFO法では最新の原価をCOGSに配分。販売 = 800単位。新しい層から充当：500単位@$27 = $13,500、次に300単位@$24 = $7,200。合計800単位。COGS = $13,500 + $7,200 = $20,700。（期末在庫 = 300@$20 + 100@$24 = $8,400が残存。）",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-099",
+      "topic": "Inventory",
+      "subtopic": "Trade Discount Chain - Invoice Cost",
+      "stem": "Vega Co. purchases merchandise with a list price of $20,000 subject to trade discounts of 20% and 10% (chain discount). Credit terms are 2/10, n/30, and Vega does not intend to pay within the discount period. Using the gross method, at what amount should the purchase be recorded?",
+      "choices": [
+        { "label": "A", "text": "$14,400" },
+        { "label": "B", "text": "$14,000" },
+        { "label": "C", "text": "$14,112" },
+        { "label": "D", "text": "$13,600" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trade (chain) discounts are applied sequentially to the list price and are never recorded; only the net invoice price is recorded. Invoice price = $20,000 × (1 − 0.20) × (1 − 0.10) = $20,000 × 0.80 × 0.90 = $14,400. Because the gross method is used and the cash discount is not expected to be taken, the purchase is recorded at the full invoice price of $14,400 (the 2% cash discount is recognized only if taken).",
+      "explanationJa": "取引（連鎖）割引は定価に順次適用され、記帳されない。記録するのは正味送り状価格のみ。送り状価格 = $20,000 × (1 − 0.20) × (1 − 0.10) = $20,000 × 0.80 × 0.90 = $14,400。総額法で現金割引を受けない見込みのため、仕入は送り状価格全額$14,400で記録（2%の現金割引は受けた場合のみ認識）。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-100",
+      "topic": "Inventory",
+      "subtopic": "Vendor Rebate / Cash Consideration from Vendor",
+      "stem": "Marlin Co. purchases 50,000 units of a component at $12 each from a supplier. The purchase agreement provides a volume rebate of $0.50 per unit once annual purchases exceed 40,000 units, and Marlin expects to earn the full rebate. Under ASC 705-20, what is the cost recorded per unit of inventory?",
+      "choices": [
+        { "label": "A", "text": "$11.50" },
+        { "label": "B", "text": "$12.00" },
+        { "label": "C", "text": "$12.50" },
+        { "label": "D", "text": "$11.40" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 705-20, cash consideration received from a vendor (such as a volume rebate) is presumed to be a reduction of the price of the goods purchased and therefore reduces the cost of inventory, unless it is a payment for a distinct good or service or a reimbursement of a specific cost. The rebate reduces unit cost: $12.00 − $0.50 = $11.50 per unit.",
+      "explanationJa": "ASC 705-20により、仕入先から受け取る現金対価（数量リベート等）は、別個の財・サービスの対価または特定費用の補填でない限り、購入した財の価格の減額と推定され、棚卸資産の原価を減額する。リベートで単価が減少：$12.00 − $0.50 = $11.50。",
+      "references": ["ASC 705-20-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-101",
+      "topic": "Inventory",
+      "subtopic": "Capitalized Interest and Storage - Cost Exclusion",
+      "stem": "Aspen Co. purchases inventory for $300,000. It also incurs $4,000 of interest on a general short-term loan used partly for operations, $6,000 of routine warehouse storage costs for finished goods awaiting sale, and $5,000 of freight-in. Under ASC 330, what amount should be capitalized as inventory cost?",
+      "choices": [
+        { "label": "A", "text": "$305,000" },
+        { "label": "B", "text": "$315,000" },
+        { "label": "C", "text": "$311,000" },
+        { "label": "D", "text": "$300,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Inventory cost includes purchase price ($300,000) and freight-in ($5,000) because freight-in brings the goods to their present location and condition. General interest on routine inventory is a period cost and is not capitalized (interest is capitalized only for discrete projects that take substantial time to get ready, per ASC 835-20). Routine storage of finished goods is a period selling/holding cost, not inventoriable. Capitalized inventory cost = $300,000 + $5,000 = $305,000.",
+      "explanationJa": "棚卸資産原価には購入価格($300,000)と仕入運賃($5,000)を含める（運賃は商品を現在の場所・状態にするため）。通常在庫の一般利息は期間費用で資産化しない（利息はASC 835-20の準備に相当の時間を要する個別プロジェクトのみ資産化）。完成品の通常保管費は期間費用で棚卸不可。資産化原価 = $300,000 + $5,000 = $305,000。",
+      "references": ["ASC 330-10-30-1", "ASC 835-20-15-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-102",
+      "topic": "Inventory",
+      "subtopic": "Abnormal Idle Capacity - Amount Expensed",
+      "stem": "Beacon Mfg. budgeted fixed manufacturing overhead of $480,000 based on normal capacity of 120,000 machine hours. During the period only 90,000 machine hours were used due to a labor strike, and actual fixed overhead was $480,000. How much fixed overhead must be expensed as a period cost (rather than capitalized to inventory)?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$360,000" },
+        { "label": "C", "text": "$480,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 330-10-30-3, fixed overhead is allocated using normal capacity. Fixed overhead rate = $480,000 / 120,000 hours = $4.00 per hour. Amount allocated to inventory = 90,000 actual hours × $4.00 = $360,000. The remaining unallocated fixed overhead from operating below normal capacity = $480,000 − $360,000 = $120,000 must be expensed in the period as a period charge.",
+      "explanationJa": "ASC 330-10-30-3により、固定間接費は正常生産能力で配賦。固定間接費率 = $480,000 / 120,000時間 = $4.00/時間。在庫への配賦額 = 90,000実際時間 × $4.00 = $360,000。正常能力を下回る操業で未配賦となる固定間接費 = $480,000 − $360,000 = $120,000を当期費用として計上する。",
+      "references": ["ASC 330-10-30-3", "ASC 330-10-30-7"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-103",
+      "topic": "Inventory",
+      "subtopic": "Dollar-Value LIFO - Double-Extension Index",
+      "stem": "Larkin Co. adopts dollar-value LIFO. At the end of Year 1, the ending inventory extended at current-year (Year 1) costs is $264,000, and the same physical inventory extended at base-year costs is $240,000. The base-year layer (January 1) was $240,000 at an index of 1.00. What is the internally computed price index for Year 1, and the DV-LIFO ending inventory?",
+      "choices": [
+        { "label": "A", "text": "Index 1.10; DV-LIFO $240,000" },
+        { "label": "B", "text": "Index 1.10; DV-LIFO $264,000" },
+        { "label": "C", "text": "Index 0.91; DV-LIFO $240,000" },
+        { "label": "D", "text": "Index 1.10; DV-LIFO $254,400" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the double-extension method, the current-year price index = Ending inventory at current-year cost / Ending inventory at base-year cost = $264,000 / $240,000 = 1.10. Ending inventory at base-year cost ($240,000) equals the base layer ($240,000), so there is no new layer this year. The DV-LIFO inventory therefore remains the base layer of $240,000 × 1.00 = $240,000.",
+      "explanationJa": "二重価格法では、当年度物価指数 = 当年度原価による期末在庫 / 基準年度原価による期末在庫 = $264,000 / $240,000 = 1.10。基準年度原価による期末在庫($240,000)は基礎層($240,000)に等しく、新規層はない。よってDV-LIFO在庫は基礎層$240,000 × 1.00 = $240,000のまま。",
+      "references": ["ASC 330-10-30-18"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-104",
+      "topic": "Inventory",
+      "subtopic": "Dollar-Value LIFO - Three-Layer Build",
+      "stem": "Monroe Co. uses dollar-value LIFO. Base-year inventory (index 1.00) = $200,000. End of Year 1: inventory at base = $230,000, index 1.05. End of Year 2: inventory at base = $260,000, index 1.12. What is the DV-LIFO inventory at the end of Year 2?",
+      "choices": [
+        { "label": "A", "text": "$265,100" },
+        { "label": "B", "text": "$291,200" },
+        { "label": "C", "text": "$264,500" },
+        { "label": "D", "text": "$260,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Each layer is valued at the index of the year it was added. Base layer = $200,000 × 1.00 = $200,000. Year 1 layer (base): $230,000 − $200,000 = $30,000 × 1.05 = $31,500. Year 2 layer (base): $260,000 − $230,000 = $30,000 × 1.12 = $33,600. DV-LIFO Year 2 = $200,000 + $31,500 + $33,600 = $265,100.",
+      "explanationJa": "各層はそれが追加された年度の指数で評価する。基礎層 = $200,000 × 1.00 = $200,000。Year 1層（基準）：$230,000 − $200,000 = $30,000 × 1.05 = $31,500。Year 2層（基準）：$260,000 − $230,000 = $30,000 × 1.12 = $33,600。DV-LIFO Year 2 = $200,000 + $31,500 + $33,600 = $265,100。",
+      "references": ["ASC 330-10-30-18"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-105",
+      "topic": "Inventory",
+      "subtopic": "LIFO Effective Income Tax Savings",
+      "stem": "During a period of rising prices, Crestview Co. would report COGS of $720,000 under FIFO and $760,000 under LIFO. The income tax rate is 21%. Compared with FIFO, how much does adopting LIFO reduce the company's current income tax expense?",
+      "choices": [
+        { "label": "A", "text": "$8,400" },
+        { "label": "B", "text": "$40,000" },
+        { "label": "C", "text": "$31,600" },
+        { "label": "D", "text": "$16,800" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "LIFO produces higher COGS in a period of rising prices, lowering pretax income. The reduction in pretax income = LIFO COGS − FIFO COGS = $760,000 − $720,000 = $40,000. The tax savings = reduction in pretax income × tax rate = $40,000 × 21% = $8,400. This lower tax payment is the cash-flow advantage of LIFO during inflation.",
+      "explanationJa": "物価上昇期にLIFOはCOGSが高くなり税引前利益を引き下げる。税引前利益の減少 = LIFO COGS − FIFO COGS = $760,000 − $720,000 = $40,000。税金節約額 = 税引前利益の減少 × 税率 = $40,000 × 21% = $8,400。この税金支払減少が物価上昇期のLIFOのキャッシュフロー上の利点である。",
+      "references": ["ASC 330-10-30-9", "ASC 740-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-106",
+      "topic": "Inventory",
+      "subtopic": "Lump-Sum Purchase with One Unknown Fair Value",
+      "stem": "Dalton Co. acquires a bundle of three product lines for a single price of $480,000. Reliable fair values are available for two: Line A $300,000 and Line B $180,000. The fair value of Line C cannot be reliably determined, but management estimates it at $120,000. Cost is allocated on relative fair value. How much cost is allocated to Line C?",
+      "choices": [
+        { "label": "A", "text": "$96,000" },
+        { "label": "B", "text": "$120,000" },
+        { "label": "C", "text": "$80,000" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In a lump-sum (basket) purchase, the total cost is allocated to each item in proportion to its relative fair value. Total fair value = $300,000 + $180,000 + $120,000 = $600,000. Line C allocation = ($120,000 / $600,000) × $480,000 = 0.20 × $480,000 = $96,000.",
+      "explanationJa": "一括（バスケット）購入では、総原価を各品目の相対的公正価値に比例して配分する。公正価値合計 = $300,000 + $180,000 + $120,000 = $600,000。Line Cへの配分 = ($120,000 / $600,000) × $480,000 = 0.20 × $480,000 = $96,000。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-107",
+      "topic": "Inventory",
+      "subtopic": "Perpetual Moving-Average - Ending Inventory",
+      "stem": "Felton Co. uses a perpetual moving-average system. Beginning inventory: 400 units @ $15. May 4: purchased 200 units @ $18. May 9: sold 300 units. May 18: purchased 300 units @ $20. What is the ending inventory balance after the May 18 purchase?",
+      "choices": [
+        { "label": "A", "text": "$10,800" },
+        { "label": "B", "text": "$10,600" },
+        { "label": "C", "text": "$10,400" },
+        { "label": "D", "text": "$11,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "After May 4: total cost = (400 × $15) + (200 × $18) = $6,000 + $3,600 = $9,600; units = 600; average = $9,600 / 600 = $16.00. May 9 sale of 300 units at $16.00 = $4,800 COGS; remaining = 300 units × $16.00 = $4,800. After May 18 purchase: total cost = $4,800 + (300 × $20) = $4,800 + $6,000 = $10,800; units = 600. Ending inventory = $10,800.",
+      "explanationJa": "5/4後：総原価 = (400×$15) + (200×$18) = $9,600、数量 = 600、平均 = $16.00。5/9販売300単位@$16.00 = $4,800（COGS）、残 = 300単位×$16.00 = $4,800。5/18仕入後：総原価 = $4,800 + (300×$20) = $10,800、数量 = 600。期末在庫 = $10,800。",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-108",
+      "topic": "Inventory",
+      "subtopic": "Standard Cost - Direct Labor Variances",
+      "stem": "Hale Mfg. uses a standard cost system. Standard direct labor per unit: 3 hours @ $20/hour. During the month, 2,000 units were produced using 5,800 actual labor hours at an actual rate of $21/hour. What is the direct labor efficiency (quantity) variance?",
+      "choices": [
+        { "label": "A", "text": "$4,000 favorable" },
+        { "label": "B", "text": "$5,800 unfavorable" },
+        { "label": "C", "text": "$4,000 unfavorable" },
+        { "label": "D", "text": "$4,200 favorable" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Standard hours allowed = 2,000 units × 3 hours = 6,000 hours. Labor efficiency variance = (Actual hours − Standard hours allowed) × Standard rate = (5,800 − 6,000) × $20 = (−200) × $20 = $4,000 favorable (fewer hours were used than the standard allowed). The rate variance, by contrast, is (Actual rate − Standard rate) × Actual hours = ($21 − $20) × 5,800 = $5,800 unfavorable, but the question asks only for the efficiency variance.",
+      "explanationJa": "標準許容時間 = 2,000単位 × 3時間 = 6,000時間。労務能率差異 = (実際時間 − 標準許容時間) × 標準賃率 = (5,800 − 6,000) × $20 = (−200) × $20 = $4,000有利（標準より少ない時間で生産）。なお賃率差異は ($21 − $20) × 5,800 = $5,800不利だが、設問は能率差異のみを問う。",
+      "references": ["ASC 330-10-30-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-109",
+      "topic": "Inventory",
+      "subtopic": "Goods in Transit - Freight Capitalization with FOB",
+      "stem": "On December 31, Kingsley Co. has goods costing $60,000 in transit from a vendor, shipped FOB shipping point on December 28, with freight of $1,200 to be paid by Kingsley. Separately, Kingsley shipped $40,000 of goods to a customer FOB shipping point on December 30. What amount related to these items should be in Kingsley's December 31 inventory?",
+      "choices": [
+        { "label": "A", "text": "$61,200" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$101,200" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Incoming goods shipped FOB shipping point: title passed to Kingsley on December 28, so the $60,000 belongs in inventory even though in transit, and the $1,200 freight-in is an inventoriable cost (buyer pays freight on FOB shipping point). Inventory for incoming goods = $60,000 + $1,200 = $61,200. Outgoing goods shipped to a customer FOB shipping point: title passed to the customer at shipment on December 30, so the $40,000 is no longer Kingsley's inventory. Total = $61,200.",
+      "explanationJa": "FOB出荷地点の仕入品：所有権は12/28にKingsleyへ移転、輸送中でも$60,000は在庫に含め、運賃$1,200は棚卸原価（FOB出荷地点では買主が運賃負担）。仕入品在庫 = $60,000 + $1,200 = $61,200。顧客宛FOB出荷地点の出荷品：所有権は12/30の出荷時に顧客へ移転、$40,000はKingsleyの在庫ではない。合計 = $61,200。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-110",
+      "topic": "Inventory",
+      "subtopic": "Sale with Right of Return - Inventory Returned Asset",
+      "stem": "Norwood Co. sells 5,000 units at $50 each (cost $30 each) and, based on history, expects 4% of units to be returned. Under ASC 606, in addition to a refund liability, Norwood recognizes an asset for its right to recover products from customers. At what amount is that asset recorded (assume no recovery costs or impairment)?",
+      "choices": [
+        { "label": "A", "text": "$6,000" },
+        { "label": "B", "text": "$10,000" },
+        { "label": "C", "text": "$7,500" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 606-10-55-23 through 55-29, a seller that expects returns recognizes (1) revenue and a refund liability only for units not expected to be returned, and (2) an asset (and corresponding adjustment to cost of sales) for its right to recover products, measured at the former carrying amount of the inventory less any expected recovery costs. Expected returned units = 5,000 × 4% = 200 units. Right-to-recover asset = 200 × $30 cost = $6,000.",
+      "explanationJa": "ASC 606-10-55-23〜55-29により、返品が見込まれる売手は、(1) 返品見込みのない単位についてのみ収益と返金負債を認識し、(2) 製品回収権の資産（および売上原価の対応調整）を、棚卸資産の従前簿価から回収予想費用を控除した額で認識する。返品見込数 = 5,000 × 4% = 200単位。回収権資産 = 200 × $30 = $6,000。",
+      "references": ["ASC 606-10-55-23", "ASC 606-10-55-27"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-111",
+      "topic": "Inventory",
+      "subtopic": "Purchase Return - Net Method Accounting",
+      "stem": "Using the net method, Ridge Co. records a $40,000 purchase with terms 1/15, n/45. Before payment, Ridge returns $5,000 (gross list amount) of defective goods. What is the inventory balance for this purchase after the return, assuming the goods are still unpaid and within the discount period?",
+      "choices": [
+        { "label": "A", "text": "$34,650" },
+        { "label": "B", "text": "$35,000" },
+        { "label": "C", "text": "$34,600" },
+        { "label": "D", "text": "$35,350" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the net method, inventory is recorded net of the available discount. Net purchase = $40,000 × (1 − 0.01) = $39,600. The return is also recorded net: $5,000 × (1 − 0.01) = $4,950. Inventory after return = $39,600 − $4,950 = $34,650. Equivalently, the net amount payable = ($40,000 − $5,000) × 0.99 = $35,000 × 0.99 = $34,650.",
+      "explanationJa": "純額法では在庫は利用可能な割引控除後で記録。純仕入 = $40,000 × (1 − 0.01) = $39,600。返品も純額で記録：$5,000 × (1 − 0.01) = $4,950。返品後の在庫 = $39,600 − $4,950 = $34,650。別法：純支払額 = ($40,000 − $5,000) × 0.99 = $34,650。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-112",
+      "topic": "Inventory",
+      "subtopic": "Conventional Retail Method - Ending Inventory at Cost",
+      "stem": "Hudson Stores uses the conventional retail method (lower of cost or market). Beginning inventory: cost $60,000, retail $90,000. Net purchases: cost $300,000, retail $420,000. Net markups $30,000. Net markdowns $20,000. Net sales $400,000. What is the estimated ending inventory at cost?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$84,000" },
+        { "label": "C", "text": "$76,800" },
+        { "label": "D", "text": "$72,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Conventional retail excludes net markdowns from the cost-to-retail ratio. Cost-to-retail ratio = (Cost: $60,000 + $300,000) / (Retail: $90,000 + $420,000 + $30,000) = $360,000 / $540,000 = 66.67%. Ending inventory at retail = $90,000 + $420,000 + $30,000 − $20,000 − $400,000 = $120,000. Ending inventory at cost = $120,000 × 66.67% = $80,000.",
+      "explanationJa": "従来型小売法では値下げを原価率から除外する。原価率 = (原価：$60,000 + $300,000) / (売価：$90,000 + $420,000 + $30,000) = $360,000 / $540,000 = 66.67%。期末在庫（売価）= $90,000 + $420,000 + $30,000 − $20,000 − $400,000 = $120,000。期末在庫（原価）= $120,000 × 66.67% = $80,000。",
+      "references": ["ASC 330-10-30-22"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-113",
+      "topic": "Inventory",
+      "subtopic": "Cost Retail Method - Average Cost (Markdowns Included)",
+      "stem": "Pinehill Co. uses the cost (average) retail method, which includes both net markups and net markdowns in the cost-to-retail ratio. Beginning inventory: cost $48,000, retail $80,000. Net purchases: cost $192,000, retail $304,000. Net markups $30,000. Net markdowns $14,000. Net sales $296,000. What is the estimated ending inventory at cost?",
+      "choices": [
+        { "label": "A", "text": "$62,400" },
+        { "label": "B", "text": "$64,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$68,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The cost (average) retail method includes both net markups and net markdowns in the cost-to-retail ratio. Cost-to-retail ratio = (Cost: $48,000 + $192,000) / (Retail: $80,000 + $304,000 + $30,000 − $14,000) = $240,000 / $400,000 = 60%. Ending inventory at retail = $400,000 − $296,000 sales = $104,000. Ending inventory at cost = $104,000 × 60% = $62,400.",
+      "explanationJa": "原価（平均）小売法では値上げと値下げの両方を原価率に含める。原価率 = (原価：$48,000 + $192,000) / (売価：$80,000 + $304,000 + $30,000 − $14,000) = $240,000 / $400,000 = 60%。期末在庫（売価）= $400,000 − $296,000 = $104,000。期末在庫（原価）= $104,000 × 60% = $62,400。",
+      "references": ["ASC 330-10-30-22"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-114",
+      "topic": "Inventory",
+      "subtopic": "Gross Profit Method - Margin Stated on Cost",
+      "stem": "A flood destroyed Tilden Co.'s inventory. Records show beginning inventory $90,000, net purchases $410,000, and net sales $600,000. The company normally earns a gross profit of 25% on cost. What is the estimated cost of the inventory destroyed?",
+      "choices": [
+        { "label": "A", "text": "$20,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$35,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gross profit of 25% on cost means COGS = Sales / 1.25. Estimated COGS = $600,000 / 1.25 = $480,000. Goods available for sale = $90,000 + $410,000 = $500,000. Estimated ending (destroyed) inventory = $500,000 − $480,000 = $20,000. Note: 25% on cost equals a 20% gross margin on sales ($600,000 × 0.80 = $480,000), giving the same COGS.",
+      "explanationJa": "原価に対する25%の売上総利益とは、COGS = 売上 / 1.25。推定COGS = $600,000 / 1.25 = $480,000。販売可能商品 = $90,000 + $410,000 = $500,000。推定期末（焼失）在庫 = $500,000 − $480,000 = $20,000。原価に対する25%は売上に対する20%の利益率に等しい（$600,000 × 0.80 = $480,000）。",
+      "references": ["ASC 330-10-30-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-115",
+      "topic": "Inventory",
+      "subtopic": "Process Costing - Equivalent Units (Weighted Average)",
+      "stem": "Quartz Co. uses weighted-average process costing. Beginning WIP: 2,000 units (40% complete as to conversion). Started: 18,000 units. Completed and transferred out: 16,000 units. Ending WIP: 4,000 units (75% complete as to conversion). Materials are added at the beginning of the process. What are the equivalent units of production for conversion costs?",
+      "choices": [
+        { "label": "A", "text": "19,000" },
+        { "label": "B", "text": "20,000" },
+        { "label": "C", "text": "16,000" },
+        { "label": "D", "text": "18,200" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the weighted-average method, equivalent units = units completed and transferred out + (ending WIP × percent complete). Beginning WIP completion percentage is ignored under weighted average. Conversion EUP = 16,000 (completed) + (4,000 × 75%) = 16,000 + 3,000 = 19,000 equivalent units.",
+      "explanationJa": "加重平均法では、完成換算量 = 完成・振替単位 + (期末仕掛品 × 完成度)。加重平均法では期首仕掛品の完成度は無視する。加工費の完成換算量 = 16,000（完成）+ (4,000 × 75%) = 16,000 + 3,000 = 19,000単位。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-116",
+      "topic": "Inventory",
+      "subtopic": "Purchase Commitment - Recovery in Following Year",
+      "stem": "At December 31, Year 1, Oakdale Co. accrued a $30,000 loss on a noncancelable commitment to buy 10,000 units at $15 (market had fallen to $12). The goods are received in February Year 2 when the market price has recovered to $13. At what amount should the inventory be recorded upon receipt in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$130,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "$160,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When the loss was accrued at Year 1 end, the carrying basis was effectively written down to the December 31 market of $12. When the goods are received in Year 2, inventory is recorded at the lower of the contract price ($15) and the current market at receipt ($13) = $13 per unit. Inventory = 10,000 × $13 = $130,000. The recovery from $12 to $13 reduces the previously accrued loss (a $10,000 gain/recovery in Year 2), but inventory cannot exceed the current market of $13. Entry: Dr Inventory $130,000, Dr Accrued loss liability $30,000, Cr Accounts payable $150,000, Cr Recovery of loss $10,000.",
+      "explanationJa": "Year 1末に損失を計上した時点で、簿価は12/31の市場価格$12まで実質的に評価減された。Year 2の受領時、在庫は契約価格($15)と受領時の市場価格($13)のいずれか低い方 = $13で記録する。在庫 = 10,000 × $13 = $130,000。$12から$13への回復は前期計上損失を減額する（Year 2に$10,000の戻入益）が、在庫は市場価格$13を超えられない。仕訳：（借）在庫$130,000、見越損失負債$30,000 /（貸）買掛金$150,000、損失戻入$10,000。",
+      "references": ["ASC 330-10-35-17", "ASC 330-10-35-18"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-117",
+      "topic": "Inventory",
+      "subtopic": "By-Product - Other Income (Realization) Method",
+      "stem": "Riverton Co. manufactures a main product and a minor by-product. Total joint costs are $250,000, none of which is allocated to the by-product. During the period the by-product is sold for $9,000 with $1,500 of selling costs. Under the realized-value (other income) method, where the by-product's net proceeds are recognized as other income when sold, what net cost is charged to the main product?",
+      "choices": [
+        { "label": "A", "text": "$250,000" },
+        { "label": "B", "text": "$242,500" },
+        { "label": "C", "text": "$241,000" },
+        { "label": "D", "text": "$243,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the realized-value (other income) method for by-products, no joint cost is allocated to the by-product, and the by-product's net realized value is recognized as other income (or as a reduction of COGS) only when sold — it does not reduce the joint cost assigned to the main product. Therefore the full joint cost of $250,000 is charged to the main product. (The by-product's net proceeds of $9,000 − $1,500 = $7,500 are shown separately as other income.) This contrasts with the NRV method, which would reduce the main product cost by the by-product's NRV.",
+      "explanationJa": "副産物の実現価値（雑収入）法では、副産物に連産品原価を配賦せず、副産物の正味実現価額は販売時に雑収入（またはCOGSの減額）として認識するのみで、主産物に配賦する連産品原価を減額しない。よって連産品原価$250,000全額が主産物に賦課される。（副産物の正味手取$9,000 − $1,500 = $7,500は別途雑収入として表示。）NRV法では主産物原価が副産物NRV分減額される点で異なる。",
+      "references": ["ASC 330-10-30-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-118",
+      "topic": "Inventory",
+      "subtopic": "Consignment - Inventory Remaining at Consignee",
+      "stem": "Selby Co. (consignor) ships 1,000 units costing $40 each to a consignee and pays $3,000 of freight to deliver them. By year-end the consignee has sold 600 units. What amount of consignment inventory should Selby report on its year-end balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$17,200" },
+        { "label": "B", "text": "$16,000" },
+        { "label": "C", "text": "$18,000" },
+        { "label": "D", "text": "$17,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Consigned goods remain the consignor's inventory until sold by the consignee, and freight paid to deliver goods to the consignee is an inventoriable cost allocated to all units shipped. Unsold units = 1,000 − 600 = 400. Product cost of unsold units = 400 × $40 = $16,000. Freight allocated to unsold units = ($3,000 × 400/1,000) = $1,200. Consignment inventory = $16,000 + $1,200 = $17,200.",
+      "explanationJa": "委託品は受託者が販売するまで委託者の在庫であり、受託者への配送運賃は出荷全単位に配分される棚卸原価である。未販売数 = 1,000 − 600 = 400。未販売分の製品原価 = 400 × $40 = $16,000。未販売分への配分運賃 = $3,000 × 400/1,000 = $1,200。委託在庫 = $16,000 + $1,200 = $17,200。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-119",
+      "topic": "Inventory",
+      "subtopic": "Inventory Write-Down Recovery Within Same Year (Allowance)",
+      "stem": "At the end of Q1, Granger Co. recorded an inventory write-down of $50,000 using an allowance account when NRV fell below cost. By the end of Q2 (same fiscal year), NRV partially recovered, and the required allowance is now only $18,000. The inventory had not been sold. What entry is appropriate at the end of Q2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Allowance to Reduce Inventory to NRV $32,000; Credit Recovery of Inventory Loss $32,000"
+        },
+        {
+          "label": "B",
+          "text": "No entry; U.S. GAAP prohibits any reversal of inventory write-downs"
+        },
+        {
+          "label": "C",
+          "text": "Debit Inventory $50,000; Credit Recovery of Inventory Loss $50,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Recovery of Inventory Loss $18,000; Credit Allowance to Reduce Inventory to NRV $18,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "U.S. GAAP prohibits recognizing inventory above original cost, but recoveries of write-downs taken earlier in the same fiscal year through an allowance account are permitted as interim adjustments because the annual measurement governs. The allowance must be reduced from $50,000 to $18,000, a $32,000 recovery. Entry: Dr Allowance to Reduce Inventory to NRV $32,000; Cr Recovery of Inventory Loss $32,000. The recovery is limited to amounts previously written down within the year and never raises inventory above original cost.",
+      "explanationJa": "米国GAAPは在庫を元の原価超で計上することを禁じるが、同一会計年度内に評価性引当金を用いて計上した評価減の戻入れは、年次測定が支配するため中間調整として認められる。引当金を$50,000から$18,000へ$32,000減額する。仕訳：（借）在庫評価減引当金$32,000 /（貸）在庫評価損戻入$32,000。戻入れは年度内に評価減した範囲に限られ、元の原価を超えない。",
+      "references": ["ASC 330-10-35-14", "ASC 270-10-45-6"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-120",
+      "topic": "Inventory",
+      "subtopic": "Inventoriable Cost - Sales Tax and Installation",
+      "stem": "Wexler Co. buys merchandise for resale with an invoice cost of $90,000, pays nonrefundable sales tax of $4,500 on the purchase, $2,000 of freight-in, and $1,200 to clean its sales floor for the month. What amount should be capitalized as inventory cost?",
+      "choices": [
+        { "label": "A", "text": "$96,500" },
+        { "label": "B", "text": "$92,000" },
+        { "label": "C", "text": "$97,700" },
+        { "label": "D", "text": "$94,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Inventory cost includes the invoice price, nonrefundable purchase taxes, and freight-in, because all are necessary to bring the goods to their present location and condition. Inventoriable cost = $90,000 + $4,500 (nonrefundable sales tax) + $2,000 (freight-in) = $96,500. The $1,200 to clean the sales floor is a period selling/operating cost and is not inventoriable.",
+      "explanationJa": "棚卸資産原価には送り状価格、還付されない購入税、仕入運賃を含める。これらは商品を現在の場所・状態にするために必要だからである。棚卸原価 = $90,000 + $4,500（還付不能売上税）+ $2,000（仕入運賃）= $96,500。売場清掃の$1,200は期間販売費・営業費で棚卸不可。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-121",
+      "topic": "Inventory",
+      "subtopic": "Raw Materials Write-Down When Finished Goods Below Cost",
+      "stem": "Ashby Mfg. holds raw materials costing $70,000 with a current replacement cost of $58,000. The finished goods that will incorporate these materials are now expected to sell below their production cost. At what amount should the raw materials be reported under ASC 330?",
+      "choices": [
+        { "label": "A", "text": "$58,000" },
+        { "label": "B", "text": "$70,000" },
+        { "label": "C", "text": "$64,000" },
+        { "label": "D", "text": "$12,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 330-10-35-4, raw materials are not written down below cost if the finished goods in which they will be used are expected to sell at or above cost. However, when the related finished goods are expected to be sold below cost, the raw materials should be written down, and replacement cost is the best measure of NRV for raw materials. Therefore the raw materials are reported at replacement cost of $58,000.",
+      "explanationJa": "ASC 330-10-35-4により、原材料が使用される完成品が原価以上で販売される見込みなら原材料を原価以下に評価減しない。しかし関連完成品が原価未満で販売される見込みの場合は原材料を評価減し、原材料のNRVの最良の指標は再調達原価である。よって原材料は再調達原価$58,000で報告する。",
+      "references": ["ASC 330-10-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-122",
+      "topic": "Inventory",
+      "subtopic": "Weighted Average vs FIFO - Ending Inventory Difference",
+      "stem": "Tremont Co. began the year with no inventory. It purchased 1,000 units @ $10, then 1,000 units @ $14, and sold 1,200 units during the year using a periodic system. By how much does ending inventory under FIFO exceed ending inventory under weighted average?",
+      "choices": [
+        { "label": "A", "text": "$1,600" },
+        { "label": "B", "text": "$2,000" },
+        { "label": "C", "text": "$800" },
+        { "label": "D", "text": "$1,200" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Units available = 2,000; sold = 1,200; ending units = 800. FIFO ending inventory: 800 units from the most recent purchase @ $14 = $11,200. Weighted average cost = (1,000 × $10 + 1,000 × $14) / 2,000 = $24,000 / 2,000 = $12 per unit; WA ending inventory = 800 × $12 = $9,600. Difference = $11,200 − $9,600 = $1,600. FIFO is higher because, in rising prices, FIFO leaves the newest higher-cost units in ending inventory.",
+      "explanationJa": "利用可能数 = 2,000、販売 = 1,200、期末数 = 800。FIFO期末在庫：最新仕入の800単位@$14 = $11,200。加重平均単価 = (1,000×$10 + 1,000×$14) / 2,000 = $12。加重平均期末在庫 = 800 × $12 = $9,600。差額 = $11,200 − $9,600 = $1,600。物価上昇期はFIFOが新しい高原価単位を期末在庫に残すため高くなる。",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-123",
+      "topic": "Inventory",
+      "subtopic": "Inventory Turnover - Gross vs Net Method Trap",
+      "stem": "Calder Co. reports net sales of $2,000,000, cost of goods sold of $1,200,000, beginning inventory of $140,000, and ending inventory of $160,000. What is the inventory turnover ratio?",
+      "choices": [
+        { "label": "A", "text": "8.0 times" },
+        { "label": "B", "text": "13.3 times" },
+        { "label": "C", "text": "7.5 times" },
+        { "label": "D", "text": "12.5 times" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Inventory turnover = Cost of goods sold / Average inventory. Average inventory = ($140,000 + $160,000) / 2 = $150,000. Inventory turnover = $1,200,000 / $150,000 = 8.0 times. Using net sales of $2,000,000 in the numerator (a common error) would incorrectly give 13.3 times; turnover must use COGS, not sales.",
+      "explanationJa": "在庫回転率 = 売上原価 / 平均在庫。平均在庫 = ($140,000 + $160,000) / 2 = $150,000。在庫回転率 = $1,200,000 / $150,000 = 8.0回。分子に純売上$2,000,000を使う誤りでは13.3回となる。回転率は売上ではなくCOGSを用いる。",
+      "references": ["ASC 330-10-50-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-124",
+      "topic": "Inventory",
+      "subtopic": "Standard Cost - Disposition of Immaterial Variance",
+      "stem": "At year-end, Whitman Co.'s standard cost system shows a net unfavorable variance of $9,000 that management considers immaterial. Ending inventory at standard cost is $250,000 and COGS at standard cost is $1,000,000. How should the immaterial variance be reported under ASC 330?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Charge the entire $9,000 to cost of goods sold"
+        },
+        {
+          "label": "B",
+          "text": "Allocate $1,800 to inventory and $7,200 to COGS"
+        },
+        {
+          "label": "C",
+          "text": "Capitalize the entire $9,000 to ending inventory"
+        },
+        {
+          "label": "D",
+          "text": "Report $9,000 as a separate nonoperating loss"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 330-10-30-3, standard costs are acceptable for inventory if they approximate actual cost. When variances are immaterial, they may be charged entirely to cost of goods sold in the period rather than prorated between inventory and COGS. Proration (allocating between inventory and COGS) is required only when variances are material. Because this $9,000 variance is immaterial, it is charged in full to COGS.",
+      "explanationJa": "ASC 330-10-30-3により、標準原価が実際原価に近似する場合は棚卸に使用できる。差異が重要でない場合は、在庫とCOGSに比例配分せず、その期のCOGSに全額賦課してよい。比例配分は差異が重要な場合にのみ必要。本件の$9,000は重要でないためCOGSに全額賦課する。",
+      "references": ["ASC 330-10-30-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-125",
+      "topic": "Inventory",
+      "subtopic": "LCNRV - Total Inventory (Aggregate) Basis",
+      "stem": "Vail Co. applies LCNRV to total inventory in the aggregate. Item 1: cost $120,000, NRV $110,000. Item 2: cost $80,000, NRV $96,000. Item 3: cost $50,000, NRV $44,000. What is the required write-down under the total-inventory (aggregate) approach?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$16,000" },
+        { "label": "C", "text": "$10,000" },
+        { "label": "D", "text": "$6,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the aggregate (total inventory) approach, total cost is compared with total NRV, allowing increases on some items to offset decreases on others. Total cost = $120,000 + $80,000 + $50,000 = $250,000. Total NRV = $110,000 + $96,000 + $44,000 = $250,000. Because total NRV ($250,000) is not below total cost ($250,000), no write-down is required. The aggregate method is the least conservative LCNRV grouping.",
+      "explanationJa": "総額（全体）法では総原価と総NRVを比較し、一部の含み益が他の含み損を相殺できる。総原価 = $120,000 + $80,000 + $50,000 = $250,000。総NRV = $110,000 + $96,000 + $44,000 = $250,000。総NRV($250,000)が総原価($250,000)を下回らないため評価減は不要。総額法はLCNRVのグルーピングで最も保守的でない。",
+      "references": ["ASC 330-10-35-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-126",
+      "topic": "Inventory",
+      "subtopic": "Display / Demonstration Units Classification",
+      "stem": "Monarch Appliances removes 30 refrigerators (cost $600 each) from saleable inventory to use as long-term showroom display models expected to be used for about three years before disposal. How should these units be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reclassify $18,000 to property, plant and equipment and depreciate over the display period"
+        },
+        {
+          "label": "B",
+          "text": "Continue to report the $18,000 as inventory until ultimately sold"
+        },
+        {
+          "label": "C",
+          "text": "Expense the $18,000 immediately as a marketing cost"
+        },
+        {
+          "label": "D",
+          "text": "Reclassify $18,000 to a prepaid asset and amortize over one year"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Inventory is held for sale in the ordinary course of business. Items withdrawn for use by the entity over multiple periods (such as long-term demonstration or display units used for about three years) no longer meet the definition of inventory; they are used in operations and should be reclassified to property, plant and equipment and depreciated over their useful life as display assets. Cost reclassified = 30 × $600 = $18,000.",
+      "explanationJa": "棚卸資産は通常の事業過程で販売目的に保有される。複数期間（約3年の長期展示・実演など）にわたり企業自身が使用する目的で引き出された品目はもはや棚卸資産の定義を満たさず、営業用に使用されるため有形固定資産に振り替え、展示資産として耐用年数で減価償却する。振替原価 = 30 × $600 = $18,000。",
+      "references": ["ASC 330-10-20", "ASC 360-10-05-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-127",
+      "topic": "Inventory",
+      "subtopic": "Gross Profit Method - Solving for Ending Inventory with Returns",
+      "stem": "Pelham Co. estimates inventory using the gross profit method. Beginning inventory $110,000; purchases $520,000; purchase returns $20,000; freight-in $10,000; gross sales $760,000; sales returns $40,000. The gross profit margin is 30% of net sales. What is the estimated ending inventory?",
+      "choices": [
+        { "label": "A", "text": "$116,000" },
+        { "label": "B", "text": "$92,000" },
+        { "label": "C", "text": "$126,000" },
+        { "label": "D", "text": "$104,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net purchases = $520,000 − $20,000 + $10,000 (freight-in) = $510,000. Goods available for sale = $110,000 + $510,000 = $620,000. Net sales = $760,000 − $40,000 = $720,000. Estimated COGS = Net sales × (1 − 0.30) = $720,000 × 0.70 = $504,000. Estimated ending inventory = $620,000 − $504,000 = $116,000.",
+      "explanationJa": "純仕入 = $520,000 − $20,000 + $10,000（仕入運賃）= $510,000。販売可能商品 = $110,000 + $510,000 = $620,000。純売上 = $760,000 − $40,000 = $720,000。推定COGS = 純売上 × (1 − 0.30) = $720,000 × 0.70 = $504,000。推定期末在庫 = $620,000 − $504,000 = $116,000。",
+      "references": ["ASC 330-10-30-20"],
+      "difficulty": "intermediate",
       "source": "Original - CPA Exam Practice"
     }
   ]

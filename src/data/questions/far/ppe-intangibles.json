@@ -2,7 +2,7 @@
   "id": "far-ppe-intangibles",
   "name": "Property, Plant & Equipment / Intangible Assets",
   "topic": "Property, Plant & Equipment",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "questions": [
     {
       "id": "ppe-001",
@@ -2003,6 +2003,789 @@
       "explanationJa": "ASC 410-20-35-3により、割増費用は期首ARO残高に信用調整リスクフリーレートを乗じて計算。Year 1：割増費用=$500,000 x 5%=$25,000。Year 1末ARO残高=$500,000+$25,000=$525,000。Year 2：割増費用（改定前）=$525,000 x 5%=$26,250。$100,000の改定はYear 2末に記録され、Year 3の割増費用に影響する。",
       "references": ["ASC 410-20-35-3", "ASC 410-20-35-5"],
       "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-093",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Deferred Payment Purchase - Cash Price Equivalent",
+      "stem": "Cedar Corp. acquires equipment by signing a non-interest-bearing note requiring a single payment of $50,000 in 3 years. No established cash price for the equipment is available, but the prevailing market interest rate for similar notes is 8%. The present value of $1 at 8% for 3 periods is 0.7938. At what amount should Cedar initially record the equipment?",
+      "choices": [
+        { "label": "A", "text": "$39,690" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$46,296" },
+        { "label": "D", "text": "$38,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 835-30-25-8, when equipment is acquired with a non-interest-bearing note and no cash price is available, the asset is recorded at the present value of the note using the prevailing market rate. PV = $50,000 x 0.7938 = $39,690. The $10,310 difference between the face amount ($50,000) and present value ($39,690) is a discount that is recognized as interest expense over the 3-year note term. The asset is recorded at $39,690, not its face amount. ($46,296 uses a 1-period factor in error; $38,000 applies a flat 24% to the face amount in error.)",
+      "explanationJa": "ASC 835-30-25-8により、無利息手形で設備を取得し現金価格が不明な場合、市場実勢利率を用いた手形の現在価値で資産を計上する。PV = $50,000 x 0.7938 = $39,690。額面$50,000と現在価値$39,690の差額$10,310は割引額として3年間の手形期間にわたり利息費用として認識する。資産は額面ではなく$39,690で計上。（$46,296は誤って1期間の係数を使用、$38,000は額面に一律24%を適用した誤り。）",
+      "references": ["ASC 835-30-25-8", "ASC 835-30-25-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-094",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Cash Discount on Equipment Purchase",
+      "stem": "Birchwood Inc. purchases machinery with an invoice price of $200,000 under terms 2/10, n/30. Birchwood pays within the discount period. It also incurs $6,000 freight-in and $4,000 installation costs. Under the net method, at what amount should the machinery be capitalized?",
+      "choices": [
+        { "label": "A", "text": "$206,000" },
+        { "label": "B", "text": "$210,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$196,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 360-10-30-1, the cost of machinery includes the net purchase price plus all costs necessary to bring it to working condition. Cash discounts available are treated as a reduction of cost (whether taken or not, under the net/preferred method). Net invoice price = $200,000 x (1 - 0.02) = $196,000. Add freight-in $6,000 and installation $4,000. Capitalized cost = $196,000 + $6,000 + $4,000 = $206,000.",
+      "explanationJa": "ASC 360-10-30-1により、機械の取得原価は正味購入価格に稼働状態にするための必要費用を加える。現金割引は（取得しても・しなくても、純額法では）原価の減額として処理。正味請求額 = $200,000 x (1 - 0.02) = $196,000。運送費$6,000と据付費$4,000を加算。資産計上額 = $196,000 + $6,000 + $4,000 = $206,000。",
+      "references": ["ASC 360-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-095",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Equipment Acquired by Issuing Stock",
+      "stem": "Aspen Corp. acquires a specialized machine by issuing 5,000 shares of its $10 par common stock. On the acquisition date, the stock has a readily determinable fair value of $32 per share, and an independent appraisal values the machine at $170,000. At what amount should Aspen record the machine?",
+      "choices": [
+        { "label": "A", "text": "$160,000" },
+        { "label": "B", "text": "$170,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$165,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When PP&E is acquired by issuing equity securities that have a readily determinable fair value, the asset is recorded at the fair value of the securities issued, as this is the more objective and reliable measure of the transaction's value. Fair value of stock issued = 5,000 shares x $32 = $160,000. The machine is recorded at $160,000. The $50,000 par value (5,000 x $10) and the appraisal value are not used when an active market price for the shares exists.",
+      "explanationJa": "市場価格が容易に決定できる株式を発行してPP&Eを取得する場合、取引価値のより客観的で信頼性の高い指標である発行株式の公正価値で資産を計上する。発行株式の公正価値 = 5,000株 x $32 = $160,000。機械は$160,000で計上。額面$50,000（5,000 x $10）や鑑定評価額は、株式の活発な市場価格が存在する場合は使用しない。",
+      "references": ["ASC 360-10-30-1", "ASC 845-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-096",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Self-Constructed Asset - Overhead Allocation Excess",
+      "stem": "Granite Co. self-constructs a machine for its own use. Direct materials cost $80,000 and direct labor cost $60,000. The machine required 2,000 direct labor hours. Granite normally applies variable overhead at $5 per direct labor hour to production. If Granite had instead purchased the machine, it would have paid $165,000. At what amount should the self-constructed machine be capitalized (incremental/full cost concept, but not exceeding purchase price)?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$165,000" },
+        { "label": "C", "text": "$140,000" },
+        { "label": "D", "text": "$170,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 360-10-30-1, a self-constructed asset is capitalized at direct materials, direct labor, and an allocable portion of overhead. Direct materials $80,000 + direct labor $60,000 + applied overhead (2,000 hrs x $5 = $10,000) = $150,000. Because the computed cost ($150,000) is below the external purchase price ($165,000), no write-down to a lower amount is required and no loss is recognized. The asset is capitalized at $150,000. (If accumulated construction cost had exceeded fair value/purchase price, the excess would be expensed as a loss.)",
+      "explanationJa": "ASC 360-10-30-1により、自家建設資産は直接材料費、直接労務費、配賦間接費で資産計上する。直接材料$80,000 + 直接労務$60,000 + 配賦間接費（2,000時間 x $5 = $10,000）= $150,000。計算原価$150,000が外部購入価格$165,000を下回るため、減額や損失認識は不要。資産は$150,000で計上。（建設累計原価が公正価値・購入価格を超えていれば超過分を損失計上する。）",
+      "references": ["ASC 360-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-097",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Capitalized Interest - Interest Earned on Borrowed Funds",
+      "stem": "Summit Corp. borrows $1,000,000 at 9% specifically to construct a building. Before the funds are needed for construction, Summit temporarily invests $400,000 of the loan proceeds and earns $12,000 in interest income during the period. Weighted-average accumulated expenditures equal $1,000,000. What amount of interest should Summit capitalize?",
+      "choices": [
+        { "label": "A", "text": "$90,000" },
+        { "label": "B", "text": "$78,000" },
+        { "label": "C", "text": "$102,000" },
+        { "label": "D", "text": "$84,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 835-20-30-10, interest earned on the temporary investment of borrowed construction funds does NOT reduce the amount of interest cost eligible for capitalization (for general construction projects under U.S. GAAP). Avoidable interest = specific borrowing $1,000,000 x 9% = $90,000. The $12,000 of investment income is recognized separately as interest income in the income statement and does not offset capitalized interest. Capitalized interest = $90,000.",
+      "explanationJa": "ASC 835-20-30-10により、借入建設資金の一時運用で得た利息収入は、（米国GAAPの一般的な建設プロジェクトでは）資産化適格利息費用を減額しない。回避可能利息 = 特定借入$1,000,000 x 9% = $90,000。運用益$12,000は別途利息収益として損益計算書に認識され、資産化利息と相殺しない。資産化利息 = $90,000。",
+      "references": ["ASC 835-20-30-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-098",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Capitalization Period - When Interest Capitalization Stops",
+      "stem": "Under ASC 835-20, the capitalization of interest on a qualifying asset should cease when:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The asset is substantially complete and ready for its intended use"
+        },
+        {
+          "label": "B",
+          "text": "Construction expenditures are fully paid in cash"
+        },
+        { "label": "C", "text": "The construction loan is fully repaid" },
+        { "label": "D", "text": "The asset begins generating revenue" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 835-20-25-5, the interest capitalization period ends when the asset is substantially complete and ready for its intended use. This is independent of when the loan is repaid, when expenditures are paid, or when revenue is first generated. If an asset is completed in parts and each part can be used independently, capitalization ceases for each part as it is completed. After the capitalization period ends, interest is expensed.",
+      "explanationJa": "ASC 835-20-25-5により、利息資産化期間は資産が実質的に完成し意図した用途に使用可能になった時点で終了する。これは借入金の返済時期、支出の支払時期、収益発生時期とは独立。資産が部分ごとに完成し各部分が独立して使用できる場合、各部分の完成時に資産化を停止。資産化期間終了後の利息は費用処理する。",
+      "references": ["ASC 835-20-25-5", "ASC 835-20-25-6"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-099",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Depreciation - 150% Declining Balance",
+      "stem": "Equipment costing $90,000 with no salvage value and a useful life of 6 years is depreciated using the 150% declining balance method. What is the depreciation expense in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$16,875" },
+        { "label": "B", "text": "$22,500" },
+        { "label": "C", "text": "$18,750" },
+        { "label": "D", "text": "$15,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The 150% declining balance rate = 1.5 x (1/6) = 0.25 (25%). Year 1 depreciation = $90,000 x 25% = $22,500. Book value end of Year 1 = $90,000 - $22,500 = $67,500. Year 2 depreciation = $67,500 x 25% = $16,875. Under declining balance methods, salvage value is not subtracted from the base, but the asset is not depreciated below salvage value (here $0).",
+      "explanationJa": "150%定率法の償却率 = 1.5 x (1/6) = 0.25（25%）。Year 1減価償却 = $90,000 x 25% = $22,500。Year 1末帳簿価額 = $90,000 - $22,500 = $67,500。Year 2減価償却 = $67,500 x 25% = $16,875。定率法では残存価額を償却基礎から差し引かないが、残存価額（ここでは$0）以下には償却しない。",
+      "references": ["ASC 360-10-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-100",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "DDB Switch to Straight-Line",
+      "stem": "An asset costs $64,000 with a $4,000 salvage value and a 4-year life. The company uses double-declining balance but switches to straight-line in the year that straight-line yields a higher (or equal) expense. What is the depreciation expense in Year 3?",
+      "choices": [
+        { "label": "A", "text": "$8,000" },
+        { "label": "B", "text": "$8,500" },
+        { "label": "C", "text": "$6,000" },
+        { "label": "D", "text": "$12,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "DDB rate = 2 x (1/4) = 50%. Year 1: $64,000 x 50% = $32,000; BV = $32,000. Year 2: $32,000 x 50% = $16,000; BV = $16,000. Year 3 DDB amount would be $16,000 x 50% = $8,000. Year 3 straight-line on remaining depreciable base over remaining life = ($16,000 - $4,000) / 2 years = $6,000. The company switches when straight-line exceeds DDB; here DDB ($8,000) still exceeds straight-line ($6,000), so DDB applies. Year 3 depreciation = $8,000.",
+      "explanationJa": "DDB率 = 2 x (1/4) = 50%。Year 1：$64,000 x 50% = $32,000、BV = $32,000。Year 2：$32,000 x 50% = $16,000、BV = $16,000。Year 3のDDB額 = $16,000 x 50% = $8,000。Year 3の定額法（残存償却基礎÷残存年数）= ($16,000 - $4,000) / 2年 = $6,000。定額法がDDBを上回る年に切替えるが、ここではDDB（$8,000）が定額法（$6,000）を上回るためDDBを適用。Year 3減価償却 = $8,000。",
+      "references": ["ASC 360-10-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-101",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Depreciation - Mid-Quarter (Mid-Month) Convention",
+      "stem": "A building costing $1,200,000 with no salvage value and a 40-year straight-line life is placed in service on October 1, Year 1. The company depreciates real property using the full-month (actual months in service) convention. What is the Year 1 depreciation expense?",
+      "choices": [
+        { "label": "A", "text": "$7,500" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$15,000" },
+        { "label": "D", "text": "$2,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Annual straight-line depreciation = $1,200,000 / 40 = $30,000. Under the full-month convention, the asset is depreciated for the actual number of months in service during the year. From October 1 to December 31 = 3 months. Year 1 depreciation = $30,000 x 3/12 = $7,500.",
+      "explanationJa": "年間定額償却 = $1,200,000 / 40 = $30,000。実月数法では、年度中の実際の使用月数で償却する。10月1日から12月31日 = 3か月。Year 1減価償却 = $30,000 x 3/12 = $7,500。",
+      "references": ["ASC 360-10-35-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-102",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Impairment Loss Allocation Within Asset Group",
+      "stem": "An asset group consists of equipment (carrying amount $300,000) and a building (carrying amount $700,000); total carrying amount $1,000,000. The group fails the recoverability test, and the fair value of the group is $760,000. A measured impairment loss of $240,000 is allocated pro rata based on relative carrying amounts. How much of the loss is allocated to the building?",
+      "choices": [
+        { "label": "A", "text": "$168,000" },
+        { "label": "B", "text": "$120,000" },
+        { "label": "C", "text": "$72,000" },
+        { "label": "D", "text": "$240,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 360-10-35-28, an impairment loss for an asset group is allocated to the long-lived assets of the group on a pro rata basis using the relative carrying amounts (but no individual asset is reduced below its own fair value). Total impairment = $1,000,000 - $760,000 = $240,000. Building's share = ($700,000 / $1,000,000) x $240,000 = 0.70 x $240,000 = $168,000.",
+      "explanationJa": "ASC 360-10-35-28により、資産グループの減損損失は相対的帳簿価額に基づき長期性資産に比例配分する（ただし個別資産を自身の公正価値以下には減額しない）。減損合計 = $1,000,000 - $760,000 = $240,000。建物への配分 = ($700,000 / $1,000,000) x $240,000 = 0.70 x $240,000 = $168,000。",
+      "references": ["ASC 360-10-35-28"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-103",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Impairment Triggering Events",
+      "stem": "Under ASC 360-10-35-21, which of the following is NOT, by itself, an indicator that a long-lived asset (held and used) should be tested for impairment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A routine annual increase in the asset's market value"
+        },
+        {
+          "label": "B",
+          "text": "A significant adverse change in the business climate that could affect the asset's value"
+        },
+        {
+          "label": "C",
+          "text": "A current-period operating loss combined with a history of losses associated with the asset"
+        },
+        {
+          "label": "D",
+          "text": "A significant decrease in the market price of the asset"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 360-10-35-21 lists events that indicate the carrying amount of a long-lived asset may not be recoverable, including a significant decrease in market price, a significant adverse change in business climate, and a current-period operating loss combined with a history of losses. An increase in market value is favorable and is NOT an impairment indicator; in fact, U.S. GAAP prohibits writing assets up. Only declines or adverse changes trigger impairment testing.",
+      "explanationJa": "ASC 360-10-35-21は長期性資産の帳簿価額が回収不能の可能性を示す事象を列挙し、市場価格の著しい下落、事業環境の著しい不利な変化、当期の営業損失と損失の累積履歴を含む。市場価値の上昇は好材料で減損の兆候ではない。米国GAAPは資産の評価増を禁止する。下落・不利な変化のみが減損テストのトリガーとなる。",
+      "references": ["ASC 360-10-35-21"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-104",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Held-for-Sale Classification Criteria",
+      "stem": "Under ASC 360-10-45-9, which of the following conditions must be met for a long-lived asset to be classified as held for sale?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The sale must be completed within the current fiscal year regardless of circumstances"
+        },
+        {
+          "label": "B",
+          "text": "The asset is available for immediate sale in its present condition and the sale is probable within one year"
+        },
+        {
+          "label": "C",
+          "text": "Management has only begun evaluating whether to sell the asset"
+        },
+        {
+          "label": "D",
+          "text": "The asset must already have a signed, binding sale contract"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 360-10-45-9, held-for-sale classification requires that: (1) management commits to a plan to sell, (2) the asset is available for immediate sale in its present condition, (3) an active program to locate a buyer has begun, (4) the sale is probable within one year, (5) the asset is actively marketed at a reasonable price, and (6) it is unlikely the plan will change. A signed contract is not required, the sale need not close in the current fiscal year, and merely evaluating a sale is insufficient.",
+      "explanationJa": "ASC 360-10-45-9により、売却目的保有への分類には、(1)経営者が売却計画を確約、(2)現状で即時売却可能、(3)買主探索の積極的プログラムを開始、(4)1年以内の売却が可能性高い、(5)合理的価格で積極的に売却活動、(6)計画変更の可能性が低い、を満たす必要がある。署名済み契約は不要、当期中の売却完了は不要、売却の検討段階だけでは不十分。",
+      "references": ["ASC 360-10-45-9"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-105",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "ARO - Capitalized Asset Retirement Cost Depreciation",
+      "stem": "On January 1, Year 1, Quarry Co. places an asset in service and recognizes an asset retirement obligation with a present value (fair value) of $80,000. The related plant asset has a cost of $500,000 (excluding the ARO) and a 10-year useful life with no salvage value (straight-line). What is the total Year 1 depreciation expense, including the capitalized asset retirement cost?",
+      "choices": [
+        { "label": "A", "text": "$58,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$8,000" },
+        { "label": "D", "text": "$54,800" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 410-20-25-5, the fair value of the ARO ($80,000) is capitalized as part of the carrying amount of the related long-lived asset (asset retirement cost). Total depreciable cost = $500,000 + $80,000 = $580,000. Straight-line depreciation over 10 years = $580,000 / 10 = $58,000 per year. (Accretion expense on the ARO liability is a separate charge and is not part of depreciation.)",
+      "explanationJa": "ASC 410-20-25-5により、AROの公正価値（$80,000）は関連長期性資産の帳簿価額の一部（資産除去原価）として資産計上する。減価償却対象原価合計 = $500,000 + $80,000 = $580,000。10年の定額償却 = $580,000 / 10 = $58,000/年。（ARO負債の割増費用は別建ての費用で減価償却には含まれない。）",
+      "references": ["ASC 410-20-25-5", "ASC 410-20-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-106",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "ARO - Settlement Gain or Loss",
+      "stem": "At the end of an asset's life, Delta Mining's asset retirement obligation has accreted to a carrying amount of $250,000. Delta settles the obligation by paying a third party $235,000 to perform the remediation. What gain or loss does Delta recognize on settlement?",
+      "choices": [
+        { "label": "A", "text": "$15,000 gain" },
+        { "label": "B", "text": "$15,000 loss" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$235,000 loss" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 410-20-40-1, when an asset retirement obligation is settled for an amount different from its carrying amount, the entity recognizes a gain or loss on settlement. The ARO liability carrying amount is $250,000 and the actual settlement cost is $235,000. Since the company pays less than the recorded liability, it recognizes a gain = $250,000 - $235,000 = $15,000.",
+      "explanationJa": "ASC 410-20-40-1により、資産除去債務を帳簿価額と異なる金額で決済する場合、決済損益を認識する。ARO負債の帳簿価額は$250,000、実際の決済費用は$235,000。計上負債より少なく支払うため、利得 = $250,000 - $235,000 = $15,000を認識。",
+      "references": ["ASC 410-20-40-1", "ASC 410-20-40-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-107",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Goodwill - Initial Measurement (Acquisition Method)",
+      "stem": "Acquirer Co. purchases 100% of Target Co. for $9,000,000 cash. The fair values of Target's identifiable assets total $11,000,000 and the fair values of its liabilities total $3,500,000. What amount of goodwill should Acquirer recognize?",
+      "choices": [
+        { "label": "A", "text": "$1,500,000" },
+        { "label": "B", "text": "$2,000,000" },
+        { "label": "C", "text": "$5,500,000" },
+        { "label": "D", "text": "$0; recognize a bargain purchase gain" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-30-30-1, goodwill = consideration transferred - fair value of identifiable net assets acquired. Fair value of identifiable net assets = identifiable assets $11,000,000 - liabilities $3,500,000 = $7,500,000. Goodwill = $9,000,000 - $7,500,000 = $1,500,000. Because consideration exceeds the net assets acquired, goodwill (not a bargain purchase gain) is recognized.",
+      "explanationJa": "ASC 805-30-30-1により、のれん = 移転対価 - 取得した識別可能純資産の公正価値。識別可能純資産の公正価値 = 識別可能資産$11,000,000 - 負債$3,500,000 = $7,500,000。のれん = $9,000,000 - $7,500,000 = $1,500,000。対価が取得純資産を上回るため、のれん（割安購入益ではない）を認識する。",
+      "references": ["ASC 805-30-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-108",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Bargain Purchase Gain Recognition",
+      "stem": "Buyer Corp. acquires all of Seller Corp.'s net assets for $4,200,000 cash. After a reassessment confirming all identifiable assets and liabilities are correctly measured, the fair value of identifiable assets acquired is $6,000,000 and liabilities assumed is $1,400,000. How should Buyer account for the difference?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a $400,000 bargain purchase gain in earnings on the acquisition date"
+        },
+        {
+          "label": "B",
+          "text": "Recognize $400,000 of negative goodwill amortized over 40 years"
+        },
+        {
+          "label": "C",
+          "text": "Reduce the recorded value of acquired non-current assets by $400,000"
+        },
+        { "label": "D", "text": "Record $400,000 of goodwill" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-30-25-2 and 805-30-25-4, a bargain purchase occurs when the fair value of identifiable net assets acquired exceeds the consideration transferred. Net assets = $6,000,000 - $1,400,000 = $4,600,000. Consideration = $4,200,000. Bargain purchase amount = $4,600,000 - $4,200,000 = $400,000. After reassessing the measurement, the acquirer recognizes the excess as a gain in earnings on the acquisition date. Negative goodwill amortization is not permitted under current GAAP.",
+      "explanationJa": "ASC 805-30-25-2および25-4により、取得した識別可能純資産の公正価値が移転対価を超える場合、割安購入が生じる。純資産 = $6,000,000 - $1,400,000 = $4,600,000。対価 = $4,200,000。割安購入額 = $4,600,000 - $4,200,000 = $400,000。測定を再評価した後、取得企業は超過額を取得日に利得として損益に認識する。負ののれんの償却は現行GAAPでは認められない。",
+      "references": ["ASC 805-30-25-2", "ASC 805-30-25-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-109",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Goodwill Allocation to Reporting Units",
+      "stem": "After a business combination, an acquirer must assign the $3,000,000 of acquired goodwill to its reporting units. Under ASC 350-20-35-41, the goodwill is assigned to reporting units based on:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The relative book values of the reporting units"
+        },
+        {
+          "label": "B",
+          "text": "The reporting units expected to benefit from the synergies of the combination, even if no other acquired assets are assigned to them"
+        },
+        {
+          "label": "C",
+          "text": "An equal split among all reporting units of the entity"
+        },
+        { "label": "D", "text": "The reporting unit with the highest revenue" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 350-20-35-41 and 35-42, goodwill acquired in a business combination is assigned to one or more reporting units expected to benefit from the synergies of the combination. This is done as of the acquisition date using a methodology consistent with the objective. A reporting unit may be assigned goodwill even if no other assets or liabilities of the acquired entity are assigned to it. Allocation is not based on relative book values, equal splits, or revenue alone.",
+      "explanationJa": "ASC 350-20-35-41および35-42により、企業結合で取得したのれんは、結合のシナジーから便益を受けると見込まれる1つ以上の報告単位に配分する。これは取得日時点で目的に整合する方法で行う。被取得企業の他の資産・負債が配分されていない報告単位にものれんを配分しうる。配分は相対簿価、均等分割、収益のみには基づかない。",
+      "references": ["ASC 350-20-35-41", "ASC 350-20-35-42"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-110",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Intangible - Order Backlog Recognition",
+      "stem": "In a business combination, the acquirer identifies an order or production backlog arising from purchase orders that are cancelable by customers. Under ASC 805-20, how should this backlog be treated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It cannot be recognized separately because the orders are cancelable, so it is subsumed into goodwill"
+        },
+        {
+          "label": "B",
+          "text": "It is recognized separately from goodwill if it arises from contractual or other legal rights, even if cancelable"
+        },
+        {
+          "label": "C",
+          "text": "It is recognized only if the backlog exceeds 10% of annual revenue"
+        },
+        {
+          "label": "D",
+          "text": "It is expensed immediately as a marketing-related cost"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-20-55-23, an order or production backlog acquired in a business combination meets the contractual-legal criterion and is recognized as an intangible asset separately from goodwill, even if the purchase or sales orders are cancelable. Meeting the contractual-legal criterion does not depend on whether the contracts are cancelable. There is no quantitative threshold for recognition.",
+      "explanationJa": "ASC 805-20-55-23により、企業結合で取得した受注残・生産残（バックログ）は契約・法律上の基準を満たし、たとえ注文がキャンセル可能であってものれんと区別して無形資産として認識する。契約・法律上の基準の充足はキャンセル可能性に依存しない。認識のための数値基準はない。",
+      "references": ["ASC 805-20-55-23"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-111",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Intangible - Amortization Method (Pattern of Benefit)",
+      "stem": "Under ASC 350-30-35-6, the method of amortizing a finite-life intangible asset should reflect the pattern in which the asset's economic benefits are consumed. If that pattern cannot be reliably determined, which method is used?",
+      "choices": [
+        { "label": "A", "text": "Straight-line method" },
+        { "label": "B", "text": "Double-declining balance method" },
+        { "label": "C", "text": "The asset is not amortized" },
+        { "label": "D", "text": "Sum-of-the-years'-digits method" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 350-30-35-6, the amortization method for a finite-life intangible asset should reflect the pattern in which the economic benefits of the asset are consumed or used up. If that pattern cannot be reliably determined, the straight-line method is used as the default. An intangible with a finite life must be amortized; not amortizing applies only to indefinite-life intangibles.",
+      "explanationJa": "ASC 350-30-35-6により、確定耐用年数の無形資産の償却方法は、資産の経済的便益が消費される（使い切られる）パターンを反映すべき。そのパターンを信頼性をもって決定できない場合は、デフォルトとして定額法を使用する。確定耐用年数の無形資産は償却が必須で、非償却は不確定耐用年数の無形資産にのみ適用される。",
+      "references": ["ASC 350-30-35-6"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-112",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Intangible - Residual Value in Amortization",
+      "stem": "Vertex Co. acquires a finite-life intangible asset for $500,000 with a 10-year useful life. A third party has committed to purchase the intangible at the end of its useful life for $80,000. What is the annual amortization expense?",
+      "choices": [
+        { "label": "A", "text": "$42,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$58,000" },
+        { "label": "D", "text": "$8,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 350-30-35-8, the amount of a finite-life intangible asset to be amortized is its cost less its residual value. Residual value is assumed to be zero unless a third party has committed to purchase the asset at the end of its useful life or it can be determined from an active market. Here a third-party commitment exists for $80,000. Amortizable base = $500,000 - $80,000 = $420,000. Annual amortization = $420,000 / 10 = $42,000.",
+      "explanationJa": "ASC 350-30-35-8により、確定耐用年数の無形資産の償却対象額は取得原価から残存価額を控除した額。残存価額は、第三者が耐用年数末に資産を購入する約束をしている場合または活発な市場から決定できる場合を除き、ゼロと仮定する。ここでは$80,000の第三者購入約束がある。償却基礎 = $500,000 - $80,000 = $420,000。年間償却 = $420,000 / 10 = $42,000。",
+      "references": ["ASC 350-30-35-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-113",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Finite-Life Intangible Impairment - Two-Step Test",
+      "stem": "Vista Corp. holds a finite-life customer-list intangible with a carrying amount of $360,000. Triggered by a major customer loss, Vista estimates undiscounted future cash flows of $330,000 and a fair value of $290,000. What impairment loss should Vista recognize?",
+      "choices": [
+        { "label": "A", "text": "$70,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Finite-life intangible assets are tested for impairment using the same two-step model as other long-lived assets under ASC 360-10-35. Step 1 (recoverability): carrying amount $360,000 > undiscounted cash flows $330,000, so the asset is impaired. Step 2 (measurement): impairment loss = carrying amount - fair value = $360,000 - $290,000 = $70,000.",
+      "explanationJa": "確定耐用年数の無形資産は、他の長期性資産と同じくASC 360-10-35の2段階モデルで減損テストする。ステップ1（回収可能性）：帳簿価額$360,000 > 割引前CF$330,000のため減損あり。ステップ2（測定）：減損損失 = 帳簿価額 - 公正価値 = $360,000 - $290,000 = $70,000。",
+      "references": ["ASC 360-10-35-17", "ASC 350-30-35-14"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-114",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Software for Sale - Capitalization Threshold",
+      "stem": "Under ASC 985-20, costs of developing software to be sold, leased, or otherwise marketed are capitalized:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "From the point technological feasibility is established until the product is available for general release to customers"
+        },
+        {
+          "label": "B",
+          "text": "From the beginning of the project until completion"
+        },
+        {
+          "label": "C",
+          "text": "Only after the product is released to customers"
+        },
+        {
+          "label": "D",
+          "text": "Never; all such costs are expensed as research and development"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 985-20-25-1 through 25-3, costs incurred to develop software for sale are charged to research and development expense until technological feasibility is established. From the point technological feasibility is established until the product is available for general release to customers, production costs are capitalized. After general release, capitalized costs are amortized, and subsequent maintenance and customer support costs are expensed.",
+      "explanationJa": "ASC 985-20-25-1〜25-3により、販売用ソフトウェアの開発費は、技術的実現可能性が確立するまでは研究開発費として費用処理する。技術的実現可能性確立時点から製品が顧客に一般リリース可能になるまでの制作費は資産計上する。一般リリース後は資産計上額を償却し、その後の保守・顧客サポート費は費用処理する。",
+      "references": ["ASC 985-20-25-1", "ASC 985-20-25-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-115",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Software for Sale - Amortization Greater of Two Methods",
+      "stem": "TechSoft capitalized $900,000 of software development costs for a product to be sold. In Year 1, the product generates $600,000 of current revenue, and total estimated revenue (current and future) is $3,000,000. The remaining economic life is 4 years (straight-line). Under ASC 985-20-35, what is the Year 1 amortization expense?",
+      "choices": [
+        { "label": "A", "text": "$225,000" },
+        { "label": "B", "text": "$180,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 985-20-35-1, annual amortization of capitalized software-for-sale costs is the GREATER of: (1) the revenue method: (current revenue / total estimated revenue) x capitalized cost = ($600,000 / $3,000,000) x $900,000 = $180,000; or (2) the straight-line method over remaining economic life = $900,000 / 4 = $225,000. The greater amount is $225,000.",
+      "explanationJa": "ASC 985-20-35-1により、販売用資産化ソフトウェアの年間償却は次のいずれか大きい方：(1)収益法：（当期収益 / 見積総収益）x 資産化原価 = ($600,000 / $3,000,000) x $900,000 = $180,000、または(2)残存経済耐用年数の定額法 = $900,000 / 4 = $225,000。大きい方は$225,000。",
+      "references": ["ASC 985-20-35-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-116",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Internal-Use Software - Capitalizable vs Expensed Costs",
+      "stem": "During the application development stage of an internal-use software project, NovaCorp incurs: $200,000 for coding and configuration, $40,000 for data conversion from the old system, and $25,000 for training employees on the new system. Under ASC 350-40, what amount should be capitalized?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$240,000" },
+        { "label": "C", "text": "$265,000" },
+        { "label": "D", "text": "$225,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 350-40-25-2 and 350-40-25-3, only certain application development stage costs are capitalized: coding, software configuration, interface development, testing, and installation. Data conversion costs ($40,000) and training costs ($25,000) are expensed as incurred, even if they occur during the application development stage. Therefore, only the $200,000 coding and configuration is capitalized.",
+      "explanationJa": "ASC 350-40-25-2および25-3により、アプリケーション開発段階の特定費用のみ資産計上する：コーディング、構成設定、インターフェース開発、テスト、インストール。データ変換費用（$40,000）と研修費用（$25,000）は、開発段階に発生しても費用処理する。したがって、コーディング・構成の$200,000のみ資産計上。",
+      "references": ["ASC 350-40-25-2", "ASC 350-40-25-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-117",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Long-Lived Asset Disposal - Discontinued Operations Distinction",
+      "stem": "Riverside Corp. sells a single piece of manufacturing equipment that does not represent a strategic shift in operations. The equipment is sold at a loss. Under ASC 360-10 and ASC 205-20, how should the loss be presented?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a component of income from continuing operations"
+        },
+        {
+          "label": "B",
+          "text": "As a discontinued operation, net of tax, below continuing operations"
+        },
+        { "label": "C", "text": "As a direct adjustment to retained earnings" },
+        { "label": "D", "text": "As an item of other comprehensive income" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 205-20-45-1B, a disposal is reported as a discontinued operation only if it represents a strategic shift that has (or will have) a major effect on the entity's operations and financial results. Selling a single piece of equipment that is not a strategic shift does not qualify as a discontinued operation. The gain or loss on disposal is reported within income from continuing operations, not net of tax below the line.",
+      "explanationJa": "ASC 205-20-45-1Bにより、処分が非継続事業として報告されるのは、企業の事業・財務結果に重大な影響を与える（または与える見込みの）戦略的転換を表す場合のみ。戦略的転換に当たらない単一設備の売却は非継続事業に該当しない。処分損益は、税引後で区分線下に表示せず、継続事業からの利益の中で報告する。",
+      "references": ["ASC 205-20-45-1B", "ASC 360-10-40-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-118",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Insurance Recovery on Involuntary Conversion",
+      "stem": "A fire destroys Maple Corp.'s warehouse, which had a cost of $700,000 and accumulated depreciation of $420,000. Maple receives $350,000 from its insurance company. What gain or loss should Maple recognize on the involuntary conversion?",
+      "choices": [
+        { "label": "A", "text": "$70,000 gain" },
+        { "label": "B", "text": "$350,000 loss" },
+        { "label": "C", "text": "$70,000 loss" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 610-30 and ASC 360-10-40, an involuntary conversion (e.g., destruction by fire with insurance proceeds) is accounted for by removing the asset's carrying amount and recognizing a gain or loss for the difference between the insurance proceeds and the carrying amount. Carrying amount = $700,000 - $420,000 = $280,000. Insurance proceeds = $350,000. Gain = $350,000 - $280,000 = $70,000.",
+      "explanationJa": "ASC 610-30およびASC 360-10-40により、非自発的転換（火災による滅失と保険金受取等）は、資産の帳簿価額を除却し、保険金と帳簿価額の差額を損益として認識する。帳簿価額 = $700,000 - $420,000 = $280,000。保険金 = $350,000。利得 = $350,000 - $280,000 = $70,000。",
+      "references": ["ASC 610-30-25-4", "ASC 360-10-40-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-119",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Land Held for Investment vs Operations",
+      "stem": "Horizon Corp. owns two parcels of land: Parcel 1 ($300,000) is the site of its operating headquarters, and Parcel 2 ($450,000) is held for long-term capital appreciation with no current use. How should each parcel be classified and is either depreciated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Parcel 1 as PP&E and Parcel 2 as a long-term investment; neither is depreciated"
+        },
+        {
+          "label": "B",
+          "text": "Both as PP&E; both depreciated over 40 years"
+        },
+        {
+          "label": "C",
+          "text": "Both as long-term investments; neither depreciated"
+        },
+        {
+          "label": "D",
+          "text": "Parcel 1 as PP&E (depreciated) and Parcel 2 as an investment (not depreciated)"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Land used in operations (Parcel 1) is classified as PP&E. Land held for long-term appreciation and not used in operations (Parcel 2) is classified as a long-term investment, not PP&E. Land is not depreciated regardless of classification because it has an indefinite useful life. Therefore, neither parcel is depreciated; only the classification differs based on intended use.",
+      "explanationJa": "営業に使用される土地（Parcel 1）はPP&Eに分類。長期的値上がり目的で営業に使用しない土地（Parcel 2）は長期投資に分類し、PP&Eではない。土地は耐用年数が無期限のため、分類にかかわらず減価償却しない。したがってどちらも減価償却せず、使用目的に基づき分類のみ異なる。",
+      "references": ["ASC 360-10-05-3", "ASC 360-10-35-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-120",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Capitalized Interest - Land Under Development",
+      "stem": "Pinnacle Corp. purchases land for $2,000,000 and immediately begins constructing a building on it. During the construction period, weighted-average accumulated expenditures (including the land) are $2,500,000. The applicable capitalization rate is 7%. Regarding interest on the land cost, which statement is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Interest capitalized on the land expenditures is added to the cost of the building (not the land), because the land is being developed for the building"
+        },
+        {
+          "label": "B",
+          "text": "No interest may be capitalized on land expenditures under any circumstances"
+        },
+        {
+          "label": "C",
+          "text": "Interest on land is always capitalized to the land account"
+        },
+        {
+          "label": "D",
+          "text": "Interest on land must be expensed because land is not a depreciable asset"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 835-20-30-9, if land is purchased and developed for a particular use (such as constructing a building), the land qualifies as an asset under development and is included in the qualifying asset base. The interest cost capitalized on expenditures for the land is added to the cost of the structure (building) being constructed, not to the land account, because the land is being developed for the structure. If land is developed for sale as lots, the interest would be capitalized as part of the land.",
+      "explanationJa": "ASC 835-20-30-9により、特定の用途（建物の建設等）のために土地を取得・開発する場合、その土地は開発中資産として適格資産の基礎に含まれる。土地の支出に対して資産化される利息費用は、土地が建物のために開発されているため、土地勘定ではなく建設中の建物の原価に加える。土地を区画分譲用に開発する場合は、利息は土地の一部として資産化される。",
+      "references": ["ASC 835-20-30-9"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-121",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Spare Parts and Standby Equipment Classification",
+      "stem": "Industrial Co. purchases a major spare component (a backup turbine) for $400,000 to be used only if its primary turbine fails. The backup turbine has a useful life of 12 years. How should Industrial account for this major spare part?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Capitalize as PP&E and depreciate over its useful life"
+        },
+        {
+          "label": "B",
+          "text": "Record as inventory and expense when placed into service"
+        },
+        {
+          "label": "C",
+          "text": "Expense immediately as a repairs and maintenance cost"
+        },
+        {
+          "label": "D",
+          "text": "Record as a prepaid expense and amortize over 12 months"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Major spare parts and standby (backup) equipment that an entity expects to use for more than one period qualify as property, plant, and equipment under ASC 360-10. The backup turbine has a 12-year useful life and provides standby service capacity, so it is capitalized as PP&E and depreciated over its useful life. Minor spare parts that are consumed quickly are typically carried as inventory, but a major standby component is a long-lived asset.",
+      "explanationJa": "1期間を超えて使用する見込みの主要なスペアパーツや待機（バックアップ）設備は、ASC 360-10の有形固定資産に該当する。バックアップタービンは耐用年数12年で待機サービス能力を提供するため、PP&Eとして資産計上し耐用年数にわたり減価償却する。短期間で消費される少額スペアパーツは通常棚卸資産として計上するが、主要な待機構成品は長期性資産。",
+      "references": ["ASC 360-10-05-3", "ASC 360-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-122",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Capitalized Interest - Equity Method Investee",
+      "stem": "Under ASC 835-20-15-5, an investor accounting for an investment under the equity method may capitalize interest on the investment when:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The investee has activities in progress necessary to commence its planned principal operations and is using funds to acquire qualifying assets for those operations"
+        },
+        { "label": "B", "text": "The investee pays regular dividends" },
+        {
+          "label": "C",
+          "text": "The investment is classified as available-for-sale"
+        },
+        {
+          "label": "D",
+          "text": "The investor owns less than 20% of the investee"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 835-20-15-5(c), investments accounted for by the equity method qualify for interest capitalization while the investee has activities in progress necessary to commence its planned principal operations, provided the investee's activities include the use of funds to acquire qualifying assets for its operations. Once the investee begins its principal operations, the qualifying status ends. Dividend-paying status, AFS classification, and ownership below 20% (which generally precludes equity-method accounting) are not the criteria.",
+      "explanationJa": "ASC 835-20-15-5(c)により、持分法で会計処理する投資は、被投資企業が計画した主要な事業を開始するために必要な活動を進行中で、かつその活動が事業用の適格資産取得のための資金使用を含む場合、利息資産化の対象となる。被投資企業が主要事業を開始すると適格性は終了する。配当支払の有無、AFS分類、20%未満の保有（一般に持分法適用を排除）は基準ではない。",
+      "references": ["ASC 835-20-15-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-123",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Depreciation - Fractional Year SYD Across Calendar Years",
+      "stem": "An asset costing $110,000 with a $10,000 salvage value and a 5-year life is purchased on July 1, Year 1. The company uses sum-of-the-years'-digits depreciation and allocates the first year over the partial period. What is the depreciation expense for the calendar year ended December 31, Year 2?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$33,333" },
+        { "label": "C", "text": "$26,667" },
+        { "label": "D", "text": "$28,333" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Depreciable base = $110,000 - $10,000 = $100,000. SYD denominator = 5+4+3+2+1 = 15. First full SYD year (5/15) = $100,000 x 5/15 = $33,333; second full SYD year (4/15) = $100,000 x 4/15 = $26,667. Because the asset was acquired July 1, each SYD 'year' straddles two calendar years. Calendar Year 2 = last half of SYD-Year-1 + first half of SYD-Year-2 = ($33,333 x 1/2) + ($26,667 x 1/2) = $16,667 + $13,333 = $30,000.",
+      "explanationJa": "償却基礎 = $110,000 - $10,000 = $100,000。SYD分母 = 5+4+3+2+1 = 15。SYD第1年度（5/15）= $100,000 x 5/15 = $33,333、SYD第2年度（4/15）= $100,000 x 4/15 = $26,667。7月1日取得のため各SYD「年度」は2暦年にまたがる。暦年Year 2 = SYD第1年度の後半 + SYD第2年度の前半 = ($33,333 x 1/2) + ($26,667 x 1/2) = $16,667 + $13,333 = $30,000。",
+      "references": ["ASC 360-10-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-124",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Asset Exchange - Loss Recognition When Lacking Commercial Substance",
+      "stem": "Coastal Co. exchanges a machine (cost $90,000, accumulated depreciation $50,000, fair value $32,000) for a similar machine. The exchange lacks commercial substance and no cash is exchanged. What gain or loss, if any, should Coastal recognize, and at what amount is the new machine recorded?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$8,000 loss; new machine recorded at $32,000"
+        },
+        { "label": "B", "text": "No loss; new machine recorded at $40,000" },
+        {
+          "label": "C",
+          "text": "$8,000 gain; new machine recorded at $40,000"
+        },
+        { "label": "D", "text": "$8,000 loss; new machine recorded at $40,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When an exchange lacks commercial substance, gains are deferred but losses are recognized immediately if the fair value of the asset given up is less than its book value (an indicated impairment). Book value of machine given = $90,000 - $50,000 = $40,000. Fair value = $32,000, which is below book value, so an $8,000 loss ($40,000 - $32,000) is recognized. The new machine is recorded at the fair value of the asset given up = $32,000 (book value less the recognized loss).",
+      "explanationJa": "交換に商業的実質がない場合、利得は繰り延べるが、引渡資産の公正価値が帳簿価額を下回る（減損の兆候）ときは損失を即時認識する。引渡機械の帳簿価額 = $90,000 - $50,000 = $40,000。公正価値 = $32,000で帳簿価額を下回るため、$8,000の損失（$40,000 - $32,000）を認識。新機械は引渡資産の公正価値 = $32,000（帳簿価額から認識損失を控除した額）で計上する。",
+      "references": ["ASC 845-10-30-3", "ASC 845-10-30-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-125",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Government Grant Related to Asset (Deferred Income Approach)",
+      "stem": "Solaris Inc. receives a $300,000 government grant to help fund the purchase of equipment costing $1,000,000 with a 10-year life. Solaris elects the deferred income method, recognizing the grant as deferred income and amortizing it over the equipment's life. What is the net effect on Year 1 pre-tax income from depreciation and grant amortization combined?",
+      "choices": [
+        { "label": "A", "text": "$70,000 net expense" },
+        { "label": "B", "text": "$100,000 net expense" },
+        { "label": "C", "text": "$30,000 net income" },
+        { "label": "D", "text": "$130,000 net expense" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "For-profit entities commonly account for asset-related government grants by analogy to IAS 20. Under the deferred income method, the grant is recorded as deferred income and amortized to income over the asset's life, while the asset is depreciated on its gross cost. Annual depreciation = $1,000,000 / 10 = $100,000 (expense). Annual grant amortization = $300,000 / 10 = $30,000 (income). Net effect on pre-tax income = $100,000 expense - $30,000 income = $70,000 net expense.",
+      "explanationJa": "営利企業は資産関連の政府助成金をIAS 20に類推して会計処理することが多い。繰延収益法では、助成金を繰延収益として計上し資産の耐用年数にわたり収益に振り替え、資産は総額原価で減価償却する。年間減価償却 = $1,000,000 / 10 = $100,000（費用）。年間助成金振替 = $300,000 / 10 = $30,000（収益）。税引前利益への純影響 = 費用$100,000 - 収益$30,000 = 純費用$70,000。",
+      "references": ["ASC 958-605-25-2", "ASC 360-10-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-126",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Capitalization - Relocation and Rearrangement Costs",
+      "stem": "Vantage Manufacturing pays $60,000 to relocate and rearrange its existing production machinery to improve workflow efficiency. The rearrangement is expected to provide benefits over future periods. Under U.S. GAAP, how should these rearrangement costs be treated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Capitalize and amortize over the period expected to benefit if future benefits are probable and measurable; otherwise expense"
+        },
+        {
+          "label": "B",
+          "text": "Always expense immediately as a period cost with no exceptions"
+        },
+        {
+          "label": "C",
+          "text": "Add to the cost of the land on which the factory sits"
+        },
+        {
+          "label": "D",
+          "text": "Recognize as a reduction of accumulated depreciation"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Rearrangement, reinstallation, and relocation costs that provide probable future economic benefits beyond the current period may be capitalized as a deferred cost and amortized over the periods expected to benefit. If the future benefit is not probable or cannot be reliably measured, the costs are expensed as incurred. They are not added to land, and they are not netted against accumulated depreciation.",
+      "explanationJa": "再配置・再据付・移設費用で、当期を超える将来の経済的便益が見込まれるものは、繰延費用として資産計上し便益が見込まれる期間にわたり償却できる。将来便益が見込めない、または信頼性をもって測定できない場合は発生時に費用処理する。これらは土地原価に加算せず、減価償却累計額と相殺もしない。",
+      "references": ["ASC 360-10-25-1", "ASC 720-15-25-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-127",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Goodwill - Interim Triggering Event Testing",
+      "stem": "Apex Group performs its annual goodwill impairment test on December 31. On August 15, a significant adverse legal ruling causes the fair value of one reporting unit to drop sharply. Under ASC 350-20, what is Apex required to do?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Test that reporting unit's goodwill for impairment between annual tests because a triggering event occurred"
+        },
+        {
+          "label": "B",
+          "text": "Take no interim action and rely solely on the next scheduled annual test on December 31"
+        },
+        {
+          "label": "C",
+          "text": "Immediately write off all goodwill of the entity"
+        },
+        {
+          "label": "D",
+          "text": "Amortize the goodwill prospectively starting August 15"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 350-20-35-30, goodwill of a reporting unit must be tested for impairment between annual tests if an event occurs or circumstances change that would more likely than not reduce the fair value of the reporting unit below its carrying amount. A significant adverse legal ruling is such a triggering event, so Apex must perform an interim impairment test for the affected reporting unit instead of relying only on the scheduled annual test. Goodwill is not amortized (except under the private company alternative), and a triggering event does not automatically result in writing off all goodwill.",
+      "explanationJa": "ASC 350-20-35-30により、報告単位の公正価値が帳簿価額を下回る可能性が高くなる事象・状況変化が生じた場合、年次テストの間でものれんの減損テストを行わなければならない。重大な不利な法的判決はそのトリガーイベントであり、Apexは予定された年次テストを待たず、影響を受ける報告単位について中間減損テストを実施しなければならない。のれんは（非公開会社の代替的処理を除き）償却せず、トリガーイベントが自動的に全のれんの償却を意味するわけではない。",
+      "references": ["ASC 350-20-35-30"],
+      "difficulty": "intermediate",
       "source": "Original - CPA Exam Practice"
     }
   ]
