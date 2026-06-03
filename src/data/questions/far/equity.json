@@ -2,7 +2,7 @@
   "id": "far-equity",
   "name": "Equity",
   "topic": "Equity",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "questions": [
     {
       "id": "eq-001",
@@ -2582,6 +2582,600 @@
       "explanationJa": "ASC 260-10-45-10に基づき、基本EPSは期中の加重平均発行済株式数を使用。1-3月（3ヶ月）：200,000株。4-9月（6ヶ月）：240,000株（+40,000発行）。10-12月（3ヶ月）：220,000株（−20,000自己株式取得）。加重平均 = (200,000 × 3/12) + (240,000 × 6/12) + (220,000 × 3/12) = 50,000 + 120,000 + 55,000 = 225,000株。基本EPS = $675,000 ÷ 225,000 = $3.00。期末株数220,000と加重平均225,000は異なる点に注意。",
       "references": ["ASC 260-10-45-10"],
       "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-096",
+      "topic": "Equity",
+      "subtopic": "Treasury Stock - Cost Method Acquisition",
+      "stem": "Marlin Corp. reacquires 3,000 shares of its $2 par common stock for $48 per share, using the cost method. Which statement correctly describes the effect of this transaction?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Total stockholders' equity decreases by $144,000"
+        },
+        {
+          "label": "B",
+          "text": "Total stockholders' equity decreases by $6,000"
+        },
+        {
+          "label": "C",
+          "text": "Common stock decreases by $6,000 and APIC decreases by $138,000"
+        },
+        {
+          "label": "D",
+          "text": "There is no effect on total stockholders' equity"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the cost method (ASC 505-30-30-7), treasury stock is debited at its full reacquisition cost of 3,000 × $48 = $144,000, with a credit to Cash for the same amount. Treasury stock is a contra-equity account, so total stockholders' equity decreases by the full $144,000. Par value and APIC are not affected at acquisition under the cost method; that allocation occurs only under the par value method.",
+      "explanationJa": "原価法（ASC 505-30-30-7）では、自己株式は再取得原価3,000 × $48 = $144,000全額で借方計上し、同額を現金で貸方計上する。自己株式は資本の控除勘定であるため、株主資本合計は$144,000減少する。取得時には額面とAPICには影響しない（その配分は額面法でのみ行われる）。",
+      "references": ["ASC 505-30-30-7"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-097",
+      "topic": "Equity",
+      "subtopic": "Treasury Stock - Reissuance Above Cost",
+      "stem": "Tarpon Inc. holds 4,000 shares of treasury stock acquired at $42 per share under the cost method. It reissues 2,500 of those shares at $50 per share. What amount is credited to additional paid-in capital from treasury stock transactions?",
+      "choices": [
+        { "label": "A", "text": "$32,000" },
+        { "label": "B", "text": "$20,000" },
+        { "label": "C", "text": "$125,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the cost method, treasury stock reissued above cost generates additional paid-in capital. Cash received = 2,500 × $50 = $125,000. Treasury stock is credited at cost = 2,500 × $42 = $105,000. The excess of proceeds over cost, $125,000 − $105,000 = $20,000, is credited to additional paid-in capital from treasury stock. No gain is recognized in net income on a company's own equity transactions.",
+      "explanationJa": "原価法では、原価超で再発行した自己株式は資本剰余金を生む。受取現金 = 2,500 × $50 = $125,000。自己株式は原価で貸方計上 = 2,500 × $42 = $105,000。手取金が原価を超える額$125,000 − $105,000 = $20,000を資本剰余金（自己株式取引）に貸方計上する。自社の資本取引で純利益に利得は認識しない。",
+      "references": ["ASC 505-30-30-7"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-098",
+      "topic": "Equity",
+      "subtopic": "Stock Splits - Memo Entry",
+      "stem": "Bonita Co. has 600,000 shares of $4 par common stock issued and outstanding and additional paid-in capital of $9,000,000. The board declares a 3-for-1 forward stock split. Immediately after the split, what are the par value per share and the additional paid-in capital balance?",
+      "choices": [
+        { "label": "A", "text": "Par value $12.00 per share; APIC $9,000,000" },
+        { "label": "B", "text": "Par value $4.00 per share; APIC $27,000,000" },
+        { "label": "C", "text": "Par value $1.333 per share; APIC $3,000,000" },
+        { "label": "D", "text": "Par value $1.333 per share; APIC $9,000,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A stock split changes the par value per share and the number of shares but requires only a memorandum entry — no dollar amounts in equity accounts change. After a 3-for-1 split, shares triple to 1,800,000 and par value is divided by 3: $4 / 3 = $1.333 per share. Total par remains 1,800,000 × $1.333 = $2,400,000 (unchanged from 600,000 × $4). Additional paid-in capital is unaffected and remains $9,000,000.",
+      "explanationJa": "株式分割は1株あたり額面と株式数を変更するが、備忘記録のみで資本勘定の金額は変わらない。3対1分割後、株式数は3倍の1,800,000株となり、額面は3で除して$4 / 3 = $1.333となる。額面総額は1,800,000 × $1.333 = $2,400,000で不変。資本剰余金は影響を受けず$9,000,000のまま。",
+      "references": ["ASC 505-20-25-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-099",
+      "topic": "Equity",
+      "subtopic": "Small Stock Dividend - Retained Earnings Effect",
+      "stem": "Sailfish Corp. has 80,000 shares of $1 par common stock outstanding with a current market price of $36 per share. The board declares a 15% stock dividend. What is the reduction in retained earnings resulting from the dividend?",
+      "choices": [
+        { "label": "A", "text": "$12,000" },
+        { "label": "B", "text": "$432,000" },
+        { "label": "C", "text": "$2,880,000" },
+        { "label": "D", "text": "$420,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A stock dividend below the 20–25% threshold is a small stock dividend recorded at fair market value (ASC 505-20-30-3). New shares issued = 80,000 × 15% = 12,000. Retained earnings is reduced by the fair value of those shares = 12,000 × $36 = $432,000. Of that, $12,000 (12,000 × $1 par) is credited to common stock and $420,000 to additional paid-in capital.",
+      "explanationJa": "20〜25%未満の株式配当は小規模株式配当であり、公正市場価値で記録する（ASC 505-20-30-3）。新規発行株式 = 80,000 × 15% = 12,000株。利益剰余金はその公正価値分減少する = 12,000 × $36 = $432,000。うち$12,000（12,000 × $1額面）を普通株式、$420,000を資本剰余金に貸方計上する。",
+      "references": ["ASC 505-20-30-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-100",
+      "topic": "Equity",
+      "subtopic": "Basic EPS - Cumulative Preferred and Mid-Year Issuance",
+      "stem": "Halibut Corp. reported net income of $945,000 for the year. It has 8,000 shares of 7%, $50 par cumulative preferred stock outstanding all year. Common shares were 300,000 on January 1, and 60,000 additional common shares were issued on May 1. What is basic EPS for the year?",
+      "choices": [
+        { "label": "A", "text": "$2.78" },
+        { "label": "B", "text": "$2.55" },
+        { "label": "C", "text": "$2.70" },
+        { "label": "D", "text": "$2.63" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cumulative preferred dividends are deducted whether or not declared: 8,000 × $50 × 7% = $28,000. Income available to common = $945,000 − $28,000 = $917,000. Weighted-average shares = 300,000 × 12/12 + 60,000 × 8/12 = 300,000 + 40,000 = 340,000. Basic EPS = $917,000 / 340,000 = $2.70.",
+      "explanationJa": "累積優先配当は宣言の有無にかかわらず控除する：8,000 × $50 × 7% = $28,000。普通株主に帰属する利益 = $945,000 − $28,000 = $917,000。加重平均株式数 = 300,000 × 12/12 + 60,000 × 8/12 = 340,000。基本EPS = $917,000 / 340,000 = $2.70。",
+      "references": ["ASC 260-10-45-11"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-101",
+      "topic": "Equity",
+      "subtopic": "Diluted EPS - Treasury Stock Method",
+      "stem": "Pompano Corp. has net income of $1,200,000 and 400,000 weighted-average common shares outstanding. It has 50,000 stock options outstanding with an exercise price of $20; the average market price of the stock during the year was $32. The options are the only potentially dilutive security. What is diluted EPS?",
+      "choices": [
+        { "label": "A", "text": "$3.00" },
+        { "label": "B", "text": "$2.67" },
+        { "label": "C", "text": "$2.87" },
+        { "label": "D", "text": "$2.79" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Applying the treasury stock method (ASC 260-10-45-23): assumed proceeds = 50,000 × $20 = $1,000,000; shares repurchased at the average market price = $1,000,000 / $32 = 31,250; incremental dilutive shares = 50,000 − 31,250 = 18,750. Diluted shares = 400,000 + 18,750 = 418,750. Diluted EPS = $1,200,000 / 418,750 = $2.87.",
+      "explanationJa": "自己株式法（ASC 260-10-45-23）を適用する。想定手取金 = 50,000 × $20 = $1,000,000。平均市場価格での買戻株数 = $1,000,000 / $32 = 31,250株。希薄化増加株式数 = 50,000 − 31,250 = 18,750株。希薄化後株式数 = 400,000 + 18,750 = 418,750株。希薄化後EPS = $1,200,000 / 418,750 = $2.87。",
+      "references": ["ASC 260-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-102",
+      "topic": "Equity",
+      "subtopic": "Stock Compensation - Graded Vesting Accelerated Method",
+      "stem": "Wahoo Inc. grants 6,000 stock options with graded vesting: 2,000 vest at the end of Year 1, 2,000 at the end of Year 2, and 2,000 at the end of Year 3. The total grant-date fair value is $120,000 ($20 per option). Using the graded-vesting (accelerated) attribution method, what compensation expense is recognized in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$73,333" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the accelerated method (ASC 718-10-35-8), each tranche is treated as a separate award amortized over its own service period. Each tranche has fair value 2,000 × $20 = $40,000. Year 1 expense = $40,000 × 1/1 (first tranche) + $40,000 × 1/2 (second tranche) + $40,000 × 1/3 (third tranche) = $40,000 + $20,000 + $13,333 = $73,333.",
+      "explanationJa": "加速法（ASC 718-10-35-8）では、各トランシュを別個のアワードとして各勤務期間で償却する。各トランシュの公正価値は2,000 × $20 = $40,000。Year 1費用 = $40,000 × 1/1（第1トランシュ）+ $40,000 × 1/2（第2トランシュ）+ $40,000 × 1/3（第3トランシュ）= $40,000 + $20,000 + $13,333 = $73,333。",
+      "references": ["ASC 718-10-35-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-103",
+      "topic": "Equity",
+      "subtopic": "Cash-Settled SARs - Liability Measurement",
+      "stem": "Snapper Co. grants 2,000 cash-settled stock appreciation rights (SARs) that vest over a three-year service period. The fair value of each SAR is $12 at the end of Year 1 and $18 at the end of Year 2. What is the cumulative compensation liability recognized at the end of Year 2?",
+      "choices": [
+        { "label": "A", "text": "$36,000" },
+        { "label": "B", "text": "$24,000" },
+        { "label": "C", "text": "$8,000" },
+        { "label": "D", "text": "$12,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cash-settled SARs are liability-classified and remeasured to fair value each period (ASC 718-30-35-3). The cumulative liability equals total fair value × the cumulative portion of the service period elapsed. At the end of Year 2: 2,000 × $18 × 2/3 = $24,000. The Year 1 liability was 2,000 × $12 × 1/3 = $8,000, so the Year 2 incremental expense is $16,000, but the cumulative recognized liability at the end of Year 2 is $24,000.",
+      "explanationJa": "現金決済のSARは負債分類であり、各期に公正価値で再測定する（ASC 718-30-35-3）。累積負債 = 総公正価値 × 経過した勤務期間の累積割合。Year 2末：2,000 × $18 × 2/3 = $24,000。Year 1負債は2,000 × $12 × 1/3 = $8,000であったため、Year 2の増分費用は$16,000だが、Year 2末の累積負債は$24,000である。",
+      "references": ["ASC 718-30-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-104",
+      "topic": "Equity",
+      "subtopic": "Book Value Per Common Share",
+      "stem": "Grouper Corp. has total stockholders' equity of $8,000,000. Its preferred stock consists of 30,000 shares of $50 par, 5% cumulative preferred, callable at $52 per share, with one year of dividends in arrears. There are 400,000 common shares outstanding. What is the book value per common share?",
+      "choices": [
+        { "label": "A", "text": "$20.00" },
+        { "label": "B", "text": "$16.10" },
+        { "label": "C", "text": "$15.91" },
+        { "label": "D", "text": "$16.06" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The preferred claim equals the call (liquidation) value plus cumulative dividends in arrears. Call value = 30,000 × $52 = $1,560,000. Dividends in arrears = 30,000 × $50 × 5% × 1 year = $75,000. Total preferred claim = $1,635,000. Equity available to common = $8,000,000 − $1,635,000 = $6,365,000. Book value per common share = $6,365,000 / 400,000 = $15.91.",
+      "explanationJa": "優先株の請求額は償還（清算）価値に累積未払配当を加えたものである。償還価値 = 30,000 × $52 = $1,560,000。未払配当 = 30,000 × $50 × 5% × 1年 = $75,000。優先請求合計 = $1,635,000。普通株に帰属する資本 = $8,000,000 − $1,635,000 = $6,365,000。1株当たり簿価 = $6,365,000 / 400,000 = $15.91。",
+      "references": ["ASC 505-10-S99"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-105",
+      "topic": "Equity",
+      "subtopic": "Diluted EPS - Convertible Preferred If-Converted",
+      "stem": "Dorado Corp. has net income of $800,000 and 250,000 weighted-average common shares outstanding. It also has 20,000 shares of convertible preferred stock paying an annual dividend of $3 per share; each preferred share is convertible into 2 common shares. What is diluted EPS?",
+      "choices": [
+        { "label": "A", "text": "$2.96" },
+        { "label": "B", "text": "$2.55" },
+        { "label": "C", "text": "$2.76" },
+        { "label": "D", "text": "$3.20" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Basic EPS = ($800,000 − $60,000 preferred dividends) / 250,000 = $740,000 / 250,000 = $2.96. Under the if-converted method (ASC 260-10-45-40), the preferred dividend of $60,000 (20,000 × $3) is added back to the numerator and the 40,000 conversion shares (20,000 × 2) are added to the denominator: $800,000 / 290,000 = $2.76. Because $2.76 is below basic EPS of $2.96, the conversion is dilutive and diluted EPS is $2.76.",
+      "explanationJa": "基本EPS = ($800,000 − 優先配当$60,000) / 250,000 = $740,000 / 250,000 = $2.96。転換仮定法（ASC 260-10-45-40）では、優先配当$60,000（20,000 × $3）を分子に戻し、転換株式40,000株（20,000 × 2）を分母に加算する：$800,000 / 290,000 = $2.76。$2.76が基本EPS $2.96を下回るため転換は希薄化的であり、希薄化後EPSは$2.76である。",
+      "references": ["ASC 260-10-45-40"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-106",
+      "topic": "Equity",
+      "subtopic": "Diluted EPS - Convertible Bonds If-Converted",
+      "stem": "Mackerel Corp. has net income of $2,100,000 and 800,000 weighted-average common shares outstanding. It has $3,000,000 of 5% convertible bonds outstanding; each $1,000 bond is convertible into 25 common shares. The effective tax rate is 21%. What is diluted EPS?",
+      "choices": [
+        { "label": "A", "text": "$2.63" },
+        { "label": "B", "text": "$2.40" },
+        { "label": "C", "text": "$2.54" },
+        { "label": "D", "text": "$2.57" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Basic EPS = $2,100,000 / 800,000 = $2.63. Under the if-converted method, the after-tax interest is added back to the numerator: interest = $3,000,000 × 5% = $150,000; after tax = $150,000 × (1 − 0.21) = $118,500; adjusted numerator = $2,218,500. Conversion shares = (3,000 bonds × 25) = 75,000; adjusted denominator = 875,000. Diluted EPS = $2,218,500 / 875,000 = $2.54. Because $2.54 is below basic EPS, the bonds are dilutive.",
+      "explanationJa": "基本EPS = $2,100,000 / 800,000 = $2.63。転換仮定法では、税引後利息を分子に戻す：利息 = $3,000,000 × 5% = $150,000；税引後 = $150,000 × (1 − 0.21) = $118,500；調整後分子 = $2,218,500。転換株式 = 3,000口 × 25 = 75,000株；調整後分母 = 875,000株。希薄化後EPS = $2,218,500 / 875,000 = $2.54。$2.54が基本EPSを下回るため社債は希薄化的である。",
+      "references": ["ASC 260-10-45-40"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-107",
+      "topic": "Equity",
+      "subtopic": "Large Stock Dividend - Par Value",
+      "stem": "Barracuda Co. has 200,000 shares of $2 par common stock outstanding with a market price of $30 per share. It declares a 50% stock dividend. At what amount is retained earnings reduced to record this dividend?",
+      "choices": [
+        { "label": "A", "text": "$3,000,000" },
+        { "label": "B", "text": "$2,800,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A stock dividend of 20–25% or more is a large stock dividend recorded at par value, not market value (ASC 505-20-30-3). Shares issued = 200,000 × 50% = 100,000. Retained earnings is reduced by 100,000 × $2 par = $200,000, with an equal credit to common stock. No additional paid-in capital arises on a large stock dividend recorded at par.",
+      "explanationJa": "20〜25%以上の株式配当は大型株式配当であり、時価ではなく額面価額で記録する（ASC 505-20-30-3）。発行株式 = 200,000 × 50% = 100,000株。利益剰余金は100,000 × $2額面 = $200,000減少し、同額を普通株式に貸方計上する。額面で記録する大型株式配当では資本剰余金は生じない。",
+      "references": ["ASC 505-20-30-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-108",
+      "topic": "Equity",
+      "subtopic": "Weighted Average Shares - Split After Issuance",
+      "stem": "Albacore Corp. had 120,000 common shares outstanding on January 1. On April 1, it issued 30,000 additional shares for cash. On August 1, it declared a 2-for-1 stock split. What is the weighted-average number of shares used in the basic EPS computation for the year?",
+      "choices": [
+        { "label": "A", "text": "285,000" },
+        { "label": "B", "text": "262,500" },
+        { "label": "C", "text": "205,000" },
+        { "label": "D", "text": "300,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Stock splits are applied retroactively to the beginning of the period for all shares already issued, including the April 1 issuance (ASC 260-10-55-12). Restated shares: 120,000 × 2 = 240,000 from January 1, and 30,000 × 2 = 60,000 issued April 1. January 1 – March 31: 240,000 × 3/12 = 60,000. April 1 – December 31: 300,000 × 9/12 = 225,000. Weighted average = 60,000 + 225,000 = 285,000.",
+      "explanationJa": "株式分割は、4月1日発行分を含め既発行株式すべてに対し期首に遡及適用する（ASC 260-10-55-12）。再表示後の株式：1月1日から120,000 × 2 = 240,000株、4月1日発行30,000 × 2 = 60,000株。1〜3月：240,000 × 3/12 = 60,000。4〜12月：300,000 × 9/12 = 225,000。加重平均 = 60,000 + 225,000 = 285,000。",
+      "references": ["ASC 260-10-55-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-109",
+      "topic": "Equity",
+      "subtopic": "Restricted Stock - Equity Classification",
+      "stem": "Sturgeon Inc. grants 4,000 shares of restricted stock to an executive on January 1, Year 1. The shares vest after a four-year service period and are settled in shares. The grant-date fair value is $25 per share; on the vesting date the share price has risen to $40. Assuming no forfeitures, what total compensation cost does Sturgeon recognize over the service period?",
+      "choices": [
+        { "label": "A", "text": "$160,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$25,000" },
+        { "label": "D", "text": "$130,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Share-settled restricted stock is an equity-classified award measured at grant-date fair value and not remeasured (ASC 718-10-30-2). Total compensation cost = 4,000 × $25 = $100,000, recognized straight-line over the four-year service period ($25,000 per year). The rise in share price to $40 on the vesting date does not change the expense because equity-classified awards are locked to grant-date fair value.",
+      "explanationJa": "株式決済の譲渡制限付株式は持分分類のアワードであり、付与日公正価値で測定し再測定しない（ASC 718-10-30-2）。報酬費用総額 = 4,000 × $25 = $100,000を4年の勤務期間にわたり定額で認識する（年$25,000）。権利確定日の株価$40への上昇は費用に影響しない。持分分類のアワードは付与日公正価値に固定されるためである。",
+      "references": ["ASC 718-10-30-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-110",
+      "topic": "Equity",
+      "subtopic": "Treasury Stock - Reissuance Below Cost",
+      "stem": "Anchovy Corp. holds 3,000 treasury shares acquired at $48 per share under the cost method. The balance in additional paid-in capital from treasury stock is $5,000. Anchovy reissues 1,500 of the shares at $40 per share. What amount is debited to retained earnings on this reissuance?",
+      "choices": [
+        { "label": "A", "text": "$7,000" },
+        { "label": "B", "text": "$12,000" },
+        { "label": "C", "text": "$5,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cash received = 1,500 × $40 = $60,000; treasury stock is credited at cost = 1,500 × $48 = $72,000, leaving a $12,000 shortfall. Under the cost method (ASC 505-30-30-8), the shortfall is first absorbed by existing additional paid-in capital from treasury stock ($5,000), and any remainder is debited to retained earnings. Retained earnings is debited for $12,000 − $5,000 = $7,000.",
+      "explanationJa": "受取現金 = 1,500 × $40 = $60,000。自己株式は原価で貸方計上 = 1,500 × $48 = $72,000となり、$12,000の不足が生じる。原価法（ASC 505-30-30-8）では、不足額はまず既存の資本剰余金（自己株式）$5,000で吸収し、残額を利益剰余金から借方計上する。利益剰余金は$12,000 − $5,000 = $7,000借方計上される。",
+      "references": ["ASC 505-30-30-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-111",
+      "topic": "Equity",
+      "subtopic": "AOCI - Components Identification",
+      "stem": "Which of the following items would be reported in accumulated other comprehensive income rather than in net income under U.S. GAAP?",
+      "choices": [
+        { "label": "A", "text": "Realized gain on the sale of equipment" },
+        {
+          "label": "B",
+          "text": "Unrealized holding gain on a trading debt security"
+        },
+        {
+          "label": "C",
+          "text": "Effective portion of the gain on a cash flow hedging derivative"
+        },
+        {
+          "label": "D",
+          "text": "Unrealized holding gain on an equity security with a readily determinable fair value"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The effective portion of the gain or loss on a derivative designated as a cash flow hedge is deferred in other comprehensive income and accumulated in AOCI until the hedged transaction affects earnings (ASC 220-10-45-10A). Realized equipment gains and unrealized gains on trading securities go directly to net income, and under ASC 321 unrealized gains on equity securities with readily determinable fair values are also recognized in net income.",
+      "explanationJa": "キャッシュフローヘッジに指定されたデリバティブの損益の有効部分は、ヘッジ対象取引が損益に影響するまでその他の包括利益に繰り延べAOCIに累積する（ASC 220-10-45-10A）。設備売却益や売買目的証券の未実現益は純利益に直接計上され、ASC 321により公正価値が容易に算定できる持分証券の未実現益も純利益に認識される。",
+      "references": ["ASC 220-10-45-10A"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-112",
+      "topic": "Equity",
+      "subtopic": "Noncontrolling Interest - Goodwill (Full Method)",
+      "stem": "Permit Corp. acquires 75% of Bonefish Corp. for $6,000,000 cash. The fair value of Bonefish's identifiable net assets is $6,400,000, and the fair value of the 25% noncontrolling interest is $1,900,000. Under ASC 805, what amount of goodwill is recognized in the consolidated financial statements?",
+      "choices": [
+        { "label": "A", "text": "$1,200,000" },
+        { "label": "B", "text": "$400,000" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$1,500,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "U.S. GAAP requires the full (fair-value) goodwill method. Goodwill = (consideration transferred + fair value of the noncontrolling interest) − fair value of identifiable net assets = ($6,000,000 + $1,900,000) − $6,400,000 = $1,500,000 (ASC 805-20-30-1). This total includes goodwill attributable to both the controlling and noncontrolling interests.",
+      "explanationJa": "U.S. GAAPは全部（公正価値）のれん法を求める。のれん = （移転対価 + 非支配持分の公正価値）− 識別可能純資産の公正価値 = ($6,000,000 + $1,900,000) − $6,400,000 = $1,500,000（ASC 805-20-30-1）。この総額には支配持分と非支配持分の双方に帰属するのれんが含まれる。",
+      "references": ["ASC 805-20-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-113",
+      "topic": "Equity",
+      "subtopic": "Fully Participating Preferred Stock - Dividend Allocation",
+      "stem": "Crevalle Corp. has 8,000 shares of $100 par, 5% fully participating preferred stock and 40,000 shares of $10 par common stock outstanding. The board declares total dividends of $150,000. How much is allocated to the preferred shareholders?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$110,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Preferred par = 8,000 × $100 = $800,000; common par = 40,000 × $10 = $400,000. Step 1 — preferred current dividend: $800,000 × 5% = $40,000. Step 2 — matching common dividend: $400,000 × 5% = $20,000. Step 3 — remainder $150,000 − $40,000 − $20,000 = $90,000 is shared on relative par; preferred share = $90,000 × ($800,000 / $1,200,000) = $60,000. Preferred total = $40,000 + $60,000 = $100,000.",
+      "explanationJa": "優先株額面 = 8,000 × $100 = $800,000、普通株額面 = 40,000 × $10 = $400,000。ステップ1—優先株当期配当：$800,000 × 5% = $40,000。ステップ2—普通株同率配当：$400,000 × 5% = $20,000。ステップ3—残余$150,000 − $40,000 − $20,000 = $90,000を額面比率で配分し、優先株分 = $90,000 × ($800,000 / $1,200,000) = $60,000。優先株合計 = $40,000 + $60,000 = $100,000。",
+      "references": ["ASC 505-10-S99"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-114",
+      "topic": "Equity",
+      "subtopic": "Quasi-Reorganization - Deficit Elimination",
+      "stem": "Ladyfish Corp. carries out a quasi-reorganization to eliminate an accumulated deficit of $3,000,000. Immediately before the readjustment, additional paid-in capital is $4,500,000 and the asset write-downs have already been recorded. After the quasi-reorganization, what are the balances of retained earnings and additional paid-in capital?",
+      "choices": [
+        { "label": "A", "text": "Retained earnings $1,500,000; APIC $0" },
+        { "label": "B", "text": "Retained earnings $0; APIC $1,500,000" },
+        {
+          "label": "C",
+          "text": "Retained earnings $(3,000,000); APIC $4,500,000"
+        },
+        { "label": "D", "text": "Retained earnings $0; APIC $4,500,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a quasi-reorganization, the accumulated deficit is eliminated against additional paid-in capital (ASC 852-20-25). The $3,000,000 deficit is charged against APIC, reducing it from $4,500,000 to $1,500,000, and retained earnings is reset to $0. The newly dated retained earnings then begins to accumulate from a zero balance, and the date of the readjustment is disclosed for a period of time.",
+      "explanationJa": "準更生では、累積欠損金を資本剰余金に充当して消去する（ASC 852-20-25）。欠損金$3,000,000をAPICから控除し、$4,500,000から$1,500,000に減少させ、利益剰余金を$0にリセットする。日付を付した利益剰余金はゼロから累積を開始し、再調整の日付は一定期間開示される。",
+      "references": ["ASC 852-20-25"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-115",
+      "topic": "Equity",
+      "subtopic": "ESPP - Noncompensatory Safe Harbor",
+      "stem": "Drum Corp. sponsors an employee stock purchase plan open to substantially all full-time employees, with no option features other than a short enrollment period. For the plan to qualify as noncompensatory under ASC 718, the purchase discount from market price generally must not exceed which threshold?",
+      "choices": [
+        { "label": "A", "text": "5%" },
+        { "label": "B", "text": "10%" },
+        { "label": "C", "text": "15%" },
+        { "label": "D", "text": "25%" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 718-50-25-1, an ESPP is noncompensatory only if it meets all specified conditions, including that the discount from market price does not exceed the per-share issuance cost the entity would otherwise incur — a discount of 5% or less is the safe harbor presumed not to exceed those costs. A discount above 5% makes the plan compensatory unless the entity can justify a higher percentage based on actual avoided issuance costs.",
+      "explanationJa": "ASC 718-50-25-1により、ESPPが非報酬型となるのは、市場価格からの割引が企業が本来負担する1株当たり発行コストを超えないこと等の所定要件をすべて満たす場合のみである。5%以下の割引が当該コストを超えないと推定される安全基準（セーフハーバー）である。5%超の割引は、回避された発行コストに基づき高い割引率を正当化できない限り報酬型となる。",
+      "references": ["ASC 718-50-25-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-116",
+      "topic": "Equity",
+      "subtopic": "Cumulative Preferred - Dividends in Arrears Allocation",
+      "stem": "Tilapia Corp. has 12,000 shares of 6%, $100 par cumulative preferred stock outstanding. No dividends were declared in Year 1 or Year 2. In Year 3 the board declares total dividends of $300,000. How much of the Year 3 dividend is allocated to the preferred shareholders?",
+      "choices": [
+        { "label": "A", "text": "$72,000" },
+        { "label": "B", "text": "$144,000" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$216,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The annual preferred entitlement is 12,000 × $100 × 6% = $72,000. Because the stock is cumulative, the two prior years in arrears ($72,000 × 2 = $144,000) plus the Year 3 current entitlement ($72,000) must be paid before any common dividend. Preferred total = $144,000 + $72,000 = $216,000. Since $300,000 exceeds $216,000, preferred receives $216,000 and common receives the remaining $84,000.",
+      "explanationJa": "優先株の年間配当は12,000 × $100 × 6% = $72,000。累積的であるため、過去2年の未払分（$72,000 × 2 = $144,000）に当期Year 3分（$72,000）を加えた額を普通株配当に先立ち支払う必要がある。優先株合計 = $144,000 + $72,000 = $216,000。$300,000が$216,000を超えるため、優先株に$216,000、普通株に残り$84,000が配分される。",
+      "references": ["ASC 505-10-50-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-117",
+      "topic": "Equity",
+      "subtopic": "Callable Preferred Stock - Retirement",
+      "stem": "Pickerel Corp. has 6,000 shares of $25 par callable preferred stock outstanding, originally issued at $28 per share. The stock is callable at $31 per share, and Pickerel calls and retires all of the shares. Which journal entry correctly records the retirement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Preferred Stock $150,000; Debit APIC—Preferred $36,000; Credit Cash $186,000"
+        },
+        {
+          "label": "B",
+          "text": "Debit Preferred Stock $150,000; Debit APIC—Preferred $18,000; Debit Retained Earnings $18,000; Credit Cash $186,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Preferred Stock $186,000; Credit Cash $186,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Preferred Stock $150,000; Credit APIC—Preferred $36,000; Credit Cash $186,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "On retirement, preferred stock is removed at par (6,000 × $25 = $150,000) and the related APIC from original issuance is removed (6,000 × ($28 − $25) = $18,000). The call price exceeds the original issue price by $3 per share, so 6,000 × ($31 − $28) = $18,000 is charged to retained earnings (an excess of reacquisition cost over carrying amount is not a gain and never increases income). Cash paid = 6,000 × $31 = $186,000.",
+      "explanationJa": "退却時、優先株式を額面で除去（6,000 × $25 = $150,000）し、当初発行時の関連APICを除去する（6,000 × ($28 − $25) = $18,000）。償還価格が当初発行価格を1株$3超えるため、6,000 × ($31 − $28) = $18,000を利益剰余金に賦課する（再取得原価が帳簿価額を超える額は利得ではなく、純利益を増加させない）。支払現金 = 6,000 × $31 = $186,000。",
+      "references": ["ASC 505-30-30-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-118",
+      "topic": "Equity",
+      "subtopic": "Prior Period Adjustment - Inventory Error",
+      "stem": "During Year 2, Croaker Corp. discovers that ending inventory at the end of Year 1 was overstated by $80,000 due to a counting error. The applicable tax rate is 25%. What is the effect on the opening balance of retained earnings at the beginning of Year 2?",
+      "choices": [
+        { "label": "A", "text": "Decrease of $80,000" },
+        { "label": "B", "text": "Decrease of $20,000" },
+        { "label": "C", "text": "Increase of $60,000" },
+        { "label": "D", "text": "Decrease of $60,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "An overstatement of ending inventory in Year 1 understated cost of goods sold and therefore overstated pre-tax income by $80,000. Correcting the error retrospectively (ASC 250-10-45-23) reduces beginning retained earnings of Year 2 by the after-tax amount: $80,000 × (1 − 0.25) = $60,000. The error correction is a prior period adjustment to opening retained earnings, not an item of current-year income.",
+      "explanationJa": "Year 1期末棚卸資産の過大計上は売上原価を過少にし、税引前利益を$80,000過大にした。誤謬を遡及修正する（ASC 250-10-45-23）と、Year 2期首利益剰余金は税引後額だけ減少する：$80,000 × (1 − 0.25) = $60,000。誤謬訂正は期首利益剰余金への前期損益修正であり、当期利益の項目ではない。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-119",
+      "topic": "Equity",
+      "subtopic": "Stock Subscription - Initial Recording",
+      "stem": "Mullet Corp. receives subscriptions for 8,000 shares of $5 par common stock at $18 per share, collecting a 30% down payment in cash. Which journal entry correctly records the subscription?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Cash $43,200; Credit Common Stock $40,000; Credit APIC $3,200"
+        },
+        {
+          "label": "B",
+          "text": "Debit Cash $144,000; Credit Common Stock Subscribed $40,000; Credit APIC $104,000"
+        },
+        {
+          "label": "C",
+          "text": "Debit Cash $43,200; Debit Stock Subscriptions Receivable $100,800; Credit Common Stock Subscribed $40,000; Credit APIC $104,000"
+        },
+        {
+          "label": "D",
+          "text": "Debit Cash $43,200; Debit Stock Subscriptions Receivable $100,800; Credit Common Stock $144,000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Total subscription price = 8,000 × $18 = $144,000. Cash down payment = 30% × $144,000 = $43,200; stock subscriptions receivable = $100,800. Common stock subscribed is credited at par = 8,000 × $5 = $40,000, and APIC is credited for the excess over par = 8,000 × ($18 − $5) = $104,000. The shares are formally issued only when the subscription is fully collected; until then, common stock subscribed is reported within equity.",
+      "explanationJa": "引受価額合計 = 8,000 × $18 = $144,000。現金頭金 = 30% × $144,000 = $43,200、引受金未収金 = $100,800。普通株式引受済を額面で貸方計上 = 8,000 × $5 = $40,000、APICを額面超過分で貸方計上 = 8,000 × ($18 − $5) = $104,000。株式は引受金が全額回収された時点で正式発行され、それまでは普通株式引受済を資本に表示する。",
+      "references": ["ASC 505-10-45-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-120",
+      "topic": "Equity",
+      "subtopic": "Property Dividend - Fair Value Measurement",
+      "stem": "Pike Corp. declares a property dividend consisting of investment securities to be distributed to common shareholders. On the declaration date the securities have a carrying amount of $180,000 and a fair value of $240,000. What gain (if any) does Pike recognize on the declaration date, and at what amount is the dividend liability recorded?",
+      "choices": [
+        { "label": "A", "text": "No gain; dividend liability of $180,000" },
+        {
+          "label": "B",
+          "text": "Gain of $60,000; dividend liability of $180,000"
+        },
+        { "label": "C", "text": "No gain; dividend liability of $240,000" },
+        {
+          "label": "D",
+          "text": "Gain of $60,000; dividend liability of $240,000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A nonreciprocal transfer of nonmonetary assets to owners (a property dividend) is measured at the fair value of the assets distributed (ASC 845-10-30-1). On the declaration date the securities are first remeasured to fair value, producing a gain of $240,000 − $180,000 = $60,000 in net income, and the dividend liability and the charge to retained earnings are both recorded at the $240,000 fair value.",
+      "explanationJa": "所有者への非貨幣性資産の非互恵的移転（財産配当）は、分配される資産の公正価値で測定する（ASC 845-10-30-1）。宣言日にまず証券を公正価値に再測定し、$240,000 − $180,000 = $60,000の利得を純利益に計上する。配当負債および利益剰余金への賦課はいずれも公正価値$240,000で記録する。",
+      "references": ["ASC 845-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-121",
+      "topic": "Equity",
+      "subtopic": "Scrip Dividend - Interest Accrual",
+      "stem": "On October 1, Year 1, Carp Corp. declares a scrip dividend by issuing notes totaling $200,000 to shareholders, payable on April 1, Year 2, and bearing interest at 8% per annum. What is the total amount Carp will pay shareholders on April 1, Year 2?",
+      "choices": [
+        { "label": "A", "text": "$208,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$216,000" },
+        { "label": "D", "text": "$204,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A scrip dividend is a promissory note to pay a dividend at a later date, generally with interest. The $200,000 principal is charged to retained earnings on the declaration date. Interest accrues for six months (October 1 to April 1): $200,000 × 8% × 6/12 = $8,000, recognized as interest expense, not as a dividend. Total cash paid at maturity = $200,000 + $8,000 = $208,000.",
+      "explanationJa": "手形配当は将来の期日に配当を支払う約束手形で、通常利息が付く。元本$200,000は宣言日に利益剰余金へ賦課する。利息は6か月（10月1日〜4月1日）発生する：$200,000 × 8% × 6/12 = $8,000で、配当ではなく利息費用として認識する。満期の支払総額 = $200,000 + $8,000 = $208,000。",
+      "references": ["ASC 505-20-25-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-122",
+      "topic": "Equity",
+      "subtopic": "AOCI - Prior Service Cost Amortization",
+      "stem": "Bluegill Corp. has unrecognized prior service cost of $150,000 in accumulated other comprehensive income related to a defined benefit pension plan amendment. The average remaining service period of active participants is 12 years. Using straight-line amortization, what amount is reclassified from AOCI into net periodic pension cost in the first year?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$75,000" },
+        { "label": "C", "text": "$18,000" },
+        { "label": "D", "text": "$12,500" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Prior service cost arising from a plan amendment is initially recorded in other comprehensive income and then amortized into net periodic pension cost over the average remaining service period of the active employees expected to receive benefits (ASC 715-30-35-11). Straight-line amortization = $150,000 / 12 years = $12,500 per year, which is reclassified out of AOCI and reduces the AOCI balance by $12,500 in the first year.",
+      "explanationJa": "制度改定により生じた過去勤務費用は、まずその他の包括利益に計上し、給付を受けると見込まれる現役従業員の平均残存勤務期間にわたって純年金費用に償却する（ASC 715-30-35-11）。定額償却 = $150,000 / 12年 = $12,500/年で、これがAOCIから組み替えられ、初年度にAOCI残高を$12,500減少させる。",
+      "references": ["ASC 715-30-35-11"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-123",
+      "topic": "Equity",
+      "subtopic": "Stock Issuance Costs - Effect on APIC",
+      "stem": "Perch Corp. issues 20,000 shares of $1 par common stock at $25 per share and incurs $40,000 of direct, incremental issuance costs (legal, underwriting, and registration fees). After recording the issuance, what is the balance of additional paid-in capital attributable to this transaction?",
+      "choices": [
+        { "label": "A", "text": "$440,000" },
+        { "label": "B", "text": "$480,000" },
+        { "label": "C", "text": "$460,000" },
+        { "label": "D", "text": "$500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Direct, incremental costs of issuing equity are charged against the proceeds and reduce additional paid-in capital; they are not expensed (ASC 505-10-25-2; SEC SAB Topic 5A). Gross proceeds = 20,000 × $25 = $500,000. Common stock is credited at par = 20,000 × $1 = $20,000, leaving $480,000 of APIC before costs. Subtracting the $40,000 of issuance costs gives APIC = $480,000 − $40,000 = $440,000.",
+      "explanationJa": "株式発行の直接増分コストは発行収入から控除し資本剰余金を減額する。費用計上はしない（ASC 505-10-25-2、SEC SAB Topic 5A）。総収入 = 20,000 × $25 = $500,000。普通株式を額面で貸方計上 = 20,000 × $1 = $20,000で、コスト控除前のAPICは$480,000。発行コスト$40,000を差し引くとAPIC = $480,000 − $40,000 = $440,000。",
+      "references": ["ASC 505-10-25-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-124",
+      "topic": "Equity",
+      "subtopic": "Stock Options - Forfeiture Estimate Revision",
+      "stem": "On January 1, Year 1, Sole Corp. grants 20,000 stock options with a grant-date fair value of $6 per option and a four-year cliff vesting period. The initial estimated forfeiture rate is 8%. At the end of Year 3, management revises the estimated forfeiture rate to 12%. What is the cumulative compensation expense recognized through the end of Year 3?",
+      "choices": [
+        { "label": "A", "text": "$82,800" },
+        { "label": "B", "text": "$90,000" },
+        { "label": "C", "text": "$105,600" },
+        { "label": "D", "text": "$79,200" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Compensation cost is recognized based on the awards expected to vest, with forfeiture estimates revised as a change in estimate using a cumulative catch-up (ASC 718-10-35-3). At the end of Year 3, options expected to vest = 20,000 × (1 − 0.12) = 17,600; total expected compensation = 17,600 × $6 = $105,600. Recognized over four years, the cumulative amount through Year 3 = $105,600 × 3/4 = $79,200.",
+      "explanationJa": "報酬費用は権利確定見込みのアワードに基づき認識し、失効率の見積変更は累積的キャッチアップにより処理する（ASC 718-10-35-3）。Year 3末、権利確定見込みのオプション = 20,000 × (1 − 0.12) = 17,600個、見込報酬総額 = 17,600 × $6 = $105,600。4年で認識するため、Year 3末までの累計 = $105,600 × 3/4 = $79,200。",
+      "references": ["ASC 718-10-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-125",
+      "topic": "Equity",
+      "subtopic": "Noncontrolling Interest - Allocation of Subsidiary Income",
+      "stem": "Flounder Corp. owns 70% of Sole Inc., which reports net income of $500,000 for the year with no intercompany transactions. In the consolidated statement of operations, what amount of net income is allocated to the noncontrolling interest?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$350,000" },
+        { "label": "C", "text": "$500,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-45-19, consolidated net income is allocated between the controlling and noncontrolling interests based on their ownership percentages. The noncontrolling interest's share = 30% × $500,000 = $150,000. This amount is presented as net income attributable to the noncontrolling interest on the face of the consolidated income statement, and the controlling interest is allocated the remaining $350,000.",
+      "explanationJa": "ASC 810-10-45-19により、連結純利益は持分比率に基づき支配持分と非支配持分に配分する。非支配持分の取り分 = 30% × $500,000 = $150,000。この額は連結損益計算書の本体に非支配持分に帰属する純利益として表示し、支配持分には残りの$350,000を配分する。",
+      "references": ["ASC 810-10-45-19"],
+      "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }
   ]

@@ -2,7 +2,7 @@
   "id": "far-derivatives-hedging",
   "name": "Derivatives & Hedging",
   "topic": "Derivatives & Hedging",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "questions": [
     {
       "id": "deriv-001",
@@ -2106,6 +2106,543 @@
         "ASC 815-20-25-94A"
       ],
       "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-071",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Derivative Definition - Net Settlement",
+      "stem": "A contract references a commodity index (the underlying) and a notional quantity, and either party may settle the contract by paying the net cash difference rather than taking physical delivery. Which characteristic of a derivative under ASC 815 does the cash-difference settlement feature satisfy?",
+      "choices": [
+        { "label": "A", "text": "The net settlement characteristic" },
+        {
+          "label": "B",
+          "text": "The requirement that the contract be exchange-traded"
+        },
+        {
+          "label": "C",
+          "text": "The requirement for a large initial net investment"
+        },
+        {
+          "label": "D",
+          "text": "The requirement that the contract have a stated maturity exceeding one year"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 815-10-15-83(c) lists net settlement as one of the three defining characteristics of a derivative. A contract meets the net settlement criterion when its terms implicitly or explicitly require or permit net settlement, when one party can be net settled outside the contract (e.g., through a market mechanism), or when an asset to be delivered is readily convertible to cash. The ability to settle the net cash difference instead of taking physical delivery satisfies this characteristic. Exchange-trading, a large initial investment, and a minimum maturity are not derivative requirements.",
+      "explanationJa": "ASC 815-10-15-83(c)は差金決済をデリバティブの3つの定義特性の1つとして掲げる。契約条件が差金決済を要求・許容する場合、市場メカニズム等で一方が契約外で差金決済できる場合、または引き渡す資産が容易に換金可能な場合に差金決済要件を満たす。物理的受渡しの代わりに正味現金差額を決済できる点がこの特性を満たす。取引所取引・多額の当初投資・最低満期はデリバティブの要件ではない。",
+      "references": ["ASC 815-10-15-83", "ASC 815-10-15-100"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-072",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Speculation - Purchased Call Loss",
+      "stem": "On March 1, Marlow Co. pays a premium of $25,000 to purchase a call option on 5,000 shares with a strike price of $60. The option is not designated as a hedge. At the December 31 year-end, the option's fair value has fallen to $18,000. What is the effect on Marlow's current-year earnings?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No effect until the option is exercised or expires"
+        },
+        { "label": "B", "text": "Gain of $18,000" },
+        { "label": "C", "text": "Loss of $7,000" },
+        { "label": "D", "text": "Loss of $25,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A derivative not designated as a hedging instrument is carried at fair value with all changes in fair value recognized in current earnings (ASC 815-10-35-2). The option was recorded at its $25,000 cost and its fair value at year-end is $18,000, so the change in fair value is $18,000 − $25,000 = $7,000, recognized as a loss in earnings. The premium is not expensed in full because the option still has $18,000 of remaining fair value at year-end.",
+      "explanationJa": "ヘッジ指定のないデリバティブは公正価値で計上し、公正価値の変動を全額当期損益に認識する（ASC 815-10-35-2）。オプションは取得原価$25,000で計上され、年末の公正価値は$18,000であるため、変動額は$18,000 − $25,000 = △$7,000の損失として損益に認識される。年末時点でオプションになお$18,000の公正価値が残るため、プレミアム全額を費用処理はしない。",
+      "references": ["ASC 815-10-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-073",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge - Swap Settlement to Interest Expense",
+      "stem": "Sutter Corp. has $20,000,000 of variable-rate debt and designates a pay-fixed, receive-variable interest rate swap as a cash flow hedge. The swap's fixed rate is 5.0% and the variable leg resets to SOFR. For the current quarter, SOFR is 3.5%. What net swap settlement does Sutter add to interest expense for the quarter when the hedged interest payment affects earnings?",
+      "choices": [
+        { "label": "A", "text": "$75,000 added to interest expense" },
+        { "label": "B", "text": "$75,000 reduction of interest expense" },
+        { "label": "C", "text": "$300,000 added to interest expense" },
+        {
+          "label": "D",
+          "text": "$0; swap settlements never affect interest expense"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "On a pay-fixed, receive-variable swap, the net quarterly settlement equals (Fixed rate − Variable rate) × Notional × (1/4 year) = (5.0% − 3.5%) × $20,000,000 × 0.25 = 1.5% × $20,000,000 × 0.25 = $75,000. Because the fixed rate exceeds the variable rate this period, Sutter pays the counterparty, so the $75,000 net settlement increases interest expense. Under a cash flow hedge, the effective portion held in OCI is reclassified to earnings in the same period the hedged interest payment affects earnings, producing this net charge (ASC 815-30-35-38).",
+      "explanationJa": "固定支払・変動受取スワップの四半期の純決済額 = (固定レート − 変動レート) × 想定元本 × (1/4年) = (5.0% − 3.5%) × $20,000,000 × 0.25 = 1.5% × $20,000,000 × 0.25 = $75,000。当期は固定レートが変動レートを上回るためSutterが相手方へ支払い、純決済額$75,000が利息費用を増加させる。キャッシュフローヘッジではOCIの有効部分を、ヘッジ対象の利息支払が損益に影響する同じ期間に振り替え、この純費用が生じる（ASC 815-30-35-38）。",
+      "references": ["ASC 815-30-35-38", "ASC 815-30-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-074",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge - Interest Rate Risk Conversion",
+      "stem": "Crandall Inc. has $8,000,000 of variable-rate debt indexed to SOFR and enters into a receive-variable, pay-fixed interest rate swap designated as a cash flow hedge. Which statement best describes the economic and accounting effect of this hedge?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The swap converts fixed-rate debt into variable-rate debt, and the swap's fair value change is reported in earnings"
+        },
+        {
+          "label": "B",
+          "text": "The swap converts the variable-rate interest exposure into a fixed-rate exposure, and the effective portion of the swap's fair value change is reported in OCI"
+        },
+        {
+          "label": "C",
+          "text": "The swap is a fair value hedge, and the debt's carrying amount is adjusted for changes in interest rates"
+        },
+        {
+          "label": "D",
+          "text": "The swap's entire fair value change is recognized immediately in earnings because variable-rate debt cannot be hedged"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A receive-variable, pay-fixed swap on variable-rate debt economically transforms the borrower's net interest payments into a fixed rate: the variable receipts offset the variable interest on the debt, leaving the fixed leg as the net cost. Because the hedged exposure is the variability in future interest cash flows, this qualifies as a cash flow hedge, and the effective portion of the swap's change in fair value is reported in OCI and reclassified to earnings as the hedged interest payments affect earnings.",
+      "explanationJa": "変動金利債務に対する変動受取・固定支払スワップは、借り手の正味利息支払を固定金利に経済的に転換する。変動受取が債務の変動利息を相殺し、固定脚が正味コストとして残る。ヘッジ対象が将来の利息キャッシュフローの変動性であるため、これはキャッシュフローヘッジに該当し、スワップの公正価値変動の有効部分はOCIに計上され、ヘッジ対象の利息支払が損益に影響する期間に損益へ振り替えられる。",
+      "references": ["ASC 815-20-25-15", "ASC 815-30-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-075",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Interest Rate Cap - Semiannual Payoff",
+      "stem": "Denholm Co. purchases an interest rate cap with a strike rate of 4.5% on a notional amount of $4,000,000. Settlement occurs semiannually. For the current six-month period, the reference rate (SOFR) resets to 6.0%. What payoff does Denholm receive from the cap for this period?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$240,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An interest rate cap pays the holder when the reference rate exceeds the strike rate, prorated for the settlement period. Payoff = (Reference rate − Strike rate) × Notional × (period fraction) = (6.0% − 4.5%) × $4,000,000 × (6/12) = 1.5% × $4,000,000 × 0.5 = $30,000. The semiannual settlement requires multiplying the annual rate differential by one-half.",
+      "explanationJa": "金利キャップは参照レートがストライクレートを超えた場合に、決済期間で按分して保有者に支払われる。支払額 = (参照レート − ストライクレート) × 想定元本 × (期間按分) = (6.0% − 4.5%) × $4,000,000 × (6/12) = 1.5% × $4,000,000 × 0.5 = $30,000。半年決済のため年率差を2分の1する必要がある。",
+      "references": ["ASC 815-10-15-83", "ASC 815-20-25-82"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-076",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Embedded Derivative - Clearly and Closely Related",
+      "stem": "Foster Corp. issues a fixed-rate bond that the issuer may call (redeem early) at a premium that compensates the holder for the unamortized issuance costs. The bond is measured at amortized cost. Under ASC 815-15, must the embedded call option be bifurcated and accounted for as a separate derivative?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because every call option in a debt instrument must be bifurcated"
+        },
+        {
+          "label": "B",
+          "text": "Yes, because the bond is measured at amortized cost rather than fair value"
+        },
+        {
+          "label": "C",
+          "text": "No, because a call option whose exercise price approximates the bond's amortized cost on each exercise date is clearly and closely related to the debt host"
+        },
+        {
+          "label": "D",
+          "text": "No, because embedded derivatives are never bifurcated from debt hosts"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 815-15-25-42, a call (or put) option embedded in a debt instrument is considered clearly and closely related to the debt host if the option's exercise price is approximately equal to the debt's amortized cost (par plus or minus unamortized premium/discount and issuance costs) on each exercise date, and the instrument was not acquired at a substantial premium or discount. Because the call here is exercisable at an amount approximating amortized cost, it is clearly and closely related and is not bifurcated.",
+      "explanationJa": "ASC 815-15-25-42により、債務商品に組み込まれたコール（またはプット）オプションは、各行使日における行使価格が債務の償却原価（額面に未償却プレミアム/ディスカウントおよび発行費用を加減した額）にほぼ等しく、商品が大幅なプレミアム・ディスカウントで取得されていない場合、債務ホストと明確かつ密接に関連すると判断される。本問のコールは償却原価に近似する金額で行使可能であるため明確かつ密接に関連し、分離されない。",
+      "references": ["ASC 815-15-25-42", "ASC 815-15-25-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-077",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Fair Value Hedge - Net Earnings Effect",
+      "stem": "Halloran Co. holds a fixed-rate bond payable and designates a receive-fixed, pay-variable interest rate swap as a fair value hedge. During the period, interest rates fall: the swap's fair value decreases by $62,000 and the bond's fair value increases by $59,500 due to the hedged interest rate risk. What is the net effect on earnings for the period?",
+      "choices": [
+        { "label": "A", "text": "Loss of $62,000" },
+        { "label": "B", "text": "Loss of $2,500" },
+        { "label": "C", "text": "Gain of $59,500" },
+        { "label": "D", "text": "Gain of $2,500" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a fair value hedge, both the change in fair value of the hedging derivative and the change in fair value of the hedged item attributable to the hedged risk are recognized in earnings. The swap loss is $62,000 and the bond fair value gain attributable to the hedged risk is $59,500. Net effect = −$62,000 + $59,500 = −$2,500, a net loss representing the hedge ineffectiveness for the period.",
+      "explanationJa": "公正価値ヘッジでは、ヘッジ手段の公正価値変動とヘッジ対象のヘッジリスクに帰属する公正価値変動の両方を損益に認識する。スワップ損失$62,000、社債のヘッジリスク帰属公正価値利益$59,500。純影響 = △$62,000 + $59,500 = △$2,500の純損失であり、当期のヘッジ非有効部分を表す。",
+      "references": ["ASC 815-25-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-078",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Net Investment Hedge - Ineffective Portion",
+      "stem": "Reyes Corp. designates a foreign currency forward contract as a hedge of its net investment in a Mexican subsidiary. For the period, the forward contract has a gain of $90,000, while the translation loss on the net investment attributable to the hedged risk is $84,000. Assuming the entity assesses effectiveness based on changes in fair value, how is the $6,000 excess accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognized in the cumulative translation adjustment within OCI"
+        },
+        {
+          "label": "B",
+          "text": "Deferred until the subsidiary is sold or liquidated"
+        },
+        {
+          "label": "C",
+          "text": "Recorded as an adjustment to the carrying amount of the investment"
+        },
+        {
+          "label": "D",
+          "text": "Recognized currently in earnings as the ineffective portion of the hedge"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "For a net investment hedge, the effective portion of the hedging instrument's gain or loss is reported in the cumulative translation adjustment in OCI, mirroring the translation adjustment on the net investment. When effectiveness is assessed based on changes in fair value, any excess of the hedging instrument's gain over the offsetting translation loss is ineffective. Here the $6,000 excess ($90,000 − $84,000) is the ineffective portion and is recognized currently in earnings; the $84,000 effective portion goes to the cumulative translation adjustment.",
+      "explanationJa": "純投資ヘッジでは、ヘッジ手段の損益の有効部分を純投資の換算調整と対応させてOCIの累積換算調整勘定（CTA）に計上する。有効性を公正価値の変動で評価する場合、ヘッジ手段の利益が相殺される換算損失を超える部分は非有効である。本問では超過額$6,000（$90,000 − $84,000）が非有効部分として当期損益に認識され、有効部分$84,000はCTAに計上される。",
+      "references": ["ASC 815-35-35-1", "ASC 815-35-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-079",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Commodity Futures - Cash Flow Hedge OCI",
+      "stem": "Brixton Manufacturing enters into commodity futures contracts to pay a fixed price of $85 per unit and receive the floating market price on 8,000 units of aluminum, designating the contracts as a cash flow hedge of a forecasted purchase. At the first settlement date, the floating market price is $91 per unit. Assuming the hedge is fully effective, what amount is recorded in other comprehensive income?",
+      "choices": [
+        { "label": "A", "text": "Loss of $48,000" },
+        { "label": "B", "text": "Gain of $728,000" },
+        { "label": "C", "text": "Gain of $48,000" },
+        { "label": "D", "text": "Gain of $680,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the futures, Brixton receives the floating price ($91) and pays the fixed price ($85), so the net gain per unit is $91 − $85 = $6. For 8,000 units, the gain is $6 × 8,000 = $48,000. For a fully effective cash flow hedge, the effective portion of the gain on the hedging instrument is recorded in OCI (ASC 815-30-35-3) and later reclassified when the hedged purchase affects earnings.",
+      "explanationJa": "先物では、Brixtonは変動価格（$91）を受け取り固定価格（$85）を支払うため、1単位当たりの純利益は$91 − $85 = $6。8,000単位では利益は$6 × 8,000 = $48,000。完全に有効なキャッシュフローヘッジでは、ヘッジ手段の利益の有効部分をOCIに計上し（ASC 815-30-35-3）、ヘッジ対象の購入が損益に影響する時点で振り替える。",
+      "references": ["ASC 815-30-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-080",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Scope - Capacity (Power Purchase) Contract",
+      "stem": "A manufacturer enters into a multi-year power purchase agreement that obligates it to buy a stated quantity of electricity each month for use in its own operations, with physical delivery and no provision for net settlement. The quantities match the entity's expected usage in the normal course of business. Under ASC 815, how is this contract most appropriately treated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It must always be accounted for as a derivative measured at fair value"
+        },
+        {
+          "label": "B",
+          "text": "It may qualify for the normal purchases and normal sales scope exception and not be accounted for as a derivative"
+        },
+        {
+          "label": "C",
+          "text": "It must be bifurcated into a host contract and an embedded derivative"
+        },
+        {
+          "label": "D",
+          "text": "It is accounted for as an operating lease of the power-generating facility"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 815-10-15-22 through 15-51 permit the normal purchases and normal sales (NPNS) scope exception for contracts that provide for the physical delivery of quantities expected to be used or sold in the normal course of business, when net settlement is not provided for and the entity has no past practice of net settling similar contracts. A power purchase agreement for the entity's own consumption that meets these conditions can be designated under the NPNS exception and is not accounted for as a derivative.",
+      "explanationJa": "ASC 815-10-15-22〜15-51は、通常業務で使用・販売が見込まれる数量の物理的受渡しを定める契約について、差金決済の定めがなく、類似契約を差金決済する過去の慣行がない場合に、通常購入・通常販売（NPNS）の適用除外を認める。自家消費目的の電力購入契約がこれらの要件を満たす場合、NPNS例外として指定でき、デリバティブとして会計処理されない。",
+      "references": ["ASC 815-10-15-22", "ASC 815-10-15-36"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-081",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Interest Rate Floor - Out-of-the-Money Payoff",
+      "stem": "Wexler Co. purchases an interest rate floor with a strike rate of 3.5% on a notional amount of $15,000,000, settled annually. For the current year, the reference rate (SOFR) resets to 4.2%. What payoff does Wexler receive from the floor for the year?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$105,000" },
+        { "label": "C", "text": "$525,000" },
+        { "label": "D", "text": "$630,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An interest rate floor pays the holder only when the reference rate falls below the strike rate. Here the reference rate of 4.2% exceeds the 3.5% strike, so the floor is out of the money and the payoff = max(Strike rate − Reference rate, 0) × Notional = max(3.5% − 4.2%, 0) × $15,000,000 = $0. The holder receives nothing this period because rates did not decline below the strike level.",
+      "explanationJa": "金利フロアは参照レートがストライクレートを下回った場合にのみ保有者に支払われる。本問では参照レート4.2%がストライク3.5%を上回るためフロアはアウト・オブ・ザ・マネーであり、支払額 = max(ストライクレート − 参照レート, 0) × 想定元本 = max(3.5% − 4.2%, 0) × $15,000,000 = $0。金利がストライク水準を下回らなかったため当期の受取はない。",
+      "references": ["ASC 815-10-15-83", "ASC 815-20-25-82"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-082",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedge of Recognized Foreign-Currency Receivable",
+      "stem": "Tanaka Inc., a U.S. company, has a recognized account receivable denominated in euros and enters into a forward contract to sell euros to offset the foreign currency transaction exposure. Even without formal hedge designation, what is the earnings effect of pairing the forward contract with the foreign-currency receivable?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The change in fair value of the forward contract is deferred in OCI until the receivable is collected"
+        },
+        {
+          "label": "B",
+          "text": "Neither the receivable remeasurement nor the forward's fair value change affects earnings until settlement"
+        },
+        {
+          "label": "C",
+          "text": "The transaction gain or loss on remeasuring the receivable and the change in fair value of the forward contract are both recognized in earnings, providing a natural offset"
+        },
+        {
+          "label": "D",
+          "text": "Only the forward contract is remeasured; the receivable remains at the historical exchange rate"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A recognized foreign-currency-denominated receivable is remeasured each period at the current spot rate, with the transaction gain or loss recognized in earnings under ASC 830-20-35-1. A forward contract that is not designated as a hedge is measured at fair value with changes recognized in earnings under ASC 815-10-35-2. Because both the receivable remeasurement and the forward's fair value change flow through earnings, they naturally offset, so formal hedge accounting is generally unnecessary for an economic hedge of an existing recognized monetary item.",
+      "explanationJa": "外貨建ての認識済み債権は各期に直物レートで再測定され、為替差損益はASC 830-20-35-1により損益に認識される。ヘッジ指定のない先渡契約はASC 815-10-35-2により公正価値で測定され、変動が損益に認識される。債権の再測定と先渡の公正価値変動の両方が損益を通るため自然に相殺され、既存の認識済み貨幣項目の経済的ヘッジには正式なヘッジ会計は通常不要である。",
+      "references": ["ASC 830-20-35-1", "ASC 815-10-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-083",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Forward Contract - Remeasurement Gain (Sell Position)",
+      "stem": "On November 1, Year 1, a U.S. company enters into a forward contract to sell €600,000 at a forward rate of $1.18/€. The contract is not designated as a hedge. At the December 31 year-end, the forward rate applicable to the remaining maturity is $1.13/€. Ignoring discounting, what gain or loss does the company record on the forward contract at December 31?",
+      "choices": [
+        { "label": "A", "text": "Gain of $30,000" },
+        { "label": "B", "text": "Loss of $30,000" },
+        { "label": "C", "text": "Gain of $708,000" },
+        { "label": "D", "text": "Loss of $18,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The company is committed to sell euros at $1.18, while the year-end forward rate for the remaining term has fallen to $1.13. Because the company can sell at a rate higher than the current market forward rate, the contract is favorable. Gain = (Contracted sell rate − Current forward rate) × Notional = ($1.18 − $1.13) × €600,000 = $0.05 × 600,000 = $30,000. As an undesignated derivative, the $30,000 gain is recognized in earnings (ASC 815-10-35-2).",
+      "explanationJa": "当社はユーロを$1.18で売る義務を負う一方、残存期間の年末先渡レートは$1.13に下落した。現在の市場先渡レートより高いレートで売却できるため契約は有利である。利益 = (契約売却レート − 現在の先渡レート) × 想定元本 = ($1.18 − $1.13) × €600,000 = $0.05 × 600,000 = $30,000。指定なしデリバティブとして、利益$30,000を損益に認識する（ASC 815-10-35-2）。",
+      "references": ["ASC 815-10-35-2", "ASC 830-20-35-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-084",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge - Basis Adjustment (Loss)",
+      "stem": "Under ASU 2017-12, Calloway Co. designates a cash flow hedge of a forecasted purchase of machinery and elects the basis adjustment approach. When the machinery is acquired, accumulated other comprehensive income holds a loss of $25,000 related to the hedge. How does this affect the machinery's initial carrying amount?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The cost basis of the machinery is decreased by $25,000"
+        },
+        {
+          "label": "B",
+          "text": "The $25,000 loss is recognized immediately in earnings at acquisition"
+        },
+        {
+          "label": "C",
+          "text": "The $25,000 loss remains in AOCI and is amortized over the machinery's useful life"
+        },
+        {
+          "label": "D",
+          "text": "The cost basis of the machinery is increased by $25,000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under the basis adjustment approach permitted by ASU 2017-12, accumulated OCI amounts from a cash flow hedge of a forecasted purchase of a nonfinancial asset are reclassified from AOCI to adjust the asset's initial cost basis when it is recognized. A loss in AOCI increases the asset's cost basis (a gain would decrease it). Therefore the $25,000 AOCI loss increases the machinery's carrying amount by $25,000, which then affects future depreciation.",
+      "explanationJa": "ASU 2017-12で認められた基礎調整アプローチでは、非金融資産の予定購入に対するキャッシュフローヘッジのAOCI累積額を、資産認識時にその取得原価の調整としてAOCIから振り替える。AOCIの損失は資産の取得原価を増加させる（利益なら減少させる）。したがってAOCIの損失$25,000は機械の取得原価を$25,000増加させ、将来の減価償却に影響する。",
+      "references": ["ASC 815-30-35-38"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-085",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Interest Rate Cap - Cash Flow Hedge OCI",
+      "stem": "Orion Capital purchases an interest rate cap with a strike rate of 4.0% on a notional amount of $12,000,000 and designates it as a cash flow hedge of the interest payments on its variable-rate debt. Settlement is annual. For the current year, the reference rate (SOFR) resets to 6.0%. Assuming the hedge is fully effective, what amount of the cap's intrinsic value gain is recorded in other comprehensive income for the period?",
+      "choices": [
+        { "label": "A", "text": "Gain of $240,000" },
+        { "label": "B", "text": "Gain of $720,000" },
+        { "label": "C", "text": "Loss of $240,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The cap pays the holder when the reference rate exceeds the strike: intrinsic payoff = (Reference rate − Strike rate) × Notional = (6.0% − 4.0%) × $12,000,000 = 2.0% × $12,000,000 = $240,000. Because the cap is designated as a fully effective cash flow hedge of the variable-rate interest payments, the effective portion of the gain on the hedging instrument is recorded in OCI (ASC 815-30-35-3) and reclassified to earnings as the hedged interest payments affect earnings.",
+      "explanationJa": "キャップは参照レートがストライクを超えた場合に保有者へ支払う：内在的支払額 = (参照レート − ストライクレート) × 想定元本 = (6.0% − 4.0%) × $12,000,000 = 2.0% × $12,000,000 = $240,000。キャップは変動金利の利息支払に対する完全に有効なキャッシュフローヘッジに指定されているため、ヘッジ手段の利益の有効部分はOCIに計上され（ASC 815-30-35-3）、ヘッジ対象の利息支払が損益に影響する期間に損益へ振り替えられる。",
+      "references": ["ASC 815-30-35-3", "ASC 815-20-25-82"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-086",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Benchmark Interest Rate - Hedged Risk",
+      "stem": "Under ASC 815 as amended by ASU 2017-12 and ASU 2018-16, when hedging interest rate risk of a fixed-rate financial instrument, an entity may designate the hedged risk as the risk of changes in which of the following?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The entity's own incremental borrowing rate determined at hedge inception"
+        },
+        {
+          "label": "B",
+          "text": "The total contractual coupon cash flows, which cannot be decomposed"
+        },
+        {
+          "label": "C",
+          "text": "A permitted benchmark interest rate, such as SOFR (the Secured Overnight Financing Rate)"
+        },
+        {
+          "label": "D",
+          "text": "Only the prime rate published by the entity's primary lender"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 815-20-25-6A and the amendments in ASU 2017-12 and ASU 2018-16 expanded the list of permitted U.S. benchmark interest rates that may be designated as the hedged risk for a fair value hedge of interest rate risk to include the SOFR Overnight Index Swap rate, along with rates such as the U.S. Treasury rate and the Fed Funds Effective Swap rate. Designating the benchmark-rate component allows the entity to isolate the interest rate risk attributable to that benchmark.",
+      "explanationJa": "ASC 815-20-25-6AおよびASU 2017-12・ASU 2018-16の改正は、金利リスクの公正価値ヘッジでヘッジ対象リスクとして指定できる米国のベンチマーク金利の範囲を拡大し、米国債金利やFedファンド実効スワップ金利に加えてSOFRのオーバーナイト・インデックス・スワップ金利を含めた。ベンチマーク金利の構成要素を指定することで、当該ベンチマークに帰属する金利リスクを切り出せる。",
+      "references": ["ASC 815-20-25-6A", "ASC 815-20-25-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-087",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Interest Rate Floor - Annual Payoff",
+      "stem": "Pemberton Bank purchases an interest rate floor with a strike rate of 3.0% on a notional amount of $10,000,000, settled annually. For the current year, the reference rate (SOFR) resets to 1.8%. What payoff does Pemberton receive from the floor for the year?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$180,000" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An interest rate floor pays the holder when the reference rate falls below the strike rate. Payoff = (Strike rate − Reference rate) × Notional = (3.0% − 1.8%) × $10,000,000 = 1.2% × $10,000,000 = $120,000. A floor protects the holder (such as a lender or a holder of a variable-rate asset) against declines in interest rates below the strike level.",
+      "explanationJa": "金利フロアは参照レートがストライクレートを下回った場合に保有者に支払われる。支払額 = (ストライクレート − 参照レート) × 想定元本 = (3.0% − 1.8%) × $10,000,000 = 1.2% × $10,000,000 = $120,000。フロアは保有者（貸し手や変動金利資産の保有者など）をストライク水準を下回る金利低下から保護する。",
+      "references": ["ASC 815-10-15-83", "ASC 815-20-25-82"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-088",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Fair Value Hedge - Discontinuation Basis Amortization",
+      "stem": "Larkspur Co. discontinues a fair value hedge of its fixed-rate bond payable. At discontinuation, the cumulative basis adjustment to the bond's carrying amount from the hedge is $30,000, and the bond has 5 years remaining to maturity. How is the $30,000 basis adjustment accounted for after the hedge is discontinued?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It is immediately written off to earnings at the date of discontinuation"
+        },
+        {
+          "label": "B",
+          "text": "It is reclassified to OCI and remains there until the bond matures"
+        },
+        {
+          "label": "C",
+          "text": "It is reversed against the carrying amount of the bond with no earnings effect"
+        },
+        {
+          "label": "D",
+          "text": "It is amortized to earnings as an adjustment to interest expense over the bond's remaining term"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 815-25-40-8, when a fair value hedge of an interest-bearing financial instrument is discontinued, the cumulative basis adjustment that adjusted the hedged item's carrying amount is amortized to earnings. For a debt instrument, the adjustment is amortized as a yield adjustment to interest expense over the remaining life of the instrument, beginning no later than when the hedged item ceases to be adjusted for changes in fair value attributable to the hedged risk.",
+      "explanationJa": "ASC 815-25-40-8により、利付金融商品の公正価値ヘッジを中止した場合、ヘッジ対象の帳簿価額を調整していた累積基礎調整額は損益に償却される。債務商品の場合、当該調整額は商品の残存期間にわたり利息費用に対する利回り調整として償却され、ヘッジリスクに帰属する公正価値変動についてヘッジ対象の調整が止まる時点までに開始する。",
+      "references": ["ASC 815-25-40-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-089",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Written Swaption - Premium Received",
+      "stem": "Vandermark Co. writes (sells) a swaption and receives a premium of $38,000. The swaption is not designated as a hedge. At expiration, the holder does not exercise the option. What is the total impact on Vandermark's earnings from the written swaption?",
+      "choices": [
+        { "label": "A", "text": "Loss of $38,000" },
+        { "label": "B", "text": "Gain of $38,000" },
+        { "label": "C", "text": "$0" },
+        {
+          "label": "D",
+          "text": "Gain equal to the fair value of the underlying swap at expiration"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A written swaption is a derivative recorded at fair value (ASC 815-10-35-1). At inception, the $38,000 premium received is recorded as a liability equal to the swaption's fair value. As an undesignated derivative, changes in fair value are recognized in earnings each period. When the swaption expires unexercised, its fair value is zero, so the liability is extinguished. The cumulative change from a $38,000 liability to $0 produces a total gain of $38,000 recognized in earnings.",
+      "explanationJa": "売建スワプションは公正価値で記録するデリバティブである（ASC 815-10-35-1）。組成時に受け取ったプレミアム$38,000をスワプションの公正価値に等しい負債として計上する。指定なしデリバティブとして、各期の公正価値変動を損益に認識する。スワプションが未行使で満期を迎えると公正価値はゼロとなり負債が消滅する。$38,000の負債からゼロへの累積変動が利益$38,000として損益に認識される。",
+      "references": ["ASC 815-10-35-1", "ASC 815-10-15-83"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-090",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedge Effectiveness - Critical Terms Match",
+      "stem": "Halverson Co. designates a forward contract as a cash flow hedge of a forecasted purchase. The notional amount of the forward equals the quantity of the forecasted purchase, the underlying and currency match, and the forward's maturity coincides with the expected purchase date. Under ASC 815, what does satisfying these critical terms allow the entity to conclude?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The hedge is presumed to be perfectly effective, eliminating the need to record the derivative at fair value"
+        },
+        {
+          "label": "B",
+          "text": "The forecasted transaction need not be probable of occurring"
+        },
+        {
+          "label": "C",
+          "text": "The entity may qualitatively conclude the hedge is expected to be highly effective without a quantitative effectiveness calculation"
+        },
+        {
+          "label": "D",
+          "text": "The derivative's fair value changes may be recognized directly in earnings rather than OCI"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the critical-terms-match method in ASC 815-20-25-84, if the critical terms of the hedging instrument and the hedged forecasted transaction are the same (notional/quantity, underlying, currency, and timing), the entity may conclude that changes in fair value attributable to the hedged risk are expected to completely offset, supporting a qualitative assessment that the hedge is highly effective. The derivative is still recorded at fair value, the forecasted transaction must still be probable, and the effective portion is still reported in OCI for a cash flow hedge.",
+      "explanationJa": "ASC 815-20-25-84の重要条件一致法では、ヘッジ手段とヘッジ対象の予定取引の重要条件（想定元本・数量、基礎数値、通貨、時期）が同一であれば、ヘッジリスクに帰属する公正価値変動が完全に相殺すると見込めると判断でき、ヘッジが高度に有効であるとの定性的評価を裏付ける。デリバティブは依然として公正価値で記録され、予定取引は依然として蓋然性が必要であり、キャッシュフローヘッジの有効部分は依然としてOCIに計上される。",
+      "references": ["ASC 815-20-25-84"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-091",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Fair Value Hedge - Inventory Carrying Adjustment (Increase)",
+      "stem": "A grain elevator designates a short futures position as a fair value hedge of its corn inventory. During the period, the futures contract has a loss of $22,000 and the inventory's fair value increases by $21,000 due to the hedged commodity price risk. What is the adjustment to the carrying amount of the inventory?",
+      "choices": [
+        { "label": "A", "text": "Increase of $21,000" },
+        { "label": "B", "text": "Decrease of $22,000" },
+        {
+          "label": "C",
+          "text": "No adjustment; inventory remains at the lower of cost or net realizable value"
+        },
+        { "label": "D", "text": "Increase of $1,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In a fair value hedge, the carrying amount of the hedged item is adjusted for the gain or loss attributable to the hedged risk, and that adjustment is recognized in earnings along with the derivative's change in fair value. The corn inventory's fair value gain attributable to the hedged risk is $21,000, so its carrying amount is increased by $21,000. Both amounts hit earnings: the inventory gain of $21,000 and the futures loss of $22,000 net to a $1,000 loss representing ineffectiveness.",
+      "explanationJa": "公正価値ヘッジでは、ヘッジ対象の帳簿価額をヘッジリスクに帰属する損益分だけ調整し、その調整額をデリバティブの公正価値変動とともに損益に認識する。とうもろこし在庫のヘッジリスク帰属公正価値利益は$21,000であるため、帳簿価額を$21,000増加させる。両方が損益に計上され、在庫利益$21,000と先物損失$22,000の差引$1,000が非有効部分を表す損失となる。",
+      "references": ["ASC 815-25-35-1", "ASC 815-25-35-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-092",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Statement Classification of Derivatives",
+      "stem": "Quinby Co. uses a derivative designated in a qualifying cash flow hedge of a forecasted purchase of inventory. Cash flows from the settlement of the derivative are classified in the statement of cash flows in which category?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Always as financing activities, because derivatives are financial instruments"
+        },
+        {
+          "label": "B",
+          "text": "Always as investing activities, regardless of the hedged item"
+        },
+        {
+          "label": "C",
+          "text": "Split equally between operating and investing activities"
+        },
+        {
+          "label": "D",
+          "text": "In the same category as the cash flows of the hedged item (operating, for an inventory purchase)"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 230-10-45-27, when a derivative is designated in a qualifying hedge and an accounting policy election is made, the cash flows of the hedging instrument may be classified in the same category as the cash flows of the items being hedged. For a cash flow hedge of a forecasted inventory purchase, the hedged item's cash flows are operating, so the derivative's settlement cash flows are also classified as operating activities. This aligns the hedge's cash flow presentation with the underlying transaction.",
+      "explanationJa": "ASC 230-10-45-27により、デリバティブが適格ヘッジに指定され会計方針の選択を行った場合、ヘッジ手段のキャッシュフローをヘッジ対象のキャッシュフローと同じ区分に分類できる。予定在庫購入のキャッシュフローヘッジでは、ヘッジ対象のキャッシュフローは営業活動であるため、デリバティブの決済キャッシュフローも営業活動に分類される。これによりヘッジのキャッシュフロー表示が基礎取引と整合する。",
+      "references": ["ASC 230-10-45-27"],
+      "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }
   ]

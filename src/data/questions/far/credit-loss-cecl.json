@@ -2,7 +2,7 @@
   "id": "far-credit-loss-cecl",
   "name": "Credit Loss (CECL)",
   "topic": "Credit Loss - Current Expected Credit Losses (ASC 326)",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "questions": [
     {
       "id": "cecl-001",
@@ -2195,6 +2195,558 @@
       "explanationJa": "ASC 326-20-50-13は、引当金のロールフォワードスケジュールとして期首残高、当期繰入額（信用損失費用）、引当金から控除された償却、過去の償却の回収、期末残高の開示を要求。このロールフォワードはポートフォリオセグメント別に提示する必要がある。Bの公正価値調整は引当金ロールフォワードの一部ではない。CとDは要求される詳細度に比べ不十分。正解はA。",
       "references": ["ASC 326-20-50-13", "ASC 326-20-50-14"],
       "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-076",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Expected Credit Loss - PD/LGD/EAD",
+      "stem": "Lakeside Bank holds a commercial loan portfolio with an exposure at default of $8,000,000. Management estimates a probability of default of 2.5% and a loss given default of 55%. Exposure at default equals the carrying amount. Under ASC 326, what allowance for expected credit losses should be recorded?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$110,000" },
+        { "label": "C", "text": "$440,000" },
+        { "label": "D", "text": "$220,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Expected credit loss = EAD × PD × LGD = $8,000,000 × 2.5% × 55% = $110,000. CECL requires recognition of lifetime expected credit losses at the reporting date based on the loss-rate components. Applying only the 2.5% default probability and ignoring loss given default overstates the loss to $200,000. Applying the 55% severity to the full exposure while ignoring the 2.5% default probability produces $440,000. Doubling the 2.5% rate to 5.0% on the full exposure produces $220,000.",
+      "explanationJa": "期待信用損失 = EAD × PD × LGD = $8,000,000 × 2.5% × 55% = $110,000。CECLでは報告日時点で存続期間の期待信用損失を認識する。LGDを無視し2.5%のみを適用すると$200,000、PDを無視し55%のみを全エクスポージャーに適用すると$440,000、2.5%を5.0%に倍化すると$220,000となる誤りである。",
+      "references": ["ASC 326-20-30-2", "ASC 326-20-30-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-077",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Allowance Rollforward - Provision Plug",
+      "stem": "Meridian Finance began the year with an allowance for credit losses of $60,000. During the year it charged off $18,000 of uncollectible loans and recovered $5,000 previously written off. The required year-end allowance is $72,000. What is the provision for credit losses recognized in the income statement?",
+      "choices": [
+        { "label": "A", "text": "$12,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$25,000" },
+        { "label": "D", "text": "$35,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Allowance rollforward: Beginning $60,000 − charge-offs $18,000 + recoveries $5,000 + provision = ending $72,000. Provision = $72,000 − $60,000 + $18,000 − $5,000 = $25,000. The provision is the amount needed to bring the allowance to the required balance after net charge-offs. The net increase in the allowance alone is $12,000. Ignoring the $5,000 of recoveries yields $30,000. Adding recoveries instead of subtracting them yields $35,000.",
+      "explanationJa": "引当金増減：期首$60,000 − 償却$18,000 + 回収$5,000 + 繰入額 = 期末$72,000。繰入額 = $72,000 − $60,000 + $18,000 − $5,000 = $25,000。引当金の純増のみは$12,000、回収を無視すると$30,000、回収を誤って加算すると$35,000となる。",
+      "references": ["ASC 326-20-35-1", "ASC 326-20-35-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-078",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Loss Rate Method - Weighted Pools",
+      "stem": "Coastal Supply Co. groups its $4,500,000 of trade receivables into three risk tiers: Tier 1 ($2,500,000, loss rate 1%), Tier 2 ($1,500,000, loss rate 3%), and Tier 3 ($500,000, loss rate 12%). Using the loss-rate method, what is the total allowance for expected credit losses?",
+      "choices": [
+        { "label": "A", "text": "$130,000" },
+        { "label": "B", "text": "$135,000" },
+        { "label": "C", "text": "$70,000" },
+        { "label": "D", "text": "$90,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tier 1: $2,500,000 × 1% = $25,000. Tier 2: $1,500,000 × 3% = $45,000. Tier 3: $500,000 × 12% = $60,000. Total = $25,000 + $45,000 + $60,000 = $130,000. Applying a flat 3% to the whole balance gives $135,000. Omitting Tier 3 gives $70,000. Applying a flat 2% to the total gives $90,000.",
+      "explanationJa": "Tier 1：$2,500,000 × 1% = $25,000。Tier 2：$1,500,000 × 3% = $45,000。Tier 3：$500,000 × 12% = $60,000。合計 = $130,000。全体に3%を適用すると$135,000、Tier 3を除外すると$70,000、全体に2%を適用すると$90,000となる。",
+      "references": ["ASC 326-20-30-2", "ASC 326-20-55-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-079",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Vintage Analysis - Mid-Life Pool",
+      "stem": "Harbor Lending originated a vintage of installment loans with an original balance of $1,000,000. Lifetime loss rates by year are: Year 1 = 1%, Year 2 = 2.5%, Year 3 = 1.5%, Year 4 = 0.5%. By the end of Year 2, $20,000 of losses on this vintage have already been incurred and charged off against the allowance. Under the vintage method, what allowance is required at the end of Year 2 for the remaining expected losses over the rest of the vintage's life?",
+      "choices": [
+        { "label": "A", "text": "$35,000" },
+        { "label": "B", "text": "$20,000" },
+        { "label": "C", "text": "$55,000" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Because the Year 1 and Year 2 losses have already been incurred and charged off, the allowance at the end of Year 2 covers only the expected losses remaining in Years 3 and 4. Remaining loss rate = 1.5% + 0.5% = 2.0%, so the required allowance = $1,000,000 × 2.0% = $20,000. The full lifetime loss rate of 5.5% produces $55,000, the entire lifetime figure. Subtracting the $20,000 already charged off from the $55,000 lifetime figure produces $35,000 and double-counts the realized losses. Applying a 3.0% rate to the remaining periods produces $30,000.",
+      "explanationJa": "Year 1・Year 2の損失は既に発生し引当金から償却済みのため、Year 2末の引当金はYear 3・Year 4に残る期待損失のみを対象とする。残存損失率 = 1.5% + 0.5% = 2.0%、必要引当金 = $1,000,000 × 2.0% = $20,000。生涯損失率5.5%では$55,000（生涯全額）、生涯$55,000から償却済み$20,000を控除すると$35,000（実現損失の二重計上）、残存期間に3.0%を適用すると$30,000となる。",
+      "references": ["ASC 326-20-30-2", "ASC 326-20-55-49"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-080",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "DCF Method - Effective Interest Discounting",
+      "stem": "Summit Bank holds a $700,000 loan with an effective interest rate of 6%. After a credit event, management estimates the present value of expected future cash flows, discounted at the loan's original effective rate of 6%, is $612,000. The fair value of the loan is $590,000. Under the DCF method of ASC 326-20, what is the expected credit loss?",
+      "choices": [
+        { "label": "A", "text": "$110,000" },
+        { "label": "B", "text": "$88,000" },
+        { "label": "C", "text": "$22,000" },
+        { "label": "D", "text": "$70,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-30-4, when an entity measures expected credit losses using a DCF method, the loss equals amortized cost less the present value of expected cash flows discounted at the loan's effective interest rate: $700,000 − $612,000 = $88,000. Fair value of $590,000 is not used in the DCF approach. Using fair value instead of the present value of cash flows ($700,000 − $590,000) gives $110,000. The gap between the present value and fair value ($612,000 − $590,000) is $22,000. Applying a flat 10% to the loan gives $70,000.",
+      "explanationJa": "DCF法では、信用損失 = 償却原価 − 実効金利で割引いた期待キャッシュフローの現在価値 = $700,000 − $612,000 = $88,000。公正価値$590,000はDCF法では使用しない。公正価値を誤用すると（$700,000 − $590,000）$110,000、現在価値と公正価値の差は$22,000、10%を適用すると$70,000となる。",
+      "references": ["ASC 326-20-30-4", "ASC 326-20-55-23"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-081",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Collateral-Dependent Practical Expedient",
+      "stem": "Granite Bank holds a $900,000 loan to a borrower experiencing financial difficulty. Repayment is expected to be provided substantially through the sale of the underlying real estate collateral, and the bank elects the collateral-dependent practical expedient. The collateral has a fair value of $740,000, and the bank expects to incur selling costs of $44,000. What expected credit loss should the bank record?",
+      "choices": [
+        { "label": "A", "text": "$160,000" },
+        { "label": "B", "text": "$116,000" },
+        { "label": "C", "text": "$204,000" },
+        { "label": "D", "text": "$44,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When the entity expects to sell the collateral, expected credit loss = amortized cost − (fair value of collateral − costs to sell) = $900,000 − ($740,000 − $44,000) = $900,000 − $696,000 = $204,000. Omitting selling costs ($900,000 − $740,000) gives $160,000. Subtracting selling costs from the unadjusted shortfall ($160,000 − $44,000) gives $116,000. The selling costs alone are $44,000.",
+      "explanationJa": "担保を売却する見込みの場合、期待信用損失 = 償却原価 − (担保の公正価値 − 売却費用) = $900,000 − ($740,000 − $44,000) = $900,000 − $696,000 = $204,000。売却費用を無視すると$160,000、未調整の不足額から売却費用を控除すると$116,000、売却費用のみは$44,000である。",
+      "references": ["ASC 326-20-35-4", "ASC 326-20-35-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-082",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Collateral-Dependent - No Intent to Sell",
+      "stem": "Pioneer Bank holds an $850,000 loan to a borrower in financial difficulty and applies the collateral-dependent practical expedient. The bank intends to operate, not sell, the collateral; its fair value is $620,000 and estimated costs to sell are $40,000. What expected credit loss should be recorded?",
+      "choices": [
+        { "label": "A", "text": "$230,000" },
+        { "label": "B", "text": "$270,000" },
+        { "label": "C", "text": "$190,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-35-5, when repayment is expected through operation (not sale) of the collateral, costs to sell are excluded. Expected credit loss = amortized cost − fair value of collateral = $850,000 − $620,000 = $230,000. Improperly subtracting selling costs ($850,000 − ($620,000 − $40,000)) gives $270,000. Improperly adding selling costs to the collateral value ($850,000 − ($620,000 + $40,000)) gives $190,000. The selling costs alone are $40,000.",
+      "explanationJa": "ASC 326-20-35-5では、担保の運用（売却ではなく）を通じた回収が見込まれる場合、売却費用は控除しない。期待信用損失 = 償却原価 − 担保の公正価値 = $850,000 − $620,000 = $230,000。誤って売却費用を控除すると$270,000、誤って売却費用を担保価値に加算すると$190,000、売却費用のみは$40,000である。",
+      "references": ["ASC 326-20-35-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-083",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "AFS Debt Securities - Credit vs Non-Credit Split",
+      "stem": "Westfield Corp. holds an AFS corporate bond with an amortized cost of $600,000 and a fair value of $520,000. It does not intend to sell and will not be required to sell the security. The present value of expected cash flows, discounted at the bond's effective rate, is $555,000. How much of the $80,000 decline is recognized as a credit loss in earnings?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$35,000" },
+        { "label": "C", "text": "$45,000" },
+        { "label": "D", "text": "$25,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 326-30, the credit loss equals amortized cost minus the present value of expected cash flows = $600,000 − $555,000 = $45,000, recorded through an allowance in earnings. The non-credit portion is $80,000 − $45,000 = $35,000, recognized in OCI. The credit loss is capped at the total decline of $80,000, but $45,000 is below that cap. The entire decline of $80,000 wrongly treats all of the loss as credit-related. The non-credit OCI portion is $35,000. A credit loss of $25,000 understates the shortfall by stopping below the full amortized cost versus present value difference.",
+      "explanationJa": "ASC 326-30では信用損失 = 償却原価 − 期待キャッシュフローの現在価値 = $600,000 − $555,000 = $45,000を引当金経由で損益認識する。非信用部分は$80,000 − $45,000 = $35,000でOCI計上。信用損失の上限は下落総額$80,000だが$45,000はそれ未満。下落総額$80,000は全額を信用損失とする誤り、非信用OCI部分は$35,000、$25,000は償却原価と現在価値の差に届かず不足額を過少評価したものである。",
+      "references": ["ASC 326-30-35-3", "ASC 326-30-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-084",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "AFS Debt Securities - Allowance Capped at Decline",
+      "stem": "Brookline Bank holds an AFS Treasury-backed security with an amortized cost of $500,000 and a fair value of $470,000. The present value of expected cash flows discounted at the effective rate is $455,000. The bank neither intends nor is required to sell. What credit-loss allowance is recognized in earnings?",
+      "choices": [
+        { "label": "A", "text": "$45,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$15,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The measured credit loss based on cash flows is amortized cost − PV of expected cash flows = $500,000 − $455,000 = $45,000. Under ASC 326-30-35-4, the AFS credit-loss allowance is limited to the amount by which fair value is below amortized cost = $500,000 − $470,000 = $30,000. The allowance recognized is the lesser amount, $30,000. The cash-flow shortfall of $45,000 ignores the fair-value cap. The gap between fair value and the present value of cash flows is $15,000. A $0 allowance incorrectly assumes no credit loss exists.",
+      "explanationJa": "キャッシュフローに基づく信用損失 = 償却原価 − 期待キャッシュフローのPV = $500,000 − $455,000 = $45,000。ASC 326-30-35-4により、AFSの信用損失引当金は公正価値が償却原価を下回る額（$500,000 − $470,000 = $30,000）を上限とする。認識額は小さい方の$30,000。キャッシュフロー不足$45,000は上限を無視、公正価値とPVの差は$15,000、$0は信用損失なしと誤認したものである。",
+      "references": ["ASC 326-30-35-3", "ASC 326-30-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-085",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "HTM Debt Securities - Net Carrying Amount",
+      "stem": "Ridgeway Inc. classifies a debt security as held-to-maturity with an amortized cost of $3,200,000. The estimated lifetime expected credit loss is $140,000, and the security's fair value is $3,050,000. Under ASC 326-20, at what net carrying amount is the HTM security reported on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$3,050,000" },
+        { "label": "B", "text": "$3,200,000" },
+        { "label": "C", "text": "$3,060,000" },
+        { "label": "D", "text": "$2,910,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "HTM securities are reported at amortized cost less the allowance for credit losses, regardless of fair value. Net carrying amount = $3,200,000 − $140,000 = $3,060,000. Fair value of $3,050,000 is disclosed but not used for measurement on the balance sheet. Reporting at fair value of $3,050,000 ignores the measurement rule. Reporting at $3,200,000 ignores the allowance. Subtracting the allowance from fair value ($3,050,000 − $140,000) gives $2,910,000.",
+      "explanationJa": "HTM有価証券は公正価値にかかわらず償却原価から信用損失引当金を控除して報告する。純帳簿価額 = $3,200,000 − $140,000 = $3,060,000。公正価値$3,050,000は開示されるが測定には使用しない。公正価値$3,050,000での計上は測定ルールを無視、$3,200,000は引当金を無視、公正価値から引当金を控除すると$2,910,000となる。",
+      "references": ["ASC 326-20-30-1", "ASC 326-20-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-086",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Purchased Credit-Deteriorated - Day 1 Gross-Up",
+      "stem": "Anchor Bank purchases a pool of distressed loans for $1,100,000. The contractual unpaid principal balance is $1,500,000. At acquisition, the estimated lifetime expected credit loss is $250,000. Under the PCD model in ASC 326-20, what is the initial amortized cost basis of the loans (the gross-up basis)?",
+      "choices": [
+        { "label": "A", "text": "$1,500,000" },
+        { "label": "B", "text": "$1,100,000" },
+        { "label": "C", "text": "$1,350,000" },
+        { "label": "D", "text": "$850,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "For PCD assets, the day-one allowance is added to the purchase price to establish the amortized cost basis, with no credit-loss expense at acquisition. Amortized cost = purchase price + initial allowance = $1,100,000 + $250,000 = $1,350,000. The remaining non-credit discount = $1,500,000 − $1,350,000 = $150,000 is accreted to interest income over the life. The unpaid principal balance is $1,500,000. The purchase price alone is $1,100,000. Subtracting the allowance from the purchase price ($1,100,000 − $250,000) gives $850,000.",
+      "explanationJa": "PCD資産では、当初引当金を購入価格に加算して償却原価を設定し、取得時に信用損失費用は計上しない。償却原価 = 購入価格$1,100,000 + 当初引当金$250,000 = $1,350,000。非信用ディスカウント$1,500,000 − $1,350,000 = $150,000は存続期間にわたり利息収益として加算する。未払元本は$1,500,000、購入価格のみは$1,100,000、購入価格から引当金を控除すると$850,000となる。",
+      "references": ["ASC 326-20-30-13", "ASC 326-20-30-14"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-087",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Non-PCD Purchased Asset - Day 1 Provision",
+      "stem": "Sterling Bank purchases a pool of performing loans (not credit-deteriorated) for $980,000, equal to their amortized cost basis. At the acquisition date, the bank estimates a lifetime expected credit loss of $35,000 on the pool. How does Sterling record the day-one allowance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$35,000 credit-loss expense in the income statement, with the loan basis remaining $980,000"
+        },
+        {
+          "label": "B",
+          "text": "$35,000 added to the loan basis, with no credit-loss expense"
+        },
+        {
+          "label": "C",
+          "text": "No allowance is recorded until a loss is incurred"
+        },
+        { "label": "D", "text": "$35,000 recognized directly in OCI" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "For purchased financial assets that are NOT credit-deteriorated (non-PCD), the gross-up approach does not apply. The entity establishes an allowance through a charge to credit-loss expense at acquisition, just like an originated asset, and the loan basis stays at $980,000. Adding the allowance to basis with no expense is the PCD treatment, which does not apply to non-PCD assets. CECL requires day-one recognition rather than deferring until an incurred loss arises, and credit losses on amortized-cost assets flow through earnings, not OCI.",
+      "explanationJa": "信用劣化していない購入金融資産（非PCD）にはグロスアップ法は適用されない。組成資産と同様に取得時に信用損失費用を計上して引当金を設定し、ローン基礎は$980,000のまま。費用なしで基礎に加算するのはPCD処理であり非PCDには当てはまらない。CECLは発生損失を待たず初日認識を要求し、償却原価資産の信用損失はOCIではなく損益を通す。",
+      "references": ["ASC 326-20-30-13", "ASC 326-20-25-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-088",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Collateral Maintenance Practical Expedient",
+      "stem": "Anchorage Bank enters into a reverse repurchase agreement that is continuously secured by collateral the counterparty is contractually required to replenish so that the collateral's fair value always at least equals the amortized cost basis of the asset. The bank reasonably expects the counterparty to continue replenishing the collateral. Under the collateral maintenance practical expedient in ASC 326-20, how may the bank measure expected credit losses on this asset?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It may estimate expected credit losses as zero to the extent the fair value of the collateral equals or exceeds the amortized cost basis and the counterparty is expected to continue replenishing the collateral"
+        },
+        {
+          "label": "B",
+          "text": "It must measure a lifetime expected credit loss using a probability-of-default model regardless of the collateral arrangement"
+        },
+        {
+          "label": "C",
+          "text": "It must write the asset down to the fair value of the collateral at each reporting date"
+        },
+        {
+          "label": "D",
+          "text": "It is exempt from the CECL model entirely because the asset is fully collateralized"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 326-20-35-6 provides a collateral maintenance practical expedient for financial assets secured by collateral that the borrower is required to continually adjust so its fair value at least equals the amortized cost basis. When the entity reasonably expects the borrower to continue replenishing the collateral, expected credit losses may be estimated as zero to the extent the collateral's fair value equals or exceeds the amortized cost basis. A full probability-of-default measurement is not required when this expedient applies. The asset is not written down to collateral fair value, and a fully collateralized asset remains within the CECL model even though the measured loss may be zero.",
+      "explanationJa": "ASC 326-20-35-6は、借り手が担保の公正価値を償却原価以上に維持するよう継続的に調整することを求められる金融資産に対し、担保維持の実務上の簡便法を定める。借り手が担保を補充し続けると合理的に見込まれる場合、担保の公正価値が償却原価以上である範囲で期待信用損失をゼロと見積もることができる。この簡便法が適用される場合、PDモデルによる全面測定は不要である。資産を担保公正価値まで切り下げることはなく、全額担保された資産も測定損失がゼロであってもCECLの範囲内に留まる。",
+      "references": ["ASC 326-20-35-6"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-089",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "WARM Method - Expected Loss Calculation",
+      "stem": "Cedar Credit Union estimates losses on a $6,000,000 loan pool using the weighted-average remaining maturity (WARM) method. The pool has a weighted-average remaining maturity of 5 years and an average annual charge-off rate of 0.4%. Assuming no adjustment for prepayments, what is the expected credit loss?",
+      "choices": [
+        { "label": "A", "text": "$24,000" },
+        { "label": "B", "text": "$120,000" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the WARM method, the expected loss = balance × annual loss rate × weighted-average remaining maturity = $6,000,000 × 0.4% × 5 = $120,000. WARM applies the average annual charge-off rate over the remaining life of the pool. Using a single year of loss without the remaining maturity gives $24,000. Using a 1% annual rate gives $300,000. Using a 0.2% annual rate over five years gives $60,000.",
+      "explanationJa": "WARM法では、期待損失 = 残高 × 年間損失率 × 加重平均残存期間 = $6,000,000 × 0.4% × 5 = $120,000。WARMは平均年間償却率をプールの残存期間にわたって適用する。残存期間を考慮せず1年分のみでは$24,000、1%を適用すると$300,000、0.2%を5年適用すると$60,000となる。",
+      "references": ["ASC 326-20-30-3", "ASC 326-20-55-50"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-090",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Off-Balance-Sheet - Unfunded Commitment Liability",
+      "stem": "Fairmont Bank has an unconditionally cancellable line-of-credit commitment with an undrawn amount of $2,000,000. Management expects $1,200,000 of the commitment to be funded over its life and applies a lifetime loss rate of 3% to the funded exposure. Under ASC 326-20, what amount should be recognized as a liability for the off-balance-sheet credit exposure?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$36,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$24,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 326-20-30-11 requires an allowance for expected credit losses on off-balance-sheet credit exposures only for the period the entity is exposed to credit risk through a present contractual obligation that is NOT unconditionally cancellable. Because this commitment is unconditionally cancellable by the bank, no liability is recorded. Applying 3% to the full undrawn amount gives $60,000, applying 3% to the $1,200,000 expected funding gives $36,000, and applying 3% to $800,000 gives $24,000, but each wrongly accrues a loss despite the unconditional cancellability.",
+      "explanationJa": "ASC 326-20-30-11は、無条件で取消可能でない現在の契約義務を通じて信用リスクに晒される期間についてのみ、オフバランス信用エクスポージャーの引当を要求する。本コミットメントは銀行が無条件で取消可能なため負債は計上しない。未実行額全額に3%で$60,000、見込実行$1,200,000に3%で$36,000、$800,000に3%で$24,000となるが、いずれも取消可能性を無視した誤りである。",
+      "references": ["ASC 326-20-30-11", "ASC 326-20-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-091",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Off-Balance-Sheet - Non-Cancellable Commitment",
+      "stem": "Belmont Bank has issued a non-cancellable loan commitment with an undrawn balance of $1,500,000. Management estimates that $900,000 will ultimately be funded and applies a lifetime expected loss rate of 4% to the amount expected to be funded. What liability for the unfunded commitment should be recorded under ASC 326-20?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$36,000" },
+        { "label": "C", "text": "$24,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Because the commitment is non-cancellable, the bank is exposed to credit risk and must record a liability based on the amount expected to be funded over the commitment's life: $900,000 × 4% = $36,000. The estimate considers the likelihood that funding will occur. Applying the rate to the full undrawn balance ($1,500,000 × 4%) gives $60,000. Applying the rate to $600,000 gives $24,000. Recording nothing wrongly assumes no accrual is required.",
+      "explanationJa": "コミットメントが取消不能なため、銀行は信用リスクに晒され、存続期間にわたり実行が見込まれる額に基づき負債を計上する：$900,000 × 4% = $36,000。実行の可能性を考慮する。未実行残高全額に適用すると$60,000、$600,000に適用すると$24,000、計上しないのは引当不要との誤認である。",
+      "references": ["ASC 326-20-30-11"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-092",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Transition - Cumulative-Effect Adjustment",
+      "stem": "On adoption of ASC 326, Tidewater Bank's incurred-loss allowance was $400,000 and its CECL day-one allowance is $640,000. The applicable tax rate is 21%. Using the modified-retrospective transition method, what is the net-of-tax decrease to opening retained earnings?",
+      "choices": [
+        { "label": "A", "text": "$240,000" },
+        { "label": "B", "text": "$189,600" },
+        { "label": "C", "text": "$50,400" },
+        { "label": "D", "text": "$134,400" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Increase in allowance = $640,000 − $400,000 = $240,000 (pretax). Deferred tax benefit = $240,000 × 21% = $50,400, recorded as an increase in the deferred tax asset. Net-of-tax charge to retained earnings = $240,000 − $50,400 = $189,600. The pretax amount alone is $240,000. The tax effect alone is $50,400. Applying a 44% rate to the increase gives $134,400.",
+      "explanationJa": "引当金増加額 = $640,000 − $400,000 = $240,000（税引前）。繰延税金便益 = $240,000 × 21% = $50,400（DTA増加）。税引後の利益剰余金減少 = $240,000 − $50,400 = $189,600。税引前額のみは$240,000、税効果のみは$50,400、44%を適用すると$134,400となる。",
+      "references": ["ASC 326-10-65-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-093",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Trade Receivables - Aging Method",
+      "stem": "Linden Wholesale estimates credit losses on trade receivables using an aging schedule with the following balances and historical loss rates: Current $1,500,000 (0.5%), 1-30 days $400,000 (2%), 31-60 days $150,000 (8%), and over 60 days $100,000 (25%). What total allowance for credit losses should be recognized?",
+      "choices": [
+        { "label": "A", "text": "$52,500" },
+        { "label": "B", "text": "$45,000" },
+        { "label": "C", "text": "$60,500" },
+        { "label": "D", "text": "$27,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Current: $1,500,000 × 0.5% = $7,500. 1-30 days: $400,000 × 2% = $8,000. 31-60 days: $150,000 × 8% = $12,000. Over 60 days: $100,000 × 25% = $25,000. Total = $7,500 + $8,000 + $12,000 + $25,000 = $52,500. Omitting the current bucket ($8,000 + $12,000 + $25,000) gives $45,000. Double-counting the 1-30 day bucket's $8,000 gives $60,500. Omitting the over-60-day bucket ($7,500 + $8,000 + $12,000) gives $27,500.",
+      "explanationJa": "Current：$1,500,000 × 0.5% = $7,500。1-30日：$400,000 × 2% = $8,000。31-60日：$150,000 × 8% = $12,000。60日超：$100,000 × 25% = $25,000。合計 = $52,500。Currentを除外すると$45,000、1-30日の$8,000を二重計上すると$60,500、60日超を除外すると$27,500となる。",
+      "references": ["ASC 326-20-30-2", "ASC 326-20-55-37"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-094",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Qualitative Adjustment to Historical Rate",
+      "stem": "Ashford Bank's historical lifetime loss rate on a $5,000,000 commercial pool is 2%. Considering current and forecasted economic conditions (rising unemployment in its region), management increases the rate by a qualitative adjustment of 60 basis points. What is the adjusted allowance for expected credit losses?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$130,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$160,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "CECL requires adjusting historical loss experience for current conditions and reasonable and supportable forecasts. Adjusted rate = 2.0% + 0.60% = 2.60%. Allowance = $5,000,000 × 2.60% = $130,000. The unadjusted historical allowance at 2.0% is $100,000. The incremental qualitative adjustment alone (0.60%) is $30,000. Applying a 3.2% rate gives $160,000.",
+      "explanationJa": "CECLは過去の損失実績を現在の状況と合理的で裏付け可能な予測に基づき調整する。調整後率 = 2.0% + 0.60% = 2.60%。引当金 = $5,000,000 × 2.60% = $130,000。未調整の過去引当金（2.0%）は$100,000、質的調整増分のみ（0.60%）は$30,000、3.2%を適用すると$160,000となる。",
+      "references": ["ASC 326-20-30-7", "ASC 326-20-30-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-095",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Multiple Economic Scenarios - Weighted Estimate",
+      "stem": "Crestview Bank estimates credit losses on a $4,000,000 pool using three probability-weighted scenarios: baseline (loss rate 2%, weight 50%), adverse (loss rate 5%, weight 30%), and severely adverse (loss rate 9%, weight 20%). What is the probability-weighted expected credit loss?",
+      "choices": [
+        { "label": "A", "text": "$160,000" },
+        { "label": "B", "text": "$172,000" },
+        { "label": "C", "text": "$360,000" },
+        { "label": "D", "text": "$213,333" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Weighted loss rate = (2% × 0.50) + (5% × 0.30) + (9% × 0.20) = 1.0% + 1.5% + 1.8% = 4.3%. Expected loss = $4,000,000 × 4.3% = $172,000. Applying a flat 4% rate to the pool gives $160,000. Applying the severely-adverse 9% rate alone gives $360,000. Simple-averaging the three rates (5.333%) instead of probability-weighting them gives $213,333.",
+      "explanationJa": "加重損失率 = (2% × 0.50) + (5% × 0.30) + (9% × 0.20) = 1.0% + 1.5% + 1.8% = 4.3%。期待損失 = $4,000,000 × 4.3% = $172,000。一律4%を適用すると$160,000、深刻シナリオ9%のみでは$360,000、3率の単純平均（5.333%）では$213,333となる。",
+      "references": ["ASC 326-20-30-7", "ASC 326-20-55-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-096",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Zero-Loss Expectation - U.S. Treasury Securities",
+      "stem": "Hartwell Bank holds $2,000,000 of U.S. Treasury securities classified as held-to-maturity. The securities are explicitly backed by the full faith and credit of the U.S. government and have a long history of zero credit losses with no expectation of nonpayment. What allowance for credit losses should the bank record under ASC 326-20?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$0, because the expectation of nonpayment is zero"
+        },
+        {
+          "label": "B",
+          "text": "A nominal 0.01% allowance is still required for all financial assets"
+        },
+        {
+          "label": "C",
+          "text": "An allowance equal to the difference between cost and fair value"
+        },
+        {
+          "label": "D",
+          "text": "An allowance based on the entity's overall portfolio loss rate"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 326-20-30-10 permits an entity to record zero expected credit losses when the expectation of nonpayment is zero, such as for U.S. Treasury securities backed by the full faith and credit of the U.S. government with a long history of no credit losses. CECL does not mandate a floor allowance on every asset, fair-value declines are not the credit-loss measure for HTM securities, and a portfolio-wide rate would not reflect these instruments' specific zero-loss characteristics.",
+      "explanationJa": "ASC 326-20-30-10は、米国の完全な信用で裏付けられ信用損失の長い無実績を持つ米国財務省証券など、不払いの予想がゼロの場合に信用損失をゼロとすることを認める。CECLは全資産に最低引当を課さず、公正価値下落はHTMの信用損失尺度ではなく、ポートフォリオ全体率はこれら特有のゼロ損失性を反映しない。",
+      "references": ["ASC 326-20-30-10", "ASC 326-20-55-49"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-097",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "AFS Debt Securities - Intent to Sell",
+      "stem": "Northgate Corp. holds an AFS debt security with an amortized cost of $700,000 and a fair value of $610,000. At the reporting date, management intends to sell the security before recovery of its amortized cost. How should the $90,000 decline be accounted for under ASC 326-30?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$90,000 is recorded in OCI as an unrealized loss"
+        },
+        {
+          "label": "B",
+          "text": "The credit portion is recorded in earnings and the remainder in OCI"
+        },
+        {
+          "label": "C",
+          "text": "The amortized cost is written down to $610,000 with the entire $90,000 recognized in earnings"
+        },
+        {
+          "label": "D",
+          "text": "No loss is recognized until the security is actually sold"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 326-30-35-10, when an entity intends to sell an AFS security (or more likely than not will be required to sell before recovery), it writes down the amortized cost basis to fair value, and the entire difference ($700,000 − $610,000 = $90,000) is recognized in earnings. The credit-versus-noncredit allowance split does not apply once there is intent to sell, and deferring the loss to OCI or until disposal would be inappropriate.",
+      "explanationJa": "ASC 326-30-35-10では、AFS証券を売却する意図がある（または回収前に売却が要求される可能性が高い）場合、償却原価を公正価値まで切り下げ、差額全額（$700,000 − $610,000 = $90,000）を損益認識する。売却意図がある場合、信用・非信用の引当分割は適用されず、OCIや処分時までの繰延は不適切である。",
+      "references": ["ASC 326-30-35-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-098",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Allowance Reversal - Improved Expectations",
+      "stem": "At year-end, Glenwood Bank reduced its CECL allowance from $310,000 to $250,000 because forecasted economic conditions improved. There were no charge-offs or recoveries during the period. How should the $60,000 change be reflected in the income statement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a $60,000 reduction of credit-loss expense (a credit/negative provision)"
+        },
+        {
+          "label": "B",
+          "text": "As a $60,000 gain reported in other comprehensive income"
+        },
+        {
+          "label": "C",
+          "text": "As a direct increase to retained earnings, bypassing the income statement"
+        },
+        {
+          "label": "D",
+          "text": "No adjustment, because reversals of credit-loss allowances are prohibited"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-35-1, changes in the allowance for expected credit losses, including decreases due to improved forecasts, are recognized in the income statement as a credit-loss expense (or a reversal/benefit). The $60,000 reduction lowers credit-loss expense for the period. CECL allowance reversals flow through earnings, not OCI or directly to equity, and reversals are required when expectations improve, not prohibited.",
+      "explanationJa": "ASC 326-20-35-1では、予測改善による減少を含む期待信用損失引当金の変動は、損益計算書で信用損失費用（または戻入・便益）として認識する。$60,000の減少は当期の信用損失費用を減らす。CECLの戻入はOCIや資本直接ではなく損益を通し、期待改善時は戻入が要求され禁止されない。",
+      "references": ["ASC 326-20-35-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-099",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "PCD Assets - Non-Credit Discount Accretion",
+      "stem": "Riverton Bank acquired a PCD loan with a contractual unpaid principal balance of $1,000,000 for a purchase price of $760,000. The day-one expected credit-loss allowance is $180,000. The non-credit discount is accreted to interest income using the effective-interest method over an estimated 4-year life on a straight-line approximation. Ignoring credit-allowance changes, what amount is accreted to interest income in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$45,000" },
+        { "label": "B", "text": "$15,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$190,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Amortized cost (gross-up basis) = purchase price + day-one allowance = $760,000 + $180,000 = $940,000. Non-credit discount = unpaid principal − amortized cost = $1,000,000 − $940,000 = $60,000. Accreted straight-line over 4 years: $60,000 ÷ 4 = $15,000 per year. Spreading the full $180,000 allowance over 4 years gives $45,000. Accreting the entire $60,000 non-credit discount in one year gives $60,000. Combining the discount with the allowance ($60,000 + $180,000 ÷ ...) overstates the amount to $190,000.",
+      "explanationJa": "償却原価（グロスアップ基礎） = 購入価格$760,000 + 当初引当金$180,000 = $940,000。非信用ディスカウント = 未払元本$1,000,000 − 償却原価$940,000 = $60,000。4年で直線加算：$60,000 ÷ 4 = 年$15,000。引当金$180,000全額を4年配分すると$45,000、1年で全額加算すると$60,000、ディスカウントと引当金を混同すると$190,000となる。",
+      "references": ["ASC 326-20-30-13", "ASC 310-20-35-26"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-100",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Expected Recoveries in the Allowance Estimate",
+      "stem": "Westbrook Bank estimates gross lifetime expected credit losses of $500,000 on a loan pool. Based on collateral and historical collection experience, the bank also expects to recover $80,000 of amounts within that pool that would otherwise be written off. The expected recoveries do not exceed the amounts written off and expected to be written off. Under ASC 326-20, what net allowance for credit losses should the bank record on this pool?",
+      "choices": [
+        { "label": "A", "text": "$420,000" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$580,000" },
+        { "label": "D", "text": "$80,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-30-1, the allowance for credit losses is a valuation account that reflects expected credit losses net of expected recoveries of amounts previously written off or expected to be written off, provided those expected recoveries do not exceed the amounts written off and expected to be written off. Net allowance = gross expected losses − expected recoveries = $500,000 − $80,000 = $420,000. Ignoring expected recoveries leaves $500,000. Adding expected recoveries to gross losses gives $580,000. The expected recoveries alone are $80,000.",
+      "explanationJa": "ASC 326-20-30-1により、信用損失引当金は、既に償却したまたは償却が見込まれる金額の期待回収額（その回収額が償却済みおよび償却見込額を超えない範囲）を控除した期待信用損失を反映する評価勘定である。純引当金 = 総期待損失 − 期待回収額 = $500,000 − $80,000 = $420,000。期待回収を無視すると$500,000、総損失に加算すると$580,000、期待回収のみは$80,000である。",
+      "references": ["ASC 326-20-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-101",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "CECL Scope - Excluded Financial Assets",
+      "stem": "A bank reports four financial assets. Three of them are measured at amortized cost and one is carried at fair value through net income. Applying the scope guidance in ASC 326-20, the bank must record a CECL allowance on three of these assets but is not required to do so on the fourth. On which asset is a CECL allowance NOT required?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Held-to-maturity debt securities measured at amortized cost"
+        },
+        {
+          "label": "B",
+          "text": "A loan receivable measured at amortized cost"
+        },
+        {
+          "label": "C",
+          "text": "A loan measured at fair value through net income"
+        },
+        { "label": "D", "text": "A net investment in a sales-type lease" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The CECL model applies to financial assets measured at amortized cost. A loan measured at fair value through net income is excluded because changes in its value (including credit deterioration) are already captured in earnings through fair value remeasurement, so a separate allowance would be redundant. Held-to-maturity securities, amortized-cost loans, and net investments in leases are all within CECL's scope.",
+      "explanationJa": "CECLモデルは償却原価で測定される金融資産に適用される。公正価値を通じて純損益で測定されるローンは、信用劣化を含む価値変動が公正価値再測定により既に損益に反映されるため除外され、別途の引当は重複となる。HTM証券、償却原価ローン、正味リース投資はすべてCECLの範囲内である。",
+      "references": ["ASC 326-20-15-2", "ASC 326-20-15-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-102",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Allowance Limited to Amortized Cost Basis",
+      "stem": "Fenwick Bank holds an individually evaluated loan with an amortized cost basis of $200,000 to a severely distressed borrower. Its credit-loss model, based on expected cash flows, indicates expected credit losses of $250,000. Under ASC 326-20, what allowance for credit losses should the bank record on this loan?",
+      "choices": [
+        { "label": "A", "text": "$250,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-30-1, the allowance for credit losses is a valuation account deducted from the amortized cost basis to present the net amount expected to be collected. Because the net carrying amount cannot be reduced below zero, the allowance is limited to the amortized cost basis of $200,000, even though the model indicates a larger shortfall. The uncapped model output is $250,000. The excess of the model output over the amortized cost basis is $50,000. Recording $0 ignores the substantial expected loss entirely.",
+      "explanationJa": "ASC 326-20-30-1により、信用損失引当金は回収見込純額を表示するため償却原価から控除される評価勘定である。純帳簿価額をゼロ未満にはできないため、モデルがより大きな不足を示しても引当金は償却原価$200,000を上限とする。上限を設けないモデル値は$250,000、モデル値が償却原価を超える額は$50,000、$0は多額の期待損失を全く無視したものである。",
+      "references": ["ASC 326-20-30-1"],
+      "difficulty": "intermediate",
       "source": "Original - CPA Exam Practice"
     }
   ]

@@ -2,7 +2,7 @@
   "id": "far-receivables",
   "name": "Receivables",
   "topic": "Receivables",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "questions": [
     {
       "id": "rec-001",
@@ -1973,6 +1973,576 @@
       "explanationJa": "売却として適格な譲渡で継続的関与がある場合、サービシング資産/負債および保証義務の公正価値を認識する。現金受取$2,000,000、サービシング資産$25,000を資産計上、保証義務$30,000を負債計上。純受取額 = $2,000,000 + $25,000 - $30,000 = $1,995,000。",
       "references": ["ASC 860-20-25-1", "ASC 860-50-25-1", "ASC 860-50-35-1"],
       "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-089",
+      "topic": "Receivables",
+      "subtopic": "CECL - Combining Receivables into Pools",
+      "stem": "Under ASC 326-20, when should an entity measure expected credit losses on a collective (pooled) basis rather than on an individual financial asset?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Only when the entity has more than 1,000 individual receivables"
+        },
+        {
+          "label": "B",
+          "text": "When the financial assets share similar risk characteristics"
+        },
+        {
+          "label": "C",
+          "text": "Only for financial assets that are past due more than 90 days"
+        },
+        {
+          "label": "D",
+          "text": "Whenever the entity prefers a simpler estimation approach"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 326-20-30-2 requires that expected credit losses be evaluated on a collective (pool) basis when financial assets share similar risk characteristics (for example, similar credit ratings, geography, industry, or collateral type). If a financial asset does not share risk characteristics with other assets, it is evaluated individually. The pooling decision is driven by shared risk characteristics, not by the number of assets or their delinquency status.",
+      "explanationJa": "ASC 326-20-30-2は、金融資産が類似のリスク特性（信用格付、地域、業種、担保の種類など）を共有する場合、予想信用損失を集合（プール）ベースで評価することを要求する。他の資産とリスク特性を共有しない資産は個別に評価する。プール化の判断は資産数や延滞状況ではなく、共有するリスク特性に基づく。",
+      "references": ["ASC 326-20-30-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-090",
+      "topic": "Receivables",
+      "subtopic": "Trade Discount on Sale",
+      "stem": "Entity A sells merchandise with a list price of $80,000 subject to a trade discount of 15%. The sale is made on credit with terms 2/10, n/30. At what amount should Entity A initially record the trade receivable?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$64,000" },
+        { "label": "C", "text": "$68,000" },
+        { "label": "D", "text": "$66,640" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trade discounts are never recorded in the accounts; they are used only to determine the invoice price. Invoice price = $80,000 × (1 − 15%) = $68,000. The cash (sales) discount of 2/10 is a separate matter handled at collection (or estimated as variable consideration); the receivable is initially recorded at the gross invoice price of $68,000 under the gross method.",
+      "explanationJa": "値引（trade discount）は帳簿に記録せず、請求価格の決定にのみ使用する。請求価格 = $80,000 ×（1 − 15%）= $68,000。現金割引2/10は回収時に処理する別個の事項であり、総額法では債権を請求総額$68,000で当初計上する。",
+      "references": ["ASC 606-10-32-2", "ASC 310-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-091",
+      "topic": "Receivables",
+      "subtopic": "Sales Discount - Net Method",
+      "stem": "Entity B sells goods for $50,000 on terms 2/10, n/30 and records the receivable using the net method. The customer pays after the discount period has lapsed. What entry does Entity B make to record the forfeited discount upon collection?",
+      "choices": [
+        { "label": "A", "text": "Credit Sales Revenue $1,000" },
+        { "label": "B", "text": "Credit Sales Discounts Forfeited $1,000" },
+        { "label": "C", "text": "Debit Sales Discounts $1,000" },
+        { "label": "D", "text": "Credit Accounts Receivable $1,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the net method, the receivable and revenue are recorded at $50,000 × (1 − 2%) = $49,000, assuming the discount will be taken. When the customer pays after the discount period, the additional $1,000 collected is recognized as 'Sales Discounts Forfeited,' an item of other income. The collection entry is: Debit Cash $50,000, Credit Accounts Receivable $49,000, Credit Sales Discounts Forfeited $1,000.",
+      "explanationJa": "純額法では、割引が利用されると仮定し債権と収益を$50,000 ×（1 − 2%）= $49,000で計上する。顧客が割引期間経過後に支払う場合、追加で受け取る$1,000を「失効売上割引（Sales Discounts Forfeited）」として営業外収益に認識する。回収仕訳：（借）現金$50,000 /（貸）売掛金$49,000、（貸）失効売上割引$1,000。",
+      "references": ["ASC 606-10-32-2", "ASC 310-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-092",
+      "topic": "Receivables",
+      "subtopic": "CECL - Recovery Reversal of Allowance",
+      "stem": "Entity C's allowance for credit losses on trade receivables was $90,000 at the prior year-end. Conditions improved, and at the current year-end the required allowance under CECL is $62,000. There were no write-offs or recoveries during the year. What amount should Entity C report as credit loss expense (or reversal) for the current year?",
+      "choices": [
+        { "label": "A", "text": "Credit loss expense of $28,000" },
+        { "label": "B", "text": "Reversal of credit loss expense of $28,000" },
+        { "label": "C", "text": "Credit loss expense of $62,000" },
+        { "label": "D", "text": "No effect on the income statement" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-35-1, the allowance is adjusted each period through the income statement so that the balance reflects the current estimate of expected credit losses. With no write-offs or recoveries, the allowance moves from $90,000 to $62,000, a decrease of $28,000. This decrease is recognized as a reversal of credit loss expense (a credit to the income statement) of $28,000.",
+      "explanationJa": "ASC 326-20-35-1により、引当金は毎期、予想信用損失の現在の見積りを反映するよう損益を通じて調整する。償却・回収がないため、引当金は$90,000から$62,000へ$28,000減少する。この減少は$28,000の信用損失費用の戻入（損益計算書への貸方）として認識する。",
+      "references": ["ASC 326-20-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-093",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Non-Interest-Bearing 4-Year PV",
+      "stem": "On January 1, Year 1, Entity D accepts a 4-year, non-interest-bearing note with a face value of $400,000 in exchange for a parcel of land. The market rate for such a note is 9%. The present value of $1 at 9% for 4 periods is 0.70843. At what amount should the note receivable be initially recorded?",
+      "choices": [
+        { "label": "A", "text": "$400,000" },
+        { "label": "B", "text": "$316,628" },
+        { "label": "C", "text": "$366,972" },
+        { "label": "D", "text": "$283,372" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A non-interest-bearing note is recorded at the present value of the single future payment using the market rate. PV = $400,000 × 0.70843 = $283,372. The difference between the $400,000 face value and the $283,372 present value is a $116,628 discount that is amortized to interest income over the 4-year term using the effective interest method.",
+      "explanationJa": "無利息手形は市場利率を用いた将来の単一支払額の現在価値で計上する。PV = $400,000 × 0.70843 = $283,372。額面$400,000と現在価値$283,372の差額$116,628は割引であり、実効金利法により4年間で受取利息として償却する。",
+      "references": ["ASC 835-30-25-2", "ASC 835-30-30-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-094",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Discount Amortization Year 1",
+      "stem": "On January 1, Year 1, Entity E receives a 4-year, non-interest-bearing note with a face value of $400,000 when the market rate is 9%. The initial carrying amount is $283,372. What is the interest income Entity E recognizes in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$36,000" },
+        { "label": "B", "text": "$25,504" },
+        { "label": "C", "text": "$29,160" },
+        { "label": "D", "text": "$27,805" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the effective interest method, interest income for the first year equals the beginning carrying amount times the market rate. Interest income = $283,372 × 9% = $25,503.48, which rounds to $25,504. This amount is added to the carrying value (discount amortization) since the note is non-interest-bearing and no cash interest is received.",
+      "explanationJa": "実効金利法では、初年度の受取利息は期首帳簿価額に市場利率を乗じたものに等しい。受取利息 = $283,372 × 9% = $25,503.48 ≈ $25,504。無利息手形で現金利息の受取がないため、この金額は帳簿価額に加算（割引償却）される。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-095",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Stated Above Market Premium",
+      "stem": "On January 1, Year 1, Entity F accepts a 3-year note receivable with a face value of $300,000 and a stated rate of 12% (interest paid annually) when the market rate is 8%. The PV of an ordinary annuity at 8% for 3 periods is 2.57710, and the PV of $1 at 8% for 3 periods is 0.79383. At what amount should the note be initially recorded?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$269,075" },
+        { "label": "C", "text": "$330,925" },
+        { "label": "D", "text": "$312,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Because the stated rate (12%) exceeds the market rate (8%), the note is recorded at a premium. Annual interest = $300,000 × 12% = $36,000. PV of interest = $36,000 × 2.57710 = $92,776. PV of principal = $300,000 × 0.79383 = $238,149. Total carrying amount = $92,776 + $238,149 = $330,925. The $30,925 premium is amortized as a reduction of interest income over the note's life.",
+      "explanationJa": "表面利率（12%）が市場利率（8%）を上回るため、手形はプレミアム付きで計上する。年間利息 = $300,000 × 12% = $36,000。利息のPV = $36,000 × 2.57710 = $92,776。元本のPV = $300,000 × 0.79383 = $238,149。帳簿価額合計 = $92,776 + $238,149 = $330,925。$30,925のプレミアムは手形期間にわたり受取利息の減額として償却する。",
+      "references": ["ASC 835-30-25-2", "ASC 835-30-30-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-096",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Premium Amortization Year 1 Income",
+      "stem": "On January 1, Year 1, Entity G holds a 3-year, $300,000 note receivable with a 12% stated rate (interest paid annually) and a market rate of 8%. The note's initial carrying amount is $330,925. What is the interest income recognized in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$36,000" },
+        { "label": "B", "text": "$26,474" },
+        { "label": "C", "text": "$24,000" },
+        { "label": "D", "text": "$39,711" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the effective interest method, interest income = carrying amount × market rate = $330,925 × 8% = $26,474. Cash interest received = $300,000 × 12% = $36,000. The excess of cash received over interest income ($36,000 − $26,474 = $9,526) reduces the carrying amount (premium amortization).",
+      "explanationJa": "実効金利法では、受取利息 = 帳簿価額 × 市場利率 = $330,925 × 8% = $26,474。受取現金利息 = $300,000 × 12% = $36,000。受取現金が受取利息を超える額（$36,000 − $26,474 = $9,526）は帳簿価額を減額する（プレミアム償却）。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-097",
+      "topic": "Receivables",
+      "subtopic": "Discounting Notes Receivable - Proceeds",
+      "stem": "Entity H holds a $60,000, 6-month, 10% interest-bearing note receivable dated March 1. On June 1, Entity H discounts the note at the bank at a 12% discount rate. What proceeds does Entity H receive from the bank?",
+      "choices": [
+        { "label": "A", "text": "$63,000" },
+        { "label": "B", "text": "$61,110" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$59,220" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Maturity value = $60,000 + ($60,000 × 10% × 6/12) = $60,000 + $3,000 = $63,000. The note is discounted on June 1, which is 3 months after March 1, leaving a remaining discount period of 6 − 3 = 3 months. Bank discount = $63,000 × 12% × 3/12 = $1,890. Proceeds = $63,000 − $1,890 = $61,110.",
+      "explanationJa": "満期金額 = $60,000 + （$60,000 × 10% × 6/12）= $63,000。6月1日に割り引くと3月1日から3か月経過しており、残り割引期間は6 − 3 = 3か月。銀行割引額 = $63,000 × 12% × 3/12 = $1,890。受取額 = $63,000 − $1,890 = $61,110。",
+      "references": ["ASC 860-10-40-5", "ASC 835-30-35-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-098",
+      "topic": "Receivables",
+      "subtopic": "Factoring Without Recourse - Loss on Sale",
+      "stem": "Entity J factors $750,000 of accounts receivable without recourse. The factor charges a 4% finance fee and withholds 6% as a holdback to cover sales returns and allowances. What is the loss on sale of receivables recognized by Entity J?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$75,000" },
+        { "label": "C", "text": "$45,000" },
+        { "label": "D", "text": "$705,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In a without-recourse factoring that qualifies as a sale, the finance fee is the loss on sale. Finance fee = $750,000 × 4% = $30,000. The holdback of $750,000 × 6% = $45,000 is recorded as a receivable from the factor (returned after collections), not a loss. Cash received = $750,000 − $30,000 − $45,000 = $675,000. The loss on sale is the $30,000 finance fee.",
+      "explanationJa": "売却適格な遡及権なしファクタリングでは、金融手数料が売却損となる。金融手数料 = $750,000 × 4% = $30,000。留保金$750,000 × 6% = $45,000はファクターからの受取債権（回収完了後に返還）であり損失ではない。受取現金 = $750,000 − $30,000 − $45,000 = $675,000。売却損は金融手数料$30,000である。",
+      "references": ["ASC 860-10-40-5", "ASC 860-20-40-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-099",
+      "topic": "Receivables",
+      "subtopic": "Factoring With Recourse - Net Proceeds",
+      "stem": "Entity K factors $1,000,000 of accounts receivable with recourse. The factor charges a 5% finance fee and withholds 8% as a holdback (recorded as a due-from-factor receivable). Entity K estimates the fair value of the recourse obligation at $35,000. Assuming the transfer qualifies as a sale, what are the net proceeds under ASC 860 (the fair value of all assets obtained less any liabilities incurred)?",
+      "choices": [
+        { "label": "A", "text": "$870,000" },
+        { "label": "B", "text": "$835,000" },
+        { "label": "C", "text": "$950,000" },
+        { "label": "D", "text": "$915,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 860-20-30-1, net proceeds equal the fair value of all assets obtained less any liabilities incurred. Cash received = $1,000,000 − 5% fee ($50,000) − 8% holdback ($80,000) = $870,000. The 8% holdback of $80,000 is an asset obtained (due from factor). The recourse obligation of $35,000 is a liability incurred. Net proceeds = Cash $870,000 + Due from factor $80,000 − Recourse obligation $35,000 = $915,000.",
+      "explanationJa": "ASC 860-20-30-1により、純受取額は取得した全資産の公正価値から発生した負債を控除した額に等しい。受取現金 = $1,000,000 − 手数料5%（$50,000）− 留保金8%（$80,000）= $870,000。留保金8%の$80,000は取得資産（ファクターからの受取債権）。遡及義務$35,000は発生負債。純受取額 = 現金$870,000 + 受取債権$80,000 − 遡及義務$35,000 = $915,000。",
+      "references": ["ASC 860-20-25-1", "ASC 860-20-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-100",
+      "topic": "Receivables",
+      "subtopic": "Pledging - Interest Expense on Secured Borrowing",
+      "stem": "On October 1, Entity L pledges $500,000 of accounts receivable as collateral for a $350,000 borrowing bearing 10% annual interest. The receivables remain on Entity L's books. What amount of interest expense related to this borrowing should Entity L accrue at December 31?",
+      "choices": [
+        { "label": "A", "text": "$8,750" },
+        { "label": "B", "text": "$35,000" },
+        { "label": "C", "text": "$12,500" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Pledging does not derecognize the receivables; the borrowing is a liability and interest accrues on the loan principal. Interest accrues for 3 months (October 1 to December 31). Interest expense = $350,000 × 10% × 3/12 = $8,750. The interest is computed on the $350,000 loan, not on the $500,000 of pledged receivables.",
+      "explanationJa": "担保差入では債権の認識中止は行わず、借入金は負債としてローン元本に利息が発生する。利息は3か月分（10月1日から12月31日）発生する。支払利息 = $350,000 × 10% × 3/12 = $8,750。利息は担保差入債権$500,000ではなく借入金$350,000に対して計算する。",
+      "references": ["ASC 860-30-25-1", "ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-101",
+      "topic": "Receivables",
+      "subtopic": "CECL - Loss Rate Method on Pool",
+      "stem": "Entity M holds a homogeneous pool of trade receivables totaling $2,500,000. Its historical annual loss rate is 1.8%. Management determines that forward-looking macroeconomic conditions warrant a downward qualitative adjustment of 0.3 percentage points. What is the required allowance for credit losses?",
+      "choices": [
+        { "label": "A", "text": "$45,000" },
+        { "label": "B", "text": "$37,500" },
+        { "label": "C", "text": "$52,500" },
+        { "label": "D", "text": "$7,500" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the CECL loss-rate method, the historical loss rate is adjusted for current conditions and reasonable and supportable forecasts. Adjusted loss rate = 1.8% − 0.3% = 1.5%. Required allowance = $2,500,000 × 1.5% = $37,500. The favorable forecast reduces the loss rate, lowering the allowance compared with the unadjusted $45,000.",
+      "explanationJa": "CECL損失率法では、過去の損失率を現在の状況および合理的かつ裏付け可能な予測について調整する。調整後損失率 = 1.8% − 0.3% = 1.5%。必要引当金 = $2,500,000 × 1.5% = $37,500。良好な予測により損失率が低下し、未調整の$45,000より引当金が減少する。",
+      "references": ["ASC 326-20-30-2", "ASC 326-20-55-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-102",
+      "topic": "Receivables",
+      "subtopic": "CECL - Probability of Default Method",
+      "stem": "Entity N estimates expected credit losses on a $1,000,000 receivable using a probability-of-default approach. It assigns a 6% probability of default (PD) and a 40% loss given default (LGD). What is the expected credit loss?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$400,000" },
+        { "label": "C", "text": "$24,000" },
+        { "label": "D", "text": "$2,400" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The probability-of-default method computes expected credit loss as the exposure at default multiplied by the probability of default and the loss given default. ECL = $1,000,000 × 6% × 40% = $24,000. The PD reflects the likelihood the borrower defaults, and the LGD reflects the portion not expected to be recovered upon default.",
+      "explanationJa": "デフォルト確率法では、予想信用損失をデフォルト時エクスポージャー × デフォルト確率 × デフォルト時損失率で計算する。ECL = $1,000,000 × 6% × 40% = $24,000。PDは借手がデフォルトする可能性、LGDはデフォルト時に回収が見込めない割合を反映する。",
+      "references": ["ASC 326-20-30-3", "ASC 326-20-55-6"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-103",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Effective Interest Final Year Carrying",
+      "stem": "On January 1, Year 1, Entity O accepts a 2-year, $200,000 note receivable with a stated rate of 5% (interest paid annually) when the market rate is 9%. The initial carrying amount is $185,927. Interest income in Year 1 is $16,733. What is the carrying amount of the note at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$185,927" },
+        { "label": "B", "text": "$195,927" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$192,660" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under the effective interest method, the carrying amount increases by the discount amortized. Cash interest received in Year 1 = $200,000 × 5% = $10,000. Discount amortization = Interest income $16,733 − Cash interest $10,000 = $6,733. Carrying amount at year-end = $185,927 + $6,733 = $192,660.",
+      "explanationJa": "実効金利法では、帳簿価額は償却された割引額だけ増加する。Year 1の受取現金利息 = $200,000 × 5% = $10,000。割引償却額 = 受取利息$16,733 − 現金利息$10,000 = $6,733。期末帳簿価額 = $185,927 + $6,733 = $192,660。",
+      "references": ["ASC 835-30-35-2", "ASC 310-10-35-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-104",
+      "topic": "Receivables",
+      "subtopic": "Note Exchanged for Cash and Rights",
+      "stem": "Entity P lends $90,000 cash to a supplier and receives a 3-year, 3% note with a face value of $90,000 (interest paid annually). In exchange for the below-market rate, the supplier grants Entity P a purchase price reduction on future inventory. The market rate is 8%. The PV of the note's cash flows at 8% is $78,401. How should Entity P record the $11,599 difference at inception?",
+      "choices": [
+        { "label": "A", "text": "As interest income immediately" },
+        {
+          "label": "B",
+          "text": "As a discount on note receivable and a prepaid asset (deferred charge) for the future price reduction"
+        },
+        { "label": "C", "text": "As a loss on the note" },
+        {
+          "label": "D",
+          "text": "As an increase to the note receivable carrying amount"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 835-30-25-3, when a note is issued for cash and an additional right or privilege, the difference between the cash advanced ($90,000) and the present value of the note ($78,401) represents payment for that right. The $11,599 difference is recorded as a discount on the note receivable, with a corresponding prepaid asset (deferred charge) for the future inventory price reduction. The discount is amortized to interest income, and the prepaid asset reduces future inventory cost.",
+      "explanationJa": "ASC 835-30-25-3により、現金と追加の権利・特典のために手形が発行された場合、貸付現金（$90,000）と手形の現在価値（$78,401）の差額はその権利の対価を表す。差額$11,599は受取手形の割引として記録し、将来の在庫価格引下げに対する前払資産（繰延費用）を計上する。割引は受取利息に償却し、前払資産は将来の在庫原価を減額する。",
+      "references": ["ASC 835-30-25-3", "ASC 835-30-25-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-105",
+      "topic": "Receivables",
+      "subtopic": "Bad Debt Expense - Aging Method with Debit Balance",
+      "stem": "At year-end, Entity Q's aging analysis indicates a required allowance for credit losses of $52,000. Before adjustment, the allowance account has a debit balance of $7,000 (write-offs exceeded the prior allowance). What amount of credit loss expense should Entity Q record?",
+      "choices": [
+        { "label": "A", "text": "$45,000" },
+        { "label": "B", "text": "$52,000" },
+        { "label": "C", "text": "$59,000" },
+        { "label": "D", "text": "$7,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the aging (percentage-of-receivables) method, the expense is the amount needed to bring the allowance to the required ending credit balance. Because the allowance currently has a $7,000 debit balance, the expense must cover both the debit balance and the required $52,000 credit balance. Credit loss expense = $52,000 + $7,000 = $59,000.",
+      "explanationJa": "年齢分析（売掛金残高比率）法では、費用は引当金を必要な期末貸方残高にするために要する金額である。引当金が現在$7,000の借方残高であるため、費用はこの借方残高と必要な貸方残高$52,000の両方をカバーしなければならない。信用損失費用 = $52,000 + $7,000 = $59,000。",
+      "references": ["ASC 326-20-30-1", "ASC 326-20-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-106",
+      "topic": "Receivables",
+      "subtopic": "Installment Method - Year 2 Gross Profit",
+      "stem": "Entity R sells property with a cost of $360,000 for $600,000 using the installment method. The buyer pays $150,000 down in Year 1 and $150,000 in Year 2. What gross profit does Entity R recognize in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$90,000" },
+        { "label": "C", "text": "$150,000" },
+        { "label": "D", "text": "$240,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gross profit rate = ($600,000 − $360,000) / $600,000 = 40%. Under the installment method, gross profit is recognized as cash is collected. Year 2 cash collection = $150,000. Year 2 gross profit = $150,000 × 40% = $60,000. The down payment recognition occurred separately in Year 1.",
+      "explanationJa": "粗利益率 = （$600,000 − $360,000）/ $600,000 = 40%。割賦販売法では、粗利益は現金回収に応じて認識する。Year 2の現金回収 = $150,000。Year 2粗利益 = $150,000 × 40% = $60,000。頭金の認識はYear 1に別途行われた。",
+      "references": ["ASC 606-10-55-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-107",
+      "topic": "Receivables",
+      "subtopic": "Cost Recovery Method - Profit Recognition",
+      "stem": "Entity S sells land costing $400,000 for $700,000 and, because collectibility is highly uncertain, uses the cost recovery method. The buyer pays $250,000 in Year 1 and $250,000 in Year 2. How much gross profit does Entity S recognize in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the cost recovery method, no gross profit is recognized until cumulative cash collections exceed the cost of the item sold ($400,000). Year 1 collections of $250,000 do not exceed cost, so no profit is recognized. By the end of Year 2, cumulative collections = $250,000 + $250,000 = $500,000, which exceeds the $400,000 cost by $100,000. Therefore $100,000 of gross profit is recognized in Year 2.",
+      "explanationJa": "原価回収法では、累積現金回収額が販売物の原価（$400,000）を超えるまで粗利益を認識しない。Year 1の回収$250,000は原価を超えないため利益を認識しない。Year 2末の累積回収額 = $250,000 + $250,000 = $500,000で、原価$400,000を$100,000超過する。したがってYear 2に粗利益$100,000を認識する。",
+      "references": ["ASC 606-10-55-1", "ASC 610-20-32-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-108",
+      "topic": "Receivables",
+      "subtopic": "Note Impairment - PV of Restructured Cash Flows",
+      "stem": "Bank T holds a $600,000 loan with an original effective interest rate of 10%. The borrower is in financial difficulty, and the bank now expects a single lump-sum payment of $500,000 at the end of 2 years (no interim interest). The PV of $1 at 10% for 2 periods is 0.82645. What credit loss should the bank recognize?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$413,225" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$186,775" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The expected credit loss equals the carrying amount less the present value of expected future cash flows discounted at the original effective rate. PV of expected cash flows = $500,000 × 0.82645 = $413,225. Credit loss = $600,000 − $413,225 = $186,775.",
+      "explanationJa": "予想信用損失 = 帳簿価額 − 当初実効金利で割り引いた予想将来キャッシュフローの現在価値。予想キャッシュフローのPV = $500,000 × 0.82645 = $413,225。信用損失 = $600,000 − $413,225 = $186,775。",
+      "references": ["ASC 326-20-30-4", "ASC 326-20-35-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-109",
+      "topic": "Receivables",
+      "subtopic": "Collateral-Dependent - Allowance Measurement",
+      "stem": "Bank U holds a $900,000 loan that is collateral-dependent. The fair value of the collateral is $780,000 and estimated costs to sell are $30,000. Repayment is expected substantially through sale of the collateral. Under the CECL collateral-dependent practical expedient, what allowance for credit losses should the bank record?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$90,000" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-20-35-5, for a collateral-dependent financial asset, the allowance equals the amortized cost less the fair value of the collateral, adjusted for costs to sell when repayment is expected through sale. Collateral fair value less costs to sell = $780,000 − $30,000 = $750,000. Allowance = $900,000 − $750,000 = $150,000.",
+      "explanationJa": "ASC 326-20-35-5により、担保依存型の金融資産では、引当金は償却原価から担保の公正価値（売却が見込まれる場合は売却費用調整後）を控除した額に等しい。担保の公正価値から売却費用を控除した額 = $780,000 − $30,000 = $750,000。引当金 = $900,000 − $750,000 = $150,000。",
+      "references": ["ASC 326-20-35-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-110",
+      "topic": "Receivables",
+      "subtopic": "Purchased Credit-Deteriorated Asset - Initial Allowance",
+      "stem": "Entity V purchases a portfolio of loans for $850,000 that meets the definition of purchased financial assets with credit deterioration (PCD). At acquisition, the entity estimates expected credit losses of $120,000. Under ASC 326, what is the initial amortized cost basis (gross) of the loans?",
+      "choices": [
+        { "label": "A", "text": "$850,000" },
+        { "label": "B", "text": "$970,000" },
+        { "label": "C", "text": "$730,000" },
+        { "label": "D", "text": "$120,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "For purchased credit-deteriorated (PCD) assets, ASC 326-20-30-13 requires a gross-up approach: the initial allowance for expected credit losses is added to the purchase price to determine the initial amortized cost basis. There is no credit loss expense at acquisition. Initial amortized cost = Purchase price $850,000 + Initial allowance $120,000 = $970,000.",
+      "explanationJa": "購入時信用劣化（PCD）資産については、ASC 326-20-30-13がグロスアップ法を要求する。予想信用損失の当初引当金を購入価格に加算して当初償却原価を算定する。取得時に信用損失費用は計上しない。当初償却原価 = 購入価格$850,000 + 当初引当金$120,000 = $970,000。",
+      "references": ["ASC 326-20-30-13", "ASC 326-20-30-14"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-111",
+      "topic": "Receivables",
+      "subtopic": "Sales Return Allowance - Net Receivable Impact",
+      "stem": "Entity W has gross accounts receivable of $1,200,000, an allowance for credit losses of $36,000, and a separate refund liability of $48,000 for expected sales returns recorded under ASC 606. At what amount should accounts receivable, net of the credit loss allowance, be presented in current assets?",
+      "choices": [
+        { "label": "A", "text": "$1,116,000" },
+        { "label": "B", "text": "$1,152,000" },
+        { "label": "C", "text": "$1,164,000" },
+        { "label": "D", "text": "$1,200,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The allowance for credit losses is a contra-asset that reduces accounts receivable. The refund liability for expected returns is a separate liability under ASC 606-10-32-10, not a contra-receivable, so it is presented on the liability side and does not reduce the receivable. Accounts receivable, net = $1,200,000 − $36,000 = $1,164,000.",
+      "explanationJa": "貸倒引当金は売掛金を減額するcontra-assetである。返品見込みに対する返金負債はASC 606-10-32-10に基づく別個の負債であり、債権の控除項目ではないため、負債側に表示され債権を減額しない。売掛金純額 = $1,200,000 − $36,000 = $1,164,000。",
+      "references": ["ASC 326-20-45-1", "ASC 606-10-32-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-112",
+      "topic": "Receivables",
+      "subtopic": "Accounts Receivable Turnover - Days Sales Outstanding",
+      "stem": "Entity X reports net credit sales of $7,300,000 for the year. Beginning accounts receivable were $550,000 and ending accounts receivable were $810,000. What is the days sales outstanding (DSO), using a 365-day year and average receivables?",
+      "choices": [
+        { "label": "A", "text": "34.0 days" },
+        { "label": "B", "text": "68.0 days" },
+        { "label": "C", "text": "40.5 days" },
+        { "label": "D", "text": "27.5 days" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Average accounts receivable = ($550,000 + $810,000) / 2 = $680,000. Receivables turnover = Net credit sales / Average AR = $7,300,000 / $680,000 = 10.735 times. Days sales outstanding = 365 / 10.735 = 34.0 days. Equivalently, DSO = (Average AR / Net credit sales) × 365 = ($680,000 / $7,300,000) × 365 = 34.0 days.",
+      "explanationJa": "平均売掛金 = （$550,000 + $810,000）/ 2 = $680,000。売掛金回転率 = 正味掛売上 / 平均売掛金 = $7,300,000 / $680,000 = 10.735回。売上債権回転日数（DSO）= 365 / 10.735 = 34.0日。または、DSO =（平均売掛金 / 正味掛売上）× 365 =（$680,000 / $7,300,000）× 365 = 34.0日。",
+      "references": ["Financial analysis ratios"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-113",
+      "topic": "Receivables",
+      "subtopic": "Interest Receivable - Note Acquired Mid-Period",
+      "stem": "On May 1, Entity Y accepts an $180,000, 1-year note receivable bearing 8% interest, with all interest due at maturity. What amount of interest receivable should Entity Y report on its December 31 year-end balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$9,600" },
+        { "label": "B", "text": "$14,400" },
+        { "label": "C", "text": "$4,800" },
+        { "label": "D", "text": "$12,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Interest accrues from May 1 to December 31, which is 8 months. Annual interest = $180,000 × 8% = $14,400. Interest receivable accrued = $14,400 × 8/12 = $9,600. Although the cash interest is not received until maturity, the earned interest must be accrued at year-end.",
+      "explanationJa": "利息は5月1日から12月31日までの8か月分発生する。年間利息 = $180,000 × 8% = $14,400。発生未収利息 = $14,400 × 8/12 = $9,600。現金利息は満期まで受け取らないが、稼得した利息は期末に見越計上する。",
+      "references": ["ASC 835-30-35-2", "ASC 310-10-35-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-114",
+      "topic": "Receivables",
+      "subtopic": "Foreign Currency Receivable - Transaction Gain",
+      "stem": "Entity Z, a U.S. company, sells goods to a U.K. customer for 500,000 British pounds on December 1, when the spot rate is $1.26/pound. At December 31, the spot rate is $1.31/pound. The receivable is still outstanding at year-end. What foreign currency transaction gain or loss should Entity Z recognize at December 31?",
+      "choices": [
+        { "label": "A", "text": "$25,000 loss" },
+        { "label": "B", "text": "$655,000 gain" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$25,000 gain" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The receivable is denominated in pounds and must be remeasured at the year-end spot rate. Initial value = 500,000 × $1.26 = $630,000. December 31 value = 500,000 × $1.31 = $655,000. Because the pound strengthened, the dollar value of the receivable increased by $655,000 − $630,000 = $25,000, producing a foreign currency transaction gain of $25,000 (ASC 830-20-35-1).",
+      "explanationJa": "債権はポンド建てであり、期末スポットレートで再測定しなければならない。当初価額 = 500,000 × $1.26 = $630,000。12月31日価額 = 500,000 × $1.31 = $655,000。ポンド高により債権のドル価値が$655,000 − $630,000 = $25,000増加し、為替差益$25,000を生じる（ASC 830-20-35-1）。",
+      "references": ["ASC 830-20-35-1", "ASC 830-20-25-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-115",
+      "topic": "Receivables",
+      "subtopic": "Contract Asset vs Receivable Distinction",
+      "stem": "Under ASC 606, which of the following best distinguishes a contract asset from a receivable?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A contract asset and a receivable are identical and used interchangeably"
+        },
+        {
+          "label": "B",
+          "text": "A receivable is an unconditional right to consideration, whereas a contract asset is a right to consideration conditioned on something other than the passage of time"
+        },
+        {
+          "label": "C",
+          "text": "A contract asset is always classified as noncurrent, while a receivable is always current"
+        },
+        {
+          "label": "D",
+          "text": "A receivable arises only from service contracts, while a contract asset arises only from goods"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 606-10-45-3 and 45-4, a receivable is an entity's unconditional right to consideration — only the passage of time is required before payment is due. A contract asset is the entity's right to consideration in exchange for goods or services already transferred when that right is conditioned on something other than the passage of time (for example, completing additional performance obligations).",
+      "explanationJa": "ASC 606-10-45-3および45-4により、債権（receivable）は対価に対する無条件の権利であり、支払期日までに時の経過のみを要する。契約資産（contract asset）は、既に移転した財・サービスと交換に対価を受け取る権利のうち、時の経過以外の条件（例：追加の履行義務の完了）が付されたものである。",
+      "references": ["ASC 606-10-45-3", "ASC 606-10-45-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-116",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Land Sale Gain with PV",
+      "stem": "On January 1, Year 1, Entity AA sells land with a carrying value of $250,000 in exchange for a 3-year, non-interest-bearing note with a face value of $360,000. No reliable fair value of the land is available, but the market rate for such a note is 10%. The PV of $1 at 10% for 3 periods is 0.75131. What gain on sale of land should Entity AA recognize at the date of sale?",
+      "choices": [
+        { "label": "A", "text": "$110,000" },
+        { "label": "B", "text": "$20,472" },
+        { "label": "C", "text": "$270,472" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When the fair value of the property is not determinable, the note is recorded at the present value of its cash flows using the imputed market rate. PV of note = $360,000 × 0.75131 = $270,472. This present value is the deemed sales price. Gain on sale = $270,472 − Carrying value $250,000 = $20,472. The $89,528 discount ($360,000 − $270,472) is recognized as interest income over the note term, not as gain at sale.",
+      "explanationJa": "資産の公正価値が判定できない場合、手形は帰属市場利率を用いたキャッシュフローの現在価値で計上する。手形のPV = $360,000 × 0.75131 = $270,472。この現在価値がみなし販売価格となる。売却益 = $270,472 − 帳簿価額$250,000 = $20,472。割引$89,528（$360,000 − $270,472）は売却時の利得ではなく、手形期間にわたり受取利息として認識する。",
+      "references": ["ASC 835-30-25-2", "ASC 835-30-25-7"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-117",
+      "topic": "Receivables",
+      "subtopic": "CECL - Off-Balance-Sheet Commitment Liability",
+      "stem": "Entity BB has an unfunded loan commitment of $4,000,000 that is not unconditionally cancellable by the entity. Under CECL, it estimates that 60% of the commitment is likely to be funded over its life and applies an expected lifetime loss rate of 2% to the funded exposure. What liability for expected credit losses should Entity BB record on the unfunded commitment?",
+      "choices": [
+        { "label": "A", "text": "$48,000" },
+        { "label": "B", "text": "$80,000" },
+        { "label": "C", "text": "$2,400,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20-30-11, expected credit losses on off-balance-sheet credit exposures that are not unconditionally cancellable are estimated over the contractual period, considering the likelihood that funding will occur. Expected funded exposure = $4,000,000 × 60% = $2,400,000. Expected credit loss liability = $2,400,000 × 2% = $48,000, recorded as a liability rather than a contra-asset.",
+      "explanationJa": "ASC 326-20-30-11により、無条件に取消不能でないオフバランスの信用エクスポージャーの予想信用損失は、資金供与が生じる可能性を考慮し契約期間にわたり見積もる。予想資金供与エクスポージャー = $4,000,000 × 60% = $2,400,000。予想信用損失負債 = $2,400,000 × 2% = $48,000で、contra-assetではなく負債として計上する。",
+      "references": ["ASC 326-20-30-11", "ASC 326-20-30-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-118",
+      "topic": "Receivables",
+      "subtopic": "Write-Off - Effect on Net Receivables",
+      "stem": "Before a write-off, Entity CC has gross accounts receivable of $940,000 and an allowance for credit losses of $58,000, giving net receivables of $882,000. Entity CC then writes off a specific $22,000 account as uncollectible using the allowance method. What is the net realizable value of accounts receivable immediately after the write-off?",
+      "choices": [
+        { "label": "A", "text": "$860,000" },
+        { "label": "B", "text": "$904,000" },
+        { "label": "C", "text": "$882,000" },
+        { "label": "D", "text": "$818,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A write-off under the allowance method reduces both gross accounts receivable and the allowance by the same amount: gross AR becomes $940,000 − $22,000 = $918,000, and the allowance becomes $58,000 − $22,000 = $36,000. Net realizable value = $918,000 − $36,000 = $882,000, unchanged from before the write-off. The write-off has no effect on net receivables or net income because the loss was anticipated in the allowance.",
+      "explanationJa": "引当金法による償却は、売掛金総額と引当金を同額減少させる。売掛金総額は$940,000 − $22,000 = $918,000、引当金は$58,000 − $22,000 = $36,000となる。正味実現可能価額 = $918,000 − $36,000 = $882,000で、償却前と変わらない。損失は引当金で既に予想されていたため、償却は正味債権にも純利益にも影響しない。",
+      "references": ["ASC 326-20-35-8"],
+      "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }
   ]

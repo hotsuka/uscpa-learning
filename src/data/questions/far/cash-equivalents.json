@@ -2,7 +2,7 @@
   "id": "far-cash-equivalents",
   "name": "Cash and Cash Equivalents",
   "topic": "Cash and Cash Equivalents",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "questions": [
     {
       "id": "cce-001",
@@ -1952,6 +1952,468 @@
       "explanationJa": "旅費前渡金は従業員に支払った金額で、経費報告書による精算または返金が必要。資金の管理が従業員に移転しているため現金ではなく従業員からの受取勘定に分類。精算が30日以内に見込まれるため流動資産（受取勘定）。費用未発生のため前払費用ではなく、会社が従業員に債権を持つため負債でもない。",
       "references": ["ASC 305-10-05-2", "ASC 310-10-25"],
       "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-066",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Adjusted Bank Balance",
+      "stem": "On June 30, a company's bank statement shows a balance of $63,500. The company identifies deposits in transit of $7,250 and outstanding checks of $9,400. There are no other bank-side reconciling items. What is the adjusted bank balance?",
+      "choices": [
+        { "label": "A", "text": "$61,350" },
+        { "label": "B", "text": "$65,650" },
+        { "label": "C", "text": "$80,150" },
+        { "label": "D", "text": "$46,850" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The adjusted bank balance equals the bank statement balance plus deposits in transit minus outstanding checks: $63,500 + $7,250 - $9,400 = $61,350. Deposits in transit are added because the bank has not yet recorded them, and outstanding checks are subtracted because the bank has not yet processed them. Reversing both adjustments yields $65,650, and adding the outstanding checks instead of subtracting them yields $80,150.",
+      "explanationJa": "修正後銀行残高 = 銀行残高 + 未達預入 - 未取立小切手 = $63,500 + $7,250 - $9,400 = $61,350。未達預入は銀行未記帳のため加算、未取立小切手は銀行未処理のため減算する。両調整を逆にすると$65,650、未取立小切手を減算ではなく加算すると$80,150になる。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-067",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Petty Cash - Reportable Cash Amount",
+      "stem": "At month-end, a custodian counts a $300 imprest petty cash fund and finds $112 in currency, $8 in coins, $175 in expense receipts, and $5 of unused postage stamps. What amount should be reported as petty cash (cash) on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$300" },
+        { "label": "B", "text": "$120" },
+        { "label": "C", "text": "$125" },
+        { "label": "D", "text": "$295" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Only currency and coins represent cash in the fund: $112 + $8 = $120. The $175 in receipts represents expenses already incurred, and the $5 of postage stamps is a prepaid expense, not cash. The imprest amount of $300 is the authorized fund size, not the actual cash on hand. Including the stamps would overstate cash at $125.",
+      "explanationJa": "現金として報告できるのは通貨と硬貨のみ：$112 + $8 = $120。レシート$175は既発生費用、切手$5は前払費用であり現金ではない。定額$300は承認された基金額であって実際の現金ではない。切手を含めると$125と過大計上になる。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-068",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Cash Classification - Excluded Item",
+      "stem": "Which of the following should NOT be included in the Cash and Cash Equivalents line on the December 31 balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A U.S. Treasury bill purchased at issuance with a 2-month original maturity"
+        },
+        {
+          "label": "B",
+          "text": "A current-dated customer check on hand but not yet deposited"
+        },
+        {
+          "label": "C",
+          "text": "A certificate of deposit with a 120-day original maturity"
+        },
+        {
+          "label": "D",
+          "text": "A demand deposit in an unrestricted checking account"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A certificate of deposit with a 120-day original maturity exceeds the three-month threshold of ASC 305-10-20 and therefore does not qualify as a cash equivalent; it is a short-term investment. The 2-month Treasury bill qualifies as a cash equivalent, a current-dated customer check on hand is negotiable cash, and an unrestricted demand deposit is cash.",
+      "explanationJa": "当初満期120日のCDはASC 305-10-20の3か月基準を超えるため現金同等物に該当せず、短期投資となる。当初満期2か月のT-Billは現金同等物、即時換金可能な当日付小切手は現金、制限のない要求払預金も現金である。",
+      "references": ["ASC 305-10-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-069",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Adjusted Book Balance",
+      "stem": "A company's December 31 book balance is $54,800. The bank reconciliation reveals: a note receivable collected by the bank of $8,000 plus $320 interest, a monthly service charge of $60, an NSF check from a customer of $1,450, and a recording error in which a check written for $940 was recorded in the books as $490. What is the adjusted book balance?",
+      "choices": [
+        { "label": "A", "text": "$62,060" },
+        { "label": "B", "text": "$61,160" },
+        { "label": "C", "text": "$63,060" },
+        { "label": "D", "text": "$60,260" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Beginning book balance $54,800: add the note collected $8,000 and interest $320; subtract the service charge $60 and the NSF check $1,450. The check for $940 was recorded as $490, understating the disbursement by $450, so the book balance is overstated by $450 and must be reduced. Adjusted book balance = $54,800 + $8,000 + $320 - $60 - $1,450 - $450 = $61,160. Adding the $450 error instead of subtracting it yields $62,060, and omitting both the error and the NSF check yields $63,060.",
+      "explanationJa": "帳簿残高$54,800：銀行回収手形+$8,000と利息+$320を加算、手数料-$60とNSF-$1,450を減算。$940の小切手を$490と記帳→支出$450過少→帳簿が$450過大のため減算。修正後帳簿残高 = $54,800 + $8,000 + $320 - $60 - $1,450 - $450 = $61,160。誤差$450を減算ではなく加算すると$62,060になる。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-070",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Restricted Cash - Current Bond Sinking Fund",
+      "stem": "A company holds $400,000 in a sinking fund restricted exclusively for the repayment of bonds that mature in 8 months. The bonds will be classified as a current liability at the balance sheet date. How should the sinking fund cash be classified?",
+      "choices": [
+        { "label": "A", "text": "Noncurrent asset — restricted cash" },
+        {
+          "label": "B",
+          "text": "Cash and cash equivalents, combined with operating cash"
+        },
+        { "label": "C", "text": "Current asset — restricted cash" },
+        { "label": "D", "text": "Investments — noncurrent" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 210-10-45, restricted cash is classified as current or noncurrent based on the timing of the underlying obligation. Because the bonds mature in 8 months and are reported as a current liability, the sinking fund set aside to repay them is classified as a current restricted asset, separately disclosed. It is not combined with operating cash because access is legally restricted. If the bonds matured beyond one year, the fund would be noncurrent.",
+      "explanationJa": "ASC 210-10-45に基づき、制限付き現金は対応する債務の時期で流動・固定を判定する。社債が8か月後に満期で流動負債に計上されるため、償還用の減債基金は流動の制限付き資産として区分表示する。法的に拘束されるため営業現金とは合算しない。社債が1年超で満期なら固定となる。",
+      "references": ["ASC 210-10-45-4", "ASC 230-10-50-8"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-071",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Compensating Balance - Short-term Legally Restricted",
+      "stem": "A company obtains a 9-month bank loan and is legally required to maintain a compensating balance of $80,000 in a separate account that it cannot withdraw until the loan is repaid. How should the compensating balance be reported on the balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Included in cash and cash equivalents without separate disclosure"
+        },
+        {
+          "label": "B",
+          "text": "Current asset — restricted cash, separately disclosed"
+        },
+        { "label": "C", "text": "Noncurrent asset — restricted cash" },
+        { "label": "D", "text": "Deduction from the related loan payable" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Because the compensating balance is legally restricted, it must be separated from cash and cash equivalents under ASC 210-10-45. Since the related loan is due in 9 months (within one year), the restriction is current, so the $80,000 is reported as a current restricted asset with disclosure of the arrangement. A legally restricted balance tied to long-term borrowing would instead be noncurrent.",
+      "explanationJa": "補償性預金が法的に拘束されているため、ASC 210-10-45により現金及び現金同等物から区分する。関連ローンが9か月（1年以内）で返済されるため制限は流動であり、$80,000を流動の制限付き資産として取決めを開示の上計上する。長期借入に紐づく法的拘束残高であれば固定となる。",
+      "references": ["ASC 210-10-45-4", "ASC 210-10-50"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-072",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Cash Overdraft - Same Bank Right of Offset",
+      "stem": "A company has three accounts at the same bank with a legal right of offset: an operating account of $42,000, a disbursement account overdrawn by $15,000, and a reserve account of $9,000. What net amount should be reported as cash?",
+      "choices": [
+        { "label": "A", "text": "$51,000" },
+        { "label": "B", "text": "$66,000" },
+        { "label": "C", "text": "$36,000" },
+        { "label": "D", "text": "$42,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "With a legal right of offset at the same bank, the overdraft is netted against the positive balances: $42,000 - $15,000 + $9,000 = $36,000, reported as a single cash amount. Ignoring the overdraft yields $51,000, and adding it back instead of subtracting it yields $66,000. Without a right of offset, the $15,000 overdraft would instead be a current liability.",
+      "explanationJa": "同一銀行で法的相殺権がある場合、当座借越を他の口座残高と相殺する：$42,000 - $15,000 + $9,000 = $36,000を一括して現金として表示する。借越を無視すると$51,000、減算ではなく加算すると$66,000になる。相殺権がなければ$15,000の借越は流動負債となる。",
+      "references": ["ASC 210-10-45-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-073",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Foreign Currency Cash - Remeasurement",
+      "stem": "A U.S. company holds €250,000 in a foreign bank account. The cash was recorded on the receipt date when the spot rate was $1.06/€. At December 31, the spot rate is $1.12/€. At what amount should the cash be reported, and how is the difference treated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$265,000, with the difference deferred until the cash is converted"
+        },
+        {
+          "label": "B",
+          "text": "$280,000, with a $15,000 foreign currency gain recognized in net income"
+        },
+        {
+          "label": "C",
+          "text": "$280,000, with a $15,000 gain recognized in other comprehensive income"
+        },
+        { "label": "D", "text": "$265,000, with no adjustment required" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 830-10-45-17, foreign currency monetary assets such as cash are remeasured at the current spot rate at each balance sheet date. The reported amount is €250,000 × $1.12 = $280,000. The increase from the previously recorded $265,000 (€250,000 × $1.06) is a $15,000 foreign currency transaction gain recognized in net income, not in other comprehensive income and not deferred.",
+      "explanationJa": "ASC 830-10-45-17により、現金等の外貨建て貨幣性資産は各B/S日の直物レートで再測定する。報告額は€250,000 × $1.12 = $280,000。前回計上額$265,000（€250,000 × $1.06）からの増加$15,000は為替差益として純利益に計上し、OCIや繰延ではない。",
+      "references": ["ASC 830-10-45-17"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-074",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Proof of Cash - Adjusted Disbursements",
+      "stem": "In preparing a four-column proof of cash, a company finds that bank disbursements (checks paid) for the month totaled $76,000. Outstanding checks were $8,200 at the beginning of the month and $10,500 at the end of the month. What amount should be reported as the company's adjusted (book) disbursements for the month?",
+      "choices": [
+        { "label": "A", "text": "$73,700" },
+        { "label": "B", "text": "$78,300" },
+        { "label": "C", "text": "$76,000" },
+        { "label": "D", "text": "$94,700" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Adjusted book disbursements = bank disbursements - beginning outstanding checks + ending outstanding checks = $76,000 - $8,200 + $10,500 = $78,300. The beginning outstanding checks cleared during the month and are included in the bank's $76,000, so they are removed; the ending outstanding checks were recorded by the company but not yet paid by the bank, so they are added. Reversing both adjustments yields $73,700.",
+      "explanationJa": "修正後帳簿支出額 = 銀行支出 - 期首未取立小切手 + 期末未取立小切手 = $76,000 - $8,200 + $10,500 = $78,300。期首の未取立小切手は当月に決済され$76,000に含まれるため控除し、期末の未取立小切手は会社記帳済み・銀行未払のため加算する。両調整を逆にすると$73,700になる。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-075",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Net Book Adjustment",
+      "stem": "A company's bank reconciliation discloses the following items that are recorded by the bank but not by the company: an NSF check from a customer of $2,100, a returned-item fee of $25, interest earned of $90, and a service charge of $40. What is the net adjustment to the company's book balance?",
+      "choices": [
+        { "label": "A", "text": "$2,075 decrease" },
+        { "label": "B", "text": "$2,075 increase" },
+        { "label": "C", "text": "$2,255 decrease" },
+        { "label": "D", "text": "$1,985 decrease" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "All four items adjust the book balance because the bank has recorded them but the company has not. The NSF check decreases the balance by $2,100, the returned-item fee by $25, and the service charge by $40, while interest earned increases it by $90. Net adjustment = -$2,100 - $25 - $40 + $90 = -$2,075, a decrease of $2,075. Ignoring the interest yields a $2,255 decrease, and omitting the service charge and fee yields a $1,985 decrease.",
+      "explanationJa": "4項目とも銀行記帳済み・帳簿未記帳のため帳簿を修正する。NSF小切手-$2,100、返却手数料-$25、手数料-$40、利息+$90。純修正額 = -$2,100 - $25 - $40 + $90 = -$2,075（$2,075の減少）。利息を無視すると$2,255減少、手数料と返却手数料を除外すると$1,985減少になる。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-076",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - EFT Customer Collection",
+      "stem": "A company's December bank statement shows an electronic funds transfer (EFT) of $4,600 received directly from a customer that the company has not yet recorded in its books. In the bank reconciliation, this EFT collection should be:",
+      "choices": [
+        { "label": "A", "text": "Deducted from the bank balance" },
+        { "label": "B", "text": "Added to the book balance" },
+        { "label": "C", "text": "Deducted from the book balance" },
+        { "label": "D", "text": "Added to the bank balance" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The EFT receipt has already been processed by the bank (increasing the bank balance) but has not been recorded by the company. To reconcile, the company's book balance must be increased by $4,600, and a journal entry is required debiting Cash and crediting the customer's accounts receivable. No adjustment to the bank balance is needed because the bank has already recorded the collection.",
+      "explanationJa": "EFT入金は銀行で処理済み（銀行残高は増加）だが会社帳簿に未記帳。一致させるには帳簿残高を$4,600増額し、現金(借方)・売掛金(貸方)の仕訳を行う。銀行は既に記帳済みのため銀行残高の修正は不要。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-077",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Undelivered Checks at Year-End",
+      "stem": "At December 31, a company had drawn and recorded checks totaling $18,000 to pay vendors, reducing its Cash account, but the checks were still in the company's possession and had not been mailed or released to the payees by year-end. Before these checks were recorded as disbursements, the Cash account had a balance of $5,000. What amount of cash should the company report on its December 31 balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$5,000" },
+        { "label": "B", "text": "$23,000" },
+        { "label": "C", "text": "$18,000" },
+        { "label": "D", "text": "($13,000)" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Checks that have been drawn and recorded but not yet delivered to the payees do not reduce cash, because the company still controls the funds and no legal obligation has been discharged. The $18,000 of undelivered checks must be added back to the post-disbursement Cash balance and reinstated to accounts payable: $5,000 + $18,000 = $23,000 reported as cash. Recording the checks as if they had been released understates cash at $5,000, and treating the disbursement as final leaves a negative balance of ($13,000).",
+      "explanationJa": "振り出して記帳済みでも未交付（未郵送）の小切手は現金を減少させない。会社が依然として資金を支配し、債務も消滅していないためである。未交付小切手$18,000は支出計上後の現金残高に戻し入れ、買掛金も再計上する：$5,000 + $18,000 = $23,000を現金として報告する。交付済みとして記帳すると$5,000と過少計上になり、支出を確定として扱うと残高は$(13,000)とマイナスになる。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-078",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Comprehensive Adjusted Balance",
+      "stem": "Company M reports a December 31 book balance of $71,300. Its bank reconciliation shows: a note collected by the bank of $12,000 (including $500 of interest), an NSF check from a customer of $3,200, a bank service charge of $175, and an error in which a deposit of $6,300 was recorded in the books as $3,600. What is the adjusted (correct) cash balance?",
+      "choices": [
+        { "label": "A", "text": "$79,925" },
+        { "label": "B", "text": "$85,325" },
+        { "label": "C", "text": "$82,625" },
+        { "label": "D", "text": "$80,225" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Beginning book balance $71,300: add the note collected $12,000 (interest is already included in the $12,000); subtract the NSF check $3,200 and the service charge $175. The deposit of $6,300 was recorded as $3,600, understating cash by $2,700, so add $2,700. Adjusted balance = $71,300 + $12,000 - $3,200 - $175 + $2,700 = $82,625. Omitting the deposit error yields $79,925, and double-counting the interest by adding $500 separately yields $85,325.",
+      "explanationJa": "帳簿残高$71,300：銀行回収手形+$12,000（利息$500は$12,000に含む）を加算、NSF-$3,200と手数料-$175を減算。預入$6,300を$3,600と記帳→$2,700過少→+$2,700。修正後残高 = $71,300 + $12,000 - $3,200 - $175 + $2,700 = $82,625。預入誤りを無視すると$79,925、利息$500を別途加算して二重計上すると$85,325になる。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-079",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Proof of Cash - Adjusted Receipts",
+      "stem": "In a two-month proof of cash, a company's bank statement shows deposits credited during May of $158,000. Deposits in transit were $12,300 at April 30 and $9,800 at May 31. What amount should be reported as the company's adjusted (book) cash receipts for May?",
+      "choices": [
+        { "label": "A", "text": "$160,500" },
+        { "label": "B", "text": "$155,500" },
+        { "label": "C", "text": "$158,000" },
+        { "label": "D", "text": "$180,100" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Adjusted book receipts = bank deposits + ending deposits in transit - beginning deposits in transit = $158,000 + $9,800 - $12,300 = $155,500. The April 30 deposits in transit cleared the bank in May and are already included in the $158,000, so they are subtracted; the May 31 deposits in transit have not yet cleared, so they are added. Reversing both adjustments yields $160,500.",
+      "explanationJa": "修正後帳簿受領額 = 銀行記録預入 + 期末未達預入 - 期首未達預入 = $158,000 + $9,800 - $12,300 = $155,500。4月末の未達預入は5月に銀行で処理済みのため控除し、5月末の未達預入は未処理のため加算する。両調整を逆にすると$160,500になる。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-080",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Foreign Currency Cash - Multiple Balances",
+      "stem": "A U.S. company holds cash in three currencies at December 31: CHF 60,000 (rate $1.11/CHF), AUD 120,000 (rate $0.66/AUD), and ¥5,000,000 (rate $0.0069/¥). What total amount should be reported as cash on the U.S. dollar balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$145,800" },
+        { "label": "B", "text": "$180,300" },
+        { "label": "C", "text": "$111,300" },
+        { "label": "D", "text": "$179,400" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 830-10-45-17, foreign currency cash is remeasured at the current spot rate at the balance sheet date. CHF 60,000 × $1.11 = $66,600; AUD 120,000 × $0.66 = $79,200; ¥5,000,000 × $0.0069 = $34,500. Total = $66,600 + $79,200 + $34,500 = $180,300. Omitting the yen balance yields $145,800. Any remeasurement gains or losses are recognized in net income.",
+      "explanationJa": "ASC 830-10-45-17により外貨建て現金はB/S日の直物レートで再測定する。CHF 60,000 × $1.11 = $66,600；AUD 120,000 × $0.66 = $79,200；¥5,000,000 × $0.0069 = $34,500。合計 = $66,600 + $79,200 + $34,500 = $180,300。円残高を除外すると$145,800になる。為替差損益は純利益に計上する。",
+      "references": ["ASC 830-10-45-17"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-081",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Restricted Cash - Escrow Exceeding Requirement",
+      "stem": "Under a loan covenant, Company N must keep at least $90,000 in a restricted escrow account until the loan is repaid in 4 years. At December 31, the escrow account holds $95,000. How should the $95,000 be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$90,000 as noncurrent restricted cash and $5,000 as unrestricted current cash"
+        },
+        { "label": "B", "text": "Noncurrent asset — restricted cash, $95,000" },
+        { "label": "C", "text": "Current asset — restricted cash, $95,000" },
+        {
+          "label": "D",
+          "text": "Cash and cash equivalents with footnote disclosure, $95,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The entire $95,000 sits in an escrow account that is restricted by the loan covenant, and the loan does not mature for 4 years, so the restriction is long-term. The full balance, including the $5,000 that exceeds the minimum, is held in the restricted account and is not available for general operations, so all $95,000 is classified as noncurrent restricted cash.",
+      "explanationJa": "$95,000全額がローン契約により拘束されたエスクロー口座にあり、ローン満期が4年後のため長期の制限である。最低要件を$5,000超過する分も拘束口座内にあり通常営業に使用不可のため、$95,000全額を固定の制限付き現金に分類する。",
+      "references": ["ASC 210-10-45-4", "ASC 230-10-50-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-082",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Redeemable Preferred Stock Near Redemption",
+      "stem": "On December 1, a company purchases preferred stock that has a fixed mandatory redemption date of February 15 of the following year (approximately 76 days after purchase). The stock will be redeemed at a fixed price. How should this investment be classified at December 31?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cash equivalent, because it was acquired close enough to its fixed redemption date"
+        },
+        {
+          "label": "B",
+          "text": "Equity security excluded from cash equivalents because all stock carries price risk"
+        },
+        {
+          "label": "C",
+          "text": "Short-term investment, because the original issue date is more than three months ago"
+        },
+        {
+          "label": "D",
+          "text": "Trading security measured at fair value through net income"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 305-10-20 generally excludes equity securities from cash equivalents, but it provides an exception for preferred shares acquired close to a fixed maturity (redemption) date. Here the stock was purchased about 76 days before its mandatory redemption at a fixed price, so the period from acquisition to redemption is within three months and the redemption price is known. It therefore qualifies as a cash equivalent. The relevant period runs from the entity's purchase date to redemption, not from the original issuance date.",
+      "explanationJa": "ASC 305-10-20は株式を原則として現金同等物から除外するが、確定した満期（償還）日に近接して取得した優先株には例外を設けている。本件は確定価格での強制償還の約76日前に取得しており、取得から償還までが3か月以内で償還価格も既知のため現金同等物に該当する。判定期間は発行日ではなく企業の取得日から償還日までである。",
+      "references": ["ASC 305-10-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-083",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Term Repurchase Agreement Classification",
+      "stem": "A company enters into a 6-month term repurchase agreement collateralized by U.S. Treasury securities. The agreement cannot be terminated early without penalty. How should the amount invested be classified at the balance sheet date?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cash equivalent, because it is collateralized by U.S. Treasury securities"
+        },
+        {
+          "label": "B",
+          "text": "Short-term investment, because the original maturity exceeds three months"
+        },
+        {
+          "label": "C",
+          "text": "Cash equivalent, because all repurchase agreements are cash equivalents"
+        },
+        {
+          "label": "D",
+          "text": "Restricted cash, because of the early-termination penalty"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Although overnight repurchase agreements typically qualify as cash equivalents, a 6-month term repo has an original maturity that exceeds the three-month threshold of ASC 305-10-20. The Treasury collateral does not change the maturity test, and the instrument cannot be redeemed early without penalty. It is therefore classified as a short-term investment rather than a cash equivalent.",
+      "explanationJa": "翌日物レポは通常現金同等物に該当するが、6か月の期間付レポは当初満期がASC 305-10-20の3か月基準を超える。米国債の担保は満期判定を変えず、早期解約にはペナルティがある。したがって現金同等物ではなく短期投資に分類する。",
+      "references": ["ASC 305-10-20", "ASC 860-10-05"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-084",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Petty Cash - IOU Exclusion",
+      "stem": "A custodian counts a $400 imprest petty cash fund and finds $95 in currency, $20 in coins, a $35 signed IOU from an employee, and $250 in expense receipts. What amount should be reported as petty cash (cash)?",
+      "choices": [
+        { "label": "A", "text": "$400" },
+        { "label": "B", "text": "$150" },
+        { "label": "C", "text": "$115" },
+        { "label": "D", "text": "$365" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Only currency and coins qualify as cash: $95 + $20 = $115. The $35 IOU is a receivable from the employee, and the $250 in receipts represents expenses already incurred, neither of which is cash. The imprest amount of $400 is the authorized fund size, not the actual cash on hand. Including the IOU would overstate cash at $150.",
+      "explanationJa": "現金に該当するのは通貨と硬貨のみ：$95 + $20 = $115。IOU $35は従業員からの受取勘定、レシート$250は既発生費用であり、いずれも現金ではない。定額$400は承認された基金額であって実際の現金ではない。IOUを含めると$150と現金を過大計上する。",
+      "references": ["ASC 305-10-05-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-085",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Cash Overdraft - Different Banks No Offset",
+      "stem": "At year-end, a company has the following bank balances with no right of offset among the banks: Bank A positive $58,000, Bank B overdraft $14,000, and Bank C positive $6,000. How should these be reported on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "Cash $50,000 only" },
+        {
+          "label": "B",
+          "text": "Cash $58,000 in current assets and overdraft $14,000 in current liabilities, with Bank C shown separately"
+        },
+        {
+          "label": "C",
+          "text": "Cash $64,000 in current assets and overdraft $14,000 in current liabilities"
+        },
+        { "label": "D", "text": "Cash $64,000 and current liabilities $20,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Without a right of offset, an overdraft at one bank cannot be netted against positive balances at other banks. The positive balances at Bank A ($58,000) and Bank C ($6,000) total $64,000 and are reported as cash in current assets. The Bank B overdraft of $14,000 is reported separately as a current liability. Netting the overdraft against the positive balances would understate cash at $50,000.",
+      "explanationJa": "相殺権がない場合、ある銀行の当座借越を他行の預金残高と相殺できない。Bank A（$58,000）とBank C（$6,000）の正残高合計$64,000を流動資産の現金として表示し、Bank Bの借越$14,000を流動負債として別途計上する。借越を正残高と相殺すると$50,000と過少計上になる。",
+      "references": ["ASC 210-10-45-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-086",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Treasury Bill Purchased at a Discount",
+      "stem": "On December 1, a company purchases a 90-day U.S. Treasury bill with a face (maturity) value of $100,000 for $99,400. At December 31, the carrying amount has accreted to $99,600. The T-bill qualifies as a cash equivalent. At what amount should it be included in cash and cash equivalents on the December 31 balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$99,400" },
+        { "label": "C", "text": "$99,600" },
+        { "label": "D", "text": "$98,800" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A Treasury bill purchased at a discount is recorded at its cost ($99,400), and the discount is accreted to interest income over the holding period. At the balance sheet date it is carried at amortized cost, which is the accreted amount of $99,600, and that is the amount included in cash and cash equivalents. The $100,000 face value is the amount collectible at maturity, not the carrying amount, and $99,400 is the original cost before accretion.",
+      "explanationJa": "割引で取得した米国財務省短期証券（T-Bill）は取得原価$99,400で計上し、割引額は保有期間にわたり利息収益として加算（アクリーション）する。B/S日には償却原価、すなわち加算後の$99,600で計上され、その金額を現金及び現金同等物に含める。額面$100,000は満期回収額であって帳簿価額ではなく、$99,400は加算前の当初原価である。",
+      "references": ["ASC 305-10-20", "ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-087",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Cash Equivalents - Original Maturity Count",
+      "stem": "On September 1, a company purchases the following: (1) a 30-day Treasury bill, (2) a 100-day commercial paper, (3) a 5-year corporate bond with 60 days remaining to maturity, (4) a government money market fund with a stable NAV and daily liquidity, and (5) a 6-month certificate of deposit. How many of these qualify as cash equivalents at September 30?",
+      "choices": [
+        { "label": "A", "text": "Five" },
+        { "label": "B", "text": "Four" },
+        { "label": "C", "text": "Two" },
+        { "label": "D", "text": "Three" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Classification depends on the original maturity from the entity's purchase date. The 30-day Treasury bill qualifies (30 days). The 5-year corporate bond purchased with 60 days remaining qualifies because the period from purchase to maturity is 60 days, not the bond's original term. The government money market fund with a stable NAV and daily liquidity qualifies. The 100-day commercial paper and the 6-month certificate of deposit both exceed three months and do not qualify. Three instruments qualify.",
+      "explanationJa": "判定は企業の取得日からの当初満期で行う。30日T-Bill（30日）は適格。5年社債だが取得時に残存60日のものは、取得から満期までが60日のため適格（社債の当初期間ではない）。安定NAVで日次流動性の政府系MMFも適格。100日CPと6か月CDは3か月を超えるため不適格。適格は3つ。",
+      "references": ["ASC 305-10-20"],
+      "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }
   ]
