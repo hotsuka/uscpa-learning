@@ -2,7 +2,7 @@
   "id": "far-accounting-changes",
   "name": "Accounting Changes & Errors",
   "topic": "Accounting Changes & Errors",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "chg-001",
@@ -2441,6 +2441,717 @@
       "explanationJa": "過年度の棚卸でその場にあった在庫を計上漏れすることは、報告日に存在した事実の使用における誤りであり、ASC 250に基づき誤謬の訂正に該当し、過年度の修正再表示を要する。他の状況は、当初の見積り後に入手可能となった新情報に基づく見積りの改訂であり（貸倒引当金の増加、耐用年数の短縮、保証率の更新）、いずれも将来に向かって適用する会計上の見積りの変更である。",
       "references": ["ASC 250-10-45-23", "ASC 250-10-20"],
       "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-105",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Retrospective Application - Earliest Period Presented",
+      "stem": "On January 1, Year 3, Holloway Corp. voluntarily changed from FIFO to the weighted-average method for inventory. Net income under each method was: Year 1 — FIFO $500,000, weighted average $460,000; Year 2 — FIFO $620,000, weighted average $600,000. Holloway presents comparative financial statements for Year 2 and Year 3. Ignoring income taxes, what adjustment should be made to the beginning retained earnings of Year 2, the earliest period presented?",
+      "choices": [
+        { "label": "A", "text": "$60,000 decrease" },
+        { "label": "B", "text": "$40,000 decrease" },
+        { "label": "C", "text": "$20,000 decrease" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under retrospective application, the cumulative effect of the change on periods BEFORE the earliest period presented is recorded as an adjustment to the opening retained earnings of the earliest period presented (Year 2). Only Year 1 precedes Year 2, and the Year 1 difference is $500,000 − $460,000 = $40,000 lower income under weighted average, so beginning Year 2 retained earnings decreases by $40,000. The Year 2 difference of $20,000 is reflected by restating the Year 2 income statement itself, not the opening balance; combining both years ($60,000) would double-count the Year 2 effect, and a zero adjustment would ignore the required retrospective treatment.",
+      "explanationJa": "ASC 250-10-45-5に基づき、会計方針の変更は遡及適用され、表示される最も早い期間（Year 2）より前の期間に係る累積的影響額は、その最も早い期間の期首利益剰余金の修正として計上する。Year 2より前はYear 1のみであり、その差額は $500,000 − $460,000 = $40,000（加重平均法の方が利益が少ない）。よってYear 2期首利益剰余金を$40,000減額する。Year 2の差額$20,000はYear 2の損益計算書自体を修正再表示することで反映されるため、期首残高調整には含めない。両年度合計の$60,000とするとYear 2の影響を二重計上することになる。",
+      "references": ["ASC 250-10-45-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-106",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Change in Estimate - Useful Life Extension",
+      "stem": "Calloway Co. purchased equipment on January 1, Year 1, for $720,000 with no salvage value and an estimated useful life of 8 years, depreciated on a straight-line basis. At the beginning of Year 4, Calloway determined that the equipment's total useful life is 12 years (9 years remaining). What is depreciation expense for Year 4?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$90,000" },
+        { "label": "D", "text": "$37,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A revision of useful life is a change in accounting estimate accounted for prospectively. Accumulated depreciation through Year 3 is ($720,000 ÷ 8) × 3 = $270,000, leaving a carrying amount of $450,000. That carrying amount is depreciated over the 9 remaining years: $450,000 ÷ 9 = $50,000. Dividing the original cost by the new 12-year life ($60,000) ignores depreciation already taken; $90,000 continues the old rate; and $37,500 incorrectly spreads the carrying amount over 12 years instead of the 9 years remaining.",
+      "explanationJa": "耐用年数の見直しは見積りの変更であり、ASC 250-10-45-17に従い将来に向かって（prospectively）処理する。Year 3末までの減価償却累計額は ($720,000 ÷ 8年) × 3年 = $270,000、帳簿価額は $450,000。これを残存耐用年数9年で償却するため、Year 4の減価償却費は $450,000 ÷ 9年 = $50,000。取得原価を新耐用年数12年で割る$60,000は既償却分を無視しており、$90,000は旧償却率の継続、$37,500は帳簿価額を残存9年でなく12年で除した誤りである。",
+      "references": ["ASC 250-10-45-17"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-107",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Change to LIFO - Prospective Treatment",
+      "stem": "Drummond Inc. changes its inventory cost flow assumption from FIFO to LIFO. In practice, how is this change usually accounted for, and why?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Retrospectively, because all changes in inventory method must restate prior periods"
+        },
+        {
+          "label": "B",
+          "text": "As a cumulative-effect adjustment reported in current period net income"
+        },
+        {
+          "label": "C",
+          "text": "Prospectively, because reconstructing prior-year LIFO layers is generally impracticable, so the opening inventory becomes the first LIFO layer"
+        },
+        {
+          "label": "D",
+          "text": "As a correction of an error, with a prior period adjustment to beginning retained earnings"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A change in accounting principle normally requires retrospective application, but ASC 250 provides an impracticability exception. A change to LIFO typically qualifies because the entity usually cannot reconstruct the LIFO cost layers that would have existed in prior years without using hindsight. Therefore the change is applied prospectively: the beginning inventory of the year of change becomes the base-year LIFO layer. Reporting a cumulative-effect adjustment in current income is the superseded APB 20 approach, and treating the change as an error correction is wrong because adopting LIFO is not the correction of a misstatement.",
+      "explanationJa": "会計方針の変更は原則遡及適用だが、ASC 250-10-45-9は遡及適用が実務上不可能（impracticable）な場合の例外を認めている。LIFOへの変更では、過年度に存在したはずのLIFO原価層（レイヤー）を事後的判断なしに再構築することが通常不可能なため、この例外に該当する典型例である。よって変更年度の期首棚卸資産を基準層（base layer）として将来に向かって適用する。累積的影響額を当期純利益に計上する処理は廃止された旧APB 20の方法であり、誤謬訂正として処理するのも誤り（LIFO採用は誤謬の訂正ではない）。",
+      "references": ["ASC 250-10-45-9"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-108",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Error Correction - Omitted Discount Amortization",
+      "stem": "On January 1, Year 1, Whitfield Co. issued $2,000,000 of 10-year bonds for $1,940,000 and properly recorded the $60,000 discount. However, Whitfield recorded only the cash interest each year and never amortized the discount (straight-line amortization is appropriate and not materially different from the effective interest method). The error is discovered at the beginning of Year 3. Ignoring income taxes, beginning Year 3 retained earnings is:",
+      "choices": [
+        { "label": "A", "text": "Understated by $12,000" },
+        { "label": "B", "text": "Overstated by $6,000" },
+        { "label": "C", "text": "Understated by $6,000" },
+        { "label": "D", "text": "Overstated by $12,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Straight-line discount amortization is $60,000 ÷ 10 years = $6,000 per year, which increases interest expense above the cash interest paid. Omitting it understated interest expense by $6,000 in Year 1 and $6,000 in Year 2, overstating cumulative income — and therefore beginning Year 3 retained earnings — by $12,000. An understatement direction is backwards (discount amortization adds to expense, so omitting it inflates income), and $6,000 captures only one of the two affected years.",
+      "explanationJa": "定額法による割引額（ディスカウント）の償却は $60,000 ÷ 10年 = 年$6,000 で、現金支払利息に加算して支払利息を増加させる。これを2年間（Year 1・Year 2）失念したため、支払利息が累計 $12,000 過小計上され、利益およびYear 3期首利益剰余金は $12,000 過大となっている。ASC 250-10-45-23により、誤謬訂正として期首利益剰余金を減額する修正再表示が必要。過小（understated）方向の選択は割引償却が費用を増やすという関係を逆に捉えた誤りで、$6,000は1年分しか考慮していない。",
+      "references": ["ASC 250-10-45-23", "ASC 835-30"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-109",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Interim Reporting - Change in Principle During the Year",
+      "stem": "In the third quarter of Year 2, Lakemont Corp. voluntarily changes from the average cost method to FIFO for inventory. How should this change in accounting principle be reflected in Lakemont's interim financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Apply the new method beginning in the third quarter only, with no adjustment to earlier quarters"
+        },
+        {
+          "label": "B",
+          "text": "Apply the change retrospectively, restating previously issued interim statements of the current year and prior periods presented"
+        },
+        {
+          "label": "C",
+          "text": "Report the cumulative effect of the change in third-quarter net income"
+        },
+        {
+          "label": "D",
+          "text": "Defer recognition of the change until the annual financial statements are issued"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 250 requires that a change in accounting principle made in an interim period be applied retrospectively, the same as an annual change: previously issued interim statements of the current fiscal year are restated to reflect the new principle, along with prior annual periods presented. Applying the new method only from the quarter of change is a prospective treatment reserved for estimate changes; a cumulative-effect catch-up in current-quarter income is the superseded approach; and deferral until year-end is not permitted.",
+      "explanationJa": "ASC 250-10-45-14およびASC 270により、中間期に行われた会計方針の変更も年度の変更と同様に遡及適用しなければならない。すなわち、当年度の既発行中間財務諸表および表示される過年度を新方針で修正再表示する。変更した四半期から将来適用する処理は見積りの変更に対する取扱いであり、累積的影響額を当四半期損益に一括計上する方法は廃止された旧処理、年度末まで認識を繰り延べることも認められない。",
+      "references": ["ASC 250-10-45-14", "ASC 270-10-45"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-110",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Disclosure - Changes in Estimate Made in the Ordinary Course",
+      "stem": "Under ASC 250, which statement best describes the disclosure requirement for changes in accounting estimates?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "All changes in estimate must be disclosed, regardless of materiality"
+        },
+        {
+          "label": "B",
+          "text": "Changes in estimate are never disclosed because they are accounted for prospectively"
+        },
+        {
+          "label": "C",
+          "text": "Changes in estimate require restated prior-period disclosures identical to those for changes in principle"
+        },
+        {
+          "label": "D",
+          "text": "Disclosure of the effect on income from continuing operations, net income, and per-share amounts is required when the change is material, but estimates made each period in the ordinary course (such as uncollectible accounts) need not be disclosed unless the effect is material"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 250-10-50-4 requires disclosure of the effect of a change in estimate on income from continuing operations, net income, and related per-share amounts of the current period when the change is material. However, disclosure is not required for estimate revisions made each period in the ordinary course of business — such as uncollectible accounts or inventory obsolescence — unless the effect is material. Requiring disclosure of all changes regardless of materiality overstates the rule; saying no disclosure is ever required understates it; and restated prior-period disclosures apply to retrospective principle changes, not prospective estimate changes.",
+      "explanationJa": "ASC 250-10-50-4は、見積りの変更が重要（material）な場合、継続事業からの利益・当期純利益・1株当たり金額への影響の開示を求める。ただし、貸倒見積りや棚卸資産の陳腐化引当のように通常の業務過程で毎期行われる見積りの見直しについては、影響が重要でない限り開示不要である。重要性にかかわらず全ての変更を開示するという記述は要求を過大に述べており、開示が一切不要という記述は過小。過年度の修正再表示開示は遡及適用される方針変更に対する要求であり、将来的処理の見積り変更には適用されない。",
+      "references": ["ASC 250-10-50-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-111",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Prior Period Adjustment - Tax Effect",
+      "stem": "In Year 2, Brennan Co. discovered that it failed to record $90,000 of revenue that was earned and should have been recognized in Year 1. Brennan's tax rate is 25%, and it presents single-year (non-comparative) financial statements. How should the correction be reported in Year 2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a prior period adjustment increasing beginning retained earnings by $67,500"
+        },
+        {
+          "label": "B",
+          "text": "As a prior period adjustment increasing beginning retained earnings by $90,000"
+        },
+        {
+          "label": "C",
+          "text": "As additional revenue of $90,000 in Year 2 income"
+        },
+        {
+          "label": "D",
+          "text": "As a prior period adjustment increasing beginning retained earnings by $22,500"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A material prior-year error is corrected through a prior period adjustment to the opening retained earnings of the current year, reported net of tax: $90,000 × (1 − 0.25) = $67,500 increase. The gross $90,000 ignores the related tax effect, $22,500 is only the tax portion, and recognizing the revenue in Year 2 income would misstate the current period — errors are never run through current earnings.",
+      "explanationJa": "重要な過年度誤謬は、ASC 250-10-45-23に基づきprior period adjustmentとして当期の期首利益剰余金を修正する。修正額は税効果考慮後の純額で、$90,000 × (1 − 25%) = $67,500 の増額となる。$90,000は税効果を無視した総額、$22,500は税額部分のみであり、いずれも誤り。また、Year 2の収益として当期損益に計上することは当期の業績を歪めるため認められない（誤謬は当期損益を経由させない）。",
+      "references": ["ASC 250-10-45-23", "ASC 250-10-45-24"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-112",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Counterbalancing Error - Omitted Interest Receivable",
+      "stem": "Tremont Co. failed to accrue $8,000 of interest receivable at December 31, Year 1. The interest was received in cash in Year 2 and recorded as interest revenue at that time. If the error is never corrected, what is the effect on Year 2 net income?",
+      "choices": [
+        { "label": "A", "text": "Understated by $8,000" },
+        { "label": "B", "text": "No effect" },
+        { "label": "C", "text": "Overstated by $8,000" },
+        { "label": "D", "text": "Understated by $16,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The $8,000 of interest was earned in Year 1 but recorded as revenue in Year 2 when collected. Year 1 income was understated by $8,000, and Year 2 income is overstated by $8,000 because it includes revenue belonging to the prior year. This is a counterbalancing error: retained earnings at the end of Year 2 is correct. An understatement of Year 2 reverses the direction of the error, no effect describes ending retained earnings rather than Year 2 income, and $16,000 double-counts a single $8,000 misstatement.",
+      "explanationJa": "$8,000の利息はYear 1に稼得されたが、現金回収時のYear 2に収益計上された。このためYear 1の利益は$8,000過小、Year 2の利益は前期帰属の収益を含むため$8,000過大となる。これは相殺型（counterbalancing）の誤謬であり、Year 2末の利益剰余金は正しい金額に自己修正される。Year 2が過小という選択は影響の方向が逆であり、「影響なし」はYear 2末の利益剰余金についての記述であって当期純利益には当てはまらない。$16,000は単一の$8,000の誤謬を二重に数えている。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-113",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Retrospective Change - Single-Year Statements",
+      "stem": "Norcross Inc. presents single-year (non-comparative) financial statements. On January 1 of the current year, Norcross voluntarily changed an accounting principle. The cumulative effect of the change on all prior years is a $130,000 decrease in pretax income, and the tax rate is 30%. How should the change be reflected in the current-year financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A $130,000 decrease to beginning retained earnings"
+        },
+        {
+          "label": "B",
+          "text": "A $91,000 decrease to beginning retained earnings"
+        },
+        {
+          "label": "C",
+          "text": "A $91,000 charge included in current-year net income"
+        },
+        {
+          "label": "D",
+          "text": "A $39,000 decrease to beginning retained earnings"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When only the current year is presented, retrospective application means the cumulative effect of the change on all prior periods is recorded, net of tax, as an adjustment to the opening retained earnings of the current year: $130,000 × (1 − 0.30) = $91,000 decrease. The gross $130,000 ignores the tax effect, $39,000 is only the tax effect, and charging current-year income with the cumulative effect is the superseded cumulative-effect approach prohibited by ASC 250.",
+      "explanationJa": "単年度のみ表示する場合、遡及適用は「過年度全体への累積的影響額を税効果考慮後の純額で当期の期首利益剰余金に反映する」ことを意味する（ASC 250-10-45-5(c)）。計算は $130,000 × (1 − 30%) = $91,000 の減額。総額$130,000は税効果の考慮漏れ、$39,000は税効果部分のみ。累積的影響額を当期損益に計上する方法は旧基準（APB 20）の処理であり、ASC 250では禁止されている。",
+      "references": ["ASC 250-10-45-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-114",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Change in Estimate - Patent Remaining Life",
+      "stem": "Ellsworth Co. acquired a patent on January 1, Year 1, for $360,000 and amortized it on a straight-line basis over its 12-year legal life. At the beginning of Year 5, due to new competing technology, Ellsworth determined that the patent's remaining useful life is only 4 years. What is amortization expense for Year 5?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$45,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$90,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Amortization through Year 4 is ($360,000 ÷ 12) × 4 = $120,000, leaving a carrying amount of $240,000. The revised remaining life of 4 years is applied prospectively: $240,000 ÷ 4 = $60,000 per year. The $30,000 figure continues the original rate and ignores the revision, $45,000 spreads original cost over a total 8-year life without isolating the carrying amount and remaining period correctly ($360,000 ÷ 8), and $90,000 divides the full original cost by the 4 remaining years, ignoring amortization already taken.",
+      "explanationJa": "Year 4末までの償却累計額は ($360,000 ÷ 12年) × 4年 = $120,000、帳簿価額は $240,000。残存耐用年数の見直しは見積りの変更としてASC 250-10-45-17により将来に向かって処理し、Year 5の償却費は $240,000 ÷ 4年 = $60,000。$30,000は従来の償却率を継続した場合、$45,000は取得原価を合計8年で除した誤り（$360,000 ÷ 8）、$90,000は既償却分を無視して取得原価全額を残存4年で除した誤りである。",
+      "references": ["ASC 250-10-45-17", "ASC 350-30-35"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-115",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Change in Reporting Entity - Excluded Transactions",
+      "stem": "Under ASC 250, which of the following is NOT accounted for as a change in reporting entity?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The acquisition of a new subsidiary in a business combination accounted for under ASC 805"
+        },
+        {
+          "label": "B",
+          "text": "Presenting consolidated financial statements in place of statements of individual entities"
+        },
+        {
+          "label": "C",
+          "text": "Changing the specific subsidiaries that make up the group for which consolidated statements are presented"
+        },
+        {
+          "label": "D",
+          "text": "Changing the entities included in combined financial statements"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 250 explicitly states that a business combination — the purchase of a new subsidiary — is not a change in reporting entity; it is accounted for prospectively under ASC 805 with no restatement of prior periods. The three situations that DO qualify as changes in reporting entity are presenting consolidated statements in place of individual-entity statements, changing the specific subsidiaries comprising the consolidated group, and changing the entities included in combined statements; each requires retrospective application to all periods presented.",
+      "explanationJa": "ASC 250-10-45-21は報告企業の変更に該当する3類型として、(1)個別財務諸表に代えて連結財務諸表を表示する場合、(2)連結対象の子会社の構成を変更する場合、(3)結合（combined）財務諸表に含める企業を変更する場合を挙げ、これらは表示する全期間に遡及適用する。一方、ASC 805に基づく企業結合による新規子会社の取得は報告企業の変更には該当せず、過年度の修正再表示は行わない（取得日以降の将来的処理）。",
+      "references": ["ASC 250-10-45-21", "ASC 805-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-116",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Inventory Error - Consigned Goods Included in Count",
+      "stem": "At December 31, Year 1, Pinehurst Co. included in its physical inventory count $45,000 of goods held on consignment FROM Quill Corp. (Pinehurst is the consignee). No purchase was recorded. The error was not discovered, and Year 2 ending inventory was counted correctly. What is the effect of the error on Year 2 net income?",
+      "choices": [
+        { "label": "A", "text": "Overstated by $45,000" },
+        { "label": "B", "text": "No effect" },
+        { "label": "C", "text": "Overstated by $90,000" },
+        { "label": "D", "text": "Understated by $45,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Consigned goods belong to the consignor and should be excluded from the consignee's inventory. Including them overstated Year 1 ending inventory by $45,000, which understated Year 1 cost of goods sold and overstated Year 1 net income. In Year 2, the overstated ending inventory becomes overstated beginning inventory, which overstates Year 2 cost of goods sold and understates Year 2 net income by $45,000. An overstatement of Year 2 confuses it with the Year 1 effect, no effect applies only to combined two-year retained earnings, and $90,000 double-counts the single misstatement.",
+      "explanationJa": "受託販売品（委託者Quill Corp.の所有物）は受託者Pinehurstの棚卸資産に含めてはならない。誤って含めたためYear 1期末棚卸資産が$45,000過大→Year 1売上原価が過小→Year 1利益が過大となった。Year 2では、この過大な期末棚卸資産が期首棚卸資産として引き継がれ、Year 2の売上原価が$45,000過大→Year 2純利益は$45,000過小となる。過大という選択はYear 1への影響との混同、「影響なし」は2年間通算の利益剰余金についてのみ正しい記述、$90,000は単一の誤謬の二重計上である。",
+      "references": ["ASC 250-10-45-23", "ASC 330-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-117",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Prior Period Adjustment - Financial Statement Presentation",
+      "stem": "When single-period financial statements are presented, a material error related to a prior period that is discovered in the current period should be reported in the current-period financial statements as:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A separately disclosed component of current-period net income"
+        },
+        {
+          "label": "B",
+          "text": "An adjustment to the opening balance of retained earnings, net of applicable income taxes"
+        },
+        {
+          "label": "C",
+          "text": "A footnote disclosure only, with no adjustment to any account balance"
+        },
+        {
+          "label": "D",
+          "text": "An adjustment to ending retained earnings reported as the last line of the income statement"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 250 requires that the correction of a material prior period error be reported as a prior period adjustment — an adjustment, net of tax, to the opening balance of retained earnings in the statement of retained earnings (or statement of stockholders' equity). The error never flows through current-period net income, footnote disclosure alone does not correct the misstated balances, and the income statement does not end with retained earnings adjustments.",
+      "explanationJa": "ASC 250-10-45-23・45-24により、過年度の重要な誤謬の訂正はprior period adjustmentとして処理し、利益剰余金計算書（または株主資本等変動計算書）において期首利益剰余金残高を税効果考慮後の純額で修正する形で表示する。誤謬の影響を当期純利益に含めることは禁止されており、注記のみで残高を修正しない処理や、損益計算書の末尾で調整する表示も認められない。",
+      "references": ["ASC 250-10-45-23", "ASC 250-10-45-24"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-118",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Prospective vs Retrospective Classification",
+      "stem": "Which of the following is accounted for prospectively, affecting only the current and future periods?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A voluntary change from LIFO to FIFO for inventory"
+        },
+        {
+          "label": "B",
+          "text": "Correction of a mathematical error in last year's depreciation calculation"
+        },
+        {
+          "label": "C",
+          "text": "A change in depreciation method that is inseparable from a change in the estimated pattern of benefits"
+        },
+        {
+          "label": "D",
+          "text": "A change in the subsidiaries included in consolidated financial statements"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A change in depreciation method is a change in accounting estimate effected by a change in accounting principle; because the principle change is inseparable from the estimate change, it is accounted for prospectively. A change from LIFO to FIFO is a change in principle requiring retrospective application, a mathematical error is corrected by restatement (prior period adjustment), and changing the subsidiaries in a consolidated group is a change in reporting entity that is applied retrospectively to all periods presented.",
+      "explanationJa": "減価償却方法の変更は「会計方針の変更によってもたらされる見積りの変更」（ASC 250-10-45-18）であり、方針の変更と見積りの変更が区別不能なため将来に向かって処理する。LIFOからFIFOへの変更は遡及適用が必要な方針の変更、前期の減価償却計算の計算ミスは修正再表示（prior period adjustment）で訂正すべき誤謬、連結対象子会社の構成変更は報告企業の変更であり表示全期間に遡及適用する。よって将来的処理となるのは減価償却方法の変更のみである。",
+      "references": ["ASC 250-10-45-18", "ASC 250-10-45-5", "ASC 250-10-45-21"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-119",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Change in Depreciation Method - SL to Units of Production",
+      "stem": "Marwood Co. purchased a machine on January 1, Year 1, for $800,000 with a $50,000 salvage value and a 10-year useful life, depreciated straight-line. At the beginning of Year 3, Marwood changed to the units-of-production method, estimating 600,000 units of remaining capacity. The machine produced 90,000 units in Year 3. What is depreciation expense for Year 3?",
+      "choices": [
+        { "label": "A", "text": "$90,000" },
+        { "label": "B", "text": "$75,000" },
+        { "label": "C", "text": "$97,500" },
+        { "label": "D", "text": "$112,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A change in depreciation method is accounted for prospectively as a change in estimate effected by a change in principle. Depreciation taken through Year 2 was [($800,000 − $50,000) ÷ 10] × 2 = $150,000, so the carrying amount is $650,000. The remaining depreciable base is $650,000 − $50,000 salvage = $600,000, or $1.00 per unit over 600,000 units. Year 3 expense is 90,000 × $1.00 = $90,000. Continuing the old method gives $75,000; failing to deduct salvage from the carrying amount gives ($650,000 ÷ 600,000) × 90,000 = $97,500; and using original cost less salvage without prior depreciation gives ($750,000 ÷ 600,000) × 90,000 = $112,500.",
+      "explanationJa": "減価償却方法の変更は「方針の変更によってもたらされる見積りの変更」として将来に向かって処理する（ASC 250-10-45-18）。Year 2末までの償却累計額は [($800,000 − $50,000) ÷ 10年] × 2年 = $150,000、帳簿価額は $650,000。残存償却基礎は $650,000 − 残存価額$50,000 = $600,000 で、残存生産能力600,000単位あたり$1.00。Year 3の償却費は 90,000単位 × $1.00 = $90,000。$75,000は旧定額法の継続、$97,500は残存価額の控除漏れ ($650,000 ÷ 600,000 × 90,000)、$112,500は既償却分を無視した計算 ($750,000 ÷ 600,000 × 90,000) による誤り。",
+      "references": ["ASC 250-10-45-18"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-120",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "LIFO to FIFO - Restated Comparative Net Income",
+      "stem": "On January 1, Year 3, Ashbury Corp. changed from LIFO to FIFO. Year 2 net income as reported under LIFO was $300,000. FIFO inventory exceeded LIFO inventory by $80,000 at December 31, Year 1, and by $110,000 at December 31, Year 2. Ashbury's tax rate is 25%. In the comparative statements presented with Year 3, what is restated Year 2 net income?",
+      "choices": [
+        { "label": "A", "text": "$330,000" },
+        { "label": "B", "text": "$382,500" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$322,500" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under FIFO, Year 2 pretax income increases by the change in the inventory difference during Year 2: $110,000 − $80,000 = $30,000 (beginning inventory is $80,000 higher AND ending inventory is $110,000 higher, so cost of goods sold falls by the $30,000 net). After tax: $30,000 × (1 − 0.25) = $22,500, giving restated net income of $300,000 + $22,500 = $322,500. The $330,000 figure omits the tax effect on the $30,000; $382,500 incorrectly adds the full $110,000 ending difference (after tax) rather than the change during the year; and $300,000 ignores the restatement entirely.",
+      "explanationJa": "遡及適用によりYear 2をFIFOで修正再表示する。Year 2の税引前利益への影響は、年間の棚卸差額の増分 $110,000 − $80,000 = $30,000（期首棚卸資産が$80,000多く、期末が$110,000多いため、売上原価が純額$30,000減少）。税効果考慮後は $30,000 × (1 − 25%) = $22,500 の増加で、修正後Year 2純利益は $300,000 + $22,500 = $322,500。$330,000は税効果の考慮漏れ、$382,500は年間増分でなく期末差額$110,000全額（税引後）を加算した誤り、$300,000は修正再表示を行っていない金額である。",
+      "references": ["ASC 250-10-45-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-121",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Current-Year Error Found Before Issuance",
+      "stem": "In December of Year 1, before the Year 1 financial statements are issued, Fairfield Co.'s controller discovers that depreciation expense recorded in the first quarter of Year 1 was calculated incorrectly. How should this misstatement be handled?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Report it as a prior period adjustment to beginning Year 1 retained earnings"
+        },
+        {
+          "label": "B",
+          "text": "Restate the previously issued Year 0 annual financial statements"
+        },
+        {
+          "label": "C",
+          "text": "Correct the depreciation amounts in the Year 1 financial statements before they are issued; no prior period adjustment is needed"
+        },
+        {
+          "label": "D",
+          "text": "Disclose the error in the notes and correct it in Year 2"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The error arose and was discovered within the same fiscal year, before the annual statements were issued. The company simply records the correct depreciation in the Year 1 statements; there is no misstatement of any previously issued annual financial statements, so no prior period adjustment or restatement is required. A prior period adjustment applies only to errors in prior-year issued statements, Year 0 statements were not affected, and deferring the fix to Year 2 would knowingly issue misstated Year 1 statements.",
+      "explanationJa": "誤謬は同一会計年度内に発生し、年度財務諸表の発行前に発見されている。この場合はYear 1の財務諸表上で正しい減価償却費に修正するだけでよく、既発行の年度財務諸表に誤りはないためprior period adjustmentや修正再表示は不要である。prior period adjustmentは過年度の既発行財務諸表の誤謬に対する処理であり、Year 0の財務諸表は影響を受けていない。また、修正をYear 2に先送りすることは誤った財務諸表を故意に発行することになり認められない。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-122",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Definition - What Is an Accounting Change",
+      "stem": "Under ASC 250, which of the following is NOT classified as an accounting change?",
+      "choices": [
+        { "label": "A", "text": "A change in accounting estimate" },
+        {
+          "label": "B",
+          "text": "Correction of an error in previously issued financial statements"
+        },
+        { "label": "C", "text": "A change in accounting principle" },
+        { "label": "D", "text": "A change in reporting entity" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 250 defines exactly three types of accounting changes: a change in accounting principle, a change in accounting estimate, and a change in reporting entity. The correction of an error in previously issued financial statements is specifically excluded from the definition of an accounting change — it is an error correction, accounted for by restatement (prior period adjustment), and the distinction matters because error corrections are never treated as discretionary changes.",
+      "explanationJa": "ASC 250-10-20の定義上、会計上の変更（accounting change）は (1)会計方針の変更、(2)会計上の見積りの変更、(3)報告企業の変更 の3類型のみである。既発行財務諸表における誤謬の訂正は会計上の変更には含まれず、誤謬の訂正（error correction）として修正再表示（prior period adjustment）により処理される。この区別は重要で、誤謬訂正は経営者の裁量による「変更」ではなく、過去の誤りの是正である。",
+      "references": ["ASC 250-10-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-123",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Retrospective Application - Restated Beginning Retained Earnings",
+      "stem": "Kendrick Co. changed from average cost to FIFO on January 1, Year 3. Retained earnings at January 1, Year 3, as previously reported under average cost was $850,000. Pretax income would have been higher under FIFO by $35,000 in Year 1 and $48,000 in Year 2. Kendrick's tax rate is 20%. What is the restated January 1, Year 3 retained earnings balance?",
+      "choices": [
+        { "label": "A", "text": "$916,400" },
+        { "label": "B", "text": "$933,000" },
+        { "label": "C", "text": "$888,400" },
+        { "label": "D", "text": "$878,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The cumulative pretax effect through January 1, Year 3 is $35,000 + $48,000 = $83,000 of additional income under FIFO. Net of tax: $83,000 × (1 − 0.20) = $66,400. Restated retained earnings = $850,000 + $66,400 = $916,400. The $933,000 figure adds the gross $83,000 without the tax effect, $888,400 includes only the Year 2 effect net of tax ($48,000 × 0.80 = $38,400), and $878,000 includes only the Year 1 effect net of tax ($35,000 × 0.80 = $28,000).",
+      "explanationJa": "遡及適用により、Year 3期首までの累積的影響額を期首利益剰余金に反映する（ASC 250-10-45-5）。税引前の累積影響は $35,000 + $48,000 = $83,000（FIFOの方が利益が大きい）。税効果考慮後は $83,000 × (1 − 20%) = $66,400。修正後期首利益剰余金 = $850,000 + $66,400 = $916,400。$933,000は税効果を無視して総額$83,000を加算した誤り、$888,400はYear 2分のみ（$48,000 × 80% = $38,400）、$878,000はYear 1分のみ（$35,000 × 80% = $28,000）を反映した誤りである。",
+      "references": ["ASC 250-10-45-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-124",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Change in Estimate - Actuarial Assumptions",
+      "stem": "Glenview Co. sponsors a defined benefit pension plan. At the beginning of the current year, Glenview's actuary revised the discount rate used to measure the projected benefit obligation based on current market conditions. Under ASC 250, this revision is:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A change in accounting principle requiring retrospective application"
+        },
+        {
+          "label": "B",
+          "text": "An error correction requiring restatement of prior-year financial statements"
+        },
+        { "label": "C", "text": "A change in reporting entity" },
+        {
+          "label": "D",
+          "text": "A change in accounting estimate accounted for in the current and future periods"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Actuarial assumptions — discount rates, mortality, compensation growth — are estimates. Revising them based on new information or changed conditions is a change in accounting estimate, accounted for prospectively in the period of change and future periods. It is not a change in principle because the measurement method (the accounting principle for pensions) is unchanged; it is not an error because the prior rate was reasonable based on information available at the time; and it has nothing to do with the composition of the reporting entity.",
+      "explanationJa": "割引率・死亡率・昇給率等の数理計算上の仮定は会計上の見積りである。市場環境の変化等の新情報に基づくこれらの見直しは見積りの変更に該当し、ASC 250-10-45-17により変更期および将来の期間で将来的に処理する。年金の測定方法（会計方針）自体は変わっていないため方針の変更ではなく、従前の割引率も当時入手可能な情報に基づき合理的であったため誤謬でもない。報告企業の構成にも無関係である。",
+      "references": ["ASC 250-10-45-17", "ASC 715-30"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-125",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Error - Asset Disposal Not Recorded",
+      "stem": "During Year 1, Stanton Co. sold equipment for $95,000 cash. The equipment had a cost of $200,000 and accumulated depreciation of $130,000 (carrying amount $70,000) at the date of sale. The bookkeeper credited the entire $95,000 to miscellaneous revenue and did not remove the equipment's cost or accumulated depreciation from the books. Ignoring any depreciation after the sale date, Year 1 net income is:",
+      "choices": [
+        { "label": "A", "text": "Overstated by $95,000" },
+        { "label": "B", "text": "Overstated by $70,000" },
+        { "label": "C", "text": "Understated by $25,000" },
+        { "label": "D", "text": "Overstated by $25,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The correct accounting would recognize a gain of $95,000 − $70,000 = $25,000. Instead, the company recognized $95,000 of revenue without removing the $70,000 carrying amount, so income is overstated by $95,000 − $25,000 = $70,000 — exactly the carrying amount that should have been charged against the proceeds. The $95,000 figure ignores that a $25,000 gain was legitimately earned, $25,000 is the correct gain itself rather than the misstatement, and an understatement direction is impossible because too much income was recorded.",
+      "explanationJa": "正しい処理では売却益 $95,000 − 帳簿価額$70,000 = $25,000 を認識すべきである。実際には帳簿価額$70,000を除却せずに$95,000全額を収益計上したため、利益は $95,000 − $25,000 = $70,000 過大、すなわち売却対価と相殺すべきだった帳簿価額の分だけ過大となる。$95,000は正当に稼得された$25,000の売却益を無視した金額、$25,000はあるべき売却益そのものであって過大計上額ではない。収益を過剰に計上しているため過小（understated）方向はあり得ない。",
+      "references": ["ASC 250-10-45-23", "ASC 360-10-40"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-126",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Modified Retrospective Adoption - Cumulative Effect Calculation",
+      "stem": "Beldon Corp. adopts a new FASB Accounting Standards Update on January 1, Year 1, that requires modified retrospective transition. At adoption, the new standard requires Beldon to recognize an additional liability of $250,000 with a corresponding cumulative-effect adjustment. Beldon's tax rate is 24%. What is the effect on Beldon's January 1, Year 1 retained earnings?",
+      "choices": [
+        { "label": "A", "text": "$250,000 decrease" },
+        { "label": "B", "text": "$60,000 decrease" },
+        { "label": "C", "text": "$190,000 decrease" },
+        {
+          "label": "D",
+          "text": "No effect; the adjustment is recognized in Year 1 net income"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under modified retrospective transition, the cumulative effect of applying the new standard is recognized as an adjustment to the opening retained earnings of the year of adoption, net of tax. The $250,000 pretax liability increase is offset by a $60,000 deferred tax benefit ($250,000 × 24%), so retained earnings decreases by $250,000 × (1 − 0.24) = $190,000. The gross $250,000 ignores the tax effect, $60,000 is only the tax effect, and running the cumulative effect through Year 1 income contradicts the modified retrospective method, which adjusts equity directly.",
+      "explanationJa": "修正遡及（modified retrospective）移行では、新基準適用の累積的影響額を適用年度の期首利益剰余金で税効果考慮後の純額により調整する。負債$250,000の追加計上に対し繰延税金資産による便益 $250,000 × 24% = $60,000 が生じるため、利益剰余金の減少額は $250,000 × (1 − 24%) = $190,000。総額$250,000は税効果の考慮漏れ、$60,000は税効果部分のみ。累積的影響額をYear 1の純利益に計上する処理は、資本を直接修正する修正遡及法の趣旨に反する。",
+      "references": ["ASC 250-10-45-5", "ASC 740-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-127",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Disclosure - Retrospective Change Per-Share Effects",
+      "stem": "Rockwell Inc., a public company, retrospectively applies a voluntary change in accounting principle. Under ASC 250, which of the following disclosures is required for each prior period presented?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The effect of the change on income from continuing operations, net income, any other affected line items, and the related per-share amounts"
+        },
+        {
+          "label": "B",
+          "text": "Only the cumulative effect on beginning retained earnings of the current year"
+        },
+        {
+          "label": "C",
+          "text": "Only a statement that the change was preferable, with no quantitative disclosures"
+        },
+        {
+          "label": "D",
+          "text": "Projected effects of the change on the next five years of operations"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 250-10-50-1 requires, for each prior period retrospectively adjusted, disclosure of the effect of the change on income from continuing operations, net income, any other affected financial statement line item, and any affected per-share amounts. Disclosing only the cumulative retained earnings effect omits the required period-by-period detail, a bare preferability assertion lacks the required quantitative information (the reason the new principle is preferable is required in addition to, not instead of, the amounts), and projections of future effects are not required by ASC 250.",
+      "explanationJa": "ASC 250-10-50-1は、遡及適用された各表示期間について、継続事業からの利益、当期純利益、影響を受けるその他の表示科目、および関連する1株当たり金額への影響の開示を要求する。期首利益剰余金への累積的影響のみの開示では期間別の詳細が欠落する。新方針が望ましい（preferable）理由の説明は定量的開示に加えて要求されるものであり、それだけでは不十分。将来5年間への影響の予測開示はASC 250の要求事項ではない。",
+      "references": ["ASC 250-10-50-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-128",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Error Correction - Periods Before Earliest Presented",
+      "stem": "Caldera Co. presents comparative financial statements for Year 2 and Year 3. In Year 3, Caldera discovers a material error that affected only Year 1, which is not presented. How should the error be corrected?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Restate the Year 2 income statement to absorb the Year 1 error"
+        },
+        {
+          "label": "B",
+          "text": "Recognize the correction in Year 3 net income because Year 1 is not presented"
+        },
+        {
+          "label": "C",
+          "text": "No correction is necessary because the affected period is not presented"
+        },
+        {
+          "label": "D",
+          "text": "Adjust the opening balances of assets, liabilities, and retained earnings of Year 2, the earliest period presented"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When an error relates to a period before the earliest period presented, restatement is accomplished by adjusting the opening balances of assets, liabilities, and retained earnings of the earliest period presented (Year 2). Forcing the error into the Year 2 income statement would misstate Year 2 results, recognizing it in Year 3 income would misstate the current period, and ignoring the error would leave the cumulative balances misstated even though the originating period is not displayed.",
+      "explanationJa": "誤謬が表示される最も早い期間より前の期間にのみ関係する場合、ASC 250-10-45-23(b)に従い、表示される最も早い期間（Year 2）の資産・負債および利益剰余金の期首残高を修正することで修正再表示を行う。Year 1の誤謬をYear 2の損益計算書に吸収させればYear 2の業績が歪み、Year 3の損益に計上すれば当期が歪む。また、発生期間が表示されていなくても累積残高は誤ったままであるため、訂正しないという選択は認められない。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-129",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Change in Estimate - Life and Salvage Revised Together",
+      "stem": "Dunmore Co. purchased a machine on January 1, Year 1, for $600,000 with an estimated salvage value of $60,000 and a 10-year useful life, depreciated straight-line. At the beginning of Year 5, Dunmore revised the total useful life to 8 years and the salvage value to $24,000. What is depreciation expense for Year 5?",
+      "choices": [
+        { "label": "A", "text": "$54,000" },
+        { "label": "B", "text": "$90,000" },
+        { "label": "C", "text": "$96,000" },
+        { "label": "D", "text": "$72,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Depreciation through Year 4 is [($600,000 − $60,000) ÷ 10] × 4 = $216,000, leaving a carrying amount of $384,000. With a total life of 8 years, 4 years remain. Year 5 expense = ($384,000 − $24,000) ÷ 4 = $90,000. The $54,000 figure continues the old rate; $96,000 omits the new salvage value ($384,000 ÷ 4); and $72,000 incorrectly applies the new assumptions to original cost over the full new life [($600,000 − $24,000) ÷ 8] without isolating the remaining carrying amount and remaining years.",
+      "explanationJa": "Year 4末までの償却累計額は [($600,000 − $60,000) ÷ 10年] × 4年 = $216,000、帳簿価額は $384,000。耐用年数合計8年のうち残りは4年。見積りの変更として将来的に処理し（ASC 250-10-45-17）、Year 5の償却費は ($384,000 − 新残存価額$24,000) ÷ 4年 = $90,000。$54,000は旧償却率の継続、$96,000は新残存価額の控除漏れ（$384,000 ÷ 4）、$72,000は帳簿価額・残存年数によらず取得原価と新前提を機械的に当てはめた誤り [($600,000 − $24,000) ÷ 8]。",
+      "references": ["ASC 250-10-45-17"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-130",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "First-Time Adoption for New Transactions",
+      "stem": "During the current year, Tarleton Co. entered into derivative contracts for the first time and adopted hedge accounting policies for them. Under ASC 250, the initial adoption of an accounting principle for events or transactions occurring for the first time is:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A change in accounting principle requiring retrospective application"
+        },
+        {
+          "label": "B",
+          "text": "A change in accounting estimate requiring prospective treatment and disclosure of the income effect"
+        },
+        {
+          "label": "C",
+          "text": "Not a change in accounting principle; no retrospective application or accounting-change disclosure is required"
+        },
+        {
+          "label": "D",
+          "text": "An error correction requiring a prior period adjustment"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 250 specifies that the initial adoption of an accounting principle for events or transactions occurring for the first time — or for those that were previously immaterial — is not a change in accounting principle. There is nothing to apply retrospectively because the transactions did not exist in prior periods. It is likewise not an estimate change (no prior estimate existed) and not an error (prior statements were not misstated).",
+      "explanationJa": "ASC 250-10-45-1により、初めて発生した事象・取引（または従来重要性が乏しかった取引）に対する会計方針の新規採用は、会計方針の変更には該当しない。過年度に当該取引が存在しなかった以上、遡及適用すべき対象が存在しないためである。同様に、過去の見積りが存在しないため見積りの変更でもなく、過年度の財務諸表に誤りがあったわけでもないため誤謬の訂正でもない。",
+      "references": ["ASC 250-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-131",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Combined Inventory and Purchases Errors",
+      "stem": "Two errors occurred at Hollister Co. in Year 1: (1) a $20,000 merchandise purchase received in December Year 1 was not recorded until Year 2, even though the goods were on hand and were included in the Year 1 ending physical inventory count; and (2) separately, Year 1 ending inventory was understated by $35,000 due to a counting error on other goods. Considering both errors, Year 1 net income is:",
+      "choices": [
+        { "label": "A", "text": "Understated by $15,000" },
+        { "label": "B", "text": "Overstated by $15,000" },
+        { "label": "C", "text": "Understated by $55,000" },
+        { "label": "D", "text": "Overstated by $55,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cost of goods sold = beginning inventory + purchases − ending inventory. Error (1): the $20,000 purchase was omitted but the goods were included in the ending count, so purchases are understated by $20,000, which understates COGS and overstates income by $20,000. Error (2): ending inventory understated by $35,000 overstates COGS and understates income by $35,000. Net effect: income understated by $35,000 − $20,000 = $15,000. The overstatement direction reverses the larger error, and $55,000 incorrectly adds the two effects instead of offsetting them.",
+      "explanationJa": "売上原価 = 期首棚卸資産 + 仕入 − 期末棚卸資産。誤謬(1): $20,000の仕入が未記帳である一方、商品自体は期末実地棚卸に含まれているため、仕入が$20,000過小 → 売上原価が過小 → 利益が$20,000過大。誤謬(2): 期末棚卸資産の$35,000過小計上により売上原価が過大 → 利益が$35,000過小。両者を合算すると、Year 1純利益は $35,000 − $20,000 = $15,000 の過小となる。過大方向の選択は大きい方の誤謬の影響を逆に捉えたもの、$55,000は相殺すべき2つの影響を加算した誤りである。",
+      "references": ["ASC 250-10-45-23", "ASC 330-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-132",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Error Correction - Unearned Rent Recorded as Revenue",
+      "stem": "On July 1, Year 2, Belgrave Co. received $96,000 for a two-year lease of office space covering July 1, Year 2, through June 30, Year 4, and credited the entire amount to rent revenue. The error was discovered early in Year 3, after the Year 2 financial statements were issued. Belgrave's tax rate is 25%. What is the net-of-tax prior period adjustment to beginning Year 3 retained earnings?",
+      "choices": [
+        { "label": "A", "text": "$72,000 decrease" },
+        { "label": "B", "text": "$96,000 decrease" },
+        { "label": "C", "text": "$18,000 decrease" },
+        { "label": "D", "text": "$54,000 decrease" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "By December 31, Year 2, only 6 of the 24 lease months had elapsed, so earned revenue is $96,000 × 6/24 = $24,000 and the remaining $72,000 should have been deferred as unearned rent. Year 2 revenue was therefore overstated by $72,000 pretax; net of tax, retained earnings is overstated by $72,000 × (1 − 0.25) = $54,000, and the prior period adjustment decreases beginning Year 3 retained earnings by $54,000. The $72,000 figure ignores the tax effect, $96,000 ignores both the earned portion and tax, and $18,000 is only the tax effect on the misstatement.",
+      "explanationJa": "Year 2末時点でリース期間24か月のうち6か月のみ経過しているため、稼得済収益は $96,000 × 6/24 = $24,000、残額$72,000は前受収益として繰り延べるべきであった。Year 2の収益は税引前で$72,000過大であり、税効果考慮後の利益剰余金の過大額は $72,000 × (1 − 25%) = $54,000。ASC 250-10-45-23により、Year 3期首利益剰余金を$54,000減額するprior period adjustmentを行う。$72,000は税効果の考慮漏れ、$96,000は稼得済部分と税効果の両方を無視、$18,000は税効果部分のみの金額である。",
+      "references": ["ASC 250-10-45-23", "ASC 250-10-45-24"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-133",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "ASC 250 vs Superseded Cumulative-Effect Approach",
+      "stem": "A staff accountant proposes reporting the cumulative effect of a voluntary change in accounting principle as a separate line item in the current year's income statement, after income from continuing operations. Under ASC 250, this proposal is:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acceptable, because cumulative effects are always reported in current income"
+        },
+        {
+          "label": "B",
+          "text": "Not acceptable; ASC 250 eliminated income statement recognition of cumulative effects, requiring instead an adjustment to the opening retained earnings of the earliest period presented"
+        },
+        {
+          "label": "C",
+          "text": "Acceptable only if the company presents single-year financial statements"
+        },
+        {
+          "label": "D",
+          "text": "Acceptable only if the change is from LIFO to FIFO"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 250 (which carried forward FAS 154) eliminated the former APB 20 approach of reporting a cumulative-effect adjustment in the income statement. Changes in accounting principle are applied retrospectively, with the cumulative effect on periods before those presented recorded as an adjustment to the opening retained earnings of the earliest period presented — never as a component of current-period income. This holds whether single-year or comparative statements are presented, and the inventory methods involved do not create an exception.",
+      "explanationJa": "ASC 250（FAS 154を引き継いだ規定）は、旧APB 20が認めていた「累積的影響額を当期の損益計算書に独立項目として表示する方法」を廃止した。会計方針の変更は遡及適用し、表示期間より前の累積的影響額は表示される最も早い期間の期首利益剰余金の修正として計上する。累積的影響額が当期損益の構成要素になることはなく、単年度表示か比較表示かを問わず、また棚卸資産の評価方法の種類によっても例外は生じない。",
+      "references": ["ASC 250-10-45-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "chg-134",
+      "topic": "Accounting Changes & Errors",
+      "subtopic": "Retrospective Application - Required Mechanics",
+      "stem": "Under ASC 250, retrospective application of a change in accounting principle requires which of the following? I. Adjusting the carrying amounts of assets and liabilities as of the beginning of the earliest period presented for the cumulative effect of the new principle. II. Recording an offsetting adjustment to the opening balance of retained earnings (or other appropriate components of equity) for that period.",
+      "choices": [
+        { "label": "A", "text": "I only" },
+        { "label": "B", "text": "II only" },
+        { "label": "C", "text": "Both I and II" },
+        { "label": "D", "text": "Neither I nor II" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 250-10-45-5 prescribes both mechanics: the cumulative effect of applying the new principle to periods before the earliest period presented is reflected in the carrying amounts of assets and liabilities at the beginning of that earliest period, AND an offsetting adjustment is made to the opening balance of retained earnings (or other appropriate equity components, such as AOCI when applicable) for that same period. In addition, all periods presented are restated to reflect the period-specific effects of the new principle. Performing only one half of the entry would leave the balance sheet out of balance.",
+      "explanationJa": "ASC 250-10-45-5は遡及適用の手続として両方を要求している。すなわち、(1)表示される最も早い期間より前の期間への累積的影響額を、当該期間の期首時点の資産・負債の帳簿価額に反映し、(2)同額の相手勘定として当該期間の期首利益剰余金（または該当する場合はAOCI等の他の資本項目）を修正する。さらに、表示される各期間の財務諸表は新方針による期間別影響額を反映して修正再表示する。どちらか一方のみでは貸借が一致しない。",
+      "references": ["ASC 250-10-45-5"],
+      "difficulty": "intermediate",
       "source": "Original - CPA Exam Practice"
     }
   ]

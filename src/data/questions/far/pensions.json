@@ -2,7 +2,7 @@
   "id": "far-pensions",
   "name": "Pensions",
   "topic": "Pensions",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "pen-001",
@@ -2637,6 +2637,441 @@
       "explanationJa": "年間償却額 = $480,000 / 12年 = $40,000。4年間（第1年から第4年）の累積償却額 = $40,000 × 4 = $160,000。AOCIに残る未償却過去勤務費用 = $480,000 - $160,000 = $320,000。",
       "references": ["ASC 715-30-35-11"],
       "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-119",
+      "topic": "Pensions",
+      "subtopic": "PBO Rollforward - Solve for Actuarial Gain/Loss",
+      "stem": "Ridgemont Corp.'s defined benefit pension plan reports the following for the current year: PBO at January 1, $5,200,000; service cost, $310,000; discount rate, 5%; benefits paid to retirees, $420,000; PBO at December 31, $5,500,000. There were no plan amendments during the year. What amount of actuarial gain or loss on the PBO arose during the year?",
+      "choices": [
+        { "label": "A", "text": "$150,000 actuarial loss" },
+        { "label": "B", "text": "$150,000 actuarial gain" },
+        { "label": "C", "text": "$270,000 actuarial gain" },
+        { "label": "D", "text": "$410,000 actuarial loss" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The expected ending PBO before any actuarial adjustment is: $5,200,000 beginning PBO + $310,000 service cost + $260,000 interest cost ($5,200,000 × 5%) − $420,000 benefits paid = $5,350,000. Because the actual ending PBO of $5,500,000 exceeds the expected balance by $150,000, an actuarial loss of $150,000 arose during the year. A $150,000 actuarial gain reverses the direction of the difference; the obligation grew larger than expected, not smaller. A $270,000 gain results from incorrectly omitting the benefits paid from the rollforward ($5,770,000 − $5,500,000). A $410,000 loss results from omitting the interest cost component ($5,090,000 expected vs. $5,500,000 actual).",
+      "explanationJa": "ASC 715-30におけるPBOのロールフォワードは「期首PBO＋勤務費用＋利息費用−給付支払±数理計算上の差異＝期末PBO」で構成される。数理差異控除前の期末予想PBOは $5,200,000 + $310,000 + ($5,200,000 × 5% = $260,000) − $420,000 = $5,350,000。実際の期末PBOは $5,500,000 であり、予想を $150,000 上回っているため、当期に $150,000 の数理計算上の損失（PBOの増加）が発生したことになる。給付支払を除外すると $270,000 の利得という誤答に、利息費用を除外すると $410,000 の損失という誤答になる。",
+      "references": ["ASC 715-30-35", "ASC 715-30-35-21"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-120",
+      "topic": "Pensions",
+      "subtopic": "PBO/ABO/VBO - Relative Size Relationship",
+      "stem": "A company sponsors a defined benefit pension plan with a benefit formula based on final salary, and some participants are not yet fully vested. Which of the following correctly orders the three measures of the pension obligation from smallest to largest?",
+      "choices": [
+        { "label": "A", "text": "ABO, VBO, PBO" },
+        { "label": "B", "text": "VBO, ABO, PBO" },
+        { "label": "C", "text": "PBO, ABO, VBO" },
+        { "label": "D", "text": "VBO, PBO, ABO" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The vested benefit obligation (VBO) includes only benefits that employees are entitled to regardless of future service, so it is the smallest measure. The accumulated benefit obligation (ABO) adds nonvested benefits but uses current salary levels. The projected benefit obligation (PBO) is the largest because it uses the same accrued service as the ABO but incorporates assumptions about future compensation increases, which a final-salary formula makes relevant. Any ordering that places the PBO below the ABO, or the ABO below the VBO, contradicts these definitions when the plan is pay-related and some benefits are nonvested.",
+      "explanationJa": "ASC 715-30では年金債務に3つの測定値がある。VBO（受給権確定給付債務）は将来勤務に関係なく確定している給付のみを含むため最小。ABO（累積給付債務）はこれに未確定（nonvested）給付を加えるが、現在の給与水準で測定する。PBO（予測給付債務）はABOと同じ勤務期間を対象としつつ将来の昇給を織り込むため、最終給与比例型の制度では最大となる。したがって小さい順に VBO ≤ ABO ≤ PBO が正しい。",
+      "references": ["ASC 715-30-20", "ASC 715-30-35-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-121",
+      "topic": "Pensions",
+      "subtopic": "Plan Assets Rollforward - Solve for Benefits Paid",
+      "stem": "Stoneharbor Corp.'s defined benefit pension plan reports the following: fair value of plan assets at January 1, $3,100,000; actual return on plan assets for the year, $280,000; employer contributions during the year, $450,000; fair value of plan assets at December 31, $3,460,000. What amount of benefits was paid to retirees from plan assets during the year?",
+      "choices": [
+        { "label": "A", "text": "$90,000" },
+        { "label": "B", "text": "$360,000" },
+        { "label": "C", "text": "$370,000" },
+        { "label": "D", "text": "$730,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The plan assets rollforward is: beginning fair value + actual return + employer contributions − benefits paid = ending fair value. Solving: $3,100,000 + $280,000 + $450,000 − benefits paid = $3,460,000, so benefits paid = $370,000. An answer of $90,000 results from omitting the actual return from the rollforward. An answer of $360,000 is simply the change in fair value ($3,460,000 − $3,100,000), which ignores the inflows and outflows. An answer of $730,000 is the sum of the actual return and contributions, which is the total inflow rather than the benefits paid.",
+      "explanationJa": "ASC 715-30における制度資産の公正価値ロールフォワードは「期首公正価値＋実際運用収益＋事業主拠出−給付支払＝期末公正価値」。$3,100,000 + $280,000 + $450,000 − 給付支払 = $3,460,000 を解くと、給付支払 = $370,000。実際運用収益を除外すると $90,000、単純な期中増減額（$3,460,000 − $3,100,000）を答えると $360,000、収益と拠出の合計（流入総額）を答えると $730,000 という誤答になる。",
+      "references": ["ASC 715-30-35", "ASC 715-30-55"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-122",
+      "topic": "Pensions",
+      "subtopic": "Corridor Amortization - MRVA Greater Than PBO",
+      "stem": "At January 1, Tidewater Corp.'s defined benefit pension plan has an accumulated net actuarial loss in AOCI of $980,000. The PBO at that date is $8,400,000, and the market-related value of plan assets is $9,000,000. The average remaining service period of active employees is 8 years. Using the corridor approach, what is the minimum amortization of the net actuarial loss for the year?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$17,500" },
+        { "label": "C", "text": "$122,500" },
+        { "label": "D", "text": "$10,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The corridor is 10% of the greater of the beginning-of-year PBO or the market-related value of plan assets. Here the market-related value ($9,000,000) exceeds the PBO ($8,400,000), so the corridor is $900,000. The excess of the net loss over the corridor is $980,000 − $900,000 = $80,000, and the minimum amortization is $80,000 ÷ 8 years = $10,000. An answer of $17,500 results from incorrectly using 10% of the PBO ($840,000) as the corridor, yielding an excess of $140,000 ÷ 8. An answer of $0 ignores that the loss exceeds the corridor. An answer of $122,500 amortizes the entire $980,000 loss over 8 years without applying the corridor.",
+      "explanationJa": "ASC 715-30-35-24のコリドー・アプローチでは、コリドーは期首PBOと制度資産の市場関連価値（MRVA）のいずれか大きい方の10%。本問ではMRVA $9,000,000 > PBO $8,400,000 なのでコリドーは $900,000。純損失 $980,000 のうちコリドー超過額は $80,000 で、これを平均残存勤務期間8年で除した $10,000 が最低償却額。PBOの10%（$840,000）を誤って使うと $140,000 ÷ 8 = $17,500、コリドーを適用せず全額を8年償却すると $122,500 という誤答になる。",
+      "references": ["ASC 715-30-35-24", "ASC 715-30-35-25"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-123",
+      "topic": "Pensions",
+      "subtopic": "Funded Status - Current vs Noncurrent Classification",
+      "stem": "Under ASC 715, how should an employer with a classified balance sheet present the current portion of an underfunded defined benefit pension plan's liability?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A current liability is reported to the extent the actuarial present value of benefits expected to be paid within the next 12 months exceeds the fair value of plan assets"
+        },
+        {
+          "label": "B",
+          "text": "The entire net pension liability is always classified as noncurrent because pension obligations are long-term in nature"
+        },
+        {
+          "label": "C",
+          "text": "The liability is allocated between current and noncurrent based on the ratio of retired participants to active participants"
+        },
+        {
+          "label": "D",
+          "text": "A current liability is reported equal to the employer's expected contribution for the next 12 months"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-20-45, a liability for an underfunded plan is classified as current to the extent that the actuarial present value of benefits included in the obligation payable within the next 12 months exceeds the fair value of the plan's assets, because those near-term payments cannot be covered by existing plan assets. Treating the entire liability as automatically noncurrent ignores this requirement. Allocating by participant ratio has no basis in the guidance. Expected employer contributions are a disclosure item, not the measure of the current liability; contributions go into the plan rather than directly to retirees.",
+      "explanationJa": "ASC 715-20-45では、区分式貸借対照表において、過少積立制度の負債は「今後12か月以内に支払われる給付の数理現価が制度資産の公正価値を超える額」を流動負債として表示する。制度資産で賄える範囲の給付支払は事業主の流動負債とならないため、超過分のみが流動となる。年金債務は長期だから全額固定負債とする処理や、退職者比率による按分は根拠がない。翌期の予定拠出額は開示項目であり、流動負債の測定基準ではない。",
+      "references": ["ASC 715-20-45-2", "ASC 715-20-45-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-124",
+      "topic": "Pensions",
+      "subtopic": "Net Periodic Pension Cost - Five Components with Gain Amortization",
+      "stem": "Wrenfield Corp. reports the following for the current year: service cost, $240,000; interest cost, $130,000; expected return on plan assets, $160,000; amortization of prior service cost, $25,000; amortization of net actuarial gain, $15,000. What is Wrenfield's net periodic pension cost for the year?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$220,000" },
+        { "label": "C", "text": "$250,000" },
+        { "label": "D", "text": "$210,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Net periodic pension cost = service cost $240,000 + interest cost $130,000 − expected return on plan assets $160,000 + amortization of prior service cost $25,000 − amortization of net actuarial gain $15,000 = $220,000. Amortization of a net gain reduces pension cost, while amortization of prior service cost increases it. An answer of $250,000 results from adding the gain amortization instead of subtracting it. An answer of $200,000 results from flipping the signs of both amortization items (subtracting prior service cost and adding the gain). An answer of $210,000 results from ignoring both amortization components.",
+      "explanationJa": "ASC 715-30-35における年金費用の5要素の合算: 勤務費用 $240,000 + 利息費用 $130,000 − 期待運用収益 $160,000 + 過去勤務費用償却 $25,000 − 数理計算上の純利得の償却 $15,000 = $220,000。純利得の償却は費用の減額要素、過去勤務費用の償却は増額要素である点に注意。利得償却を加算すると $250,000、両償却の符号を逆にすると $200,000、両償却を無視すると $210,000 という誤答になる。",
+      "references": ["ASC 715-30-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-125",
+      "topic": "Pensions",
+      "subtopic": "Prior Service Cost - AOCI Balance After First-Year Amortization",
+      "stem": "On January 1 of the current year, Alderbrook Corp. amends its defined benefit pension plan, granting retroactive benefits that increase the PBO by $350,000. The average remaining service period of employees expected to receive benefits is 10 years, and the company uses straight-line amortization. What balance related to this prior service cost remains in accumulated other comprehensive income at December 31 of the current year?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$35,000" },
+        { "label": "C", "text": "$315,000" },
+        { "label": "D", "text": "$350,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The full $350,000 of prior service cost is recognized in other comprehensive income at the date of the amendment and then amortized into net periodic pension cost over the 10-year average remaining service period. The first year's amortization is $350,000 ÷ 10 = $35,000, leaving $350,000 − $35,000 = $315,000 in AOCI at year-end. An answer of $350,000 ignores that amortization begins in the year of the amendment. An answer of $35,000 is the annual amortization amount, not the remaining balance. An answer of $0 would only result from immediate full recognition in expense, which is not how prior service cost is treated under ASC 715.",
+      "explanationJa": "ASC 715-30-35では、制度改訂による過去勤務費用 $350,000 は改訂時にその他の包括利益（OCI）に全額計上され、その後、給付を受ける従業員の平均残存勤務期間（10年）にわたり年金費用へ定額償却される。初年度の償却額は $350,000 ÷ 10 = $35,000 なので、期末のAOCI残高は $350,000 − $35,000 = $315,000。改訂年度から償却が始まる点を見落とすと $350,000、年間償却額そのものを答えると $35,000 という誤答になる。",
+      "references": ["ASC 715-30-35-11", "ASC 715-30-35-13"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-126",
+      "topic": "Pensions",
+      "subtopic": "Transactions Affecting PBO vs Plan Assets",
+      "stem": "Which of the following events decreases the projected benefit obligation of a defined benefit pension plan without affecting the fair value of plan assets?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Payment of benefits to retirees from plan assets"
+        },
+        { "label": "B", "text": "An employer cash contribution to the plan" },
+        { "label": "C", "text": "Actual return earned on plan investments" },
+        {
+          "label": "D",
+          "text": "An increase in the discount rate used to measure the obligation"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "An increase in the discount rate reduces the present value of future benefit payments, decreasing the PBO and creating an actuarial gain, while plan assets are unaffected because no cash moves. Benefit payments decrease both the PBO and plan assets simultaneously. An employer contribution increases plan assets only and has no effect on the PBO. The actual return on plan investments changes plan assets only; it has no effect on the obligation.",
+      "explanationJa": "割引率の引き上げは将来給付の現在価値を低下させるためPBOを減少させ（数理計算上の利得）、現金の移動がないため制度資産には影響しない。給付支払はPBOと制度資産の両方を同額減少させる。事業主拠出は制度資産のみを増加させ、PBOには影響しない。制度資産の実際運用収益は資産側のみの変動であり、債務には影響しない（ASC 715-30-35参照）。",
+      "references": ["ASC 715-30-35", "ASC 715-30-35-21"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-127",
+      "topic": "Pensions",
+      "subtopic": "Partial Settlement - Pro Rata Gain Recognition",
+      "stem": "Cravenmoor Corp. purchases nonparticipating annuity contracts to settle 30% of its projected benefit obligation. Immediately before the settlement, the company has an unrecognized net actuarial gain in AOCI of $400,000 related to the plan. What is the maximum settlement gain Cravenmoor may recognize in earnings as a result of this transaction?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$120,000" },
+        { "label": "C", "text": "$280,000" },
+        { "label": "D", "text": "$400,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 715-30-35-79, when only part of the obligation is settled, the employer recognizes in earnings a pro rata portion of the net gain or loss in AOCI equal to the percentage reduction in the PBO. Here, 30% × $400,000 = $120,000 is the maximum gain recognized. Recognizing the full $400,000 would be appropriate only for a settlement of the entire obligation. An answer of $280,000 represents the 70% portion that remains in AOCI, not the amount recognized. An answer of $0 would apply only if the settlement did not meet the recognition criteria, which a 30% irrevocable annuity purchase does.",
+      "explanationJa": "ASC 715-30-35-79では、債務の一部のみを清算（settlement）した場合、AOCIに含まれる数理計算上の純利得（または損失）のうち、PBOの減少割合に相当する比例部分を損益に認識する。本問では 30% × $400,000 = $120,000 が認識可能な最大の清算利得。全額 $400,000 の認識は債務全体を清算した場合のみ。$280,000 はAOCIに残る70%部分であり、認識額ではない。",
+      "references": ["ASC 715-30-35-79", "ASC 715-30-35-83"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-128",
+      "topic": "Pensions",
+      "subtopic": "Curtailment - Net Gain with PSC Write-Off",
+      "stem": "Driftstone Corp. closes a regional operation, eliminating the expected future services of a significant portion of plan participants. The curtailment decreases the PBO by $150,000. The curtailment also eliminates 40% of the remaining expected future service years on which unamortized prior service cost of $240,000 was being amortized. Ignoring any net actuarial gains or losses in AOCI, what net curtailment gain or loss should Driftstone recognize?",
+      "choices": [
+        { "label": "A", "text": "$54,000 net curtailment gain" },
+        { "label": "B", "text": "$150,000 net curtailment gain" },
+        { "label": "C", "text": "$96,000 net curtailment loss" },
+        { "label": "D", "text": "$54,000 net curtailment loss" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A curtailment requires writing off the portion of unamortized prior service cost associated with the eliminated future service years: 40% × $240,000 = $96,000 loss. The decrease in the PBO of $150,000 is a curtailment gain. The net effect is a $150,000 gain − $96,000 loss = $54,000 net curtailment gain. An answer of $150,000 gain ignores the required prior service cost write-off. An answer of $96,000 loss ignores the PBO decrease. A $54,000 net loss reverses the relative sizes of the two components; the PBO gain exceeds the write-off here.",
+      "explanationJa": "ASC 715-30-35-92以降の縮小（curtailment）会計では、消滅した将来勤務年数に対応する未償却過去勤務費用を損失として即時認識する: 40% × $240,000 = $96,000。一方、PBOの減少 $150,000 は縮小利得となる。純額では $150,000 − $96,000 = $54,000 の純縮小利得。過去勤務費用の償却切捨てを無視すると $150,000 の利得、PBO減少を無視すると $96,000 の損失という誤答になる。",
+      "references": ["ASC 715-30-35-92", "ASC 715-30-35-93"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-129",
+      "topic": "Pensions",
+      "subtopic": "Expected Return - Time-Weighted Mid-Year Contribution",
+      "stem": "Emberlyn Corp.'s pension plan has a market-related value of plan assets of $6,000,000 at January 1. The expected long-term rate of return on plan assets is 8%. On July 1, the employer contributes $600,000 to the plan, and the actuary's methodology time-weights contributions in computing the expected return. No benefits were paid during the year. What is the expected return on plan assets for the year?",
+      "choices": [
+        { "label": "A", "text": "$456,000" },
+        { "label": "B", "text": "$480,000" },
+        { "label": "C", "text": "$528,000" },
+        { "label": "D", "text": "$504,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The expected return is computed on the beginning market-related value plus a time-weighted adjustment for the mid-year contribution: ($6,000,000 × 8%) + ($600,000 × 8% × 6/12) = $480,000 + $24,000 = $504,000. An answer of $480,000 ignores the contribution entirely. An answer of $528,000 applies a full year of expected return to the July 1 contribution rather than weighting it for the six months it was in the plan. An answer of $456,000 incorrectly subtracts the half-year return on the contribution instead of adding it.",
+      "explanationJa": "期待運用収益は期首の市場関連価値に期待収益率を乗じ、期中拠出は在籍期間で加重して加算する: ($6,000,000 × 8%) + ($600,000 × 8% × 6/12) = $480,000 + $24,000 = $504,000。期中拠出を無視すると $480,000、7月1日の拠出に1年分の収益率を適用すると $528,000 という誤答になる（ASC 715-30-35-47参照）。",
+      "references": ["ASC 715-30-35-47"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-130",
+      "topic": "Pensions",
+      "subtopic": "AOCI Net Loss - Ending Balance Rollforward",
+      "stem": "At January 1, Fallowfield Corp. has an accumulated net actuarial loss in AOCI of $500,000 related to its pension plan. During the year, the company amortizes $40,000 of the net loss into net periodic pension cost, and a new actuarial loss of $120,000 arises at the year-end measurement date. What is the accumulated net actuarial loss in AOCI at December 31?",
+      "choices": [
+        { "label": "A", "text": "$460,000" },
+        { "label": "B", "text": "$620,000" },
+        { "label": "C", "text": "$580,000" },
+        { "label": "D", "text": "$660,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The AOCI rollforward is: beginning net loss $500,000 − amortization reclassified into pension cost $40,000 + new loss arising $120,000 = $580,000 ending balance. Amortization is a reclassification out of AOCI into earnings, so it reduces the AOCI balance. An answer of $460,000 omits the new loss ($500,000 − $40,000). An answer of $620,000 adds the amortization to AOCI instead of removing it while omitting the new loss ($500,000 + $120,000) yields the same figure. An answer of $660,000 adds both the amortization and the new loss ($500,000 + $40,000 + $120,000), treating the reclassification as an increase.",
+      "explanationJa": "AOCIの数理計算上純損失のロールフォワード: 期首残高 $500,000 − 当期償却（年金費用への組替額）$40,000 + 当期発生の新たな損失 $120,000 = 期末残高 $580,000。償却はAOCIから損益への組替（reclassification adjustment）なのでAOCI残高を減少させる。新規損失を無視すると $460,000、償却を加算扱いにすると $660,000 という誤答になる（ASC 715-30-35-24、ASC 220参照）。",
+      "references": ["ASC 715-30-35-24", "ASC 220-10-45-14A"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-131",
+      "topic": "Pensions",
+      "subtopic": "Disclosure - Plans with ABO in Excess of Plan Assets",
+      "stem": "An employer sponsors several defined benefit pension plans, some overfunded and some underfunded. Under ASC 715-20-50, which of the following disclosures is required when one or more plans have an accumulated benefit obligation in excess of plan assets?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Only the net aggregate funded status of all plans combined, because individual plan information is never disclosed"
+        },
+        {
+          "label": "B",
+          "text": "The aggregate PBO, aggregate ABO, and aggregate fair value of plan assets for the plans with an ABO in excess of plan assets"
+        },
+        {
+          "label": "C",
+          "text": "The name and individual funded status of each underfunded plan, listed separately"
+        },
+        {
+          "label": "D",
+          "text": "Only a qualitative statement that certain plans are underfunded, with no quantitative information"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 715-20-50 requires that when one or more plans have an ABO in excess of plan assets, the employer disclose the aggregate PBO, aggregate ABO, and aggregate fair value of plan assets for those plans as a group. Disclosing only the combined net funded status of all plans would mask the underfunded plans by offsetting them against overfunded plans. Plan-by-plan disclosure naming each plan is not required; the guidance permits aggregation of the affected plans. A purely qualitative statement does not satisfy the quantitative disclosure requirement.",
+      "explanationJa": "ASC 715-20-50では、ABOが制度資産を超過する制度が1つ以上ある場合、当該制度群について、PBO合計・ABO合計・制度資産の公正価値合計を開示することが求められる。全制度を純額合算した積立状況のみの開示では、過大積立制度との相殺により過少積立制度の実態が隠れてしまう。制度ごとの個別名称付き開示までは要求されておらず、該当制度の集計開示で足りる。定性的記述のみでは定量的開示要件を満たさない。",
+      "references": ["ASC 715-20-50-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-132",
+      "topic": "Pensions",
+      "subtopic": "Funding in Excess of Pension Cost - Balance Sheet Effect",
+      "stem": "Glassmere Corp. reports net periodic pension cost of $300,000 for the year and contributes $380,000 in cash to its underfunded defined benefit pension plan. Ignoring any remeasurement gains or losses, what is the effect of these events on Glassmere's net pension liability?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The net pension liability decreases by $80,000"
+        },
+        {
+          "label": "B",
+          "text": "The net pension liability increases by $80,000"
+        },
+        {
+          "label": "C",
+          "text": "The net pension liability decreases by $380,000"
+        },
+        { "label": "D", "text": "The net pension liability is unchanged" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Pension cost (excluding remeasurement effects) increases the net pension liability by $300,000, while the cash contribution increases plan assets and therefore decreases the net liability by $380,000. The net effect is a decrease of $380,000 − $300,000 = $80,000. An increase of $80,000 reverses the direction; funding exceeded cost, so the liability shrinks. A decrease of $380,000 considers only the contribution and ignores the cost recognized for the year. No change would occur only if the contribution exactly equaled the pension cost.",
+      "explanationJa": "再測定の影響を除けば、年金費用 $300,000 は純年金負債を増加させ、現金拠出 $380,000 は制度資産を増加させるため純負債を減少させる。純額では $380,000 − $300,000 = $80,000 の負債減少。拠出が費用を上回る（超過拠出）場合、純年金負債は減少する。仕訳イメージ: 年金費用 300,000 / 現金 380,000、差額80,000は純年金負債の借方（減少）。拠出のみを見ると $380,000 減少という誤答になる。",
+      "references": ["ASC 715-30-25-1", "ASC 715-30-35"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-133",
+      "topic": "Pensions",
+      "subtopic": "Plan Termination - Combined Settlement and Curtailment",
+      "stem": "Hartwicke Corp. terminates its defined benefit pension plan entirely. Employees immediately stop accruing benefits, and the company purchases nonparticipating annuity contracts that irrevocably transfer the full obligation to an insurance company. How should this plan termination be accounted for under ASC 715?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a settlement only, because the obligation was transferred to the insurer"
+        },
+        {
+          "label": "B",
+          "text": "As a curtailment only, because future benefit accruals ceased"
+        },
+        {
+          "label": "C",
+          "text": "As a plan amendment, with the effects amortized over the remaining service period"
+        },
+        {
+          "label": "D",
+          "text": "As both a curtailment (for the cessation of future accruals) and a settlement (for the irrevocable transfer of the obligation)"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A full plan termination typically involves two distinct events with separate accounting: the cessation of future benefit accruals is a curtailment, which triggers write-off of applicable prior service cost and recognition of curtailment gain or loss; the irrevocable annuity purchase that relieves the employer of primary responsibility for the obligation is a settlement, which triggers recognition of the net gain or loss in AOCI. Treating the transaction as only one of the two events omits required recognition for the other. A plan amendment with prospective amortization applies to benefit formula changes, not to a termination.",
+      "explanationJa": "制度の完全終了は通常2つの事象を含み、それぞれ別個に会計処理する。将来の給付発生の停止は縮小（curtailment）に該当し、関連する未償却過去勤務費用の切捨てと縮小損益の認識を要する。買戻不能な年金保険契約の購入による債務の移転は清算（settlement）に該当し、AOCI中の数理計算上純損益の認識を要する（ASC 715-30-35-92、35-79）。いずれか一方のみとして処理すると他方の認識が漏れる。制度改訂としての償却処理は給付算定式の変更に適用されるものであり、終了には妥当しない。",
+      "references": ["ASC 715-30-35-79", "ASC 715-30-35-92"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-134",
+      "topic": "Pensions",
+      "subtopic": "Combined Asset and Liability Gains/Losses - Net OCI Effect",
+      "stem": "During the year, Ivorydale Corp.'s pension plan has an actual return on plan assets of $320,000 against an expected return of $250,000. At the year-end measurement date, a change in actuarial assumptions increases the PBO by $110,000. There is no amortization of existing AOCI amounts. What is the net effect of these two items on the accumulated net actuarial gain or loss in AOCI?",
+      "choices": [
+        { "label": "A", "text": "Net loss in AOCI increases by $180,000" },
+        { "label": "B", "text": "Net loss in AOCI increases by $110,000" },
+        { "label": "C", "text": "Net loss in AOCI increases by $40,000" },
+        { "label": "D", "text": "Net loss in AOCI decreases by $40,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The asset gain is the excess of actual over expected return: $320,000 − $250,000 = $70,000 gain. The assumption change creates a $110,000 liability loss. Both are recognized in OCI in the period they arise. The net effect is a $110,000 loss − $70,000 gain = $40,000 net increase in the accumulated net loss. An increase of $180,000 adds the two amounts as if both were losses. An increase of $110,000 ignores the offsetting asset gain. A decrease of $40,000 reverses the direction; the liability loss exceeds the asset gain, so the net loss grows.",
+      "explanationJa": "資産側の利得は実際運用収益と期待運用収益の差額: $320,000 − $250,000 = $70,000 の利得。数理仮定の変更によるPBO増加 $110,000 は債務側の損失。いずれも発生期にOCIで認識される（ASC 715-30-35-21）。純額では損失 $110,000 − 利得 $70,000 = $40,000 だけAOCIの純損失が増加する。両者を損失として合算すると $180,000、資産利得を無視すると $110,000 という誤答になる。",
+      "references": ["ASC 715-30-35-21", "ASC 715-30-35-22"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-135",
+      "topic": "Pensions",
+      "subtopic": "OPEB - APBO and EPBO at Full Eligibility",
+      "stem": "Under ASC 715-60, what is the relationship between the accumulated postretirement benefit obligation (APBO) and the expected postretirement benefit obligation (EPBO) for an employee who has reached the full eligibility date?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The APBO equals the EPBO, because the full benefit has been attributed to service already rendered"
+        },
+        {
+          "label": "B",
+          "text": "The APBO continues to be less than the EPBO until the employee actually retires"
+        },
+        {
+          "label": "C",
+          "text": "The APBO exceeds the EPBO because interest continues to accrue on the APBO"
+        },
+        {
+          "label": "D",
+          "text": "The APBO is reset to zero and attribution begins again over the remaining service period"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 715-60, the EPBO is attributed to service from the date of hire to the full eligibility date. Once an employee reaches full eligibility, the entire EPBO has been attributed, so the APBO equals the EPBO from that point forward and no further service cost is recognized for that employee. The APBO does not remain below the EPBO until retirement; attribution ends at full eligibility, not retirement. Interest accrues on both measures equally, so it does not cause the APBO to exceed the EPBO. There is no resetting of the obligation at full eligibility.",
+      "explanationJa": "ASC 715-60では、EPBO（予想退職後給付債務）は入社日から完全受給資格日（full eligibility date）までの勤務期間に帰属（attribution）させる。完全受給資格日に達した時点でEPBOの全額が帰属済みとなるため、それ以降APBOはEPBOと等しくなり、当該従業員について追加の勤務費用は認識されない。年金（退職日まで帰属）と異なり、OPEBの帰属期間は完全受給資格日で終わる点が特徴。利息は両測定値に等しく発生するためAPBOがEPBOを上回ることはない。",
+      "references": ["ASC 715-60-35-65", "ASC 715-60-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-136",
+      "topic": "Pensions",
+      "subtopic": "Net Periodic Pension Cost - Solve for Expected Return",
+      "stem": "Junewood Corp. reports net periodic pension cost of $210,000 for the year. The components include: service cost, $190,000; interest cost, $85,000; amortization of prior service cost, $20,000. There is no amortization of net actuarial gains or losses. What was the expected return on plan assets for the year?",
+      "choices": [
+        { "label": "A", "text": "$65,000" },
+        { "label": "B", "text": "$20,000" },
+        { "label": "C", "text": "$105,000" },
+        { "label": "D", "text": "$85,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Net periodic pension cost = service cost + interest cost − expected return + amortization of prior service cost. Solving for expected return: $190,000 + $85,000 + $20,000 − $210,000 = $85,000. An answer of $65,000 results from omitting the prior service cost amortization from the equation ($190,000 + $85,000 − $210,000). An answer of $105,000 double-counts the prior service cost amortization ($85,000 + $20,000). An answer of $20,000 is simply the amortization component, not the expected return.",
+      "explanationJa": "ASC 715-30-35-4の構成式「年金費用 = 勤務費用 + 利息費用 − 期待運用収益 + 過去勤務費用償却」を期待運用収益について解く: $190,000 + $85,000 + $20,000 − $210,000 = $85,000。過去勤務費用償却を式から落とすと $65,000、二重計上すると $105,000 という誤答になる。",
+      "references": ["ASC 715-30-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-137",
+      "topic": "Pensions",
+      "subtopic": "Pension Plan Financial Statements - ASC 960",
+      "stem": "A defined benefit pension plan prepares its own financial statements as a reporting entity under ASC 960. Which of the following is reported in the plan's financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The sponsor's net periodic pension cost for the year"
+        },
+        {
+          "label": "B",
+          "text": "The actuarial present value of accumulated plan benefits and the net assets available for benefits"
+        },
+        {
+          "label": "C",
+          "text": "The projected benefit obligation measured using future salary levels"
+        },
+        {
+          "label": "D",
+          "text": "The funded status as a single net asset or net liability, consistent with the sponsor's balance sheet"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 960 governs the financial statements of the plan itself, which report the net assets available for benefits and the actuarial present value of accumulated plan benefits, along with changes in each. The plan's benefit obligation measure is based on accumulated benefits (generally current and past compensation), not the PBO with future salary projections, which is the employer's measure under ASC 715. Net periodic pension cost is an element of the sponsor's financial statements, not the plan's. The plan does not present a single netted funded status; the obligation information and net assets are presented separately rather than offset.",
+      "explanationJa": "ASC 960は年金制度自体（プラン）の財務諸表を規律する。プランの財務諸表では「給付に利用可能な純資産（net assets available for benefits）」と「累積制度給付の数理現価（actuarial present value of accumulated plan benefits）」およびそれぞれの増減を報告する。将来昇給を織り込むPBOは事業主側（ASC 715）の測定値であり、プランの測定値ではない。年金費用（NPPC）はスポンサー側の財務諸表項目。プランは積立状況を純額1本で表示せず、純資産と給付債務情報を別個に表示する。",
+      "references": ["ASC 960-20-35", "ASC 960-205-45"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-138",
+      "topic": "Pensions",
+      "subtopic": "OPEB - Net Cost for an Unfunded Plan",
+      "stem": "Kelsmere Corp. sponsors an unfunded postretirement health care plan (OPEB). For the current year: service cost is $60,000; the APBO at the beginning of the year is $900,000; the discount rate is 6%. The company paid $45,000 of retiree health claims directly during the year. There are no amortization items. What is Kelsmere's net periodic postretirement benefit cost for the year?",
+      "choices": [
+        { "label": "A", "text": "$54,000" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$114,000" },
+        { "label": "D", "text": "$159,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Net periodic postretirement benefit cost = service cost $60,000 + interest cost ($900,000 × 6% = $54,000) − expected return on plan assets ($0, because the plan is unfunded) = $114,000. Benefit payments of $45,000 reduce the APBO but are not a component of periodic cost. An answer of $54,000 is the interest cost alone. An answer of $60,000 is the service cost alone. An answer of $159,000 incorrectly adds the benefit payments to the cost ($114,000 + $45,000).",
+      "explanationJa": "ASC 715-60における退職後給付費用 = 勤務費用 $60,000 + 利息費用（$900,000 × 6% = $54,000）− 期待運用収益 $0（積立のない制度のため）= $114,000。OPEBは積立されないことが多く、その場合期待運用収益はゼロとなる。事業主が直接支払った給付 $45,000 はAPBOを減少させるが、期間費用の構成要素ではない。給付支払を費用に加算すると $159,000 という誤答になる。",
+      "references": ["ASC 715-60-35", "ASC 715-60-35-9"],
+      "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }
   ]

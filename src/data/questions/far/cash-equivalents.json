@@ -2,7 +2,7 @@
   "id": "far-cash-equivalents",
   "name": "Cash and Cash Equivalents",
   "topic": "Cash and Cash Equivalents",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "cce-001",
@@ -2413,6 +2413,480 @@
       "explanation": "Classification depends on the original maturity from the entity's purchase date. The 30-day Treasury bill qualifies (30 days). The 5-year corporate bond purchased with 60 days remaining qualifies because the period from purchase to maturity is 60 days, not the bond's original term. The government money market fund with a stable NAV and daily liquidity qualifies. The 100-day commercial paper and the 6-month certificate of deposit both exceed three months and do not qualify. Three instruments qualify.",
       "explanationJa": "判定は企業の取得日からの当初満期で行う。30日T-Bill（30日）は適格。5年社債だが取得時に残存60日のものは、取得から満期までが60日のため適格（社債の当初期間ではない）。安定NAVで日次流動性の政府系MMFも適格。100日CPと6か月CDは3か月を超えるため不適格。適格は3つ。",
       "references": ["ASC 305-10-20"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-088",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Banker's Acceptance Classification",
+      "stem": "On December 15, Year 1, Holt Corp. purchases a banker's acceptance in the secondary market. The instrument has 75 days remaining to maturity at the acquisition date and is readily convertible to a known amount of cash. In its December 31, Year 1 balance sheet, how should Holt classify the banker's acceptance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a short-term investment, separate from cash and cash equivalents"
+        },
+        {
+          "label": "B",
+          "text": "As a cash equivalent, included in the cash and cash equivalents line"
+        },
+        {
+          "label": "C",
+          "text": "As a trading debt security measured at fair value through earnings"
+        },
+        { "label": "D", "text": "As a note receivable from the accepting bank" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A cash equivalent is a short-term, highly liquid investment that is readily convertible to a known amount of cash and is so near its maturity (generally an original maturity of three months or less from the date of acquisition) that it presents insignificant risk of changes in value from interest rate movements. The banker's acceptance was acquired with only 75 days to maturity, which is within the three-month threshold, so it qualifies as a cash equivalent. Classifying it as a separate short-term investment would be appropriate only if the maturity at acquisition exceeded three months. Treating it as a trading security or as a note receivable ignores the cash equivalent definition that applies to short-term, highly liquid money market instruments such as banker's acceptances, Treasury bills, and commercial paper.",
+      "explanationJa": "ASC 230-10-20の定義により、現金同等物とは（1）容易に既知の金額の現金に転換可能で、（2）取得日から満期までが短い（一般に3か月以内）ため金利変動による価値変動リスクが僅少な、短期かつ流動性の高い投資をいいます。本問の銀行引受手形（banker's acceptance）は取得時点で満期まで75日（3か月以内）であるため、現金同等物に該当し、貸借対照表上「現金及び現金同等物」に含めて表示します。取得時の残存期間が3か月超であれば短期投資として区分表示しますが、本問では該当しません。トレーディング有価証券や受取手形としての処理は、銀行引受手形・T-bill・CPなどの短期金融商品に適用される現金同等物の定義を無視したものです。",
+      "references": ["ASC 230-10-20", "ASC 305-10-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-089",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Adjusted Balance per Bank",
+      "stem": "At December 31, Pell Co.'s bank statement shows a balance of $52,300. Pell identifies the following reconciling items: deposits in transit of $6,400, outstanding checks of $4,750, and a bank service charge of $35 that has not yet been recorded in Pell's books. What is the correct (adjusted) cash balance at December 31?",
+      "choices": [
+        { "label": "A", "text": "$53,950" },
+        { "label": "B", "text": "$53,985" },
+        { "label": "C", "text": "$53,915" },
+        { "label": "D", "text": "$50,650" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Starting from the bank balance, the adjusted (true) cash balance is computed as: $52,300 + deposits in transit of $6,400 − outstanding checks of $4,750 = $53,950. The bank service charge is already reflected in the bank statement balance; it is an adjustment to the book balance, not the bank balance. $53,985 results from incorrectly adding the $35 service charge to the bank side, and $53,915 results from incorrectly subtracting it. $50,650 results from reversing the treatment of deposits in transit and outstanding checks (subtracting deposits and adding checks).",
+      "explanationJa": "銀行勘定調整表では、銀行残高側に「未達預金（deposit in transit）を加算」「未取付小切手（outstanding checks）を減算」して調整後残高を求めます。$52,300 + $6,400 − $4,750 = $53,950 が正しい現金残高です。銀行手数料$35はすでに銀行残高に反映済みであり、帳簿残高側の調整項目です（銀行側では調整しない）。$53,985は手数料を銀行側に誤って加算した値、$53,915は誤って減算した値、$50,650は未達預金と未取付小切手の加減算を逆にした値です。",
+      "references": ["ASC 305-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-090",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Petty Cash - Replenishment Amount with Shortage",
+      "stem": "Dorr Co. maintains a $600 imprest petty cash fund. At the replenishment date, the fund contains $148 in currency and coins, together with receipts for office supplies of $210, delivery charges of $145, and business meals of $89. What amount of cash is needed to replenish the fund to its imprest balance?",
+      "choices": [
+        { "label": "A", "text": "$444" },
+        { "label": "B", "text": "$460" },
+        { "label": "C", "text": "$452" },
+        { "label": "D", "text": "$600" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the imprest system, the fund is replenished by the amount needed to restore it to the imprest balance: $600 − $148 cash on hand = $452. The replenishment entry debits the expenses supported by receipts ($210 + $145 + $89 = $444) and debits Cash Short and Over for the $8 shortage ($600 − $148 − $444), with a credit to Cash of $452. $444 represents only the documented receipts and ignores the shortage. $460 incorrectly adds the $8 shortage to the replenishment check instead of recognizing that the shortage is already embedded in the $452 difference. $600 is the full imprest amount, which would be paid only if the fund contained no cash at all.",
+      "explanationJa": "インプレスト・システム（定額資金前渡制度）では、補充額は「定額残高−手許現金」で計算します。$600 − $148 = $452 が補充に必要な現金です。補充仕訳は、領収書に基づく費用 $444（$210+$145+$89）と現金過不足 $8（$600−$148−$444）を借方計上し、現金 $452 を貸方計上します。$444は領収書合計のみで不足額を無視した値、$460は不足額$8を補充額に二重に加えた誤り、$600は手許現金がゼロの場合にのみ成立する金額です。",
+      "references": ["ASC 305-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-091",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Compensating Balance - Noncurrent Classification",
+      "stem": "Lane Corp. obtains a 3-year term loan from its bank. The loan agreement legally restricts $150,000 of Lane's deposit balance as a compensating balance, and the restriction remains in effect until the loan matures. How should Lane present the $150,000 in its classified balance sheet at the end of the first year of the loan?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Included in cash and cash equivalents, with no separate presentation"
+        },
+        {
+          "label": "B",
+          "text": "Netted against the related term loan liability"
+        },
+        {
+          "label": "C",
+          "text": "Separately presented as a current asset, because it is held in a demand deposit account"
+        },
+        {
+          "label": "D",
+          "text": "Separately presented as a noncurrent asset, because the restriction extends beyond one year"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A legally restricted compensating balance must be segregated from cash and cash equivalents and classified consistently with the term of the related borrowing. Because the restriction supports a 3-year term loan and will not lapse within one year (or the operating cycle, if longer), the $150,000 is presented as a noncurrent asset, such as in investments or other assets. Including it in unrestricted cash would overstate liquid resources available for general use. Offsetting it against the loan is prohibited because no right of setoff exists for a compensating balance arrangement. Current asset classification is inappropriate because the legal restriction extends beyond one year, regardless of the fact that the funds sit in a demand deposit account.",
+      "explanationJa": "法的に拘束された補償残高（compensating balance）は、現金及び現金同等物から区分して表示し、関連する借入金の期間に対応させて流動・非流動を分類します（SEC Regulation S-X Rule 5-02参照）。本問では3年の長期借入に対する拘束で、解除まで1年超を要するため、$150,000は投資その他の資産等の非流動資産として区分表示します。無拘束の現金に含めると一般目的に利用可能な流動性を過大表示します。借入金との相殺は相殺権が存在しないため認められません。要求払預金口座にあるという事実にかかわらず、法的拘束が1年を超えるため流動資産分類も不適切です。",
+      "references": ["SEC Regulation S-X Rule 5-02", "ASC 210-10-45"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-092",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Maturity Measured from Acquisition Date",
+      "stem": "On December 10, Year 1, Marr Co. purchases in the secondary market a U.S. Treasury note that was originally issued two years earlier with a 3-year term. At Marr's acquisition date, the note has 75 days remaining until maturity. Marr intends to hold the note to maturity. How should Marr classify the Treasury note at December 31, Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a held-to-maturity investment, because the original term of the instrument was 3 years"
+        },
+        {
+          "label": "B",
+          "text": "As a short-term investment, because Treasury notes can never be cash equivalents"
+        },
+        {
+          "label": "C",
+          "text": "As a cash equivalent, because the remaining maturity at the date Marr acquired it was three months or less"
+        },
+        {
+          "label": "D",
+          "text": "As restricted cash, because the note cannot be sold before maturity"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The three-month maturity test is applied from the date the investment is acquired by the reporting entity, not from the instrument's original issuance date. A 3-year Treasury note purchased when only 75 days remain to maturity satisfies the test and qualifies as a cash equivalent. The instrument's original 3-year term at issuance is irrelevant to the purchaser's classification. There is no rule excluding Treasury notes from cash equivalent treatment; the classification depends on the maturity remaining at acquisition. Restricted cash treatment is wrong because the note is freely marketable and no external restriction exists.",
+      "explanationJa": "ASC 230-10-20の「満期3か月以内」基準は、報告企業がその投資を取得した日から満期までの期間で判定します。証券の当初発行時の期間（original term）ではありません。当初3年物の米国財務省中期証券（T-note）でも、残存75日の時点で取得すれば基準を満たし、現金同等物に該当します。発行時の3年という当初期間は購入者の分類には無関係です。T-noteを一律に現金同等物から除外する規定はなく、分類は取得時点の残存期間で決まります。本証券は自由に売却可能で外部拘束もないため、制限付き現金にも該当しません。",
+      "references": ["ASC 230-10-20"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-093",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Computing Ending Deposits in Transit",
+      "stem": "Quill Co. is preparing its June 30 bank reconciliation. Deposits in transit at May 31 were $9,200. Cash receipts recorded in Quill's books during June totaled $104,500, and the June bank statement shows deposits credited by the bank of $101,300 (including the May 31 deposits in transit). There were no errors or other reconciling items affecting deposits. What amount should Quill report as deposits in transit at June 30?",
+      "choices": [
+        { "label": "A", "text": "$12,400" },
+        { "label": "B", "text": "$6,000" },
+        { "label": "C", "text": "$3,200" },
+        { "label": "D", "text": "$9,200" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ending deposits in transit = beginning deposits in transit + receipts recorded per books − deposits credited by the bank = $9,200 + $104,500 − $101,300 = $12,400. The bank credited the May items plus $92,100 of June receipts ($101,300 − $9,200), leaving $104,500 − $92,100 = $12,400 of June receipts not yet credited. $6,000 results from subtracting book receipts and adding bank deposits (reversed signs). $3,200 ignores the beginning deposits in transit. $9,200 simply carries forward the prior month's balance without rolling it forward.",
+      "explanationJa": "月末未達預金 = 月初未達預金 + 当月帳簿入金 − 当月銀行入金記帳額、で計算します。$9,200 + $104,500 − $101,300 = $12,400 です。銀行が6月に記帳した$101,300のうち$9,200は5月末の未達分なので、6月入金分の記帳は$92,100。帳簿上の6月入金$104,500との差額$12,400が6月末の未達預金です。$6,000は帳簿入金と銀行入金の加減算を逆にした値、$3,200は月初未達預金を無視した値（$104,500−$101,300）、$9,200は前月残高をそのまま繰り越しただけの誤りです。",
+      "references": ["ASC 305-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-094",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Computing Ending Outstanding Checks",
+      "stem": "Rand Co. is preparing its August 31 bank reconciliation. Outstanding checks at July 31 totaled $7,800. During August, Rand recorded checks issued of $86,000, and the August bank statement shows checks paid by the bank of $84,500 (including checks outstanding at July 31). There were no errors or other reconciling items affecting disbursements. What amount should Rand report as outstanding checks at August 31?",
+      "choices": [
+        { "label": "A", "text": "$6,300" },
+        { "label": "B", "text": "$9,300" },
+        { "label": "C", "text": "$1,500" },
+        { "label": "D", "text": "$7,800" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ending outstanding checks = beginning outstanding checks + checks issued per books − checks paid by the bank = $7,800 + $86,000 − $84,500 = $9,300. The bank paid the July outstanding checks plus $76,700 of August checks ($84,500 − $7,800), so $86,000 − $76,700 = $9,300 of August checks remain unpaid. $6,300 results from subtracting the $1,500 net difference from the beginning balance instead of adding it. $1,500 is merely the difference between checks issued and checks paid, ignoring the beginning outstanding checks. $7,800 carries forward the prior balance without rolling it forward.",
+      "explanationJa": "月末未取付小切手 = 月初未取付小切手 + 当月振出小切手（帳簿） − 当月銀行支払額、で計算します。$7,800 + $86,000 − $84,500 = $9,300 です。銀行支払額$84,500のうち$7,800は7月末の未取付分なので、8月振出分の決済は$76,700。8月振出$86,000との差額$9,300が8月末の未取付小切手です。$6,300は差額$1,500を月初残高から誤って控除した値、$1,500は月初未取付小切手を無視した単純差額、$7,800は前月残高の単純繰越です。",
+      "references": ["ASC 305-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-095",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Composition of Cash and Cash Equivalents",
+      "stem": "At December 31, Voss Co. has the following items: checking account balance $42,000; savings account balance $18,000; petty cash fund $400; a U.S. Treasury bill purchased on November 30 maturing January 31 (two months from purchase) $25,000; a bond sinking fund restricted for bonds maturing in 5 years $30,000; and a 6-month certificate of deposit purchased on October 1 $15,000. What amount should Voss report as cash and cash equivalents at December 31?",
+      "choices": [
+        { "label": "A", "text": "$100,400" },
+        { "label": "B", "text": "$115,400" },
+        { "label": "C", "text": "$130,400" },
+        { "label": "D", "text": "$85,400" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cash and cash equivalents include the checking account ($42,000), savings account ($18,000), petty cash ($400), and the Treasury bill purchased with a 2-month maturity ($25,000), for a total of $85,400. The bond sinking fund is restricted for long-term debt repayment and is reported as a noncurrent asset, not cash. The 6-month CD had an original maturity exceeding three months at acquisition, so it is a short-term investment, not a cash equivalent. $100,400 incorrectly includes the 6-month CD. $115,400 incorrectly includes the restricted sinking fund. $130,400 incorrectly includes both.",
+      "explanationJa": "現金及び現金同等物に含まれるのは、当座預金$42,000、普通預金$18,000、小口現金$400、取得時満期2か月のT-bill $25,000で、合計$85,400です。社債減債基金$30,000は5年後満期の社債返済のために拘束されており、非流動資産として区分表示します（現金に含めない）。6か月物CDは取得時の満期が3か月超のため現金同等物ではなく短期投資です（ASC 230-10-20）。$100,400は6か月CDを誤って含めた値、$115,400は減債基金を誤って含めた値、$130,400は両方を含めた値です。",
+      "references": ["ASC 230-10-20", "ASC 210-10-45"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-096",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "NSF Check - Journal Entry on Depositor's Books",
+      "stem": "Tate Co. deposited a $2,800 check received from a customer on account. The bank subsequently returned the check marked NSF (not sufficient funds). What journal entry should Tate record upon learning of the returned check?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Bad Debt Expense $2,800; credit Cash $2,800"
+        },
+        {
+          "label": "B",
+          "text": "Debit Cash $2,800; credit Accounts Receivable $2,800"
+        },
+        {
+          "label": "C",
+          "text": "Debit Accounts Receivable $2,800; credit Cash $2,800"
+        },
+        {
+          "label": "D",
+          "text": "No entry is required because the bank will redeposit the check automatically"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When a customer's check is returned NSF, the original collection did not occur, so the depositor reverses the cash receipt by debiting Accounts Receivable and crediting Cash for $2,800. The receivable from the customer is reinstated because the customer still owes the amount. Recording bad debt expense is premature; an NSF return does not by itself establish that the account is uncollectible. Debiting Cash and crediting Accounts Receivable describes the original deposit entry, not the correction. An entry is required because the book cash balance is overstated until the NSF return is recorded.",
+      "explanationJa": "顧客の小切手が資金不足（NSF）で返却された場合、当初の入金は成立しなかったことになるため、預金者は「（借方）売掛金 $2,800／（貸方）現金 $2,800」の仕訳で入金を取り消し、債権を復活させます。顧客の支払義務は残っているため、NSF返却のみでは回収不能とは判断できず、貸倒費用の計上は時期尚早です。現金借方・売掛金貸方は当初の入金仕訳であり修正仕訳ではありません。NSF記帳まで帳簿現金残高は過大なので、仕訳は必須です。",
+      "references": ["ASC 305-10", "ASC 310-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-097",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Book Overdraft vs Bank Overdraft Presentation",
+      "stem": "At December 31, Wren Co.'s general ledger shows a credit (negative) cash balance of $12,000 in its only account at City Bank because checks written and recorded in December exceeded the funds on deposit. The checks have not yet cleared, and the bank statement still shows a positive balance of $3,000. Wren has no other accounts at City Bank and no right of offset with accounts at other banks. How should Wren report the $12,000 book overdraft at December 31?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Net the $12,000 against positive cash balances held at other banks"
+        },
+        {
+          "label": "B",
+          "text": "Report negative cash of $12,000 within the cash and cash equivalents line"
+        },
+        {
+          "label": "C",
+          "text": "Disclose the overdraft in the notes only, with no balance sheet effect"
+        },
+        {
+          "label": "D",
+          "text": "Reclassify the $12,000 credit balance as a current liability"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A book overdraft arises when checks recorded exceed the balance in the account, even though the checks have not yet cleared the bank. The credit balance in the cash ledger account is reclassified and reported as a current liability (in substance, the unreleased checks restore accounts payable). Netting against deposits at other banks is prohibited because no right of offset exists between different banks. Reporting negative cash within the cash line misstates both cash and liabilities. Note disclosure alone is insufficient because the balance sheet itself must reflect the liability.",
+      "explanationJa": "帳簿上の当座借越（book overdraft）は、振り出して記帳した小切手が預金残高を超過した場合に生じます（小切手はまだ銀行で決済されていない）。現金勘定の貸方残高$12,000は流動負債に振り替えて表示します（実質的には未決済小切手分の買掛金の復活と同じ性質）。別銀行の預金との相殺は、銀行間に相殺権が存在しないため認められません。現金及び現金同等物の中にマイナス残高として表示すると現金と負債の双方を誤表示します。注記開示のみでは不十分で、貸借対照表本体に負債として反映する必要があります。",
+      "references": ["ASC 210-10-45", "ASC 305-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-098",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Foreign Currency Cash - Year-End Remeasurement",
+      "stem": "A U.S. company holds MXN 2,000,000 (Mexican pesos) in a Mexican bank account. The cash was recorded when received at the then-current spot rate of $0.055 per peso. At December 31, the spot rate is $0.052 per peso. The U.S. dollar is the company's functional currency. What amount should the company report for this cash at December 31, and what is the related effect on income?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$104,000, with a $6,000 foreign currency transaction loss in net income"
+        },
+        { "label": "B", "text": "$110,000, with no gain or loss recognized" },
+        {
+          "label": "C",
+          "text": "$104,000, with a $6,000 unrealized loss reported in other comprehensive income"
+        },
+        {
+          "label": "D",
+          "text": "$110,000, with a $6,000 foreign currency transaction loss in net income"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Foreign currency cash is a monetary asset and is remeasured at the current spot rate at each balance sheet date: MXN 2,000,000 × $0.052 = $104,000. The cash was originally recorded at MXN 2,000,000 × $0.055 = $110,000, so the $6,000 decline is recognized as a foreign currency transaction loss in net income under ASC 830-20. Carrying the cash at the historical $110,000 ignores the remeasurement requirement for monetary items. Reporting the loss in other comprehensive income confuses transaction gains and losses (which go to earnings) with translation adjustments of a foreign entity's financial statements (which go to OCI).",
+      "explanationJa": "外貨建現金は貨幣性資産であるため、各決算日に決算日レートで再測定します。MXN 2,000,000 × $0.052 = $104,000 が貸借対照表計上額です。当初計上額は MXN 2,000,000 × $0.055 = $110,000 なので、差額$6,000はASC 830-20に基づき外貨換算取引損失として当期純利益に計上します。歴史的レートの$110,000のまま据え置くのは貨幣性項目の再測定要求に反します。損失をその他の包括利益（OCI）に計上するのは、取引損益（純利益計上）と在外事業体の財務諸表換算調整額（OCI計上）を混同した誤りです。",
+      "references": ["ASC 830-20-35-1", "ASC 830-20-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-099",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Adjusted Book Balance with Book Error",
+      "stem": "Nole Co.'s December 31 unadjusted book cash balance is $88,640. The December bank reconciliation reveals the following: the bank collected a note receivable of $12,000 plus interest of $300 on Nole's behalf; bank service charges were $90; a customer check for $2,450 was returned NSF; and Nole recorded check #882, correctly written and paid by the bank for $1,980, in its books as $1,890. What is Nole's adjusted cash balance at December 31?",
+      "choices": [
+        { "label": "A", "text": "$98,400" },
+        { "label": "B", "text": "$98,310" },
+        { "label": "C", "text": "$98,490" },
+        { "label": "D", "text": "$98,220" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Adjusted book balance = $88,640 + note collected $12,000 + interest $300 − service charges $90 − NSF check $2,450 − check error $90 = $98,310. The check was written for $1,980 but recorded as $1,890, so cash disbursements were understated by $90 and the book balance must be reduced by $90. $98,400 ignores the recording error. $98,490 adds the $90 error instead of subtracting it. $98,220 subtracts the error twice ($180 instead of $90).",
+      "explanationJa": "調整後帳簿残高 = $88,640 + 銀行回収手形$12,000 + 利息$300 − 銀行手数料$90 − NSF小切手$2,450 − 小切手記帳誤り$90 = $98,310 です。小切手#882は実際$1,980なのに帳簿には$1,890と記帳され、支払が$90過少記帳されているため、帳簿残高を$90減額修正します。$98,400は記帳誤りを無視した値、$98,490は$90を減算ではなく加算した値、$98,220は誤りを二重（$180）に減算した値です。",
+      "references": ["ASC 305-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-100",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Money Market Fund vs Short-Term Bond Fund",
+      "stem": "At year-end, Gere Co. holds two investments that both provide next-day liquidity: (1) a money market mutual fund that seeks to maintain a stable $1.00 net asset value and invests in short-term government obligations, and (2) an ultra-short-term bond mutual fund whose net asset value fluctuates daily with market interest rates. Which of these investments may Gere classify as a cash equivalent?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Both investments, because each can be redeemed within one day"
+        },
+        {
+          "label": "B",
+          "text": "Neither investment, because mutual fund shares are equity interests"
+        },
+        {
+          "label": "C",
+          "text": "Only the money market fund, because it presents insignificant risk of changes in value"
+        },
+        {
+          "label": "D",
+          "text": "Only the ultra-short-term bond fund, because its underlying bonds are short term"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A cash equivalent must be readily convertible to a known amount of cash and present insignificant risk of changes in value. A stable-NAV money market fund satisfies both criteria and is customarily treated as a cash equivalent. The ultra-short-term bond fund fails the 'known amount of cash' and 'insignificant risk' criteria because its NAV fluctuates with interest rates, so redemption proceeds are not a known amount, regardless of daily liquidity. Liquidity alone is not sufficient for cash equivalent classification. The blanket exclusion of all mutual fund shares is incorrect; money market funds are a recognized exception because their structure makes them equivalent to holding short-term money market instruments directly.",
+      "explanationJa": "現金同等物の要件は「既知の金額の現金への容易な転換可能性」と「価値変動リスクが僅少であること」の両方です（ASC 230-10-20）。安定NAV（$1.00維持）型のMMF（マネー・マーケット・ファンド）は両要件を満たし、慣行上現金同等物として扱われます。一方、超短期債券ファンドはNAVが金利変動で日々変動するため、償還額が「既知の金額」とならず、日次流動性があっても要件を満たしません。流動性のみでは現金同等物の要件として不十分です。投資信託持分を一律に除外するのも誤りで、MMFは実質的に短期金融商品を直接保有するのと同等であるため認められる例外です。",
+      "references": ["ASC 230-10-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-101",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Stale Outstanding Check Write-Back",
+      "stem": "Pym Co. wrote a $3,400 check to a vendor in March. At December 31, the check remains outstanding, and under Pym's policy and applicable banking practice the check is now stale-dated and will no longer be honored by the bank. The underlying obligation to the vendor has not been settled. What entry should Pym record at December 31?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit Cash $3,400; credit Accounts Payable $3,400"
+        },
+        {
+          "label": "B",
+          "text": "Debit Cash $3,400; credit Miscellaneous Income $3,400"
+        },
+        {
+          "label": "C",
+          "text": "No entry; continue carrying the check as outstanding in the bank reconciliation"
+        },
+        {
+          "label": "D",
+          "text": "Debit Accounts Payable $3,400; credit Cash $3,400"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When an outstanding check becomes stale and will not clear, the original payment never occurred in substance. Cash is restored (debit Cash $3,400) and the unpaid obligation to the vendor is reinstated (credit Accounts Payable $3,400). Crediting income is improper because the underlying liability still exists; the vendor remains entitled to payment. Continuing to carry the check as outstanding understates both cash and liabilities once it is known the check will not be honored. Debiting Accounts Payable and crediting Cash would duplicate the original (now void) payment entry rather than reverse it.",
+      "explanationJa": "未取付小切手が失効（stale-dated）して決済されないことが確定した場合、当初の支払は実質的に成立していないため、「（借方）現金 $3,400／（貸方）買掛金 $3,400」で現金を復元し、仕入先への未払債務を復活させます。債務は依然存在し仕入先に支払請求権があるため、雑収入への貸方計上は不適切です。失効が判明した後も未取付として調整表に残し続けると、現金と負債の双方が過少表示になります。買掛金借方・現金貸方の仕訳は、当初の（無効となった）支払仕訳の取消ではなく重複計上です。",
+      "references": ["ASC 305-10", "ASC 405-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-102",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Net Adjustment to Book Balance",
+      "stem": "Sayre Co.'s December bank reconciliation includes the following items: interest earned credited by the bank $75; bank service charges $40; a customer NSF check $1,200; deposits in transit $5,000; and outstanding checks $3,800. None of the bank-originated items have been recorded in Sayre's books. What is the net adjustment required to Sayre's book cash balance?",
+      "choices": [
+        { "label": "A", "text": "$35 increase" },
+        { "label": "B", "text": "$1,240 decrease" },
+        { "label": "C", "text": "$1,165 increase" },
+        { "label": "D", "text": "$1,165 decrease" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Only items not yet recorded in the books adjust the book balance: interest earned +$75, service charges −$40, and the NSF check −$1,200, for a net decrease of $1,165. Deposits in transit and outstanding checks are adjustments to the bank balance, not the book balance. A $35 increase reflects only the interest and service charge while omitting the NSF check. A $1,240 decrease omits the interest earned ($40 + $1,200). A $1,165 increase has the correct magnitude but the wrong direction.",
+      "explanationJa": "帳簿残高を調整するのは帳簿未記帳の銀行発生項目のみです。受取利息 +$75、銀行手数料 −$40、NSF小切手 −$1,200 で、純額$1,165の減少となります。未達預金$5,000と未取付小切手$3,800は銀行残高側の調整項目であり、帳簿残高には影響しません。$35増加はNSF小切手を漏らした値（$75−$40）、$1,240減少は受取利息を漏らした値（$40+$1,200）、$1,165増加は金額は正しいが方向が逆です。",
+      "references": ["ASC 305-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-103",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Restricted Cash - Plant Expansion Fund",
+      "stem": "Ulm Corp.'s board of directors has contractually committed $800,000 of cash, held in a separate account under an agreement with its lender, to fund construction of a new manufacturing facility that will begin in two years. The agreement prohibits use of the funds for any other purpose. How should Ulm report the $800,000 at the current balance sheet date?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Within cash and cash equivalents, because the funds are held in a bank account"
+        },
+        {
+          "label": "B",
+          "text": "As a noncurrent asset, separately presented as restricted cash"
+        },
+        {
+          "label": "C",
+          "text": "As a current asset, because cash is always classified as current"
+        },
+        {
+          "label": "D",
+          "text": "As a reduction of the related construction liability"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cash that is contractually restricted to the acquisition or construction of noncurrent assets is excluded from cash and cash equivalents and classified as a noncurrent asset, because the restriction relates to a long-term purpose and the funds are unavailable for current operations. Including it in unrestricted cash would overstate available liquidity. Cash is not automatically current; classification follows the nature and timing of the restriction. There is no construction liability yet to offset, and offsetting assets against liabilities is generally prohibited absent a right of setoff.",
+      "explanationJa": "非流動資産（工場等）の取得・建設のために契約上拘束された現金は、現金及び現金同等物から除外し、制限付き現金として非流動資産に区分表示します。拘束の目的が長期（2年後着工の工場建設）であり、当座の営業活動に利用できないためです。無拘束の現金に含めると利用可能な流動性を過大表示します。現金が常に流動資産になるわけではなく、分類は拘束の性質と期間に従います。建設に係る負債はまだ存在せず、また相殺権がない限り資産と負債の相殺表示は原則禁止です。",
+      "references": ["ASC 210-10-45-4", "ASC 230-10-50-7"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-104",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Bank Reconciliation - Book Deposit Recording Error",
+      "stem": "Drew Co.'s December 31 unadjusted book cash balance is $61,250. While preparing the bank reconciliation, Drew discovers that a customer remittance of $5,430, correctly deposited and credited by the bank, was recorded in Drew's cash receipts journal as $4,530. The reconciliation also identifies an unrecorded bank service charge of $25. What is Drew's adjusted cash balance at December 31?",
+      "choices": [
+        { "label": "A", "text": "$60,325" },
+        { "label": "B", "text": "$62,175" },
+        { "label": "C", "text": "$62,125" },
+        { "label": "D", "text": "$61,225" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The deposit was understated in the books by $900 ($5,430 − $4,530), a transposition error, so the book balance must be increased by $900. The service charge reduces the book balance by $25. Adjusted balance = $61,250 + $900 − $25 = $62,125. $60,325 subtracts the $900 error instead of adding it. $62,175 adds the $25 service charge instead of subtracting it. $61,225 reflects only the service charge and ignores the deposit error.",
+      "explanationJa": "入金$5,430を$4,530と記帳した転記誤りにより、帳簿は$900過少（$5,430−$4,530）です。これは帳簿側の誤りなので帳簿残高に$900を加算し、未記帳の銀行手数料$25を減算します。調整後残高 = $61,250 + $900 − $25 = $62,125 です。$60,325は$900を加算ではなく減算した値、$62,175は手数料$25を減算ではなく加算した値、$61,225は入金誤りを無視して手数料のみ調整した値です。",
+      "references": ["ASC 305-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-105",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Informal Compensating Balance Arrangement",
+      "stem": "In connection with a short-term borrowing arrangement, Kerr Co. has informally agreed with its bank to maintain an average balance of $200,000 in its demand deposit account. The arrangement is not a written contract, and no legal restriction prevents Kerr from withdrawing the funds at any time. How should Kerr treat the $200,000 in its financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Include the amount in cash and cash equivalents and disclose the arrangement in the notes"
+        },
+        {
+          "label": "B",
+          "text": "Reclassify the amount as a current restricted asset, separate from cash"
+        },
+        {
+          "label": "C",
+          "text": "Reclassify the amount as a noncurrent asset until the borrowing is repaid"
+        },
+        {
+          "label": "D",
+          "text": "Exclude the amount from the balance sheet entirely as the bank's property"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When a compensating balance arrangement is informal and the depositor is not legally restricted from withdrawing the funds, the cash remains available for general use. The amount stays within cash and cash equivalents, and the existence and terms of the arrangement are disclosed in the notes. Segregation on the balance sheet as a restricted asset (current or noncurrent) is required only when the funds are legally restricted as to withdrawal or use. The funds remain the depositor's asset, so removing them from the balance sheet is not supportable.",
+      "explanationJa": "補償残高の取決めが非公式（informal）で、預金者の引出しに法的拘束がない場合、当該資金は一般目的に利用可能なため、現金及び現金同等物に含めたまま、取決めの存在と条件を注記で開示します（SEC Regulation S-X Rule 5-02の枠組み）。貸借対照表上、制限付き資産として区分掲記（流動・非流動）が必要となるのは、引出し・使用が法的に拘束されている場合のみです。資金は預金者の資産であり続けるため、貸借対照表から除外する処理は成り立ちません。",
+      "references": ["SEC Regulation S-X Rule 5-02", "ASC 210-10-45"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-106",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Computing Beginning Deposits in Transit",
+      "stem": "Lund Co. is reconstructing its June 30 bank reconciliation. The July bank statement shows deposits credited by the bank during July of $142,800. Cash receipts recorded in Lund's books during July totaled $145,600, and deposits in transit at July 31 were $11,500. All deposits in transit at June 30 cleared the bank in July, and there were no errors or other items affecting deposits. What were the deposits in transit at June 30?",
+      "choices": [
+        { "label": "A", "text": "$2,800" },
+        { "label": "B", "text": "$14,300" },
+        { "label": "C", "text": "$11,500" },
+        { "label": "D", "text": "$8,700" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Deposits credited by the bank in July consist of June 30 deposits in transit plus July receipts that cleared in July. July receipts that cleared = $145,600 − $11,500 still in transit at July 31 = $134,100. Therefore June 30 deposits in transit = $142,800 − $134,100 = $8,700. Equivalently: beginning DIT = bank deposits − book receipts + ending DIT = $142,800 − $145,600 + $11,500 = $8,700. $2,800 is merely the difference between book receipts and bank deposits, ignoring ending deposits in transit. $14,300 reverses the signs of the formula. $11,500 confuses the ending balance with the beginning balance.",
+      "explanationJa": "7月に銀行が記帳した入金$142,800は「6月末の未達預金 + 7月受領分のうち7月中に記帳された分」で構成されます。7月中に記帳された7月受領分 = $145,600 − 7月末未達$11,500 = $134,100。よって6月末未達預金 = $142,800 − $134,100 = $8,700 です。公式では「月初未達 = 銀行入金 − 帳簿入金 + 月末未達 = $142,800 − $145,600 + $11,500 = $8,700」となります。$2,800は月末未達を無視した単純差額、$14,300は公式の符号を逆にした値、$11,500は月末残高を月初残高と取り違えた値です。",
+      "references": ["ASC 305-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cce-107",
+      "topic": "Cash and Cash Equivalents",
+      "subtopic": "Working Backward to Unadjusted Book Balance",
+      "stem": "Hoyt Co.'s December 31 bank reconciliation produced a correct (adjusted) cash balance of $74,920. The reconciliation included the following adjustments to the book balance: a note receivable of $8,000 collected by the bank, interest earned of $120, an NSF customer check of $1,640, and bank service charges of $60. What was Hoyt's unadjusted book cash balance before the reconciliation adjustments?",
+      "choices": [
+        { "label": "A", "text": "$81,340" },
+        { "label": "B", "text": "$68,500" },
+        { "label": "C", "text": "$68,620" },
+        { "label": "D", "text": "$65,100" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The adjusted balance equals the unadjusted book balance plus the note collected and interest earned, minus the NSF check and service charges. Working backward: unadjusted balance = $74,920 − $8,000 − $120 + $1,640 + $60 = $68,500. As a proof: $68,500 + $8,000 + $120 − $1,640 − $60 = $74,920. $81,340 reverses all of the signs when working backward. $68,620 mishandles the service charge and interest in the reversal. $65,100 subtracts every reconciling item from the adjusted balance regardless of direction.",
+      "explanationJa": "調整後残高 = 調整前帳簿残高 + 銀行回収手形 + 受取利息 − NSF小切手 − 銀行手数料、の関係を逆算します。調整前残高 = $74,920 − $8,000 − $120 + $1,640 + $60 = $68,500 です。検算：$68,500 + $8,000 + $120 − $1,640 − $60 = $74,920 で一致します。$81,340は逆算時にすべての符号を逆にした値、$68,620は手数料と利息の符号処理を誤った値、$65,100は方向にかかわらず全項目を調整後残高から減算した値です。",
+      "references": ["ASC 305-10"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }

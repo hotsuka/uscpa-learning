@@ -2,7 +2,7 @@
   "id": "far-stock-compensation",
   "name": "Stock Compensation",
   "topic": "Stock Compensation",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "sc-001",
@@ -2729,6 +2729,462 @@
       "explanationJa": "ASU 2021-07はASC 718-10-30-20Aに実務上の簡便法を追加し、非公開企業がオプション価格モデルのインプットとして用いる持分株式の現在価格インプットを、合理的な評価方法の合理的な適用により決定することを認めた。この簡便法は許容される評価の特徴を示し、内国歳入法第409A条の一部評価で用いられる手法と整合し、原資産株式価値の見積りのコストと複雑性を軽減する。これは報酬を本源的価値で測定すること、全ての付与で契約期間を予想期間とすること、または勤務条件付報酬を報酬費用から免除することは認めていない。",
       "references": ["ASC 718-10-30-20A", "ASU 2021-07"],
       "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-098",
+      "topic": "Stock Compensation",
+      "subtopic": "Forfeitures As They Occur - Expense Reversal",
+      "stem": "On January 1, Year 1, Hale Corp. grants 30,000 stock options with a grant-date fair value of $8 per option and a 3-year cliff vesting period. Hale has elected to account for forfeitures as they occur. In Year 2, employees holding 3,000 unvested options terminate employment and forfeit their options. No other forfeitures occur. What amount of compensation expense should Hale recognize in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$72,000" },
+        { "label": "C", "text": "$64,000" },
+        { "label": "D", "text": "$144,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the as-they-occur policy, previously recognized expense for forfeited unvested awards is reversed in the period of forfeiture. Year 1 expense was 30,000 × $8 × 1/3 = $80,000. After the Year 2 forfeitures, cumulative expense through Year 2 should reflect only the 27,000 remaining options: 27,000 × $8 × 2/3 = $144,000. Year 2 expense is therefore $144,000 − $80,000 = $64,000. The amount of $80,000 ignores the forfeitures entirely; $72,000 results from spreading the remaining options' total cost over 3 years without the cumulative catch-down (27,000 × $8 ÷ 3); $144,000 is the cumulative total through Year 2, not the Year 2 expense alone.",
+      "explanationJa": "ASC 718-10-35-3およびASU 2016-09により、失効（forfeiture）を発生時に認識する方針を選択した場合、未確定アワードが失効した期に過年度計上額を戻し入れます。Year 1の費用は 30,000個 × $8 × 1/3 = $80,000。Year 2末時点の累計費用は残存27,000個ベースで 27,000 × $8 × 2/3 = $144,000 となるべきなので、Year 2の費用は $144,000 − $80,000 = $64,000 です。$80,000は失効を無視した金額、$72,000は累計調整を行わず残存分を単純に3年で割った金額（27,000 × $8 ÷ 3）、$144,000はYear 2単年ではなく累計額です。",
+      "references": ["ASC 718-10-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-099",
+      "topic": "Stock Compensation",
+      "subtopic": "Estimated Forfeiture Rate - Cumulative Catch-Up on Revision",
+      "stem": "On January 1, Year 1, Marlow Inc. grants 50,000 stock options with a grant-date fair value of $6 per option and a 4-year cliff vesting period. Marlow estimates forfeitures and initially expects 20% of the options to be forfeited. At the end of Year 3, Marlow revises its estimate and now expects only 10% to be forfeited. What amount of compensation expense should Marlow recognize in Year 3?",
+      "choices": [
+        { "label": "A", "text": "$82,500" },
+        { "label": "B", "text": "$67,500" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$202,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A change in the estimated forfeiture rate is accounted for with a cumulative catch-up adjustment in the period of change. Total grant-date fair value is 50,000 × $6 = $300,000. Cumulative expense through Year 2 was based on 80% vesting: $300,000 × 80% × 2/4 = $120,000. Cumulative expense required through Year 3 at the revised 90% estimate is $300,000 × 90% × 3/4 = $202,500. Year 3 expense is $202,500 − $120,000 = $82,500. The amount of $67,500 is one year's expense at the new rate without the catch-up ($300,000 × 90% ÷ 4); $60,000 is one year's expense at the old rate; $202,500 is the cumulative total, not the Year 3 charge.",
+      "explanationJa": "ASC 718-10-35-3に基づき、失効見積率の変更は変更期に累積キャッチアップ調整として処理します。付与日公正価値総額は 50,000 × $6 = $300,000。Year 2末までの累計費用は確定率80%前提で $300,000 × 80% × 2/4 = $120,000。Year 3末に必要な累計費用は改訂後の確定率90%で $300,000 × 90% × 3/4 = $202,500。よってYear 3の費用は $202,500 − $120,000 = $82,500 です。$67,500は累積調整を行わない新レートでの単年費用、$60,000は旧レートでの単年費用、$202,500は累計額であり単年費用ではありません。",
+      "references": ["ASC 718-10-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-100",
+      "topic": "Stock Compensation",
+      "subtopic": "Graded Vesting - Accelerated Attribution Year 1",
+      "stem": "On January 1, Year 1, Quill Co. grants 6,000 stock options that vest in three equal annual tranches of 2,000 options each on December 31 of Years 1, 2, and 3. Quill values each tranche separately: the grant-date fair values are $9 per option for the first tranche, $12 for the second, and $15 for the third. Quill uses the accelerated (graded-vesting / tranche-by-tranche) attribution method. What amount of compensation expense should Quill recognize in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$24,000" },
+        { "label": "B", "text": "$40,000" },
+        { "label": "C", "text": "$72,000" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the accelerated method, each tranche is treated as a separate award and expensed over its own vesting period. Year 1 expense: Tranche 1 (vests in 1 year): 2,000 × $9 = $18,000; Tranche 2 (vests over 2 years): 2,000 × $12 × 1/2 = $12,000; Tranche 3 (vests over 3 years): 2,000 × $15 × 1/3 = $10,000. Total Year 1 expense is $18,000 + $12,000 + $10,000 = $40,000. The amount of $24,000 is the straight-line result (total cost of $72,000 ÷ 3); $72,000 is the total compensation cost for the entire award; $30,000 results from incorrectly averaging the tranche fair values.",
+      "explanationJa": "ASC 718-10-35-8に基づき、加速法（tranche-by-tranche法）では各トランシェを独立のアワードとみなし、それぞれの権利確定期間で費用化します。Year 1の費用：第1トランシェ（1年で確定）2,000 × $9 = $18,000、第2トランシェ（2年）2,000 × $12 × 1/2 = $12,000、第3トランシェ（3年）2,000 × $15 × 1/3 = $10,000。合計 $40,000 です。$24,000は定額法による金額（総額$72,000 ÷ 3年）、$72,000はアワード全体の総費用、$30,000はトランシェ公正価値を誤って平均した結果です。",
+      "references": ["ASC 718-10-35-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-101",
+      "topic": "Stock Compensation",
+      "subtopic": "Graded Vesting - Straight-Line Floor Constraint",
+      "stem": "A company grants stock options with graded vesting (service condition only) and elects the straight-line attribution method permitted by ASC 718. Which of the following constraints applies to the straight-line election?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cumulative compensation expense may never exceed the total grant-date fair value of the vested tranches."
+        },
+        {
+          "label": "B",
+          "text": "The straight-line method may be used only if all tranches have the same grant-date fair value per option."
+        },
+        {
+          "label": "C",
+          "text": "The election must be made award by award and may differ for each grant."
+        },
+        {
+          "label": "D",
+          "text": "Cumulative compensation expense recognized at any date must be at least equal to the grant-date fair value of the portion of the award that has vested as of that date."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 718-10-35-8 permits straight-line attribution for awards with graded vesting and only a service condition, but imposes a floor: cumulative compensation cost recognized at any date must at least equal the grant-date fair value of the vested portion of the award at that date. The statement that cumulative expense may never exceed the vested tranches' fair value reverses the constraint — it is a minimum, not a maximum. There is no requirement that all tranches share the same per-option fair value. The attribution method is an accounting policy applied consistently to similar awards, not an award-by-award election.",
+      "explanationJa": "ASC 718-10-35-8は、勤務条件のみの段階的権利確定アワードについて定額法を認めていますが、「任意の時点における累計費用は、その時点で権利確定済み部分の付与日公正価値を下回ってはならない」というフロア（下限）制約を課しています。確定済み部分の公正価値を上限とする記述は制約の向きが逆です（下限であって上限ではない）。全トランシェの単価が同一である必要はありません。また帰属方法は類似のアワードに首尾一貫して適用すべき会計方針であり、アワードごとに選択するものではありません。",
+      "references": ["ASC 718-10-35-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-102",
+      "topic": "Stock Compensation",
+      "subtopic": "Market Condition Achieved but Service Condition Failed",
+      "stem": "Verity Corp. grants stock options that vest only if (1) the employee provides 3 years of service and (2) the stock price reaches $90 (a market condition). The grant-date fair value, which incorporates the market condition, is $120,000. The stock price reaches $90 in Year 1, but the employee voluntarily terminates employment at the end of Year 2, before completing the required service. How should Verity account for the compensation cost previously recognized?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reverse the previously recognized compensation expense, because the requisite service was not rendered."
+        },
+        {
+          "label": "B",
+          "text": "Retain the previously recognized expense, because the market condition was achieved before termination."
+        },
+        {
+          "label": "C",
+          "text": "Retain the previously recognized expense and accelerate the remaining unrecognized cost."
+        },
+        {
+          "label": "D",
+          "text": "Reclassify the previously recognized expense from compensation expense to a loss on forfeiture."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The treatment of market conditions cuts only one way: compensation cost is not reversed when a market condition fails, provided the requisite service is rendered. When the service condition itself is not satisfied — the employee leaves before completing the 3-year requisite service period — the award is forfeited and all previously recognized compensation cost is reversed, regardless of whether the market condition was achieved. Retaining or accelerating the expense would be appropriate only if service had been completed. There is no reclassification to a forfeiture loss under ASC 718.",
+      "explanationJa": "ASC 718-10-35-2および35-14の市場条件の取扱いは一方向のみです。すなわち、勤務条件を満たしたうえで市場条件のみ未達成の場合は費用を戻し入れませんが、本問のように勤務条件自体が未達成（3年の必要勤務期間前に退職）の場合、アワードは失効し、市場条件の達成有無にかかわらず過年度計上費用をすべて戻し入れます。費用の維持や残額の加速認識は勤務完了時のみ妥当であり、「失効損失」への振替という処理はASC 718に存在しません。",
+      "references": ["ASC 718-10-35-2", "ASC 718-10-35-14"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-103",
+      "topic": "Stock Compensation",
+      "subtopic": "Cash-Settled SAR - Year 2 Expense After Fair Value Decline",
+      "stem": "On January 1, Year 1, Brandt Co. grants 10,000 cash-settled stock appreciation rights (SARs) to employees with a 2-year cliff vesting period. The fair value per SAR is $4 at the grant date, $7 at December 31, Year 1, and $6 at December 31, Year 2. What amount of compensation expense should Brandt recognize in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$35,000" },
+        { "label": "B", "text": "$25,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cash-settled SARs are liability-classified awards remeasured at fair value each reporting date, with expense recognized based on the percentage of the service period elapsed. The liability at December 31, Year 1 is 10,000 × $7 × 1/2 = $35,000 (which equals Year 1 expense). At December 31, Year 2 the awards are fully vested, so the liability is 10,000 × $6 = $60,000. Year 2 expense is the increase in the liability: $60,000 − $35,000 = $25,000. The amount of $35,000 is the Year 1 expense; $30,000 results from simply halving the ending liability; $60,000 is the total liability balance, not the Year 2 expense.",
+      "explanationJa": "ASC 718-30-35-3により、現金決済型SARは負債分類として各報告日に公正価値で再測定し、勤務期間の経過割合に応じて費用を認識します。Year 1末の負債は 10,000 × $7 × 1/2 = $35,000（＝Year 1費用）。Year 2末は全数権利確定済みのため負債は 10,000 × $6 = $60,000。Year 2の費用は負債の増加額 $60,000 − $35,000 = $25,000 です。$35,000はYear 1の費用、$30,000は期末負債を単純に半分にした誤り、$60,000は期末負債残高でありYear 2単年の費用ではありません。",
+      "references": ["ASC 718-30-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-104",
+      "topic": "Stock Compensation",
+      "subtopic": "Cash-Settled SAR - Settlement Adjustment",
+      "stem": "Doran Inc. has 8,000 fully vested cash-settled stock appreciation rights outstanding. The related liability has a carrying amount of $50,000. All 8,000 SARs are exercised on the same date, when the intrinsic value is $7 per SAR, and Doran pays the holders in cash. What additional compensation expense, if any, should Doran recognize at settlement?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$56,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$6,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A liability-classified award is remeasured to fair value through the settlement date, so the total compensation cost ultimately equals the cash paid. The settlement amount is 8,000 × $7 = $56,000. Because the liability is carried at $50,000, an additional $6,000 of compensation expense is recognized at settlement (debit compensation expense $6,000, debit SAR liability $50,000, credit cash $56,000). An answer of $0 would be correct only if the carrying amount already equaled the settlement value; $56,000 is the total cash paid, not the incremental expense; $50,000 is the pre-settlement liability balance.",
+      "explanationJa": "ASC 718-30-35-3により、負債分類のアワードは決済日まで公正価値で再測定されるため、最終的な報酬費用合計は支払現金額と一致します。決済額は 8,000 × $7 = $56,000。負債計上額が $50,000 のため、決済時に追加費用 $6,000 を認識します（借方：報酬費用 6,000／SAR負債 50,000、貸方：現金 56,000）。追加費用 $0 は帳簿価額が決済額と一致している場合のみ正しく、$56,000 は支払総額、$50,000 は決済前の負債残高です。",
+      "references": ["ASC 718-30-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-105",
+      "topic": "Stock Compensation",
+      "subtopic": "Compensatory ESPP - Discount Expense Measurement",
+      "stem": "Pemberton Co. sponsors an employee stock purchase plan that allows employees to buy shares at an 8% discount from the market price on the purchase date. The plan has no look-back or other option features, and Pemberton cannot justify the discount as comparable to offers made to other holders or as equal to avoided issuance costs. An employee purchases 1,000 shares when the market price is $50, paying $46 per share. What amount of compensation expense should Pemberton recognize for this purchase?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$1,500" },
+        { "label": "C", "text": "$4,000" },
+        { "label": "D", "text": "$2,500" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 718-50, a plan is noncompensatory only if the discount does not exceed 5% (or a greater discount can be justified), substantially all eligible employees may participate, and the plan has no option features. An 8% unjustified discount makes the plan compensatory, and the entire discount — not merely the portion above 5% — is compensation: 1,000 shares × ($50 − $46) = $4,000. An expense of $0 would apply only to a noncompensatory plan; $1,500 incorrectly charges only the discount in excess of 5% (1,000 × $1.50); $2,500 incorrectly charges a 5% discount (1,000 × $2.50).",
+      "explanationJa": "ASC 718-50-25-1により、ESPPが非報酬型（noncompensatory）となるのは、割引率が5%以下（またはそれを超える割引の正当化が可能）、実質的に全従業員が参加可能、オプション的特徴がない、という要件をすべて満たす場合のみです。正当化できない8%割引のプランは報酬型であり、5%超過部分だけでなく割引額全額が報酬費用となります：1,000株 × ($50 − $46) = $4,000。$0は非報酬型の場合のみ、$1,500は5%超過分のみ（1,000 × $1.50）を費用化した誤り、$2,500は5%分（1,000 × $2.50）を費用化した誤りです。",
+      "references": ["ASC 718-50-25-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-106",
+      "topic": "Stock Compensation",
+      "subtopic": "Modification of Unvested Options - Subsequent Annual Expense",
+      "stem": "On January 1, Year 1, Sutter Corp. grants 2,000 stock options with a grant-date fair value of $6 per option and a 3-year cliff vesting period. On December 31, Year 1, after recognizing Year 1 expense, Sutter reduces the exercise price. Immediately before the modification, the fair value of each option is $2; immediately after, it is $5. The vesting period is unchanged and the options are expected to vest. What amount of compensation expense should Sutter recognize in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$7,000" },
+        { "label": "B", "text": "$4,000" },
+        { "label": "C", "text": "$10,000" },
+        { "label": "D", "text": "$14,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A modification adds incremental fair value — the excess of the modified award's fair value over the original award's fair value immediately before modification — to the unrecognized original cost. Original total cost: 2,000 × $6 = $12,000; Year 1 expense: $4,000; unrecognized original cost: $8,000. Incremental fair value: 2,000 × ($5 − $2) = $6,000. Total remaining cost of $8,000 + $6,000 = $14,000 is recognized over the remaining 2 years, or $7,000 per year. The amount of $4,000 ignores the incremental value; $10,000 incorrectly spreads only the incremental value plus one year of original cost; $14,000 is the total remaining cost, not the Year 2 expense.",
+      "explanationJa": "ASC 718-20-35-3により、条件変更時は「変更後公正価値－変更直前公正価値」の増分公正価値を、未認識の当初費用に加算して残存期間で認識します。当初総費用：2,000 × $6 = $12,000、Year 1費用：$4,000、未認識残：$8,000。増分公正価値：2,000 × ($5 − $2) = $6,000。残存認識額は $8,000 + $6,000 = $14,000 で、残り2年にわたり年 $7,000 ずつ認識します。$4,000は増分価値を無視した金額、$10,000は計算要素の組合せ誤り、$14,000は残存総額でありYear 2単年の費用ではありません。",
+      "references": ["ASC 718-20-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-107",
+      "topic": "Stock Compensation",
+      "subtopic": "Cancellation Without Replacement Award",
+      "stem": "Wexford Co. cancels unvested stock options held by employees and does not grant any replacement award or other consideration concurrently with the cancellation. At the cancellation date, $90,000 of grant-date compensation cost remains unrecognized. How should Wexford account for the cancellation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reverse all compensation cost previously recognized for the cancelled options."
+        },
+        {
+          "label": "B",
+          "text": "Recognize the remaining $90,000 of unrecognized compensation cost immediately at the cancellation date."
+        },
+        {
+          "label": "C",
+          "text": "Continue to recognize the remaining $90,000 over the original vesting period."
+        },
+        {
+          "label": "D",
+          "text": "Recognize no further compensation cost and leave previously recognized amounts unchanged."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 718-20-35-9, a cancellation that is not accompanied by a concurrent grant of a replacement award is treated as an acceleration of vesting: all remaining unrecognized compensation cost is recognized immediately at the cancellation date. Reversing previously recognized cost is the treatment for a forfeiture due to failure to satisfy a service condition, not for an employer-initiated cancellation. Continuing recognition over the original vesting period ignores that the award no longer exists. Stopping recognition without expensing the remaining cost would understate total compensation for services the entity contracted for.",
+      "explanationJa": "ASC 718-20-35-9により、代替アワードの同時付与を伴わないキャンセル（cancellation）は権利確定の加速として扱い、未認識の残存費用 $90,000 をキャンセル日に即時認識します。過年度計上額の戻入れは勤務条件未達成による失効の処理であり、会社都合のキャンセルには適用されません。当初の権利確定期間にわたる認識の継続はアワードが消滅している事実と矛盾し、残存費用を認識せず打ち切る処理は報酬費用の過少計上となります。",
+      "references": ["ASC 718-20-35-9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-108",
+      "topic": "Stock Compensation",
+      "subtopic": "Restricted Stock - Year 3 Expense With Actual Forfeitures",
+      "stem": "On January 1, Year 1, Calder Inc. grants 9,000 shares of restricted stock to employees when the stock price is $18 per share. The shares cliff-vest after 3 years of service. Calder accounts for forfeitures as they occur. In Year 3, employees holding 600 unvested shares terminate employment and forfeit their shares; the remaining 8,400 shares vest on December 31, Year 3. What amount of compensation expense should Calder recognize in Year 3?",
+      "choices": [
+        { "label": "A", "text": "$54,000" },
+        { "label": "B", "text": "$50,400" },
+        { "label": "C", "text": "$43,200" },
+        { "label": "D", "text": "$151,200" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Restricted stock is measured at the grant-date stock price. Expense in Years 1 and 2 was 9,000 × $18 × 1/3 = $54,000 per year, or $108,000 cumulatively. After the Year 3 forfeitures, cumulative expense must equal the cost of the shares that actually vest: 8,400 × $18 = $151,200. Year 3 expense is $151,200 − $108,000 = $43,200, which combines the normal third-year charge with the reversal of cost previously recognized on the 600 forfeited shares. The amount of $54,000 ignores the forfeitures; $50,400 spreads the vested shares' cost over 3 years without the cumulative adjustment (8,400 × $18 ÷ 3); $151,200 is the total cost of the award, not the Year 3 expense.",
+      "explanationJa": "ASC 718-10-30およびASC 718-10-35-3により、制限株式は付与日の株価で測定します。Year 1・2の費用は各年 9,000 × $18 × 1/3 = $54,000、累計 $108,000。Year 3に600株が失効したため、累計費用は実際に確定した株式のコスト 8,400 × $18 = $151,200 と一致させる必要があります。Year 3の費用は $151,200 − $108,000 = $43,200 で、3年目の通常費用と失効株600株分の戻入れの純額です。$54,000は失効を無視、$50,400は累積調整なしで確定株コストを単純に3等分（8,400 × $18 ÷ 3）、$151,200はアワード総費用です。",
+      "references": ["ASC 718-10-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-109",
+      "topic": "Stock Compensation",
+      "subtopic": "Service Inception Date Precedes Grant Date",
+      "stem": "On October 1, Year 1, Norwich Co. and a new executive agree that the executive will receive a stock option award, and the executive begins providing the requisite service immediately. However, the award is not authorized by the board of directors until February 1, Year 2, which is when the grant date occurs. How should Norwich account for compensation cost between October 1, Year 1 and February 1, Year 2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize no compensation cost until the grant date, then recognize cost prospectively from February 1, Year 2."
+        },
+        {
+          "label": "B",
+          "text": "Recognize compensation cost beginning October 1, Year 1, measured at the intrinsic value of the award on that date and never remeasured."
+        },
+        {
+          "label": "C",
+          "text": "Defer all compensation cost until the award vests, because no grant date exists during the service period."
+        },
+        {
+          "label": "D",
+          "text": "Recognize compensation cost beginning October 1, Year 1, based on the award's fair value remeasured at each reporting date until the grant date is established."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When the service inception date precedes the grant date, ASC 718 requires compensation cost to be accrued from the service inception date based on the fair value of the award estimated at each reporting date, with remeasurement continuing until the grant date is established; at the grant date, the measurement is fixed at grant-date fair value. Delaying recognition until the grant date would omit cost for service already rendered. Intrinsic value at the service inception date is not the required measure. Deferring all cost until vesting has no basis in ASC 718.",
+      "explanationJa": "ASC 718-10-55-108により、勤務開始日（service inception date）が付与日（grant date）に先行する場合、勤務開始日から費用の計上を開始し、付与日が確定するまで各報告日に公正価値を再見積りします。付与日成立時点で測定額は付与日公正価値に固定されます。付与日まで認識を開始しない処理は既提供の勤務に対する費用の脱漏となり、勤務開始日の本源的価値による固定測定も要求される方法ではありません。権利確定まで全費用を繰り延べる処理にASC 718上の根拠はありません。",
+      "references": ["ASC 718-10-55-108"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-110",
+      "topic": "Stock Compensation",
+      "subtopic": "Performance Condition Never Achieved - Lifetime Expense",
+      "stem": "Ashby Corp. grants stock options with a total grant-date fair value of $120,000 that vest only upon achievement of a specified cumulative earnings target (a performance condition) over a 3-year service period. The target was assessed as probable in Years 1 and 2, and Ashby recognized $40,000 of cumulative compensation expense through the end of Year 2. In Year 3, achievement becomes improbable, and the target is ultimately not achieved; the options never vest, although the employees remain employed. What is the total compensation expense recognized over the life of the award?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$120,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$80,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Compensation cost for an award with a performance condition is recognized only if the condition is satisfied. When achievement becomes improbable, previously recognized cost is reversed in that period, and because the target is never met, no cost is ever recognized for the award — total lifetime expense is $0. In Year 3, Ashby reverses the $40,000 recognized in Years 1 and 2. A total of $120,000 would apply only if the condition were satisfied; $40,000 ignores the required reversal; $80,000 has no basis. This treatment contrasts with market conditions, for which cost is not reversed when the condition fails.",
+      "explanationJa": "ASC 718-10-35-2およびASC 718-10-25-20により、業績条件付アワードの費用は条件達成が見込まれる（probable）場合にのみ認識し、達成不能となった期に過年度計上額を戻し入れます。最終的に目標未達成でアワードが確定しなかったため、存続期間全体の費用合計は $0 です（Year 3にYear 1・2計上分 $40,000 を戻入れ）。$120,000は条件達成時のみ、$40,000は戻入れを無視した金額です。なお市場条件の場合は未達成でも費用を戻し入れない点が対照的です。",
+      "references": ["ASC 718-10-35-2", "ASC 718-10-25-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-111",
+      "topic": "Stock Compensation",
+      "subtopic": "Capitalization of Share-Based Compensation Cost",
+      "stem": "Granger Manufacturing grants stock options to employees who work directly in the production of inventory. How should Granger account for the share-based compensation cost attributable to these production employees?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Expense the cost immediately, because ASC 718 requires all share-based compensation to be recognized in the income statement as incurred."
+        },
+        {
+          "label": "B",
+          "text": "Treat the cost the same as cash compensation paid to those employees, capitalizing it into inventory and expensing it through cost of goods sold when the inventory is sold."
+        },
+        {
+          "label": "C",
+          "text": "Recognize the cost directly in equity, because the credit and the debit both relate to equity instruments."
+        },
+        {
+          "label": "D",
+          "text": "Defer the cost as a prepaid asset until the options are exercised."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 718-10-25-2 requires share-based compensation cost to be recognized in the same manner as if the entity had paid cash compensation. Cost attributable to employees whose labor is capitalizable — such as production workers or employees constructing fixed assets — is capitalized into inventory (or the asset) and flows to expense through cost of goods sold or depreciation. Immediate expensing is required only when the related cash compensation would also be expensed. Recognizing the cost directly in equity would bypass the income statement entirely, and deferral as a prepaid asset until exercise has no basis in ASC 718.",
+      "explanationJa": "ASC 718-10-25-2により、株式報酬費用は現金給与を支払った場合と同様に処理します。製造要員や固定資産の自家建設に従事する従業員など、労務費が資産化対象となる従業員に係る株式報酬は棚卸資産（または当該資産）に資産化し、売上原価や減価償却を通じて費用化します。即時費用化が求められるのは、対応する現金給与も費用処理される場合のみです。資本に直接認識する処理は損益計算書を完全に迂回することになり、行使時まで前払資産として繰り延べる処理に根拠はありません。",
+      "references": ["ASC 718-10-25-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-112",
+      "topic": "Stock Compensation",
+      "subtopic": "Option Exercise - APIC in Excess of Par",
+      "stem": "Employees of Halpern Co. exercise 2,000 fully vested stock options with an exercise price of $15 per share. The common stock has a par value of $1 per share, and the balance in APIC — stock options related to these options is $8,000. What amount should Halpern credit to additional paid-in capital in excess of par upon exercise?",
+      "choices": [
+        { "label": "A", "text": "$28,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$36,000" },
+        { "label": "D", "text": "$38,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Upon exercise, the entity records cash received of 2,000 × $15 = $30,000, eliminates the $8,000 APIC — stock options balance, credits common stock for par of 2,000 × $1 = $2,000, and credits the remainder to APIC in excess of par: $30,000 + $8,000 − $2,000 = $36,000. The amount of $28,000 omits the reclassified option APIC and the cash combination ($30,000 − $2,000); $30,000 is just the cash proceeds; $38,000 fails to deduct the par value credited to common stock.",
+      "explanationJa": "ASC 718-20-35-2の枠組みでの行使時仕訳は、（借方）現金 2,000 × $15 = $30,000、（借方）APIC—ストックオプション $8,000、（貸方）資本金（額面）2,000 × $1 = $2,000、（貸方）APIC—額面超過額 $36,000（= 30,000 + 8,000 − 2,000）となります。$28,000はオプション分APICの振替を漏らした金額（30,000 − 2,000）、$30,000は現金受取額のみ、$38,000は額面相当の資本金計上 $2,000 を控除し忘れた金額です。",
+      "references": ["ASC 718-20-35"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-113",
+      "topic": "Stock Compensation",
+      "subtopic": "Shares with Repurchase (Put) Feature - Classification",
+      "stem": "Renwick Co. grants shares to employees that vest after 2 years. Each employee holds a put right allowing the employee to require Renwick to repurchase the vested shares for cash at fair value beginning three months after vesting. How should Renwick classify the award?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Equity, because the repurchase price is fair value rather than a fixed amount."
+        },
+        {
+          "label": "B",
+          "text": "Equity, because classification is based solely on the legal form of the instrument as shares."
+        },
+        {
+          "label": "C",
+          "text": "Liability only if the employees are members of management."
+        },
+        {
+          "label": "D",
+          "text": "Liability, because the put right allows the employee to avoid bearing the risks and rewards of share ownership for a reasonable period (at least six months) after vesting."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 718-10-25-9, an award of shares with a repurchase feature is classified as a liability if the employee can put the shares back to the employer before bearing the risks and rewards of ownership for a reasonable period — defined as at least six months — after the shares vest. A put exercisable three months after vesting fails this test, so the award is a liability even though the repurchase price is fair value. A fair value repurchase price does not by itself preserve equity classification when the holding-period test fails, legal form is not the classification criterion, and the holder's management status is irrelevant to the test.",
+      "explanationJa": "ASC 718-10-25-9により、従業員が権利確定後「合理的期間（最低6か月）」株式所有のリスクと経済価値を負担する前に会社へ売り戻せるプット権付き株式は負債に分類されます。本問のプットは確定後3か月で行使可能なため6か月基準を満たさず、買戻価格が公正価値であっても負債分類となります。買戻価格が公正価値であること自体は保有期間テスト不合格を治癒せず、法形式（株式であること）は分類基準ではなく、保有者が経営者か否かも判定に無関係です。",
+      "references": ["ASC 718-10-25-9"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-114",
+      "topic": "Stock Compensation",
+      "subtopic": "Unrecognized Compensation Cost - End of Year 1",
+      "stem": "On January 1, Year 1, Tilden Corp. grants 18,000 stock options with a grant-date fair value of $7 per option and a 3-year cliff vesting period. All options are expected to vest, and no forfeitures occur. What is the amount of unrecognized compensation cost remaining at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$84,000" },
+        { "label": "B", "text": "$42,000" },
+        { "label": "C", "text": "$126,000" },
+        { "label": "D", "text": "$63,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Total compensation cost is 18,000 × $7 = $126,000, recognized straight-line over the 3-year requisite service period. Year 1 expense is $126,000 × 1/3 = $42,000, leaving unrecognized cost of $126,000 − $42,000 = $84,000 at December 31, Year 1. The amount of $42,000 is the Year 1 expense rather than the remaining cost; $126,000 is the total cost before any recognition; $63,000 incorrectly assumes half of the cost has been recognized after one year of a 3-year period.",
+      "explanationJa": "ASC 718-10-35-2により、報酬費用総額は 18,000 × $7 = $126,000 で、3年の必要勤務期間にわたり定額で認識します。Year 1の費用は $126,000 × 1/3 = $42,000 なので、Year 1末の未認識報酬費用は $126,000 − $42,000 = $84,000 です。$42,000はYear 1の費用そのもの、$126,000は認識前の総額、$63,000は3年契約の1年経過時点で半分認識済みと誤って仮定した金額です。なお未認識費用とその加重平均認識期間はASC 718の開示項目でもあります。",
+      "references": ["ASC 718-10-35-2", "ASC 718-10-50-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-115",
+      "topic": "Stock Compensation",
+      "subtopic": "Conditions Excluded from Grant-Date Fair Value",
+      "stem": "Under ASC 718, how do service conditions and performance conditions (other than market conditions) affect the measurement of an equity-classified employee stock option award?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "They reduce the grant-date fair value per option through an adjustment to the option-pricing model."
+        },
+        {
+          "label": "B",
+          "text": "They are excluded from the grant-date fair value per option and instead affect the number of awards for which compensation cost is recognized."
+        },
+        {
+          "label": "C",
+          "text": "They require remeasurement of the award's fair value at each reporting date until the condition is resolved."
+        },
+        {
+          "label": "D",
+          "text": "They are reflected by discounting the grant-date fair value for the probability of achievement."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Service and performance conditions are vesting conditions that are not reflected in the grant-date fair value of the option itself. Instead, they determine the quantity of awards for which cost is recognized: expense is accrued for the number of awards expected to (and that ultimately do) vest, with changes in expectations handled through cumulative catch-up adjustments. Only market conditions are incorporated into the fair value measure through the valuation model. Equity-classified awards are not remeasured after the grant date, and probability-weighting the per-option fair value is not the prescribed mechanism for service or performance conditions.",
+      "explanationJa": "ASC 718-10-30-27により、勤務条件と業績条件（市場条件以外）はオプション自体の付与日公正価値には反映せず、費用認識の対象となるアワードの「数量」に反映します。すなわち確定見込数量に基づいて費用を計上し、見込みの変更は累積キャッチアップで調整します。評価モデルを通じて公正価値に織り込むのは市場条件のみです。持分分類のアワードは付与日後に再測定せず、達成確率で単価を割り引く方法も勤務・業績条件について規定された処理ではありません。",
+      "references": ["ASC 718-10-30-27"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-116",
+      "topic": "Stock Compensation",
+      "subtopic": "Business Combination - Replacement Award Allocation Calculation",
+      "stem": "In acquiring Target Co., Acquirer Inc. is obligated to issue replacement stock options to Target's employees. The fair value of the replacement awards equals the fair value of the original Target awards: $100,000. At the acquisition date, the employees have completed 3 years of the original 4-year requisite service period, and the replacement awards require 1 additional year of post-combination service. What amount of the replacement awards' fair value is included in the consideration transferred for the business combination?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$25,000" },
+        { "label": "C", "text": "$75,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 805, the portion of a replacement award attributable to precombination service is included in consideration transferred, computed as the fair value of the acquiree award multiplied by the ratio of the precombination service period to the greater of the total service period or the original service period. Here, $100,000 × 3/4 = $75,000 is part of consideration transferred, and the remaining $25,000 is recognized as post-combination compensation expense over the 1-year remaining service period. The amount of $100,000 ignores the required attribution; $25,000 is the post-combination portion; $50,000 has no basis in the 3-of-4-years service pattern.",
+      "explanationJa": "ASC 805-30-30-9により、代替アワードのうち取得前勤務（precombination service）に帰属する部分を企業結合の移転対価に含めます。配分は「被取得企業アワードの公正価値 × 取得前勤務期間 ÷（総勤務期間と当初勤務期間のいずれか大きい方）」で計算します。本問では $100,000 × 3/4 = $75,000 が移転対価、残額 $25,000 が残存1年の勤務期間にわたる取得後の報酬費用となります。$100,000は配分計算を無視、$25,000は取得後費用部分、$50,000は本問の勤務実績（4年中3年完了）から導けない金額です。",
+      "references": ["ASC 805-30-30-9"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "sc-117",
+      "topic": "Stock Compensation",
+      "subtopic": "Income Statement Classification of Stock Compensation",
+      "stem": "How should share-based compensation expense be classified in the income statement under U.S. GAAP?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Always as a separate line item labeled \"share-based compensation expense.\""
+        },
+        {
+          "label": "B",
+          "text": "Always within general and administrative expenses, regardless of the employees' functions."
+        },
+        {
+          "label": "C",
+          "text": "As a component of other comprehensive income until the awards vest."
+        },
+        {
+          "label": "D",
+          "text": "In the same income statement line items in which the cash compensation of the related employees is classified (e.g., cost of goods sold, selling expense, research and development)."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 718 requires share-based compensation cost to be classified consistently with other compensation of the employees who received the awards — production employees' awards flow through cost of goods sold, sales staff's through selling expense, and so on. There is no requirement to present a single separate income statement line, and forcing all such cost into general and administrative expenses would misstate functional expense classifications. Share-based compensation expense is a component of net income, not other comprehensive income; the corresponding credit (for equity-classified awards) goes to paid-in capital, but the expense itself never bypasses earnings.",
+      "explanationJa": "ASC 718-10-25-2の原則により、株式報酬費用は当該従業員の現金給与と同じ損益計算書の表示科目に分類します（製造要員は売上原価、販売員は販売費、研究員は研究開発費など）。独立の単一表示科目とする要求はなく、全額を一般管理費に計上すると機能別分類を歪めます。株式報酬費用は純利益の構成要素であり、その他の包括利益（OCI）を経由しません。持分分類アワードの貸方は払込資本ですが、費用そのものは必ず損益を通ります。",
+      "references": ["ASC 718-10-25-2"],
+      "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }
   ]

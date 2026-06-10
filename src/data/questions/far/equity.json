@@ -2,7 +2,7 @@
   "id": "far-equity",
   "name": "Equity",
   "topic": "Equity",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "eq-001",
@@ -3175,6 +3175,606 @@
       "explanation": "Under ASC 810-10-45-19, consolidated net income is allocated between the controlling and noncontrolling interests based on their ownership percentages. The noncontrolling interest's share = 30% × $500,000 = $150,000. This amount is presented as net income attributable to the noncontrolling interest on the face of the consolidated income statement, and the controlling interest is allocated the remaining $350,000.",
       "explanationJa": "ASC 810-10-45-19により、連結純利益は持分比率に基づき支配持分と非支配持分に配分する。非支配持分の取り分 = 30% × $500,000 = $150,000。この額は連結損益計算書の本体に非支配持分に帰属する純利益として表示し、支配持分には残りの$350,000を配分する。",
       "references": ["ASC 810-10-45-19"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-126",
+      "topic": "Equity",
+      "subtopic": "Lump-Sum Stock Issuance - Proportional Method",
+      "stem": "Heron Corp. issues 10,000 shares of $1 par common stock and 2,000 shares of $20 par preferred stock for a lump-sum payment of $190,000. At the issuance date, the common stock has a fair value of $12 per share and the preferred stock has a fair value of $40 per share. Using the proportional method, what amount of the proceeds should be allocated to the common stock?",
+      "choices": [
+        { "label": "A", "text": "$114,000" },
+        { "label": "B", "text": "$120,000" },
+        { "label": "C", "text": "$95,000" },
+        { "label": "D", "text": "$76,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When both classes have determinable fair values, the lump-sum proceeds are allocated proportionally based on relative fair values. Total fair value = (10,000 × $12) + (2,000 × $40) = $120,000 + $80,000 = $200,000. Common stock allocation = ($120,000 / $200,000) × $190,000 = $114,000. $120,000 is the full fair value of the common stock without scaling to the actual proceeds. $76,000 is the amount allocated to the preferred stock, not the common. $95,000 results from incorrectly splitting the proceeds 50/50 between the two classes.",
+      "explanationJa": "両クラスの公正価値が測定可能な場合、一括発行の対価は相対公正価値に基づき比例配分する（按分法）。公正価値合計 = (10,000株 × $12) + (2,000株 × $40) = $120,000 + $80,000 = $200,000。普通株式への配分額 = ($120,000 / $200,000) × $190,000 = $114,000。$120,000は受取対価への按分を行わない普通株式の公正価値そのもの、$76,000は優先株式への配分額、$95,000は単純な折半による誤りである。",
+      "references": ["ASC 505-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-127",
+      "topic": "Equity",
+      "subtopic": "Lump-Sum Stock Issuance - Incremental Method",
+      "stem": "Osprey Inc. issues 8,000 shares of common stock and 1,000 shares of preferred stock for a total of $260,000. The common stock is actively traded at $25 per share, but no reliable fair value is available for the newly created class of preferred stock. What amount should be allocated to the preferred stock?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$26,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$130,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When only one class of securities has a determinable fair value, the incremental method is used: the security with the known fair value is assigned that value, and the remainder of the proceeds is allocated to the other security. Common stock = 8,000 × $25 = $200,000. Preferred stock = $260,000 − $200,000 = $60,000. $200,000 is the amount assigned to the common stock, not the preferred. $130,000 results from incorrectly splitting the proceeds equally. $26,000 has no basis in the allocation.",
+      "explanationJa": "一方のクラスのみ公正価値が測定可能な場合は増分法（incremental method）を用いる。公正価値が判明している証券にその金額を配分し、残額をもう一方に配分する。普通株式 = 8,000株 × $25 = $200,000。優先株式 = $260,000 − $200,000 = $60,000。$200,000は普通株式への配分額であり、$130,000は折半による誤りである。",
+      "references": ["ASC 505-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-128",
+      "topic": "Equity",
+      "subtopic": "Stock Issued for Noncash Assets",
+      "stem": "Kestrel Corp. issues 4,000 shares of its $5 par common stock in exchange for a parcel of land. Kestrel's stock is actively traded on a national exchange at $22 per share on the exchange date. The seller had the land independently appraised at $92,000, but the appraisal is considered less reliable than the quoted stock price. What amount should Kestrel credit to additional paid-in capital?",
+      "choices": [
+        { "label": "A", "text": "$72,000" },
+        { "label": "B", "text": "$68,000" },
+        { "label": "C", "text": "$88,000" },
+        { "label": "D", "text": "$20,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Stock issued for noncash assets is recorded at the more reliably determinable of the fair value of the stock issued or the fair value of the asset received. Because the stock is actively traded, its quoted price is the better measure: 4,000 × $22 = $88,000 total. Common stock (par) = 4,000 × $5 = $20,000, so APIC = $88,000 − $20,000 = $68,000. $72,000 results from using the $92,000 appraisal ($92,000 − $20,000). $88,000 is the total recorded value of the land, not the APIC portion. $20,000 is the par value credited to common stock.",
+      "explanationJa": "現物出資により発行した株式は、発行株式の公正価値と受入資産の公正価値のうち、より信頼性をもって測定可能な金額で記録する。本問では活発に取引される株式の市場価格が優先される: 4,000株 × $22 = $88,000。額面（普通株式勘定）= 4,000株 × $5 = $20,000。よってAPIC = $88,000 − $20,000 = $68,000。$72,000は鑑定評価額$92,000を用いた誤り、$88,000は土地の計上総額、$20,000は額面部分である。",
+      "references": ["ASC 505-10", "ASC 845-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-129",
+      "topic": "Equity",
+      "subtopic": "Stock Issued for Services",
+      "stem": "Plover Corp. issues 1,500 shares of its $1 par common stock to its outside attorney in full settlement of legal services rendered in connection with a lawsuit. On the issuance date, Plover's stock trades at $14 per share. What amount of legal expense should Plover recognize?",
+      "choices": [
+        { "label": "A", "text": "$1,500" },
+        { "label": "B", "text": "$19,500" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$21,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Stock issued in exchange for services is recorded at the fair value of the stock issued (or the services received, if more reliably measurable). Legal expense = 1,500 × $14 = $21,000, with $1,500 credited to common stock at par and $19,500 to APIC. $1,500 is only the par value, $19,500 is only the APIC portion, and $0 ignores that consideration in the form of stock still gives rise to an expense for services consumed.",
+      "explanationJa": "役務の対価として発行した株式は、発行株式の公正価値（または役務の公正価値のうち信頼性の高い方）で記録する。法務費用 = 1,500株 × $14 = $21,000。仕訳は普通株式（額面）$1,500、APIC $19,500の貸方計上となる。$1,500は額面のみ、$19,500はAPIC部分のみであり、株式での支払いでも費消した役務は費用認識が必要なため$0は誤り。",
+      "references": ["ASC 505-50"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-130",
+      "topic": "Equity",
+      "subtopic": "Stock Issuance Costs - Direct vs Indirect",
+      "stem": "Which of the following costs incurred in connection with the issuance of common stock should be expensed as incurred rather than treated as a reduction of the offering proceeds?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Underwriting commissions paid to the investment bank"
+        },
+        {
+          "label": "B",
+          "text": "Salaries of management for time spent on the stock offering"
+        },
+        { "label": "C", "text": "SEC registration fees for the shares issued" },
+        {
+          "label": "D",
+          "text": "Legal fees directly attributable to drafting the offering documents"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Only direct, incremental costs of issuing equity (underwriting commissions, registration fees, and directly attributable legal and accounting fees) are charged against the gross proceeds as a reduction of additional paid-in capital. Indirect costs, such as management salaries and allocated overhead, would have been incurred regardless of the offering and must be expensed as incurred. Underwriting commissions, SEC registration fees, and directly attributable legal fees are all direct incremental costs netted against APIC.",
+      "explanationJa": "株式発行に直接起因する増分費用（引受手数料、SEC登録費用、募集書類作成の弁護士費用等）のみが発行対価から控除されAPICの減額として処理される（SAB Topic 5.A）。一方、経営者の給与や間接費の配賦のような間接費用は、発行の有無にかかわらず発生するものであり、発生時に費用処理しなければならない。引受手数料・登録費用・直接帰属する法務費用はいずれもAPIC控除の対象となる直接増分費用である。",
+      "references": ["SEC SAB Topic 5.A", "ASC 340-10-S99-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-131",
+      "topic": "Equity",
+      "subtopic": "Treasury Stock - Par Value Method Acquisition",
+      "stem": "Egret Corp. originally issued 10,000 shares of $10 par common stock at $18 per share. Egret later reacquires 1,000 of these shares at $22 per share and accounts for treasury stock using the par value method. There is no additional paid-in capital from prior treasury stock transactions. What amount should Egret debit to retained earnings for the reacquisition?",
+      "choices": [
+        { "label": "A", "text": "$12,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$4,000" },
+        { "label": "D", "text": "$8,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the par value method, treasury stock is debited at par (1,000 × $10 = $10,000) and the APIC recorded on original issuance is removed (1,000 × ($18 − $10) = $8,000). Cash paid is $22,000. Because the cost ($22,000) exceeds the original issue proceeds removed ($18,000), the $4,000 excess is debited to retained earnings. $12,000 is the entire excess of cost over par ($22 − $10) × 1,000, ignoring the APIC removal. $8,000 is the original-issue APIC that is debited to APIC, not retained earnings. $0 would be the retained earnings effect under the cost method, not the par value method.",
+      "explanationJa": "額面法では、自己株式を額面で借方計上し（1,000株 × $10 = $10,000）、当初発行時のAPICを取り崩す（1,000株 × ($18 − $10) = $8,000）。支払額$22,000が当初発行対価$18,000を超える$4,000は利益剰余金の借方となる。$12,000は取得価額と額面の差額全体でAPIC取崩しを無視した誤り、$8,000はAPIC勘定の借方計上額（利益剰余金ではない）、$0は原価法を適用した場合の利益剰余金への影響である。",
+      "references": ["ASC 505-30-30"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-132",
+      "topic": "Equity",
+      "subtopic": "Treasury Stock - Effect on Equity and Income",
+      "stem": "Curlew Corp. purchases treasury stock during Year 1 under the cost method and reissues all of the shares during Year 2 at a price above their acquisition cost. Which of the following correctly describes the effects of these transactions?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The purchase decreases total stockholders' equity, and no gain is reported in net income on the reissuance"
+        },
+        {
+          "label": "B",
+          "text": "The purchase has no effect on total stockholders' equity, and a gain is reported in net income on the reissuance"
+        },
+        {
+          "label": "C",
+          "text": "The purchase decreases total stockholders' equity, and a gain is reported in net income on the reissuance"
+        },
+        {
+          "label": "D",
+          "text": "The purchase increases total stockholders' equity, and the excess on reissuance is credited to retained earnings"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A treasury stock purchase reduces total stockholders' equity by the cost of the shares because treasury stock is a contra-equity account. An entity never recognizes gains or losses in net income on transactions in its own stock; when treasury shares are reissued above cost, the excess is credited to additional paid-in capital from treasury stock transactions, not to income and not to retained earnings. The statements that report a gain in net income, that the purchase has no equity effect, or that equity increases on purchase all contradict these principles.",
+      "explanationJa": "自己株式の取得は、自己株式が株主資本の控除項目であるため、取得原価分だけ株主資本合計を減少させる。自社株式に係る取引から損益を純利益に計上することは認められない（ASC 505-30）。取得原価を超えて再発行した場合の超過額は自己株式取引によるAPICに貸方計上され、純利益にも利益剰余金にも計上されない。純利益への利得計上、取得時に株主資本へ影響なし、取得で株主資本増加とする記述はいずれも誤り。",
+      "references": ["ASC 505-30-25", "ASC 505-30-30"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-133",
+      "topic": "Equity",
+      "subtopic": "Treasury Stock - Par Value Method Reissuance",
+      "stem": "Avocet Corp. uses the par value method to account for treasury stock. It holds 500 treasury shares of $10 par common stock, carried at par. Avocet reissues all 500 shares for $17 per share. What amount should be credited to additional paid-in capital on the reissuance?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$3,500" },
+        { "label": "C", "text": "$5,000" },
+        { "label": "D", "text": "$8,500" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the par value method, a reissuance of treasury stock is treated like a new issuance of shares: cash is debited for the proceeds (500 × $17 = $8,500), treasury stock is credited at par (500 × $10 = $5,000), and the excess of $3,500 is credited to additional paid-in capital. $5,000 is the credit to the treasury stock account at par. $8,500 is the total cash received. $0 would ignore the premium over par received on reissuance.",
+      "explanationJa": "額面法では自己株式の再発行を新規発行と同様に処理する。現金 $8,500（500株 × $17）を借方、自己株式を額面 $5,000（500株 × $10）で貸方計上し、差額 $3,500 をAPICに貸方計上する。$5,000は自己株式勘定の貸方額、$8,500は受取現金総額であり、額面超過分が生じているため$0は誤り。",
+      "references": ["ASC 505-30-30"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-134",
+      "topic": "Equity",
+      "subtopic": "Stock Split Effected in the Form of a Dividend",
+      "stem": "Godwit Corp. has 100,000 shares of $5 par common stock outstanding with a market price of $20 per share. To comply with stock exchange requirements, Godwit declares a 100% stock dividend that is accounted for as a stock split effected in the form of a dividend, with no change in par value. What amount should Godwit transfer from retained earnings to contributed capital?",
+      "choices": [
+        { "label": "A", "text": "$500,000" },
+        { "label": "B", "text": "$2,000,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$1,500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A stock split effected in the form of a dividend leaves the par value per share unchanged, so legal requirements obligate the entity to capitalize an amount equal to the par value of the additional shares issued: 100,000 new shares × $5 par = $500,000, transferred from retained earnings to common stock. $2,000,000 (100,000 × $20 market) would apply to a small stock dividend, which is capitalized at fair value. $0 would apply to a true stock split in which par value per share is reduced proportionately and only a memo entry is made. $1,500,000 is the difference between the market-value and par-value capitalizations and has no basis.",
+      "explanationJa": "配当形式による株式分割（stock split effected in the form of a dividend）では1株当たり額面が変わらないため、法定資本の要請から、増加株式の額面相当額を利益剰余金から資本金へ振り替える: 新株100,000株 × 額面$5 = $500,000。$2,000,000（市場価格基準）は小規模株式配当に適用される処理であり、$0は額面を比例的に引き下げる純粋な株式分割（メモ記入のみ）の場合である。",
+      "references": ["ASC 505-20-30"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-135",
+      "topic": "Equity",
+      "subtopic": "Cash Dividend - Date of Record",
+      "stem": "On November 1, Year 1, Dunlin Corp.'s board of directors declares a cash dividend payable on January 15, Year 2, to shareholders of record on December 1, Year 1. What journal entry, if any, should Dunlin record on December 1, Year 1, the date of record?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Debit retained earnings and credit dividends payable"
+        },
+        { "label": "B", "text": "Debit dividends payable and credit cash" },
+        { "label": "C", "text": "Debit retained earnings and credit cash" },
+        { "label": "D", "text": "No journal entry is required" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A cash dividend involves three dates: the declaration date, when retained earnings is debited and dividends payable is credited because a legal liability arises; the date of record, which merely identifies the shareholders entitled to the dividend and requires no journal entry; and the payment date, when dividends payable is debited and cash is credited. The entry debiting retained earnings and crediting dividends payable belongs on the declaration date, and the entry debiting dividends payable and crediting cash belongs on the payment date.",
+      "explanationJa": "現金配当には3つの日付がある。宣言日には法的債務が発生するため利益剰余金を借方、未払配当金を貸方に計上する。基準日（date of record）は配当を受け取る株主を特定するだけの日であり、仕訳は不要である。支払日には未払配当金を借方、現金を貸方に計上する。利益剰余金/未払配当金の仕訳は宣言日、未払配当金/現金の仕訳は支払日の処理である。",
+      "references": ["ASC 505-10-45"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-136",
+      "topic": "Equity",
+      "subtopic": "Property Dividend - Asset Carried Above Fair Value",
+      "stem": "Sanderling Corp. declares a property dividend, distributable to common shareholders, consisting of a parcel of land with a carrying amount of $200,000 and a fair value of $170,000 at the declaration date. What amount of loss, if any, should Sanderling recognize in net income as a result of the declaration?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$170,000" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A nonmonetary asset distributed as a property dividend is remeasured to fair value at the declaration date, and any gain or loss is recognized in net income. The loss is $200,000 − $170,000 = $30,000, and retained earnings is then charged for the $170,000 fair value of the dividend. $0 incorrectly assumes the asset is transferred at carrying amount with no remeasurement. $170,000 is the charge to retained earnings, not a loss in income. $200,000 is the carrying amount of the land, which is neither the loss nor the dividend amount.",
+      "explanationJa": "財産配当として分配する非貨幣性資産は宣言日に公正価値へ再測定し、評価損益を純利益に認識する（ASC 845-10-30）。損失 = $200,000 − $170,000 = $30,000。その後、配当の公正価値$170,000を利益剰余金から減額する。$0は帳簿価額のまま移転すると誤解した場合、$170,000は利益剰余金の減額（損失ではない）、$200,000は土地の帳簿価額である。",
+      "references": ["ASC 845-10-30", "ASC 505-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-137",
+      "topic": "Equity",
+      "subtopic": "Small Stock Dividend - APIC Credit",
+      "stem": "Turnstone Corp. has 60,000 shares of $2 par common stock outstanding. It declares and distributes a 15% stock dividend when the market price of the stock is $25 per share. What amount should Turnstone credit to additional paid-in capital for the stock dividend?",
+      "choices": [
+        { "label": "A", "text": "$225,000" },
+        { "label": "B", "text": "$18,000" },
+        { "label": "C", "text": "$207,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A stock dividend of less than 20–25% is a small stock dividend, capitalized at fair value. New shares = 60,000 × 15% = 9,000. Retained earnings is debited for 9,000 × $25 = $225,000; common stock is credited at par for 9,000 × $2 = $18,000; and the difference of $207,000 is credited to APIC. $225,000 is the total retained earnings charge, not the APIC portion. $18,000 is the par value credited to common stock. $0 would apply only to a large stock dividend capitalized at par, where no APIC arises.",
+      "explanationJa": "20〜25%未満の株式配当は小規模株式配当として公正価値で資本化する。新株 = 60,000株 × 15% = 9,000株。利益剰余金の借方 = 9,000株 × $25 = $225,000、普通株式（額面）の貸方 = 9,000株 × $2 = $18,000、差額 $207,000 がAPICへの貸方計上額となる。$225,000は利益剰余金の減額総額、$18,000は額面部分、$0は額面で資本化する大規模株式配当の場合である。",
+      "references": ["ASC 505-20-30"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-138",
+      "topic": "Equity",
+      "subtopic": "Stock Dividend Distributable - Classification",
+      "stem": "On December 15, Year 1, Whimbrel Corp. declares a 10% stock dividend to be distributed on January 20, Year 2. At December 31, Year 1, how should Whimbrel report the common stock dividend distributable?",
+      "choices": [
+        { "label": "A", "text": "As a current liability" },
+        { "label": "B", "text": "As a component of stockholders' equity" },
+        { "label": "C", "text": "As a long-term liability" },
+        {
+          "label": "D",
+          "text": "As a deduction from retained earnings disclosed only in the notes"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A stock dividend declared but not yet distributed is reported as common stock dividend distributable within stockholders' equity, typically immediately after common stock. It is not a liability because it will be settled by issuing the entity's own shares rather than by transferring assets. Reporting it as a current or long-term liability is therefore incorrect, and retained earnings has already been formally reduced by the journal entry at declaration, so a note-only deduction is also incorrect.",
+      "explanationJa": "宣言済み未交付の株式配当は「交付予定株式配当（common stock dividend distributable）」として株主資本の部（通常は普通株式の直後）に表示する。資産の引渡しではなく自社株式の交付により決済されるため負債には該当しない。流動負債・固定負債としての表示は誤りであり、利益剰余金は宣言時の仕訳で既に減額されているため注記のみの開示も誤りである。",
+      "references": ["ASC 505-20", "ASC 505-10-45"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-139",
+      "topic": "Equity",
+      "subtopic": "Liquidating Dividend - Calculation",
+      "stem": "Phalarope Corp. has retained earnings of $300,000 and additional paid-in capital of $900,000. The board declares a cash dividend of $500,000, and state law permits dividends to be charged against paid-in capital once retained earnings is exhausted. What amount of the dividend should be debited to additional paid-in capital?",
+      "choices": [
+        { "label": "A", "text": "$500,000" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A dividend in excess of retained earnings is a liquidating dividend to the extent of the excess, representing a return of capital rather than a distribution of earnings. Retained earnings absorbs the first $300,000, and the remaining $500,000 − $300,000 = $200,000 is debited to additional paid-in capital. $500,000 would charge the entire dividend to APIC, ignoring available retained earnings. $300,000 is the portion charged to retained earnings. $0 ignores that the dividend exceeds retained earnings.",
+      "explanationJa": "利益剰余金を超える配当は、超過部分が清算配当（liquidating dividend）となり、利益の分配ではなく資本の払戻しを意味する。まず利益剰余金$300,000を全額充当し、残額 $500,000 − $300,000 = $200,000 をAPICの借方に計上する。$500,000は全額をAPICに賦課する誤り、$300,000は利益剰余金への賦課額、$0は配当が利益剰余金を超過している事実を無視した誤りである。",
+      "references": ["ASC 505-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-140",
+      "topic": "Equity",
+      "subtopic": "Dividend Availability - Legal Capital Restriction",
+      "stem": "Willet Corp. operates in a state whose corporation law prohibits dividend distributions that would reduce total stockholders' equity below legal capital, defined as the aggregate par value of issued shares. Willet has total stockholders' equity of $2,400,000, which includes common stock (par) of $1,500,000. What is the maximum cash dividend Willet may legally declare?",
+      "choices": [
+        { "label": "A", "text": "$900,000" },
+        { "label": "B", "text": "$2,400,000" },
+        { "label": "C", "text": "$1,500,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under a legal capital statute, distributions may not reduce total stockholders' equity below the aggregate par value of issued shares. The maximum dividend is therefore $2,400,000 − $1,500,000 = $900,000. $2,400,000 would distribute all equity including legal capital. $1,500,000 is the legal capital itself, which must be preserved rather than distributed. $0 is incorrect because equity exceeds legal capital, leaving a distributable surplus.",
+      "explanationJa": "法定資本制度の下では、配当により株主資本合計を発行済株式の額面総額（法定資本）未満に減少させることはできない。よって配当可能最大額 = $2,400,000 − $1,500,000 = $900,000。$2,400,000は法定資本まで含めた全額分配であり違法、$1,500,000は維持すべき法定資本そのもの、株主資本が法定資本を上回っているため$0も誤りである。",
+      "references": ["ASC 505-10-50"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-141",
+      "topic": "Equity",
+      "subtopic": "Stock Split - New Par Value",
+      "stem": "Tattler Corp. has 100,000 shares of $12 par common stock issued and outstanding, with a common stock account balance of $1,200,000. Tattler effects a 3-for-1 stock split. After the split, what is the par value per share?",
+      "choices": [
+        { "label": "A", "text": "$12" },
+        { "label": "B", "text": "$36" },
+        { "label": "C", "text": "$4" },
+        { "label": "D", "text": "$6" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "In a true stock split, the number of shares increases and the par value per share decreases proportionately, leaving the total common stock account unchanged. Shares increase to 300,000, and the new par is $1,200,000 / 300,000 = $4 per share. $12 is the pre-split par, which does not survive a true split. $36 results from multiplying rather than dividing par by the split ratio. $6 would result from an incorrect 2-for-1 assumption.",
+      "explanationJa": "純粋な株式分割では株式数が増加し、1株当たり額面が比例的に減少するため、資本金（普通株式勘定）合計は変わらない。株式数は300,000株となり、新額面 = $1,200,000 ÷ 300,000株 = $4。$12は分割前の額面、$36は分割比率を乗じてしまった誤り、$6は2対1分割と誤認した場合の値である。",
+      "references": ["ASC 505-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-142",
+      "topic": "Equity",
+      "subtopic": "Partially Participating Preferred - Dividend Allocation",
+      "stem": "Knot Corp. has 10,000 shares of 6%, $100 par preferred stock (total par $1,000,000) that participates in dividends up to an additional 2% above its stated rate, and common stock with a total par value of $2,000,000. No dividends are in arrears. Knot declares total dividends of $300,000. What total amount should be allocated to the preferred shareholders?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$80,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$120,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Preferred first receives its stated rate: 6% × $1,000,000 = $60,000. Common then receives a matching 6% × $2,000,000 = $120,000. The remaining $300,000 − $180,000 = $120,000 would be shared pro rata on par values ($120,000 / $3,000,000 = 4%), but the preferred participation is capped at an additional 2%, so preferred receives only 2% × $1,000,000 = $20,000 more, for a total of $80,000. $60,000 treats the preferred as nonparticipating. $100,000 results from full participation (an additional 4% with no cap). $120,000 is the matching dividend allocated to common, not the preferred total.",
+      "explanationJa": "優先株式はまず表示利率分 6% × $1,000,000 = $60,000 を受け取る。普通株式に同率 6% × $2,000,000 = $120,000 を配分後、残余 $300,000 − $180,000 = $120,000 を額面比で按分すると4%相当だが、参加上限は追加2%のため優先株式の追加分は 2% × $1,000,000 = $20,000 にとどまる。優先株式合計 = $60,000 + $20,000 = $80,000。$60,000は非参加型とした場合、$100,000は完全参加型（上限なし追加4%）とした場合、$120,000は普通株式への同率配分額である。",
+      "references": ["ASC 505-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-143",
+      "topic": "Equity",
+      "subtopic": "Noncumulative Preferred - Dividend Allocation",
+      "stem": "Ruff Corp. has 5,000 shares of 8%, $100 par noncumulative, nonparticipating preferred stock and 60,000 shares of common stock outstanding. No dividends were declared in Year 1 or Year 2. In Year 3, Ruff declares total dividends of $190,000. What amount should be distributed to the common shareholders?",
+      "choices": [
+        { "label": "A", "text": "$70,000" },
+        { "label": "B", "text": "$40,000" },
+        { "label": "C", "text": "$190,000" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Noncumulative preferred stock has no claim to dividends omitted in prior years; passed dividends are lost permanently. In Year 3, the preferred is entitled only to the current year's preference of 8% × $100 × 5,000 = $40,000, leaving $190,000 − $40,000 = $150,000 for common. $70,000 results from incorrectly treating the preferred as cumulative and paying three years of dividends ($120,000) first. $40,000 is the preferred allocation, not the common. $190,000 ignores the preferred's current-year preference entirely.",
+      "explanationJa": "非累積型優先株式は、過年度に宣言されなかった配当に対する請求権を持たず、未宣言分は永久に消滅する。Year 3では当年度分 8% × $100 × 5,000株 = $40,000 のみが優先され、普通株式への配分 = $190,000 − $40,000 = $150,000。$70,000は累積型と誤認して3年分$120,000を先取りさせた場合、$40,000は優先株式への配分額、$190,000は当年度の優先権すら無視した誤りである。",
+      "references": ["ASC 505-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-144",
+      "topic": "Equity",
+      "subtopic": "Redeemable Preferred Stock - Mezzanine Presentation",
+      "stem": "Stint Corp., an SEC registrant, issues preferred stock that is redeemable for cash at the option of the holder. The shares are not mandatorily redeemable on a fixed date. How should Stint classify the preferred stock in its balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Outside of permanent equity, in temporary (mezzanine) equity"
+        },
+        { "label": "B", "text": "As a long-term liability under ASC 480" },
+        {
+          "label": "C",
+          "text": "Within permanent stockholders' equity, combined with other preferred stock"
+        },
+        {
+          "label": "D",
+          "text": "As a current liability, because the holder may redeem at any time"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Preferred stock redeemable at the holder's option (or upon events outside the issuer's control) is not mandatorily redeemable, so it does not meet the ASC 480 criteria for liability classification. However, under ASC 480-10-S99 (SEC ASR 268), SEC registrants must present such shares outside of permanent equity, in temporary or mezzanine equity, because redemption is not solely within the issuer's control. Liability classification (long-term or current) applies only to unconditionally mandatorily redeemable shares, and inclusion in permanent equity is prohibited for SEC registrants when redemption can be triggered by the holder.",
+      "explanationJa": "保有者の選択（または発行者が支配できない事象）により償還可能な優先株式は、無条件の強制償還株式ではないためASC 480の負債分類要件を満たさない。しかしSEC登録企業は、償還が発行者の支配下にないため、ASC 480-10-S99（SEC ASR 268）により恒久資本の外、すなわち仮勘定資本（mezzanine equity）として表示しなければならない。負債分類（固定・流動とも）は無条件の強制償還株式に限られ、保有者が償還を発動できる場合に恒久株主資本へ含めることはSEC登録企業には認められない。",
+      "references": ["ASC 480-10-S99-3A", "SEC ASR 268"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-145",
+      "topic": "Equity",
+      "subtopic": "Stock Subscription - Subscribed Stock and Receivable Balances",
+      "stem": "Brant Corp. receives subscriptions for 6,000 shares of its $10 par common stock at a subscription price of $20 per share, collecting a 40% down payment in cash. The shares will not be issued until the full subscription price is collected. At the balance sheet date, what amount should Brant report as common stock subscribed?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$48,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$72,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Common stock subscribed is credited at the par value of the subscribed shares: 6,000 × $10 = $60,000. The excess of the subscription price over par (6,000 × ($20 − $10) = $60,000) is credited to APIC at the subscription date, and subscriptions receivable is debited for the full $120,000, reduced by the $48,000 collected to a $72,000 remaining balance. $120,000 is the total subscription price, not the subscribed stock account. $48,000 is the cash collected. $72,000 is the remaining subscriptions receivable balance.",
+      "explanationJa": "申込済株式（common stock subscribed）勘定は申込株式の額面で貸方計上する: 6,000株 × $10 = $60,000。額面超過分（6,000株 × ($20 − $10) = $60,000）は申込時にAPICへ貸方計上し、株式申込未収金は総額$120,000で借方計上後、入金$48,000を控除した残高$72,000となる。$120,000は申込価額総額、$48,000は入金額、$72,000は未収金残高である。",
+      "references": ["ASC 505-10", "SEC Regulation S-X Rule 5-02"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-146",
+      "topic": "Equity",
+      "subtopic": "Retained Earnings Appropriation - Effect",
+      "stem": "Murre Corp. has retained earnings of $1,000,000. The board of directors votes to appropriate $300,000 of retained earnings for a planned plant expansion. Immediately after the appropriation, what amount should Murre report as total retained earnings?",
+      "choices": [
+        { "label": "A", "text": "$700,000" },
+        { "label": "B", "text": "$1,000,000" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$1,300,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "An appropriation merely reclassifies retained earnings into appropriated and unappropriated portions; it does not reduce total retained earnings, set aside cash, or create an expense or liability. Total retained earnings remains $1,000,000, consisting of $300,000 appropriated and $700,000 unappropriated. $700,000 is only the unappropriated portion. $300,000 is only the appropriated portion. $1,300,000 incorrectly adds the appropriation to the existing balance.",
+      "explanationJa": "利益剰余金の充当（appropriation）は利益剰余金を充当済と未充当に区分表示するだけであり、利益剰余金総額の減少、現金の留保、費用や負債の計上は一切生じない。総額は$1,000,000のまま（充当済$300,000＋未充当$700,000）。$700,000は未充当部分のみ、$300,000は充当済部分のみ、$1,300,000は充当額を加算してしまった誤りである。",
+      "references": ["ASC 505-10-45"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-147",
+      "topic": "Equity",
+      "subtopic": "Quasi-Reorganization - APIC After Restatement",
+      "stem": "Fulmar Corp. undertakes a quasi-reorganization. Before the reorganization, Fulmar has an accumulated deficit of $1,800,000 and additional paid-in capital of $200,000. As part of the procedures, assets are written down to fair value, increasing the deficit by $400,000. The par value of its 500,000 outstanding shares is then reduced from $10 to $4 per share, with the reduction credited to additional paid-in capital, which absorbs the entire deficit. What is the balance of additional paid-in capital immediately after the quasi-reorganization?",
+      "choices": [
+        { "label": "A", "text": "$1,400,000" },
+        { "label": "B", "text": "$800,000" },
+        { "label": "C", "text": "$3,200,000" },
+        { "label": "D", "text": "$1,000,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The par reduction creates APIC of 500,000 × ($10 − $4) = $3,000,000, bringing APIC to $200,000 + $3,000,000 = $3,200,000. The deficit after the asset write-down is $1,800,000 + $400,000 = $2,200,000, which is charged against APIC, leaving $3,200,000 − $2,200,000 = $1,000,000. Retained earnings is reset to zero and dated. $1,400,000 omits the $400,000 asset write-down from the deficit. $800,000 omits the pre-existing $200,000 APIC. $3,200,000 is the APIC before absorbing the deficit.",
+      "explanationJa": "減資によるAPIC創出額 = 500,000株 × ($10 − $4) = $3,000,000。APIC合計 = $200,000 + $3,000,000 = $3,200,000。資産評価減後の欠損金 = $1,800,000 + $400,000 = $2,200,000をAPICで補填し、残高 = $3,200,000 − $2,200,000 = $1,000,000。利益剰余金はゼロにリセットされ日付を付して表示する（ASC 852-20）。$1,400,000は評価減$400,000の見落とし、$800,000は既存APIC $200,000の見落とし、$3,200,000は欠損補填前のAPICである。",
+      "references": ["ASC 852-20"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-148",
+      "topic": "Equity",
+      "subtopic": "Comprehensive Income - Calculation",
+      "stem": "Gannet Corp. reports the following for Year 1: net income $400,000; unrealized holding gain on available-for-sale debt securities $30,000; foreign currency translation loss $20,000; unrealized holding gain on trading securities $10,000 (included in net income); and prior service cost arising during the year from a pension plan amendment $15,000. What amount should Gannet report as comprehensive income for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$395,000" },
+        { "label": "B", "text": "$405,000" },
+        { "label": "C", "text": "$410,000" },
+        { "label": "D", "text": "$445,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Comprehensive income = net income + other comprehensive income. OCI includes the unrealized gain on AFS debt securities (+$30,000), the translation loss (−$20,000), and the prior service cost arising during the year (−$15,000), for net OCI of −$5,000. Comprehensive income = $400,000 − $5,000 = $395,000. The trading securities gain is already in net income and is never an OCI item; adding it again gives the incorrect $405,000. $410,000 omits the pension prior service cost. $445,000 incorrectly adds all items as gains, ignoring the signs of the translation loss and prior service cost.",
+      "explanationJa": "包括利益 = 純利益 + その他の包括利益（OCI）。OCI = AFS負債証券の未実現利得 +$30,000、外貨換算損失 −$20,000、当期発生の過去勤務費用 −$15,000 = 純額 −$5,000。包括利益 = $400,000 − $5,000 = $395,000。売買目的有価証券の利得は既に純利益に含まれOCI項目ではないため、二重計上すると$405,000となる。$410,000は過去勤務費用の見落とし、$445,000は損失項目の符号を誤って全て加算した場合である。",
+      "references": ["ASC 220-10-45"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-149",
+      "topic": "Equity",
+      "subtopic": "Statement of Changes in Stockholders' Equity",
+      "stem": "Under U.S. GAAP, when an entity presents both financial position and results of operations, what disclosure is required with respect to changes in stockholders' equity?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Only changes in retained earnings must be disclosed"
+        },
+        {
+          "label": "B",
+          "text": "Changes in equity accounts need not be disclosed if a balance sheet is presented"
+        },
+        {
+          "label": "C",
+          "text": "Changes in the separate accounts comprising stockholders' equity must be disclosed, either in a separate statement or in the notes"
+        },
+        {
+          "label": "D",
+          "text": "A separate statement of stockholders' equity is required as a basic financial statement in all cases"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 505-10-50 requires disclosure of changes in the separate accounts comprising stockholders' equity (such as common stock, APIC, retained earnings, treasury stock, and AOCI) and in the number of shares, for each period for which an income statement is presented. The disclosure may be made in a separate statement of stockholders' equity, in the basic statements, or in the notes. Disclosing only retained earnings changes is insufficient, omitting the disclosure entirely is not permitted, and a separate statement is one acceptable format rather than the only required one.",
+      "explanationJa": "ASC 505-10-50は、損益計算書が表示される各期間について、株主資本を構成する各勘定（普通株式、APIC、利益剰余金、自己株式、AOCI等）の増減および株式数の変動の開示を要求する。開示方法は株主資本等変動計算書、基本財務諸表内、または注記のいずれでもよい。利益剰余金の変動のみの開示では不十分であり、開示の省略は認められず、独立の計算書は許容される形式の一つであって唯一の必須形式ではない。",
+      "references": ["ASC 505-10-50-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-150",
+      "topic": "Equity",
+      "subtopic": "Convertible Preferred Conversion - Book Value Method",
+      "stem": "Jaeger Corp. has 2,000 shares of $50 par convertible preferred stock outstanding that were originally issued for $55 per share. Each preferred share is convertible into 5 shares of $12 par common stock. All preferred shares are converted when the common stock's market price is $20 per share. Under the book value method, what amount should Jaeger debit to retained earnings on the conversion?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$10,000" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "$90,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the book value method, the carrying amount of the preferred (2,000 × $55 = $110,000) is transferred to common equity with no gain or loss. Common shares issued = 2,000 × 5 = 10,000 shares, with total par of 10,000 × $12 = $120,000. Because the par of the common issued ($120,000) exceeds the preferred's carrying amount ($110,000), the $10,000 shortfall is debited to retained earnings (no APIC credit arises). $0 would be correct only if the common par were less than or equal to the preferred carrying amount. $120,000 is the par of the common issued. $90,000 incorrectly uses the $20 market price (10,000 × $20 = $200,000 less $110,000), which belongs to the market value method, and is also miscomputed.",
+      "explanationJa": "帳簿価額法では、優先株式の帳簿価額（2,000株 × $55 = $110,000）を損益を認識せずに普通株式資本へ振り替える。発行する普通株式 = 2,000株 × 5 = 10,000株、額面合計 = 10,000株 × $12 = $120,000。普通株式の額面$120,000が優先株式の帳簿価額$110,000を上回るため、不足額$10,000を利益剰余金の借方に計上する（APICへの貸方は生じない）。$0は普通株式の額面が帳簿価額以下の場合にのみ正しい。$120,000は発行普通株式の額面総額である。",
+      "references": ["ASC 505-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-151",
+      "topic": "Equity",
+      "subtopic": "Callable Preferred Stock - Classification",
+      "stem": "Skua Corp. issues preferred stock that is callable at a fixed price solely at the option of Skua, the issuer. The shares have no mandatory redemption date and are not redeemable at the holder's option. How should Skua classify the callable preferred stock?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a liability, because the call price represents a future cash obligation"
+        },
+        {
+          "label": "B",
+          "text": "In temporary (mezzanine) equity, because the shares may be redeemed"
+        },
+        {
+          "label": "C",
+          "text": "As equity until the call is announced, then as a current liability retroactively for all periods presented"
+        },
+        {
+          "label": "D",
+          "text": "Within permanent stockholders' equity, with the call price disclosed"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Preferred stock callable solely at the issuer's option imposes no obligation on the issuer—redemption is entirely within its control—so the shares are neither mandatorily redeemable liabilities under ASC 480 nor mezzanine equity under the SEC guidance, which applies when redemption is outside the issuer's control. The shares remain in permanent equity, with disclosure of the call (redemption) price. Liability treatment applies to mandatorily redeemable shares, mezzanine presentation applies when the holder or an external event can force redemption, and retroactive reclassification of prior periods upon a call announcement is not a GAAP concept.",
+      "explanationJa": "発行者のみが行使できるコール条項付き優先株式は、償還が完全に発行者の支配下にあり発行者に義務を課さないため、ASC 480の強制償還負債にも、償還が発行者の支配外にある場合に適用されるSECのメザニン表示ガイダンスにも該当しない。恒久株主資本に含めて表示し、買戻（償還）価格を開示する。負債分類は強制償還株式、メザニン表示は保有者や外部事象が償還を強制できる場合の処理であり、コール公表時に過年度へ遡及して負債に再分類する処理はGAAP上存在しない。",
+      "references": ["ASC 480-10-25", "ASC 505-10-50"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-152",
+      "topic": "Equity",
+      "subtopic": "Scrip Dividend - Retained Earnings Charge",
+      "stem": "On October 1, Year 1, Petrel Corp. declares a scrip dividend by issuing promissory notes to shareholders totaling $300,000, bearing interest at 10% and payable on October 1, Year 2. What amount should be charged directly to retained earnings as a result of the scrip dividend declaration?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$307,500" },
+        { "label": "C", "text": "$330,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A scrip dividend is recorded at the declaration date by debiting retained earnings and crediting notes (scrip) payable for the principal amount of $300,000. Interest on the scrip is a financing cost recognized as interest expense over the period the notes are outstanding; it reduces net income, not retained earnings directly. $307,500 incorrectly adds three months of accrued interest ($7,500) to the retained earnings charge. $330,000 incorrectly adds a full year of interest ($30,000). $0 ignores that the declaration creates an immediate charge to retained earnings.",
+      "explanationJa": "スクリップ配当は宣言日に元本額$300,000で利益剰余金を借方、スクリップ（約束手形）未払金を貸方に計上する。手形利息は手形の未決済期間にわたり支払利息として費用認識され、純利益を減少させるが、利益剰余金への直接賦課項目ではない。$307,500は3か月分の経過利息$7,500を、$330,000は1年分の利息$30,000を誤って利益剰余金賦課額に含めた場合であり、宣言時に利益剰余金への賦課が生じるため$0も誤りである。",
+      "references": ["ASC 505-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-153",
+      "topic": "Equity",
+      "subtopic": "True No-Par Stock Issuance",
+      "stem": "Gadwall Corp. issues 8,000 shares of true no-par common stock (no stated value) for $35 per share. What amount should Gadwall credit to the common stock account?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$40,000" },
+        { "label": "C", "text": "$280,000" },
+        { "label": "D", "text": "$240,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When true no-par stock without a stated value is issued, the entire proceeds are credited to the common stock account: 8,000 × $35 = $280,000. No additional paid-in capital arises. $40,000 assumes a $5 stated value, which would apply only to no-par stock with a stated value. $240,000 would be the APIC under a $5 stated-value assumption, but no APIC is recorded for true no-par stock. $0 is incorrect because the proceeds must be credited to common stock.",
+      "explanationJa": "表示価額（stated value）のない純粋な無額面株式を発行した場合、受取対価の全額を普通株式勘定に貸方計上する: 8,000株 × $35 = $280,000。APICは生じない。$40,000は表示価額$5を仮定した場合の処理（表示価額付き無額面株式にのみ適用）、$240,000は同じ仮定でのAPIC相当額であり、純粋な無額面株式ではAPICは計上されない。",
+      "references": ["ASC 505-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-154",
+      "topic": "Equity",
+      "subtopic": "AOCI - Ending Balance with Reclassification",
+      "stem": "Smew Corp. begins Year 1 with a credit balance of $50,000 in accumulated other comprehensive income. During Year 1: an unrealized holding gain of $25,000 arises on available-for-sale debt securities; a $10,000 gain previously recognized in OCI is reclassified to net income upon sale of securities; and a foreign currency translation loss of $8,000 arises. Ignoring income taxes, what is the ending balance of AOCI?",
+      "choices": [
+        { "label": "A", "text": "$67,000" },
+        { "label": "B", "text": "$57,000" },
+        { "label": "C", "text": "$77,000" },
+        { "label": "D", "text": "$32,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The reclassification adjustment removes from AOCI the $10,000 gain now realized in net income, preventing double counting. Ending AOCI = $50,000 + $25,000 − $10,000 − $8,000 = $57,000. $67,000 omits the reclassification adjustment. $77,000 incorrectly adds the reclassified gain back to AOCI instead of removing it. $32,000 incorrectly subtracts the $25,000 unrealized gain rather than adding it.",
+      "explanationJa": "組替調整（reclassification adjustment）は、純利益に実現計上された$10,000の利得をAOCIから除去し、二重計上を防ぐ。期末AOCI = $50,000 + $25,000 − $10,000 − $8,000 = $57,000。$67,000は組替調整の見落とし、$77,000は組替分を除去せず逆に加算した誤り、$32,000は未実現利得$25,000を加算ではなく減算した誤りである。",
+      "references": ["ASC 220-10-45-25"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "eq-155",
+      "topic": "Equity",
+      "subtopic": "Cash Dividend - Treasury Shares Excluded",
+      "stem": "Wigeon Corp. has 1,000,000 shares of common stock authorized and 400,000 shares issued, of which 25,000 shares are held in treasury. Wigeon declares a cash dividend of $0.60 per share. What total amount of dividends should Wigeon record at the declaration date?",
+      "choices": [
+        { "label": "A", "text": "$240,000" },
+        { "label": "B", "text": "$600,000" },
+        { "label": "C", "text": "$15,000" },
+        { "label": "D", "text": "$225,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cash dividends are paid only on shares outstanding; treasury shares are issued but not outstanding and receive no dividends. Outstanding shares = 400,000 − 25,000 = 375,000, so the dividend is 375,000 × $0.60 = $225,000. $240,000 incorrectly pays the dividend on all issued shares including treasury shares. $600,000 incorrectly uses the authorized shares. $15,000 is the dividend that would relate to the treasury shares alone (25,000 × $0.60), which is precisely the amount excluded.",
+      "explanationJa": "現金配当は発行済かつ社外流通株式（outstanding shares）に対してのみ支払われる。自己株式は発行済みだが流通しておらず配当を受け取らない。流通株式数 = 400,000 − 25,000 = 375,000株、配当総額 = 375,000株 × $0.60 = $225,000。$240,000は自己株式を含む発行済株式全体に配当した誤り、$600,000は授権株式数を用いた誤り、$15,000は除外されるべき自己株式分（25,000株 × $0.60）である。",
+      "references": ["ASC 505-10"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }

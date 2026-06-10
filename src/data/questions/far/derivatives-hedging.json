@@ -2,7 +2,7 @@
   "id": "far-derivatives-hedging",
   "name": "Derivatives & Hedging",
   "topic": "Derivatives & Hedging",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "deriv-001",
@@ -2642,6 +2642,501 @@
       "explanation": "Under ASC 230-10-45-27, when a derivative is designated in a qualifying hedge and an accounting policy election is made, the cash flows of the hedging instrument may be classified in the same category as the cash flows of the items being hedged. For a cash flow hedge of a forecasted inventory purchase, the hedged item's cash flows are operating, so the derivative's settlement cash flows are also classified as operating activities. This aligns the hedge's cash flow presentation with the underlying transaction.",
       "explanationJa": "ASC 230-10-45-27により、デリバティブが適格ヘッジに指定され会計方針の選択を行った場合、ヘッジ手段のキャッシュフローをヘッジ対象のキャッシュフローと同じ区分に分類できる。予定在庫購入のキャッシュフローヘッジでは、ヘッジ対象のキャッシュフローは営業活動であるため、デリバティブの決済キャッシュフローも営業活動に分類される。これによりヘッジのキャッシュフロー表示が基礎取引と整合する。",
       "references": ["ASC 230-10-45-27"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-093",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Derivative Definition - Initial Net Investment",
+      "stem": "Hollis Corp. is evaluating two ways to gain exposure to 10,000 shares of a publicly traded stock currently priced at $80 per share: (1) purchase the shares outright for $800,000, or (2) enter into an exchange-traded futures contract on the shares that requires only a $40,000 initial margin deposit. Under ASC 815, which characteristic of the futures contract distinguishes it as a derivative, in contrast to the direct stock purchase?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The futures contract has no underlying or notional amount"
+        },
+        {
+          "label": "B",
+          "text": "The futures contract requires an initial net investment that is smaller than would be required to acquire the underlying position directly"
+        },
+        {
+          "label": "C",
+          "text": "The futures contract cannot be settled prior to its maturity date"
+        },
+        {
+          "label": "D",
+          "text": "The futures contract eliminates all market risk for the holder"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 815-10-15-83, a derivative has three characteristics: (1) an underlying and a notional amount (or payment provision), (2) an initial net investment of zero or an amount smaller than would be required for a contract with a similar response to market changes, and (3) net settlement. The futures contract requires only $40,000 of margin to control an $800,000 exposure, satisfying the smaller-initial-net-investment criterion; a direct purchase requires full payment of $800,000 and is therefore not a derivative. The futures contract does have an underlying (the stock price) and a notional amount (10,000 shares), so the assertion that it lacks them is false. Exchange-traded futures can be closed out before maturity, and a long futures position retains full exposure to market price risk rather than eliminating it.",
+      "explanationJa": "ASC 815-10-15-83 により、デリバティブは (1) アンダーライング（基礎数値）と想定元本（または支払条項）、(2) 当初純投資がゼロまたは同様の市場反応を持つ契約に通常必要な額より僅少であること、(3) 純額決済、の3要素をすべて満たす。先物契約は $800,000 相当のエクスポージャーを $40,000 の証拠金のみで取得できるため「僅少な当初純投資」の要件を満たす。一方、株式の直接購入は全額 $800,000 の投資が必要なためデリバティブに該当しない。先物には株価というアンダーライングと10,000株という想定数量が存在し、満期前の反対売買による決済も可能であり、市場リスクが消滅するわけでもない。",
+      "references": ["ASC 815-10-15-83"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-094",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Speculative Futures - Gain Recognition",
+      "stem": "On November 1, Year 1, Tremont Co. enters into a long futures contract for 50,000 pounds of copper at a futures price of $4.20 per pound. The contract is not designated as a hedge. At December 31, Year 1, the futures price for the same delivery date is $4.35 per pound. What amount of gain, if any, should Tremont recognize in Year 1 earnings?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$210,000" },
+        { "label": "C", "text": "$7,500" },
+        { "label": "D", "text": "$217,500" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A derivative that is not designated as a hedge is measured at fair value with all changes recognized currently in earnings (ASC 815-10-35-2). The long futures position gains as the futures price rises: ($4.35 − $4.20) × 50,000 lbs = $7,500, recognized in Year 1 earnings. Recognizing no gain is wrong because derivatives are remeasured to fair value every reporting date regardless of hedge designation. $210,000 ($4.20 × 50,000) and $217,500 ($4.35 × 50,000) incorrectly treat the gross contract value rather than the change in the futures price as the gain.",
+      "explanationJa": "ヘッジ指定のないデリバティブは公正価値で測定し、変動額をすべて当期損益に計上する（ASC 815-10-35-2）。買建（ロング）先物は先物価格の上昇で利益となり、($4.35 − $4.20) × 50,000ポンド = $7,500 を Year 1 の損益に認識する。ヘッジ指定がなくても毎報告日に公正価値評価が必要なため利益ゼロは誤り。$210,000（$4.20×50,000）や $217,500（$4.35×50,000）は価格変動分ではなく契約総額を損益とみなした誤りである。",
+      "references": ["ASC 815-10-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-095",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Forward Contract - Remeasurement Loss (Buy Position)",
+      "stem": "On December 1, Year 1, Ashford Inc., a U.S. company, enters into a 90-day forward contract to purchase ¥10,000,000 at a forward rate of $0.0090 per yen. The contract is not designated as a hedge. At December 31, Year 1, the forward rate for delivery on the same settlement date is $0.0086 per yen. Ignoring discounting, what should Ashford report in Year 1 earnings related to the forward contract?",
+      "choices": [
+        { "label": "A", "text": "A loss of $4,000" },
+        { "label": "B", "text": "A gain of $4,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "A loss of $40,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A non-designated forward contract is remeasured to fair value through earnings using the change in the forward rate for the remaining term. Ashford is committed to buy yen at $0.0090, but the same yen can now be locked in at $0.0086, so the contract is unfavorable: ($0.0090 − $0.0086) × ¥10,000,000 = $4,000 loss. A gain of $4,000 reverses the direction — a buyer of currency loses when the forward rate falls. Reporting nothing ignores the required fair value remeasurement, and $40,000 results from a decimal-place error in the rate differential.",
+      "explanationJa": "ヘッジ指定のない先渡契約は、残存期間に対応する先渡レートの変動に基づき公正価値評価し、損益計上する（ASC 815-10-35-2）。$0.0090 で円を買う義務を負っているが、現在は $0.0086 で同じ円を確保できるため契約は不利な状態にあり、($0.0090 − $0.0086) × ¥10,000,000 = $4,000 の損失となる。買建ポジションは先渡レートの下落で損失となるため $4,000 の利益は方向の誤り。評価不要とするのは公正価値測定の要求を無視しており、$40,000 はレート差の桁誤りによる。",
+      "references": ["ASC 815-10-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-096",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Speculative Put Option - Net Gain at Expiration",
+      "stem": "On July 1, Year 1, Calder Co. pays a premium of $12,000 to purchase a put option on 8,000 shares of Rylan Corp. stock with a strike price of $35 per share, expiring December 15, Year 1. The option is not designated as a hedge. On December 15, Rylan's stock price is $28, and Calder exercises the option and settles net in cash. What is the total net gain or loss Calder recognizes on the option over its life?",
+      "choices": [
+        { "label": "A", "text": "$56,000 net gain" },
+        { "label": "B", "text": "$12,000 net loss" },
+        { "label": "C", "text": "$68,000 net gain" },
+        { "label": "D", "text": "$44,000 net gain" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "At expiration the put's intrinsic value is ($35 − $28) × 8,000 shares = $56,000, which Calder receives on net settlement. Because Calder paid a $12,000 premium, the net gain over the option's life is $56,000 − $12,000 = $44,000, all recognized in earnings since the option is not a designated hedge. $56,000 ignores the premium paid. $68,000 incorrectly adds the premium to the payoff instead of deducting it. A $12,000 loss would occur only if the option had expired worthless (stock at or above $35).",
+      "explanationJa": "満期日のプット・オプションの本源的価値は ($35 − $28) × 8,000株 = $56,000 であり、純額決済でこれを受け取る。支払ったプレミアム $12,000 を控除すると、オプション存続期間全体の純利益は $56,000 − $12,000 = $44,000 となり、ヘッジ指定がないためすべて損益計上される（ASC 815-10-35-2）。$56,000 はプレミアムの控除漏れ、$68,000 はプレミアムを差し引かずに加算した誤り。$12,000 の損失は株価が $35 以上でオプションが無価値となった場合にのみ生じる。",
+      "references": ["ASC 815-10-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-097",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Non-Designated Interest Rate Swap - Total Earnings Effect",
+      "stem": "On January 1, Year 1, Driscoll Corp. enters into a pay-fixed 5%, receive-variable interest rate swap with a notional amount of $3,000,000 and annual settlement. The swap is not designated as a hedge. The variable rate for Year 1 is 3.8%. At December 31, Year 1, the swap has a fair value of $52,000 (liability) versus $0 at inception. What is the total decrease in Driscoll's Year 1 pretax earnings from the swap?",
+      "choices": [
+        { "label": "A", "text": "$88,000" },
+        { "label": "B", "text": "$52,000" },
+        { "label": "C", "text": "$36,000" },
+        { "label": "D", "text": "$16,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A non-designated swap affects earnings through both the periodic net settlement and the change in fair value. The Year 1 net settlement is a payment of (5.0% − 3.8%) × $3,000,000 = $36,000 because the fixed rate paid exceeds the variable rate received. In addition, the swap's fair value declined from $0 to a $52,000 liability, producing a $52,000 unrealized loss in earnings. Total pretax earnings decrease: $36,000 + $52,000 = $88,000. $52,000 captures only the fair value change, $36,000 only the settlement, and $16,000 incorrectly nets the two amounts against each other.",
+      "explanationJa": "ヘッジ指定のないスワップは、期中の純決済額と公正価値変動の両方が損益に影響する（ASC 815-10-35-2）。Year 1 の純決済は、支払固定5.0%が受取変動3.8%を上回るため (5.0% − 3.8%) × $3,000,000 = $36,000 の支払。さらに公正価値が $0 から負債 $52,000 へ悪化したため $52,000 の評価損も損益計上する。税引前利益の減少額は合計 $36,000 + $52,000 = $88,000。$52,000 は評価損のみ、$36,000 は決済額のみを捉えた誤りで、$16,000 は両者を相殺してしまった誤りである。",
+      "references": ["ASC 815-10-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-098",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Fair Value Hedge of Firm Commitment - Balance Sheet Recognition",
+      "stem": "Greystone Mills has an unrecognized firm commitment to sell 50,000 bushels of grain at a fixed price in four months and designates a long futures contract as a fair value hedge of the commitment's exposure to grain price changes. During the period, grain prices rise: the futures contract increases in value by $42,000, and the fair value of the firm commitment attributable to the hedged risk decreases by $40,000. What should Greystone recognize on its balance sheet with respect to the firm commitment at period end?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Nothing, because firm commitments are executory contracts that are never recognized"
+        },
+        { "label": "B", "text": "A liability of $40,000" },
+        { "label": "C", "text": "An asset of $40,000" },
+        { "label": "D", "text": "A liability of $42,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a fair value hedge of an unrecognized firm commitment, the change in the commitment's fair value attributable to the hedged risk is recognized on the balance sheet as an asset or liability with the offsetting gain or loss in earnings (ASC 815-25-35-1). Because Greystone is committed to sell at a fixed price while market prices rose, the commitment became unfavorable by $40,000, so a $40,000 liability is recorded (with a $40,000 loss in earnings that largely offsets the $42,000 futures gain). Although executory contracts are ordinarily unrecognized, hedge accounting overrides that treatment for the hedged risk. An asset of $40,000 reverses the direction of the exposure, and $42,000 is the derivative's change, not the commitment's.",
+      "explanationJa": "未認識の確定約定（firm commitment）を対象とする公正価値ヘッジでは、ヘッジ対象リスクに起因する確定約定の公正価値変動を資産または負債として貸借対照表に認識し、相手勘定を損益とする（ASC 815-25-35-1）。固定価格で売る約定を抱えたまま市場価格が上昇したため、約定は $40,000 不利となり、負債 $40,000 を計上する（損益には $40,000 の損失が計上され、先物の利益 $42,000 と概ね相殺される）。未履行契約は通常オフバランスだが、ヘッジ会計の適用によりヘッジ対象リスク部分は認識される。$40,000 の資産はエクスポージャーの方向を逆にした誤りで、$42,000 はデリバティブ側の変動額である。",
+      "references": ["ASC 815-25-35-1", "ASC 815-20-25-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-099",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge of Forecasted Foreign Currency Sale - Reclassification",
+      "stem": "In October Year 1, Belmar Inc., a U.S. company, designates a forward contract to sell €800,000 as a cash flow hedge of a highly probable forecasted export sale expected to occur in February Year 2. At December 31, Year 1, the forward contract has an accumulated gain of $24,000, and the hedge meets all effectiveness requirements. The sale occurs as forecasted in February Year 2 and the customer pays in March Year 2. How should the $24,000 gain be reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognized in Year 1 earnings as the gain arises"
+        },
+        {
+          "label": "B",
+          "text": "Deferred in accumulated OCI until the customer pays in March Year 2"
+        },
+        {
+          "label": "C",
+          "text": "Reported in OCI in Year 1 and reclassified to earnings in February Year 2 when the forecasted sale is recognized"
+        },
+        {
+          "label": "D",
+          "text": "Retained in accumulated OCI indefinitely as part of the cumulative translation adjustment"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "For a qualifying cash flow hedge, the entire change in the derivative's fair value is recorded in OCI and reclassified into earnings in the period the hedged forecasted transaction affects earnings (ASC 815-30-35-3 and 815-30-35-38). The forecasted sale affects earnings when revenue is recognized in February Year 2, so the $24,000 is held in OCI at December 31, Year 1 and reclassified to earnings (within the same income statement line as the hedged sale) in February Year 2. Current recognition in Year 1 earnings would be appropriate only for a non-designated derivative. The reclassification trigger is recognition of the sale, not collection of cash, and amounts in AOCI from a cash flow hedge are not part of the cumulative translation adjustment and do not remain in equity indefinitely.",
+      "explanationJa": "適格なキャッシュフローヘッジでは、デリバティブの公正価値変動の全額をOCIに計上し、ヘッジ対象の予定取引が損益に影響を与える期間に損益へ組替調整する（ASC 815-30-35-3、815-30-35-38）。予定売上はYear 2の2月に収益認識された時点で損益に影響するため、$24,000 はYear 1末時点ではOCIに留め、2月に損益（ヘッジ対象の売上と同じ表示科目）へ組み替える。Year 1に損益認識するのはヘッジ指定がない場合の処理。組替のトリガーは売上の認識であって入金ではなく、キャッシュフローヘッジのAOCI残高は為替換算調整勘定（CTA)ではないため無期限に資本に留まることもない。",
+      "references": ["ASC 815-30-35-3", "ASC 815-30-35-38"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-100",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Net Investment Hedge - Net Change in CTA",
+      "stem": "Voss Industries, a U.S. parent, borrows €5,000,000 on January 1, Year 1, when the exchange rate is $1.10 per euro, and designates the borrowing as a hedge of its net investment in a European subsidiary. At December 31, Year 1, the exchange rate is $1.14. The translation of the subsidiary's financial statements for Year 1 produces a translation adjustment gain of $230,000. The hedge is fully effective. What is the net change in Voss's cumulative translation adjustment (CTA) within accumulated OCI for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$230,000 increase" },
+        { "label": "B", "text": "$200,000 decrease" },
+        { "label": "C", "text": "$430,000 increase" },
+        { "label": "D", "text": "$30,000 increase" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "In a net investment hedge, the effective portion of the hedging instrument's gain or loss is reported in the cumulative translation adjustment within OCI, offsetting the translation adjustment on the net investment (ASC 815-35-35-1). The euro strengthened, so the euro borrowing produces a remeasurement loss of ($1.14 − $1.10) × €5,000,000 = $200,000, recorded in CTA. The net CTA change is the $230,000 translation gain less the $200,000 hedging loss = $30,000 increase. $230,000 ignores the hedge entirely, a $200,000 decrease ignores the translation gain, and $430,000 adds the two amounts instead of offsetting them.",
+      "explanationJa": "純投資ヘッジでは、ヘッジ手段の損益の有効部分をOCI内の為替換算調整勘定（CTA）に計上し、純投資の換算調整額と相殺させる（ASC 815-35-35-1）。ユーロ高により、ユーロ建借入金には ($1.14 − $1.10) × €5,000,000 = $200,000 の換算損失が生じ、CTAに計上される。CTAの純増減は換算調整益 $230,000 − ヘッジ損失 $200,000 = $30,000 の増加となる。$230,000 はヘッジの影響を無視、$200,000 の減少は換算調整益を無視、$430,000 は相殺すべき両者を合算した誤りである。",
+      "references": ["ASC 815-35-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-101",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hybrid Instrument - Fair Value Option Election",
+      "stem": "Marchetti Corp. issues a structured note containing an embedded derivative that is not clearly and closely related to the debt host and that would otherwise require bifurcation under ASC 815-15. Under ASC 815-15-25-4, what alternative is available to Marchetti instead of separately accounting for the embedded derivative?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Measure the entire hybrid instrument at amortized cost and disclose the embedded feature in the notes"
+        },
+        {
+          "label": "B",
+          "text": "Irrevocably elect to measure the entire hybrid instrument at fair value, with changes in fair value recognized in earnings"
+        },
+        {
+          "label": "C",
+          "text": "Measure the entire hybrid instrument at fair value, with changes in fair value recognized in other comprehensive income"
+        },
+        {
+          "label": "D",
+          "text": "Defer recognition of the embedded derivative until it is net settled"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 815-15-25-4 permits an entity that would otherwise be required to bifurcate an embedded derivative to instead irrevocably elect to measure the entire hybrid instrument at fair value, with all changes in fair value recognized in earnings. This avoids the complexity of separately valuing the embedded derivative and the host. Measuring the whole instrument at amortized cost with disclosure does not satisfy the bifurcation requirement. Fair value changes under this election flow through earnings, not OCI (other than the own-credit component for fair-value-option liabilities under ASC 825). Deferring recognition until net settlement has no basis in ASC 815.",
+      "explanationJa": "ASC 815-15-25-4 は、組込デリバティブの区分処理（bifurcation）が必要となる場合、その代替としてハイブリッド商品全体を公正価値で測定し変動額を損益に計上することを取消不能な選択として認めている。これにより組込デリバティブと主契約を別々に評価する複雑さを回避できる。全体を償却原価で測定し注記開示のみ行う処理は区分処理の要求を満たさない。本選択での公正価値変動は原則として損益計上であり、OCIではない（ASC 825の公正価値オプション負債に係る自己信用リスク部分を除く）。純額決済まで認識を繰り延べる処理にASC 815上の根拠はない。",
+      "references": ["ASC 815-15-25-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-102",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Contractually Specified Component - Hedged Risk",
+      "stem": "Kestrel Foods regularly purchases corn-based ingredients under supply contracts whose pricing formula explicitly references the CBOT corn futures price plus a fixed processing spread. Kestrel wishes to hedge the corn price component of its forecasted purchases using corn futures and apply cash flow hedge accounting. Under ASC 815 as amended by ASU 2017-12, which of the following may Kestrel designate as the hedged risk?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Variability in cash flows attributable to the contractually specified corn price component of the forecasted purchases"
+        },
+        {
+          "label": "B",
+          "text": "Only the variability in the total purchase price of the ingredients, because risk components of nonfinancial items can never be hedged"
+        },
+        {
+          "label": "C",
+          "text": "Variability attributable to a benchmark interest rate embedded in the supply contract"
+        },
+        {
+          "label": "D",
+          "text": "Variability attributable to general inflation in food commodity markets"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2017-12 (codified in ASC 815-20-25-22A) permits an entity to designate the variability in cash flows attributable to a contractually specified component of a forecasted purchase or sale of a nonfinancial asset as the hedged risk in a cash flow hedge. Because the supply contracts explicitly reference the CBOT corn price, that component qualifies. Before ASU 2017-12, only total price variability (or foreign currency risk) could be hedged for nonfinancial items, but that restriction no longer applies when a component is contractually specified. A benchmark interest rate is relevant to hedges of financial instruments, not commodity purchases, and general inflation is not a contractually specified component and is not an eligible hedged risk.",
+      "explanationJa": "ASU 2017-12（ASC 815-20-25-22Aに法典化）により、非金融資産の予定購入・売却について、契約上明記された構成要素（contractually specified component）に起因するキャッシュフロー変動をヘッジ対象リスクとして指定できる。供給契約がCBOTコーン価格を明示的に参照しているため、この構成要素は適格である。ASU 2017-12以前は非金融項目について全体価格の変動（または為替リスク）しかヘッジ対象にできなかったが、契約上特定された構成要素についてはこの制限は撤廃された。ベンチマーク金利は金融商品のヘッジに関する概念であり商品購入には該当せず、一般的なインフレは契約上特定された構成要素ではないため適格なヘッジ対象リスクとならない。",
+      "references": ["ASC 815-20-25-22A"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-103",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Receive-Fixed Swap - Fair Value Direction",
+      "stem": "Penrose Co. holds a receive-fixed 5%, pay-variable interest rate swap entered into at market terms (initial fair value of zero). Shortly thereafter, market interest rates rise significantly and remain elevated. From Penrose's perspective, what happens to the fair value of the swap?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It increases, because Penrose receives a fixed rate"
+        },
+        {
+          "label": "B",
+          "text": "It remains zero, because fair value is based on the notional amount, which is unchanged"
+        },
+        {
+          "label": "C",
+          "text": "It decreases and may become a liability, because receiving a below-market fixed rate while paying a higher variable rate is unfavorable"
+        },
+        {
+          "label": "D",
+          "text": "It resets to zero at each settlement date regardless of rate movements"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A receive-fixed, pay-variable swap behaves like holding a fixed-rate bond financed at floating rates: when market rates rise, the fixed 5% receipts become less valuable relative to current rates and the variable payments increase, so the swap's fair value falls and can become a liability to the holder. The opposite occurs when rates fall — receive-fixed swaps gain value. Fair value is the present value of expected net settlements discounted at current rates, not the notional amount, and a swap's fair value does not automatically reset to zero at settlement dates; only the current period's net settlement is exchanged.",
+      "explanationJa": "受取固定・支払変動スワップは、固定利付債を変動金利で資金調達して保有するのと同様の経済性を持つ。市場金利が上昇すると、固定5%の受取は現行金利に比べて価値が低下し、変動支払は増加するため、スワップの公正価値は下落し保有者にとって負債となり得る。金利が低下する場合は逆に受取固定スワップの価値は上昇する。公正価値は将来の純決済額を現行金利で割り引いた現在価値であり想定元本そのものではない。また、決済日に公正価値が自動的にゼロへリセットされることはなく、交換されるのは当期分の純決済額のみである（ASC 815-10-35-2）。",
+      "references": ["ASC 815-10-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-104",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Commodity Forward - Speculative Gain",
+      "stem": "On September 1, Year 1, Ridgeline Co. enters into a forward contract to purchase 20,000 pounds of nickel at $3.00 per pound for delivery in March Year 2. The contract permits net cash settlement and is not designated as a hedge. At December 31, Year 1, the forward price for March Year 2 delivery is $3.25 per pound. How should Ridgeline report the contract's results for Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No gain or loss until the contract is settled in March Year 2"
+        },
+        { "label": "B", "text": "A $5,000 gain in other comprehensive income" },
+        { "label": "C", "text": "A $65,000 gain in earnings" },
+        { "label": "D", "text": "A $5,000 gain in earnings" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The contract is a derivative (underlying: nickel price; notional: 20,000 lbs; net settlement permitted) with no hedge designation, so it is carried at fair value with changes in earnings. As the long (buyer) at $3.00 while the forward price rose to $3.25, Ridgeline has a gain of ($3.25 − $3.00) × 20,000 = $5,000 recognized in Year 1 earnings. Waiting until settlement ignores required fair value measurement. OCI treatment applies only to the effective portion of designated cash flow or net investment hedges, not speculative positions. $65,000 ($3.25 × 20,000) is the gross forward value, not the change in value.",
+      "explanationJa": "この契約はデリバティブの定義（アンダーライング＝ニッケル価格、想定数量＝20,000ポンド、純額決済可能）を満たし、ヘッジ指定がないため公正価値で測定し変動を損益計上する（ASC 815-10-35-2）。$3.00 の買建ポジションに対し先渡価格が $3.25 へ上昇したため、($3.25 − $3.00) × 20,000 = $5,000 の利益を Year 1 の損益に認識する。決済時まで認識しないのは公正価値測定の要求を無視した処理。OCI計上はキャッシュフローヘッジ等の指定がある場合に限られ、投機目的には適用されない。$65,000（$3.25×20,000）は契約総額であり変動額ではない。",
+      "references": ["ASC 815-10-15-83", "ASC 815-10-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-105",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Credit Default Swap - Protection Buyer",
+      "stem": "Stanhope Capital purchases credit protection through a credit default swap (CDS) referencing a corporate bond issuer, paying periodic premiums. The CDS is not designated in a hedging relationship. During Year 1, Stanhope pays premiums of $20,000, and the fair value of the CDS rises from zero at inception to a $75,000 asset at year-end as the reference entity's credit deteriorates. What is the net effect of the CDS on Stanhope's Year 1 pretax earnings?",
+      "choices": [
+        { "label": "A", "text": "$55,000 increase" },
+        { "label": "B", "text": "$75,000 increase" },
+        { "label": "C", "text": "$20,000 decrease" },
+        { "label": "D", "text": "$95,000 increase" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A CDS is a derivative, and without hedge designation all fair value changes are recognized in earnings along with the cost of the premiums. The fair value gain of $75,000 (the protection becomes more valuable as the reference credit deteriorates) less premiums of $20,000 yields a net pretax earnings increase of $55,000. $75,000 ignores the premium cost, $20,000 decrease ignores the fair value gain, and $95,000 incorrectly adds the premiums to the gain rather than deducting them.",
+      "explanationJa": "CDSはデリバティブであり、ヘッジ指定がない場合は公正価値変動の全額を損益に計上し、支払プレミアムも費用認識する（ASC 815-10-35-2）。参照企業の信用悪化によりプロテクションの価値が上昇し公正価値が $75,000 の資産となったため評価益 $75,000、これからプレミアム $20,000 を差し引いた純額 $55,000 が税引前利益の増加額となる。$75,000 はプレミアム費用の控除漏れ、$20,000 の減少は評価益の認識漏れ、$95,000 はプレミアムを控除せず加算した誤りである。",
+      "references": ["ASC 815-10-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-106",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Balance Sheet Offsetting - Master Netting Arrangement",
+      "stem": "Welburn Co. has derivative contracts with a single counterparty under an enforceable master netting arrangement: derivative assets with a fair value of $400,000 and derivative liabilities with a fair value of $250,000. Welburn has adopted an accounting policy of offsetting fair value amounts under master netting arrangements. How should these positions be presented on Welburn's balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A $400,000 derivative asset and a $250,000 derivative liability; offsetting is prohibited for derivatives"
+        },
+        {
+          "label": "B",
+          "text": "No amounts, because positions under a master netting arrangement are settled net and remain off-balance-sheet"
+        },
+        { "label": "C", "text": "A net derivative asset of $150,000" },
+        {
+          "label": "D",
+          "text": "A net amount only if the counterparty has actually defaulted"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 815-10-45-5 permits (but does not require) an entity to offset fair value amounts recognized for derivative instruments executed with the same counterparty under a master netting arrangement, provided the offsetting policy is applied consistently. Having elected that policy, Welburn presents $400,000 − $250,000 = a net derivative asset of $150,000. Gross presentation would apply only if the entity had not elected offsetting — it is not the case that offsetting is prohibited. Derivatives at fair value are always recognized on the balance sheet, never off-balance-sheet, and the offsetting election does not depend on an actual default by the counterparty.",
+      "explanationJa": "ASC 815-10-45-5 は、法的に有効なマスターネッティング契約の下で同一相手方と締結したデリバティブの公正価値について、相殺表示を会計方針として選択することを認めている（強制ではない）。相殺方針を採用している以上、$400,000 − $250,000 = $150,000 の純額デリバティブ資産として表示する。総額表示は相殺を選択していない場合の処理であり、デリバティブの相殺が禁止されているわけではない。公正価値で測定されるデリバティブは必ずオンバランスで認識され、また相殺表示の選択は相手方の実際のデフォルト発生を条件としない。",
+      "references": ["ASC 815-10-45-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-107",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Treasury Lock - Reclassification Over Debt Term",
+      "stem": "Anticipating the issuance of $20,000,000 of 10-year fixed-rate bonds, Corliss Inc. enters into a treasury lock agreement designated as a cash flow hedge of the variability in future interest payments attributable to changes in the benchmark rate before issuance. When the bonds are issued, the treasury lock is settled with a gain of $180,000, which is recorded in accumulated OCI. The hedge was fully effective and the bonds pay interest annually for 10 years. How does the $180,000 affect earnings after issuance, assuming straight-line allocation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The entire $180,000 is recognized as a gain in earnings on the issuance date"
+        },
+        {
+          "label": "B",
+          "text": "$18,000 is reclassified each year as a reduction of interest expense over the 10-year term"
+        },
+        {
+          "label": "C",
+          "text": "$18,000 is reclassified each year as an increase to interest expense over the 10-year term"
+        },
+        {
+          "label": "D",
+          "text": "The $180,000 remains in accumulated OCI until the bonds mature, then is recognized in full"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Amounts in accumulated OCI from a cash flow hedge of a forecasted debt issuance are reclassified into earnings over the periods in which the hedged interest payments affect earnings (ASC 815-30-35-38). The $180,000 gain is therefore released as $180,000 ÷ 10 years = $18,000 per year, reducing interest expense — the gain locked in a lower effective borrowing cost. Recognizing the full gain at issuance would ignore that the hedged item (interest payments) affects earnings over the bond term. An $18,000 annual increase to interest expense reverses the direction (a settlement gain reduces, not increases, the effective interest cost), and waiting until maturity defers reclassification beyond the periods the hedged payments affect earnings.",
+      "explanationJa": "予定される社債発行をヘッジ対象とするキャッシュフローヘッジのAOCI残高は、ヘッジされた利払いが損益に影響する期間にわたり損益へ組み替える（ASC 815-30-35-38）。よって $180,000 ÷ 10年 = 年 $18,000 を支払利息の減額として組替調整する。トレジャリーロックの決済益は実効的な調達コストを引き下げる効果を持つためである。発行時の一括利益認識は、ヘッジ対象（利払い）が社債の存続期間にわたって損益に影響する点を無視している。年 $18,000 の支払利息増加は方向が逆であり、満期まで組替を行わない処理は組替時期の要求に反する。",
+      "references": ["ASC 815-30-35-38"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-108",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedged Item Eligibility - Net Position Prohibition",
+      "stem": "Danforth Corp. forecasts export sales of €1,000,000 and import purchases of €600,000 in the same future quarter, leaving a net euro exposure of €400,000. Danforth wants to enter into one forward contract to sell €400,000 and apply cash flow hedge accounting. Under ASC 815, how should Danforth designate the hedging relationship?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Designate the net €400,000 exposure (sales minus purchases) as the hedged item"
+        },
+        {
+          "label": "B",
+          "text": "Hedge accounting is unavailable because the exposures partially offset"
+        },
+        {
+          "label": "C",
+          "text": "Designate the full €1,000,000 of sales and the full €600,000 of purchases as a single combined hedged item"
+        },
+        {
+          "label": "D",
+          "text": "Designate €400,000 of the forecasted export sales (a gross position) as the hedged item"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 815 prohibits designating a net position (offsetting assets and liabilities, or offsetting forecasted purchases and sales) as the hedged item; the hedged item must be a gross exposure (ASC 815-20-25-12). Danforth can achieve the same economic result by designating €400,000 of the forecasted export sales — a gross forecasted transaction — as the hedged item for the €400,000 forward. Designating the net exposure directly is not permitted under U.S. GAAP (unlike the limited net-position allowances in IFRS 9). Hedge accounting is available; the prohibition concerns only how the hedged item is designated. Combining sales and purchases into one hedged item is itself a net position designation in substance and is equally prohibited.",
+      "explanationJa": "ASC 815 は、相殺し合う資産・負債や予定購入・予定売上を合算した純額ポジション（net position）をヘッジ対象として指定することを禁止しており、ヘッジ対象は総額（gross）のエクスポージャーでなければならない（ASC 815-20-25-12）。€400,000 の先渡契約に対しては、予定輸出売上のうち €400,000（総額の予定取引）をヘッジ対象に指定すれば同じ経済効果を得られる。純額指定はIFRS 9と異なり米国基準では認められない。ヘッジ会計自体は利用可能であり、禁止されるのは指定方法のみである。売上と購入を合算して単一のヘッジ対象とすることも実質的に純額指定であり同様に認められない。",
+      "references": ["ASC 815-20-25-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-109",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Scope Exception - Contracts Indexed to Own Stock",
+      "stem": "Halford Inc. issues detachable warrants that allow holders to purchase shares of Halford's own common stock at a fixed exercise price. The warrants are indexed to Halford's own stock and meet all conditions for classification in stockholders' equity under ASC 815-40. How should Halford account for the warrants?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As derivative liabilities measured at fair value with changes recognized in earnings each period"
+        },
+        {
+          "label": "B",
+          "text": "As equity instruments that are not subsequently remeasured, because they qualify for the own-equity scope exception in ASC 815"
+        },
+        {
+          "label": "C",
+          "text": "As derivative assets measured at fair value with changes recognized in other comprehensive income"
+        },
+        {
+          "label": "D",
+          "text": "As debt measured at amortized cost using the effective interest method"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 815-10-15-74(a) excludes from derivative accounting contracts issued by the reporting entity that are both indexed to its own stock and classified in stockholders' equity. Because the warrants meet both conditions, they are recorded in equity at issuance and are not subsequently remeasured. Derivative liability treatment with fair value changes in earnings would apply only if either condition failed (for example, if the warrants were not considered indexed to the entity's own stock or required net cash settlement outside the issuer's control). The warrants are the issuer's own equity contracts, not assets, and they carry no contractual interest or principal that would support amortized cost debt accounting.",
+      "explanationJa": "ASC 815-10-15-74(a) は、報告企業が発行した契約のうち、自社株式に連動（indexed to its own stock）し、かつ資本に分類されるものをデリバティブ会計の適用範囲から除外している。本問のワラントは両要件を満たすため、発行時に資本に計上し、その後の再測定は行わない。いずれかの要件を満たさない場合（自社株式への連動性が否定される場合や、発行者がコントロールできない現金純額決済が要求される場合等）にのみ、公正価値で測定し変動を損益計上するデリバティブ負債として処理する。ワラントは発行者にとって自社の資本性契約であり資産ではなく、利息や元本の定めもないため償却原価による負債処理も不適切である。",
+      "references": ["ASC 815-10-15-74", "ASC 815-40"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-110",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Intercompany Derivatives as Hedging Instruments",
+      "stem": "The operating subsidiaries of Crowell Group execute foreign currency forward contracts with the parent's central treasury unit rather than with outside banks. In Crowell's consolidated financial statements, under what condition can these intercompany derivative contracts qualify as hedging instruments?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Only for hedges of foreign currency risk, and only if the treasury unit offsets the internal contracts with derivative contracts with unrelated third parties"
+        },
+        {
+          "label": "B",
+          "text": "For any type of hedged risk, because the contracts are at arm's-length terms"
+        },
+        {
+          "label": "C",
+          "text": "Never, because all intercompany balances and transactions are eliminated in consolidation"
+        },
+        {
+          "label": "D",
+          "text": "Only if each subsidiary separately documents the hedge in its standalone financial statements"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In consolidated financial statements, internal (intercompany) derivatives are generally eliminated and cannot serve as hedging instruments. ASC 815-20-25-61 provides a limited exception: an internal derivative may be designated as a hedging instrument for foreign currency risk only, provided the issuing member (the treasury unit) offsets the net exposure from the internal contracts with third-party derivative contracts meeting specified criteria. The exception does not extend to interest rate or commodity risk, so eligibility for any hedged risk is too broad. A blanket prohibition overlooks the foreign currency exception, and documentation in subsidiaries' standalone statements does not overcome elimination at the consolidated level without the third-party offset.",
+      "explanationJa": "連結財務諸表上、グループ内（インターカンパニー）デリバティブは原則として消去されるためヘッジ手段になり得ない。ただしASC 815-20-25-61 は限定的な例外として、為替リスクのヘッジに限り、発行側メンバー（トレジャリー部門）が内部契約から生じる純エクスポージャーを所定の要件を満たす第三者とのデリバティブ契約で相殺している場合に、内部デリバティブをヘッジ手段として指定できると定めている。この例外は金利リスクや商品リスクには適用されないため、あらゆるリスクで適格とする処理は範囲が広すぎる。一律に不可とする見解は為替リスクの例外を見落としており、子会社の単体財務諸表での文書化だけでは第三者との相殺なしに連結上の消去を克服できない。",
+      "references": ["ASC 815-20-25-61"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-111",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge - Total Interest Expense with Swap",
+      "stem": "Marbury Co. has $10,000,000 of variable-rate debt that pays interest annually at SOFR plus 2%. To fix its interest cost, Marbury enters into a pay-fixed 5%, receive-SOFR interest rate swap with a $10,000,000 notional amount, designated as a fully effective cash flow hedge. SOFR is 4% throughout Year 1. What total interest expense does Marbury report for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$700,000" },
+        { "label": "D", "text": "$1,100,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Interest on the debt is (4% + 2%) × $10,000,000 = $600,000. The swap's net settlement is pay 5% ($500,000) and receive SOFR 4% ($400,000), a net payment of $100,000 that is reclassified from OCI into interest expense in the same period. Total interest expense = $600,000 + $100,000 = $700,000, equivalent to a fixed all-in rate of 7% (5% fixed leg + 2% credit spread). $600,000 ignores the swap settlement, $500,000 uses only the fixed swap leg and ignores the credit spread on the debt, and $1,100,000 adds the gross fixed payment without crediting the SOFR receipt.",
+      "explanationJa": "負債の利息は (4% + 2%) × $10,000,000 = $600,000。スワップの純決済は固定5%支払（$500,000）と SOFR 4%受取（$400,000）の差額 $100,000 の支払であり、同一期間にOCIから支払利息へ組替調整される（ASC 815-30-35-38）。支払利息合計は $600,000 + $100,000 = $700,000 で、実効金利は固定レグ5% + 信用スプレッド2% = 7%に固定される。$600,000 はスワップ決済の組替漏れ、$500,000 は固定レグのみで信用スプレッドを無視、$1,100,000 はSOFR受取額を控除せず支払レグ総額を加算した誤りである。",
+      "references": ["ASC 815-30-35-3", "ASC 815-30-35-38"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-112",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedge Type Selection - Converting Fixed-Rate Debt to Variable",
+      "stem": "Ellsworth Corp. has outstanding fixed-rate notes payable and management expects market interest rates to decline. To convert its fixed interest cost into a variable cost and benefit from falling rates, which hedging strategy should Ellsworth adopt under ASC 815?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A cash flow hedge using a pay-fixed, receive-variable interest rate swap"
+        },
+        {
+          "label": "B",
+          "text": "A net investment hedge using a foreign currency forward contract"
+        },
+        {
+          "label": "C",
+          "text": "A cash flow hedge using a receive-fixed, pay-variable interest rate swap"
+        },
+        {
+          "label": "D",
+          "text": "A fair value hedge using a receive-fixed, pay-variable interest rate swap"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Fixed-rate debt exposes the issuer to fair value risk (its fair value changes as market rates move), so converting fixed to variable is accomplished with a fair value hedge. A receive-fixed, pay-variable swap offsets the fixed coupon: combined, Ellsworth effectively pays a variable rate and benefits if rates decline. A cash flow hedge applies to variability in future cash flows, which fixed-rate debt does not have; a pay-fixed, receive-variable swap is the tool for converting variable-rate debt to fixed (a cash flow hedge), the opposite of Ellsworth's objective. A receive-fixed swap designated as a cash flow hedge mismatches the hedge type with the exposure, and a net investment hedge addresses foreign currency exposure of foreign operations, which is not the risk here.",
+      "explanationJa": "固定金利負債は市場金利の変動により公正価値が変動するリスク（公正価値リスク）を発行者にもたらすため、固定から変動への転換は公正価値ヘッジで行う。受取固定・支払変動スワップにより固定クーポンが相殺され、実質的に変動金利の支払となるため金利低下の恩恵を受けられる（ASC 815-25）。キャッシュフローヘッジは将来キャッシュフローの変動性を対象とするが、固定金利負債にはその変動性がない。支払固定・受取変動スワップは変動金利負債を固定化する手段（キャッシュフローヘッジ）であり目的と逆方向。受取固定スワップをキャッシュフローヘッジに指定するのはヘッジ類型とエクスポージャーの不整合であり、純投資ヘッジは在外事業体の為替リスクを対象とするため本問のリスクに該当しない。",
+      "references": ["ASC 815-25", "ASC 815-20-25-12"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }
