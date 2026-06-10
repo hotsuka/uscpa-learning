@@ -2,7 +2,7 @@
   "id": "far-nonprofit-accounting",
   "name": "Not-for-Profit Accounting",
   "topic": "Not-for-Profit Accounting",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "nfp-001",
@@ -2560,6 +2560,822 @@
       "explanation": "Net assets released from restrictions equals the sum of restrictions satisfied during the period. The purpose restriction on the first gift is fully met, releasing $120,000. The time restriction on the second gift is satisfied ratably over four years, so the Year 2 portion released is $200,000 ÷ 4 = $50,000. Total released = $120,000 + $50,000 = $170,000. Releasing only one of the two gifts gives $120,000 or $50,000, and releasing the entire $320,000 ignores that three years of the time-restricted gift remain restricted.",
       "explanationJa": "制限解除された純資産は、当期に充足された制限の合計である。最初の寄付の目的制限は全額充足され$120,000が解除される。2番目の寄付の時間制限は4年にわたり按分して充足されるため、Year 2の解除分は$200,000 ÷ 4 = $50,000。解除合計 = $120,000 + $50,000 = $170,000。いずれか一方のみの解除では$120,000・$50,000、$320,000全額の解除は時間制限付き寄付の残り3年分がなお制限付きである事実を無視する。",
       "references": ["ASC 958-205-45-11", "ASC 958-205-45-9"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-111",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Net Asset Classification - Year-End Composition",
+      "stem": "At year-end, an NFP holds the following: cash available for general operations of $300,000; contributions receivable that donors stipulated must be used for next year's literacy program of $150,000; cash restricted by a donor for the purchase of laboratory equipment of $80,000; and investments of $200,000 that the board of directors has designated for a future expansion. What amount should the NFP report as net assets with donor restrictions?",
+      "choices": [
+        { "label": "A", "text": "$230,000" },
+        { "label": "B", "text": "$430,000" },
+        { "label": "C", "text": "$80,000" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net assets with donor restrictions include only resources subject to donor-imposed stipulations: the $150,000 receivable restricted for the literacy program plus the $80,000 cash restricted for equipment, totaling $230,000. The $200,000 board-designated investments are net assets without donor restrictions because board designations are self-imposed, not donor-imposed. $430,000 incorrectly adds the board-designated amount; $80,000 omits the purpose-restricted receivable; $150,000 omits the equipment-restricted cash.",
+      "explanationJa": "ASC 958-210により、純資産は「donor restrictionsあり/なし」の2分類で報告する。寄付者による制限があるのは、識字プログラム指定の約束寄付$150,000と設備購入指定の現金$80,000で、合計$230,000がnet assets with donor restrictionsとなる。理事会指定（board-designated）の投資$200,000は寄付者ではなく組織自身による指定のため、without donor restrictionsに含まれる。$430,000は理事会指定分を誤って加算した金額、$80,000と$150,000はいずれか一方のみを集計した誤りである。",
+      "references": ["ASC 958-210-45-1", "ASC 958-210-45-9"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-112",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Conditional Contributions - Barrier Indicators",
+      "stem": "Under ASC 958-605, a contribution is conditional when the agreement includes both a right of return and a barrier that must be overcome. Which of the following stipulations is most indicative of a barrier?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A requirement that the NFP provide the donor with an annual report summarizing how the funds were used"
+        },
+        {
+          "label": "B",
+          "text": "A statement that the funds should generally support the NFP's mission"
+        },
+        {
+          "label": "C",
+          "text": "A requirement that the NFP achieve a specified measurable outcome, such as providing job training to 200 unemployed individuals"
+        },
+        {
+          "label": "D",
+          "text": "A donor request to be publicly acknowledged in the NFP's newsletter"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Indicators of a barrier include a measurable performance-related requirement, limited discretion by the recipient over how resources are spent, and stipulations related to the purpose of the agreement. A requirement to train 200 individuals is a measurable performance-related barrier. Routine administrative or reporting requirements, such as submitting an annual report, are not barriers by themselves. A general statement of mission support imposes no specific hurdle, and a request for public acknowledgment is trivial and unrelated to entitlement to the funds.",
+      "explanationJa": "ASC 958-605-25-5Aにより、条件付き寄付には返還権（right of return）とバリア（barrier）の両方が必要である。バリアの指標は、(1)測定可能な成果要件、(2)資金使途に関する受領者の裁量の制限、(3)契約目的に関連する規定、である。「失業者200名への職業訓練の達成」は測定可能な成果要件であり典型的なバリアに該当する。年次報告書の提出といった事務的・管理的要件のみではバリアにならず、ミッション支援という一般的記述や広報での謝辞掲載の依頼もバリアを構成しない。",
+      "references": ["ASC 958-605-25-5A", "ASC 958-605-25-5D"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-113",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Conditional Grant - Milestones Partially Met",
+      "stem": "On March 1, Year 1, an NFP receives a $900,000 grant paid in advance. The agreement contains a right of return and requires the NFP to complete three distinct training phases; the NFP becomes entitled to $300,000 as each phase is completed. By December 31, Year 1, the NFP has completed two of the three phases. How much contribution revenue should the NFP recognize in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$900,000" },
+        { "label": "B", "text": "$600,000" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Each training phase is a separate barrier, and the condition is satisfied phase by phase. Completing two phases entitles the NFP to 2 × $300,000 = $600,000 of revenue; the remaining $300,000 is reported as a refundable advance liability until the third phase is completed. $900,000 ignores the unmet condition on the final phase, $300,000 counts only one completed phase, and $0 ignores that conditions were partially satisfied during the year.",
+      "explanationJa": "ASC 958-605により、条件付き寄付は条件（バリア）が実質的に満たされた時点で収益認識する。本問では3つの研修フェーズがそれぞれ独立したバリアであり、フェーズ完了ごとに$300,000の受領権が確定する。Year 1に2フェーズ完了しているため、収益認識額は$300,000×2＝$600,000。未達成の残り$300,000は返還義務付前受金（refundable advance）として負債計上する。$900,000は未達フェーズ分まで認識した誤り、$300,000は1フェーズ分のみ、$0は部分達成を無視した誤りである。",
+      "references": ["ASC 958-605-25-5A", "ASC 958-605-45-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-114",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Refundable Advance - Year-End Liability Balance",
+      "stem": "An NFP receives a $500,000 advance payment under a grant agreement that contains a right of return and allows the NFP to keep amounts only to the extent it incurs qualifying program costs. During the year, the NFP incurs $410,000 of qualifying costs. What amount should the NFP report as a refundable advance liability at year-end?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$410,000" },
+        { "label": "D", "text": "$90,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The barrier (incurring qualifying costs) is overcome as costs are incurred, so the NFP recognizes $410,000 of contribution revenue and reports the unearned remainder of $500,000 − $410,000 = $90,000 as a refundable advance. $0 would be correct only if all conditions had been met, $500,000 would be correct only if no conditions had been met, and $410,000 is the revenue recognized, not the liability balance.",
+      "explanationJa": "ASC 958-605-45-3により、条件付き寄付の前受額は条件達成まで返還義務付前受金（refundable advance）として負債計上する。本問のバリアは適格コストの発生であり、発生額$410,000分は条件達成として収益認識、未達成分$500,000−$410,000＝$90,000が期末の負債残高となる。$0は全条件達成の場合、$500,000は全く未達成の場合の残高であり、$410,000は負債ではなく当期の収益認識額である。",
+      "references": ["ASC 958-605-45-3", "ASC 958-605-25-5A"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-115",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Contributed Services - Mixed Recognition Computation",
+      "stem": "During the year, an NFP animal shelter receives the following donated services: a licensed electrician rewires the shelter building, a service the NFP would otherwise have purchased, with a fair value of $24,000; community volunteers answer phones and greet visitors, requiring no specialized skills, with a fair value of $18,000; and a CPA firm provides accounting services with a fair value of $15,000. What amount of contributed services revenue should the NFP recognize?",
+      "choices": [
+        { "label": "A", "text": "$57,000" },
+        { "label": "B", "text": "$39,000" },
+        { "label": "C", "text": "$24,000" },
+        { "label": "D", "text": "$15,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Contributed services are recognized only if they create or enhance nonfinancial assets, or require specialized skills, are provided by individuals possessing those skills, and would typically need to be purchased if not donated. The electrician's work ($24,000) and the CPA firm's accounting services ($15,000) meet the specialized-skills criteria, for a total of $39,000. The phone and greeting volunteers require no specialized skills, so their $18,000 fair value is not recognized. $57,000 incorrectly includes the unskilled volunteer time, while $24,000 and $15,000 each capture only one of the two qualifying services.",
+      "explanationJa": "ASC 958-605-25-16により、寄付された役務は(a)非金融資産を創出・増価する場合、または(b)専門技能を要し、その技能を持つ者が提供し、寄付がなければ購入する必要がある場合にのみ認識する（SKILL基準）。電気工事士の配線工事$24,000とCPAの会計サービス$15,000は専門技能要件を満たし、合計$39,000を認識する。電話応対等の一般ボランティア$18,000は専門技能を要しないため認識しない。$57,000は非適格の一般ボランティアを含めた誤り、$24,000・$15,000は適格サービスの一方のみを集計した誤りである。",
+      "references": ["ASC 958-605-25-16"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-116",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "ASU 2020-07 - Presentation of Contributed Nonfinancial Assets",
+      "stem": "Under ASU 2020-07, how must an NFP present contributed nonfinancial assets (gifts-in-kind) in its statement of activities?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a line item separate from contributions of cash and other financial assets"
+        },
+        {
+          "label": "B",
+          "text": "Combined with cash contributions in a single contributions line"
+        },
+        {
+          "label": "C",
+          "text": "As a direct addition to net assets, bypassing the statement of activities"
+        },
+        {
+          "label": "D",
+          "text": "Only in the notes to the financial statements, with no face presentation"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2020-07 requires contributed nonfinancial assets to be presented as a separate line item in the statement of activities, apart from contributions of cash and other financial assets. It also requires disaggregated note disclosure by category, including whether the gifts were monetized or utilized, any donor restrictions, and the valuation techniques used. Combining them with cash contributions defeats the standard's transparency objective, gifts-in-kind flow through the statement of activities rather than directly to net assets, and note disclosure supplements rather than replaces face presentation.",
+      "explanationJa": "ASU 2020-07（ASC 958-605-45-7A）により、現物寄付（contributed nonfinancial assets）は活動計算書上、現金等の金融資産の寄付とは区分した独立の表示科目で表示しなければならない。さらに注記では、カテゴリー別の内訳、換金されたか事業で利用されたか、寄付者制限の有無、評価技法等の開示が求められる。現金寄付との合算表示は本基準の透明性向上の趣旨に反し、純資産への直接加算は認められず、注記開示は本表表示を代替するものではない。",
+      "references": ["ASC 958-605-45-7A", "ASU 2020-07"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-117",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Single-Sum Pledge - Present Value Measurement",
+      "stem": "On January 1, Year 1, an NFP receives an unconditional written promise from a donor to contribute $200,000, payable in a single sum four years from now. The appropriate risk-adjusted discount rate is 5%, and the present value factor of $1 due in four years at 5% is 0.8227. What amount of contribution revenue should the NFP recognize in Year 1 from this pledge?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$164,540" },
+        { "label": "C", "text": "$190,476" },
+        { "label": "D", "text": "$172,768" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Unconditional promises to give that are due in more than one year are measured at the present value of estimated future cash flows: $200,000 × 0.8227 = $164,540, recognized as contribution revenue with donor restrictions (implied time restriction). $200,000 ignores the required discounting, $190,476 discounts for only one year ($200,000 ÷ 1.05), and $172,768 results from using a three-year factor instead of the four-year factor.",
+      "explanationJa": "ASC 958-605-30-4により、回収期間が1年超の無条件の約束寄付は、見積将来キャッシュフローの割引現在価値で測定する。$200,000×0.8227＝$164,540を、時期に関する暗黙の制限があるためnet assets with donor restrictionsの寄付収益として認識する。$200,000は割引を行わない誤り、$190,476は1年分のみ割引（$200,000÷1.05）した誤り、$172,768は3年の現価係数を誤用した結果である。",
+      "references": ["ASC 958-605-30-4", "ASC 958-310-35-6"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-118",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Installment Pledge - Restricted Portion Classification",
+      "stem": "On December 31, Year 1, an NFP receives an unconditional pledge of $30,000 per year for three years, with the first $30,000 payment received in cash on that same date and no purpose restrictions. The discount rate is 6%, and the present value factor of an ordinary annuity for two periods at 6% is 1.8334. What amount of contribution revenue should be classified as with donor restrictions at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$60,000" },
+        { "label": "B", "text": "$90,000" },
+        { "label": "C", "text": "$55,002" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The $30,000 received currently is available immediately and is revenue without donor restrictions. The two remaining installments are subject to an implied time restriction and are measured at present value: $30,000 × 1.8334 = $55,002, classified as contribution revenue with donor restrictions. $60,000 fails to discount the future installments, $90,000 treats the entire pledge as restricted and undiscounted, and $30,000 is the unrestricted current payment rather than the restricted portion.",
+      "explanationJa": "ASC 958-605により、当日に現金受領した$30,000は即時使用可能であり、without donor restrictionsの収益となる。将来回収分の2回の分割払いには時期に関する暗黙の制限が付されるため、割引現在価値$30,000×1.8334＝$55,002をwith donor restrictionsの寄付収益として分類する。$60,000は将来分の割引を省略した誤り、$90,000は全額を制限付き・割引なしとした誤り、$30,000は制限なしに分類すべき当期受領分である。",
+      "references": ["ASC 958-605-30-4", "ASC 958-605-45-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-119",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Pledge Discount Amortization - Income Statement Classification",
+      "stem": "An NFP recorded a multi-year unconditional promise to give at its discounted present value. In subsequent periods, how should the NFP report the amortization of the discount as the payment dates approach?",
+      "choices": [
+        { "label": "A", "text": "As additional contribution revenue" },
+        { "label": "B", "text": "As interest income within investment return" },
+        { "label": "C", "text": "As a reduction of bad debt expense" },
+        { "label": "D", "text": "As a gain on remeasurement of receivables" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 958-310 requires the accretion of the discount on contributions receivable to be recognized as contribution revenue, not interest income, because the entire inflow arises from a donation rather than a lending arrangement. The amortization is reported in the same net asset class as the original contribution. Treating it as investment return, as an offset to bad debt expense, or as a remeasurement gain mischaracterizes the donative nature of the inflow.",
+      "explanationJa": "ASC 958-310-35-6により、約束寄付債権の割引の振戻し（accretion）は受取利息ではなく寄付収益（contribution revenue）として認識する。インフロー全体が貸付ではなく寄付に由来するためであり、当初寄付と同じ純資産区分で報告する。投資収益（受取利息）への計上、貸倒費用の減額処理、債権の再測定益としての処理はいずれも寄付としての性質を誤って表現するものである。",
+      "references": ["ASC 958-310-35-6"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-120",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Perpetual Trust Held by Third Party",
+      "stem": "A donor establishes an irrevocable perpetual trust administered by a bank trustee. An NFP is entitled to receive the trust's income distributions in perpetuity, but the NFP will never receive the trust corpus. At the date the trust is established, the fair value of the trust assets is $2,400,000, and the expected annual income distribution is $120,000. What amount should the NFP recognize as contribution revenue at inception?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$0; revenue is recognized only as income distributions are received"
+        },
+        {
+          "label": "B",
+          "text": "$120,000, the expected first-year distribution"
+        },
+        {
+          "label": "C",
+          "text": "$1,200,000, the estimated present value of ten years of distributions"
+        },
+        {
+          "label": "D",
+          "text": "$2,400,000, the fair value of the trust assets"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When an NFP is the beneficiary of a perpetual trust held by a third party, it recognizes a beneficial interest asset and contribution revenue measured at the fair value of its interest, which is generally measured by the fair value of the trust assets, here $2,400,000. The contribution is classified as net assets with donor restrictions in perpetuity. Deferring recognition until distributions are received ignores the unconditional beneficial interest, and $120,000 or an arbitrary ten-year present value understates the perpetual interest.",
+      "explanationJa": "ASC 958-605-30-14により、第三者（受託銀行）が保有する永久信託の受益者であるNFPは、受益権（beneficial interest）を資産計上し、その公正価値で寄付収益を認識する。永久信託の受益権の公正価値は一般に信託資産の公正価値$2,400,000で測定され、永久に制限されたnet assets with donor restrictionsに分類される。分配受領時まで認識を繰り延べる処理は無条件の受益権の存在を無視しており、$120,000（初年度分配額）や10年分の現在価値は永久の受益権を過小評価する。",
+      "references": ["ASC 958-605-30-14", "ASC 958-30"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-121",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Pooled (Life) Income Fund",
+      "stem": "A donor contributes assets to an NFP's pooled (life) income fund. The donor is assigned units in the pool and will receive the actual income earned on those units each year until death, at which point the donor's units revert to the NFP for its unrestricted use. How should the NFP measure the contribution at the date of the gift?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "At the full fair value of the assets contributed to the pool"
+        },
+        {
+          "label": "B",
+          "text": "At the expected annual income to be paid to the donor"
+        },
+        {
+          "label": "C",
+          "text": "At the fair value of the assets discounted for the period until the donor's death, with the difference recorded as deferred revenue"
+        },
+        { "label": "D", "text": "No amount is recognized until the donor dies" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "For a pooled income fund, the NFP records the assets at fair value and recognizes contribution revenue equal to the remainder interest, measured as the fair value of the assets discounted over the donor's estimated remaining life. The difference between the asset fair value and the remainder interest is recorded as deferred revenue representing the income interest payable to the donor. Recognizing the full fair value ignores the donor's retained life income interest, the annual income amount measures the donor's interest rather than the NFP's, and deferring all recognition until death ignores the irrevocable remainder interest received currently.",
+      "explanationJa": "ASC 958-30により、プールド・インカム・ファンド（pooled income fund）への寄付では、NFPは受領資産を公正価値で計上し、寄付者の推定余命期間で割り引いた残余権益（remainder interest）相当額を寄付収益として認識する。資産公正価値と残余権益の差額は、寄付者に支払う収益受益権を表す繰延収益として負債計上する。資産全額での収益認識は寄付者が留保する生涯収益受益権を無視し、年間収益額はNFPではなく寄付者側の持分の測定であり、死亡時まで認識しない処理は既に取得した取消不能の残余権益を無視している。",
+      "references": ["ASC 958-30-25", "ASC 958-30-30"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-122",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Endowment - Restricted Balance After Appropriation",
+      "stem": "An NFP's donor-restricted endowment consists of an original gift of $3,000,000 that must be maintained in perpetuity, plus accumulated net investment earnings of $400,000 that the donor requires to be used for scholarships. During the year, the board appropriates $150,000 of the accumulated earnings, all of which is spent on scholarships before year-end. The NFP is in a state that has adopted UPMIFA. What amount related to this endowment should be reported in net assets with donor restrictions at year-end?",
+      "choices": [
+        { "label": "A", "text": "$3,400,000" },
+        { "label": "B", "text": "$3,250,000" },
+        { "label": "C", "text": "$3,000,000" },
+        { "label": "D", "text": "$250,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under UPMIFA as reflected in ASC 958-205, accumulated endowment earnings remain in net assets with donor restrictions until appropriated for expenditure and spent for the stipulated purpose. The restricted balance is the perpetual corpus of $3,000,000 plus remaining accumulated earnings of $400,000 − $150,000 = $250,000, for a total of $3,250,000. $3,400,000 ignores the release from the appropriation, $3,000,000 omits the unappropriated earnings that remain restricted, and $250,000 omits the perpetual corpus.",
+      "explanationJa": "ASC 958-205-45-13Aにより、UPMIFA採用州ではエンダウメントの未充当（unappropriated）投資収益は、理事会が支出のために充当（appropriation）し目的どおり支出されるまでnet assets with donor restrictionsに留まる。期末の制限付き残高は、永久維持元本$3,000,000＋残存累積収益（$400,000−$150,000＝$250,000）＝$3,250,000。$3,400,000は充当・支出による制限解除を無視、$3,000,000は制限が継続する未充当収益を脱漏、$250,000は永久元本を脱漏した誤りである。",
+      "references": ["ASC 958-205-45-13A", "ASC 958-205-45-21"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-123",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Underwater Endowment - Deficiency Disclosure",
+      "stem": "An NFP has a donor-restricted endowment fund with an original gift amount required to be maintained of $2,000,000. At year-end, the fair value of the fund is $1,750,000 due to market losses. Under ASU 2016-14, what is the aggregate deficiency the NFP must disclose for this underwater endowment, and in which net asset class is the entire fund reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Deficiency of $1,750,000, reported in net assets without donor restrictions"
+        },
+        {
+          "label": "B",
+          "text": "Deficiency of $0, because losses are charged to net assets without donor restrictions"
+        },
+        {
+          "label": "C",
+          "text": "Deficiency of $2,000,000, reported partly in each net asset class"
+        },
+        {
+          "label": "D",
+          "text": "Deficiency of $250,000, with the entire fund reported in net assets with donor restrictions"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASU 2016-14, the entire underwater endowment fund, including the loss, is reported within net assets with donor restrictions, and the NFP must disclose for each underwater fund (in the aggregate) the fair value, the original gift amount or level required to be maintained, and the deficiency: $2,000,000 − $1,750,000 = $250,000. Charging the loss to net assets without donor restrictions was the pre-ASU 2016-14 approach and is no longer permitted, and the fair value or corpus amounts are not the deficiency itself.",
+      "explanationJa": "ASU 2016-14（ASC 958-205-45-22）により、アンダーウォーター・エンダウメント（時価が維持要求額を下回る基金）は、評価損を含む基金全体をnet assets with donor restrictionsの中で報告する。開示すべき不足額（deficiency）は維持要求額$2,000,000−公正価値$1,750,000＝$250,000で、各基金の公正価値・当初寄付額・不足額の合計を注記する。損失をwithout donor restrictionsに賦課する処理はASU 2016-14以前の方法であり現在は認められない。公正価値や元本額自体は不足額ではない。",
+      "references": ["ASC 958-205-45-22", "ASC 958-205-50-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-124",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Term Endowment Classification",
+      "stem": "A donor contributes $750,000 to an NFP with the stipulation that the principal be maintained intact for 20 years, after which the entire amount may be used for any purpose the NFP chooses. How should this gift be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Net assets with donor restrictions until the 20-year term expires, then reclassified to net assets without donor restrictions"
+        },
+        {
+          "label": "B",
+          "text": "Net assets without donor restrictions, because the NFP will eventually have unrestricted use"
+        },
+        {
+          "label": "C",
+          "text": "Net assets with donor restrictions in perpetuity, with no reclassification ever permitted"
+        },
+        { "label": "D", "text": "A liability until the 20-year term expires" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "This is a term endowment: a donor-imposed time restriction requires the principal to be maintained for a stated period. The gift is classified as net assets with donor restrictions, and when the 20-year term expires the restriction lapses and the amount is reclassified to net assets without donor restrictions through net assets released from restrictions. Immediate classification as without donor restrictions ignores the existing time restriction, perpetual classification ignores the finite term, and a contribution received is revenue, not a liability.",
+      "explanationJa": "本問は期限付きエンダウメント（term endowment）であり、元本を20年間維持するという寄付者の時間的制限が付されている。受領時はnet assets with donor restrictionsに分類し、20年経過により制限が消滅した時点でnet assets released from restrictionsを通じてwithout donor restrictionsへ再分類する（ASC 958-205）。即時に制限なしへ分類するのは現存する時間的制限の無視、永久制限とするのは期限の存在の無視であり、無条件の寄付は負債ではなく収益として認識する。",
+      "references": ["ASC 958-205-45", "ASC 958-225-45-13"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-125",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Quasi-Endowment - Board Appropriation Mechanics",
+      "stem": "An NFP's board previously designated $4,000,000 of resources with no donor-imposed restrictions as a quasi-endowment. In the current year, the board votes to withdraw $300,000 from the quasi-endowment to fund operating needs. How is this withdrawal reported in the statement of activities?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As net assets released from restrictions, decreasing net assets with donor restrictions"
+        },
+        {
+          "label": "B",
+          "text": "As contribution revenue without donor restrictions"
+        },
+        {
+          "label": "C",
+          "text": "It does not appear as a reclassification between net asset classes because board designations are not donor-imposed restrictions"
+        },
+        {
+          "label": "D",
+          "text": "As a loss on de-designation of endowment funds"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A quasi-endowment consists of net assets without donor restrictions that the board has internally designated; the board may undo its own designation at any time. The withdrawal merely reduces the board-designated portion within net assets without donor restrictions and does not flow through net assets released from restrictions, which is reserved for donor-imposed restrictions. It is not new contribution revenue, and reversing an internal designation produces no loss.",
+      "explanationJa": "準エンダウメント（quasi-endowment／board-designated endowment）は寄付者制限のない純資産を理事会が内部指定したものであり、理事会はいつでも自らの指定を解除できる（ASC 958-210-45-11）。引出しはwithout donor restrictions内の理事会指定区分を減らす内部振替にすぎず、寄付者制限の解除を示すnet assets released from restrictionsには計上されない。新たな寄付収益でもなく、内部指定の解除から損失も生じない。",
+      "references": ["ASC 958-210-45-11", "ASC 958-205-45"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-126",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Exchange vs Contribution - Sponsored Research",
+      "stem": "A pharmaceutical company provides $2,000,000 to an NFP university to conduct a clinical research study. Which of the following terms would most strongly indicate that the arrangement is an exchange transaction accounted for under ASC 606 rather than a contribution under ASC 958?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The university must submit periodic progress reports to the company"
+        },
+        {
+          "label": "B",
+          "text": "The research results will be published in academic journals available to the general public"
+        },
+        {
+          "label": "C",
+          "text": "The company's payment is described as a 'grant' in the agreement"
+        },
+        {
+          "label": "D",
+          "text": "The company retains exclusive rights to the research findings and any resulting patents"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "An arrangement is an exchange when the resource provider receives commensurate value in return. Exclusive rights to the findings and patents mean the company receives direct commercial value, making this a contract with a customer under ASC 606. Publication of results for the general public's benefit indicates the public, not the sponsor, is the primary beneficiary, which points to a contribution. Progress reports are administrative and do not constitute commensurate value, and the label 'grant' is not determinative; the substance of the agreement governs.",
+      "explanationJa": "ASC 958-605-15-5Aにより、資源提供者が見返りに相応の価値（commensurate value）を受け取る場合は交換取引としてASC 606を適用する。研究成果や特許の独占的権利の留保は、スポンサー企業が直接の商業的価値を得ることを意味し、交換取引の最も強い指標となる。成果が学術誌で一般公開される場合は一般公衆が主たる受益者であり寄付を示唆する。経過報告書の提出は事務的要件にすぎず相応の価値ではなく、契約書上の「グラント」という名称は決定要因にならない（実質優先）。",
+      "references": ["ASC 958-605-15-5A", "ASC 606-10-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-127",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Membership Dues - Bifurcation Computation",
+      "stem": "An NFP charges annual membership dues of $400. Members receive a subscription to the NFP's professional journal and member discounts with a combined fair value of $150 per year. What amount of each member's dues should the NFP recognize as contribution revenue?",
+      "choices": [
+        { "label": "A", "text": "$250" },
+        { "label": "B", "text": "$400" },
+        { "label": "C", "text": "$150" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When membership dues exceed the fair value of benefits provided, the arrangement is bifurcated: the exchange component equals the fair value of benefits ($150), recognized as exchange revenue over the membership period under ASC 606, and the excess of $400 − $150 = $250 is a contribution. $400 treats the entire payment as a contribution and ignores the member benefits, $150 is the exchange portion rather than the contribution, and $0 would be appropriate only if the benefits' fair value equaled or exceeded the dues.",
+      "explanationJa": "会費が提供される便益の公正価値を上回る場合、取引を二分する（ASC 958-605-55）。交換部分は便益の公正価値$150であり、ASC 606に従い会員期間にわたり収益認識する。超過額$400−$150＝$250が寄付収益となる。$400は会員便益の存在を無視して全額を寄付とした誤り、$150は寄付ではなく交換部分の金額、$0は便益の公正価値が会費以上の場合にのみ妥当する。",
+      "references": ["ASC 958-605-55-12", "ASC 606-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-128",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Statement of Activities - Ending Net Assets Without Donor Restrictions",
+      "stem": "An NFP began Year 1 with net assets without donor restrictions of $1,500,000. During Year 1, it received contributions without donor restrictions of $800,000, reported net assets released from restrictions of $350,000, and incurred total expenses of $1,000,000. What is the ending balance of net assets without donor restrictions?",
+      "choices": [
+        { "label": "A", "text": "$1,300,000" },
+        { "label": "B", "text": "$1,650,000" },
+        { "label": "C", "text": "$2,650,000" },
+        { "label": "D", "text": "$1,150,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Net assets released from restrictions increase net assets without donor restrictions (and decrease net assets with donor restrictions), and all expenses are reported as decreases in net assets without donor restrictions. Ending balance = $1,500,000 + $800,000 + $350,000 − $1,000,000 = $1,650,000. $1,300,000 omits the release, $2,650,000 omits expenses, and $1,150,000 incorrectly subtracts the release instead of adding it.",
+      "explanationJa": "ASC 958-225により、制限解除額（net assets released from restrictions）はwithout donor restrictionsを増加させ（with donor restrictionsを同額減少）、費用はすべてwithout donor restrictionsの減少として報告する。期末残高＝$1,500,000＋$800,000＋$350,000−$1,000,000＝$1,650,000。$1,300,000は制限解除の加算漏れ、$2,650,000は費用の控除漏れ、$1,150,000は制限解除を加算ではなく減算した誤りである。",
+      "references": ["ASC 958-225-45", "ASC 958-720-45-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-129",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Functional Classification - Management and General",
+      "stem": "Which of the following costs incurred by an NFP charity should be classified entirely as management and general expenses in the statement of functional expenses?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Printing and mailing a newsletter that educates beneficiaries about available services"
+        },
+        {
+          "label": "B",
+          "text": "Salaries of counselors who deliver the NFP's job-training program"
+        },
+        {
+          "label": "C",
+          "text": "Costs of a telethon soliciting donations from the public"
+        },
+        {
+          "label": "D",
+          "text": "Fees paid for the annual external financial statement audit"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "External audit fees relate to the overall direction and administration of the entity and benefit the organization as a whole, so they are management and general expenses that are not allocable to programs. Educating beneficiaries through a newsletter and counselor salaries are program expenses because they directly further the mission, and telethon solicitation costs are fundraising expenses.",
+      "explanationJa": "ASC 958-720-45により、機能別分類は program services / management and general / fundraising に区分する。外部監査報酬は組織全体の管理運営（governance・oversight）に関する費用であり、プログラムへ配分できないmanagement and generalの典型例である。受益者向け広報ニュースレターやカウンセラー給与はミッションを直接遂行するprogram expenses、テレソンによる寄付勧誘費用はfundraising expensesに分類される。",
+      "references": ["ASC 958-720-45-7", "ASC 958-720-45-9"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-130",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Depreciation Allocation by Square Footage",
+      "stem": "An NFP recognizes $240,000 of annual depreciation on its headquarters building. The building's space is used as follows: 55% by program services, 25% by management and general, and 20% by fundraising. Using square footage as the allocation base, what amount of depreciation should be reported as program services expense?",
+      "choices": [
+        { "label": "A", "text": "$132,000" },
+        { "label": "B", "text": "$240,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$48,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Depreciation is a natural expense that must be allocated among functions on a reasonable basis such as square footage: $240,000 × 55% = $132,000 to program services. $240,000 fails to allocate at all, $60,000 is the management and general share ($240,000 × 25%), and $48,000 is the fundraising share ($240,000 × 20%).",
+      "explanationJa": "ASC 958-720-45-2Cにより、減価償却費等の自然分類費用は床面積等の合理的基準で機能別に配分しなければならない。プログラム・サービスへの配分額は$240,000×55%＝$132,000。$240,000は配分を行わない誤り、$60,000はmanagement and general配分額（25%）、$48,000はfundraising配分額（20%）である。配分方法は注記での開示も求められる。",
+      "references": ["ASC 958-720-45-2C", "ASC 958-720-50-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-131",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Functional Expense Classification - Supporting Activities",
+      "stem": "An NFP incurs the following costs. Which should be classified as management and general expenses rather than program or fundraising expenses?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Costs of distributing educational pamphlets describing how to access the NFP's services"
+        },
+        {
+          "label": "B",
+          "text": "Salaries of staff who directly supervise the delivery of program services"
+        },
+        {
+          "label": "C",
+          "text": "Human resources and payroll processing costs that benefit the entire organization"
+        },
+        {
+          "label": "D",
+          "text": "Costs of maintaining the donor database used for solicitation campaigns"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Human resources and payroll administration are supporting activities that benefit the organization as a whole and are not identifiable with a single program or with fundraising, so they are management and general. Distributing educational pamphlets about accessing services and direct program supervision are program expenses, and maintaining a donor database used for solicitation is a fundraising expense.",
+      "explanationJa": "ASC 958-720-45-7により、management and generalには、組織全体の経営管理・総務・財務など、特定のプログラムや資金調達に直接識別されない支援活動費用が含まれる。人事・給与計算業務は組織全体に便益が及ぶ典型的なmanagement and general費用である。サービス利用方法を案内する教育パンフレットの配布やプログラム提供の直接監督はprogram expenses、寄付勧誘キャンペーンに使うドナー・データベースの維持費はfundraising expensesに分類される。",
+      "references": ["ASC 958-720-45-7"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-132",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Statement of Cash Flows - Restricted Contribution for Building",
+      "stem": "During the year, an NFP receives a $1,000,000 cash contribution that the donor restricts to the construction of a new program facility. In the NFP's statement of cash flows, how should this cash receipt be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating activities, because contributions are part of ongoing operations"
+        },
+        { "label": "B", "text": "Financing activities" },
+        {
+          "label": "C",
+          "text": "Investing activities, because the cash will be used to acquire a long-lived asset"
+        },
+        { "label": "D", "text": "Noncash disclosure only" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cash contributions that are donor-restricted for long-term purposes, such as acquiring or constructing long-lived assets or establishing endowments, are classified as financing activities under ASC 230 as applied to NFPs. The later expenditure of the cash to construct the building is an investing outflow, but the receipt itself is financing. Operating classification applies to contributions available for current use, and a cash receipt is not a noncash transaction.",
+      "explanationJa": "ASC 230-10-45-14により、長期目的（長期性資産の取得・建設、エンダウメントの設立等）に寄付者制限された現金寄付の受領は、キャッシュフロー計算書上、財務活動（financing activities）に分類する。後日その現金で建物を建設する支出は投資活動のアウトフローとなるが、受領自体は財務活動である。営業活動に分類されるのは当期使用可能な寄付であり、現金の受領である以上、非資金取引の注記開示のみで済ませることはできない。",
+      "references": ["ASC 230-10-45-14", "ASC 958-230"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-133",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Statement of Cash Flows - Financing Activities Computation",
+      "stem": "During Year 1, an NFP receives the following cash: contributions restricted by donors for permanent endowment of $600,000; contributions restricted by donors for the purchase of equipment of $250,000; contributions without donor restrictions of $900,000; and interest income without donor restrictions of $40,000. What total amount should be reported as cash inflows from financing activities?",
+      "choices": [
+        { "label": "A", "text": "$850,000" },
+        { "label": "B", "text": "$600,000" },
+        { "label": "C", "text": "$1,750,000" },
+        { "label": "D", "text": "$890,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Contributions restricted for long-term purposes are financing inflows: $600,000 for endowment plus $250,000 for equipment acquisition equals $850,000. Unrestricted contributions of $900,000 and unrestricted interest income of $40,000 are operating inflows. $600,000 omits the equipment-restricted gift, $1,750,000 wrongly adds the unrestricted contributions, and $890,000 wrongly combines the equipment gift with operating interest income while omitting the endowment gift.",
+      "explanationJa": "ASC 230-10-45-14により、長期目的に制限された寄付の受領は財務活動に分類する。永久エンダウメント指定$600,000＋設備購入指定$250,000＝$850,000が財務活動によるキャッシュ・インフローとなる。制限のない寄付$900,000および制限のない受取利息$40,000は営業活動に分類される。$600,000は設備指定寄付の脱漏、$1,750,000は無制限寄付の誤加算、$890,000はエンダウメント寄付を漏らし営業区分の利息を誤って加えた金額である。",
+      "references": ["ASC 230-10-45-14", "ASC 958-230"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-134",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Collections - Definition Criteria",
+      "stem": "Under ASC 958-360, an NFP may elect not to capitalize works of art and similar items only if they meet the definition of a 'collection.' Which set of criteria must all be satisfied for items to qualify as a collection?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Items are insured at full replacement value, displayed at least annually, and appraised every five years"
+        },
+        {
+          "label": "B",
+          "text": "Items are held for investment appreciation, professionally stored, and available for sale to qualified buyers"
+        },
+        {
+          "label": "C",
+          "text": "Items were acquired by donation rather than purchase, are irreplaceable, and are at least 50 years old"
+        },
+        {
+          "label": "D",
+          "text": "Items are held for public exhibition, education, or research; are protected, kept unencumbered, cared for, and preserved; and are subject to a policy requiring sale proceeds to be used to acquire other collection items or for the direct care of existing collections"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The collection definition has three criteria: the items are held for public exhibition, education, or research in furtherance of public service; they are protected, kept unencumbered, cared for, and preserved; and the organization has a policy that proceeds from sales of collection items be used to acquire other collection items, for the direct care of existing collections, or both. Insurance, appraisal frequency, investment intent, donation-only acquisition, and age are not part of the definition.",
+      "explanationJa": "ASC 958-360-20のコレクションの定義は3要件をすべて満たす必要がある：(1)営利目的ではなく公共サービスのための公開展示・教育・研究目的で保有、(2)保護・無担保維持・手入れ・保存がなされている、(3)売却収入を他のコレクション品の取得または既存コレクションの直接的維持管理（direct care）に充てる方針を有する（ASU 2019-03で direct care が明確化）。定義を満たす場合のみ資産計上しない選択が認められる。保険付保、定期鑑定、投資目的、寄贈による取得、年数は定義の要件ではない。",
+      "references": ["ASC 958-360-20", "ASU 2019-03"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-135",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Federated Organization - Revenue With Donor Designations",
+      "stem": "A federated fundraising organization conducts an annual campaign and collects $4,000,000 in cash. Of this amount, donors specifically designated $1,500,000 for named member charities, and the organization has no variance power over those designated amounts. The remaining $2,500,000 is undesignated and will be allocated at the organization's discretion. What amount should the federated organization report as contribution revenue?",
+      "choices": [
+        { "label": "A", "text": "$4,000,000" },
+        { "label": "B", "text": "$1,500,000" },
+        { "label": "C", "text": "$2,500,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Amounts that donors designate for specified beneficiaries, where the recipient organization lacks variance power, are agency transactions: the federated organization records an asset and a corresponding liability to the specified charities, not revenue. Only the $2,500,000 over which the organization has discretion is contribution revenue. $4,000,000 wrongly includes the agency amounts, $1,500,000 is the liability amount rather than revenue, and $0 ignores the discretionary contributions received.",
+      "explanationJa": "ASC 958-605-25-24により、寄付者が特定の受益団体を指定し、受領組織にバリアンス・パワー（指定先を変更する一方的権限）がない場合、その受領は代理取引（agency transaction）であり、資産と同額の負債を計上し収益認識しない。組織が裁量を持つ$2,500,000のみが寄付収益となる。$4,000,000は代理分$1,500,000を誤って収益に含めた金額、$1,500,000は収益ではなく指定先団体への負債、$0は裁量分の寄付の認識を怠った誤りである。",
+      "references": ["ASC 958-605-25-24"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-136",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Healthcare NFP - Net Patient Service Revenue Computation",
+      "stem": "A not-for-profit hospital reports the following for the year: gross patient service charges of $4,200,000; contractual adjustments under third-party payor agreements of $1,300,000; implicit price concessions for self-pay patients of $250,000; and services provided to patients who qualified under its charity care policy, measured at established rates, of $400,000. What amount should the hospital report as net patient service revenue?",
+      "choices": [
+        { "label": "A", "text": "$2,900,000" },
+        { "label": "B", "text": "$2,250,000" },
+        { "label": "C", "text": "$2,650,000" },
+        { "label": "D", "text": "$2,500,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Charity care is never recognized as revenue because the hospital does not pursue collection, and contractual adjustments and implicit price concessions reduce the transaction price under ASC 606. Net patient service revenue = $4,200,000 − $1,300,000 − $250,000 − $400,000 = $2,250,000. $2,900,000 deducts only contractual adjustments, $2,650,000 forgets to remove charity care, and $2,500,000 forgets to remove the implicit price concessions.",
+      "explanationJa": "ASC 954-605により、慈善医療（charity care）は回収を意図しないため収益として認識せず、原価ベースの金額を注記開示する。また契約調整額と黙示的価格譲歩（implicit price concessions）はASC 606の取引価格の減額要素である。純患者サービス収益＝$4,200,000−$1,300,000−$250,000−$400,000＝$2,250,000。$2,900,000は契約調整のみ控除、$2,650,000は慈善医療の控除漏れ、$2,500,000は黙示的価格譲歩の控除漏れである。",
+      "references": ["ASC 954-605", "ASC 606-10-32"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-137",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Healthcare NFP - Capitation Premium Revenue",
+      "stem": "A not-for-profit clinic enters into a capitation agreement with a managed care organization under which the clinic receives $45 per member per month for 3,000 enrolled members for 12 months, regardless of the volume of services actually provided. During the year, the clinic incurred $1,400,000 of costs serving these members. What amount of premium revenue should the clinic recognize for the year?",
+      "choices": [
+        { "label": "A", "text": "$1,400,000" },
+        { "label": "B", "text": "$220,000" },
+        { "label": "C", "text": "$135,000" },
+        { "label": "D", "text": "$1,620,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under a capitation arrangement, the provider earns the fixed per-member fee by standing ready to provide care over the coverage period, so premium revenue equals $45 × 3,000 members × 12 months = $1,620,000, regardless of services actually rendered. $1,400,000 is the cost of services, not revenue; $220,000 is the margin between revenue and costs; and $135,000 is only one month of premiums ($45 × 3,000).",
+      "explanationJa": "キャピテーション契約では、医療提供者は契約期間中に医療提供の用意を整えること（stand-ready obligation）により定額報酬を稼得するため、実際の診療量にかかわらずプレミアム収益を期間で認識する（ASC 954）。収益＝$45×3,000名×12か月＝$1,620,000。$1,400,000は収益ではなく診療コスト、$220,000は収益とコストの差額（マージン）、$135,000は1か月分のプレミアム（$45×3,000）にすぎない。",
+      "references": ["ASC 954-605", "ASC 606-10-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-138",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Gifts of Long-Lived Assets - Placed-in-Service Approach",
+      "stem": "An NFP receives a cash gift restricted by the donor to the acquisition of a delivery van. The donor's agreement contains no stipulations about how long the van must be used. The NFP buys the van in November and places it in service in December of the same year. Under ASU 2016-14, when is the donor restriction released?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "In full when the van is placed in service in December"
+        },
+        {
+          "label": "B",
+          "text": "Ratably over the van's estimated useful life as an implied time restriction"
+        },
+        { "label": "C", "text": "When the cash gift is initially received" },
+        {
+          "label": "D",
+          "text": "Only when the van is eventually sold or retired"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2016-14 requires the placed-in-service approach for gifts of, or restricted to the acquisition of, long-lived assets absent explicit donor stipulations about how long the asset must be used: the entire restriction is released when the asset is placed in service. The former option of implying a time restriction and releasing the restriction over the useful life was eliminated. Receipt of the cash does not satisfy the purpose restriction, and deferring the release until disposal has no basis in the guidance.",
+      "explanationJa": "ASU 2016-14（ASC 958-205-45-12）により、長期性資産の寄付またはその取得に制限された寄付については、使用期間に関する寄付者の明示的な定めがない限り、placed-in-service approachの適用が強制され、資産の供用開始時点で制限全額を解除する。耐用年数にわたり時間的制限を擬制して段階的に解除する従来の選択肢は廃止された。現金受領時点では使途制限は未充足であり、売却・除却時まで解除を待つ根拠は基準上存在しない。",
+      "references": ["ASC 958-205-45-12", "ASU 2016-14"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-139",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Donated Securities - Measurement at Gift Date",
+      "stem": "A donor transfers publicly traded shares to an NFP with no restrictions. The donor's cost basis in the shares is $60,000, and the fair value on the date of the gift is $90,000. Consistent with its policy, the NFP sells the shares several days later for $94,000. What amount should the NFP report as contribution revenue?",
+      "choices": [
+        { "label": "A", "text": "$94,000" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$90,000" },
+        { "label": "D", "text": "$4,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Contributions of securities are measured at fair value on the date of the gift, so contribution revenue is $90,000. The subsequent appreciation of $94,000 − $90,000 = $4,000 is reported as an investment gain, not as additional contribution revenue. The donor's $60,000 cost basis is irrelevant to the NFP's measurement, and $94,000 improperly combines the contribution with the post-gift gain.",
+      "explanationJa": "ASC 958-605-30-2により、有価証券の寄付は受贈日の公正価値で測定するため、寄付収益は$90,000である。受贈後の値上がり分$94,000−$90,000＝$4,000は寄付収益ではなく投資利得（investment gain）として報告する。寄付者の取得原価$60,000はNFP側の測定には無関係であり、$94,000は寄付収益と受贈後利得を不適切に合算した金額である。",
+      "references": ["ASC 958-605-30-2", "ASC 958-320"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-140",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Endowment Return - Net Change in Restricted Net Assets",
+      "stem": "An NFP in a UPMIFA state holds a donor-restricted endowment with a corpus of $5,000,000 that must be maintained in perpetuity; the donor is silent regarding the use of investment returns. During the year, the endowment earns interest and dividends of $120,000 and net appreciation of $180,000. The board appropriates $200,000 for current spending, which is spent for the supported programs during the year. What is the net increase in net assets with donor restrictions from this endowment activity for the year?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When the donor is silent, UPMIFA subjects the total return to a restriction until appropriated, so the full return of $120,000 + $180,000 = $300,000 increases net assets with donor restrictions. The appropriation and expenditure of $200,000 releases that amount to net assets without donor restrictions. Net increase = $300,000 − $200,000 = $100,000. $300,000 ignores the release, $200,000 is the amount released rather than the net change, and $0 would require the appropriation to equal the total return.",
+      "explanationJa": "ASC 958-205-45-13Aにより、寄付者が収益の使途について沈黙している場合、UPMIFA採用州では投資リターン全体（受取利息・配当$120,000＋純評価益$180,000＝$300,000）が充当されるまで制限付き純資産を増加させる。理事会が$200,000を充当し目的どおり支出したことで同額の制限が解除される。よって純増加額＝$300,000−$200,000＝$100,000。$300,000は制限解除の無視、$200,000は純変動ではなく解除額、$0は充当額がリターン総額と等しい場合の値である。",
+      "references": ["ASC 958-205-45-13A"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-141",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Conditional Promises - Disclosure Before Recognition",
+      "stem": "At year-end, an NFP holds a donor's conditional promise to give $1,000,000 that depends on a measurable barrier that has not yet been overcome, and no cash has been transferred. How should the NFP report this promise in its financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a receivable and contribution revenue with donor restrictions"
+        },
+        {
+          "label": "B",
+          "text": "Recognize a receivable and a refundable advance liability"
+        },
+        {
+          "label": "C",
+          "text": "Recognize contribution revenue but defer the receivable"
+        },
+        {
+          "label": "D",
+          "text": "Do not recognize any asset or revenue; disclose the amount and a description of the conditional promise in the notes"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Conditional promises to give are not recognized until the conditions are substantially met; because no cash was received, there is also no refundable advance to record. ASC 958-310 requires note disclosure of the total amounts promised and a description of each group of conditional promises. Recognizing a receivable or revenue before the barrier is overcome anticipates a transfer the NFP is not yet entitled to, and a refundable advance arises only when assets are received in advance.",
+      "explanationJa": "ASC 958-605により、条件付きの約束寄付は条件が実質的に満たされるまで認識しない。本問では現金も受領していないため、返還義務付前受金を計上する余地もない。ASC 958-310-50により、条件付き約束寄付の総額および各グループの内容の説明を注記で開示する。バリア達成前に債権や収益を認識することは、未だ受領権のない資金移転の先取りであり、refundable advanceは資産を事前に受領した場合にのみ生じる。",
+      "references": ["ASC 958-605-25-5A", "ASC 958-310-50-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-142",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Statement of Financial Position - Required Presentation",
+      "stem": "Which of the following must an NFP report on the face of its statement of financial position under ASC 958-210?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Total assets, total liabilities, and net assets segregated into amounts with donor restrictions and without donor restrictions"
+        },
+        {
+          "label": "B",
+          "text": "Net assets segregated into unrestricted, temporarily restricted, and permanently restricted classes"
+        },
+        {
+          "label": "C",
+          "text": "Fund balances for each individual fund maintained in the accounting records"
+        },
+        { "label": "D", "text": "Net assets by functional program category" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 958-210 requires the statement of financial position to report total assets, total liabilities, and total net assets for the entity as a whole, with net assets segregated into the two classes: with donor restrictions and without donor restrictions. The three-class presentation (unrestricted, temporarily restricted, permanently restricted) was eliminated by ASU 2016-14. Fund-by-fund presentation is not required by GAAP for external reporting, and functional categories apply to expenses, not net assets.",
+      "explanationJa": "ASC 958-210-45-1により、財政状態計算書（statement of financial position）では、組織全体の資産合計・負債合計・純資産合計を表示し、純資産はwith donor restrictionsとwithout donor restrictionsの2区分に分けて表示しなければならない。unrestricted/temporarily restricted/permanently restrictedの3区分はASU 2016-14により廃止された。ファンド別表示は外部報告GAAP上の要求ではなく、機能別区分は純資産ではなく費用に適用される分類である。",
+      "references": ["ASC 958-210-45-1", "ASU 2016-14"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-143",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Financially Interrelated Organizations",
+      "stem": "A hospital foundation exists solely to raise funds for a related not-for-profit hospital. The hospital can influence the foundation's operating and financial decisions, and the hospital has an ongoing economic interest in the foundation's net assets; the two entities are financially interrelated under ASC 958-20, but they do not present consolidated statements. When the foundation receives contributions from donors, how does the hospital account for the activity?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The hospital recognizes contribution revenue directly when donors give to the foundation"
+        },
+        {
+          "label": "B",
+          "text": "The hospital recognizes nothing until the foundation actually transfers cash"
+        },
+        {
+          "label": "C",
+          "text": "The hospital recognizes its interest in the foundation's net assets and adjusts that interest for its share of the foundation's change in net assets, similar to the equity method"
+        },
+        {
+          "label": "D",
+          "text": "The hospital records a refundable advance liability for amounts the foundation raises"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When a recipient organization and a beneficiary are financially interrelated, the recipient (foundation) recognizes contribution revenue when it receives gifts, and the beneficiary (hospital) recognizes an interest in the net assets of the recipient and adjusts that interest for its share of the change in the foundation's net assets, in a manner similar to the equity method. The hospital does not record the donors' gifts as its own direct contribution revenue, deferring recognition until cash is transferred ignores the recognized interest, and the hospital has received nothing that could create a refundable advance.",
+      "explanationJa": "ASC 958-20により、受領組織（財団）と受益組織（病院）が財務的相互関連（financially interrelated）にある場合、財団は寄付受領時に寄付収益を認識し、病院は財団の純資産に対する持分（interest in the net assets）を認識して、持分法に類似した方法で財団の純資産変動のうち自己の持分相当額だけ当該持分を増減させる。病院が寄付者からの寄付を直接自己の寄付収益として認識するのは誤りであり、現金移転まで何も認識しない処理は持分の存在を無視し、何も受領していない病院に返還義務付前受金は生じない。",
+      "references": ["ASC 958-20-25", "ASC 958-20-35"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-144",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Unconditional Promise of Multi-Year Free Facility Use",
+      "stem": "On January 1, Year 1, a property owner makes an irrevocable, unconditional written promise to allow an NFP to use office space rent-free for the next five years. The annual fair rental value is $50,000. How should the NFP account for this promise in Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize $50,000 of in-kind revenue and rent expense in each year, with no asset recorded at inception"
+        },
+        {
+          "label": "B",
+          "text": "Recognize a contribution receivable and contribution revenue at the present value of the five years of rent at inception, classified as with donor restrictions for future-period use"
+        },
+        {
+          "label": "C",
+          "text": "Disclose the arrangement in the notes only, because no cash is involved"
+        },
+        {
+          "label": "D",
+          "text": "Recognize the full $250,000 as revenue without donor restrictions in Year 1"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "An irrevocable, unconditional promise to provide the use of property for multiple future years is an unconditional promise to give, recognized at inception as a receivable and contribution revenue measured at the present value of the rental value of the use periods; the future-period use is time-restricted, so the revenue is classified as with donor restrictions and released as each period of use occurs. Year-by-year recognition applies when the arrangement is cancelable or only the current period's use is given. Disclosure-only treatment ignores a recognizable unconditional promise, and immediate classification of the entire undiscounted amount as without donor restrictions ignores both discounting and the time restriction.",
+      "explanationJa": "取消不能かつ無条件の複数年にわたる施設無償使用の約束は、無条件の約束寄付（unconditional promise to give）に該当し、ASC 958-605により約束時点で使用権の賃料相当額の割引現在価値で債権と寄付収益を認識する。将来期間の使用分には時間的制限があるためwith donor restrictionsに分類し、各年の使用に応じて制限を解除する。年度ごとの認識は契約が取消可能な場合等の処理であり、注記開示のみは認識すべき無条件の約束の無視、割引前総額$250,000を初年度に制限なし収益とする処理は割引と時間的制限の両方を無視している。",
+      "references": ["ASC 958-605-25-8", "ASC 958-605-30-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-145",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Statement of Activities - Total Change in Net Assets",
+      "stem": "For Year 1, an NFP reports: contributions without donor restrictions of $2,500,000; contributions with donor restrictions of $900,000; investment return without donor restrictions of $150,000; net assets released from restrictions of $700,000; and total expenses of $3,100,000. What is the total change in net assets for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$1,150,000" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$450,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Net assets released from restrictions is a reclassification that increases net assets without donor restrictions and decreases net assets with donor restrictions by the same $700,000, so it has no effect on the total change. Total change = $2,500,000 + $900,000 + $150,000 − $3,100,000 = $450,000. As a check: the without-restrictions column changes by $2,500,000 + $150,000 + $700,000 − $3,100,000 = $250,000 and the with-restrictions column by $900,000 − $700,000 = $200,000, which sum to $450,000. $1,150,000 double-counts the release, while $250,000 and $200,000 are the changes in the individual columns, not the total.",
+      "explanationJa": "ASC 958-225により、制限解除額（net assets released from restrictions）はwithout donor restrictionsを$700,000増加させ、with donor restrictionsを同額減少させる組替であり、純資産合計の変動には影響しない。総変動額＝$2,500,000＋$900,000＋$150,000−$3,100,000＝$450,000。検算：制限なし区分の変動＝$2,500,000＋$150,000＋$700,000−$3,100,000＝$250,000、制限あり区分の変動＝$900,000−$700,000＝$200,000、合計$450,000で一致。$1,150,000は組替額の二重計上、$250,000・$200,000は各区分単独の変動額である。",
+      "references": ["ASC 958-225-45"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }

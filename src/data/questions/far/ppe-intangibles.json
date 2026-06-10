@@ -2,7 +2,7 @@
   "id": "far-ppe-intangibles",
   "name": "Property, Plant & Equipment / Intangible Assets",
   "topic": "Property, Plant & Equipment",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "ppe-001",
@@ -2786,6 +2786,696 @@
       "explanationJa": "ASC 350-20-35-30により、報告単位の公正価値が帳簿価額を下回る可能性が高くなる事象・状況変化が生じた場合、年次テストの間でものれんの減損テストを行わなければならない。重大な不利な法的判決はそのトリガーイベントであり、Apexは予定された年次テストを待たず、影響を受ける報告単位について中間減損テストを実施しなければならない。のれんは（非公開会社の代替的処理を除き）償却せず、トリガーイベントが自動的に全のれんの償却を意味するわけではない。",
       "references": ["ASC 350-20-35-30"],
       "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-128",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Land Acquisition Cost Composition",
+      "stem": "Harlow Corp. acquired a tract of land for $400,000 to be used as a future plant site. Harlow also paid $12,000 in closing costs, assumed $8,000 of delinquent property taxes owed by the seller, paid $15,000 to raze an old shed on the property (receiving $3,000 in salvage proceeds), and paid a $10,000 special assessment to the city for sewer connections. At what amount should Harlow record the land?",
+      "choices": [
+        { "label": "A", "text": "$432,000" },
+        { "label": "B", "text": "$445,000" },
+        { "label": "C", "text": "$442,000" },
+        { "label": "D", "text": "$430,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The cost of land includes all expenditures necessary to acquire it and prepare it for its intended use: purchase price $400,000 + closing costs $12,000 + delinquent taxes assumed $8,000 + razing costs $15,000 − salvage proceeds $3,000 + special assessment $10,000 = $442,000. Demolition costs (net of salvage) are part of land when the land was acquired with the intent to remove the existing structure, and special assessments for permanent improvements maintained by the government are also charged to land. $432,000 results from omitting the net razing cost of $12,000; $445,000 results from failing to offset the $3,000 salvage proceeds; $430,000 results from excluding both the razing cost and the salvage offset.",
+      "explanationJa": "土地の取得原価には、取得と使用準備に直接必要なすべての支出を含めます（ASC 360-10-30）。購入価格$400,000 + 決済費用$12,000 + 売主の滞納固定資産税の引受$8,000 + 旧建物の取壊費用$15,000 − 廃材売却収入$3,000 + 下水道特別賦課金$10,000 = $442,000。土地を建物撤去目的で取得した場合、取壊費用（純額）は土地原価に算入されます。また政府が維持する恒久的改良に対する特別賦課金も土地原価です。$432,000は取壊純費用$12,000の脱漏、$445,000は廃材収入$3,000の控除漏れ、$430,000は両方を除外した誤りです。",
+      "references": ["ASC 360-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-129",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Building Acquisition Cost - Purchased Building",
+      "stem": "Kestrel Inc. purchased an existing office building for $850,000 and paid $5,000 for title insurance. Before occupying the building, Kestrel spent $95,000 on renovations necessary to prepare the building for its intended use. During the renovation period, vandals broke windows, and Kestrel paid $10,000 to repair the vandalism damage. At what amount should Kestrel capitalize the building?",
+      "choices": [
+        { "label": "A", "text": "$960,000" },
+        { "label": "B", "text": "$950,000" },
+        { "label": "C", "text": "$945,000" },
+        { "label": "D", "text": "$860,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The cost of a purchased building includes the purchase price plus all costs necessary to bring it to the condition for its intended use: $850,000 + $5,000 title insurance + $95,000 renovation = $950,000. Repairs of vandalism damage are not a necessary cost of readying the asset—they are neither normal nor necessary, so the $10,000 is expensed as incurred. $960,000 incorrectly capitalizes the vandalism repair; $945,000 incorrectly omits the title insurance; $860,000 incorrectly excludes the renovation costs that were necessary for the intended use.",
+      "explanationJa": "購入した建物の取得原価は、購入価格に意図した用途で使用可能な状態にするために必要なすべての費用を加えた額です：$850,000 + 権原保険$5,000 + 使用前の改修費$95,000 = $950,000。改修期間中の破壊行為（vandalism）による修繕$10,000は、資産を使用可能にするために「正常かつ必要」な支出ではないため発生時に費用処理します。$960,000は破壊行為修繕費の誤資産化、$945,000は権原保険の脱漏、$860,000は必要な改修費の除外による誤りです。",
+      "references": ["ASC 360-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-130",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Self-Constructed Asset - Excluded Costs",
+      "stem": "Pinewood Manufacturing self-constructs a piece of production equipment for its own use. Which of the following costs should be excluded from the capitalized cost of the self-constructed equipment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Direct labor of employees working on the construction"
+        },
+        {
+          "label": "B",
+          "text": "Variable manufacturing overhead directly attributable to the construction"
+        },
+        {
+          "label": "C",
+          "text": "Interest cost incurred during the construction period on borrowings, up to avoidable interest"
+        },
+        {
+          "label": "D",
+          "text": "Abnormal amounts of wasted material and labor caused by construction inefficiencies"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The cost of a self-constructed asset includes direct materials, direct labor, and overhead directly attributable to the construction, plus capitalized interest during the construction period under ASC 835-20. However, abnormal amounts of wasted material, labor, or other resources resulting from inefficiencies do not add value to the asset and are charged to expense in the period incurred. Direct labor, directly attributable variable overhead, and avoidable interest during construction are all properly includable in the asset's cost.",
+      "explanationJa": "自家建設資産の取得原価には、直接材料費、直接労務費、建設に直接帰属する製造間接費、および建設期間中の資本化利子（ASC 835-20の回避可能利子の範囲内）が含まれます。一方、建設の非効率に起因する異常な仕損（材料・労務の浪費）は資産の価値を高めないため、発生した期の費用として処理します。直接労務費、直接帰属する変動製造間接費、建設期間中の回避可能利子はいずれも適切に資産計上できる費用です。",
+      "references": ["ASC 360-10-30-1", "ASC 835-20-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-131",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Capitalized Interest - Specific and General Borrowings",
+      "stem": "Tidewater Corp. is constructing a new distribution center. Weighted-average accumulated expenditures for the year were $1,500,000. Tidewater has a construction loan of $900,000 at 6% specifically obtained for the project, and other general debt outstanding all year of $3,000,000 at 9% (actual interest of $270,000). What amount of interest should Tidewater capitalize for the year?",
+      "choices": [
+        { "label": "A", "text": "$108,000" },
+        { "label": "B", "text": "$135,000" },
+        { "label": "C", "text": "$90,000" },
+        { "label": "D", "text": "$54,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Avoidable interest is computed by applying the specific borrowing rate to expenditures up to the specific borrowing, and the weighted-average rate on other borrowings to the excess: ($900,000 × 6%) + (($1,500,000 − $900,000) × 9%) = $54,000 + $54,000 = $108,000. Total actual interest ($54,000 + $270,000 = $324,000) exceeds avoidable interest, so $108,000 is capitalized. $135,000 results from applying 9% to the full $1,500,000; $90,000 results from applying 6% to the full $1,500,000; $54,000 results from capitalizing only the interest on the specific construction loan and ignoring the excess expenditures.",
+      "explanationJa": "ASC 835-20の回避可能利子は、加重平均累積支出のうち特定借入額までは特定借入利率、超過部分には他の借入の加重平均利率を適用して計算します：($900,000 × 6%) + (($1,500,000 − $900,000) × 9%) = $54,000 + $54,000 = $108,000。実際利子総額$324,000が回避可能利子を上回るため、資本化額は$108,000です。$135,000は全額に9%を適用した誤り、$90,000は全額に6%を適用した誤り、$54,000は特定借入分のみ資本化し超過支出分を無視した誤りです。",
+      "references": ["ASC 835-20-30-10", "ASC 835-20-30-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-132",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Basket Purchase - Relative Fair Value Allocation",
+      "stem": "Sycamore Co. acquired land, a building, and machinery from a bankrupt competitor for a single lump-sum payment of $2,700,000. Independent appraisals indicate fair values of $1,000,000 for the land, $1,800,000 for the building, and $200,000 for the machinery. At what amount should Sycamore record the building?",
+      "choices": [
+        { "label": "A", "text": "$1,800,000" },
+        { "label": "B", "text": "$1,620,000" },
+        { "label": "C", "text": "$1,500,000" },
+        { "label": "D", "text": "$900,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a lump-sum (basket) purchase, the total cost is allocated to the individual assets based on their relative fair values. Total appraised value = $1,000,000 + $1,800,000 + $200,000 = $3,000,000. The building receives $2,700,000 × ($1,800,000 / $3,000,000) = $1,620,000. $1,800,000 incorrectly records the building at its full appraised value, which would overstate total assets above the actual cost paid; $1,500,000 results from an even allocation error; $900,000 applies the building's ratio to only a portion of the price.",
+      "explanationJa": "一括購入では、支払総額を各資産の相対的公正価値の比率で配分します。鑑定評価額合計 = $1,000,000 + $1,800,000 + $200,000 = $3,000,000。建物への配分額 = $2,700,000 × ($1,800,000 / $3,000,000) = $1,620,000。鑑定評価額$1,800,000をそのまま計上すると実際の支払額を超えて資産が過大計上されます。$1,500,000や$900,000は配分比率の適用誤りによる値です。",
+      "references": ["ASC 360-10-30-1", "ASC 805-50-30-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-133",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Exchange with Commercial Substance - Boot Received",
+      "stem": "Ridgeline Corp. exchanged a machine (original cost $80,000, accumulated depreciation $30,000, fair value $62,000) for newer equipment with a fair value of $52,000 plus $10,000 in cash. The exchange has commercial substance. What amount of gain should Ridgeline recognize on the exchange?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$10,000" },
+        { "label": "C", "text": "$1,935" },
+        { "label": "D", "text": "$12,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When a nonmonetary exchange has commercial substance, the transaction is measured at fair value and the full gain or loss is recognized immediately. The gain equals the fair value of the asset given up minus its carrying amount: $62,000 − ($80,000 − $30,000) = $62,000 − $50,000 = $12,000. The new equipment is recorded at its fair value of $52,000. $0 would apply only if the exchange lacked commercial substance and no boot were received; $10,000 confuses the cash received with the gain; $1,935 results from incorrectly applying the proportional gain recognition formula ($12,000 × $10,000/$62,000), which applies only when the exchange lacks commercial substance.",
+      "explanationJa": "商業的実質（commercial substance）を有する非貨幣性資産の交換では、取引を公正価値で測定し、損益の全額を即時認識します（ASC 845-10-30）。利得 = 引渡資産の公正価値$62,000 − 帳簿価額($80,000 − $30,000 = $50,000) = $12,000。受入設備は公正価値$52,000で計上します。$0は商業的実質を欠きbootを受け取らない場合の処理、$10,000は受取現金と利得の混同、$1,935は商業的実質を欠く場合にのみ適用される比例認識（$12,000 × $10,000/$62,000）の誤適用です。",
+      "references": ["ASC 845-10-30-1", "ASC 845-10-30-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-134",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Exchange Lacking Commercial Substance - Partial Gain on Boot Received",
+      "stem": "Meridian Co. exchanged equipment with a carrying amount of $40,000 and a fair value of $48,000 for a similar asset with a fair value of $40,000 plus $8,000 in cash. The exchange lacks commercial substance. What amount of gain should Meridian recognize?",
+      "choices": [
+        { "label": "A", "text": "$1,333" },
+        { "label": "B", "text": "$8,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$6,667" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When an exchange lacks commercial substance and boot (monetary consideration) of less than 25% of the total fair value is received, a proportional amount of the gain is recognized: total gain × (boot received / total consideration received). Total gain = $48,000 − $40,000 = $8,000. Boot ratio = $8,000 / $48,000 = 1/6. Recognized gain = $8,000 × 1/6 = $1,333 (rounded). The boot of $8,000 is 16.7% of the $48,000 total, below the 25% threshold, so full fair value accounting does not apply. $8,000 would be the full gain, recognized only if the exchange had commercial substance or boot were 25% or more; $0 ignores the partial recognition required when boot is received; $6,667 is the deferred portion of the gain rather than the recognized portion.",
+      "explanationJa": "商業的実質を欠く交換で総対価の25%未満のboot（現金）を受け取った場合、利得の一部を比例的に認識します：総利得 × (受取boot ÷ 受取対価総額)。総利得 = $48,000 − $40,000 = $8,000。boot比率 = $8,000 ÷ $48,000 = 1/6。認識利得 = $8,000 × 1/6 ≒ $1,333。bootは総額の16.7%で25%基準未満のため、全額公正価値処理は適用されません。$8,000は商業的実質がある場合またはbootが25%以上の場合の全額認識、$0はboot受領時に必要な部分認識の無視、$6,667は認識額ではなく繰延部分です。",
+      "references": ["ASC 845-10-30-6", "ASC 845-10-25-6"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-135",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Exchange Lacking Commercial Substance - Boot Paid",
+      "stem": "Larkspur Inc. exchanged a delivery van (original cost $60,000, accumulated depreciation $25,000, fair value $42,000) for a similar van, paying $5,000 cash in addition. The exchange lacks commercial substance. At what amount should Larkspur record the van received?",
+      "choices": [
+        { "label": "A", "text": "$47,000" },
+        { "label": "B", "text": "$42,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$35,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When an exchange lacks commercial substance and boot is paid, no gain is recognized; the asset received is recorded at the carrying amount of the asset surrendered plus the cash paid: ($60,000 − $25,000) + $5,000 = $35,000 + $5,000 = $40,000. The implied gain of $7,000 ($42,000 fair value − $35,000 carrying amount) is deferred and embedded in the lower carrying amount of the new asset. $47,000 ($42,000 + $5,000) applies fair value accounting, which is appropriate only when the exchange has commercial substance; $42,000 is the fair value of the asset given up, not the recorded amount; $35,000 omits the cash paid.",
+      "explanationJa": "商業的実質を欠く交換でbootを支払った場合、利得は認識せず、受入資産は引渡資産の帳簿価額に支払現金を加えた額で計上します：($60,000 − $25,000) + $5,000 = $40,000。含み益$7,000（公正価値$42,000 − 帳簿価額$35,000）は繰り延べられ、新資産の低い計上額に織り込まれます。$47,000は商業的実質がある場合の公正価値ベース（$42,000 + $5,000）、$42,000は引渡資産の公正価値そのもの、$35,000は支払現金の加算漏れです。",
+      "references": ["ASC 845-10-30-3", "ASC 845-10-30-6"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-136",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Units-of-Production Depreciation - Machine Hours",
+      "stem": "Crestline Corp. purchased a stamping machine for $310,000 with an estimated salvage value of $10,000. The machine is expected to operate for a total of 60,000 machine hours over its life. During Year 1, the machine operated for 12,000 hours. What is Year 1 depreciation expense under the units-of-production method?",
+      "choices": [
+        { "label": "A", "text": "$62,000" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$75,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the units-of-production method, the depreciation rate per unit of activity is (cost − salvage value) / total estimated activity: ($310,000 − $10,000) / 60,000 hours = $5.00 per hour. Year 1 depreciation = $5.00 × 12,000 hours = $60,000. $62,000 results from failing to deduct the salvage value ($310,000 / 60,000 × 12,000); $50,000 and $75,000 result from using incorrect hour fractions of the depreciable base.",
+      "explanationJa": "生産高比例法では、単位当たり償却率 = (取得原価 − 残存価額) ÷ 総見積稼働量で計算します：($310,000 − $10,000) ÷ 60,000時間 = $5.00/時間。Year 1の減価償却費 = $5.00 × 12,000時間 = $60,000。$62,000は残存価額の控除漏れ（$310,000 ÷ 60,000 × 12,000）、$50,000と$75,000は稼働割合の適用誤りによる値です。",
+      "references": ["ASC 360-10-35-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-137",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Double-Declining Balance - Second Year Depreciation",
+      "stem": "Bayfield Inc. purchased equipment on January 1, Year 1 for $200,000. The equipment has an estimated salvage value of $20,000 and a useful life of 8 years. Using the double-declining balance method, what is depreciation expense for Year 2?",
+      "choices": [
+        { "label": "A", "text": "$37,500" },
+        { "label": "B", "text": "$45,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$33,750" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The double-declining balance rate is 2 / 8 years = 25%, applied to the beginning carrying amount without deducting salvage value. Year 1: $200,000 × 25% = $50,000. Year 2: ($200,000 − $50,000) × 25% = $150,000 × 25% = $37,500. Salvage value is ignored in the annual computation but serves as a floor below which the carrying amount cannot fall. $45,000 incorrectly deducts salvage from the base ($180,000 × 25%); $50,000 is the Year 1 amount; $33,750 results from compounding the salvage-adjusted base into the second year ($135,000 × 25%).",
+      "explanationJa": "定率法（200%定率法）の償却率は 2 ÷ 8年 = 25%で、残存価額を控除しない期首帳簿価額に適用します。Year 1: $200,000 × 25% = $50,000。Year 2: ($200,000 − $50,000) × 25% = $37,500。残存価額は年次計算では無視されますが、帳簿価額がそれを下回らないための下限として機能します。$45,000は残存価額を控除した基礎額の誤り（$180,000 × 25%）、$50,000はYear 1の金額、$33,750は残存価額控除後の基礎額を2年目に引き継いだ誤りです。",
+      "references": ["ASC 360-10-35-7"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-138",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Sum-of-the-Years'-Digits - Third Year Depreciation",
+      "stem": "Oakhurst Co. purchased machinery on January 1, Year 1 for $150,000 with a salvage value of $30,000 and a useful life of 5 years. Using the sum-of-the-years'-digits method, what is depreciation expense for Year 3?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$32,000" },
+        { "label": "C", "text": "$16,000" },
+        { "label": "D", "text": "$24,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The sum of the years' digits for a 5-year life is 5 + 4 + 3 + 2 + 1 = 15. The depreciable base is $150,000 − $30,000 = $120,000. Year 3 uses the fraction 3/15 (remaining life at the beginning of Year 3 over the sum): $120,000 × 3/15 = $24,000. $40,000 is the Year 1 amount ($120,000 × 5/15); $32,000 is the Year 2 amount ($120,000 × 4/15); $16,000 is the Year 4 amount ($120,000 × 2/15).",
+      "explanationJa": "級数法では年数合計 = 5 + 4 + 3 + 2 + 1 = 15。償却基礎額 = $150,000 − $30,000 = $120,000。Year 3は期首残存耐用年数3年を分子とする3/15を適用：$120,000 × 3/15 = $24,000。$40,000はYear 1（5/15）、$32,000はYear 2（4/15）、$16,000はYear 4（2/15）の金額であり、適用年度を誤った値です。",
+      "references": ["ASC 360-10-35-7"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-139",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Change in Depreciation Estimate - Life and Salvage Revised",
+      "stem": "Glenview Corp. purchased equipment on January 1, Year 1 for $360,000 with no salvage value and an 8-year useful life, depreciated straight-line. At the beginning of Year 4, Glenview determines that the equipment will last only 5 more years from that date and will have a salvage value of $25,000. What is depreciation expense for Year 4?",
+      "choices": [
+        { "label": "A", "text": "$45,000" },
+        { "label": "B", "text": "$41,875" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$25,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A change in estimated useful life or salvage value is a change in accounting estimate, accounted for prospectively. Accumulated depreciation through Year 3 = ($360,000 / 8) × 3 = $135,000, leaving a carrying amount of $225,000. The remaining depreciable amount is $225,000 − $25,000 new salvage = $200,000, spread over the 5 remaining years: $200,000 / 5 = $40,000. $45,000 ignores the new salvage value ($225,000 / 5); $41,875 spreads the revised depreciable cost over the original 8-year life (($360,000 − $25,000) / 8); $25,000 incorrectly divides the remaining base by the original life.",
+      "explanationJa": "耐用年数・残存価額の見直しは会計上の見積りの変更であり、将来に向かって（prospectively）処理します（ASC 250-10-45-17）。Year 3末までの減価償却累計額 = ($360,000 ÷ 8) × 3 = $135,000、帳簿価額 = $225,000。残存償却基礎額 = $225,000 − 新残存価額$25,000 = $200,000を残り5年で配分：$200,000 ÷ 5 = $40,000。$45,000は新残存価額の無視、$41,875は改訂後の基礎額を当初8年で割った誤り、$25,000は残存基礎額を当初年数で割った誤りです。",
+      "references": ["ASC 250-10-45-17", "ASC 360-10-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-140",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Subsequent Expenditures - Capitalize vs Expense",
+      "stem": "Which of the following expenditures related to existing machinery should be expensed as incurred?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Replacement of a major motor that extends the machine's useful life by five years"
+        },
+        {
+          "label": "B",
+          "text": "Routine annual maintenance and lubrication performed under a service contract"
+        },
+        {
+          "label": "C",
+          "text": "Installation of an attachment that increases the machine's hourly output capacity"
+        },
+        {
+          "label": "D",
+          "text": "Modification of the machine required to produce a newly designed product line"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Routine maintenance merely keeps an asset in its existing operating condition and provides no benefit beyond the current period, so it is expensed as incurred. Expenditures that extend useful life (the motor replacement), increase capacity (the output attachment), or adapt the asset to a new use (the product-line modification) provide future economic benefits and are capitalized, either as an addition to the asset's cost or, for life-extending expenditures, sometimes as a debit to accumulated depreciation.",
+      "explanationJa": "経常的な保守・注油は資産を現状の稼働状態に維持するだけで当期を超える便益をもたらさないため、発生時に費用処理します。一方、耐用年数を延長する支出（モーター交換）、生産能力を増加させる支出（能力増強アタッチメント）、新用途への適応支出（新製品ライン向け改造）は将来の経済的便益をもたらすため資本的支出として資産計上します（耐用年数延長型は減価償却累計額の借方処理も実務上認められます）。",
+      "references": ["ASC 360-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-141",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Impairment Loss Measurement - Held and Used",
+      "stem": "Driftwood Corp. has manufacturing equipment with a carrying amount of $800,000. Due to a significant adverse change in the business climate, Driftwood tests the equipment for impairment. The sum of undiscounted expected future cash flows is $750,000, the present value of those cash flows is $640,000, and the equipment's fair value determined from market prices for similar assets is $620,000. What impairment loss should Driftwood recognize?",
+      "choices": [
+        { "label": "A", "text": "$180,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$160,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 360, the recoverability test compares the carrying amount ($800,000) with undiscounted future cash flows ($750,000); because the carrying amount is not recoverable, an impairment loss is measured as the excess of carrying amount over fair value: $800,000 − $620,000 = $180,000. When a market-based fair value is available, it is used rather than the present value of entity-specific cash flows. $50,000 incorrectly measures the loss using undiscounted cash flows; $160,000 uses the present value of cash flows ($640,000) even though an observable fair value exists; $0 would apply only if undiscounted cash flows had exceeded the carrying amount.",
+      "explanationJa": "ASC 360の保有使用資産の減損では、第1段階で帳簿価額$800,000と割引前将来キャッシュ・フロー$750,000を比較し、回収不能と判定されたら第2段階で帳簿価額と公正価値の差額を減損損失として測定します：$800,000 − $620,000 = $180,000。市場ベースの公正価値が入手可能な場合は、企業固有キャッシュ・フローの現在価値ではなくそれを使用します。$50,000は割引前キャッシュ・フローとの差額という測定誤り、$160,000は公正価値があるのに現在価値$640,000を使った誤り、$0は回収可能性テストを通過した場合の処理です。",
+      "references": ["ASC 360-10-35-17", "ASC 360-10-35-21"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-142",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Impairment - Recoverability Test Passed",
+      "stem": "Stonebridge Co. owns a production facility with a carrying amount of $900,000. An impairment indicator exists. The undiscounted expected future cash flows from the facility total $950,000, and the facility's fair value is $700,000. What impairment loss, if any, should Stonebridge recognize?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 360, an impairment loss for a held-and-used asset is recognized only if the carrying amount is not recoverable—that is, only if it exceeds the sum of undiscounted future cash flows. Here, undiscounted cash flows of $950,000 exceed the carrying amount of $900,000, so the asset passes the recoverability test and no impairment loss is recognized, even though fair value ($700,000) is below carrying amount. $200,000 (carrying amount minus fair value) would be recorded only if the recoverability test had failed; $250,000 and $50,000 are differences between other figure pairs that have no significance once the test is passed.",
+      "explanationJa": "ASC 360では、保有使用資産の減損損失は帳簿価額が回収不能な場合、すなわち割引前将来キャッシュ・フロー合計を上回る場合にのみ認識します。本問では割引前キャッシュ・フロー$950,000 > 帳簿価額$900,000であり回収可能性テストを通過するため、公正価値$700,000が帳簿価額を下回っていても減損損失は認識しません（$0）。$200,000（帳簿価額−公正価値）はテストに不合格だった場合の測定額です。これはIFRSと異なり、米国基準特有の2段階構造です。",
+      "references": ["ASC 360-10-35-17"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-143",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Held for Sale - Initial Write-Down",
+      "stem": "On October 1, Year 1, Fairmont Corp. committed to a plan to sell a warehouse and properly classified it as held for sale. The warehouse has a carrying amount of $420,000, a fair value of $400,000, and estimated costs to sell of $30,000. What loss should Fairmont recognize upon classification as held for sale?",
+      "choices": [
+        { "label": "A", "text": "$20,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A long-lived asset classified as held for sale is measured at the lower of its carrying amount or fair value less costs to sell. Fair value less costs to sell = $400,000 − $30,000 = $370,000, which is below the $420,000 carrying amount, so a loss of $420,000 − $370,000 = $50,000 is recognized. Depreciation also ceases upon held-for-sale classification. $20,000 compares carrying amount only with fair value, ignoring costs to sell; $30,000 is just the costs to sell; $0 ignores the required write-down.",
+      "explanationJa": "売却目的保有（held for sale）に分類された長期性資産は、帳簿価額と「公正価値−売却費用」のいずれか低い方で測定します（ASC 360-10-35-43）。公正価値−売却費用 = $400,000 − $30,000 = $370,000 < 帳簿価額$420,000のため、損失 = $420,000 − $370,000 = $50,000を認識します。また分類時点で減価償却は中止されます。$20,000は売却費用を無視して公正価値とのみ比較した誤り、$30,000は売却費用そのもの、$0は必要な評価減の無視です。",
+      "references": ["ASC 360-10-35-43", "ASC 360-10-45-9"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-144",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Held for Sale - Subsequent Recovery Limitation",
+      "stem": "In Year 1, Westgate Co. classified a building as held for sale and wrote it down from its carrying amount of $420,000 to its fair value less costs to sell of $370,000. At the end of Year 2, while the building is still held for sale, its fair value less costs to sell has increased to $450,000. What gain should Westgate recognize in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$80,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A subsequent increase in fair value less costs to sell of a held-for-sale asset is recognized as a gain, but only up to the cumulative impairment losses previously recognized. The cumulative prior write-down was $50,000 ($420,000 − $370,000), so the recovery gain is limited to $50,000, bringing the carrying amount back to $420,000—not to the $450,000 current fair value less costs to sell. $80,000 would write the asset up above its pre-impairment carrying amount, which is prohibited; $30,000 is the excess above the original carrying amount that cannot be recognized; $0 ignores the permitted recovery for held-for-sale assets.",
+      "explanationJa": "売却目的保有資産の「公正価値−売却費用」がその後回復した場合、過去に認識した減損損失の累計額を上限として利得を認識します（ASC 360-10-35-40）。過去の評価減累計は$50,000（$420,000 − $370,000）のため、回復利得は$50,000に制限され、帳簿価額は$420,000まで戻ります（$450,000までは戻せません）。$80,000は減損前帳簿価額を超える評価増で禁止、$30,000は認識できない超過部分、$0は売却目的保有資産に認められる回復処理の無視です。なお保有使用資産では減損の戻入れ自体が禁止されている点と対比されます。",
+      "references": ["ASC 360-10-35-40"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-145",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "ARO - Total First-Year Expense (Accretion plus Depreciation)",
+      "stem": "On January 1, Year 1, Cobalt Energy placed a storage facility in service and recognized an asset retirement obligation with a fair value of $200,000, using a credit-adjusted risk-free rate of 8%. The related asset retirement cost is depreciated straight-line over the facility's 10-year life with no salvage value. What total expense related to the ARO and the asset retirement cost should Cobalt recognize in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$20,000" },
+        { "label": "B", "text": "$36,000" },
+        { "label": "C", "text": "$16,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Recognizing an ARO produces two recurring charges: (1) accretion expense on the liability, $200,000 × 8% = $16,000, and (2) depreciation of the capitalized asset retirement cost, $200,000 / 10 years = $20,000. Total Year 1 expense = $16,000 + $20,000 = $36,000. $20,000 includes only the depreciation component; $16,000 includes only the accretion component; $40,000 incorrectly doubles the depreciation rather than adding accretion.",
+      "explanationJa": "ASC 410-20では、ARO認識後に毎期2つの費用が生じます：(1) 負債の時の経過による増加額（accretion expense）= $200,000 × 8% = $16,000、(2) 資産計上した除去費用（asset retirement cost）の減価償却費 = $200,000 ÷ 10年 = $20,000。Year 1の合計費用 = $16,000 + $20,000 = $36,000。$20,000は減価償却のみ、$16,000はaccretionのみで、いずれも片方の構成要素の見落としです。$40,000は減価償却の二重計上による誤りです。",
+      "references": ["ASC 410-20-35-2", "ASC 410-20-35-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-146",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Depletion - Cost of Goods Sold vs Inventory",
+      "stem": "Galena Mining acquired a mineral property for $7,200,000 and incurred $800,000 of development costs. Galena expects to incur restoration costs of $500,000 (recognized as part of the depletion base) and estimates the land's residual value after restoration at $500,000. Estimated recoverable reserves are 4,000,000 tons. During Year 1, Galena extracted 600,000 tons and sold 500,000 tons. What amount of depletion should be included in Year 1 cost of goods sold?",
+      "choices": [
+        { "label": "A", "text": "$1,200,000" },
+        { "label": "B", "text": "$1,062,500" },
+        { "label": "C", "text": "$900,000" },
+        { "label": "D", "text": "$1,000,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The depletion base = acquisition cost $7,200,000 + development $800,000 + restoration $500,000 − residual value $500,000 = $8,000,000. The depletion rate = $8,000,000 / 4,000,000 tons = $2.00 per ton. Total depletion for extraction = 600,000 × $2.00 = $1,200,000, but only the portion related to tons sold flows to cost of goods sold: 500,000 × $2.00 = $1,000,000. The remaining $200,000 (100,000 unsold tons) stays in inventory. $1,200,000 is total depletion capitalized to extracted units, not COGS; $1,062,500 results from omitting the residual value from the computation ($8,500,000 / 4,000,000 × 500,000); $900,000 results from an incorrect rate.",
+      "explanationJa": "減耗償却基礎額 = 取得原価$7,200,000 + 開発費$800,000 + 原状回復費$500,000 − 土地の残存価値$500,000 = $8,000,000。減耗率 = $8,000,000 ÷ 4,000,000トン = $2.00/トン。採掘分の総減耗額は600,000トン × $2.00 = $1,200,000ですが、売上原価には販売分のみが計上されます：500,000トン × $2.00 = $1,000,000。未販売の100,000トン分$200,000は棚卸資産に残ります。$1,200,000は採掘分全額をCOGSとした誤り、$1,062,500は残存価値の控除漏れ、$900,000は率の計算誤りです。",
+      "references": ["ASC 930-330", "ASC 360-10-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-147",
+      "topic": "Intangible Assets",
+      "subtopic": "Goodwill Impairment - Loss Less Than Goodwill Balance",
+      "stem": "Brookfield Corp.'s consumer products reporting unit has a carrying amount of $4,500,000, including goodwill of $800,000. The reporting unit's fair value is determined to be $4,000,000. Under ASC 350 (post-ASU 2017-04), what goodwill impairment loss should Brookfield recognize?",
+      "choices": [
+        { "label": "A", "text": "$800,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$500,000" },
+        { "label": "D", "text": "$300,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the one-step goodwill impairment test, the loss equals the excess of the reporting unit's carrying amount over its fair value, limited to the carrying amount of goodwill: $4,500,000 − $4,000,000 = $500,000, which is less than the $800,000 goodwill balance, so the full $500,000 is recognized. $800,000 would write off all goodwill even though the shortfall is smaller; $0 would apply only if fair value equaled or exceeded the carrying amount; $300,000 is the residual goodwill after impairment, not the loss itself.",
+      "explanationJa": "ASU 2017-04後のASC 350では、のれんの減損損失は報告単位の帳簿価額が公正価値を超過する額とし、のれんの帳簿価額を上限とします（1ステップテスト）。超過額 = $4,500,000 − $4,000,000 = $500,000 < のれん残高$800,000のため、$500,000全額を減損損失として認識します。$800,000は超過額が小さいのにのれん全額を償却する誤り、$0は公正価値が帳簿価額以上の場合の処理、$300,000は減損後ののれん残高（$800,000 − $500,000）であり損失額ではありません。",
+      "references": ["ASC 350-20-35-3C", "ASU 2017-04"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-148",
+      "topic": "Intangible Assets",
+      "subtopic": "Goodwill Impairment - Loss Capped at Goodwill Balance",
+      "stem": "Lakeshore Inc.'s industrial reporting unit has a carrying amount of $6,000,000, including goodwill of $700,000. A quantitative impairment test determines the reporting unit's fair value to be $5,000,000. What goodwill impairment loss should Lakeshore recognize under ASC 350?",
+      "choices": [
+        { "label": "A", "text": "$700,000" },
+        { "label": "B", "text": "$1,000,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$300,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The goodwill impairment loss is the amount by which the reporting unit's carrying amount exceeds its fair value ($6,000,000 − $5,000,000 = $1,000,000), but the loss cannot exceed the carrying amount of goodwill allocated to the reporting unit. Because goodwill is only $700,000, the loss is capped at $700,000. The remaining $300,000 shortfall is not recognized against other assets under the goodwill test (other long-lived assets are tested separately under ASC 360 before the goodwill test). $1,000,000 ignores the goodwill cap; $0 ignores the failed test; $300,000 is the uncapped excess over the goodwill balance.",
+      "explanationJa": "のれんの減損損失は報告単位の帳簿価額の公正価値超過額（$6,000,000 − $5,000,000 = $1,000,000）ですが、その報告単位に配分されたのれんの帳簿価額が上限となります（ASC 350-20-35-3C）。のれん残高は$700,000のため損失は$700,000に制限されます。残りの$300,000はのれんテストでは認識されません（他の長期性資産はのれんテストの前にASC 360で別途減損テストを実施）。$1,000,000は上限の無視、$0はテスト不合格の無視、$300,000は上限超過部分です。",
+      "references": ["ASC 350-20-35-3C", "ASC 350-20-35-31"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-149",
+      "topic": "Intangible Assets",
+      "subtopic": "Indefinite-Life Intangible Impairment - No Recoverability Test",
+      "stem": "Summit Media holds an indefinite-life broadcast license with a carrying amount of $900,000. At the annual impairment test date, the license's fair value is $760,000, and the undiscounted future cash flows expected from the license total $1,000,000. What impairment loss should Summit recognize?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$140,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$240,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Indefinite-life intangible assets (other than goodwill) are tested for impairment under ASC 350-30 by comparing carrying amount directly with fair value—there is no undiscounted cash flow recoverability test. Because fair value ($760,000) is below carrying amount ($900,000), an impairment loss of $140,000 is recognized, even though undiscounted cash flows exceed the carrying amount. $0 incorrectly applies the ASC 360 recoverability screen, which is available only for assets being amortized or depreciated (finite-life or long-lived assets held and used); $100,000 and $240,000 compare the wrong figure pairs.",
+      "explanationJa": "耐用年数を確定できない無形資産（のれん以外）の減損テストは、ASC 350-30に基づき帳簿価額と公正価値を直接比較します。割引前キャッシュ・フローによる回収可能性テスト（ASC 360の第1段階）は適用されません。公正価値$760,000 < 帳簿価額$900,000のため、減損損失$140,000を認識します。割引前キャッシュ・フロー$1,000,000が帳簿価額を上回っていても結論は変わりません。$0は耐用年数確定資産（償却資産）にのみ適用される回収可能性テストの誤適用です。",
+      "references": ["ASC 350-30-35-18", "ASC 350-30-35-19"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-150",
+      "topic": "Intangible Assets",
+      "subtopic": "R&D Expense Classification",
+      "stem": "During Year 1, Novatech Corp. incurred the following costs: laboratory research aimed at discovering new technology, $120,000; design, construction, and testing of a preproduction prototype, $90,000; quality control testing during commercial production, $50,000; legal fees to obtain a patent on the new technology, $30,000; and market research for the new product, $25,000. What amount should Novatech report as research and development expense for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$315,000" },
+        { "label": "B", "text": "$240,000" },
+        { "label": "C", "text": "$260,000" },
+        { "label": "D", "text": "$210,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 730, R&D includes laboratory research aimed at new knowledge ($120,000) and the design, construction, and testing of preproduction prototypes ($90,000), for a total of $210,000. Quality control during commercial production is a period production cost, not R&D; legal fees to obtain a patent are capitalized as part of the patent's cost; and market research is a selling-related expense excluded from R&D. $315,000 includes all five items; $240,000 incorrectly adds the patent legal fees; $260,000 incorrectly adds quality control costs.",
+      "explanationJa": "ASC 730の研究開発費には、新知識の発見を目的とした実験的研究$120,000と、量産前プロトタイプの設計・製作・テスト$90,000が含まれ、合計$210,000です。商業生産中の品質管理テストはR&Dではなく製造期間費用、特許取得のための弁護士費用は特許権の取得原価として資産計上、市場調査は販売関連費用でR&Dから除外されます（ASC 730-10-55）。$315,000は5項目全部の合算、$240,000は特許法務費用の誤算入、$260,000は品質管理費の誤算入です。",
+      "references": ["ASC 730-10-25-1", "ASC 730-10-55-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-151",
+      "topic": "Intangible Assets",
+      "subtopic": "R&D Equipment with Alternative Future Uses",
+      "stem": "On January 1, Year 1, Helix Labs purchased testing equipment for $400,000 to be used in a current research project. The equipment has a 5-year useful life, no salvage value, and alternative future uses in other research projects and in production. The equipment was used exclusively on the research project during Year 1. What amount related to this equipment should Helix include in research and development expense for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$400,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$80,000" },
+        { "label": "D", "text": "$320,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Equipment acquired for R&D activities that has alternative future uses is capitalized and depreciated; the depreciation for the periods the equipment is used in R&D is classified as R&D expense. Year 1 depreciation = $400,000 / 5 = $80,000, charged to R&D expense. $400,000 would be correct only if the equipment had no alternative future uses, in which case the entire cost is expensed immediately; $0 ignores that the depreciation must be classified as R&D while the asset is used in research; $320,000 is the year-end carrying amount, not an expense.",
+      "explanationJa": "代替的な将来の用途（alternative future uses）を有するR&D用設備は資産計上して減価償却し、研究活動に使用した期間の減価償却費をR&D費用に分類します（ASC 730-10-25-2(a)）。Year 1の減価償却費 = $400,000 ÷ 5年 = $80,000をR&D費用に計上します。$400,000は代替用途がない場合（取得時全額費用処理）の金額、$0は研究使用期間の償却費のR&D分類の無視、$320,000は期末帳簿価額であり費用ではありません。",
+      "references": ["ASC 730-10-25-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-152",
+      "topic": "Intangible Assets",
+      "subtopic": "Software to Be Sold - Costs Capitalized After Technological Feasibility",
+      "stem": "Quantum Soft is developing a software product to be sold to customers. During Year 1, it incurred $300,000 of costs before establishing technological feasibility, $500,000 of coding and testing costs after technological feasibility was established but before the product was available for general release, and $100,000 of customer support and maintenance costs after general release. Under ASC 985-20, what amount should Quantum capitalize as software development costs?",
+      "choices": [
+        { "label": "A", "text": "$500,000" },
+        { "label": "B", "text": "$800,000" },
+        { "label": "C", "text": "$900,000" },
+        { "label": "D", "text": "$600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 985-20, costs incurred before technological feasibility is established are expensed as R&D ($300,000). Costs incurred after technological feasibility but before general release—coding, testing, and producing product masters—are capitalized ($500,000). Costs after general release, such as maintenance and customer support, are expensed ($100,000). Therefore, only $500,000 is capitalized. $800,000 incorrectly capitalizes the pre-feasibility R&D costs; $900,000 capitalizes everything; $600,000 incorrectly capitalizes the post-release support costs.",
+      "explanationJa": "ASC 985-20（市場販売目的ソフトウェア）では、技術的実現可能性（technological feasibility）確立前のコスト$300,000はR&D費用として処理、確立後から製品の一般リリースまでのコーディング・テスト費用$500,000は資産計上、リリース後の保守・カスタマーサポート費用$100,000は費用処理します。したがって資産計上額は$500,000のみです。$800,000は実現可能性確立前コストの誤資産化、$900,000は全額資産化、$600,000はリリース後コストの誤資産化です。",
+      "references": ["ASC 985-20-25-1", "ASC 985-20-25-2", "ASC 985-20-25-6"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-153",
+      "topic": "Intangible Assets",
+      "subtopic": "Internal-Use Software - Commencement of Amortization",
+      "stem": "Under ASC 350-40, amortization of capitalized internal-use software costs should begin when:",
+      "choices": [
+        { "label": "A", "text": "The application development stage begins" },
+        {
+          "label": "B",
+          "text": "The software is ready for its intended use, regardless of whether it has been placed in service"
+        },
+        {
+          "label": "C",
+          "text": "Management commits funding to the software project"
+        },
+        {
+          "label": "D",
+          "text": "The post-implementation/operation stage costs are first incurred"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 350-40-35-6 requires amortization of internal-use software to begin when the software is ready for its intended use—that is, after all substantial testing is completed—regardless of whether the software will be placed in service in planned stages that may extend beyond a reporting period. The start of the application development stage marks when capitalization begins, not amortization; management commitment of funding occurs in the preliminary project stage; and the post-implementation stage relates to training and maintenance costs, which are expensed.",
+      "explanationJa": "ASC 350-40-35-6により、内部利用目的ソフトウェアの償却は「ソフトウェアが意図した用途に使用可能となった時点」、すなわち実質的なテストがすべて完了した時点から開始します。段階的に稼働させる計画であっても、使用可能になれば償却を開始します。アプリケーション開発段階の開始は資産計上の開始時点であり償却開始ではありません。経営者による資金コミットメントは予備プロジェクト段階の事象、ポスト実装・運用段階の費用（研修・保守）は発生時費用処理です。",
+      "references": ["ASC 350-40-35-6"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-154",
+      "topic": "Intangible Assets",
+      "subtopic": "Franchise - Initial Fee Amortization and Continuing Fees",
+      "stem": "On January 1, Year 1, Brava Foods paid an initial franchise fee of $240,000 for a franchise with a 10-year useful life. The franchise agreement also requires Brava to pay a continuing franchise fee equal to 5% of annual franchise revenue. Franchise revenue for Year 1 was $600,000. What total franchise-related expense should Brava report for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$24,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$270,000" },
+        { "label": "D", "text": "$54,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The initial franchise fee is capitalized as an intangible asset and amortized over its useful life: $240,000 / 10 years = $24,000 per year. Continuing franchise fees are operating expenses of the period in which the related revenue is earned: $600,000 × 5% = $30,000. Total Year 1 franchise expense = $24,000 + $30,000 = $54,000. $24,000 omits the continuing fee; $30,000 omits the amortization; $270,000 incorrectly expenses the entire initial fee immediately plus the continuing fee.",
+      "explanationJa": "フランチャイズの初期加盟料は無形資産として計上し耐用年数で償却します：$240,000 ÷ 10年 = 年間$24,000。継続的フランチャイズ料（ロイヤルティ）は対応する収益が稼得された期の営業費用です：$600,000 × 5% = $30,000。Year 1の合計費用 = $24,000 + $30,000 = $54,000。$24,000は継続料の脱漏、$30,000は償却費の脱漏、$270,000は初期加盟料の全額即時費用化（$240,000 + $30,000）という誤りです。",
+      "references": ["ASC 350-30-35-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-155",
+      "topic": "Intangible Assets",
+      "subtopic": "Patent - Successful Legal Defense Costs",
+      "stem": "At the beginning of Year 5, Vexel Corp.'s patent had a carrying amount of $180,000 with a remaining useful life of 6 years. On January 2, Year 5, Vexel paid $60,000 in legal fees to successfully defend the patent against an infringement suit. What amount of patent amortization expense should Vexel report for Year 5?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$90,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Legal fees incurred in successfully defending a patent are capitalized because they establish the holder's legal rights and benefit future periods. The new carrying amount of $180,000 + $60,000 = $240,000 is amortized over the remaining 6-year useful life: $240,000 / 6 = $40,000 per year. $30,000 amortizes only the pre-defense carrying amount ($180,000 / 6); $90,000 expenses the legal fees immediately and adds the $30,000 amortization, which is the treatment for an unsuccessful defense; $60,000 has no valid computational basis here.",
+      "explanationJa": "特許権の侵害訴訟で勝訴した場合の弁護士費用は、権利の法的有効性を確立し将来便益をもたらすため資産計上します。新帳簿価額 = $180,000 + $60,000 = $240,000を残存耐用年数6年で償却：$240,000 ÷ 6 = 年間$40,000。$30,000は防御費用を加算しない償却額、$90,000は敗訴時の処理（弁護士費用$60,000を即時費用化 + 償却$30,000）です。敗訴の場合は防御費用を費用処理し、特許自体の減損も検討する必要があります。",
+      "references": ["ASC 350-30-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-156",
+      "topic": "Intangible Assets",
+      "subtopic": "Trademark - Useful Life Shorter Than Legal Life",
+      "stem": "Halcyon Brands purchased a registered trademark for $96,000. The trademark's registration has a remaining legal life of 10 years and is renewable indefinitely at minimal cost. However, management plans to phase out the branded product line in 8 years and will not renew the trademark thereafter. What annual amortization expense should Halcyon record?",
+      "choices": [
+        { "label": "A", "text": "$12,000" },
+        { "label": "B", "text": "$9,600" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$4,800" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A recognized intangible asset is amortized over its useful life to the reporting entity, which reflects the period over which the asset is expected to contribute to cash flows. Although the trademark is legally renewable indefinitely, management's plan to discontinue the product in 8 years limits the useful life to 8 years: $96,000 / 8 = $12,000 per year. $9,600 uses the 10-year legal life; $0 treats the trademark as indefinite-life, which is inappropriate because the entity-specific useful life is limited; $4,800 has no valid basis.",
+      "explanationJa": "無形資産は「報告企業にとっての耐用年数」、すなわちキャッシュ・フローへの貢献が見込まれる期間で償却します（ASC 350-30-35-2〜3）。商標は法的には低コストで無期限更新可能ですが、経営者が8年後に製品ラインを廃止し更新しない計画のため、企業固有の耐用年数は8年に限定されます：$96,000 ÷ 8 = 年間$12,000。$9,600は法的残存期間10年の誤用、$0は耐用年数不確定（indefinite）扱いの誤りです。更新意思と能力がある場合のみ更新期間を耐用年数に含められます。",
+      "references": ["ASC 350-30-35-2", "ASC 350-30-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-157",
+      "topic": "Intangible Assets",
+      "subtopic": "IPR&D - Subsequent Accounting After Acquisition",
+      "stem": "Axion Corp. acquired in-process research and development (IPR&D) in a business combination and recognized it as an indefinite-life intangible asset at its acquisition-date fair value of $3,000,000. Two years later, the R&D project is successfully completed and the resulting technology is placed in service. How should Axion account for the IPR&D asset upon completion of the project?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Write off the entire $3,000,000 to expense because R&D costs must be expensed"
+        },
+        {
+          "label": "B",
+          "text": "Assign the asset a finite useful life and begin amortizing it over that life"
+        },
+        {
+          "label": "C",
+          "text": "Continue carrying it as an indefinite-life asset subject only to annual impairment testing"
+        },
+        { "label": "D", "text": "Reclassify the amount to goodwill" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "IPR&D acquired in a business combination is capitalized at fair value and treated as an indefinite-life intangible asset during the development period, tested for impairment annually. When the project is completed, the asset's useful life becomes determinable: the entity assigns a finite useful life and amortizes the asset over the period it is expected to contribute to cash flows. Writing it off to expense applies only to internally incurred R&D costs under ASC 730 (or if the acquired project is abandoned); continuing indefinite-life treatment is inappropriate once the development is complete; reclassification to goodwill is never appropriate for a separately recognized identifiable asset.",
+      "explanationJa": "企業結合で取得したIPR&Dは公正価値で資産計上し、開発期間中は耐用年数不確定の無形資産として年次減損テストを行います。プロジェクトが成功裏に完了した時点で耐用年数が確定可能となるため、確定耐用年数を付して償却を開始します（ASC 350-30-35-17A）。全額費用化は内部発生のR&D費用（ASC 730）またはプロジェクト放棄時の処理、不確定耐用年数の継続は開発完了後には不適切、のれんへの振替は個別に認識された識別可能資産には行いません。",
+      "references": ["ASC 350-30-35-17A", "ASC 805-20-30-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-158",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Land vs Land Improvements Classification",
+      "stem": "Juniper Corp. incurred the following costs for a new corporate site: land purchase price $600,000; perimeter fencing $40,000; paved parking lots $70,000; permanent landscaping (earth-moving and contouring with indefinite life) $20,000; and outdoor lighting systems $15,000. What total amount should Juniper classify as depreciable land improvements?",
+      "choices": [
+        { "label": "A", "text": "$145,000" },
+        { "label": "B", "text": "$110,000" },
+        { "label": "C", "text": "$85,000" },
+        { "label": "D", "text": "$125,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Land improvements with limited useful lives are depreciable: fencing $40,000 + parking lots $70,000 + outdoor lighting $15,000 = $125,000. Permanent landscaping with an indefinite life (earth-moving, contouring) is added to the non-depreciable land account, as is the $600,000 purchase price. $145,000 incorrectly includes the permanent landscaping; $110,000 omits the lighting; $85,000 omits the parking lots.",
+      "explanationJa": "耐用年数が限定される土地改良（land improvements）は減価償却の対象です：フェンス$40,000 + 舗装駐車場$70,000 + 屋外照明設備$15,000 = $125,000。一方、恒久的な造園（整地・地形造成等で耐用年数が無期限のもの）$20,000は減価償却しない土地勘定に算入します（購入価格$600,000も同様）。$145,000は恒久的造園の誤算入、$110,000は照明の脱漏、$85,000は駐車場の脱漏です。",
+      "references": ["ASC 360-10-30-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-159",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Capitalized Interest - Conditions to Begin Capitalization",
+      "stem": "Under ASC 835-20, which of the following is NOT a condition required for interest capitalization on a qualifying asset to begin?",
+      "choices": [
+        { "label": "A", "text": "Expenditures for the asset have been made" },
+        {
+          "label": "B",
+          "text": "Activities necessary to get the asset ready for its intended use are in progress"
+        },
+        {
+          "label": "C",
+          "text": "A borrowing specifically designated for the construction of the asset has been arranged"
+        },
+        { "label": "D", "text": "Interest cost is being incurred" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Interest capitalization begins when three conditions are all met: (1) expenditures for the asset have been made, (2) activities necessary to get the asset ready for its intended use are in progress, and (3) interest cost is being incurred. A specific construction borrowing is not required—interest on general borrowings is capitalizable using the weighted-average rate, so an entity with any outstanding debt can capitalize interest even without project-specific financing.",
+      "explanationJa": "ASC 835-20-25-3により、利子の資本化は次の3条件がすべて満たされた時点で開始します：(1) 資産に対する支出が行われていること、(2) 資産を意図した用途に使用可能にするために必要な活動が進行中であること、(3) 利子費用が発生していること。建設のための特定借入の存在は要件ではありません。一般借入の利子も加重平均利率を用いて資本化できるため、プロジェクト固有の資金調達がなくても、何らかの有利子負債があれば資本化は可能です。",
+      "references": ["ASC 835-20-25-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-160",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Nonreciprocal Transfer - Donation of Asset to Charity",
+      "stem": "Cypress Corp. donated a parcel of land to a charitable organization. The land had a carrying amount of $100,000 and a fair value of $150,000 at the date of donation. What gain, if any, should Cypress recognize on the donation?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A nonreciprocal transfer of a nonmonetary asset to another entity is recorded at the fair value of the asset given up, with a gain or loss recognized for the difference between fair value and carrying amount. Cypress records contribution expense of $150,000 and recognizes a gain of $150,000 − $100,000 = $50,000. $150,000 is the contribution expense, not the gain; $100,000 is the carrying amount removed from the books; $0 incorrectly applies carrying-amount accounting, which does not apply to nonreciprocal transfers measured at fair value.",
+      "explanationJa": "非貨幣性資産の非対価性移転（nonreciprocal transfer、寄付等）は引き渡した資産の公正価値で記録し、公正価値と帳簿価額の差額を損益として認識します（ASC 845-10-30-1）。Cypressは寄付費用$150,000を計上するとともに、利得 = $150,000 − $100,000 = $50,000を認識します。仕訳は「寄付費用150,000 / 土地100,000・利得50,000」です。$150,000は寄付費用の額、$100,000は除却される帳簿価額、$0は帳簿価額ベース処理の誤適用です。",
+      "references": ["ASC 845-10-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-161",
+      "topic": "Intangible Assets",
+      "subtopic": "Goodwill Measurement - Acquisition-Related Costs",
+      "stem": "Falcon Corp. acquired 100% of Target Inc. in a business combination. Falcon paid $5,000,000 cash to Target's shareholders and also paid $200,000 in legal and investment-banking fees directly related to the acquisition. The fair value of Target's identifiable net assets was $4,400,000. What amount of goodwill should Falcon recognize?",
+      "choices": [
+        { "label": "A", "text": "$800,000" },
+        { "label": "B", "text": "$600,000" },
+        { "label": "C", "text": "$400,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805, acquisition-related costs such as legal, accounting, and investment-banking fees are expensed as incurred and are not part of the consideration transferred. Goodwill = consideration transferred $5,000,000 − fair value of identifiable net assets $4,400,000 = $600,000. The $200,000 of fees is charged to expense in the period of the acquisition. $800,000 incorrectly adds the acquisition costs to consideration; $400,000 incorrectly subtracts them; $0 ignores the excess of consideration over net assets.",
+      "explanationJa": "ASC 805では、法務・会計・投資銀行手数料などの取得関連コストは発生時に費用処理し、移転対価には含めません（ASC 805-10-25-23）。のれん = 移転対価$5,000,000 − 識別可能純資産の公正価値$4,400,000 = $600,000。手数料$200,000は取得した期の費用です。$800,000は取得関連コストを対価に加算した誤り（旧基準SFAS 141の処理）、$400,000は対価から控除した誤りです。",
+      "references": ["ASC 805-10-25-23", "ASC 805-30-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "ppe-162",
+      "topic": "Property, Plant & Equipment",
+      "subtopic": "Conditional Asset Retirement Obligations",
+      "stem": "Pemberton Corp. owns a factory containing asbestos that, under current law, must be removed and disposed of in a special manner whenever the factory undergoes major renovation or is demolished. Pemberton has no current plans to renovate or demolish the factory, but the building will not last forever. Under ASC 410-20, how should Pemberton account for the asbestos removal obligation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize no liability until renovation or demolition activities actually begin"
+        },
+        {
+          "label": "B",
+          "text": "Disclose the obligation but recognize no liability because the timing of settlement is uncertain"
+        },
+        {
+          "label": "C",
+          "text": "Recognize a liability only if removal is expected within the next 12 months"
+        },
+        {
+          "label": "D",
+          "text": "Recognize a liability at fair value currently if the fair value can be reasonably estimated, because the obligation to perform is unconditional"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 410-20 addresses conditional asset retirement obligations: even though the timing and method of settlement are conditional on a future event (renovation or demolition), the legal obligation to perform the asbestos removal is unconditional and exists today. The entity must recognize a liability at fair value when incurred if fair value can be reasonably estimated, incorporating the uncertainty about timing and method into the measurement (for example, through expected present value techniques). Deferring recognition until activity begins, merely disclosing, or applying a 12-month threshold all contradict the recognition requirements for conditional AROs.",
+      "explanationJa": "ASC 410-20（FIN 47を統合）は条件付資産除去債務を扱います。決済の時期・方法が将来の事象（改修や解体）に条件付けられていても、アスベスト除去を実施する法的義務自体は無条件に現在存在します。したがって公正価値を合理的に見積れる場合は、発生時に公正価値で負債を認識しなければなりません。時期・方法の不確実性は期待現在価値法などにより測定に織り込みます。活動開始まで認識を遅らせる処理、開示のみの処理、12か月基準はいずれも条件付AROの認識要件に反します。",
+      "references": ["ASC 410-20-25-10", "ASC 410-20-25-4"],
+      "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }
   ]

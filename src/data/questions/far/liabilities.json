@@ -2,7 +2,7 @@
   "id": "far-liabilities",
   "name": "Liabilities",
   "topic": "Liabilities",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "liab-001",
@@ -2695,6 +2695,840 @@
       "explanation": "The $240,000 advance covers 4 units at $60,000 each ($240,000 / 4). Each unit is a separate performance obligation satisfied at a point in time upon delivery. By December 31, Year 1, one unit has been delivered, so revenue recognized = $60,000 and the remaining contract liability = $240,000 − $60,000 = $180,000 (for the 3 undelivered units).",
       "explanationJa": "前受金$240,000は4ユニット分で各$60,000（$240,000 / 4）。各ユニットは引渡時点で充足される独立した履行義務である。12月31日までに1ユニットを引き渡したため、認識収益 = $60,000、残契約負債 = $240,000 − $60,000 = $180,000（未引渡3ユニット分）。",
       "references": ["ASC 606-10-45-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-128",
+      "topic": "Liabilities",
+      "subtopic": "Bond Issue Price - Semiannual Interest Computation",
+      "stem": "On January 1, Year 1, Kestrel Corp. issues $2,000,000 face value, 8% bonds that pay interest semiannually on June 30 and December 31. The bonds mature in 5 years, and the market (effective) annual rate at issuance is 10%. Present value factors: PV of $1 for 10 periods at 5% = 0.61391; PV of $1 for 10 periods at 10% = 0.38554; PV of an ordinary annuity for 10 periods at 5% = 7.72173; PV of an ordinary annuity for 10 periods at 10% = 6.14457. At what price are the bonds issued?",
+      "choices": [
+        { "label": "A", "text": "$1,845,558" },
+        { "label": "B", "text": "$2,000,000" },
+        { "label": "C", "text": "$1,227,820" },
+        { "label": "D", "text": "$1,262,646" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "With semiannual interest, the computation uses 10 periods at the semiannual market rate of 5%. Semiannual cash interest = $2,000,000 x 8% x 6/12 = $80,000. Issue price = principal of $2,000,000 x 0.61391 = $1,227,820, plus interest annuity of $80,000 x 7.72173 = $617,738, for a total of $1,845,558. An answer of $2,000,000 ignores discounting entirely (the bonds sell at a discount because the stated rate is below the market rate). $1,227,820 omits the present value of the interest payments. $1,262,646 results from incorrectly using the full 10% annual rate per semiannual period ($2,000,000 x 0.38554 + $80,000 x 6.14457).",
+      "explanationJa": "利払いが半年ごとの場合、期間数は10期、市場利率は半年あたり5%を使用する（ASC 835-30）。半年ごとの現金利息は $2,000,000 × 8% × 6/12 = $80,000。発行価格 = 元本 $2,000,000 × 0.61391 = $1,227,820 ＋ 利息年金 $80,000 × 7.72173 = $617,738、合計 $1,845,558。表面利率（8%）が市場利率（10%）を下回るためディスカウント発行となる。$2,000,000 は割引計算を無視した額面、$1,227,820 は利息部分の現在価値を omit した誤り、$1,262,646 は半年複利に直さず年率10%を各期に適用した誤り。",
+      "references": ["ASC 835-30-25", "ASC 470-10"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-129",
+      "topic": "Liabilities",
+      "subtopic": "Bond Premium - Effective Interest Amortization Year 1",
+      "stem": "On January 1, Year 1, Dunmore Corp. issues $3,000,000 face value, 9% bonds (interest paid annually each December 31) for $3,210,000, when the effective rate is 7%. The bonds mature in 5 years. Using the effective interest method, what amount of premium amortization should Dunmore record for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$270,000" },
+        { "label": "B", "text": "$45,300" },
+        { "label": "C", "text": "$224,700" },
+        { "label": "D", "text": "$42,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the effective interest method, interest expense = carrying value x effective rate = $3,210,000 x 7% = $224,700. Cash interest = $3,000,000 x 9% = $270,000. Premium amortization = cash interest minus interest expense = $270,000 - $224,700 = $45,300. The amounts $270,000 and $224,700 are the cash interest and the interest expense, respectively, not the amortization. $42,000 results from incorrectly using straight-line amortization ($210,000 premium / 5 years), which is not the GAAP-preferred method.",
+      "explanationJa": "実効金利法（ASC 835-30-35-2）では、利息費用＝帳簿価額×実効金利＝$3,210,000 × 7% = $224,700。現金利息＝$3,000,000 × 9% = $270,000。プレミアム償却額＝現金利息−利息費用＝$270,000 − $224,700 = $45,300。$270,000 は現金利息、$224,700 は利息費用そのものであり償却額ではない。$42,000 は定額法（プレミアム$210,000 ÷ 5年）による誤りで、GAAPでは実効金利法が原則。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-130",
+      "topic": "Liabilities",
+      "subtopic": "Effective Interest Method - Pattern of Expense for Discount Bonds",
+      "stem": "A company issued bonds at a discount and amortizes the discount using the effective interest method. Compared to Year 1, how will Year 2 interest expense and Year 2 discount amortization behave?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Interest expense decreases; discount amortization decreases"
+        },
+        {
+          "label": "B",
+          "text": "Interest expense remains constant; discount amortization increases"
+        },
+        {
+          "label": "C",
+          "text": "Interest expense increases; discount amortization increases"
+        },
+        {
+          "label": "D",
+          "text": "Interest expense increases; discount amortization decreases"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "For bonds issued at a discount, the carrying value increases each period as the discount is amortized toward face value. Because interest expense equals the (growing) carrying value times a constant effective rate, interest expense increases each period. Cash interest is fixed, so amortization (interest expense minus cash interest) also increases each period. A pattern of decreasing expense and amortization describes premium bonds, not discount bonds. Constant interest expense with changing amortization describes no acceptable method, and increasing expense with decreasing amortization is internally inconsistent because amortization is the excess of expense over fixed cash interest.",
+      "explanationJa": "ディスカウント発行の社債では、償却により帳簿価額が額面に向かって毎期増加する。利息費用＝帳簿価額×一定の実効金利のため、利息費用は毎期増加する（ASC 835-30-35-2）。現金利息は固定なので、償却額（利息費用−現金利息）も毎期増加する。費用・償却額がともに減少するパターンはプレミアム発行債のもの。利息費用が一定となるのは定額法だがその場合償却額も一定であり、費用増加かつ償却減少は現金利息固定の構造上あり得ない。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-131",
+      "topic": "Liabilities",
+      "subtopic": "Bonds Issued Between Interest Dates - Partial-Year Interest Expense",
+      "stem": "On April 1, Year 1, Halvorsen Corp. issues $1,200,000 face value, 8% bonds at par. The bonds are dated January 1, Year 1, and pay interest semiannually on June 30 and December 31. The purchaser pays par plus accrued interest. What amount of interest expense should Halvorsen report for the year ended December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$96,000" },
+        { "label": "B", "text": "$48,000" },
+        { "label": "C", "text": "$24,000" },
+        { "label": "D", "text": "$72,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Interest expense accrues only for the period the bonds are actually outstanding: April 1 through December 31, or 9 months. Interest expense = $1,200,000 x 8% x 9/12 = $72,000. The accrued interest collected from the purchaser at issuance ($1,200,000 x 8% x 3/12 = $24,000) is recorded as a payable and returned in the June 30 payment, so it never becomes expense. $96,000 represents a full year of interest, ignoring that the issuer did not owe interest for January through March. $48,000 reflects only one semiannual payment, and $24,000 is the accrued interest collected at issuance rather than the expense.",
+      "explanationJa": "利息費用は社債が実際に発行されていた期間（4月1日〜12月31日の9か月）についてのみ計上する。利息費用 = $1,200,000 × 8% × 9/12 = $72,000。発行時に購入者から受け取った経過利息（$1,200,000 × 8% × 3/12 = $24,000）は未払利息として負債計上され、6月30日の利払いで返還されるため費用にはならない（ASC 835-30）。$96,000 は1〜3月分も含めた1年分、$48,000 は半年分の利払い1回分のみ、$24,000 は費用ではなく発行時に受け取った経過利息である。",
+      "references": ["ASC 835-30-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-132",
+      "topic": "Liabilities",
+      "subtopic": "Debt Issuance Costs - Effect on Effective Interest Rate",
+      "stem": "A company issues term debt at par and incurs material debt issuance costs, which are presented as a direct deduction from the carrying amount of the debt. What is the effect of the debt issuance costs on the effective interest rate used to recognize interest expense over the term of the debt?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The effective interest rate is higher than the stated rate because the net proceeds are less than the face amount"
+        },
+        {
+          "label": "B",
+          "text": "The effective interest rate equals the stated rate because the debt was issued at par"
+        },
+        {
+          "label": "C",
+          "text": "The effective interest rate is lower than the stated rate because total carrying value is reduced"
+        },
+        {
+          "label": "D",
+          "text": "The issuance costs do not affect the effective rate because they are expensed as incurred"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Debt issuance costs reduce the initial carrying amount of the debt (like a discount) and are amortized to interest expense using the effective interest method. Because the issuer receives net proceeds below face value but must repay the full face amount plus stated interest, the true cost of borrowing — the effective rate — is higher than the stated rate. The view that the effective rate equals the stated rate ignores the cost-reduced carrying amount. A lower effective rate reverses the direction of the effect: a smaller initial carrying amount with the same cash flows yields a higher yield, not lower. Expensing issuance costs as incurred is not permitted; ASC 835-30 requires deferral and amortization.",
+      "explanationJa": "社債発行費は負債の当初帳簿価額から直接控除され（ディスカウントと同様の表示、ASC 835-30-45-1A）、実効金利法で利息費用として償却される（ASC 835-30-35-2）。発行者は額面未満の手取額しか受け取らないのに額面＋表面利息を支払うため、実質的な借入コスト（実効金利）は表面利率より高くなる。額面発行だから実効金利＝表面利率という考えは発行費控除後の帳簿価額を無視している。実効金利が低くなるという結論は効果の方向が逆であり、発行時に即時費用処理する方法はGAAPでは認められない。",
+      "references": ["ASC 835-30-45-1A", "ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-133",
+      "topic": "Liabilities",
+      "subtopic": "Early Extinguishment - Premium and Unamortized Issue Costs",
+      "stem": "Brockway Corp. reacquires its outstanding bonds in the open market at 101. The bonds have a face value of $4,000,000, unamortized premium of $120,000, and unamortized debt issuance costs of $40,000. What gain or loss should Brockway recognize on the extinguishment?",
+      "choices": [
+        { "label": "A", "text": "$80,000 gain" },
+        { "label": "B", "text": "$40,000 gain" },
+        { "label": "C", "text": "$120,000 gain" },
+        { "label": "D", "text": "$40,000 loss" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The net carrying amount of extinguished debt includes unamortized premium and is reduced by unamortized issuance costs: $4,000,000 + $120,000 - $40,000 = $4,080,000. The reacquisition price is $4,000,000 x 101% = $4,040,000. Gain = $4,080,000 - $4,040,000 = $40,000, recognized in income in the period of extinguishment. $80,000 ignores the unamortized issuance costs ($4,120,000 - $4,040,000). $120,000 treats the entire premium as the gain without comparing carrying amount to the reacquisition price. A $40,000 loss reverses the comparison; because the carrying amount exceeds the price paid, the result is a gain, not a loss.",
+      "explanationJa": "消滅する負債の正味帳簿価額には未償却プレミアムを加算し、未償却社債発行費を控除する：$4,000,000 + $120,000 − $40,000 = $4,080,000（ASC 470-50-40-2）。買入価額は $4,000,000 × 101% = $4,040,000。利得 = $4,080,000 − $4,040,000 = $40,000 で、消滅した期の損益に計上する。$80,000 は未償却発行費の控除を忘れた誤り、$120,000 はプレミアム全額を利得とみなし買入価額との比較を行っていない誤り、$40,000 の損失は帳簿価額が支払額を上回っているのに方向を逆にした誤り。",
+      "references": ["ASC 470-50-40-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-134",
+      "topic": "Liabilities",
+      "subtopic": "Convertible Bonds - Allocation at Issuance (ASU 2020-06)",
+      "stem": "On January 1, Year 1, Larkfield Corp. issues $6,000,000 face value convertible bonds at par. The conversion feature is not required to be bifurcated as a derivative, and the bonds were not issued at a substantial premium. Under ASC 470-20 as amended by ASU 2020-06, what amount should Larkfield record as a liability at issuance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$6,000,000 less the fair value of the conversion option, with the remainder credited to equity"
+        },
+        {
+          "label": "B",
+          "text": "The fair value of similar nonconvertible debt, with the excess credited to equity"
+        },
+        {
+          "label": "C",
+          "text": "$6,000,000, with no amount allocated to equity"
+        },
+        {
+          "label": "D",
+          "text": "The present value of the cash flows discounted at the issuer's nonconvertible borrowing rate, with a debt discount accreted to face"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASU 2020-06 eliminated the cash conversion and beneficial conversion feature separation models. A convertible bond whose conversion feature is not a bifurcated derivative and that is not issued at a substantial premium is accounted for entirely as a liability — the full $6,000,000 of proceeds is recorded as debt with no equity component. Deducting the fair value of the conversion option, allocating based on the value of equivalent nonconvertible debt, and discounting at a nonconvertible borrowing rate to create a debt discount all describe the pre-ASU 2020-06 separation models (or IFRS treatment) that no longer apply under U.S. GAAP.",
+      "explanationJa": "ASU 2020-06（ASC 470-20）は、キャッシュ・コンバージョン要素および有利転換条件（BCF）の分離モデルを廃止した。転換権がデリバティブとして区分処理されず、かつ実質的プレミアム付きで発行されていない転換社債は、全額を負債として処理する。したがって発行価額 $6,000,000 の全額が負債となり、資本への配分はない。転換オプションの公正価値を控除する方法、類似の非転換社債の公正価値で配分する方法、非転換借入利率で割り引いてディスカウントを計上する方法は、いずれも改正前のU.S. GAAPまたはIFRSの取扱いであり、現行のU.S. GAAPでは適用されない。",
+      "references": ["ASC 470-20-25", "ASU 2020-06"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-135",
+      "topic": "Liabilities",
+      "subtopic": "Detachable Warrants - Proportional Method Allocation to Warrants",
+      "stem": "Marwick Corp. issues $3,000,000 face value bonds with detachable stock warrants for total proceeds of $3,060,000. At issuance, the bonds without the warrants have a fair value of $2,940,000, and the warrants have a fair value of $210,000. Using the proportional (relative fair value) method, what amount should be credited to paid-in capital for the warrants?",
+      "choices": [
+        { "label": "A", "text": "$210,000" },
+        { "label": "B", "text": "$120,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$204,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Because both fair values are known, the proceeds are allocated proportionally. Total fair value = $2,940,000 + $210,000 = $3,150,000. Amount allocated to warrants = $3,060,000 x ($210,000 / $3,150,000) = $204,000. $210,000 is the warrants' full fair value without scaling to the actual proceeds. $120,000 results from the incremental method ($3,060,000 - $2,940,000), which is used only when one fair value is unknown. $60,000 is merely the excess of proceeds over the bonds' face value and has no allocation basis.",
+      "explanationJa": "社債と分離型ワラントの双方の公正価値が判明している場合、発行価額を相対公正価値で比例配分する（ASC 470-20-25-2）。公正価値合計 = $2,940,000 + $210,000 = $3,150,000。ワラントへの配分額 = $3,060,000 × ($210,000 / $3,150,000) = $204,000。$210,000 はワラントの公正価値そのままで実際の手取額に按分していない。$120,000 は片方の公正価値が不明な場合にのみ使う増分法（$3,060,000 − $2,940,000）の結果。$60,000 は手取額と社債額面の差にすぎず配分根拠がない。",
+      "references": ["ASC 470-20-25-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-136",
+      "topic": "Liabilities",
+      "subtopic": "Induced Conversion - Measurement of Sweetener",
+      "stem": "To encourage early conversion of its outstanding convertible bonds, Penrose Corp. offers bondholders additional shares beyond the original conversion terms if they convert within 60 days. The offer is accepted. How should Penrose account for the additional consideration given to induce conversion?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize an expense equal to the fair value of the incremental consideration given, included in income from continuing operations"
+        },
+        {
+          "label": "B",
+          "text": "Debit paid-in capital for the fair value of the incremental shares, with no income statement effect"
+        },
+        {
+          "label": "C",
+          "text": "Recognize a loss classified as an extraordinary item"
+        },
+        {
+          "label": "D",
+          "text": "Add the fair value of the incremental shares to the carrying amount of the bonds before applying the book value method"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 470-20-40-16, when conversion is induced by changing terms or adding consideration for a limited period, the issuer recognizes an expense equal to the fair value of all securities and other consideration transferred in excess of the fair value of securities issuable under the original terms. The expense is part of income from continuing operations. Charging paid-in capital would understate expenses and misstate equity. Extraordinary item classification no longer exists under U.S. GAAP. Folding the sweetener into the bond carrying amount before conversion has no basis; the incremental consideration is an inducement cost, not part of the debt.",
+      "explanationJa": "ASC 470-20-40-16 により、限定期間の条件変更や追加対価で転換を誘導（induced conversion）した場合、発行者は「当初の転換条件で交付されるはずだった証券の公正価値を超えて移転したすべての証券・対価の公正価値」を費用として認識する。この費用は継続事業の損益に含める。払込資本から直接控除する処理は費用の過少計上となる。異常項目（extraordinary item）区分は現行U.S. GAAPでは廃止されている。追加対価を社債の帳簿価額に加算してから簿価法を適用する処理には根拠がなく、誘導対価は負債の一部ではなく誘導コストである。",
+      "references": ["ASC 470-20-40-16"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-137",
+      "topic": "Liabilities",
+      "subtopic": "Troubled Debt Restructuring - Modification with Gain (Debtor)",
+      "stem": "Fenwick Corp. is experiencing financial difficulty. Its lender agrees to restructure a note with a carrying amount of $1,080,000 (principal $1,000,000 plus accrued interest $80,000). Under the new terms, Fenwick will pay principal of $900,000 in 2 years plus annual interest of 5% on the $900,000 ($45,000 per year for 2 years). What gain on restructuring should Fenwick recognize?",
+      "choices": [
+        { "label": "A", "text": "$180,000" },
+        { "label": "B", "text": "$90,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a troubled debt restructuring involving a modification of terms, the debtor compares the carrying amount of the debt with the total (undiscounted) future cash payments under the new terms. Total future payments = $900,000 + ($45,000 x 2) = $990,000. Because this is less than the carrying amount of $1,080,000, the debtor recognizes a gain of $1,080,000 - $990,000 = $90,000, and all subsequent payments reduce the liability with no future interest expense. $180,000 compares the carrying amount only to the new principal and ignores the $90,000 of future interest payments. $100,000 ignores the accrued interest in the carrying amount. A gain of zero would apply only if total future payments equaled or exceeded the carrying amount, in which case a new effective rate would be computed.",
+      "explanationJa": "条件変更型のトラブルド・デット・リストラクチャリングでは、債務者は負債の帳簿価額と新条件による将来キャッシュ支払総額（割引前）を比較する（ASC 470-60-35-5〜6）。将来支払総額 = $900,000 + ($45,000 × 2年) = $990,000。帳簿価額 $1,080,000 を下回るため、利得 = $1,080,000 − $990,000 = $90,000 を認識し、以後の支払はすべて負債の減額となり将来の利息費用はゼロになる。$180,000 は将来利息 $90,000 を無視して新元本のみと比較した誤り。$100,000 は帳簿価額に含まれる未払利息 $80,000 を無視した誤り。将来支払総額が帳簿価額以上の場合にのみ利得ゼロ（新実効金利を算定）となる。",
+      "references": ["ASC 470-60-35-5", "ASC 470-60-35-6"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-138",
+      "topic": "Liabilities",
+      "subtopic": "Troubled Debt Restructuring - Settlement with Equity Interest",
+      "stem": "Calloway Corp., in financial difficulty, settles a note payable with a carrying amount of $800,000 (principal $750,000 plus accrued interest $50,000) by issuing 100,000 shares of its $1 par common stock to the creditor. The stock has a fair value of $6 per share at the settlement date. What gain on restructuring should Calloway recognize?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$700,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When a debtor settles debt by transferring an equity interest in a troubled debt restructuring, the equity is recorded at fair value (100,000 shares x $6 = $600,000), and the gain equals the carrying amount of the debt minus the fair value of the equity issued: $800,000 - $600,000 = $200,000. The stock is recorded as common stock $100,000 (par) and additional paid-in capital $500,000. $150,000 ignores the $50,000 of accrued interest in the carrying amount ($750,000 - $600,000). $700,000 incorrectly measures the equity at par value rather than fair value ($800,000 - $100,000). A gain of zero would be appropriate only if the fair value of the shares equaled the carrying amount of the debt.",
+      "explanationJa": "トラブルド・デット・リストラクチャリングで持分（株式）の交付により債務を消滅させる場合、株式は公正価値で計上し（100,000株 × $6 = $600,000）、利得＝負債帳簿価額−交付株式の公正価値＝$800,000 − $600,000 = $200,000 となる（ASC 470-60-35-3〜4）。株式は資本金 $100,000（額面）と払込剰余金 $500,000 に区分計上する。$150,000 は帳簿価額に含まれる未払利息 $50,000 を無視した誤り（$750,000 − $600,000）。$700,000 は株式を公正価値ではなく額面で測定した誤り（$800,000 − $100,000）。株式の公正価値が帳簿価額と等しい場合にのみ利得ゼロとなる。",
+      "references": ["ASC 470-60-35-3", "ASC 470-60-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-139",
+      "topic": "Liabilities",
+      "subtopic": "Loss Contingency - Probable but Not Reasonably Estimable",
+      "stem": "At year-end, Tolliver Corp. is the defendant in a product liability lawsuit. Legal counsel believes it is probable that Tolliver will be found liable, but because the litigation is at an early stage, neither a best estimate nor a meaningful range of the loss can be determined. How should Tolliver report this contingency in its year-end financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Accrue an amount based on the plaintiff's claimed damages"
+        },
+        {
+          "label": "B",
+          "text": "Accrue a nominal amount and disclose the uncertainty"
+        },
+        {
+          "label": "C",
+          "text": "Neither accrue nor disclose until the amount is estimable"
+        },
+        {
+          "label": "D",
+          "text": "Make no accrual, but disclose the nature of the contingency and the fact that an estimate cannot be made"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 450-20 requires accrual only when a loss is both probable and reasonably estimable. When the loss is probable but no amount within a range can be reasonably estimated, no accrual is made; however, disclosure of the nature of the contingency — and a statement that an estimate cannot be made — is required. Accruing the plaintiff's claimed damages would record an unsupported amount; the claim is not an estimate of the probable loss. Accruing a nominal placeholder amount has no basis in GAAP. Omitting disclosure entirely is not acceptable because the probable loss is material information for users even when unquantifiable.",
+      "explanationJa": "ASC 450-20-25-2 により、損失偶発事象の引当計上は「発生の可能性が高い（probable）」かつ「金額を合理的に見積り可能」の両方を満たす場合に限られる。発生は probable だが金額（レンジを含む）を合理的に見積もれない場合は引当計上せず、偶発事象の内容と「見積りができない旨」の開示が要求される（ASC 450-20-50）。原告の請求額をそのまま計上するのは根拠のない金額の計上であり、請求額は損失の見積りではない。名目的な金額の計上にもGAAP上の根拠はない。金額不明でも probable な損失は利用者にとって重要な情報であり、開示の省略は認められない。",
+      "references": ["ASC 450-20-25-2", "ASC 450-20-50-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-140",
+      "topic": "Liabilities",
+      "subtopic": "Loss Contingency - Reasonably Possible Range",
+      "stem": "At December 31, Year 1, Ashford Corp. is a defendant in litigation. Legal counsel concludes that an unfavorable outcome is reasonably possible (but not probable) and estimates the potential loss in the range of $200,000 to $500,000. What should Ashford report in its Year 1 financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No accrual; disclose the nature of the contingency and the range of possible loss"
+        },
+        {
+          "label": "B",
+          "text": "Accrue $200,000 and disclose the additional exposure up to $500,000"
+        },
+        { "label": "C", "text": "Accrue $350,000, the midpoint of the range" },
+        {
+          "label": "D",
+          "text": "No accrual and no disclosure, because the loss is not probable"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Accrual under ASC 450-20 requires that the loss be probable; a reasonably possible loss is never accrued. However, reasonably possible losses must be disclosed: the nature of the contingency and an estimate of the possible loss or range (or a statement that no estimate can be made). Accruing $200,000 applies the low-end-of-range rule, which is relevant only when the loss is probable and no amount in the range is a better estimate. Accruing the midpoint has no support under U.S. GAAP (an expected-value or midpoint approach is an IFRS-style notion). Omitting disclosure is wrong because disclosure, unlike accrual, is required at the reasonably possible threshold.",
+      "explanationJa": "ASC 450-20-25-2 の引当計上要件は「probable（発生の可能性が高い）」であり、reasonably possible（合理的に起こり得る）にとどまる損失は引当計上しない。ただし reasonably possible な損失は開示が必要で、偶発事象の内容と損失見積額またはレンジ（見積不能の場合はその旨）を注記する（ASC 450-20-50-3〜4）。$200,000 の計上はレンジ下限ルールの適用だが、これは損失が probable でレンジ内に最善の見積りがない場合にのみ用いる。中央値 $350,000 の計上はU.S. GAAPに根拠がない（期待値的アプローチはIFRS的発想）。開示の省略は誤りで、引当と異なり開示は reasonably possible の段階で要求される。",
+      "references": ["ASC 450-20-25-2", "ASC 450-20-50-3", "ASC 450-20-50-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-141",
+      "topic": "Liabilities",
+      "subtopic": "Volume Rebates - Refund Liability Accrual",
+      "stem": "Granby Corp. offers a customer a 3% rebate on all purchases if the customer's cumulative purchases for the calendar year exceed $1,000,000. Through December 31, Year 1 (Granby's interim reporting date is not relevant; this is year-to-date under a contract year ending June 30, Year 2), the customer has purchased $800,000, and Granby concludes it is probable the customer's purchases will reach an estimated $1,200,000 by the end of the contract year, so the rebate threshold will be met. What refund liability should Granby report at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$36,000" },
+        { "label": "B", "text": "$24,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$6,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Volume rebates are variable consideration under ASC 606. Because it is probable the threshold will be met, the rebate applies to all purchases, and revenue is reduced for the expected rebate on sales recorded to date: $800,000 x 3% = $24,000 refund liability. $36,000 is the rebate on the estimated full-year purchases of $1,200,000, but a liability is recognized only for the rebate attributable to sales that have already occurred. $0 would be appropriate only if reaching the threshold were not expected, which contradicts the facts. $6,000 incorrectly computes the rebate only on the estimated purchases above the $1,000,000 threshold ($200,000 x 3%), but the 3% rebate applies to all purchases once the threshold is met.",
+      "explanationJa": "数量リベートはASC 606の変動対価に該当する。閾値到達が見込まれる（probable）ため、リベートは全購入額に適用され、既に計上した売上に対応する見込みリベート分だけ収益を減額し返金負債を計上する：$800,000 × 3% = $24,000。$36,000 は年間見込購入額 $1,200,000 に対するリベートだが、負債は既発生の売上に帰属する部分のみ認識する。$0 は閾値到達が見込まれない場合の処理であり事実関係と矛盾する。$6,000 は閾値超過部分（$200,000 × 3%）のみにリベートを適用した誤りで、閾値到達時はリベートが全購入額に適用される。",
+      "references": ["ASC 606-10-32-8", "ASC 606-10-55-22"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-142",
+      "topic": "Liabilities",
+      "subtopic": "Gift Card Breakage - Proportional Method Computation",
+      "stem": "During Year 1, Lindale Stores sells $1,200,000 of gift cards. Based on historical experience, Lindale expects 10% of the gift card value ($120,000) will never be redeemed (breakage), and it is entitled to the breakage. By December 31, Year 1, customers have redeemed $540,000 of gift cards, which is 50% of the total expected redemptions of $1,080,000. Using the proportional method, what breakage revenue should Lindale recognize in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$54,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 606-10-55-48, expected breakage is recognized in proportion to the pattern of rights exercised by customers. Customers have redeemed $540,000 / $1,080,000 = 50% of expected redemptions, so breakage revenue = $120,000 x 50% = $60,000. Recognizing the full $120,000 immediately would front-load revenue before the redemption pattern supports it. $54,000 incorrectly applies the 10% breakage rate to the dollars redeemed ($540,000 x 10%) rather than measuring proportional progress against expected redemptions. Recognizing nothing until cards expire is appropriate only when the entity does not expect to be entitled to breakage or cannot estimate it.",
+      "explanationJa": "ASC 606-10-55-48 により、ブレイケージ（未使用見込額）は顧客の権利行使パターンに比例して認識する。償還済額 $540,000 ÷ 予想総償還額 $1,080,000 = 50% の進捗であるため、ブレイケージ収益 = $120,000 × 50% = $60,000。$120,000 を即時に全額認識するのは償還パターンに先行した収益の前倒し計上となる。$54,000 は償還額にブレイケージ率10%を乗じた誤り（$540,000 × 10%）で、予想償還額に対する比例進捗で測定すべきである。カード失効まで認識しない処理は、ブレイケージへの権利が見込めないか見積不能な場合に限られる。",
+      "references": ["ASC 606-10-55-48"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-143",
+      "topic": "Liabilities",
+      "subtopic": "Assurance-Type Warranty - Timing of Expense Recognition",
+      "stem": "Stratton Corp. sells machinery with a standard 3-year assurance-type warranty that is not sold separately. Warranty claims are typically paid evenly over the 3 years following each sale. When should Stratton recognize warranty expense for machines sold during Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Evenly over the 3-year warranty period as coverage is provided"
+        },
+        { "label": "B", "text": "When warranty claims are actually paid" },
+        { "label": "C", "text": "When customers file warranty claims" },
+        {
+          "label": "D",
+          "text": "In Year 1, at the time of sale, based on the estimated total cost of honoring the warranty"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "An assurance-type warranty is a loss contingency: the obligating event is the sale of the product, the future cost is probable, and it is reasonably estimable from experience. Therefore the full estimated warranty cost is expensed in the period of sale, with a corresponding warranty liability. Spreading the expense over the coverage period describes a service-type warranty, which is a separate performance obligation with deferred revenue — not the accounting for an assurance warranty. Expensing when claims are paid or when claims are filed is cash-basis (or claims-basis) accounting that fails to match the cost with the revenue from the sale.",
+      "explanationJa": "アシュアランス型保証（assurance-type warranty）は損失偶発事象であり、義務発生事象は製品の販売、将来コストの発生は probable、過去の経験から金額も合理的に見積り可能である。したがって見積保証費用の全額を販売した期に費用計上し、同額の製品保証引当金を計上する（ASC 460-10-25-5、ASC 450-20）。保証期間にわたり按分する処理はサービス型保証（独立した履行義務として収益を繰り延べる）の会計処理であり、アシュアランス型には適用されない。クレーム支払時または請求時に費用化するのは現金主義的処理で、販売収益との対応（matching）を欠く。",
+      "references": ["ASC 460-10-25-5", "ASC 450-20-25-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-144",
+      "topic": "Liabilities",
+      "subtopic": "Warranty Liability - Change in Estimated Claim Rate",
+      "stem": "Welby Corp. accrues warranty costs at 2% of sales. Year 1 sales were $5,000,000, and Welby paid $30,000 of Year 1 claims during Year 1. Early in Year 2, based on new claims data, Welby revises its estimated warranty cost rate to 3% for Year 2 sales. Year 2 sales were $6,000,000. The revision does not indicate that the Year 1 accrual was in error. What warranty expense should Welby report for Year 2?",
+      "choices": [
+        { "label": "A", "text": "$180,000" },
+        { "label": "B", "text": "$230,000" },
+        { "label": "C", "text": "$120,000" },
+        { "label": "D", "text": "$110,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A revision of the warranty cost rate is a change in accounting estimate, accounted for prospectively under ASC 250. Year 2 warranty expense = Year 2 sales x revised rate = $6,000,000 x 3% = $180,000. Prior-year amounts are not restated. $230,000 incorrectly adds a catch-up adjustment by re-measuring Year 1 sales at the higher rate ($6,000,000 x 3% + $5,000,000 x 1%), which would be retrospective treatment. $120,000 applies the old 2% rate to Year 2 sales, ignoring the revised estimate. $110,000 improperly nets claim payments or the existing liability balance against the expense; cash payments reduce the liability, not the current-period expense.",
+      "explanationJa": "保証費率の見直しは会計上の見積りの変更であり、ASC 250-10-45-17 により将来に向かって（prospectively）処理する。Year 2 の保証費用 = Year 2 売上 × 改訂後率 = $6,000,000 × 3% = $180,000。過年度の修正再表示は行わない。$230,000 は Year 1 売上にも新レートを遡及適用したキャッチアップ調整（$6,000,000 × 3% + $5,000,000 × 1%）であり遡及処理に当たるため誤り。$120,000 は旧率2%を Year 2 売上に適用し見積りの変更を無視した誤り。$110,000 はクレーム支払額や既存引当金残高を費用と相殺した誤りで、支払は引当金（負債）を減額するものであり当期費用を減額しない。",
+      "references": ["ASC 250-10-45-17", "ASC 460-10-25-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-145",
+      "topic": "Liabilities",
+      "subtopic": "Guarantees - Subsequent Measurement of Noncontingent Obligation",
+      "stem": "On January 1, Year 1, Redmond Corp. guarantees a 5-year bank loan of an unrelated business partner and records a guarantee liability at the fair value of the noncontingent (stand-ready) obligation. Default by the borrower remains remote throughout Year 1, and Redmond has not elected the fair value option. How should Redmond typically account for the guarantee liability after initial recognition?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Remeasure the liability to fair value at each reporting date, with changes in earnings"
+        },
+        {
+          "label": "B",
+          "text": "Reduce the liability by a credit to earnings as Redmond is released from risk, typically over the term of the guarantee"
+        },
+        {
+          "label": "C",
+          "text": "Carry the liability unchanged until the guarantee expires, then derecognize it against equity"
+        },
+        {
+          "label": "D",
+          "text": "Derecognize the liability immediately because default is remote"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 460-10-35-2 provides that the initial noncontingent guarantee liability is typically reduced as the guarantor is released from risk under the guarantee — commonly by a systematic and rational amortization (often over the guarantee term) credited to earnings. Ongoing fair value remeasurement applies only if the fair value option is elected or the guarantee is within derivative guidance, neither of which applies here. Holding the liability static and derecognizing through equity bypasses the income statement, which is improper. Immediate derecognition because default is remote confuses the contingent component (an ASC 450 layer accrued only if payment becomes probable) with the noncontingent stand-ready obligation, which exists regardless of the likelihood of default.",
+      "explanationJa": "ASC 460-10-35-2 により、当初認識した非偶発的（stand-ready）保証債務は、保証人がリスクから解放されるにつれて減額し、通常は保証期間にわたる規則的・合理的な方法で収益（earnings）へ振り替える。公正価値での毎期再測定は、公正価値オプションを選択した場合やデリバティブに該当する場合に限られ、本問では該当しない。負債を据え置き満期に資本へ直接振り替える処理は損益計算書を経由しないため不適切。デフォルトが remote だから即時に認識中止するという処理は、偶発的部分（支払が probable になった場合にASC 450で追加計上する層）と、デフォルト可能性にかかわらず存在する非偶発的 stand-ready 義務とを混同している。",
+      "references": ["ASC 460-10-35-2", "ASC 460-10-25-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-146",
+      "topic": "Liabilities",
+      "subtopic": "Short-Term Obligations - Repayment Before Refinancing",
+      "stem": "At December 31, Year 1, Norcross Corp. has a $4,000,000 note payable due February 10, Year 2. On January 20, Year 2, Norcross pays off the note using existing cash. On February 25, Year 2, before the Year 1 financial statements are issued, Norcross issues $4,000,000 of 10-year bonds and replenishes its cash. How should the $4,000,000 note be classified in the December 31, Year 1 balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Noncurrent, because long-term bonds were issued before the financial statements were issued"
+        },
+        {
+          "label": "B",
+          "text": "Noncurrent, because Norcross demonstrated both intent and ability to refinance"
+        },
+        {
+          "label": "C",
+          "text": "Current, because the obligation was repaid using current assets before the refinancing occurred"
+        },
+        {
+          "label": "D",
+          "text": "Half current and half noncurrent, reflecting the period each source of funds was used"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 470-10-45-15 specifically addresses this fact pattern: if a short-term obligation is repaid after the balance sheet date using current assets, and long-term financing is obtained later, the obligation must still be classified as current because working capital was actually used to extinguish it. The subsequent bond issuance replenished cash but did not fund the repayment. Classifying the note as noncurrent based on the later bond issuance or on intent and ability ignores that the refinancing exception requires the short-term obligation to be refinanced on a long-term basis — not repaid with current assets first. There is no basis for splitting the classification.",
+      "explanationJa": "ASC 470-10-45-15 はまさにこの事例を規定している。貸借対照表日後に短期債務を流動資産（手元現金）で返済し、その後に長期資金調達を行った場合、実際に運転資本が返済に使用された以上、当該債務は流動負債に分類しなければならない。その後の社債発行は現金を補充しただけで返済の原資ではない。後日の社債発行や借換えの意図と能力を根拠に固定負債とする処理は、借換特例が「短期債務が長期ベースで借り換えられること」を要件とし、先に流動資産で返済された場合には適用されない点を見落としている。分類を按分する根拠は存在しない。",
+      "references": ["ASC 470-10-45-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-147",
+      "topic": "Liabilities",
+      "subtopic": "Covenant Waiver - Probable Recurrence of Violation",
+      "stem": "At December 31, Year 1, Pemberton Corp. violates the minimum net worth covenant on its $7,000,000 long-term loan, giving the lender the right to call the loan. Before the financial statements are issued, the lender waives its right to call the loan for a period of more than one year from the balance sheet date. However, the covenant is measured quarterly, and it is probable that Pemberton will violate the same covenant at March 31, Year 2. How should the loan be classified at December 31, Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Noncurrent, because a waiver covering more than one year was obtained"
+        },
+        {
+          "label": "B",
+          "text": "Noncurrent, because classification depends only on conditions existing at the balance sheet date"
+        },
+        {
+          "label": "C",
+          "text": "Current, but only if the lender formally notifies Pemberton of intent to call"
+        },
+        {
+          "label": "D",
+          "text": "Current, because it is probable the covenant will be violated again at the next measurement date, making the debt callable within one year"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 470-10-45-1 and related guidance, a waiver alone does not support noncurrent classification when it is probable that the borrower will violate the same covenant at subsequent measurement dates within the next 12 months — the expected new violation would again make the obligation callable within one year. A waiver supports noncurrent classification only if compliance at future measurement dates is reasonably expected (or the waiver also covers probable future violations). Relying solely on conditions at the balance sheet date ignores the required look-forward to compliance over the next year. A formal call notice from the lender is irrelevant; classification is driven by the lender's right to call, not its exercised intent.",
+      "explanationJa": "ASC 470-10-45-1 および関連ガイダンスにより、ウェイバーを取得しても、今後12か月以内の測定日に同じコベナンツへの再違反が probable な場合は固定負債分類を支えられない。新たな違反により債務は再び1年以内に請求可能となるためである。ウェイバーで固定分類が認められるのは、将来の測定日における遵守が合理的に見込まれる場合（または将来の違反見込みまでウェイバーがカバーする場合）に限られる。貸借対照表日時点の状況のみで判断する考え方は、向こう1年間の遵守見通しの検討要件を無視している。貸手の正式な期限の利益喪失通知は無関係で、分類は貸手が請求「できる」権利の有無で決まり、実際に行使する意図は問わない。",
+      "references": ["ASC 470-10-45-1", "ASC 470-10-45-11"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-148",
+      "topic": "Liabilities",
+      "subtopic": "Discounted Note Payable - Effective Interest Rate",
+      "stem": "On January 1, Year 1, Ellsworth Corp. signs a one-year, $500,000 face value note with a bank. The bank deducts interest of 8% of face value ($40,000) in advance (a discounted note), giving Ellsworth proceeds of $460,000. Ellsworth repays $500,000 at maturity. What is the approximate effective annual interest rate on this borrowing?",
+      "choices": [
+        { "label": "A", "text": "8.7%" },
+        { "label": "B", "text": "8.0%" },
+        { "label": "C", "text": "8.3%" },
+        { "label": "D", "text": "9.2%" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The effective rate is the interest cost divided by the funds actually available to the borrower: $40,000 / $460,000 = 8.7% (approximately). Because the bank deducts interest in advance, Ellsworth has use of only $460,000 while paying $40,000 of interest, so the effective rate exceeds the stated discount rate. 8.0% is the stated rate computed on face value, which overstates the usable proceeds. 8.3% results from dividing by the average of face and proceeds ($40,000 / $480,000), which is not how the effective rate on a single-payment note is measured. 9.2% has no computational basis in these facts.",
+      "explanationJa": "実効金利は、利息コストを借手が実際に利用できた資金で除して求める：$40,000 ÷ $460,000 ≒ 8.7%。銀行が利息を前取りするため、Ellsworth が使用できる資金は $460,000 にとどまる一方で $40,000 の利息を負担するので、実効金利は表面割引率を上回る（ASC 835-30）。8.0% は額面ベースの表面割引率で、利用可能資金を過大評価している。8.3% は額面と手取額の平均（$480,000）で除した誤りで、一括返済の手形の実効金利測定方法ではない。9.2% は本問の数値から導かれる計算根拠がない。",
+      "references": ["ASC 835-30-25"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-149",
+      "topic": "Liabilities",
+      "subtopic": "Debt Derecognition - In-Substance Defeasance",
+      "stem": "Holloway Corp. irrevocably places U.S. Treasury securities in a trust, with the trust assets dedicated solely to making all remaining principal and interest payments on Holloway's outstanding bonds. Holloway has not been legally released from its obligation by the bondholders, and the bonds remain outstanding. How should Holloway account for this arrangement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Derecognize the bonds and recognize a gain or loss on extinguishment"
+        },
+        {
+          "label": "B",
+          "text": "Continue to report both the bonds payable and the trust assets; the liability is not extinguished"
+        },
+        {
+          "label": "C",
+          "text": "Offset the trust assets against the bonds payable and report only the net amount"
+        },
+        {
+          "label": "D",
+          "text": "Reclassify the bonds as equity because repayment is economically assured"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 405-20-40-1, a liability is derecognized only when (1) the debtor pays the creditor and is relieved of the obligation, or (2) the debtor is legally released from being the primary obligor, either judicially or by the creditor. An in-substance defeasance — funding a trust without legal release — meets neither condition, so the bonds and the trust assets both remain on the balance sheet. Derecognition with a gain or loss would be appropriate only upon actual payment or legal release. Offsetting is prohibited because the right of setoff criteria are not met; the trust assets and the bonds involve different counterparties. Debt is never reclassified to equity merely because repayment is economically assured.",
+      "explanationJa": "ASC 405-20-40-1 により、負債の認識中止が認められるのは、(1) 債務者が債権者に支払い義務を免れた場合、または (2) 裁判上もしくは債権者により主たる債務者の地位から法的に解放された場合に限られる。法的免責を伴わずに信託へ資金を拠出する実質的ディフィーザンス（in-substance defeasance）はいずれの要件も満たさないため、社債と信託資産の両方を貸借対照表に計上し続ける。消滅損益の認識は実際の弁済または法的免責があって初めて認められる。相殺表示は相殺権の要件（同一相手方等）を満たさないため禁止される。返済が経済的に確実というだけで負債を資本に振り替えることはない。",
+      "references": ["ASC 405-20-40-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-150",
+      "topic": "Liabilities",
+      "subtopic": "Zero-Coupon Bond - Year 2 Interest Expense",
+      "stem": "On January 1, Year 1, Veranda Corp. issues a 5-year, zero-coupon bond with a face value of $1,000,000 for proceeds of $620,920, reflecting an effective annual rate of 10%. What interest expense should Veranda recognize for Year 2?",
+      "choices": [
+        { "label": "A", "text": "$62,092" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$68,301" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A zero-coupon bond accrues interest by accreting the carrying value at the effective rate. Year 1 interest expense = $620,920 x 10% = $62,092, bringing the carrying value to $683,012 at the end of Year 1. Year 2 interest expense = $683,012 x 10% = $68,301. $62,092 is the Year 1 expense; using it for Year 2 ignores compounding on the higher carrying value. $0 confuses the absence of cash interest payments with the absence of expense — interest accrues even though no cash is paid until maturity. $100,000 incorrectly applies the 10% rate to the face value rather than the carrying value.",
+      "explanationJa": "ゼロクーポン債は実効金利で帳簿価額を増価（accretion）させて利息を認識する（ASC 835-30-35-2）。Year 1 の利息費用 = $620,920 × 10% = $62,092 で、Year 1 末の帳簿価額は $683,012 となる。Year 2 の利息費用 = $683,012 × 10% = $68,301。$62,092 は Year 1 の費用であり、増加した帳簿価額への複利計算を無視している。$0 は現金利払いがないことと費用がないことの混同で、満期まで現金支払がなくても利息は毎期発生する。$100,000 は実効金利10%を帳簿価額ではなく額面に適用した誤り。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-151",
+      "topic": "Liabilities",
+      "subtopic": "ASU 2020-06 - Diluted EPS for Convertible Instruments",
+      "stem": "Under ASU 2020-06, which method must an issuer use to reflect convertible debt instruments in diluted earnings per share?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The treasury stock method, if the issuer states an intent to settle the principal in cash"
+        },
+        {
+          "label": "B",
+          "text": "Either the treasury stock method or the if-converted method, as an accounting policy election"
+        },
+        {
+          "label": "C",
+          "text": "The two-class method for all convertible instruments"
+        },
+        {
+          "label": "D",
+          "text": "The if-converted method, with share settlement presumed for instruments that may be settled in cash or shares"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASU 2020-06 amended ASC 260 to require the if-converted method for all convertible instruments in diluted EPS and eliminated the ability to use the treasury stock method based on a stated or presumed cash settlement of principal. For instruments settleable in cash or shares, share settlement is presumed and an entity may no longer rebut that presumption with its settlement intent or policy. A policy election between methods does not exist. The two-class method applies to participating securities (such as certain preferred stock or instruments with participation rights), not as the general model for convertible debt.",
+      "explanationJa": "ASU 2020-06 はASC 260を改正し、希薄化後EPSにおいて全ての転換証券に if-converted 法（転換仮定法）の適用を義務付け、元本の現金決済方針を根拠とする自己株式方式（treasury stock method）の使用を廃止した。現金または株式で決済可能な商品については株式決済が推定され、発行者の決済意図や方針によりこの推定を覆すことはできなくなった。両方式間の会計方針の選択は存在しない。two-class 法は参加型証券（参加権を持つ優先株式等）に適用されるものであり、転換社債の一般的モデルではない。",
+      "references": ["ASC 260-10-45-21A", "ASU 2020-06"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-152",
+      "topic": "Liabilities",
+      "subtopic": "Litigation Accrual - Settlement Offer as Minimum of Range",
+      "stem": "Yardley Corp. is a defendant in a breach of contract suit in which the plaintiff seeks $1,000,000 in damages. Yardley's counsel believes a loss is probable and, to resolve the matter, Yardley has offered the plaintiff $300,000 to settle; the offer remains open at year-end and counsel believes the ultimate loss will be at least the offer amount, though no amount within the range up to $1,000,000 is a better estimate than any other. What amount should Yardley accrue at year-end?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$1,000,000" },
+        { "label": "C", "text": "$650,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The loss is probable and the range of loss is $300,000 (the outstanding settlement offer, which counsel views as the minimum exposure) to $1,000,000 (the claim). When no amount within the range is a better estimate than any other, ASC 450-20-30-1 requires accruing the minimum of the range — $300,000 — with disclosure of the additional exposure. Accruing the full $1,000,000 claim records the maximum rather than the required minimum. $650,000, the midpoint, is not the U.S. GAAP measurement (a midpoint convention is an IFRS-style approach). Accruing nothing fails the recognition test because the loss is both probable and reasonably estimable within a range.",
+      "explanationJa": "損失は probable であり、レンジは $300,000（係属中の和解提示額＝弁護士が最低限の損失と判断）から $1,000,000（請求額）。レンジ内に他より優れた見積額がない場合、ASC 450-20-30-1 はレンジの下限額 $300,000 の引当計上を要求し、追加的なエクスポージャーは開示する。$1,000,000 の計上は下限ではなく上限の計上であり要件と異なる。中央値 $650,000 はU.S. GAAPの測定方法ではない（中間値はIFRS的アプローチ）。引当ゼロは、損失が probable かつレンジで合理的に見積り可能である以上、認識要件を満たしているため誤り。",
+      "references": ["ASC 450-20-30-1", "ASC 450-20-50-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-153",
+      "topic": "Liabilities",
+      "subtopic": "Unasserted Claims - Assertion Not Probable",
+      "stem": "Drummond Corp. becomes aware that a defect in a discontinued product could give rise to customer claims. No customer has asserted a claim, and based on the small number of affected units, the passage of time, and the lack of any customer complaints, management and counsel conclude that the assertion of a claim is not probable. How should Drummond treat this potential claim in its financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Accrue the estimated cost of potential claims"
+        },
+        { "label": "B", "text": "No accrual and no disclosure is required" },
+        {
+          "label": "C",
+          "text": "Disclose the potential claim even though no accrual is made"
+        },
+        {
+          "label": "D",
+          "text": "Accrue a liability only for units still under warranty"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "For unasserted claims, ASC 450-20-50-6 establishes a two-step analysis: a loss contingency need not be disclosed (or accrued) unless it is considered probable that a claim will be asserted; only if assertion is probable does the entity then evaluate the likelihood of an unfavorable outcome. Because assertion is not probable here, neither accrual nor disclosure is required. Accruing estimated costs skips both steps of the analysis. Disclosure is unnecessary at this stage because the threshold trigger — probable assertion — is absent. Limiting an accrual to in-warranty units restates the question as a warranty issue, but the facts describe an unasserted legal claim, not an existing warranty obligation.",
+      "explanationJa": "未主張の請求（unasserted claim）について、ASC 450-20-50-6 は2段階の判定を定めている：請求が主張される可能性が高い（probable）と判断されない限り、開示も引当も不要。主張が probable な場合に初めて、不利な結果の可能性を評価する。本問では主張の可能性が probable でないため、引当も開示も要求されない。見積コストの引当計上は2段階判定の双方を飛ばしている。開示も、判定の入口である「主張の probable 性」が欠けているため不要。保証期間内のユニットに限定した引当は問題を製品保証の論点にすり替えており、本問は既存の保証債務ではなく未主張の法的請求の事例である。",
+      "references": ["ASC 450-20-50-6"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-154",
+      "topic": "Liabilities",
+      "subtopic": "Bonus Accrual - Bonus Based on Income After Bonus",
+      "stem": "Caldwell Corp. has an agreement to pay its chief executive a bonus equal to 10% of income after deduction of the bonus (but before income taxes). Income before the bonus and before income taxes for Year 1 is $660,000. What bonus liability should Caldwell accrue at year-end?",
+      "choices": [
+        { "label": "A", "text": "$66,000" },
+        { "label": "B", "text": "$72,600" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$54,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Let B = the bonus. B = 0.10 x ($660,000 - B), so B = $66,000 - 0.10B, and 1.10B = $66,000, giving B = $60,000. Verification: income after the bonus is $660,000 - $60,000 = $600,000, and 10% of $600,000 is $60,000. $66,000 computes the bonus on income before the bonus, ignoring the self-referencing deduction. $72,600 grosses the bonus up in the wrong direction ($66,000 x 1.10). $54,000 applies the rate to income after deducting an incorrect $120,000 of combined items not supported by the agreement.",
+      "explanationJa": "ボーナスを B とすると、B = 0.10 × ($660,000 − B)。整理して B = $66,000 − 0.10B、1.10B = $66,000、よって B = $60,000（ASC 710-10、未払費用の発生主義計上）。検算：ボーナス控除後利益 = $660,000 − $60,000 = $600,000、その10% = $60,000 で一致。$66,000 はボーナス控除前利益に10%を乗じ、自己参照的な控除を無視した誤り。$72,600 は逆方向にグロスアップした誤り（$66,000 × 1.10）。$54,000 は契約条件に基づかない控除を行った計算であり根拠がない。",
+      "references": ["ASC 710-10-25"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-155",
+      "topic": "Liabilities",
+      "subtopic": "Gift Cards - Breakage Subject to Escheat Laws",
+      "stem": "Whitfield Stores sells gift cards in a state whose unclaimed property (escheat) laws require unredeemed gift card balances to be remitted to the state after a dormancy period. For the portion of unredeemed gift card balances subject to escheatment, how should Whitfield account for expected breakage?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize breakage revenue in proportion to customer redemptions"
+        },
+        {
+          "label": "B",
+          "text": "Recognize breakage revenue when the dormancy period ends"
+        },
+        {
+          "label": "C",
+          "text": "Recognize breakage revenue at the point of sale of the gift card"
+        },
+        {
+          "label": "D",
+          "text": "Do not recognize breakage revenue; continue to report a liability for the amounts that must be remitted to the state"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 606-10-55-48 permits breakage recognition only to the extent the entity expects to be entitled to the breakage amount. Where escheat laws require unredeemed balances to be remitted to the state, the entity is not entitled to those amounts, so no breakage revenue is recognized for the escheatable portion — the balance remains a liability until remitted. Proportional recognition applies only to breakage the entity is entitled to keep. Recognizing revenue at the end of the dormancy period or at the point of sale would record revenue for amounts that legally belong to the state.",
+      "explanationJa": "ASC 606-10-55-48 は、企業がブレイケージ額への権利を得ると見込まれる範囲でのみブレイケージの収益認識を認める。エスチート法（未請求財産法）により未使用残高を州へ納付する義務がある場合、企業はその金額への権利を有しないため、エスチート対象部分についてブレイケージ収益は認識できず、納付まで負債として計上し続ける。比例的認識は企業が保持する権利を持つブレイケージにのみ適用される。休眠期間満了時や販売時点での収益認識は、法的に州に帰属する金額を収益計上することになり不適切。",
+      "references": ["ASC 606-10-55-48", "ASC 606-10-55-46"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-156",
+      "topic": "Liabilities",
+      "subtopic": "Debt Derecognition - Third-Party Assumption Without Legal Release",
+      "stem": "Brennan Corp. sells a warehouse to Tate Corp., and as part of the transaction Tate contractually agrees to assume and service Brennan's mortgage on the property. The lender, however, does not release Brennan from the note, and Brennan remains the primary obligor if Tate fails to pay. How should Brennan account for the mortgage after the sale?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Continue to report the mortgage as its liability because it has not been legally released by the lender"
+        },
+        {
+          "label": "B",
+          "text": "Derecognize the mortgage because Tate has contractually assumed the payments"
+        },
+        {
+          "label": "C",
+          "text": "Derecognize the mortgage and recognize a guarantee liability for the full mortgage balance"
+        },
+        {
+          "label": "D",
+          "text": "Report the mortgage net of the value of Tate's assumption agreement"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 405-20-40-1, a debtor derecognizes a liability only when it pays the creditor or is legally released as primary obligor by the creditor or judicially. A private assumption agreement between buyer and seller does not bind the lender; Brennan remains primarily liable and must keep the mortgage on its balance sheet (with a corresponding receivable or other asset reflecting Tate's assumption, as applicable). Derecognition based on the assumption alone ignores the legal release requirement. Replacing the debt with a guarantee liability would be the accounting only if the lender had released Brennan and Brennan separately guaranteed Tate's performance. Netting the obligation against the assumption arrangement violates offsetting requirements.",
+      "explanationJa": "ASC 405-20-40-1 により、債務者が負債の認識を中止できるのは、債権者へ弁済した場合、または債権者もしくは裁判により主たる債務者の地位から法的に解放された場合に限られる。買主・売主間の引受契約は貸手を拘束しないため、Brennan は引き続き主たる債務者であり、モーゲージを貸借対照表に計上し続けなければならない（Tate の引受を反映する債権等を別途計上）。引受契約のみを根拠とする認識中止は法的免責要件を無視している。負債を保証債務に置き換える処理は、貸手が Brennan を免責し、Brennan が別途 Tate の履行を保証した場合にのみ妥当する。債務と引受契約の純額表示は相殺要件に違反する。",
+      "references": ["ASC 405-20-40-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-157",
+      "topic": "Liabilities",
+      "subtopic": "Convertible Debt Issued at a Substantial Premium",
+      "stem": "Ridgeline Corp. issues $1,000,000 face value convertible bonds for proceeds of $1,100,000. The conversion feature does not require bifurcation, and the 10% premium is considered substantial and attributable to the conversion feature. Under ASC 470-20, how should Ridgeline record the issuance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Liability of $1,100,000, with the premium amortized as a reduction of interest expense"
+        },
+        {
+          "label": "B",
+          "text": "Liability of $1,000,000 and paid-in capital of $100,000"
+        },
+        {
+          "label": "C",
+          "text": "Liability of $1,100,000, with the premium recognized immediately as a gain"
+        },
+        {
+          "label": "D",
+          "text": "Liability equal to the fair value of nonconvertible debt, with the remainder to paid-in capital"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 470-20-25-13 retains a presumption (even after ASU 2020-06) that when convertible debt is issued at a substantial premium, the premium represents paid-in capital. Accordingly, the bonds are recorded at the $1,000,000 face amount as a liability, and the $100,000 substantial premium is credited to additional paid-in capital. Recording the entire $1,100,000 as a liability with premium amortization is the treatment for an ordinary (non-substantial) premium not attributable to the conversion feature. Recognizing the premium as an immediate gain has no GAAP basis — proceeds received at issuance are never income. Allocating based on the fair value of equivalent nonconvertible debt describes the repealed cash conversion model.",
+      "explanationJa": "ASC 470-20-25-13 は（ASU 2020-06 後も存続する規定として）、転換社債が実質的なプレミアム（substantial premium）付きで発行された場合、そのプレミアムは払込資本を表すという推定を置いている。したがって社債は額面 $1,000,000 を負債として計上し、実質的プレミアム $100,000 は資本剰余金（APIC）に貸方計上する。$1,100,000 全額を負債としプレミアムを利息費用の減額として償却する処理は、転換権に起因しない通常の（実質的でない）プレミアムの場合の取扱い。プレミアムの即時利得計上は発行時の受取額を収益とするものでGAAP上の根拠がない。非転換社債の公正価値で配分する方法は廃止されたキャッシュ・コンバージョン・モデルの説明である。",
+      "references": ["ASC 470-20-25-13"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-158",
+      "topic": "Liabilities",
+      "subtopic": "Purchase Commitment - Accrual of Loss on Firm Commitment",
+      "stem": "At December 31, Year 1, Moreland Corp. has a noncancelable commitment to purchase raw materials in Year 2 for a fixed price of $2,500,000. At year-end, the market value of the committed materials has declined to $2,200,000, and the decline is not expected to reverse before delivery. What should Moreland report in its Year 1 financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Disclosure of the commitment only, with no loss recognized until the materials are purchased"
+        },
+        {
+          "label": "B",
+          "text": "A deferred charge of $300,000 to be added to inventory cost in Year 2"
+        },
+        {
+          "label": "C",
+          "text": "A loss of $300,000 and a corresponding liability for the loss on the purchase commitment"
+        },
+        {
+          "label": "D",
+          "text": "A direct write-down of existing inventory of $300,000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 330-10-35-17 through 35-18, a material loss on a firm, noncancelable purchase commitment is measured in the same way as an inventory write-down and is recognized in the period of the price decline: Moreland accrues a $300,000 loss ($2,500,000 - $2,200,000) and a liability (estimated loss on purchase commitment). Disclosure alone is appropriate only when no loss exists or the commitment is hedged or cancelable. Deferring the loss as a future inventory cost would capitalize a known loss, and writing down existing inventory is impossible because the goods have not yet been acquired — the loss attaches to the commitment, not to on-hand inventory.",
+      "explanationJa": "ASC 330-10-35-17〜18 により、解約不能の確定購入契約に係る重要な損失は、棚卸資産の評価減と同様の方法で測定し、価格下落が生じた期に認識する。Moreland は損失 $300,000（$2,500,000 − $2,200,000）と「購入契約損失引当金」（負債）を計上する。開示のみで足りるのは、損失が生じていない場合や契約がヘッジされている・解約可能な場合である。損失を将来の棚卸資産原価として繰り延べる処理は判明済みの損失の資産化に当たる。手持在庫の評価減は、対象物品が未取得である以上不可能で、損失は在庫ではなく契約に帰属する。",
+      "references": ["ASC 330-10-35-17", "ASC 330-10-35-18"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-159",
+      "topic": "Liabilities",
+      "subtopic": "Mail-In Rebate Liability - Year-End Balance",
+      "stem": "During Year 1, Corliss Products sells 200,000 units of a product, each carrying a $5 mail-in rebate offer. Based on experience with similar promotions, Corliss estimates that 30% of purchasers will redeem the rebate. Through December 31, Year 1, Corliss has paid $100,000 of rebates. What rebate liability should Corliss report at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$1,000,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Total estimated rebates = 200,000 units x 30% x $5 = $300,000, recognized as a reduction of the transaction price when the related sales occur. The year-end liability equals total estimated rebates minus rebates already paid: $300,000 - $100,000 = $200,000. $300,000 is the total estimated obligation before deducting the $100,000 of payments. $1,000,000 assumes every unit sold will be redeemed (200,000 x $5), ignoring the 30% redemption estimate. $100,000 is the amount already paid, which reduces the liability rather than representing the remaining obligation.",
+      "explanationJa": "見積リベート総額 = 200,000個 × 30% × $5 = $300,000。リベートは変動対価として売上計上時に取引価格から減額する（ASC 606-10-32-8）。期末の負債残高 = 見積総額 − 既払額 = $300,000 − $100,000 = $200,000。$300,000 は既払 $100,000 を控除する前の見積総額。$1,000,000 は販売全数の償還（200,000 × $5）を仮定し30%の償還率見積りを無視した誤り。$100,000 は既払額そのもので、負債を減額する要素であり残存債務の額ではない。",
+      "references": ["ASC 606-10-32-8"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-160",
+      "topic": "Liabilities",
+      "subtopic": "Bonds Issued at Discount - Total Interest Expense Over Life",
+      "stem": "On January 1, Year 1, Thackeray Corp. issues $1,000,000 face value, 6% bonds (interest paid annually) for $958,000. The bonds mature in 5 years. What total interest expense will Thackeray recognize over the entire life of the bonds?",
+      "choices": [
+        { "label": "A", "text": "$342,000" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$258,000" },
+        { "label": "D", "text": "$42,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Total interest expense over the life of a bond equals total cash interest paid plus the discount (or minus the premium). Cash interest = $1,000,000 x 6% x 5 years = $300,000. Discount = $1,000,000 - $958,000 = $42,000, which is amortized into expense over the term. Total expense = $300,000 + $42,000 = $342,000. This is true regardless of whether straight-line or effective interest amortization is used; the methods change only the timing. $300,000 counts only the cash coupons and ignores the discount. $258,000 incorrectly subtracts the discount, which is the premium treatment. $42,000 is the discount alone, not total interest.",
+      "explanationJa": "社債の全期間の利息費用合計 = 現金利息総額 ＋ ディスカウント（プレミアムの場合は控除）。現金利息 = $1,000,000 × 6% × 5年 = $300,000。ディスカウント = $1,000,000 − $958,000 = $42,000 で、これは期間にわたり利息費用へ償却される。合計費用 = $300,000 + $42,000 = $342,000（ASC 835-30）。この合計額は定額法・実効金利法のいずれでも同じで、両者の違いは期間配分（タイミング）のみ。$300,000 はクーポンのみでディスカウントを無視。$258,000 はディスカウントを控除しておりプレミアム発行の場合の扱い。$42,000 はディスカウント単独の額にすぎない。",
+      "references": ["ASC 835-30-35-2"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-161",
+      "topic": "Liabilities",
+      "subtopic": "Current Liability Classification - Operating Cycle Longer Than One Year",
+      "stem": "Garrick Shipbuilders has an operating cycle of 18 months. At year-end, Garrick has accounts payable for shipbuilding materials that are due in 15 months, consistent with the normal terms of its production cycle. How should these payables be classified on Garrick's classified balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Noncurrent, because they are due more than 12 months after the balance sheet date"
+        },
+        {
+          "label": "B",
+          "text": "Current, because obligations expected to be settled within the normal operating cycle are current when the cycle exceeds one year"
+        },
+        {
+          "label": "C",
+          "text": "Split between current (the 12-month portion) and noncurrent (the remainder)"
+        },
+        {
+          "label": "D",
+          "text": "Noncurrent, unless Garrick intends to pay them early"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Current liabilities are obligations whose liquidation is reasonably expected to require the use of current assets within one year or the operating cycle, whichever is longer. Because Garrick's operating cycle is 18 months, payables due in 15 months — incurred in the normal course of the cycle — are current. A strict 12-month test ignores the longer-of rule in ASC 210-10. Splitting the balance by time has no basis when the entire obligation falls within the operating cycle. Classification depends on the expected settlement within the cycle, not on management's intent to accelerate payment.",
+      "explanationJa": "流動負債は、1年または正常営業循環（operating cycle）のいずれか長い期間内に流動資産の使用により決済が見込まれる債務である（ASC 210-10-45-5〜8）。Garrick の営業循環は18か月であるため、循環の通常の過程で生じた15か月後支払の買掛金は流動負債となる。厳格な12か月基準は「いずれか長い方」ルールを無視している。債務全体が営業循環内に収まる以上、期間で按分する根拠はない。分類は循環内での決済見込みによって決まり、経営者の早期支払の意図には依存しない。",
+      "references": ["ASC 210-10-45-5", "ASC 210-10-45-8"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-162",
+      "topic": "Liabilities",
+      "subtopic": "Accrued Interest Payable - Semiannual Bonds at Year-End",
+      "stem": "Loxley Corp. has $3,000,000 face value, 8% bonds outstanding that were issued at par. Interest is paid semiannually on April 1 and October 1. What accrued interest payable should Loxley report at December 31?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$240,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$20,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The last interest payment was made October 1, so interest has accrued for 3 months (October, November, December) at year-end: $3,000,000 x 8% x 3/12 = $60,000. Because the bonds were issued at par, there is no discount or premium amortization to adjust the accrual. $120,000 represents a full 6 months of interest — the amount of each semiannual payment — rather than the 3 months accrued since October 1. $240,000 is a full year of interest. $20,000 reflects only 1 month of accrual ($3,000,000 x 8% x 1/12).",
+      "explanationJa": "直近の利払日は10月1日であるため、期末時点で10月・11月・12月の3か月分の利息が未払いとして発生している：$3,000,000 × 8% × 3/12 = $60,000（ASC 835-30、発生主義）。額面発行のためディスカウント・プレミアムの償却による調整はない。$120,000 は半年ごとの利払額（6か月分）であり、10月1日以降に発生した3か月分ではない。$240,000 は1年分の利息。$20,000 は1か月分（$3,000,000 × 8% × 1/12）しか見ていない誤り。",
+      "references": ["ASC 835-30-25"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }

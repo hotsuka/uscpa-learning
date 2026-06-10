@@ -2,7 +2,7 @@
   "id": "far-government-accounting",
   "name": "Government Accounting",
   "topic": "Government Accounting",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "gov-001",
@@ -2582,6 +2582,918 @@
       "explanationJa": "GASB 87は短期リースの例外を設けており、短期リースとは開始時点で最大可能リース期間（行使可能性に関係なく延長オプションを含む）が12か月以下のリースをいう。延長オプションのない9か月リースはこれに該当する。短期リースでは、借手はリース負債や使用権資産を認識せず、契約の支払条項に基づきリース料を資源流出（支出または費用）として認識する。単一モデルによる全面認識は短期でないリースにのみ適用される。",
       "references": ["GASB Statement 87, par. 12, 16"],
       "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-114",
+      "topic": "Government Accounting",
+      "subtopic": "Governmental Fund Types - Identification",
+      "stem": "Which of the following correctly lists the five governmental fund types used by state and local governments?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "General, special revenue, capital projects, debt service, internal service"
+        },
+        {
+          "label": "B",
+          "text": "General, special revenue, capital projects, debt service, permanent"
+        },
+        {
+          "label": "C",
+          "text": "General, special revenue, enterprise, debt service, permanent"
+        },
+        {
+          "label": "D",
+          "text": "General, special revenue, capital projects, custodial, permanent"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The five governmental fund types are the general fund, special revenue funds, capital projects funds, debt service funds, and permanent funds. Internal service funds and enterprise funds are proprietary fund types, and custodial funds are fiduciary funds, so any list containing those fund types mixes categories and is incorrect.",
+      "explanationJa": "GASB 34に基づき、政府型ファンド（governmental funds）は一般基金（General Fund）、特別収入基金（Special Revenue Funds）、資本プロジェクト基金（Capital Projects Funds）、債務返済基金（Debt Service Funds）、永久基金（Permanent Funds）の5類型である。内部サービス基金とエンタープライズ基金は事業型（proprietary）、カストディアル基金は受託型（fiduciary）に属するため、これらを含むリストは誤り。",
+      "references": ["GASB 34"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-115",
+      "topic": "Government Accounting",
+      "subtopic": "Major Fund Determination - Quantitative Test",
+      "stem": "A city is determining whether its Library Special Revenue Fund must be reported as a major fund. Total assets plus deferred outflows of resources are: Library Fund $6,000,000; all governmental funds combined $50,000,000; all governmental and enterprise funds combined $80,000,000. No other element (liabilities, revenues, or expenditures) of the Library Fund meets the thresholds. Must the Library Fund be reported as a major fund?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes, because its assets plus deferred outflows are at least 10% of the corresponding total for all governmental funds and at least 5% of the corresponding total for all governmental and enterprise funds combined"
+        },
+        {
+          "label": "B",
+          "text": "No, because its assets plus deferred outflows are less than 10% of the combined total for all governmental and enterprise funds"
+        },
+        {
+          "label": "C",
+          "text": "No, because the quantitative test may be applied only to total revenues, not to assets"
+        },
+        {
+          "label": "D",
+          "text": "Yes, because any special revenue fund with assets exceeding $5,000,000 is automatically a major fund"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under GASB 34, a fund is major if the same element (assets plus deferred outflows, liabilities plus deferred inflows, revenues, or expenditures/expenses) is at least 10% of the total for all funds of that category (governmental) AND at least 5% of the total for all governmental and enterprise funds combined. Here, $6,000,000 / $50,000,000 = 12% (meets 10%) and $6,000,000 / $80,000,000 = 7.5% (meets 5%), so the fund must be reported as major. The test compares the same element against both totals; it is not limited to revenues, there is no automatic dollar threshold, and the combined-funds criterion is 5%, not 10%.",
+      "explanationJa": "GASB 34では、同一の要素（資産+繰延アウトフロー、負債+繰延インフロー、収入、支出/費用のいずれか）が、(1)当該カテゴリー（政府型）の合計の10%以上、かつ(2)政府型+エンタープライズ基金合計の5%以上の場合にメジャーファンドとなる。$6,000,000÷$50,000,000=12%（10%基準充足）、$6,000,000÷$80,000,000=7.5%（5%基準充足）のため、メジャーファンドとして報告が必須。収入のみが対象という制限はなく、金額による自動判定もない。",
+      "references": ["GASB 34"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-116",
+      "topic": "Government Accounting",
+      "subtopic": "Imposed Nonexchange Revenue - Fines",
+      "stem": "During the fiscal year, a city's municipal court assessed fines of $500,000 for which an enforceable legal claim exists. The city collected $420,000 during the year and estimates that $50,000 of the assessed fines will never be collected. In the government-wide statement of activities, what amount of fine revenue should the city report for the year?",
+      "choices": [
+        { "label": "A", "text": "$500,000" },
+        { "label": "B", "text": "$420,000" },
+        { "label": "C", "text": "$450,000" },
+        { "label": "D", "text": "$470,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Fines are imposed nonexchange revenues. On the accrual basis used in government-wide statements, revenue is recognized when an enforceable legal claim arises, net of estimated uncollectible amounts: $500,000 - $50,000 = $450,000. Reporting $500,000 ignores the allowance for uncollectible fines, $420,000 reflects only cash collected (cash basis), and $470,000 results from subtracting an incorrect amount rather than the $50,000 estimated to be uncollectible.",
+      "explanationJa": "罰金はimposed nonexchange revenue（賦課型非交換収入）であり、政府全体財務諸表の発生主義では強制力ある法的請求権が生じた時点で、回収不能見積額を控除した純額で収益認識する（GASB 33）。$500,000−$50,000=$450,000。$500,000は回収不能引当を無視した総額、$420,000は現金主義による回収額のみ、$470,000は控除額を誤った計算結果である。",
+      "references": ["GASB 33"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-117",
+      "topic": "Government Accounting",
+      "subtopic": "Voluntary Nonexchange - Time Requirement",
+      "stem": "In December Year 1, a private foundation gives a city $1,200,000 cash with the stipulation that the resources may not be used until Year 2. There are no other eligibility requirements. How should the city report this transaction in its government-wide statement of net position at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "Revenue of $1,200,000 recognized in Year 1" },
+        {
+          "label": "B",
+          "text": "A liability for unearned revenue of $1,200,000"
+        },
+        {
+          "label": "C",
+          "text": "Note disclosure only, with no amounts recognized"
+        },
+        {
+          "label": "D",
+          "text": "An asset of $1,200,000 and a deferred inflow of resources of $1,200,000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "For voluntary nonexchange transactions, a time requirement (resources may not be used until a future period) means all eligibility requirements have not been met for revenue recognition. Because the cash has been received, the city reports an asset and a deferred inflow of resources, recognizing revenue in Year 2 when the time requirement is satisfied. Recognizing revenue in Year 1 ignores the time requirement; under GASB standards resources received before time requirements are met are reported as deferred inflows, not liabilities; and the cash received must be recognized on the face of the statements, not merely disclosed.",
+      "explanationJa": "自発的非交換取引（voluntary nonexchange）において、時期要件（time requirement）が満たされるまで収益認識はできない（GASB 33）。現金は受領済みのため、資産$1,200,000と繰延インフロー$1,200,000を計上し、Year 2に時期要件充足時点で収益認識する。Year 1での収益認識は時期要件の無視であり、GASB 65により時期要件未充足の受領資源は負債（unearned revenue）ではなく繰延インフローとして報告する。注記のみの開示も誤り。",
+      "references": ["GASB 33", "GASB 65"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-118",
+      "topic": "Government Accounting",
+      "subtopic": "Modified Accrual - Property Tax Availability",
+      "stem": "A city levies property taxes of $4,800,000 for the fiscal year, estimating 2% to be uncollectible. The city collects $4,200,000 during the year and expects to collect $350,000 within 60 days after year-end; the remaining collectible balance is expected more than 60 days after year-end. The city uses a 60-day availability period. What amount of property tax revenue should the General Fund report for the year?",
+      "choices": [
+        { "label": "A", "text": "$4,704,000" },
+        { "label": "B", "text": "$4,550,000" },
+        { "label": "C", "text": "$4,200,000" },
+        { "label": "D", "text": "$4,800,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under modified accrual, property tax revenue is recognized when measurable and available—collected within the period or soon enough thereafter (60 days here) to pay current liabilities: $4,200,000 + $350,000 = $4,550,000. Amounts expected after the 60-day window are reported as deferred inflows of resources. $4,704,000 is the net levy (98% of $4,800,000), which is the accrual-basis amount used in government-wide statements; $4,200,000 is cash collections only; $4,800,000 is the gross levy ignoring both availability and uncollectibles.",
+      "explanationJa": "修正発生主義では、固定資産税収入は「測定可能かつ利用可能（available）」な範囲で認識する。利用可能とは期中回収分＋期末後60日以内の回収見込み分: $4,200,000+$350,000=$4,550,000。60日超の回収見込み分は繰延インフローとして報告する。$4,704,000は純賦課額（$4,800,000×98%）で政府全体財務諸表（発生主義）での認識額、$4,200,000は現金回収額のみ、$4,800,000は総賦課額であり誤り。",
+      "references": ["GASB 33", "GASB 65"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-119",
+      "topic": "Government Accounting",
+      "subtopic": "Budgetary Entry - Budgetary Fund Balance",
+      "stem": "At the beginning of the fiscal year, a town adopts its General Fund budget: estimated revenues $9,500,000, estimated other financing sources $200,000, and appropriations $9,800,000. In recording the budget, what entry is made to Budgetary Fund Balance?",
+      "choices": [
+        { "label": "A", "text": "Debit of $100,000" },
+        { "label": "B", "text": "Credit of $100,000" },
+        { "label": "C", "text": "Debit of $300,000" },
+        { "label": "D", "text": "Credit of $300,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The budget entry debits Estimated Revenues $9,500,000 and Estimated Other Financing Sources $200,000, and credits Appropriations $9,800,000. Total inflows of $9,700,000 are $100,000 less than appropriations, so Budgetary Fund Balance is debited $100,000 to balance the entry (a planned deficit). A $100,000 credit would apply if inflows exceeded appropriations; $300,000 in either direction ignores the $200,000 of estimated other financing sources.",
+      "explanationJa": "予算計上仕訳は、Estimated Revenues $9,500,000とEstimated Other Financing Sources $200,000を借方、Appropriations $9,800,000を貸方に記帳する。流入見積合計$9,700,000が歳出予算$9,800,000を$100,000下回るため、差額はBudgetary Fund Balanceの借方$100,000（予算上の赤字）となる。貸方$100,000は流入超過の場合であり、$300,000はその他財源見積$200,000を無視した誤計算。",
+      "references": ["GASB 34", "NCGA Statement 1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-120",
+      "topic": "Government Accounting",
+      "subtopic": "Budgetary Control - Available Appropriation",
+      "stem": "A village's General Fund has appropriations of $5,000,000 for the public works function. To date, expenditures of $4,600,000 have been recorded and purchase orders totaling $250,000 remain outstanding (encumbered). What amount of appropriation remains available for additional spending commitments?",
+      "choices": [
+        { "label": "A", "text": "$400,000" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$150,000" },
+        { "label": "D", "text": "$650,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Available appropriation = appropriations - expenditures - outstanding encumbrances = $5,000,000 - $4,600,000 - $250,000 = $150,000. Encumbrances reduce remaining spending authority even though they are not expenditures. $400,000 ignores outstanding encumbrances, $250,000 is merely the encumbered amount, and $650,000 incorrectly adds encumbrances back to the unexpended balance.",
+      "explanationJa": "利用可能な歳出予算残高＝歳出予算−支出−未消化エンカンブランス＝$5,000,000−$4,600,000−$250,000=$150,000。エンカンブランスは支出ではないが、予算統制上は支出権限を減少させる。$400,000はエンカンブランスを無視、$250,000はエンカンブランス額そのもの、$650,000はエンカンブランスを加算してしまった誤り。",
+      "references": ["NCGA Statement 1", "GASB 54"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-121",
+      "topic": "Government Accounting",
+      "subtopic": "Supplies Inventory - Consumption Method",
+      "stem": "A city's General Fund accounts for supplies using the consumption method. Beginning supplies inventory was $40,000, supplies purchased during the year totaled $300,000, and ending supplies inventory was $70,000. What amount should be reported as supplies expenditures for the year?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$330,000" },
+        { "label": "C", "text": "$230,000" },
+        { "label": "D", "text": "$270,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under the consumption method, expenditures equal supplies used: beginning inventory + purchases - ending inventory = $40,000 + $300,000 - $70,000 = $270,000. $300,000 would be the expenditure under the purchases method, $330,000 reverses the inventory change ($300,000 + $70,000 - $40,000), and $230,000 subtracts ending inventory from purchases while ignoring beginning inventory.",
+      "explanationJa": "消費法（consumption method）では、支出＝消費した物品＝期首棚卸$40,000＋購入$300,000−期末棚卸$70,000=$270,000。$300,000は購入法（purchases method）での支出額、$330,000は棚卸増減の符号を逆にした誤計算（$300,000+$70,000−$40,000）、$230,000は期首棚卸を無視した誤りである。",
+      "references": ["NCGA Statement 1", "GASB 54"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-122",
+      "topic": "Government Accounting",
+      "subtopic": "GASB 87 - Lessor Deferred Inflow Amortization",
+      "stem": "On January 1, a county (lessor) leases equipment to a private company for 5 years. Annual payments of $100,000 are due each December 31, and the present value at the 6% rate is $421,236. The county records a lease receivable and a deferred inflow of resources of $421,236. Using straight-line recognition, what amount of lease revenue from amortizing the deferred inflow should the county recognize in Year 1?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$84,247" },
+        { "label": "C", "text": "$25,274" },
+        { "label": "D", "text": "$109,521" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 87, a lessor recognizes the deferred inflow of resources as revenue over the lease term in a systematic and rational manner, typically straight-line: $421,236 / 5 years = $84,247. $100,000 is the cash payment, not the deferred inflow amortization; $25,274 is the Year 1 interest revenue on the receivable ($421,236 x 6%), which is recognized separately; and $109,521 combines the deferred inflow amortization with interest revenue rather than isolating the amortization component.",
+      "explanationJa": "GASB 87では、貸手はリース債権と繰延インフローを当初計上し、繰延インフローはリース期間にわたり規則的（通常は定額法）に収益認識する: $421,236÷5年=$84,247。$100,000は現金受取額、$25,274は債権に係る初年度利息収益（$421,236×6%）で別個に認識されるもの、$109,521は繰延インフロー償却と利息収益の合算であり、設問が問う償却部分のみの金額ではない。",
+      "references": ["GASB 87"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-123",
+      "topic": "Government Accounting",
+      "subtopic": "GASB 96 - Short-Term SBITA Exception",
+      "stem": "A city enters into a subscription-based information technology arrangement (SBITA) with a maximum possible term, including options reasonably certain of exercise, of 12 months. Under GASB 96, how should the city account for this arrangement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a subscription asset and a subscription liability at the present value of payments"
+        },
+        {
+          "label": "B",
+          "text": "Capitalize only the implementation costs and expense the subscription payments"
+        },
+        {
+          "label": "C",
+          "text": "Recognize expense or expenditure as the subscription payments come due"
+        },
+        {
+          "label": "D",
+          "text": "Defer all payments and amortize them over five years"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "GASB 96 provides a short-term SBITA exception: if the subscription term, including options reasonably certain of being exercised, is 12 months or less, the government recognizes expense (or expenditure in governmental funds) as payments come due rather than recording a subscription asset and liability. Recognizing an asset and liability applies only to SBITAs longer than 12 months; capitalizing implementation costs alone or amortizing payments over an arbitrary five-year period has no basis in the standard.",
+      "explanationJa": "GASB 96は短期SBITAの例外を定めており、行使が合理的に確実なオプションを含む契約期間が12か月以内の場合、サブスクリプション資産・負債を計上せず、支払期日到来に応じて費用（政府型ファンドでは支出）認識する。資産・負債計上は12か月超のSBITAに適用される。導入費用のみの資産化や恣意的な5年償却は基準に根拠がない。",
+      "references": ["GASB 96"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-124",
+      "topic": "Government Accounting",
+      "subtopic": "Government-wide - Internal Balances",
+      "stem": "At year-end, a city's General Fund reports a $120,000 receivable from the Water Enterprise Fund, and the Water Enterprise Fund reports a $45,000 receivable from the General Fund. In the government-wide statement of net position, what amount should be reported as internal balances?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$75,000 receivable reported in governmental activities, with an offsetting amount in business-type activities"
+        },
+        {
+          "label": "B",
+          "text": "$120,000 receivable in governmental activities and $45,000 receivable in business-type activities"
+        },
+        {
+          "label": "C",
+          "text": "$165,000 reported as both a receivable and a payable"
+        },
+        {
+          "label": "D",
+          "text": "$0, because all interfund balances are eliminated entirely"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Amounts due between governmental and business-type activities are not eliminated entirely; they are netted and presented as internal balances: $120,000 - $45,000 = $75,000 net receivable in governmental activities and a corresponding negative amount in business-type activities, which offset in the total primary government column. Showing both gross receivables, summing them to $165,000, or eliminating them to zero misapplies the netting requirement—full elimination applies only to balances within the same activity column.",
+      "explanationJa": "政府型活動と事業型活動の間の債権債務は完全消去せず、純額を「internal balances」として表示する: $120,000−$45,000=$75,000を政府型活動の純債権として計上し、事業型活動に対応するマイナス額を表示（primary government合計列では相殺されゼロ）。総額表示や$165,000への合算、全額消去は誤り。完全消去は同一活動区分内の残高にのみ適用される（GASB 34）。",
+      "references": ["GASB 34"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-125",
+      "topic": "Government Accounting",
+      "subtopic": "Reconciliation - Fund Balance to Net Position",
+      "stem": "A city reports total governmental fund balances of $3,000,000. The following information relates to governmental activities: capital assets net of accumulated depreciation $8,000,000; general obligation bonds payable $5,500,000; accrued interest payable not due at year-end $100,000; net position of internal service funds serving governmental activities $400,000. What amount should be reported as net position of governmental activities in the government-wide statement of net position?",
+      "choices": [
+        { "label": "A", "text": "$5,400,000" },
+        { "label": "B", "text": "$5,900,000" },
+        { "label": "C", "text": "$11,400,000" },
+        { "label": "D", "text": "$5,800,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The reconciliation starts with fund balances and adds capital assets, subtracts long-term liabilities and accrued interest, and adds internal service fund net position: $3,000,000 + $8,000,000 - $5,500,000 - $100,000 + $400,000 = $5,800,000. $5,400,000 omits the internal service fund net position, $5,900,000 omits the accrued interest payable adjustment, and $11,400,000 fails to subtract the long-term bonds and accrued interest at all.",
+      "explanationJa": "ファンドバランスから政府全体純資産への調整: $3,000,000＋資本資産$8,000,000−長期債務$5,500,000−未払利息$100,000＋内部サービスファンド純資産$400,000=$5,800,000（GASB 34）。$5,400,000は内部サービスファンドの加算漏れ、$5,900,000は未払利息の控除漏れ、$11,400,000は長期債務・未払利息を控除していない誤り。",
+      "references": ["GASB 34"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-126",
+      "topic": "Government Accounting",
+      "subtopic": "Enterprise Fund - Required Use Criteria",
+      "stem": "Under GASB 34, which of the following circumstances REQUIRES an activity to be reported in an enterprise fund?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The activity charges fees to external users for goods or services"
+        },
+        {
+          "label": "B",
+          "text": "The activity is financed with debt secured solely by a pledge of the net revenues from its fees and charges"
+        },
+        {
+          "label": "C",
+          "text": "The activity receives an annual operating subsidy from the General Fund"
+        },
+        {
+          "label": "D",
+          "text": "The activity provides services primarily to other departments of the government"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "GASB 34 requires enterprise fund reporting when any one of three criteria is met: (1) the activity is financed with debt secured solely by a pledge of its net revenues, (2) laws or regulations require that costs be recovered through fees, or (3) pricing policies are designed to recover costs including capital costs. Merely charging fees to external users permits, but does not require, enterprise fund use; receiving a General Fund subsidy does not trigger the requirement; and serving other departments primarily describes an internal service fund.",
+      "explanationJa": "GASB 34は、(1)料金収入の純収益のみを担保とする債務で資金調達している、(2)法令により費用を料金で回収することが要求されている、(3)資本コストを含む費用回収を意図した料金設定方針がある——のいずれかに該当する場合、エンタープライズファンドでの報告を「義務付け」る。外部利用者への課金は使用を「許容」するが義務付けない。一般基金からの補助金受領は要件に該当せず、他部門への役務提供が主であれば内部サービスファンドの記述である。",
+      "references": ["GASB 34"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-127",
+      "topic": "Government Accounting",
+      "subtopic": "Internal Service Fund - Predominant External Participants",
+      "stem": "A county operates a self-insurance activity currently accounted for in an internal service fund. A review reveals that approximately 70% of the activity's services are provided to legally separate school districts and towns, not to departments of the county itself. How should the county report this activity?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Continue reporting it as an internal service fund"
+        },
+        { "label": "B", "text": "Report it in the General Fund" },
+        { "label": "C", "text": "Report it as an enterprise fund" },
+        { "label": "D", "text": "Report it as a custodial fund" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Internal service funds are appropriate only when the reporting government itself is the predominant participant in the activity. When external parties (other governments here, at 70%) are the predominant participants, GASB 34 requires the activity to be reported as an enterprise fund. The General Fund is not appropriate for a business-type cost-reimbursement activity, and a custodial fund is for fiduciary activities where the government controls assets for the benefit of others without administrative involvement, which is not the case for a self-insurance operation.",
+      "explanationJa": "内部サービスファンドは、報告政府自身がその活動の主要な参加者（predominant participant）である場合にのみ使用できる。外部の法的に独立した団体（本問では70%）が主要参加者の場合、GASB 34はエンタープライズファンドでの報告を要求する。費用回収型の事業活動を一般基金で報告するのは不適切であり、カストディアルファンドは政府が他者のために資産を管理する受託活動向けで、自家保険事業には該当しない。",
+      "references": ["GASB 34"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-128",
+      "topic": "Government Accounting",
+      "subtopic": "Pass-Through Grants - Administrative Involvement",
+      "stem": "A state receives a $3,000,000 federal grant that it must distribute to local governments. The state monitors recipients for compliance with grant requirements, determines eligible recipients using its own criteria, and exercises discretion in allocating the funds. How should the state report the grant?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "In a custodial fund, because the state is merely a conduit"
+        },
+        {
+          "label": "B",
+          "text": "In note disclosure only, with no recognition in any fund"
+        },
+        {
+          "label": "C",
+          "text": "As a liability until the federal government confirms each distribution"
+        },
+        {
+          "label": "D",
+          "text": "As intergovernmental revenue and expenditures in a governmental fund"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under GASB 24, a recipient government that has administrative involvement (monitoring compliance, determining eligible recipients, exercising discretion in allocation) or direct financial involvement must report a pass-through grant as revenue and expenditures in a governmental fund, not as a custodial (fiduciary) activity. Custodial fund treatment applies only when the government serves as a pure cash conduit with no administrative or direct financial involvement. Note-only disclosure or holding the amount as a liability pending federal confirmation has no basis in the standards.",
+      "explanationJa": "GASB 24により、パススルー補助金について受領政府が管理的関与（コンプライアンス監視、受給資格者の決定、配分の裁量行使）または直接的財務関与を有する場合は、政府型ファンドで収入と支出として認識しなければならない。単なる現金の導管（conduit）にすぎない場合のみカストディアルファンドで処理する。注記のみの開示や連邦確認まで負債計上する処理は基準上の根拠がない。",
+      "references": ["GASB 24", "GASB 84"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-129",
+      "topic": "Government Accounting",
+      "subtopic": "Private-Purpose Trust Fund - Identification",
+      "stem": "A city receives $800,000 under a trust agreement specifying that both principal and earnings must be used to provide college scholarships to children of city firefighters. In which fund should the city account for this trust?",
+      "choices": [
+        { "label": "A", "text": "Private-purpose trust fund" },
+        { "label": "B", "text": "Permanent fund" },
+        { "label": "C", "text": "Special revenue fund" },
+        { "label": "D", "text": "Custodial fund" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A private-purpose trust fund reports trust arrangements under which principal and/or income benefit individuals, private organizations, or other governments—here, scholarships for specific individuals. A permanent fund requires that resources benefit the government or its citizenry as a whole and that principal be maintained intact, neither of which applies. A special revenue fund accounts for restricted revenues supporting the government's own programs. A custodial fund is for fiduciary activities not held in a qualifying trust, but this arrangement is a trust with individual beneficiaries.",
+      "explanationJa": "元本と収益の両方が特定の個人（消防士の子弟）の便益に充てられる信託は、私的目的信託ファンド（private-purpose trust fund）で会計処理する（GASB 34/84）。永久基金は政府または住民全体の便益かつ元本維持が要件であり該当しない。特別収入基金は政府自身のプログラムを支える使途制限収入向け。カストディアルファンドは適格な信託契約によらない受託活動向けであり、本問は個人受益者のある信託のため該当しない。",
+      "references": ["GASB 34", "GASB 84"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-130",
+      "topic": "Government Accounting",
+      "subtopic": "ACFR - Three Major Sections",
+      "stem": "An annual comprehensive financial report (ACFR) of a state or local government consists of which three major sections?",
+      "choices": [
+        { "label": "A", "text": "Transmittal, audit, and budgetary" },
+        { "label": "B", "text": "MD&A, basic financial statements, and notes" },
+        { "label": "C", "text": "Government-wide, fund, and fiduciary" },
+        { "label": "D", "text": "Introductory, financial, and statistical" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "An ACFR contains an introductory section (letter of transmittal, organizational chart, list of officials), a financial section (auditor's report, MD&A, basic financial statements, notes, RSI, and combining statements), and a statistical section (trend and demographic data). MD&A, basic statements, and notes are components within the financial section, not the three major sections; government-wide, fund, and fiduciary describe types of statements; and there is no separate audit or budgetary section at the top level.",
+      "explanationJa": "ACFR（年次総合財務報告書）は、序論セクション（送付状、組織図、役職者一覧）、財務セクション（監査報告書、MD&A、基本財務諸表、注記、RSI、結合財務諸表）、統計セクション（趨勢・人口統計データ）の3部構成である。MD&A・基本財務諸表・注記は財務セクション内の構成要素にすぎず、政府全体・ファンド・受託は財務諸表の種類の区分であり、ACFRの3大セクションではない。",
+      "references": ["GASB 34", "GASB 44"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-131",
+      "topic": "Government Accounting",
+      "subtopic": "MD&A - Content and Placement",
+      "stem": "Which of the following statements about Management's Discussion and Analysis (MD&A) in a government's financial report is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It is part of the basic financial statements and is covered by the auditor's opinion on those statements"
+        },
+        {
+          "label": "B",
+          "text": "It is required supplementary information presented before the basic financial statements and analyzes current-year results compared with the prior year"
+        },
+        {
+          "label": "C",
+          "text": "It may include management's subjective forecasts of future budget surpluses"
+        },
+        {
+          "label": "D",
+          "text": "It is presented in the statistical section of the ACFR"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "MD&A is required supplementary information (RSI) that precedes the basic financial statements and provides an objective, easily readable analysis of financial activities, including comparisons of current-year results with the prior year. It is not part of the basic financial statements, so it is not covered by the opinion on those statements. Its discussion must be based on currently known facts, decisions, or conditions—subjective forecasts are not permitted—and it appears in the financial section, not the statistical section.",
+      "explanationJa": "MD&Aは基本財務諸表の「前」に置かれる必須補足情報（RSI）であり、当年度と前年度の比較を含む客観的で読みやすい財務分析を提供する（GASB 34）。基本財務諸表の一部ではないため監査意見の直接対象ではない。記載は現に判明している事実・決定・状況に基づく必要があり、主観的な将来予測は認められない。掲載場所はACFRの財務セクションであり統計セクションではない。",
+      "references": ["GASB 34", "GASB 37"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-132",
+      "topic": "Government Accounting",
+      "subtopic": "Required Supplementary Information - Scope",
+      "stem": "Which of the following is NOT classified as required supplementary information (RSI) in a government's financial report?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Budgetary comparison schedule for the General Fund"
+        },
+        {
+          "label": "B",
+          "text": "Ten-year schedules of pension contributions required by GASB 68"
+        },
+        { "label": "C", "text": "Notes to the basic financial statements" },
+        {
+          "label": "D",
+          "text": "Condition assessment schedules for infrastructure reported under the modified approach"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The notes are an integral part of the basic financial statements themselves, not RSI. RSI includes MD&A, budgetary comparison schedules for the General Fund and major special revenue funds with legally adopted budgets, the multi-year pension and OPEB schedules required by GASB 67/68/74/75, and infrastructure condition and maintenance schedules under the modified approach.",
+      "explanationJa": "注記は基本財務諸表そのものの不可分の一部であり、RSI（必須補足情報）ではない。RSIに含まれるのは、MD&A、一般基金および法定予算を持つメジャー特別収入基金の予算比較スケジュール、GASB 67/68/74/75が要求する年金・OPEBの複数年スケジュール、修正アプローチ採用時のインフラ資産状態評価スケジュール等である。",
+      "references": ["GASB 34", "GASB 68"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-133",
+      "topic": "Government Accounting",
+      "subtopic": "Statement of Activities - Net Program Expense",
+      "stem": "A city's public safety function reports the following for the year: expenses $9,000,000; charges for services $1,500,000; operating grants and contributions $2,000,000; capital grants and contributions $500,000. In the government-wide statement of activities, what is the net (expense) of the public safety function?",
+      "choices": [
+        { "label": "A", "text": "$5,000,000" },
+        { "label": "B", "text": "$7,500,000" },
+        { "label": "C", "text": "$5,500,000" },
+        { "label": "D", "text": "$9,000,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net (expense) revenue = expenses minus all program revenues (charges for services, operating grants and contributions, and capital grants and contributions): $9,000,000 - $1,500,000 - $2,000,000 - $500,000 = $5,000,000. $7,500,000 deducts only charges for services, $5,500,000 omits the capital grants, and $9,000,000 is the gross expense without any program revenue offset. General revenues such as property taxes are reported separately at the bottom of the statement and never netted against functions.",
+      "explanationJa": "政府全体活動計算書では、機能別純費用＝費用−プログラム収入（サービス料金、運営補助金、資本補助金の3区分すべて）: $9,000,000−$1,500,000−$2,000,000−$500,000=$5,000,000（GASB 34）。$7,500,000はサービス料金のみ控除、$5,500,000は資本補助金の控除漏れ、$9,000,000はプログラム収入を全く控除していない。固定資産税等の一般収入は計算書下部に別掲され、機能と相殺しない。",
+      "references": ["GASB 34"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-134",
+      "topic": "Government Accounting",
+      "subtopic": "Interfund Loan vs Transfer",
+      "stem": "A city's General Fund provides $200,000 to the Capital Projects Fund with the expectation that the amount will be repaid in two years. How should the General Fund report this transaction?",
+      "choices": [
+        { "label": "A", "text": "As a transfer out" },
+        { "label": "B", "text": "As an expenditure" },
+        { "label": "C", "text": "As an other financing use" },
+        {
+          "label": "D",
+          "text": "As an interfund receivable (advance to other funds)"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Because repayment is expected, this is an interfund loan, reported as an interfund receivable—an advance, given the two-year (noncurrent) repayment horizon—in the General Fund and a payable in the Capital Projects Fund. It does not affect either fund's operating statement. A transfer out or other financing use applies only when repayment is not expected, and an expenditure applies when the fund consumes goods or services, neither of which describes a loan.",
+      "explanationJa": "返済が予定されているためこれはインターファンド・ローンであり、一般基金では債権（2年後返済の非流動性からAdvance to Other Funds）、資本プロジェクト基金では債務として計上する。両基金の運営計算書には影響しない。返済が予定されない場合にのみ振替（transfer）/その他財源使途として処理し、支出（expenditure）は財・サービスの消費時の概念であり貸付には該当しない。",
+      "references": ["GASB 34"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-135",
+      "topic": "Government Accounting",
+      "subtopic": "Debt Service Fund - Unmatured Interest",
+      "stem": "A city's fiscal year ends June 30. Debt service of $1,300,000 ($1,000,000 principal and $300,000 interest) on general obligation bonds is due July 15, fifteen days after year-end. The city has not transferred resources to the Debt Service Fund by June 30 and does not elect early recognition. The $300,000 interest payment covers the six months from January 15 to July 15. What amount of debt service expenditures should the Debt Service Fund report for the fiscal year ended June 30?",
+      "choices": [
+        { "label": "A", "text": "$275,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$1,300,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under modified accrual, debt service principal and interest are recognized as expenditures when due (matured), not as they accrue. Because the payment is due July 15—after year-end—no expenditure is reported at June 30. The optional early-recognition exception (payment due early in the next year, within approximately one month, with resources provided to the debt service fund in the current year) does not apply because resources were not transferred. $275,000 represents accrual-basis accrued interest (5.5/6 of $300,000), which is the government-wide treatment; $300,000 and $1,300,000 anticipate payments not yet due.",
+      "explanationJa": "修正発生主義では、元利償還は発生に応じてではなく「支払期日到来時（when due）」に支出認識する。支払期日は期末後の7月15日のため、6月30日時点の支出は$0。早期認識の例外（翌期初約1か月以内の期日かつ当期中に債務返済基金へ資金移転済み）は、資金移転がないため適用不可。$275,000は発生主義による未払利息（$300,000×5.5/6）で政府全体財務諸表での処理、$300,000や$1,300,000は期日未到来の支払を先取りした誤り。",
+      "references": ["NCGA Statement 1", "GASB 34"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-136",
+      "topic": "Government Accounting",
+      "subtopic": "Sale of Capital Asset - Governmental Fund Reporting",
+      "stem": "A city's General Fund sells a fire truck that originally cost $900,000 and has accumulated depreciation of $600,000 (recorded only in the government-wide records) for $350,000 cash. How should the General Fund report this sale?",
+      "choices": [
+        { "label": "A", "text": "A gain of $50,000 reported as revenue" },
+        {
+          "label": "B",
+          "text": "Revenue of $350,000 and an expenditure of $300,000"
+        },
+        {
+          "label": "C",
+          "text": "An other financing source of $350,000 for the sale proceeds"
+        },
+        {
+          "label": "D",
+          "text": "No amounts reported until the government-wide statements are prepared"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Governmental funds do not record capital assets or accumulated depreciation, so there is no carrying amount against which to compute a gain. The entire $350,000 of proceeds is reported, typically as an other financing source (sale of capital assets), in the General Fund. The $50,000 gain ($350,000 less the $300,000 net book value) is recognized only in the government-wide statement of activities. Pairing revenue with a $300,000 expenditure has no basis, and the cash inflow must be reported in the fund statements, not deferred to the government-wide presentation.",
+      "explanationJa": "政府型ファンドは資本資産と減価償却累計額を計上しないため、帳簿価額との比較による売却益の計算はできない。売却代金$350,000の全額をその他財源（other financing source - sale of capital assets）として一般基金で報告する。売却益$50,000（$350,000−純帳簿価額$300,000）は政府全体活動計算書でのみ認識される。収入と支出$300,000の組合せに根拠はなく、ファンド財務諸表での報告を省略することもできない。",
+      "references": ["GASB 34"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-137",
+      "topic": "Government Accounting",
+      "subtopic": "Sale of Capital Asset - Government-wide Gain",
+      "stem": "A county sells maintenance equipment for $500,000. The equipment originally cost $1,200,000 and has accumulated depreciation of $800,000. What amount of gain or loss should the county report in its government-wide statement of activities?",
+      "choices": [
+        { "label": "A", "text": "Gain of $500,000" },
+        { "label": "B", "text": "No gain or loss" },
+        { "label": "C", "text": "Loss of $400,000" },
+        { "label": "D", "text": "Gain of $100,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Government-wide statements use full accrual accounting, so the gain equals proceeds minus net book value: $500,000 - ($1,200,000 - $800,000) = $500,000 - $400,000 = $100,000 gain. A $500,000 gain treats the entire proceeds as gain, ignoring the carrying amount; reporting no gain or loss reflects fund-level (modified accrual) thinking, which does not apply in government-wide statements; and a $400,000 loss confuses the net book value with a loss amount.",
+      "explanationJa": "政府全体財務諸表は完全発生主義のため、売却損益＝売却代金−純帳簿価額: $500,000−($1,200,000−$800,000)=$100,000の利得（GASB 34）。$500,000の利得は帳簿価額を無視して代金全額を利得とした誤り、損益なしはファンドレベル（修正発生主義）の発想で政府全体には適用されない。$400,000の損失は純帳簿価額を損失額と混同したものである。",
+      "references": ["GASB 34"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-138",
+      "topic": "Government Accounting",
+      "subtopic": "GASB 87 - Lessee Discount Rate",
+      "stem": "Under GASB 87, in measuring its lease liability at the commencement of the lease term, a government lessee should discount the future lease payments using which rate?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The interest rate the lessor charges the lessee if readily determinable; otherwise, the lessee's incremental borrowing rate"
+        },
+        {
+          "label": "B",
+          "text": "The lessee's most recent general obligation bond coupon rate in all cases"
+        },
+        {
+          "label": "C",
+          "text": "The risk-free Treasury rate matching the lease term"
+        },
+        {
+          "label": "D",
+          "text": "The prime rate published at the commencement date"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "GASB 87 requires the lessee to use the rate the lessor charges the lessee (which may be the rate implicit in the lease) when that rate is readily determinable; if it is not, the lessee uses its own incremental borrowing rate—the rate it would pay to borrow a similar amount for a similar term with similar security. A prior bond coupon rate, the risk-free Treasury rate, or the prime rate is not the prescribed hierarchy under the standard.",
+      "explanationJa": "GASB 87では、借手は貸手が借手に課す利率（リースの計算利子率を含む）が容易に算定可能であればそれを使用し、算定できない場合は借手の追加借入利子率（incremental borrowing rate：類似の金額・期間・担保で借り入れる場合の利率）を使用する。過去の一般財源保証債のクーポンレート、リスクフリーレート、プライムレートの使用は基準の定める階層に該当しない。",
+      "references": ["GASB 87"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-139",
+      "topic": "Government Accounting",
+      "subtopic": "GASB 87 - Variable Payments Excluded from Liability",
+      "stem": "On January 1, a city (lessee) signs a 5-year vehicle lease requiring fixed payments of $80,000 each December 31, plus $0.10 per mile driven (expected usage 20,000 miles per year, or $2,000 annually). The relevant discount rate is 5% (present value factor for an ordinary annuity, 5 years, 5% = 4.32948). What amount should the city report as its initial lease liability?",
+      "choices": [
+        { "label": "A", "text": "$355,017" },
+        { "label": "B", "text": "$346,358" },
+        { "label": "C", "text": "$400,000" },
+        { "label": "D", "text": "$410,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 87, variable payments based on future usage (such as per-mile charges) are excluded from the lease liability and expensed as incurred. The liability is the present value of fixed payments only: $80,000 x 4.32948 = $346,358. $355,017 incorrectly includes the expected variable payments in the discounted amount ($82,000 x 4.32948), $400,000 is the undiscounted sum of fixed payments, and $410,000 is the undiscounted sum of fixed plus expected variable payments.",
+      "explanationJa": "GASB 87では、将来の使用量に基づく変動リース料（走行距離連動分）はリース負債の測定から除外し、発生時に費用処理する。負債＝固定リース料の現在価値のみ: $80,000×4.32948=$346,358。$355,017は変動分を含めて割り引いた誤り（$82,000×4.32948）、$400,000は固定リース料の割引前合計、$410,000は固定＋変動見込額の割引前合計である。",
+      "references": ["GASB 87"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-140",
+      "topic": "Government Accounting",
+      "subtopic": "Fund Balance - Nonspendable Classification",
+      "stem": "At year-end, a city's General Fund includes the following items: supplies inventory $50,000; prepaid insurance $30,000; a long-term loan receivable from an employee not expected to be collected within the next year $20,000; and cash of $100,000 restricted by a grantor for road repairs. What total amount should be classified as nonspendable fund balance?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nonspendable fund balance comprises amounts not in spendable form: inventory $50,000 + prepaid insurance $30,000 + long-term receivable $20,000 = $100,000. The grantor-restricted cash of $100,000 is in spendable form and is classified as restricted fund balance, not nonspendable. $80,000 omits the long-term receivable, $200,000 incorrectly adds the restricted cash, and $50,000 counts only the inventory.",
+      "explanationJa": "GASB 54のnonspendable（支出不能）区分は「支出可能な形態にない」金額で構成される: 棚卸資産$50,000＋前払保険料$30,000＋短期回収見込みのない長期貸付金$20,000=$100,000。補助金交付者による使途制限付き現金$100,000は支出可能な形態にあるためrestricted（制限付き）区分となる。$80,000は長期貸付金の漏れ、$200,000は制限付き現金の誤加算、$50,000は棚卸資産のみの計上である。",
+      "references": ["GASB 54"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-141",
+      "topic": "Government Accounting",
+      "subtopic": "Restricted Net Position - Calculation",
+      "stem": "A city's water enterprise fund holds assets of $2,000,000 restricted by bond covenants for debt service. Liabilities of $500,000 are payable from those restricted assets. What amount should the fund report as restricted net position for debt service?",
+      "choices": [
+        { "label": "A", "text": "$2,000,000" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$2,500,000" },
+        { "label": "D", "text": "$1,500,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Restricted net position equals restricted assets reduced by liabilities (and deferred inflows) related to those assets: $2,000,000 - $500,000 = $1,500,000. Reporting the gross $2,000,000 ignores the related liabilities, $500,000 is only the liability amount, and $2,500,000 incorrectly adds the liabilities to the restricted assets.",
+      "explanationJa": "制限付き純資産（restricted net position）＝制限付き資産−当該資産に関連する負債（および繰延インフロー）: $2,000,000−$500,000=$1,500,000（GASB 34/46）。$2,000,000の総額表示は関連負債の控除漏れ、$500,000は負債額のみ、$2,500,000は負債を加算してしまった誤りである。",
+      "references": ["GASB 34"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-142",
+      "topic": "Government Accounting",
+      "subtopic": "Landfill Closure Costs (GASB 18)",
+      "stem": "A county operates a municipal solid waste landfill accounted for in an enterprise fund. Total estimated closure and postclosure care costs are $12,000,000. At the end of the current year, 40% of the landfill's capacity has been used. The liability reported at the end of the prior year was $3,600,000, and no closure costs have been paid. What amount of closure and postclosure care expense should the county recognize for the current year?",
+      "choices": [
+        { "label": "A", "text": "$1,200,000" },
+        { "label": "B", "text": "$4,800,000" },
+        { "label": "C", "text": "$2,400,000" },
+        { "label": "D", "text": "$3,600,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under GASB 18, the liability is accrued based on landfill capacity used to date: $12,000,000 x 40% = $4,800,000 required ending liability. The current-year expense is the increase in the liability: $4,800,000 - $3,600,000 = $1,200,000. $4,800,000 is the ending liability balance rather than the annual expense, $2,400,000 would result from using an incorrect 20% incremental usage assumption, and $3,600,000 is the beginning liability balance.",
+      "explanationJa": "GASB 18では、埋立地の閉鎖・閉鎖後管理費用の負債は使用済み容量の割合に基づいて累積計上する: 必要な期末負債＝$12,000,000×40%=$4,800,000。当期費用＝負債の増加額＝$4,800,000−$3,600,000=$1,200,000。$4,800,000は期末負債残高であり当期費用ではない。$2,400,000は使用増分を20%と誤った場合の計算、$3,600,000は期首負債残高である。",
+      "references": ["GASB 18"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-143",
+      "topic": "Government Accounting",
+      "subtopic": "Investments at Fair Value (GASB 72) - Investment Income",
+      "stem": "A city's General Fund investment portfolio had a fair value of $1,000,000 at the beginning of the year. During the year, the city purchased investments for $200,000 and sold investments for proceeds of $150,000. The portfolio's fair value at year-end was $1,150,000, and the city received interest of $40,000. What total investment income should the city report for the year?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$140,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 72 (and GASB 31), investments are reported at fair value with the net change in fair value—including both realized and unrealized amounts—reported as investment income. Net change in fair value = $1,150,000 ending - $1,000,000 beginning - $200,000 purchases + $150,000 sales proceeds = $100,000. Total investment income = $100,000 + $40,000 interest = $140,000. $100,000 omits the interest, $40,000 reflects interest only, and $50,000 has no supportable derivation from the fair value rollforward.",
+      "explanationJa": "GASB 72（およびGASB 31）により、投資は公正価値で報告し、実現・未実現を区別しない公正価値の純変動額を投資収益として計上する。公正価値純変動＝期末$1,150,000−期首$1,000,000−購入$200,000＋売却代金$150,000=$100,000。総投資収益＝$100,000＋利息$40,000=$140,000。$100,000は利息の加算漏れ、$40,000は利息のみ、$50,000は公正価値の増減計算から導出できない誤答である。",
+      "references": ["GASB 72", "GASB 31"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-144",
+      "topic": "Government Accounting",
+      "subtopic": "Imposed Nonexchange Revenue - Identification",
+      "stem": "Under GASB 33, which of the following is an example of an imposed nonexchange revenue?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sales taxes collected by merchants and remitted to the state"
+        },
+        {
+          "label": "B",
+          "text": "Personal income taxes withheld from employee wages"
+        },
+        {
+          "label": "C",
+          "text": "Fines and forfeitures assessed by a municipal court"
+        },
+        {
+          "label": "D",
+          "text": "A federal grant that requires the government to provide specified services"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Imposed nonexchange revenues result from assessments on nongovernmental entities other than assessments on exchange transactions—property taxes, fines, and forfeitures are the classic examples. Sales taxes and income taxes are derived tax revenues because they are imposed on underlying exchange transactions (sales and earnings). A federal grant requiring specified services is a government-mandated nonexchange transaction.",
+      "explanationJa": "賦課型非交換収入（imposed nonexchange revenue）は、交換取引以外に対する賦課から生じる収入で、固定資産税や罰金・没収金が典型例である（GASB 33）。売上税と所得税は基礎にある交換取引（販売・稼得）に課されるため派生税収入（derived tax revenue）に分類される。特定サービス提供を条件とする連邦補助金は政府指令型（government-mandated）非交換取引である。",
+      "references": ["GASB 33"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-145",
+      "topic": "Government Accounting",
+      "subtopic": "Budgetary Accounts - Year-End Disposition",
+      "stem": "At the end of the fiscal year, what happens to the budgetary accounts (Estimated Revenues, Appropriations, and Budgetary Fund Balance) recorded in a General Fund?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "They are carried forward as beginning balances of the next fiscal year"
+        },
+        {
+          "label": "B",
+          "text": "They are closed against actual revenues and expenditures to compute the fund's net income"
+        },
+        {
+          "label": "C",
+          "text": "They are reported on the year-end balance sheet as budgetary reserves"
+        },
+        {
+          "label": "D",
+          "text": "They are closed by reversing the original budget entry and do not affect the GAAP fund balance"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Budgetary accounts are control accounts used during the year and are closed at year-end by reversing the original budgetary entry (debit Appropriations, credit Estimated Revenues, with the difference to Budgetary Fund Balance). Because the closing entry exactly reverses the opening entry, budgetary accounts have no effect on actual GAAP fund balance or the financial statements. They are not carried forward, they are not netted against actual amounts (and governmental funds do not compute net income), and they never appear on the GAAP balance sheet.",
+      "explanationJa": "予算勘定（Estimated Revenues、Appropriations、Budgetary Fund Balance）は期中の統制用勘定であり、期末に期首の予算計上仕訳を反対仕訳して締め切る。締切仕訳は期首仕訳の完全な逆仕訳のため、GAAPベースの実際のファンドバランスや財務諸表に影響しない。翌期への繰越や実際額との相殺は行わず（政府型ファンドに純利益の概念はない）、GAAP貸借対照表にも計上されない。",
+      "references": ["NCGA Statement 1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-146",
+      "topic": "Government Accounting",
+      "subtopic": "Expenditure Classification - Function vs Object",
+      "stem": "A city reports salaries of its police officers under the caption 'public safety' in its governmental fund statement of revenues, expenditures, and changes in fund balances. This caption represents which classification of expenditures?",
+      "choices": [
+        { "label": "A", "text": "Function" },
+        { "label": "B", "text": "Object class" },
+        { "label": "C", "text": "Organizational unit" },
+        { "label": "D", "text": "Character" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Function (or program) classification groups expenditures by major purpose or service area—public safety, general government, health and welfare, education. Object class would describe what was purchased (personnel services, supplies, capital outlay); organizational unit would identify the department (police department); and character classifies expenditures by fiscal period benefited (current, capital outlay, debt service).",
+      "explanationJa": "機能別（function/program）分類は、公共安全・一般行政・保健福祉・教育など主要な目的・サービス領域で支出をグルーピングする。費目別（object class）は購入対象（人件費・消耗品・資本支出）、組織単位別（organizational unit）は部局（警察署）、性質別（character）は支出が便益をもたらす会計期間（経常・資本支出・債務返済）による分類である。",
+      "references": ["NCGA Statement 1", "GASB 34"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-147",
+      "topic": "Government Accounting",
+      "subtopic": "Proprietary Fund Cash Flows - Interest Classification",
+      "stem": "An enterprise fund paid $250,000 of interest during the year on revenue bonds issued to construct its treatment plant. In the fund's statement of cash flows prepared under GASB 9, in which category should this interest payment be reported?",
+      "choices": [
+        { "label": "A", "text": "Operating activities" },
+        { "label": "B", "text": "Capital and related financing activities" },
+        { "label": "C", "text": "Investing activities" },
+        { "label": "D", "text": "Noncapital financing activities" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under GASB 9, interest paid on debt attributable to acquiring or constructing capital assets is reported in capital and related financing activities. This differs from FASB standards, under which interest paid is an operating activity. Interest paid would appear in noncapital financing activities only if the related debt was not for capital purposes, and investing activities includes interest received on investments, not interest paid on debt.",
+      "explanationJa": "GASB 9では、資本資産の取得・建設のための債務に係る支払利息は「資本及び関連財務活動」に区分する。営業活動に区分するFASB基準（企業会計）との重要な相違点である。当該債務が資本目的でない場合のみ「非資本財務活動」となり、「投資活動」は投資に係る受取利息の区分であって支払利息の区分ではない。",
+      "references": ["GASB 9"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-148",
+      "topic": "Government Accounting",
+      "subtopic": "Tax Anticipation Notes - General Fund Reporting",
+      "stem": "In October, a city's General Fund borrows $2,000,000 by issuing tax anticipation notes that mature in eight months and will be repaid from property tax collections of the current fiscal year. How should the General Fund report the note proceeds?",
+      "choices": [
+        { "label": "A", "text": "As an other financing source" },
+        { "label": "B", "text": "As property tax revenue" },
+        {
+          "label": "C",
+          "text": "As a liability (tax anticipation notes payable)"
+        },
+        {
+          "label": "D",
+          "text": "Only in the government-wide statements, not in the fund statements"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tax anticipation notes are short-term debt expected to be repaid from current resources, so the General Fund records a fund liability of $2,000,000—not an inflow on the operating statement. Other financing source treatment applies to long-term debt proceeds (such as general obligation bonds), the borrowing is not revenue because no tax has been earned by issuing notes, and short-term fund liabilities are reported in the fund statements as well as the government-wide statements.",
+      "explanationJa": "租税収入見込み手形（TAN）は当期資源で返済予定の短期借入であるため、一般基金は$2,000,000を基金の負債（Tax Anticipation Notes Payable）として計上し、運営計算書上の流入としては報告しない。その他財源（other financing source）としての処理は一般財源保証債等の長期債務発行収入金に適用される。借入は収入ではなく、短期負債はファンド財務諸表にも計上される。",
+      "references": ["NCGA Statement 1", "GASB 34"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-149",
+      "topic": "Government Accounting",
+      "subtopic": "Government-wide Conversion - Accrued Interest",
+      "stem": "A city's governmental funds reported interest expenditures of $480,000 for the year, representing interest payments that came due during the year. Accrued interest payable on general long-term debt was $60,000 at the beginning of the year and $90,000 at the end of the year. What amount of interest expense should be reported for governmental activities in the government-wide statement of activities?",
+      "choices": [
+        { "label": "A", "text": "$480,000" },
+        { "label": "B", "text": "$450,000" },
+        { "label": "C", "text": "$540,000" },
+        { "label": "D", "text": "$510,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Government-wide statements use accrual accounting, so interest expense equals amounts due during the year adjusted for the change in accrued interest payable: $480,000 + ($90,000 - $60,000) = $510,000. $480,000 is the modified accrual expenditure without adjustment, $450,000 subtracts the increase in the accrual instead of adding it, and $540,000 incorrectly adds the beginning accrual balance rather than the net change.",
+      "explanationJa": "政府全体財務諸表は発生主義のため、支払利息費用＝期中期日到来額±未払利息の増減: $480,000＋($90,000−$60,000)=$510,000。$480,000は修正発生主義の支出額のまま調整していない誤り、$450,000は未払利息の増加を加算すべきところ減算した誤り、$540,000は純増減ではなく期首残高$60,000を加算した誤りである。",
+      "references": ["GASB 34"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-150",
+      "topic": "Government Accounting",
+      "subtopic": "GASB 68 - Contributions After Measurement Date",
+      "stem": "A city sponsors a single-employer defined benefit pension plan and uses a measurement date of June 30, Year 1, for its fiscal year ending June 30, Year 2. Between the measurement date and the fiscal year-end, the city contributed $450,000 to the plan. How should the city report these contributions in its government-wide financial statements at June 30, Year 2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a deferred outflow of resources of $450,000"
+        },
+        { "label": "B", "text": "As pension expense of $450,000" },
+        {
+          "label": "C",
+          "text": "As a direct reduction of the net pension liability reported at year-end"
+        },
+        {
+          "label": "D",
+          "text": "As a deferred inflow of resources of $450,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under GASB 68, employer contributions made after the measurement date but before the end of the reporting period are reported as a deferred outflow of resources, because the net pension liability is measured as of the earlier measurement date and does not yet reflect those contributions. The contributions will reduce the net pension liability in the following period's measurement. They are not expensed immediately, the year-end liability cannot be adjusted directly because it is fixed at the measurement date, and a deferred inflow has the opposite balance-sheet effect.",
+      "explanationJa": "GASB 68では、測定日後・報告期間末までの事業主拠出は繰延アウトフローとして報告する。純年金負債は測定日（6月30日Year 1）時点で測定されており、その後の拠出$450,000を反映していないためである。当該拠出は翌期の測定で純年金負債を減少させる。即時費用化は誤りであり、負債は測定日時点で確定しているため直接減額もできない。繰延インフローでは貸借対照表上の効果が逆になる。",
+      "references": ["GASB 68"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-151",
+      "topic": "Government Accounting",
+      "subtopic": "Works of Art and Historical Collections",
+      "stem": "A city receives a donated collection of historical paintings. Under GASB 34, the city may elect NOT to capitalize the collection if certain conditions are met. Which of the following describes those conditions?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The collection's fair value cannot be reasonably estimated and it was acquired before 1980"
+        },
+        {
+          "label": "B",
+          "text": "The collection is held for public exhibition rather than financial gain, is protected and preserved, and is subject to a policy requiring sale proceeds to be used to acquire other collection items"
+        },
+        {
+          "label": "C",
+          "text": "The collection is insured for its full replacement value and displayed in a public building"
+        },
+        {
+          "label": "D",
+          "text": "The city council passes a resolution declaring the collection to be inexhaustible"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "GASB 34 permits a government not to capitalize collections that meet all three conditions: held for public exhibition, education, or research in furtherance of public service rather than financial gain; protected, kept unencumbered, cared for, and preserved; and subject to an organizational policy requiring proceeds from sales of collection items to be used to acquire other collection items. The inability to estimate fair value, insurance coverage, or a council resolution about inexhaustibility is not the basis for the capitalization exemption.",
+      "explanationJa": "GASB 34は、(1)営利目的ではなく公開展示・教育・研究のために保有、(2)保護・保全されている、(3)売却収入を他の収蔵品取得に充てる方針が存在——の3条件をすべて満たすコレクションについて、資産計上しない選択を認めている。公正価値の見積不能や取得年、保険の付保、議会決議による「非消耗」宣言は資産計上免除の根拠ではない。",
+      "references": ["GASB 34"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-152",
+      "topic": "Government Accounting",
+      "subtopic": "Bond Anticipation Notes - Long-Term Treatment",
+      "stem": "A city issues $4,000,000 of bond anticipation notes (BANs) to begin construction of a civic center, intending to refinance them with long-term general obligation bonds. Under what circumstances may the city exclude the BANs from the liabilities of its Capital Projects Fund?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Whenever the proceeds are used for capital purposes, regardless of refinancing plans"
+        },
+        {
+          "label": "B",
+          "text": "Only if the BANs mature more than five years after issuance"
+        },
+        {
+          "label": "C",
+          "text": "When all legal steps have been taken to refinance the BANs and the intent is supported by an ability to consummate the long-term refinancing"
+        },
+        {
+          "label": "D",
+          "text": "Never; all notes payable must be reported as fund liabilities"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bond anticipation notes may be treated as long-term debt (general long-term liabilities rather than fund liabilities) only when all legal steps have been taken to refinance them and the intent is supported by an ability to consummate refinancing on a long-term basis—criteria drawn from the refinancing guidance applied through NCGA Interpretation 9. The use of proceeds for capital purposes alone is not sufficient, there is no five-year maturity test, and an absolute prohibition is incorrect because the refinancing exception exists.",
+      "explanationJa": "BAN（起債前つなぎ手形）は、(1)長期借換のためのすべての法的手続が完了しており、(2)長期借換を完遂する能力に裏付けられた意図がある場合に限り、ファンド負債ではなく一般長期負債として扱える（NCGA Interpretation 9による借換基準の適用）。資金使途が資本目的であるだけでは不十分であり、5年満期基準は存在しない。借換例外があるため「常にファンド負債」とする選択も誤り。",
+      "references": ["NCGA Interpretation 9", "GASB 34"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "gov-153",
+      "topic": "Government Accounting",
+      "subtopic": "Expenditure-Driven Grant - Revenue and Liability",
+      "stem": "A city is awarded a $900,000 state grant under which the state reimburses allowable costs as they are incurred (eligibility requirement: incurrence of allowable costs). During the year, the city incurred $600,000 of qualifying costs and received $700,000 in cash from the state. What amount of grant revenue should the city recognize for the year?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$900,000" },
+        { "label": "C", "text": "$700,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "For expenditure-driven (reimbursement-type) grants, revenue is recognized when the eligibility requirement—incurrence of allowable costs—is met: $600,000. The $100,000 of cash received in excess of qualifying costs ($700,000 - $600,000) is reported as a liability (unearned revenue) because eligibility has not been met for that portion. $900,000 is the total award not yet earned, $700,000 is the cash received regardless of eligibility, and recognizing nothing ignores the costs already incurred.",
+      "explanationJa": "支出連動型（実費精算型）補助金では、適格要件である「許容費用の発生」が満たされた範囲で収益認識する（GASB 33）: $600,000。適格費用を超えて受領した現金$100,000（$700,000−$600,000）は要件未充足のため負債（unearned revenue）として計上する。$900,000は未稼得の交付決定総額、$700,000は適格性を無視した現金受領額、ゼロ認識は既発生費用を無視した誤りである。",
+      "references": ["GASB 33"],
+      "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }
   ]

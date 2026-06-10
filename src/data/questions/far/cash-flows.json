@@ -2,7 +2,7 @@
   "id": "far-cash-flows",
   "name": "Statement of Cash Flows",
   "topic": "Statement of Cash Flows",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "cf-001",
@@ -2738,6 +2738,838 @@
       "explanationJa": "資産除去債務（ARO）の決済のための現金支払は営業活動に分類される。AROの決済は発生した営業負債の履行を表す（債務はアクリーションおよび資産化された除去費用の減価償却を通じて時間をかけて費用計上された）。支払は純利益の決定に含まれた費用に関連するため、ASC 230-10-45-17に基づき営業活動の流出である。",
       "references": ["ASC 230-10-45-17", "ASC 410-20-35"],
       "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-126",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Cash Equivalents - Maturity Measured from Acquisition Date",
+      "stem": "On October 1, Year 1, Calloway Corp. purchased a U.S. Treasury note that matures on March 1, Year 2 (five months after purchase). At December 31, Year 1, the note has two months remaining until maturity. How should the Treasury note be reported at December 31, Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a cash equivalent, because the remaining maturity at the balance sheet date is three months or less"
+        },
+        {
+          "label": "B",
+          "text": "As a short-term investment, because the maturity was more than three months from the date of acquisition"
+        },
+        {
+          "label": "C",
+          "text": "As a cash equivalent, provided management intends to hold the note to maturity"
+        },
+        {
+          "label": "D",
+          "text": "As restricted cash, presented separately from cash and cash equivalents"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230, cash equivalents are short-term, highly liquid investments with original maturities of three months or less, measured from the date the investment is acquired by the entity—not from the balance sheet date. Because the note had five months to maturity when Calloway purchased it, it can never qualify as a cash equivalent, even when only two months remain at year-end. Classifying based on the remaining maturity at the balance sheet date misapplies the definition. Management's intent to hold the note does not change the maturity test. The note is not restricted cash because its use is not legally or contractually limited.",
+      "explanationJa": "ASC 230において、現金同等物は「取得日から」満期まで3か月以内の短期・高流動性投資と定義される（貸借対照表日からの残存期間ではない）。本問の財務省証券は購入時点で満期まで5か月あったため、期末時点で残存2か月であっても現金同等物には該当せず、短期投資として報告する。経営者の保有意図は満期テストに影響しない。また使用制限があるわけではないので制限付き現金でもない。",
+      "references": ["ASC 230-10-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-127",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Comprehensive Operating Cash Flow",
+      "stem": "Bristow Corp. reported net income of $480,000 for Year 1. The following additional information is available: depreciation expense $55,000; gain on sale of equipment $20,000; increase in accounts receivable $30,000; decrease in inventory $12,000; increase in accounts payable $25,000. Under the indirect method, what amount should Bristow report as net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$522,000" },
+        { "label": "B", "text": "$562,000" },
+        { "label": "C", "text": "$508,000" },
+        { "label": "D", "text": "$542,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net cash provided by operating activities = $480,000 net income + $55,000 depreciation (noncash) − $20,000 gain on sale (reported in investing) − $30,000 AR increase + $12,000 inventory decrease + $25,000 AP increase = $522,000. An answer of $562,000 results from adding the gain instead of deducting it. An answer of $508,000 results from reversing the signs of all three working capital changes. An answer of $542,000 results from omitting the gain adjustment entirely.",
+      "explanationJa": "間接法による営業CF = 純利益$480,000 + 減価償却費$55,000（非資金費用の加算）− 設備売却益$20,000（投資活動に属するため控除）− 売掛金増加$30,000 + 棚卸資産減少$12,000 + 買掛金増加$25,000 = $522,000（ASC 230-10-45-28）。売却益を加算すると$562,000、運転資本3項目の符号を逆にすると$508,000、売却益の調整を忘れると$542,000となり、いずれも誤り。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-128",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash Collected with Write-Offs",
+      "stem": "Danvers Co. reported sales revenue of $2,400,000 for the year. Accounts receivable was $310,000 at the beginning of the year and $265,000 at the end of the year. During the year, Danvers wrote off $20,000 of uncollectible accounts against the allowance. Under the direct method, what amount of cash was collected from customers?",
+      "choices": [
+        { "label": "A", "text": "$2,445,000" },
+        { "label": "B", "text": "$2,355,000" },
+        { "label": "C", "text": "$2,425,000" },
+        { "label": "D", "text": "$2,375,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cash collected = sales + beginning AR − ending AR − write-offs = $2,400,000 + $310,000 − $265,000 − $20,000 = $2,425,000. Write-offs reduce accounts receivable without generating cash, so $20,000 of the $45,000 decline in AR did not produce collections. An answer of $2,445,000 ignores the write-offs. An answer of $2,355,000 subtracts the AR decrease instead of adding it. An answer of $2,375,000 combines both errors.",
+      "explanationJa": "顧客からの現金回収額 = 売上高 + 期首売掛金 − 期末売掛金 − 貸倒償却額 = $2,400,000 + $310,000 − $265,000 − $20,000 = $2,425,000。貸倒償却$20,000は現金を伴わずに売掛金を減少させるため、売掛金減少$45,000のうち償却分は回収額に含めない（ASC 230-10-45-25）。償却を無視すると$2,445,000、売掛金減少を減算すると$2,355,000となり誤り。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-129",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash Paid to Suppliers",
+      "stem": "Elmhurst Inc. reported cost of goods sold of $1,150,000 for the year. During the year, inventory increased by $40,000 and accounts payable decreased by $25,000. Under the direct method, what amount of cash was paid to suppliers?",
+      "choices": [
+        { "label": "A", "text": "$1,085,000" },
+        { "label": "B", "text": "$1,165,000" },
+        { "label": "C", "text": "$1,175,000" },
+        { "label": "D", "text": "$1,215,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Purchases = COGS + inventory increase = $1,150,000 + $40,000 = $1,190,000. Cash paid = purchases + AP decrease = $1,190,000 + $25,000 = $1,215,000. An inventory increase means more goods were bought than sold, and an AP decrease means the company paid more cash than it purchased on account—both increase cash outflows. An answer of $1,085,000 subtracts both adjustments. An answer of $1,165,000 subtracts the AP decrease. An answer of $1,175,000 ignores the inventory change.",
+      "explanationJa": "仕入額 = 売上原価$1,150,000 + 棚卸資産増加$40,000 = $1,190,000。仕入先への現金支払額 = 仕入額 + 買掛金減少$25,000 = $1,215,000（ASC 230-10-45-25）。棚卸資産の増加は販売量以上の購入を、買掛金の減少は掛仕入以上の支払を意味し、いずれも現金支出を増加させる。両方を減算すると$1,085,000、買掛金減少を減算すると$1,165,000となり誤り。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-130",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash Paid for Interest with Discount Amortization",
+      "stem": "Garfield Corp. reported interest expense of $96,000 for the year. During the year, interest payable increased by $11,000, and amortization of bond discount included in interest expense was $7,000. What amount should Garfield disclose as cash paid for interest?",
+      "choices": [
+        { "label": "A", "text": "$78,000" },
+        { "label": "B", "text": "$92,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$114,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cash paid for interest = interest expense − increase in interest payable − discount amortization = $96,000 − $11,000 − $7,000 = $78,000. The increase in interest payable represents expense accrued but not yet paid, and discount amortization is a noncash component of interest expense; both reduce the cash outflow below expense. An answer of $92,000 adds back the discount amortization incorrectly ($96,000 − $11,000 + $7,000). An answer of $100,000 adds the payable increase ($96,000 + $11,000 − $7,000). An answer of $114,000 adds both adjustments.",
+      "explanationJa": "支払利息の現金支出額 = 利息費用$96,000 − 未払利息増加$11,000 − 社債割引発行差金償却$7,000 = $78,000。未払利息の増加は費用計上済みだが未払いの部分、割引差金償却は非資金費用であり、いずれも現金支出を費用より小さくする（ASC 230-10-50-2の補足開示）。差金償却を加算すると$92,000、未払利息増加を加算すると$100,000となり誤り。",
+      "references": ["ASC 230-10-50-2", "ASC 230-10-45-25"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-131",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash Paid for Income Taxes with Deferred Taxes",
+      "stem": "Hollis Inc. reported income tax expense of $240,000 for the year. During the year, income taxes payable increased by $18,000 and the deferred tax liability increased by $32,000. What amount should Hollis disclose as cash paid for income taxes?",
+      "choices": [
+        { "label": "A", "text": "$254,000" },
+        { "label": "B", "text": "$190,000" },
+        { "label": "C", "text": "$226,000" },
+        { "label": "D", "text": "$240,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cash paid for income taxes = tax expense − increase in income taxes payable − increase in deferred tax liability = $240,000 − $18,000 − $32,000 = $190,000. The payable increase reflects current tax accrued but unpaid, and the deferred tax liability increase is the noncash deferred portion of tax expense. An answer of $254,000 adds the deferred tax change instead of subtracting it. An answer of $226,000 adds the payable increase instead of subtracting it. An answer of $240,000 ignores both adjustments.",
+      "explanationJa": "法人税の現金支払額 = 法人税費用$240,000 − 未払法人税増加$18,000 − 繰延税金負債増加$32,000 = $190,000。未払法人税の増加は計上済み未払分、繰延税金負債の増加は税金費用のうち非資金の繰延部分であり、いずれも控除する（ASC 230-10-50-2）。繰延税金を加算すると$254,000、未払税金を加算すると$226,000となり誤り。",
+      "references": ["ASC 230-10-50-2"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-132",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Loans Held for Sale - Operating Classification",
+      "stem": "Ironwood Mortgage Co. originates residential mortgage loans with the intent to sell them in the secondary market within 60 days. During the year, Ironwood disbursed $30,000,000 to originate such loans and received $28,500,000 from sales of loans. How should these cash flows be classified on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Both as investing activities, because loans are financial assets"
+        },
+        {
+          "label": "B",
+          "text": "Originations as investing outflows and sale proceeds as operating inflows"
+        },
+        {
+          "label": "C",
+          "text": "Both as operating activities, because the loans are acquired specifically for resale"
+        },
+        {
+          "label": "D",
+          "text": "Originations as financing outflows and sale proceeds as financing inflows"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 230, cash flows from purchases, originations, and sales of loans that are acquired specifically for resale and carried at fair value or the lower of cost or fair value are classified as operating activities, because such loans are similar to inventory held for sale in the ordinary course of business. Investing classification applies only to loans held for investment (held for the longer term to collect contractual cash flows). Financing classification is unrelated because no capital or borrowing transaction of Ironwood itself is involved.",
+      "explanationJa": "ASC 230-10-45-21により、転売目的で取得・組成され、公正価値または低価法で測定されるローンの組成・購入・売却によるキャッシュフローは営業活動に分類される。これらのローンは通常の営業過程で販売される棚卸資産に類似するためである。投資活動分類は長期保有目的（投資目的）のローンにのみ適用される。自社の資本・借入取引ではないため財務活動にも該当しない。",
+      "references": ["ASC 230-10-45-21"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-133",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Bond Discount Amortization Adjustment",
+      "stem": "Jasper Corp. issued bonds at a discount several years ago. During the current year, Jasper recorded $14,000 of bond discount amortization, which is included in interest expense. Under the indirect method, how does the discount amortization affect the reconciliation of net income to net cash provided by operating activities?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It is added to net income, because it is a noncash component of interest expense"
+        },
+        {
+          "label": "B",
+          "text": "It is deducted from net income, because it reduces the carrying amount of the bonds"
+        },
+        {
+          "label": "C",
+          "text": "No adjustment is required, because interest is an operating item"
+        },
+        {
+          "label": "D",
+          "text": "It is reported as a financing outflow of $14,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Discount amortization increases interest expense (reducing net income) without any cash payment—cash interest paid equals only the stated coupon. Under the indirect method, the $14,000 noncash expense is therefore added back to net income. Deducting it would double the effect of the noncash charge. Making no adjustment misstates operating cash flow because net income includes an expense that consumed no cash. Discount amortization itself involves no cash, so it cannot be a financing outflow; it actually increases (not reduces) the bonds' carrying amount toward face value.",
+      "explanationJa": "割引発行差金の償却は現金支出を伴わずに利息費用を増加（純利益を減少）させる。実際の現金支払はクーポン利息のみであるため、間接法では非資金費用$14,000を純利益に加算する（ASC 230-10-45-28）。控除すると非資金費用の影響を二重計上することになる。また差金償却は社債の帳簿価額を額面に向けて増加させるものであり、現金が動かない以上、財務活動の支出にも該当しない。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-134",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Deferred Tax Asset Increase",
+      "stem": "During the year, Kendrick Co.'s deferred tax asset increased by $26,000 because of temporary differences that will produce future tax deductions. Under the indirect method, how does this change affect the reconciliation of net income to net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "It is added to net income" },
+        { "label": "B", "text": "It has no effect on the reconciliation" },
+        { "label": "C", "text": "It is reported as an investing inflow" },
+        { "label": "D", "text": "It is deducted from net income" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "An increase in a deferred tax asset reduces income tax expense (through a deferred tax benefit) and thereby increases net income without any corresponding cash inflow. Under the indirect method, the $26,000 increase must be deducted from net income to arrive at operating cash flow. Adding it would compound the noncash benefit. Ignoring it would overstate operating cash flow. Deferred taxes relate to operations, not investing, so no investing classification applies.",
+      "explanationJa": "繰延税金資産の増加は繰延税金ベネフィットを通じて法人税費用を減少させ、現金収入を伴わずに純利益を増加させる。したがって間接法では増加額$26,000を純利益から控除する（ASC 230-10-45-28）。加算すると非資金の利益を二重に反映し、無調整では営業CFが過大表示となる。繰延税金は営業活動に関連するため投資活動には分類されない。",
+      "references": ["ASC 230-10-45-28", "ASC 740-10-25"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-135",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Sale of Building - Proceeds and Gain Treatment",
+      "stem": "Lakewood Corp. sold a building that had an original cost of $900,000 and accumulated depreciation of $620,000. The sale resulted in a gain of $45,000. Lakewood uses the indirect method. How should this transaction be reflected in the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$280,000 investing inflow; $45,000 added to net income in operating activities"
+        },
+        {
+          "label": "B",
+          "text": "$325,000 investing inflow; $45,000 deducted from net income in operating activities"
+        },
+        {
+          "label": "C",
+          "text": "$325,000 investing inflow; $45,000 added to net income in operating activities"
+        },
+        {
+          "label": "D",
+          "text": "$280,000 investing inflow; no adjustment in operating activities"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Book value = $900,000 − $620,000 = $280,000. Because the gain was $45,000, sale proceeds = $280,000 + $45,000 = $325,000, reported in full as an investing inflow. Under the indirect method, the $45,000 gain included in net income must be deducted in operating activities to avoid double counting the cash already captured in investing. Reporting only $280,000 in investing omits the gain portion of the proceeds. Adding the gain to net income would double count it.",
+      "explanationJa": "帳簿価額 = $900,000 − $620,000 = $280,000。売却益$45,000より、売却収入 = $280,000 + $45,000 = $325,000であり、全額を投資活動の収入として表示する。間接法では純利益に含まれる売却益$45,000を営業活動で控除し、投資活動に計上済みの現金の二重計上を防ぐ（ASC 230-10-45-12、45-28）。投資活動に$280,000のみ計上すると収入の一部が漏れ、売却益を加算すると二重計上となる。",
+      "references": ["ASC 230-10-45-12", "ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-136",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Shares Withheld for Employee Taxes - Financing",
+      "stem": "When restricted stock units vested, Marlowe Corp. withheld shares from employees to satisfy the employees' statutory income tax withholding obligation and remitted $180,000 cash to the taxing authority on the employees' behalf. Under ASU 2016-09 amendments to ASC 230, how should the $180,000 payment be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating activity, because it relates to payroll taxes"
+        },
+        {
+          "label": "B",
+          "text": "Investing activity, because shares were acquired"
+        },
+        {
+          "label": "C",
+          "text": "Financing activity, because it is in substance a repurchase of the entity's equity instruments"
+        },
+        {
+          "label": "D",
+          "text": "Noncash transaction requiring disclosure only"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASU 2016-09 requires cash paid to a taxing authority when an employer withholds shares to satisfy employees' statutory tax withholding to be classified as a financing activity. Economically, the employer has repurchased a portion of the vested shares from employees, which is a treasury-stock-like transaction. It is not an ordinary payroll-related operating payment because it substitutes for delivering shares. It is not investing because the entity is dealing in its own equity. Cash was actually remitted, so it is not a noncash transaction.",
+      "explanationJa": "ASU 2016-09（ASC 230-10-45-15）により、従業員の源泉税納付目的で株式を源泉留保し、雇用主が税務当局へ現金を納付した場合、その支払は財務活動に分類される。実質的に従業員から自社株式の一部を買い戻す自己株式取得類似の取引であるためである。通常の給与関連支出（営業活動）ではなく、自社株式に関する取引なので投資活動でもない。現金が実際に支払われているため非資金取引でもない。",
+      "references": ["ASC 230-10-45-15", "ASU 2016-09"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-137",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Restricted Cash - Total Change Reported",
+      "stem": "Norwell Inc. presents the following balances. Beginning of year: cash and cash equivalents $150,000; restricted cash $40,000. End of year: cash and cash equivalents $210,000; restricted cash $25,000. Under ASU 2016-18, what net change should the statement of cash flows reconcile?",
+      "choices": [
+        { "label": "A", "text": "$45,000 increase" },
+        { "label": "B", "text": "$60,000 increase" },
+        { "label": "C", "text": "$15,000 decrease" },
+        { "label": "D", "text": "$75,000 increase" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2016-18 requires the statement of cash flows to explain the change in the total of cash, cash equivalents, and restricted cash. Beginning total = $150,000 + $40,000 = $190,000; ending total = $210,000 + $25,000 = $235,000; net change = $45,000 increase. An answer of $60,000 considers only unrestricted cash. An answer of $15,000 decrease considers only restricted cash. An answer of $75,000 incorrectly adds the two separate changes as absolute values.",
+      "explanationJa": "ASU 2016-18（ASC 230-10-45-4）により、キャッシュフロー計算書は現金・現金同等物・制限付き現金の「合計」の増減を説明する。期首合計 = $150,000 + $40,000 = $190,000、期末合計 = $210,000 + $25,000 = $235,000、純増加 = $45,000。非制限現金のみを見ると$60,000、制限付き現金のみだと$15,000減少となり、いずれも誤り。",
+      "references": ["ASC 230-10-45-4", "ASU 2016-18"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-138",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Transfers Between Restricted and Unrestricted Cash",
+      "stem": "During the year, Oakhurst Co. transferred $500,000 from its operating cash account into an escrow account (restricted cash) as required by a debt covenant. No other party received the funds. Under ASU 2016-18, how is this transfer presented in the statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "As a $500,000 investing outflow" },
+        {
+          "label": "B",
+          "text": "As a $500,000 financing outflow, because the escrow relates to debt"
+        },
+        { "label": "C", "text": "As a $500,000 operating outflow" },
+        {
+          "label": "D",
+          "text": "It is not presented as a cash flow, because restricted cash is included in the total reconciled on the statement"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Because ASU 2016-18 requires restricted cash to be combined with cash and cash equivalents in the beginning and ending totals on the statement of cash flows, internal transfers between unrestricted cash and restricted cash do not change the combined total and therefore are not reported as operating, investing, or financing cash flows. Presenting the transfer in any activity category would misstate cash flows, since no cash entered or left the combined pool.",
+      "explanationJa": "ASU 2016-18により制限付き現金はキャッシュフロー計算書の期首・期末合計に含めて調整されるため、非制限現金と制限付き現金の間の内部振替は合計額を変化させず、営業・投資・財務いずれの活動にもキャッシュフローとして表示しない。現金が合算プールの外に出入りしていない以上、いずれかの区分に表示すればキャッシュフローの過大表示となる。",
+      "references": ["ASC 230-10-45-4", "ASU 2016-18"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-139",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Noncash - Conversion of Preferred Stock",
+      "stem": "During Year 1, holders of Pinecrest Corp.'s convertible preferred stock converted preferred shares with a carrying amount of $1,500,000 into 100,000 shares of common stock. No cash was exchanged. How should Pinecrest report this conversion?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a financing inflow and financing outflow of $1,500,000 each"
+        },
+        {
+          "label": "B",
+          "text": "As a noncash financing activity disclosed in a supplemental schedule or note"
+        },
+        { "label": "C", "text": "As a financing outflow of $1,500,000 only" },
+        {
+          "label": "D",
+          "text": "No reporting or disclosure is required, because total equity is unchanged"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The conversion of preferred stock into common stock is a noncash financing transaction: it changes the entity's capital structure without any cash receipt or payment. ASC 230 requires noncash investing and financing activities to be disclosed in a separate schedule or in the notes, not in the body of the statement of cash flows. Reporting offsetting financing inflows and outflows would fabricate cash flows that never occurred. Disclosure is required even though total equity is unchanged, because the information is relevant to understanding financing activities.",
+      "explanationJa": "優先株式から普通株式への転換は、現金の授受なしに資本構成を変化させる非資金財務取引である。ASC 230-10-50-3〜6により、非資金の投資・財務活動はキャッシュフロー計算書本体ではなく別表または注記で開示する。発生していない現金流入・流出を相殺表示するのは誤りであり、純資産合計が不変であっても財務活動の理解に有用なため開示は必要である。",
+      "references": ["ASC 230-10-50-3", "ASC 230-10-50-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-140",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Insurance Settlement Allocated by Nature of Loss",
+      "stem": "Quincy Corp.'s warehouse fire destroyed both inventory and the building. Quincy received a single lump-sum insurance settlement of $900,000, of which $350,000 was identified as compensation for the destroyed inventory and $550,000 for the destroyed building. Under ASU 2016-15, how should the proceeds be classified?",
+      "choices": [
+        { "label": "A", "text": "$900,000 entirely as an operating inflow" },
+        { "label": "B", "text": "$900,000 entirely as an investing inflow" },
+        {
+          "label": "C",
+          "text": "$350,000 as an operating inflow and $550,000 as an investing inflow"
+        },
+        {
+          "label": "D",
+          "text": "$550,000 as an operating inflow and $350,000 as an investing inflow"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASU 2016-15 requires insurance settlement proceeds to be classified on the basis of the nature of the related loss, and a lump-sum settlement must be allocated among categories based on the nature of each loss covered. Inventory is an operating asset, so the $350,000 recovery is an operating inflow; the building is a productive asset, so the $550,000 recovery is an investing inflow. Classifying the entire amount in a single category ignores the required allocation, and reversing the amounts mismatches each recovery with the nature of its loss.",
+      "explanationJa": "ASU 2016-15（ASC 230-10-45-21B）により、保険金収入は補償対象となった損失の性質に基づいて分類し、一括受領額は損失の性質ごとに配分する。棚卸資産は営業資産であるため$350,000は営業活動の収入、建物は生産的資産であるため$550,000は投資活動の収入となる。全額を単一区分に分類したり金額を逆に配分するのは誤り。",
+      "references": ["ASC 230-10-45-21B", "ASU 2016-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-141",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Contingent Consideration Paid Soon After Acquisition",
+      "stem": "Redfern Inc. acquired a business on March 1, Year 1. The purchase agreement required a contingent payment that Redfern settled for $700,000 cash on April 15, Year 1—approximately six weeks after the acquisition date. Under ASU 2016-15, how should the $700,000 payment be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Investing activity, because it was made soon after the business combination"
+        },
+        {
+          "label": "B",
+          "text": "Financing activity up to the acquisition-date fair value of the liability"
+        },
+        { "label": "C", "text": "Operating activity in its entirety" },
+        {
+          "label": "D",
+          "text": "Noncash transaction requiring disclosure only"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASU 2016-15, contingent consideration payments made soon after the acquisition date (generally within a relatively short period such as three months or less) are classified as investing activities, as part of the cash paid to acquire the business. The split between financing (up to the acquisition-date fair value of the liability) and operating (any excess) applies only to payments made beyond that initial period. The payment involves actual cash, so noncash disclosure treatment does not apply.",
+      "explanationJa": "ASU 2016-15により、企業結合の取得日から短期間内（おおむね3か月以内）に支払われた条件付対価は、事業取得のための現金支出の一部として投資活動に分類される。取得日公正価値までを財務活動、超過分を営業活動とする区分は、取得日から相当期間経過後の支払にのみ適用される。実際に現金が支払われているため非資金取引の開示扱いにはならない。",
+      "references": ["ASC 230-10-45-13", "ASC 230-10-45-15", "ASU 2016-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-142",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Beneficial Interest - Subsequent Cash Receipts",
+      "stem": "Sandpiper Corp. securitized trade receivables and received, in addition to cash, a beneficial interest in the transferred receivables. In the following year, Sandpiper collected $260,000 of cash payments on that beneficial interest. Under ASU 2016-15, how should the $260,000 of collections be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating activity, because the underlying assets were trade receivables"
+        },
+        {
+          "label": "B",
+          "text": "Financing activity, because securitization is a form of borrowing"
+        },
+        {
+          "label": "C",
+          "text": "Split between operating and financing based on the interest's fair value"
+        },
+        { "label": "D", "text": "Investing activity" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASU 2016-15, cash receipts from payments on a transferor's beneficial interest in securitized trade receivables are classified as investing activities. The beneficial interest is an investment received in the securitization (its initial receipt is disclosed as a noncash activity), so subsequent collections on it are returns of/on an investment, not operating collections of trade receivables. The transfer qualified as a sale, not a borrowing, so financing classification is inapplicable, and no fair-value-based split is prescribed.",
+      "explanationJa": "ASU 2016-15（ASC 230-10-45-12）により、譲渡人が売上債権の証券化で受け取った受益権に対するその後の現金回収は投資活動に分類される。受益権は証券化で受領した投資（当初受領は非資金取引として開示）であり、その回収は投資のリターンであって売上債権の営業上の回収ではない。譲渡は売却処理されており借入ではないため財務活動には該当せず、公正価値による按分も規定されていない。",
+      "references": ["ASC 230-10-45-12", "ASU 2016-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-143",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Multiple Working Capital Changes",
+      "stem": "Talbot Co. reported net income of $250,000 and depreciation expense of $31,000. Balance sheet changes during the year: accounts receivable decreased $22,000; inventory increased $35,000; prepaid expenses increased $8,000; accounts payable decreased $14,000; accrued liabilities increased $9,000. Under the indirect method, what is net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$325,000" },
+        { "label": "B", "text": "$255,000" },
+        { "label": "C", "text": "$224,000" },
+        { "label": "D", "text": "$239,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Operating cash flow = $250,000 + $31,000 depreciation + $22,000 AR decrease − $35,000 inventory increase − $8,000 prepaid increase − $14,000 AP decrease + $9,000 accrued liabilities increase = $255,000. An answer of $325,000 results from adding the $35,000 inventory increase instead of subtracting it (a $70,000 error). An answer of $224,000 omits the depreciation add-back. An answer of $239,000 reverses the signs of the AR and AP changes.",
+      "explanationJa": "営業CF = 純利益$250,000 + 減価償却費$31,000 + 売掛金減少$22,000 − 棚卸資産増加$35,000 − 前払費用増加$8,000 − 買掛金減少$14,000 + 未払費用増加$9,000 = $255,000（ASC 230-10-45-28）。棚卸資産増加を加算すると$325,000、減価償却費の加算を忘れると$224,000、売掛金と買掛金の符号を逆にすると$239,000となり誤り。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-144",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Accumulated Depreciation Rollforward - Deriving Depreciation Expense",
+      "stem": "Updike Corp.'s accumulated depreciation was $800,000 at the beginning of the year and $920,000 at the end of the year. During the year, Updike sold equipment with accumulated depreciation of $150,000. There were no other disposals or impairments. What amount of depreciation expense should be added back to net income under the indirect method?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$270,000" },
+        { "label": "D", "text": "$420,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ending accumulated depreciation = beginning + depreciation expense − accumulated depreciation removed on disposals. Solving: $920,000 = $800,000 + expense − $150,000, so depreciation expense = $270,000. An answer of $120,000 is merely the net change in the account and ignores the disposal. An answer of $150,000 is the accumulated depreciation removed, not the expense. An answer of $420,000 double counts the disposal by adding it twice.",
+      "explanationJa": "期末減価償却累計額 = 期首 + 当期減価償却費 − 売却資産の累計額除去分。$920,000 = $800,000 + 減価償却費 − $150,000 より、減価償却費 = $270,000。これが間接法で純利益に加算される金額となる（ASC 230-10-45-28）。勘定の純増減$120,000は処分の影響を無視しており、$150,000は除去された累計額にすぎず、$420,000は処分額を二重に加えた誤り。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-145",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Financing Activities - Net Section Total",
+      "stem": "During Year 1, Vintner Corp. had the following cash transactions: issued common stock for $400,000; paid cash dividends of $120,000; repaid bonds payable of $250,000; purchased treasury stock for $80,000; received proceeds of $60,000 from a short-term bank loan. What amount should Vintner report as net cash provided by (used in) financing activities?",
+      "choices": [
+        { "label": "A", "text": "$10,000 provided" },
+        { "label": "B", "text": "$130,000 provided" },
+        { "label": "C", "text": "$(50,000) used" },
+        { "label": "D", "text": "$170,000 provided" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Net financing cash flow = $400,000 stock issuance − $120,000 dividends − $250,000 bond repayment − $80,000 treasury stock + $60,000 short-term borrowing = $10,000 provided. All five items are financing activities; short-term bank borrowings are financing regardless of maturity. An answer of $130,000 omits the dividend payment. An answer of $(50,000) omits the short-term borrowing. An answer of $170,000 treats the treasury stock purchase as an inflow rather than an outflow.",
+      "explanationJa": "財務活動による純CF = 普通株式発行$400,000 − 配当支払$120,000 − 社債償還$250,000 − 自己株式取得$80,000 + 短期借入$60,000 = $10,000の純収入（ASC 230-10-45-14、45-15）。短期借入も満期にかかわらず財務活動である。配当支払を漏らすと$130,000、短期借入を漏らすと$(50,000)、自己株式取得を収入として扱うと$170,000となり誤り。",
+      "references": ["ASC 230-10-45-14", "ASC 230-10-45-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-146",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Investing Activities - Net Section Total",
+      "stem": "During Year 1, Westbrook Inc. had the following cash transactions: purchased equipment for $275,000; received $90,000 from the sale of land; purchased available-for-sale debt securities for $130,000; collected $50,000 of principal on a long-term note receivable; received $12,000 of interest on the note. What amount should Westbrook report as net cash used in investing activities?",
+      "choices": [
+        { "label": "A", "text": "$253,000" },
+        { "label": "B", "text": "$315,000" },
+        { "label": "C", "text": "$185,000" },
+        { "label": "D", "text": "$265,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Net investing = −$275,000 equipment + $90,000 land proceeds − $130,000 AFS securities + $50,000 principal collection = $(265,000) used. Interest received of $12,000 is an operating inflow under U.S. GAAP and is excluded. An answer of $253,000 incorrectly includes the interest in investing. An answer of $315,000 omits the principal collection. An answer of $185,000 includes only the equipment and land transactions.",
+      "explanationJa": "投資活動による純CF = 設備購入−$275,000 + 土地売却$90,000 − AFS債券購入−$130,000 + 貸付金元本回収$50,000 = 純支出$265,000（ASC 230-10-45-12、45-13）。利息受取$12,000は米国GAAPでは営業活動の収入であり除外する。利息を含めると$253,000、元本回収を漏らすと$315,000、設備と土地のみだと$185,000となり誤り。",
+      "references": [
+        "ASC 230-10-45-12",
+        "ASC 230-10-45-13",
+        "ASC 230-10-45-16"
+      ],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-147",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Primary Purpose of the Statement",
+      "stem": "Under ASC 230, what is the primary purpose of the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "To report the financial position of the entity at a point in time"
+        },
+        {
+          "label": "B",
+          "text": "To provide relevant information about an entity's cash receipts and cash payments during a period"
+        },
+        {
+          "label": "C",
+          "text": "To reconcile retained earnings to net income for the period"
+        },
+        {
+          "label": "D",
+          "text": "To present the entity's profitability on the accrual basis of accounting"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 230-10-10-1 states that the primary purpose of the statement of cash flows is to provide relevant information about the cash receipts and cash payments of an entity during a period, helping users assess liquidity, solvency, and the ability to generate future cash flows. Financial position at a point in time is the purpose of the balance sheet. The statement of stockholders' equity reconciles retained earnings. Accrual-basis profitability is presented in the income statement, not the cash flow statement.",
+      "explanationJa": "ASC 230-10-10-1により、キャッシュフロー計算書の主目的は、一会計期間における企業の現金収入と現金支出に関する有用な情報を提供することであり、流動性・支払能力・将来キャッシュフロー創出能力の評価に役立てる。一時点の財政状態は貸借対照表、利益剰余金の調整は株主資本等変動計算書、発生主義による収益性は損益計算書の役割である。",
+      "references": ["ASC 230-10-10-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-148",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Discontinued Operations - Presentation",
+      "stem": "Yarrow Corp. disposed of a component that qualifies as a discontinued operation. How are the cash flows of the discontinued operation presented in Yarrow's statement of cash flows under U.S. GAAP?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a separate fourth category following financing activities"
+        },
+        {
+          "label": "B",
+          "text": "Excluded from the statement of cash flows entirely"
+        },
+        {
+          "label": "C",
+          "text": "Included within operating, investing, and financing activities, with either total operating and investing cash flows of the discontinued operation or specified items disclosed"
+        },
+        {
+          "label": "D",
+          "text": "Netted into a single line within operating activities"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cash flows of a discontinued operation are not presented as a separate category; they remain within the three standard classifications. ASC 205-20 requires disclosure of either the total operating and investing cash flows of the discontinued operation or its depreciation, amortization, capital expenditures, and significant noncash items. The cash flows are real flows of the entity and cannot be excluded. Compressing all of them into one operating line would misclassify investing and financing flows of the component.",
+      "explanationJa": "非継続事業のキャッシュフローは独立した第4区分としては表示せず、営業・投資・財務の3区分の中に含めて表示する。ASC 205-20-50-5B(c)により、非継続事業の営業・投資キャッシュフロー合計、または減価償却費・設備投資・重要な非資金項目等のいずれかを開示する。企業の実際のキャッシュフローであるため除外はできず、全額を営業活動の1行に圧縮すると投資・財務のフローが誤区分となる。",
+      "references": ["ASC 205-20-50-5B", "ASC 230-10-45"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-149",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Unrealized Foreign Currency Transaction Loss",
+      "stem": "Zephyr Co. has a euro-denominated account payable that remains unsettled at year-end. Remeasurement of the payable at the year-end exchange rate produced a $16,000 foreign currency transaction loss, which is included in net income. Under the indirect method, how does this loss affect the operating activities section?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It is added back to net income, because it is an unrealized noncash loss"
+        },
+        {
+          "label": "B",
+          "text": "It is deducted from net income, because the payable increased"
+        },
+        {
+          "label": "C",
+          "text": "It is reported in the separate line for the effect of exchange rate changes on cash"
+        },
+        {
+          "label": "D",
+          "text": "No adjustment is needed, because the loss relates to an operating liability"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The remeasurement loss reduced net income but involved no cash payment because the payable is still outstanding. Under the indirect method, the $16,000 unrealized loss is added back to net income. Deducting it would double its effect. The separate exchange-rate line on the statement applies only to the effect of rate changes on cash balances themselves, not on payables. Making no adjustment would understate operating cash flow by the amount of a noncash charge.",
+      "explanationJa": "未決済の外貨建買掛金の期末換算（再測定）による為替差損$16,000は純利益を減少させたが、現金支出を伴わない未実現損失である。したがって間接法では純利益に加算する（ASC 230-10-45-28、ASC 830-20）。控除すると影響が二重になる。計算書末尾の「為替レート変動の現金への影響」は現金残高自体への影響のみを表示する行であり、買掛金の換算差損には適用されない。",
+      "references": ["ASC 230-10-45-28", "ASC 830-20-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-150",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Assets Rented to Others and Subsequently Sold",
+      "stem": "Acorn Equipment Co. manufactures machinery that it first rents to customers under short-term rental agreements and then routinely sells when the machines come off rent. During the year, Acorn received $2,000,000 of rental payments and $3,500,000 from sales of machines that had been rented. How should these receipts be classified?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rentals as operating inflows; sales proceeds as investing inflows"
+        },
+        {
+          "label": "B",
+          "text": "Both as investing inflows, because the machines are productive assets"
+        },
+        {
+          "label": "C",
+          "text": "Rentals as investing inflows; sales proceeds as operating inflows"
+        },
+        { "label": "D", "text": "Both as operating inflows" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 230 classifies as operating activities the cash receipts from both rents and subsequent sales of assets that an entity routinely rents to others and then sells in the ordinary course of business. For such an entity, the machines function like inventory, so the sale proceeds are operating—not investing—inflows. Treating the sale proceeds as investing would apply only to productive assets held for use in operations rather than for rental-then-sale in the normal business cycle.",
+      "explanationJa": "ASC 230-10-45-16により、通常の営業過程で他者に賃貸した後に売却することを常とする資産については、賃貸料収入とその後の売却収入の両方を営業活動に分類する。このような企業にとって当該機械は実質的に棚卸資産として機能するため、売却収入も投資活動ではなく営業活動となる。投資活動への分類は、自社の事業で使用する目的で保有する生産的資産の売却にのみ適用される。",
+      "references": ["ASC 230-10-45-16"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-151",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash Paid for Operating Expenses",
+      "stem": "Birchwood Co. reported total operating expenses of $620,000, which include depreciation expense of $70,000. During the year, prepaid expenses decreased by $9,000 and accrued operating liabilities increased by $13,000. Under the direct method, what amount of cash was paid for operating expenses?",
+      "choices": [
+        { "label": "A", "text": "$550,000" },
+        { "label": "B", "text": "$528,000" },
+        { "label": "C", "text": "$572,000" },
+        { "label": "D", "text": "$598,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cash paid = operating expenses − depreciation (noncash) − decrease in prepaid expenses − increase in accrued liabilities = $620,000 − $70,000 − $9,000 − $13,000 = $528,000. A prepaid decrease means expense was recognized from amounts paid in prior periods, and an accrual increase means expense was recognized before payment—both reduce current cash outflows. An answer of $550,000 ignores both working capital changes. An answer of $572,000 reverses the signs of the working capital changes. An answer of $598,000 fails to remove depreciation.",
+      "explanationJa": "営業費用の現金支払額 = 営業費用$620,000 − 減価償却費$70,000（非資金）− 前払費用減少$9,000 − 未払費用増加$13,000 = $528,000（ASC 230-10-45-25）。前払費用の減少は過年度支払分の費用化、未払費用の増加は未払いのままの費用計上を意味し、いずれも当期の現金支出を減少させる。運転資本変動を無視すると$550,000、符号を逆にすると$572,000、減価償却費を除かないと$598,000となり誤り。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-152",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Ending Cash Balance with Exchange Rate Effect",
+      "stem": "Crandall Corp. reports the following for Year 1: net cash provided by operating activities $320,000; net cash used in investing activities $410,000; net cash provided by financing activities $150,000; effect of exchange rate changes on cash $12,000 (increase). Cash and cash equivalents at the beginning of the year were $95,000. What is the ending balance of cash and cash equivalents?",
+      "choices": [
+        { "label": "A", "text": "$155,000" },
+        { "label": "B", "text": "$72,000" },
+        { "label": "C", "text": "$167,000" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Net change in cash = $320,000 − $410,000 + $150,000 + $12,000 = $72,000 increase. Ending cash = $95,000 + $72,000 = $167,000. The effect of exchange rate changes on cash is a required separate reconciling line and must be included in the total change. An answer of $155,000 omits the exchange rate effect. An answer of $72,000 is the net change, not the ending balance. An answer of $60,000 is the net change before the exchange rate effect.",
+      "explanationJa": "現金の純増減 = $320,000 − $410,000 + $150,000 + 為替レート変動の影響$12,000 = $72,000の増加。期末現金 = 期首$95,000 + $72,000 = $167,000。為替レート変動が現金に与える影響は独立の調整行として表示し、純増減に含める（ASC 230-10-45-18）。為替影響を漏らすと$155,000、$72,000は純増減額であって期末残高ではない。",
+      "references": ["ASC 230-10-45-18"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-153",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct vs. Indirect Method - Key Relationships",
+      "stem": "Which of the following statements about the direct and indirect methods of presenting operating cash flows is correct under ASC 230?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Both methods report the same total net cash provided by operating activities, and only the operating section differs in presentation"
+        },
+        {
+          "label": "B",
+          "text": "The indirect method generally reports higher operating cash flow than the direct method"
+        },
+        {
+          "label": "C",
+          "text": "The FASB requires the direct method for public business entities"
+        },
+        {
+          "label": "D",
+          "text": "The investing and financing sections differ depending on which method is chosen"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The direct and indirect methods are alternative presentations of the same operating cash flows, so the net total of operating activities is identical under either method; only the format of the operating section differs. The FASB encourages but does not require the direct method—most entities use the indirect method. The investing and financing sections are presented identically regardless of the method chosen for operating activities.",
+      "explanationJa": "直接法と間接法は同一の営業キャッシュフローの表示方法の違いにすぎず、営業活動による純額はどちらの方法でも一致する。異なるのは営業活動セクションの表示形式のみである。FASBは直接法を推奨するが強制はしておらず（ASC 230-10-45-25）、実務では間接法が大多数である。投資活動・財務活動セクションは選択した方法にかかわらず同一に表示される。",
+      "references": ["ASC 230-10-45-25", "ASC 230-10-45-28"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-154",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Equity Securities as Cash Equivalents",
+      "stem": "Which of the following statements regarding cash equivalents under ASC 230 is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Any security maturing within one year qualifies as a cash equivalent"
+        },
+        {
+          "label": "B",
+          "text": "Money market mutual funds can never be presented within cash and cash equivalents"
+        },
+        {
+          "label": "C",
+          "text": "Common stock of a highly liquid public company qualifies if management intends to sell it within three months"
+        },
+        {
+          "label": "D",
+          "text": "Equity securities are generally excluded from cash equivalents, although preferred stock acquired shortly before its specified redemption date may qualify"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cash equivalents must be readily convertible to known amounts of cash and so near maturity that they present insignificant risk of value changes from interest rate movements. Equity securities have no maturity date and fluctuate in value, so they are generally excluded; however, ASC 230 cites preferred stock acquired within three months of its specified redemption date as an example that can qualify because redemption fixes the amount and timing. A one-year maturity is far too long. Money market funds commonly qualify. Intent to sell common stock does not create a maturity or a known redemption amount.",
+      "explanationJa": "現金同等物は既知の金額の現金に容易に転換でき、金利変動による価値変動リスクが僅少なほど満期が近い投資でなければならない（ASC 230-10-20）。持分証券は満期がなく価値が変動するため原則として除外されるが、償還日が定められた優先株式を償還日の3か月以内前に取得した場合は金額と時期が確定しているため該当し得る、とASC 230は例示している。満期1年は長すぎ、MMFは通常該当し、普通株式の売却意図は満期や確定償還額を生まない。",
+      "references": ["ASC 230-10-20"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-155",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Discount Accretion on Bond Investment",
+      "stem": "Driscoll Inc. holds a held-to-maturity bond investment purchased at a discount. During the year, interest income of $42,000 was recognized, of which $6,000 represented accretion of the discount; the remainder was received in cash. Under the indirect method, how is the discount accretion treated in the operating activities section?",
+      "choices": [
+        { "label": "A", "text": "Added to net income as a noncash expense" },
+        {
+          "label": "B",
+          "text": "Deducted from net income, because it is noncash interest income"
+        },
+        { "label": "C", "text": "Reported as a $6,000 investing inflow" },
+        {
+          "label": "D",
+          "text": "No adjustment, because all interest income is operating"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Discount accretion on a bond investment increases interest income and net income without any cash receipt—only $36,000 of the $42,000 was collected in cash. Under the indirect method, the $6,000 noncash income must be deducted from net income. Adding it back applies only to noncash expenses, which this is not. No cash moved, so no investing inflow exists. Failing to adjust would overstate operating cash flow by $6,000.",
+      "explanationJa": "債券投資の割引差金（ディスカウント）の償却（アクリーション）は、現金受取を伴わずに利息収益と純利益を増加させる。実際の現金受取は$42,000のうち$36,000のみである。したがって間接法では非資金収益$6,000を純利益から控除する（ASC 230-10-45-28）。加算調整は非資金費用に対するものでありこれには該当しない。現金は動いていないため投資活動の収入も生じず、無調整では営業CFが$6,000過大となる。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-156",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Dividends Paid - Computed from Payable Balances",
+      "stem": "Ellsworth Corp. declared cash dividends of $90,000 during Year 1. Dividends payable was $15,000 at the beginning of the year and $22,000 at the end of the year. What amount should Ellsworth report as dividends paid in the financing activities section?",
+      "choices": [
+        { "label": "A", "text": "$90,000" },
+        { "label": "B", "text": "$97,000" },
+        { "label": "C", "text": "$83,000" },
+        { "label": "D", "text": "$68,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dividends paid = beginning dividends payable + dividends declared − ending dividends payable = $15,000 + $90,000 − $22,000 = $83,000, reported as a financing outflow. Only the cash actually disbursed appears on the statement; the declaration itself is not a cash flow. An answer of $90,000 is the amount declared, not paid. An answer of $97,000 reverses the payable balances ($90,000 + $22,000 − $15,000). An answer of $68,000 subtracts the ending payable from declarations without adding the beginning balance.",
+      "explanationJa": "配当支払額 = 期首未払配当金$15,000 + 当期宣言額$90,000 − 期末未払配当金$22,000 = $83,000で、財務活動の支出として表示する（ASC 230-10-45-15）。計算書に表示されるのは実際に支払われた現金のみで、宣言自体はキャッシュフローではない。$90,000は宣言額、$97,000は期首・期末を逆にした誤り、$68,000は期首残高を加算し忘れた誤り。",
+      "references": ["ASC 230-10-45-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-157",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Lease Payments - Classification Matrix",
+      "stem": "Under ASC 842, which of the following lease-related cash payments by a lessee is classified as a financing activity on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Repayment of the principal portion of the finance lease liability"
+        },
+        { "label": "B", "text": "Fixed payments on an operating lease" },
+        {
+          "label": "C",
+          "text": "Variable lease payments not included in the lease liability"
+        },
+        {
+          "label": "D",
+          "text": "Payments on a short-term lease for which the recognition exemption was elected"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842-20-45-5, a lessee classifies repayments of the principal portion of a finance lease liability as financing activities, while the interest portion follows ASC 230 (operating for most entities). Operating lease payments, variable lease payments not included in the measurement of the lease liability, and short-term lease payments are all classified as operating activities, because they are expensed as part of ordinary operations rather than repayments of recognized financing obligations.",
+      "explanationJa": "ASC 842-20-45-5により、借手はファイナンス・リース負債の元本部分の返済を財務活動に分類する（利息部分はASC 230に従い通常は営業活動）。一方、オペレーティング・リースの支払、リース負債の測定に含まれない変動リース料、短期リースの免除規定を選択したリースの支払は、いずれも認識された金融負債の返済ではなく通常の営業費用であるため営業活動に分類される。",
+      "references": ["ASC 842-20-45-5", "ASC 230-10-45-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-158",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Reissuance of Treasury Stock",
+      "stem": "Foxglove Corp. reissued treasury shares that had been acquired at a cost of $60,000, receiving $75,000 in cash. How should this reissuance be reported in the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$60,000 financing inflow and $15,000 operating inflow"
+        },
+        { "label": "B", "text": "$75,000 investing inflow" },
+        { "label": "C", "text": "$15,000 financing inflow only" },
+        { "label": "D", "text": "$75,000 financing inflow" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The full $75,000 of cash received from reissuing treasury stock is a financing inflow, because transactions in the entity's own equity instruments are financing activities. The $15,000 excess over cost is credited to additional paid-in capital and never flows through net income, so no portion is an operating item. The transaction involves the entity's own shares, not an investment in another entity, so investing classification does not apply, and splitting the proceeds between categories has no basis in ASC 230.",
+      "explanationJa": "自己株式の処分による受取額$75,000全額が財務活動の収入となる。自社の持分証券に関する取引は財務活動だからである（ASC 230-10-45-14）。取得原価$60,000を超える$15,000は資本剰余金（APIC）に貸記され損益を通らないため、営業活動に計上される部分はない。他社への投資ではないため投資活動にも該当せず、区分間で分割する根拠もない。",
+      "references": ["ASC 230-10-45-14", "ASC 505-30-30"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-159",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Comprehensive with Equity Method and Impairment",
+      "stem": "Grantham Inc. reported net income of $825,000, which includes the following items: depreciation $110,000; goodwill impairment loss $60,000; gain on early extinguishment of debt $35,000; equity in earnings of an investee $90,000. Additional information: the deferred tax asset increased by $20,000; dividends of $40,000 were received from the equity method investee (classified as operating under the cumulative earnings approach); accounts receivable increased by $55,000. Under the indirect method, what is net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$795,000" },
+        { "label": "B", "text": "$835,000" },
+        { "label": "C", "text": "$905,000" },
+        { "label": "D", "text": "$925,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Operating cash flow = $825,000 + $110,000 depreciation + $60,000 impairment (noncash) − $35,000 gain on extinguishment (financing-related) − $20,000 DTA increase − $90,000 equity in earnings (noncash income) + $40,000 dividends received − $55,000 AR increase = $835,000. An answer of $795,000 omits the dividends received. An answer of $905,000 adds the extinguishment gain instead of deducting it. An answer of $925,000 fails to remove the equity in earnings.",
+      "explanationJa": "営業CF = 純利益$825,000 + 減価償却費$110,000 + のれん減損$60,000（非資金）− 債務消滅益$35,000（財務関連のため控除）− 繰延税金資産増加$20,000 − 持分法投資利益$90,000（非資金収益）+ 投資先からの配当受取$40,000（累積利益アプローチで営業区分）− 売掛金増加$55,000 = $835,000（ASC 230-10-45-28）。配当を漏らすと$795,000、消滅益を加算すると$905,000、持分法利益を除かないと$925,000となり誤り。",
+      "references": ["ASC 230-10-45-28", "ASC 230-10-45-21D"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-160",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Equity Method Distributions - Accounting Policy Election",
+      "stem": "Under ASU 2016-15, which of the following statements is correct regarding the classification of distributions received from equity method investees?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "All distributions from equity method investees must be classified as investing activities"
+        },
+        {
+          "label": "B",
+          "text": "The classification approach may be selected separately for each individual investee based on materiality"
+        },
+        {
+          "label": "C",
+          "text": "An entity makes an accounting policy election between the cumulative earnings approach and the nature of the distribution approach, applied to all investees; if information for the nature approach is unavailable for an investee, the cumulative earnings approach is applied to that investee and the election is reported as a change in accounting principle"
+        },
+        {
+          "label": "D",
+          "text": "All distributions must be classified as operating activities regardless of the approach"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASU 2016-15 requires an entity to elect, as an accounting policy applied to all equity method investees, either the cumulative earnings approach (distributions up to cumulative equity earnings are returns on investment—operating; the excess is a return of investment—investing) or the nature of the distribution approach. If the information needed to apply the nature approach is not available for an individual investee, the entity applies the cumulative earnings approach for that investee and reports the resulting classification change as a change in accounting principle on a retrospective basis. Classification is not uniformly investing or uniformly operating, and the election is not made investee-by-investee at will.",
+      "explanationJa": "ASU 2016-15（ASC 230-10-45-21D）により、持分法投資先からの分配の分類について、累積利益アプローチ（累積持分法利益までは投資のリターンとして営業活動、超過分は投資の回収として投資活動）と分配の性質アプローチのいずれかを会計方針として選択し、全投資先に適用する。性質アプローチに必要な情報が特定の投資先について入手できない場合は、その投資先には累積利益アプローチを適用し、会計原則の変更として遡及的に報告する。一律に投資活動または営業活動とするものではなく、投資先ごとの任意選択も認められない。",
+      "references": ["ASC 230-10-45-21D", "ASU 2016-15"],
+      "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
     }
   ]

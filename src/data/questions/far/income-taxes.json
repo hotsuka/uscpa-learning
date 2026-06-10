@@ -2,7 +2,7 @@
   "id": "far-income-taxes",
   "name": "Income Taxes",
   "topic": "Income Taxes",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "tax-001",
@@ -3410,6 +3410,903 @@
       "explanationJa": "ASC 740-10-30-18により、DTA実現を支える源泉の一つは既存の課税一時差異の将来の解消。$400,000の課税一時差異（DTL）はYear 4に解消し、これは$400,000の減算差異が解消するのと同じ期間で、減算差異が相殺できる$400,000の課税所得を生む。解消の時期と金額が一致するため、他の所得源泉に関わらずDTAは実現可能で、損失履歴があっても評価性引当金は不要。DTA $84,000を全額認識する。",
       "references": ["ASC 740-10-30-18", "ASC 740-10-30-5"],
       "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-131",
+      "topic": "Income Taxes",
+      "subtopic": "Identifying Deductible Temporary Differences",
+      "stem": "Which of the following items creates a deductible temporary difference that results in a deferred tax asset?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A gain on an installment sale recognized currently for book purposes but reported for tax purposes as cash is collected"
+        },
+        {
+          "label": "B",
+          "text": "Tax depreciation in excess of book depreciation on equipment"
+        },
+        {
+          "label": "C",
+          "text": "An accrued litigation loss recognized for book purposes that is not deductible for tax purposes until paid"
+        },
+        {
+          "label": "D",
+          "text": "A prepaid expense deducted on the tax return in the year paid but expensed for book purposes in a later year"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "An accrued litigation loss reduces book income now but will reduce taxable income only when paid in the future, creating a deductible temporary difference and a deferred tax asset. The installment sale gain, excess tax depreciation, and prepaid expense deducted currently for tax all cause book income to exceed taxable income initially and will produce taxable amounts in the future, so each creates a taxable temporary difference and a deferred tax liability.",
+      "explanationJa": "ASC 740-10-25-20では、将来減算一時差異（将来の課税所得を減少させる差異）が繰延税金資産（DTA）を生じさせる。訴訟損失の引当は帳簿上先に費用認識され、税務上は支払時に損金算入されるため、将来減算一時差異となりDTAが生じる。割賦販売益の先行計上、税務上の加速償却、税務上先行控除した前払費用は、いずれも帳簿利益が課税所得を先行して上回る将来加算一時差異であり、繰延税金負債（DTL）を生じさせる。",
+      "references": ["ASC 740-10-25-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-132",
+      "topic": "Income Taxes",
+      "subtopic": "DTA from Allowance for Credit Losses",
+      "stem": "Corbett Corp. records an allowance for credit losses of $250,000 for financial reporting purposes. For tax purposes, bad debts are deductible only when specific accounts are written off (direct write-off method), and no accounts have been written off to date. The enacted tax rate is 25%. What amount of deferred tax asset should Corbett recognize related to the allowance?",
+      "choices": [
+        { "label": "A", "text": "$250,000" },
+        { "label": "B", "text": "$62,500" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The allowance reduces the book basis of receivables below their tax basis by $250,000, a deductible temporary difference. The deferred tax asset is $250,000 × 25% = $62,500. $250,000 is the gross temporary difference, not its tax effect; $50,000 incorrectly applies a 20% rate; $0 ignores the temporary difference entirely.",
+      "explanationJa": "ASC 740-10-30-5に基づき、繰延税金は一時差異に制定税率を乗じて測定する。貸倒引当金$250,000は帳簿上先に費用化されるが、税務上は個別償却時まで損金算入できないため将来減算一時差異となる。DTA = $250,000 × 25% = $62,500。$250,000は税効果前の差異総額、$50,000は誤った税率20%を適用した値である。",
+      "references": ["ASC 740-10-30-5", "ASC 740-10-25-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-133",
+      "topic": "Income Taxes",
+      "subtopic": "Current Tax Payable with Multiple Adjustments",
+      "stem": "Delgado Corp. reports pretax financial income of $900,000 for Year 1. The following items are included in or related to that amount: (1) premiums of $40,000 on officers' life insurance where Delgado is the beneficiary (nondeductible), (2) tax depreciation exceeds book depreciation by $140,000, and (3) rent of $60,000 received in advance is taxable on receipt but deferred for book purposes. The enacted tax rate is 25%. What is Delgado's current income tax payable for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$215,000" },
+        { "label": "B", "text": "$225,000" },
+        { "label": "C", "text": "$285,000" },
+        { "label": "D", "text": "$190,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Taxable income = $900,000 + $40,000 nondeductible premiums − $140,000 excess tax depreciation + $60,000 advance rent taxable currently = $860,000. Current tax payable = $860,000 × 25% = $215,000. $225,000 applies the rate to book income with no adjustments; $285,000 results from adding rather than subtracting the depreciation difference; $190,000 omits the insurance and rent adjustments.",
+      "explanationJa": "当期税金費用（未払法人税）は課税所得×制定税率で計算する（ASC 740-10-30-2）。課税所得 = $900,000 +（損金不算入の役員保険料）$40,000 −（税務上の超過償却）$140,000 +（前受家賃の即時課税）$60,000 = $860,000。未払税金 = $860,000 × 25% = $215,000。$225,000は調整を一切行わない誤り、$285,000は減価償却差異の符号を逆にした誤り。",
+      "references": ["ASC 740-10-30-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-134",
+      "topic": "Income Taxes",
+      "subtopic": "Total Tax Expense - Current Plus Deferred",
+      "stem": "During Year 1, Ellsworth Corp. computed current income tax payable of $264,000. During the year, net taxable temporary differences increased by $192,000, and the enacted tax rate is 25%. There were no other items affecting the tax provision. What is Ellsworth's total income tax expense for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$264,000" },
+        { "label": "B", "text": "$216,000" },
+        { "label": "C", "text": "$456,000" },
+        { "label": "D", "text": "$312,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Deferred tax expense equals the increase in net taxable temporary differences times the enacted rate: $192,000 × 25% = $48,000. Total tax expense = current $264,000 + deferred $48,000 = $312,000. $264,000 is only the current portion; $216,000 incorrectly subtracts the deferred component; $456,000 incorrectly adds the gross temporary difference rather than its tax effect.",
+      "explanationJa": "ASC 740-10-10-1のとおり、法人税等費用は当期税金費用と繰延税金費用の合計である。繰延税金費用 = 将来加算一時差異の増加$192,000 × 25% = $48,000。総税金費用 = $264,000 + $48,000 = $312,000。$264,000は当期分のみ、$456,000は一時差異の総額（税効果前）を加算した誤りである。",
+      "references": ["ASC 740-10-10-1", "ASC 740-10-30-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-135",
+      "topic": "Income Taxes",
+      "subtopic": "Rate Change Effect on Deferred Tax Asset",
+      "stem": "Farnsworth Corp. has a deferred tax asset of $180,000 arising from a $600,000 deductible temporary difference measured at the currently enacted rate of 30%. In December of the current year, a new tax law is enacted reducing the rate to 25% for all future years. What is the effect of the rate change on income tax expense in the period of enactment?",
+      "choices": [
+        { "label": "A", "text": "Increase income tax expense by $30,000" },
+        { "label": "B", "text": "Decrease income tax expense by $30,000" },
+        { "label": "C", "text": "Increase income tax expense by $150,000" },
+        {
+          "label": "D",
+          "text": "No effect until the new rate becomes effective"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The deferred tax asset must be remeasured at the newly enacted rate: $600,000 × 25% = $150,000, a decrease of $30,000 from the recorded $180,000. Writing down a deferred tax asset increases income tax expense by $30,000 in the period of enactment. A $30,000 decrease in expense would occur only if a deferred tax liability were being remeasured downward; $150,000 is the remeasured asset balance, not the change; deferring recognition until the effective date contradicts ASC 740's enactment-date requirement.",
+      "explanationJa": "ASC 740-10-35-4により、税率変更の影響は制定（enactment）された期の継続事業に係る税金費用に計上する。DTAは$600,000 × 25% = $150,000に再測定され、既存の$180,000から$30,000減少する。DTAの減額は税金費用を$30,000増加させる。発効日まで待つという処理は制定日基準に反する。",
+      "references": ["ASC 740-10-35-4", "ASC 740-10-45-15"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-136",
+      "topic": "Income Taxes",
+      "subtopic": "Change in Valuation Allowance Balance",
+      "stem": "At the beginning of Year 2, Granville Corp. had a gross deferred tax asset of $400,000 and a valuation allowance of $90,000. At the end of Year 2, based on updated projections of future taxable income, Granville determines that a valuation allowance of $140,000 is required (the gross deferred tax asset is unchanged). How should the Year 2 change in the valuation allowance be reported?",
+      "choices": [
+        { "label": "A", "text": "A $140,000 increase in income tax expense" },
+        { "label": "B", "text": "A $50,000 decrease in income tax expense" },
+        { "label": "C", "text": "A $50,000 increase in income tax expense" },
+        { "label": "D", "text": "A $90,000 increase in income tax expense" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Only the change in the valuation allowance during the period affects tax expense: $140,000 required − $90,000 existing = $50,000 increase, which increases income tax expense. $140,000 is the ending balance, not the change; a decrease in expense would result from reducing the allowance; $90,000 is the beginning balance.",
+      "explanationJa": "ASC 740-10-45-20により、評価性引当金の期中変動額は原則として継続事業の税金費用に計上する。必要額$140,000 − 期首残高$90,000 = $50,000の引当金増加であり、税金費用が$50,000増加する。$140,000は期末残高であって変動額ではない点に注意。",
+      "references": ["ASC 740-10-30-5(e)", "ASC 740-10-45-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-137",
+      "topic": "Income Taxes",
+      "subtopic": "NOL Utilization - Mixed Pre-2018 and Post-2017 Vintages",
+      "stem": "Hadley Corp. enters Year 5 with two federal net operating loss carryforwards: $100,000 generated in 2016 (pre-2018 NOL, not subject to the 80% limitation) and $300,000 generated in 2021 (post-2017 NOL, subject to the 80% limitation). Year 5 taxable income before any NOL deduction is $250,000. Under current federal tax law, pre-2018 NOLs are used first and are not limited. What is Hadley's Year 5 taxable income after the NOL deductions?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The pre-2018 NOL of $100,000 offsets income without limitation, leaving $150,000. The post-2017 NOL deduction is limited to 80% of the remaining taxable income: 80% × $150,000 = $120,000. Taxable income = $250,000 − $100,000 − $120,000 = $30,000. $0 ignores the 80% limitation; $50,000 incorrectly applies the 80% limit to the full $250,000 for both vintages; $150,000 uses only the pre-2018 NOL.",
+      "explanationJa": "TCJA後の税法では、2018年以後発生のNOLは課税所得の80%まで（無期限繰越）、2018年前発生のNOLは制限なし（20年で失効）で控除できる。2016年分$100,000を全額控除後の残額$150,000に対し、2021年分は80% × $150,000 = $120,000が控除上限。課税所得 = $250,000 − $100,000 − $120,000 = $30,000。$0は80%制限の見落とし、$50,000は$250,000全体に80%制限を適用した誤り。",
+      "references": ["ASC 740-10-30-5", "IRC Section 172"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-138",
+      "topic": "Income Taxes",
+      "subtopic": "UTP Measurement - Largest Cumulative Benefit",
+      "stem": "Ingram Corp. takes a tax position claiming a $600,000 benefit and concludes the position is more likely than not to be sustained. Management estimates the following possible outcomes and individual probabilities upon settlement with the taxing authority: $600,000 (30% likely), $400,000 (25% likely), and $200,000 (45% likely). What amount of tax benefit should Ingram recognize?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$370,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$400,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 740 measures a recognized tax position at the largest benefit that is greater than 50% likely of being realized on a cumulative-probability basis. Cumulative probabilities: $600,000 → 30%; $400,000 → 30% + 25% = 55%. Because 55% exceeds 50%, $400,000 is recognized. $600,000 reaches only 30% cumulative probability; $370,000 is an expected-value calculation, which ASC 740 does not permit; $200,000 understates the benefit because a larger amount already exceeds the 50% threshold.",
+      "explanationJa": "ASC 740-10-30-7により、認識基準（more-likely-than-not）を満たした税務ポジションは、累積確率が50%を超える最大の便益額で測定する。累積確率は$600,000で30%、$400,000で55%（30%+25%）となり、50%を超える最大額は$400,000。期待値（$370,000）による測定はASC 740では認められない。",
+      "references": ["ASC 740-10-30-7"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-139",
+      "topic": "Income Taxes",
+      "subtopic": "Interim Provision with Revised Annual Rate",
+      "stem": "In the first quarter of Year 1, Jasper Corp. estimated its annual effective tax rate at 30% and reported Q1 pretax income of $100,000, recording $30,000 of income tax expense. In the second quarter, Jasper revises its estimated annual effective tax rate to 26%. Q2 pretax income is $250,000. What income tax expense should Jasper report for the second quarter?",
+      "choices": [
+        { "label": "A", "text": "$65,000" },
+        { "label": "B", "text": "$61,000" },
+        { "label": "C", "text": "$91,000" },
+        { "label": "D", "text": "$75,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the integral approach, the year-to-date provision is computed at the current estimated annual rate and the previously recorded amount is subtracted: ($100,000 + $250,000) × 26% = $91,000 year-to-date, less $30,000 recorded in Q1 = $61,000 for Q2. $65,000 applies 26% only to Q2 income, ignoring the catch-up adjustment for Q1; $91,000 is the year-to-date total, not the Q2 amount; $75,000 applies the old 30% rate to Q2 income.",
+      "explanationJa": "ASC 740-270の一体（integral）アプローチでは、見積年間実効税率の改訂はYTDベースで反映する。YTD税金費用 = ($100,000 + $250,000) × 26% = $91,000。Q1計上済み$30,000を差し引き、Q2の税金費用は$61,000。これによりQ1の旧税率30%との差額がQ2でキャッチアップ調整される。$65,000はQ2単独に26%を乗じただけの誤り。",
+      "references": ["ASC 740-270-25-2", "ASC 740-270-30-6"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-140",
+      "topic": "Income Taxes",
+      "subtopic": "Net-of-Tax Presentation of OCI Pension Loss",
+      "stem": "Kingsley Corp. incurs an actuarial loss of $240,000 on its defined benefit pension plan during Year 1, recognized in other comprehensive income. The loss is not currently deductible for tax purposes. The enacted tax rate is 25%. At what amount should the actuarial loss be reported in other comprehensive income, net of tax?",
+      "choices": [
+        { "label": "A", "text": "$180,000" },
+        { "label": "B", "text": "$240,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$192,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Items of other comprehensive income are reported net of their tax effects. The deferred tax benefit allocated to OCI is $240,000 × 25% = $60,000, so the net-of-tax loss is $240,000 − $60,000 = $180,000. $240,000 is the gross loss; $60,000 is the tax effect alone; $192,000 incorrectly applies a 20% rate.",
+      "explanationJa": "期間内税金配分（intraperiod tax allocation, ASC 740-20-45）により、OCI項目はその税効果を控除した純額で表示する。年金数理差損に係る税効果（DTA）= $240,000 × 25% = $60,000。OCI表示額 = $240,000 − $60,000 = $180,000（純損失）。$240,000は税効果考慮前の総額である。",
+      "references": ["ASC 740-20-45-11", "ASC 220-10-45-12"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-141",
+      "topic": "Income Taxes",
+      "subtopic": "Nontaxable Business Combination - DTL on Fair Value Step-Up",
+      "stem": "In a nontaxable business combination, Lockhart Corp. acquires a customer relationship intangible with an acquisition-date fair value of $800,000. Because the transaction is nontaxable, the asset's tax basis carries over at $500,000. The enacted tax rate is 25%. What deferred tax amount should Lockhart recognize for this asset in acquisition accounting?",
+      "choices": [
+        { "label": "A", "text": "A deferred tax asset of $75,000" },
+        {
+          "label": "B",
+          "text": "No deferred tax, because the difference arose in a business combination"
+        },
+        { "label": "C", "text": "A deferred tax liability of $200,000" },
+        { "label": "D", "text": "A deferred tax liability of $75,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The book basis ($800,000) exceeds the carryover tax basis ($500,000) by $300,000, a taxable temporary difference. A deferred tax liability of $300,000 × 25% = $75,000 is recognized at the acquisition date, which increases goodwill. A deferred tax asset would arise only if tax basis exceeded book basis; $200,000 incorrectly applies the rate to the full fair value; the business-combination exception applies to goodwill itself, not to identifiable assets.",
+      "explanationJa": "ASC 805-740-25-3により、企業結合で取得した識別可能資産・負債の帳簿価額と税務基準額の差異には繰延税金を認識する（のれん自体を除く）。将来加算一時差異 = $800,000 − $500,000 = $300,000、DTL = $300,000 × 25% = $75,000。このDTLの認識はのれんを増加させる。非課税取引のため税務基準額は$500,000のまま引き継がれる点がポイント。",
+      "references": ["ASC 805-740-25-3", "ASC 740-10-25-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-142",
+      "topic": "Income Taxes",
+      "subtopic": "Excess Tax Benefit on Option Exercise",
+      "stem": "Marlowe Corp. granted nonqualified stock options and recognized cumulative book compensation expense of $90,000 over the vesting period, recording a corresponding deferred tax asset at the 25% enacted rate. Upon exercise, the intrinsic value (and the tax deduction) is $150,000. Under current GAAP, how should the difference between the actual tax benefit and the previously recorded deferred tax asset be reported?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a $15,000 credit to additional paid-in capital"
+        },
+        {
+          "label": "B",
+          "text": "As a $37,500 reduction of income tax expense"
+        },
+        {
+          "label": "C",
+          "text": "As a $15,000 reduction of income tax expense in the period of exercise"
+        },
+        { "label": "D", "text": "As a $22,500 credit to retained earnings" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The actual tax benefit is $150,000 × 25% = $37,500, while the deferred tax asset previously recorded was $90,000 × 25% = $22,500. The $15,000 excess tax benefit is recognized in income tax expense (a discrete-period benefit) under ASU 2016-09, not in additional paid-in capital. $37,500 is the total benefit, not the excess; crediting APIC reflects superseded guidance; retained earnings is never the destination for this item.",
+      "explanationJa": "ASU 2016-09（ASC 718-740）により、株式報酬の超過税務便益（windfall）はAPICではなく損益計算書の法人税等費用で認識する。実際の税務便益 = $150,000 × 25% = $37,500、計上済みDTA = $90,000 × 25% = $22,500。差額$15,000が行使期の税金費用の減額（離散項目）となる。APIC計上は改正前の旧基準の処理である。",
+      "references": ["ASC 718-740-35-2", "ASU 2016-09"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-143",
+      "topic": "Income Taxes",
+      "subtopic": "Tax Shortfall on RSU Vesting",
+      "stem": "Norcross Corp. granted restricted stock units and recognized cumulative book compensation expense of $200,000, recording a deferred tax asset at the 25% enacted rate. When the RSUs vest, the fair value of the shares delivered (and the tax deduction) is only $160,000 because the stock price declined. What is the effect of the vesting on Norcross's income tax expense?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No effect; the shortfall is charged to additional paid-in capital"
+        },
+        { "label": "B", "text": "A decrease of $40,000" },
+        { "label": "C", "text": "An increase of $40,000" },
+        { "label": "D", "text": "An increase of $10,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The deferred tax asset recorded was $200,000 × 25% = $50,000, but the actual tax benefit is only $160,000 × 25% = $40,000. The $10,000 shortfall is recognized as additional income tax expense in the period of vesting under ASU 2016-09; charging it to additional paid-in capital reflects superseded guidance. $40,000 is the gross deduction shortfall ($200,000 − $160,000) before applying the tax rate, not its $10,000 tax effect, so a $40,000 expense change overstates the effect.",
+      "explanationJa": "ASU 2016-09により、株式報酬の税務便益の不足額（shortfall）もAPICではなく税金費用で認識する。計上済みDTA = $200,000 × 25% = $50,000、実際の便益 = $160,000 × 25% = $40,000。不足額$10,000は権利確定期の税金費用の増加となる。$40,000は税効果前の控除差額の総額（$200,000−$160,000）であり、その税効果$10,000（×25%）と混同した値である。",
+      "references": ["ASC 718-740-35-2", "ASU 2016-09"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-144",
+      "topic": "Income Taxes",
+      "subtopic": "Sources of Taxable Income for DTA Realization",
+      "stem": "Under ASC 740, all of the following are sources of taxable income that may support the realization of deferred tax assets EXCEPT:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Future reversals of existing taxable temporary differences"
+        },
+        {
+          "label": "B",
+          "text": "Taxable income in prior carryback years, if carryback is permitted"
+        },
+        {
+          "label": "C",
+          "text": "Projected increases in the enacted statutory tax rate in future years"
+        },
+        {
+          "label": "D",
+          "text": "Tax-planning strategies that would, if necessary, be implemented to realize a deferred tax asset"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 740-10-30-18 identifies four sources of taxable income: future reversals of existing taxable temporary differences, future taxable income exclusive of reversals, taxable income in carryback years, and tax-planning strategies. A projected increase in the statutory rate is not a source of taxable income; deferred taxes are measured only at currently enacted rates, and anticipated rate changes cannot support realization.",
+      "explanationJa": "ASC 740-10-30-18は、DTAの実現可能性を支える課税所得の源泉として、(1)既存の将来加算一時差異の将来戻入れ、(2)将来の課税所得（戻入れを除く）、(3)繰戻し可能年度の課税所得、(4)タックスプランニング戦略、の4つを列挙している。将来の法定税率引上げの予測は課税所得の源泉ではなく、繰延税金は制定済み税率でのみ測定するため実現可能性の根拠にもならない。",
+      "references": ["ASC 740-10-30-18"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-145",
+      "topic": "Income Taxes",
+      "subtopic": "Qualifying Tax-Planning Strategies",
+      "stem": "Under ASC 740, which of the following statements about a qualifying tax-planning strategy used to support realization of a deferred tax asset is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The strategy must already be part of management's operating plans regardless of tax consequences"
+        },
+        {
+          "label": "B",
+          "text": "The strategy must be prudent and feasible, and one that management ordinarily might not take but would take if necessary to prevent a carryforward from expiring unused"
+        },
+        {
+          "label": "C",
+          "text": "The strategy may be considered even if its implementation depends primarily on the actions of third parties"
+        },
+        {
+          "label": "D",
+          "text": "Expenses to implement the strategy are ignored when measuring the deferred tax asset that can be realized"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 740-10-30-19 defines a tax-planning strategy as an action that is prudent and feasible, that an entity ordinarily might not take but would take to prevent an operating loss or tax credit carryforward from expiring unused, and that would result in realization of deferred tax assets. A strategy already embedded in operating plans is simply future taxable income, not a strategy; implementation must be primarily within management's control, not dependent on third parties; significant expenses to implement a strategy must be deducted from the resulting benefit.",
+      "explanationJa": "ASC 740-10-30-19により、タックスプランニング戦略とは、(a)慎重かつ実行可能で、(b)通常は実行しないが繰越欠損金等の失効を防ぐために必要なら実行し、(c)DTAの実現をもたらす行動をいう。実行が第三者の行動に依存するものは認められず、戦略の実施に要する重要な費用は実現便益から控除して測定する（ASC 740-10-30-19）。既に事業計画に含まれる行動は単なる将来課税所得であり「戦略」ではない。",
+      "references": ["ASC 740-10-30-19"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-146",
+      "topic": "Income Taxes",
+      "subtopic": "UTP Not Meeting Recognition Threshold",
+      "stem": "Oakhurst Corp. deducts $800,000 on its tax return for a position that management concludes has only a 40% likelihood of being sustained upon examination, assuming the taxing authority has full knowledge of all relevant information. The enacted tax rate is 25%. How should Oakhurst account for this position in its financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize no tax benefit and record a $200,000 liability for the unrecognized tax benefit"
+        },
+        {
+          "label": "B",
+          "text": "Recognize a tax benefit of $80,000, the expected value of the position"
+        },
+        {
+          "label": "C",
+          "text": "Recognize the full $200,000 benefit because the deduction was claimed on a filed return"
+        },
+        {
+          "label": "D",
+          "text": "Recognize a tax benefit of $100,000, half of the claimed amount"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Because the position does not meet the more-likely-than-not (greater than 50%) recognition threshold, no benefit may be recognized in the financial statements. Since the $800,000 × 25% = $200,000 benefit was taken on the return, the entity records a $200,000 liability for the unrecognized tax benefit. Expected-value measurement is not permitted; filing the return does not justify recognition; arbitrary partial recognition has no basis in ASC 740.",
+      "explanationJa": "ASC 740-10-25-6の認識基準（more-likely-than-not、50%超）を満たさない税務ポジションは、財務諸表上一切便益を認識できない。申告書上は$800,000 × 25% = $200,000の便益を享受しているため、その全額を未認識税務便益（UTB）の負債として計上する。期待値による測定や、申告済みであることを理由とした認識は認められない。",
+      "references": ["ASC 740-10-25-6", "ASC 740-10-25-7"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-147",
+      "topic": "Income Taxes",
+      "subtopic": "UTB Rollforward Calculation",
+      "stem": "Pembroke Corp. began Year 3 with a liability for unrecognized tax benefits of $300,000. During Year 3: (1) new tax positions taken in the current year added $120,000, (2) settlements with taxing authorities resolved positions carried at $80,000, and (3) the statute of limitations lapsed on positions carried at $50,000. What is the ending balance of the liability for unrecognized tax benefits?",
+      "choices": [
+        { "label": "A", "text": "$340,000" },
+        { "label": "B", "text": "$370,000" },
+        { "label": "C", "text": "$290,000" },
+        { "label": "D", "text": "$420,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ending UTB = $300,000 beginning + $120,000 additions − $80,000 settlements − $50,000 statute lapses = $290,000. $340,000 omits the statute lapse; $370,000 omits the settlements; $420,000 includes only the additions and ignores both reductions.",
+      "explanationJa": "ASC 740-10-50-15Aは公開企業にUTBの期首から期末への増減表（rollforward）の開示を求めており、その構成は本問のとおり。期末UTB = 期首$300,000 + 当期ポジション追加$120,000 − 当局との解決$80,000 − 時効成立$50,000 = $290,000。時効成立（statute of limitations lapse）と当局との解決はいずれもUTB負債を取り崩し、便益認識につながる。",
+      "references": ["ASC 740-10-25-8", "ASC 740-10-50-15A"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-148",
+      "topic": "Income Taxes",
+      "subtopic": "Interest Accrual on Unrecognized Tax Benefits",
+      "stem": "Quentin Corp. has a $400,000 unrecognized tax benefit relating to a position taken on its prior-year return, representing a tax underpayment under the tax law. The applicable statutory interest rate is 6% per year, and one full year has passed since the underpayment arose. Quentin's accounting policy is to classify interest on tax positions as income tax expense. What amount of interest should Quentin accrue for the year?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$0, because the position has not been examined"
+        },
+        { "label": "B", "text": "$48,000" },
+        { "label": "C", "text": "$12,000" },
+        { "label": "D", "text": "$24,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 740 requires an entity to accrue interest on the difference between the tax position taken on the return and the amount recognized in the financial statements, beginning when the underpayment would start accruing interest under the tax law: $400,000 × 6% × 1 year = $24,000. Waiting for examination is not permitted; $48,000 assumes two years; $12,000 assumes only half a year.",
+      "explanationJa": "ASC 740-10-25-56により、申告ポジションと財務諸表認識額の差額（税務上の過少納付額）には、税法上利息が発生し始める時点から利息を見積計上しなければならない。利息 = $400,000 × 6% × 1年 = $24,000。税務調査を待って計上する処理は認められない。利息・ペナルティの表示区分（税金費用か営業外か）は会計方針の選択であり、開示が必要（ASC 740-10-50-19）。",
+      "references": ["ASC 740-10-25-56", "ASC 740-10-50-19"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-149",
+      "topic": "Income Taxes",
+      "subtopic": "Intra-Entity Transfers - Inventory Exception",
+      "stem": "Under ASU 2016-16 (ASC 740), which of the following correctly describes the accounting for income tax consequences of intra-entity transfers of assets between members of a consolidated group?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Current and deferred tax consequences are recognized when the transfer occurs for all assets except inventory; for inventory, recognition is deferred until sale to an outside party"
+        },
+        {
+          "label": "B",
+          "text": "Tax consequences of all intra-entity transfers are deferred until the asset is sold to an outside party"
+        },
+        {
+          "label": "C",
+          "text": "Tax consequences of all intra-entity transfers are recognized immediately when the transfer occurs, with no exceptions"
+        },
+        {
+          "label": "D",
+          "text": "Tax consequences are recognized immediately only for transfers of inventory; all other transfers are deferred"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2016-16 requires recognition of the income tax consequences of an intra-entity transfer of an asset other than inventory when the transfer occurs. Inventory is the single exception: the seller's tax effects on intercompany inventory profit remain deferred until the inventory is sold to an outside party. Deferring everything reflects the pre-ASU model; recognizing everything immediately ignores the inventory exception; the exception runs in the opposite direction of immediate recognition for inventory only.",
+      "explanationJa": "ASU 2016-16（ASC 740-10-25-3(e)の改正）により、棚卸資産以外の資産のグループ内移転に係る税効果（売手の当期税金、買手側の繰延税金）は移転時に認識する。棚卸資産のみが例外で、グループ内利益に係る税効果は外部への販売まで繰延べられる。改正前はすべての移転で繰延べる処理だったが、棚卸資産以外については廃止された。",
+      "references": ["ASC 740-10-25-3(e)", "ASU 2016-16"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-150",
+      "topic": "Income Taxes",
+      "subtopic": "DTL on Equity Method Earnings with DRD",
+      "stem": "Radcliffe Corp. owns 30% of a domestic investee and accounts for it under the equity method. Radcliffe's share of the investee's undistributed earnings for the year is $200,000. Radcliffe expects to realize the outside basis difference through future dividends, which qualify for a 65% dividends received deduction. The enacted tax rate is 25%. What deferred tax liability should Radcliffe recognize on the current year's undistributed earnings?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$17,500" },
+        { "label": "C", "text": "$32,500" },
+        { "label": "D", "text": "$0, because the earnings are undistributed" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Because realization is expected through dividends, the deferred tax liability is measured on the portion that will actually be taxable after the dividends received deduction: $200,000 × (1 − 65%) = $70,000 taxable, × 25% = $17,500. $50,000 ignores the DRD; $32,500 taxes the deductible portion instead of the taxable portion; the indefinite reversal exception does not apply to a domestic equity method investee that is not a subsidiary, so $0 is incorrect.",
+      "explanationJa": "ASC 740-30-25-5以下により、持分法投資（50%以下保有の国内投資先）の未分配利益には原則DTLを認識する。配当による実現を見込む場合、受取配当益金不算入（DRD）65%考慮後の課税部分で測定する：$200,000 × 35% = $70,000、DTL = $70,000 × 25% = $17,500。APB 23の無期限再投資例外は国内の持分法投資先には適用されない。",
+      "references": ["ASC 740-30-25-5", "ASC 740-10-55-24"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-151",
+      "topic": "Income Taxes",
+      "subtopic": "Change in Indefinite Reinvestment Assertion",
+      "stem": "Sheffield Corp. has historically asserted that the $2,000,000 of undistributed earnings of its foreign subsidiary are indefinitely reinvested and has recognized no related deferred taxes. In the current year, management changes its plans and now intends to repatriate all of those earnings. Upon distribution, the only tax cost will be a 5% foreign withholding tax; no residual home-country tax will be due. What should Sheffield record in the period the assertion changes?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Nothing until the dividend is actually declared"
+        },
+        { "label": "B", "text": "A deferred tax liability of $420,000" },
+        { "label": "C", "text": "A deferred tax liability of $520,000" },
+        { "label": "D", "text": "A deferred tax liability of $100,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When an entity can no longer assert indefinite reinvestment, it must recognize a deferred tax liability for the tax expected on remittance: $2,000,000 × 5% withholding = $100,000, recognized in the period the assertion changes, not when the dividend is declared. $420,000 incorrectly applies a 21% rate and $520,000 adds withholding on top of a residual tax that the facts state will not be due.",
+      "explanationJa": "ASC 740-30-25-19の無期限再投資の例外（APB 23例外）は、再投資の意思を主張できなくなった時点で適用を停止し、送金時に見込まれる税金についてDTLを認識する。本問では送金時のコストは外国源泉税5%のみ：DTL = $2,000,000 × 5% = $100,000。認識時点は意思決定（主張の変更）が行われた期であり、配当宣言時ではない。",
+      "references": ["ASC 740-30-25-19", "ASC 740-30-25-17"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-152",
+      "topic": "Income Taxes",
+      "subtopic": "DTA on Deferred Subscription Revenue",
+      "stem": "Thackeray Corp. collects $480,000 of three-year subscription fees on January 1, Year 1. For tax purposes the entire amount is taxable upon receipt. For book purposes, revenue is recognized evenly over three years, so $160,000 is recognized in Year 1 and $320,000 remains in deferred revenue at December 31, Year 1. The enacted tax rate is 25%. What deferred tax amount should Thackeray report at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "A deferred tax liability of $80,000" },
+        { "label": "B", "text": "A deferred tax asset of $120,000" },
+        { "label": "C", "text": "A deferred tax asset of $80,000" },
+        { "label": "D", "text": "A deferred tax asset of $40,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The deferred revenue liability has a book basis of $320,000 and a tax basis of zero (the income was already taxed). The future book revenue recognition will not be taxed again, creating a deductible temporary difference of $320,000 and a deferred tax asset of $320,000 × 25% = $80,000. A liability is the wrong direction because tax income preceded book income; $120,000 uses the full $480,000 receipt; $40,000 uses only one remaining year ($160,000).",
+      "explanationJa": "前受収益は税務上受領時に全額課税済みのため、帳簿上の負債$320,000に対し税務基準額はゼロ。将来、帳簿上収益認識される際に再課税されないため将来減算一時差異となり、DTA = $320,000 × 25% = $80,000（ASC 740-10-25-20）。課税が帳簿認識より先行しているのでDTLではなくDTAである。$120,000は受領総額$480,000を使った誤り。",
+      "references": ["ASC 740-10-25-20", "ASC 740-10-30-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-153",
+      "topic": "Income Taxes",
+      "subtopic": "Percentage Depletion as Permanent Difference",
+      "stem": "Umberton Mining Co. reports pretax book income of $1,000,000 for Year 1, which reflects cost depletion of $100,000. For tax purposes, Umberton deducts percentage (statutory) depletion of $160,000. The $60,000 excess of percentage depletion over cost depletion will never reverse. The enacted tax rate is 25%, and there are no other differences. What is Umberton's total income tax expense for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$235,000" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$265,000" },
+        { "label": "D", "text": "$240,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Percentage depletion in excess of cost depletion is a permanent difference, so it reduces both taxable income and total tax expense with no deferred tax consequence. Total tax expense = ($1,000,000 − $60,000) × 25% = $235,000, which here equals the current tax payable. $250,000 ignores the permanent difference; $265,000 adds it instead of subtracting; $240,000 reflects an arbitrary partial adjustment.",
+      "explanationJa": "コスト基準を超える法定（百分率）減耗控除は将来戻り入れられることのない永久差異であり、繰延税金を生じさせず実効税率を法定税率より引き下げる。総税金費用 = ($1,000,000 − $60,000) × 25% = $235,000。永久差異は当期税金と総税金費用の双方を減少させる点で一時差異と異なる（ASC 740-10-25-30参照）。",
+      "references": ["ASC 740-10-25-30", "ASC 740-10-50-12"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-154",
+      "topic": "Income Taxes",
+      "subtopic": "DTL on Partially Collected Installment Sale",
+      "stem": "Vanderhoff Corp. sells land in Year 1 and recognizes the entire $300,000 gain for financial reporting purposes. For tax purposes, the gain is reported under the installment method as cash is collected: $100,000 of the gain is taxed in Year 1 and the remaining $200,000 will be taxed in future years. The enacted tax rate is 25%. What deferred tax liability should Vanderhoff report at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$75,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$25,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Only the portion of the gain not yet taxed creates a temporary difference at year-end: $200,000 × 25% = $50,000 deferred tax liability. $75,000 applies the rate to the entire gain, ignoring the $100,000 already taxed currently; $25,000 applies the rate to the taxed portion; $0 ignores the remaining difference.",
+      "explanationJa": "割賦基準により税務上の認識が繰延べられる利得は将来加算一時差異を生む（ASC 740-10-25-20）。期末時点で未課税の部分のみが一時差異となるため、DTL = ($300,000 − $100,000) × 25% = $50,000。$75,000は当期に課税済みの$100,000を含めて計算した誤り。",
+      "references": ["ASC 740-10-25-20", "ASC 740-10-30-5"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-155",
+      "topic": "Income Taxes",
+      "subtopic": "Deferred Tax Benefit from Net DTA Rollforward",
+      "stem": "At the beginning of Year 2, Wexford Corp. reported a gross deferred tax asset of $250,000 and a valuation allowance of $100,000. At the end of Year 2, the gross deferred tax asset is $320,000 and the required valuation allowance is $60,000. Wexford has no deferred tax liabilities. What deferred income tax benefit should Wexford report in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$110,000" },
+        { "label": "B", "text": "$70,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Deferred tax expense or benefit equals the change in the net deferred tax position. Net DTA moved from $250,000 − $100,000 = $150,000 to $320,000 − $60,000 = $260,000, an increase of $110,000, which is a deferred tax benefit. $70,000 is only the change in the gross asset; $40,000 is only the change in the valuation allowance; $30,000 incorrectly nets the two changes against each other.",
+      "explanationJa": "繰延税金費用（便益）は正味繰延税金ポジションの期中変動額で測定する（ASC 740-10-45-20参照）。正味DTAは期首 $250,000 − $100,000 = $150,000 から期末 $320,000 − $60,000 = $260,000 へ$110,000増加しており、これが繰延税金便益となる。グロスDTAの増加$70,000と評価性引当金の減少$40,000の両方が便益方向に働く点に注意（70,000 + 40,000 = 110,000）。",
+      "references": ["ASC 740-10-30-5", "ASC 740-10-45-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-156",
+      "topic": "Income Taxes",
+      "subtopic": "Intraperiod Allocation - Discontinued Operations Gain",
+      "stem": "Yardley Corp. has income from continuing operations before tax of $600,000 and a gain from discontinued operations before tax of $150,000. The enacted tax rate applicable to all items is 25%. At what amount should the discontinued operations be presented in the income statement?",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$37,500" },
+        { "label": "C", "text": "$112,500" },
+        { "label": "D", "text": "$120,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under intraperiod tax allocation, discontinued operations are presented net of their directly allocable tax: $150,000 − ($150,000 × 25%) = $112,500. $150,000 is the pretax gain; $37,500 is the tax alone; $120,000 incorrectly applies a 20% rate.",
+      "explanationJa": "期間内税金配分（ASC 740-20-45）により、非継続事業は関連する税金を控除した純額で表示する。非継続事業の税金 = $150,000 × 25% = $37,500、表示額 = $150,000 − $37,500 = $112,500。継続事業の税金費用$150,000（$600,000 × 25%）とは区分して配分・表示する。",
+      "references": ["ASC 740-20-45-2", "ASC 205-20-45-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-157",
+      "topic": "Income Taxes",
+      "subtopic": "Measurement Period Adjustment to Acquired Valuation Allowance",
+      "stem": "Six months after acquiring Target Co. in a business combination, Acquirer Corp. obtains new information about facts and circumstances that existed as of the acquisition date, leading it to reduce the valuation allowance on Target's acquired deferred tax assets by $120,000. The measurement period has not yet ended. How should Acquirer record this adjustment?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a $120,000 reduction of income tax expense in the period of the change"
+        },
+        {
+          "label": "B",
+          "text": "As a $120,000 credit to additional paid-in capital"
+        },
+        {
+          "label": "C",
+          "text": "As a $120,000 credit to retained earnings as a prior period adjustment"
+        },
+        { "label": "D", "text": "As a $120,000 reduction of goodwill" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "During the measurement period, adjustments to acquired deferred tax balances that result from new information about facts existing at the acquisition date are recognized as adjustments to goodwill (first reducing goodwill, then bargain purchase gain). Recognizing the change in income tax expense is correct only after the measurement period ends or when the change results from post-acquisition events; equity accounts are never the destination for this adjustment.",
+      "explanationJa": "ASC 805-740-45-2により、測定期間（最長1年）内に取得日時点で存在した事実に関する新情報により取得したDTAの評価性引当金を修正する場合は、のれんの修正として処理する（のれんをゼロまで減額後は割安購入益）。測定期間経過後の変更や取得後の事象に起因する変更は税金費用で認識する。本問は測定期間内かつ取得日時点の事実に関する情報であるため、のれんの減額$120,000となる。",
+      "references": ["ASC 805-740-45-2", "ASC 805-740-25-3"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-158",
+      "topic": "Income Taxes",
+      "subtopic": "Tax Allocation in Separate Subsidiary Financial Statements",
+      "stem": "Subsidiary S is a member of a consolidated group that files a single consolidated tax return. S issues its own separate financial statements. Under ASC 740, which method of allocating consolidated income tax expense to S is acceptable for S's separate financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Allocating tax expense in proportion to each member's share of consolidated revenue"
+        },
+        {
+          "label": "B",
+          "text": "A method that is systematic, rational, and consistent with the broad principles of ASC 740, such as the separate return method"
+        },
+        {
+          "label": "C",
+          "text": "No allocation is permitted; only the parent may report income tax expense"
+        },
+        {
+          "label": "D",
+          "text": "Allocating only the amount of cash actually paid to the parent under the tax sharing agreement, regardless of method"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 740-10-30-27 requires that the consolidated tax provision be allocated to members issuing separate statements using a method that is systematic, rational, and consistent with the broad principles of ASC 740; the separate return method meets those criteria. Revenue-proportional allocation is not consistent with ASC 740's asset-and-liability principles; members must present their allocated tax expense; amounts paid under a tax sharing agreement may differ from an acceptable allocation, with the difference treated as a capital transaction.",
+      "explanationJa": "ASC 740-10-30-27により、連結納税グループの構成会社が単体財務諸表を作成する場合、連結税金費用を「体系的・合理的でASC 740の基本原則に整合する方法」で配分しなければならず、セパレートリターン法（単独申告を仮定する方法）はこれを満たす代表的な方法である。収益比例配分は資産負債法の原則に整合しない。タックスシェアリング契約上の授受額と配分額の差は資本取引として扱われる。",
+      "references": ["ASC 740-10-30-27"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-159",
+      "topic": "Income Taxes",
+      "subtopic": "Scope of ASC 740",
+      "stem": "Which of the following taxes is within the scope of ASC 740, Income Taxes?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sales taxes collected from customers and remitted to the state"
+        },
+        {
+          "label": "B",
+          "text": "Property taxes assessed on the fair value of real estate holdings"
+        },
+        {
+          "label": "C",
+          "text": "A state franchise tax to the extent it is based on the entity's income"
+        },
+        { "label": "D", "text": "Employer payroll taxes on employee wages" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 740 applies to taxes based on income. A franchise tax is within its scope to the extent the tax is computed on income (any portion based on capital or another base is accounted for outside ASC 740 as an operating expense). Sales taxes, property taxes, and payroll taxes are not based on income and are excluded from ASC 740.",
+      "explanationJa": "ASC 740の適用範囲は「所得（income）に基づく税金」である。フランチャイズ税は所得を課税標準とする部分についてASC 740の対象となり、資本等を課税標準とする部分は営業費用として処理する（ASC 740-10-15-4）。売上税・固定資産税・給与税は所得課税ではないため対象外。",
+      "references": ["ASC 740-10-15-4", "ASC 740-10-15-3"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-160",
+      "topic": "Income Taxes",
+      "subtopic": "ASU 2023-09 Rate Reconciliation Disclosure",
+      "stem": "Under ASU 2023-09, Improvements to Income Tax Disclosures, which of the following describes the enhanced rate reconciliation disclosure required for public business entities?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A qualitative description of rate reconciliation items, with no numerical detail required"
+        },
+        {
+          "label": "B",
+          "text": "Disclosure of only the total difference between the statutory rate and the effective rate"
+        },
+        {
+          "label": "C",
+          "text": "A reconciliation limited to federal items, with state and foreign effects combined into a single line"
+        },
+        {
+          "label": "D",
+          "text": "A tabular reconciliation using specified categories (such as state and local taxes, foreign tax effects, and tax credits), with separate disclosure of items equal to or greater than 5% of the amount computed at the statutory rate"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASU 2023-09 requires public business entities to present the rate reconciliation in a tabular format using eight specified categories, with separate disclosure (and disaggregation by nature and, for some categories, jurisdiction) of any reconciling item equal to or greater than 5% of the amount computed by multiplying pretax income by the statutory rate. A qualitative-only description is permitted for entities other than public business entities, not for PBEs; total-only and federal-only presentations do not satisfy the disaggregation requirements.",
+      "explanationJa": "ASU 2023-09（ASC 740-10-50-12A）は、公開営利企業（PBE）に対し、州・地方税、外国税の影響、税額控除等の特定カテゴリーによる表形式の税率調整表を要求し、法定税率×税引前利益の5%以上の調整項目は個別開示（性質別・一部は法域別に細分化）を求める。定性的説明のみで足りるのは非PBEであり、PBEには認められない。年次期間に適用される。",
+      "references": ["ASC 740-10-50-12A", "ASU 2023-09"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-161",
+      "topic": "Income Taxes",
+      "subtopic": "Nonpublic Entity Rate Reconciliation Relief",
+      "stem": "Under ASC 740-10-50, how do the income tax rate reconciliation disclosure requirements for entities other than public business entities differ from those for public business entities?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Nonpublic entities must provide the same numerical reconciliation but may omit the statutory rate used"
+        },
+        {
+          "label": "B",
+          "text": "Nonpublic entities may disclose the nature of significant reconciling items qualitatively and are not required to present a numerical reconciliation"
+        },
+        {
+          "label": "C",
+          "text": "Nonpublic entities are exempt from all income tax disclosures"
+        },
+        {
+          "label": "D",
+          "text": "Nonpublic entities must present the reconciliation in dollars but never in percentages"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Entities other than public business entities are not required to present the numerical rate reconciliation; instead, they must disclose the nature of significant reconciling items between the statutory rate and the effective rate qualitatively. They are not exempt from other income tax disclosures (such as the components of deferred tax assets and liabilities), and public entities may present the reconciliation in either percentages or dollar amounts.",
+      "explanationJa": "ASC 740-10-50-13により、非公開企業（PBE以外）は数値による税率調整表の開示を要求されず、法定税率と実効税率の重要な差異項目の内容を定性的に開示すればよい。ただし繰延税金の主要な内訳等、他の税金開示が免除されるわけではない。PBEは調整表を金額または比率のいずれでも表示できる（ASC 740-10-50-12）。",
+      "references": ["ASC 740-10-50-13", "ASC 740-10-50-12"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-162",
+      "topic": "Income Taxes",
+      "subtopic": "Stranded Tax Effects in AOCI",
+      "stem": "A change in the enacted tax rate causes deferred taxes originally recorded through other comprehensive income to be remeasured through income tax expense from continuing operations, leaving disproportionate (\"stranded\") tax effects in accumulated other comprehensive income. Under ASU 2018-02, how may an entity address stranded tax effects resulting from the Tax Cuts and Jobs Act?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Elect to reclassify the stranded tax effects from accumulated other comprehensive income to retained earnings"
+        },
+        {
+          "label": "B",
+          "text": "Reverse the rate-change remeasurement out of continuing operations and record it in OCI"
+        },
+        {
+          "label": "C",
+          "text": "Amortize the stranded tax effects into income tax expense over the average reversal period"
+        },
+        {
+          "label": "D",
+          "text": "Write off the stranded tax effects directly to income from continuing operations"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2018-02 permits (but does not require) an election to reclassify the stranded tax effects of the Tax Cuts and Jobs Act from accumulated other comprehensive income to retained earnings, an equity-to-equity transfer. Recording the rate-change remeasurement in OCI would violate the prohibition on backwards tracing; amortization into expense and direct write-off to continuing operations are not provided for in the guidance.",
+      "explanationJa": "米国GAAPはbackwards tracing（税率変更等の影響を当初計上した区分に遡って計上すること）を禁止しているため、税率変更時にOCI起源の繰延税金の再測定差額は継続事業の税金費用に計上され、AOCIに「取り残された（stranded）」税効果が残る。ASU 2018-02（ASC 220-10-45-12B）は、TCJAに起因するstranded tax effectsについて、AOCIから利益剰余金への振替（資本内の振替）を選択適用として認めた。OCIで再測定する処理はbackwards tracing禁止に反する。",
+      "references": ["ASC 220-10-45-12B", "ASU 2018-02"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-163",
+      "topic": "Income Taxes",
+      "subtopic": "DTA Measured at Scheduled Future Enacted Rates",
+      "stem": "Zelinski Corp. has a deferred compensation liability of $500,000 at December 31, Year 1, deductible for tax purposes when paid. Of this amount, $200,000 will be paid in Year 2 and $300,000 will be paid in Year 3 and later. Enacted tax law sets the rate at 25% for Year 2 and 22% for Year 3 and all later years. What deferred tax asset should Zelinski report at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$125,000" },
+        { "label": "B", "text": "$110,000" },
+        { "label": "C", "text": "$119,000" },
+        { "label": "D", "text": "$116,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Deferred taxes are measured at the enacted rates expected to apply in the periods the differences reverse: ($200,000 × 25%) + ($300,000 × 22%) = $50,000 + $66,000 = $116,000. $125,000 applies 25% to the entire difference; $110,000 applies 22% to the entire difference; $119,000 reverses the scheduling, applying 25% to the Year 3 portion and 22% to the Year 2 portion.",
+      "explanationJa": "ASC 740-10-30-8により、繰延税金は一時差異が解消する期に適用される制定済み税率で測定する。解消スケジュールに応じて、Year 2解消分 $200,000 × 25% = $50,000、Year 3以降解消分 $300,000 × 22% = $66,000、合計DTA = $116,000。全額に単一税率を適用する計算（$125,000や$110,000）は、段階的税率変更が制定されている場合には誤りとなる。",
+      "references": ["ASC 740-10-30-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-164",
+      "topic": "Income Taxes",
+      "subtopic": "Section 174 R&E Capitalization DTA Calculation",
+      "stem": "In Year 1, Abernathy Corp. incurs $600,000 of domestic research and experimental (R&E) expenditures, all expensed immediately for financial reporting. Under IRC Section 174 (as amended for tax years beginning after 2021), the costs must be capitalized for tax purposes and amortized over 5 years using a half-year convention, producing a Year 1 tax deduction of $60,000. The enacted tax rate is 25%. What deferred tax asset arises from this item at the end of Year 1?",
+      "choices": [
+        { "label": "A", "text": "$135,000" },
+        { "label": "B", "text": "$150,000" },
+        { "label": "C", "text": "$120,000" },
+        {
+          "label": "D",
+          "text": "$0, because R&E costs are a permanent difference"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The tax basis of the capitalized R&E is $600,000 − $60,000 = $540,000, while the book basis is zero, creating a deductible temporary difference of $540,000 and a deferred tax asset of $540,000 × 25% = $135,000. $150,000 ignores the Year 1 tax amortization; $120,000 assumes a full year of amortization ($120,000 deducted); the difference fully reverses through future tax amortization, so it is temporary, not permanent.",
+      "explanationJa": "2022年以後開始事業年度より、IRC Section 174は国内R&E費用の税務上の資産計上と5年償却（半年規則）を要求する。帳簿上は即時費用化（基準額ゼロ）に対し、税務基準額 = $600,000 − 初年度償却$60,000 = $540,000。将来減算一時差異$540,000 × 25% = DTA $135,000。将来の税務償却により全額解消されるため一時差異であり、永久差異ではない。",
+      "references": ["ASC 740-10-25-20", "IRC Section 174"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-165",
+      "topic": "Income Taxes",
+      "subtopic": "NOL Carryback Refund at Differing Prior-Year Rates",
+      "stem": "Under a special statutory provision, Bancroft Corp. may carry back its Year 3 net operating loss of $350,000 to the two preceding years, applying the loss to the earliest year first. Year 1 taxable income was $200,000, taxed at an enacted rate of 30%; Year 2 taxable income was $150,000, taxed at an enacted rate of 25%. What income tax refund receivable should Bancroft recognize in Year 3?",
+      "choices": [
+        { "label": "A", "text": "$87,500" },
+        { "label": "B", "text": "$97,500" },
+        { "label": "C", "text": "$105,000" },
+        { "label": "D", "text": "$73,500" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The carryback benefit is measured using the tax rates of the years to which the loss is carried: $200,000 × 30% = $60,000 from Year 1, plus the remaining $150,000 × 25% = $37,500 from Year 2, for a total refund of $97,500. $87,500 applies 25% to the entire loss; $105,000 applies 30% to the entire loss; $73,500 incorrectly uses a 21% rate.",
+      "explanationJa": "欠損金の繰戻し還付は、繰り戻す各年度に実際に適用された税率で測定し、税金還付債権（受取債権）と当期の税務便益を認識する。Year 1充当分 $200,000 × 30% = $60,000、残額のYear 2充当分 $150,000 × 25% = $37,500、還付合計 = $97,500。繰戻しは当期の制定税率ではなく過年度の納付実績に基づく点が繰越し（将来税率で測定）と異なる。",
+      "references": ["ASC 740-10-25-2", "ASC 740-10-45-4"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-166",
+      "topic": "Income Taxes",
+      "subtopic": "DTA from Book Impairment of Equipment",
+      "stem": "Caldwell Corp. recorded an impairment loss on equipment for financial reporting purposes that is not deductible for tax purposes until the asset is sold or disposed of. At year-end, the equipment's book carrying amount is $420,000 and its tax basis is $470,000. The enacted tax rate is 25%. What deferred tax amount should Caldwell report related to this equipment?",
+      "choices": [
+        { "label": "A", "text": "A deferred tax liability of $12,500" },
+        { "label": "B", "text": "A deferred tax asset of $50,000" },
+        { "label": "C", "text": "A deferred tax asset of $12,500" },
+        {
+          "label": "D",
+          "text": "$0, because the deduction depends on a future sale"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The tax basis ($470,000) exceeds the book carrying amount ($420,000) by $50,000, a deductible temporary difference: when the asset is recovered, tax deductions will exceed book expense by $50,000. The deferred tax asset is $50,000 × 25% = $12,500. A liability arises only when book basis exceeds tax basis; $50,000 is the gross difference; the dependence on future recovery does not prevent recognition, although realizability is assessed through the valuation allowance.",
+      "explanationJa": "資産負債法（ASC 740-10-30-5）では帳簿価額と税務基準額の差異で繰延税金を測定する。税務基準額$470,000 > 帳簿価額$420,000のため将来減算一時差異$50,000が存在し、DTA = $50,000 × 25% = $12,500。帳簿上の減損は税務上売却等まで損金算入されないため、回収時に税務上の控除が帳簿費用を上回る。実現可能性は評価性引当金で別途検討する。",
+      "references": ["ASC 740-10-30-5", "ASC 740-10-25-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-167",
+      "topic": "Income Taxes",
+      "subtopic": "Interim Treatment of Valuation Allowance Changes",
+      "stem": "During the second quarter, Dalton Corp. changes its judgment about the realizability of a deferred tax asset that existed at the beginning of the year. Under ASC 740-270, which statement correctly describes the interim accounting for changes in a beginning-of-year valuation allowance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "All changes in the valuation allowance are always treated as discrete items in the quarter of the change"
+        },
+        {
+          "label": "B",
+          "text": "A change resulting from expected current-year ordinary income is included in the estimated annual effective tax rate, while a change in judgment about realization in future years is recognized discretely in the quarter of the change"
+        },
+        {
+          "label": "C",
+          "text": "All changes in the valuation allowance are spread evenly over the remaining quarters of the year"
+        },
+        {
+          "label": "D",
+          "text": "Changes in the valuation allowance may not be recognized until the annual financial statements are prepared"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 740-270, a release or increase of the beginning-of-year valuation allowance that is attributable to income expected to be earned in the current year is built into the estimated annual effective tax rate, whereas a change driven by revised expectations about future years' income is a discrete event recognized entirely in the interim period in which the judgment changes. Treating every change as discrete, spreading changes evenly, or deferring recognition to year-end all misstate the model.",
+      "explanationJa": "ASC 740-270-25-4以下により、期首評価性引当金の変動のうち、当年度のordinary income（経常的な当年度所得）による実現見込みに起因する部分は見積年間実効税率（AETR）に織り込み、将来年度の所得見通しの判断変更に起因する部分は判断変更が生じた四半期に離散項目（discrete item）として全額認識する。すべてを離散処理する、残存四半期に均等配分する、年度末まで認識しないといった処理はいずれも誤り。",
+      "references": ["ASC 740-270-25-4", "ASC 740-270-25-7"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-168",
+      "topic": "Income Taxes",
+      "subtopic": "Distinguishing Permanent from Temporary Differences",
+      "stem": "All of the following are permanent differences between pretax financial income and taxable income EXCEPT:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Warranty costs accrued for book purposes but deductible for tax purposes when paid"
+        },
+        { "label": "B", "text": "Interest income on municipal bonds" },
+        {
+          "label": "C",
+          "text": "Fines and penalties paid for violations of law"
+        },
+        {
+          "label": "D",
+          "text": "The dividends received deduction on qualifying dividends from domestic corporations"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Accrued warranty costs reverse when the warranty claims are paid and deducted, making them a deductible temporary difference that creates a deferred tax asset. Municipal bond interest is never taxable, fines and penalties are never deductible, and the dividends received deduction is never reversed, so each of those is a permanent difference with no deferred tax consequence.",
+      "explanationJa": "永久差異は将来解消されることがなく繰延税金を生じさせない。地方債利息（益金不算入）、罰科金（損金不算入）、受取配当益金不算入（DRD）はいずれも永久差異。一方、製品保証引当金は帳簿上の費用認識が先行し、税務上は支払時に損金算入されるため、将来解消する将来減算一時差異であり、DTAを生じさせる（ASC 740-10-25-20）。",
+      "references": ["ASC 740-10-25-20", "ASC 740-10-25-30"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-169",
+      "topic": "Income Taxes",
+      "subtopic": "Total Tax Expense with Permanent and Temporary Differences",
+      "stem": "Eastman Corp. reports pretax financial income of $2,400,000 for Year 1, which includes $100,000 of nontaxable municipal bond interest. Tax depreciation exceeds book depreciation by $300,000 (a temporary difference). The enacted tax rate is 25% for all years. What is Eastman's total income tax expense for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$525,000" },
+        { "label": "D", "text": "$575,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Total tax expense equals the rate applied to book income adjusted only for permanent differences: ($2,400,000 − $100,000) × 25% = $575,000. As proof: taxable income = $2,400,000 − $100,000 − $300,000 = $2,000,000, current tax = $500,000, deferred tax expense = $300,000 × 25% = $75,000, total = $575,000. $600,000 ignores the permanent difference; $500,000 is the current portion only; $525,000 incorrectly treats the temporary difference as permanent.",
+      "explanationJa": "総税金費用は永久差異のみを調整した帳簿利益に税率を乗じた額となる：($2,400,000 − $100,000) × 25% = $575,000。検算：課税所得 = $2,400,000 − $100,000 − $300,000 = $2,000,000、当期税金 = $500,000、繰延税金費用 = $300,000 × 25% = $75,000、合計$575,000。一時差異は当期税金と繰延税金の間の配分にのみ影響し、総額には影響しない（ASC 740-10-10-1）。",
+      "references": ["ASC 740-10-10-1", "ASC 740-10-30-5"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "tax-170",
+      "topic": "Income Taxes",
+      "subtopic": "Deferred Portion of the Tax Provision",
+      "stem": "During Year 1, Fairbanks Corp.'s deferred tax liabilities increased by $40,000 and its deferred tax assets increased by $15,000. Current income tax payable for the year is $180,000. What is the deferred portion of Fairbanks's income tax provision for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$55,000 expense" },
+        { "label": "B", "text": "$25,000 benefit" },
+        { "label": "C", "text": "$25,000 expense" },
+        { "label": "D", "text": "$205,000 expense" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Deferred tax expense equals the increase in deferred tax liabilities minus the increase in deferred tax assets: $40,000 − $15,000 = $25,000 expense. $55,000 incorrectly adds the two changes; a benefit would arise only if the net deferred position improved; $205,000 combines the current payable with the deferred amount, which is the total provision rather than the deferred portion.",
+      "explanationJa": "繰延税金費用は正味繰延税金ポジションの変動で測定する：DTL増加$40,000 − DTA増加$15,000 = $25,000の費用。DTAの増加は税金費用を減らす方向に働くため、両者を加算（$55,000）するのは誤り。なお総税金費用は当期分$180,000 + 繰延分$25,000 = $205,000となるが、問われているのは繰延部分である。",
+      "references": ["ASC 740-10-45-20", "ASC 740-10-10-1"],
+      "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
     }
   ]

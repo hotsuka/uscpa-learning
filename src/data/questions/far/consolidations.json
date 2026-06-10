@@ -2,7 +2,7 @@
   "id": "far-consolidations",
   "name": "Consolidations",
   "topic": "Consolidations",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "questions": [
     {
       "id": "con-001",
@@ -3025,6 +3025,921 @@
       "explanation": "Under ASC 805-20-30-1, the acquirer measures identifiable assets acquired at fair value. The acquiree's previously recorded goodwill is NOT an identifiable asset and is not carried over; it is replaced by new goodwill computed in the current combination. New goodwill = consideration transferred − fair value of identifiable net assets (excluding old goodwill) = $9,000,000 − $7,200,000 = $1,800,000. Sub's old $1,000,000 goodwill is disregarded.",
       "explanationJa": "ASC 805-20-30-1により、取得者は取得した識別可能資産を公正価値で測定する。被取得企業が以前計上したのれんは識別可能資産ではなく引き継がれず、当該結合で計算される新たなのれんに置き換わる。新のれん = 移転対価 − 識別可能純資産の公正価値（旧のれん除く）= $9,000,000 − $7,200,000 = $1,800,000。子会社の旧のれん$1,000,000は無視する。",
       "references": ["ASC 805-20-30-1", "ASC 805-30-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-129",
+      "topic": "Consolidations",
+      "subtopic": "Definition of a Business - Screen Test",
+      "stem": "Under ASC 805, an entity acquires a set of assets and activities. Substantially all of the fair value of the gross assets acquired is concentrated in a single identifiable asset. How should the acquirer account for the transaction?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a business combination, because activities were acquired along with the asset"
+        },
+        {
+          "label": "B",
+          "text": "As a business combination, with goodwill recognized for any excess consideration"
+        },
+        {
+          "label": "C",
+          "text": "As an asset acquisition, because the set is not considered a business under the screen test"
+        },
+        {
+          "label": "D",
+          "text": "The acquirer may elect either business combination or asset acquisition accounting"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 805-10-55-5A provides a screen test: if substantially all of the fair value of the gross assets acquired is concentrated in a single identifiable asset (or group of similar identifiable assets), the set is not a business. The transaction is accounted for as an asset acquisition, with the cost allocated to the assets acquired and no goodwill recognized. Treating the set as a business combination is incorrect because the screen test is determinative when met, and there is no free election between the two accounting models.",
+      "explanationJa": "ASC 805-10-55-5Aのスクリーンテストでは、取得した総資産の公正価値の実質的にすべてが単一の識別可能資産（または類似資産グループ）に集中している場合、その取得セットは「事業（business）」に該当しないと判定される。この場合は資産取得（asset acquisition）として処理し、取得原価を資産に配分する。のれんは認識されない。スクリーンテストを満たした時点で判定は確定するため、企業結合としての処理や任意の選択は認められない。",
+      "references": ["ASC 805-10-55-5A"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-130",
+      "topic": "Consolidations",
+      "subtopic": "Asset Acquisition - Relative Fair Value Allocation",
+      "stem": "Crown Corp pays $1,200,000 to acquire a group of assets that does not constitute a business: land with a fair value of $700,000, a building with a fair value of $500,000, and equipment with a fair value of $300,000. What amount should Crown allocate to the building?",
+      "choices": [
+        { "label": "A", "text": "$400,000" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$560,000" },
+        { "label": "D", "text": "$480,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In an asset acquisition, the total cost is allocated to the individual assets based on their relative fair values. Total fair value = $700,000 + $500,000 + $300,000 = $1,500,000. Building allocation = $1,200,000 × ($500,000 / $1,500,000) = $400,000. Recording the building at its $500,000 stand-alone fair value would be wrong because the total cost paid ($1,200,000) is less than the total fair value ($1,500,000) and no bargain purchase gain is recognized in an asset acquisition. $560,000 results from applying the land's ratio, and $480,000 results from using an incorrect 40% ratio.",
+      "explanationJa": "資産取得（ASC 805-50）では、取得原価合計を各資産の相対的公正価値に基づいて配分する。公正価値合計＝$700,000＋$500,000＋$300,000＝$1,500,000。建物への配分額＝$1,200,000×($500,000/$1,500,000)＝$400,000。資産取得ではバーゲン購入益を認識しないため、建物を単独の公正価値$500,000で計上するのは誤り。$560,000は土地の比率を誤って適用した結果、$480,000は40%という誤った比率を用いた結果である。",
+      "references": ["ASC 805-50-30-3"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-131",
+      "topic": "Consolidations",
+      "subtopic": "Contingent Consideration Classified as Equity",
+      "stem": "On January 1, Year 1, Acme Corp acquired Target and agreed to issue additional common shares if Target meets an earnings target. The arrangement is classified as equity and was recorded at its acquisition-date fair value of $200,000. At the settlement date, the fair value of the obligation is $350,000. What amount of gain or loss should Acme recognize in earnings related to the change in fair value?",
+      "choices": [
+        { "label": "A", "text": "$150,000 loss" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$350,000 loss" },
+        { "label": "D", "text": "$200,000 loss" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-30-35-1, contingent consideration classified as equity is not remeasured after the acquisition date. Its settlement is accounted for within equity, so no gain or loss is recognized in earnings regardless of changes in fair value. A $150,000 loss would result only if the arrangement were classified as a liability, in which case changes in fair value flow through earnings each period until settlement. The $350,000 and $200,000 amounts represent the settlement-date and acquisition-date fair values, neither of which is recognized in earnings for an equity-classified arrangement.",
+      "explanationJa": "ASC 805-30-35-1により、資本（equity）に分類された条件付対価は取得日後に再測定されない。決済も資本の中で処理されるため、公正価値が変動しても損益は認識されず、認識額は$0である。$150,000の損失が計上されるのは負債に分類された場合のみで、その場合は決済まで毎期の公正価値変動が損益に計上される。$350,000や$200,000は決済日・取得日の公正価値であり、資本分類の場合に損益認識される金額ではない。",
+      "references": ["ASC 805-30-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-132",
+      "topic": "Consolidations",
+      "subtopic": "Noncash Consideration Transferred by Acquirer",
+      "stem": "Bolt Corp acquires 100% of Tern Inc by paying $2,000,000 cash and transferring a parcel of land to Tern's former shareholders. The land has a carrying amount of $300,000 and an acquisition-date fair value of $450,000. What amount of gain should Bolt recognize in earnings on the transfer of the land?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$450,000" },
+        { "label": "C", "text": "$300,000" },
+        { "label": "D", "text": "$150,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 805-30-30-8, noncash assets transferred as consideration are remeasured to fair value at the acquisition date, and the acquirer recognizes a gain or loss in earnings for the difference from carrying amount. Gain = $450,000 − $300,000 = $150,000. The consideration transferred is measured at $2,450,000 ($2,000,000 cash + $450,000 fair value of land). Recognizing no gain would be appropriate only if the land remained within the combined entity after the combination; here it was transferred to the former owners. $450,000 and $300,000 are the fair value and carrying amount of the land, not the gain.",
+      "explanationJa": "ASC 805-30-30-8により、対価として移転する非現金資産は取得日の公正価値で再測定し、帳簿価額との差額を損益として認識する。利得＝$450,000−$300,000＝$150,000。移転対価の総額は$2,450,000（現金$2,000,000＋土地の公正価値$450,000）となる。利得を認識しないのは、移転資産が結合後も結合企業グループ内に留まる場合のみであり、本問では旧株主に移転しているため該当しない。$450,000と$300,000はそれぞれ土地の公正価値・帳簿価額であり、利得の金額ではない。",
+      "references": ["ASC 805-30-30-7", "ASC 805-30-30-8"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-133",
+      "topic": "Consolidations",
+      "subtopic": "Step Acquisition - Goodwill Computation",
+      "stem": "Pike Corp held a 20% investment in Slate Inc with a carrying amount of $250,000. On July 1, Year 2, Pike paid $1,400,000 for an additional 60% of Slate, obtaining control. On that date, the fair value of Pike's previously held 20% interest was $320,000, the fair value of the 20% noncontrolling interest was $460,000, and the fair value of Slate's identifiable net assets was $1,900,000. What amount of goodwill should Pike recognize?",
+      "choices": [
+        { "label": "A", "text": "$280,000" },
+        { "label": "B", "text": "$210,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$350,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Goodwill = consideration transferred + fair value of previously held equity interest + fair value of NCI − fair value of identifiable net assets = $1,400,000 + $320,000 + $460,000 − $1,900,000 = $280,000. The previously held interest is remeasured to its $320,000 fair value (producing a separate $70,000 remeasurement gain in earnings). Using the $250,000 carrying amount instead of fair value yields $210,000, which is incorrect. $200,000 results from omitting the NCI and comparing against only 80% of net assets, and $350,000 results from incorrectly adding the $70,000 remeasurement gain to goodwill.",
+      "explanationJa": "ASC 805-30-30-1により、のれん＝移転対価＋既保有持分の公正価値＋NCIの公正価値−識別可能純資産の公正価値＝$1,400,000＋$320,000＋$460,000−$1,900,000＝$280,000。段階取得では既保有20%持分を公正価値$320,000に再測定し、再測定益$70,000（$320,000−$250,000）を損益に計上する（ASC 805-10-25-10）。帳簿価額$250,000を使うと$210,000となり誤り。$200,000はNCIを除外して純資産の80%とだけ比較した誤り、$350,000は再測定益をのれんに加算した誤りである。",
+      "references": ["ASC 805-30-30-1", "ASC 805-10-25-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-134",
+      "topic": "Consolidations",
+      "subtopic": "Mid-Year Acquisition - Consolidated Net Income",
+      "stem": "Pace Corp acquired 100% of Soto Inc on October 1, Year 1. For the full calendar Year 1, Pace's separate net income (excluding any income from Soto) was $900,000, and Soto's net income was $400,000, earned evenly throughout the year. There were no intercompany transactions and no excess fair value amortization. What is consolidated net income for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$1,300,000" },
+        { "label": "B", "text": "$900,000" },
+        { "label": "C", "text": "$1,000,000" },
+        { "label": "D", "text": "$1,200,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The consolidated income statement includes the subsidiary's results only from the acquisition date forward. Soto's post-acquisition income = $400,000 × 3/12 = $100,000 (October through December). Consolidated net income = $900,000 + $100,000 = $1,000,000. $1,300,000 incorrectly includes Soto's full-year income, including the pre-acquisition period. $900,000 excludes Soto entirely, and $1,200,000 incorrectly includes nine months of Soto's income rather than three.",
+      "explanationJa": "ASC 810-10-45-4により、連結損益計算書には取得日以降の子会社の業績のみを含める。Sotoの取得後利益＝$400,000×3/12＝$100,000（10月〜12月）。連結純利益＝$900,000＋$100,000＝$1,000,000。$1,300,000は取得前期間を含むSotoの年間利益全額を含めた誤り。$900,000はSotoを完全に除外した誤り、$1,200,000は3か月ではなく9か月分を含めた誤りである。",
+      "references": ["ASC 810-10-45-4", "ASC 805-10-25-6"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-135",
+      "topic": "Consolidations",
+      "subtopic": "Downstream Inventory - Beginning and Ending Unrealized Profit",
+      "stem": "Pratt Corp sells inventory to its 80%-owned subsidiary, Sill Inc, at a markup. Sill's beginning inventory for Year 2 contained $30,000 of unrealized intercompany profit, and its ending inventory contained $45,000 of unrealized intercompany profit. The combined separate net incomes of Pratt and Sill for Year 2 total $800,000. Assuming no other adjustments, what is consolidated net income for Year 2?",
+      "choices": [
+        { "label": "A", "text": "$815,000" },
+        { "label": "B", "text": "$785,000" },
+        { "label": "C", "text": "$755,000" },
+        { "label": "D", "text": "$830,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Profit deferred in beginning inventory is realized in the current year when the goods are sold to outsiders (+$30,000), while profit in ending inventory must be deferred (−$45,000). Consolidated net income = $800,000 + $30,000 − $45,000 = $785,000. $815,000 reverses the signs of the two adjustments. $755,000 ignores the realization of the beginning inventory profit, and $830,000 ignores the deferral of the ending inventory profit.",
+      "explanationJa": "期首棚卸資産に含まれる未実現利益は、当期に外部へ販売された時点で実現するため加算（＋$30,000）し、期末棚卸資産の未実現利益は繰延べるため減算（−$45,000）する。連結純利益＝$800,000＋$30,000−$45,000＝$785,000。$815,000は2つの調整の符号を逆にした誤り。$755,000は期首未実現利益の実現を無視した誤り、$830,000は期末未実現利益の繰延べを無視した誤りである。なおダウンストリーム取引のため、調整はすべて親会社株主帰属分に影響し、NCIには影響しない。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-136",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Sales Calculation",
+      "stem": "For Year 1, Penn Corp reported sales of $5,000,000 and its wholly-owned subsidiary, Sayer Inc, reported sales of $2,000,000. During the year, Penn sold goods to Sayer for $600,000, of which Sayer resold 60% to outside customers by year-end. What amount should be reported as consolidated sales for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$7,000,000" },
+        { "label": "B", "text": "$6,760,000" },
+        { "label": "C", "text": "$5,000,000" },
+        { "label": "D", "text": "$6,400,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The entire $600,000 of intercompany sales is eliminated regardless of how much of the inventory has been resold, because no sale to a party outside the consolidated group occurred for that transfer. Consolidated sales = $5,000,000 + $2,000,000 − $600,000 = $6,400,000. $7,000,000 fails to eliminate the intercompany sales. $6,760,000 incorrectly eliminates only the unsold portion ($240,000). $5,000,000 incorrectly excludes the subsidiary's sales altogether. The portion remaining in inventory affects the unrealized profit deferral in cost of goods sold and inventory, not the amount of the sales elimination.",
+      "explanationJa": "ASC 810-10-45-1により、グループ内売上は再販売の割合にかかわらず全額消去する。連結売上高＝$5,000,000＋$2,000,000−$600,000＝$6,400,000。$7,000,000は内部売上を消去していない誤り。$6,760,000は未販売部分（$240,000）のみを消去した誤りで、売上消去額は再販割合に左右されない。$5,000,000は子会社の売上を除外した誤り。在庫に残る40%部分は売上消去額ではなく、未実現利益の繰延（売上原価・棚卸資産の調整）に影響する。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-137",
+      "topic": "Consolidations",
+      "subtopic": "Upstream Equipment Sale - NCI Attribution in Subsequent Year",
+      "stem": "On January 1, Year 1, Sard Inc (80%-owned by Pell Corp) sold equipment to Pell at a gain of $100,000. The equipment had a remaining useful life of 5 years with no salvage value, and straight-line depreciation is used. For Year 2, Sard reported separate net income of $500,000. What amount of Year 2 consolidated net income should be attributed to the noncontrolling interest?",
+      "choices": [
+        { "label": "A", "text": "$104,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$96,000" },
+        { "label": "D", "text": "$84,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Because the sale was upstream, the deferred gain and its subsequent realization are attributed to the subsidiary. The $100,000 gain is realized through reduced depreciation at $20,000 per year ($100,000 / 5). For Year 2, Sard's adjusted income = $500,000 + $20,000 = $520,000. NCI share = 20% × $520,000 = $104,000. $100,000 ignores the realization adjustment. $96,000 incorrectly subtracts the $20,000 instead of adding it, and $84,000 incorrectly deferred $80,000 of remaining gain against Year 2 income.",
+      "explanationJa": "アップストリーム取引のため、繰延べた利得とその後の実現は子会社に帰属させ、NCIにも配分する。$100,000の利得は残存5年にわたり年$20,000ずつ（減価償却費の減額を通じて）実現する。Year 2のSardの調整後利益＝$500,000＋$20,000＝$520,000。NCI帰属額＝20%×$520,000＝$104,000。$100,000は実現調整を無視した誤り。$96,000は$20,000を加算ではなく減算した誤り、$84,000は残存未実現利得$80,000をYear 2の利益から控除した誤りである。",
+      "references": ["ASC 810-10-45-18", "ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-138",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Bonds - Attribution of Constructive Gain",
+      "stem": "Sub Inc (75%-owned by Par Corp) has bonds outstanding. Par purchases all of Sub's bonds on the open market at an amount below their carrying value, resulting in a constructive gain on retirement in consolidation. For purposes of allocating consolidated net income, to which entity is the constructive gain attributed?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Entirely to the parent, because the parent made the open-market purchase"
+        },
+        { "label": "B", "text": "Equally to the parent and the subsidiary" },
+        {
+          "label": "C",
+          "text": "To the subsidiary as the issuer, so the noncontrolling interest shares in the gain"
+        },
+        {
+          "label": "D",
+          "text": "The gain is deferred and not attributed to either entity until the bonds mature"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The prevailing approach attributes the constructive retirement gain or loss to the issuing affiliate, because the economic event is the retirement of that affiliate's debt. Since the subsidiary issued the bonds, the gain is attributed to the subsidiary, and the noncontrolling interest receives its 25% share. Attributing the gain to the parent merely because it executed the purchase confuses the purchasing agent with the economic debtor. Splitting the gain equally has no conceptual basis, and the gain is recognized in consolidated income in the year of purchase, not deferred to maturity.",
+      "explanationJa": "社債の推定償還（constructive retirement）損益は、発行会社（issuer）に帰属させるのが一般的な処理である。経済的実態は発行会社の負債の償還だからである。本問では子会社が発行体のため、利得は子会社に帰属し、NCIも25%の持分相当を配分される。購入を実行したのが親会社だからといって親会社に帰属させるのは、購入主体と経済的債務者を混同した誤り。均等配分には概念的根拠がなく、また利得は購入年度の連結損益に認識され、満期まで繰延べられることはない。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-139",
+      "topic": "Consolidations",
+      "subtopic": "VIE - Insufficient Equity at Risk",
+      "stem": "Lender Corp is evaluating whether Devco LLC is a variable interest entity. Devco's total equity investment at risk is 2% of its total assets, and Devco cannot finance its activities without additional subordinated financial support from its variable interest holders. Which conclusion is most appropriate under ASC 810-10?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Devco is not a VIE because the VIE assessment is based solely on voting rights"
+        },
+        {
+          "label": "B",
+          "text": "Devco is a VIE because its equity investment at risk is insufficient to finance its activities without additional subordinated financial support"
+        },
+        {
+          "label": "C",
+          "text": "Devco is a VIE only if its equity is exactly zero"
+        },
+        {
+          "label": "D",
+          "text": "Devco is not a VIE as long as its equity holders have voting rights"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 810-10-15-14(a), an entity is a VIE if its total equity investment at risk is not sufficient to permit the entity to finance its activities without additional subordinated financial support. A 2% equity level combined with dependence on subordinated support indicates insufficiency (an equity investment of less than 10% of total assets is generally presumed insufficient absent contrary evidence). The VIE assessment is separate from the voting interest model, an entity does not need zero equity to be a VIE, and holding voting rights does not prevent VIE classification if the equity at risk is insufficient or lacks the characteristics of a controlling financial interest.",
+      "explanationJa": "ASC 810-10-15-14(a)により、リスク負担資本（equity investment at risk）が、追加的な劣後的財務支援なしに事業活動を賄うのに不十分な場合、その事業体はVIEに該当する。総資産の2%という資本水準と劣後支援への依存はその不十分性を示す（総資産の10%未満の資本は、反証がない限り不十分と推定される）。VIE判定は議決権モデルとは別個の判定であり、資本がゼロである必要はなく、議決権の存在もリスク負担資本が不十分であればVIE該当を妨げない。",
+      "references": ["ASC 810-10-15-14", "ASC 810-10-25-45"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-140",
+      "topic": "Consolidations",
+      "subtopic": "VIE - Reconsideration Events",
+      "stem": "Under ASC 810-10, the initial determination of whether an entity is a variable interest entity is reconsidered only upon the occurrence of specified events. Which of the following requires a reporting entity to reconsider whether a legal entity is a VIE?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A decline in market interest rates that affects the entity's borrowing costs"
+        },
+        {
+          "label": "B",
+          "text": "The mere passage of time since the initial assessment"
+        },
+        {
+          "label": "C",
+          "text": "A general downturn in the industry in which the entity operates"
+        },
+        {
+          "label": "D",
+          "text": "A change in the entity's governing documents that changes the characteristics of its equity investment at risk"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 810-10-35-4 lists specific reconsideration events, including changes to the entity's governing documents or contractual arrangements that change the characteristics or adequacy of the equity investment at risk, returns of equity to investors, additional equity issuances, and undertaking additional activities. General market movements such as interest rate changes, the passage of time, and industry downturns are not reconsideration events; the VIE status determination is not continuously reassessed for ordinary changes in economic conditions (in contrast to the primary beneficiary determination, which is assessed on an ongoing basis).",
+      "explanationJa": "ASC 810-10-35-4は、VIE該当性の再判定が必要となる事象（reconsideration events）を限定列挙しており、定款・契約の変更によるリスク負担資本の性質や十分性の変化、出資の払戻し、追加出資、追加的事業活動の開始などが含まれる。市場金利の変動、単なる時の経過、業界全体の景気後退は再判定事象に該当しない。VIE該当性の判定は通常の経済環境の変化では見直されない（一方、第一受益者の判定は継続的に見直される点と対比される）。",
+      "references": ["ASC 810-10-35-4"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-141",
+      "topic": "Consolidations",
+      "subtopic": "Redeemable Noncontrolling Interest Presentation",
+      "stem": "Pico Corp (an SEC registrant) owns 80% of Sub Inc. The noncontrolling shareholders hold a put option that allows them to require Pico to purchase their shares for cash at fair value, and the redemption is not solely within Pico's control. How should the noncontrolling interest be presented in Pico's consolidated balance sheet?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "In temporary (mezzanine) equity, outside of permanent equity"
+        },
+        {
+          "label": "B",
+          "text": "Within permanent equity, separate from the parent's equity"
+        },
+        {
+          "label": "C",
+          "text": "As a long-term liability measured at the redemption amount"
+        },
+        {
+          "label": "D",
+          "text": "Netted against the parent's retained earnings"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under SEC guidance codified in ASC 480-10-S99-3A, equity instruments that are redeemable for cash at the option of the holder, or upon events not solely within the issuer's control, must be classified outside of permanent equity in temporary (mezzanine) equity. A redeemable NCI subject to a holder put option meets this criterion. Presentation within permanent equity applies only to ordinary NCI without such redemption features. The instrument is not a liability because redemption is contingent on the holder's option rather than mandatory, and netting against retained earnings has no basis in GAAP.",
+      "explanationJa": "ASC 480-10-S99-3A（SECガイダンス）により、保有者の選択または発行者の支配外の事象により現金償還され得る持分商品は、恒久資本（permanent equity）の外側、すなわち中間区分（temporary/mezzanine equity）に表示しなければならない。NCI保有者がプット・オプションを持ち償還が親会社の支配外である本問のNCIはこれに該当する。恒久資本内での表示は償還条項のない通常のNCIの場合のみ。償還が義務的ではなく保有者の選択に依存するため負債にも該当せず、利益剰余金との相殺にはGAAP上の根拠がない。",
+      "references": ["ASC 480-10-S99-3A", "ASC 810-10-45-16"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-142",
+      "topic": "Consolidations",
+      "subtopic": "Contingent Liabilities Assumed in a Business Combination",
+      "stem": "In a business combination, the acquiree is a defendant in a pending lawsuit. The contingency arises from a contract, and its acquisition-date fair value is determinable. Under ASC 805, how should the acquirer account for this assumed contingency at the acquisition date?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize it only if payment is probable and reasonably estimable under ASC 450"
+        },
+        {
+          "label": "B",
+          "text": "Disclose it in the notes but recognize no liability until settlement"
+        },
+        {
+          "label": "C",
+          "text": "Recognize a liability at its acquisition-date fair value"
+        },
+        {
+          "label": "D",
+          "text": "Recognize a liability equal to the maximum possible loss"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 805-20-25-19 through 25-20, an acquirer recognizes an assumed contingency at its acquisition-date fair value if that fair value can be determined during the measurement period. The probable-and-reasonably-estimable threshold of ASC 450 applies in acquisition accounting only when the acquisition-date fair value cannot be determined; here it can be. Disclosure-only treatment understates the liabilities assumed, and the maximum possible loss is not a fair value measure because it ignores the probability of different outcomes.",
+      "explanationJa": "ASC 805-20-25-19〜25-20により、取得日の公正価値が測定期間内に算定可能な場合、取得企業は引き受けた偶発債務を取得日公正価値で負債計上する。ASC 450の「発生の可能性が高く合理的に見積可能」という認識基準が適用されるのは、公正価値が算定できない場合に限られるが、本問では算定可能である。注記開示のみでは引受負債が過小表示となり、最大損失額は各結果の発生確率を無視するため公正価値測定とはいえない。",
+      "references": ["ASC 805-20-25-19", "ASC 805-20-25-20"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-143",
+      "topic": "Consolidations",
+      "subtopic": "Reacquired Rights - Amortization",
+      "stem": "In acquiring Franchisee Corp, Granter Inc reacquired a franchise right it had previously granted to Franchisee. The reacquired right is recognized as an intangible asset at a fair value of $600,000. The remaining contractual term of the franchise agreement is 4 years, and market participants would expect renewals extending the right for 4 additional years. Over what period and at what annual amount should the reacquired right be amortized (straight-line)?",
+      "choices": [
+        { "label": "A", "text": "8 years at $75,000 per year" },
+        { "label": "B", "text": "4 years at $150,000 per year" },
+        {
+          "label": "C",
+          "text": "It is not amortized because it has an indefinite life"
+        },
+        { "label": "D", "text": "5 years at $120,000 per year" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-20-30-20 and 805-20-35-2, a reacquired right is measured and amortized over the remaining contractual term of the contract in which the right was granted, without regard to potential renewals. Amortization = $600,000 / 4 years = $150,000 per year. Including the 4 expected renewal years to reach an 8-year life is prohibited specifically for reacquired rights, even though renewals may be considered for other intangibles. The right has a finite contractual term, so indefinite-life treatment is inappropriate, and a 5-year period has no basis in the facts.",
+      "explanationJa": "ASC 805-20-30-20および805-20-35-2により、再取得した権利（reacquired right）は、更新可能性を考慮せず、当該権利を付与した契約の残存契約期間にわたって測定・償却する。年間償却額＝$600,000÷4年＝$150,000。他の無形資産では更新期間を耐用年数に含め得るのに対し、再取得権利については更新4年を加えた8年での償却は明示的に禁止されている。契約期間が有限であるため非償却（耐用年数不確定）の扱いも不適切であり、5年という期間には事実関係上の根拠がない。",
+      "references": ["ASC 805-20-30-20", "ASC 805-20-35-2"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-144",
+      "topic": "Consolidations",
+      "subtopic": "Acquiree as Lessor - Off-Market Operating Lease",
+      "stem": "In a business combination, the acquiree is the lessor under an operating lease of a building, and the lease terms are favorable to the acquiree relative to current market terms. Under ASC 805, how should the acquirer reflect the favorable lease terms?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a separate intangible asset for the favorable terms"
+        },
+        {
+          "label": "B",
+          "text": "Recognize a deferred credit amortized over the lease term"
+        },
+        { "label": "C", "text": "Adjust goodwill for the favorable terms" },
+        {
+          "label": "D",
+          "text": "Incorporate the lease terms into the fair value measurement of the underlying building; no separate intangible is recognized"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 805-20-25-12 and related guidance, when the acquiree is the lessor in an operating lease, the acquirer measures the underlying leased asset at fair value taking the lease terms into account; favorable or unfavorable terms are embedded in that measurement rather than recognized as a separate intangible asset or liability. A separate favorable-lease intangible is recognized only when the acquiree is the lessee (where it adjusts the right-of-use asset) under legacy guidance contexts, not for lessor operating leases. A deferred credit applies to unfavorable positions in other contexts, and goodwill is a residual that is not adjusted directly for lease terms.",
+      "explanationJa": "ASC 805-20-25-12等により、被取得企業がオペレーティング・リースの貸手（lessor）である場合、取得企業はリース条件を織り込んだ上で原資産（建物）を公正価値で測定する。有利・不利なリース条件はその測定額に内包され、別個の無形資産・負債としては認識しない。別個の有利リース無形資産が問題となるのは被取得企業が借手の場合（使用権資産の調整として反映）であり、貸手のオペレーティング・リースには適用されない。繰延貸方は別の文脈の処理であり、のれんは残余であってリース条件で直接調整されるものではない。",
+      "references": ["ASC 805-20-25-12", "ASC 805-20-30-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-145",
+      "topic": "Consolidations",
+      "subtopic": "Contract Liabilities Acquired (ASU 2021-08)",
+      "stem": "In a business combination, the acquiree has deferred revenue (a contract liability) from customer contracts with a carrying amount of $300,000 measured under ASC 606. The estimated fair value of the obligation, based on the cost to fulfill plus a market margin, is $220,000. Under ASC 805 as amended by ASU 2021-08, at what amount should the acquirer recognize the contract liability at the acquisition date?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$220,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$260,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2021-08 (codified in ASC 805-20-30-28) requires the acquirer to recognize and measure contract assets and contract liabilities from contracts with customers in accordance with ASC 606, rather than at fair value. The acquirer therefore records the contract liability at $300,000, the amount determined under ASC 606. $220,000 reflects the superseded fair value approach, which previously caused acquired deferred revenue to be written down (the so-called haircut). Recognizing nothing ignores the remaining performance obligations, and $260,000 is merely an average with no basis in the guidance.",
+      "explanationJa": "ASU 2021-08（ASC 805-20-30-28）により、顧客との契約から生じる契約資産・契約負債は公正価値ではなくASC 606に従って認識・測定する。したがって契約負債はASC 606に基づく金額$300,000で計上する。$220,000は改正前の公正価値アプローチ（取得した繰延収益が切り下げられる、いわゆるヘアカット）であり現行基準では誤り。未履行の履行義務が残るため認識ゼロは不適切で、$260,000は単なる平均値であり基準上の根拠がない。",
+      "references": ["ASC 805-20-30-28", "ASU 2021-08"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-146",
+      "topic": "Consolidations",
+      "subtopic": "Acquired NOL Carryforward - Effect on Goodwill",
+      "stem": "Quill Corp pays $5,000,000 for 100% of Reed Inc. The fair value of Reed's identifiable net assets, before considering income tax attributes, is $4,200,000. Reed has a net operating loss carryforward for which a deferred tax asset of $300,000 is recognized at the acquisition date (no valuation allowance is needed). What amount of goodwill should Quill recognize?",
+      "choices": [
+        { "label": "A", "text": "$800,000" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$500,000" },
+        { "label": "D", "text": "$1,100,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 805-740, deferred tax assets of the acquiree, including those for NOL carryforwards expected to be realized, are recognized as part of the identifiable net assets acquired. Identifiable net assets = $4,200,000 + $300,000 = $4,500,000. Goodwill = $5,000,000 − $4,500,000 = $500,000. $800,000 ignores the deferred tax asset. $300,000 is the DTA itself, not goodwill, and $1,100,000 incorrectly subtracts the DTA from net assets instead of adding it.",
+      "explanationJa": "ASC 805-740により、実現が見込まれる被取得企業の繰越欠損金に係る繰延税金資産は、取得した識別可能純資産の一部として認識する。識別可能純資産＝$4,200,000＋$300,000＝$4,500,000。のれん＝$5,000,000−$4,500,000＝$500,000。$800,000は繰延税金資産を無視した誤り。$300,000はDTAそのものであってのれんではなく、$1,100,000はDTAを加算ではなく減算した誤りである。",
+      "references": ["ASC 805-740-25-2", "ASC 805-30-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-147",
+      "topic": "Consolidations",
+      "subtopic": "Common Control Transactions - Measurement",
+      "stem": "Holdco owns 100% of both Alpha Corp and Beta Corp. Holdco directs Alpha to transfer a manufacturing division to Beta. In Holdco's consolidated records, the division's net assets have a carrying amount of $400,000; their fair value is $600,000. At what amount should Beta record the net assets received?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$400,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$500,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A transfer of net assets between entities under common control is not a business combination under ASC 805. Per ASC 805-50-30-5, the receiving entity records the net assets at the carrying amounts in the financial statements of the transferring entity (or the common parent), here $400,000. No new basis of accounting is established and no gain is recognized because there has been no change in ultimate ownership. $600,000 incorrectly applies acquisition-method fair value measurement, $200,000 is the unrecognized appreciation, and $500,000 is an unsupported average.",
+      "explanationJa": "共通支配下（common control）の企業間における純資産の移転はASC 805上の企業結合に該当しない。ASC 805-50-30-5により、受入企業は移転企業（または共通親会社）の帳簿価額$400,000で純資産を計上する。最終的な所有関係に変化がないため、新たな会計基礎は生じず利得も認識されない。$600,000は取得法の公正価値測定を誤って適用したもの、$200,000は未認識の評価差額、$500,000は根拠のない平均値である。",
+      "references": ["ASC 805-50-30-5", "ASC 805-50-15-6"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-148",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Total Stockholders' Equity",
+      "stem": "Pomo Corp owns 80% of Selt Inc and accounts for the investment using the equity method on its separate books. At December 31, Pomo's separate stockholders' equity is $8,000,000 and Selt's total stockholders' equity is $3,000,000. There is no acquisition differential and no intercompany profit. What is total consolidated stockholders' equity?",
+      "choices": [
+        { "label": "A", "text": "$8,000,000" },
+        { "label": "B", "text": "$11,000,000" },
+        { "label": "C", "text": "$10,400,000" },
+        { "label": "D", "text": "$8,600,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under the equity method, the parent's separate equity already includes its 80% share of the subsidiary's equity, so consolidated controlling interest equals the parent's equity of $8,000,000. Total consolidated equity adds the noncontrolling interest: 20% × $3,000,000 = $600,000. Total = $8,000,000 + $600,000 = $8,600,000. $8,000,000 omits the NCI. $11,000,000 double counts by adding the subsidiary's full equity to the parent's equity-method balance, and $10,400,000 double counts the parent's 80% share.",
+      "explanationJa": "持分法を適用している親会社の単体資本$8,000,000には、子会社資本に対する80%持分がすでに含まれているため、連結上の親会社株主持分は$8,000,000となる。連結資本合計はこれにNCI（20%×$3,000,000＝$600,000）を加えた$8,600,000である。$8,000,000はNCIを欠落させた誤り。$11,000,000は子会社資本全額を持分法適用後の親会社資本に加えた二重計上、$10,400,000は親会社の80%持分を二重計上した誤りである。",
+      "references": ["ASC 810-10-45-15", "ASC 810-10-45-16"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-149",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Common Stock Balance",
+      "stem": "Pine Corp owns 90% of Spruce Inc. Pine's common stock is $1,000,000 and Spruce's common stock is $400,000. What amount of common stock should be reported in the consolidated balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$1,000,000" },
+        { "label": "B", "text": "$1,400,000" },
+        { "label": "C", "text": "$1,360,000" },
+        { "label": "D", "text": "$1,040,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Consolidated financial statements present the equity of the parent's shareholders plus a single NCI amount. The subsidiary's common stock is eliminated in full against the investment account (and NCI) in the consolidation working papers, so consolidated common stock is the parent's $1,000,000 only. $1,400,000 fails to eliminate the subsidiary's stock. $1,360,000 incorrectly eliminates only the parent's 90% share, and $1,040,000 incorrectly adds the NCI's 10% of the subsidiary's stock as common stock rather than within the separate NCI component.",
+      "explanationJa": "連結財務諸表の資本金は親会社株主のものを表示し、子会社の資本金は連結精算表上、投資勘定（およびNCI）と相殺して全額消去される。したがって連結上の資本金は親会社の$1,000,000のみ。$1,400,000は子会社の資本金を消去していない誤り。$1,360,000は親会社持分90%のみを消去した誤り、$1,040,000は子会社資本金の10%（NCI相当）を、独立したNCI区分ではなく資本金に加えた誤りである。",
+      "references": ["ASC 810-10-45-15"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-150",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Receivables and Payables Elimination",
+      "stem": "At December 31, Plat Corp reports accounts receivable of $900,000, which includes $150,000 due from its wholly-owned subsidiary, Sill Inc. Sill reports accounts receivable of $400,000, which includes $50,000 due from Plat. What amount of accounts receivable should be reported in the consolidated balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$1,300,000" },
+        { "label": "B", "text": "$1,150,000" },
+        { "label": "C", "text": "$1,100,000" },
+        { "label": "D", "text": "$1,250,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "All intercompany receivables and payables are eliminated in consolidation because the consolidated entity cannot owe money to itself. Consolidated accounts receivable = $900,000 + $400,000 − $150,000 − $50,000 = $1,100,000. $1,300,000 fails to eliminate any intercompany balances. $1,150,000 eliminates only the $150,000 due from Sill, and $1,250,000 eliminates only the $50,000 due from Plat.",
+      "explanationJa": "ASC 810-10-45-1により、グループ内の債権債務は連結上すべて消去する（連結実体が自分自身に対して債権を持つことはできないため）。連結売掛金＝$900,000＋$400,000−$150,000−$50,000＝$1,100,000。$1,300,000は内部債権を一切消去していない誤り。$1,150,000はSillに対する$150,000のみ、$1,250,000はPlatに対する$50,000のみを消去した誤りである。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-151",
+      "topic": "Consolidations",
+      "subtopic": "NCI Attribution with Excess Fair Value Amortization",
+      "stem": "Pell Corp owns 75% of Sond Inc. At acquisition, the fair value of Sond's equipment exceeded its book value by $200,000; the equipment had a remaining useful life of 10 years (straight-line). For the current year, Sond reported separate net income of $400,000. What amount of consolidated net income should be attributed to the noncontrolling interest?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$95,000" },
+        { "label": "C", "text": "$90,000" },
+        { "label": "D", "text": "$105,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The NCI shares in the subsidiary's income adjusted for amortization of the acquisition-date fair value differential. Annual excess amortization = $200,000 / 10 = $20,000. Adjusted subsidiary income = $400,000 − $20,000 = $380,000. NCI share = 25% × $380,000 = $95,000. $100,000 ignores the excess amortization. $90,000 incorrectly doubles the amortization to $40,000, and $105,000 incorrectly adds the amortization to income instead of subtracting it.",
+      "explanationJa": "NCIへの利益配分は、取得日の公正価値差額の償却を反映した調整後の子会社利益に基づいて行う。超過額の年間償却＝$200,000÷10年＝$20,000。調整後利益＝$400,000−$20,000＝$380,000。NCI帰属額＝25%×$380,000＝$95,000。$100,000は超過償却を無視した誤り。$90,000は償却額を$40,000と二倍にした誤り、$105,000は償却額を減算ではなく加算した誤りである。",
+      "references": ["ASC 810-10-45-18", "ASC 805-20-30-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-152",
+      "topic": "Consolidations",
+      "subtopic": "Investment Elimination Entry - Goodwill Component",
+      "stem": "Parr Corp paid $1,500,000 for 100% of Sutt Inc on January 1, Year 1. On that date, Sutt's stockholders' equity consisted of common stock of $400,000, additional paid-in capital of $200,000, and retained earnings of $500,000. The fair value of Sutt's land exceeded book value by $150,000, and equipment exceeded book value by $50,000. In the acquisition-date consolidation working paper, what amount of goodwill is included in the investment elimination?",
+      "choices": [
+        { "label": "A", "text": "$400,000" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$150,000" },
+        { "label": "D", "text": "$200,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sutt's book equity = $400,000 + $200,000 + $500,000 = $1,100,000. Fair value adjustments total $200,000 ($150,000 land + $50,000 equipment), so identifiable net assets at fair value = $1,300,000. Goodwill = $1,500,000 − $1,300,000 = $200,000. $400,000 compares the price only to book equity, ignoring the fair value adjustments. $250,000 reflects only the land adjustment, and $150,000 reflects only the land step-up amount itself rather than the residual goodwill.",
+      "explanationJa": "Suttの簿価資本＝$400,000＋$200,000＋$500,000＝$1,100,000。公正価値調整は合計$200,000（土地$150,000＋設備$50,000）であり、識別可能純資産の公正価値＝$1,300,000。のれん＝$1,500,000−$1,300,000＝$200,000。$400,000は公正価値調整を無視して簿価資本とのみ比較した誤り。$250,000は土地の調整のみ反映した誤り、$150,000は残余としてののれんではなく土地の評価増額そのものである。",
+      "references": ["ASC 805-30-30-1", "ASC 810-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-153",
+      "topic": "Consolidations",
+      "subtopic": "Parent's Internal Accounting Method and Consolidated Amounts",
+      "stem": "Park Corp owns 100% of Sory Inc. Park may account for its investment in Sory on its separate books using either the cost method or the equity method. Which statement best describes the effect of this choice on the consolidated financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Consolidated amounts are identical under either method; only the working paper eliminations differ"
+        },
+        {
+          "label": "B",
+          "text": "Consolidated net income is higher when the equity method is used"
+        },
+        {
+          "label": "C",
+          "text": "Consolidated retained earnings are higher when the cost method is used"
+        },
+        {
+          "label": "D",
+          "text": "The equity method is required on the parent's books whenever the parent consolidates"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The parent's internal bookkeeping method for the investment is a matter of convenience: the investment account, intercompany income, and dividends are all eliminated in consolidation, so consolidated net income, retained earnings, and all other consolidated amounts are identical regardless of whether the cost or equity method is used internally. Only the form of the working paper elimination entries differs. Neither income nor retained earnings differs in the final consolidated statements, and GAAP does not mandate a particular internal method for a subsidiary that will be consolidated.",
+      "explanationJa": "親会社が単体帳簿で投資勘定に用いる方法（原価法・持分法）は内部的な便宜の問題にすぎない。連結上は投資勘定、グループ内損益、配当がすべて消去されるため、どちらの方法でも連結純利益・連結利益剰余金を含む連結数値は同一になる。異なるのは連結精算表上の消去仕訳の形だけである。連結対象子会社について、GAAPは親会社の単体帳簿上の処理方法を特定の方法に強制していない。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-154",
+      "topic": "Consolidations",
+      "subtopic": "Deconsolidation with NCI - Gain Calculation",
+      "stem": "Prim Corp owns 80% of Sage Inc. The carrying amount of Sage's net assets in the consolidated financial statements is $2,500,000, and the carrying amount of the noncontrolling interest is $480,000. Prim sells its entire 80% interest to an unrelated party for $2,400,000 cash and retains no interest. What amount of gain or loss should Prim recognize on deconsolidation?",
+      "choices": [
+        { "label": "A", "text": "$400,000 gain" },
+        { "label": "B", "text": "$100,000 loss" },
+        { "label": "C", "text": "$380,000 gain" },
+        { "label": "D", "text": "$880,000 gain" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 810-10-40-5, the deconsolidation gain = (fair value of consideration received + fair value of any retained interest + carrying amount of NCI) − carrying amount of the subsidiary's net assets = ($2,400,000 + $0 + $480,000) − $2,500,000 = $380,000. The $400,000 amount incorrectly compares the proceeds with only 80% of the net assets ($2,000,000) without using the prescribed formula. A $100,000 loss incorrectly compares proceeds with 100% of net assets while ignoring the derecognition of the NCI, and $880,000 omits the net assets' carrying amount reduction for the NCI improperly (adding NCI but deducting only $2,000,000).",
+      "explanationJa": "ASC 810-10-40-5により、支配喪失時の損益＝（受取対価の公正価値＋残存持分の公正価値＋NCIの帳簿価額）−子会社純資産の帳簿価額＝($2,400,000＋$0＋$480,000)−$2,500,000＝$380,000の利得。$400,000は所定の算式を使わず売却対価と純資産の80%（$2,000,000）のみを比較した誤り。$100,000の損失はNCIの認識中止を無視して対価と純資産全額を比較した誤り、$880,000はNCIを加算しつつ純資産を$2,000,000しか控除しない誤った組合せである。",
+      "references": ["ASC 810-10-40-5"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-155",
+      "topic": "Consolidations",
+      "subtopic": "Statement of Cash Flows - Stock Issued as Consideration",
+      "stem": "Pyle Corp acquires 100% of Trent Inc by issuing its own common stock directly to Trent's shareholders. No cash is paid. How should this acquisition be reflected in Pyle's consolidated statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a cash outflow from investing activities equal to the fair value of the stock issued"
+        },
+        {
+          "label": "B",
+          "text": "As a noncash investing and financing activity disclosed in a supplemental schedule or notes"
+        },
+        {
+          "label": "C",
+          "text": "As a cash inflow from financing activities and an outflow from investing activities of equal amounts"
+        },
+        {
+          "label": "D",
+          "text": "It is omitted from the statement of cash flows and all related disclosures"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 230-10-50-3, transactions that affect recognized assets or liabilities but involve no cash receipts or payments are excluded from the body of the statement of cash flows and disclosed as noncash investing and financing activities. Issuing stock to acquire a business is the classic example. Reporting a cash outflow misstates cash flows because no cash was paid. Grossing up equal inflows and outflows fabricates cash movements that did not occur, and omitting the transaction entirely violates the disclosure requirement. Any cash acquired with Trent would appear as a cash inflow in investing activities, but the stock consideration itself is noncash.",
+      "explanationJa": "ASC 230-10-50-3により、認識された資産・負債に影響するが現金収支を伴わない取引は、キャッシュ・フロー計算書の本体から除外し、非資金投資・財務活動として補足スケジュールまたは注記で開示する。株式発行による企業買収はその典型例である。現金を支払っていない以上、投資活動の現金支出として表示するのは誤り。同額の収入・支出を両建て表示するのは実在しない資金移動の捏造であり、開示自体を省略することも開示要求に違反する。なお取得したTrentの保有現金があれば投資活動の現金収入として表示される。",
+      "references": ["ASC 230-10-50-3", "ASC 230-10-50-4"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-156",
+      "topic": "Consolidations",
+      "subtopic": "Total Elimination of Intercompany Profit",
+      "stem": "Sub Inc is 60%-owned by Par Corp. During the year, Sub sold inventory to Par at a profit, and a portion remains in Par's ending inventory. What percentage of the unrealized intercompany profit in ending inventory should be eliminated in consolidation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "60%, corresponding to the parent's ownership percentage"
+        },
+        {
+          "label": "B",
+          "text": "40%, corresponding to the noncontrolling interest's percentage"
+        },
+        { "label": "C", "text": "None, because the sale was upstream" },
+        {
+          "label": "D",
+          "text": "100%, regardless of the parent's ownership percentage"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 810-10-45-1 requires the elimination of intercompany profit in its entirety; the existence of a noncontrolling interest does not justify partial elimination. The full unrealized profit is removed from consolidated inventory and income. For an upstream sale, the effect of the elimination is then shared between the controlling and noncontrolling interests in the income attribution (60%/40%), but the amount eliminated is still 100%. Eliminating only 60% or 40% confuses the attribution step with the elimination step, and eliminating nothing is contrary to the basic consolidation principle.",
+      "explanationJa": "ASC 810-10-45-1により、グループ内未実現利益は全額（100%）消去する。NCIの存在は部分消去の根拠にならない。アップストリーム取引の場合、消去の影響は利益帰属の段階で支配株主とNCIに60%/40%で配分されるが、消去額自体はあくまで100%である。60%や40%のみの消去は「消去」と「帰属配分」の手続を混同した誤りであり、消去を行わないことは連結の基本原則に反する。",
+      "references": ["ASC 810-10-45-1", "ASC 810-10-45-18"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-157",
+      "topic": "Consolidations",
+      "subtopic": "Acquirer Identification - Newco Formation",
+      "stem": "Two operating companies, Delta Corp and Echo Corp, combine their businesses. A new entity, Newco, is formed solely to issue its equity shares to the shareholders of both Delta and Echo to effect the combination. Newco has no other activities. Under ASC 805, which entity should be identified as the acquirer?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "One of the combining entities (Delta or Echo) that existed before the combination"
+        },
+        {
+          "label": "B",
+          "text": "Newco, because it is the legal parent that issued the shares"
+        },
+        {
+          "label": "C",
+          "text": "Neither; the combination is accounted for as a pooling of interests"
+        },
+        {
+          "label": "D",
+          "text": "Both Delta and Echo are treated as co-acquirers"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805-10-55-15, a new entity formed solely to issue equity interests to effect a business combination cannot be the acquirer; one of the combining entities that existed before the combination must be identified as the acquirer using the guidance on relative voting rights, board composition, and other factors. Newco's status as legal parent does not make it the accounting acquirer because it is merely a vehicle. Pooling of interests was eliminated from US GAAP, and ASC 805 requires a single acquirer to be identified for every business combination.",
+      "explanationJa": "ASC 805-10-55-15により、企業結合を実行する目的のみで設立され株式を発行する新設企業（Newco）は取得企業になり得ない。結合前から存在する結合当事企業（DeltaまたはEcho）のいずれかを、議決権比率・取締役会構成等の要因に基づき取得企業として識別しなければならない。Newcoが法律上の親会社であっても、単なる器（vehicle）であるため会計上の取得企業にはならない。持分プーリング法は米国GAAPから廃止されており、ASC 805はすべての企業結合について単一の取得企業の識別を要求する。",
+      "references": ["ASC 805-10-55-15"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-158",
+      "topic": "Consolidations",
+      "subtopic": "Adjustments After the Measurement Period Ends",
+      "stem": "Fifteen months after acquiring Tarn Inc, and after the measurement period has closed, Quest Corp obtains information showing that the acquisition-date fair value assigned to an acquired customer list was overstated due to a computational mistake made at the acquisition date. How should Quest account for this?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Adjust goodwill prospectively in the current period as a measurement period adjustment"
+        },
+        {
+          "label": "B",
+          "text": "Recognize the entire effect in current period earnings as a change in estimate"
+        },
+        {
+          "label": "C",
+          "text": "Correct the amounts as an error correction in accordance with ASC 250, restating prior periods as applicable"
+        },
+        {
+          "label": "D",
+          "text": "No adjustment is permitted once the measurement period has ended"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 805-10-25-19, after the measurement period ends, the acquirer revises the accounting for a business combination only to correct an error in accordance with ASC 250. A computational mistake existing at the acquisition date is an error, so prior period amounts are restated as required by ASC 250-10-45-23. Measurement period adjustments to goodwill are available only within the measurement period (maximum one year). Change-in-estimate treatment applies to new information about future conditions, not to mistakes that existed at the acquisition date, and GAAP does not prohibit correcting errors merely because the measurement period has closed.",
+      "explanationJa": "ASC 805-10-25-19により、測定期間終了後の企業結合会計の修正は、ASC 250に従った誤謬の訂正に限られる。取得日時点で存在した計算ミスは誤謬に該当するため、ASC 250-10-45-23に従い過年度の財務諸表を修正再表示する。のれんを調整する測定期間調整が認められるのは測定期間内（最長1年）のみ。会計上の見積りの変更は将来の状況に関する新情報に適用されるものであり、取得日に存在したミスには適用されない。また測定期間が終了したからといって誤謬の訂正が禁止されるわけではない。",
+      "references": ["ASC 805-10-25-19", "ASC 250-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-159",
+      "topic": "Consolidations",
+      "subtopic": "Acquirer's Restructuring Plans - Not Assumed Liabilities",
+      "stem": "In connection with its acquisition of Sled Inc, Plow Corp plans to close two of Sled's factories and terminate certain Sled employees after the acquisition. Sled has no obligation for these actions at the acquisition date; the plan is Plow's. How should the expected restructuring costs be accounted for?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognized as a liability assumed in the business combination, increasing goodwill"
+        },
+        {
+          "label": "B",
+          "text": "Recognized as post-combination expenses when the applicable recognition criteria are met"
+        },
+        { "label": "C", "text": "Deducted from the consideration transferred" },
+        {
+          "label": "D",
+          "text": "Recognized as a direct reduction of retained earnings at the acquisition date"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805-20-25-2, the acquirer recognizes only the liabilities the acquiree has at the acquisition date. Costs the acquirer expects to incur to exit acquiree activities or terminate employees under the acquirer's own plan are not liabilities of the acquiree at that date; they are recognized as post-combination expenses when the ASC 420 (or other applicable) criteria are met. Recording them as assumed liabilities would improperly inflate goodwill and shield future earnings from the costs. They are not an adjustment of consideration, and charging retained earnings directly bypasses the income statement without basis.",
+      "explanationJa": "ASC 805-20-25-2により、取得企業が認識するのは取得日時点で被取得企業が負っている負債のみである。取得企業自身の計画に基づく工場閉鎖や従業員解雇の見込費用は、取得日時点の被取得企業の負債ではないため、結合後にASC 420等の認識基準を満たした時点で費用として認識する。引受負債として計上すると、のれんが過大になり将来の費用が損益計算書を迂回してしまう。対価の調整でもなく、利益剰余金への直接賦課にも根拠がない。",
+      "references": ["ASC 805-20-25-2", "ASC 420-10-25"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-160",
+      "topic": "Consolidations",
+      "subtopic": "Defensive Intangible Assets",
+      "stem": "In a business combination, Brand Corp acquires a competing trade name that it does not intend to use; it acquired the name to prevent others from using it. Under ASC 350-30, how should Brand account for this defensive intangible asset?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Expense it immediately because it will not be actively used"
+        },
+        {
+          "label": "B",
+          "text": "Subsume it into goodwill because it has no direct cash flows"
+        },
+        {
+          "label": "C",
+          "text": "Recognize it at fair value with an indefinite life not subject to amortization"
+        },
+        {
+          "label": "D",
+          "text": "Recognize it at fair value and amortize it over the period during which it contributes to cash flows by being withheld from the market"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 350-30-35-5A, a defensive intangible asset is recognized at fair value and assigned a useful life that reflects the period over which the asset contributes directly or indirectly to the entity's cash flows, which for a defensive asset is the period during which withholding it from competitors provides benefit. The guidance states it would be rare for such an asset to have an indefinite life. Immediate expensing is prohibited because the asset provides economic benefit through its defensive use, and it is an identifiable (separable or contractual) asset that cannot be subsumed into goodwill.",
+      "explanationJa": "ASC 350-30-35-5Aにより、防御的無形資産（defensive intangible asset）は公正価値で認識し、競合他社の使用を妨げることで直接・間接にキャッシュ・フローに貢献する期間を耐用年数として償却する。基準上、防御的資産の耐用年数が不確定（indefinite）となるのは稀であるとされている。防御的使用を通じて経済的便益をもたらすため即時費用化は認められず、識別可能（分離可能または契約上の権利）な資産であるためのれんへの包含も認められない。",
+      "references": ["ASC 350-30-35-5A", "ASC 805-20-25-10"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-161",
+      "topic": "Consolidations",
+      "subtopic": "Income Statement Presentation of NCI",
+      "stem": "Under ASC 810, how should net income be presented in a consolidated income statement when a subsidiary has a noncontrolling interest?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Consolidated net income includes amounts attributable to both the parent and the NCI, with the attribution to each presented separately"
+        },
+        {
+          "label": "B",
+          "text": "The NCI's share of income is presented as an expense in arriving at consolidated net income"
+        },
+        {
+          "label": "C",
+          "text": "Consolidated net income includes only the parent's share, and the NCI's share is omitted from the income statement"
+        },
+        {
+          "label": "D",
+          "text": "The NCI's share is reported in other comprehensive income"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 810-10-50-1A and 810-10-45-19 through 45-20, consolidated net income is the total for the consolidated entity, including amounts attributable to both the parent and the noncontrolling interest, and the amounts attributable to each must be presented separately on the face of the income statement. Presenting the NCI share as an expense reflects the superseded pre-FAS 160 practice. Omitting the NCI share misstates consolidated net income, and the NCI's share of net income is not an item of other comprehensive income.",
+      "explanationJa": "ASC 810-10-50-1Aおよび810-10-45-19〜45-20により、連結純利益は親会社帰属分とNCI帰属分の両方を含む連結実体全体の利益として表示し、それぞれへの帰属額を損益計算書の本体で区分表示する。NCI帰属分を費用として表示するのはFAS 160以前の廃止された実務である。NCI帰属分の省略は連結純利益の誤表示となり、NCIの利益持分はその他の包括利益の項目でもない。",
+      "references": ["ASC 810-10-50-1A", "ASC 810-10-45-20"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-162",
+      "topic": "Consolidations",
+      "subtopic": "Upstream Land Sale - Realization on Sale to Outsider",
+      "stem": "In Year 1, Slag Inc (90%-owned by Pact Corp) sold land to Pact for $300,000. Slag's cost of the land was $220,000. In Year 3, Pact sold the land to an unrelated third party for $350,000. What amount of gain on the land should be recognized in the Year 3 consolidated income statement?",
+      "choices": [
+        { "label": "A", "text": "$50,000" },
+        { "label": "B", "text": "$80,000" },
+        { "label": "C", "text": "$130,000" },
+        { "label": "D", "text": "$350,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "From the consolidated perspective, the land's cost is Slag's original $220,000; the $80,000 intercompany gain was deferred in Years 1 and 2. When the land is sold outside the group in Year 3, the entire gain is realized: $350,000 − $220,000 = $130,000 (the $80,000 previously deferred gain plus Pact's $50,000 gain on its books). $50,000 is only the gain recorded on Pact's separate books, ignoring the realization of the deferred gain. $80,000 is only the previously deferred intercompany gain, and $350,000 is the sales proceeds rather than the gain.",
+      "explanationJa": "連結の観点では土地の取得原価はSlagの当初原価$220,000であり、グループ内利得$80,000はYear 1〜2で繰延べられていた。Year 3に土地がグループ外へ売却された時点で利得全体が実現する：$350,000−$220,000＝$130,000（繰延利得$80,000＋Pactの単体帳簿上の利得$50,000）。$50,000はPact単体の利得のみで繰延利得の実現を無視した誤り。$80,000は繰延利得部分のみ、$350,000は利得ではなく売却代金である。なおアップストリーム取引のため、実現した$80,000部分はNCIにも10%配分される。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-163",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Depreciation After Fair Value Step-Up",
+      "stem": "Pram Corp acquired 100% of Sten Inc on January 1, Year 1. On that date, Sten's equipment had a book value of $500,000 and a fair value of $600,000, with a remaining useful life of 5 years and no salvage value (straight-line). Sten recorded depreciation of $100,000 on the equipment in its separate Year 1 statements. What amount of depreciation expense related to this equipment should appear in the Year 1 consolidated income statement?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$120,000" },
+        { "label": "C", "text": "$20,000" },
+        { "label": "D", "text": "$220,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In consolidation, the equipment is measured at its acquisition-date fair value of $600,000, so consolidated depreciation = $600,000 / 5 = $120,000 per year. This equals Sten's recorded $100,000 plus $20,000 of excess fair value amortization ($100,000 step-up / 5 years). $100,000 reflects only the book-value depreciation without the step-up. $20,000 is only the incremental amortization, not the total, and $220,000 incorrectly adds the full subsidiary depreciation to the consolidated total, double counting.",
+      "explanationJa": "連結上、設備は取得日公正価値$600,000で測定されるため、連結減価償却費＝$600,000÷5年＝$120,000。これはSten計上額$100,000に評価増額$100,000の償却分$20,000（$100,000÷5年）を加えた金額に等しい。$100,000は評価増を反映しない簿価ベースの償却のみ。$20,000は増分償却のみで総額ではなく、$220,000は子会社計上額を連結額にさらに加算した二重計上の誤りである。",
+      "references": ["ASC 805-20-30-1", "ASC 810-10-45-1"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-164",
+      "topic": "Consolidations",
+      "subtopic": "Consolidated Gross Profit with Downstream Inventory Profit",
+      "stem": "For Year 1, Prine Corp reported sales of $3,000,000 and cost of goods sold of $1,800,000. Its wholly-owned subsidiary, Slate Inc, reported sales of $1,000,000 and cost of goods sold of $600,000. During the year, Prine sold goods to Slate for $200,000 that cost Prine $140,000; 50% of these goods remain in Slate's ending inventory. What is consolidated gross profit for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$1,600,000" },
+        { "label": "B", "text": "$1,540,000" },
+        { "label": "C", "text": "$1,400,000" },
+        { "label": "D", "text": "$1,570,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Combined gross profit = ($3,000,000 − $1,800,000) + ($1,000,000 − $600,000) = $1,600,000. The intercompany profit on the goods is $200,000 − $140,000 = $60,000, of which 50% ($30,000) remains unrealized in ending inventory and must be deferred. Consolidated gross profit = $1,600,000 − $30,000 = $1,570,000. The sales/COGS elimination of the $200,000 transfer itself has no net effect on gross profit. $1,600,000 ignores the unrealized profit deferral. $1,540,000 defers the full $60,000 even though half the goods were resold, and $1,400,000 incorrectly reduces gross profit by the entire $200,000 intercompany sales amount.",
+      "explanationJa": "単純合算の売上総利益＝($3,000,000−$1,800,000)＋($1,000,000−$600,000)＝$1,600,000。グループ内利益は$200,000−$140,000＝$60,000で、その50%（$30,000）が期末在庫に未実現のまま残るため繰延べる。連結売上総利益＝$1,600,000−$30,000＝$1,570,000。$200,000の内部売上高と売上原価の相殺消去自体は売上総利益に正味の影響を与えない。$1,600,000は未実現利益の繰延を無視した誤り。$1,540,000は半分が再販済みであるのに$60,000全額を繰延べた誤り、$1,400,000は内部売上$200,000全額を売上総利益から控除した誤りである。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "intermediate",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-165",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Sale at a Loss",
+      "stem": "Parent Corp sold inventory to its wholly-owned subsidiary at a price below Parent's cost, recording a loss. The inventory remains in the subsidiary's ending inventory, and there is no indication that the inventory's market value has declined below Parent's original cost. How should the intercompany loss be treated in consolidation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The loss is eliminated, restoring the inventory to its original cost to the consolidated entity"
+        },
+        {
+          "label": "B",
+          "text": "The loss is recognized because losses, unlike gains, are never deferred in consolidation"
+        },
+        {
+          "label": "C",
+          "text": "The loss is recognized because conservatism requires immediate loss recognition"
+        },
+        {
+          "label": "D",
+          "text": "Half the loss is eliminated and half is recognized"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Intercompany losses are eliminated in consolidation just as intercompany gains are, because no transaction with an outside party has occurred. The inventory is restored to its cost to the consolidated entity. An exception arises when the transaction price reflects an actual impairment in the value of the asset; in that case the loss may indicate a write-down that should be recognized, but the facts state there is no market decline below original cost. The notion that losses are never deferred is contrary to ASC 810-10-45-1, conservatism does not override the elimination requirement when no impairment exists, and a 50% split has no basis.",
+      "explanationJa": "グループ内取引の損失も利得と同様に連結上消去する。グループ外部との取引が生じていないためである。棚卸資産は連結実体にとっての原価に戻される。例外は取引価格が資産の実際の減損を反映している場合で、その場合は評価減として損失認識が必要となり得るが、本問では市場価値が当初原価を下回る兆候はないとされている。「損失は繰延べない」という考えはASC 810-10-45-1に反し、減損がない以上保守主義も消去要求に優先せず、50%ずつの折衷処理にも根拠がない。",
+      "references": ["ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-166",
+      "topic": "Consolidations",
+      "subtopic": "Consolidation of Subsidiary with Dissimilar Operations",
+      "stem": "Industrial Corp, a manufacturer, owns 100% of Finance Sub, a consumer finance company whose operations and financial statement structure differ significantly from Industrial's. Under ASC 810, how should Industrial report Finance Sub?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Use the equity method because the operations are nonhomogeneous"
+        },
+        {
+          "label": "B",
+          "text": "Present Finance Sub's statements separately and not consolidate"
+        },
+        {
+          "label": "C",
+          "text": "Consolidate Finance Sub, because dissimilar operations do not exempt a controlled subsidiary from consolidation"
+        },
+        {
+          "label": "D",
+          "text": "Report the investment at fair value with changes in earnings"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 810-10-15-10 requires consolidation of all entities in which a parent has a controlling financial interest; there is no exception for subsidiaries with operations dissimilar from the parent's (the former nonhomogeneity exception was eliminated by FAS 94). The equity method and separate presentation are not substitutes for consolidation when control exists, and fair value reporting applies to investments where consolidation and the equity method do not, such as certain investment company situations, not to a controlled operating subsidiary.",
+      "explanationJa": "ASC 810-10-15-10により、支配的財務持分を有するすべての企業は連結しなければならず、親会社と事業内容が異質（nonhomogeneous）な子会社に対する例外は存在しない（旧来の異質事業の例外はFAS 94により廃止された）。支配が存在する場合、持分法や個別表示は連結の代替とならない。公正価値での報告は、投資会社など連結や持分法が適用されない投資に用いられるものであり、支配下の事業子会社には適用されない。",
+      "references": ["ASC 810-10-15-10"],
+      "difficulty": "basic",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-167",
+      "topic": "Consolidations",
+      "subtopic": "NCI Attribution with Both Upstream and Downstream Profit",
+      "stem": "Plex Corp owns 70% of Strand Inc. For Year 1, Strand reported separate net income of $600,000. At year-end, unrealized intercompany profit in ending inventories consists of $40,000 from downstream sales (Plex to Strand) and $50,000 from upstream sales (Strand to Plex). What amount of consolidated net income should be attributed to the noncontrolling interest for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$180,000" },
+        { "label": "B", "text": "$165,000" },
+        { "label": "C", "text": "$153,000" },
+        { "label": "D", "text": "$168,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Only upstream unrealized profit affects the NCI, because that profit is in the subsidiary's reported income. Adjusted subsidiary income = $600,000 − $50,000 = $550,000. NCI share = 30% × $550,000 = $165,000. The $40,000 downstream profit is attributed entirely to the parent as the seller. $180,000 ignores both adjustments. $153,000 incorrectly deducts both the downstream and upstream profits from the subsidiary's income, and $168,000 incorrectly deducts only the downstream profit.",
+      "explanationJa": "NCIに影響するのはアップストリーム取引の未実現利益のみである（その利益が子会社の報告利益に含まれているため）。調整後子会社利益＝$600,000−$50,000＝$550,000。NCI帰属額＝30%×$550,000＝$165,000。ダウンストリームの$40,000は売手である親会社に全額帰属する。$180,000は両方の調整を無視した誤り。$153,000はダウンストリーム分まで子会社利益から控除した誤り、$168,000はダウンストリーム分のみを控除した誤りである。",
+      "references": ["ASC 810-10-45-18", "ASC 810-10-45-1"],
+      "difficulty": "advanced",
+      "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "con-168",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Bonds - Constructive Retirement Loss",
+      "stem": "Pone Corp has bonds payable outstanding with a face amount of $1,000,000 and a carrying amount of $970,000 (unamortized discount of $30,000). Pone's wholly-owned subsidiary purchases all of the bonds on the open market for $1,010,000. What gain or loss should be recognized in the consolidated income statement in the year of purchase?",
+      "choices": [
+        { "label": "A", "text": "$10,000 loss" },
+        { "label": "B", "text": "$30,000 loss" },
+        { "label": "C", "text": "$40,000 gain" },
+        { "label": "D", "text": "$40,000 loss" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "From the consolidated viewpoint, the purchase constructively retires the debt. The loss equals the price paid minus the carrying amount of the bonds: $1,010,000 − $970,000 = $40,000 loss, recognized in consolidated income in the year of purchase. A $10,000 loss incorrectly compares the purchase price with the face amount rather than the carrying amount. A $30,000 loss is merely the unamortized discount. A $40,000 gain reverses the direction: paying more than carrying amount to extinguish debt produces a loss, not a gain.",
+      "explanationJa": "連結の観点では、子会社による購入は社債の推定償還（constructive retirement）に該当する。損失＝購入価額−社債の帳簿価額＝$1,010,000−$970,000＝$40,000の損失で、購入年度の連結損益に認識する。$10,000の損失は帳簿価額ではなく額面と比較した誤り。$30,000は未償却割引額そのものにすぎない。帳簿価額を上回る金額で債務を消滅させた場合は損失であり、$40,000の利得は方向を逆にした誤りである。",
+      "references": ["ASC 810-10-45-1", "ASC 470-50-40-2"],
       "difficulty": "intermediate",
       "source": "Original - CPA Exam Practice"
     }
