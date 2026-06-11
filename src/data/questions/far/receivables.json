@@ -2,7 +2,7 @@
   "id": "far-receivables",
   "name": "Receivables",
   "topic": "Receivables",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "rec-001",
@@ -3228,6 +3228,441 @@
       "references": ["ASC 860-20-25"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "rec-149",
+      "topic": "Receivables",
+      "subtopic": "Net Realizable Value - Multiple Allowances",
+      "stem": "At year-end, Entity A has gross accounts receivable of $950,000, an allowance for credit losses of $38,000, and expects customers to take cash discounts of $12,000 on outstanding balances. At what amount should accounts receivable be reported at net realizable value?",
+      "choices": [
+        { "label": "A", "text": "$912,000" },
+        { "label": "B", "text": "$938,000" },
+        { "label": "C", "text": "$900,000" },
+        { "label": "D", "text": "$950,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Net realizable value is the amount of cash the entity expects to collect. Both the allowance for credit losses and the estimated cash discounts expected to be taken reduce gross receivables: $950,000 − $38,000 − $12,000 = $900,000. The amount of $912,000 deducts only the credit loss allowance and ignores expected discounts; $938,000 deducts only the discounts; $950,000 is the gross balance with no reduction at all.",
+      "explanationJa": "正味実現可能価額（NRV）は回収が見込まれる現金額である。貸倒引当金と顧客が利用すると見込まれる現金値引の両方を総売掛金から控除する: $950,000 − $38,000 − $12,000 = $900,000。$912,000は貸倒引当金のみを控除し見込値引を無視した金額、$938,000は値引のみを控除した金額、$950,000は何も控除しない総額である。",
+      "references": ["ASC 310-10-35", "ASC 326-20-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-150",
+      "topic": "Receivables",
+      "subtopic": "Percentage of Net Credit Sales",
+      "stem": "Entity B estimates credit loss expense at 0.8% of net credit sales. Total sales for the year were $5,000,000, of which $1,200,000 were cash sales. Sales returns on credit sales were $300,000. What amount should Entity B report as credit loss expense for the year?",
+      "choices": [
+        { "label": "A", "text": "$28,000" },
+        { "label": "B", "text": "$30,400" },
+        { "label": "C", "text": "$37,600" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The percentage applies to net credit sales only. Credit sales = $5,000,000 − $1,200,000 = $3,800,000; net credit sales = $3,800,000 − $300,000 returns = $3,500,000. Expense = $3,500,000 × 0.8% = $28,000. The amount of $30,400 fails to deduct the returns; $37,600 deducts returns but incorrectly includes cash sales; $40,000 applies the rate to total sales.",
+      "explanationJa": "比率は純掛売上高にのみ適用する。掛売上 = $5,000,000 − 現金売上$1,200,000 = $3,800,000。純掛売上 = $3,800,000 − 返品$300,000 = $3,500,000。費用 = $3,500,000 × 0.8% = $28,000。$30,400は返品を控除し忘れた金額、$37,600は返品は控除したが現金売上を誤って含めた金額、$40,000は総売上高に比率を掛けた金額である。",
+      "references": ["ASC 326-20-30"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-151",
+      "topic": "Receivables",
+      "subtopic": "Allowance Rollforward - Solving for Recoveries",
+      "stem": "Entity C's allowance for credit losses had a beginning credit balance of $50,000 and an ending credit balance of $49,000. During the year, credit loss expense of $35,000 was recognized and accounts of $42,000 were written off. What amount of previously written-off accounts was recovered during the year?",
+      "choices": [
+        { "label": "A", "text": "$36,000" },
+        { "label": "B", "text": "$41,000" },
+        { "label": "C", "text": "$13,000" },
+        { "label": "D", "text": "$6,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Allowance rollforward: Beginning $50,000 + expense $35,000 − write-offs $42,000 + recoveries = ending $49,000. Recoveries = $49,000 − $43,000 = $6,000. The amount of $41,000 omits the credit loss expense from the rollforward; $36,000 omits the write-offs; $13,000 results from reversing the signs of expense and write-offs.",
+      "explanationJa": "引当金のロールフォワード: 期首$50,000 + 費用$35,000 − 償却$42,000 + 回収額 = 期末$49,000。回収額 = $49,000 − $43,000 = $6,000。$41,000は費用をロールフォワードから漏らした場合、$36,000は償却を漏らした場合、$13,000は費用と償却の符号を逆にした場合の金額である。",
+      "references": ["ASC 326-20-50"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-152",
+      "topic": "Receivables",
+      "subtopic": "Change in Estimate of Uncollectibles",
+      "stem": "In Year 3, Entity D obtains new information indicating that its historical loss rate for estimating uncollectible receivables should increase from 2% to 3%. How should Entity D account for this change?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Restate prior-year financial statements to reflect the 3% rate"
+        },
+        {
+          "label": "B",
+          "text": "Apply the 3% rate prospectively in Year 3 and future periods as a change in accounting estimate"
+        },
+        {
+          "label": "C",
+          "text": "Report the cumulative effect of the change as an adjustment to beginning retained earnings"
+        },
+        {
+          "label": "D",
+          "text": "Disclose the change but continue using the 2% rate until the next fiscal year"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A revision of the estimated uncollectible percentage based on new information is a change in accounting estimate under ASC 250, accounted for prospectively in the period of change and future periods. Restating prior years is the treatment for error corrections, not estimate changes; a cumulative-effect adjustment to retained earnings applies to certain changes in accounting principle; and continuing to use a rate known to be outdated would misstate the current-period allowance.",
+      "explanationJa": "新たな情報に基づく貸倒見積率の改定はASC 250上の会計上の見積りの変更であり、変更期および将来の期間に将来法（prospective）で処理する。過年度の遡及修正は誤謬の訂正の処理であり見積りの変更には適用されない。利益剰余金期首残高への累積影響調整は一部の会計方針の変更に適用される処理である。また、古いと判明した率を使い続けることは当期の引当金を誤表示させる。",
+      "references": ["ASC 250-10-45", "ASC 326-20-30"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-153",
+      "topic": "Receivables",
+      "subtopic": "Direct Write-Off vs Allowance - Income Effect",
+      "stem": "In Year 1, Entity E had credit sales of $1,500,000. Under the allowance method, it would estimate credit loss expense at 2% of credit sales. Actual accounts written off as uncollectible during Year 1 were $18,000. Compared with the allowance method, Year 1 net income under the direct write-off method would be:",
+      "choices": [
+        { "label": "A", "text": "$12,000 higher" },
+        { "label": "B", "text": "$12,000 lower" },
+        { "label": "C", "text": "$30,000 lower" },
+        { "label": "D", "text": "The same under both methods" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the allowance method, expense = $1,500,000 × 2% = $30,000. Under the direct write-off method, expense equals actual write-offs of $18,000. Direct write-off expense is $12,000 lower, so net income is $12,000 higher. Stating that income is $12,000 lower reverses the comparison; $30,000 lower treats the allowance-method expense as an additional charge; and the two methods produce the same income only when estimated expense happens to equal actual write-offs, which is not the case here.",
+      "explanationJa": "引当金法では費用 = $1,500,000 × 2% = $30,000。直接償却法では費用は実際の償却額$18,000。直接償却法の費用が$12,000少ないため、純利益は$12,000多くなる。「$12,000少ない」は比較の向きが逆である。「$30,000少ない」は引当金法の費用を追加費用として扱った誤り。両方法の利益が一致するのは見積費用と実際償却額が偶然一致する場合のみで、本問では一致しない。",
+      "references": ["ASC 326-20-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-154",
+      "topic": "Receivables",
+      "subtopic": "Short-Term Trade Note - No Imputation",
+      "stem": "Entity F sells merchandise to a customer and accepts a $30,000 non-interest-bearing trade note due in 60 days, consistent with customary trade terms. At what amount should Entity F initially record the note receivable?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Present value discounted at the market rate of interest"
+        },
+        { "label": "B", "text": "Present value discounted at the prime rate" },
+        { "label": "C", "text": "Face amount of $30,000" },
+        {
+          "label": "D",
+          "text": "Face amount less an imputed discount amortized over 60 days"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 835-30 excludes from interest imputation receivables arising from transactions with customers in the normal course of business that are due within approximately one year under customary trade terms. A 60-day trade note is therefore recorded at its face amount of $30,000. Discounting at a market rate or the prime rate, or recording an imputed discount, applies only to notes outside this scope exception, such as long-term notes with unreasonably low stated rates.",
+      "explanationJa": "ASC 835-30は、通常の営業過程で顧客との取引から生じ、慣行的な取引条件によりおおむね1年以内に決済される債権を利息の付与（imputation）の対象から除外している。したがって60日の営業手形は額面$30,000で計上する。市場利子率やプライムレートで割り引く処理、または付与割引を計上する処理は、このスコープ除外に該当しない手形（不当に低い表面利率の長期手形など）にのみ適用される。",
+      "references": ["ASC 835-30-15"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-155",
+      "topic": "Receivables",
+      "subtopic": "Interest-Bearing Note at Discount - Total Interest over Life",
+      "stem": "On January 1, Year 1, Entity G accepts a 3-year, $200,000 note receivable with a 4% stated rate (interest of $8,000 paid each December 31; principal due at maturity). The market rate for similar notes is 8%. The present value factors at 8% for 3 periods are 0.79383 (single sum) and 2.57710 (ordinary annuity). What total interest income will Entity G recognize over the life of the note?",
+      "choices": [
+        { "label": "A", "text": "$24,000" },
+        { "label": "B", "text": "$44,617" },
+        { "label": "C", "text": "$48,000" },
+        { "label": "D", "text": "$20,617" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Initial carrying amount = ($200,000 × 0.79383) + ($8,000 × 2.57710) = $158,766 + $20,617 = $179,383. Total cash to be received = $200,000 principal + ($8,000 × 3) = $224,000. Total interest income over the life = $224,000 − $179,383 = $44,617, which equals the stated coupons of $24,000 plus the discount of $20,617 amortized to income. The amount of $24,000 counts only the stated coupons; $20,617 counts only the discount amortization; $48,000 applies 8% to the face amount for three years instead of to the carrying amount.",
+      "explanationJa": "当初帳簿価額 = ($200,000 × 0.79383) + ($8,000 × 2.57710) = $158,766 + $20,617 = $179,383。受取総額 = 元本$200,000 + 利息($8,000 × 3) = $224,000。手形存続期間の利息収益合計 = $224,000 − $179,383 = $44,617。これは表面利息$24,000と割引額$20,617の償却額の合計に等しい。$24,000は表面利息のみ、$20,617は割引償却額のみを数えた金額。$48,000は帳簿価額ではなく額面に8%を3年分適用した誤りである。",
+      "references": ["ASC 835-30-35"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-156",
+      "topic": "Receivables",
+      "subtopic": "Zero-Coupon Note - Total Interest over Life",
+      "stem": "On January 1, Year 1, Entity H accepts a 2-year, non-interest-bearing note with a face amount of $121,000 in exchange for services. The market rate of interest is 10%. What total interest income will Entity H recognize over the 2-year life of the note?",
+      "choices": [
+        { "label": "A", "text": "$24,200" },
+        { "label": "B", "text": "$12,100" },
+        { "label": "C", "text": "$10,000" },
+        { "label": "D", "text": "$21,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The note is recorded at present value: $121,000 ÷ (1.10)² = $100,000. Total interest income over the life equals the full discount: $121,000 − $100,000 = $21,000 (Year 1: $100,000 × 10% = $10,000; Year 2: $110,000 × 10% = $11,000). The amount of $10,000 is only Year 1 interest; $24,200 applies 10% to the face amount for two years; $12,100 applies 10% to the face amount for one year.",
+      "explanationJa": "手形は現在価値で計上する: $121,000 ÷ (1.10)² = $100,000。存続期間の利息収益合計は割引額全額に等しい: $121,000 − $100,000 = $21,000（1年目: $100,000 × 10% = $10,000、2年目: $110,000 × 10% = $11,000）。$10,000は1年目の利息のみ、$24,200は額面に10%を2年分適用した金額、$12,100は額面に10%を1年分適用した金額である。",
+      "references": ["ASC 835-30-25", "ASC 835-30-35"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-157",
+      "topic": "Receivables",
+      "subtopic": "Note Measurement Hierarchy",
+      "stem": "Entity J receives a long-term note in exchange for property in a transaction with no established exchange price for the property and an unreasonable stated interest rate on the note. Under ASC 835-30, at what amount should the note initially be recorded?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The fair value of the property or the market value of the note, whichever is more clearly determinable"
+        },
+        { "label": "B", "text": "The face amount of the note" },
+        {
+          "label": "C",
+          "text": "The carrying amount of the property surrendered"
+        },
+        {
+          "label": "D",
+          "text": "The face amount plus accrued interest at the stated rate"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When there is no established exchange price and the stated rate is unreasonable, the note is recorded at the fair value of the property exchanged or the market value of the note, whichever is more clearly determinable; if neither is determinable, the note is recorded at present value using an imputed rate. Recording at face amount ignores the time value of money when the stated rate is unreasonable. The carrying amount of the property surrendered is not a measure of the consideration received. Adding accrued interest at an unreasonable stated rate compounds the misstatement.",
+      "explanationJa": "成立した交換価格がなく表面利率が不合理な場合、手形は交換した財産の公正価値または手形の市場価値のうち、より明確に決定できる方で計上する。いずれも決定できない場合は付与利子率（imputed rate）による現在価値で計上する。額面での計上は表面利率が不合理な場合に貨幣の時間価値を無視することになる。引き渡した財産の帳簿価額は受け取った対価の測定値ではない。不合理な表面利率による未収利息を加算する処理は誤表示を拡大させる。",
+      "references": ["ASC 835-30-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-158",
+      "topic": "Receivables",
+      "subtopic": "Note Discounting - Basis of Bank Discount",
+      "stem": "When an entity discounts an interest-bearing note receivable at a bank before maturity, the bank's discount charge is computed by applying the discount rate to:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The face amount of the note for the full original term"
+        },
+        {
+          "label": "B",
+          "text": "The maturity value of the note for the time remaining to maturity"
+        },
+        {
+          "label": "C",
+          "text": "The carrying amount of the note for the time the holder held it"
+        },
+        {
+          "label": "D",
+          "text": "The face amount of the note for the time remaining to maturity"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The bank earns its return on the amount it will collect at maturity — the maturity value (face plus interest to maturity) — over the period it must wait, which is the remaining term. Discount = maturity value × discount rate × remaining time. Using the face amount understates the base for an interest-bearing note, and using the full original term or the holding period misstates the time over which the bank's funds are outstanding.",
+      "explanationJa": "銀行は満期に回収する金額、すなわち満期価値（額面＋満期までの利息）に対して、自らが待つ期間（残存期間）にわたりリターンを得る。割引料 = 満期価値 × 割引率 × 残存期間。利付手形について額面を基礎に使うと計算基礎が過小になり、当初の全期間や保有期間を使うと銀行の資金が拘束される期間を誤って測定することになる。",
+      "references": ["ASC 860-20-40"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-159",
+      "topic": "Receivables",
+      "subtopic": "Note Discounting - Gain on Sale",
+      "stem": "Entity K holds a $100,000, 9%, 6-month note receivable dated April 1. On August 1, Entity K discounts the note at a bank at a 6% discount rate in a transfer that qualifies as a sale. What gain or loss should Entity K recognize on the transfer?",
+      "choices": [
+        { "label": "A", "text": "Loss of $1,045" },
+        { "label": "B", "text": "Gain of $3,455" },
+        { "label": "C", "text": "Gain of $1,500" },
+        { "label": "D", "text": "Gain of $455" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Maturity value = $100,000 + ($100,000 × 9% × 6/12) = $104,500. The note has 2 months remaining, so the bank discount = $104,500 × 6% × 2/12 = $1,045, and proceeds = $104,500 − $1,045 = $103,455. The carrying amount at the transfer date is face plus 4 months of accrued interest: $100,000 + ($100,000 × 9% × 4/12) = $103,000. Gain = $103,455 − $103,000 = $455. Because the bank's discount rate is below the note's stated rate, the transfer produces a gain. The $1,045 figure is the bank discount itself, not the loss; $3,455 compares proceeds with the face amount and ignores accrued interest; $1,500 is the 3% rate differential applied to face for 6 months, which is not how the gain is measured.",
+      "explanationJa": "満期価値 = $100,000 + ($100,000 × 9% × 6/12) = $104,500。残存期間は2か月なので割引料 = $104,500 × 6% × 2/12 = $1,045、手取額 = $104,500 − $1,045 = $103,455。譲渡日の帳簿価額は額面＋4か月分の未収利息 = $100,000 + ($100,000 × 9% × 4/12) = $103,000。利得 = $103,455 − $103,000 = $455。銀行の割引率が手形の表面利率を下回るため利得が生じる。$1,045は割引料そのものであり損失ではない。$3,455は手取額を額面と比較し未収利息を無視した金額。$1,500は利率差3%を額面に6か月分適用した金額で、利得の測定方法として誤りである。",
+      "references": ["ASC 860-20-40"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-160",
+      "topic": "Receivables",
+      "subtopic": "Assignment - Loan Balance After Remittance",
+      "stem": "Entity L assigns $500,000 of accounts receivable to a finance company and borrows $400,000 at 12% annual interest on the assigned accounts. During the first month, Entity L collects $150,000 of the assigned receivables and remits this amount to the finance company plus $4,000 of accrued interest. What is the balance of the note payable after the first remittance?",
+      "choices": [
+        { "label": "A", "text": "$246,000" },
+        { "label": "B", "text": "$396,000" },
+        { "label": "C", "text": "$250,000" },
+        { "label": "D", "text": "$254,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Only the principal portion of the remittance reduces the loan: $400,000 − $150,000 = $250,000. The $4,000 interest payment is interest expense and does not reduce principal. The amount of $246,000 incorrectly applies the entire $154,000 remittance against principal; $254,000 incorrectly adds the interest to the loan balance; $396,000 incorrectly reduces the loan by only the $4,000 interest payment instead of the collections.",
+      "explanationJa": "借入金を減額するのは送金額のうち元本部分のみ: $400,000 − $150,000 = $250,000。$4,000の利息支払は支払利息であり元本を減額しない。$246,000は送金総額$154,000を全額元本に充当した誤り。$254,000は利息を借入残高に加算した誤り。$396,000は回収額ではなく利息支払$4,000のみを借入金から控除した誤りである。",
+      "references": ["ASC 860-30-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-161",
+      "topic": "Receivables",
+      "subtopic": "Factoring Without Recourse - Risk Allocation and Holdback",
+      "stem": "Entity M factors receivables without recourse, and the factor withholds a portion of the purchase price as a holdback (due from factor). Which statement best describes the purpose of the holdback in a without-recourse factoring arrangement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It protects the factor against customer credit losses, which remain the transferor's responsibility"
+        },
+        {
+          "label": "B",
+          "text": "It protects the factor against sales returns, allowances, and billing disputes, for which the transferor remains responsible"
+        },
+        {
+          "label": "C",
+          "text": "It represents prepaid interest on the factor's advance"
+        },
+        {
+          "label": "D",
+          "text": "It is recognized immediately as part of the loss on sale of the receivables"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a without-recourse factoring, the factor assumes the risk of customer credit losses. The transferor, however, remains responsible for non-credit adjustments such as sales returns, allowances, and disputed billings, and the holdback protects the factor against those items. Describing the holdback as credit-loss protection contradicts the without-recourse terms, under which credit risk passes to the factor. The holdback is a receivable (due from factor) expected to be collected, not prepaid interest, and it is not part of the loss on sale because the transferor expects to recover it.",
+      "explanationJa": "ノンリコース・ファクタリングでは、ファクターが顧客の信用リスク（貸倒リスク）を引き受ける。しかし譲渡人は売上返品・値引・請求紛争といった信用リスク以外の調整について引き続き責任を負い、留保金（holdback）はこれらからファクターを保護するためのものである。留保金を貸倒れへの備えと説明するのは、信用リスクがファクターに移転するノンリコース条件と矛盾する。留保金は回収が見込まれる債権（due from factor）であり前払利息ではなく、回収が見込まれるため売却損の一部にも含めない。",
+      "references": ["ASC 860-20-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-162",
+      "topic": "Receivables",
+      "subtopic": "Factoring With Recourse - Failed Sale Treatment",
+      "stem": "Entity N transfers $900,000 of accounts receivable to a factor with recourse and receives cash proceeds of $846,000 after a 2% fee ($18,000) and a 4% holdback ($36,000). Entity N retains effective control over the receivables, so the transfer does NOT qualify as a sale under ASC 860. What amount of loss on transfer should Entity N recognize at the transfer date?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$18,000" },
+        { "label": "C", "text": "$54,000" },
+        { "label": "D", "text": "$36,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Because the transfer fails the sale criteria, it is accounted for as a secured borrowing: the receivables remain on Entity N's balance sheet and the proceeds are recorded as a liability. No loss on sale is recognized; the $18,000 fee is recognized as interest/financing cost over the borrowing period, not as a loss at the transfer date. The $18,000 and $54,000 figures treat the transfer as a sale; $36,000 treats the holdback as a loss, but a holdback is a receivable, not a loss, under either treatment.",
+      "explanationJa": "売却の要件を満たさないため、この譲渡は担保付借入として処理する。売掛金はEntity Nの貸借対照表に残り、受取額は負債として計上する。売却損は認識せず、手数料$18,000は譲渡日の損失ではなく借入期間にわたる利息・金融費用として認識する。$18,000や$54,000は譲渡を売却として処理した場合の金額。$36,000は留保金を損失として扱った誤りで、留保金はいずれの処理においても債権であり損失ではない。",
+      "references": ["ASC 860-10-40", "ASC 860-30-25"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-163",
+      "topic": "Receivables",
+      "subtopic": "Aging Method with Required Write-Off",
+      "stem": "At year-end, Entity P has accounts receivable of $900,000, including a $30,000 account from a bankrupt customer that is known to be worthless and must be written off. The allowance for credit losses has a credit balance of $25,000 before any adjustments. An aging of the remaining $870,000 of receivables indicates a required allowance of $52,000. What amount should Entity P report as credit loss expense for the year?",
+      "choices": [
+        { "label": "A", "text": "$27,000" },
+        { "label": "B", "text": "$52,000" },
+        { "label": "C", "text": "$82,000" },
+        { "label": "D", "text": "$57,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "First record the write-off against the allowance: $25,000 credit − $30,000 = $5,000 debit balance. The aging requires an ending credit balance of $52,000, so expense = $52,000 + $5,000 = $57,000. The amount of $27,000 ignores the write-off and simply takes $52,000 − $25,000; $52,000 ignores the existing allowance balance entirely; $82,000 incorrectly charges the $30,000 write-off directly to expense in addition to the aging requirement.",
+      "explanationJa": "まず償却を引当金に対して記録する: 貸方残高$25,000 − $30,000 = 借方残高$5,000。年齢分析法は期末貸方残高$52,000を要求するため、費用 = $52,000 + $5,000 = $57,000。$27,000は償却を無視して単純に$52,000 − $25,000とした金額。$52,000は既存の引当金残高を完全に無視した金額。$82,000は年齢分析の所要額に加えて償却$30,000を直接費用に賦課した誤りである。",
+      "references": ["ASC 326-20-30", "ASC 326-20-35"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-164",
+      "topic": "Receivables",
+      "subtopic": "Note Receivable - Maturity Value",
+      "stem": "Entity Q holds an $80,000, 7.5%, 8-month note receivable. What is the total amount due from the maker at maturity?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$86,000" },
+        { "label": "C", "text": "$84,000" },
+        { "label": "D", "text": "$85,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Maturity value = face + interest for the note's term: $80,000 + ($80,000 × 7.5% × 8/12) = $80,000 + $4,000 = $84,000. The amount of $80,000 omits the interest; $86,000 uses a full year of interest ($6,000); $85,000 uses interest of $5,000, which corresponds to 10 months rather than the 8-month term.",
+      "explanationJa": "満期価値 = 額面 + 手形期間の利息: $80,000 + ($80,000 × 7.5% × 8/12) = $80,000 + $4,000 = $84,000。$80,000は利息の加算が漏れた額面のみの金額。$86,000は1年分の利息$6,000を使った誤り。$85,000は利息$5,000、すなわち8か月ではなく10か月分に相当する誤りである。",
+      "references": ["ASC 310-10-25"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-165",
+      "topic": "Receivables",
+      "subtopic": "Trade Discount with Net Method Cash Discount",
+      "stem": "Entity R sells merchandise with a list price of $60,000, subject to a trade discount of 30%, on terms 2/10, n/30. Entity R records receivables using the net method. At what amount should the account receivable initially be recorded?",
+      "choices": [
+        { "label": "A", "text": "$42,000" },
+        { "label": "B", "text": "$41,160" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$58,800" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trade discounts are never recorded; the invoice price is $60,000 × (1 − 0.30) = $42,000. Under the net method, the receivable is recorded net of the cash discount: $42,000 × (1 − 0.02) = $41,160. The amount of $42,000 reflects the gross method (cash discount not deducted); $58,800 deducts the cash discount but not the trade discount; $60,000 is the list price with no discounts applied.",
+      "explanationJa": "数量値引（trade discount）は帳簿に記録せず、送り状価格は$60,000 × (1 − 0.30) = $42,000となる。純額法では現金割引を控除した純額で売掛金を計上する: $42,000 × (1 − 0.02) = $41,160。$42,000は総額法（現金割引を控除しない）の金額。$58,800は現金割引のみ控除し数量値引を控除していない金額。$60,000は何も控除しない表示価格である。",
+      "references": ["ASC 606-10-32"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-166",
+      "topic": "Receivables",
+      "subtopic": "Failure to Impute Interest - Financial Statement Effect",
+      "stem": "Entity S sells equipment in exchange for a 5-year, non-interest-bearing note and records the note at its face amount instead of its present value. What is the effect of this error on the financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gain on sale is understated and interest income over the note's life is overstated"
+        },
+        {
+          "label": "B",
+          "text": "Gain on sale and interest income over the note's life are both understated"
+        },
+        {
+          "label": "C",
+          "text": "Total income over the note's life is overstated"
+        },
+        {
+          "label": "D",
+          "text": "Gain on sale is overstated and interest income over the note's life is understated"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Recording the note at face overstates the consideration received at the sale date, which overstates the gain on sale (or understates a loss). Because the note carries no discount to amortize, interest income that should have been recognized over the 5-year life is understated. Total income over the full life of the note is the same in aggregate — cash received does not change — so the error misallocates income between the gain and interest revenue rather than overstating lifetime income. The combination of an understated gain with overstated interest reverses the actual direction of the error.",
+      "explanationJa": "手形を額面で計上すると売却日に受け取った対価が過大計上され、売却益が過大（または売却損が過小）になる。償却すべき割引額が存在しないため、5年間にわたり認識すべき利息収益は過小になる。受取現金総額は変わらないため、手形の全期間を通じた利益の総額は同じであり、この誤りは利益の総額を過大にするのではなく、売却益と利息収益の間の期間配分を歪める。「売却益が過小で利息が過大」という組み合わせは誤りの方向が逆である。",
+      "references": ["ASC 835-30-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-167",
+      "topic": "Receivables",
+      "subtopic": "Non-Interest-Bearing Note - Carrying Amount End of Year 2",
+      "stem": "On January 1, Year 1, Entity T accepts a 3-year, non-interest-bearing note with a face amount of $250,000 in exchange for land. The market rate of interest is 9%, and the present value factor for a single sum at 9% for 3 periods is 0.77218. Using the effective interest method, what is the carrying amount of the note at December 31, Year 2?",
+      "choices": [
+        { "label": "A", "text": "$229,357" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$210,419" },
+        { "label": "D", "text": "$231,015" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Initial carrying amount = $250,000 × 0.77218 = $193,045. Year 1 interest = $193,045 × 9% = $17,374, giving a balance of $210,419 at the end of Year 1. Year 2 interest = $210,419 × 9% = $18,938, giving $229,357 at December 31, Year 2. The amount of $250,000 is the face amount, reached only at maturity; $210,419 is the balance at the end of Year 1, not Year 2; $231,015 results from amortizing the $56,955 discount on a straight-line basis ($18,985 per year), which is not the effective interest method.",
+      "explanationJa": "当初帳簿価額 = $250,000 × 0.77218 = $193,045。1年目利息 = $193,045 × 9% = $17,374で、1年目末残高は$210,419。2年目利息 = $210,419 × 9% = $18,938で、2年目末（12月31日）残高は$229,357。$250,000は額面であり満期時にのみ到達する金額。$210,419は2年目末ではなく1年目末の残高。$231,015は割引額$56,955を定額法（年$18,985）で償却した結果であり、実効金利法ではない。",
+      "references": ["ASC 835-30-35"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "rec-168",
+      "topic": "Receivables",
+      "subtopic": "Recourse Provision and Sale Accounting",
+      "stem": "Under ASC 860, which statement best describes the effect of a recourse provision on whether a transfer of receivables qualifies for sale accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A recourse provision always causes the transfer to be accounted for as a secured borrowing"
+        },
+        {
+          "label": "B",
+          "text": "A recourse provision is permitted only when the receivables are transferred to a consolidated affiliate"
+        },
+        {
+          "label": "C",
+          "text": "A recourse provision does not by itself preclude sale accounting if the transferor has surrendered control over the receivables"
+        },
+        {
+          "label": "D",
+          "text": "Sale accounting is available only for transfers made without recourse"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sale accounting under ASC 860 depends on surrender of control: the assets are legally isolated, the transferee can pledge or exchange them, and the transferor does not maintain effective control. A transfer with recourse can qualify as a sale if these conditions are met; the transferor recognizes a recourse obligation at fair value. The assertions that recourse always forces borrowing treatment, or that sale accounting requires a without-recourse transfer, overstate the role of recourse. Limiting recourse provisions to consolidated affiliates has no basis in the standard — and transfers to consolidated affiliates are eliminated in consolidation anyway.",
+      "explanationJa": "ASC 860の売却処理は支配の放棄に依存する。すなわち、資産が法的に隔離されていること、譲受人が資産を担保差入・交換できること、譲渡人が実効的支配を保持していないことである。これらの条件を満たせば遡求権付き（with recourse）の譲渡も売却に該当し、譲渡人は遡求義務を公正価値で認識する。「遡求権があれば必ず借入処理になる」「売却処理はノンリコース譲渡に限られる」という主張は遡求権の役割を過大評価している。遡求条項を連結関係会社への譲渡に限定するという基準上の根拠はなく、そもそも連結関係会社への譲渡は連結上消去される。",
+      "references": ["ASC 860-10-40", "ASC 860-20-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
     }
   ]
 }

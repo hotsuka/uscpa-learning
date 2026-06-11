@@ -2,7 +2,7 @@
   "id": "far-leases",
   "name": "Leases (ASC 842)",
   "topic": "Leases (ASC 842)",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "lease-001",
@@ -4098,6 +4098,645 @@
       "references": ["ASC 830-10-45-17", "ASC 842-20"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "lease-171",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Classification - Specialized Asset Criterion",
+      "stem": "Lessee Corp leases a custom-built piece of manufacturing equipment for 4 years. The equipment's economic life is 12 years, and the present value of lease payments is 60% of the equipment's fair value. However, the equipment is so specialized that it is expected to have no alternative use to the lessor at the end of the lease term. How should Lessee Corp classify this lease under ASC 842?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating lease, because the lease term is a minor part of the economic life"
+        },
+        {
+          "label": "B",
+          "text": "Operating lease, because the present value test is not met"
+        },
+        {
+          "label": "C",
+          "text": "Finance lease, because the asset has no alternative use to the lessor at the end of the lease term"
+        },
+        {
+          "label": "D",
+          "text": "Finance lease, because all specialized equipment leases are automatically finance leases regardless of the lease terms"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 842-10-25-2 lists five finance lease criteria, and meeting any one of them results in finance lease classification. The fifth criterion is that the underlying asset is of such a specialized nature that it is expected to have no alternative use to the lessor at the end of the lease term. Because that criterion is met here, the lease is a finance lease even though the lease term (4 of 12 years) and the present value (60% of fair value) criteria are not met. The reasoning that the lease term is only a minor part of the economic life or that the present value test fails ignores the fact that only one criterion needs to be satisfied. The claim that specialized equipment leases are automatically finance leases is too broad: the test is whether the asset is expected to have no alternative use to the lessor at the end of the term, which must be evaluated based on the facts.",
+      "explanationJa": "ASC 842-10-25-2はファイナンスリースの5基準を定めており、いずれか1つでも満たせばファイナンスリースに分類される。第5基準は「原資産が特殊仕様であり、リース期間終了時に貸手にとって代替的用途が見込まれない」こと。本問ではこの基準を満たすため、リース期間（12年中4年）や現在価値（公正価値の60%）の基準を満たさなくてもファイナンスリースとなる。「リース期間が経済的耐用年数のわずかな部分にすぎない」「現在価値テストを満たさない」という理由づけは、1基準のみで分類が決まる点を見落としている。「特殊仕様の設備リースは自動的にファイナンスリース」という記述は広すぎる。判定はあくまでリース終了時に貸手にとって代替用途が見込まれるか否かの事実評価による。",
+      "references": ["ASC 842-10-25-2"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-172",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "ROU Asset - Initial Measurement with Payment at Commencement",
+      "stem": "On January 1, Year 1, Lessee Corp enters into a 4-year operating lease requiring four annual payments of $40,000, with the first payment due at lease commencement (January 1, Year 1). The rate implicit in the lease is not readily determinable, and Lessee Corp's incremental borrowing rate is 10%. The present value of an ordinary annuity of $1 for 3 periods at 10% is 2.48685. What amount should Lessee Corp record as the right-of-use asset at commencement?",
+      "choices": [
+        { "label": "A", "text": "$99,474" },
+        { "label": "B", "text": "$139,474" },
+        { "label": "C", "text": "$160,000" },
+        { "label": "D", "text": "$126,795" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Because the first payment is made at commencement, the lease liability equals the present value of the three remaining payments: $40,000 × 2.48685 = $99,474. The ROU asset equals the lease liability plus lease payments made at or before commencement: $99,474 + $40,000 = $139,474. The amount of $99,474 omits the payment made at commencement, which must be added to the ROU asset. The amount of $160,000 is the undiscounted sum of all four payments and ignores present value. The amount of $126,795 incorrectly discounts all four payments as if they were paid at the end of each year ($40,000 × 3.16987 ordinary annuity for 4 periods).",
+      "explanationJa": "初回支払が開始日に行われるため、リース負債は残り3回の支払の現在価値となる: $40,000 × 2.48685 = $99,474。使用権資産はリース負債に開始日以前に支払ったリース料を加算する: $99,474 + $40,000 = $139,474。$99,474は開始日の支払額を使用権資産に加算するのを忘れた金額。$160,000は4回分の支払を割引かずに単純合計した金額。$126,795は4回すべてを期末払いとみなして割引いた誤り($40,000 × 普通年金現価係数3.16987)。",
+      "references": ["ASC 842-20-30-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-173",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lease Payments - Components Included in Liability",
+      "stem": "Under ASC 842, which of the following is included by a lessee in the lease payments used to measure the lease liability at commencement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The exercise price of a purchase option that the lessee is reasonably certain to exercise"
+        },
+        {
+          "label": "B",
+          "text": "Variable payments based on a percentage of the lessee's future sales"
+        },
+        {
+          "label": "C",
+          "text": "Payments for usage-based charges that depend on machine hours actually used"
+        },
+        {
+          "label": "D",
+          "text": "The full maximum amount of a residual value guarantee regardless of expected residual value"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lease payments include fixed payments, in-substance fixed payments, variable payments that depend on an index or rate (measured using the index or rate at commencement), the exercise price of a purchase option the lessee is reasonably certain to exercise, termination penalties when the term reflects termination, and amounts probable of being owed under residual value guarantees. Variable payments based on future sales and usage-based charges that depend on machine hours are excluded from the liability and expensed as incurred because they do not depend on an index or rate. For a residual value guarantee, the lessee includes only the amount probable of being owed, not the full maximum guaranteed amount.",
+      "explanationJa": "リース料には、固定支払、実質的固定支払、指数またはレートに連動する変動支払（開始日の指数・レートで測定）、行使が合理的に確実な購入オプションの行使価格、解約が前提となる場合の解約ペナルティ、残価保証のうち支払う可能性が高い金額が含まれる。将来の売上高に連動する変動支払や機械稼働時間に応じた使用量ベースの支払は、指数・レート連動ではないため負債から除外され、発生時に費用処理する。残価保証については、保証額の最大額全額ではなく、支払う可能性が高い（probable）金額のみを含める。",
+      "references": ["ASC 842-10-30-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-174",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Operating Lease Liability - Accretion at Effective Rate",
+      "stem": "On January 1, Year 1, Lessee Corp recognizes an operating lease liability of $200,000, discounted at 7%. The lease requires a single annual payment of $48,000 on December 31 of each year. What is the carrying amount of the operating lease liability at December 31, Year 1, immediately after the Year 1 payment?",
+      "choices": [
+        { "label": "A", "text": "$152,000" },
+        { "label": "B", "text": "$214,000" },
+        { "label": "C", "text": "$162,640" },
+        { "label": "D", "text": "$166,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Even for an operating lease, the lease liability is subsequently measured at the present value of remaining payments using the effective interest method, the same way as a finance lease liability. The liability accretes interest of $200,000 × 7% = $14,000, then the $48,000 payment is applied: $200,000 + $14,000 − $48,000 = $166,000. The amount of $152,000 ignores interest accretion and simply deducts the payment. The amount of $214,000 adds accretion but ignores the payment. The amount of $162,640 incorrectly deducts the payment first and then accretes interest (($200,000 − $48,000) × 1.07).",
+      "explanationJa": "オペレーティングリースでも、リース負債の事後測定はファイナンスリースと同様に実効金利法による残存リース料の現在価値で行う。利息分 $200,000 × 7% = $14,000 が加算された後、支払 $48,000 を控除する: $200,000 + $14,000 − $48,000 = $166,000。$152,000は利息の増価を無視して支払額のみ控除した金額。$214,000は増価のみで支払を無視した金額。$162,640は先に支払を控除してから利息を付した誤り(($200,000 − $48,000) × 1.07)。",
+      "references": ["ASC 842-20-35-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-175",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor Sales-Type - Profit with Lessee-Guaranteed Residual",
+      "stem": "Lessor Corp (a dealer) enters into a sales-type lease at the beginning of Year 1. The equipment has a fair value of $500,000 and a carrying amount of $380,000. The present value of the lease payments is $460,000, and the present value of the residual value, which is fully guaranteed by the lessee, is $40,000. Collectibility of payments is probable. What amount of selling profit should Lessor Corp recognize at lease commencement?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$120,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$460,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When the residual value is guaranteed by the lessee, the present value of the guaranteed residual is part of the lease receivable and therefore part of the sales price. Sales revenue = PV of lease payments + PV of guaranteed residual = $460,000 + $40,000 = $500,000. Cost of goods sold = carrying amount of $380,000 (nothing is deducted because there is no unguaranteed residual). Selling profit = $500,000 − $380,000 = $120,000. The amount of $80,000 incorrectly excludes the guaranteed residual from the sales price ($460,000 − $380,000). The amount of $40,000 is merely the present value of the residual, not the profit. The amount of $460,000 is the present value of the lease payments, not the profit.",
+      "explanationJa": "残存価値が借手によって保証されている場合、保証残価の現在価値はリース債権の一部となり、売上高に含まれる。売上高 = リース料の現在価値 + 保証残価の現在価値 = $460,000 + $40,000 = $500,000。売上原価 = 帳簿価額 $380,000（無保証残価が存在しないため控除なし）。販売益 = $500,000 − $380,000 = $120,000。$80,000は保証残価を売上高から除外した誤り($460,000 − $380,000)。$40,000は残価の現在価値そのものであり利益ではない。$460,000はリース料の現在価値であり利益ではない。",
+      "references": ["ASC 842-30-30-1", "ASC 842-30-25-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-176",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Sale-Leaseback - Loss When Carrying Amount Exceeds Fair Value",
+      "stem": "Seller-Lessee Corp sells a warehouse with a carrying amount of $900,000 to Buyer-Lessor Corp for $800,000, which equals the warehouse's fair value. Seller-Lessee simultaneously leases the warehouse back under a 5-year operating lease at market rents, and the transaction qualifies as a sale under ASC 606. How should Seller-Lessee account for the $100,000 difference between the carrying amount and the sale price?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a $100,000 loss in earnings at the date of sale"
+        },
+        {
+          "label": "B",
+          "text": "Defer the $100,000 and amortize it as additional rent expense over the 5-year leaseback term"
+        },
+        {
+          "label": "C",
+          "text": "Add $100,000 to the initial right-of-use asset from the leaseback"
+        },
+        {
+          "label": "D",
+          "text": "Recognize no loss because the transaction is a financing arrangement"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Because the transfer qualifies as a sale and the transaction is at fair value with market-rate rents, the seller-lessee derecognizes the asset and recognizes the full gain or loss immediately. The sale price of $800,000 equals fair value, so the $100,000 excess of carrying amount over the sale price is a loss recognized in earnings at the sale date. Deferring the loss over the leaseback term was the old ASC 840 model and is not permitted under ASC 842 when the sale qualifies. Adding the difference to the right-of-use asset has no basis when the transaction is at market terms. Treating the transaction as a financing would apply only if the transfer failed to qualify as a sale, which is not the case here.",
+      "explanationJa": "資産の移転がASC 606上の販売に該当し、取引が公正価値・市場賃料で行われているため、売手兼借手は資産の認識を中止し、損益を直ちに全額認識する。売却価格$800,000は公正価値と等しいため、帳簿価額が売却価格を上回る$100,000は売却日に損失として計上する。リースバック期間にわたって損失を繰り延べる処理は旧基準ASC 840の方法であり、販売が成立する場合ASC 842では認められない。市場条件での取引において差額を使用権資産に加算する根拠はない。金融取引（financing）として処理するのは販売が成立しない場合のみであり、本問には該当しない。",
+      "references": ["ASC 842-40-25-4", "ASC 842-40-30-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-177",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Modification - Term Extension Not a Separate Contract",
+      "stem": "Lessee Corp has an operating lease with 4 years remaining. Lessee Corp and the lessor agree to modify the lease by extending the term an additional 3 years at the then-market rental rate. The modification does not grant Lessee Corp the right to use any additional underlying asset. How should Lessee Corp account for this modification?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Account for the extension as a separate new lease contract beginning at the modification date"
+        },
+        {
+          "label": "B",
+          "text": "Remeasure the lease liability using the discount rate established at the original commencement date"
+        },
+        {
+          "label": "C",
+          "text": "Terminate the original lease, recognize a gain or loss, and record an entirely new lease"
+        },
+        {
+          "label": "D",
+          "text": "Remeasure the lease liability using a discount rate determined at the modification date and adjust the right-of-use asset by the same amount"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A modification is accounted for as a separate contract only if it both grants the lessee an additional right of use and the lease payments increase commensurate with the standalone price of that additional right. Extending the term does not grant an additional right-of-use asset, so the modification is not a separate contract. The lessee remeasures the lease liability for the revised payments using a discount rate determined at the effective date of the modification, adjusts the right-of-use asset by the amount of the remeasurement, and reassesses lease classification. Using the discount rate from the original commencement date is incorrect because modifications require an updated rate. Termination accounting with gain or loss applies to full or partial terminations, not to a term extension.",
+      "explanationJa": "変更が独立した契約として処理されるのは、(1)追加の使用権を借手に付与し、かつ(2)リース料がその追加使用権の独立販売価格に見合って増加する場合に限られる。期間延長は追加の使用権資産を付与しないため、独立契約には該当しない。借手は変更発効日時点の割引率を用いて改定後のリース料でリース負債を再測定し、その再測定額と同額だけ使用権資産を調整し、リース分類を再判定する。当初開始日の割引率を使うのは誤りで、変更時には新しい割引率が必要。解約処理（損益認識）は全部または一部解約の場合に適用され、期間延長には適用されない。",
+      "references": ["ASC 842-10-25-8", "ASC 842-10-25-11"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-178",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Variable Payments - CPI Increase Without Remeasurement",
+      "stem": "Lessee Corp has an operating lease with annual payments of $60,000, adjusted each year for changes in the CPI. The lease liability was initially measured using the CPI at commencement. During Year 2, the CPI increases by 4%, so the actual Year 2 payment is $62,400. No event occurs during Year 2 that requires remeasurement of the lease liability. What amount should Lessee Corp recognize as variable lease cost in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$62,400" },
+        { "label": "C", "text": "$2,400" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under U.S. GAAP, payments that vary with an index are included in the lease liability using the index at commencement, and the liability is not remeasured merely because the index changes. The difference between the actual payment and the amount built into the liability is recognized as variable lease cost in the period incurred: $62,400 − $60,000 = $2,400. Recognizing nothing would fail to expense the incremental CPI-driven payment. Recognizing the full $62,400 as variable cost double counts the $60,000 that is already reflected in the single lease cost from the liability. The $60,000 is the fixed portion embedded in the lease liability, not the variable portion.",
+      "explanationJa": "米国基準では、指数連動の支払は開始日時点の指数を用いてリース負債に含め、指数が変動しただけでは負債を再測定しない。実際の支払額と負債に織り込まれた金額の差額は、発生した期の変動リース費用として認識する: $62,400 − $60,000 = $2,400。何も認識しないのはCPI上昇分の支払を費用化していない誤り。$62,400全額を変動費用とするのは、すでに負債由来の単一リース費用に反映されている$60,000を二重計上する誤り。$60,000はリース負債に含まれる固定部分であり変動部分ではない。",
+      "references": ["ASC 842-10-35-4", "ASC 842-20-25-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-179",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Income Statement Presentation - Finance vs Operating Lease Costs",
+      "stem": "Under ASC 842, how does a lessee present the costs of a finance lease in its income statement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A single lease cost presented within operating expenses"
+        },
+        {
+          "label": "B",
+          "text": "Amortization of the ROU asset presented with depreciation/amortization, and interest on the lease liability presented with interest expense"
+        },
+        {
+          "label": "C",
+          "text": "Both amortization and interest combined and presented entirely within interest expense"
+        },
+        {
+          "label": "D",
+          "text": "Both amortization and interest combined and presented entirely within rent expense"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "For a finance lease, the lessee presents two separate components: amortization of the right-of-use asset, presented in a manner consistent with depreciation or amortization of similar assets (typically within operating expenses), and interest on the lease liability, presented with other interest expense. A single lease cost within operating expenses describes the presentation for an operating lease, not a finance lease. Combining both components within interest expense or within rent expense is not permitted because the two elements have different income statement classifications.",
+      "explanationJa": "ファイナンスリースでは、借手は2つの構成要素を区分して表示する。使用権資産の償却費は類似資産の減価償却費と整合する区分（通常は営業費用）に、リース負債に係る利息は他の支払利息と同じ区分に表示する。営業費用内の単一リース費用としての表示はオペレーティングリースの方法であり、ファイナンスリースには適用されない。両要素を支払利息にまとめる、あるいは賃借料にまとめる表示は、2つの要素の損益計算書上の区分が異なるため認められない。",
+      "references": ["ASC 842-20-45-4"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-180",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor Operating Lease - Straight-Line Rent Receivable",
+      "stem": "Lessor Corp enters into a 3-year operating lease on January 1, Year 1, with annual rents of $20,000 in Year 1, $30,000 in Year 2, and $40,000 in Year 3, each received on December 31. All payments are received as scheduled and collectibility is probable. What is the balance of Lessor Corp's straight-line rent receivable (deferred rent asset) at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$10,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$20,000" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An operating lessor recognizes lease income on a straight-line basis: total rents of $90,000 ÷ 3 years = $30,000 per year. In Year 1, income recognized is $30,000 but cash received is only $20,000, so the lessor records a straight-line rent receivable of $30,000 − $20,000 = $10,000. A balance of $0 would result only if income equaled cash each year. The amount of $20,000 is the cash received, not the receivable. The amount of $30,000 is the annual straight-line income, not the difference between income and cash.",
+      "explanationJa": "オペレーティングリースの貸手はリース収益を定額法で認識する: 総賃料$90,000 ÷ 3年 = 年$30,000。Year 1の認識収益は$30,000だが現金受取は$20,000のみのため、差額の未収賃料（定額法調整資産）$30,000 − $20,000 = $10,000を計上する。$0となるのは毎年の収益と現金が一致する場合のみ。$20,000は受取現金額であり未収残高ではない。$30,000は年間の定額収益であり、収益と現金の差額ではない。",
+      "references": ["ASC 842-30-25-11"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-181",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Sublease vs Lease Assignment - Relief of Primary Obligation",
+      "stem": "Lessee Corp no longer needs its leased office space. A third party agrees to take over the space for the remaining lease term. Under ASC 842, in which situation should Lessee Corp account for the arrangement as a termination of its original lease rather than as a sublease?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Whenever the third party occupies the space, regardless of the contractual arrangements"
+        },
+        {
+          "label": "B",
+          "text": "When Lessee Corp remains primarily obligated to the head lessor under the original lease"
+        },
+        {
+          "label": "C",
+          "text": "When the third party becomes the primary obligor and Lessee Corp is relieved of its primary obligation under the original lease"
+        },
+        {
+          "label": "D",
+          "text": "Never; a lessee must always continue to account for the original lease until the stated expiration date"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "If the new lessee becomes the primary obligor and the original lessee is relieved of its primary obligation under the original lease, the transaction is in substance a termination: the original lessee derecognizes the right-of-use asset and lease liability and recognizes any difference as a gain or loss. If the original lessee remains primarily obligated to the head lessor, it continues to account for the original (head) lease and accounts for the arrangement as a sublease, acting as an intermediate lessor. Mere occupancy by the third party does not determine the accounting; the contractual transfer of the primary obligation does. The assertion that the original lease must always be carried until expiration ignores the termination guidance.",
+      "explanationJa": "新借手が第一次債務者となり、元の借手が原リース契約上の第一次債務から解放される場合、その取引は実質的に解約であり、元の借手は使用権資産とリース負債の認識を中止し、差額を損益として認識する。元の借手が貸手に対して第一次債務を負い続ける場合は、原リース（ヘッドリース）の会計処理を継続し、中間貸手として転リースの処理を行う。第三者が物件を使用しているという事実だけでは会計処理は決まらず、第一次債務の契約上の移転の有無で決まる。「満了まで必ず原リースを計上し続ける」という記述は解約に関する規定を無視している。",
+      "references": ["ASC 842-20-40-2"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-182",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Residual Value Guarantee - Settlement at End of Lease",
+      "stem": "Lessee Corp has a 5-year finance lease that includes a residual value guarantee of $50,000. At commencement, Lessee Corp estimated it was probable of owing $10,000 under the guarantee and included that amount in the lease payments. At the end of the lease, the equipment's actual fair value is $32,000, and Lessee Corp pays the lessor the full deficiency. What additional expense (loss) should Lessee Corp recognize at settlement, beyond amounts already reflected in the lease accounting?",
+      "choices": [
+        { "label": "A", "text": "$18,000" },
+        { "label": "B", "text": "$10,000" },
+        { "label": "C", "text": "$0" },
+        { "label": "D", "text": "$8,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The deficiency owed under the guarantee is the guaranteed amount minus the actual fair value: $50,000 − $32,000 = $18,000. Of that amount, $10,000 was already included in the lease payments at commencement and has been accreted into the lease liability over the term. The excess paid at settlement, $18,000 − $10,000 = $8,000, is recognized as an expense (loss) in the period of settlement. The full $18,000 would double count the $10,000 already built into the liability. The amount of $10,000 is the portion already accounted for, not the additional loss. A result of $0 would be correct only if the actual deficiency had equaled the probable amount estimated at commencement.",
+      "explanationJa": "保証に基づく不足額は保証額から実際の公正価値を差し引いた金額: $50,000 − $32,000 = $18,000。このうち$10,000は開始時にリース料に含められ、期間を通じてリース負債に織り込み済みである。精算時に支払う超過分 $18,000 − $10,000 = $8,000 を精算期の費用（損失）として認識する。$18,000全額を計上すると、負債に織り込み済みの$10,000を二重計上することになる。$10,000はすでに会計処理済みの部分であり追加損失ではない。$0が正しいのは、実際の不足額が開始時の見積額と一致した場合のみ。",
+      "references": ["ASC 842-10-30-5", "ASC 842-20-35-4"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-183",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Refundable Security Deposit - Lessee Accounting",
+      "stem": "At the commencement of a 5-year operating lease, Lessee Corp pays the lessor a $12,000 security deposit that will be refunded in full at the end of the lease if the property is returned in good condition. Lessee Corp expects to receive the full refund. How should Lessee Corp account for the deposit at commencement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a deposit asset (receivable), excluded from lease payments and from the ROU asset"
+        },
+        {
+          "label": "B",
+          "text": "As part of the lease payments, increasing the lease liability"
+        },
+        {
+          "label": "C",
+          "text": "As an addition to the right-of-use asset, amortized over the lease term"
+        },
+        { "label": "D", "text": "As rent expense in the period paid" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A refundable security deposit that the lessee expects to recover is not a lease payment because it does not represent consideration for the right to use the asset; it is a deposit the lessor must return. The lessee records it as an asset (deposit receivable) and removes it when refunded. Including it in the lease liability is incorrect because the liability comprises only lease payments. Adding it to the right-of-use asset and amortizing it would expense an amount the lessee expects to recover. Expensing it immediately as rent is also incorrect for the same reason: a recoverable deposit is not an expense.",
+      "explanationJa": "返還が見込まれる敷金（保証金）は、資産を使用する権利の対価ではなく貸手が返還すべき預け金であるため、リース料には該当しない。借手はこれを資産（預け金・未収入金）として計上し、返還時に取り崩す。リース負債に含めるのは誤りで、負債を構成するのはリース料のみである。使用権資産に加算して償却する処理は、回収が見込まれる金額を費用化してしまう。支払時に賃借料として費用処理するのも同じ理由で誤り。回収可能な預け金は費用ではない。",
+      "references": ["ASC 842-10-30-5"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-184",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor Direct Financing - Net Investment with Deferred Profit",
+      "stem": "Lessor Corp enters into a lease classified as a direct financing lease. At commencement: present value of the lease payments is $420,000; present value of the residual value guaranteed by an unrelated third party is $50,000; fair value of the equipment is $470,000; and the equipment's carrying amount is $440,000. What is the net investment in the lease that Lessor Corp recognizes at commencement?",
+      "choices": [
+        { "label": "A", "text": "$470,000" },
+        { "label": "B", "text": "$440,000" },
+        { "label": "C", "text": "$420,000" },
+        { "label": "D", "text": "$390,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In a direct financing lease, any selling profit is deferred and reduces the net investment in the lease. The gross components are the lease receivable ($420,000 + $50,000 PV of third-party guaranteed residual = $470,000). Selling profit is fair value minus carrying amount: $470,000 − $440,000 = $30,000, which is deferred. Net investment = $470,000 − $30,000 = $440,000, which equals the asset's carrying amount, so no profit is recognized at commencement; the deferred profit is recognized over the lease term as part of the yield. The amount of $470,000 omits the deferral of selling profit. The amount of $420,000 excludes the residual component of the receivable. The amount of $390,000 incorrectly deducts the deferred profit from the payments component alone ($420,000 − $30,000).",
+      "explanationJa": "直接金融リースでは、販売益は繰り延べられ、リースに対する正味投資から控除される。グロスの構成要素はリース債権（$420,000 + 第三者保証残価の現在価値$50,000 = $470,000）。販売益は公正価値から帳簿価額を控除した $470,000 − $440,000 = $30,000 で、これを繰り延べる。正味投資 = $470,000 − $30,000 = $440,000 となり資産の帳簿価額と一致するため、開始時に利益は認識されず、繰延利益は利回りの一部としてリース期間にわたり認識される。$470,000は販売益の繰延を忘れた金額。$420,000は債権のうち残価部分を除外した金額。$390,000は繰延利益を支払部分のみから控除した誤り($420,000 − $30,000)。",
+      "references": ["ASC 842-30-30-2", "ASC 842-30-25-8"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-185",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Statement of Cash Flows - Variable and Short-Term Lease Payments",
+      "stem": "Under ASC 842, how should a lessee classify cash paid for variable lease payments that are not included in the lease liability and payments on short-term leases (for which the recognition exemption was elected) in the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Financing activities, because all lease payments settle lease obligations"
+        },
+        {
+          "label": "B",
+          "text": "Investing activities, because the payments relate to the use of long-lived assets"
+        },
+        {
+          "label": "C",
+          "text": "Split between financing (principal) and operating (interest) like finance lease payments"
+        },
+        { "label": "D", "text": "Operating activities" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Variable lease payments not included in the lease liability and short-term lease payments are classified within operating activities because they are not payments that reduce a recognized lease liability. Classification in financing activities applies only to the principal portion of finance lease payments. Investing activities is not used for lease payments by a lessee. The split between principal (financing) and interest (operating) applies to finance lease payments on recognized liabilities, not to variable or short-term lease payments that bypass the liability entirely.",
+      "explanationJa": "リース負債に含まれない変動リース料および短期リース（認識免除を選択）の支払は、認識されたリース負債を減少させる支払ではないため、営業活動に分類する。財務活動への分類はファイナンスリース支払の元本部分にのみ適用される。借手のリース支払が投資活動に分類されることはない。元本（財務）と利息（営業）への分割は、認識済み負債に対するファイナンスリースの支払に適用されるものであり、負債を経由しない変動リース料や短期リース料には適用されない。",
+      "references": ["ASC 842-20-45-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-186",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Modification - Term Reduction with Proportionate ROU Adjustment",
+      "stem": "Lessee Corp has an operating lease with a remaining lease liability of $400,000 and a right-of-use asset of $360,000. The lease is modified to shorten the lease term, which is accounted for as a partial termination. The remeasured lease liability after the modification is $250,000. Lessee Corp adjusts the ROU asset in proportion to the decrease in the lease liability. What gain or loss should Lessee Corp recognize at the modification date?",
+      "choices": [
+        { "label": "A", "text": "$15,000 gain" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$150,000 gain" },
+        { "label": "D", "text": "$135,000 loss" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The lease liability decreases by $400,000 − $250,000 = $150,000, a 37.5% reduction ($150,000 ÷ $400,000). Under the proportionate-reduction approach based on the decrease in the liability, the ROU asset is reduced by 37.5% × $360,000 = $135,000. The gain equals the liability reduction minus the ROU asset reduction: $150,000 − $135,000 = $15,000 gain. A result of $0 would occur only if the liability and ROU asset carrying amounts had been equal. The amount of $150,000 is the full liability decrease without offsetting the ROU asset reduction. The amount of $135,000 is the ROU asset reduction itself, and it produces a gain, not a loss, when netted against the larger liability decrease.",
+      "explanationJa": "リース負債は $400,000 − $250,000 = $150,000 減少し、減少率は37.5%($150,000 ÷ $400,000)。負債の減少割合に基づく比例縮小アプローチでは、使用権資産を 37.5% × $360,000 = $135,000 減額する。利得は負債減少額から使用権資産減少額を差し引いた $150,000 − $135,000 = $15,000 の利得となる。$0となるのは負債と使用権資産の帳簿価額が等しい場合のみ。$150,000は使用権資産の減額を相殺していない負債減少額の全額。$135,000は使用権資産の減額そのものであり、より大きい負債減少額と相殺すると損失ではなく利得が生じる。",
+      "references": ["ASC 842-10-25-13"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-187",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor Sales-Type - Variable Payments Excluded from Net Investment",
+      "stem": "Lessor Corp enters into a sales-type lease for retail equipment. In addition to fixed annual payments, the lessee must pay the lessor 1% of its annual store sales. Under ASC 842, how should Lessor Corp account for the sales-based variable payments?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Estimate the expected payments and include them in the net investment in the lease at commencement"
+        },
+        {
+          "label": "B",
+          "text": "Include them in the net investment only if sales-based payments exceeded fixed payments historically"
+        },
+        {
+          "label": "C",
+          "text": "Exclude them from the net investment and recognize them in income in the periods in which the underlying sales occur"
+        },
+        {
+          "label": "D",
+          "text": "Defer them as a contract liability and amortize them over the lease term"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Variable payments that do not depend on an index or rate are excluded from the lease payments and therefore excluded from the lessor's net investment in the lease. The lessor recognizes such payments in income in the period when the changes in facts and circumstances on which they are based occur — here, when the lessee's sales are generated. Estimating and including expected sales-based payments at commencement is prohibited because they are not in-substance fixed. A historical-comparison threshold has no basis in the standard. Deferring received amounts as a contract liability misstates income that has already been earned when the sales occur.",
+      "explanationJa": "指数またはレートに連動しない変動支払はリース料から除外されるため、貸手のリースに対する正味投資にも含まれない。貸手はその基礎となる事実（本問では借手の売上の発生）が生じた期に収益として認識する。開始時に売上連動支払を見積もって正味投資に含めることは、実質的固定支払に該当しない限り認められない。過去実績との比較による判定基準は基準に存在しない。受領額を契約負債として繰り延べる処理は、売上発生時にすでに稼得された収益を歪める。",
+      "references": ["ASC 842-30-25-2", "ASC 842-10-30-6"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-188",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Short-Term Lease - Straight-Line Expense with Escalating Rents",
+      "stem": "On January 1, Year 1, Lessee Corp enters into a 12-month equipment lease with no renewal or purchase options and elects the short-term lease exemption. Monthly rent is $1,000 for the first 6 months and $1,400 for the last 6 months. What lease expense should Lessee Corp recognize for the first 3 months (January through March)?",
+      "choices": [
+        { "label": "A", "text": "$3,000" },
+        { "label": "B", "text": "$3,600" },
+        { "label": "C", "text": "$4,200" },
+        { "label": "D", "text": "$14,400" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the short-term lease exemption, no ROU asset or lease liability is recognized, but lease expense is still recognized on a straight-line basis over the lease term. Total payments = (6 × $1,000) + (6 × $1,400) = $6,000 + $8,400 = $14,400, so monthly straight-line expense = $14,400 ÷ 12 = $1,200. Expense for 3 months = 3 × $1,200 = $3,600. The amount of $3,000 is the cash paid in the first 3 months, which understates expense because the rents escalate. The amount of $4,200 uses the higher second-half rent of $1,400 per month. The amount of $14,400 is the total expense for the entire 12-month term.",
+      "explanationJa": "短期リースの免除を選択すると使用権資産・リース負債は計上しないが、リース費用はリース期間にわたり定額法で認識する。総支払額 = (6 × $1,000) + (6 × $1,400) = $6,000 + $8,400 = $14,400、月次定額費用 = $14,400 ÷ 12 = $1,200。3か月分の費用 = 3 × $1,200 = $3,600。$3,000は最初の3か月の現金支払額で、賃料が逓増するため費用を過小計上している。$4,200は後半の月額$1,400を使用した誤り。$14,400は12か月全期間の総費用。",
+      "references": ["ASC 842-20-25-2"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-189",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Initial Measurement - Operating vs Finance Lease Liability",
+      "stem": "Under ASC 842, which of the following statements about a lessee's initial measurement of the lease liability is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "An operating lease liability is initially measured at the undiscounted sum of remaining lease payments"
+        },
+        {
+          "label": "B",
+          "text": "A finance lease liability is initially measured at the fair value of the underlying asset"
+        },
+        {
+          "label": "C",
+          "text": "An operating lease liability is initially measured at 75% of the present value of lease payments"
+        },
+        {
+          "label": "D",
+          "text": "Both operating and finance lease liabilities are initially measured at the present value of the unpaid lease payments using the same discount rate guidance"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "At commencement, the initial measurement of the lease liability is identical for operating and finance leases: the present value of the lease payments not yet paid, discounted using the rate implicit in the lease if readily determinable, otherwise the lessee's incremental borrowing rate. The classification affects subsequent measurement and expense recognition, not initial measurement. Using the undiscounted sum of payments ignores the time value of money. Fair value of the underlying asset is not the measurement basis for the liability. A 75% factor confuses the measurement rule with the economic-life classification guideline.",
+      "explanationJa": "開始日におけるリース負債の当初測定は、オペレーティングリースとファイナンスリースで同一であり、未払リース料の現在価値（リースの計算利子率が容易に算定できる場合はその利率、それ以外は借手の追加借入利子率で割引）で測定する。分類が影響するのは事後測定と費用認識であり、当初測定ではない。支払額の割引前合計を使う方法は貨幣の時間価値を無視している。原資産の公正価値は負債の測定基礎ではない。75%という係数は、測定ルールと経済的耐用年数の分類ガイドラインを混同したもの。",
+      "references": ["ASC 842-20-30-1"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-190",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Sublease - Finance Head Lease with Operating Sublease",
+      "stem": "Company X is the lessee under a head lease classified as a finance lease. During Year 3, Company X subleases the asset under a sublease classified as an operating lease while remaining primarily obligated under the head lease. For Year 3, Company X recognizes interest expense of $12,000 and ROU asset amortization of $30,000 on the head lease, and sublease income of $35,000. What is the net effect of these items on Company X's Year 3 pretax income?",
+      "choices": [
+        { "label": "A", "text": "$7,000 decrease" },
+        { "label": "B", "text": "$5,000 increase" },
+        { "label": "C", "text": "$35,000 increase" },
+        { "label": "D", "text": "$42,000 decrease" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "As intermediate lessor, Company X continues to account for the finance head lease (interest plus amortization) and recognizes sublease income gross because it remains primarily obligated. Total head lease expense = $12,000 + $30,000 = $42,000. Net effect = $35,000 income − $42,000 expense = $7,000 decrease in pretax income. An increase of $5,000 ignores the interest expense ($35,000 − $30,000). An increase of $35,000 counts only the sublease income and ignores all head lease costs. A decrease of $42,000 counts only the head lease expenses and ignores the sublease income.",
+      "explanationJa": "中間貸手であるCompany Xは、第一次債務を負い続けるため、ファイナンスのヘッドリースの会計処理（利息＋償却）を継続し、転リース収益をグロスで認識する。ヘッドリース費用合計 = $12,000 + $30,000 = $42,000。純影響 = 収益$35,000 − 費用$42,000 = 税引前利益$7,000の減少。$5,000の増加は利息費用を無視した誤り($35,000 − $30,000)。$35,000の増加は転リース収益のみを数えヘッドリース費用をすべて無視している。$42,000の減少はヘッドリース費用のみで転リース収益を無視している。",
+      "references": ["ASC 842-20-35-14"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-191",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Sale-Leaseback - Buyer-Lessor Accounting",
+      "stem": "In a sale-leaseback transaction, Buyer-Lessor Corp pays $2,000,000 to Seller-Lessee Corp for a building and immediately leases it back to Seller-Lessee under an operating lease. The transfer qualifies as a sale under ASC 606. How should Buyer-Lessor Corp account for the transaction?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Record a $2,000,000 financial asset (receivable) and recognize interest income over the leaseback term"
+        },
+        {
+          "label": "B",
+          "text": "Record the purchase of the building under applicable property guidance and account for the leaseback as a lessor under ASC 842"
+        },
+        {
+          "label": "C",
+          "text": "Record the building at the seller's carrying amount and defer any difference from the purchase price"
+        },
+        {
+          "label": "D",
+          "text": "Record nothing until the leaseback term ends, because the seller retains the right to use the building"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When the transfer qualifies as a sale, the buyer-lessor accounts for the purchase of the asset under other applicable GAAP (such as ASC 360 for property) and accounts for the leaseback as a lessor under ASC 842 — here, as an operating lease. Recording a financial asset and interest income is the treatment when the transfer fails to qualify as a sale (a financing). Carrying over the seller's book value is not appropriate; the buyer records the asset at the amount paid (its cost). Recording nothing ignores that control of the asset transferred to the buyer; the seller's continued use under an operating leaseback does not prevent sale accounting.",
+      "explanationJa": "資産の移転が販売に該当する場合、買手兼貸手は資産の購入を他の適用基準（不動産であればASC 360等）に従って処理し、リースバックについてはASC 842の貸手として処理する（本問ではオペレーティングリース）。金融資産（債権）を計上して利息収益を認識するのは、販売が成立しない場合（金融取引）の処理。売手の帳簿価額を引き継ぐ処理は不適切で、買手は支払額（取得原価）で資産を計上する。何も計上しないのは資産の支配が買手に移転した事実を無視しており、売手がオペレーティングリースで使用を継続しても販売処理は妨げられない。",
+      "references": ["ASC 842-40-25-1", "ASC 842-40-25-5"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-192",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Classification - Present Value Test with Residual Guarantee",
+      "stem": "Lessee Corp enters into an equipment lease. The equipment's fair value is $200,000. The present value of the fixed lease payments is $175,000, and the present value of the amount Lessee Corp is probable of owing under a residual value guarantee is $8,000. No other classification criteria are met, and the entity uses 90% as the threshold for the present value criterion. How should Lessee Corp classify the lease?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Operating lease, because the present value of fixed payments alone is only 87.5% of fair value"
+        },
+        {
+          "label": "B",
+          "text": "Operating lease, because a lease must meet at least two classification criteria to be a finance lease"
+        },
+        {
+          "label": "C",
+          "text": "Finance lease, because the present value of lease payments plus the probable residual guarantee amount is 91.5% of fair value"
+        },
+        {
+          "label": "D",
+          "text": "Finance lease, because any residual value guarantee automatically results in finance lease classification"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "For the lessee's present value test, lease payments include amounts probable of being owed under residual value guarantees. The present value subject to the test is $175,000 + $8,000 = $183,000, which is $183,000 ÷ $200,000 = 91.5% of fair value — equal to or greater than substantially all (90%), so the lease is a finance lease. Using fixed payments alone (87.5%) understates the test by omitting the residual guarantee amount. Only one criterion needs to be met, not two. A residual value guarantee does not automatically create a finance lease; it matters only through its effect on the present value computation.",
+      "explanationJa": "借手の現在価値テストでは、リース料に残価保証のうち支払う可能性が高い金額を含める。テスト対象の現在価値は $175,000 + $8,000 = $183,000 で、公正価値に対して $183,000 ÷ $200,000 = 91.5% となり、「実質的にすべて」(90%)以上のためファイナンスリースとなる。固定支払のみ(87.5%)で判定するのは残価保証額の算入漏れ。分類基準は2つ以上ではなく1つ満たせばよい。残価保証があるだけで自動的にファイナンスリースになるわけではなく、現在価値計算への影響を通じてのみ分類に関係する。",
+      "references": ["ASC 842-10-25-2", "ASC 842-10-30-5"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-193",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Remeasurement - Contingency Resolution Making Payments Fixed",
+      "stem": "Lessee Corp's lease requires variable payments of 2% of revenue until Lessee Corp obtains a regulatory license, after which the payments become fixed at $30,000 per year for the remainder of the term. In Year 2, Lessee Corp obtains the license, and the remaining payments become fixed. Under ASC 842, what should Lessee Corp do?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Remeasure the lease liability to include the newly fixed payments for the remainder of the term"
+        },
+        {
+          "label": "B",
+          "text": "Continue to expense all payments as variable lease cost because the lease liability is never updated for payment changes"
+        },
+        {
+          "label": "C",
+          "text": "Recognize the cumulative effect of the fixed payments as an expense immediately in Year 2"
+        },
+        {
+          "label": "D",
+          "text": "Wait until the next annual reporting date to evaluate whether remeasurement is needed"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A lessee remeasures the lease liability when a contingency is resolved such that some or all of the variable payments become fixed payments for the remainder of the lease term. Obtaining the license converts the variable payments into fixed payments of $30,000, so the liability is remeasured to include them, with a corresponding adjustment to the right-of-use asset. Continuing to treat the now-fixed payments as variable cost ignores this required remeasurement trigger. Recognizing a cumulative immediate expense has no basis; the adjustment runs through the liability and ROU asset. Remeasurement is performed when the triggering event occurs, not deferred to the next reporting date.",
+      "explanationJa": "借手は、不確定事象が解消され変動支払の一部または全部がリース期間の残りについて固定支払になった場合、リース負債を再測定しなければならない。ライセンス取得により変動支払が年$30,000の固定支払に転換したため、これを含めて負債を再測定し、同額を使用権資産で調整する。固定化された支払を引き続き変動費用として処理するのは、この必須の再測定トリガーを無視している。累積影響額を直ちに費用認識する処理に根拠はなく、調整は負債と使用権資産を通じて行う。再測定はトリガー事象の発生時に行うものであり、次の報告日まで先送りしない。",
+      "references": ["ASC 842-10-35-4"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-194",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Lessor Sales-Type - Initial Direct Costs When No Selling Profit",
+      "stem": "Lessor Corp enters into a sales-type lease for equipment whose fair value at commencement equals its carrying amount of $300,000 (no selling profit or loss). Lessor Corp incurs $9,000 of initial direct costs. Under ASC 842, how should Lessor Corp account for the initial direct costs?",
+      "choices": [
+        { "label": "A", "text": "Expense the $9,000 at lease commencement" },
+        {
+          "label": "B",
+          "text": "Capitalize the $9,000 as a separate intangible asset amortized on a straight-line basis"
+        },
+        {
+          "label": "C",
+          "text": "Net the $9,000 against sales revenue at commencement"
+        },
+        {
+          "label": "D",
+          "text": "Defer the $9,000 by including it in the net investment in the lease, recognizing it over the term through the implicit rate"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "In a sales-type lease, the treatment of initial direct costs depends on whether the fair value of the underlying asset differs from its carrying amount. When fair value equals carrying amount (no selling profit or loss), initial direct costs are deferred and included in the measurement of the net investment in the lease; the rate implicit in the lease is defined so that those costs are recovered through interest income over the term. Expensing at commencement applies only when fair value differs from the carrying amount (selling profit or loss exists). A separate straight-line intangible asset is not the prescribed mechanism. Netting against sales revenue is not permitted treatment for initial direct costs.",
+      "explanationJa": "販売型リースにおける当初直接コストの処理は、原資産の公正価値が帳簿価額と異なるか否かで決まる。公正価値が帳簿価額と等しい（販売損益がない）場合、当初直接コストは繰り延べられ、リースに対する正味投資の測定に含められる。リースの計算利子率はこのコストが期間にわたり利息収益を通じて回収されるように定義される。開始時に費用処理するのは公正価値が帳簿価額と異なる（販売損益が存在する）場合のみ。独立の無形資産として定額償却する方法は規定されていない。売上高と相殺する処理も当初直接コストの処理として認められない。",
+      "references": ["ASC 842-30-25-1"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-195",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "Finance Lease - Year 1 Total Expense with Payments in Advance",
+      "stem": "On January 1, Year 1, Lessee Corp enters into a 5-year finance lease. The right-of-use asset is initially recorded at $150,000, which equals the present value of all lease payments. The first annual payment of $35,000 is made at commencement, leaving a lease liability of $115,000 immediately after that payment. The discount rate is 6%, the lease does not transfer ownership and contains no purchase option, and the ROU asset is amortized on a straight-line basis over the 5-year term. What total expense should Lessee Corp recognize for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$36,900" },
+        { "label": "C", "text": "$39,000" },
+        { "label": "D", "text": "$6,900" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Interest accrues on the liability balance outstanding during the year, which is the balance after the commencement payment: $115,000 × 6% = $6,900. Amortization of the ROU asset is $150,000 ÷ 5 = $30,000. Total Year 1 expense = $6,900 + $30,000 = $36,900. The amount of $30,000 includes only the amortization and omits interest. The amount of $39,000 incorrectly computes interest on the full $150,000 before deducting the commencement payment ($9,000 + $30,000). The amount of $6,900 is only the interest component.",
+      "explanationJa": "利息は年間を通じて未返済の負債残高、すなわち開始日の支払後残高に対して発生する: $115,000 × 6% = $6,900。使用権資産の償却費は $150,000 ÷ 5 = $30,000。Year 1の費用合計 = $6,900 + $30,000 = $36,900。$30,000は償却費のみで利息を含んでいない。$39,000は開始日支払控除前の$150,000全額に利息を計算した誤り($9,000 + $30,000)。$6,900は利息部分のみの金額。",
+      "references": ["ASC 842-20-35-1", "ASC 842-20-25-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "lease-196",
+      "topic": "Leases (ASC 842)",
+      "subtopic": "ROU Asset - Abandonment Before End of Lease Term",
+      "stem": "In Year 2 of a 10-year operating lease, Lessee Corp commits to a plan to vacate the leased office space at the end of Year 3 and will not sublease it, although the lease itself cannot be terminated and payments will continue through Year 10. Under U.S. GAAP, how should Lessee Corp account for the right-of-use asset once it commits to the abandonment plan?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Derecognize the ROU asset and lease liability immediately and recognize a loss for the difference"
+        },
+        {
+          "label": "B",
+          "text": "Continue amortizing the ROU asset over the full 10-year lease term with no change"
+        },
+        {
+          "label": "C",
+          "text": "Test the ROU asset for impairment and amortize the remaining carrying amount over the shortened period ending at the cease-use date"
+        },
+        {
+          "label": "D",
+          "text": "Stop amortizing the ROU asset and recognize all remaining lease payments as a liability accrual immediately"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When a lessee commits to abandon a right-of-use asset before the end of the lease term, the asset's useful life is reassessed: the lessee tests the ROU asset for impairment under ASC 360 and amortizes the remaining carrying amount over the shortened useful life ending when the lessee ceases use (end of Year 3). The lease liability is not derecognized because the lessee remains contractually obligated to make payments, so immediate derecognition is incorrect. Continuing the full 10-year amortization ignores the reduced useful life of the asset. Stopping amortization and immediately accruing all remaining payments has no basis; the liability continues to be measured under ASC 842.",
+      "explanationJa": "借手がリース期間終了前に使用権資産の放棄（使用中止）を決定した場合、資産の耐用年数を見直す。借手はASC 360に基づき使用権資産の減損テストを行い、残存帳簿価額を使用中止日（Year 3末）までの短縮された耐用年数にわたって償却する。借手は契約上支払義務を負い続けるためリース負債の認識は中止されず、即時の認識中止は誤り。10年全期間での償却継続は資産の耐用年数短縮を無視している。償却を停止して残存リース料全額を直ちに負債計上する処理に根拠はなく、負債は引き続きASC 842に基づいて測定される。",
+      "references": ["ASC 360-10-35", "ASC 842-20-35-9"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
     }
   ]
 }

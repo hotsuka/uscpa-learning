@@ -2,7 +2,7 @@
   "id": "far-inventory",
   "name": "Inventory",
   "topic": "Inventory",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "inv-001",
@@ -3768,6 +3768,483 @@
       "references": ["ASC 606-10-55-80", "ASC 330-10-30-1"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "inv-158",
+      "topic": "Inventory",
+      "subtopic": "Cost Flow Methods - Balance Sheet Approximation",
+      "stem": "In a period of steadily changing prices, which inventory cost flow method reports an ending inventory balance that most closely approximates current replacement cost?",
+      "choices": [
+        { "label": "A", "text": "LIFO" },
+        { "label": "B", "text": "FIFO" },
+        { "label": "C", "text": "Weighted average" },
+        { "label": "D", "text": "Base stock" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under FIFO, the earliest costs flow to cost of goods sold, so ending inventory consists of the most recent purchase costs. Those recent costs most closely approximate current replacement cost at the balance sheet date. LIFO leaves the oldest (possibly decades-old) costs in ending inventory, producing a balance sheet amount far from current cost. Weighted average blends old and new costs, so it is less current than FIFO. The base stock method retains a fixed base layer at original cost and is not permitted under U.S. GAAP.",
+      "explanationJa": "FIFOでは最も古い原価から売上原価に流れるため、期末棚卸資産は直近の仕入原価で構成される。直近の原価は貸借対照表日時点の再調達原価に最も近い。LIFOは最も古い原価が期末棚卸資産に残るため、貸借対照表の金額は時価から大きく乖離する。加重平均は新旧の原価が混合されるためFIFOより現在性が劣る。ベースストック法は基礎在庫を取得時原価のまま維持する方法で、米国GAAPでは認められていない。",
+      "references": ["ASC 330-10-30"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-159",
+      "topic": "Inventory",
+      "subtopic": "Purchase Discounts - Gross Method",
+      "stem": "Corbett Co. records purchases using the gross method. During the year, Corbett purchased $80,000 of merchandise on terms 2/10, n/30. Corbett paid invoices totaling $60,000 within the discount period and the remaining $20,000 after the discount period expired. What is Corbett's net cost of purchases for the year?",
+      "choices": [
+        { "label": "A", "text": "$78,800" },
+        { "label": "B", "text": "$78,400" },
+        { "label": "C", "text": "$80,000" },
+        { "label": "D", "text": "$79,200" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the gross method, purchases are initially recorded at the full invoice amount of $80,000, and discounts are recognized only when taken. Discounts taken = 2% x $60,000 = $1,200. Net cost of purchases = $80,000 - $1,200 = $78,800. The amount $78,400 incorrectly applies the 2% discount to all $80,000 of purchases, including the $20,000 paid after the discount period. The amount $80,000 ignores the discounts actually taken, and $79,200 incorrectly uses a 1% rate on the full purchase amount.",
+      "explanationJa": "総額法では、仕入は請求額の総額$80,000で記帳し、値引は実際に取得した時にのみ認識する。取得した仕入割引 = 2% × $60,000 = $1,200。仕入の純額 = $80,000 − $1,200 = $78,800。$78,400は割引期間後に支払った$20,000を含む全額$80,000に2%を適用した誤り。$80,000は実際に取得した割引を無視しており、$79,200は全額に誤って1%を適用した金額である。",
+      "references": ["ASC 330-10-30-1"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-160",
+      "topic": "Inventory",
+      "subtopic": "LIFO in Declining Prices",
+      "stem": "During a period of steadily declining prices, a company using LIFO, compared with a company using FIFO, would report:",
+      "choices": [
+        { "label": "A", "text": "Lower net income and lower ending inventory" },
+        {
+          "label": "B",
+          "text": "Higher net income and lower ending inventory"
+        },
+        {
+          "label": "C",
+          "text": "Higher net income and higher ending inventory"
+        },
+        { "label": "D", "text": "Lower net income and higher ending inventory" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When prices are falling, the most recent costs are the lowest. LIFO charges these recent (lower) costs to cost of goods sold, resulting in lower COGS and therefore higher net income than FIFO. Ending inventory under LIFO retains the older (higher) costs, so ending inventory is also higher than under FIFO. The effects in a declining price environment are the mirror image of the familiar rising-price case, where LIFO produces lower income and lower inventory. Any combination pairing higher income with lower inventory (or lower income with higher inventory) mixes the two price environments.",
+      "explanationJa": "物価下落局面では直近の原価が最も低い。LIFOはこの直近の（低い）原価を売上原価に計上するため、FIFOより売上原価が低くなり純利益は高くなる。LIFOの期末棚卸資産には古い（高い）原価が残るため、期末棚卸資産もFIFOより高くなる。物価下落時の影響は、よく知られた物価上昇時（LIFOは利益も棚卸資産も低い）の鏡像である。「利益が高く棚卸資産が低い」等の組合せは2つの物価環境を混同したものである。",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-161",
+      "topic": "Inventory",
+      "subtopic": "Gross Profit Method - Acceptable Uses",
+      "stem": "The gross profit method of estimating inventory is acceptable for each of the following purposes EXCEPT:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Estimating inventory for interim financial statements"
+        },
+        {
+          "label": "B",
+          "text": "Estimating inventory destroyed in a casualty for an insurance claim"
+        },
+        {
+          "label": "C",
+          "text": "Testing the overall reasonableness of a physical inventory count"
+        },
+        {
+          "label": "D",
+          "text": "Determining ending inventory for annual financial statements prepared under GAAP"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The gross profit method is only an estimation technique based on a historical gross margin percentage; it does not measure the actual quantity or cost of inventory on hand. It is acceptable for interim estimates, casualty loss claims, and reasonableness tests of a physical count. However, annual GAAP financial statements require inventory determined by a physical count or a reliable perpetual record valued under an acceptable cost flow method, so an estimate based on an assumed gross margin is not acceptable for the annual statements.",
+      "explanationJa": "売上総利益法は過去の売上総利益率に基づく見積技法にすぎず、実際の在庫数量や原価を測定するものではない。期中（四半期）の見積り、災害損失の保険請求額の算定、実地棚卸結果の合理性チェックには使用が認められる。しかし年次のGAAP財務諸表では、実地棚卸または信頼できる継続記録に基づき、認められた原価配分法で評価した棚卸資産が必要であり、仮定された利益率に基づく見積りは年次財務諸表には認められない。",
+      "references": ["ASC 330-10-30"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-162",
+      "topic": "Inventory",
+      "subtopic": "Moving Average - System Requirement",
+      "stem": "The moving-average inventory cost method can be used only with which type of inventory system?",
+      "choices": [
+        { "label": "A", "text": "A periodic inventory system" },
+        { "label": "B", "text": "A perpetual inventory system" },
+        {
+          "label": "C",
+          "text": "Either a periodic or a perpetual inventory system"
+        },
+        { "label": "D", "text": "A specific identification system" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The moving-average method recomputes a new average unit cost after each purchase, which requires continuous updating of inventory records as transactions occur. Only a perpetual system maintains such running records. Under a periodic system, the average is computed only once at period-end (the weighted-average method), so a moving average cannot be applied. Specific identification is itself a separate cost flow method, not an inventory recording system.",
+      "explanationJa": "移動平均法は仕入のたびに新しい平均単価を再計算する方法であり、取引発生の都度、在庫記録を継続的に更新する必要がある。そのような継続記録を維持するのは継続記録法（perpetual）のみである。棚卸計算法（periodic）では平均単価は期末に一度だけ計算される（総平均法）ため、移動平均は適用できない。個別法はそれ自体が別個の原価配分法であり、在庫の記録システムではない。",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-163",
+      "topic": "Inventory",
+      "subtopic": "Year-End Cutoff - Multiple Adjustments",
+      "stem": "Halvern Co.'s physical inventory count on December 31, Year 1, totaled $620,000. The count included $45,000 of goods held on consignment from Varga Co. The count excluded: (1) goods costing $50,000 that Halvern had shipped to a consignee and that remained unsold at year-end, and (2) goods costing $30,000 that Halvern sold and shipped on December 28 FOB destination, which were still in transit at December 31. What amount should Halvern report as inventory at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$625,000" },
+        { "label": "B", "text": "$700,000" },
+        { "label": "C", "text": "$605,000" },
+        { "label": "D", "text": "$655,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Goods held on consignment from Varga belong to Varga, so the $45,000 must be removed from the count. Goods out on consignment still belong to Halvern, so the $50,000 must be added. Goods shipped FOB destination remain Halvern's until they reach the buyer, so the $30,000 in transit must be added. Correct inventory = $620,000 - $45,000 + $50,000 + $30,000 = $655,000. The amount $625,000 omits the FOB destination goods in transit; $700,000 fails to remove the consigned-in goods; $605,000 omits the goods out on consignment.",
+      "explanationJa": "Varga社からの受託品（消化仕入でない委託品）はVarga社の資産であるため$45,000を控除する。委託販売のため積送した未販売品は依然としてHalvern社の資産であるため$50,000を加算する。FOB destinationで出荷した商品は買手到着まで売手の資産であるため、輸送中の$30,000を加算する。正しい棚卸資産 = $620,000 − $45,000 + $50,000 + $30,000 = $655,000。$625,000はFOB destinationの輸送中商品の加算漏れ、$700,000は受託品の控除漏れ、$605,000は積送品の加算漏れである。",
+      "references": ["ASC 330-10-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-164",
+      "topic": "Inventory",
+      "subtopic": "Purchase Commitments - Cancelable Contract",
+      "stem": "In November, Year 1, Drennan Co. entered into a contract to purchase raw materials in March, Year 2, at a fixed price of $200,000. The contract is cancelable by Drennan at any time without penalty. At December 31, Year 1, the market price of the materials has declined to $170,000. How should Drennan account for this contract at December 31, Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Accrue a $30,000 loss and a corresponding liability"
+        },
+        {
+          "label": "B",
+          "text": "Record the materials as inventory at $170,000 with a $200,000 liability"
+        },
+        {
+          "label": "C",
+          "text": "Recognize no loss, because the commitment is not noncancelable"
+        },
+        {
+          "label": "D",
+          "text": "Defer a $30,000 loss and amortize it over the period the materials are used"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A loss on a purchase commitment is accrued only when the commitment is firm (noncancelable) and a market decline indicates a loss will be incurred. Because Drennan can cancel this contract at any time without penalty, it is not committed to purchase at the above-market price, and no loss has been incurred. Accruing a $30,000 loss would only be appropriate for a noncancelable commitment. Recording inventory and a liability is improper because title to the goods has not passed under an executory contract. Deferring and amortizing a loss is never an acceptable treatment for purchase commitment losses.",
+      "explanationJa": "購入契約の損失を計上するのは、契約が解約不能（firm commitment）であり、市場価格の下落により損失の発生が見込まれる場合に限られる。本契約はペナルティなしでいつでも解約できるため、市場価格を上回る価格での購入義務を負っておらず、損失は発生していない。$30,000の損失計上は解約不能な契約の場合にのみ適切である。未履行契約の段階では商品の所有権が移転していないため、棚卸資産と負債の計上は不適切である。損失の繰延・償却処理は購入契約損失について認められない。",
+      "references": ["ASC 330-10-35-17"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-165",
+      "topic": "Inventory",
+      "subtopic": "Cutoff Error - Purchase Recorded, Goods Excluded",
+      "stem": "On December 28, Year 1, a vendor shipped goods costing $25,000 to Mercer Co. with terms FOB destination. The goods arrived on January 3, Year 2. Mercer recorded the purchase and the related accounts payable in Year 1 based on the invoice date but properly excluded the goods from its December 31, Year 1 physical inventory. Ignoring income taxes, what is the effect of this error on Mercer's Year 1 net income?",
+      "choices": [
+        { "label": "A", "text": "Understated by $25,000" },
+        { "label": "B", "text": "Overstated by $25,000" },
+        { "label": "C", "text": "No effect" },
+        { "label": "D", "text": "Understated by $50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under FOB destination terms, title does not pass until the goods arrive in Year 2, so neither the purchase nor the inventory belongs in Year 1. Mercer recorded the purchase (overstating purchases by $25,000) but correctly excluded the goods from ending inventory. COGS = beginning inventory + purchases - ending inventory, so overstated purchases with correct ending inventory overstate COGS by $25,000, which understates net income by $25,000. There is an effect because purchases and inventory were treated inconsistently; the error would self-correct only on income if both had been recorded or both omitted. The amount $50,000 incorrectly doubles the single $25,000 misstatement.",
+      "explanationJa": "FOB destination条件では商品が到着するYear 2まで所有権が移転しないため、仕入も棚卸資産もYear 1に計上すべきではない。Mercer社は仕入を計上し（仕入$25,000過大）、棚卸資産からは正しく除外した。売上原価 = 期首棚卸資産 + 仕入 − 期末棚卸資産であるため、仕入の過大計上と正しい期末棚卸資産の組合せにより売上原価が$25,000過大となり、純利益は$25,000過小となる。仕入と棚卸資産の処理が不整合であるため影響が生じる。仕入と棚卸資産の両方を計上（または両方を除外）していれば利益への影響はなかった。$50,000は単一の$25,000の誤りを誤って2倍にした金額である。",
+      "references": ["ASC 330-10-30", "ASC 250-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-166",
+      "topic": "Inventory",
+      "subtopic": "Inventory Error - Correction After Issuance",
+      "stem": "In March, Year 2, after its Year 1 financial statements were issued, Quentin Co. discovered that its December 31, Year 1 ending inventory was overstated by $40,000 due to a counting error. Quentin presents comparative financial statements. How should Quentin account for this discovery in its Year 2 financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Report the $40,000 as a loss in Year 2 income from continuing operations"
+        },
+        {
+          "label": "B",
+          "text": "Restate the Year 1 comparative statements and correct the error as a prior-period adjustment"
+        },
+        {
+          "label": "C",
+          "text": "Report the $40,000 as a cumulative-effect adjustment in Year 2 net income"
+        },
+        {
+          "label": "D",
+          "text": "Make no adjustment, because the error counterbalances by the end of Year 2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The correction of a material error discovered after the financial statements are issued is treated as a prior-period adjustment under ASC 250: the Year 1 comparative statements are restated (reducing Year 1 ending inventory and net income by $40,000), and beginning retained earnings of the earliest period presented is adjusted. Reporting the loss in Year 2 income would misstate Year 2 results for a Year 1 error. A cumulative-effect adjustment in net income applies to neither errors nor changes in accounting principle under current GAAP. Although the income effect counterbalances over two years, GAAP still requires restatement because the individual years and interim trends are misstated.",
+      "explanationJa": "財務諸表発行後に発見された重要な誤謬の訂正は、ASC 250に基づき過年度遡及修正（prior-period adjustment）として処理する。すなわちYear 1の比較財務諸表を修正再表示し（Year 1の期末棚卸資産と純利益を$40,000減額）、表示する最も古い期間の期首利益剰余金を修正する。Year 2の損益に損失計上するとYear 1の誤謬によりYear 2の業績が歪む。純利益への累積影響額調整は現行GAAPでは誤謬にも会計方針の変更にも適用されない。利益への影響は2年間で相殺されるが、各年度の数値と趨勢が誤っているため、GAAPは修正再表示を要求する。",
+      "references": ["ASC 250-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-167",
+      "topic": "Inventory",
+      "subtopic": "Gross Profit Method - Estimating Theft Shortage",
+      "stem": "Ralston Co. suspects employee theft of inventory. Records for the year show: beginning inventory $150,000; net purchases $610,000; net sales $900,000. Ralston's gross profit rate has been a stable 25% of net sales. A physical count at year-end shows inventory on hand of $62,000. Using the gross profit method, what is the estimated cost of the missing inventory?",
+      "choices": [
+        { "label": "A", "text": "$23,000" },
+        { "label": "B", "text": "$85,000" },
+        { "label": "C", "text": "$62,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Goods available for sale = $150,000 + $610,000 = $760,000. Estimated COGS = $900,000 x (1 - 0.25) = $675,000. Estimated ending inventory = $760,000 - $675,000 = $85,000. Estimated shortage = estimated ending inventory of $85,000 minus the $62,000 actually on hand = $23,000. The amount $85,000 is the estimated ending inventory before subtracting the physical count; $62,000 is simply the count itself; $40,000 results from incorrectly treating the 25% as a markup on cost (COGS = $900,000 / 1.25 = $720,000, leaving $40,000), which also fails to subtract the count.",
+      "explanationJa": "販売可能商品原価 = $150,000 + $610,000 = $760,000。推定売上原価 = $900,000 ×（1 − 0.25）= $675,000。推定期末棚卸資産 = $760,000 − $675,000 = $85,000。推定盗難損失 = 推定期末棚卸資産$85,000 − 実地棚卸高$62,000 = $23,000。$85,000は実地棚卸高を控除する前の推定期末棚卸資産、$62,000は実地棚卸高そのものである。$40,000は25%を誤って原価に対する利益率として扱い（売上原価 = $900,000 ÷ 1.25 = $720,000、残額$40,000）、かつ実地棚卸高の控除も行っていない誤りである。",
+      "references": ["ASC 330-10-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-168",
+      "topic": "Inventory",
+      "subtopic": "FOB Shipping Point - Goods Not Yet Delivered to Carrier",
+      "stem": "On December 31, Year 1, Telford Co. completed a sale of goods costing $18,000 with terms FOB shipping point. The goods were packed and segregated on Telford's loading dock at year-end and were picked up by the common carrier on January 2, Year 2. How should Telford treat these goods in its December 31, Year 1 financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Exclude the goods from inventory because the sales agreement was final at year-end"
+        },
+        {
+          "label": "B",
+          "text": "Exclude the goods from inventory because FOB shipping point transfers title at the seller's location"
+        },
+        {
+          "label": "C",
+          "text": "Include the goods in inventory because title does not pass until the goods are delivered to the carrier"
+        },
+        {
+          "label": "D",
+          "text": "Include half the cost in inventory to reflect the shared risk during the transfer period"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under FOB shipping point terms, title passes when the seller delivers the goods to the common carrier—not when the sales agreement is signed and not merely because the goods sit at the seller's location. At December 31 the goods were still on Telford's dock and had not been given to the carrier, so title (and control) had not passed, and the $18,000 remains in Telford's inventory. The reasoning that the contract was final ignores the shipping-term trigger for title transfer. The notion that title passes 'at the seller's location' is incomplete: it passes at the seller's location only upon delivery to the carrier. Splitting the cost has no basis in GAAP.",
+      "explanationJa": "FOB shipping point条件では、売手が運送業者に商品を引き渡した時点で所有権が移転する。販売契約の締結時点や、商品が売手の構内にあるという事実だけでは移転しない。12月31日時点で商品はまだTelford社の搬出口にあり運送業者に引き渡されていないため、所有権（および支配）は移転しておらず、$18,000はTelford社の棚卸資産に含めたままにする。「契約が確定していた」という理由は、所有権移転の契機が運送業者への引渡しであることを無視している。「売手の所在地で所有権が移転する」という説明は不完全で、移転するのは運送業者への引渡し時である。原価を折半する処理にGAAP上の根拠はない。",
+      "references": ["ASC 330-10-30", "ASC 606-10-25-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-169",
+      "topic": "Inventory",
+      "subtopic": "Consignment - Consignee Remittance Calculation",
+      "stem": "Berwick Co. (consignee) holds goods on consignment from Lyle Co. (consignor). During December, Berwick sold 80 consigned units at $100 each. Per the consignment agreement, Berwick is entitled to a 15% commission on gross sales and reimbursement of $300 of local delivery costs it paid on behalf of Lyle. What amount of cash should Berwick remit to Lyle for December?",
+      "choices": [
+        { "label": "A", "text": "$6,800" },
+        { "label": "B", "text": "$8,000" },
+        { "label": "C", "text": "$5,600" },
+        { "label": "D", "text": "$6,500" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gross consignment sales = 80 x $100 = $8,000. Berwick deducts its commission of 15% x $8,000 = $1,200 and the $300 of reimbursable delivery costs it advanced. Remittance = $8,000 - $1,200 - $300 = $6,500. The amount $6,800 deducts the commission but ignores the reimbursable delivery costs; $8,000 is the gross sales with no deductions; $5,600 deducts an incorrect 30% combined amount rather than the actual commission plus the $300 advanced.",
+      "explanationJa": "委託販売の総売上 = 80個 × $100 = $8,000。受託者Berwick社は手数料 15% × $8,000 = $1,200 と、立替えた配送費$300を控除する。送金額 = $8,000 − $1,200 − $300 = $6,500。$6,800は手数料のみ控除し立替配送費を無視した金額、$8,000は控除前の総売上、$5,600は実際の手数料と立替額$300ではなく誤って合計30%相当を控除した金額である。",
+      "references": ["ASC 606-10-55-80"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-170",
+      "topic": "Inventory",
+      "subtopic": "Retail Method - Abnormal Shortage Treatment",
+      "stem": "In applying the conventional retail inventory method, abnormal shortages (such as losses from a casualty or major theft) should be:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Deducted from both the cost and retail columns before the cost-to-retail ratio is computed"
+        },
+        {
+          "label": "B",
+          "text": "Deducted from the retail column only, after the cost-to-retail ratio is computed"
+        },
+        {
+          "label": "C",
+          "text": "Ignored in the retail computation and disclosed in the notes only"
+        },
+        {
+          "label": "D",
+          "text": "Added to both the cost and retail columns before the cost-to-retail ratio is computed"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Abnormal shortages are removed from both the cost and retail columns before computing the cost-to-retail ratio, so that the unusual loss does not distort the ratio applied to the remaining goods; the abnormal loss is then reported as a separate loss. This contrasts with normal shortages, which are deducted from the retail column only, after the ratio, because they are an expected cost of doing business. Ignoring the shortage would overstate ending inventory, and adding amounts to the columns has no conceptual basis.",
+      "explanationJa": "異常な減耗（災害や大規模盗難等）は、原価対売価比率の算定前に原価欄と売価欄の両方から控除する。これにより異常損失が残りの商品に適用される比率を歪めることを防ぎ、異常損失は別個の損失として報告する。これに対し、正常な減耗は事業上見込まれるコストであるため、比率算定後に売価欄からのみ控除する点で対照的である。減耗を無視すると期末棚卸資産が過大になり、両欄への加算には概念的根拠がない。",
+      "references": ["ASC 330-10-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-171",
+      "topic": "Inventory",
+      "subtopic": "Inventory Error - Working Capital Effect",
+      "stem": "At December 31, Year 1, Foley Co.'s ending inventory was understated by $35,000 because a section of the warehouse was missed during the physical count. Accounts payable was correctly stated. What is the effect of this error on Foley's working capital and current ratio at December 31, Year 1? (Foley's current ratio exceeds 1.0.)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Working capital overstated; current ratio overstated"
+        },
+        {
+          "label": "B",
+          "text": "Working capital understated; current ratio understated"
+        },
+        {
+          "label": "C",
+          "text": "Working capital understated; current ratio unaffected"
+        },
+        {
+          "label": "D",
+          "text": "Working capital unaffected; current ratio understated"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Inventory is a current asset. Understating ending inventory by $35,000 understates total current assets by $35,000, while current liabilities are unaffected. Working capital (current assets - current liabilities) is therefore understated by $35,000, and the current ratio (current assets / current liabilities) is also understated because the numerator is too low. The combination of an overstated measure is backwards. Working capital cannot be unaffected when a current asset is misstated and liabilities are correct, and the current ratio changes whenever the numerator changes with a constant denominator.",
+      "explanationJa": "棚卸資産は流動資産である。期末棚卸資産の$35,000の過小計上は流動資産合計を$35,000過小にするが、流動負債には影響しない。したがって運転資本（流動資産 − 流動負債）は$35,000過小となり、流動比率（流動資産 ÷ 流動負債）も分子が過小であるため過小となる。「過大」とする組合せは逆である。流動資産が誤っていて負債が正しい場合に運転資本が影響を受けないことはあり得ず、分母が一定で分子が変化すれば流動比率は必ず変化する。",
+      "references": ["ASC 330-10-30", "ASC 250-10-45-23"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-172",
+      "topic": "Inventory",
+      "subtopic": "Specific Identification - Manipulation Criticism",
+      "stem": "A criticism of the specific identification method of inventory costing is that it:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Is not permitted for income tax reporting purposes"
+        },
+        {
+          "label": "B",
+          "text": "Always produces the lowest net income in a period of rising prices"
+        },
+        {
+          "label": "C",
+          "text": "Cannot be used when inventory units are individually identifiable"
+        },
+        {
+          "label": "D",
+          "text": "Allows management to manipulate income by choosing which specific units to sell"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When identical interchangeable units carry different acquisition costs, specific identification lets management decide which particular units to deliver to a customer. By delivering high-cost units, management lowers income; by delivering low-cost units, it raises income. This ability to steer reported income is the classic criticism of the method. The method is permitted for tax purposes. It does not systematically produce the lowest income in rising prices—the result depends entirely on which units are chosen. And individual identifiability is precisely the situation in which the method is used, not a barrier to it.",
+      "explanationJa": "同一で交換可能な商品の取得原価が異なる場合、個別法では経営者がどの商品を顧客に引き渡すかを選択できる。高原価の商品を引き渡せば利益は減少し、低原価の商品を引き渡せば利益は増加する。この報告利益の操作可能性が個別法に対する古典的な批判である。個別法は税務上も認められている。物価上昇時に常に最低の利益となるわけではなく、結果はどの商品を選ぶかに完全に依存する。また個別に識別可能であることはまさに個別法が使われる状況であり、適用の障害ではない。",
+      "references": ["ASC 330-10-30-9"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-173",
+      "topic": "Inventory",
+      "subtopic": "Lower of Cost or Market - Replacement Cost Below Floor",
+      "stem": "Walsh Co. uses LIFO and applies the lower of cost or market rule to an inventory item with the following data: original cost $100; estimated selling price $84; cost to complete and sell $4; normal profit margin $12; current replacement cost $62. At what amount should Walsh report this item?",
+      "choices": [
+        { "label": "A", "text": "$62" },
+        { "label": "B", "text": "$80" },
+        { "label": "C", "text": "$68" },
+        { "label": "D", "text": "$100" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ceiling = NRV = $84 - $4 = $80. Floor = NRV - normal profit = $80 - $12 = $68. Market is replacement cost limited to the ceiling-floor range: replacement cost of $62 is below the floor of $68, so market = $68. The item is reported at the lower of cost ($100) or market ($68) = $68. The amount $62 uses raw replacement cost without applying the floor limit; $80 is the ceiling, which applies only when replacement cost exceeds it; $100 is original cost, which is higher than market and would overstate the inventory.",
+      "explanationJa": "シーリング = NRV = $84 − $4 = $80。フロア = NRV − 正常利益 = $80 − $12 = $68。マーケットは再調達原価をシーリングとフロアの範囲内に制限した値であり、再調達原価$62はフロア$68を下回るため、マーケット = $68。棚卸資産は原価（$100）とマーケット（$68）の低い方 = $68で報告する。$62はフロアの下限を適用せず再調達原価をそのまま使った誤り、$80は再調達原価がシーリングを上回る場合にのみ用いるシーリングの金額、$100はマーケットより高い取得原価であり棚卸資産の過大計上となる。",
+      "references": ["ASC 330-10-35-1"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-174",
+      "topic": "Inventory",
+      "subtopic": "Dollar-Value LIFO - Link-Chain Method",
+      "stem": "Compared with the double-extension technique, the primary advantage of the link-chain technique for computing a dollar-value LIFO price index is that the link-chain technique:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Remains practical when the inventory mix changes substantially, because items need to be priced only at current-year and beginning-of-year costs"
+        },
+        {
+          "label": "B",
+          "text": "Eliminates the need to compute a cumulative price index"
+        },
+        {
+          "label": "C",
+          "text": "Always produces a lower ending inventory valuation than double extension"
+        },
+        {
+          "label": "D",
+          "text": "Permits the entity to avoid maintaining a base-year inventory amount"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Double extension requires pricing every item in ending inventory at base-year cost, which becomes impractical or impossible when products turn over and new items have no base-year cost. Link-chain instead prices the ending inventory at current-year and beginning-of-year costs to derive an annual index, then multiplies the annual indexes together to obtain the cumulative index. A cumulative index is still required—it is built by chaining, not eliminated. Neither technique systematically produces a lower valuation; results depend on actual price changes. And a base-year dollar amount must still be maintained, because layers are stated at base-year cost under both techniques.",
+      "explanationJa": "ダブルエクステンション法では期末棚卸資産の全品目を基準年原価で評価する必要があり、商品の入替わりで新製品に基準年原価が存在しない場合には実務上困難または不可能になる。リンクチェーン法では期末棚卸資産を当年原価と期首原価で評価して年次指数を求め、年次指数を乗じ合わせて累積指数を算定するため、品目構成が大幅に変化しても実務的に対応できる。累積指数は連鎖計算で構築されるのであって不要になるわけではない。どちらの手法が低い評価額になるかは実際の価格変動次第であり、体系的に低くなることはない。また両手法ともレイヤーは基準年原価で表示されるため、基準年金額の維持は依然として必要である。",
+      "references": ["ASC 330-10-30"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-175",
+      "topic": "Inventory",
+      "subtopic": "Dollar-Value LIFO - Layer Erosion in Second Year",
+      "stem": "Garrick Co. adopted dollar-value LIFO when its inventory was $200,000 (index 1.00). At the end of Year 1, inventory at current-year cost was $254,100 and the index was 1.10. At the end of Year 2, inventory at current-year cost was $264,500 and the index was 1.15. What is Garrick's dollar-value LIFO ending inventory at the end of Year 2?",
+      "choices": [
+        { "label": "A", "text": "$234,500" },
+        { "label": "B", "text": "$233,000" },
+        { "label": "C", "text": "$230,000" },
+        { "label": "D", "text": "$264,500" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Year 1: $254,100 / 1.10 = $231,000 at base-year cost, creating a Year 1 layer of $31,000, valued at $31,000 x 1.10 = $34,100 (ending inventory $234,100). Year 2: $264,500 / 1.15 = $230,000 at base-year cost—a decrease of $1,000, which erodes the Year 1 layer (LIFO order). Remaining layers: base $200,000 x 1.00 = $200,000, plus Year 1 layer $30,000 x 1.10 = $33,000. Ending inventory = $233,000. The amount $234,500 incorrectly prices the remaining $30,000 layer at the Year 2 index of 1.15; once a layer is established, it keeps its original-year index. The amount $230,000 is base-year dollars without applying any indexes, and $264,500 is simply current-year cost.",
+      "explanationJa": "Year 1: $254,100 ÷ 1.10 = 基準年原価$231,000。Year 1レイヤー$31,000が生じ、その評価額は$31,000 × 1.10 = $34,100（期末棚卸資産$234,100）。Year 2: $264,500 ÷ 1.15 = 基準年原価$230,000で$1,000の減少となり、LIFOの順序によりYear 1レイヤーが侵食される。残存レイヤー: 基礎$200,000 × 1.00 = $200,000、Year 1レイヤー$30,000 × 1.10 = $33,000。期末棚卸資産 = $233,000。$234,500は残存レイヤー$30,000に誤ってYear 2の指数1.15を適用した金額であり、一度形成されたレイヤーは形成年度の指数を維持する。$230,000は指数を適用しない基準年ドルの金額、$264,500は当年原価そのものである。",
+      "references": ["ASC 330-10-30"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-176",
+      "topic": "Inventory",
+      "subtopic": "Fixed Overhead Allocation - Abnormally High Production",
+      "stem": "Stanton Mfg. budgeted fixed manufacturing overhead of $600,000 based on a normal capacity of 100,000 units. Because of an unusual surge in demand, Stanton actually produced 150,000 units during the year, a level considered abnormally high. Actual fixed overhead incurred equaled the budget. Under ASC 330, what amount of fixed overhead should be allocated to each unit produced?",
+      "choices": [
+        { "label": "A", "text": "$6" },
+        { "label": "B", "text": "$5" },
+        { "label": "C", "text": "$10" },
+        { "label": "D", "text": "$4" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 330-10-30 requires fixed overhead to be allocated based on normal capacity, except that in periods of abnormally high production the per-unit allocation must be decreased so that inventory is not measured above actual cost. Allocating the normal-capacity rate of $6 ($600,000 / 100,000) to 150,000 units would assign $900,000 of fixed overhead when only $600,000 was incurred, overstating inventory. The correct allocation uses actual production: $600,000 / 150,000 = $4 per unit. The $6 rate applies in normal or abnormally low production periods (with unallocated amounts expensed when production is abnormally low). The $5 and $10 amounts do not result from any acceptable allocation basis here.",
+      "explanationJa": "ASC 330-10-30は固定製造間接費を正常生産能力に基づいて配賦することを要求するが、生産量が異常に多い期間には、棚卸資産が実際原価を超えて評価されないよう単位当たり配賦額を引き下げなければならない。正常生産能力レート$6（$600,000 ÷ 100,000）を150,000個に配賦すると、実際発生額$600,000に対し$900,000を配賦することになり棚卸資産が過大となる。正しい配賦は実際生産量を用い、$600,000 ÷ 150,000 = 単位当たり$4。$6のレートは正常または異常に低い生産水準の期間に適用される（生産が異常に低い場合、未配賦額は期間費用とする）。$5や$10はこの状況で認められる配賦基準からは導かれない。",
+      "references": ["ASC 330-10-30-3"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "inv-177",
+      "topic": "Inventory",
+      "subtopic": "Purchase Commitment - No Loss When Finished Goods Profitable",
+      "stem": "Vickers Mfg. has a noncancelable commitment to purchase 10,000 pounds of a raw material at $8 per pound in the following year. At year-end, the market price of the raw material has fallen to $6.50 per pound. However, the finished products in which the material will be used are expected to sell at prices that will recover the $8 committed cost plus a normal profit margin. How should Vickers account for the commitment at year-end?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Accrue a $15,000 loss because the market price is below the commitment price"
+        },
+        {
+          "label": "B",
+          "text": "Record the raw materials and a liability at the committed amount of $80,000"
+        },
+        {
+          "label": "C",
+          "text": "Recognize no loss, because no loss is expected on the ultimate sale of the finished products"
+        },
+        {
+          "label": "D",
+          "text": "Accrue a $15,000 loss and reduce it by the expected normal profit margin"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Losses on firm purchase commitments are measured in the same way as inventory write-downs. Consistent with the principle that raw materials are not written down when the finished goods in which they will be incorporated are expected to sell at or above cost, no loss is accrued on the commitment when the decline in the material's market price will not result in a loss on the ultimate sale of the finished products. Accruing the $15,000 decline ($1.50 x 10,000) looks only at the raw material price and ignores the recoverability through finished goods sales. Recording the goods and a liability is improper for an executory contract before title passes. Netting a loss against an expected profit margin is not an accepted measurement approach.",
+      "explanationJa": "解約不能な購入契約の損失は棚卸資産の評価減と同じ方法で測定する。原材料が組み込まれる完成品が原価以上で販売できると見込まれる場合に原材料の評価減を行わないという原則と整合的に、原材料の市場価格下落が完成品の最終販売で損失をもたらさない場合には、購入契約についても損失を計上しない。$15,000の下落額（$1.50 × 10,000ポンド）の計上は原材料価格のみに着目し、完成品販売による回収可能性を無視している。所有権移転前の未履行契約について商品と負債を計上するのは不適切である。損失を予想利益率と相殺する測定方法は認められていない。",
+      "references": ["ASC 330-10-35-17", "ASC 330-10-35-8"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
     }
   ]
 }

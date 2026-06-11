@@ -2,7 +2,7 @@
   "id": "far-cash-flows",
   "name": "Statement of Cash Flows",
   "topic": "Statement of Cash Flows",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "cf-001",
@@ -3571,6 +3571,516 @@
       "references": ["ASC 230-10-45-21D", "ASU 2016-15"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cf-161",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Multiple Adjustments with Investment Gain",
+      "stem": "Calloway Inc. reported net income of $530,000 for the year. Additional information: depreciation expense $67,000; gain on sale of investments $24,000; increase in accounts receivable $31,000; decrease in inventory $18,000; decrease in accounts payable $12,000. Under the indirect method, what is net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$596,000" },
+        { "label": "B", "text": "$548,000" },
+        { "label": "C", "text": "$572,000" },
+        { "label": "D", "text": "$610,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Start with net income $530,000, add depreciation $67,000, subtract the gain on sale of investments $24,000 (the proceeds belong in investing activities), subtract the increase in accounts receivable $31,000, add the decrease in inventory $18,000, and subtract the decrease in accounts payable $12,000: $530,000 + $67,000 − $24,000 − $31,000 + $18,000 − $12,000 = $548,000. The $596,000 figure incorrectly adds the gain instead of subtracting it. The $572,000 figure incorrectly adds the decrease in accounts payable. The $610,000 figure incorrectly adds both the receivable increase and the payable decrease.",
+      "explanationJa": "純利益$530,000から開始し、減価償却費$67,000を加算、投資売却益$24,000を減算（売却収入は投資活動に計上されるため）、売掛金増加$31,000を減算、棚卸資産減少$18,000を加算、買掛金減少$12,000を減算する。$530,000 + $67,000 − $24,000 − $31,000 + $18,000 − $12,000 = $548,000。$596,000は売却益を減算ではなく加算した誤り。$572,000は買掛金減少を誤って加算したもの。$610,000は売掛金増加と買掛金減少の両方を加算してしまった誤り。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-162",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Items Deducted from Net Income",
+      "stem": "When preparing the operating activities section under the indirect method, which of the following items is deducted from net income?",
+      "choices": [
+        { "label": "A", "text": "An increase in accounts receivable" },
+        { "label": "B", "text": "Depreciation expense for the period" },
+        { "label": "C", "text": "A decrease in inventory" },
+        { "label": "D", "text": "An increase in accrued liabilities" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An increase in accounts receivable means revenue was recognized that has not yet been collected in cash, so it is deducted from net income. Depreciation expense is a noncash charge and is added back. A decrease in inventory means cost of goods sold exceeded purchases, so it is added back. An increase in accrued liabilities means expenses were recognized that have not yet been paid, so it is also added back.",
+      "explanationJa": "売掛金の増加は、収益として認識されたがまだ現金回収されていないことを意味するため、純利益から減算する。減価償却費は非資金費用であり加算する。棚卸資産の減少は売上原価が仕入を上回ったことを意味し加算する。未払負債の増加は費用が認識されたがまだ支払われていないことを意味し、同様に加算する。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-163",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash from Customers with Unearned Revenue Decrease",
+      "stem": "Drummond Co. reported sales revenue of $1,500,000 for the year. During the year, accounts receivable decreased by $40,000 and unearned revenue decreased by $25,000. Under the direct method, what amount should Drummond report as cash collected from customers?",
+      "choices": [
+        { "label": "A", "text": "$1,540,000" },
+        { "label": "B", "text": "$1,475,000" },
+        { "label": "C", "text": "$1,515,000" },
+        { "label": "D", "text": "$1,565,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cash collected from customers = sales revenue + decrease in accounts receivable − decrease in unearned revenue = $1,500,000 + $40,000 − $25,000 = $1,515,000. The receivable decrease means collections exceeded sales on account; the unearned revenue decrease means some revenue recognized this year was collected in a prior year. The $1,540,000 figure ignores the unearned revenue change. The $1,475,000 figure subtracts both changes. The $1,565,000 figure adds the unearned revenue decrease instead of subtracting it.",
+      "explanationJa": "顧客からの現金回収額 = 売上高 + 売掛金減少 − 前受収益減少 = $1,500,000 + $40,000 − $25,000 = $1,515,000。売掛金の減少は回収が掛売上を上回ったことを意味し、前受収益の減少は当期認識収益の一部が前期に回収済みであることを意味する。$1,540,000は前受収益の変動を無視した誤り。$1,475,000は両方の変動を減算した誤り。$1,565,000は前受収益減少を減算ではなく加算した誤り。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-164",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash Paid to Suppliers with Decreasing Balances",
+      "stem": "Ashford Corp. reported cost of goods sold of $880,000 for the year. During the year, inventory decreased by $35,000 and accounts payable decreased by $42,000. Under the direct method, what amount should Ashford report as cash paid to suppliers?",
+      "choices": [
+        { "label": "A", "text": "$873,000" },
+        { "label": "B", "text": "$803,000" },
+        { "label": "C", "text": "$957,000" },
+        { "label": "D", "text": "$887,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "First compute purchases: cost of goods sold − decrease in inventory = $880,000 − $35,000 = $845,000. Then compute cash paid: purchases + decrease in accounts payable = $845,000 + $42,000 = $887,000. A decrease in payables means the company paid more than it purchased. The $873,000 figure adds the inventory decrease and subtracts the payable decrease (both signs reversed). The $803,000 figure subtracts both changes. The $957,000 figure adds both changes.",
+      "explanationJa": "まず仕入額を計算する: 売上原価 − 棚卸資産減少 = $880,000 − $35,000 = $845,000。次に現金支払額: 仕入額 + 買掛金減少 = $845,000 + $42,000 = $887,000。買掛金の減少は仕入額を上回る支払いをしたことを意味する。$873,000は棚卸資産減少を加算し買掛金減少を減算した（符号が両方逆の）誤り。$803,000は両方を減算した誤り。$957,000は両方を加算した誤り。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-165",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Interest Paid with Bond Premium Amortization",
+      "stem": "Kirkwood Inc. issued bonds at a premium several years ago. For the current year, Kirkwood reported interest expense of $72,000, which is net of bond premium amortization of $6,000. Interest payable increased by $9,000 during the year. What amount of cash did Kirkwood pay for interest during the year?",
+      "choices": [
+        { "label": "A", "text": "$69,000" },
+        { "label": "B", "text": "$87,000" },
+        { "label": "C", "text": "$57,000" },
+        { "label": "D", "text": "$75,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When bonds are issued at a premium, the cash coupon exceeds interest expense. Coupon interest = interest expense + premium amortization = $72,000 + $6,000 = $78,000. Because interest payable increased by $9,000, cash paid was less than the coupon accrued: $78,000 − $9,000 = $69,000. The $87,000 figure adds the payable increase instead of subtracting it. The $57,000 figure subtracts both the amortization and the payable increase. The $75,000 figure subtracts the amortization and adds the payable increase (both signs reversed).",
+      "explanationJa": "社債をプレミアム発行した場合、クーポン利息は利息費用を上回る。クーポン利息 = 利息費用 + プレミアム償却 = $72,000 + $6,000 = $78,000。未払利息が$9,000増加したため、現金支払額は発生したクーポンより少ない: $78,000 − $9,000 = $69,000。$87,000は未払利息増加を減算ではなく加算した誤り。$57,000は償却額と未払利息増加の両方を減算した誤り。$75,000は償却額を減算し未払利息増加を加算した（符号が両方逆の）誤り。",
+      "references": ["ASC 230-10-45-25", "ASC 230-10-50-2"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-166",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Income Taxes - Deriving Tax Expense from Cash Paid",
+      "stem": "Penrose Corp. paid $190,000 in cash for income taxes during the year. Income taxes payable increased by $30,000 during the year, and the deferred tax liability increased by $15,000. What amount should Penrose report as total income tax expense for the year?",
+      "choices": [
+        { "label": "A", "text": "$220,000" },
+        { "label": "B", "text": "$235,000" },
+        { "label": "C", "text": "$205,000" },
+        { "label": "D", "text": "$175,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Current tax expense = cash paid + increase in income taxes payable = $190,000 + $30,000 = $220,000 (the payable increased because expense accrued exceeded payments). Deferred tax expense equals the increase in the deferred tax liability of $15,000. Total income tax expense = $220,000 + $15,000 = $235,000. The $220,000 figure omits the deferred portion. The $205,000 figure subtracts the deferred tax liability increase. The $175,000 figure subtracts the payable increase and adds the deferred amount.",
+      "explanationJa": "当期税金費用 = 現金支払額 + 未払法人税増加 = $190,000 + $30,000 = $220,000（未払額の増加は発生費用が支払額を上回ったことを意味する）。繰延税金費用は繰延税金負債の増加額$15,000に等しい。法人税等合計 = $220,000 + $15,000 = $235,000。$220,000は繰延部分を見落とした誤り。$205,000は繰延税金負債増加を減算した誤り。$175,000は未払法人税増加を減算し繰延額を加算した誤り。",
+      "references": ["ASC 230-10-50-2", "ASC 740-10-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-167",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Restricted Cash - Required Reconciliation Disclosure",
+      "stem": "Wexford Inc. presents restricted cash as a separate line item on its balance sheet, apart from cash and cash equivalents. Under ASC 230 (as amended by ASU 2016-18), which of the following disclosures is required in connection with the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Changes in restricted cash must be shown as investing activities on the face of the statement"
+        },
+        {
+          "label": "B",
+          "text": "Restricted cash must be excluded from the beginning and ending totals on the statement of cash flows"
+        },
+        {
+          "label": "C",
+          "text": "Only the nature of the restrictions must be disclosed; amounts are not required"
+        },
+        {
+          "label": "D",
+          "text": "A reconciliation of the total of cash, cash equivalents, and restricted cash on the statement of cash flows to the related balance sheet line items"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When cash, cash equivalents, and restricted cash are presented in more than one line item on the balance sheet, the entity must disclose, on the face of the statement of cash flows or in the notes, a reconciliation showing the amounts and line items in which they appear, agreeing to the total used on the statement of cash flows. The statement of cash flows must include restricted cash in its beginning and ending totals, so excluding restricted cash is incorrect, and mere transfers between restricted and unrestricted cash are not presented as investing activities. The nature of restrictions must also be disclosed, but amounts and the reconciliation are required as well.",
+      "explanationJa": "現金・現金同等物・制限付き現金が貸借対照表上で複数の表示科目に分かれている場合、キャッシュ・フロー計算書本体または注記で、各科目の金額とキャッシュ・フロー計算書上の合計額との調整表の開示が要求される。キャッシュ・フロー計算書の期首・期末残高には制限付き現金を含めなければならないため、制限付き現金を除外するという記述は誤り。制限付き現金と非制限現金の間の単なる振替は投資活動として表示しない。制限の内容の開示も必要だが、金額と調整表の開示も併せて要求される。",
+      "references": ["ASC 230-10-45-4", "ASC 230-10-50-8"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-168",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Capital Expenditures Accrued in Accounts Payable",
+      "stem": "During Year 1, Halvorsen Corp. acquired equipment with a total cost of $400,000. At December 31, Year 1, invoices totaling $70,000 for this equipment remained unpaid and were included in accounts payable. How should these equipment acquisitions be reflected in the Year 1 statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Investing outflow of $400,000 with no additional disclosure"
+        },
+        {
+          "label": "B",
+          "text": "Investing outflow of $400,000 and a financing inflow of $70,000"
+        },
+        {
+          "label": "C",
+          "text": "Investing outflow of $330,000, with the $70,000 unpaid portion disclosed as a noncash investing and financing activity"
+        },
+        {
+          "label": "D",
+          "text": "Investing outflow of $330,000 and an operating outflow of $70,000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The statement of cash flows reports only cash actually paid. Cash paid for equipment in Year 1 was $400,000 − $70,000 = $330,000, reported as an investing outflow. The $70,000 acquired on credit is a noncash investing and financing activity that must be disclosed; the related cash outflow will appear in investing activities in the year the payable is settled. Reporting the full $400,000 overstates the cash outflow, treating the unpaid portion as a financing inflow fabricates a cash flow that did not occur, and the unpaid amount is not an operating item because it relates to acquiring a productive asset.",
+      "explanationJa": "キャッシュ・フロー計算書には実際に支払った現金のみを計上する。Year 1の設備への現金支払額は $400,000 − $70,000 = $330,000 で、投資活動の支出として報告する。掛けで取得した$70,000は非資金の投資・財務活動として開示が必要であり、関連する現金支出は買掛金決済時の年度に投資活動として表示される。$400,000全額の計上は現金支出の過大表示であり、未払部分を財務活動の収入とするのは実際には発生していないキャッシュ・フローの創出になる。未払額は生産的資産の取得に関するものであるため営業活動項目でもない。",
+      "references": ["ASC 230-10-50-3", "ASC 230-10-45-13"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-169",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Short-Term Lease Payments Classification",
+      "stem": "Brindle Co., a lessee, elected the short-term lease exemption under ASC 842 for a 9-month equipment lease and makes monthly rental payments. How should Brindle classify these lease payments on its statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Operating activities" },
+        { "label": "B", "text": "Financing activities" },
+        { "label": "C", "text": "Investing activities" },
+        {
+          "label": "D",
+          "text": "Allocated between operating and financing activities"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 842, a lessee classifies payments on short-term leases (and on operating leases, as well as variable lease payments not included in the lease liability) within operating activities. Only the principal portion of finance lease payments is a financing activity. No portion of a short-term lease payment relates to acquiring a long-term asset, so investing classification does not apply, and no allocation between sections is required because no lease liability is recognized.",
+      "explanationJa": "ASC 842のもとで、借手は短期リース（およびオペレーティング・リース、リース負債に含まれない変動リース料）の支払を営業活動に分類する。財務活動になるのはファイナンス・リース支払の元本部分のみである。短期リース料は長期資産の取得に関するものではないため投資活動には該当せず、リース負債を認識しないため区分間の按分も不要である。",
+      "references": ["ASC 842-20-45-5"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-170",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Excess Tax Benefits from Share-Based Payments",
+      "stem": "Tolland Corp. recognized excess tax benefits when employee stock options were exercised during the year (the tax deduction exceeded the compensation cost recognized for financial reporting). Under current US GAAP (after ASU 2016-09), how are these excess tax benefits classified on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Financing activities, presented separately from other income tax cash flows"
+        },
+        {
+          "label": "B",
+          "text": "Operating activities, along with other income tax cash flows"
+        },
+        { "label": "C", "text": "Investing activities" },
+        { "label": "D", "text": "Disclosed only as a noncash activity" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASU 2016-09 eliminated the prior requirement to present excess tax benefits as a financing inflow (with an offsetting operating outflow). Excess tax benefits are now recognized in income tax expense and are classified within operating activities together with other income tax cash flows. Financing classification reflects the superseded guidance. The benefit affects taxes paid in cash, so it is neither an investing item nor a noncash activity.",
+      "explanationJa": "ASU 2016-09により、超過税務便益を財務活動の収入（および営業活動の支出として相殺表示）とする従来の要求は廃止された。超過税務便益は現在、法人税費用に認識され、他の法人税関連キャッシュ・フローとともに営業活動に分類される。財務活動への分類は廃止された旧基準の取扱いである。この便益は現金で支払う税額に影響するため、投資活動項目でも非資金活動でもない。",
+      "references": ["ASC 230-10-45-17", "ASU 2016-09"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-171",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Deriving Beginning Cash Balance",
+      "stem": "Ravenwood Inc. reported the following for Year 1: net cash provided by operating activities $410,000; net cash used in investing activities $290,000; net cash used in financing activities $95,000; effect of exchange rate changes on cash $5,000 increase. Cash, cash equivalents, and restricted cash at the end of Year 1 totaled $640,000. What was the total of cash, cash equivalents, and restricted cash at the beginning of Year 1?",
+      "choices": [
+        { "label": "A", "text": "$670,000" },
+        { "label": "B", "text": "$640,000" },
+        { "label": "C", "text": "$615,000" },
+        { "label": "D", "text": "$610,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Net increase in cash = $410,000 − $290,000 − $95,000 + $5,000 = $30,000. Beginning balance = ending balance − net increase = $640,000 − $30,000 = $610,000. The $670,000 figure adds the net increase to the ending balance instead of subtracting it. The $640,000 figure assumes no net change. The $615,000 figure omits the exchange rate effect ($640,000 − $25,000).",
+      "explanationJa": "現金の純増加額 = $410,000 − $290,000 − $95,000 + $5,000 = $30,000。期首残高 = 期末残高 − 純増加額 = $640,000 − $30,000 = $610,000。$670,000は純増加額を期末残高から減算ではなく加算した誤り。$640,000は純変動がなかったと仮定した誤り。$615,000は為替変動の影響を見落とした誤り（$640,000 − $25,000）。",
+      "references": ["ASC 230-10-45-4"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-172",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - PP&E Impairment and Insurance Gain",
+      "stem": "Sablewood Corp. reported net income of $390,000, which includes an impairment loss on machinery of $85,000 and a gain of $20,000 on insurance proceeds received for equipment destroyed in a storm (the proceeds are classified as investing). There were no other noncash items or working capital changes. Under the indirect method, what is net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$475,000" },
+        { "label": "B", "text": "$305,000" },
+        { "label": "C", "text": "$455,000" },
+        { "label": "D", "text": "$495,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The impairment loss of $85,000 is a noncash charge added back to net income. The $20,000 gain is removed because the related insurance proceeds are reported in investing activities. Net cash from operating activities = $390,000 + $85,000 − $20,000 = $455,000. The $475,000 figure fails to remove the gain. The $305,000 figure subtracts the impairment loss instead of adding it. The $495,000 figure adds the gain instead of subtracting it.",
+      "explanationJa": "機械の減損損失$85,000は非資金費用であり純利益に加算する。$20,000の保険差益は、関連する保険金収入が投資活動に計上されるため除去（減算）する。営業活動によるキャッシュ・フロー = $390,000 + $85,000 − $20,000 = $455,000。$475,000は差益の除去を怠った誤り。$305,000は減損損失を加算ではなく減算した誤り。$495,000は差益を減算ではなく加算した誤り。",
+      "references": ["ASC 230-10-45-28", "ASC 360-10-35"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-173",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Dividends Received on Equity Securities (No Significant Influence)",
+      "stem": "Linden Co. holds a 5% investment in the common stock of another corporation (no significant influence) and received $45,000 of cash dividends during the year. Under US GAAP, how should Linden classify the dividends received on its statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Operating activities" },
+        { "label": "B", "text": "Financing activities" },
+        { "label": "C", "text": "Investing activities" },
+        { "label": "D", "text": "Noncash investing and financing activities" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 230, dividends received (like interest received) are returns on investment and are classified as operating activities. Financing activities relate to transactions with the entity's own creditors and owners, such as dividends the entity itself pays. Investing classification applies to purchases and sales of the investment itself, not to dividend income received in cash, and a cash receipt is by definition not a noncash activity.",
+      "explanationJa": "ASC 230のもとで、受取配当金は（受取利息と同様に）投資に対するリターンであり、営業活動に分類される。財務活動は自社の債権者・株主との取引（自社が支払う配当など）に関するものである。投資活動への分類は投資自体の購入・売却に適用されるものであり、現金で受け取った配当収入には適用されない。また、現金収入である以上、定義上、非資金活動には該当しない。",
+      "references": ["ASC 230-10-45-16"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-174",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Deferred Taxes with Working Capital Changes",
+      "stem": "Mercer Inc. reported net income of $720,000. During the year: the deferred tax liability increased by $38,000; depreciation expense was $95,000; and accounts receivable increased by $52,000. There were no other adjustments. Under the indirect method, what is net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$763,000" },
+        { "label": "B", "text": "$801,000" },
+        { "label": "C", "text": "$905,000" },
+        { "label": "D", "text": "$725,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "An increase in the deferred tax liability represents tax expense recognized but not currently payable in cash, so it is added back. Net cash from operations = $720,000 + $38,000 + $95,000 − $52,000 = $801,000. The $763,000 figure omits the deferred tax adjustment. The $905,000 figure adds the receivable increase instead of subtracting it. The $725,000 figure subtracts the deferred tax liability increase instead of adding it.",
+      "explanationJa": "繰延税金負債の増加は、税金費用として認識されたが当期に現金で支払う必要のない部分を表すため、純利益に加算する。営業活動によるキャッシュ・フロー = $720,000 + $38,000 + $95,000 − $52,000 = $801,000。$763,000は繰延税金の調整を見落とした誤り。$905,000は売掛金増加を減算ではなく加算した誤り。$725,000は繰延税金負債増加を加算ではなく減算した誤り。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-175",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Cash and Credit Sales Combined",
+      "stem": "Northgate Co. reported total sales of $2,000,000 for the year, of which $500,000 were cash sales and the remainder were on credit. Accounts receivable was $250,000 at the beginning of the year and $310,000 at the end of the year. There were no write-offs. Under the direct method, what amount should Northgate report as cash received from customers?",
+      "choices": [
+        { "label": "A", "text": "$1,440,000" },
+        { "label": "B", "text": "$2,060,000" },
+        { "label": "C", "text": "$1,940,000" },
+        { "label": "D", "text": "$2,000,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Credit sales = $2,000,000 − $500,000 = $1,500,000. Collections on account = beginning receivables + credit sales − ending receivables = $250,000 + $1,500,000 − $310,000 = $1,440,000. Total cash received from customers = $1,440,000 + $500,000 cash sales = $1,940,000. The $1,440,000 figure omits the cash sales. The $2,060,000 figure adds the receivable increase to total sales instead of subtracting it. The $2,000,000 figure ignores the change in receivables entirely.",
+      "explanationJa": "掛売上 = $2,000,000 − $500,000 = $1,500,000。掛代金の回収額 = 期首売掛金 + 掛売上 − 期末売掛金 = $250,000 + $1,500,000 − $310,000 = $1,440,000。顧客からの現金受取総額 = $1,440,000 + 現金売上$500,000 = $1,940,000。$1,440,000は現金売上を見落とした誤り。$2,060,000は売掛金増加を総売上に減算ではなく加算した誤り。$2,000,000は売掛金の変動を完全に無視した誤り。",
+      "references": ["ASC 230-10-45-25"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-176",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Premium Amortization on Bond Investment",
+      "stem": "Oakdale Inc. holds a held-to-maturity bond investment that was purchased at a premium. During the year, Oakdale recorded $7,000 of premium amortization, which reduced interest income below the cash coupon received. Under the indirect method, how should the premium amortization be treated in the operating activities section?",
+      "choices": [
+        { "label": "A", "text": "Deducted from net income as $7,000" },
+        { "label": "B", "text": "No adjustment is necessary" },
+        { "label": "C", "text": "Reported as a $7,000 investing inflow" },
+        { "label": "D", "text": "Added to net income as $7,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When a bond investment is purchased at a premium, the cash coupon received exceeds the interest income recognized (interest income = coupon − premium amortization). Net income therefore understates operating cash inflows by the $7,000 amortization, so it is added back to net income. Deducting it would be the treatment for discount accretion on an investment, where income exceeds cash received. An adjustment is necessary because income and cash differ, and the amortization itself involves no investing cash flow.",
+      "explanationJa": "社債投資をプレミアムで購入した場合、受け取るクーポン現金は認識する受取利息を上回る（受取利息 = クーポン − プレミアム償却）。したがって純利益は営業キャッシュ・インフローを償却額$7,000だけ過小に表すため、純利益に加算する。減算するのは投資のディスカウント・アクリーション（収益が現金受取を上回る場合）の取扱いである。収益と現金が乖離するため調整は必要であり、償却自体は投資活動のキャッシュ・フローを伴わない。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-177",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Financing Section Total with Lease Principal",
+      "stem": "During Year 1, Quarry Corp. had the following cash transactions: issued preferred stock for $250,000; paid cash dividends of $90,000; repurchased treasury stock for $130,000; made principal payments of $40,000 on a finance lease; and paid interest of $25,000 on long-term debt. What amount should Quarry report as net cash used in financing activities?",
+      "choices": [
+        { "label": "A", "text": "$10,000" },
+        { "label": "B", "text": "$35,000" },
+        { "label": "C", "text": "$30,000 (net cash provided)" },
+        { "label": "D", "text": "$120,000 (net cash provided)" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Financing activities: preferred stock issuance +$250,000; dividends paid −$90,000; treasury stock repurchase −$130,000; finance lease principal −$40,000. Net = $250,000 − $90,000 − $130,000 − $40,000 = −$10,000, or net cash used of $10,000. Interest paid of $25,000 is an operating activity under US GAAP. The $35,000 figure incorrectly includes interest paid in financing. The $30,000 provided figure omits the finance lease principal payment. The $120,000 provided figure results from treating the treasury stock repurchase as an investing activity ($250,000 − $90,000 − $40,000 = $120,000).",
+      "explanationJa": "財務活動: 優先株式発行 +$250,000、配当支払 −$90,000、自己株式取得 −$130,000、ファイナンス・リース元本返済 −$40,000。純額 = $250,000 − $90,000 − $130,000 − $40,000 = −$10,000、すなわち財務活動による純支出$10,000。利息支払$25,000はUS GAAPでは営業活動である。$35,000は利息支払を財務活動に誤って含めたもの。純収入$30,000はリース元本返済を見落とした誤り。純収入$120,000は自己株式取得を投資活動として扱った誤り（$250,000 − $90,000 − $40,000 = $120,000）。",
+      "references": ["ASC 230-10-45-15", "ASC 842-20-45-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-178",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Investing Section Total with Loans to Affiliate",
+      "stem": "During Year 1, Riverbend Inc. had the following cash transactions: purchased a patent for $60,000; loaned $100,000 to an unconsolidated affiliate; collected $25,000 of principal on that loan; and received $140,000 from the sale of used equipment. What amount should Riverbend report as net cash provided by (used in) investing activities?",
+      "choices": [
+        { "label": "A", "text": "$20,000 used" },
+        { "label": "B", "text": "$5,000 provided" },
+        { "label": "C", "text": "$105,000 provided" },
+        { "label": "D", "text": "$135,000 used" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "All four items are investing activities: patent purchase −$60,000; loan made −$100,000; principal collected +$25,000; equipment sale proceeds +$140,000. Net = −$60,000 − $100,000 + $25,000 + $140,000 = +$5,000 provided. The $20,000 used figure omits the principal collection. The $105,000 provided figure omits the loan made and the collection ($140,000 − $60,000 + $25,000). The $135,000 used figure excludes the equipment sale proceeds (−$60,000 − $100,000 + $25,000).",
+      "explanationJa": "4項目すべて投資活動である: 特許権購入 −$60,000、貸付実行 −$100,000、貸付元本回収 +$25,000、設備売却収入 +$140,000。純額 = −$60,000 − $100,000 + $25,000 + $140,000 = +$5,000（純収入）。純支出$20,000は元本回収を見落とした誤り。純収入$105,000は貸付実行を見落とした誤り（$140,000 − $60,000 + $25,000）。純支出$135,000は設備売却収入を除外した誤り（−$60,000 − $100,000 + $25,000）。",
+      "references": ["ASC 230-10-45-12", "ASC 230-10-45-13"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-179",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Reconciliation - Deriving the Change in Receivables",
+      "stem": "Stillwater Corp. reported net cash provided by operating activities of $612,000 and net income of $580,000. The indirect-method reconciliation included: depreciation $75,000; gain on sale of land $28,000; increase in inventory $40,000; increase in accounts payable $50,000. The only other reconciling item was the change in accounts receivable. What was the change in accounts receivable during the year?",
+      "choices": [
+        { "label": "A", "text": "Increase of $81,000" },
+        { "label": "B", "text": "Decrease of $25,000" },
+        { "label": "C", "text": "Increase of $25,000" },
+        { "label": "D", "text": "Decrease of $81,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Before the receivables change, the reconciliation gives $580,000 + $75,000 − $28,000 − $40,000 + $50,000 = $637,000. Since actual operating cash flow was $612,000, the receivables adjustment must be −$25,000 ($637,000 − $25,000 = $612,000). A negative adjustment means accounts receivable increased by $25,000. A decrease of $25,000 would have produced $662,000 of operating cash flow. The $81,000 amounts result from adding the gain instead of subtracting it ($693,000 − $612,000 = $81,000).",
+      "explanationJa": "売掛金の変動を除く調整後の金額は $580,000 + $75,000 − $28,000 − $40,000 + $50,000 = $637,000。実際の営業キャッシュ・フローが$612,000なので、売掛金の調整は −$25,000 でなければならない（$637,000 − $25,000 = $612,000）。マイナスの調整は売掛金が$25,000増加したことを意味する。$25,000の減少であれば営業キャッシュ・フローは$662,000になったはずである。$81,000という金額は売却益を減算ではなく加算した場合の誤り（$693,000 − $612,000 = $81,000）。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-180",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Entities Exempt from Presenting a Statement of Cash Flows",
+      "stem": "Under ASC 230, which of the following entities is NOT required to present a statement of cash flows with its financial statements?",
+      "choices": [
+        { "label": "A", "text": "A not-for-profit university" },
+        { "label": "B", "text": "A privately held manufacturing company" },
+        { "label": "C", "text": "A publicly traded corporation" },
+        { "label": "D", "text": "A defined benefit pension plan" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 230 requires a statement of cash flows whenever a full set of financial statements is presented, for both business entities and not-for-profit organizations, whether public or private. However, defined benefit pension plans (and certain other employee benefit plans, as well as certain highly liquid investment companies meeting specified conditions) are exempt. Therefore the not-for-profit university, the privately held manufacturer, and the publicly traded corporation must all present the statement, while the pension plan need not.",
+      "explanationJa": "ASC 230は、完全な一組の財務諸表を表示する場合、営利企業・非営利組織を問わず、また公開・非公開を問わず、キャッシュ・フロー計算書の作成を要求する。ただし、確定給付年金制度（および一定の従業員給付制度、所定の要件を満たす高流動性の投資会社）は免除される。したがって非営利大学、非公開の製造会社、公開会社はいずれも作成が必要であり、年金制度は不要である。",
+      "references": ["ASC 230-10-15-4"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-181",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Lessor Classification of Lease Receipts",
+      "stem": "Tanager Leasing Co. is the lessor under a sales-type lease of equipment. During the year, Tanager received cash lease payments from the lessee that include both interest and a reduction of the net investment in the lease. Under ASC 842, how should Tanager classify these cash receipts on its statement of cash flows?",
+      "choices": [
+        { "label": "A", "text": "Entirely within operating activities" },
+        {
+          "label": "B",
+          "text": "Interest portion in operating activities and principal portion in investing activities"
+        },
+        { "label": "C", "text": "Entirely within investing activities" },
+        { "label": "D", "text": "Entirely within financing activities" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 842 requires a lessor to classify all cash receipts from leases as operating activities, regardless of whether the lease is classified as sales-type, direct financing, or operating. No split between interest and principal is made on the lessor's statement of cash flows. The split treatment applies to lessees with finance leases (interest in operating, principal in financing), not to lessors.",
+      "explanationJa": "ASC 842は、リースがセールスタイプ、直接金融、オペレーティングのいずれに分類されるかにかかわらず、貸手がリースから受け取るすべての現金を営業活動に分類することを要求している。貸手のキャッシュ・フロー計算書では利息部分と元本部分の区分は行わない。区分処理が適用されるのはファイナンス・リースの借手（利息は営業、元本は財務）であり、貸手ではない。",
+      "references": ["ASC 842-30-45-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-182",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Payments Made Directly from Restricted Cash",
+      "stem": "Ulverton Corp. maintains a restricted construction escrow account that is included in the total of cash, cash equivalents, and restricted cash on its statement of cash flows. During the year, Ulverton paid $300,000 directly from the escrow account to a contractor for construction of a new building. How should this payment be presented on the statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Not presented, because restricted cash is outside the statement of cash flows"
+        },
+        { "label": "B", "text": "As a $300,000 investing activity outflow" },
+        { "label": "C", "text": "As a $300,000 operating activity outflow" },
+        {
+          "label": "D",
+          "text": "Disclosed only as a noncash investing and financing activity"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Because restricted cash is included in the beginning and ending totals on the statement of cash flows, a payment made from a restricted account is a cash outflow that must be classified by the nature of the payment. Constructing a building is the acquisition of a productive long-lived asset, so the $300,000 is an investing outflow. The payment cannot be omitted, because it reduces the total cash balance reported on the statement. It is not operating because it acquires a capital asset, and it is not a noncash activity because cash was actually disbursed.",
+      "explanationJa": "制限付き現金はキャッシュ・フロー計算書の期首・期末残高合計に含まれるため、制限付き口座からの支払は支払の性質に応じて分類すべき現金支出である。建物の建設は生産的な長期資産の取得であるため、$300,000は投資活動の支出となる。この支払は計算書上の現金残高合計を減少させるため省略できない。資本的資産の取得であるため営業活動ではなく、実際に現金が支出されているため非資金活動でもない。",
+      "references": ["ASC 230-10-45-4", "ASC 230-10-45-13"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-183",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Direct Method - Net Operating Cash Flow Total",
+      "stem": "Vandermill Inc. prepares its operating section using the direct method and has the following cash flow data for the year: cash received from customers $2,150,000; cash paid to suppliers $1,280,000; cash paid for operating expenses $340,000; interest paid $60,000; income taxes paid $95,000; interest received $15,000; dividends paid to shareholders $50,000. What is net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$340,000" },
+        { "label": "B", "text": "$435,000" },
+        { "label": "C", "text": "$390,000" },
+        { "label": "D", "text": "$450,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under US GAAP, interest paid, interest received, and income taxes paid are all operating items, while dividends paid to shareholders are a financing activity. Net operating cash flow = $2,150,000 − $1,280,000 − $340,000 − $60,000 − $95,000 + $15,000 = $390,000. The $340,000 figure incorrectly deducts the $50,000 of dividends paid. The $435,000 figure incorrectly excludes both interest paid and interest received. The $450,000 figure excludes interest paid but includes interest received.",
+      "explanationJa": "US GAAPでは、支払利息、受取利息、法人税支払はすべて営業活動項目であり、株主への配当支払は財務活動である。営業活動によるキャッシュ・フロー = $2,150,000 − $1,280,000 − $340,000 − $60,000 − $95,000 + $15,000 = $390,000。$340,000は配当支払$50,000を誤って控除した誤り。$435,000は支払利息と受取利息の両方を誤って除外した誤り。$450,000は支払利息を除外し受取利息のみ含めた誤り。",
+      "references": ["ASC 230-10-45-25", "ASC 230-10-45-17"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-184",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Items Added to Net Income",
+      "stem": "When preparing the operating activities section under the indirect method, which of the following items is added to net income?",
+      "choices": [
+        { "label": "A", "text": "A gain on the sale of equipment" },
+        { "label": "B", "text": "An increase in inventory" },
+        { "label": "C", "text": "A decrease in accounts payable" },
+        { "label": "D", "text": "A loss on the sale of equipment" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A loss on the sale of equipment reduced net income but involved no operating cash outflow (the full sale proceeds are reported in investing activities), so the loss is added back to net income. A gain on sale is the opposite and is deducted. An increase in inventory uses cash and is deducted, and a decrease in accounts payable means more cash was paid to suppliers than expense recognized, so it is also deducted.",
+      "explanationJa": "設備売却損は純利益を減少させたが営業活動の現金支出を伴っていない（売却収入の全額は投資活動に計上される）ため、純利益に加算する。売却益はその逆で減算する。棚卸資産の増加は現金を使用するため減算し、買掛金の減少は認識した費用以上の現金を仕入先に支払ったことを意味するためこれも減算する。",
+      "references": ["ASC 230-10-45-28"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-185",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Indirect Method - Stock Compensation with Related Deferred Taxes",
+      "stem": "Whitfield Corp. reported net income of $1,040,000 for the year. Additional information: stock-based compensation expense $120,000; increase in deferred tax assets (related to the stock compensation) $35,000; depreciation expense $210,000; increase in accounts receivable $90,000; decrease in inventory $45,000. Under the indirect method, what is net cash provided by operating activities?",
+      "choices": [
+        { "label": "A", "text": "$1,290,000" },
+        { "label": "B", "text": "$1,360,000" },
+        { "label": "C", "text": "$1,170,000" },
+        { "label": "D", "text": "$1,200,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Stock-based compensation of $120,000 is a noncash expense added back. The $35,000 increase in deferred tax assets reduced tax expense without providing cash (a deferred tax benefit), so it is deducted. Depreciation of $210,000 is added back, the $90,000 receivable increase is deducted, and the $45,000 inventory decrease is added: $1,040,000 + $120,000 − $35,000 + $210,000 − $90,000 + $45,000 = $1,290,000. The $1,360,000 figure adds the deferred tax asset increase instead of deducting it. The $1,170,000 figure omits the stock compensation add-back. The $1,200,000 figure deducts the inventory decrease instead of adding it.",
+      "explanationJa": "株式報酬費用$120,000は非資金費用であり加算する。繰延税金資産の増加$35,000は現金をもたらさずに税金費用を減少させた（繰延税金ベネフィット）ため減算する。減価償却費$210,000を加算、売掛金増加$90,000を減算、棚卸資産減少$45,000を加算する: $1,040,000 + $120,000 − $35,000 + $210,000 − $90,000 + $45,000 = $1,290,000。$1,360,000は繰延税金資産の増加を減算ではなく加算した誤り。$1,170,000は株式報酬の加算を見落とした誤り。$1,200,000は棚卸資産減少を加算ではなく減算した誤り。",
+      "references": ["ASC 230-10-45-28", "ASC 718-10-35"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cf-186",
+      "topic": "Statement of Cash Flows",
+      "subtopic": "Total Interest Paid Including Capitalized Interest",
+      "stem": "Yardley Corp. reported interest expense of $140,000 for the year, which excludes $30,000 of interest that was capitalized as part of a self-constructed asset. Interest payable decreased by $12,000 during the year. For purposes of the supplemental disclosure of interest paid, what total amount of cash did Yardley pay for interest during the year?",
+      "choices": [
+        { "label": "A", "text": "$152,000" },
+        { "label": "B", "text": "$182,000" },
+        { "label": "C", "text": "$158,000" },
+        { "label": "D", "text": "$128,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Total interest incurred = interest expensed $140,000 + interest capitalized $30,000 = $170,000. A decrease in interest payable of $12,000 means cash payments exceeded the interest incurred: $170,000 + $12,000 = $182,000. ASC 230 requires disclosure of total interest paid (net of amounts capitalized only with respect to where the outflow is classified — the capitalized portion's cash outflow is investing, but the disclosure of interest paid includes it). The $152,000 figure omits the capitalized interest. The $158,000 figure subtracts the payable decrease instead of adding it. The $128,000 figure omits the capitalized interest and subtracts the payable decrease.",
+      "explanationJa": "発生した利息総額 = 費用処理した利息$140,000 + 資産化した利息$30,000 = $170,000。未払利息が$12,000減少したことは、現金支払が発生額を上回ったことを意味する: $170,000 + $12,000 = $182,000。ASC 230は支払利息総額の補足開示を要求しており、資産化部分の現金支出は投資活動に分類されるものの、支払利息の開示額には含まれる。$152,000は資産化利息を見落とした誤り。$158,000は未払利息減少を加算ではなく減算した誤り。$128,000は資産化利息を見落とし、かつ未払利息減少を減算した誤り。",
+      "references": ["ASC 230-10-50-2", "ASC 835-20-30"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
     }
   ]
 }

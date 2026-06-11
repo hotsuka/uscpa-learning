@@ -2,7 +2,7 @@
   "id": "far-nonprofit-accounting",
   "name": "Not-for-Profit Accounting",
   "topic": "Not-for-Profit Accounting",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "nfp-001",
@@ -3378,6 +3378,504 @@
       "references": ["ASC 958-225-45"],
       "difficulty": "advanced",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "nfp-146",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Reporting Net Assets Released from Restrictions",
+      "stem": "An NFP satisfies a donor-imposed purpose restriction during the current year. How is the resulting reclassification reported in the statement of activities?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As revenue in the without-donor-restrictions class only, increasing the total change in net assets"
+        },
+        {
+          "label": "B",
+          "text": "As a footnote disclosure only, with no line item in the statement of activities"
+        },
+        {
+          "label": "C",
+          "text": "As an increase in net assets without donor restrictions and a decrease in net assets with donor restrictions, with no effect on the total change in net assets"
+        },
+        {
+          "label": "D",
+          "text": "As a direct adjustment to beginning net assets of each class"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When a donor restriction is satisfied, the NFP reports a reclassification line (commonly labeled \"net assets released from restrictions\") that increases net assets without donor restrictions and simultaneously decreases net assets with donor restrictions by the same amount. Because the two effects offset, the total change in net assets for the entity is unaffected. The reclassification is presented on the face of the statement of activities, not merely in the notes; reporting it as revenue that increases the total change in net assets double-counts support already recognized when the gift was received, and adjusting beginning balances would improperly bypass current-period activity.",
+      "explanationJa": "ドナーの制約が解除されると、NFPは「制約解除による純資産の振替（net assets released from restrictions）」という組替表示を行う。これは制約なし純資産（without donor restrictions）を増加させ、同額だけ制約付き純資産（with donor restrictions）を減少させるため、純資産合計の増減額には影響しない。この組替は活動計算書の本表に表示されるものであり、注記だけで済ませる処理は誤り。収益として純資産合計を増やす処理は、寄付受領時に既に認識した収益の二重計上になる。期首残高の直接修正も当期の活動を飛ばすため不適切。",
+      "references": ["ASC 958-225-45", "ASC 958-205-45"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-147",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Release Limited to Restricted Balance",
+      "stem": "At the beginning of Year 2, an NFP holds $200,000 of net assets with donor restrictions designated for its adult literacy program. During Year 2, the NFP spends $300,000 on qualifying adult literacy program expenses, funding the excess from unrestricted resources. What amount should the NFP report as net assets released from restrictions in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$100,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Net assets released from restrictions cannot exceed the balance of net assets with donor restrictions available for that purpose. The NFP incurred $300,000 of qualifying expenses, but only $200,000 of donor-restricted net assets existed for the literacy program, so the release is limited to $200,000. The remaining $100,000 of spending is simply an expense funded from resources without donor restrictions. Reporting a $300,000 release would overstate the reclassification beyond the restricted balance; $100,000 represents only the unfunded excess, not the release; and $0 ignores that qualifying expenditures did satisfy the restriction.",
+      "explanationJa": "制約解除額は、その目的のために保有する制約付き純資産の残高を超えることはできない。適格な識字プログラム支出は$300,000だが、制約付き純資産は$200,000しか存在しないため、解除額は$200,000に限定される。残りの$100,000は制約なし資源から賄った通常の費用にすぎない。$300,000の解除は制約付き残高を超えて組替を過大計上することになる。$100,000は未充当の超過額であって解除額ではない。適格支出により制約は確かに充足されているため$0も誤り。",
+      "references": ["ASC 958-205-45", "ASC 958-225-45"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-148",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Barrier vs Administrative Stipulation",
+      "stem": "Under ASC 958-605, a grant agreement contains a right of return. Which of the following stipulations in the agreement would NOT cause the contribution to be accounted for as conditional?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The NFP must achieve a specified outcome of serving 500 meals per week"
+        },
+        {
+          "label": "B",
+          "text": "The NFP may incur only qualifying expenses identified in an approved budget line-item schedule"
+        },
+        {
+          "label": "C",
+          "text": "The NFP must obtain matching contributions of an equal amount before funds are earned"
+        },
+        {
+          "label": "D",
+          "text": "The NFP must submit a standard annual report summarizing how the funds were used"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A contribution is conditional only when the agreement includes both a right of return and a barrier that must be overcome. Measurable performance targets (serving 500 meals per week), limits on how the entity may spend the funds (qualifying expenses per an approved line-item budget), and matching requirements are all indicators of a barrier. In contrast, a routine administrative or trivial stipulation—such as filing a standard annual report on the use of funds—is not a barrier because it is not related to the purpose of the agreement in a substantive way. Therefore the reporting requirement alone does not make the grant conditional.",
+      "explanationJa": "寄付が条件付きとなるのは、契約に返還権（right of return）とバリア（克服すべき障壁）の両方が含まれる場合のみ。測定可能な成果目標（週500食の提供）、支出方法の制限（承認予算の費目に限定した適格支出）、マッチング要件はいずれもバリアの指標である。一方、資金使途をまとめた標準的な年次報告書の提出といった事務的・些末な定めは、契約の目的と実質的に関連しないためバリアに該当しない。したがって報告義務だけでは助成金は条件付きにならない。",
+      "references": ["ASC 958-605-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-149",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Condition Met After Year-End",
+      "stem": "On November 1, Year 1, a foundation promises $600,000 to an NFP, contingent on the NFP receiving accreditation from a national certifying body, with a right of return if accreditation is not obtained. The NFP receives the accreditation on January 20, Year 2, before its Year 1 financial statements are issued. No cash was received in Year 1. What should the NFP report in its Year 1 financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No contribution revenue or receivable; disclose the conditional promise in the notes"
+        },
+        {
+          "label": "B",
+          "text": "Contribution revenue of $600,000 because the condition was met before the statements were issued"
+        },
+        {
+          "label": "C",
+          "text": "A receivable of $600,000 and a refundable advance liability of $600,000"
+        },
+        {
+          "label": "D",
+          "text": "Contribution revenue of $600,000 net of a discount for the expected delay in collection"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A conditional promise to give is recognized only when the barrier is overcome. At December 31, Year 1, the accreditation barrier had not been met, so no revenue and no receivable are recognized; the conditional promise is disclosed in the notes. Meeting the condition on January 20, Year 2 is a nonrecognized subsequent event—it provides evidence of a condition that arose after the balance sheet date, so it does not support Year 1 recognition. A refundable advance liability arises only when cash or other assets are received in advance of meeting the condition, which did not occur here. Recognizing $600,000 of revenue, discounted or not, is premature in Year 1.",
+      "explanationJa": "条件付き寄付約束は、バリアが克服された時点で初めて認識する。Year 1の12月31日時点では認定というバリアは未充足のため、収益も債権も認識せず、条件付き約束を注記で開示する。Year 2の1月20日の認定取得は、貸借対照表日後に発生した状況を示す「非認識後発事象」であり、Year 1での認識根拠にはならない。返還義務付き前受金（refundable advance）負債は、条件充足前に現金等を受領した場合にのみ生じるが、本問では現金を受領していない。割引の有無にかかわらずYear 1での$600,000の収益認識は時期尚早である。",
+      "references": ["ASC 958-605-25", "ASC 855-10-25"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-150",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Donated Services - Effect on Change in Net Assets",
+      "stem": "A software engineer donates specialized services to an NFP to maintain its donor database, services the NFP would otherwise have purchased for $25,000. The services do not create or enhance a nonfinancial asset and carry no donor restrictions. What is the effect of recognizing these services on the NFP's Year 1 statement of activities?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Contribution revenue increases $25,000 and the change in net assets without donor restrictions increases $25,000"
+        },
+        {
+          "label": "B",
+          "text": "Contribution revenue and expenses each increase $25,000, with no effect on the change in net assets"
+        },
+        {
+          "label": "C",
+          "text": "No amounts are recognized because the services were not capitalized as an asset"
+        },
+        {
+          "label": "D",
+          "text": "An asset of $25,000 is recognized and amortized over its useful life"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The services require specialized skills, are provided by an individual possessing those skills, and would typically need to be purchased if not donated, so they meet the recognition criteria. Because the services were consumed in operations rather than creating or enhancing a nonfinancial asset, the NFP records contribution revenue of $25,000 and an equal $25,000 of expense in the appropriate functional category. The two amounts offset, so the change in net assets is zero. Reporting only a $25,000 increase in net assets ignores the offsetting expense; recognizing nothing is wrong because the recognition criteria are met even without capitalization; and capitalizing with amortization applies only when the services create or enhance a nonfinancial asset.",
+      "explanationJa": "本件サービスは専門技能を要し、その技能を持つ者が提供し、寄付がなければ購入する必要があるため認識要件を満たす。非財務資産の創出・増価ではなく業務で消費されたため、寄付収益$25,000と同額の費用$25,000（該当する機能別区分）を計上する。両者は相殺されるため純資産の増減額への影響はゼロ。純資産が$25,000増加するという処理は対応する費用を無視している。資産計上していなくても認識要件を満たす以上、何も認識しない処理は誤り。資産計上して償却する処理は、サービスが非財務資産を創出・増価する場合に限られる。",
+      "references": ["ASC 958-605-25-16"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-151",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Donated Utilities",
+      "stem": "A local utility company provides free electricity to an NFP's community center each month. The fair value of the electricity provided during the year is $18,000. How should the NFP report this arrangement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No recognition, because utilities are not contributed services requiring specialized skills"
+        },
+        { "label": "B", "text": "Disclosure in the notes only" },
+        {
+          "label": "C",
+          "text": "A reduction of occupancy expense of $18,000 with no revenue recognized"
+        },
+        {
+          "label": "D",
+          "text": "Contribution revenue of $18,000 and utilities expense of $18,000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Donated utilities are contributed nonfinancial assets (gifts-in-kind), not contributed services, so the specialized-skills test does not apply. The NFP recognizes contribution revenue at the $18,000 fair value of the electricity as it is received and used, and recognizes a corresponding $18,000 of utilities expense. Note-only treatment and nonrecognition understate both support and expenses, and netting the gift against expense misstates the gross amounts of support and functional expenses that GAAP requires to be reported.",
+      "explanationJa": "無償提供された電気などのユーティリティは現物寄付（contributed nonfinancial assets）であり、寄付サービスではないため専門技能テストは適用されない。NFPは受領・使用に応じて公正価値$18,000の寄付収益を認識し、同額の光熱費（費用）を計上する。注記のみの開示や非認識は収益と費用の両方を過小表示する。寄付額を費用と純額相殺する処理は、GAAPが求める収益と機能別費用の総額表示をゆがめるため不適切。",
+      "references": ["ASC 958-605-30", "ASC 958-605-25"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-152",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Third-Party Payments - Exchange vs Contribution",
+      "stem": "A not-for-profit healthcare clinic receives payments from a state Medicaid program for covered medical services the clinic provides to individual Medicaid beneficiaries at established rates. How should the clinic account for these payments?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As revenue from an exchange transaction under ASC 606, because the government is paying on behalf of identified patients who receive commensurate value"
+        },
+        {
+          "label": "B",
+          "text": "As an unconditional contribution, because the payer is a governmental entity"
+        },
+        {
+          "label": "C",
+          "text": "As a conditional contribution recognized when each patient visit occurs"
+        },
+        {
+          "label": "D",
+          "text": "As an agency transaction, with a liability recorded until services are provided"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When a government pays an NFP at established rates for services delivered to specific identified individuals, the government is acting as a third-party payer on behalf of those patients, who receive commensurate value (medical care). The transaction is therefore an exchange accounted for under ASC 606, not a contribution. The identity of the resource provider as a government does not make a payment a contribution; the analysis turns on whether commensurate value is transferred. Conditional contribution treatment applies only to nonexchange transfers with barriers and a right of return, and agency treatment applies when an entity passes resources to a third-party beneficiary, neither of which describes fee-for-service Medicaid payments.",
+      "explanationJa": "政府が特定の個人に提供されたサービスの対価を所定の料率でNFPに支払う場合、政府は患者（医療という対応する価値を受け取る者）に代わって支払う第三者支払者として行動している。したがってこの取引は寄付ではなくASC 606に基づく交換取引である。資金提供者が政府であることだけでは寄付にはならず、対応する価値（commensurate value）の移転の有無で判断する。条件付き寄付の処理はバリアと返還権を伴う非交換取引にのみ適用され、代理取引の処理は第三受益者へ資源を引き渡す場合に適用されるため、出来高払いのMedicaid収入には当てはまらない。",
+      "references": ["ASC 958-605-15", "ASC 606-10"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-153",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Underwater Endowment - Quasi-Endowment Excluded",
+      "stem": "At year-end, an NFP holds two endowment funds. Fund 1 is a donor-restricted endowment with an original gift of $3,600,000 required to be maintained in perpetuity; its fair value is $3,250,000. Fund 2 is a board-designated quasi-endowment originally funded with $1,000,000 of resources without donor restrictions; its fair value is $900,000. What aggregate underwater endowment deficiency must the NFP disclose?",
+      "choices": [
+        { "label": "A", "text": "$450,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$350,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "An underwater endowment exists when the fair value of a donor-restricted endowment fund is less than the original gift amount (or the amount required to be maintained by the donor or law). Fund 1 is underwater by $3,600,000 − $3,250,000 = $350,000, and that deficiency must be disclosed along with the funds' fair value and original gift amounts. Fund 2 is a quasi-endowment created by board designation of resources without donor restrictions; because it carries no donor restriction, it cannot be underwater by definition, and its $100,000 decline is excluded. Combining both declines to reach $450,000 improperly includes the board-designated fund, $100,000 reflects only the quasi-endowment decline, and $0 ignores the donor-restricted deficiency.",
+      "explanationJa": "Underwater endowmentは、ドナー制約付きエンダウメント基金の公正価値が当初寄付額（またはドナー・法律が維持を求める額）を下回る場合に生じる。Fund 1の不足額は$3,600,000 − $3,250,000 = $350,000であり、公正価値・当初寄付額とともに開示が必要。Fund 2は制約なし資源を理事会が指定した準エンダウメント（quasi-endowment）であり、ドナー制約がないため定義上underwaterにはなり得ず、$100,000の下落は除外する。両方を合算した$450,000は理事会指定基金を誤って含めている。$100,000は準エンダウメントの下落のみを見た誤り。ドナー制約付き基金の不足を無視する$0も誤り。",
+      "references": ["ASC 958-205-50", "ASC 958-205-45"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-154",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Net Presentation of Investment Return",
+      "stem": "During Year 1, an NFP's investment portfolio (without donor restrictions) generates interest and dividend income of $90,000, realized gains of $40,000, and unrealized losses of $25,000. The NFP pays $15,000 of external investment management fees. Under ASU 2016-14, what amount should the NFP report as net investment return in its statement of activities?",
+      "choices": [
+        { "label": "A", "text": "$90,000" },
+        { "label": "B", "text": "$105,000" },
+        { "label": "C", "text": "$115,000" },
+        { "label": "D", "text": "$130,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASU 2016-14 requires investment return to be presented net of external and direct internal investment expenses. Net investment return = $90,000 income + $40,000 realized gains − $25,000 unrealized losses − $15,000 external management fees = $90,000. The total of $105,000 results from omitting the management fees; $115,000 results from omitting the unrealized losses; and $130,000 results from omitting both the unrealized losses and the fees. Note that the investment fees netted against return are also excluded from the functional expense analysis.",
+      "explanationJa": "ASU 2016-14により、投資収益は外部および直接内部の投資費用を控除した純額で表示しなければならない。純投資収益 = 受取利息・配当$90,000 + 実現利得$40,000 − 未実現損失$25,000 − 外部運用報酬$15,000 = $90,000。$105,000は運用報酬の控除漏れ、$115,000は未実現損失の控除漏れ、$130,000は両方の控除漏れによる誤り。なお、投資収益と純額表示した投資費用は機能別費用の分析からも除外される。",
+      "references": ["ASC 958-225-45", "ASC 958-205-45"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-155",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Expiration of Time Restrictions",
+      "stem": "A donor contributes $50,000 to an NFP in Year 1, stipulating that the funds may not be used until Year 3. The NFP does not spend the funds until Year 4. When does the donor-imposed restriction expire?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "In Year 1, when the contribution is received"
+        },
+        {
+          "label": "B",
+          "text": "In Year 3, when the stipulated time arrives, regardless of when the funds are spent"
+        },
+        {
+          "label": "C",
+          "text": "In Year 4, when the funds are actually expended"
+        },
+        { "label": "D", "text": "Ratably over Years 1 through 4" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A time restriction expires with the passage of time—when the stipulated date or period arrives—without regard to when the NFP actually spends the resources. The restriction on this gift therefore expires at the start of Year 3, and the NFP reclassifies the $50,000 to net assets without donor restrictions at that time. Recognizing expiration at receipt in Year 1 ignores the donor's stipulation; tying expiration to the Year 4 expenditure confuses time restrictions with purpose restrictions, which are satisfied by incurring qualifying costs; and ratable expiration has no basis when the donor specified a single availability date.",
+      "explanationJa": "期限制約（time restriction）は時の経過によって、すなわち指定された日付・期間が到来した時点で解除され、NFPが実際にいつ支出したかは関係ない。本問の制約はYear 3の到来時に解除され、その時点で$50,000を制約なし純資産へ組み替える。受領時のYear 1での解除はドナーの定めを無視している。Year 4の支出時とする考え方は、適格支出により充足される目的制約（purpose restriction）との混同である。ドナーが単一の利用可能日を指定している以上、按分で解除する根拠はない。",
+      "references": ["ASC 958-205-45", "ASC 958-225-45"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-156",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Cash Flows - Sale of Donated Securities",
+      "stem": "An NFP receives a gift of publicly traded stock with no donor restrictions and, consistent with its policy, sells the shares for $75,000 nearly immediately upon receipt. In the NFP's statement of cash flows, the $75,000 of sale proceeds should be classified as:",
+      "choices": [
+        { "label": "A", "text": "An investing activity inflow" },
+        { "label": "B", "text": "A financing activity inflow" },
+        { "label": "C", "text": "A noncash transaction disclosed separately" },
+        { "label": "D", "text": "An operating activity inflow" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cash receipts from the sale of donated financial assets that are converted nearly immediately into cash and carry no donor-imposed long-term restrictions are classified as operating cash flows, because the substance is equivalent to receiving an unrestricted cash contribution. Investing classification would apply only if the NFP held the securities as investments rather than converting them upon receipt; financing classification applies when the donated securities are restricted for long-term purposes such as endowment or acquisition of long-lived assets; and the sale generates actual cash proceeds, so it is not a noncash transaction.",
+      "explanationJa": "受領後ほぼ即時に現金化され、長期目的のドナー制約が付されていない寄付有価証券の売却収入は、実質的に無制約の現金寄付の受領と同等であるため、営業活動によるキャッシュフローに分類する。投資活動に分類するのは、受領時に換金せず投資として保有していた場合に限られる。財務活動に分類するのは、寄付有価証券がエンダウメントや固定資産取得など長期目的に制約されている場合である。売却により実際に現金収入が生じているため、非資金取引としての開示対象でもない。",
+      "references": ["ASC 230-10-45-21A", "ASC 958-230"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-157",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Agency Transaction with Administrative Fee",
+      "stem": "A community foundation receives $200,000 in cash from a donor with instructions to deliver the funds to a named, unaffiliated charity. The foundation has no variance power but is entitled to retain a 5% administrative fee for processing the transfer. What amount should the foundation report as a liability upon receipt of the cash?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$190,000" },
+        { "label": "D", "text": "$10,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Because the donor specified the beneficiary and the foundation lacks variance power, the foundation is acting as an agent and recognizes no contribution revenue for the amount it must pass through. The administrative fee of $200,000 × 5% = $10,000 is consideration the foundation earns for its processing services, so the liability to the beneficiary is $200,000 − $10,000 = $190,000, and the $10,000 fee is recognized as revenue. Reporting $200,000 ignores the fee the foundation is entitled to retain; $10,000 is the fee revenue, not the liability; and recognizing no liability would treat the pass-through funds as the foundation's own contribution revenue, which is improper for an agent.",
+      "explanationJa": "ドナーが受益者を指定し、財団に変更権限（variance power）がないため、財団は代理人として行動しており、引き渡すべき金額について寄付収益は認識しない。事務手数料は$200,000 × 5% = $10,000で、これは処理サービスの対価として財団が稼得する収益である。よって受益者への負債は$200,000 − $10,000 = $190,000となり、$10,000は手数料収益として認識する。$200,000は財団が留保できる手数料を無視している。$10,000は負債ではなく手数料収益の金額である。負債を計上しない処理は、通過資金を財団自身の寄付収益として扱うことになり、代理人として不適切。",
+      "references": ["ASC 958-605-25-23"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-158",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Collections - Permitted Capitalization Policies",
+      "stem": "Under ASC 958-360, which of the following accounting policies for works of art and similar collection items is NOT permitted for an NFP museum?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Capitalizing only selected individual collections while not capitalizing others"
+        },
+        {
+          "label": "B",
+          "text": "Capitalizing all collection items, whether acquired before or after the policy adoption"
+        },
+        {
+          "label": "C",
+          "text": "Capitalizing only collection items acquired after the date the capitalization policy is adopted"
+        },
+        {
+          "label": "D",
+          "text": "Not capitalizing any collection items that meet the definition of a collection"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An NFP that holds collections meeting the definition may choose among three policies: capitalize all collections retroactively, capitalize collections prospectively (only items acquired after adoption), or capitalize no collections. Selective capitalization—capitalizing some collections while excluding others on an item-by-item or collection-by-collection basis—is prohibited because it would make the financial statements inconsistent and incomparable. Full capitalization, prospective-only capitalization, and complete noncapitalization (with required disclosures) are each acceptable elections.",
+      "explanationJa": "コレクションの定義を満たす美術品等を保有するNFPは、3つの方針から選択できる。すなわち、(1)全コレクションを遡及的に資産計上する、(2)方針採用日以後に取得した品目のみ将来に向かって資産計上する、(3)一切資産計上しない、のいずれかである。一部のコレクションだけを選択的に資産計上し他を除外する処理は、財務諸表の一貫性・比較可能性を損なうため認められない。全部資産計上、将来分のみの資産計上、（所定の開示を伴う）全部非計上は、いずれも認められる会計方針の選択である。",
+      "references": ["ASC 958-360-25"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-159",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Gift of Long-Lived Asset Without Donor Stipulation",
+      "stem": "A donor contributes an office building with a fair value of $800,000 to an NFP. The donor places no stipulations on how the building must be used or how long it must be held. How should the NFP report the gift?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Contribution revenue with donor restrictions of $800,000, released over the building's useful life"
+        },
+        {
+          "label": "B",
+          "text": "Contribution revenue without donor restrictions of $800,000, measured at fair value at the date of gift"
+        },
+        {
+          "label": "C",
+          "text": "Contribution revenue with donor restrictions of $800,000, released when the NFP formally places the building in service"
+        },
+        {
+          "label": "D",
+          "text": "Deferred revenue of $800,000, recognized as the building is depreciated"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A donor-imposed restriction exists only when the donor explicitly stipulates one (or when circumstances surrounding the gift make a restriction clear). Here the donor attached no stipulations, so the $800,000 fair value of the building is recognized as contribution revenue without donor restrictions when received. Treating the gift as restricted and releasing it over the useful life or upon placement in service applies only to gifts of (or restricted to acquire) long-lived assets that carry donor stipulations—and even then, ASU 2016-14 requires the placed-in-service approach. Deferred revenue treatment is never appropriate for an unconditional contribution.",
+      "explanationJa": "ドナー制約は、ドナーが明示的に定めた場合（または贈与の状況から制約が明らかな場合）にのみ存在する。本問ではドナーは何の条件も付していないため、建物の公正価値$800,000は受領時に制約なし寄付収益として認識する。耐用年数にわたる解除や供用開始時の解除は、ドナーの定めが付された固定資産の贈与（または固定資産取得目的の制約付き寄付）にのみ適用される処理であり、その場合でもASU 2016-14は供用開始（placed-in-service）アプローチを要求する。無条件の寄付について繰延収益として処理することは認められない。",
+      "references": ["ASC 958-605-45", "ASC 958-605-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-160",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Pledge Present Value - Payments Beginning Immediately",
+      "stem": "On January 1, Year 1, an NFP receives an unconditional promise of $20,000 per year for three years, with the first payment received on January 1, Year 1 and the remaining payments due each January 1 thereafter. The appropriate discount rate is 8%. The present value of an ordinary annuity of $1 for 2 periods at 8% is 1.783, and for 3 periods is 2.577. What amount of contribution revenue should the NFP recognize on January 1, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$51,540" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$55,660" },
+        { "label": "D", "text": "$35,660" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Because the first payment is received immediately, only the two remaining payments need to be discounted. Contribution revenue = $20,000 (received today, no discounting) + $20,000 × 1.783 (present value of the two future payments) = $20,000 + $35,660 = $55,660. Using the three-period ordinary annuity factor ($20,000 × 2.577 = $51,540) incorrectly treats the first payment as occurring one year in the future. The undiscounted total of $60,000 ignores the time value of money required for multiyear promises. $35,660 represents only the present value of the two future installments and omits the payment received on day one.",
+      "explanationJa": "初回支払いを即時に受領するため、割引が必要なのは残り2回の支払いのみ。寄付収益 = $20,000（当日受領、割引不要）+ $20,000 × 1.783（将来2回分の現在価値）= $20,000 + $35,660 = $55,660。3期間の通常年金係数を使う計算（$20,000 × 2.577 = $51,540）は、初回支払いを1年後とみなす誤りである。割引前合計の$60,000は、複数年にわたる約束に必要な貨幣の時間価値を無視している。$35,660は将来2回分の現在価値のみで、当日受領分の支払いが漏れている。",
+      "references": ["ASC 958-605-30", "ASC 958-310-30"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-161",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Capital Restrictions - Placed-in-Service Requirement",
+      "stem": "An NFP receives a contribution restricted to the construction of a new program facility. Under ASU 2016-14, when the facility is completed and placed in service, how must the NFP release the restriction in the absence of explicit donor stipulations about how long the asset must be used?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ratably over the facility's estimated useful life, mirroring depreciation"
+        },
+        {
+          "label": "B",
+          "text": "At the NFP's election, either entirely when placed in service or over the useful life"
+        },
+        {
+          "label": "C",
+          "text": "Only when the donor provides written confirmation that the restriction is satisfied"
+        },
+        {
+          "label": "D",
+          "text": "Entirely in the period the facility is placed in service"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASU 2016-14 eliminated the option of releasing restrictions on gifts of (or for) long-lived assets over the asset's useful life. In the absence of explicit donor stipulations limiting the asset's use for a specified period, the NFP must use the placed-in-service approach, reclassifying the entire restricted amount to net assets without donor restrictions when the asset is placed in service. The over-useful-life release and the free election between methods describe pre-ASU 2016-14 practice that is no longer permitted, and donor confirmation is not a GAAP requirement for recognizing the expiration of a restriction.",
+      "explanationJa": "ASU 2016-14は、固定資産の贈与（または固定資産取得目的の寄付）に係る制約を耐用年数にわたって解除する選択肢を廃止した。資産の使用期間を限定する明示的なドナーの定めがない場合、NFPは供用開始（placed-in-service）アプローチを用い、資産の供用開始時に制約付き金額の全額を制約なし純資産へ組み替えなければならない。耐用年数にわたる解除や方法間の自由選択はASU 2016-14以前の実務であり、現在は認められない。制約解除の認識にドナーの書面確認は要求されていない。",
+      "references": ["ASC 958-205-45", "ASC 958-605-45"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-162",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "NFP Acquisition - Inherent Contribution",
+      "stem": "NFP P acquires NFP S in a transaction that qualifies as an acquisition under ASC 958-805. P transfers consideration of $1,000,000, and the fair value of S's identifiable net assets acquired is $1,400,000. S's operations are not expected to be predominantly supported by contributions and investment return. How should P account for the $400,000 excess?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As negative goodwill amortized to income over 10 years"
+        },
+        {
+          "label": "B",
+          "text": "As an inherent contribution received, recognized as a separate credit in the statement of activities"
+        },
+        {
+          "label": "C",
+          "text": "As a pro rata reduction of the acquired long-lived assets"
+        },
+        {
+          "label": "D",
+          "text": "As goodwill of $400,000 on the statement of financial position"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In an NFP acquisition, when the fair value of identifiable net assets acquired ($1,400,000) exceeds the consideration transferred ($1,000,000), the acquirer recognizes the $400,000 excess as an inherent contribution received, reported as a separate credit (contribution income) in the statement of activities in the period of acquisition. Goodwill arises only when consideration exceeds the fair value of net assets acquired—the opposite situation. Amortized negative goodwill and pro rata reduction of long-lived assets reflect superseded business-combination methods that do not apply under current GAAP.",
+      "explanationJa": "NFPの取得（acquisition）において、取得した識別可能純資産の公正価値（$1,400,000）が移転対価（$1,000,000）を上回る場合、取得企業はその超過額$400,000を「内在的寄付（inherent contribution）」の受領として認識し、取得日の属する期間の活動計算書に独立の貸方項目（寄付収益）として表示する。のれんが生じるのは対価が取得純資産の公正価値を上回る逆のケースである。負ののれんの償却や固定資産の按分減額は、現行GAAPでは適用されない廃止済みの企業結合処理である。",
+      "references": ["ASC 958-805-25", "ASC 958-805-30"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-163",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Bargain Purchase - Part Contribution",
+      "stem": "A longtime supporter sells a warehouse with a fair value of $500,000 to an NFP for $300,000 in a transaction intended partly as a sale and partly as a gift. What amount of contribution revenue should the NFP recognize?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$500,000" },
+        { "label": "D", "text": "$300,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A bargain purchase from a donor is a part-exchange, part-contribution transaction. The NFP records the warehouse at its $500,000 fair value, credits cash for the $300,000 paid, and recognizes the $200,000 difference as contribution revenue. Recognizing no contribution would record the asset at cost and ignore the inherent gift; $500,000 would be the contribution only if the warehouse had been donated outright with no payment; and $300,000 is the cash paid, which is the exchange portion rather than the gift portion.",
+      "explanationJa": "ドナーからの廉価購入（bargain purchase）は、一部交換・一部寄付の取引である。NFPは倉庫を公正価値$500,000で計上し、支払現金$300,000を貸方記入し、差額$200,000を寄付収益として認識する。寄付を認識しない処理は資産を取得原価で計上し内在する贈与部分を無視することになる。$500,000が寄付収益となるのは対価なしで倉庫全体が寄贈された場合のみ。$300,000は支払った現金であり、贈与部分ではなく交換部分の金額である。",
+      "references": ["ASC 958-605-55", "ASC 958-605-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-164",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Intention to Give vs Promise to Give",
+      "stem": "A wealthy supporter tells an NFP's development director, \"I have named your organization in my will and intend to leave you $1,000,000.\" The supporter is alive and may revise the will at any time. How should the NFP account for this communication?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize contribution revenue of $1,000,000 with donor restrictions"
+        },
+        {
+          "label": "B",
+          "text": "Recognize a pledge receivable measured at the present value of $1,000,000"
+        },
+        {
+          "label": "C",
+          "text": "Recognize a conditional contribution and a refundable advance liability"
+        },
+        {
+          "label": "D",
+          "text": "Recognize nothing, because a revocable intention to give is not a promise to give"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Recognition of a contribution requires an unconditional promise to give—a communication that is legally enforceable. A statement of intent to make a bequest is revocable at the donor's discretion (the will can be changed at any time), so it is an intention to give, not a promise, and no revenue or receivable is recognized while the donor is alive. Revenue with donor restrictions and a discounted pledge receivable both presuppose an enforceable unconditional promise that does not exist here, and a refundable advance arises only when assets are received before a condition is met, which has not occurred.",
+      "explanationJa": "寄付の認識には、法的拘束力のある無条件の寄付約束（promise to give）が必要である。遺贈の意向表明はドナーの裁量でいつでも撤回可能（遺言は変更できる）であるため、これは約束ではなく単なる贈与の意図（intention to give）であり、ドナーの存命中は収益も債権も認識しない。制約付き寄付収益や割引後の寄付約束債権の計上は、本問には存在しない拘束力ある無条件の約束を前提としている。返還義務付き前受金は条件充足前に資産を受領した場合にのみ生じるが、本問では何も受領していない。",
+      "references": ["ASC 958-605-25"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "nfp-165",
+      "topic": "Not-for-Profit Accounting",
+      "subtopic": "Liquidity Disclosure - Available Financial Assets",
+      "stem": "At year-end, an NFP reports the following: cash of $400,000 (of which $100,000 is donor-restricted for equipment purchases), short-term investments of $250,000, pledges receivable due within one year of $150,000, pledges receivable due in three years of $300,000, and a board-designated quasi-endowment of $500,000 that the board has no intention of appropriating in the coming year. For its quantitative liquidity disclosure under ASU 2016-14, what amount should the NFP report as financial assets available for general expenditure within one year?",
+      "choices": [
+        { "label": "A", "text": "$800,000" },
+        { "label": "B", "text": "$1,200,000" },
+        { "label": "C", "text": "$700,000" },
+        { "label": "D", "text": "$1,000,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Financial assets available for general expenditure within one year exclude amounts unavailable because of donor restrictions, board designations, or the nature of the asset. Available amount = ($400,000 cash − $100,000 donor-restricted for equipment) + $250,000 short-term investments + $150,000 pledges due within one year = $700,000. The $300,000 of pledges due in three years is not available within one year, and the $500,000 quasi-endowment is excluded because the board does not intend to appropriate it. The $800,000 total fails to remove the donor-restricted cash; $1,000,000 improperly includes the long-term pledges; and $1,200,000 improperly adds back the board-designated quasi-endowment.",
+      "explanationJa": "1年以内に一般支出に利用可能な金融資産からは、ドナー制約、理事会指定、資産の性質により利用できない金額を除外する。利用可能額 = （現金$400,000 − 設備購入目的のドナー制約分$100,000）+ 短期投資$250,000 + 1年以内回収予定の寄付約束債権$150,000 = $700,000。3年後回収の寄付約束債権$300,000は1年以内に利用できず、準エンダウメント$500,000は理事会が翌年度の取崩しを予定していないため除外する。$800,000はドナー制約付き現金の控除漏れ。$1,000,000は長期の寄付約束債権を誤って含めている。$1,200,000は理事会指定の準エンダウメントを誤って加算している。",
+      "references": ["ASC 958-210-50", "ASC 958-205-45"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
     }
   ]
 }

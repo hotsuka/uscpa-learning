@@ -2,7 +2,7 @@
   "id": "far-liabilities",
   "name": "Liabilities",
   "topic": "Liabilities",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "liab-001",
@@ -3531,6 +3531,588 @@
       "references": ["ASC 835-30-25"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "liab-163",
+      "topic": "Liabilities",
+      "subtopic": "Bonds Issued Between Interest Dates - Amortization Period",
+      "stem": "Corbett Corp.'s 10-year bonds are dated January 1, Year 1, but are not sold until March 1, Year 1, at a price that includes a premium. The bonds mature on December 31, Year 10. Over what period should Corbett amortize the bond premium?",
+      "choices": [
+        { "label": "A", "text": "120 months, beginning January 1, Year 1" },
+        { "label": "B", "text": "118 months, beginning March 1, Year 1" },
+        { "label": "C", "text": "119 months, beginning February 1, Year 1" },
+        { "label": "D", "text": "60 months, beginning March 1, Year 1" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When bonds are sold after their dated date, any premium or discount is amortized over the period the bonds are actually outstanding — from the issuance date to the maturity date. Here, that period runs from March 1, Year 1 to December 31, Year 10, which is 118 months. Amortizing over the full 120-month stated term would incorrectly assign premium amortization to the two months (January and February of Year 1) during which the bonds were not outstanding and no interest expense was incurred.",
+      "explanationJa": "社債が表示日（dated date）より後に売却された場合、打歩（プレミアム）や割引は実際に社債が流通している期間、すなわち発行日から満期日までの期間で償却する。本問では Year 1 の3月1日から Year 10 の12月31日までの118か月が償却期間となる。表示上の120か月で償却すると、社債が未発行で利息費用が発生していない Year 1 の1月・2月にも償却を割り当てることになり誤りである。",
+      "references": ["ASC 835-30-35"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-164",
+      "topic": "Liabilities",
+      "subtopic": "Bond Discount - Semiannual Effective Interest Total Year 1 Expense",
+      "stem": "On January 1, Year 1, Delwood Corp. issues $2,000,000 face value, 6% bonds for $1,850,000. Interest is paid semiannually on June 30 and December 31, and the effective interest rate is 8% (4% per semiannual period). Using the effective interest method, what is total interest expense for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$148,000" },
+        { "label": "C", "text": "$148,560" },
+        { "label": "D", "text": "$160,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "First period: interest expense = $1,850,000 × 4% = $74,000; cash interest = $2,000,000 × 3% = $60,000; discount amortized = $14,000, so the new carrying amount is $1,864,000. Second period: interest expense = $1,864,000 × 4% = $74,560. Total Year 1 expense = $74,000 + $74,560 = $148,560. The $120,000 amount is only the cash coupon and ignores discount amortization. The $148,000 amount fails to apply the effective rate to the increased second-period carrying amount. The $160,000 amount incorrectly applies the 8% effective rate to face value rather than to carrying value.",
+      "explanationJa": "第1期: 利息費用 = $1,850,000 × 4% = $74,000、現金利息 = $2,000,000 × 3% = $60,000、割引償却 = $14,000 となり、帳簿価額は $1,864,000 に増加する。第2期: 利息費用 = $1,864,000 × 4% = $74,560。Year 1 合計 = $74,000 + $74,560 = $148,560。$120,000 は現金クーポンのみで割引償却を無視している。$148,000 は第2期に増加後の帳簿価額へ実効利率を適用していない。$160,000 は実効利率8%を帳簿価額ではなく額面に適用した誤りである。",
+      "references": ["ASC 835-30-35"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-165",
+      "topic": "Liabilities",
+      "subtopic": "Bond Issue Costs with Discount - Initial Net Carrying Amount",
+      "stem": "On January 1, Year 1, Fairmont Corp. issues $4,000,000 face value bonds at 98 and incurs $60,000 of bond issuance costs. At what net amount should the bonds initially be reported on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$3,860,000" },
+        { "label": "B", "text": "$3,920,000" },
+        { "label": "C", "text": "$4,000,000" },
+        { "label": "D", "text": "$3,940,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Debt issuance costs are presented as a direct deduction from the carrying amount of the debt, similar to a discount. Issue proceeds = $4,000,000 × 98% = $3,920,000. Net carrying amount = $3,920,000 − $60,000 issuance costs = $3,860,000. The $3,920,000 amount ignores the issuance costs, $4,000,000 ignores both the discount and the issuance costs, and $3,940,000 deducts the issuance costs from face value while ignoring the discount.",
+      "explanationJa": "負債発行費用は割引と同様に負債の帳簿価額からの直接控除として表示する。発行収入 = $4,000,000 × 98% = $3,920,000。当初純帳簿価額 = $3,920,000 − 発行費用 $60,000 = $3,860,000。$3,920,000 は発行費用を無視しており、$4,000,000 は割引と発行費用の両方を無視している。$3,940,000 は額面から発行費用のみを控除し割引を無視した誤りである。",
+      "references": ["ASC 835-30-45"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-166",
+      "topic": "Liabilities",
+      "subtopic": "Bond Retirement - Accrued Interest Included in Payment",
+      "stem": "Stanhope Corp. reacquires its outstanding bonds in the open market between interest dates. The bonds have a face value of $1,000,000 and unamortized discount of $40,000 at the reacquisition date. Stanhope pays total cash of $1,010,000, which includes $30,000 of accrued interest. What gain or loss should Stanhope recognize on the extinguishment?",
+      "choices": [
+        { "label": "A", "text": "$50,000 loss" },
+        { "label": "B", "text": "$10,000 loss" },
+        { "label": "C", "text": "$30,000 gain" },
+        { "label": "D", "text": "$20,000 loss" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Accrued interest is not part of the reacquisition price; it settles the interest payable and is excluded from the extinguishment computation. Reacquisition price = $1,010,000 − $30,000 accrued interest = $980,000. Carrying amount = $1,000,000 − $40,000 unamortized discount = $960,000. Loss = $980,000 − $960,000 = $20,000. A $50,000 loss incorrectly compares the full $1,010,000 payment with the carrying amount. A $10,000 loss compares the total payment with face value, ignoring both the accrued interest and the discount. A $30,000 gain misclassifies the accrued interest itself as the extinguishment result.",
+      "explanationJa": "経過利息は買戻価格に含めず、未払利息の決済として消滅損益の計算から除外する。買戻価格 = $1,010,000 − 経過利息 $30,000 = $980,000。帳簿価額 = $1,000,000 − 未償却割引 $40,000 = $960,000。損失 = $980,000 − $960,000 = $20,000。$50,000 の損失は支払総額 $1,010,000 を帳簿価額と比較した誤り。$10,000 の損失は支払総額と額面を比較し、経過利息と割引の両方を無視している。$30,000 の利得は経過利息そのものを消滅損益と誤認したものである。",
+      "references": ["ASC 470-50-40"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-167",
+      "topic": "Liabilities",
+      "subtopic": "Extinguishment Gain - Income Statement Presentation",
+      "stem": "In Year 1, Marbury Corp. retires bonds early and recognizes a material gain on the extinguishment. How should this gain be reported in Marbury's Year 1 financial statements?",
+      "choices": [
+        { "label": "A", "text": "As an extraordinary item, net of tax" },
+        { "label": "B", "text": "In other comprehensive income" },
+        {
+          "label": "C",
+          "text": "As a component of income from continuing operations"
+        },
+        {
+          "label": "D",
+          "text": "As a direct adjustment to beginning retained earnings"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gains and losses on early extinguishment of debt are reported in income from continuing operations in the period of extinguishment. The extraordinary item classification was eliminated from U.S. GAAP (ASU 2015-01), so net-of-tax extraordinary presentation is no longer permitted. Other comprehensive income is reserved for specifically enumerated items (such as certain pension adjustments and foreign currency translation), which do not include extinguishment gains. A direct adjustment to retained earnings is used for prior-period error corrections and certain accounting changes, not for a current-period transaction gain.",
+      "explanationJa": "負債の期限前消滅に係る損益は、消滅した期の継続事業からの利益（income from continuing operations）に計上する。異常項目（extraordinary item）の区分は ASU 2015-01 により米国基準から廃止されており、税引後の異常項目表示は認められない。その他の包括利益は年金調整や外貨換算調整など限定列挙された項目のためのものであり、消滅利得は含まれない。利益剰余金への直接調整は過年度の誤謬訂正等に用いるものであり、当期の取引利得には適用されない。",
+      "references": ["ASC 470-50-45"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-168",
+      "topic": "Liabilities",
+      "subtopic": "Debt Exchange - Extinguishment with New Debt at Fair Value",
+      "stem": "Renfrew Corp. is having difficulty servicing a note payable, although it is not experiencing financial difficulty for accounting purposes. Renfrew and its lender exchange the old note, which has a carrying amount of $5,200,000 (including $200,000 of unamortized premium), for a new note with substantially different terms — the present value of the cash flows under the new note differs from the present value of the remaining old cash flows by more than 10%. The fair value of the new note is $4,900,000. What should Renfrew recognize at the exchange date?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No gain or loss; the new note is recorded at $5,200,000"
+        },
+        { "label": "B", "text": "A gain of $100,000" },
+        { "label": "C", "text": "A gain of $300,000" },
+        { "label": "D", "text": "A loss of $300,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Because the present value of the cash flows changes by more than 10%, the exchange is accounted for as an extinguishment: the old debt is derecognized and the new debt is recorded at its fair value of $4,900,000. Gain = carrying amount of old debt $5,200,000 − fair value of new debt $4,900,000 = $300,000 gain. Recording the new note at the old carrying amount with no gain or loss is the treatment for a modification (a change of less than 10%), which does not apply here. A $100,000 gain incorrectly uses the $5,000,000 face amount instead of the $5,200,000 carrying amount. A loss is the wrong direction because the new obligation is smaller than the carrying amount extinguished.",
+      "explanationJa": "キャッシュ・フローの現在価値が10%超変動しているため、本取引は消滅（extinguishment）として処理する。旧債務の認識を中止し、新債務を公正価値 $4,900,000 で計上する。利得 = 旧債務帳簿価額 $5,200,000 − 新債務公正価値 $4,900,000 = $300,000。損益を認識せず新債務を旧帳簿価額で計上するのは変動が10%未満の条件変更（modification）の処理であり、本問には当てはまらない。$100,000 の利得は帳簿価額 $5,200,000 ではなく額面 $5,000,000 を用いた誤り。新債務が消滅した帳簿価額より小さいため、損失となる方向も誤りである。",
+      "references": ["ASC 470-50-40"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-169",
+      "topic": "Liabilities",
+      "subtopic": "Bonds with Nondetachable Warrants",
+      "stem": "Hadley Corp. issues bonds with stock warrants attached. The warrants are nondetachable — they cannot be separated from the bonds and traded independently, and the bonds must be surrendered to exercise the warrants. How should Hadley allocate the issuance proceeds?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Allocate the entire proceeds to the bonds, with no amount assigned to the warrants"
+        },
+        {
+          "label": "B",
+          "text": "Allocate the proceeds between the bonds and the warrants based on relative fair values"
+        },
+        {
+          "label": "C",
+          "text": "Allocate to the warrants their fair value, with the residual assigned to the bonds"
+        },
+        {
+          "label": "D",
+          "text": "Allocate the entire proceeds to paid-in capital"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Securities with nondetachable warrants are accounted for in the same manner as convertible debt: the instrument is treated as a single unit and the entire proceeds are recorded as debt, with no separate amount assigned to the equity feature. Allocation between debt and equity using relative fair values, or assigning the warrants their fair value with the residual to the bonds, applies only when the warrants are detachable and can trade separately. Recording the entire proceeds in paid-in capital ignores the debt obligation entirely.",
+      "explanationJa": "分離不能ワラント付き証券は転換社債と同様に処理する。すなわち単一の金融商品として全発行収入を負債に計上し、持分部分に金額を配分しない。相対公正価値による負債・持分への配分や、ワラントに公正価値を配分し残額を社債とする方法は、ワラントが分離可能で独立して取引できる場合にのみ適用される。全額を払込資本に計上する処理は負債としての義務を完全に無視している。",
+      "references": ["ASC 470-20-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-170",
+      "topic": "Liabilities",
+      "subtopic": "Convertible Bond Conversion - Market Value Method",
+      "stem": "Lockhart Corp. has convertible bonds with a face value of $1,000,000 and a carrying amount of $980,000. Bondholders convert all of the bonds into 50,000 shares of Lockhart's $5 par common stock when the stock's market price is $21 per share. Lockhart uses the market value method to record the conversion. What gain or loss should Lockhart recognize?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$70,000 loss" },
+        { "label": "C", "text": "$50,000 loss" },
+        { "label": "D", "text": "$70,000 gain" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the market value method, the stock issued is recorded at its fair value, and the difference between that fair value and the carrying amount of the converted bonds is recognized in income. Fair value of stock = 50,000 shares × $21 = $1,050,000. Loss = $1,050,000 − $980,000 carrying amount = $70,000 loss (the company gave up equity worth more than the recorded liability). Recognizing no gain or loss is the result under the book value method, not the market value method. A $50,000 loss incorrectly compares the stock's fair value with the $1,000,000 face value rather than the carrying amount. A gain is the wrong direction because the fair value of the shares issued exceeds the carrying amount of the debt removed.",
+      "explanationJa": "時価法（market value method）では、交付株式を公正価値で計上し、その公正価値と転換社債の帳簿価額との差額を損益に認識する。株式の公正価値 = 50,000株 × $21 = $1,050,000。損失 = $1,050,000 − 帳簿価額 $980,000 = $70,000（計上されていた負債を上回る価値の持分を引き渡したため損失）。損益を認識しないのは簿価法（book value method）の結果である。$50,000 の損失は帳簿価額ではなく額面 $1,000,000 と比較した誤り。交付株式の公正価値が消滅する負債の帳簿価額を上回っているため、利得とする方向も誤りである。",
+      "references": ["ASC 470-20-40"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-171",
+      "topic": "Liabilities",
+      "subtopic": "Detachable Warrants - Expiration Unexercised",
+      "stem": "Several years ago, Pemrose Corp. issued bonds with detachable stock warrants and credited $150,000 of the proceeds to additional paid-in capital — stock warrants. The warrants have now expired unexercised. How should Pemrose account for the expiration?",
+      "choices": [
+        { "label": "A", "text": "Recognize a $150,000 gain in income" },
+        {
+          "label": "B",
+          "text": "Reclassify the $150,000 to a liability for potential claims"
+        },
+        {
+          "label": "C",
+          "text": "Transfer the $150,000 to another paid-in capital account, with no effect on income"
+        },
+        {
+          "label": "D",
+          "text": "Add the $150,000 back to the carrying amount of the bonds"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Amounts received for equity instruments remain in equity even if the instruments expire unexercised. The balance in paid-in capital from the warrants is simply transferred to another paid-in capital account (such as paid-in capital from expired warrants); total equity and net income are unaffected. Recognizing a gain in income is prohibited because transactions in an entity's own equity instruments do not produce income. No liability arises on expiration because the holders' rights have lapsed. Adding the amount to the bonds' carrying amount is wrong because the original allocation to the warrants is not reversed — the bonds continue to be accounted for based on their allocated issue price.",
+      "explanationJa": "持分金融商品の対価として受け取った金額は、その商品が未行使のまま失効しても資本にとどまる。ワラントに係る払込資本の残高は別の払込資本勘定（失効ワラントからの払込資本等）へ振り替えるだけで、資本合計にも純利益にも影響しない。自社の持分商品に係る取引から利益は生じないため、損益への利得計上は認められない。保有者の権利は消滅しているため負債も発生しない。当初のワラントへの配分は取り消されないため、社債の帳簿価額へ戻し入れる処理も誤りである。",
+      "references": ["ASC 505-10-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-172",
+      "topic": "Liabilities",
+      "subtopic": "Note Payable with Below-Market Stated Rate",
+      "stem": "On January 1, Year 1, Whitcomb Corp. purchases equipment by issuing a $300,000, 3-year note payable bearing interest at 3%, payable annually. The prevailing market rate for similar notes is 9%. The present value of $1 at 9% for 3 periods is 0.77, and the present value of an ordinary annuity of $1 at 9% for 3 periods is 2.53. At what amount should Whitcomb record the equipment?",
+      "choices": [
+        { "label": "A", "text": "$300,000" },
+        { "label": "B", "text": "$253,770" },
+        { "label": "C", "text": "$231,000" },
+        { "label": "D", "text": "$327,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When a note's stated rate is unreasonably below the market rate, the note and the asset acquired are recorded at the present value of the note's cash flows discounted at the market rate. Annual stated interest = $300,000 × 3% = $9,000. Present value = ($9,000 × 2.53) + ($300,000 × 0.77) = $22,770 + $231,000 = $253,770. Recording the equipment at the $300,000 face amount ignores the imputation requirement because the 3% stated rate does not represent the market rate. The $231,000 amount discounts only the principal and omits the stated interest payments. The $327,000 amount incorrectly adds the total stated interest of $27,000 to the face amount instead of discounting the cash flows.",
+      "explanationJa": "手形の表面利率が市場利率を不合理に下回る場合、手形と取得資産は市場利率で割り引いたキャッシュ・フローの現在価値で計上する。年間表面利息 = $300,000 × 3% = $9,000。現在価値 = ($9,000 × 2.53) + ($300,000 × 0.77) = $22,770 + $231,000 = $253,770。額面 $300,000 での計上は、表面利率3%が市場利率を表さないため利息の擬制（imputation）を無視している。$231,000 は元本のみを割り引き表面利息の支払を omit した誤り。$327,000 は割引計算をせず表面利息総額 $27,000 を額面に加算した誤りである。",
+      "references": ["ASC 835-30-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-173",
+      "topic": "Liabilities",
+      "subtopic": "Zero-Coupon Note - Total Interest Over Life",
+      "stem": "Granger Corp. issues a 5-year, zero-coupon note with a face value of $500,000 for proceeds of $340,000. What is the total interest expense Granger will recognize over the life of the note?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$32,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$160,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A zero-coupon note pays no periodic interest, so the entire difference between the face value repaid at maturity and the proceeds received at issuance is interest: $500,000 − $340,000 = $160,000, recognized over the 5-year life using the effective interest method. Reporting zero total interest confuses the absence of cash coupons with the absence of interest expense. The $32,000 amount is only one year's straight-line share ($160,000 ÷ 5), not the total over the life. The $200,000 amount does not correspond to the actual discount on this note.",
+      "explanationJa": "ゼロクーポン債は定期利息を支払わないため、満期に返済する額面と発行時の手取額との差額の全額が利息となる: $500,000 − $340,000 = $160,000。これを5年間にわたり実効金利法で認識する。利息合計をゼロとするのは、現金クーポンがないことと利息費用がないことを混同している。$32,000 は定額法による1年分（$160,000 ÷ 5）にすぎず、全期間の合計ではない。$200,000 はこの手形の実際の割引額と一致しない。",
+      "references": ["ASC 835-30-35"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-174",
+      "topic": "Liabilities",
+      "subtopic": "Installment Note - Current Portion at Year-End",
+      "stem": "On January 1, Year 1, Tilford Corp. borrows $1,000,000 on a 5-year mortgage note bearing interest at 6%, with equal annual payments of $237,400 due each December 31. After making the Year 1 payment, what amount should Tilford report as the current portion of the note at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$188,044" },
+        { "label": "B", "text": "$177,400" },
+        { "label": "C", "text": "$237,400" },
+        { "label": "D", "text": "$822,600" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Year 1: interest = $1,000,000 × 6% = $60,000; principal reduction = $237,400 − $60,000 = $177,400; balance at December 31, Year 1 = $822,600. The current portion is the principal that will be repaid in Year 2: Year 2 interest = $822,600 × 6% = $49,356, so Year 2 principal = $237,400 − $49,356 = $188,044. The $177,400 amount is the principal already repaid in Year 1, not the amount due next year. The $237,400 amount is the full payment, which includes interest that has not yet accrued and is therefore not a year-end liability. The $822,600 amount is the entire remaining balance, most of which is noncurrent.",
+      "explanationJa": "Year 1: 利息 = $1,000,000 × 6% = $60,000、元本返済 = $237,400 − $60,000 = $177,400、Year 1 末残高 = $822,600。流動部分は Year 2 に返済される元本である: Year 2 利息 = $822,600 × 6% = $49,356、よって Year 2 元本 = $237,400 − $49,356 = $188,044。$177,400 は Year 1 に既に返済済みの元本であり、翌年返済額ではない。$237,400 は支払額全額で、まだ発生していない利息を含むため期末負債にならない。$822,600 は残高全体であり、その大部分は非流動である。",
+      "references": ["ASC 470-10-45", "ASC 210-10-45"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-175",
+      "topic": "Liabilities",
+      "subtopic": "ARO - Downward Revision Discount Rate",
+      "stem": "Under ASC 410-20, a company revises its estimate of the undiscounted cash flows required to settle an asset retirement obligation downward. What discount rate should the company use to measure the decrease in the liability?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The current credit-adjusted risk-free rate at the date of the revision"
+        },
+        {
+          "label": "B",
+          "text": "The credit-adjusted risk-free rate that existed when the obligation was originally recognized"
+        },
+        {
+          "label": "C",
+          "text": "The risk-free rate without any credit adjustment"
+        },
+        {
+          "label": "D",
+          "text": "The company's weighted-average cost of capital"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 410-20 uses a layered approach: upward revisions in estimated cash flows are treated as a new layer of the liability and discounted at the current credit-adjusted risk-free rate, while downward revisions reduce existing layers and are discounted at the rate (or weighted-average rate) that applied when those layers were originally recognized. Using the current rate for a decrease applies the upward-revision rule to the wrong direction. A pure risk-free rate is never used because ASC 410-20 requires the rate to be adjusted for the entity's credit standing. The weighted-average cost of capital is not a permitted measurement rate for AROs.",
+      "explanationJa": "ASC 410-20 はレイヤー方式を採用しており、見積キャッシュ・フローの増額改訂は負債の新たなレイヤーとして改訂時点の信用調整後リスクフリーレートで割り引く一方、減額改訂は既存レイヤーの減少として、そのレイヤーを当初認識した時点のレート（または加重平均レート）で割り引く。減額に現在のレートを使うのは増額改訂のルールを誤った方向に適用したもの。ASC 410-20 は企業の信用状態を反映したレートを要求するため、信用調整のない純粋なリスクフリーレートは使用しない。加重平均資本コストはAROの測定に認められたレートではない。",
+      "references": ["ASC 410-20-35"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-176",
+      "topic": "Liabilities",
+      "subtopic": "ARO - Recognition and Measurement Principles",
+      "stem": "Which of the following statements about asset retirement obligations (AROs) under ASC 410-20 is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The ARO is measured at the undiscounted amount of the estimated future retirement costs"
+        },
+        {
+          "label": "B",
+          "text": "The retirement cost is expensed immediately when the obligation is incurred"
+        },
+        {
+          "label": "C",
+          "text": "The ARO is recognized only when the asset is actually retired"
+        },
+        {
+          "label": "D",
+          "text": "The ARO is recognized at fair value when incurred, with a corresponding increase to the carrying amount of the related asset"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "An ARO is recognized in the period in which a legal obligation is incurred, provided its fair value can be reasonably estimated, and is measured at fair value — typically the present value of the expected retirement cash flows discounted at a credit-adjusted risk-free rate. The same amount is capitalized as an asset retirement cost, increasing the carrying amount of the related long-lived asset, and is then depreciated over the asset's useful life. Measuring at undiscounted cash flows ignores the fair value (present value) requirement. Immediate expensing contradicts the capitalization requirement. Waiting until actual retirement to recognize the liability defers an existing legal obligation and understates liabilities throughout the asset's life.",
+      "explanationJa": "AROは法的義務が発生した期に、公正価値を合理的に見積もれる場合に認識し、公正価値（通常は信用調整後リスクフリーレートで割り引いた予想除去キャッシュ・フローの現在価値）で測定する。同額を資産除去費用として資産化し、関連する長期性資産の帳簿価額を増額したうえで耐用年数にわたり減価償却する。割引前キャッシュ・フローでの測定は公正価値（現在価値）の要求を無視している。即時費用処理は資産化の要求に反する。実際の除去時まで認識を遅らせる処理は、既に存在する法的義務の認識を繰り延べ、資産の使用期間を通じて負債を過小表示する。",
+      "references": ["ASC 410-20-25"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-177",
+      "topic": "Liabilities",
+      "subtopic": "General Business Risks - Self-Insurance",
+      "stem": "Norfield Corp. does not carry insurance against hurricane damage to its coastal facilities and instead self-insures. Based on historical patterns, management expects average annual storm losses of $400,000 and wishes to accrue this amount each year to smooth earnings. No storm damage has occurred as of year-end. What is the appropriate accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No accrual is recorded, because no asset has been impaired and no liability has been incurred at the balance sheet date"
+        },
+        {
+          "label": "B",
+          "text": "Accrue $400,000 each year as a self-insurance reserve"
+        },
+        {
+          "label": "C",
+          "text": "Accrue the present value of expected losses over the facilities' remaining lives"
+        },
+        {
+          "label": "D",
+          "text": "Record the $400,000 in other comprehensive income until a storm occurs"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 450 prohibits accrual for general or unspecified business risks, including self-insured risks for events that have not yet occurred. A loss contingency is accrued only when an asset has been impaired or a liability incurred as of the balance sheet date — exposure to future storms does not meet that condition because the damaging event has not happened. Accruing an annual reserve, whether at the expected amount or at present value, creates a reserve for future losses and improperly smooths income. Other comprehensive income is not a holding area for unincurred losses; the exposure may be disclosed, but no amount is recognized.",
+      "explanationJa": "ASC 450 は、一般的・不特定の事業リスク（未発生の事象に対する自家保険リスクを含む）に対する引当を禁止している。損失偶発事象は、貸借対照表日時点で資産が毀損しているか負債が発生している場合にのみ引当計上する。将来の暴風被害へのエクスポージャーは、損害事象がまだ発生していないためこの条件を満たさない。期待額であれ現在価値であれ毎期引当金を積む処理は、将来損失のための準備金を創設し利益を不当に平準化するものである。その他の包括利益は未発生損失の待避場所ではない。エクスポージャーは開示し得るが、金額は認識しない。",
+      "references": ["ASC 450-20-25"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-178",
+      "topic": "Liabilities",
+      "subtopic": "Subsequent Events - Condition Arising After Year-End",
+      "stem": "Calverton Corp.'s fiscal year ends December 31, Year 1. On January 20, Year 2, before the financial statements are issued, a flood destroys one of Calverton's uninsured warehouses, resulting in a material loss. The flood was an isolated event with no connection to conditions existing at December 31, Year 1. How should Calverton treat this event in its Year 1 financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Accrue the loss in the Year 1 financial statements"
+        },
+        {
+          "label": "B",
+          "text": "Accrue the loss and also disclose the event in the notes"
+        },
+        {
+          "label": "C",
+          "text": "Neither accrue nor disclose, because the event occurred after year-end"
+        },
+        {
+          "label": "D",
+          "text": "Disclose the nature of the event and an estimate of the loss in the notes, without accrual"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "This is a nonrecognized subsequent event: the condition (the flood) arose after the balance sheet date, so it provides no evidence about conditions existing at December 31, Year 1, and no accrual is made in Year 1. Because the event is material and the statements would otherwise be misleading, Calverton must disclose the nature of the event and an estimate of its financial effect (or state that an estimate cannot be made). Accruing the loss, with or without disclosure, is appropriate only for recognized subsequent events that confirm conditions existing at the balance sheet date. Omitting disclosure entirely is wrong because a material post-year-end event of this kind must be disclosed even though it is not recognized.",
+      "explanationJa": "これは非認識後発事象である。状況（洪水）が貸借対照表日後に発生しているため、Year 1 の12月31日時点に存在した状況の証拠とはならず、Year 1 では引当計上しない。事象は重要であり開示しなければ財務諸表が誤解を招くため、事象の性質と財務的影響の見積額（または見積不能である旨）を注記で開示しなければならない。損失の引当計上（開示の有無を問わず）は、貸借対照表日時点に存在した状況を裏付ける認識後発事象にのみ適切である。重要な期末後事象であるため、開示自体を省略するのも誤りである。",
+      "references": ["ASC 855-10-25", "ASC 450-20-50"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-179",
+      "topic": "Liabilities",
+      "subtopic": "Adverse Judgment Under Appeal",
+      "stem": "In December Year 1, a jury renders a verdict against Brindle Corp. for $2,000,000 in a product liability case. Brindle files an appeal. Legal counsel advises that it is probable the verdict will be upheld on appeal, although it is reasonably possible the appellate court could reduce the award to $1,200,000. What amount should Brindle accrue at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$800,000" },
+        { "label": "C", "text": "$1,200,000" },
+        { "label": "D", "text": "$2,000,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A loss is accrued when it is probable and reasonably estimable. Counsel believes it is probable the $2,000,000 verdict will be upheld, so $2,000,000 is the best estimate of the loss and should be accrued; the possible reduction to $1,200,000 is only reasonably possible and therefore does not change the measurement, though it may be disclosed. Accruing nothing ignores a probable, estimable loss evidenced by an actual jury verdict. The $800,000 amount is merely the difference between the verdict and the possible reduced award and has no measurement significance. Accruing $1,200,000 treats the reasonably possible reduction as the best estimate, but the minimum-of-the-range approach applies only when no amount within the range is more likely than the others — here the full verdict is the probable outcome.",
+      "explanationJa": "損失は発生の可能性が高く（probable）合理的に見積可能な場合に引当計上する。弁護士は $2,000,000 の評決が控訴審で維持される可能性が高いと判断しているため、$2,000,000 が損失の最善の見積りであり、これを引当計上する。$1,200,000 への減額は合理的に起こり得る（reasonably possible）にすぎず測定額を変えないが、開示の対象にはなり得る。引当をしない処理は、現実の陪審評決という証拠のある probable かつ見積可能な損失を無視している。$800,000 は評決額と減額可能性のある金額との差額にすぎず、測定上の意味を持たない。$1,200,000 の引当は reasonably possible な減額を最善の見積りとして扱うものだが、レンジの最小値を用いる方法はレンジ内のどの金額も他より可能性が高いとはいえない場合にのみ適用される。本問では評決全額が probable な結果である。",
+      "references": ["ASC 450-20-25", "ASC 450-20-30"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-180",
+      "topic": "Liabilities",
+      "subtopic": "Warranty Expense - Full Recognition in Year of Sale",
+      "stem": "Ashbury Corp. sells appliances with a 2-year assurance-type warranty. Based on experience, warranty costs are expected to equal 1% of sales in the year of sale and 3% of sales in the year following the sale. Year 1 sales were $3,000,000, and Ashbury paid $25,000 of actual warranty claims during Year 1. What warranty expense should Ashbury report for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$25,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$90,000" },
+        { "label": "D", "text": "$120,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under the expense warranty (accrual) approach, the entire estimated cost of servicing warranties on products sold during the year is expensed in the year of sale to match the cost against the related revenue: ($3,000,000 × 1%) + ($3,000,000 × 3%) = $30,000 + $90,000 = $120,000. The $25,000 amount is the cash-basis claims paid, which is not the expense. The $30,000 amount includes only the costs expected in the year of sale and improperly defers the costs expected next year, even though they relate to Year 1 sales. The $90,000 amount captures only the second-year portion and omits the current-year portion.",
+      "explanationJa": "費用認識アプローチ（引当法）では、当期に販売した製品の保証に要する見積総額を販売年度に費用計上し、関連する収益と対応させる: ($3,000,000 × 1%) + ($3,000,000 × 3%) = $30,000 + $90,000 = $120,000。$25,000 は現金主義で支払ったクレーム額であり費用ではない。$30,000 は販売年度に発生が見込まれるコストのみを含み、Year 1 の売上に関連するにもかかわらず翌年度見込分を不当に繰り延べている。$90,000 は2年目部分のみで当年度部分を欠いている。",
+      "references": ["ASC 460-10-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-181",
+      "topic": "Liabilities",
+      "subtopic": "Warranty - Loss Not Reasonably Estimable",
+      "stem": "Kelridge Corp. launches an entirely new product line in December Year 1 with a 3-year warranty. Because the product uses unproven technology and Kelridge has no claims history or comparable industry data, management concludes that warranty costs are probable but cannot be reasonably estimated. What should Kelridge do in its Year 1 financial statements?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Accrue an amount based on the warranty percentage used for its other product lines"
+        },
+        {
+          "label": "B",
+          "text": "Disclose the warranty obligation in the notes without accruing a liability"
+        },
+        {
+          "label": "C",
+          "text": "Accrue the maximum possible warranty exposure"
+        },
+        {
+          "label": "D",
+          "text": "Neither accrue nor disclose until claims are actually received"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Accrual of a loss contingency requires that the loss be both probable and reasonably estimable. When warranty costs are probable but no reasonable estimate can be made, no liability is accrued; instead, the nature of the contingency is disclosed, along with the fact that an estimate cannot be made. Borrowing the warranty percentage from dissimilar product lines does not produce a reasonable estimate for unproven technology. Accruing the maximum exposure is not a faithful measurement and overstates liabilities. Remaining silent until claims arrive fails the disclosure requirement that applies when a probable loss cannot be estimated.",
+      "explanationJa": "損失偶発事象の引当計上には、損失が probable かつ合理的に見積可能であることの両方が必要である。保証費用の発生は probable だが合理的な見積りができない場合、負債は計上せず、偶発事象の性質と見積不能である旨を注記で開示する。性質の異なる他の製品ラインの保証率を流用しても、未実証技術に対する合理的な見積りにはならない。最大エクスポージャーの引当は忠実な測定ではなく負債の過大表示となる。クレームが実際に届くまで何もしないのは、probable な損失が見積不能な場合に求められる開示要件に反する。",
+      "references": ["ASC 450-20-25", "ASC 450-20-50"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-182",
+      "topic": "Liabilities",
+      "subtopic": "Compensated Absences - Sick Pay vs. Vacation",
+      "stem": "Under ASC 710-10, an employer's obligation for which of the following compensated absences MUST be accrued (assuming the obligation relates to services already rendered, payment is probable, and the amount is reasonably estimable)?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sick pay benefits that vest — employees are paid for unused sick days upon termination"
+        },
+        {
+          "label": "B",
+          "text": "Sick pay benefits that accumulate but do not vest"
+        },
+        {
+          "label": "C",
+          "text": "Vacation benefits that neither vest nor accumulate"
+        },
+        { "label": "D", "text": "Holiday pay for future company holidays" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Accrual is required when the obligation relates to past services, the rights vest or accumulate, payment is probable, and the amount is reasonably estimable. Sick pay that vests must be accrued because employees will be paid regardless of future illness. For sick pay that accumulates but does not vest, accrual is permitted but specifically not required — ASC 710-10 provides this exception because payment depends on future illness. Benefits that neither vest nor accumulate fail the vesting/accumulation criterion entirely, so no accrual is made. Pay for future holidays relates to future services, not services already rendered.",
+      "explanationJa": "引当計上が要求されるのは、債務が過去の勤務に関連し、権利が確定（vest）または累積（accumulate）し、支払の可能性が高く、金額を合理的に見積もれる場合である。権利確定する病気休暇は、将来の疾病の有無にかかわらず支払われるため引当計上が必須である。累積するが権利確定しない病気休暇については、支払が将来の疾病に依存するため、ASC 710-10 は例外として引当を任意（許容されるが要求されない）としている。権利確定も累積もしない給付はそもそも要件を満たさず引当しない。将来の祝日に係る給与は既に提供された勤務ではなく将来の勤務に関連する。",
+      "references": ["ASC 710-10-25"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-183",
+      "topic": "Liabilities",
+      "subtopic": "Refinancing Agreement Cancelable by Lender",
+      "stem": "At December 31, Year 1, Donnelly Corp. has a $5,000,000 note payable maturing in June Year 2. Before the financial statements are issued, Donnelly enters into a financing agreement with a bank that would allow it to refinance the note on a long-term basis. However, the agreement permits the bank to cancel its commitment if, in the bank's sole judgment, a material adverse change occurs in Donnelly's financial condition. How should Donnelly classify the note at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "Entirely as a current liability" },
+        { "label": "B", "text": "Entirely as a noncurrent liability" },
+        {
+          "label": "C",
+          "text": "As noncurrent, with the cancellation clause disclosed in the notes"
+        },
+        { "label": "D", "text": "Half current and half noncurrent" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "To exclude a short-term obligation from current liabilities based on a refinancing agreement, the agreement must not be cancelable by the lender, and compliance with its conditions must be objectively determinable. A clause allowing the bank to withdraw based on its own subjective judgment of a material adverse change means the refinancing is not assured, so the note remains a current liability in full. Noncurrent classification — with or without disclosure of the clause — overstates the company's ability to refinance because disclosure cannot cure the failure of the noncancelability condition. An arbitrary split between current and noncurrent has no basis; partial noncurrent classification is appropriate only when a valid agreement covers part of the obligation.",
+      "explanationJa": "借換契約に基づき短期債務を流動負債から除外するには、契約が貸し手によって解約不能であり、契約条件の充足が客観的に判定可能でなければならない。銀行が自らの主観的判断で重大な悪化（material adverse change）を理由にコミットメントを取り消せる条項がある場合、借換は確実とはいえず、手形は全額流動負債のままとする。条項の注記開示の有無にかかわらず非流動への分類は借換能力の過大表示であり、開示によって解約不能要件の欠如を治癒することはできない。流動・非流動への恣意的な折半にも根拠はない。一部のみの非流動分類は、有効な契約が債務の一部のみをカバーする場合に限り適切である。",
+      "references": ["ASC 470-10-45"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-184",
+      "topic": "Liabilities",
+      "subtopic": "Debt to Be Retired from a Noncurrent Sinking Fund",
+      "stem": "At December 31, Year 1, Wexler Corp. has bonds payable of $2,000,000 maturing on September 30, Year 2. The bonds will be retired entirely from a bond sinking fund that is classified as a noncurrent investment on Wexler's balance sheet. How should the bonds be classified at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "As a current liability" },
+        { "label": "B", "text": "As a noncurrent liability" },
+        {
+          "label": "C",
+          "text": "As a current liability, net of the sinking fund balance"
+        },
+        {
+          "label": "D",
+          "text": "As a deduction from the sinking fund investment"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A liability is classified as current when its liquidation is expected to require the use of existing current assets or the creation of other current liabilities. Because these bonds will be retired from a fund classified as a noncurrent asset — not from current assets — they are properly reported as noncurrent even though they mature within one year. Classifying them as current contradicts the definition because no current assets will be used. Netting the bonds against the sinking fund, whether shown in current liabilities or as a deduction from the investment, violates the general prohibition against offsetting assets and liabilities absent a right of setoff.",
+      "explanationJa": "負債は、その決済に既存の流動資産の使用または他の流動負債の発生が見込まれる場合に流動に分類される。本問の社債は流動資産ではなく非流動資産に分類される減債基金から償還されるため、満期が1年以内であっても非流動負債として表示するのが適切である。流動分類は、流動資産を使用しないため定義に反する。社債と減債基金の相殺表示は、流動負債側で示す場合も投資からの控除として示す場合も、相殺権がない限り資産と負債の相殺を禁じる原則に違反する。",
+      "references": ["ASC 210-10-45", "ASC 470-10-45"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-185",
+      "topic": "Liabilities",
+      "subtopic": "TDR - Asset Settlement with Two Gain Components",
+      "stem": "Harlowe Corp. is experiencing financial difficulty. Its lender agrees to accept land in full settlement of a note with a carrying amount of $900,000 (principal of $850,000 plus accrued interest of $50,000). The land has a cost basis of $400,000 and a fair value of $600,000 at the settlement date. What total amount should Harlowe recognize in income as a result of the settlement?",
+      "choices": [
+        { "label": "A", "text": "$200,000" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$500,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A troubled debt restructuring settled by transferring an asset produces two separate income components. First, the asset is adjusted to fair value, producing a gain on disposal of $600,000 − $400,000 = $200,000. Second, a restructuring gain is recognized for the excess of the debt's carrying amount (including accrued interest) over the asset's fair value: $900,000 − $600,000 = $300,000. Total effect on income = $200,000 + $300,000 = $500,000. The $200,000 amount captures only the disposal gain, and the $300,000 amount captures only the restructuring gain — each is just one component. The $50,000 amount is merely the accrued interest, which is part of the carrying amount settled, not a separate gain.",
+      "explanationJa": "資産の引渡しによる不良債権再編（TDR）の決済では、2つの損益要素が生じる。第一に、資産を公正価値に修正することで処分益 $600,000 − $400,000 = $200,000 を認識する。第二に、債務の帳簿価額（経過利息を含む）が資産の公正価値を超える額をリストラクチャリング利得として認識する: $900,000 − $600,000 = $300,000。損益への合計影響 = $200,000 + $300,000 = $500,000。$200,000 は処分益のみ、$300,000 はリストラクチャリング利得のみで、いずれも一方の構成要素にすぎない。$50,000 は経過利息にすぎず、決済される帳簿価額の一部であって独立した利得ではない。",
+      "references": ["ASC 470-60-35"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-186",
+      "topic": "Liabilities",
+      "subtopic": "TDR - Future Cash Flows Exceed Carrying Amount",
+      "stem": "Quillen Corp., a debtor in financial difficulty, restructures a note payable with a carrying amount of $1,000,000. Under the modified terms, the principal is reduced to $950,000 and the interest rate is lowered, so that total future cash payments (principal plus all future interest) equal $1,100,000. How should Quillen account for the restructuring?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize a $50,000 gain for the principal reduction"
+        },
+        { "label": "B", "text": "Recognize a $100,000 gain" },
+        {
+          "label": "C",
+          "text": "Recognize no gain; compute a new effective interest rate and recognize interest expense prospectively"
+        },
+        { "label": "D", "text": "Recognize a $100,000 loss" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "In a troubled debt restructuring involving a modification of terms, the debtor compares the total undiscounted future cash payments under the new terms with the carrying amount of the debt. Because the $1,100,000 of total future payments exceeds the $1,000,000 carrying amount, no gain is recognized; the carrying amount remains unchanged, and a new effective interest rate is imputed that equates the future payments to the carrying amount, with interest expense recognized prospectively. A $50,000 gain looks only at the principal reduction and ignores the future interest payments included in the comparison. A $100,000 amount, whether treated as a gain or a loss, is just the excess of future payments over carrying amount — that excess is recognized as interest expense over the remaining term, not as an immediate gain or loss.",
+      "explanationJa": "条件変更による不良債権再編では、債務者は新条件下での割引前将来キャッシュ支払総額と債務の帳簿価額を比較する。将来支払総額 $1,100,000 が帳簿価額 $1,000,000 を超えているため利得は認識しない。帳簿価額は変更せず、将来支払額を帳簿価額に等しくする新たな実効利率を算定し、利息費用を将来に向かって認識する。$50,000 の利得は元本減額のみに着目し、比較に含めるべき将来利息支払を無視している。$100,000 は利得・損失いずれの扱いでも将来支払額の帳簿価額超過分にすぎず、この超過分は残存期間にわたる利息費用として認識されるものであって、即時の損益ではない。",
+      "references": ["ASC 470-60-35"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-187",
+      "topic": "Liabilities",
+      "subtopic": "Fair Value Option - Instrument-Specific Credit Risk",
+      "stem": "Verlaine Corp. elected the fair value option for a note payable. During Year 1, the fair value of the note decreased by $80,000 (a gain to Verlaine), of which $30,000 is attributable to a deterioration in Verlaine's own (instrument-specific) credit risk. What amount of the fair value change should Verlaine report in net income for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "For liabilities measured under the fair value option, the portion of the total fair value change attributable to instrument-specific credit risk is reported in other comprehensive income, and only the remainder is reported in net income. Net income portion = $80,000 − $30,000 = $50,000; the $30,000 credit-risk portion goes to OCI. Reporting the full $80,000 in earnings ignores the required OCI bifurcation and would let a company's own credit deterioration inflate its profits. The $30,000 amount is the piece that belongs in OCI, not net income. Reporting nothing in net income incorrectly routes the entire change through OCI.",
+      "explanationJa": "公正価値オプションを適用した負債では、公正価値変動額のうち商品固有の信用リスク（自社の信用リスク）に起因する部分をその他の包括利益（OCI）に表示し、残額のみを純利益に計上する。純利益計上額 = $80,000 − $30,000 = $50,000。信用リスク部分の $30,000 はOCIに計上する。$80,000 全額の純利益計上は要求されるOCIへの区分を無視しており、自社の信用悪化が利益を押し上げる結果を招く。$30,000 はOCIに属する部分であり純利益ではない。純利益への計上をゼロとする処理は変動額全体を誤ってOCIに振り向けている。",
+      "references": ["ASC 825-10-45"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "liab-188",
+      "topic": "Liabilities",
+      "subtopic": "Bond Carrying Amount at Maturity",
+      "stem": "A company issued bonds several years ago at a premium and has amortized the premium using the effective interest method. Immediately before repayment at the scheduled maturity date, the carrying amount of the bonds equals:",
+      "choices": [
+        { "label": "A", "text": "The face value of the bonds" },
+        { "label": "B", "text": "The face value plus the unamortized premium" },
+        { "label": "C", "text": "The original issue price" },
+        { "label": "D", "text": "The current market value of the bonds" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Premium and discount are amortized to zero over the bond's life, so by the maturity date the carrying amount has converged to the face value — the amount the issuer must repay. This convergence occurs regardless of whether the effective interest or straight-line method is used. A balance of face value plus unamortized premium cannot exist at maturity because the premium is fully amortized by then. The original issue price is the carrying amount only at issuance, before any amortization. Market value is irrelevant to the amortized cost carrying amount of bonds not measured under the fair value option.",
+      "explanationJa": "打歩（プレミアム）や割引は社債の存続期間にわたりゼロまで償却されるため、満期日には帳簿価額は額面、すなわち発行者が返済すべき金額に収束する。この収束は実効金利法・定額法のいずれを用いても生じる。満期時点ではプレミアムは全額償却済みのため「額面＋未償却プレミアム」という残高はあり得ない。当初発行価額は償却前の発行時点の帳簿価額にすぎない。公正価値オプションを適用していない社債の償却原価による帳簿価額に、市場価値は関係しない。",
+      "references": ["ASC 835-30-35"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
     }
   ]
 }
