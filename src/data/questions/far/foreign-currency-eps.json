@@ -2,7 +2,7 @@
   "id": "far-foreign-currency-eps",
   "name": "Foreign Currency & EPS",
   "topic": "Foreign Currency & EPS",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "fx-001",
@@ -2583,6 +2583,285 @@
       "references": ["ASC 230-10-45-3", "ASC 260-10-45-2"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "fx-118",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Two-Transaction Perspective",
+      "stem": "On December 1, a U.S. company (USD functional currency) sells goods to a foreign customer with the invoice denominated in the customer's local currency. Under the two-transaction perspective required by ASC 830, how should the company account for the sale and subsequent exchange rate changes?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Record revenue at the spot rate on the settlement date when cash is received"
+        },
+        {
+          "label": "B",
+          "text": "Record revenue at the spot rate on the transaction date; subsequent rate changes are transaction gains or losses in net income"
+        },
+        {
+          "label": "C",
+          "text": "Record revenue at the spot rate on the transaction date and adjust revenue at each balance sheet date for rate changes"
+        },
+        {
+          "label": "D",
+          "text": "Record revenue at the spot rate on the transaction date; subsequent rate changes are deferred in other comprehensive income until settlement"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the two-transaction perspective, the sale and the financing (holding a foreign-currency receivable) are viewed as separate events. Revenue is measured at the spot rate on the transaction date and is never adjusted afterward. Changes in the exchange rate between the transaction date and settlement affect only the receivable and are recognized as foreign currency transaction gains or losses in net income in the period the rate changes. Measuring revenue at the settlement-date rate describes the single-transaction perspective, which U.S. GAAP rejects. Adjusting revenue at each balance sheet date is improper because the revenue amount is fixed at the transaction date. Deferring the rate changes in other comprehensive income applies to translation adjustments and certain hedges, not to ordinary unhedged transaction gains and losses.",
+      "explanationJa": "二取引基準（two-transaction perspective）では、販売取引と外貨建債権の保有（金融側面）を別個の事象とみなす。収益は取引日の直物レートで測定され、その後は修正されない。取引日から決済日までの為替レート変動は債権の額にのみ影響し、レート変動が生じた期の純利益に為替差損益として認識される。決済日レートで収益を測定する方法は一取引基準であり、米国GAAPでは認められない。各貸借対照表日に収益を修正する処理は、収益額が取引日に確定するため誤り。レート変動をその他の包括利益に繰り延べる処理は、換算調整額や特定のヘッジに適用されるものであり、通常のヘッジされていない取引差損益には適用されない。",
+      "references": ["ASC 830-20-35"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-119",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Transactions Creating FX Gain/Loss Exposure",
+      "stem": "A U.S. company's functional currency is the U.S. dollar. Which of the following situations gives rise to a foreign currency transaction gain or loss to be reported in the company's net income?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A purchase of inventory from a foreign supplier with the invoice denominated in U.S. dollars"
+        },
+        {
+          "label": "B",
+          "text": "A forecasted purchase of equipment from a foreign vendor expected to occur next year"
+        },
+        {
+          "label": "C",
+          "text": "A sale to a foreign customer denominated in the customer's local currency that remains unsettled at year-end"
+        },
+        {
+          "label": "D",
+          "text": "An export sale to a foreign customer with the invoice denominated in U.S. dollars"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A foreign currency transaction gain or loss arises only when a transaction is denominated in a currency other than the entity's functional currency, creating a monetary asset or liability whose dollar value changes with exchange rates. The unsettled receivable denominated in the customer's local currency must be remeasured to the current spot rate at year-end, with the change reported in net income. A purchase or an export sale invoiced in U.S. dollars creates no exposure for the U.S. company because the amount of dollars to be paid or received is fixed regardless of rate movements; the foreign counterparty bears the exchange risk. A forecasted purchase involves no recognized asset or liability yet, so no transaction gain or loss can arise from it.",
+      "explanationJa": "為替差損益は、取引が機能通貨以外の通貨建てで行われ、為替レートとともにドル価値が変動する貨幣性資産・負債が生じる場合にのみ発生する。顧客の現地通貨建てで未決済の売掛金は、期末に直物レートで再測定され、変動額は純利益に計上される。米ドル建ての仕入や輸出販売は、レート変動にかかわらず受け払いするドル額が固定されているため、米国企業に為替リスクは生じない（為替リスクは外国側の取引相手が負う）。予定購入はまだ資産・負債が認識されていないため、取引差損益は発生しない。",
+      "references": ["ASC 830-20-25"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-120",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Same-Year Settlement Gain/Loss",
+      "stem": "On October 1, Year 1, a U.S. company (USD functional currency) sold goods to a European customer for €500,000 on account. The receivable was collected on December 1, Year 1. Spot rates were: October 1, $1.10/€; December 1, $1.06/€; December 31, $1.04/€. What amount of foreign currency transaction gain or loss should the company report in Year 1 net income?",
+      "choices": [
+        { "label": "A", "text": "$20,000 loss" },
+        { "label": "B", "text": "$20,000 gain" },
+        { "label": "C", "text": "$30,000 loss" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The receivable was recorded on October 1 at €500,000 × $1.10 = $550,000. It was settled on December 1, when the company received €500,000 worth $1.06 each, or $530,000. The transaction loss is $550,000 − $530,000 = $20,000, recognized in net income. Because the receivable was settled on December 1, the December 31 rate of $1.04 is irrelevant — there is no open balance to remeasure at year-end. A $30,000 loss incorrectly measures the change to the year-end rate ($1.10 − $1.04 = $0.06 × €500,000). A $20,000 gain reverses the direction of the rate movement: the euro weakened, so the dollar value of the receivable declined, producing a loss. Reporting no gain or loss ignores the rate change between the transaction date and the settlement date.",
+      "explanationJa": "売掛金は10月1日に €500,000 × $1.10 = $550,000 で計上された。12月1日の決済時に受け取った €500,000 の価値は $1.06 換算で $530,000。為替差損は $550,000 − $530,000 = $20,000 で、純利益に認識される。債権は12月1日に決済済みのため、12月31日のレート $1.04 は無関係（期末に再測定すべき残高が存在しない）。$30,000 の損失は期末レートまでの変動（$1.10 − $1.04 = $0.06 × €500,000）を誤って用いた計算。$20,000 の利得はレート変動の方向を逆にしている（ユーロ安により債権のドル価値は減少したので損失）。差損益ゼロという結論は取引日から決済日までのレート変動を無視している。",
+      "references": ["ASC 830-20-35"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-121",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Remeasurement - Deferred Taxes at Current Rate",
+      "stem": "A foreign subsidiary's functional currency is the U.S. dollar, so its local-currency financial statements are remeasured using the temporal method. Which of the following items should be remeasured using the current (year-end) exchange rate?",
+      "choices": [
+        { "label": "A", "text": "Inventory carried at cost" },
+        { "label": "B", "text": "Prepaid rent" },
+        { "label": "C", "text": "Patents, net of amortization" },
+        { "label": "D", "text": "Deferred income tax liability" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under the temporal method, monetary items are remeasured at the current exchange rate, while nonmonetary items carried at historical cost are remeasured at historical rates. A deferred income tax liability is treated as a monetary item because it represents an obligation that will be settled in a fixed or determinable amount of currency, so it is remeasured at the current rate. Inventory carried at cost, prepaid rent, and patents are all nonmonetary items measured at historical cost; each is remeasured at the historical rate in effect when the item was acquired or the cost was incurred.",
+      "explanationJa": "テンポラル法では、貨幣性項目は期末（現在）レートで再測定し、取得原価で計上される非貨幣性項目は取得時の歴史的レートで再測定する。繰延税金負債は、固定または確定可能な通貨額で決済される債務を表すため貨幣性項目として扱われ、期末レートで再測定される。原価で計上される棚卸資産、前払家賃、特許権はいずれも歴史的原価で測定される非貨幣性項目であり、取得時・支出時の歴史的レートで再測定される。",
+      "references": ["ASC 830-10-45", "ASC 830-10-55-10"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-122",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Functional Currency Change - USD to Local Currency",
+      "stem": "Due to significant changes in economic facts and circumstances, a foreign subsidiary's functional currency changes from the U.S. dollar (the reporting currency) to its local currency. How should this change be accounted for under ASC 830?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Prospectively; nonmonetary assets are translated at the current rate as of the change date, and the resulting adjustment is reported in the cumulative translation adjustment within other comprehensive income"
+        },
+        {
+          "label": "B",
+          "text": "Retrospectively; prior-period financial statements are restated as if the local currency had always been the functional currency"
+        },
+        {
+          "label": "C",
+          "text": "Prospectively; nonmonetary assets continue to be carried at the dollar amounts based on historical rates, which become their new accounting basis"
+        },
+        {
+          "label": "D",
+          "text": "Prospectively; the adjustment from translating all assets and liabilities at the current rate is recognized in net income as a remeasurement gain or loss"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A change in functional currency is accounted for prospectively; previously issued financial statements are not restated. When the functional currency changes from the reporting currency (USD) to the local currency, all assets and liabilities — including nonmonetary items previously carried at historical-rate dollar amounts — are translated at the current exchange rate as of the date of change, and the adjustment is reported in the cumulative translation adjustment component of other comprehensive income. Restating prior periods is prohibited because the change results from new economic facts, not an error or a change in principle requiring retrospective treatment. Continuing to carry nonmonetary assets at historical-rate dollar amounts describes the opposite change (local currency to USD), where translated historical amounts become the accounting basis. Recognizing the adjustment in net income is incorrect because the difference goes to OCI, not earnings.",
+      "explanationJa": "機能通貨の変更は将来に向かって（prospectively）処理し、過年度の財務諸表は修正再表示しない。機能通貨が報告通貨（米ドル）から現地通貨に変わる場合、それまで歴史的レートのドル額で計上されていた非貨幣性項目を含む全ての資産・負債を変更日の現在レートで換算し、その調整額はその他の包括利益の累積換算調整額（CTA）に計上する。過年度の修正再表示は、この変更が誤謬や遡及適用を要する会計方針の変更ではなく新たな経済的事実に起因するため禁止される。非貨幣性資産を歴史的レートのドル額のまま引き継ぐ処理は逆方向の変更（現地通貨→米ドル）の場合であり、その際は換算済みの歴史的金額が新たな会計基礎となる。調整額を純利益に認識する処理は誤りで、差額はOCIに計上される。",
+      "references": ["ASC 830-10-45-9", "ASC 830-10-45-10"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-123",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Remeasurement - Net Monetary Liability Gain",
+      "stem": "A foreign subsidiary's functional currency is the U.S. dollar. Throughout the year, the subsidiary maintained a net monetary liability position of LC 4,000,000. The exchange rate was $0.25/LC on January 1 and $0.20/LC on December 31. What should the parent report from remeasuring this net monetary position?",
+      "choices": [
+        { "label": "A", "text": "$200,000 loss in net income" },
+        { "label": "B", "text": "$200,000 gain in net income" },
+        { "label": "C", "text": "$200,000 gain in other comprehensive income" },
+        {
+          "label": "D",
+          "text": "$0; remeasurement affects only nonmonetary items"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the temporal method, monetary assets and liabilities are remeasured at the current rate, and the resulting gain or loss is reported in net income. The net monetary liability was $1,000,000 at the beginning of the year (LC 4,000,000 × $0.25) and $800,000 at year-end (LC 4,000,000 × $0.20). Because the local currency weakened, the dollar burden of the net liability fell by $200,000, producing a remeasurement gain in net income. A loss of the same amount reverses the logic — owing a currency that weakens benefits the debtor. Reporting the gain in other comprehensive income confuses remeasurement with translation under the current rate method, where the adjustment goes to the cumulative translation adjustment. Concluding there is no effect is wrong because remeasurement gains and losses arise precisely from monetary items; it is nonmonetary items at historical rates that generate no remeasurement gain or loss.",
+      "explanationJa": "テンポラル法では貨幣性資産・負債を期末レートで再測定し、生じた損益は純利益に計上する。純貨幣性負債は期首 $1,000,000（LC 4,000,000 × $0.25）から期末 $800,000（LC 4,000,000 × $0.20）に減少した。現地通貨が下落したため純負債のドル負担が $200,000 減少し、純利益に再測定利得が生じる。同額の損失とする結論は論理が逆である（下落する通貨建ての債務は債務者に有利）。利得をその他の包括利益に計上する処理は、再測定と現在レート法による換算（調整額はCTAへ）を混同している。影響なしという結論は誤りで、再測定損益はまさに貨幣性項目から生じる（歴史的レートで再測定される非貨幣性項目からは再測定損益は生じない）。",
+      "references": ["ASC 830-10-45-17"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-124",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Reverse Stock Split Retroactive Adjustment",
+      "stem": "Wren Corp. reported basic EPS of $0.90 for Year 1 based on 2,000,000 weighted-average common shares. On April 1, Year 2, Wren effected a one-for-four reverse stock split. In Wren's Year 2 comparative financial statements, what amount should be reported as basic EPS for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$0.90" },
+        { "label": "B", "text": "$0.23" },
+        { "label": "C", "text": "$3.60" },
+        { "label": "D", "text": "$1.80" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Stock splits and reverse stock splits are applied retroactively to all periods presented so that EPS amounts are comparable. The one-for-four reverse split reduces Year 1 weighted-average shares to 2,000,000 ÷ 4 = 500,000. Restated Year 1 EPS = ($0.90 × 2,000,000) ÷ 500,000 = $1,800,000 ÷ 500,000 = $3.60, which is simply $0.90 × 4. Leaving EPS at $0.90 fails to restate the prior period. $0.23 divides EPS by four, treating the reverse split as if it were a four-for-one forward split that increases shares. $1.80 assumes a one-for-two reverse split rather than one-for-four.",
+      "explanationJa": "株式分割および株式併合（逆分割）は、EPSの比較可能性を保つため表示される全期間に遡及適用する。1対4の株式併合により、Year 1 の加重平均株式数は 2,000,000 ÷ 4 = 500,000株 に修正される。修正後の Year 1 EPS = ($0.90 × 2,000,000) ÷ 500,000 = $1,800,000 ÷ 500,000 = $3.60（すなわち $0.90 × 4）。$0.90 のままにするのは過年度の修正再表示を怠っている。$0.23 はEPSを4で割っており、株式数が増加する1対4の株式分割と取り違えている。$1.80 は1対4ではなく1対2の併合を前提とした誤り。",
+      "references": ["ASC 260-10-55-12"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-125",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Cumulative Preferred - Arrears Paid in Current Year",
+      "stem": "Tova Corp. reports net income of $900,000 and has 300,000 weighted-average common shares outstanding. Tova has 20,000 shares of 6%, $50 par cumulative preferred stock outstanding all year. During the current year, Tova paid preferred dividends of $180,000, representing the current-year dividend plus two years of dividends in arrears. What is Tova's basic EPS?",
+      "choices": [
+        { "label": "A", "text": "$3.00" },
+        { "label": "B", "text": "$2.40" },
+        { "label": "C", "text": "$2.60" },
+        { "label": "D", "text": "$2.80" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "For cumulative preferred stock, only the current-year dividend requirement is deducted from net income in computing basic EPS, regardless of how much is actually paid. The annual requirement is 20,000 shares × $50 par × 6% = $60,000. Basic EPS = ($900,000 − $60,000) ÷ 300,000 = $840,000 ÷ 300,000 = $2.80. The two years of arrears ($120,000) were already deducted in computing EPS in the years they accumulated; deducting them again would double-count. Deducting the full $180,000 paid yields $2.40 and double-counts the arrears. Deducting $120,000 yields $2.60 and uses the arrears instead of the current-year requirement. $3.00 ignores the preferred dividend entirely.",
+      "explanationJa": "累積的優先株式については、実際の支払額にかかわらず、基本的EPSの計算では当期分の所要配当額のみを純利益から控除する。年間所要額は 20,000株 × $50額面 × 6% = $60,000。基本的EPS = ($900,000 − $60,000) ÷ 300,000 = $840,000 ÷ 300,000 = $2.80。2年分の延滞配当（$120,000）は累積した各年度のEPS計算で既に控除済みであり、再度控除すると二重計上になる。支払総額 $180,000 を控除すると $2.40 となり延滞分を二重計上している。$120,000 を控除した $2.60 は当期所要額ではなく延滞分を使った誤り。$3.00 は優先配当の控除を完全に無視している。",
+      "references": ["ASC 260-10-45-11"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-126",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Basic EPS - Actual Conversion of Bonds Mid-Year",
+      "stem": "Juno Corp. had 600,000 common shares outstanding on January 1. On July 1, holders of Juno's convertible bonds converted their bonds into 120,000 common shares. No other share transactions occurred. What is Juno's weighted-average number of common shares outstanding for computing basic EPS for the calendar year?",
+      "choices": [
+        { "label": "A", "text": "660,000" },
+        { "label": "B", "text": "720,000" },
+        { "label": "C", "text": "600,000" },
+        { "label": "D", "text": "690,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Shares issued upon actual conversion of bonds are included in the basic EPS denominator from the conversion date, weighted for the period they are outstanding. Weighted-average shares = 600,000 × 12/12 + 120,000 × 6/12 = 600,000 + 60,000 = 660,000. Using 720,000 counts the new shares for the full year, which is appropriate only for the if-converted assumption in diluted EPS, not basic EPS. Using 600,000 ignores the converted shares entirely. 690,000 weights the new shares for nine months (120,000 × 9/12 = 90,000) instead of the six months from July 1 to December 31.",
+      "explanationJa": "社債の実際の転換により発行された株式は、転換日から基本的EPSの分母に含め、発行後の期間で加重平均する。加重平均株式数 = 600,000 × 12/12 + 120,000 × 6/12 = 600,000 + 60,000 = 660,000株。720,000株は新株を通年でカウントしており、これは希薄化EPSのif-converted法の仮定であって基本的EPSでは不適切。600,000株は転換による新株を完全に無視している。690,000株は新株を7月1日から12月31日までの6か月ではなく9か月（120,000 × 9/12 = 90,000）で加重した誤り。",
+      "references": ["ASC 260-10-45-10"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-127",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Net Loss Year - All Potential Shares Antidilutive",
+      "stem": "Onyx Corp. reports a net loss from continuing operations for the year. Onyx has in-the-money stock options and convertible bonds outstanding that would be dilutive in a profitable year. How should these potential common shares be treated in computing Onyx's diluted EPS?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Include the options under the treasury stock method but exclude the convertible bonds"
+        },
+        {
+          "label": "B",
+          "text": "Exclude all potential common shares; diluted loss per share equals basic loss per share"
+        },
+        {
+          "label": "C",
+          "text": "Include all potential common shares because they would be dilutive in a profitable year"
+        },
+        {
+          "label": "D",
+          "text": "Include the convertible bonds under the if-converted method but exclude the options"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When an entity reports a loss from continuing operations (the control number), including any potential common shares in the denominator would spread the loss over more shares and reduce the loss per share — an antidilutive effect. ASC 260 prohibits including antidilutive securities, so all potential common shares are excluded and diluted EPS equals basic EPS in a loss year. Including the options alone, the bonds alone, or all potential shares would each improperly decrease the reported loss per share. The fact that the securities would be dilutive in a profitable year is irrelevant; dilution is assessed based on the current period's results.",
+      "explanationJa": "継続事業からの損失（コントロールナンバー）を報告する年度では、潜在株式を分母に含めると損失がより多くの株式に分散され1株当たり損失が減少する＝逆希薄化（antidilutive）効果となる。ASC 260は逆希薄化証券の算入を禁止しているため、全ての潜在株式を除外し、損失年度の希薄化EPSは基本的EPSと等しくなる。オプションのみ、転換社債のみ、あるいは全ての潜在株式を含めるいずれの処理も、報告される1株当たり損失を不当に小さくしてしまう。利益年度であれば希薄化的であるという事実は無関係で、希薄化の判定は当期の実績に基づいて行う。",
+      "references": ["ASC 260-10-45-17", "ASC 260-10-45-18"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-128",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Convertible Preferred If-Converted - No Tax Effect",
+      "stem": "In applying the if-converted method to convertible preferred stock for diluted EPS, a company adds the preferred dividends back to the numerator without any income tax adjustment. Why is no tax adjustment made?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The tax effect is instead reflected as a reduction of the incremental shares added to the denominator"
+        },
+        {
+          "label": "B",
+          "text": "Convertible preferred stock is always antidilutive, so the tax effect never matters"
+        },
+        {
+          "label": "C",
+          "text": "Preferred dividends are distributions of earnings, not tax-deductible expenses, so assuming conversion does not change income tax expense"
+        },
+        {
+          "label": "D",
+          "text": "ASC 260 requires all numerator adjustments to be made on a pre-tax basis"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Preferred dividends are paid out of after-tax earnings and are not deductible in computing taxable income. Assuming the preferred stock had been converted eliminates the dividend, but because the dividend never affected income tax expense, no tax adjustment is needed — the full dividend is simply added back. This contrasts with convertible bonds, where the interest add-back must be net of tax because interest expense is deductible. The denominator under the if-converted method adds the full number of shares issuable on conversion with no tax-related reduction. Convertible preferred can be either dilutive or antidilutive depending on its incremental effect, so a blanket antidilution claim is wrong. ASC 260 requires numerator adjustments to reflect their actual after-tax consequences, not a uniform pre-tax basis — interest on convertible debt is added back net of tax precisely for that reason.",
+      "explanationJa": "優先配当は税引後利益からの分配であり、課税所得の計算上損金算入されない。優先株式の転換を仮定すると配当は消滅するが、配当はもともと法人税費用に影響していないため税効果の調整は不要であり、配当全額をそのまま分子に加算する。これは転換社債と対照的で、社債利息は損金算入されるため利息の加算は税引後で行う必要がある。if-converted法の分母には転換により発行可能な株式数全数を加え、税金に関連した減額はない。転換優先株式は増分効果次第で希薄化的にも逆希薄化的にもなり得るため、常に逆希薄化的という主張は誤り。ASC 260は分子調整を実際の税引後の影響で反映することを求めており、一律に税引前で行うわけではない（転換社債の利息が税引後で加算されるのはまさにそのため）。",
+      "references": ["ASC 260-10-45-40"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "fx-129",
+      "topic": "Foreign Currency & EPS",
+      "subtopic": "Diluted EPS - Dilutive Options with Antidilutive Convertible Preferred",
+      "stem": "Larch Corp. has net income of $1,200,000 and 400,000 weighted-average common shares outstanding. Larch has 10,000 shares of 8%, $100 par convertible preferred stock (dividends declared and paid), each share convertible into 2.5 common shares (25,000 total shares). Larch also has 40,000 stock options outstanding all year with an exercise price of $24; the average market price of common stock was $32. What is Larch's diluted EPS (rounded to the nearest cent)?",
+      "choices": [
+        { "label": "A", "text": "$2.80" },
+        { "label": "B", "text": "$2.93" },
+        { "label": "C", "text": "$2.76" },
+        { "label": "D", "text": "$2.73" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Preferred dividends = 10,000 × $100 × 8% = $80,000, so basic EPS = ($1,200,000 − $80,000) ÷ 400,000 = $2.80. Options (treasury stock method): proceeds = 40,000 × $24 = $960,000; shares repurchased = $960,000 ÷ $32 = 30,000; incremental shares = 40,000 − 30,000 = 10,000. Options are added first because their incremental EPS effect is $0 per share (no numerator effect). Tentative diluted EPS = $1,120,000 ÷ 410,000 = $2.73. Convertible preferred test: incremental EPS = $80,000 ÷ 25,000 = $3.20, which exceeds $2.73, so the preferred is antidilutive and is excluded. Diluted EPS = $2.73. $2.80 stops at basic EPS and ignores the dilutive options. $2.76 improperly includes the antidilutive preferred ($1,200,000 ÷ 435,000). $2.93 adds the option shares but fails to deduct the preferred dividends from the numerator ($1,200,000 ÷ 410,000).",
+      "explanationJa": "優先配当 = 10,000株 × $100 × 8% = $80,000。基本的EPS = ($1,200,000 − $80,000) ÷ 400,000 = $2.80。オプション（自己株式方式）: 行使代金 = 40,000 × $24 = $960,000、買戻株式数 = $960,000 ÷ $32 = 30,000株、増分株式数 = 40,000 − 30,000 = 10,000株。オプションは増分EPS効果が1株当たり$0（分子への影響なし）のため最初に算入する。暫定希薄化EPS = $1,120,000 ÷ 410,000 = $2.73。転換優先株式の判定: 増分EPS = $80,000 ÷ 25,000 = $3.20 で $2.73 を上回るため逆希薄化的であり除外する。希薄化EPS = $2.73。$2.80 は基本的EPSに留まり希薄化的なオプションを無視している。$2.76 は逆希薄化的な優先株式を誤って算入した計算（$1,200,000 ÷ 435,000）。$2.93 はオプション株式を加えながら分子から優先配当を控除し忘れた計算（$1,200,000 ÷ 410,000）。",
+      "references": ["ASC 260-10-45-18", "ASC 260-10-45-23"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
     }
   ]
 }

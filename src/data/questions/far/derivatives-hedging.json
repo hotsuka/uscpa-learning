@@ -2,7 +2,7 @@
   "id": "far-derivatives-hedging",
   "name": "Derivatives & Hedging",
   "topic": "Derivatives & Hedging",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "deriv-001",
@@ -3139,6 +3139,285 @@
       "references": ["ASC 815-25", "ASC 815-20-25-12"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "deriv-113",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Derivative Definition - Readily Convertible to Cash",
+      "stem": "Under ASC 815, a contract that requires gross physical delivery of an asset can still meet the net settlement characteristic of a derivative if the asset is readily convertible to cash. Which of the following delivery contracts meets the net settlement characteristic?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A contract requiring delivery of custom-built machinery for which no liquid market exists"
+        },
+        {
+          "label": "B",
+          "text": "A contract that can be settled only by delivering shares of a privately held company"
+        },
+        {
+          "label": "C",
+          "text": "A contract requiring delivery of a commodity that trades in an active market with quoted prices and the capacity to absorb the quantity without significantly affecting the price"
+        },
+        {
+          "label": "D",
+          "text": "A contract requiring delivery of consulting services over a two-year period"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The net settlement characteristic is met if (1) neither party is required to deliver an asset, (2) a market mechanism (such as an exchange) facilitates net settlement, or (3) the asset to be delivered is readily convertible to cash. A commodity that trades in an active market with quoted prices, where the market can absorb the contract quantity without significantly affecting the price, is readily convertible to cash, so the contract is the economic equivalent of net settlement. Custom-built machinery with no liquid market and shares of a privately held company are not readily convertible to cash, and a contract for consulting services involves delivery of services rather than an asset convertible to cash, so none of those contracts meets the net settlement characteristic.",
+      "explanationJa": "純額決済の要件は、(1)いずれの当事者も資産の引渡しを要しない、(2)取引所等の市場メカニズムにより純額決済が可能、(3)引き渡される資産が容易に現金化可能（readily convertible to cash）、のいずれかで満たされる。活発な市場で取引され公表価格があり、契約数量を価格に大きな影響を与えずに吸収できる商品は容易に現金化可能であるため、現物引渡契約でも実質的に純額決済と同等となる。流動的な市場のない特注機械や非公開会社の株式は容易に現金化できず、コンサルティングサービスの提供契約は現金化可能な資産の引渡しではないため、純額決済の要件を満たさない。",
+      "references": ["ASC 815-10-15-83", "ASC 815-10-15-119"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-114",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Embedded Derivative - Clearly and Closely Related Analysis",
+      "stem": "A company is evaluating whether embedded features in various contracts must be bifurcated and accounted for separately as derivatives under ASC 815. Assuming none of the host contracts is measured at fair value through earnings, which of the following embedded features must be bifurcated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "An interest rate floor in a variable-rate loan that is at-the-money at issuance and is not leveraged"
+        },
+        {
+          "label": "B",
+          "text": "Interest payments on a debt instrument that are indexed to the market price of gold"
+        },
+        {
+          "label": "C",
+          "text": "An issuer's option to prepay a debt instrument at its par amount"
+        },
+        {
+          "label": "D",
+          "text": "Lease rentals that adjust based on the consumer price index of the economic environment in which the leased asset is used"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bifurcation is required when the embedded feature is not clearly and closely related to the host contract, the hybrid is not remeasured at fair value through earnings, and the feature would be a derivative on a standalone basis. Gold prices have no economic relationship to the interest rate and credit characteristics of a debt host, so interest payments indexed to the price of gold are not clearly and closely related to the debt host and must be bifurcated. An at-the-money, unleveraged interest rate floor in a variable-rate loan is clearly and closely related to the debt host. A prepayment option exercisable at par generally does not require bifurcation. CPI-based rent adjustments tied to the economic environment of the leased asset are considered clearly and closely related to the lease host.",
+      "explanationJa": "区分処理（bifurcation）が必要となるのは、組込特性がホスト契約と経済的に密接に関連せず（not clearly and closely related）、ハイブリッド商品全体が公正価値（損益計上）で測定されておらず、かつその特性が単独でデリバティブの定義を満たす場合である。金価格は負債ホストの金利・信用特性と経済的関連性がないため、金価格に連動する利息支払いは密接関連性がなく区分処理が必要。変動金利ローンに組み込まれたレバレッジのないアット・ザ・マネーの金利フロアは負債ホストと密接に関連する。額面での期限前償還オプションは通常区分処理不要。リース資産が使用される経済環境のCPIに連動する賃料調整もリースホストと密接に関連するとされる。",
+      "references": ["ASC 815-15-25-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-115",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Fair Value Hedge - Hedged Item Carrying Amount",
+      "stem": "Whitfield Corp. has $5,000,000 of fixed-rate bonds payable and designates a receive-fixed, pay-variable interest rate swap as a fair value hedge of the bonds' benchmark interest rate risk. During Year 1, market interest rates decline, and the fair value of the bonds attributable to the hedged risk increases by $140,000, while the swap's fair value increases by $135,000 (a gain to Whitfield). At what amount should the bonds payable be reported on Whitfield's December 31, Year 1 balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$5,140,000" },
+        { "label": "B", "text": "$4,860,000" },
+        { "label": "C", "text": "$5,000,000" },
+        { "label": "D", "text": "$5,135,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In a fair value hedge, the carrying amount of the hedged item is adjusted for the change in its fair value attributable to the hedged risk, with the adjustment recognized in earnings. Because interest rates declined, the fair value of the fixed-rate bonds increased by $140,000, so the liability is written up: $5,000,000 + $140,000 = $5,140,000. The amount of $4,860,000 incorrectly subtracts the adjustment instead of adding it to the liability. Leaving the bonds at $5,000,000 ignores the required basis adjustment. The amount of $5,135,000 incorrectly adjusts the hedged item by the swap's fair value change rather than by the change in the bonds' fair value attributable to the hedged risk.",
+      "explanationJa": "公正価値ヘッジでは、ヘッジ対象の帳簿価額をヘッジ対象リスクに起因する公正価値変動分だけ調整し、その調整額を損益に計上する。金利低下により固定利付社債の公正価値は$140,000増加したため、負債を増額する: $5,000,000 + $140,000 = $5,140,000。$4,860,000は調整額を負債から誤って減算したもの。$5,000,000のままとするのは要求される簿価調整を無視している。$5,135,000はヘッジ対象の公正価値変動ではなくスワップの公正価値変動額で誤って調整したものである。",
+      "references": ["ASC 815-25-35-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-116",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge - Partial Reclassification from AOCI",
+      "stem": "Drummond Co. designated a futures contract as a cash flow hedge of a forecasted inventory purchase. By the time the inventory was purchased late in Year 1, a $24,000 gain had accumulated in accumulated other comprehensive income (AOCI), and Drummond did not elect a basis adjustment. During Year 2, Drummond sold 75% of the hedged inventory; the remaining 25% was still on hand at the end of Year 2. What amount should Drummond reclassify from AOCI into earnings in Year 2?",
+      "choices": [
+        { "label": "A", "text": "$24,000" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$6,000" },
+        { "label": "D", "text": "$18,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Amounts accumulated in AOCI from a cash flow hedge of a forecasted inventory purchase are reclassified into earnings in the same period the hedged transaction affects earnings, which occurs when the inventory is sold and charged to cost of goods sold. Because 75% of the hedged inventory was sold in Year 2, Drummond reclassifies 75% x $24,000 = $18,000 into earnings in Year 2. Reclassifying $24,000 would be appropriate only if all of the inventory had been sold. Reclassifying nothing ignores that the sale of inventory affects earnings. The amount of $6,000 represents the gain related to the 25% of inventory still on hand, which remains in AOCI until that inventory is sold.",
+      "explanationJa": "予定棚卸資産購入のキャッシュフローヘッジでAOCIに累積した金額は、ヘッジ対象取引が損益に影響する期、すなわち棚卸資産が販売され売上原価に計上される期に損益へリサイクル（再分類）する。Year 2にヘッジ対象棚卸資産の75%が販売されたため、75% × $24,000 = $18,000をYear 2に損益へ再分類する。$24,000の全額再分類は棚卸資産がすべて販売された場合にのみ妥当。$0とするのは販売が損益に影響した事実を無視している。$6,000は手元に残る25%分に対応する利得であり、その棚卸資産が販売されるまでAOCIに残る。",
+      "references": ["ASC 815-30-35-38"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-117",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Net Investment Hedge - Excluded Component Amortization",
+      "stem": "On January 1, Year 1, Beaumont Corp., a U.S. parent, designates a 12-month foreign currency forward contract as a hedge of its net investment in a European subsidiary. Beaumont assesses effectiveness based on changes in spot rates and excludes the forward points from the assessment, electing to amortize the initial value of the excluded component ($36,000 of forward points) to earnings on a straight-line basis. During the first quarter of Year 1, the change in spot rates produces a $50,000 gain on the forward contract. What amount should Beaumont recognize in net income for the first quarter related to this hedge?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$9,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$59,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the spot method for a net investment hedge, the portion of the forward's gain or loss attributable to changes in spot rates is recorded in the cumulative translation adjustment (CTA) within other comprehensive income, so the $50,000 spot-rate gain bypasses net income. When the forward points are excluded from the effectiveness assessment and a systematic amortization approach is elected, the initial value of the excluded component is amortized to earnings over the hedge term: $36,000 / 12 months x 3 months = $9,000 recognized in net income for the quarter. Recognizing nothing ignores the amortization of the excluded component, while $50,000 and $59,000 incorrectly include the spot-rate gain in earnings rather than in CTA.",
+      "explanationJa": "純投資ヘッジでスポット法を用いる場合、先渡契約の損益のうちスポットレート変動に起因する部分はその他の包括利益内の為替換算調整勘定（CTA）に計上されるため、$50,000のスポット利得は純利益を経由しない。フォワードポイントを有効性評価から除外し、規則的な償却アプローチを選択した場合、除外要素の当初価値はヘッジ期間にわたり損益に償却される: $36,000 ÷ 12か月 × 3か月 = $9,000が当四半期の純利益に認識される。$0は除外要素の償却を無視しており、$50,000と$59,000はCTAに計上すべきスポット利得を誤って損益に含めている。",
+      "references": ["ASC 815-35-35-1", "ASC 815-20-35-1A"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-118",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedged Item Eligibility - Held-to-Maturity Securities",
+      "stem": "Caldwell Bank classifies a fixed-rate debt security as held-to-maturity (HTM). Under ASC 815, which of the following risks of the HTM security may be designated as the hedged risk in a fair value hedge?",
+      "choices": [
+        { "label": "A", "text": "Benchmark interest rate risk" },
+        { "label": "B", "text": "Prepayment risk" },
+        {
+          "label": "C",
+          "text": "The risk of changes in its overall fair value caused by changes in market interest rates"
+        },
+        { "label": "D", "text": "Credit risk" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Because an entity asserts both the intent and ability to hold an HTM security to maturity, interim fair value changes caused by interest rate movements are irrelevant to the entity's stated strategy. Accordingly, ASC 815 prohibits designating interest rate risk or prepayment risk of an HTM security as the hedged risk. The security may, however, be hedged for credit risk (and for foreign exchange risk if it is denominated in a foreign currency), because default and credit deterioration affect the entity regardless of its intent to hold to maturity. Benchmark interest rate risk, prepayment risk, and overall fair value changes driven by market interest rates are all interest-rate-related exposures that are ineligible for hedge designation on an HTM security.",
+      "explanationJa": "満期保有目的（HTM）の分類は満期まで保有する意図と能力の表明であるため、金利変動による期中の公正価値変動は企業の保有方針と無関係である。したがってASC 815は、HTM証券について金利リスクや期限前償還リスクをヘッジ対象リスクに指定することを禁止している。一方、信用リスク（外貨建の場合は為替リスクも）はヘッジ可能である。債務不履行や信用悪化は満期まで保有する意図にかかわらず企業に影響するためである。ベンチマーク金利リスク、期限前償還リスク、市場金利変動による公正価値全体の変動リスクはいずれも金利関連のエクスポージャーであり、HTM証券についてはヘッジ指定の適格性がない。",
+      "references": ["ASC 815-20-25-43"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-119",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Written Call Option - Speculative Loss",
+      "stem": "On June 1, Year 1, Pinecrest Co. writes (sells) a call option on shares of another public company's stock and receives a premium of $15,000. The option is not designated as a hedging instrument. At December 31, Year 1, the option remains outstanding and has a fair value of $22,000 (a liability to Pinecrest). What amount of gain or loss should Pinecrest recognize in Year 1 earnings related to the written option?",
+      "choices": [
+        { "label": "A", "text": "$7,000 loss" },
+        { "label": "B", "text": "$22,000 loss" },
+        { "label": "C", "text": "$15,000 gain" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A written option is a derivative that is initially recognized at the premium received ($15,000 liability) and subsequently remeasured at fair value with changes recognized in earnings because no hedge designation exists. The option liability increased from $15,000 to $22,000, so Pinecrest recognizes a loss of $22,000 - $15,000 = $7,000. A $22,000 loss ignores the $15,000 premium that established the initial carrying amount of the liability. A $15,000 gain treats the premium received as income rather than as the initial measurement of an obligation. Recognizing no gain or loss is incorrect because derivatives must be remeasured to fair value each reporting date.",
+      "explanationJa": "売建（ライト）オプションはデリバティブであり、受取プレミアム（$15,000の負債）で当初認識され、ヘッジ指定がないため以後は公正価値で再測定し変動を損益に計上する。オプション負債は$15,000から$22,000に増加したため、$22,000 − $15,000 = $7,000の損失を認識する。$22,000の損失は負債の当初計上額となる$15,000のプレミアムを無視している。$15,000の利得は受取プレミアムを義務の当初測定額ではなく収益として扱う誤り。損益ゼロとするのは、デリバティブを各報告日に公正価値へ再測定する要求に反するため誤りである。",
+      "references": ["ASC 815-10-35-2"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-120",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Derivative Definition - Underlying vs Notional",
+      "stem": "Under ASC 815, a derivative instrument must have one or more underlyings and one or more notional amounts or payment provisions. Which of the following represents an underlying?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The number of bushels of wheat specified in a commodity contract"
+        },
+        {
+          "label": "B",
+          "text": "The $1,000,000 face amount on which interest rate swap payments are computed"
+        },
+        {
+          "label": "C",
+          "text": "The level of the S&P 500 index specified in an equity contract"
+        },
+        {
+          "label": "D",
+          "text": "The premium paid to enter into an option contract"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "An underlying is a specified price, rate, index, or other variable (such as an interest rate, security price, commodity price, foreign exchange rate, or index of prices or rates) whose changes drive the settlement value of the derivative. The level of the S&P 500 index is a variable of this kind and is therefore an underlying. The number of bushels of wheat and the $1,000,000 face amount of a swap are notional amounts—quantities of units used to compute the settlement, not variables. The premium paid for an option is the initial net investment, which relates to a separate characteristic of the derivative definition.",
+      "explanationJa": "「基礎数値（underlying）」とは、デリバティブの決済額を変動させる特定の価格・利率・指数その他の変数（金利、証券価格、商品価格、為替レート、価格・利率の指数等）をいう。S&P 500指数の水準はこの種の変数であり、基礎数値に該当する。小麦のブッシェル数やスワップの額面$1,000,000は決済額の計算に用いる数量単位であり「想定元本（notional amount）」である。オプション取得のために支払うプレミアムは「当初純投資」であり、デリバティブの定義の別の要件に関係するものである。",
+      "references": ["ASC 815-10-15-88"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-121",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge of Forecasted Sale - Earnings Effect",
+      "stem": "Saddleback Ranch designates short cattle futures contracts as a cash flow hedge of a highly probable forecasted sale of cattle expected in six months. Cattle prices subsequently decline, and the futures contracts accumulate a $30,000 gain in accumulated other comprehensive income, all of which relates to an effective hedge. At the end of six months, Saddleback sells the cattle at the spot market price for $510,000 cash, and the futures contracts are settled. What total amount should the hedged sale and the hedge contribute to Saddleback's earnings in the period of the sale?",
+      "choices": [
+        { "label": "A", "text": "$510,000" },
+        { "label": "B", "text": "$540,000" },
+        { "label": "C", "text": "$480,000" },
+        { "label": "D", "text": "$30,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When the hedged forecasted sale occurs and affects earnings, the gain accumulated in AOCI is reclassified into earnings in the same period, presented in the same income statement line as the hedged transaction. Earnings therefore reflect the $510,000 cash sale plus the $30,000 reclassified gain, for a total of $540,000—which is the revenue level the short futures position locked in before prices fell. The amount of $510,000 omits the reclassification from AOCI. The amount of $480,000 incorrectly subtracts the futures gain from the sale proceeds even though a short position gains when prices decline. The amount of $30,000 reflects only the reclassified gain and ignores the sale itself.",
+      "explanationJa": "ヘッジ対象の予定販売が実行され損益に影響する期に、AOCIに累積した利得を同じ期に損益へ再分類し、ヘッジ対象取引と同じ損益計算書の表示科目に計上する。したがって損益には現金売上$510,000とAOCIから再分類された利得$30,000の合計$540,000が反映される。これは価格下落前に売建先物ポジションが固定した収入水準である。$510,000はAOCIからの再分類を漏らしている。$480,000は価格下落時に売建ポジションが利得となるにもかかわらず先物利得を売上から誤って控除したもの。$30,000は再分類された利得のみで販売自体を無視している。",
+      "references": ["ASC 815-30-35-38", "ASC 815-20-45-1A"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-122",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Cash Flow Hedge - Failed Effectiveness Test",
+      "stem": "Midway through a hedging relationship, Torrance Co.'s cash flow hedge fails its quarterly effectiveness assessment because the hedging relationship is no longer highly effective. The hedged forecasted transaction remains probable of occurring. Which of the following describes the appropriate accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "All amounts in accumulated other comprehensive income are immediately reclassified into earnings"
+        },
+        {
+          "label": "B",
+          "text": "Hedge accounting continues, and changes in the derivative's fair value continue to be deferred in other comprehensive income"
+        },
+        {
+          "label": "C",
+          "text": "The derivative contract must be terminated and settled with the counterparty"
+        },
+        {
+          "label": "D",
+          "text": "Amounts in accumulated other comprehensive income remain there until the forecasted transaction affects earnings, and subsequent changes in the derivative's fair value are recognized currently in earnings"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When a hedging relationship no longer qualifies because it is not highly effective, hedge accounting is discontinued prospectively. Amounts previously accumulated in AOCI remain there and are reclassified into earnings when the forecasted transaction affects earnings, as long as the transaction remains probable of occurring; immediate reclassification is required only when the forecasted transaction becomes probable of not occurring. After discontinuation, the derivative continues to be carried at fair value, but subsequent changes are recognized in earnings rather than OCI. The entity is not required to terminate the derivative contract itself, and continuing to defer fair value changes in OCI is precluded once the relationship fails to qualify.",
+      "explanationJa": "ヘッジ関係が高い有効性を失い適格性を喪失した場合、ヘッジ会計は将来に向かって（prospectively）中止される。AOCIに既に累積された金額は、予定取引の発生がなお見込まれる限りAOCIに残り、予定取引が損益に影響する時点で損益へ再分類される。即時の損益再分類が求められるのは予定取引の発生が見込まれなくなった場合のみである。中止後もデリバティブは公正価値で計上され続けるが、以後の公正価値変動はOCIではなく損益に認識する。デリバティブ契約自体の解約・決済は要求されず、適格性喪失後も公正価値変動をOCIに繰り延べ続けることは認められない。",
+      "references": ["ASC 815-30-40-1", "ASC 815-30-40-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-123",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Accounting After Bifurcation of Embedded Derivative",
+      "stem": "Ralston Corp. issues a hybrid debt instrument containing an embedded derivative that meets all of the criteria for bifurcation under ASC 815. After bifurcation, how should Ralston account for the two components?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The host contract is accounted for under the GAAP applicable to that type of instrument, and the embedded derivative is measured at fair value with changes recognized in earnings"
+        },
+        {
+          "label": "B",
+          "text": "Both the host contract and the embedded derivative are measured at fair value with changes recognized in earnings"
+        },
+        {
+          "label": "C",
+          "text": "Both the host contract and the embedded derivative are measured at amortized cost"
+        },
+        {
+          "label": "D",
+          "text": "The host contract is measured at fair value through other comprehensive income, and the embedded derivative is measured at amortized cost"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When an embedded derivative is bifurcated, it is separated from the host and accounted for as a freestanding derivative—measured at fair value each period with changes recognized in earnings. The remaining host contract is then accounted for under the GAAP that applies to instruments of its type (for a debt host, typically amortized cost). Measuring both components at fair value through earnings describes the fair value option for the entire hybrid instrument, which is an alternative to bifurcation rather than the result of it. Measuring the derivative at amortized cost is never permitted, and a fair-value-through-OCI host with an amortized-cost derivative reverses the required treatment.",
+      "explanationJa": "組込デリバティブを区分処理する場合、組込デリバティブはホストから分離され、独立のデリバティブとして毎期公正価値で測定し変動を損益に計上する。残るホスト契約は、その商品種類に適用されるGAAP（負債ホストであれば通常は償却原価）で会計処理する。両方の構成要素を公正価値（損益計上）で測定するのは、ハイブリッド商品全体に対する公正価値オプションの説明であり、区分処理の結果ではなくその代替手段である。デリバティブを償却原価で測定することは認められず、ホストをFV-OCI・デリバティブを償却原価とするのは要求される処理を逆転させた誤りである。",
+      "references": ["ASC 815-15-25-1", "ASC 815-15-30-2"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "deriv-124",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Forward Contract Fair Value - Discounted Forward Rate Change",
+      "stem": "On December 1, Year 1, Kingsley Inc., a U.S. company, enters into a 90-day forward contract to purchase €400,000 at a forward rate of $1.20 per euro. The contract is not designated as a hedge. At December 31, Year 1, the spot rate is $1.23, and the forward rate for contracts maturing on March 1, Year 2 is $1.26. The present value factor for the remaining two months is 0.99. What is the fair value of the forward contract (asset) that Kingsley should report at December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$24,000" },
+        { "label": "B", "text": "$12,000" },
+        { "label": "C", "text": "$23,760" },
+        { "label": "D", "text": "$11,880" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The fair value of a forward contract is measured by comparing the contracted forward rate with the current forward rate for the remaining term, multiplied by the notional amount and discounted to present value. Kingsley contracted to buy euros at $1.20, and the forward rate for the same maturity has risen to $1.26, so the contract is favorable by ($1.26 - $1.20) x €400,000 = $24,000; discounting gives $24,000 x 0.99 = $23,760. The amount of $24,000 omits the present value discount. The amounts of $12,000 and $11,880 incorrectly measure the change using the spot rate of $1.23 (with and without discounting) instead of the forward rate for the remaining contract term.",
+      "explanationJa": "先渡契約の公正価値は、契約上の先渡レートと残存期間に対応する現在の先渡レートの差に想定元本を乗じ、現在価値に割り引いて測定する。Kingsleyは$1.20でユーロを購入する契約をしており、同一満期の先渡レートが$1.26に上昇したため、契約は($1.26 − $1.20) × €400,000 = $24,000有利であり、割引後は$24,000 × 0.99 = $23,760となる。$24,000は現在価値への割引を漏らしている。$12,000と$11,880は、残存期間の先渡レートではなくスポットレート$1.23を誤って用いて変動を測定したもの（割引なし・割引ありの別）である。",
+      "references": ["ASC 815-10-35-1", "ASC 820-10-35-9"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
     }
   ]
 }

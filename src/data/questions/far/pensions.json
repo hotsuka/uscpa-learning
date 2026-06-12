@@ -2,7 +2,7 @@
   "id": "far-pensions",
   "name": "Pensions",
   "topic": "Pensions",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "pen-001",
@@ -3073,6 +3073,261 @@
       "references": ["ASC 715-60-35", "ASC 715-60-35-9"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "pen-139",
+      "topic": "Pensions",
+      "subtopic": "PBO vs ABO - Non-Pay-Related Plan",
+      "stem": "Walden Corp. sponsors a defined benefit pension plan with a flat-benefit formula: each participant earns a benefit of $40 per month for each year of service, regardless of compensation level. What is the relationship between the projected benefit obligation (PBO) and the accumulated benefit obligation (ABO) for this plan?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The PBO exceeds the ABO because the PBO incorporates assumed future salary increases"
+        },
+        { "label": "B", "text": "The PBO and the ABO are equal" },
+        {
+          "label": "C",
+          "text": "The ABO exceeds the PBO because the ABO includes nonvested benefits"
+        },
+        {
+          "label": "D",
+          "text": "The PBO equals the vested benefit obligation but exceeds the ABO"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The only difference between the PBO and the ABO is the salary assumption: the PBO uses projected future compensation levels, while the ABO uses current (and past) compensation. When the benefit formula is not pay-related (a flat dollar amount per year of service), future salary levels have no effect on the benefit, so the two measures are identical. The statement that the PBO exceeds the ABO is true only for pay-related formulas. The ABO can never exceed the PBO, and both the ABO and the PBO include nonvested benefits, so vesting does not distinguish them.",
+      "explanationJa": "PBOとABOの唯一の違いは給与の仮定である。PBOは将来の昇給を織り込んだ予測給与水準を用い、ABOは現在（および過去）の給与水準を用いる。給付算定式が給与と無関係（勤続年数1年あたり定額）の場合、将来給与は給付額に影響しないため、両者は等しくなる。「PBOがABOを上回る」のは給与連動型の算定式の場合のみ。ABOがPBOを上回ることはなく、また未確定（nonvested）給付はABO・PBOの両方に含まれるため、受給権確定の有無は両者の差異要因ではない。",
+      "references": ["ASC 715-30-20"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-140",
+      "topic": "Pensions",
+      "subtopic": "OCI Items - Components Never Deferred",
+      "stem": "Under ASC 715, certain elements of defined benefit pension accounting are initially recognized in other comprehensive income and later reclassified (amortized) into net periodic pension cost. Which of the following is recognized immediately in net periodic pension cost and is NEVER initially recorded in accumulated other comprehensive income?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Prior service cost arising from a plan amendment"
+        },
+        { "label": "B", "text": "Net actuarial gains and losses" },
+        { "label": "C", "text": "Service cost" },
+        {
+          "label": "D",
+          "text": "Net transition obligation existing at initial application of the standard"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Service cost is recognized in full as a component of net periodic pension cost in the period employees render service; it is never deferred in AOCI. In contrast, prior service cost from a plan amendment, net actuarial gains and losses, and any net transition obligation or asset are initially recognized in other comprehensive income and subsequently reclassified into pension expense through amortization. This deferral-and-amortization mechanism is the recycling feature of pension accounting under ASC 715.",
+      "explanationJa": "勤務費用（service cost）は、従業員が勤務を提供した期に全額が年金費用の構成要素として認識され、AOCIに繰り延べられることはない。一方、制度改訂による過去勤務費用、数理計算上の差異（actuarial gains/losses）、および基準適用時の移行調整額（transition obligation/asset）は、まずその他の包括利益（OCI）に認識され、その後償却を通じて年金費用へ振り替えられる（リサイクリング）。この繰延・償却の仕組みがASC 715の特徴である。",
+      "references": ["ASC 715-30-35"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-141",
+      "topic": "Pensions",
+      "subtopic": "Defined Contribution Plan - Measurement Simplicity",
+      "stem": "Crestpoint Corp. sponsors a defined contribution pension plan for its employees. Which of the following statements about the accounting for this plan under ASC 715-70 is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Crestpoint must measure a projected benefit obligation using a settlement discount rate"
+        },
+        {
+          "label": "B",
+          "text": "Crestpoint must apply the corridor approach to defer gains and losses on plan investments"
+        },
+        {
+          "label": "C",
+          "text": "Crestpoint bears the investment risk and must fund any shortfall in participant account balances"
+        },
+        {
+          "label": "D",
+          "text": "Pension expense equals the contribution required by the plan formula for the period, and no actuarial assumptions are required"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "In a defined contribution plan, the employer's obligation is limited to the contribution called for by the plan formula each period. Pension expense is simply that required contribution, so no actuarial assumptions, discount rates, or benefit obligation measurements are needed. There is no projected benefit obligation to measure and no corridor approach to apply, because there are no actuarial gains or losses at the employer level. The investment risk rests with the employees, whose retirement benefits depend on the performance of their individual accounts; the employer does not guarantee account balances.",
+      "explanationJa": "確定拠出制度では、雇用主の義務は各期に制度の算定式が定める拠出額に限定される。年金費用はその要拠出額そのものであり、数理計算上の仮定、割引率、給付債務の測定は不要である。雇用主レベルでは数理差異が生じないため、測定すべきPBOもコリドーアプローチの適用もない。運用リスクは従業員が負担し、退職給付は各自の口座残高の運用成果に依存する。雇用主は口座残高を保証せず、不足分の補填義務も負わない。",
+      "references": ["ASC 715-70-35"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-142",
+      "topic": "Pensions",
+      "subtopic": "Vested Benefit Obligation Calculation",
+      "stem": "At December 31, Year 4, Birchfield Corp.'s defined benefit pension plan reports a projected benefit obligation of $3,100,000 and an accumulated benefit obligation of $2,400,000. The plan's actuary determines that 85% of the benefits included in the accumulated benefit obligation are vested. What is the vested benefit obligation at December 31, Year 4?",
+      "choices": [
+        { "label": "A", "text": "$2,040,000" },
+        { "label": "B", "text": "$2,635,000" },
+        { "label": "C", "text": "$2,400,000" },
+        { "label": "D", "text": "$360,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The vested benefit obligation (VBO) is the actuarial present value of vested benefits measured using current salary levels, so it is derived from the ABO, not the PBO: $2,400,000 × 85% = $2,040,000. Applying the vested percentage to the PBO ($3,100,000 × 85% = $2,635,000) is incorrect because the PBO incorporates future salary increases, which are not part of vested benefits. The full $2,400,000 is the ABO itself, which includes both vested and nonvested benefits. The $360,000 amount ($2,400,000 × 15%) represents the nonvested portion, not the vested portion.",
+      "explanationJa": "受給権確定給付債務（VBO）は、現在の給与水準で測定した確定済給付の数理現価であり、PBOではなくABOから算定する。$2,400,000 × 85% = $2,040,000。確定割合をPBOに乗じる計算（$3,100,000 × 85% = $2,635,000）は、PBOが将来昇給を含むため誤り。$2,400,000はABOそのものであり、確定・未確定の両方の給付を含む。$360,000（$2,400,000 × 15%）は未確定部分であって、確定部分ではない。",
+      "references": ["ASC 715-30-20"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-143",
+      "topic": "Pensions",
+      "subtopic": "Pension Expense - Expected Return Not Actual Return",
+      "stem": "Stonebrook Corp. reports the following data for its defined benefit pension plan for the current year: service cost $150,000; interest cost $80,000; actual return on plan assets $110,000; expected return on plan assets $70,000; amortization of prior service cost $20,000. There is no amortization of net actuarial gain or loss. What is Stonebrook's net periodic pension cost for the year?",
+      "choices": [
+        { "label": "A", "text": "$140,000" },
+        { "label": "B", "text": "$180,000" },
+        { "label": "C", "text": "$160,000" },
+        { "label": "D", "text": "$120,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Net periodic pension cost uses the EXPECTED return on plan assets, not the actual return: $150,000 service cost + $80,000 interest cost − $70,000 expected return + $20,000 prior service cost amortization = $180,000. The $40,000 excess of actual return ($110,000) over expected return ($70,000) is an asset gain recognized in other comprehensive income, not in pension expense. Subtracting the actual return yields $140,000, which improperly lets current-year market performance flow through earnings. The $160,000 figure omits the prior service cost amortization, and $120,000 makes both errors at once.",
+      "explanationJa": "年金費用の計算には実際運用収益ではなく期待運用収益を用いる。$150,000（勤務費用）+ $80,000（利息費用）− $70,000（期待運用収益）+ $20,000（過去勤務費用償却）= $180,000。実際運用収益$110,000と期待運用収益$70,000の差額$40,000は資産に係る数理差異（利得）としてOCIに認識され、年金費用には含めない。実際運用収益を控除した$140,000は、当期の市場変動を損益に直接反映させてしまう誤り。$160,000は過去勤務費用の償却を漏らした金額、$120,000は両方の誤りを犯した金額である。",
+      "references": ["ASC 715-30-35-22", "ASC 715-30-35-26"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-144",
+      "topic": "Pensions",
+      "subtopic": "Corridor Test - Current-Year Loss Excluded",
+      "stem": "At January 1, Year 6, Maplewood Corp.'s defined benefit pension plan has an accumulated net actuarial loss in AOCI of $400,000. At that date, the projected benefit obligation is $4,200,000 and the market-related value of plan assets is $3,800,000. During Year 6, an additional actuarial loss of $300,000 arises from a change in mortality assumptions. The average remaining service period of active employees is 10 years. Under the corridor approach, what is the minimum amortization of net actuarial loss included in Year 6 pension expense?",
+      "choices": [
+        { "label": "A", "text": "$28,000" },
+        { "label": "B", "text": "$40,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The corridor test is applied to the net gain or loss balance at the BEGINNING of the year. The corridor is 10% of the greater of the beginning PBO ($4,200,000) or the beginning market-related value of plan assets ($3,800,000), which is 10% × $4,200,000 = $420,000. The beginning net loss of $400,000 is within the corridor, so no amortization is required, and the answer is $0. The $300,000 loss arising during Year 6 is excluded from the current year's test; it enters the AOCI balance and is first tested at the beginning of Year 7. The $28,000 figure incorrectly adds the current-year loss to the test (($700,000 − $420,000) ÷ 10), $40,000 incorrectly amortizes the entire beginning balance ($400,000 ÷ 10), and $30,000 incorrectly amortizes the current-year loss ($300,000 ÷ 10).",
+      "explanationJa": "コリドーテストは期首の数理差異残高に対して適用する。コリドーは期首PBO（$4,200,000）と期首の市場関連価値（$3,800,000）のいずれか大きい方の10%、すなわち10% × $4,200,000 = $420,000。期首の純損失$400,000はコリドー内に収まるため償却は不要であり、答えは$0。当期中に発生した$300,000の損失は当期のテストには含めず、AOCI残高に加算されて翌期首に初めてテスト対象となる。$28,000は当期発生損失を誤ってテストに含めた計算（($700,000 − $420,000) ÷ 10）、$40,000は期首残高全額の償却（$400,000 ÷ 10）、$30,000は当期発生損失の償却（$300,000 ÷ 10）でいずれも誤り。",
+      "references": ["ASC 715-30-35-24"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-145",
+      "topic": "Pensions",
+      "subtopic": "Asset Gain to OCI - Derived from Rollforward",
+      "stem": "Garnetfield Corp.'s defined benefit pension plan reports the following for the current year: fair value of plan assets at January 1, $3,000,000; employer contributions, $260,000; benefits paid to retirees, $180,000; fair value of plan assets at December 31, $3,330,000. The expected long-term rate of return is 7%, applied to the beginning fair value of plan assets. What asset-related gain or loss is recognized in other comprehensive income for the year?",
+      "choices": [
+        { "label": "A", "text": "$40,000 gain" },
+        { "label": "B", "text": "$40,000 loss" },
+        { "label": "C", "text": "$250,000 gain" },
+        { "label": "D", "text": "$210,000 gain" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "First derive the actual return from the plan asset rollforward: ending assets $3,330,000 = beginning $3,000,000 + contributions $260,000 − benefits paid $180,000 + actual return, so actual return = $3,330,000 − $3,000,000 − $260,000 + $180,000 = $250,000. The expected return is 7% × $3,000,000 = $210,000. Because the actual return exceeds the expected return by $40,000, an asset GAIN of $40,000 is recognized in other comprehensive income. A $40,000 loss reverses the direction of the difference. The $250,000 amount is the actual return itself and the $210,000 amount is the expected return itself; neither difference component alone is the OCI amount.",
+      "explanationJa": "まず年金資産のロールフォワードから実際運用収益を逆算する。期末資産$3,330,000 = 期首$3,000,000 + 拠出$260,000 − 給付支払$180,000 + 実際運用収益。よって実際運用収益 = $3,330,000 − $3,000,000 − $260,000 + $180,000 = $250,000。期待運用収益は7% × $3,000,000 = $210,000。実際が期待を$40,000上回るため、$40,000の資産に係る利得（gain）をOCIに認識する。$40,000の損失は差額の方向を逆にした誤り。$250,000は実際運用収益そのもの、$210,000は期待運用収益そのものであり、OCI計上額ではない。",
+      "references": ["ASC 715-30-35-21", "ASC 715-30-35-24"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-146",
+      "topic": "Pensions",
+      "subtopic": "Balance Sheet Liability Measured Against PBO",
+      "stem": "At December 31, Year 8, Lornadale Corp.'s defined benefit pension plan has the following measures: fair value of plan assets $4,000,000; projected benefit obligation $5,200,000; accumulated benefit obligation $4,600,000; vested benefit obligation $4,100,000. What amount should Lornadale report as its net pension liability on the December 31, Year 8 balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$600,000" },
+        { "label": "B", "text": "$100,000" },
+        { "label": "C", "text": "$1,200,000" },
+        { "label": "D", "text": "$5,200,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under ASC 715, the funded status recognized on the balance sheet is the fair value of plan assets minus the PROJECTED benefit obligation: $4,000,000 − $5,200,000 = $(1,200,000), a net pension liability of $1,200,000. The $600,000 amount measures the shortfall against the ABO ($4,600,000 − $4,000,000), and the $100,000 amount measures it against the VBO ($4,100,000 − $4,000,000); neither obligation measure is used for the recognized funded status of a pension plan. Reporting the gross PBO of $5,200,000 ignores the offsetting plan assets, which are netted against the obligation rather than shown separately.",
+      "explanationJa": "ASC 715では、貸借対照表に認識する積立状況（funded status）は「年金資産の公正価値 − PBO（予測給付債務）」である。$4,000,000 − $5,200,000 = △$1,200,000、すなわち純年金負債$1,200,000。$600,000はABOとの差額（$4,600,000 − $4,000,000）、$100,000はVBOとの差額（$4,100,000 − $4,000,000）であり、年金制度の積立状況の認識にはどちらの債務指標も使用しない。PBO総額$5,200,000をそのまま計上するのは、債務と相殺表示すべき年金資産を無視した誤り。",
+      "references": ["ASC 715-30-25-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-147",
+      "topic": "Pensions",
+      "subtopic": "PBO Measurement Using Projected Final Salary",
+      "stem": "Quillstone Corp.'s defined benefit plan provides an annual retirement benefit equal to 2% of final salary for each year of service. An employee has completed 10 years of service as of the measurement date. The employee's current salary is $100,000, and the actuary projects a final salary at retirement of $180,000. The actuarial present value factor (reflecting discounting, mortality, and the deferral period) for each $1 of annual retirement benefit is 8.0. What is the projected benefit obligation for this employee at the measurement date?",
+      "choices": [
+        { "label": "A", "text": "$160,000" },
+        { "label": "B", "text": "$36,000" },
+        { "label": "C", "text": "$230,400" },
+        { "label": "D", "text": "$288,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The PBO measures the benefit earned for service to date but uses PROJECTED final compensation. The annual benefit attributed to the 10 years of completed service is 2% × 10 years × $180,000 projected final salary = $36,000 per year. Applying the present value factor: $36,000 × 8.0 = $288,000. The $160,000 amount uses the current salary of $100,000 (2% × 10 × $100,000 × 8.0), which is the accumulated benefit obligation, not the PBO. The $36,000 amount is the undiscounted annual benefit without applying the present value factor, and $230,400 is based on a blended salary of $144,000 that has no basis in the PBO definition.",
+      "explanationJa": "PBOは測定日までの勤務に対応する給付を、予測最終給与を用いて測定する。完了済み10年の勤務に帰属する年間給付は 2% × 10年 × 予測最終給与$180,000 = 年額$36,000。現価係数を適用して $36,000 × 8.0 = $288,000。$160,000は現在給与$100,000を用いた計算（2% × 10 × $100,000 × 8.0）でありABOに相当し、PBOではない。$36,000は現価係数を適用していない年間給付額。$230,400は中間的な給与$144,000に基づく金額で、PBOの定義に根拠がない。",
+      "references": ["ASC 715-30-20", "ASC 715-30-35-36"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-148",
+      "topic": "Pensions",
+      "subtopic": "AOCI Pension Balance - Combined PSC and Net Loss Rollforward",
+      "stem": "At January 1, Year 9, Ravenscroft Corp.'s accumulated other comprehensive income includes the following pretax pension-related debit balances: net actuarial loss $700,000 and unamortized prior service cost $240,000. During Year 9, pension expense includes amortization of net actuarial loss of $30,000 and amortization of prior service cost of $40,000. Also during Year 9, a new actuarial GAIN of $120,000 arises from remeasurement of the PBO. What is the total pretax pension-related debit balance in AOCI at December 31, Year 9?",
+      "choices": [
+        { "label": "A", "text": "$870,000" },
+        { "label": "B", "text": "$750,000" },
+        { "label": "C", "text": "$820,000" },
+        { "label": "D", "text": "$990,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Roll forward each component separately. Net actuarial loss: $700,000 beginning − $30,000 amortized into expense − $120,000 current-year gain (which offsets the accumulated loss) = $550,000. Prior service cost: $240,000 − $40,000 amortized = $200,000. Total pretax debit balance in AOCI = $550,000 + $200,000 = $750,000. The $870,000 figure ignores the $120,000 current-year gain, the $820,000 figure ignores both amortizations while including the gain ($700,000 − $120,000 + $240,000), and the $990,000 figure treats the current-year gain as if it increased the accumulated loss instead of reducing it.",
+      "explanationJa": "構成要素ごとにロールフォワードする。数理純損失: 期首$700,000 − 費用へ償却$30,000 − 当期発生の利得$120,000（累積損失を相殺）= $550,000。過去勤務費用: $240,000 − 償却$40,000 = $200,000。AOCIの税引前借方残高合計 = $550,000 + $200,000 = $750,000。$870,000は当期発生の利得$120,000を無視した金額。$820,000は両方の償却を無視して利得のみ反映した金額（$700,000 − $120,000 + $240,000）。$990,000は当期の利得を累積損失の増加として逆方向に処理した誤り。",
+      "references": ["ASC 715-30-35-11", "ASC 220-10-45"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-149",
+      "topic": "Pensions",
+      "subtopic": "OPEB - Net Cost for Partially Funded Plan with Negative Amendment",
+      "stem": "Tarringford Corp. sponsors a partially funded postretirement health care plan (OPEB). For the current year: service cost is $60,000; the accumulated postretirement benefit obligation at January 1 is $800,000 and the discount rate is 5.5%; plan assets at January 1 are $200,000 with an expected long-term rate of return of 6%; and amortization of a prior service CREDIT from an earlier negative plan amendment is $10,000 per year. There is no amortization of net gain or loss. What is net periodic postretirement benefit cost for the year?",
+      "choices": [
+        { "label": "A", "text": "$92,000" },
+        { "label": "B", "text": "$94,000" },
+        { "label": "C", "text": "$82,000" },
+        { "label": "D", "text": "$102,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Net periodic postretirement benefit cost = service cost $60,000 + interest cost ($800,000 × 5.5% = $44,000) − expected return on plan assets ($200,000 × 6% = $12,000) − amortization of prior service credit $10,000 = $82,000. A negative plan amendment reduces the APBO and creates a prior service CREDIT whose amortization reduces cost. The $92,000 amount omits the prior service credit amortization ($60,000 + $44,000 − $12,000), the $94,000 amount omits the expected return ($60,000 + $44,000 − $10,000), and the $102,000 amount adds the prior service credit amortization instead of subtracting it ($60,000 + $44,000 − $12,000 + $10,000).",
+      "explanationJa": "退職後給付費用 = 勤務費用$60,000 + 利息費用（$800,000 × 5.5% = $44,000）− 期待運用収益（$200,000 × 6% = $12,000）− 過去勤務「貸方」の償却$10,000 = $82,000。給付を削減する制度改訂（negative amendment）はAPBOを減少させ、過去勤務貸方（prior service credit）を生み、その償却は費用を減額する。$92,000は過去勤務貸方の償却を漏らした金額（$60,000 + $44,000 − $12,000）。$94,000は期待運用収益を漏らした金額（$60,000 + $44,000 − $10,000）。$102,000は過去勤務貸方の償却を減算ではなく加算した誤り（$60,000 + $44,000 − $12,000 + $10,000）。",
+      "references": ["ASC 715-60-35"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "pen-150",
+      "topic": "Pensions",
+      "subtopic": "Curtailment - Asymmetric Timing of Gain vs Loss Recognition",
+      "stem": "Under ASC 715-30, the timing of recognition for curtailment gains differs from the timing for curtailment losses. Which of the following correctly describes when each is recognized?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A curtailment loss is recognized when it is probable that a curtailment will occur and the effects are reasonably estimable; a curtailment gain is recognized only when the related employees terminate or the plan suspension or amendment is adopted"
+        },
+        {
+          "label": "B",
+          "text": "Both curtailment gains and curtailment losses are recognized when the curtailment becomes probable and reasonably estimable"
+        },
+        {
+          "label": "C",
+          "text": "Both curtailment gains and curtailment losses are deferred until the related employees actually terminate employment"
+        },
+        {
+          "label": "D",
+          "text": "A curtailment gain is recognized when probable and reasonably estimable; a curtailment loss is deferred until the related employees terminate"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 715-30 applies a conservative, asymmetric recognition model to curtailments, consistent with contingency accounting. A net LOSS is recognized when it is probable that a curtailment will occur and its effects are reasonably estimable. A net GAIN, however, is deferred and recognized only when the related employees actually terminate or when the plan suspension or amendment is adopted. Recognizing both at the probable-and-estimable stage would accelerate gain recognition improperly; deferring both until termination would delay required loss recognition; and recognizing gains earlier than losses reverses the conservative asymmetry the standard prescribes.",
+      "explanationJa": "ASC 715-30は縮小（curtailment）に対し、偶発事象会計と整合的な保守的・非対称の認識モデルを採用している。純損失は、縮小の発生が「probable（発生可能性が高い）」かつ影響額が合理的に見積可能となった時点で認識する。一方、純利得は繰り延べられ、対象従業員が実際に退職した時点、または制度の停止・改訂が採択された時点で初めて認識する。利得・損失の両方をprobable段階で認識すると利得の認識が不当に早まり、両方を退職時まで繰り延べると必要な損失認識が遅れる。利得を損失より早く認識する処理は、基準が定める保守的な非対称性と逆である。",
+      "references": ["ASC 715-30-35-92", "ASC 715-30-35-93"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
     }
   ]
 }

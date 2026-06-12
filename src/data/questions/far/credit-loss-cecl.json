@@ -2,7 +2,7 @@
   "id": "far-credit-loss-cecl",
   "name": "Credit Loss (CECL)",
   "topic": "Credit Loss - Current Expected Credit Losses (ASC 326)",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "questions": [
     {
       "id": "cecl-001",
@@ -3453,6 +3453,507 @@
       "references": ["ASC 326-20-45-1"],
       "difficulty": "basic",
       "source": "Original - CPA Exam Practice"
+    },
+    {
+      "id": "cecl-133",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "CECL Scope - Loans Held for Sale",
+      "stem": "Which of the following financial assets is excluded from the scope of the current expected credit loss (CECL) model in ASC 326-20?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Trade accounts receivable arising from contracts with customers"
+        },
+        {
+          "label": "B",
+          "text": "Corporate bonds classified as held-to-maturity"
+        },
+        {
+          "label": "C",
+          "text": "Mortgage loans classified as held for sale and measured at the lower of amortized cost or fair value"
+        },
+        {
+          "label": "D",
+          "text": "The net investment in a sales-type lease recognized by a lessor"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 326-20 applies to financial assets measured at amortized cost, including trade receivables, held-to-maturity debt securities, and a lessor's net investment in sales-type and direct financing leases. Loans held for sale are measured at the lower of amortized cost or fair value, and that measurement attribute already captures declines in value; therefore, held-for-sale loans are excluded from the CECL allowance model. Trade receivables, held-to-maturity bonds, and the net investment in a sales-type lease are all explicitly within the scope of ASC 326-20.",
+      "explanationJa": "ASC 326-20は償却原価で測定される金融資産（売掛金、満期保有目的の負債証券、貸手のセールスタイプリース・直接金融リースの正味リース投資未回収額など）に適用される。売却目的保有（held for sale）の貸付金は「償却原価と公正価値のいずれか低い方」で測定され、その測定属性自体が価値の下落を反映するため、CECLの引当金モデルの適用範囲から除外される。売掛金、満期保有目的の社債、セールスタイプリースの正味リース投資未回収額はいずれもASC 326-20の適用範囲内である。",
+      "references": ["ASC 326-20-15-3"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-134",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "DCF Method - Discount Rate Selection",
+      "stem": "When an entity elects to use a discounted cash flow method to estimate expected credit losses on a loan measured at amortized cost under ASC 326-20, the expected future cash flows should be discounted at:",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The financial asset's effective interest rate"
+        },
+        {
+          "label": "B",
+          "text": "The current market rate of interest for similar loans"
+        },
+        { "label": "C", "text": "The risk-free rate of interest" },
+        {
+          "label": "D",
+          "text": "The entity's weighted-average cost of capital"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 326-20, when a discounted cash flow approach is used, expected cash flows are discounted at the financial asset's effective interest rate—the rate implicit in the asset at origination or acquisition. The allowance equals the difference between the amortized cost basis and the present value of expected cash flows at that rate. Using a current market rate would mix credit loss measurement with interest rate risk, the risk-free rate ignores the asset's contractual yield, and the entity's weighted-average cost of capital relates to the reporting entity's financing, not the asset being measured.",
+      "explanationJa": "ASC 326-20の下で割引キャッシュフロー法を用いる場合、期待キャッシュフローは当該金融資産の実効金利（組成時または取得時に内在する利率）で割り引く。引当金は償却原価と実効金利で割り引いた期待キャッシュフローの現在価値との差額となる。現在の市場金利を用いると信用損失の測定に金利リスクが混入し、リスクフリーレートは資産の契約上の利回りを無視し、加重平均資本コストは測定対象の資産ではなく報告企業の資金調達に関するものであるため、いずれも不適切である。",
+      "references": ["ASC 326-20-30-4"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-135",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Write-Off Effect on Net Receivables and Income",
+      "stem": "Calloway Corp. uses the allowance method under ASC 326 and has a sufficient allowance for credit losses. During the year, Calloway writes off a $20,000 trade receivable that is deemed uncollectible. What is the effect of the write-off on net receivables (receivables less the allowance) and on net income?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Net receivables decrease $20,000 and net income decreases $20,000"
+        },
+        {
+          "label": "B",
+          "text": "Net receivables decrease $20,000 and net income is unaffected"
+        },
+        {
+          "label": "C",
+          "text": "Net receivables are unaffected and net income decreases $20,000"
+        },
+        {
+          "label": "D",
+          "text": "Neither net receivables nor net income is affected"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The write-off entry debits the allowance for credit losses and credits accounts receivable for $20,000. Gross receivables and the allowance both decrease by the same amount, so net receivables (gross receivables minus the allowance) are unchanged. No expense is recorded at write-off because credit loss expense was already recognized when the allowance was established or adjusted. The answers showing a $20,000 decrease in net receivables or in net income confuse the write-off with the direct write-off method, under which the expense would be recognized at the time of write-off.",
+      "explanationJa": "直接償却（write-off）の仕訳は「借方：貸倒引当金 20,000／貸方：売掛金 20,000」である。売掛金総額と引当金が同額減少するため、純額（売掛金−引当金）は変わらない。引当金設定時にすでに信用損失費用を認識しているため、償却時点で費用は発生しない。純額が$20,000減少する、あるいは純利益が$20,000減少するという処理は、償却時に費用を認識する直接償却法と混同したものである。",
+      "references": ["ASC 326-20-35-8"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-136",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Short-Term Receivables - Lifetime ECL Required",
+      "stem": "Holloway Manufacturing's trade receivables are all due within 30 days, and most customers pay on time. Holloway's controller proposes recording no allowance for credit losses because the receivables are short-term and not yet past due. Under ASC 326-20, which statement best describes the appropriate accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "No allowance is needed because expected credit losses are recognized only when receivables become past due"
+        },
+        {
+          "label": "B",
+          "text": "Holloway must estimate lifetime expected credit losses on the receivables at each reporting date, even though the receivables are current and short-term"
+        },
+        {
+          "label": "C",
+          "text": "An allowance is required only if Holloway is a financial institution"
+        },
+        {
+          "label": "D",
+          "text": "Holloway may defer recognition of credit losses until a loss event has been incurred"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The CECL model requires an entity to estimate and recognize lifetime expected credit losses on in-scope financial assets, including trade receivables, at each reporting date. The contractual life of a 30-day receivable is short, so the lifetime estimate covers a short horizon, but a current, not-yet-due receivable still carries some expected loss based on historical experience, current conditions, and reasonable and supportable forecasts. Waiting until receivables are past due or until a loss event has been incurred reflects the superseded incurred loss model, and CECL applies to all entities holding in-scope assets, not only financial institutions.",
+      "explanationJa": "CECLモデルでは、売掛金を含む適用範囲内の金融資産について、各報告日に全期間の期待信用損失を見積もり認識しなければならない。30日満期の売掛金は契約期間が短いため見積り対象期間も短いが、期日前の正常債権であっても、過去の実績・現在の状況・合理的で裏付け可能な予測に基づく期待損失が存在する。「延滞になってから」や「損失事象が発生してから」認識するのは廃止された発生損失モデルの考え方であり、またCECLは金融機関に限らず適用範囲内の資産を保有するすべての企業に適用される。",
+      "references": ["ASC 326-20-30-1"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-137",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Loss Rate Method - Net Receivables Presentation",
+      "stem": "Brennan Supply Co. has gross trade receivables of $4,000,000 at year-end. Using a historical lifetime loss rate adjusted for current conditions and forecasts, Brennan estimates a lifetime expected credit loss rate of 2.5%. At what net amount should the receivables be reported on the balance sheet?",
+      "choices": [
+        { "label": "A", "text": "$3,900,000" },
+        { "label": "B", "text": "$4,000,000" },
+        { "label": "C", "text": "$3,000,000" },
+        { "label": "D", "text": "$3,990,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The allowance for credit losses is $4,000,000 × 2.5% = $100,000. Receivables are presented at amortized cost less the allowance: $4,000,000 − $100,000 = $3,900,000. Reporting the full $4,000,000 ignores the required allowance, $3,000,000 incorrectly applies a 25% rate, and $3,990,000 incorrectly applies a 0.25% rate.",
+      "explanationJa": "貸倒引当金は $4,000,000 × 2.5% = $100,000。売掛金は償却原価から引当金を控除した純額 $4,000,000 − $100,000 = $3,900,000 で表示する。$4,000,000のままの表示は必要な引当金を無視しており、$3,000,000は誤って25%を適用した値、$3,990,000は誤って0.25%を適用した値である。",
+      "references": ["ASC 326-20-30-3", "ASC 326-20-45-1"],
+      "difficulty": "basic",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-138",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Aging Method - Allowance with Debit Balance",
+      "stem": "Marlowe Distributors estimates expected credit losses using an aging schedule: current $500,000 (2% loss rate); 31–60 days $200,000 (10%); 61–90 days $100,000 (20%); over 90 days $40,000 (60%). Because write-offs during the year exceeded the prior allowance, the allowance for credit losses has a $6,000 debit balance before adjustment. What amount of credit loss expense should Marlowe recognize for the year?",
+      "choices": [
+        { "label": "A", "text": "$74,000" },
+        { "label": "B", "text": "$68,000" },
+        { "label": "C", "text": "$80,000" },
+        { "label": "D", "text": "$86,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Required ending allowance = ($500,000 × 2%) + ($200,000 × 10%) + ($100,000 × 20%) + ($40,000 × 60%) = $10,000 + $20,000 + $20,000 + $24,000 = $74,000 credit balance. Because the allowance currently has a $6,000 debit balance, the adjustment must cover both the deficiency and the required balance: $74,000 + $6,000 = $80,000 credit loss expense. The $74,000 amount ignores the existing debit balance, $68,000 incorrectly subtracts the debit balance as if it were a credit balance, and $86,000 double-counts the $6,000 deficiency.",
+      "explanationJa": "必要な期末引当金残高 = ($500,000 × 2%) + ($200,000 × 10%) + ($100,000 × 20%) + ($40,000 × 60%) = $10,000 + $20,000 + $20,000 + $24,000 = $74,000（貸方残高）。調整前の引当金は$6,000の借方残高であるため、調整額は不足分と必要残高の両方をカバーする必要があり、信用損失費用は $74,000 + $6,000 = $80,000 となる。$74,000は既存の借方残高を無視した値、$68,000は借方残高を貸方残高と取り違えて控除した値、$86,000は$6,000を二重計上した値である。",
+      "references": ["ASC 326-20-30-3"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-139",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Allowance Rollforward - Solving for Recoveries",
+      "stem": "Ellsworth Finance reports the following activity in its allowance for credit losses: beginning balance $90,000; credit loss expense (provision) $40,000; write-offs $55,000; ending balance $82,000. What amount of recoveries of previously written-off amounts did Ellsworth record during the year?",
+      "choices": [
+        { "label": "A", "text": "$13,000" },
+        { "label": "B", "text": "$7,000" },
+        { "label": "C", "text": "$17,000" },
+        { "label": "D", "text": "$3,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The allowance rollforward is: beginning balance + provision − write-offs + recoveries = ending balance. Solving: $90,000 + $40,000 − $55,000 + recoveries = $82,000, so recoveries = $82,000 − $75,000 = $7,000. Recoveries are credited directly to the allowance when previously written-off amounts are collected. The $13,000, $17,000, and $3,000 amounts result from sign or transposition errors in the rollforward, such as adding write-offs or subtracting the provision.",
+      "explanationJa": "引当金のロールフォワードは「期首残高 + 繰入額 − 直接償却 + 回収額 = 期末残高」。$90,000 + $40,000 − $55,000 + 回収額 = $82,000 を解くと、回収額 = $82,000 − $75,000 = $7,000。過去に償却済みの債権を回収した場合、回収額は引当金に直接貸記される。$13,000、$17,000、$3,000は、償却額を加算したり繰入額を減算したりする符号・計算の誤りから生じる値である。",
+      "references": ["ASC 326-20-35-8"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-140",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "DCF Method - Multi-Period Expected Cash Flows",
+      "stem": "Whitcomb Bank holds a loan with an amortized cost basis of $350,000 and an effective interest rate of 10%. Using a discounted cash flow method, the bank expects to collect $110,000 at the end of Year 1 and $242,000 at the end of Year 2, with no other cash flows. What allowance for credit losses should Whitcomb record on the loan?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$42,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Present value of expected cash flows at the 10% effective rate = $110,000 ÷ 1.10 + $242,000 ÷ 1.21 = $100,000 + $200,000 = $300,000. Allowance = amortized cost basis − present value of expected cash flows = $350,000 − $300,000 = $50,000. An allowance of $0 results from comparing undiscounted expected cash flows of $352,000 with the $350,000 basis; under the DCF method the cash flows must be discounted at the effective interest rate, which produces a $50,000 shortfall.",
+      "explanationJa": "実効金利10%で割り引いた期待キャッシュフローの現在価値 = $110,000 ÷ 1.10 + $242,000 ÷ 1.21 = $100,000 + $200,000 = $300,000。引当金 = 償却原価 − 期待キャッシュフローの現在価値 = $350,000 − $300,000 = $50,000。$0という結論は、割引前の期待キャッシュフロー合計$352,000を償却原価$350,000と比較した誤りである。DCF法では実効金利で割り引く必要があり、その結果$50,000の不足が生じる。",
+      "references": ["ASC 326-20-30-4"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-141",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Loss Rate Method - Provision with Mid-Year Activity",
+      "stem": "Dunmore Bank applies a lifetime loss rate of 3% to its $2,000,000 loan pool, resulting in a required ending allowance of $60,000. The allowance had a beginning credit balance of $50,000. During the year, the bank wrote off $30,000 of loans and recorded recoveries of $5,000. What credit loss expense should Dunmore recognize for the year?",
+      "choices": [
+        { "label": "A", "text": "$35,000" },
+        { "label": "B", "text": "$60,000" },
+        { "label": "C", "text": "$10,000" },
+        { "label": "D", "text": "$25,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Allowance balance before the provision = $50,000 beginning − $30,000 write-offs + $5,000 recoveries = $25,000. Credit loss expense = required ending allowance − balance before provision = $60,000 − $25,000 = $35,000. Recording $60,000 treats the entire required ending balance as the expense, $10,000 compares the ending requirement only with the beginning balance and ignores write-offs and recoveries, and $25,000 is the pre-provision balance rather than the expense.",
+      "explanationJa": "繰入前の引当金残高 = 期首$50,000 − 直接償却$30,000 + 回収$5,000 = $25,000。信用損失費用 = 必要期末残高 − 繰入前残高 = $60,000 − $25,000 = $35,000。$60,000は必要期末残高全額を費用とした誤り、$10,000は期末必要額と期首残高のみを比較して償却・回収を無視した誤り、$25,000は費用ではなく繰入前残高である。",
+      "references": ["ASC 326-20-30-3", "ASC 326-20-35-8"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-142",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "AFS Debt Securities - Rate-Driven Decline Only",
+      "stem": "Pembrook Corp. holds an available-for-sale debt security with an amortized cost of $800,000 and a fair value of $730,000. Pembrook does not intend to sell the security and is not more likely than not required to sell it. A discounted cash flow analysis shows the present value of cash flows expected to be collected equals $800,000, because the decline in fair value is attributable entirely to rising market interest rates. How should Pembrook account for the $70,000 decline?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize credit loss expense of $70,000 in earnings"
+        },
+        {
+          "label": "B",
+          "text": "Recognize no allowance for credit losses; report the $70,000 unrealized loss in other comprehensive income"
+        },
+        {
+          "label": "C",
+          "text": "Recognize credit loss expense of $35,000 and an unrealized loss of $35,000 in other comprehensive income"
+        },
+        {
+          "label": "D",
+          "text": "Write the security down to $730,000 through earnings as the new cost basis"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 326-30, a credit loss exists on an AFS debt security only when the present value of cash flows expected to be collected is less than the amortized cost basis. Here the present value of expected cash flows equals the $800,000 amortized cost, so no credit loss exists and no allowance is recorded. The entire $70,000 decline is attributable to noncredit factors (interest rates) and is reported as an unrealized loss in other comprehensive income. Recognizing the decline in earnings, splitting it evenly, or writing the cost basis down to fair value would each improperly treat a rate-driven decline as a credit loss; a basis write-down is required only when the entity intends to sell or is more likely than not required to sell.",
+      "explanationJa": "ASC 326-30の下で、AFS負債証券に信用損失が存在するのは、回収が見込まれるキャッシュフローの現在価値が償却原価を下回る場合のみである。本問では期待キャッシュフローの現在価値が償却原価$800,000と等しいため信用損失は存在せず、引当金は計上しない。$70,000の下落全額は非信用要因（市場金利の上昇）によるものであり、その他の包括利益（OCI）に未実現損失として計上する。下落額を損益に計上する、半分ずつに分割する、公正価値まで簿価を切り下げるといった処理は、金利要因の下落を信用損失として扱う誤りである。簿価の切下げが必要となるのは、売却意図がある場合または売却が要求される可能性が50%超の場合のみである。",
+      "references": ["ASC 326-30-35-1"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-143",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Collateral-Dependent - Foreclosure Probable",
+      "stem": "Stratton Bank holds a $750,000 commercial mortgage loan. The borrower has defaulted, and Stratton has determined that foreclosure on the underlying real estate is probable. How should Stratton measure expected credit losses on the loan under ASC 326-20?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Continue to apply a discounted cash flow method based on the loan's contractual cash flows"
+        },
+        {
+          "label": "B",
+          "text": "Apply the collateral-based measurement only if Stratton elects the collateral-dependent practical expedient"
+        },
+        {
+          "label": "C",
+          "text": "Measure the loan at the lower of amortized cost or the loan's observable market price"
+        },
+        {
+          "label": "D",
+          "text": "Measure expected credit losses based on the fair value of the collateral; this measurement is required, not elective, when foreclosure is probable"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 326-20-35-4 requires—not merely permits—an entity to measure expected credit losses based on the fair value of the collateral when the entity determines that foreclosure is probable. The elective collateral-dependent practical expedient applies in a different situation: when the borrower is experiencing financial difficulty and repayment is expected substantially through the collateral, but foreclosure is not yet probable. Continuing a contractual cash flow DCF approach ignores the foreclosure determination, and a lower-of-cost-or-market-price measurement is not the model prescribed by ASC 326 for loans.",
+      "explanationJa": "ASC 326-20-35-4は、担保物件の差押え（foreclosure）の可能性が高い（probable）と判断した場合、担保の公正価値に基づいて期待信用損失を測定することを「要求」している（任意選択ではない）。任意で選択できる担保依存型の実務的便法が適用されるのは、借手が財政的困難に陥っており返済が実質的に担保によると見込まれるが、差押えがまだprobableではない場合という別の状況である。契約キャッシュフローに基づくDCF法の継続は差押えの判断を無視しており、「償却原価と市場価格のいずれか低い方」による測定はASC 326が貸付金に定めるモデルではない。",
+      "references": ["ASC 326-20-35-4", "ASC 326-20-35-5"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-144",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Risk of Loss Even When Remote",
+      "stem": "Kendrick Bank's internal analysis of a commercial loan pool concludes that the most likely outcome is full collection of all contractual cash flows. Management proposes recording a zero allowance because no loss is expected in the most likely scenario. Under ASC 326-20, which statement is most accurate?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The estimate of expected credit losses must reflect the risk of loss even when that risk is remote, so a nonzero allowance is generally required"
+        },
+        {
+          "label": "B",
+          "text": "A zero allowance is appropriate whenever the most likely outcome is full collection"
+        },
+        {
+          "label": "C",
+          "text": "A zero allowance is appropriate as long as the loans are fully secured"
+        },
+        {
+          "label": "D",
+          "text": "The bank may record a zero allowance if its historical loss rate over the past year is zero"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ASC 326-20 requires the estimate of expected credit losses to reflect the risk of loss, even when that risk is remote. An entity may not default to its single most likely outcome; the estimate must consider the possibility that some loss will occur. A zero expectation of credit loss is acceptable only in narrow circumstances, such as certain U.S. Treasury securities where historical experience, current conditions, and forecasts support an expectation of no loss. Full collateralization reduces but does not automatically eliminate expected losses (collateral values can decline), and a single year of zero historical losses does not by itself support a zero lifetime estimate.",
+      "explanationJa": "ASC 326-20は、損失リスクが僅少（remote）であっても、期待信用損失の見積りにそのリスクを反映することを要求している。最も可能性の高い単一シナリオのみに依拠することは認められず、何らかの損失が発生する可能性を考慮しなければならない。期待信用損失をゼロとできるのは、過去の実績・現在の状況・予測がゼロ損失の期待を裏付ける米国財務省証券のような限定的な場合のみである。担保による完全な保全は期待損失を減少させるが自動的にゼロにするものではなく（担保価値は下落しうる）、直近1年間の実績損失がゼロであることだけでは全期間の見積りをゼロとする根拠にならない。",
+      "references": ["ASC 326-20-30-10"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-145",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "PCD Assets - Subsequent Changes in Expected Losses",
+      "stem": "One year after acquiring a purchased credit-deteriorated (PCD) loan portfolio and recording the day-one allowance through the gross-up approach, Hargrove Bank's updated analysis indicates that expected credit losses on the portfolio have increased by $75,000. How should Hargrove account for this change under ASC 326-20?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Adjust the loans' effective yield prospectively over the remaining life of the portfolio"
+        },
+        {
+          "label": "B",
+          "text": "Reduce the remaining non-credit discount on the portfolio by $75,000"
+        },
+        {
+          "label": "C",
+          "text": "Recognize $75,000 of credit loss expense in current earnings and increase the allowance for credit losses"
+        },
+        {
+          "label": "D",
+          "text": "Adjust goodwill recorded in the acquisition by $75,000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "After initial recognition, PCD assets follow the same allowance model as other financial assets measured at amortized cost: changes in expected credit losses—favorable or unfavorable—are recognized immediately in earnings through credit loss expense and the allowance. The prospective yield adjustment approach belonged to the superseded ASC 310-30 model for purchased credit-impaired assets. The non-credit discount continues to accrete to interest income and is not adjusted for changes in credit expectations, and goodwill is not adjusted for post-acquisition changes in credit loss estimates.",
+      "explanationJa": "当初認識後のPCD資産は、償却原価で測定される他の金融資産と同じ引当金モデルに従う。期待信用損失の変動は、有利・不利を問わず、信用損失費用と引当金を通じて直ちに損益に認識する。将来に向かって実効利回りを調整する方法は、廃止されたASC 310-30（購入信用減損資産）のモデルである。非信用ディスカウントは引き続き利息収益として償却（アクリーション）され、信用見積りの変動によって調整されることはなく、のれんも取得後の信用損失見積りの変動で調整されない。",
+      "references": ["ASC 326-20-35-1", "ASC 326-20-30-13"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-146",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Financial Guarantees - Dual Liability Recognition",
+      "stem": "Whitfield Corp. issues a financial guarantee of a customer's bank loan. The guarantee is not accounted for as insurance and is not measured at fair value through earnings. Under ASC 460 and ASC 326, how should Whitfield account for the guarantee?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recognize only the fair value of the guarantee as a liability at inception; no credit loss accounting applies"
+        },
+        {
+          "label": "B",
+          "text": "Recognize a liability only when payment under the guarantee becomes probable and estimable"
+        },
+        {
+          "label": "C",
+          "text": "Recognize the noncontingent guarantee obligation at fair value under ASC 460 and, in addition, recognize a liability for expected credit losses on the contingent exposure under ASC 326"
+        },
+        {
+          "label": "D",
+          "text": "Recognize the guarantee as a contra-asset against the related receivable from the customer"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A financial guarantee within the scope of ASC 326-20 (one not accounted for as insurance or at fair value through net income) gives rise to two distinct obligations. First, ASC 460 requires the guarantor to recognize the noncontingent obligation to stand ready to perform at fair value at inception. Second, ASC 326-20 treats the guarantee as an off-balance-sheet credit exposure and requires a separate liability for expected credit losses on the contingent obligation to make payments. Recognizing only the inception fair value omits the CECL liability, waiting until payment is probable reflects the superseded incurred loss approach, and a guarantee of another party's loan is a liability of the guarantor, not a contra-asset.",
+      "explanationJa": "ASC 326-20の適用範囲に含まれる金融保証（保険として処理されず、公正価値（FVTNI）でも測定されないもの）からは2つの別個の義務が生じる。第一に、ASC 460により、保証人は履行に備える非偶発的義務を契約開始時に公正価値で負債計上する。第二に、ASC 326-20は保証をオフバランスの信用エクスポージャーとして扱い、支払を行う偶発的義務に係る期待信用損失について別個の負債の認識を要求する。開始時の公正価値のみの認識はCECLに基づく負債を欠落させ、支払がprobableになるまで待つのは廃止された発生損失アプローチであり、他者の借入に対する保証は保証人の負債であって控除資産（contra-asset）ではない。",
+      "references": ["ASC 460-10-25-2", "ASC 326-20-30-11"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-147",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Credit Enhancements - Freestanding vs Embedded",
+      "stem": "Aldridge Bank holds a commercial loan portfolio. Some loans carry guarantees that were obtained as part of, and travel with, the loan agreements. Separately, Aldridge purchased a freestanding credit insurance policy from a third party covering losses on the portfolio. In estimating expected credit losses under ASC 326-20, how should these credit enhancements be treated?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Both the embedded guarantees and the freestanding insurance policy reduce the estimate of expected credit losses"
+        },
+        {
+          "label": "B",
+          "text": "The embedded guarantees reduce the estimate of expected credit losses, but the freestanding insurance policy may not be considered"
+        },
+        {
+          "label": "C",
+          "text": "Neither type of credit enhancement may be considered in the estimate"
+        },
+        {
+          "label": "D",
+          "text": "Only the freestanding insurance policy reduces the estimate, because it was purchased specifically to cover losses"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 326-20-30-12 states that the estimate of expected credit losses should reflect how credit enhancements (other than those that are freestanding contracts) mitigate expected losses. Guarantees embedded in or transferred with the loan agreements are part of the asset's contractual terms and reduce the loss estimate. A freestanding contract, such as separately purchased credit insurance, is a separate unit of account and may not be netted against the expected credit losses of the loans; any recovery under it is accounted for separately. Treating both enhancements alike in either direction, or excluding both, fails to draw the freestanding-versus-embedded distinction.",
+      "explanationJa": "ASC 326-20-30-12は、期待信用損失の見積りに信用補完の損失軽減効果を反映すべきとする一方、独立契約（freestanding contract）である信用補完を除外している。貸付契約に組み込まれ契約と一体で移転する保証は資産の契約条件の一部であり、損失見積りを減額する。これに対し、別途購入した信用保険のような独立契約は別個の会計単位であり、貸付金の期待信用損失と相殺できない（保険による回収は別個に会計処理する）。両方を同様に扱う、あるいは両方を除外する処理は、独立契約か組込みかの区別を欠いたものである。",
+      "references": ["ASC 326-20-30-12"],
+      "difficulty": "intermediate",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-148",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Transition - PCD Gross-Up Excluded from Retained Earnings",
+      "stem": "On January 1, Calder Bank adopts ASC 326 using the modified retrospective approach. Its allowance under the incurred loss model was $200,000. The day-one CECL allowance for its existing (non-PCD) portfolio is $260,000. In addition, Calder records a $40,000 allowance gross-up on loans previously accounted for as purchased credit-impaired that transition to PCD treatment. Ignoring income taxes, what is the cumulative-effect adjustment to beginning retained earnings?",
+      "choices": [
+        { "label": "A", "text": "$100,000 decrease" },
+        { "label": "B", "text": "$60,000 decrease" },
+        { "label": "C", "text": "$40,000 decrease" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "For non-PCD assets, the difference between the CECL day-one allowance and the incurred loss allowance is recorded as a cumulative-effect adjustment to beginning retained earnings: $260,000 − $200,000 = $60,000 decrease. The PCD transition is different: the $40,000 allowance is established through a prospective gross-up that increases the amortized cost basis of the PCD assets by the same amount, so it has no effect on retained earnings. A $100,000 decrease incorrectly runs the PCD gross-up through retained earnings, $40,000 reflects only the PCD amount, and $0 ignores the required adjustment for the non-PCD portfolio.",
+      "explanationJa": "非PCD資産については、CECL適用初日の引当金と発生損失モデルの引当金の差額を期首利益剰余金の累積的影響額として調整する: $260,000 − $200,000 = $60,000の減少。PCDの移行措置は異なり、$40,000の引当金は同額だけPCD資産の償却原価を増加させるグロスアップ法（将来に向かって適用）で設定されるため、利益剰余金には影響しない。$100,000の減少はPCDのグロスアップを誤って利益剰余金に通した値、$40,000はPCD分のみを反映した値、$0は非PCDポートフォリオに必要な調整を無視した値である。",
+      "references": ["ASC 326-10-65-1"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-149",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Negative Allowance - Expected Recoveries Limit",
+      "stem": "Renfield Bank previously wrote off $300,000 of a loan's amortized cost basis against the allowance. Based on improved collateral values, the bank now expects to recover amounts on the written-off balance. Under ASC 326-20, which statement best describes how these expected recoveries affect the allowance for credit losses?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Expected recoveries may not be considered until cash is actually received"
+        },
+        {
+          "label": "B",
+          "text": "Expected recoveries may reduce the allowance without limit, including amounts in excess of prior write-offs"
+        },
+        {
+          "label": "C",
+          "text": "Expected recoveries must be recognized as a separate receivable asset rather than through the allowance"
+        },
+        {
+          "label": "D",
+          "text": "Expected recoveries are included in the allowance estimate and may result in a negative allowance, but only up to the amounts previously written off"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 326-20 requires the allowance estimate to include expected recoveries of amounts previously written off (and expected to be written off). This can produce a negative allowance—an addition to the asset's net carrying amount—but the negative allowance is limited to the aggregate amounts previously written off and expected to be written off; it cannot exceed those amounts. Waiting until cash is received understates expected recoveries contrary to the expected-loss framework, an unlimited reduction would let the carrying amount exceed amounts supportable by the write-off history, and recoveries flow through the allowance rather than being set up as a separate receivable.",
+      "explanationJa": "ASC 326-20は、過去に償却した（および償却が見込まれる）金額の期待回収額を引当金の見積りに含めることを要求している。この結果、引当金がマイナス（資産の正味帳簿価額への加算）になることがあるが、マイナス引当金は過去に償却済みおよび償却見込みの累計額が上限であり、それを超えることはできない。現金受領まで考慮しないのは期待損失の枠組みに反して回収見込みを過小評価することになり、無制限の引当金減額は償却実績で裏付けられる額を超えて帳簿価額を増加させてしまい、また回収見込みは別個の債権として計上するのではなく引当金を通じて反映する。",
+      "references": ["ASC 326-20-30-1", "ASC 326-20-35-8A"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-150",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Demand Loans - Contractual Term",
+      "stem": "Brockton Bank holds a loan that is repayable on demand. In estimating expected credit losses under ASC 326-20, over what period should Brockton measure expected credit losses on the demand loan?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The period over which the bank could contractually demand repayment, which for a demand loan is essentially immediate"
+        },
+        {
+          "label": "B",
+          "text": "The period over which the bank expects the borrower to actually repay, based on historical repayment behavior"
+        },
+        {
+          "label": "C",
+          "text": "A standard five-year horizon prescribed for loans without a stated maturity"
+        },
+        {
+          "label": "D",
+          "text": "The weighted-average life of the bank's overall loan portfolio"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Expected credit losses are measured over the contractual term of the financial asset. For a loan repayable on demand, the contractual term is the period until the lender could require repayment—essentially immediate—so the measurement horizon is very short regardless of how long the lender expects the loan to remain outstanding. Using expected (behavioral) repayment patterns to extend the horizon beyond the contractual term is not permitted, no standard five-year horizon exists in ASC 326, and the portfolio's weighted-average life is irrelevant to an individual asset's contractual term.",
+      "explanationJa": "期待信用損失は金融資産の契約期間にわたって測定する。要求払い（repayable on demand）の貸付金の契約期間は、貸手が返済を要求できるまでの期間、すなわち実質的に即時であるため、貸手が実際にどれだけ長く貸付を継続すると見込んでいても測定対象期間は極めて短い。実際の返済行動に基づく期間で契約期間を超えて測定することは認められず、ASC 326に「満期の定めのない貸付金は5年」といった標準期間は存在せず、ポートフォリオ全体の加重平均残存期間も個別資産の契約期間とは無関係である。",
+      "references": ["ASC 326-20-30-6"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-151",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "PD/LGD with Embedded Government Guarantee",
+      "stem": "Telford Bank holds a $3,000,000 loan, 75% of which is guaranteed by a federal agency under a guarantee that is embedded in the loan and transfers with it (it is not a freestanding contract). Telford estimates an 8% probability of default and a 50% loss given default on the unguaranteed exposure. Using a PD/LGD approach, what is the expected credit loss on the loan?",
+      "choices": [
+        { "label": "A", "text": "$120,000" },
+        { "label": "B", "text": "$90,000" },
+        { "label": "C", "text": "$30,000" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Because the guarantee is embedded in the loan rather than freestanding, it is considered in measuring expected credit losses. The exposure at risk is the unguaranteed portion: $3,000,000 × 25% = $750,000. Expected credit loss = $750,000 × 8% PD × 50% LGD = $30,000. The $120,000 amount applies PD and LGD to the full $3,000,000 and ignores the guarantee, $90,000 applies the loss calculation to the guaranteed 75% portion instead of the unguaranteed portion, and $60,000 omits the 50% loss given default ($750,000 × 8%).",
+      "explanationJa": "保証は独立契約ではなく貸付金に組み込まれているため、期待信用損失の測定で考慮できる。リスクにさらされるエクスポージャーは非保証部分: $3,000,000 × 25% = $750,000。期待信用損失 = $750,000 × デフォルト確率8% × デフォルト時損失率50% = $30,000。$120,000は保証を無視して$3,000,000全額にPD・LGDを適用した値、$90,000は非保証部分ではなく保証されている75%部分に損失計算を適用した値、$60,000はデフォルト時損失率50%の適用を漏らした値（$750,000 × 8%）である。",
+      "references": ["ASC 326-20-30-12"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
+    },
+    {
+      "id": "cecl-152",
+      "topic": "Credit Loss (CECL)",
+      "subtopic": "Probability-Weighted DCF Scenarios",
+      "stem": "Norwood Bank holds a loan with an amortized cost basis of $600,000 and an effective interest rate of 6%. Using a probability-weighted discounted cash flow approach, the bank identifies two scenarios: a 70% probability that all contractual cash flows are collected (present value $600,000), and a 30% probability of default in which the bank collects a single payment of $424,000 one year from now. What allowance for credit losses should Norwood record?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$52,800" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "In the default scenario, the present value of the expected payment at the 6% effective rate is $424,000 ÷ 1.06 = $400,000, producing a shortfall of $600,000 − $400,000 = $200,000. The probability-weighted expected credit loss is ($0 × 70%) + ($200,000 × 30%) = $60,000. An allowance of $0 incorrectly uses only the most likely scenario, $200,000 uses the default-scenario loss without probability weighting, and $52,800 weights an undiscounted shortfall (($600,000 − $424,000) × 30%) instead of discounting the expected cash flow at the effective interest rate.",
+      "explanationJa": "デフォルトシナリオでは、実効金利6%で割り引いた期待回収額の現在価値は $424,000 ÷ 1.06 = $400,000 であり、不足額は $600,000 − $400,000 = $200,000。確率加重後の期待信用損失は ($0 × 70%) + ($200,000 × 30%) = $60,000。$0は最も可能性の高いシナリオのみを用いた誤り、$200,000は確率加重をせずにデフォルトシナリオの損失をそのまま用いた誤り、$52,800は実効金利で割り引かずに名目額の不足 (($600,000 − $424,000) × 30%) を加重した誤りである。",
+      "references": ["ASC 326-20-30-4", "ASC 326-20-30-7"],
+      "difficulty": "advanced",
+      "source": "AICPA released question style"
     }
   ]
 }
