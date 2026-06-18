@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo, useRef } from "react"
+import { useState, useMemo, useRef, forwardRef, useImperativeHandle } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -18,13 +18,18 @@ function replaceExplanationLabels(text: string, labelMap: Record<string, string>
     .replace(/\b([A-D]) is correct\b/g, (_, l: string) => `${labelMap[l] ?? l} is correct`)
 }
 
+export interface QuestionCardRef {
+  selectChoice: (label: string) => void
+  submitAnswer: () => void
+}
+
 interface QuestionCardProps {
   question: FARQuestion
   questionNumber: number
   totalQuestions: number
 }
 
-export function QuestionCard({ question, questionNumber, totalQuestions }: QuestionCardProps) {
+export const QuestionCard = forwardRef<QuestionCardRef, QuestionCardProps>(function QuestionCard({ question, questionNumber, totalQuestions }, ref) {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [isAnswered, setIsAnswered] = useState(false)
   const [showExplanation, setShowExplanation] = useState(false)
@@ -74,8 +79,21 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
   const pastCorrectCount = pastValidAttempts.filter((a) => a.isCorrect === true).length
   const pastAccuracy = pastValidAttempts.length > 0 ? Math.round((pastCorrectCount / pastValidAttempts.length) * 100) : null
 
+  useImperativeHandle(ref, () => ({
+    selectChoice: (label: string) => {
+      if (!isAnswered) {
+        setSelectedAnswer(label)
+      }
+    },
+    submitAnswer: () => {
+      if (!isAnswered && selectedAnswer) {
+        handleSubmit()
+      }
+    },
+  }))
+
   const handleSubmit = () => {
-    if (!selectedAnswer) return
+    if (!selectedAnswer || isAnswered) return
     const isCorrect = selectedAnswer === shuffledCorrectAnswer
     setIsAnswered(true)
     setShowExplanation(true)
@@ -304,4 +322,4 @@ export function QuestionCard({ question, questionNumber, totalQuestions }: Quest
       </CardContent>
     </Card>
   )
-}
+})

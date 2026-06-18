@@ -1,40 +1,53 @@
-import { create } from "zustand"
-import { persist } from "zustand/middleware"
-import type { Subject, TimerMode, TimerStatus } from "@/types"
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import type { Subject, TimerMode, TimerStatus } from "@/types";
 
 interface TimerState {
   // 設定
-  subject: Subject
-  subtopic: string | null
-  mode: TimerMode
-  pomodoroMinutes: number
-  breakMinutes: number
+  subject: Subject;
+  subtopic: string | null;
+  mode: TimerMode;
+  pomodoroMinutes: number;
+  breakMinutes: number;
 
   // 記録用フィールド（タイマー画面で入力）
-  totalQuestions: string
-  correctAnswers: string
-  memo: string
+  totalQuestions: string;
+  correctAnswers: string;
+  memo: string;
+  fromQuestionBank: boolean;
 
   // 状態
-  status: TimerStatus
-  startTime: number | null
-  elapsedSeconds: number
-  isBreak: boolean
+  status: TimerStatus;
+  startTime: number | null;
+  elapsedSeconds: number;
+  isBreak: boolean;
 
   // アクション
-  setSubject: (subject: Subject) => void
-  setSubtopic: (subtopic: string | null) => void
-  setMode: (mode: TimerMode) => void
-  setTotalQuestions: (value: string) => void
-  setCorrectAnswers: (value: string) => void
-  setMemo: (value: string) => void
-  start: () => void
-  pause: () => void
-  stop: () => { subject: Subject; subtopic: string | null; durationSeconds: number; startTime: number; endTime: number; totalQuestions: string; correctAnswers: string; memo: string } | null
-  resetRecordFields: () => void
-  reset: () => void
-  tick: () => void
-  syncElapsed: () => void
+  setSubject: (subject: Subject) => void;
+  setSubtopic: (subtopic: string | null) => void;
+  setMode: (mode: TimerMode) => void;
+  setTotalQuestions: (value: string) => void;
+  setCorrectAnswers: (value: string) => void;
+  setMemo: (value: string) => void;
+  setFromQuestionBank: (value: boolean) => void;
+  setQuestionBankContext: (subtopic: string | null) => void;
+  start: () => void;
+  pause: () => void;
+  stop: () => {
+    subject: Subject;
+    subtopic: string | null;
+    durationSeconds: number;
+    startTime: number;
+    endTime: number;
+    totalQuestions: string;
+    correctAnswers: string;
+    memo: string;
+    fromQuestionBank: boolean;
+  } | null;
+  resetRecordFields: () => void;
+  reset: () => void;
+  tick: () => void;
+  syncElapsed: () => void;
 }
 
 export const useTimerStore = create<TimerState>()(
@@ -51,6 +64,7 @@ export const useTimerStore = create<TimerState>()(
       totalQuestions: "",
       correctAnswers: "",
       memo: "",
+      fromQuestionBank: false,
 
       // 初期状態
       status: "idle",
@@ -59,67 +73,88 @@ export const useTimerStore = create<TimerState>()(
       isBreak: false,
 
       setSubject: (subject) => {
-        const { status } = get()
+        const { status } = get();
         if (status === "idle") {
-          set({ subject, subtopic: null }) // 科目変更時にサブテーマをリセット
+          set({ subject, subtopic: null }); // 科目変更時にサブテーマをリセット
         }
       },
 
       setSubtopic: (subtopic) => {
-        const { status } = get()
+        const { status } = get();
         if (status === "idle") {
-          set({ subtopic })
+          set({ subtopic });
         }
       },
 
       setMode: (mode) => {
-        const { status } = get()
+        const { status } = get();
         if (status === "idle") {
-          set({ mode, elapsedSeconds: 0, isBreak: false })
+          set({ mode, elapsedSeconds: 0, isBreak: false });
         }
       },
 
       setTotalQuestions: (value) => set({ totalQuestions: value }),
       setCorrectAnswers: (value) => set({ correctAnswers: value }),
       setMemo: (value) => set({ memo: value }),
+      setFromQuestionBank: (value) => set({ fromQuestionBank: value }),
 
-      resetRecordFields: () => set({ totalQuestions: "", correctAnswers: "", memo: "" }),
+      // タイマー稼働中でもサブトピックを変更可能（問題バンクからの設定用）
+      setQuestionBankContext: (subtopic) => {
+        set({ subtopic, fromQuestionBank: true });
+      },
+
+      resetRecordFields: () =>
+        set({
+          totalQuestions: "",
+          correctAnswers: "",
+          memo: "",
+          fromQuestionBank: false,
+        }),
 
       start: () => {
-        const { status, startTime, elapsedSeconds } = get()
-        if (status === "running") return
+        const { status, startTime, elapsedSeconds } = get();
+        if (status === "running") return;
 
-        const now = Date.now()
+        const now = Date.now();
         // pauseから再開の場合は、経過時間を考慮してstartTimeを調整
-        const newStartTime = startTime
-          ? now - elapsedSeconds * 1000
-          : now
+        const newStartTime = startTime ? now - elapsedSeconds * 1000 : now;
 
         set({
           status: "running",
           startTime: newStartTime,
-        })
+        });
       },
 
       pause: () => {
-        const { status, startTime } = get()
-        if (status !== "running" || !startTime) return
+        const { status, startTime } = get();
+        if (status !== "running" || !startTime) return;
 
-        const elapsed = Math.floor((Date.now() - startTime) / 1000)
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
         set({
           status: "paused",
           elapsedSeconds: elapsed,
-        })
+        });
       },
 
       stop: () => {
-        const { status, startTime, subject, subtopic, elapsedSeconds, totalQuestions, correctAnswers, memo } = get()
-        if (status === "idle" || !startTime) return null
+        const {
+          status,
+          startTime,
+          subject,
+          subtopic,
+          elapsedSeconds,
+          totalQuestions,
+          correctAnswers,
+          memo,
+          fromQuestionBank,
+        } = get();
+        if (status === "idle" || !startTime) return null;
 
-        const endTime = Date.now()
-        const finalElapsed = status === "running"
-          ? Math.floor((endTime - startTime) / 1000)
-          : elapsedSeconds
+        const endTime = Date.now();
+        const finalElapsed =
+          status === "running"
+            ? Math.floor((endTime - startTime) / 1000)
+            : elapsedSeconds;
 
         // 状態をリセット（記録フィールドは保持）
         set({
@@ -127,10 +162,10 @@ export const useTimerStore = create<TimerState>()(
           startTime: null,
           elapsedSeconds: 0,
           isBreak: false,
-        })
+        });
 
         // 1分未満は記録しない
-        if (finalElapsed < 60) return null
+        if (finalElapsed < 60) return null;
 
         return {
           subject,
@@ -141,7 +176,8 @@ export const useTimerStore = create<TimerState>()(
           totalQuestions,
           correctAnswers,
           memo,
-        }
+          fromQuestionBank,
+        };
       },
 
       reset: () => {
@@ -150,19 +186,26 @@ export const useTimerStore = create<TimerState>()(
           startTime: null,
           elapsedSeconds: 0,
           isBreak: false,
-        })
+        });
       },
 
       tick: () => {
-        const { status, startTime, mode, pomodoroMinutes, breakMinutes, isBreak } = get()
-        if (status !== "running" || !startTime) return
+        const {
+          status,
+          startTime,
+          mode,
+          pomodoroMinutes,
+          breakMinutes,
+          isBreak,
+        } = get();
+        if (status !== "running" || !startTime) return;
 
-        const elapsed = Math.floor((Date.now() - startTime) / 1000)
-        set({ elapsedSeconds: elapsed })
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        set({ elapsedSeconds: elapsed });
 
         // ポモドーロモードの完了チェック
         if (mode === "pomodoro") {
-          const limit = isBreak ? breakMinutes * 60 : pomodoroMinutes * 60
+          const limit = isBreak ? breakMinutes * 60 : pomodoroMinutes * 60;
           if (elapsed >= limit) {
             if (!isBreak) {
               // 作業完了 → 休憩開始
@@ -170,7 +213,7 @@ export const useTimerStore = create<TimerState>()(
                 isBreak: true,
                 startTime: Date.now(),
                 elapsedSeconds: 0,
-              })
+              });
             } else {
               // 休憩完了 → 停止
               set({
@@ -178,7 +221,7 @@ export const useTimerStore = create<TimerState>()(
                 startTime: null,
                 elapsedSeconds: 0,
                 isBreak: false,
-              })
+              });
             }
           }
         }
@@ -186,10 +229,10 @@ export const useTimerStore = create<TimerState>()(
 
       // ブラウザ復帰時に経過時間を同期
       syncElapsed: () => {
-        const { status, startTime } = get()
+        const { status, startTime } = get();
         if (status === "running" && startTime) {
-          const elapsed = Math.floor((Date.now() - startTime) / 1000)
-          set({ elapsedSeconds: elapsed })
+          const elapsed = Math.floor((Date.now() - startTime) / 1000);
+          set({ elapsedSeconds: elapsed });
         }
       },
     }),
@@ -206,11 +249,12 @@ export const useTimerStore = create<TimerState>()(
         totalQuestions: state.totalQuestions,
         correctAnswers: state.correctAnswers,
         memo: state.memo,
+        fromQuestionBank: state.fromQuestionBank,
       }),
       merge: (persisted, current) => ({
         ...current,
         ...(persisted as object),
       }),
-    }
-  )
-)
+    },
+  ),
+);

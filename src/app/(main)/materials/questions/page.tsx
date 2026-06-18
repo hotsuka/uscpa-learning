@@ -13,9 +13,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { QuestionCard } from "@/components/materials/QuestionCard"
+import { QuestionCard, type QuestionCardRef } from "@/components/materials/QuestionCard"
 import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
 import { useTimer } from "@/hooks/useTimer"
+import { useTimerStore } from "@/stores/timerStore"
 import { farQuestionSets, getTotalQuestionCount } from "@/data/questions/far"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { useRecordStore } from "@/stores/recordStore"
@@ -46,6 +47,7 @@ export default function QuestionsPage() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const miniTimerRef = useRef<MiniTimerRef>(null)
+  const questionCardRef = useRef<QuestionCardRef>(null)
   const { isRunning, start, pause } = useTimer()
 
   const attempts = useQuestionBankStore((s) => s.attempts)
@@ -164,6 +166,16 @@ export default function QuestionsPage() {
     return questions
   }, [selectedTopic, difficulty, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
 
+  // 問題バンクのトピックをタイマーのサブトピックに反映
+  useEffect(() => {
+    if (selectedTopic !== "all") {
+      const set = farQuestionSets.find((s) => s.topic === selectedTopic)
+      if (set) {
+        useTimerStore.getState().setQuestionBankContext(set.name)
+      }
+    }
+  }, [selectedTopic])
+
   // キーボードショートカット
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -174,6 +186,21 @@ export default function QuestionsPage() {
         activeElement?.getAttribute("contenteditable") === "true"
 
       if (isInputFocused) return
+
+      // 1-4: 選択肢 A-D を選択
+      if (e.key >= "1" && e.key <= "4") {
+        e.preventDefault()
+        const labels = ["A", "B", "C", "D"]
+        questionCardRef.current?.selectChoice(labels[parseInt(e.key) - 1])
+        return
+      }
+
+      // Enter: 回答を確定
+      if (e.key === "Enter") {
+        e.preventDefault()
+        questionCardRef.current?.submitAnswer()
+        return
+      }
 
       // Space: タイマー開始/停止
       if (e.key === " " && e.code === "Space") {
@@ -232,10 +259,16 @@ export default function QuestionsPage() {
   const goNext = () => setCurrentIndex((i) => Math.min(i + 1, filteredQuestions.length - 1))
   const goPrev = () => setCurrentIndex((i) => Math.max(i - 1, 0))
 
-  // トピック変更時にインデックスリセット
+  // トピック変更時にインデックスリセット＋タイマーコンテキスト更新
   const handleTopicChange = (value: string) => {
     setSelectedTopic(value)
     setCurrentIndex(0)
+    if (value !== "all") {
+      const set = farQuestionSets.find((s) => s.topic === value)
+      if (set) {
+        useTimerStore.getState().setQuestionBankContext(set.name)
+      }
+    }
   }
 
   const handleDifficultyChange = (value: string) => {
@@ -421,6 +454,7 @@ export default function QuestionsPage() {
         {filteredQuestions.length > 0 && currentQuestion ? (
           <>
             <QuestionCard
+              ref={questionCardRef}
               key={currentQuestion.id}
               question={currentQuestion}
               questionNumber={currentIndex + 1}

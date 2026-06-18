@@ -31,6 +31,7 @@ interface PendingSession {
   totalQuestions: string;
   correctAnswers: string;
   memo: string;
+  fromQuestionBank: boolean;
 }
 
 export default function TimerPage() {
@@ -95,6 +96,7 @@ export default function TimerPage() {
         totalQuestions: session.totalQuestions,
         correctAnswers: session.correctAnswers,
         memo: session.memo,
+        fromQuestionBank: session.fromQuestionBank,
       });
       setShowRecordDialog(true);
     }
@@ -317,6 +319,7 @@ export default function TimerPage() {
           initialTotalQuestions={pendingSession.totalQuestions}
           initialCorrectAnswers={pendingSession.correctAnswers}
           initialMemo={pendingSession.memo}
+          initialFromQuestionBank={pendingSession.fromQuestionBank}
           onSave={handleSaveRecord}
           onCancel={handleCancelRecord}
         />

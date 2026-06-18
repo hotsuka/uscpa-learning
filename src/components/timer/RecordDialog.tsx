@@ -29,6 +29,7 @@ interface RecordDialogProps {
   initialTotalQuestions?: string
   initialCorrectAnswers?: string
   initialMemo?: string
+  initialFromQuestionBank?: boolean
   onSave: (data: RecordData) => Promise<void>
   onCancel: () => void
 }
@@ -60,6 +61,7 @@ export function RecordDialog({
   initialTotalQuestions = "",
   initialCorrectAnswers = "",
   initialMemo = "",
+  initialFromQuestionBank = false,
   onSave,
   onCancel,
 }: RecordDialogProps) {
@@ -70,7 +72,7 @@ export function RecordDialog({
   const [chapter, setChapter] = useState<string>("")
   const [pageRange, setPageRange] = useState<string>("")
   const [memo, setMemo] = useState<string>(initialMemo)
-  const [fromQuestionBank, setFromQuestionBank] = useState(false)
+  const [fromQuestionBank, setFromQuestionBank] = useState(initialFromQuestionBank)
   const [isSaving, setIsSaving] = useState(false)
   const [validationError, setValidationError] = useState<string | null>(null)
 
@@ -80,8 +82,9 @@ export function RecordDialog({
       setTotalQuestions(initialTotalQuestions)
       setCorrectAnswers(initialCorrectAnswers)
       setMemo(initialMemo)
+      setFromQuestionBank(initialFromQuestionBank)
     }
-  }, [open, initialTotalQuestions, initialCorrectAnswers, initialMemo])
+  }, [open, initialTotalQuestions, initialCorrectAnswers, initialMemo, initialFromQuestionBank])
 
   const accuracy = totalQuestions && correctAnswers
     ? Math.round((parseInt(correctAnswers) / parseInt(totalQuestions)) * 100)
