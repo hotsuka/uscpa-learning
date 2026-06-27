@@ -2,7 +2,7 @@
   "id": "far-consolidations",
   "name": "Consolidations",
   "topic": "Consolidations",
-  "version": "1.7.0",
+  "version": "1.9.0",
   "questions": [
     {
       "id": "con-001",
@@ -4575,6 +4575,420 @@
       "references": ["ASC 810-10-15-8", "ASC 323-10-15-6"],
       "difficulty": "intermediate",
       "source": "AICPA released question style"
+    },
+    {
+      "id": "con-195",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition Method",
+      "stem": "On January 1, Year 1, Purl purchased all of Scott's common stock for $360,000. On January 1, Year 1, the fair value of Scott's assets and liabilities equaled their carrying amounts of $410,000 and $160,000, respectively. The fair value of Scott's inventory was $10,000 more than its carrying amount on the acquisition date. Purl's policy is to amortize intangible assets over a 10-year period unless a definite life is ascertainable.  During Year 1, Purl and Scott paid cash dividends of $100,000 and $30,000, respectively.  There were no intercompany transactions, except for Purl's receipt of dividends from Scott and Purl's recording of its share of Scott's earnings. Selected information from December 31, Year 1, appears below: Purl Scott Investment in Scott 390,000 --- Equity in earnings of Scott 60,000 --- Net Income 200,000 70,000 In the December 31, Year 1, consolidated financial statements, net income should be:",
+      "choices": [
+        { "label": "A", "text": "$170,000" },
+        { "label": "B", "text": "$190,000" },
+        { "label": "C", "text": "$200,000" },
+        { "label": "D", "text": "$270,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under the acquisition method (ASC 805), consolidated net income eliminates the parent's equity-method income and replaces it with the subsidiary's actual results, adjusted for any fair-value step-up amortization. Purl's standalone income (excluding the equity pickup) is $200,000 − $60,000 = $140,000. Scott's net income is $70,000, but the $10,000 inventory fair-value step-up must be expensed in Year 1 because that inventory was sold during the year, reducing the contribution by $10,000. No goodwill amortization applies under current U.S. GAAP (ASC 350). Consolidated net income = $140,000 + $70,000 − $10,000 = $200,000.",
+      "explanationJa": "ASC 805の取得法では、連結純利益は親会社の持分法収益を消去し、子会社の実績を公正価値調整後で取り込む。PurlのスタンドアロンNI（持分法収益除き）＝$200,000－$60,000＝$140,000。ScottのNI $70,000から、当年度に販売済みの棚卸資産の公正価値超過額$10,000を費用計上として減算。のれんはASC 350により償却不要。連結純利益＝$140,000＋$70,000－$10,000＝$200,000。",
+      "references": ["ASC 805", "ASC 810", "ASC 350"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-196",
+      "topic": "Consolidations",
+      "subtopic": "Elimination Entries",
+      "stem": "On January 1, Year 1, Polk Corp. and Strass Corp. had condensed balance sheets as follows: Polk Current assets $70,000 $20,000 Noncurrent assets 90,000 40,000 Total assets $160,000 $60,000 Current liabilities $30,000 $10,000 Long-term debt 50,000 - Stockholders' equity 80,000 50,000 Total liabilities and stockholders' equity $160,000 $60,000 On January 2, Year 1, Polk borrowed $60,000 and used the proceeds to purchase 90% of the outstanding common shares of Strass. This debt is payable in ten equal annual principal payments, plus interest, beginning December 30, Year 1. The excess cost of the investment over Strass' book value of acquired net assets should be allocated 60% to inventory and 40% to goodwill. On January 2, Year 1, the fair value of Strass shares held by noncontrolling parties was $10,000. On Polk's January 2, Year 1, consolidated balance sheet, current liabilities should be",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$40,000" },
+        { "label": "C", "text": "$46,000" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Consolidated current liabilities on January 2 equal Polk's current liabilities ($30,000) plus Strass's current liabilities ($10,000) plus the current portion of Polk's new $60,000 debt (10 equal annual payments → $6,000 due December 30, Year 1). The excess cost allocated to inventory increases assets, not liabilities. Total = $30,000 + $10,000 + $6,000 = $46,000.",
+      "explanationJa": "連結流動負債＝Polk流動負債$30,000＋Strass流動負債$10,000＋新規借入$60,000の当期返済分（10等分）$6,000＝$46,000。棚卸資産への配分は資産側の調整であり流動負債に影響しない。",
+      "references": ["ASC 805", "ASC 810"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-197",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition Method",
+      "stem": "Which of the following expenses related to the business acquisition should be included, in total, in the determination of net income of the combined corporation for the period in which the expenses are incurred? Fees of finders and consultants Registration fees for equity securities issued",
+      "choices": [
+        { "label": "A", "text": "Yes Yes" },
+        { "label": "B", "text": "Yes No" },
+        { "label": "C", "text": "No Yes" },
+        { "label": "D", "text": "No No" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805, acquisition-related costs such as finder fees and consultant fees are expensed as incurred and therefore reduce net income in the period. However, costs to register and issue equity securities are not expensed; they are charged directly against the proceeds of the equity issuance (reducing additional paid-in capital) and do not flow through net income. Therefore finder/consultant fees are included in net income (Yes) but registration fees for equity are not (No).",
+      "explanationJa": "ASC 805では、ファインダーフィーおよびコンサルタント費用は発生時に費用計上され純利益に影響する（Yes）。一方、株式発行の登録費用は追加払込資本から直接控除され、純利益を通じない（No）。",
+      "references": ["ASC 805"],
+      "difficulty": "basic",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-198",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition Method",
+      "stem": "Sayon Co. issues 200,000 shares of $5 par value common stock to acquire Trask Co. in a business combination accounted for under the acquisition method. The market value of Sayon's common stock is $12. Legal and consulting fees incurred in relationship to the purchase are $110,000. Registration and issuance costs for the common stock are $35,000. What should be recorded in Sayon's additional paid-in capital account for this business combination?",
+      "choices": [
+        { "label": "A", "text": "$1,545,000" },
+        { "label": "B", "text": "$1,400,000" },
+        { "label": "C", "text": "$1,255,000" },
+        { "label": "D", "text": "$1,365,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The gross additional paid-in capital from issuing 200,000 shares at $12 market with $5 par is ($12 − $5) × 200,000 = $1,400,000. Under ASC 805, equity issuance costs ($35,000) reduce APIC directly, yielding $1,400,000 − $35,000 = $1,365,000. The $110,000 in legal and consulting fees are expensed as acquisition-related costs and do not affect APIC.",
+      "explanationJa": "APIC＝（$12－$5）×200,000株＝$1,400,000。株式発行費用$35,000はAPICから直接控除→$1,365,000。法務・コンサル費用$110,000はASC 805により発生時費用計上でAPICに影響しない。",
+      "references": ["ASC 805"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-199",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition Method",
+      "stem": "How should the acquirer recognize a bargain purchase in a business acquisition?",
+      "choices": [
+        { "label": "A", "text": "As negative goodwill in the statement of financial position." },
+        { "label": "B", "text": "As goodwill in the statement of financial position." },
+        { "label": "C", "text": "As a gain in earnings at the acquisition date." },
+        { "label": "D", "text": "As a deferred gain that is amortized into earnings over the estimated future periods benefited." }
+      ],
+      "correctAnswer": "C",
+      "explanation": "ASC 805-30-25-2 requires that when the fair value of net identifiable assets acquired exceeds the consideration transferred (a bargain purchase), the acquirer must recognize the excess immediately as a gain in earnings on the acquisition date. There is no balance-sheet presentation as negative goodwill under current U.S. GAAP, and deferral or amortization of such a gain is not permitted.",
+      "explanationJa": "ASC 805-30-25-2により、取得した識別可能純資産の公正価値が支払対価を超過する場合（バーゲンパーチェス）、その超過額は取得日に利益として即時認識する。貸借対照表上の負ののれんや繰延利益として処理することは現行U.S. GAAPでは認められない。",
+      "references": ["ASC 805"],
+      "difficulty": "basic",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-200",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Transactions",
+      "stem": "Nolan owns 100% of the capital stock of both Twill Corp. and Webb Corp. Twill purchases merchandise inventory from Webb at 140% of Webb's cost. During Year 1, merchandise that cost Webb $40,000 was sold to Twill. Twill sold all of this merchandise to unrelated customers for $81,200 during Year 1. In preparing combined financial statements for Year 1, Nolan's bookkeeper disregarded the common ownership of Twill and Webb. What amount should be eliminated from cost of goods sold in the combined income statement for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$16,000" },
+        { "label": "B", "text": "$24,000" },
+        { "label": "C", "text": "$40,000" },
+        { "label": "D", "text": "$56,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Webb sold goods to Twill at 140% of Webb's cost: $40,000 × 1.40 = $56,000. This intercompany transfer price of $56,000 is recorded as both Webb's revenue and Twill's cost of goods sold (Twill's COGS for these items = $56,000). Because Twill sold all the goods to outside parties, the intercompany profit is fully realized, but the intercompany COGS entry of $56,000 in Twill's books still duplicates Webb's original $40,000 COGS already included in combined COGS. The entire $56,000 (Twill's COGS from the intercompany purchase) must be eliminated to avoid double-counting; the remaining combined COGS represents only Webb's original cost of $40,000.",
+      "explanationJa": "WebbはTwillへ$40,000×1.4＝$56,000で販売→Twillの売上原価に$56,000計上。結合財務諸表では、この社内取引（Webb→Twill）分の売上原価$56,000を消去し、Webbの原価$40,000のみを残す。消去額＝$56,000。",
+      "references": ["ASC 810"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-201",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Transactions",
+      "stem": "During Year 1, Pard Corp. sold goods to its 80%-owned subsidiary, Seed Corp. At December 31, Year 1, one-half of these goods were included in Seed's ending inventory. Year 1 selling expenses were $1,100,000 and $400,000 for Pard and Seed, respectively. Pard's selling expenses included $50,000 in freight-out costs for goods sold to Seed. Pard did not charge Seed for these costs. What amount of selling expenses should be reported in Pard's Year 1 consolidated income statement?",
+      "choices": [
+        { "label": "A", "text": "$1,450,000" },
+        { "label": "B", "text": "$1,475,000" },
+        { "label": "C", "text": "$1,480,000" },
+        { "label": "D", "text": "$1,500,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Combined selling expenses before eliminations are $1,100,000 + $400,000 = $1,500,000. The $50,000 freight-out that Pard incurred on intercompany sales to Seed was not charged to Seed and therefore represents an intercompany cost that must be eliminated on consolidation. No allocation between sold and unsold portions is needed for freight-out because it is a selling expense incurred by the seller, not an inventory cost. Consolidated selling expenses = $1,500,000 − $50,000 = $1,450,000.",
+      "explanationJa": "合算販売費用＝$1,100,000＋$400,000＝$1,500,000。PardがSeedへの社内販売に要した運賃$50,000はSeedに請求されていない社内費用であるため消去。連結販売費用＝$1,500,000－$50,000＝$1,450,000。",
+      "references": ["ASC 810"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-202",
+      "topic": "Consolidations",
+      "subtopic": "Noncontrolling Interest",
+      "stem": "Thyme, Inc. owns 16,000 of Sage Co.'s 20,000 outstanding common shares. The carrying value of Sage's equity is $500,000. Sage subsequently issues an additional 5,000 previously unissued shares for $200,000 to an outside party that is unrelated to either Thyme or Sage. What is the total noncontrolling interest after the additional shares are issued?",
+      "choices": [
+        { "label": "A", "text": "$140,000" },
+        { "label": "B", "text": "$172,000" },
+        { "label": "C", "text": "$252,000" },
+        { "label": "D", "text": "$300,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "After the new issuance, total shares outstanding are 20,000 + 5,000 = 25,000. The outside investors hold 9,000 shares (4,000 previously held by minority + 5,000 new shares), representing 9,000/25,000 = 36% of Sage. Total equity after the issuance = $500,000 + $200,000 = $700,000. Noncontrolling interest = 36% × $700,000 = $252,000.",
+      "explanationJa": "新株発行後の発行済株式数＝25,000株。Thyme以外の保有＝9,000株（既存4,000＋新規5,000）＝36%。発行後総資本＝$500,000＋$200,000＝$700,000。非支配株主持分＝36%×$700,000＝$252,000。",
+      "references": ["ASC 810"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-203",
+      "topic": "Consolidations",
+      "subtopic": "Noncontrolling Interest",
+      "stem": "Pard acquired its interest in Spin on January 2, Year 1. During Year 1, Pard sold goods to Spin at the same markup on cost that Pard uses for all sales. At December 31, Year 1, Spin had not paid for all of these goods and still held 37.5% of them in inventory. December 31, Year 1 selected information: Pard Spin Accounts receivable $26,000 $19,000 $39,000 Inventory 30,000 25,000 52,000 Noncontrolling interest --- --- 10,000 Stockholders' equity 154,000 50,000 154,000 Revenues $200,000 $140,000 $308,000 Cost of goods sold 150,000 110,000 231,000 Gross profit 50,000 30,000 77,000 Net income 36,000 20,000 40,000 What is the percent of noncontrolling ownership interest in Spin?",
+      "choices": [
+        { "label": "A", "text": "4.9%" },
+        { "label": "B", "text": "6.5%" },
+        { "label": "C", "text": "20.0%" },
+        { "label": "D", "text": "32.5%" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The consolidated column shows noncontrolling interest (NCI) in equity of $10,000, and Spin's total stockholders' equity is $50,000. The NCI percentage is determined by dividing the NCI balance by Spin's total equity: $10,000 ÷ $50,000 = 20%. This is consistent with Pard owning 80% of Spin.",
+      "explanationJa": "連結欄の非支配株主持分＝$10,000、SpinのSE＝$50,000。NCI%＝$10,000÷$50,000＝20%。PardはSpinの80%を保有していることになる。",
+      "references": ["ASC 810"],
+      "difficulty": "basic",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-204",
+      "topic": "Consolidations",
+      "subtopic": "Noncontrolling Interest",
+      "stem": "Parent Co. owns 90% of the 10,000 outstanding shares of Subsidiary Co.'s common stock on December 31, Year 1. On that date, the stockholders' equity of Subsidiary was $150,000, consisting of $100,000 of no-par common stock and $50,000 of retained earnings. On January 2, Year 2, Subsidiary issued 2,000 previously unissued shares for $24,000 to various outside investors. As a consequence of this transaction, Parent's ownership share was reduced to 75%. Which of the following correctly reports this transaction?",
+      "choices": [
+        { "label": "A", "text": "Parent's investment in Subsidiary is reduced by $4,500." },
+        { "label": "B", "text": "Parent's investment in Subsidiary is increased by $3,000." },
+        { "label": "C", "text": "The consolidated income statement reports a loss of $7,500." },
+        { "label": "D", "text": "The consolidated income statement reports a gain of $4,000." }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Before the issuance, Parent holds 9,000 of 10,000 shares (90%), and its share of Subsidiary's equity is 90% × $150,000 = $135,000. After the issuance of 2,000 new shares for $24,000, total equity becomes $174,000 and total shares become 12,000. Parent now holds 9,000 of 12,000 = 75%, so its share is 75% × $174,000 = $130,500. The change in Parent's investment = $130,500 − $135,000 = −$4,500. Under ASC 810, this dilution is recorded in equity (not in income), reducing the investment by $4,500.",
+      "explanationJa": "発行前：Parent持分＝90%×$150,000＝$135,000。発行後：総資本$174,000、Parent持分75%×$174,000＝$130,500。変化額＝$130,500－$135,000＝－$4,500。ASC 810により損益計上でなく資本として処理し、投資額が$4,500減少する。",
+      "references": ["ASC 810"],
+      "difficulty": "advanced",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-205",
+      "topic": "Consolidations",
+      "subtopic": "Elimination Entries",
+      "stem": "On January 1, Year 1, Purl purchased all of Scott's common stock for $360,000. On January 1, Year 1, the fair value of Scott's assets and liabilities equaled their carrying amount of $410,000 and $160,000, respectively. The fair value of Scott's inventory was $10,000 more than its carrying amount on the acquisition date, and it had not been sold by December 31, Year 1. Purl's policy is to amortize intangible assets over a 10-year period unless a definite life is ascertainable. December 31, Year 1, selected information: Purl Scott Inventories $90,000 $50,000 Total current assets 310,000 135,000 Investment in Scott (equity method) 390,000 --- In the December 31, Year 1, consolidated financial statements, total current assets should be:",
+      "choices": [
+        { "label": "A", "text": "$135,000" },
+        { "label": "B", "text": "$310,000" },
+        { "label": "C", "text": "$445,000" },
+        { "label": "D", "text": "$455,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Consolidated current assets combine Purl's current assets ($310,000) and Scott's current assets ($135,000), then add the unrecognized fair-value step-up on Scott's inventory ($10,000) that has not yet been sold. The Investment in Scott ($390,000) is a noncurrent asset eliminated against Scott's equity and does not appear in current assets. Consolidated total current assets = $310,000 + $135,000 + $10,000 = $455,000.",
+      "explanationJa": "連結流動資産＝Purl$310,000＋Scott$135,000＋棚卸資産の公正価値超過額（未売却）$10,000＝$455,000。Scott株式への投資$390,000は非流動資産として消去されるため流動資産に含めない。",
+      "references": ["ASC 805", "ASC 810"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-206",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Transactions",
+      "stem": "Pard acquired its interest in Spin on January 2, Year 1. During Year 1, Pard sold goods to Spin at the same markup on cost that Pard uses for all sales. At December 31, Year 1, Spin had not paid for all of these goods and still held 37.5% of them in inventory. December 31, Year 1 selected information: Pard Spin Accounts receivable $26,000 $19,000 $39,000 Inventory 30,000 25,000 52,000 Minority interest — — 10,000 Stockholders' equity 154,000 50,000 154,000 Revenues $200,000 $140,000 $308,000 Cost of goods sold 150,000 110,000 231,000 Gross profit 50,000 30,000 77,000 Net income 36,000 20,000 40,000 In Pard's consolidated balance sheet, what was the carrying amount of the inventory that Spin purchased from Pard?",
+      "choices": [
+        { "label": "A", "text": "$3,000" },
+        { "label": "B", "text": "$6,000" },
+        { "label": "C", "text": "$9,000" },
+        { "label": "D", "text": "$12,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Intercompany sales from Pard to Spin are determined by comparing combined revenues ($200,000 + $140,000 = $340,000) to consolidated revenues ($308,000), giving intercompany sales of $32,000. Spin still holds 37.5% of those goods: 37.5% × $32,000 = $12,000 at the intercompany transfer price. Pard's gross profit percentage is $50,000 / $200,000 = 25%, so the unrealized intercompany profit embedded in Spin's inventory is 25% × $12,000 = $3,000. The consolidated carrying amount = $12,000 − $3,000 = $9,000.",
+      "explanationJa": "社内売上＝($200,000＋$140,000)－$308,000＝$32,000。Spin在庫に残る分＝37.5%×$32,000＝$12,000（移転価格）。Pardの粗利率＝$50,000/$200,000＝25%。未実現利益＝25%×$12,000＝$3,000。連結簿価＝$12,000－$3,000＝$9,000。",
+      "references": ["ASC 810"],
+      "difficulty": "advanced",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-207",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Transactions",
+      "stem": "Ahm Corp. owns 90% of Bee Corp.'s common stock and 80% of Cee Corp.'s common stock. Bee sells exclusively to Cee and Cee buys exclusively from Bee. Cee sells exclusively to unrelated companies. Selected Year 1 information from Bee and Cee's combined financial statements follows: Bee Corp. Cee Corp. Sales $130,000 $91,000 Cost of sales 100,000 65,000 Beginning inventory None None Ending inventory None 65,000 What amount should be reported as gross profit in Bee and Cee's combined income statement for the year ended December 31, Year 1?",
+      "choices": [
+        { "label": "A", "text": "$26,000" },
+        { "label": "B", "text": "$41,000" },
+        { "label": "C", "text": "$47,800" },
+        { "label": "D", "text": "$56,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bee sells all of its output to Cee (intercompany), and Cee sells to outside customers. For the combined statements, the intercompany sales of $130,000 (Bee's revenue = Cee's purchases) are eliminated. Cee sold half of what it purchased ($65,000 COGS at transfer price vs. $130,000 purchased), so Bee's cost applicable to goods Cee sold is $100,000 × ($65,000/$130,000) = $50,000. Combined gross profit = Cee's external sales ($91,000) − Bee's original cost of goods Cee sold ($50,000) = $41,000.",
+      "explanationJa": "BeeのCeeへの社内売上$130,000を消去。Ceeは購入した半分を販売（COGS$65,000/$130,000＝50%）→Beeの対応コスト＝$100,000×50%＝$50,000。結合粗利益＝外部売上$91,000－Bee原価$50,000＝$41,000。",
+      "references": ["ASC 810"],
+      "difficulty": "advanced",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-208",
+      "topic": "Consolidations",
+      "subtopic": "Goodwill Impairment",
+      "stem": "On January 1, Year 1, Purl purchased all of Scott's common stock for $360,000. On January 1, Year 1, the carrying amounts of Scott's recorded assets and liabilities were $410,000 and $160,000, respectively. The fair value of Scott's inventory was $10,000 more than its carrying amount on the acquisition date. In Purl's January 2, Year 1, consolidated balance sheet, what amount should be reported as goodwill?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$110,000" },
+        { "label": "C", "text": "$250,000" },
+        { "label": "D", "text": "$260,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 805, goodwill equals the consideration transferred less the fair value of net identifiable assets acquired. Scott's net assets at fair value = ($410,000 + $10,000 FV step-up on inventory) − $160,000 = $260,000. Goodwill = $360,000 − $260,000 = $100,000.",
+      "explanationJa": "ASC 805によりのれん＝支払対価－識別可能純資産の公正価値。ScottのFV純資産＝（$410,000＋$10,000）－$160,000＝$260,000。のれん＝$360,000－$260,000＝$100,000。",
+      "references": ["ASC 805"],
+      "difficulty": "basic",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-209",
+      "topic": "Consolidations",
+      "subtopic": "Elimination Entries",
+      "stem": "Beni Corp. purchased 100% of Carr Corp.'s outstanding capital stock for $430,000 cash. Immediately before the acquisition, the balance sheets of both corporations reported the following: Beni Carr Assets $2,000,000 $750,000 Liabilities 750,000 400,000 Common stock 1,000,000 310,000 Retained earnings 250,000 40,000 Liabilities and stockholders' equity $2,000,000 $750,000 At the date of the acquisition, the fair value of Carr's assets was $50,000 more than the aggregate carrying amounts. In the consolidated balance sheet prepared immediately after the purchase, the consolidated stockholders' equity should amount to",
+      "choices": [
+        { "label": "A", "text": "$1,250,000" },
+        { "label": "B", "text": "$1,600,000" },
+        { "label": "C", "text": "$1,650,000" },
+        { "label": "D", "text": "$1,680,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the acquisition method (ASC 805), consolidated stockholders' equity immediately after acquisition equals the parent's pre-acquisition stockholders' equity only; the subsidiary's equity is eliminated. Beni's stockholders' equity = $1,000,000 (common stock) + $250,000 (retained earnings) = $1,250,000. The $430,000 cash payment reduces Beni's assets (not equity directly) and is replaced on consolidation by Carr's fair-value net assets plus goodwill. Carr's equity is eliminated, so it does not appear in consolidated equity.",
+      "explanationJa": "ASC 805の取得法では、連結SE＝親会社（Beni）のSEのみ。Beni SE＝$1,000,000＋$250,000＝$1,250,000。Carrの資本は消去されるため連結SEに含まれない。現金支払$430,000は資産と相殺され、CarrのFV純資産＋のれんに置き換わる。",
+      "references": ["ASC 805", "ASC 810"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-210",
+      "topic": "Consolidations",
+      "subtopic": "Acquisition Method",
+      "stem": "A company incurred the following costs to complete a business combination in the current year: Issuing debt securities $30,000 Registering debt securities 25,000 Legal fees 10,000 Due diligence costs 1,000 What amount should be reported as current-year expenses, not subject to amortization?",
+      "choices": [
+        { "label": "A", "text": "$1,000" },
+        { "label": "B", "text": "$11,000" },
+        { "label": "C", "text": "$36,000" },
+        { "label": "D", "text": "$66,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under ASC 805, the treatment of business-combination costs depends on their nature. Debt issuance costs ($30,000) and debt registration costs ($25,000) are capitalized as a debt discount and amortized over the debt term using the effective-interest method — they are not expensed immediately. Legal fees ($10,000) and due diligence costs ($1,000) are acquisition-related costs that must be expensed as incurred under ASC 805. Total expensed immediately (and not amortized) = $10,000 + $1,000 = $11,000.",
+      "explanationJa": "ASC 805により、社債発行費用$30,000と社債登録費用$25,000は社債の割引として資本化し実効利子法で償却。法務費用$10,000と実査費用$1,000は取得関連コストとして発生時に費用計上（償却なし）。即時費用計上額＝$10,000＋$1,000＝$11,000。",
+      "references": ["ASC 805"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-211",
+      "topic": "Consolidations",
+      "subtopic": "Elimination Entries",
+      "stem": "On January 2, Year 1, Peace Co. paid $310,000 to purchase 75% of the voting shares of Surge Co. Peace reported retained earnings of $80,000, and Surge reported contributed capital of $300,000 and retained earnings of $100,000. The purchase differential was attributed to depreciable assets with a remaining useful life of 10 years. Peace used the equity method in accounting for its investment in Surge. Surge reported net income of $20,000 and declared and paid dividends of $8,000 during the current year. Peace reported income, exclusive of its income from Surge, of $30,000 and declared and paid dividends of $15,000 during the current year. What amount will Peace report as dividends declared and paid in its Year 1 consolidated statement of retained earnings?",
+      "choices": [
+        { "label": "A", "text": "$8,000" },
+        { "label": "B", "text": "$15,000" },
+        { "label": "C", "text": "$21,000" },
+        { "label": "D", "text": "$23,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "In consolidated financial statements, only the parent company's dividends are presented in the consolidated statement of retained earnings; the subsidiary's dividends paid to the parent are eliminated as intercompany transactions, and dividends paid by the subsidiary to noncontrolling shareholders reduce the noncontrolling interest balance rather than appearing in consolidated retained earnings. Therefore, consolidated dividends declared and paid equal Peace's dividends of $15,000 only.",
+      "explanationJa": "連結利益剰余金計算書に表示する配当は親会社（Peace）の配当のみ$15,000。Surgeが支払った配当$8,000のうち、Peaceへの75%分（$6,000）は社内取引として消去され、残り25%（$2,000）は非支配株主持分の減少として処理される。連結配当＝$15,000。",
+      "references": ["ASC 810"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-212",
+      "topic": "Consolidations",
+      "subtopic": "Equity Method – Partial Year Acquisition",
+      "stem": "On July 1 of the current year, Denver Corp. purchased 3,000 shares of Eagle Co.'s 10,000 outstanding shares of common stock for $20 per share. On December 15, Eagle paid $40,000 in dividends to its common stockholders. Eagle's net income for the current year ended December 31 was $120,000, earned evenly throughout the year. In its current year-end income statement, what amount of income from this investment should Denver report?",
+      "choices": [
+        { "label": "A", "text": "$36,000" },
+        { "label": "B", "text": "$18,000" },
+        { "label": "C", "text": "$12,000" },
+        { "label": "D", "text": "$6,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Denver owns 3,000 of 10,000 shares (30%), which exceeds the 20% threshold, so the equity method applies (ASC 323-10). Under the equity method, Denver recognizes its proportionate share of Eagle's net income from the acquisition date. Because the acquisition occurred on July 1, Denver only picks up income for the second half of the year. Eagle's net income for the full year was $120,000 earned evenly, so the July–December portion is $60,000. Denver's 30% share = $60,000 × 30% = $18,000. Dividends received reduce the investment account and are not recognized as income under the equity method.",
+      "explanationJa": "Denverは10,000株中3,000株（30%）を保有し、20%の閾値を超えるため持分法が適用されます（ASC 323-10）。持分法では取得日以降の比例持分を認識します。取得日が7月1日のため、認識するのは下半期分のみです。Eagleの年間純利益$120,000は均等発生なので、7〜12月分は$60,000。Denverの取り分 = $60,000 × 30% = $18,000。配当金は投資勘定から控除され、収益にはなりません。",
+      "references": ["ASC 323-10-35"],
+      "difficulty": "intermediate",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-213",
+      "topic": "Consolidations",
+      "subtopic": "Cost Method – Preferred Stock Investment",
+      "stem": "Moss Corp. owns 20% of Dubro Corp.'s preferred stock and 0% of its common stock. Dubro's stock outstanding at December 31 of the current year is as follows: 10% cumulative preferred stock $100,000 Common stock 700,000 Dubro reported net income of $60,000 and paid dividend of $10,000 to its preferred shareholders for the year ended December 31. How much total revenue should Moss record due to its investment in Dubro for the year ended December 31?",
+      "choices": [
+        { "label": "A", "text": "$ 2,000" },
+        { "label": "B", "text": "$48,000" },
+        { "label": "C", "text": "$48,400" },
+        { "label": "D", "text": "$50,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Moss holds preferred stock only (20% of $100,000 par value preferred) and no common stock, so it has no significant influence and uses the cost method. Under the cost method, revenue is recognized only when dividends are declared or paid. Dubro paid $10,000 in preferred dividends, and Moss's 20% share is $10,000 × 20% = $2,000. Even though the preferred stock is cumulative at 10% × $100,000 = $10,000 per year, revenue under the cost method is limited to dividends actually paid (ASC 321-10, ASC 323-10).",
+      "explanationJa": "Mossは優先株のみ保有（$100,000額面の20%）し、普通株は保有していないため重要な影響力がなくコスト法を適用します。コスト法では配当が宣言・支払われた時のみ収益を認識します。Dubroが優先株主に支払った配当は$10,000で、Mossの取り分は$10,000 × 20% = $2,000です（ASC 321-10）。",
+      "references": ["ASC 321-10", "ASC 323-10-15"],
+      "difficulty": "basic",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-214",
+      "topic": "Consolidations",
+      "subtopic": "Equity Method – Purchase Price Allocation and Income Adjustment",
+      "stem": "Sage, Inc. bought 40% of Adams Corp.'s outstanding common stock on January 2 of the current year for $400,000. The carrying amount of Adams' net assets at the purchase date totaled $900,000. Fair values and carrying amounts were the same for all items except for plant and inventory, for which fair values exceeded their carrying amounts by $90,000 and $10,000, respectively. The plant has an 18-year life. All inventory was sold during the year. Goodwill, if any, will be tested for impairment each year. During the year, Adams reported net income of $120,000 and paid a $20,000 cash dividend. What amount should Sage report in its income statement from its investment in Adams for the year ended December 31?",
+      "choices": [
+        { "label": "A", "text": "$48,000" },
+        { "label": "B", "text": "$42,000" },
+        { "label": "C", "text": "$36,000" },
+        { "label": "D", "text": "$32,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under the equity method, Sage's share of Adams' net income is 40% × $120,000 = $48,000. This is then reduced by amortization of the excess fair value over carrying amount for identifiable assets. Plant excess: $90,000 ÷ 18 years = $5,000 per year; Sage's 40% = $2,000. Inventory excess: $10,000 × 100% was recognized (all sold in the year); Sage's 40% = $4,000. Total adjustments = $2,000 + $4,000 = $6,000. Equity income = $48,000 − $6,000 = $42,000. Dividends reduce the investment account and are not part of income. Goodwill = purchase price $400,000 − 40% × ($900,000 + $90,000 + $10,000) = $400,000 − $400,000 = $0 (ASC 323-10-35).",
+      "explanationJa": "持分法の下、Sageが認識するAdamsの純利益取り分は40% × $120,000 = $48,000。そこから識別可能資産の超過公正価値の償却額を控除します。設備超過額：$90,000 ÷ 18年 = $5,000/年 × 40% = $2,000。棚卸資産超過額（当年全量売却）：$10,000 × 40% = $4,000。調整合計 = $6,000。持分収益 = $48,000 − $6,000 = $42,000（ASC 323-10-35）。",
+      "references": ["ASC 323-10-35"],
+      "difficulty": "advanced",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-215",
+      "topic": "Consolidations",
+      "subtopic": "Equity Method – Investment Balance Calculation",
+      "stem": "On January 2, Kean co. purchased a 30% interest in Pod Co. for $250,000. On this date, Pod's stockholders' equity was $500,000. The fair value of plant and equipment exceeded its carrying amount by $200,000. Plant and assets were determined to have a remaining 10 year life at December 31. There were no other under valued assets. Pod reported net income of $100,000 for the year, and paid no dividends. Kean accounts for this investment using the equity method. In its December 31, year-end balance sheet, what amount should Kean report as investment in subsidiary?",
+      "choices": [
+        { "label": "A", "text": "$210,000" },
+        { "label": "B", "text": "$220,000" },
+        { "label": "C", "text": "$270,000" },
+        { "label": "D", "text": "$274,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Starting investment = $250,000. Kean's share of Pod's net income = 30% × $100,000 = $30,000. Amortization of excess plant fair value: the plant excess is $200,000, amortized over 10 years = $20,000 per year; Kean's 40% share... wait, Kean holds 30%: $20,000 × 30% = $6,000. Equity income = $30,000 − $6,000 = $24,000. Investment at December 31 = $250,000 + $24,000 = $274,000 (ASC 323-10-35). Note: Goodwill = $250,000 − 30% × ($500,000 + $200,000) = $250,000 − $210,000 = $40,000, which is embedded in the investment balance and not separately amortized under ASC 350.",
+      "explanationJa": "投資開始額 = $250,000。KeanのPod純利益取り分 = 30% × $100,000 = $30,000。設備超過額の償却：$200,000 ÷ 10年 = $20,000/年 × 30% = $6,000。持分収益 = $30,000 − $6,000 = $24,000。12月31日の投資残高 = $250,000 + $24,000 = $274,000（ASC 323-10-35）。なおのれん = $250,000 − 30% × $700,000 = $40,000は投資残高に含まれ、別途償却しません（ASC 350）。",
+      "references": ["ASC 323-10-35", "ASC 350-20"],
+      "difficulty": "advanced",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-216",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Sale of Fixed Asset – Consolidation Elimination",
+      "stem": "On January 1, year 3, Poe Co. sold a machine for $900,000 to Saxe Corp., it's wholly owned subsidiary. Poe paid $1,100,000 for this machine, which had accumulated depreciation of $250,000. Poe estimated a $100,000 salvage value and depreciated the machine on the straight-line method over 20 years, a policy which Saxe continued. In Poe's December 31, year 3 consolidated balance sheet, this machine should be included in cost and accumulated depreciation as Cost Accumulated Depreciation",
+      "choices": [
+        { "label": "A", "text": "$1,100,000 $300,000" },
+        { "label": "B", "text": "$1,100,000 $290,000" },
+        { "label": "C", "text": "$ 900,000 $ 40,000" },
+        { "label": "D", "text": "$ 850,000 $ 42,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In consolidated financial statements, intercompany transactions are eliminated as if they never occurred. The machine must be reported at Poe's original historical cost of $1,100,000. Accumulated depreciation at January 1, year 3 (before the intercompany sale) was $250,000. During year 3, Poe's normal depreciation continues for the consolidated entity: ($1,100,000 − $100,000 salvage) ÷ 20 years = $50,000 per year. Accumulated depreciation at December 31, year 3 = $250,000 + $50,000 = $300,000. The intercompany sale price of $900,000 and the related intercompany gain are eliminated in consolidation (ASC 810-10-45).",
+      "explanationJa": "連結財務諸表では子会社間取引を消去します。機械は親会社Poeの当初原価$1,100,000で計上します。Year 3開始時の累計減価償却額は$250,000。年間減価償却費 = ($1,100,000 − $100,000) ÷ 20年 = $50,000。Year 3末累計 = $250,000 + $50,000 = $300,000。連結処理では内部取引価格$900,000と関連利益を消去します（ASC 810-10-45）。",
+      "references": ["ASC 810-10-45"],
+      "difficulty": "advanced",
+      "source": "FAR Exercise PDF"
+    },
+    {
+      "id": "con-217",
+      "topic": "Consolidations",
+      "subtopic": "Intercompany Bond – Constructive Retirement",
+      "stem": "Wagner, a holder of a $1,000,000 Palmer, Inc. bond, collected the interest due on March 31 of the current year, and then sold the bond to Seal, Inc. for $975,000. On that date, Palmer, a 75% owner of Seal, had a $1,075,000 carrying amount for this bond. What was the effect of Seal's purchase of Palmer's bond on the retained earnings and noncontrolling interests amounts reported in Palmer's March 31 consolidated balance sheet? Retained earnings Noncontrolling interests",
+      "choices": [
+        { "label": "A", "text": "$100,000 increase $0" },
+        { "label": "B", "text": "$75,000 increase $25,000 increase" },
+        { "label": "C", "text": "$0 $25,000 increase" },
+        { "label": "D", "text": "$0 $100,000 increase" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "When a subsidiary purchases the parent's bonds from an outside third party, a constructive retirement of the debt occurs in consolidation. Palmer's bond had a carrying amount of $1,075,000 on its books; Seal paid $975,000, creating an economic gain on retirement of $1,075,000 − $975,000 = $100,000. Under ASC 810-10, this gain is recognized in the consolidated income statement in the period of the constructive retirement and is allocated between the controlling interest (Palmer's 75%) and the noncontrolling interest (25%). Retained earnings increase by 75% × $100,000 = $75,000, and noncontrolling interests increase by 25% × $100,000 = $25,000.",
+      "explanationJa": "子会社が親会社の社債を外部から購入すると、連結上で実質的な社債償還が生じます。Palmerの社債帳簿価額$1,075,000に対してSealは$975,000を支払い、$100,000の利得が発生します（ASC 810-10）。この利得は連結損益計算書で認識され、支配持分（75%）と非支配持分（25%）に配分されます。利益剰余金増加 = $100,000 × 75% = $75,000、非支配持分増加 = $100,000 × 25% = $25,000。",
+      "references": ["ASC 810-10-45"],
+      "difficulty": "advanced",
+      "source": "FAR Exercise PDF"
     }
   ]
 }
