@@ -108,7 +108,7 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 12,
+      version: 13,
       migrate: (persisted, version) => {
         // 破壊的処理の前に現在の localStorage 値を退避する
         backupBeforeMigrate("uscpa-question-bank", version);
@@ -253,6 +253,21 @@ export const useQuestionBankStore = create<QuestionBankState>()(
             if (a.questionId !== "cecl-054") return a;
             if (a.isCorrect === false) {
               return { ...a, selectedAnswer: "B", isCorrect: true };
+            }
+            return a;
+          });
+        }
+
+        // v12→v13: cce-131 の correctAnswer バグ（"C" 88日 → 正解は "D" 95日）修正に伴い、
+        // 平均在庫ベースの95日を選んだ回答を正解に、期末在庫ベースの88日を不正解に補正する。
+        if (version === 12) {
+          state.attempts = state.attempts.map((a) => {
+            if (a.questionId !== "cce-131") return a;
+            if (a.selectedAnswer === "D" && a.isCorrect === false) {
+              return { ...a, isCorrect: true };
+            }
+            if (a.selectedAnswer === "C" && a.isCorrect === true) {
+              return { ...a, isCorrect: false };
             }
             return a;
           });
