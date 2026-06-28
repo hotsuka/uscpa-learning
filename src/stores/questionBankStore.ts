@@ -108,7 +108,7 @@ export const useQuestionBankStore = create<QuestionBankState>()(
     }),
     {
       name: "uscpa-question-bank",
-      version: 13,
+      version: 14,
       migrate: (persisted, version) => {
         // 破壊的処理の前に現在の localStorage 値を退避する
         backupBeforeMigrate("uscpa-question-bank", version);
@@ -267,6 +267,21 @@ export const useQuestionBankStore = create<QuestionBankState>()(
               return { ...a, isCorrect: true };
             }
             if (a.selectedAnswer === "C" && a.isCorrect === true) {
+              return { ...a, isCorrect: false };
+            }
+            return a;
+          });
+        }
+
+        // v13→v14: cce-148 の correctAnswer バグ（"B" Decreased both → 正解は "C" Increased current/Decreased quick）修正。
+        // 比率>1なら同額減少で比率上昇、<1なら低下。selectedAnswer="C"を正解に、"B"を不正解に補正。
+        if (version === 13) {
+          state.attempts = state.attempts.map((a) => {
+            if (a.questionId !== "cce-148") return a;
+            if (a.selectedAnswer === "C" && a.isCorrect === false) {
+              return { ...a, isCorrect: true };
+            }
+            if (a.selectedAnswer === "B" && a.isCorrect === true) {
               return { ...a, isCorrect: false };
             }
             return a;
