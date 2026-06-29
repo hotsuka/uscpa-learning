@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle2, XCircle, ChevronDown, ChevronUp, History, Clock, HelpCircle } from "lucide-react"
 import type { FARQuestion, QuestionAttempt } from "@/types/questions"
+import { MarkdownPreview } from "@/components/notes/MarkdownPreview"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { cn } from "@/lib/utils"
 
@@ -213,7 +214,9 @@ export const QuestionCard = forwardRef<QuestionCardRef, QuestionCardProps>(funct
         )}
 
         {/* 問題文 */}
-        <p className="text-base font-medium mb-6 leading-relaxed">{question.stem}</p>
+        <div className="text-base font-medium mb-6 leading-relaxed">
+          <MarkdownPreview content={question.stem} />
+        </div>
 
         {/* 選択肢 */}
         <div className="space-y-3 mb-6">
