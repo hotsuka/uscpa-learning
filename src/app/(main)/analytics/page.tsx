@@ -7,6 +7,9 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { SUBJECTS, SUBJECT_OPTIONS, type Subject } from "@/types"
 import { useRecordStore } from "@/stores/recordStore"
+import { useQuestionBankStore } from "@/stores/questionBankStore"
+import { farQuestionSets } from "@/data/questions/far"
+import { getFarScopeForSet, FAR_SCOPE_LABELS } from "@/data/questions/far/farScope"
 import { getJSTDateString } from "@/lib/utils"
 import { useSettingsStore } from "@/stores/settingsStore"
 import {
@@ -18,6 +21,7 @@ import {
   Clock,
   CheckCircle2,
   BookOpen,
+  Gauge,
 } from "lucide-react"
 import {
   Select,
@@ -34,6 +38,38 @@ export default function AnalyticsPage() {
   const { subjectTargetHours } = useSettingsStore()
   const [selectedPeriod, setSelectedPeriod] = useState<Period>("week")
   const [selectedTopic, setSelectedTopic] = useState<string>("")
+
+  const attempts = useQuestionBankStore((s) => s.attempts)
+  const getFirstAttemptStats = useQuestionBankStore((s) => s.getFirstAttemptStats)
+
+  // 問題バンクの初見正答率（各問題の最初の解答のみ＝実力の目安）
+  const bankFirstStats = useMemo(
+    () => getFirstAttemptStats(),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [attempts]
+  )
+
+  // 初見正答率の全体値とワースト5テーマ（母数10問以上）
+  const bankSummary = useMemo(() => {
+    let correct = 0
+    let total = 0
+    for (const stat of Object.values(bankFirstStats)) {
+      correct += stat.correct
+      total += stat.total
+    }
+    const worst = farQuestionSets
+      .map((set) => ({ set, stat: bankFirstStats[set.topic] }))
+      .filter((x): x is { set: (typeof farQuestionSets)[0]; stat: { correct: number; total: number; rate: number } } =>
+        Boolean(x.stat && x.stat.total >= 10)
+      )
+      .sort((a, b) => a.stat.rate - b.stat.rate)
+      .slice(0, 5)
+    return {
+      overallRate: total > 0 ? Math.round((correct / total) * 100) : null,
+      totalFirstAttempts: total,
+      worst,
+    }
+  }, [bankFirstStats])
 
   // 期間でフィルタしたレコードを取得
   const filteredRecords = useMemo(() => {
@@ -459,6 +495,78 @@ export default function AnalyticsPage() {
                 <p className="text-xs mt-1">
                   学習記録が蓄積されると、正答率の低いテーマが表示されます
                 </p>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* 問題バンク実力統計（初見正答率） */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Gauge className="h-5 w-5 text-indigo-500" />
+              問題バンク実力統計
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            {bankSummary.overallRate !== null ? (
+              <>
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-3xl font-bold">{bankSummary.overallRate}%</span>
+                  <span className="text-sm text-muted-foreground">
+                    初見正答率（{bankSummary.totalFirstAttempts}問の初回解答ベース）
+                  </span>
+                </div>
+                <p className="text-xs text-muted-foreground mb-3">
+                  各問題の最初の解答のみで集計した実力の目安。解き直し後の正答率より低く出ます。
+                </p>
+                <div className="space-y-2">
+                  {bankSummary.worst.map(({ set, stat }) => {
+                    const scopeInfo = getFarScopeForSet(set.id)
+                    return (
+                      <div
+                        key={set.id}
+                        className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                      >
+                        <div className="flex items-center gap-2 min-w-0">
+                          <span className="text-sm truncate">{set.name}</span>
+                          {scopeInfo.scope !== "in" && (
+                            <Badge
+                              variant="outline"
+                              className="px-1 py-0 text-[10px] font-normal text-muted-foreground shrink-0"
+                            >
+                              {FAR_SCOPE_LABELS[scopeInfo.scope]}
+                            </Badge>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <span className="text-xs text-muted-foreground">
+                            ({stat.correct}/{stat.total}問)
+                          </span>
+                          <span
+                            className={`text-sm font-medium ${
+                              stat.rate >= 80
+                                ? "text-green-600"
+                                : stat.rate >= 60
+                                  ? "text-yellow-600"
+                                  : "text-red-500"
+                            }`}
+                          >
+                            {stat.rate}%
+                          </span>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+                <p className="text-xs text-muted-foreground mt-4">
+                  ※ 初見正答率が低い順に5テーマを表示（初回解答10問以上のもの）
+                </p>
+              </>
+            ) : (
+              <div className="text-center py-8 text-muted-foreground">
+                <p>問題バンクの解答データがありません</p>
+                <p className="text-xs mt-1">問題バンクで演習すると初見正答率が表示されます</p>
               </div>
             )}
           </CardContent>

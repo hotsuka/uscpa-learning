@@ -18,6 +18,7 @@ import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
 import { useTimer } from "@/hooks/useTimer"
 import { useTimerStore } from "@/stores/timerStore"
 import { farQuestionSets, getTotalQuestionCount } from "@/data/questions/far"
+import { getFarScopeForSet, FAR_SCOPE_LABELS } from "@/data/questions/far/farScope"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { useRecordStore } from "@/stores/recordStore"
 import type { FARQuestion } from "@/types/questions"
@@ -31,13 +32,33 @@ import {
   ChevronRight,
   AlertTriangle,
   XCircle,
+  Gauge,
 } from "lucide-react"
 
 type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced"
 
+// 出題範囲フィルター: far = FAR範囲（in + partial）、out = FAR範囲外（BAR領域）のみ
+type ScopeFilter = "all" | "far" | "out"
+
+const SCOPE_STORAGE_KEY = "uscpa-scope-filter"
+
+// 出題範囲フィルターをlocalStorageから読み込み
+const loadScopeFilter = (): ScopeFilter => {
+  if (typeof window === "undefined") return "all"
+  const stored = localStorage.getItem(SCOPE_STORAGE_KEY)
+  return stored === "far" || stored === "out" ? stored : "all"
+}
+
+// 出題範囲フィルターをlocalStorageに保存
+const saveScopeFilter = (value: ScopeFilter) => {
+  if (typeof window === "undefined") return
+  localStorage.setItem(SCOPE_STORAGE_KEY, value)
+}
+
 export default function QuestionsPage() {
   const [selectedTopic, setSelectedTopic] = useState<string>("all")
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all")
+  const [scopeFilter, setScopeFilter] = useState<ScopeFilter>(loadScopeFilter)
   const [weaknessMode, setWeaknessMode] = useState(false)
   const [neverCorrectOnly, setNeverCorrectOnly] = useState(false)
   const [unattemptedOnly, setUnattemptedOnly] = useState(false)
@@ -51,7 +72,26 @@ export default function QuestionsPage() {
   const { isRunning, start, pause } = useTimer()
 
   const attempts = useQuestionBankStore((s) => s.attempts)
+  const getFirstAttemptStats = useQuestionBankStore((s) => s.getFirstAttemptStats)
   const records = useRecordStore((s) => s.records)
+
+  // 初見正答率（各問題の最初の解答のみ。attemptsが変わったら再計算）
+  const firstAttemptStats = useMemo(
+    () => getFirstAttemptStats(),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [attempts]
+  )
+
+  // 初見正答率の全体値（統計カード用）
+  const overallFirstRate = useMemo(() => {
+    let correct = 0
+    let total = 0
+    for (const stat of Object.values(firstAttemptStats)) {
+      correct += stat.correct
+      total += stat.total
+    }
+    return total > 0 ? Math.round((correct / total) * 100) : null
+  }, [firstAttemptStats])
 
   // 問題IDからQuestionSetのtopicへのマップ（個別問題のtopicではなくセット単位で集約）
   const questionSetTopicMap = useMemo(() => {
@@ -120,10 +160,19 @@ export default function QuestionsPage() {
   const filteredQuestions = useMemo(() => {
     let questions: FARQuestion[] = []
 
+    // 出題範囲フィルター（テーマ＝QuestionSet単位で判定）
+    const scopedSets =
+      scopeFilter === "all"
+        ? farQuestionSets
+        : farQuestionSets.filter((set) => {
+            const { scope } = getFarScopeForSet(set.id)
+            return scopeFilter === "far" ? scope !== "out" : scope === "out"
+          })
+
     if (selectedTopic === "all") {
-      questions = farQuestionSets.flatMap((set) => set.questions)
+      questions = scopedSets.flatMap((set) => set.questions)
     } else {
-      const set = farQuestionSets.find((s) => s.topic === selectedTopic)
+      const set = scopedSets.find((s) => s.topic === selectedTopic)
       questions = set ? set.questions : []
     }
 
@@ -164,7 +213,7 @@ export default function QuestionsPage() {
     }
 
     return questions
-  }, [selectedTopic, difficulty, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
+  }, [selectedTopic, difficulty, scopeFilter, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
 
   // 問題バンクのトピックをタイマーのサブトピックに反映
   useEffect(() => {
@@ -276,6 +325,13 @@ export default function QuestionsPage() {
     setCurrentIndex(0)
   }
 
+  const handleScopeChange = (value: string) => {
+    const scope = value as ScopeFilter
+    setScopeFilter(scope)
+    saveScopeFilter(scope)
+    setCurrentIndex(0)
+  }
+
   // 問題ごとの解答状態マップ（未解答/最終正解/最終不正解/解答済み・正誤不明）
   // 各 questionId の最新 attempt で判定する
   const questionStatusMap = useMemo(() => {
@@ -330,7 +386,7 @@ export default function QuestionsPage() {
         </div>
 
         {/* 統計カード */}
-        <div className="grid grid-cols-3 gap-3 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
           <Card>
             <CardContent className="p-3 text-center">
               <BookOpen className="w-5 h-5 mx-auto mb-1 text-blue-500" />
@@ -343,6 +399,15 @@ export default function QuestionsPage() {
               <Target className="w-5 h-5 mx-auto mb-1 text-green-500" />
               <div className="text-lg font-bold">{attemptedCount}</div>
               <div className="text-xs text-muted-foreground">回答済み</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-3 text-center">
+              <Gauge className="w-5 h-5 mx-auto mb-1 text-indigo-500" />
+              <div className="text-lg font-bold">
+                {overallFirstRate !== null ? `${overallFirstRate}%` : "-"}
+              </div>
+              <div className="text-xs text-muted-foreground">初見正答率</div>
             </CardContent>
           </Card>
           <Card>
@@ -365,11 +430,19 @@ export default function QuestionsPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">全トピック</SelectItem>
-                    {farQuestionSets.map((set) => (
-                      <SelectItem key={set.id} value={set.topic}>
-                        {set.name}
-                      </SelectItem>
-                    ))}
+                    {farQuestionSets.map((set) => {
+                      const scopeInfo = getFarScopeForSet(set.id)
+                      return (
+                        <SelectItem key={set.id} value={set.topic}>
+                          {set.name}
+                          {scopeInfo.scope !== "in" && (
+                            <span className="ml-2 text-xs text-muted-foreground">
+                              [{FAR_SCOPE_LABELS[scopeInfo.scope]}]
+                            </span>
+                          )}
+                        </SelectItem>
+                      )
+                    })}
                   </SelectContent>
                 </Select>
               </div>
@@ -383,6 +456,18 @@ export default function QuestionsPage() {
                     <SelectItem value="basic">基礎</SelectItem>
                     <SelectItem value="intermediate">標準</SelectItem>
                     <SelectItem value="advanced">応用</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="w-full sm:w-44">
+                <Select value={scopeFilter} onValueChange={handleScopeChange}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="出題範囲" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">全範囲</SelectItem>
+                    <SelectItem value="far">FAR範囲のみ</SelectItem>
+                    <SelectItem value="out">FAR範囲外のみ</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -541,30 +626,49 @@ export default function QuestionsPage() {
           <Card className="mt-6">
             <CardHeader>
               <CardTitle className="text-base">トピック別正答率</CardTitle>
+              <p className="text-xs text-muted-foreground">
+                初見＝各問題の最初の解答のみ（実力の目安）／ 復習後＝各問題の最新解答
+              </p>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
                 {farQuestionSets.map((set) => {
                   const stat = topicStats[set.topic]
-                  if (!stat) return null
+                  const first = firstAttemptStats[set.topic]
+                  if (!stat && !first) return null
+                  const scopeInfo = getFarScopeForSet(set.id)
+                  const firstRate = first?.rate ?? 0
                   return (
                     <div key={set.id} className="flex items-center justify-between text-sm">
-                      <span className="truncate flex-1">{set.name}</span>
+                      <span className="truncate flex-1">
+                        {set.name}
+                        {scopeInfo.scope !== "in" && (
+                          <Badge
+                            variant="outline"
+                            className="ml-2 px-1 py-0 text-[10px] font-normal text-muted-foreground"
+                          >
+                            {FAR_SCOPE_LABELS[scopeInfo.scope]}
+                          </Badge>
+                        )}
+                      </span>
                       <div className="flex items-center gap-2 ml-2">
                         <div className="w-24 h-2 bg-muted rounded-full overflow-hidden">
                           <div
                             className={`h-full rounded-full ${
-                              stat.rate >= 80
+                              firstRate >= 80
                                 ? "bg-green-500"
-                                : stat.rate >= 60
+                                : firstRate >= 60
                                   ? "bg-yellow-500"
                                   : "bg-red-500"
                             }`}
-                            style={{ width: `${stat.rate}%` }}
+                            style={{ width: `${firstRate}%` }}
                           />
                         </div>
-                        <span className="w-12 text-right text-muted-foreground">
-                          {stat.rate}%
+                        <span className="w-14 text-right font-medium">
+                          {first ? `${first.rate}%` : "-"}
+                        </span>
+                        <span className="w-16 text-right text-xs text-muted-foreground">
+                          復習後 {stat ? `${stat.rate}%` : "-"}
                         </span>
                       </div>
                     </div>

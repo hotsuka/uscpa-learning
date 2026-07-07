@@ -17,6 +17,10 @@ interface QuestionBankState {
     string,
     { correct: number; total: number; rate: number }
   >;
+  getFirstAttemptStats: () => Record<
+    string,
+    { correct: number; total: number; rate: number }
+  >;
   getAttemptedQuestionIds: () => Set<string>;
   clearAttempts: () => void;
 }
@@ -88,6 +92,51 @@ export const useQuestionBankStore = create<QuestionBankState>()(
           }
           stats[attempt.topic].total++;
           if (attempt.isCorrect === true) stats[attempt.topic].correct++;
+        }
+        for (const topic of Object.keys(stats)) {
+          stats[topic].rate =
+            stats[topic].total > 0
+              ? Math.round((stats[topic].correct / stats[topic].total) * 100)
+              : 0;
+        }
+        return stats;
+      },
+
+      // 初見正答率: 各問題の「最初の解答」のみで集計する（解き直しで上書きされないため実力の目安になる）
+      // キーは QuestionSet.topic（個別問題の topic がセットの topic と異なるケースを正規化）
+      getFirstAttemptStats: () => {
+        const setTopicByQuestionId = new Map<string, string>();
+        for (const s of farQuestionSets) {
+          for (const q of s.questions) {
+            setTopicByQuestionId.set(q.id, s.topic);
+          }
+        }
+
+        const firstByQuestion = new Map<string, QuestionAttempt>();
+        for (const a of get().attempts) {
+          // 正誤不明(null)は初見判定・分母の両方から除外
+          if (a.isCorrect === null) continue;
+          const existing = firstByQuestion.get(a.questionId);
+          if (
+            !existing ||
+            new Date(a.attemptedAt) < new Date(existing.attemptedAt)
+          ) {
+            firstByQuestion.set(a.questionId, a);
+          }
+        }
+
+        const stats: Record<
+          string,
+          { correct: number; total: number; rate: number }
+        > = {};
+        for (const attempt of firstByQuestion.values()) {
+          const topic =
+            setTopicByQuestionId.get(attempt.questionId) ?? attempt.topic;
+          if (!stats[topic]) {
+            stats[topic] = { correct: 0, total: 0, rate: 0 };
+          }
+          stats[topic].total++;
+          if (attempt.isCorrect === true) stats[topic].correct++;
         }
         for (const topic of Object.keys(stats)) {
           stats[topic].rate =
