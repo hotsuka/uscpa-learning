@@ -33,6 +33,7 @@ import {
   AlertTriangle,
   XCircle,
   Gauge,
+  ClipboardCheck,
 } from "lucide-react"
 
 type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced"
@@ -378,11 +379,19 @@ export default function QuestionsPage() {
         </div>
 
         {/* ページヘッダー */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold mb-2">FAR 問題バンク</h1>
-          <p className="text-sm text-muted-foreground">
-            AICPA公開問題ベースの追加演習（全{totalQuestions}問）
-          </p>
+        <div className="mb-6 flex items-start justify-between gap-2">
+          <div>
+            <h1 className="text-2xl font-bold mb-2">FAR 問題バンク</h1>
+            <p className="text-sm text-muted-foreground">
+              AICPA公開問題ベースの追加演習（全{totalQuestions}問）
+            </p>
+          </div>
+          <Button asChild variant="outline" size="sm" className="shrink-0">
+            <Link href="/materials/questions/mock">
+              <ClipboardCheck className="w-4 h-4 mr-1.5" />
+              模試モード
+            </Link>
+          </Button>
         </div>
 
         {/* 統計カード */}
