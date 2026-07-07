@@ -12,8 +12,16 @@ import {
   deleteBackup,
   type BackupItem,
 } from "@/lib/backup/utils"
+import {
+  listIndexedDbBackups,
+  restoreFromIndexedDbBackup,
+  deleteIndexedDbBackup,
+  readBackupMeta,
+  type IndexedDbBackupItem,
+  type BackupMeta,
+} from "@/lib/backup/autoBackup"
 import { downloadCurrentStateAsJson, importFromJsonFile } from "@/lib/backup/exportImport"
-import { Download, Upload, Save, RotateCcw, Trash2, Database } from "lucide-react"
+import { Download, Upload, Save, RotateCcw, Trash2, Database, HardDrive } from "lucide-react"
 
 const formatDateTime = (iso: string): string => {
   try {
@@ -45,9 +53,11 @@ const labelOfOriginalKey = (key: string): string => {
 
 export function BackupRestoreCard() {
   const [items, setItems] = useState<BackupItem[]>([])
+  const [autoItems, setAutoItems] = useState<IndexedDbBackupItem[]>([])
+  const [meta, setMeta] = useState<BackupMeta>({})
   const [confirmOpen, setConfirmOpen] = useState(false)
   const [pendingAction, setPendingAction] = useState<{
-    type: "restore" | "delete" | "import"
+    type: "restore" | "delete" | "import" | "restore-auto" | "delete-auto"
     backupKey?: string
     file?: File
     title: string
@@ -57,6 +67,10 @@ export function BackupRestoreCard() {
 
   const reload = useCallback(() => {
     setItems(listBackups())
+    setMeta(readBackupMeta())
+    listIndexedDbBackups()
+      .then(setAutoItems)
+      .catch(console.error)
   }, [])
 
   useEffect(() => {
@@ -88,6 +102,26 @@ export function BackupRestoreCard() {
       backupKey: item.backupKey,
       title: "このバックアップを削除しますか？",
       description: `${labelOfOriginalKey(item.originalKey)} / ${formatDateTime(item.createdAt)} のバックアップを削除します。`,
+    })
+    setConfirmOpen(true)
+  }
+
+  const handleRestoreAutoClick = (item: IndexedDbBackupItem): void => {
+    setPendingAction({
+      type: "restore-auto",
+      backupKey: item.id,
+      title: `${labelOfOriginalKey(item.originalKey)}を自動バックアップから復元しますか？`,
+      description: `${formatDateTime(item.createdAt)} の自動バックアップで現在のデータを上書きします。復元後はページがリロードされます。`,
+    })
+    setConfirmOpen(true)
+  }
+
+  const handleDeleteAutoClick = (item: IndexedDbBackupItem): void => {
+    setPendingAction({
+      type: "delete-auto",
+      backupKey: item.id,
+      title: "この自動バックアップを削除しますか？",
+      description: `${labelOfOriginalKey(item.originalKey)} / ${formatDateTime(item.createdAt)} の自動バックアップを削除します。`,
     })
     setConfirmOpen(true)
   }
@@ -131,6 +165,19 @@ export function BackupRestoreCard() {
         alert(`インポートに失敗しました: ${result.error ?? "不明なエラー"}`)
         reload()
       }
+    } else if (pendingAction.type === "restore-auto" && pendingAction.backupKey) {
+      // 復元前のスナップショットを取る
+      createManualBackup()
+      const result = await restoreFromIndexedDbBackup(pendingAction.backupKey)
+      if (result.ok) {
+        window.location.reload()
+      } else {
+        alert(`復元に失敗しました: ${result.error ?? "不明なエラー"}`)
+        reload()
+      }
+    } else if (pendingAction.type === "delete-auto" && pendingAction.backupKey) {
+      await deleteIndexedDbBackup(pendingAction.backupKey)
+      reload()
     }
     setPendingAction(null)
   }
@@ -168,6 +215,19 @@ export function BackupRestoreCard() {
             className="hidden"
             onChange={handleFileSelected}
           />
+        </div>
+
+        {/* バックアップ状況 */}
+        <div className="text-xs text-muted-foreground space-y-0.5">
+          <p>
+            最終自動バックアップ:{" "}
+            {meta.lastAutoBackupAt ? formatDateTime(meta.lastAutoBackupAt) : "未実行"}
+            （アプリ起動時に24時間間隔で自動保存）
+          </p>
+          <p>
+            最終JSONダウンロード:{" "}
+            {meta.lastJsonDownloadAt ? formatDateTime(meta.lastJsonDownloadAt) : "未実行"}
+          </p>
         </div>
 
         {/* バックアップ一覧 */}
@@ -224,6 +284,61 @@ export function BackupRestoreCard() {
             </div>
           )}
         </div>
+
+        {/* 自動バックアップ一覧（IndexedDB） */}
+        <div className="space-y-2">
+          <h4 className="text-sm font-medium flex items-center gap-1.5">
+            <HardDrive className="w-4 h-4" />
+            自動バックアップ ({autoItems.length}件)
+          </h4>
+          {autoItems.length === 0 ? (
+            <p className="text-sm text-muted-foreground">
+              自動バックアップはまだありません。アプリ起動時に24時間間隔で作成されます。
+            </p>
+          ) : (
+            <div className="space-y-1.5 max-h-96 overflow-y-auto">
+              {autoItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center justify-between gap-2 px-3 py-2 rounded-md border bg-muted/30 text-sm"
+                >
+                  <div className="flex items-center gap-2 min-w-0 flex-1">
+                    <Badge variant="outline" className="shrink-0">
+                      {labelOfOriginalKey(item.originalKey)}
+                    </Badge>
+                    <Badge variant="secondary" className="shrink-0 text-xs">
+                      自動
+                    </Badge>
+                    <span className="text-muted-foreground truncate">
+                      {formatDateTime(item.createdAt)}
+                    </span>
+                    <span className="text-muted-foreground text-xs shrink-0">
+                      {item.recordCount !== null ? `${item.recordCount}件` : "-"} / {formatBytes(item.byteSize)}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1 shrink-0">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleRestoreAutoClick(item)}
+                      title="復元"
+                    >
+                      <RotateCcw className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleDeleteAutoClick(item)}
+                      title="削除"
+                    >
+                      <Trash2 className="w-4 h-4 text-destructive" />
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </CardContent>
 
       <ConfirmDialog
@@ -231,7 +346,11 @@ export function BackupRestoreCard() {
         onOpenChange={setConfirmOpen}
         title={pendingAction?.title ?? ""}
         description={pendingAction?.description ?? ""}
-        confirmLabel={pendingAction?.type === "delete" ? "削除する" : "復元する"}
+        confirmLabel={
+          pendingAction?.type === "delete" || pendingAction?.type === "delete-auto"
+            ? "削除する"
+            : "復元する"
+        }
         variant="destructive"
         onConfirm={handleConfirm}
       />

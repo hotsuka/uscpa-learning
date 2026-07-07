@@ -1,4 +1,5 @@
 import { TARGET_KEYS, type TargetKey } from "./constants"
+import { writeBackupMeta } from "./autoBackup"
 
 export interface ExportPayload {
   schema: "uscpa-backup"
@@ -39,6 +40,8 @@ export function downloadCurrentStateAsJson(): void {
   a.click()
   document.body.removeChild(a)
   URL.revokeObjectURL(url)
+  // リマインダー表示の判定に使う最終ダウンロード日時を記録
+  writeBackupMeta({ lastJsonDownloadAt: new Date().toISOString() })
 }
 
 const isExportPayload = (obj: unknown): obj is ExportPayload => {

@@ -1,24 +1,25 @@
-"use client"
+"use client";
 
-import { Sidebar } from "@/components/layout/Sidebar"
-import { BottomNav } from "@/components/layout/BottomNav"
-import { SyncProvider } from "@/components/providers/SyncProvider"
-import { Loading } from "@/components/common/Loading"
-import { useHydration } from "@/hooks/useHydration"
+import { Sidebar } from "@/components/layout/Sidebar";
+import { BottomNav } from "@/components/layout/BottomNav";
+import { SyncProvider } from "@/components/providers/SyncProvider";
+import { Loading } from "@/components/common/Loading";
+import { BackupReminderBanner } from "@/components/common/BackupReminderBanner";
+import { useHydration } from "@/hooks/useHydration";
 
 export default function MainLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const hydrated = useHydration()
+  const hydrated = useHydration();
 
   if (!hydrated) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <Loading size="lg" />
       </div>
-    )
+    );
   }
 
   return (
@@ -26,10 +27,11 @@ export default function MainLayout({
       <div className="min-h-screen bg-background">
         <Sidebar />
         <main className="md:ml-64 pb-20 md:pb-0">
+          <BackupReminderBanner />
           {children}
         </main>
         <BottomNav />
       </div>
     </SyncProvider>
-  )
+  );
 }
