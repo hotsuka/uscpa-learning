@@ -1,4 +1,5 @@
-export type TBSAnswerType = "number" | "select" | "multiselect" | "table";
+export type TBSAnswerType =
+  "number" | "select" | "multiselect" | "table" | "research";
 
 export interface TBSExhibit {
   id: string;
@@ -47,10 +48,14 @@ export interface TBSQuestion {
   source: string;
 }
 
+// 回答値: number=数値, select/research=文字列, multiselect=文字列配列, table=セルキー→入力値
+export type TBSAnswerValue =
+  string | number | string[] | Record<string, string>;
+
 export interface TBSTaskAttempt {
   tbsId: string;
   taskId: string;
-  userAnswer: string | number | string[];
+  userAnswer: TBSAnswerValue;
   isCorrect: boolean;
   attemptedAt: string;
 }

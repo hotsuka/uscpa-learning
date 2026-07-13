@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Circle } from "lucide-react";
 import { TBSAnswerForm } from "./TBSAnswerForm";
-import type { TBSTask, TBSTaskAttempt } from "@/types/tbs";
+import type { TBSTask, TBSTaskAttempt, TBSAnswerValue } from "@/types/tbs";
 import { cn } from "@/lib/utils";
 
 interface TBSTaskPanelProps {
@@ -14,7 +14,7 @@ interface TBSTaskPanelProps {
   taskAttempts: TBSTaskAttempt[];
   onTaskSubmit: (
     taskId: string,
-    answer: string | number | string[],
+    answer: TBSAnswerValue,
     isCorrect: boolean,
   ) => void;
 }

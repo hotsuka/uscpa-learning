@@ -7,7 +7,12 @@ import Link from "next/link";
 import { TBSExhibitPanel } from "./TBSExhibitPanel";
 import { TBSTaskPanel } from "./TBSTaskPanel";
 import { useTBSBankStore } from "@/stores/tbsBankStore";
-import type { TBSQuestion, TBSTaskAttempt, TBSAttempt } from "@/types/tbs";
+import type {
+  TBSQuestion,
+  TBSTaskAttempt,
+  TBSAttempt,
+  TBSAnswerValue,
+} from "@/types/tbs";
 
 interface TBSViewerProps {
   question: TBSQuestion;
@@ -20,11 +25,7 @@ export function TBSViewer({ question }: TBSViewerProps) {
   const addAttempt = useTBSBankStore((s) => s.addAttempt);
 
   const handleTaskSubmit = useCallback(
-    (
-      taskId: string,
-      answer: string | number | string[],
-      isCorrect: boolean,
-    ) => {
+    (taskId: string, answer: TBSAnswerValue, isCorrect: boolean) => {
       const newAttempt: TBSTaskAttempt = {
         tbsId: question.id,
         taskId,

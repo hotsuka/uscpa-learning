@@ -11,19 +11,43 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CheckCircle2, XCircle } from "lucide-react";
-import type { TBSTask } from "@/types/tbs";
+import { cn } from "@/lib/utils";
+import type { TBSTask, TBSTableCell, TBSAnswerValue } from "@/types/tbs";
 
 interface TBSAnswerFormProps {
   task: TBSTask;
-  onSubmit: (answer: string | number | string[], isCorrect: boolean) => void;
+  onSubmit: (answer: TBSAnswerValue, isCorrect: boolean) => void;
   isAnswered: boolean;
-  userAnswer: string | number | string[] | null;
+  userAnswer: TBSAnswerValue | null;
 }
 
-function checkCorrect(
-  task: TBSTask,
-  answer: string | number | string[],
-): boolean {
+// ASC引用の正規化: 数字以外の区切りをハイフンに統一（"ASC 606-10-32-28" → "606-10-32-28"）
+function normalizeCitation(value: string): string {
+  return value.replace(/[^0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+// テーブルセルの正誤判定（数値は許容誤差つき、文字列は正規化比較）
+function checkTableCell(cell: TBSTableCell, rawInput: string): boolean {
+  if (typeof cell.correctValue === "number") {
+    if (rawInput.trim() === "") return false;
+    const tolerance = cell.tolerance ?? 0;
+    return Math.abs(Number(rawInput) - cell.correctValue) <= tolerance;
+  }
+  return (
+    rawInput.trim().toLowerCase() === cell.correctValue.trim().toLowerCase()
+  );
+}
+
+function checkCorrect(task: TBSTask, answer: TBSAnswerValue): boolean {
+  if (task.answerType === "table") {
+    const cells = task.tableConfig?.cells;
+    if (!cells || cells.length === 0) return false;
+    const input = answer as Record<string, string>;
+    return cells.every((cell) =>
+      checkTableCell(cell, input[`${cell.rowLabel}__${cell.colLabel}`] ?? ""),
+    );
+  }
+
   const correct = task.correctAnswer;
   if (correct === undefined) return false;
 
@@ -35,6 +59,11 @@ function checkCorrect(
     const a = [...(answer as string[])].sort();
     const c = [...(correct as string[])].sort();
     return JSON.stringify(a) === JSON.stringify(c);
+  }
+  if (task.answerType === "research") {
+    return (
+      normalizeCitation(String(answer)) === normalizeCitation(String(correct))
+    );
   }
   return String(answer) === String(correct);
 }
@@ -51,6 +80,11 @@ export function TBSAnswerForm({
   const [selectInput, setSelectInput] = useState(
     isAnswered && task.answerType === "select" ? String(userAnswer ?? "") : "",
   );
+  const [researchInput, setResearchInput] = useState(
+    isAnswered && task.answerType === "research"
+      ? String(userAnswer ?? "")
+      : "",
+  );
   const [multiInput, setMultiInput] = useState<string[]>(
     isAnswered && task.answerType === "multiselect"
       ? ((userAnswer as string[]) ?? [])
@@ -58,7 +92,7 @@ export function TBSAnswerForm({
   );
   const [tableInput, setTableInput] = useState<Record<string, string>>(() => {
     if (isAnswered && task.answerType === "table" && userAnswer) {
-      return userAnswer as unknown as Record<string, string>;
+      return userAnswer as Record<string, string>;
     }
     const init: Record<string, string> = {};
     task.tableConfig?.cells.forEach((cell) => {
@@ -71,15 +105,17 @@ export function TBSAnswerForm({
     isAnswered && userAnswer !== null ? checkCorrect(task, userAnswer) : null;
 
   const handleSubmit = () => {
-    let answer: string | number | string[];
+    let answer: TBSAnswerValue;
     if (task.answerType === "number") {
       answer = Number(numberInput);
     } else if (task.answerType === "select") {
       answer = selectInput;
+    } else if (task.answerType === "research") {
+      answer = researchInput;
     } else if (task.answerType === "multiselect") {
       answer = multiInput;
     } else {
-      answer = tableInput as unknown as string;
+      answer = tableInput;
     }
     const correct = checkCorrect(task, answer);
     onSubmit(answer, correct);
@@ -88,6 +124,7 @@ export function TBSAnswerForm({
   const canSubmit = (() => {
     if (task.answerType === "number") return numberInput.trim() !== "";
     if (task.answerType === "select") return selectInput !== "";
+    if (task.answerType === "research") return researchInput.trim() !== "";
     if (task.answerType === "multiselect") return multiInput.length > 0;
     return Object.values(tableInput).every((v) => v.trim() !== "");
   })();
@@ -134,6 +171,25 @@ export function TBSAnswerForm({
               ))}
             </SelectContent>
           </Select>
+        </div>
+      )}
+
+      {task.answerType === "research" && (
+        <div>
+          <label className="text-xs text-gray-500 mb-1 block">
+            該当するASC引用を入力（例: 606-10-32-28）
+          </label>
+          <div className="flex items-center gap-2">
+            <span className="text-gray-500 text-sm">ASC</span>
+            <Input
+              type="text"
+              value={researchInput}
+              onChange={(e) => setResearchInput(e.target.value)}
+              placeholder="例: 606-10-32-28"
+              disabled={isAnswered}
+              className="max-w-64"
+            />
+          </div>
         </div>
       )}
 
@@ -195,27 +251,50 @@ export function TBSAnswerForm({
                   </td>
                   {task.tableConfig!.columns.map((col) => {
                     const key = `${row}__${col}`;
-                    const isCell = task.tableConfig!.cells.some(
+                    const cell = task.tableConfig!.cells.find(
                       (c) => c.rowLabel === row && c.colLabel === col,
                     );
-                    return (
-                      <td key={col} className="border px-1 py-1">
-                        {isCell ? (
-                          <Input
-                            type="number"
-                            value={tableInput[key] ?? ""}
-                            onChange={(e) =>
-                              setTableInput((prev) => ({
-                                ...prev,
-                                [key]: e.target.value,
-                              }))
-                            }
-                            disabled={isAnswered}
-                            className="h-7 text-xs text-right"
-                          />
-                        ) : (
+                    if (!cell) {
+                      return (
+                        <td key={col} className="border px-1 py-1">
                           <span className="text-gray-300 text-center block">
                             —
+                          </span>
+                        </td>
+                      );
+                    }
+                    const cellCorrect =
+                      isAnswered && checkTableCell(cell, tableInput[key] ?? "");
+                    return (
+                      <td key={col} className="border px-1 py-1">
+                        <Input
+                          type={
+                            typeof cell.correctValue === "number"
+                              ? "number"
+                              : "text"
+                          }
+                          value={tableInput[key] ?? ""}
+                          onChange={(e) =>
+                            setTableInput((prev) => ({
+                              ...prev,
+                              [key]: e.target.value,
+                            }))
+                          }
+                          disabled={isAnswered}
+                          className={cn(
+                            "h-7 text-xs text-right",
+                            isAnswered &&
+                              (cellCorrect
+                                ? "border-green-500 bg-green-50"
+                                : "border-red-400 bg-red-50"),
+                          )}
+                        />
+                        {isAnswered && !cellCorrect && (
+                          <span className="block text-right text-xs text-red-600 mt-0.5 pr-1">
+                            正解:{" "}
+                            {typeof cell.correctValue === "number"
+                              ? cell.correctValue.toLocaleString()
+                              : cell.correctValue}
                           </span>
                         )}
                       </td>
@@ -253,6 +332,11 @@ export function TBSAnswerForm({
               {task.answerType === "number" && (
                 <span className="font-normal text-gray-500 ml-2">
                   （正解: ${Number(task.correctAnswer).toLocaleString()}）
+                </span>
+              )}
+              {task.answerType === "research" && (
+                <span className="font-normal text-gray-500 ml-2">
+                  （正解: ASC {String(task.correctAnswer)}）
                 </span>
               )}
               {(task.answerType === "select" ||
