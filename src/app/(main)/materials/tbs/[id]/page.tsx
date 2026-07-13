@@ -26,7 +26,7 @@ export default async function TBSDetailPage({ params }: Props) {
       <div className="sm:hidden border-b bg-muted/30 p-2 flex justify-center shrink-0">
         <MiniTimer />
       </div>
-      <div className="hidden sm:flex justify-end px-3 py-1.5 border-b bg-muted/30 shrink-0">
+      <div className="hidden sm:flex justify-center px-3 py-1.5 border-b bg-muted/30 shrink-0">
         <MiniTimer />
       </div>
       <div className="flex-1 min-h-0">
