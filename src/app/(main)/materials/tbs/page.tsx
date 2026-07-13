@@ -15,6 +15,7 @@ import {
 import { ArrowLeft, BookOpen, CheckCircle2 } from "lucide-react";
 import { farTBSQuestions, getTBSTopics } from "@/data/tbs/far";
 import { useTBSBankStore } from "@/stores/tbsBankStore";
+import { MiniTimer } from "@/components/materials/MiniTimer";
 
 type StatusFilter = "all" | "unattempted" | "attempted";
 type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced";
@@ -53,7 +54,13 @@ export default function TBSListPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
+      <div className="sm:hidden border-b bg-muted/30 p-2 flex justify-center">
+        <MiniTimer />
+      </div>
       <div className="max-w-2xl mx-auto px-4 py-6">
+        <div className="hidden sm:flex justify-end mb-2">
+          <MiniTimer />
+        </div>
         <div className="flex items-center gap-2 mb-4">
           <Link
             href="/materials"
