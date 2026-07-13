@@ -1,0 +1,128 @@
+[
+  {
+    "id": "far-tbs-eps-001",
+    "subject": "FAR",
+    "topic": "EPS",
+    "title": "Basic and Diluted Earnings Per Share",
+    "scenario": "Calder Technologies Inc. is preparing its earnings per share disclosures for the year ended December 31, Year 5.\n\nCalder's common share transactions during Year 5, including a stock split, are summarized in **Exhibit 1**. Information about Calder's potentially dilutive securities, all of which were outstanding for the entire year, appears in **Exhibit 2**. Selected income statement and other year-end data appear in **Exhibit 3**.\n\nUse the information in the exhibits to complete the tasks that follow. Calder's effective income tax rate for Year 5 was 25%.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Common Share Transactions During Year 5",
+        "content": "| Date | Transaction |\n|---|---|\n| January 1 | 380,000 shares of common stock issued and outstanding. |\n| April 1 | Issued 70,000 new shares of common stock in a public offering. |\n| July 1 | Effected a 2-for-1 stock split. |\n| November 1 | Reacquired 90,000 shares of common stock to be held as treasury stock. |\n\nNo other common share transactions occurred during Year 5."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Potentially Dilutive Securities Outstanding Throughout Year 5",
+        "content": "All exercise prices, conversion ratios, and market prices below are stated on a **post-split basis**.\n\n| Security | Terms |\n|---|---|\n| Series A stock options | 60,000 options granted to executives in Year 3, each exercisable for one share of common stock at $20 per share. |\n| Series B stock options | 40,000 options granted to executives in Year 4, each exercisable for one share of common stock at $30 per share. |\n| 5% convertible bonds | $4,000,000 face amount, issued at face amount in Year 3. Each $1,000 bond is convertible into 40 shares of common stock. |\n| 6% cumulative convertible preferred stock | 50,000 shares, $100 par value. Each preferred share is convertible into 2 shares of common stock. |\n\nThe average market price of Calder common stock during Year 5 was **$25 per share**."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Selected Income Statement and Other Data for Year 5",
+        "content": "**Prepared by the assistant controller — December 31, Year 5**\n\n- Net income for Year 5 was $2,000,000.\n- No dividends were declared or paid on the preferred stock during Year 5. Preferred dividends in arrears at December 31, Year 4 were $300,000.\n- On December 15, Year 5, the board of directors declared a cash dividend of $0.10 per share on common shares outstanding, payable January 25, Year 6.\n- Interest expense for Year 5 included $140,000 on a 7% nonconvertible term loan.\n- The closing market price of Calder common stock on December 31, Year 5 was $27 per share."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Weighted-Average Common Shares Outstanding",
+        "instruction": "Refer to Exhibit 1. Calculate the weighted-average number of common shares outstanding for Year 5 to be used in computing basic EPS. Apply the July 1 stock split retroactively (in whole shares, no commas).",
+        "answerType": "number",
+        "correctAnswer": 850000,
+        "tolerance": 1,
+        "explanation": "The 2-for-1 split is applied retroactively to all shares outstanding before the split date. January 1 shares: 380,000 × 2 × 12/12 = 760,000. April 1 issuance: 70,000 × 2 × 9/12 = 105,000. November 1 treasury purchase: 90,000 × 2/12 = 15,000 reduction. Weighted-average shares = 760,000 + 105,000 − 15,000 = 850,000.",
+        "explanationJa": "株式分割は**期首に遡及して適用**します（分割前に流通していた株式はすべて2倍にする）。\n\n| 区分 | 計算 | 加重平均 |\n|---|---|---|\n| 1/1 流通株式 | 380,000 × 2 × 12/12 | 760,000 |\n| 4/1 新株発行 | 70,000 × 2 × 9/12 | 105,000 |\n| 11/1 自己株式取得 | 90,000 × 2/12 | (15,000) |\n| **合計** | | **850,000株** |\n\n11月1日の自己株式90,000株は分割後の取得なので2倍しません。期間法で検算すると、1〜3月 760,000×3/12=190,000、4〜6月 900,000×3/12=225,000、7〜10月 900,000×4/12=300,000、11〜12月 810,000×2/12=135,000 で合計 850,000株となり一致します。",
+        "references": ["ASC 260-10-45-10", "ASC 260-10-55-12"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Basic Earnings Per Share",
+        "instruction": "Calculate basic EPS for Year 5. Round to the nearest cent (in dollars and cents, e.g., 1.23).",
+        "answerType": "number",
+        "correctAnswer": 2,
+        "tolerance": 0.01,
+        "explanation": "Income available to common stockholders = net income of $2,000,000 less the current-year cumulative preferred dividend requirement of $300,000 (50,000 shares × $100 par × 6%), whether or not declared. Basic EPS = $1,700,000 ÷ 850,000 weighted-average shares = $2.00.",
+        "explanationJa": "基本的EPS = 普通株主に帰属する利益 ÷ 加重平均流通株式数\n\n1. **分子**: 純利益 $2,000,000 − 優先配当 $300,000 = **$1,700,000**\n   - 累積型優先株式の配当は、**宣言の有無にかかわらず当期分**（50,000株 × $100 × 6% = $300,000）を控除します。\n2. **分母**: 850,000株（Work Tab 1）\n3. **基本的EPS** = $1,700,000 ÷ 850,000 = **$2.00**",
+        "references": ["ASC 260-10-45-10", "ASC 260-10-45-11"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Treatment of Cumulative Preferred Dividends in Basic EPS",
+        "instruction": "Refer to Exhibits 2 and 3. In computing income available to common stockholders for Year 5 basic EPS, how should Calder treat the dividends on its 6% cumulative preferred stock?",
+        "answerType": "select",
+        "options": [
+          "Deduct only the Year 5 dividend requirement of $300,000",
+          "Deduct the Year 5 requirement plus the Year 4 arrearage, a total of $600,000",
+          "Deduct nothing, because no dividends were declared in Year 5",
+          "Deduct only dividends actually paid in cash during Year 5"
+        ],
+        "correctAnswer": "Deduct only the Year 5 dividend requirement of $300,000",
+        "explanation": "For cumulative preferred stock, the dividend requirement for the current period is deducted from net income whether or not it is declared. Dividends in arrears from prior years were already deducted in the periods to which they relate, so the Year 4 arrearage of $300,000 is not deducted again in Year 5. Only the current-year requirement of 50,000 × $100 × 6% = $300,000 is deducted.",
+        "explanationJa": "累積型優先株式の配当のEPS上の取扱いがポイントです。\n\n- 累積型優先株式は、**宣言の有無にかかわらず当期の所要配当額**を純利益から控除します。\n- 過年度の未払配当（arrears）は、**その発生年度のEPS計算ですでに控除済み**のため、当期に再度控除しません（二重控除の禁止）。\n- 控除額 = 50,000株 × $100 × 6% = **$300,000（当期分のみ）**\n\nYear 4 分の延滞額 $300,000 を加えた $600,000 を控除するのは誤りです。",
+        "references": ["ASC 260-10-45-11"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Incremental Shares From Series A Options (Treasury Stock Method)",
+        "instruction": "Refer to Exhibit 2. Using the treasury stock method, calculate the incremental shares from the Series A stock options to be included in diluted EPS for Year 5 (in whole shares, no commas).",
+        "answerType": "number",
+        "correctAnswer": 12000,
+        "tolerance": 1,
+        "explanation": "Under the treasury stock method, assumed exercise proceeds are used to repurchase shares at the average market price. Proceeds = 60,000 options × $20 = $1,200,000. Shares assumed repurchased = $1,200,000 ÷ $25 average market price = 48,000. Incremental shares = 60,000 − 48,000 = 12,000.",
+        "explanationJa": "自己株式方式（treasury stock method）の3ステップで計算します。\n\n1. **行使による想定手取金** = 60,000個 × $20 = **$1,200,000**\n2. **平均市場価格での想定買戻株式数** = $1,200,000 ÷ $25 = **48,000株**\n3. **希薄化増加株式数** = 60,000 − 48,000 = **12,000株**\n\n買戻しに使うのは**期中平均市場価格**（$25）であり、期末株価（$27）ではない点に注意してください。行使価格 $20 < 平均市場価格 $25 なので Series A はin-the-moneyであり希薄化効果があります。",
+        "references": ["ASC 260-10-45-23"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Numerator Adjustment for the Convertible Bonds (If-Converted Method)",
+        "instruction": "Refer to Exhibit 2. Under the if-converted method, calculate the amount added back to the diluted EPS numerator for the 5% convertible bonds for Year 5. Use the 25% tax rate (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 150000,
+        "tolerance": 1,
+        "explanation": "If the bonds are assumed converted at the beginning of the year, the related interest expense, net of tax, would not have been incurred. Interest = $4,000,000 × 5% = $200,000. After-tax add-back = $200,000 × (1 − 0.25) = $150,000. The $140,000 of interest on the nonconvertible term loan is not added back because that loan is not a potential common share.",
+        "explanationJa": "if-converted法では、転換社債が期首に転換されたと仮定するため、社債利息（税引後）を分子に加算します。\n\n1. **社債利息** = $4,000,000 × 5% = **$200,000**\n2. **税引後加算額** = $200,000 × (1 − 25%) = **$150,000**\n\n利息は税務上損金算入されているため、転換を仮定して利息を戻し入れる際は**税効果を控除した純額**で加算します。なお、7%タームローンの利息 $140,000 は転換権のない借入金の利息なので加算しません。",
+        "references": ["ASC 260-10-45-40"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Identification of Antidilutive Securities",
+        "instruction": "Refer to Exhibits 2 and 3. Select all securities that are antidilutive for Year 5 and therefore excluded from the diluted EPS computation. (Select all that apply.)",
+        "answerType": "multiselect",
+        "options": [
+          "Series A stock options ($20 exercise price)",
+          "Series B stock options ($30 exercise price)",
+          "5% convertible bonds",
+          "6% cumulative convertible preferred stock"
+        ],
+        "correctAnswer": [
+          "Series B stock options ($30 exercise price)",
+          "6% cumulative convertible preferred stock"
+        ],
+        "explanation": "Series B options are antidilutive because the $30 exercise price exceeds the $25 average market price; assumed exercise would reduce shares outstanding. The convertible preferred is antidilutive because its incremental effect is $300,000 ÷ (50,000 × 2 = 100,000 shares) = $3.00 per incremental share, which exceeds basic EPS of $2.00; including it would increase diluted EPS. Series A options (incremental effect of $0 per share) and the convertible bonds ($150,000 ÷ 160,000 shares = $0.9375 per incremental share, below $2.00) are both dilutive.",
+        "explanationJa": "各証券の希薄化判定は次のとおりです。\n\n| 証券 | 増分効果 | 判定 |\n|---|---|---|\n| Series A オプション | 分子増加なし・株式12,000株増 → $0.00 | 希薄化 |\n| Series B オプション | 行使価格 $30 > 平均市場価格 $25（out-of-the-money） | **逆希薄化** |\n| 5% 転換社債 | $150,000 ÷ 160,000株 = $0.9375 < 基本的EPS $2.00 | 希薄化 |\n| 6% 累積転換優先株式 | $300,000 ÷ 100,000株 = $3.00 > $2.00 | **逆希薄化** |\n\n- Series B: 行使を仮定すると買戻株式数が行使株式数を上回り、流通株式がかえって減少するため除外します。\n- 転換優先株式: 1株あたり増分効果 $3.00 が基本的EPS $2.00 を上回るため、算入するとEPSが増加してしまい除外します。",
+        "references": ["ASC 260-10-45-17"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Diluted Earnings Per Share",
+        "instruction": "Calculate diluted EPS for Year 5, including only dilutive securities. Round to the nearest cent (in dollars and cents, e.g., 1.23).",
+        "answerType": "number",
+        "correctAnswer": 1.81,
+        "tolerance": 0.01,
+        "explanation": "Potential common shares are included in order of increasing incremental effect: Series A options ($0.00 per share), then the convertible bonds ($0.9375 per share). Adding the options: $1,700,000 ÷ (850,000 + 12,000) = $1.97. Adding the bonds: ($1,700,000 + $150,000) ÷ (862,000 + 160,000) = $1,850,000 ÷ 1,022,000 = $1.81. The convertible preferred ($3.00 incremental effect) and Series B options are antidilutive and excluded. Diluted EPS = $1.81.",
+        "explanationJa": "希薄化後EPSは、**増分効果の小さい（最も希薄化的な）証券から順に**算入して計算します。\n\n1. **基本的EPS**: $1,700,000 ÷ 850,000 = $2.00\n2. **(+) Series A オプション**（増分効果 $0.00）: $1,700,000 ÷ (850,000 + 12,000) = $1,700,000 ÷ 862,000 = **$1.97**（低下→希薄化）\n3. **(+) 5% 転換社債**（増分効果 $0.9375）: ($1,700,000 + $150,000) ÷ (862,000 + 160,000株) = $1,850,000 ÷ 1,022,000 = **$1.81**（低下→希薄化）\n   - 転換株式数 = $4,000,000 ÷ $1,000 × 40株 = 160,000株\n4. **転換優先株式**（増分効果 $3.00 > $1.81）と **Series B オプション**（out-of-the-money）は逆希薄化のため除外します。\n\n**希薄化後EPS = $1,850,000 ÷ 1,022,000 = $1.81**",
+        "references": ["ASC 260-10-45-16", "ASC 260-10-45-40"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
+  }
+]

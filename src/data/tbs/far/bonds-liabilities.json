@@ -1,0 +1,404 @@
+[
+  {
+    "id": "far-tbs-bond-001",
+    "subject": "FAR",
+    "topic": "Bonds & Liabilities",
+    "title": "Bonds Issued at a Discount: Effective Interest Amortization",
+    "scenario": "Meridian Industries Inc. has a December 31 fiscal year-end. On January 1, Year 1, Meridian issued $500,000 face amount, 6% bonds that mature on December 31, Year 5. Interest is payable annually on December 31, beginning December 31, Year 1. At the date of issuance, the market (effective) yield for bonds of similar risk and maturity was 8%, and the bonds were priced to yield that rate. Meridian incurred no debt issuance costs and uses the effective interest method to amortize bond discount or premium.\n\nThe terms of the issuance are summarized in **Exhibit 1**, present value factors are provided in **Exhibit 2**, and an excerpt from the treasurer's financing memorandum appears in **Exhibit 3**.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Terms of the Bond Issuance",
+        "content": "| Item | Detail |\n|---|---|\n| Date of issuance | January 1, Year 1 |\n| Face amount | $500,000 |\n| Stated (coupon) rate | 6% per annum |\n| Interest payment dates | Annually on December 31 |\n| Maturity date | December 31, Year 5 (5-year term) |\n| Market (effective) yield at issuance | 8% per annum |\n| Debt issuance costs | None |\n| Call or conversion features | None |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Present Value Factors",
+        "content": "**Present value of $1**\n\n| Rate | 4 periods | 5 periods | 6 periods |\n|---|---|---|---|\n| 6% | 0.79209 | 0.74726 | 0.70496 |\n| 7% | 0.76290 | 0.71299 | 0.66634 |\n| 8% | 0.73503 | 0.68058 | 0.63017 |\n\n**Present value of an ordinary annuity of $1**\n\n| Rate | 4 periods | 5 periods | 6 periods |\n|---|---|---|---|\n| 6% | 3.46511 | 4.21236 | 4.91732 |\n| 7% | 3.38721 | 4.10020 | 4.76654 |\n| 8% | 3.31213 | 3.99271 | 4.62288 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Excerpt from the Treasurer's Financing Memorandum (December 12, Year 0)",
+        "content": "The proceeds of the proposed bond issue will fund the Year 1 expansion of the Westbrook plant, which is budgeted at $450,000. Any remaining proceeds will be added to working capital.\n\nThe company's existing long-term debt consists of a $120,000, 5% note payable to First Commerce Bank, due in Year 8, with interest payable quarterly. In addition, the company maintains a $200,000 revolving line of credit at prime plus 1% (currently undrawn), which will remain available after the bond issuance.\n\nManagement expects the company's effective income tax rate to remain at 25% for the foreseeable future."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Issue Price of the Bonds",
+        "instruction": "Using the present value factors in **Exhibit 2**, compute the issue price (total cash proceeds) of the bonds on January 1, Year 1. Round to the nearest whole dollar (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 460071,
+        "tolerance": 100,
+        "explanation": "The bonds pay annual cash interest of $500,000 × 6% = $30,000 for 5 years, plus $500,000 at maturity, all discounted at the 8% market yield. PV of principal: $500,000 × 0.68058 = $340,290. PV of the interest annuity: $30,000 × 3.99271 = $119,781. Issue price = $340,290 + $119,781 = $460,071. Because the market yield (8%) exceeds the stated rate (6%), the bonds sell at a discount of $500,000 − $460,071 = $39,929.",
+        "explanationJa": "発行価額 = 元本の現在価値 + 利息年金の現在価値（いずれも**市場利子率8%**で割引）\n\n1. 年間クーポン = $500,000 × 6% = **$30,000**（クーポン計算は表面利率を使う点に注意）\n2. 元本のPV = $500,000 × 0.68058 = **$340,290**\n3. 利息のPV = $30,000 × 3.99271 = **$119,781**\n4. 発行価額 = $340,290 + $119,781 = **$460,071**\n\n市場利率8% > 表面利率6% のため割引発行となり、ディスカウントは $500,000 − $460,071 = **$39,929** です。",
+        "references": ["ASC 835-30-25-2"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Journal Entry at Issuance",
+        "instruction": "Prepare the journal entry to record the issuance of the bonds on January 1, Year 1. Round each amount to the nearest whole dollar. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": ["Cash", "Discount on bonds payable", "Bonds payable"],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 460071,
+              "tolerance": 100
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Discount on bonds payable",
+              "colLabel": "Debit",
+              "correctValue": 39929,
+              "tolerance": 100
+            },
+            {
+              "rowLabel": "Discount on bonds payable",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Bonds payable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Bonds payable",
+              "colLabel": "Credit",
+              "correctValue": 500000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Cash is debited for the proceeds of $460,071. Bonds payable is credited at the face amount of $500,000. The $39,929 difference is debited to Discount on bonds payable, a contra-liability account presented as a direct deduction from the face amount of the bonds, so the net liability at issuance equals the $460,071 proceeds.",
+        "explanationJa": "発行時仕訳:\n\n| 借方 | 金額 | 貸方 | 金額 |\n|---|---|---|---|\n| Cash | $460,071 | Bonds payable | $500,000 |\n| Discount on bonds payable | $39,929 | | |\n\n1. 現金は受取額 **$460,071** で計上\n2. 社債（Bonds payable）は**額面 $500,000** で計上\n3. 差額 **$39,929** が社債割引発行差金（Discount on bonds payable）\n\nDiscountは負債の評価勘定（借方残高）で、貸借対照表では社債額面から直接控除して表示します。正味の負債額は発行価額 $460,071 と一致します。",
+        "references": ["ASC 835-30-45-1A"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Effective Interest Amortization Schedule (Years 1-2)",
+        "instruction": "Complete the effective interest amortization schedule for Year 1 and Year 2. Interest expense for each year equals the carrying amount of the bonds at the beginning of that year multiplied by the 8% effective rate. Round each amount to the nearest whole dollar.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": [
+            "Interest Expense",
+            "Cash Interest Paid",
+            "Discount Amortized",
+            "Carrying Amount, Dec 31"
+          ],
+          "rows": ["Year 1", "Year 2"],
+          "cells": [
+            {
+              "rowLabel": "Year 1",
+              "colLabel": "Interest Expense",
+              "correctValue": 36806,
+              "tolerance": 50
+            },
+            {
+              "rowLabel": "Year 1",
+              "colLabel": "Cash Interest Paid",
+              "correctValue": 30000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Year 1",
+              "colLabel": "Discount Amortized",
+              "correctValue": 6806,
+              "tolerance": 50
+            },
+            {
+              "rowLabel": "Year 1",
+              "colLabel": "Carrying Amount, Dec 31",
+              "correctValue": 466877,
+              "tolerance": 100
+            },
+            {
+              "rowLabel": "Year 2",
+              "colLabel": "Interest Expense",
+              "correctValue": 37350,
+              "tolerance": 50
+            },
+            {
+              "rowLabel": "Year 2",
+              "colLabel": "Cash Interest Paid",
+              "correctValue": 30000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Year 2",
+              "colLabel": "Discount Amortized",
+              "correctValue": 7350,
+              "tolerance": 100
+            },
+            {
+              "rowLabel": "Year 2",
+              "colLabel": "Carrying Amount, Dec 31",
+              "correctValue": 474227,
+              "tolerance": 100
+            }
+          ]
+        },
+        "explanation": "Year 1: interest expense = $460,071 × 8% = $36,806; cash interest = $500,000 × 6% = $30,000; discount amortized = $36,806 − $30,000 = $6,806; carrying amount at December 31, Year 1 = $460,071 + $6,806 = $466,877. Year 2: interest expense = $466,877 × 8% = $37,350; cash interest = $30,000; discount amortized = $37,350 − $30,000 = $7,350; carrying amount at December 31, Year 2 = $466,877 + $7,350 = $474,227.",
+        "explanationJa": "実効金利法では「期首帳簿価額 × 実効利率」で利息費用を計算します。\n\n**Year 1**\n1. 利息費用 = $460,071 × 8% = **$36,806**\n2. 現金支払利息 = $500,000 × 6% = **$30,000**\n3. 割引償却額 = $36,806 − $30,000 = **$6,806**\n4. 期末帳簿価額 = $460,071 + $6,806 = **$466,877**\n\n**Year 2**\n1. 利息費用 = $466,877 × 8% = **$37,350**\n2. 現金支払利息 = **$30,000**\n3. 割引償却額 = $37,350 − $30,000 = **$7,350**\n4. 期末帳簿価額 = $466,877 + $7,350 = **$474,227**\n\n割引発行の場合、帳簿価額は満期の額面 $500,000 に向かって毎期増加します。",
+        "references": ["ASC 835-30-35-2"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Total Interest Expense over the Life of the Bonds",
+        "instruction": "Compute the total interest expense Meridian will recognize over the entire 5-year life of the bonds (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 189929,
+        "tolerance": 100,
+        "explanation": "Total interest expense over the life of a bond equals total cash outflows minus the proceeds received: ($30,000 × 5 years) + $500,000 − $460,071 = $650,000 − $460,071 = $189,929. Equivalently, it equals total cash interest of $150,000 plus the entire $39,929 discount, which is fully amortized to interest expense by maturity.",
+        "explanationJa": "社債の全期間の利息費用は、次のどちらの方法でも計算できます。\n\n**方法1: キャッシュフロー差額**\n総支払額 − 受取額 = ($30,000 × 5年 + $500,000) − $460,071 = $650,000 − $460,071 = **$189,929**\n\n**方法2: クーポン + 割引額**\n現金利息合計 $150,000 + ディスカウント全額 $39,929 = **$189,929**\n\n割引発行差金は満期までに全額が利息費用として償却されるため、両方法は必ず一致します。",
+        "references": ["ASC 835-30-35-2"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Pattern of Interest Expense and Carrying Amount",
+        "instruction": "For a bond issued at a discount and accounted for under the effective interest method, select the statement that best describes the pattern over the bond's life.",
+        "answerType": "select",
+        "options": [
+          "Interest expense increases each year and the carrying amount increases toward the face amount.",
+          "Interest expense decreases each year and the carrying amount decreases toward the face amount.",
+          "Interest expense is constant each year and the carrying amount increases toward the face amount.",
+          "Interest expense increases each year and the carrying amount decreases toward the face amount."
+        ],
+        "correctAnswer": "Interest expense increases each year and the carrying amount increases toward the face amount.",
+        "explanation": "Under the effective interest method, a constant 8% effective rate is applied to the carrying amount. For a discount bond, each year's interest expense exceeds the cash coupon, and the excess (the amortized discount) is added to the carrying amount. The carrying amount therefore rises toward face value, and interest expense — the constant rate applied to a growing carrying amount — also increases each year. A constant annual expense would result from straight-line amortization, not the effective interest method.",
+        "explanationJa": "実効金利法のポイント:\n\n1. 利息費用 = 期首帳簿価額 × 実効利率（**利率は一定**）\n2. 割引発行では 利息費用 > 現金利息 となり、差額（償却額）が帳簿価額に加算される\n3. よって帳簿価額は額面 $500,000 に向かって**毎期増加**\n4. 増加した帳簿価額に一定の8%を掛けるため、利息費用も**毎期増加**\n\n「利息費用が毎期一定」となるのは定額法（straight-line）の場合であり、実効金利法の説明としては誤りです。",
+        "references": ["ASC 835-30-35-2"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Year 3 Interest Expense",
+        "instruction": "Compute the interest expense on the bonds for Year 3 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 37938,
+        "tolerance": 100,
+        "explanation": "The carrying amount at January 1, Year 3 equals the December 31, Year 2 carrying amount of $474,227. Interest expense for Year 3 = $474,227 × 8% = $37,938.",
+        "explanationJa": "Year 3 の利息費用は、Year 2 末（= Year 3 期首）の帳簿価額に実効利率を掛けて計算します。\n\n1. Year 3 期首帳簿価額 = **$474,227**（Work Tab 3 の Year 2 期末残高）\n2. 利息費用 = $474,227 × 8% = **$37,938**\n\n償却スケジュールを1年延長するだけの問題ですが、期首残高を使う点を間違えないようにしましょう。",
+        "references": ["ASC 835-30-35-2"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 30,
+    "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-bond-002",
+    "subject": "FAR",
+    "topic": "Bonds & Liabilities",
+    "title": "Early Extinguishment of Bonds with Call Premium",
+    "scenario": "Ridgeway Corporation has a December 31 fiscal year-end. On April 1, Year 1, Ridgeway issued $600,000 face amount, 8% bonds due April 1, Year 11, with interest payable semiannually on April 1 and October 1. On June 30, Year 6, Ridgeway exercised the call provision and redeemed the entire issue at the call price of 102 plus accrued interest.\n\nThe original terms of the issue are presented in **Exhibit 1**, the memorandum authorizing the redemption is presented in **Exhibit 2**, and selected general ledger balances immediately before the redemption entry are presented in **Exhibit 3**. The balances in **Exhibit 3** reflect all interest accruals and all amortization of the discount and debt issuance costs recorded through June 30, Year 6.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Original Terms of the Bond Issue",
+        "content": "| Item | Detail |\n|---|---|\n| Date of issuance | April 1, Year 1 |\n| Face amount | $600,000 |\n| Stated (coupon) rate | 8% per annum, payable semiannually on April 1 and October 1 |\n| Maturity date | April 1, Year 11 (10-year term) |\n| Issue price | 96 (proceeds of $576,000 before issuance costs) |\n| Debt issuance costs | $8,000 |\n| Call provision | Callable in whole at any time on or after April 1, Year 4, at 102 plus accrued interest |\n| Amortization method | Straight-line for both the discount and the debt issuance costs (not materially different from the effective interest method) |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Memorandum to the Board of Directors (June 10, Year 6)",
+        "content": "Management recommends redeeming the entire $600,000 bond issue on June 30, Year 6, under the call provision at 102 plus accrued interest. The redemption will be funded entirely from operating cash on hand.\n\nThe treasury group also evaluated two alternatives: (1) refinancing the issue with new 10-year bonds at an estimated coupon of 6.5%, and (2) drawing on the company's $500,000 revolving credit facility (SOFR plus 150 basis points, currently undrawn). Both alternatives were rejected because the company projects capital expenditures of only $300,000 in Year 7 and prefers to reduce total leverage."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Selected General Ledger Balances, June 30, Year 6 (immediately before the redemption entry)",
+        "content": "| Account | Balance |\n|---|---|\n| Bonds payable — face amount | $600,000 |\n| Discount on bonds payable (unamortized) | $11,400 |\n| Debt issuance costs — bonds (unamortized) | $3,800 |\n| Interest payable — bonds | $12,000 |\n| Cash | $980,000 |\n| Notes payable — bank (5.5%, due Year 9) | $250,000 |\n| Interest expense — bonds (January 1 through June 30, Year 6) | $25,600 |"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Total Cash Paid to Bondholders",
+        "instruction": "Compute the total cash Ridgeway paid to bondholders on June 30, Year 6, including accrued interest (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 624000,
+        "tolerance": 1,
+        "explanation": "Call price = $600,000 × 102% = $612,000. Accrued interest from the last interest payment date (April 1, Year 6) through June 30, Year 6 is 3 months: $600,000 × 8% × 3/12 = $12,000. Total cash paid = $612,000 + $12,000 = $624,000. The accrued interest settles the interest payable already on the books and is not part of the reacquisition price used to measure the extinguishment gain or loss.",
+        "explanationJa": "支払総額は「コール価格 + 経過利息」です。\n\n1. コール価格 = $600,000 × 102% = **$612,000**\n2. 経過利息 = 直前の利払日（Year 6 の4月1日）から6月30日までの**3か月分** = $600,000 × 8% × 3/12 = **$12,000**\n3. 支払総額 = $612,000 + $12,000 = **$624,000**\n\n経過利息は既に計上済みの未払利息（Interest payable $12,000）の決済であり、償還損益の計算に使う「再取得価額」には**含めません**。",
+        "references": ["ASC 470-50-40-2"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Net Carrying Amount Immediately Before Redemption",
+        "instruction": "Using **Exhibit 3**, compute the net carrying amount of the bonds immediately before the redemption, net of the unamortized discount and the unamortized debt issuance costs (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 584800,
+        "tolerance": 1,
+        "explanation": "Net carrying amount = face amount − unamortized discount − unamortized debt issuance costs = $600,000 − $11,400 − $3,800 = $584,800. Debt issuance costs are presented as a direct deduction from the carrying amount of the debt, so they reduce the net carrying amount used to measure the extinguishment gain or loss. Accrued interest payable of $12,000 is a separate liability and is not part of the bonds' net carrying amount.",
+        "explanationJa": "正味帳簿価額 = 額面 − 未償却ディスカウント − 未償却社債発行費\n\n1. 額面 = **$600,000**\n2. 未償却ディスカウント = **$11,400**（Exhibit 3）\n3. 未償却社債発行費 = **$3,800**（Exhibit 3）\n4. 正味帳簿価額 = $600,000 − $11,400 − $3,800 = **$584,800**\n\n社債発行費は負債の帳簿価額からの直接控除として表示されるため（ASC 835-30-45-1A）、償還損益の計算にも含めます。未払利息 $12,000 は別個の負債であり、社債の帳簿価額には含めません。",
+        "references": ["ASC 835-30-45-1A", "ASC 470-50-40-2"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Loss on Extinguishment",
+        "instruction": "Compute the loss on the extinguishment of the bonds recognized on June 30, Year 6. Enter the loss as a positive number (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 27200,
+        "tolerance": 1,
+        "explanation": "Loss on extinguishment = reacquisition price − net carrying amount. The reacquisition price excludes accrued interest: $600,000 × 102% = $612,000. Net carrying amount = $584,800 (Work Tab 2). Loss = $612,000 − $584,800 = $27,200. Because the reacquisition price exceeds the net carrying amount, the difference is a loss.",
+        "explanationJa": "償還損益 = 再取得価額 − 正味帳簿価額\n\n1. 再取得価額（経過利息を除く）= $600,000 × 102% = **$612,000**\n2. 正味帳簿価額 = **$584,800**（Work Tab 2）\n3. 損失 = $612,000 − $584,800 = **$27,200**\n\n再取得価額 > 帳簿価額 のため**損失**です。割引発行社債をコールプレミアム付きで償還すると、プレミアム分と未償却ディスカウント・発行費の両方が損失要因になります。",
+        "references": ["ASC 470-50-40-2"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Components of the Net Carrying Amount",
+        "instruction": "Which of the following amounts are included in the net carrying amount of the bonds for purposes of measuring the gain or loss on extinguishment? Select all that apply.",
+        "answerType": "multiselect",
+        "options": [
+          "Face amount of the bonds payable",
+          "Unamortized discount on the bonds",
+          "Unamortized debt issuance costs",
+          "Accrued interest payable at the redemption date",
+          "Call premium paid to redeem the bonds"
+        ],
+        "correctAnswer": [
+          "Face amount of the bonds payable",
+          "Unamortized discount on the bonds",
+          "Unamortized debt issuance costs"
+        ],
+        "explanation": "The net carrying amount of extinguished debt is the face amount adjusted for unamortized premium or discount and unamortized debt issuance costs. Accrued interest payable is a separate liability settled at redemption and is excluded from both the net carrying amount and the reacquisition price. The call premium is a component of the reacquisition price, not of the net carrying amount.",
+        "explanationJa": "正味帳簿価額（net carrying amount）に含まれるもの:\n\n- **額面金額** — 含む\n- **未償却ディスカウント** — 含む（控除項目）\n- **未償却社債発行費** — 含む（控除項目）\n\n含まれないもの:\n\n- **未払利息** — 別個の負債。償還時に決済されるだけで、帳簿価額にも再取得価額にも含めない\n- **コールプレミアム** — 帳簿価額側ではなく**再取得価額**（reacquisition price）の構成要素",
+        "references": ["ASC 470-50-40-2", "ASC 835-30-45-1A"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Income Statement Presentation",
+        "instruction": "How should Ridgeway report the loss on the extinguishment in its Year 6 income statement?",
+        "answerType": "select",
+        "options": [
+          "As a component of income from continuing operations",
+          "As an extraordinary item, net of income tax",
+          "In other comprehensive income",
+          "As an adjustment to beginning retained earnings"
+        ],
+        "correctAnswer": "As a component of income from continuing operations",
+        "explanation": "Gains and losses on extinguishment of debt are recognized in income of the period of extinguishment as a component of income from continuing operations. Extraordinary item classification has been eliminated from U.S. GAAP; if the amount is unusual or infrequent, it may be presented as a separate line item within continuing operations, but it is never reported net of tax below continuing operations, in other comprehensive income, or as a retained earnings adjustment.",
+        "explanationJa": "社債の期限前償還損益は、**継続事業からの損益（income from continuing operations）の一項目**として償還した期の損益に計上します。\n\n- **異常項目（extraordinary item）の区分は廃止済み**（ASU 2015-01）。税引後で区分表示する扱いは現行GAAPには存在しない\n- OCIに計上する根拠はない\n- 期首利益剰余金の修正は会計方針変更・過年度エラー訂正の場合のみ\n\n金額が unusual または infrequent な場合は継続事業の中で独立表示できますが、あくまで継続事業内での表示です。",
+        "references": ["ASC 470-50-40-2", "ASC 225-20-45-16"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Journal Entry to Record the Redemption",
+        "instruction": "Prepare the journal entry to record the redemption on June 30, Year 6, including the payment of accrued interest. The interest payable and all amortization through June 30 have already been recorded. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Bonds payable",
+            "Interest payable",
+            "Loss on extinguishment of debt",
+            "Discount on bonds payable",
+            "Debt issuance costs — bonds",
+            "Cash"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Bonds payable",
+              "colLabel": "Debit",
+              "correctValue": 600000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Bonds payable",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Interest payable",
+              "colLabel": "Debit",
+              "correctValue": 12000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Interest payable",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Loss on extinguishment of debt",
+              "colLabel": "Debit",
+              "correctValue": 27200,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Loss on extinguishment of debt",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Discount on bonds payable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Discount on bonds payable",
+              "colLabel": "Credit",
+              "correctValue": 11400,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Debt issuance costs — bonds",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Debt issuance costs — bonds",
+              "colLabel": "Credit",
+              "correctValue": 3800,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 624000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "The entry removes the face amount ($600,000 debit to Bonds payable), settles the accrued interest ($12,000 debit to Interest payable), writes off the unamortized discount ($11,400 credit) and unamortized debt issuance costs ($3,800 credit), credits Cash for the total paid of $624,000, and recognizes the balancing $27,200 debit as the loss on extinguishment. Total debits = $600,000 + $12,000 + $27,200 = $639,200, which equals total credits = $11,400 + $3,800 + $624,000 = $639,200.",
+        "explanationJa": "償還仕訳:\n\n| 借方 | 金額 | 貸方 | 金額 |\n|---|---|---|---|\n| Bonds payable | $600,000 | Discount on bonds payable | $11,400 |\n| Interest payable | $12,000 | Debt issuance costs — bonds | $3,800 |\n| Loss on extinguishment | $27,200 | Cash | $624,000 |\n\n1. 社債の額面 $600,000 を借方で消去\n2. 計上済み未払利息 $12,000 を借方で決済\n3. 未償却ディスカウント $11,400・未償却発行費 $3,800 を貸方で消去（いずれも借方残高の勘定）\n4. 現金支払額 $624,000（$612,000 + 経過利息 $12,000）を貸方計上\n5. 貸借差額 $27,200 が償還損失\n\n**検算**: 借方合計 $639,200 = 貸方合計 $639,200",
+        "references": ["ASC 470-50-40-2"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
+  }
+]

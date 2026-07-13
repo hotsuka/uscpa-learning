@@ -1,0 +1,258 @@
+[
+  {
+    "id": "far-tbs-err-001",
+    "subject": "FAR",
+    "topic": "Accounting Changes & Errors",
+    "title": "Error Correction Worksheet: Inventory, Capitalization, and Accruals",
+    "scenario": "Meridian Industrial Supply Co. is a calendar-year manufacturer. In February Year 3, before the Year 2 books were closed and before the Year 2 financial statements were issued, the company's newly hired controller completed a review of the accounting records and identified several errors affecting Year 1 and Year 2.\n\nSelected financial data as currently reported are presented in **Exhibit 1**. The controller's findings are described in **Exhibit 2**. Accounting policies and other information appear in **Exhibit 3**.\n\nFor all tasks, ignore income tax effects.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Selected Financial Data (As Currently Reported)",
+        "content": "| Item | Year 1 | Year 2 |\n|---|---|---|\n| Net sales | $3,100,000 | $3,400,000 |\n| Net income (Year 2 amount is preliminary; books not yet closed) | $500,000 | $620,000 |\n| Dividends declared and paid | $100,000 | $120,000 |\n| Total assets at December 31 | $2,900,000 | $3,150,000 |\n\nRetained earnings at January 1, Year 1 (as previously reported): **$800,000**"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Controller's Findings",
+        "content": "**Finding 1.** The physical inventory count at December 31, Year 1 included $40,000 of goods held on consignment from Apex Materials Inc. (Meridian is the consignee and never held title to the goods). No purchase was recorded for these goods. As a result, ending inventory at December 31, Year 1 was overstated by $40,000. The December 31, Year 2 count correctly excluded all consigned goods.\n\n**Finding 2.** Goods costing $25,000, shipped by a vendor FOB shipping point on December 28, Year 2 and received on January 4, Year 3, were excluded from the December 31, Year 2 physical inventory count. The related purchase was correctly recorded in December Year 2. Ending inventory at December 31, Year 2 was therefore understated by $25,000.\n\n**Finding 3.** On January 2, Year 1, Meridian paid $60,000 for a stamping machine and charged the entire amount to repairs and maintenance expense. The machine has an estimated useful life of 5 years and no salvage value. No depreciation has been recorded on this machine in Year 1 or Year 2.\n\n**Finding 4.** Salaries earned by employees during the last week of December Year 2, totaling $18,000, were not accrued at December 31, Year 2. The salaries were paid and charged to expense on January 8, Year 3. Salaries were properly accrued at December 31, Year 1.\n\n**Finding 5.** On January 2, Year 2, Meridian purchased a packaging machine for $90,000 (estimated salvage value $10,000; estimated useful life 10 years) and correctly capitalized the cost. The bookkeeper recorded Year 2 depreciation of $9,000, computed by ignoring the salvage value."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Accounting Policies and Other Information",
+        "content": "- Depreciation policy: straight-line method; a full year of depreciation is recorded in the year of acquisition.\n- Meridian uses a periodic inventory system; cost of goods sold is determined from the year-end physical count.\n- On July 1, Year 2, Meridian renewed a three-year product liability insurance policy for $36,000. The premium was recorded as prepaid insurance and is being amortized ratably over the coverage period; the controller verified that this policy was recorded correctly.\n- Meridian maintains a $500,000 revolving line of credit bearing interest at 7%; no amounts were drawn during Year 1 or Year 2.\n- The Year 1 financial statements will be presented for comparative purposes with the Year 2 financial statements."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Counterbalancing Effect of the Inventory Error",
+        "instruction": "Assume Finding 1 (the $40,000 overstatement of December 31, Year 1 inventory) had never been discovered and no correction was ever made. What would be the effect of this error on retained earnings at December 31, Year 2, after the Year 2 closing entries?",
+        "answerType": "select",
+        "options": [
+          "No effect; the error counterbalances (self-corrects) over the two-year period",
+          "Retained earnings would be overstated by $40,000",
+          "Retained earnings would be understated by $40,000",
+          "Retained earnings would be overstated by $80,000"
+        ],
+        "correctAnswer": "No effect; the error counterbalances (self-corrects) over the two-year period",
+        "explanation": "An ending inventory error counterbalances over two accounting periods. The $40,000 overstatement of December 31, Year 1 inventory understated Year 1 cost of goods sold, overstating Year 1 net income by $40,000. Because Year 1 ending inventory becomes Year 2 beginning inventory, Year 2 cost of goods sold was overstated, understating Year 2 net income by $40,000. After the Year 2 closing entries, the two effects offset exactly, so retained earnings at December 31, Year 2 is correctly stated. The individual-year income statements (and comparative statements, if presented) would still be misstated.",
+        "explanationJa": "期末棚卸資産の誤謬は**2期間でカウンターバランス（自動相殺）**します。\n\n1. Year 1 期末棚卸資産が $40,000 過大 → Year 1 の売上原価が $40,000 過小 → **Year 1 純利益が $40,000 過大**\n2. Year 1 期末在庫は Year 2 期首在庫になるため、Year 2 の売上原価が $40,000 過大 → **Year 2 純利益が $40,000 過小**\n3. Year 2 の締切後、両者は完全に相殺されるため、**Year 2 末の利益剰余金への影響はゼロ**\n\nただし各年度の純利益（および比較財務諸表）は依然として誤表示のままである点に注意してください。",
+        "references": ["ASC 250-10-45-23"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Error Correction Worksheet",
+        "instruction": "For each finding in **Exhibit 2**, enter the amount by which the net income currently computed for each year should be increased or decreased to correct the error. Enter increases as positive numbers and decreases as negative numbers (e.g., enter -5000 if the reported net income should be reduced by $5,000). Enter 0 in any cell where the finding has no effect on that year. Whole dollars, no commas. Ignore income taxes.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Year 1 Net Income", "Year 2 Net Income"],
+          "rows": [
+            "Finding 1: Consigned goods in Year 1 ending inventory",
+            "Finding 2: In-transit goods omitted from Year 2 ending inventory",
+            "Finding 3: Equipment charged to repairs expense",
+            "Finding 4: Unaccrued salaries at December 31, Year 2",
+            "Finding 5: Depreciation on Year 2 machine purchase"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Finding 1: Consigned goods in Year 1 ending inventory",
+              "colLabel": "Year 1 Net Income",
+              "correctValue": -40000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Finding 1: Consigned goods in Year 1 ending inventory",
+              "colLabel": "Year 2 Net Income",
+              "correctValue": 40000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Finding 2: In-transit goods omitted from Year 2 ending inventory",
+              "colLabel": "Year 1 Net Income",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Finding 2: In-transit goods omitted from Year 2 ending inventory",
+              "colLabel": "Year 2 Net Income",
+              "correctValue": 25000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Finding 3: Equipment charged to repairs expense",
+              "colLabel": "Year 1 Net Income",
+              "correctValue": 48000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Finding 3: Equipment charged to repairs expense",
+              "colLabel": "Year 2 Net Income",
+              "correctValue": -12000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Finding 4: Unaccrued salaries at December 31, Year 2",
+              "colLabel": "Year 1 Net Income",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Finding 4: Unaccrued salaries at December 31, Year 2",
+              "colLabel": "Year 2 Net Income",
+              "correctValue": -18000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Finding 5: Depreciation on Year 2 machine purchase",
+              "colLabel": "Year 1 Net Income",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Finding 5: Depreciation on Year 2 machine purchase",
+              "colLabel": "Year 2 Net Income",
+              "correctValue": 1000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Finding 1: Year 1 ending inventory overstated by $40,000 understated Year 1 cost of goods sold, so Year 1 net income must be decreased by $40,000. The same misstated balance is Year 2 beginning inventory, which overstated Year 2 cost of goods sold, so Year 2 net income must be increased by $40,000. Finding 2: Year 2 ending inventory was understated by $25,000 while the purchase was recorded, so Year 2 cost of goods sold was overstated; increase Year 2 net income by $25,000 (no Year 1 effect). Finding 3: Year 1 expenses included $60,000 that should have been capitalized; correct Year 1 depreciation is $60,000 / 5 = $12,000, so Year 1 expenses were overstated by a net $48,000 (increase Year 1 net income by $48,000). Year 2 is missing $12,000 of depreciation (decrease Year 2 net income by $12,000). Finding 4: $18,000 of Year 2 salaries expense was omitted; decrease Year 2 net income by $18,000. Finding 5: Correct depreciation is ($90,000 - $10,000) / 10 = $8,000, but $9,000 was recorded, so Year 2 expense was overstated by $1,000; increase Year 2 net income by $1,000. Column totals: Year 1 +$8,000; Year 2 +$36,000.",
+        "explanationJa": "各誤謬の影響を修正額（＋＝利益を増やす、−＝利益を減らす）で整理します。\n\n**Finding 1（Year 1 期末在庫 $40,000 過大）**\n- Year 1: 売上原価が過小 → 利益が過大 → 修正 **−$40,000**\n- Year 2: 期首在庫が過大 → 売上原価が過大 → 利益が過小 → 修正 **＋$40,000**\n\n**Finding 2（Year 2 期末在庫 $25,000 過小、仕入は計上済み）**\n- Year 2: 売上原価が過大 → 修正 **＋$25,000**（Year 1 は影響なし）\n\n**Finding 3（設備 $60,000 を修繕費として費用処理）**\n- Year 1: 本来は資産計上し減価償却 $60,000 ÷ 5年 = $12,000 のみ費用化すべき → 費用が正味 $48,000 過大 → 修正 **＋$48,000**\n- Year 2: 減価償却費 $12,000 が未計上 → 修正 **−$12,000**\n\n**Finding 4（Year 2 末の未払給与 $18,000 未計上）**\n- Year 2: 費用が過小 → 修正 **−$18,000**\n\n**Finding 5（Year 2 の減価償却計算誤り）**\n- 正しい償却費 = ($90,000 − $10,000) ÷ 10年 = $8,000。計上額は $9,000 → 費用が $1,000 過大 → 修正 **＋$1,000**\n\n**列合計**: Year 1 = ＋$8,000、Year 2 = ＋$36,000",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-45-24"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Corrected Year 1 Net Income",
+        "instruction": "Compute the corrected net income for Year 1 (in whole dollars, no commas). Ignore income taxes.",
+        "answerType": "number",
+        "correctAnswer": 508000,
+        "tolerance": 1,
+        "explanation": "Corrected Year 1 net income = $500,000 as reported - $40,000 (inventory overstatement, Finding 1) + $48,000 (equipment expensed net of $12,000 depreciation, Finding 3) = $508,000. Findings 2, 4, and 5 do not affect Year 1.",
+        "explanationJa": "訂正後 Year 1 純利益の計算:\n\n| 項目 | 金額 |\n|---|---|\n| 報告済み Year 1 純利益 | $500,000 |\n| Finding 1: 期末在庫過大 | −$40,000 |\n| Finding 3: 費用処理した設備（$60,000 − 償却 $12,000） | ＋$48,000 |\n| **訂正後 Year 1 純利益** | **$508,000** |\n\nFinding 2・4・5 は Year 2 のみに影響するため、Year 1 には影響しません。",
+        "references": ["ASC 250-10-45-23"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Corrected Year 2 Net Income",
+        "instruction": "Compute the corrected net income for Year 2 (in whole dollars, no commas). Ignore income taxes.",
+        "answerType": "number",
+        "correctAnswer": 656000,
+        "tolerance": 1,
+        "explanation": "Corrected Year 2 net income = $620,000 preliminary + $40,000 (Finding 1 counterbalance) + $25,000 (Finding 2) - $12,000 (Finding 3 depreciation) - $18,000 (Finding 4 salaries) + $1,000 (Finding 5 depreciation overstatement) = $620,000 + $36,000 = $656,000.",
+        "explanationJa": "訂正後 Year 2 純利益の計算:\n\n| 項目 | 金額 |\n|---|---|\n| 暫定 Year 2 純利益 | $620,000 |\n| Finding 1: 期首在庫過大（カウンターバランス） | ＋$40,000 |\n| Finding 2: 期末在庫過小 | ＋$25,000 |\n| Finding 3: 減価償却費の計上漏れ | −$12,000 |\n| Finding 4: 未払給与の計上漏れ | −$18,000 |\n| Finding 5: 減価償却費の過大計上 | ＋$1,000 |\n| **訂正後 Year 2 純利益** | **$656,000** |\n\n修正合計 = ＋$36,000（Work Tab 2 の Year 2 列合計と一致）",
+        "references": ["ASC 250-10-45-23"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Corrected Retained Earnings at December 31, Year 2",
+        "instruction": "Using the corrected net income amounts and the dividend information in **Exhibit 1**, compute the corrected retained earnings balance at December 31, Year 2 (in whole dollars, no commas). Ignore income taxes.",
+        "answerType": "number",
+        "correctAnswer": 1744000,
+        "tolerance": 1,
+        "explanation": "Corrected retained earnings, December 31, Year 2 = $800,000 (January 1, Year 1 balance) + $508,000 (corrected Year 1 net income) - $100,000 (Year 1 dividends) + $656,000 (corrected Year 2 net income) - $120,000 (Year 2 dividends) = $1,744,000. Check: retained earnings as currently computed = $800,000 + $500,000 - $100,000 + $620,000 - $120,000 = $1,700,000; cumulative correction = $8,000 + $36,000 = $44,000; $1,700,000 + $44,000 = $1,744,000.",
+        "explanationJa": "訂正後 Year 2 末の利益剰余金:\n\n$800,000（Year 1 期首 RE）\n＋ $508,000（訂正後 Year 1 純利益）\n− $100,000（Year 1 配当）\n＋ $656,000（訂正後 Year 2 純利益）\n− $120,000（Year 2 配当)\n= **$1,744,000**\n\n**検算**: 現状の RE = $800,000 ＋ $500,000 − $100,000 ＋ $620,000 − $120,000 = $1,700,000。累積修正額 = ＋$8,000 ＋ $36,000 = ＋$44,000。$1,700,000 ＋ $44,000 = **$1,744,000** で一致します。",
+        "references": ["ASC 250-10-45-24"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Classification: Error vs. Change in Principle vs. Change in Estimate",
+        "instruction": "Which of the following items are accounted for as a correction of an error (prior-period adjustment with restatement of prior periods presented) under ASC 250? Select all that apply.",
+        "answerType": "multiselect",
+        "options": [
+          "Failure to accrue salaries earned but unpaid at year end",
+          "Recording the cost of a machine as repairs and maintenance expense",
+          "A change from the FIFO cost flow method to the weighted-average cost method",
+          "A revision of a machine's estimated useful life from 10 years to 6 years based on new usage information",
+          "A change in the estimated salvage value of a fleet of delivery trucks",
+          "A change from the cash basis of accounting to the accrual basis of accounting"
+        ],
+        "correctAnswer": [
+          "Failure to accrue salaries earned but unpaid at year end",
+          "Recording the cost of a machine as repairs and maintenance expense",
+          "A change from the cash basis of accounting to the accrual basis of accounting"
+        ],
+        "explanation": "Corrections of errors result from mathematical mistakes, mistakes in applying GAAP, or oversight or misuse of facts that existed when the statements were prepared. Failing to accrue salaries and expensing a machine that should have been capitalized are both misapplications of GAAP, corrected by restatement. A change from the cash basis to the accrual basis is also a correction of an error because the cash basis is not GAAP. In contrast, a change from FIFO to weighted-average cost is a change in accounting principle (applied retrospectively, but it is not an error correction), and revisions of useful life or salvage value are changes in accounting estimate, accounted for prospectively.",
+        "explanationJa": "ASC 250 の3分類を整理します。\n\n**誤謬の訂正（restatement / 期首RE修正）**\n- 未払給与の計上漏れ → GAAP適用の誤り = **誤謬**\n- 機械の取得原価を修繕費として費用処理 → GAAP適用の誤り = **誤謬**\n- 現金主義から発生主義への変更 → 現金主義は**そもそもGAAPではない**ため、GAAPへの変更は**誤謬の訂正**として扱う（頻出のひっかけ）\n\n**会計方針の変更（遡及適用だが誤謬ではない）**\n- FIFO → 加重平均法への変更\n\n**会計上の見積りの変更（将来に向かって処理）**\n- 耐用年数の変更（10年 → 6年）\n- 残存価額の見積り変更",
+        "references": ["ASC 250-10-45-17", "ASC 250-10-45-23"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Correcting Journal Entry for the Equipment Error",
+        "instruction": "Prepare the journal entry at December 31, Year 2 to correct Finding 3 (the stamping machine charged to repairs and maintenance expense), assuming the Year 2 books have not been closed and no Year 2 depreciation has yet been recorded on this machine. Ignore income taxes. Enter amounts in whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Equipment",
+            "Depreciation expense",
+            "Accumulated depreciation - equipment",
+            "Retained earnings"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Equipment",
+              "colLabel": "Debit",
+              "correctValue": 60000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Equipment",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Depreciation expense",
+              "colLabel": "Debit",
+              "correctValue": 12000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Depreciation expense",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accumulated depreciation - equipment",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accumulated depreciation - equipment",
+              "colLabel": "Credit",
+              "correctValue": 24000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Credit",
+              "correctValue": 48000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Debit Equipment $60,000 to record the asset. Credit Retained earnings $48,000 for the prior-period adjustment: Year 1 net income was understated by $60,000 (expense overstatement) less $12,000 (Year 1 depreciation that should have been recorded) = $48,000. Debit Depreciation expense $12,000 for the current-year (Year 2) depreciation, since the Year 2 books are still open. Credit Accumulated depreciation $24,000 for two years of depreciation ($12,000 x 2). Debits $72,000 = Credits $72,000.",
+        "explanationJa": "Year 2 の帳簿が未締切のため、Year 2 分の減価償却費は当期費用として計上し、Year 1 分の影響は利益剰余金（期首修正）で処理します。\n\n| 勘定科目 | 借方 | 貸方 |\n|---|---|---|\n| 設備（Equipment） | $60,000 | |\n| 減価償却費（Year 2 分） | $12,000 | |\n| 減価償却累計額（2年分 = $12,000 × 2） | | $24,000 |\n| 利益剰余金（Year 1 過小利益 $60,000 − $12,000） | | $48,000 |\n\n- 資産計上漏れ: 借方 Equipment $60,000\n- Year 1 の純利益過小額 = 費用過大 $60,000 − 未計上償却費 $12,000 = **$48,000** → 貸方 RE\n- Year 2 の償却費 $12,000 は帳簿未締切のため当期の費用へ\n- 借方合計 $72,000 = 貸方合計 $72,000 で貸借一致",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-45-24"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "FAR TBS Practice (original)"
+  }
+]

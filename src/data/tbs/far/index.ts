@@ -8,6 +8,11 @@ import cashFlows from "./cash-flows.json";
 import receivablesCecl from "./receivables-cecl.json";
 import equity from "./equity.json";
 import ppeIntangibles from "./ppe-intangibles.json";
+import bondsLiabilities from "./bonds-liabilities.json";
+import investments from "./investments.json";
+import eps from "./eps.json";
+import changesErrors from "./changes-errors.json";
+import ratios from "./ratios.json";
 
 export const farTBSQuestions: TBSQuestion[] = [
   ...(revenueRecognition as TBSQuestion[]),
@@ -19,6 +24,11 @@ export const farTBSQuestions: TBSQuestion[] = [
   ...(receivablesCecl as TBSQuestion[]),
   ...(equity as TBSQuestion[]),
   ...(ppeIntangibles as TBSQuestion[]),
+  ...(bondsLiabilities as TBSQuestion[]),
+  ...(investments as TBSQuestion[]),
+  ...(eps as TBSQuestion[]),
+  ...(changesErrors as TBSQuestion[]),
+  ...(ratios as TBSQuestion[]),
 ];
 
 export function getTBSQuestionById(id: string): TBSQuestion | undefined {

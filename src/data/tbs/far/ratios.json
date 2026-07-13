@@ -1,0 +1,146 @@
+[
+  {
+    "id": "far-tbs-ratio-001",
+    "subject": "FAR",
+    "topic": "Financial Ratios",
+    "title": "Ratio Analysis: Liquidity, Activity, Solvency, and Profitability",
+    "scenario": "Brixton Retail Corp. sells home improvement products through 12 stores. You are a staff accountant preparing selected Year 2 ratios for the company's annual lender compliance package.\n\nRefer to the comparative balance sheets in **Exhibit 1**, the Year 2 income statement in **Exhibit 2**, and the additional information in **Exhibit 3**.\n\nUnless a task states otherwise: use ending balances for ratios that compare two balance-sheet amounts, use average balances (beginning plus ending, divided by 2) for ratios that combine an income-statement amount with a balance-sheet amount, and use a 360-day year.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Comparative Balance Sheets",
+        "content": "| | December 31, Year 2 | December 31, Year 1 |\n|---|---|---|\n| **Assets** | | |\n| Cash | $60,000 | $50,000 |\n| Short-term marketable securities | 40,000 | 30,000 |\n| Accounts receivable, net | 100,000 | 80,000 |\n| Inventory | 150,000 | 130,000 |\n| Prepaid expenses | 10,000 | 10,000 |\n| Total current assets | 360,000 | 300,000 |\n| Property, plant, and equipment, net | 440,000 | 400,000 |\n| **Total assets** | **$800,000** | **$700,000** |\n| **Liabilities and Stockholders' Equity** | | |\n| Accounts payable | $90,000 | $70,000 |\n| Accrued liabilities | 30,000 | 30,000 |\n| Current portion of long-term debt | 30,000 | 20,000 |\n| Total current liabilities | 150,000 | 120,000 |\n| Long-term debt | 250,000 | 230,000 |\n| Total liabilities | 400,000 | 350,000 |\n| Common stock | 200,000 | 200,000 |\n| Retained earnings | 200,000 | 150,000 |\n| Total stockholders' equity | 400,000 | 350,000 |\n| **Total liabilities and stockholders' equity** | **$800,000** | **$700,000** |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Income Statement for the Year Ended December 31, Year 2",
+        "content": "| | Year 2 |\n|---|---|\n| Net sales | $900,000 |\n| Cost of goods sold | (560,000) |\n| Gross profit | 340,000 |\n| Selling, general, and administrative expenses | (180,000) |\n| Depreciation expense | (40,000) |\n| Operating income | 120,000 |\n| Interest expense | (24,000) |\n| Income before income taxes | 96,000 |\n| Income tax expense | (24,000) |\n| **Net income** | **$72,000** |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "- Net credit sales for Year 2 were $720,000; all remaining net sales were cash sales.\n- Standard credit terms extended to customers are net 40 days.\n- Dividends of $22,000 were declared and paid during Year 2.\n- 50,000 shares of common stock were outstanding throughout Year 2; the closing market price was $28 per share on December 31, Year 2. The company has no preferred stock.\n- All accounts payable relate to merchandise purchases.\n- In November Year 2, Brixton signed leases for two new store locations opening in Year 3, with combined annual rent of $48,000."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Current Ratio",
+        "instruction": "Using **Exhibit 1**, compute Brixton's current ratio (total current assets divided by total current liabilities) at December 31, Year 2. Round to one decimal place (e.g., 2.1).",
+        "answerType": "number",
+        "correctAnswer": 2.4,
+        "tolerance": 0.01,
+        "explanation": "Current ratio = Total current assets / Total current liabilities = $360,000 / $150,000 = 2.4.",
+        "explanationJa": "流動比率 = 流動資産合計 ÷ 流動負債合計\n\n= $360,000 ÷ $150,000 = **2.4**\n\n流動資産には現金・短期有価証券・売掛金・棚卸資産・前払費用のすべてが含まれます。",
+        "references": ["ASC 210-10-45-1"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Quick (Acid-Test) Ratio",
+        "instruction": "Quick assets consist of cash, short-term marketable securities, and net accounts receivable. Compute the quick (acid-test) ratio at December 31, Year 2. Round to two decimal places (e.g., 1.25).",
+        "answerType": "number",
+        "correctAnswer": 1.33,
+        "tolerance": 0.01,
+        "explanation": "Quick assets = $60,000 cash + $40,000 short-term marketable securities + $100,000 net accounts receivable = $200,000. Quick ratio = $200,000 / $150,000 = 1.33. Inventory and prepaid expenses are excluded from the numerator because they are not readily convertible into cash.",
+        "explanationJa": "当座比率（酸性試験比率）= 当座資産 ÷ 流動負債\n\n**当座資産** = 現金 $60,000 ＋ 短期有価証券 $40,000 ＋ 売掛金（純額） $100,000 = $200,000\n\n当座比率 = $200,000 ÷ $150,000 = **1.33**\n\n**注意**: 棚卸資産と前払費用は換金性が低いため分子から**除外**します。ここが流動比率との違いです。",
+        "references": ["ASC 210-10-45-1"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Activity Ratio Schedule",
+        "instruction": "Complete the schedule below for Year 2. Use net credit sales for the receivable ratios and cost of goods sold for the inventory ratio, use average balances (beginning plus ending, divided by 2), and use a 360-day year for days sales outstanding. Round each value to one decimal place (e.g., 6.0 or 52.5).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Value"],
+          "rows": [
+            "Accounts receivable turnover (times)",
+            "Days sales outstanding (days)",
+            "Inventory turnover (times)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Accounts receivable turnover (times)",
+              "colLabel": "Value",
+              "correctValue": 8.0,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Days sales outstanding (days)",
+              "colLabel": "Value",
+              "correctValue": 45.0,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Inventory turnover (times)",
+              "colLabel": "Value",
+              "correctValue": 4.0,
+              "tolerance": 0.1
+            }
+          ]
+        },
+        "explanation": "Accounts receivable turnover = Net credit sales / Average net accounts receivable = $720,000 / (($100,000 + $80,000) / 2) = $720,000 / $90,000 = 8.0 times. Days sales outstanding = 360 / 8.0 = 45.0 days. Inventory turnover = Cost of goods sold / Average inventory = $560,000 / (($150,000 + $130,000) / 2) = $560,000 / $140,000 = 4.0 times. Note that only the $720,000 of credit sales (not total net sales of $900,000) is used for the receivable ratios.",
+        "explanationJa": "**売掛金回転率** = 純掛売上高 ÷ 平均売掛金\n- 平均売掛金 = ($100,000 ＋ $80,000) ÷ 2 = $90,000\n- $720,000 ÷ $90,000 = **8.0回**\n- ポイント: 総売上 $900,000 ではなく**掛売上 $720,000** を使う\n\n**売上債権回収日数（DSO）** = 360日 ÷ 売掛金回転率\n- 360 ÷ 8.0 = **45.0日**\n\n**棚卸資産回転率** = 売上原価 ÷ 平均棚卸資産\n- 平均棚卸資産 = ($150,000 ＋ $130,000) ÷ 2 = $140,000\n- $560,000 ÷ $140,000 = **4.0回**\n- ポイント: 分子は売上高ではなく**売上原価**（在庫は原価で計上されているため）",
+        "references": ["ASC 210-10-45-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Times Interest Earned",
+        "instruction": "Compute times interest earned for Year 2, defined as (income before income taxes + interest expense) divided by interest expense. Round to one decimal place.",
+        "answerType": "number",
+        "correctAnswer": 5,
+        "tolerance": 0.1,
+        "explanation": "Times interest earned = (Income before income taxes + Interest expense) / Interest expense = ($96,000 + $24,000) / $24,000 = $120,000 / $24,000 = 5.0 times. The numerator is earnings before interest and taxes, which here equals operating income of $120,000.",
+        "explanationJa": "インタレスト・カバレッジ・レシオ（times interest earned）\n\n= (税引前利益 ＋ 支払利息) ÷ 支払利息\n= ($96,000 ＋ $24,000) ÷ $24,000\n= $120,000 ÷ $24,000 = **5.0倍**\n\n分子は EBIT（利息・税金控除前利益）です。本問では営業利益 $120,000 と一致します。純利益 $72,000 をそのまま使わないよう注意してください。",
+        "references": ["ASC 470-10-45-1"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Debt-to-Equity Ratio",
+        "instruction": "Compute the debt-to-equity ratio at December 31, Year 2, defined as total liabilities divided by total stockholders' equity. Round to two decimal places.",
+        "answerType": "number",
+        "correctAnswer": 1,
+        "tolerance": 0.01,
+        "explanation": "Debt-to-equity = Total liabilities / Total stockholders' equity = $400,000 / $400,000 = 1.00. Total liabilities include both current liabilities ($150,000) and long-term debt ($250,000).",
+        "explanationJa": "負債資本倍率（D/Eレシオ）= 負債合計 ÷ 株主資本合計\n\n- 負債合計 = 流動負債 $150,000 ＋ 長期負債 $250,000 = $400,000\n- 株主資本合計 = $400,000\n\n$400,000 ÷ $400,000 = **1.00**\n\n分子は長期負債だけでなく**流動負債を含む負債総額**を使う定義であることをinstructionで確認してください。",
+        "references": ["ASC 470-10-45-1"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Return on Common Stockholders' Equity",
+        "instruction": "Compute return on common stockholders' equity for Year 2, defined as net income divided by average total stockholders' equity. Brixton has no preferred stock. Enter your answer as a percentage rounded to one decimal place, without the percent sign (e.g., enter 14.6 for 14.6%).",
+        "answerType": "number",
+        "correctAnswer": 19.2,
+        "tolerance": 0.1,
+        "explanation": "Average total stockholders' equity = ($400,000 + $350,000) / 2 = $375,000. Return on equity = $72,000 / $375,000 = 0.192 = 19.2%. Because there is no preferred stock, no preferred dividends are subtracted from the numerator.",
+        "explanationJa": "自己資本利益率（ROE）= 純利益 ÷ 平均株主資本\n\n1. 平均株主資本 = ($400,000 ＋ $350,000) ÷ 2 = $375,000\n2. ROE = $72,000 ÷ $375,000 = 0.192 = **19.2%**\n\n優先株式がないため、分子から優先配当を控除する必要はありません。期末残高 $400,000 ではなく**平均残高 $375,000** を使う点に注意してください。",
+        "references": ["ASC 505-10-50-2"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Transaction Effect on Liquidity Ratios",
+        "instruction": "On January 2, Year 3, Brixton purchases $50,000 of inventory on account, and no other transactions occur. Based on the December 31, Year 2 balance sheet in **Exhibit 1**, what is the immediate effect of this purchase on the current ratio and the quick ratio?",
+        "answerType": "select",
+        "options": [
+          "Both the current ratio and the quick ratio decrease",
+          "Both the current ratio and the quick ratio increase",
+          "The current ratio decreases and the quick ratio is unchanged",
+          "The current ratio is unchanged and the quick ratio decreases"
+        ],
+        "correctAnswer": "Both the current ratio and the quick ratio decrease",
+        "explanation": "The purchase adds $50,000 to both current assets (inventory) and current liabilities (accounts payable). Because the current ratio before the transaction is 2.4 (greater than 1), adding an equal amount to the numerator and denominator moves the ratio toward 1: ($360,000 + $50,000) / ($150,000 + $50,000) = $410,000 / $200,000 = 2.05, a decrease. The quick ratio numerator is unchanged (inventory is not a quick asset) while the denominator increases: $200,000 / $200,000 = 1.00, down from 1.33, also a decrease. Note that if the current ratio had been below 1, the same transaction would have increased the current ratio.",
+        "explanationJa": "掛仕入 $50,000 は「棚卸資産 ＋$50,000／買掛金 ＋$50,000」の取引です。\n\n**流動比率**: 分子・分母の両方に同額を加えると、比率は**1に近づく**性質があります。取引前の流動比率は 2.4（1超）なので低下します。\n- ($360,000 ＋ $50,000) ÷ ($150,000 ＋ $50,000) = $410,000 ÷ $200,000 = 2.05 ＜ 2.4 → **低下**\n\n**当座比率**: 棚卸資産は当座資産に含まれないため分子は $200,000 のまま、分母だけ増加します。\n- $200,000 ÷ $200,000 = 1.00 ＜ 1.33 → **低下**\n\nしたがって**両方とも低下**します。\n\n**重要ポイント**: もし取引前の流動比率が**1未満**なら、同じ取引で流動比率は逆に**上昇**します（比率は1に近づくため）。方向は取引前の比率が1超か1未満かで決まります。",
+        "references": ["ASC 210-10-45-1"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
+  }
+]

@@ -65,5 +65,205 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 20,
     "source": "AICPA Sample / FAR Practice"
+  },
+  {
+    "id": "far-tbs-rev-002",
+    "subject": "FAR",
+    "topic": "Revenue Recognition",
+    "title": "Variable Consideration and Sales with a Right of Return",
+    "scenario": "Crestline Tool & Supply Co. manufactures industrial fasteners and hand-tool products. The company prepares its financial statements in accordance with U.S. GAAP and recognizes revenue under ASC 606. Its fiscal year ends December 31.\n\nDuring the first quarter of Year 1, Crestline entered into two separate arrangements:\n\n1. A one-year master supply agreement with Bryce Manufacturing Corp. that includes a retroactive volume rebate. The contract terms are presented in **Exhibit 1**, and first-quarter delivery activity together with management's probability assessment of Bryce's annual purchase volume is presented in **Exhibit 2**.\n2. March sales of Model X tool kits to independent distributors under a 60-day right of return. The March distributor sales data are presented in **Exhibit 3**.\n\nControl of all products transfers to the customer upon delivery. Using the information in the exhibits, complete Work Tabs 1 through 7.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Master Supply Agreement (Excerpts) — Bryce Manufacturing Corp.",
+        "content": "| Term | Detail |\n|---|---|\n| Contract period | January 1, Year 1 – December 31, Year 1 |\n| Product | Grade-8 industrial fasteners |\n| List price | $50 per unit, invoiced upon delivery |\n| Payment terms | Net 30; past-due balances accrue interest at 1.5% per month |\n| Shipping terms | FOB shipping point; freight paid by Bryce |\n| Volume rebate | A retroactive rebate applies to **all** units purchased during the contract year, based on total annual volume, and is settled in cash in January of Year 2 |\n\n**Rebate schedule (applies retroactively to all units purchased in Year 1):**\n\n| Total annual volume purchased | Rebate on all units |\n|---|---|\n| 10,000 units or fewer | 0% |\n| 10,001 – 15,000 units | 2% |\n| More than 15,000 units | 5% |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Quarter 1 Deliveries and Management's Volume Assessment",
+        "content": "**Deliveries to Bryce Manufacturing Corp., quarter ended March 31, Year 1 (all invoiced at $50 per unit):**\n\n| Month | Units delivered |\n|---|---|\n| January | 1,300 |\n| February | 1,250 |\n| March | 1,450 |\n| **Total** | **4,000** |\n\n**Management's probability assessment of Bryce's total Year 1 purchase volume:**\n\n| Annual volume outcome | Rebate rate | Probability |\n|---|---|---|\n| 10,000 units or fewer | 0% | 10% |\n| 10,001 – 15,000 units | 2% | 50% |\n| More than 15,000 units | 5% | 40% |\n\nManagement has concluded that the expected value method better predicts the amount of consideration to which Crestline will be entitled, and that recognizing revenue based on this estimate will not result in a probable significant reversal of cumulative revenue recognized."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: March Year 1 Sales to Distributors",
+        "content": "**March Year 1 sales to independent distributors (control transfers on delivery; all sales on account):**\n\n| Product | Units sold | Selling price per unit | Cost per unit | Return rights |\n|---|---|---|---|---|\n| Model X tool kit | 1,000 | $80 | $48 | 60-day unconditional right of return |\n| Model Y workbench | 300 | $60 | $35 | None |\n\nBased on more than ten years of experience with similar products, Crestline estimates that 5% of the Model X units sold will be returned. Returned units are expected to be in resalable condition, and the costs of recovering returned units are expected to be negligible. Crestline incurred $1,200 of freight-out on March distributor shipments, which is expensed as incurred. No Model X units had been returned as of March 31, Year 1."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Transaction Price per Unit — Fastener Sales",
+        "instruction": "Using the expected value method, compute the transaction price **per unit** for Year 1 fastener sales to Bryce, net of the estimated volume rebate. Enter the amount in dollars and cents (e.g., 48.25), no commas.",
+        "answerType": "number",
+        "correctAnswer": 48.5,
+        "tolerance": 0.01,
+        "explanation": "Under the expected value method, the estimated rebate rate is the probability-weighted average of the possible rebate outcomes: (0% × 10%) + (2% × 50%) + (5% × 40%) = 0% + 1.0% + 2.0% = 3.0%. The estimated rebate per unit is $50 × 3.0% = $1.50, so the transaction price per unit is $50.00 − $1.50 = $48.50. Because the rebate applies retroactively to all units, every unit delivered is recorded at the rebate-adjusted price.",
+        "explanationJa": "期待値法（expected value method）では、起こり得る各リベート率を確率で加重平均して見積ります。\n\n1. 期待リベート率 = (0% × 10%) + (2% × 50%) + (5% × 40%) = 0% + 1.0% + 2.0% = **3.0%**\n2. 1個あたりの見積リベート = $50 × 3.0% = **$1.50**\n3. 1個あたりの取引価格 = $50.00 − $1.50 = **$48.50**\n\nリベートは年間購入量に応じて**全数量に遡及適用**されるため、引き渡した全ユニットをリベート控除後の単価で収益認識します。",
+        "references": ["ASC 606-10-32-8", "ASC 606-10-32-11"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Revenue from Fastener Deliveries — Quarter 1",
+        "instruction": "Compute the revenue that Crestline should recognize from fastener deliveries to Bryce for the quarter ended March 31, Year 1 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 194000,
+        "tolerance": 1,
+        "explanation": "Revenue = units delivered × transaction price per unit = 4,000 units × $48.50 = $194,000. Although Crestline invoices Bryce $200,000 (4,000 × $50), revenue is recognized only for the consideration Crestline expects to be entitled to after the estimated 3% rebate.",
+        "explanationJa": "第1四半期の収益 = 引渡数量 × 1個あたり取引価格で計算します。\n\n1. 引渡数量 = 1,300 + 1,250 + 1,450 = **4,000個**\n2. 収益 = 4,000個 × $48.50 = **$194,000**\n\n請求額は 4,000個 × $50 = $200,000 ですが、収益はリベート見積り（3%）控除後の「権利を得ると見込む対価」の金額で認識します。",
+        "references": ["ASC 606-10-32-2", "ASC 606-10-32-8"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Refund Liability for Volume Rebates",
+        "instruction": "Compute the liability for estimated volume rebates that Crestline should report at March 31, Year 1, related to the fastener deliveries (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 6000,
+        "tolerance": 1,
+        "explanation": "The refund liability equals the consideration invoiced (or received) that Crestline does not expect to be entitled to keep: 4,000 units × $50 × 3.0% = $6,000. Equivalently, amount invoiced $200,000 − revenue recognized $194,000 = $6,000.",
+        "explanationJa": "返金負債（refund liability）は、請求済みの対価のうち顧客に返金すると見込む部分です。\n\n- 計算1: 4,000個 × $50 × 3.0% = **$6,000**\n- 計算2（検算）: 請求額 $200,000 − 認識収益 $194,000 = **$6,000**\n\n両方の計算が一致することを確認してください。",
+        "references": ["ASC 606-10-32-10"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Classification of the Rebate Obligation",
+        "instruction": "Crestline invoices Bryce $50.00 per unit but recognizes revenue of $48.50 per unit. Select the balance sheet classification that best describes Crestline's obligation for the estimated volume rebates.",
+        "answerType": "select",
+        "options": [
+          "Refund liability",
+          "Contract liability",
+          "Contract asset",
+          "Valuation allowance deducted from accounts receivable"
+        ],
+        "correctAnswer": "Refund liability",
+        "explanation": "An entity that receives (or has an unconditional right to) consideration it expects to refund to the customer recognizes a refund liability, measured at the amount of consideration the entity does not expect to be entitled to. The rebate obligation is not a contract liability because a contract liability represents an obligation to transfer additional goods or services for consideration already received; here, Crestline's obligation is to return cash, not to perform.",
+        "explanationJa": "見積リベート $6,000 は**返金負債（refund liability）**として表示します。\n\n- **返金負債**: 受け取った（または請求した）対価のうち顧客へ返金すると見込む金額。本問のリベートはこれに該当します（ASC 606-10-32-10）。\n- **契約負債（contract liability）**でない理由: 契約負債は「受領済み対価と交換に、追加の財・サービスを移転する義務」を表します。リベートは現金を返す義務であり、履行義務ではありません。\n- **契約資産**は企業側の権利（対価に対する条件付きの権利）であり、義務ではないため該当しません。",
+        "references": ["ASC 606-10-32-10", "ASC 606-10-45-2"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Revenue from Model X Sales with a Right of Return",
+        "instruction": "Compute the sales revenue that Crestline should recognize for March Year 1 from the Model X tool kit sales, after considering expected returns (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 76000,
+        "tolerance": 1,
+        "explanation": "For sales with a right of return, revenue is recognized only for the products not expected to be returned. Expected returns = 1,000 units × 5% = 50 units. Revenue = (1,000 − 50) units × $80 = 950 × $80 = $76,000. The remaining $4,000 (50 units × $80) is recorded as a refund liability.",
+        "explanationJa": "返品権付き販売では、**返品されないと見込む分だけ**収益を認識します。\n\n1. 見積返品数量 = 1,000個 × 5% = **50個**\n2. 収益 = (1,000 − 50)個 × $80 = 950個 × $80 = **$76,000**\n3. 残りの 50個 × $80 = $4,000 は返金負債として計上します。\n\nなお、Model Y（返品権なし・300個 × $60）はこのタスクの対象外です。設問はModel Xのみを問うています。",
+        "references": ["ASC 606-10-55-23", "ASC 606-10-55-25"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Journal Entry — Model X Sales and Cost of Sales",
+        "instruction": "Prepare the summary journal entry to record the March Year 1 sales of Model X tool kits, including the related cost of sales and the right-of-return effects. Enter each amount in whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Accounts receivable",
+            "Sales revenue",
+            "Refund liability",
+            "Cost of goods sold",
+            "Return asset (right to recover products)",
+            "Inventory"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Debit",
+              "correctValue": 80000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Sales revenue",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Sales revenue",
+              "colLabel": "Credit",
+              "correctValue": 76000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Refund liability",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Refund liability",
+              "colLabel": "Credit",
+              "correctValue": 4000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cost of goods sold",
+              "colLabel": "Debit",
+              "correctValue": 45600,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cost of goods sold",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Return asset (right to recover products)",
+              "colLabel": "Debit",
+              "correctValue": 2400,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Return asset (right to recover products)",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Inventory",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Inventory",
+              "colLabel": "Credit",
+              "correctValue": 48000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Revenue side: debit Accounts receivable $80,000 (1,000 × $80, the full invoiced amount); credit Sales revenue $76,000 (950 × $80) and credit Refund liability $4,000 (50 × $80). Cost side: total inventory relieved is 1,000 × $48 = $48,000 (credit Inventory); debit Cost of goods sold $45,600 (950 × $48) for the units not expected to be returned, and debit Return asset $2,400 (50 × $48) for the right to recover products from customers. Both sides balance: debits $80,000 + $45,600 + $2,400 = $128,000 = credits $76,000 + $4,000 + $48,000.",
+        "explanationJa": "返品権付き販売の仕訳は「収益サイド」と「原価サイド」の2段構えで考えます。\n\n**収益サイド**\n- 借方: 売掛金 $80,000（1,000個 × $80、請求全額）\n- 貸方: 売上高 $76,000（950個 × $80）\n- 貸方: 返金負債 $4,000（50個 × $80）\n\n**原価サイド**\n- 貸方: 棚卸資産 $48,000（1,000個 × $48、全量を払い出し）\n- 借方: 売上原価 $45,600（950個 × $48）\n- 借方: 返品資産（return asset）$2,400（50個 × $48、製品を回収する権利）\n\n**貸借一致の検算**: 借方合計 $80,000 + $45,600 + $2,400 = $128,000 ＝ 貸方合計 $76,000 + $4,000 + $48,000 = $128,000",
+        "references": ["ASC 606-10-55-23", "ASC 606-10-55-27"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research — Methods for Estimating Variable Consideration",
+        "instruction": "Crestline's controller asks you to locate the authoritative guidance that specifies the two methods an entity may use to estimate variable consideration (the expected value method and the most likely amount method). Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "606-10-32-8",
+        "explanation": "ASC 606-10-32-8 states that an entity shall estimate the amount of variable consideration by using either the expected value method (the sum of probability-weighted amounts in a range of possible outcomes) or the most likely amount method (the single most likely outcome), whichever better predicts the amount of consideration to which the entity will be entitled.",
+        "explanationJa": "変動対価の見積方法（期待値法と最頻値法）を規定しているのは **ASC 606-10-32-8** です。\n\n- **期待値法（expected value）**: 起こり得る結果を確率で加重平均した合計。類似の契約が多数ある場合などに適切。\n- **最頻値法（most likely amount）**: 最も可能性の高い単一の金額。結果が2択（達成/未達成）の場合などに適切。\n\n企業は、権利を得ることになる対価をより適切に予測できる方の方法を選択します。",
+        "references": ["ASC 606-10-32-8"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]
