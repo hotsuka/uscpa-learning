@@ -13,6 +13,8 @@ import investments from "./investments.json";
 import eps from "./eps.json";
 import changesErrors from "./changes-errors.json";
 import ratios from "./ratios.json";
+import cash from "./cash.json";
+import nfp from "./nfp.json";
 
 export const farTBSQuestions: TBSQuestion[] = [
   ...(revenueRecognition as TBSQuestion[]),
@@ -29,6 +31,8 @@ export const farTBSQuestions: TBSQuestion[] = [
   ...(eps as TBSQuestion[]),
   ...(changesErrors as TBSQuestion[]),
   ...(ratios as TBSQuestion[]),
+  ...(cash as TBSQuestion[]),
+  ...(nfp as TBSQuestion[]),
 ];
 
 export function getTBSQuestionById(id: string): TBSQuestion | undefined {

@@ -73,5 +73,151 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 25,
     "source": "AICPA Sample / FAR Practice"
+  },
+  {
+    "id": "far-tbs-cons-002",
+    "subject": "FAR",
+    "topic": "Consolidations",
+    "title": "Consolidation: Intercompany Eliminations and Noncontrolling Interest",
+    "scenario": "Pinnacle Industries, Inc. owns 80% of the outstanding common stock of Stratton Manufacturing Co. Pinnacle acquired its interest on January 1, Year 1, and at that date the carrying amounts of Stratton's identifiable assets and liabilities equaled their fair values.\n\nPinnacle is preparing consolidated financial statements for the year ended December 31, Year 3. Separate-company income statement data appear in **Exhibit 1**. Details of intercompany transactions during Year 3 appear in **Exhibit 2**. Selected separate-company balance sheet data at December 31, Year 3 appear in **Exhibit 3**.\n\nUse the information in the exhibits to complete the tasks that follow.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Separate-Company Income Statement Data — Year Ended December 31, Year 3",
+        "content": "| Item | Pinnacle | Stratton |\n|---|---|---|\n| Sales | $5,200,000 | $2,100,000 |\n| Cost of goods sold | $3,380,000 | $1,260,000 |\n| Operating expenses | $1,180,000 | $590,000 |\n| **Net income** | **$640,000** | **$250,000** |\n\nPinnacle's amounts above exclude any investment income related to Stratton. Pinnacle's sales include all merchandise sold to Stratton during Year 3."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Intercompany Transactions — Year 3",
+        "content": "- During Year 3, Pinnacle sold merchandise to Stratton for **$400,000**. Pinnacle's cost for this merchandise was **$300,000** (a gross profit of 25% on the selling price).\n- At December 31, Year 3, Stratton's inventory included **$120,000** of merchandise purchased from Pinnacle, carried at Stratton's cost (Pinnacle's transfer price).\n- Neither company's inventory at January 1, Year 3 included any intercompany merchandise.\n- At December 31, Year 3, Stratton owed Pinnacle **$75,000** on open account for these purchases.\n- Stratton made no sales to Pinnacle during Year 3.\n- Stratton declared and paid dividends of $60,000 during Year 3."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Selected Separate-Company Balance Sheet Data — December 31, Year 3",
+        "content": "| Item | Pinnacle | Stratton |\n|---|---|---|\n| Cash | $410,000 | $180,000 |\n| Accounts receivable, net | $930,000 | $460,000 |\n| Inventory | $860,000 | $540,000 |\n| Property, plant, and equipment, net | $2,750,000 | $1,340,000 |\n| Accounts payable | $720,000 | $610,000 |\n| Note payable to bank, due Year 6 | $500,000 | — |\n\nPinnacle's accounts receivable includes the $75,000 due from Stratton, and Stratton's accounts payable includes the $75,000 due to Pinnacle. Stratton's inventory includes the $120,000 of merchandise purchased from Pinnacle. During Year 3, Stratton also purchased production equipment from an unrelated vendor for $95,000."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Elimination of Intercompany Sales",
+        "instruction": "Refer to Exhibit 2. Determine the amount of intercompany sales that must be eliminated in preparing the Year 3 consolidated income statement (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 400000,
+        "tolerance": 1,
+        "explanation": "All intercompany sales are eliminated in full, regardless of the parent's ownership percentage. Pinnacle sold $400,000 of merchandise to Stratton during Year 3, so $400,000 of sales (and the related intercompany purchases within cost of goods sold) is eliminated. The 80% ownership interest does not reduce the elimination.",
+        "explanationJa": "内部売上の消去は、持分割合に関係なく**全額（100%）**行います。\n\n- 消去額 = Year 3 の親→子 商品販売額 = **$400,000**\n- 消去仕訳のイメージ: 売上高 $400,000 / 売上原価（内部仕入） $400,000\n- 「80%所有だから $320,000 だけ消去」という処理は誤り。連結は経済的単一体として作成するため、内部取引は全額消去します。",
+        "references": ["ASC 810-10-45-1"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Unrealized Profit in Ending Inventory",
+        "instruction": "Refer to Exhibit 2. Calculate the intercompany profit in Stratton's December 31, Year 3 inventory that must be eliminated in consolidation (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 30000,
+        "tolerance": 1,
+        "explanation": "Pinnacle's gross profit rate on the intercompany sales is 25% of the selling price ($100,000 gross profit ÷ $400,000 sales). Stratton still holds $120,000 of this merchandise at year-end, carried at the transfer price. Unrealized profit to eliminate = $120,000 × 25% = $30,000. The elimination reduces ending inventory and increases consolidated cost of goods sold. Note that Pinnacle's overall gross profit rate on total sales (35%) is not used; the rate on the intercompany merchandise governs.",
+        "explanationJa": "期末在庫に含まれる未実現利益を消去します。\n\n1. **内部販売の売上総利益率** = ($400,000 − $300,000) ÷ $400,000 = **25%**（売価基準）\n2. **子会社の期末在庫のうち内部仕入分** = $120,000（移転価格ベース）\n3. **未実現利益** = $120,000 × 25% = **$30,000**\n\n消去により連結棚卸資産を $30,000 減額し、連結売上原価を $30,000 増額します。Pinnacle の会社全体の売上総利益率（35%）ではなく、**内部販売分の利益率 25%** を使う点に注意してください。",
+        "references": ["ASC 810-10-45-18"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Consolidated Sales",
+        "instruction": "Refer to Exhibits 1 and 2. Calculate consolidated sales for the year ended December 31, Year 3 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 6900000,
+        "tolerance": 1,
+        "explanation": "Consolidated sales = Pinnacle's sales + Stratton's sales − intercompany sales = $5,200,000 + $2,100,000 − $400,000 = $6,900,000. Only sales to parties outside the consolidated group are reported.",
+        "explanationJa": "連結売上高 = 親会社売上高 + 子会社売上高 − 内部売上高\n\n| 項目 | 金額 |\n|---|---|\n| Pinnacle 売上高 | $5,200,000 |\n| Stratton 売上高 | $2,100,000 |\n| 内部売上の消去 | ($400,000) |\n| **連結売上高** | **$6,900,000** |\n\n連結グループ外部への売上のみが連結売上高として報告されます。",
+        "references": ["ASC 810-10-45-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Consolidated Inventory",
+        "instruction": "Refer to Exhibits 2 and 3. Calculate consolidated inventory at December 31, Year 3 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 1370000,
+        "tolerance": 1,
+        "explanation": "Consolidated inventory = Pinnacle's inventory + Stratton's inventory − unrealized intercompany profit in ending inventory = $860,000 + $540,000 − $30,000 = $1,370,000. The elimination restates the $120,000 of intercompany merchandise held by Stratton to its original cost to the consolidated group of $90,000.",
+        "explanationJa": "連結棚卸資産 = 親会社棚卸資産 + 子会社棚卸資産 − 期末在庫の未実現利益\n\n| 項目 | 金額 |\n|---|---|\n| Pinnacle 棚卸資産 | $860,000 |\n| Stratton 棚卸資産 | $540,000 |\n| 未実現利益の消去（Work Tab 2） | ($30,000) |\n| **連結棚卸資産** | **$1,370,000** |\n\n消去後、Stratton が保有する内部仕入在庫 $120,000 は連結グループにとっての原価 $90,000（= $120,000 × 75%）で表示されることになります。",
+        "references": ["ASC 810-10-45-18"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Effect of Downstream Profit on Noncontrolling Interest",
+        "instruction": "Pinnacle's sales to Stratton are downstream transactions. Which statement best describes how the unrealized intercompany profit in ending inventory affects the attribution of Year 3 consolidated net income?",
+        "answerType": "select",
+        "options": [
+          "The entire unrealized profit is deducted in determining net income attributable to the parent; net income attributable to the noncontrolling interest is unaffected",
+          "The unrealized profit is allocated 80% to the parent and 20% to the noncontrolling interest based on ownership percentages",
+          "The entire unrealized profit is deducted from net income attributable to the noncontrolling interest",
+          "No elimination is required because the merchandise was sold at arm's-length prices"
+        ],
+        "correctAnswer": "The entire unrealized profit is deducted in determining net income attributable to the parent; net income attributable to the noncontrolling interest is unaffected",
+        "explanation": "In a downstream sale, the intercompany profit is recorded on the parent's books. The full amount of unrealized profit is eliminated in consolidation, and because the profit resides in the parent's separate income, the entire elimination is borne by the parent. The noncontrolling interest's share of consolidated net income is based on the subsidiary's income, which contains no intercompany profit from downstream sales.",
+        "explanationJa": "ダウンストリーム（親→子）販売の未実現利益の帰属がポイントです。\n\n- 未実現利益 $30,000 は**親会社の個別損益**に計上されている\n- 消去自体は全額行うが、その負担は**すべて親会社帰属分**から控除される\n- NCI帰属純利益は**子会社の純利益**を基礎とするため、ダウンストリーム取引の未実現利益の影響を受けない\n\n逆にアップストリーム（子→親）販売の場合は、未実現利益が子会社の利益に含まれるため、消去額を持分比率（80%/20%）で親会社とNCIに配分します。この対比を必ず押さえてください。",
+        "references": ["ASC 810-10-45-18", "ASC 810-10-45-20"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Net Income Attributable to the Noncontrolling Interest",
+        "instruction": "Refer to Exhibits 1 and 2. Calculate net income attributable to the noncontrolling interest for the year ended December 31, Year 3 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 50000,
+        "tolerance": 1,
+        "explanation": "Because the intercompany sales are downstream, the unrealized profit elimination does not affect the noncontrolling interest. Net income attributable to the noncontrolling interest = Stratton's net income × 20% = $250,000 × 20% = $50,000. The $30,000 unrealized profit is deducted entirely from the parent's share of consolidated net income.",
+        "explanationJa": "NCI帰属純利益の計算です。\n\n1. 内部販売は**ダウンストリーム**なので、未実現利益 $30,000 の消去は NCI に影響しない（Work Tab 5）\n2. NCI帰属純利益 = 子会社純利益 × NCI持分割合\n3. = $250,000 × 20% = **$50,000**\n\n仮にアップストリームだった場合は ($250,000 − $30,000) × 20% = $44,000 となるところですが、本問はダウンストリームのため調整不要です。",
+        "references": ["ASC 810-10-45-20"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Elimination Entry for Intercompany Receivable and Payable",
+        "instruction": "Refer to Exhibits 2 and 3. Prepare the consolidation elimination entry at December 31, Year 3 for the intercompany open-account balance between Pinnacle and Stratton. Enter amounts in whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": ["Accounts payable", "Accounts receivable"],
+          "cells": [
+            {
+              "rowLabel": "Accounts payable",
+              "colLabel": "Debit",
+              "correctValue": 75000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accounts payable",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Credit",
+              "correctValue": 75000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Intercompany balances are eliminated in full so that the consolidated balance sheet reports only amounts due to and from parties outside the group. The entry debits accounts payable (removing Stratton's $75,000 payable to Pinnacle) and credits accounts receivable (removing Pinnacle's $75,000 receivable from Stratton). The elimination is 100% of the balance even though Pinnacle owns only 80% of Stratton.",
+        "explanationJa": "内部債権債務の消去仕訳です。\n\n| 勘定科目 | 借方 | 貸方 |\n|---|---|---|\n| 買掛金（Accounts payable） | $75,000 | 0 |\n| 売掛金（Accounts receivable） | 0 | $75,000 |\n\n- Stratton の買掛金に含まれる Pinnacle 宛 $75,000 を借方で消去\n- Pinnacle の売掛金に含まれる Stratton 宛 $75,000 を貸方で消去\n- 内部売上と同様、持分割合（80%）にかかわらず**全額消去**します",
+        "references": ["ASC 810-10-45-1"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
   }
 ]

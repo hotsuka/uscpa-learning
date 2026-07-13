@@ -1,0 +1,316 @@
+[
+  {
+    "id": "far-tbs-cash-001",
+    "subject": "FAR",
+    "topic": "Cash",
+    "title": "Bank Reconciliation and Adjusting Entries",
+    "scenario": "Kestrel Manufacturing Co. maintains its operating cash account with Harborview National Bank. The company prepares a bank reconciliation at the end of each month and records any adjusting or correcting entries indicated by the reconciliation.\n\nYou have been asked to prepare the December 31, Year 1 bank reconciliation for the operating account and to record the related journal entries.\n\nRefer to the December bank statement summary in **Exhibit 1**, the company's cash records in **Exhibit 2**, and the additional information in **Exhibit 3**. Complete each work tab below.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Bank Statement Summary — December",
+        "content": "**Harborview National Bank — Statement of Account**\n**Kestrel Manufacturing Co., Operating Account No. 4471, for the month ended December 31, Year 1**\n\n| Item | Amount |\n|---|---|\n| Balance, December 1, Year 1 | $74,300 |\n| Deposits and other credits | 205,610 |\n| Checks and other debits | (193,490) |\n| **Balance, December 31, Year 1** | **$86,420** |\n\n**Selected items appearing on the December statement:**\n\n| Date | Description | Amount |\n|---|---|---|\n| Dec 22 | Check No. 5521 paid | $1,100 |\n| Dec 27 | Returned item — NSF | $2,840 |\n| Dec 28 | Credit memo — note collected for depositor (principal $6,000; interest $240) | $6,240 |\n| Dec 31 | Service charges for December | $85 |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Company Cash Records",
+        "content": "**Kestrel Manufacturing Co. — Cash records for Operating Account No. 4471**\n\nThe general ledger balance of the operating cash account at December 31, Year 1 is **$81,105**, before any adjustments arising from the December bank reconciliation.\n\n1. Cash receipts of $12,650 for December 31 were placed in the bank's night depository after banking hours on December 31, Year 1, and do not appear on the December bank statement.\n2. The following checks written in December had not cleared the bank as of December 31, Year 1:\n\n| Check No. | Amount |\n|---|---|\n| 2301 | $4,730 |\n| 2315 | 8,200 |\n| 2320 | 3,000 |\n| **Total** | **$15,930** |\n\n3. Check No. 2318, written on December 15 to Marlowe Office Supply in payment of an account payable, was correctly written for $970 but was recorded in the cash disbursements journal as $790. The check cleared the bank in December at $970."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. The credit memo on the December bank statement represents the bank's collection, at maturity on December 28, of a $6,000, 8%, six-month note receivable from a customer, Ridgeline Cabinetworks, plus $240 of interest. Kestrel had not recorded the collection before receiving the bank statement.\n2. The returned item is a $2,840 check from a customer, Brightbay Interiors, that Kestrel had received on account and deposited on December 18. The check was returned marked NSF on December 27. Kestrel will pursue collection from the customer.\n3. Check No. 5521 for $1,100, charged against Kestrel's account on December 22, was drawn by Kestrel Supply Co., an unrelated company. Harborview National Bank has confirmed that the check was charged to Kestrel's account in error and will correct the error on the January statement.\n4. Kestrel maintains a $150,000 revolving line of credit with Harborview National Bank bearing interest at prime plus 1.5%. The line was unused throughout December.\n5. On November 1, Year 1, Kestrel purchased a $25,000 six-month certificate of deposit maturing April 30, Year 2. The certificate is recorded in the short-term investments account.\n6. On January 3, Year 2, Kestrel received a $4,500 wire transfer from a customer in payment of a December invoice."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Bank Reconciliation — Balance per Bank",
+        "instruction": "Using Exhibits 1 through 3, complete the bank section of the December 31, Year 1 bank reconciliation for the operating account. Enter additions as positive numbers and deductions as negative numbers (in whole dollars, no commas).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Balance per bank statement, December 31",
+            "Deposit in transit",
+            "Outstanding checks",
+            "Check of Kestrel Supply Co. charged in error",
+            "Adjusted cash balance per bank"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Balance per bank statement, December 31",
+              "colLabel": "Amount",
+              "correctValue": 86420,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Deposit in transit",
+              "colLabel": "Amount",
+              "correctValue": 12650,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Outstanding checks",
+              "colLabel": "Amount",
+              "correctValue": -15930,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Check of Kestrel Supply Co. charged in error",
+              "colLabel": "Amount",
+              "correctValue": 1100,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Adjusted cash balance per bank",
+              "colLabel": "Amount",
+              "correctValue": 84240,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "The balance per the bank statement is $86,420. The December 31 receipts of $12,650 placed in the night depository are a deposit in transit and are added because the bank has not yet recorded them. Outstanding checks of $15,930 ($4,730 + $8,200 + $3,000) are deducted because they have been recorded by the company but have not yet cleared the bank. The $1,100 check drawn by Kestrel Supply Co. was charged to Kestrel's account by the bank in error, so it is added back to the bank balance. Adjusted cash balance per bank = $86,420 + $12,650 − $15,930 + $1,100 = $84,240.",
+        "explanationJa": "銀行残高側の調整は、「銀行がまだ記録していない項目」と「銀行側の誤記」です。\n\n| 項目 | 金額 | 調整 |\n|---|---|---|\n| 銀行残高証明書残高（12/31） | $86,420 | — |\n| 未達預金（12/31夜間金庫入金、銀行未記帳） | $12,650 | **加算** |\n| 未取付小切手（#2301 $4,730 + #2315 $8,200 + #2320 $3,000） | $15,930 | **減算** |\n| 他社（Kestrel Supply Co.）の小切手の誤引落し | $1,100 | **加算**（銀行側の誤記の訂正） |\n\n調整後銀行残高 = $86,420 + $12,650 − $15,930 + $1,100 = **$84,240**",
+        "references": ["ASC 305-10-20"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Bank Reconciliation — Balance per Books",
+        "instruction": "Using Exhibits 1 through 3, complete the book section of the December 31, Year 1 bank reconciliation for the operating account. Enter additions as positive numbers and deductions as negative numbers (in whole dollars, no commas).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Balance per books, December 31",
+            "Note receivable collected by bank, including interest",
+            "NSF check returned by bank",
+            "Bank service charges",
+            "Error in recording check No. 2318",
+            "Adjusted cash balance per books"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Balance per books, December 31",
+              "colLabel": "Amount",
+              "correctValue": 81105,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Note receivable collected by bank, including interest",
+              "colLabel": "Amount",
+              "correctValue": 6240,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "NSF check returned by bank",
+              "colLabel": "Amount",
+              "correctValue": -2840,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Bank service charges",
+              "colLabel": "Amount",
+              "correctValue": -85,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Error in recording check No. 2318",
+              "colLabel": "Amount",
+              "correctValue": -180,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Adjusted cash balance per books",
+              "colLabel": "Amount",
+              "correctValue": 84240,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "The balance per books is $81,105. The note receivable of $6,000 plus interest of $240 collected by the bank ($6,240 in total) is added because the bank has recorded the collection but the company has not. The $2,840 NSF check is deducted because the deposit did not clear. Bank service charges of $85 are deducted. Check No. 2318 was recorded at $790 instead of the correct amount of $970, so cash disbursements were understated by $180, which is deducted. Adjusted cash balance per books = $81,105 + $6,240 − $2,840 − $85 − $180 = $84,240, which agrees with the adjusted cash balance per bank.",
+        "explanationJa": "帳簿残高側の調整は、「会社がまだ記録していない項目」と「会社側の記帳誤り」です。\n\n| 項目 | 金額 | 調整 |\n|---|---|---|\n| 帳簿残高（12/31） | $81,105 | — |\n| 銀行による手形取立（元本$6,000 + 利息$240） | $6,240 | **加算** |\n| NSF小切手（Brightbay Interiors） | $2,840 | **減算** |\n| 銀行手数料 | $85 | **減算** |\n| 小切手#2318の記帳誤り（$970を$790と記帳 → 差額） | $180 | **減算**（支払の過少記帳の訂正） |\n\n調整後帳簿残高 = $81,105 + $6,240 − $2,840 − $85 − $180 = **$84,240**\n\n調整後銀行残高（Work Tab 1）の$84,240と一致します。",
+        "references": ["ASC 305-10-20"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Items Requiring Journal Entries",
+        "instruction": "Which of the following reconciling items require an adjusting or correcting journal entry on Kestrel's books at December 31, Year 1? (Select all that apply.)",
+        "answerType": "multiselect",
+        "options": [
+          "Deposit in transit of $12,650",
+          "Note receivable and interest collected by the bank",
+          "NSF check returned by the bank",
+          "Bank service charges for December",
+          "Check No. 5521 charged to the account by the bank in error",
+          "Error in recording check No. 2318"
+        ],
+        "correctAnswer": [
+          "Note receivable and interest collected by the bank",
+          "NSF check returned by the bank",
+          "Bank service charges for December",
+          "Error in recording check No. 2318"
+        ],
+        "explanation": "Only reconciling items that adjust the balance per books require journal entries: the note and interest collected by the bank, the NSF check, the bank service charges, and the correction of the error in recording check No. 2318. Items that adjust the balance per bank — the deposit in transit and the check charged to the account by the bank in error — require no entries because the company's records are already correct; the bank simply has not yet recorded them or must correct its own error.",
+        "explanationJa": "仕訳が必要なのは**帳簿残高側の調整項目のみ**です。\n\n仕訳が必要（帳簿側）:\n- 銀行による手形取立（会社が未記帳）\n- NSF小切手（入金が不成立）\n- 銀行手数料（会社が未記帳）\n- 小切手#2318の記帳誤り（会社側の誤り）\n\n仕訳が不要（銀行側）:\n- 未達預金 → 会社の帳簿は正しい。銀行が未記帳なだけ\n- 銀行による他社小切手の誤引落し → 銀行側の誤りであり、銀行が訂正する。会社の帳簿は影響を受けていない",
+        "references": ["ASC 305-10-20"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Journal Entry — Note Collected by Bank",
+        "instruction": "Prepare the journal entry Kestrel should record at December 31, Year 1 for the note receivable and interest collected by the bank. Enter all amounts as positive numbers (in whole dollars, no commas). Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": ["Cash", "Notes receivable", "Interest revenue"],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 6240,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Notes receivable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Notes receivable",
+              "colLabel": "Credit",
+              "correctValue": 6000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Interest revenue",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Interest revenue",
+              "colLabel": "Credit",
+              "correctValue": 240,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "The bank collected the $6,000 note from Ridgeline Cabinetworks plus $240 of interest and credited Kestrel's account for $6,240. Kestrel records the increase in cash with a debit to cash of $6,240, removes the note with a credit to notes receivable of $6,000, and recognizes the interest with a credit to interest revenue of $240.",
+        "explanationJa": "銀行がKestrelに代わって手形を取り立て、口座に$6,240を入金済みです。会社は未記帳なので、次の仕訳を記録します。\n\n| 勘定科目 | 借方 | 貸方 |\n|---|---|---|\n| Cash（現金） | $6,240 | |\n| Notes receivable（受取手形） | | $6,000 |\n| Interest revenue（受取利息） | | $240 |\n\n- 現金の増加: 元本と利息の合計 $6,000 + $240 = $6,240\n- 受取手形の消込: 元本 $6,000\n- 受取利息の認識: $240（$6,000 × 8% × 6/12 = $240）",
+        "references": ["ASC 305-10-20"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Journal Entry — NSF Check, Service Charges, and Check Error",
+        "instruction": "Prepare a single compound journal entry at December 31, Year 1 to record the NSF check, the December bank service charges, and the correction of the error in recording check No. 2318. Enter all amounts as positive numbers (in whole dollars, no commas). Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Accounts receivable",
+            "Bank service charge expense",
+            "Accounts payable",
+            "Cash"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Debit",
+              "correctValue": 2840,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Bank service charge expense",
+              "colLabel": "Debit",
+              "correctValue": 85,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Bank service charge expense",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts payable",
+              "colLabel": "Debit",
+              "correctValue": 180,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accounts payable",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 3105,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "The NSF check reinstates the receivable from Brightbay Interiors: debit accounts receivable $2,840. The December service charges are expensed: debit bank service charge expense $85. Check No. 2318 was a $970 payment of an account payable recorded as $790, so accounts payable was reduced by $180 too little and cash was credited $180 too little; the correction debits accounts payable $180. The total credit to cash is $2,840 + $85 + $180 = $3,105.",
+        "explanationJa": "3つの帳簿側調整項目（手形取立以外）をまとめた複合仕訳です。\n\n| 勘定科目 | 借方 | 貸方 |\n|---|---|---|\n| Accounts receivable（売掛金） | $2,840 | |\n| Bank service charge expense（支払手数料） | $85 | |\n| Accounts payable（買掛金） | $180 | |\n| Cash（現金） | | $3,105 |\n\n1. **NSF小切手**: 入金が不成立となったため、顧客Brightbay Interiorsへの売掛金$2,840を復活させます\n2. **銀行手数料**: 12月分$85を費用計上します\n3. **小切手#2318の誤記**: 買掛金支払$970を$790と記帳していたため、買掛金の減少と現金の減少がそれぞれ$180不足 → 借方 買掛金$180 / 貸方 現金$180 で訂正します\n\n現金の貸方合計 = $2,840 + $85 + $180 = **$3,105**\n\n（検算）調整後帳簿残高: $81,105 + $6,240（Work Tab 4） − $3,105 = $84,240 ✓",
+        "references": ["ASC 305-10-20"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Treatment of the Bank Error",
+        "instruction": "How should the $1,100 check drawn by Kestrel Supply Co. and charged to Kestrel's account by the bank on December 22 be treated at December 31, Year 1?",
+        "answerType": "select",
+        "options": [
+          "Added to the balance per the bank statement in the bank reconciliation; no journal entry is required",
+          "Deducted from the balance per the bank statement in the bank reconciliation; no journal entry is required",
+          "Deducted from the balance per books, with a credit to cash",
+          "Recorded as a receivable from Kestrel Supply Co., with a debit to accounts receivable"
+        ],
+        "correctAnswer": "Added to the balance per the bank statement in the bank reconciliation; no journal entry is required",
+        "explanation": "The bank, not Kestrel, made the error: it charged Kestrel's account for a check that Kestrel did not write. Because Kestrel's general ledger was never affected, no journal entry is required. In the reconciliation, the $1,100 is added back to the balance per the bank statement, since the bank balance is understated until the bank corrects its error in January. Kestrel has no claim against Kestrel Supply Co., so no receivable is recorded.",
+        "explanationJa": "これは**銀行側の誤り**です。Kestrelが振り出していない小切手が誤って口座から引き落とされました。\n\n- Kestrelの帳簿はこの誤りの影響を受けていない → **仕訳は不要**\n- 銀行残高は誤引落しの分だけ過少になっている → 銀行残高調整表で**銀行残高に加算**\n- 誤りを訂正する義務は銀行にあり、1月の残高証明書で訂正されます\n- Kestrel Supply Co.に対する債権は発生しません（Kestrelとの取引ではないため）",
+        "references": ["ASC 305-10-20"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Cash Reported on the Balance Sheet",
+        "instruction": "Determine the amount of cash in the operating account that Kestrel should report on its December 31, Year 1 balance sheet (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 84240,
+        "tolerance": 1,
+        "explanation": "The amount reported on the balance sheet for the operating account is the adjusted cash balance from the bank reconciliation. Both sections reconcile to the same amount: per bank, $86,420 + $12,650 − $15,930 + $1,100 = $84,240; per books, $81,105 + $6,240 − $2,840 − $85 − $180 = $84,240. After the adjusting and correcting entries are posted, the general ledger cash balance equals $84,240.",
+        "explanationJa": "貸借対照表に表示すべき現金残高は、銀行残高調整表の**調整後残高**です。\n\n- 銀行側: $86,420 + $12,650 − $15,930 + $1,100 = **$84,240**\n- 帳簿側: $81,105 + $6,240 − $2,840 − $85 − $180 = **$84,240**\n\n両者は一致し、修正仕訳（Work Tab 4・5）を転記した後の総勘定元帳の現金残高も $81,105 + $6,240 − $3,105 = **$84,240** となります。",
+        "references": ["ASC 210-10-45-1", "ASC 305-10-20"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 24,
+    "source": "FAR TBS Practice (original)"
+  }
+]
