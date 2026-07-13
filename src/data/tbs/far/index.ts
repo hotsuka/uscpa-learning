@@ -4,6 +4,10 @@ import leases from "./leases.json";
 import incomeTaxes from "./income-taxes.json";
 import government from "./government.json";
 import consolidations from "./consolidations.json";
+import cashFlows from "./cash-flows.json";
+import receivablesCecl from "./receivables-cecl.json";
+import equity from "./equity.json";
+import ppeIntangibles from "./ppe-intangibles.json";
 
 export const farTBSQuestions: TBSQuestion[] = [
   ...(revenueRecognition as TBSQuestion[]),
@@ -11,6 +15,10 @@ export const farTBSQuestions: TBSQuestion[] = [
   ...(incomeTaxes as TBSQuestion[]),
   ...(government as TBSQuestion[]),
   ...(consolidations as TBSQuestion[]),
+  ...(cashFlows as TBSQuestion[]),
+  ...(receivablesCecl as TBSQuestion[]),
+  ...(equity as TBSQuestion[]),
+  ...(ppeIntangibles as TBSQuestion[]),
 ];
 
 export function getTBSQuestionById(id: string): TBSQuestion | undefined {

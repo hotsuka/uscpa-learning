@@ -1,0 +1,378 @@
+[
+  {
+    "id": "far-tbs-eq-001",
+    "subject": "FAR",
+    "topic": "Equity",
+    "title": "Treasury Stock Transactions Under the Cost Method",
+    "scenario": "Meridian Industrial Corp. began Year 5 with the stockholders' equity accounts presented in **Exhibit 1**. During Year 5, the company completed several common stock and treasury stock transactions, which are summarized in **Exhibit 2**. Additional year-end information prepared by the controller appears in **Exhibit 3**.\n\nMeridian accounts for treasury stock using the **cost method**. Use the information in the exhibits to complete the tasks that follow.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Stockholders' Equity at January 1, Year 5",
+        "content": "| Account | Amount |\n|---|---|\n| Preferred stock, $100 par value, 8%, 100,000 shares authorized, no shares issued | $0 |\n| Common stock, $5 par value, 1,000,000 shares authorized, 400,000 shares issued and outstanding | $2,000,000 |\n| Additional paid-in capital—common stock | $2,800,000 |\n| Retained earnings | $1,850,000 |\n| **Total stockholders' equity** | **$6,650,000** |\n\nMeridian held no treasury shares at January 1, Year 5, and additional paid-in capital—treasury stock had a zero balance."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Year 5 Common Stock and Treasury Stock Transactions",
+        "content": "| Date | Transaction |\n|---|---|\n| February 1 | Issued 50,000 new shares of common stock for $18 per share. |\n| April 1 | Reacquired 30,000 shares of its own common stock at $20 per share, to be held as treasury stock. |\n| June 15 | Reissued 10,000 treasury shares at $24 per share. |\n| September 1 | Reissued 8,000 treasury shares at $13 per share. |\n| November 30 | Formally retired 5,000 treasury shares. These shares had originally been issued at $12 per share. |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Controller's Year-End Notes (December 31, Year 5)",
+        "content": "**Memorandum — Controller's year-end notes**\n\n- Net income for Year 5 was $940,000.\n- On December 15, the board of directors declared a cash dividend of $0.45 per share on common shares outstanding, payable January 20, Year 6, to holders of record on December 31, Year 5.\n- The board's current repurchase authorization permits cumulative buybacks of up to 60,000 shares through the end of Year 7.\n- The closing market price of Meridian common stock on December 31, Year 5 was $26 per share."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "APIC—Treasury Stock From the June 15 Reissuance",
+        "instruction": "Refer to Exhibit 2. Calculate the amount credited to additional paid-in capital—treasury stock as a result of the June 15 reissuance of treasury shares (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 40000,
+        "tolerance": 1,
+        "explanation": "Under the cost method, when treasury shares are reissued above cost, the excess of the reissuance price over cost is credited to additional paid-in capital—treasury stock. Cash received = 10,000 × $24 = $240,000. Cost of shares reissued = 10,000 × $20 = $200,000. APIC—treasury stock credited = $240,000 − $200,000 = $40,000.",
+        "explanationJa": "原価法では、自己株式を取得原価より高い価格で再発行した場合、再発行価額と取得原価の差額を **APIC—自己株式（Additional paid-in capital—treasury stock）** に貸方計上します。\n\n1. 受取現金 = 10,000株 × $24 = **$240,000**\n2. 再発行した自己株式の原価 = 10,000株 × $20 = **$200,000**\n3. APIC—自己株式（貸方） = $240,000 − $200,000 = **$40,000**\n\n再発行による「利益」は損益計算書には計上されず、資本取引として資本の部で処理される点に注意してください。",
+        "references": ["ASC 505-30-30-10"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Charge to Retained Earnings From the September 1 Reissuance",
+        "instruction": "Refer to Exhibit 2. Calculate the amount debited to retained earnings as a result of the September 1 reissuance of treasury shares (in whole dollars, no commas). Consider the balance of additional paid-in capital—treasury stock available on that date.",
+        "answerType": "number",
+        "correctAnswer": 16000,
+        "tolerance": 1,
+        "explanation": "Cash received = 8,000 × $13 = $104,000. Cost of shares reissued = 8,000 × $20 = $160,000. The deficiency is $160,000 − $104,000 = $56,000. Under the cost method, the deficiency is first charged against the existing APIC—treasury stock balance ($40,000 from the June 15 reissuance) and any remainder is debited to retained earnings: $56,000 − $40,000 = $16,000.",
+        "explanationJa": "取得原価を下回る価格で再発行した場合の不足額の処理順序がポイントです。\n\n1. 受取現金 = 8,000株 × $13 = **$104,000**\n2. 原価 = 8,000株 × $20 = **$160,000**\n3. 不足額 = $160,000 − $104,000 = **$56,000**\n4. 不足額はまず **APIC—自己株式の残高**（6月15日の再発行で計上した $40,000）と相殺します。\n5. APIC—自己株式を使い切った後の残り = $56,000 − $40,000 = **$16,000** を利益剰余金（Retained earnings）の借方に計上します。\n\n不足額を費用や損失として損益計算書に計上することはできません。",
+        "references": ["ASC 505-30-30-10"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Journal Entry for the September 1 Reissuance",
+        "instruction": "Prepare the journal entry Meridian should record on September 1, Year 5, for the reissuance of 8,000 treasury shares at $13 per share (in whole dollars, no commas). Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Cash",
+            "Additional paid-in capital—treasury stock",
+            "Retained earnings",
+            "Treasury stock"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 104000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Additional paid-in capital—treasury stock",
+              "colLabel": "Debit",
+              "correctValue": 40000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Additional paid-in capital—treasury stock",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Debit",
+              "correctValue": 16000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Treasury stock",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Treasury stock",
+              "colLabel": "Credit",
+              "correctValue": 160000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Debit cash for the proceeds of 8,000 × $13 = $104,000. Credit treasury stock at cost, 8,000 × $20 = $160,000. The $56,000 deficiency is charged first to APIC—treasury stock for its full available balance of $40,000, and the remaining $16,000 is debited to retained earnings. Total debits of $104,000 + $40,000 + $16,000 equal the $160,000 credit.",
+        "explanationJa": "9月1日の仕訳は次のとおりです。\n\n| 勘定科目 | 借方 | 貸方 |\n|---|---|---|\n| Cash | $104,000 | |\n| APIC—Treasury stock | $40,000 | |\n| Retained earnings | $16,000 | |\n| Treasury stock | | $160,000 |\n\n1. 現金 = 8,000株 × $13 = $104,000（借方）\n2. 自己株式は**原価**で減額 = 8,000株 × $20 = $160,000（貸方）\n3. 差額 $56,000 は、まず APIC—自己株式の残高 $40,000 を取り崩し、残り $16,000 を利益剰余金の借方に計上します。\n\n借方合計 $104,000 + $40,000 + $16,000 = $160,000 で貸借が一致します。",
+        "references": ["ASC 505-30-30-10"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Treasury Stock Balance at December 31, Year 5",
+        "instruction": "Calculate the balance of the treasury stock account reported in Meridian's December 31, Year 5 balance sheet (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 140000,
+        "tolerance": 1,
+        "explanation": "Treasury shares acquired on April 1 totaled 30,000 at $20 each. During the year, 10,000 shares were reissued on June 15, 8,000 shares were reissued on September 1, and 5,000 shares were retired on November 30, which removes them from the treasury stock account. Shares remaining in treasury = 30,000 − 10,000 − 8,000 − 5,000 = 7,000. Balance = 7,000 × $20 cost = $140,000, presented as a deduction from total stockholders' equity.",
+        "explanationJa": "原価法では、自己株式勘定は**取得原価**で計上され、再発行または消却によって減少します。\n\n1. 4月1日取得: 30,000株 × $20 = $600,000\n2. 6月15日再発行: △10,000株\n3. 9月1日再発行: △8,000株\n4. 11月30日消却: △5,000株（消却により自己株式勘定から除外）\n5. 期末保有自己株式 = 30,000 − 10,000 − 8,000 − 5,000 = **7,000株**\n6. 期末残高 = 7,000株 × $20 = **$140,000**\n\n自己株式は株主資本合計からの控除項目として表示されます。",
+        "references": ["ASC 505-30-45-1"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Shares Issued, in Treasury, and Outstanding at Year End",
+        "instruction": "Using Exhibits 1 and 2, determine the number of shares of Meridian common stock issued, held in treasury, and outstanding at December 31, Year 5 (in whole shares, no commas).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Number of shares"],
+          "rows": [
+            "Shares issued",
+            "Shares held in treasury",
+            "Shares outstanding"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Shares issued",
+              "colLabel": "Number of shares",
+              "correctValue": 445000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Shares held in treasury",
+              "colLabel": "Number of shares",
+              "correctValue": 7000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Shares outstanding",
+              "colLabel": "Number of shares",
+              "correctValue": 438000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Shares issued = 400,000 beginning + 50,000 issued on February 1 − 5,000 retired on November 30 = 445,000. Formal retirement reduces the number of shares issued. Shares held in treasury = 30,000 − 10,000 − 8,000 − 5,000 = 7,000. Shares outstanding = 445,000 issued − 7,000 treasury = 438,000.",
+        "explanationJa": "3つの株式数の関係: **流通株式数 = 発行済株式数 − 自己株式数** です。\n\n1. 発行済株式数（issued） = 期首 400,000 + 2月1日発行 50,000 − 11月30日消却 5,000 = **445,000株**\n   - 自己株式の取得・再発行は発行済株式数に影響しませんが、**消却（retirement）は発行済株式数を減らします**。\n2. 自己株式数（treasury） = 30,000 − 10,000 − 8,000 − 5,000 = **7,000株**\n3. 流通株式数（outstanding） = 445,000 − 7,000 = **438,000株**",
+        "references": ["ASC 505-10-50-2"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Effect of Transactions on Total Stockholders' Equity",
+        "instruction": "Refer to Exhibit 2. Select all transactions that **decreased** Meridian's total stockholders' equity. Select all that apply.",
+        "answerType": "multiselect",
+        "options": [
+          "February 1 issuance of common stock",
+          "April 1 acquisition of treasury shares",
+          "June 15 reissuance of treasury shares",
+          "September 1 reissuance of treasury shares",
+          "November 30 retirement of treasury shares"
+        ],
+        "correctAnswer": ["April 1 acquisition of treasury shares"],
+        "explanation": "Only the April 1 acquisition of treasury shares decreased total stockholders' equity, by the $600,000 cost of the shares acquired. The February 1 issuance increased equity by $900,000 of cash received. Both reissuances increased total equity by the cash received ($240,000 on June 15 and $104,000 on September 1) — a reissuance below cost still increases total equity even though it reduces APIC—treasury stock and retained earnings, because the treasury stock contra account decreases by more. The November 30 retirement merely reclassifies amounts among equity accounts and has no effect on total stockholders' equity.",
+        "explanationJa": "資本**合計**への影響は、会社と株主（外部）との間の現金等の流れで判断します。\n\n- 2月1日 新株発行: 現金 $900,000 流入 → 資本合計 **増加**\n- 4月1日 自己株式取得: 現金 $600,000 流出 → 資本合計 **減少**（これが唯一の減少取引）\n- 6月15日 再発行: 現金 $240,000 流入 → 資本合計 **増加**\n- 9月1日 再発行（原価未満）: 現金 $104,000 流入 → 資本合計 **増加**。APIC—自己株式と利益剰余金は減少しますが、控除項目である自己株式勘定が $160,000 減少するため、純額では資本合計が増加します（ひっかけpoint）\n- 11月30日 消却: 資本の部の内訳の振替のみで、資本合計への影響は **なし**",
+        "references": ["ASC 505-30-45-1"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-eq-002",
+    "subject": "FAR",
+    "topic": "Equity",
+    "title": "Retained Earnings Rollforward: Dividends, Stock Split, and Error Correction",
+    "scenario": "Sterling Retail Corp. is preparing its Year 8 statement of stockholders' equity. Stockholders' equity balances at January 1, Year 8, are presented in **Exhibit 1**. Dividend and share transactions completed during Year 8 are summarized in **Exhibit 2**. Additional information, including an accounting error discovered during Year 8, appears in **Exhibit 3**.\n\nUse the information in the exhibits to complete the tasks that follow.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Stockholders' Equity at January 1, Year 8",
+        "content": "| Account | Amount |\n|---|---|\n| Common stock, $10 par value, 500,000 shares authorized, 200,000 shares issued and outstanding | $2,000,000 |\n| Additional paid-in capital—common stock | $1,400,000 |\n| Retained earnings (as originally reported) | $3,200,000 |\n| Accumulated other comprehensive income—unrealized gain on available-for-sale debt securities | $37,000 |\n| **Total stockholders' equity** | **$6,637,000** |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Year 8 Dividend and Share Transactions",
+        "content": "| Date | Event |\n|---|---|\n| March 1 | Declared a cash dividend of $1.00 per share on common shares outstanding, payable April 10 to holders of record on March 20. Market price on the declaration date: $26 per share. |\n| April 10 | Paid the March 1 cash dividend. |\n| June 1 | Declared and distributed a 5% common stock dividend. Market price on the declaration date: $28 per share. |\n| October 1 | Effected a 2-for-1 common stock split; the par value per share was reduced from $10 to $5. Market price immediately before the split: $30 per share. |\n| November 15 | Declared a cash dividend of $0.40 per share on all common shares outstanding, payable January 10, Year 9, to holders of record on December 20, Year 8. Market price on the declaration date: $16 per share. |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Assistant Controller's Memorandum (December Year 8)",
+        "content": "**Memorandum — Year 8 closing notes**\n\n- Net income for Year 8, as reported on the income statement, was $910,000.\n- In February Year 8, while preparing a fixed-asset reconciliation, we discovered that depreciation expense for Year 7 was understated by $60,000 because a spreadsheet formula omitted one production line. The Year 7 financial statements will be presented comparatively with the Year 8 financial statements.\n- Sterling's effective income tax rate for all years is 25%.\n- Sterling's loan agreement with First Commerce Bank requires the company to maintain a retained earnings balance of at least $2,500,000."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Retained Earnings Effect of the June 1 Stock Dividend",
+        "instruction": "Refer to Exhibits 1 and 2. Calculate the decrease in retained earnings resulting from the June 1 stock dividend (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 280000,
+        "tolerance": 1,
+        "explanation": "A 5% stock dividend is a small stock dividend (less than 20-25% of shares outstanding), so retained earnings is debited for the fair value of the shares distributed. Shares distributed = 200,000 × 5% = 10,000. Retained earnings decrease = 10,000 × $28 market price = $280,000. Common stock is credited for par of 10,000 × $10 = $100,000 and APIC for the remaining $180,000.",
+        "explanationJa": "**小規模株式配当（small stock dividend）**の判定と測定基準がポイントです。\n\n1. 配当割合 5% は 20〜25% 未満 → 小規模株式配当 → **時価（fair value）基準**で測定\n2. 交付株式数 = 200,000株 × 5% = **10,000株**\n3. 利益剰余金の減少額 = 10,000株 × 時価 $28 = **$280,000**\n\n仕訳: 借方 Retained earnings $280,000 ／ 貸方 Common stock $100,000（額面 10,000株 × $10）、貸方 APIC $180,000\n\nなお 20〜25% 超の大規模株式配当であれば額面（par value）基準で測定します。",
+        "references": ["ASC 505-20-30-3"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Shares and Par Value After the October 1 Stock Split",
+        "instruction": "Determine the number of common shares issued and outstanding and the par value per share immediately after the October 1 stock split. Enter shares in whole shares and par value in whole dollars (no commas).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": ["Shares issued and outstanding", "Par value per share"],
+          "cells": [
+            {
+              "rowLabel": "Shares issued and outstanding",
+              "colLabel": "Amount",
+              "correctValue": 420000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Par value per share",
+              "colLabel": "Amount",
+              "correctValue": 5,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Shares outstanding before the split = 200,000 + 10,000 issued in the June 1 stock dividend = 210,000. A 2-for-1 split doubles the shares to 210,000 × 2 = 420,000 and halves the par value from $10 to $5. Total par value is unchanged (420,000 × $5 = $2,100,000, the same as 210,000 × $10), so no journal entry affecting account balances is required for a true stock split.",
+        "explanationJa": "株式分割の直前の株式数を正しく把握することがポイントです。\n\n1. 分割直前の発行済株式数 = 期首 200,000株 + 6月1日株式配当 10,000株 = **210,000株**\n2. 2対1分割後の株式数 = 210,000 × 2 = **420,000株**\n3. 分割後の1株当たり額面 = $10 ÷ 2 = **$5**\n\n額面総額は 420,000株 × $5 = $2,100,000 で分割前（210,000株 × $10）と変わりません。純粋な株式分割では資本の各勘定残高は変動せず、利益剰余金への影響もありません。",
+        "references": ["ASC 505-20-25-4"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Reporting the Year 7 Depreciation Error",
+        "instruction": "Refer to Exhibit 3. How should the understatement of Year 7 depreciation expense be reported in Sterling's Year 8 financial statements?",
+        "answerType": "select",
+        "options": [
+          "As an adjustment to the beginning balance of retained earnings, net of tax, with restatement of the prior-year statements presented",
+          "As a loss included in Year 8 income from continuing operations",
+          "As a separately disclosed item in Year 8 other comprehensive income",
+          "Prospectively, by revising depreciation expense in Year 8 and future periods"
+        ],
+        "correctAnswer": "As an adjustment to the beginning balance of retained earnings, net of tax, with restatement of the prior-year statements presented",
+        "explanation": "The understatement of Year 7 depreciation is an error in previously issued financial statements. Under ASC 250, an error correction is reported as a prior-period adjustment: the comparative Year 7 statements are restated, and the cumulative effect, net of tax, is reflected as an adjustment to the beginning balance of retained earnings. It is not included in Year 8 net income, other comprehensive income, or handled prospectively — prospective treatment applies to changes in accounting estimates, not error corrections.",
+        "explanationJa": "**誤謬の訂正（error correction）**は ASC 250 に従い **prior-period adjustment（前期損益修正）** として処理します。\n\n- 比較表示される Year 7 の財務諸表は**遡及修正再表示（restatement）**する\n- 累積影響額は**税引後**で**期首利益剰余金の修正**として反映する\n- Year 8 の当期純利益や OCI には含めない\n\n「将来にわたって修正（prospective）」は**会計上の見積りの変更**に適用される処理であり、誤謬の訂正には使えない点がひっかけです。",
+        "references": ["ASC 250-10-45-23"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Amount of the Prior-Period Adjustment",
+        "instruction": "Refer to Exhibit 3. Calculate the prior-period adjustment, net of tax, that decreases the beginning balance of retained earnings in the Year 8 statement of stockholders' equity. Enter the amount as a positive number (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 45000,
+        "tolerance": 1,
+        "explanation": "Year 7 depreciation expense was understated by $60,000, so Year 7 pretax income and beginning retained earnings were overstated. The prior-period adjustment is recorded net of tax: $60,000 × (1 − 0.25) = $45,000 decrease to beginning retained earnings.",
+        "explanationJa": "前期損益修正は**税引後**の金額で期首利益剰余金を修正します。\n\n1. Year 7 の減価償却費が $60,000 過少 → Year 7 の税引前利益が $60,000 過大 → 期首利益剰余金が過大\n2. 税効果 = $60,000 × 25% = $15,000（法人税費用も過大計上されていたため相殺）\n3. 修正額（税引後） = $60,000 × (1 − 0.25) = **$45,000**（期首利益剰余金の減少）",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-45-24"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Journal Entry for the November 15 Dividend Declaration",
+        "instruction": "Prepare the journal entry Sterling should record on November 15, Year 8, to declare the cash dividend (in whole dollars, no commas). Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": ["Retained earnings", "Dividends payable", "Cash"],
+          "cells": [
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Debit",
+              "correctValue": 168000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Dividends payable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Dividends payable",
+              "colLabel": "Credit",
+              "correctValue": 168000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Shares outstanding on November 15 = 420,000 (after the June stock dividend and the October 2-for-1 split). Dividend declared = 420,000 × $0.40 = $168,000. At declaration, retained earnings is debited and dividends payable is credited for $168,000. Cash is not affected until the payment date of January 10, Year 9, so dividends payable of $168,000 is a current liability at December 31, Year 8.",
+        "explanationJa": "**宣言日（declaration date）**に負債を認識する点と、宣言時点の流通株式数がポイントです。\n\n1. 11月15日時点の流通株式数 = (200,000 + 株式配当10,000) × 分割2 = **420,000株**\n2. 配当額 = 420,000株 × $0.40 = **$168,000**\n3. 仕訳: 借方 Retained earnings $168,000 ／ 貸方 Dividends payable $168,000\n\n現金は支払日（Year 9 の1月10日）まで動かないため、宣言時の仕訳に Cash は登場しません。Year 8 期末の貸借対照表には Dividends payable $168,000 が流動負債として計上されます。",
+        "references": ["ASC 505-10-50-2"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Items Affecting Retained Earnings",
+        "instruction": "Select all items that changed the balance of retained earnings during Year 8 (from the beginning balance as originally reported to the December 31, Year 8 balance). Select all that apply.",
+        "answerType": "multiselect",
+        "options": [
+          "Net income for Year 8",
+          "Declaration of the March 1 cash dividend",
+          "Payment of the March 1 cash dividend on April 10",
+          "The June 1 stock dividend",
+          "The October 1 stock split",
+          "Correction of the Year 7 depreciation error"
+        ],
+        "correctAnswer": [
+          "Net income for Year 8",
+          "Declaration of the March 1 cash dividend",
+          "The June 1 stock dividend",
+          "Correction of the Year 7 depreciation error"
+        ],
+        "explanation": "Retained earnings is increased by net income and decreased by the declaration of cash dividends, the fair value of the small stock dividend, and the net-of-tax prior-period adjustment. The April 10 payment of the previously declared dividend reduces dividends payable and cash, not retained earnings. A true stock split changes only the number of shares and par value per share and has no effect on retained earnings.",
+        "explanationJa": "利益剰余金を変動させる項目の判定です。\n\n**変動させる項目:**\n- 当期純利益（増加）\n- 3月1日の現金配当の**宣言**（減少 $200,000）— 配当は宣言日に RE を減らす\n- 6月1日の株式配当（減少 $280,000・時価基準）\n- Year 7 減価償却の誤謬訂正（期首 RE を $45,000 減少）\n\n**変動させない項目:**\n- 4月10日の配当**支払** — 借方 Dividends payable ／ 貸方 Cash の仕訳であり RE には影響しない\n- 10月1日の株式分割 — 株式数と1株当たり額面が変わるだけで、どの資本勘定の残高も変動しない",
+        "references": ["ASC 505-10-50-2", "ASC 250-10-45-23"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Retained Earnings at December 31, Year 8",
+        "instruction": "Using all exhibits, calculate the balance of retained earnings reported in Sterling's December 31, Year 8 balance sheet (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 3417000,
+        "tolerance": 1,
+        "explanation": "Beginning retained earnings as originally reported $3,200,000, less the prior-period adjustment of $45,000 (net of tax), equals adjusted beginning retained earnings of $3,155,000. Add Year 8 net income of $910,000; deduct the March 1 cash dividend of 200,000 × $1.00 = $200,000, the June 1 stock dividend at fair value of $280,000, and the November 15 cash dividend of 420,000 × $0.40 = $168,000. Ending retained earnings = $3,155,000 + $910,000 − $200,000 − $280,000 − $168,000 = $3,417,000.",
+        "explanationJa": "利益剰余金のロールフォワードを順に積み上げます。\n\n| 項目 | 金額 |\n|---|---|\n| 期首 RE（修正前） | $3,200,000 |\n| 前期損益修正（税引後） | ($45,000) |\n| 修正後期首 RE | $3,155,000 |\n| 当期純利益 | $910,000 |\n| 3月1日 現金配当宣言（200,000株 × $1.00） | ($200,000) |\n| 6月1日 株式配当（10,000株 × $28 時価） | ($280,000) |\n| 11月15日 現金配当宣言（420,000株 × $0.40） | ($168,000) |\n| **期末 RE（12月31日）** | **$3,417,000** |\n\n株式**分割**は RE に影響しない点、11月の配当は**未払**でも宣言日に RE を減らす点に注意してください。",
+        "references": ["ASC 505-10-50-2"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
+  }
+]

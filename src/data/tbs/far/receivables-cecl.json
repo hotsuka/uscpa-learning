@@ -1,0 +1,374 @@
+[
+  {
+    "id": "far-tbs-recv-001",
+    "subject": "FAR",
+    "topic": "Receivables & CECL",
+    "title": "Accounts Receivable Aging and the CECL Allowance",
+    "scenario": "Meridian Industrial Supply Co. sells maintenance and repair products to commercial customers on credit terms of net 30 days. The company prepares its financial statements in accordance with U.S. GAAP and measures expected credit losses on trade accounts receivable under the current expected credit loss (CECL) model in ASC 326, using an aging-schedule (loss-rate) method.\n\nThe company's fiscal year ends December 31, Year 3. The aging of trade accounts receivable at December 31, Year 3, and the expected credit loss rate applied to each age category are presented in **Exhibit 1**. Activity in the allowance for credit losses during Year 3 is presented in **Exhibit 2**. Additional information about Year 3 receivable activity is presented in **Exhibit 3**.\n\nUsing the information in the exhibits, complete Work Tabs 1 through 7.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Aging of Trade Accounts Receivable — December 31, Year 3",
+        "content": "| Age category | Amortized cost basis | Expected credit loss rate |\n|---|---|---|\n| Current (not yet due) | $600,000 | 1% |\n| 1-30 days past due | $200,000 | 4% |\n| 31-60 days past due | $100,000 | 10% |\n| 61-90 days past due | $50,000 | 25% |\n| Over 90 days past due | $30,000 | 60% |\n| **Total** | **$980,000** | |\n\nThe expected credit loss rates reflect Meridian's historical loss experience, adjusted for current conditions and reasonable and supportable forecasts of future economic conditions."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Allowance for Credit Losses — Year 3 Activity",
+        "content": "| Item | Amount |\n|---|---|\n| Balance, January 1, Year 3 (credit) | $38,000 |\n| Accounts written off as uncollectible during Year 3 | $29,000 |\n| Cash recoveries during Year 3 of accounts written off in prior years | $4,000 |\n\nMeridian credits recoveries of previously written-off accounts to the allowance for credit losses when the cash is received. The Year 3 credit loss expense has **not** yet been recorded."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Year 3 Information",
+        "content": "| Item | Amount |\n|---|---|\n| Gross trade accounts receivable, January 1, Year 3 | $959,000 |\n| Credit sales for Year 3 | $4,200,000 |\n| Cash collected from customers on account during Year 3 | $4,150,000 |\n| 6% note receivable from a company officer, due in Year 5 (reported separately from trade receivables) | $25,000 |\n\nMeridian did not factor, pledge, or otherwise transfer any receivables during Year 3."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Expected Credit Loss by Age Category",
+        "instruction": "Using **Exhibit 1**, compute the expected credit loss for each age category and the total required allowance for credit losses at December 31, Year 3. Enter each amount in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Expected Credit Loss"],
+          "rows": [
+            "Current (not yet due)",
+            "1-30 days past due",
+            "31-60 days past due",
+            "61-90 days past due",
+            "Over 90 days past due",
+            "Total"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Current (not yet due)",
+              "colLabel": "Expected Credit Loss",
+              "correctValue": 6000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "1-30 days past due",
+              "colLabel": "Expected Credit Loss",
+              "correctValue": 8000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "31-60 days past due",
+              "colLabel": "Expected Credit Loss",
+              "correctValue": 10000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "61-90 days past due",
+              "colLabel": "Expected Credit Loss",
+              "correctValue": 12500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Over 90 days past due",
+              "colLabel": "Expected Credit Loss",
+              "correctValue": 18000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total",
+              "colLabel": "Expected Credit Loss",
+              "correctValue": 54500,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Expected credit loss for each age category = amortized cost basis × expected credit loss rate: Current $600,000 × 1% = $6,000; 1-30 days past due $200,000 × 4% = $8,000; 31-60 days past due $100,000 × 10% = $10,000; 61-90 days past due $50,000 × 25% = $12,500; Over 90 days past due $30,000 × 60% = $18,000. Total required allowance for credit losses = $6,000 + $8,000 + $10,000 + $12,500 + $18,000 = $54,500. Under the aging-schedule method, this total is the required ending balance of the allowance at December 31, Year 3.",
+        "explanationJa": "各年齢区分の予想信用損失 = 償却原価 × 予想損失率で計算します。\n\n| 区分 | 計算 | 予想信用損失 |\n|---|---|---|\n| Current | $600,000 × 1% | $6,000 |\n| 1-30日延滞 | $200,000 × 4% | $8,000 |\n| 31-60日延滞 | $100,000 × 10% | $10,000 |\n| 61-90日延滞 | $50,000 × 25% | $12,500 |\n| 90日超延滞 | $30,000 × 60% | $18,000 |\n| **合計** | | **$54,500** |\n\n年齢調べ法（aging method）では、この合計 **$54,500** が期末の引当金の**必要残高**になります。CECLモデルでは、過去の損失実績を現在の状況と合理的で裏付け可能な予測で調整した損失率を用います。",
+        "references": ["ASC 326-20-30-1", "ASC 326-20-30-3"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Allowance Balance Before Year-End Adjustment",
+        "instruction": "Using **Exhibit 2**, compute the credit balance of the allowance for credit losses immediately **before** the December 31, Year 3 adjusting entry for credit loss expense (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 13000,
+        "tolerance": 1,
+        "explanation": "Beginning allowance balance $38,000 (credit) − accounts written off $29,000 + recoveries of prior write-offs $4,000 = $13,000 credit balance before the year-end adjustment. Write-offs are charged against the allowance, and recoveries are credited back to the allowance when received.",
+        "explanationJa": "引当金勘定のロールフォワードで調整前残高を求めます。\n\n1. 期首残高（貸方）: $38,000\n2. 当期貸倒償却（write-off）: −$29,000（引当金の借方に賦課）\n3. 過年度償却債権の回収（recovery）: +$4,000（引当金の貸方に戻し入れ）\n\n調整前残高 = $38,000 − $29,000 + $4,000 = **$13,000（貸方）**\n\n貸倒償却は費用ではなく引当金の取り崩し、回収は引当金への戻し入れである点に注意してください。",
+        "references": ["ASC 326-20-35-8"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Credit Loss Expense for Year 3",
+        "instruction": "Compute the credit loss expense that Meridian should report in its Year 3 income statement (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 41500,
+        "tolerance": 1,
+        "explanation": "Credit loss expense = required ending allowance balance $54,500 (Work Tab 1) − credit balance before adjustment $13,000 (Work Tab 2) = $41,500. The adjusting entry brings the allowance from its pre-adjustment balance up to the balance required by the aging schedule.",
+        "explanationJa": "当期の貸倒費用（credit loss expense）は、引当金を必要残高まで積み増す金額です。\n\n- 必要残高（Work Tab 1）: $54,500\n- 調整前残高（Work Tab 2）: $13,000（貸方）\n\n貸倒費用 = $54,500 − $13,000 = **$41,500**\n\n年齢調べ法は貸借対照表アプローチであり、まず期末引当金の必要残高を決め、そこから逆算して費用を求めます。",
+        "references": ["ASC 326-20-30-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Journal Entry to Record Credit Loss Expense",
+        "instruction": "Prepare the December 31, Year 3 adjusting journal entry to record credit loss expense. Enter each amount in whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": ["Credit loss expense", "Allowance for credit losses"],
+          "cells": [
+            {
+              "rowLabel": "Credit loss expense",
+              "colLabel": "Debit",
+              "correctValue": 41500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Credit loss expense",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Allowance for credit losses",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Allowance for credit losses",
+              "colLabel": "Credit",
+              "correctValue": 41500,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Debit Credit loss expense $41,500; Credit Allowance for credit losses $41,500. This adjusting entry increases the allowance from its $13,000 pre-adjustment credit balance to the $54,500 required ending balance.",
+        "explanationJa": "貸倒費用の計上仕訳:\n\n| 勘定科目 | 借方 | 貸方 |\n|---|---|---|\n| Credit loss expense（貸倒費用） | $41,500 | |\n| Allowance for credit losses（貸倒引当金） | | $41,500 |\n\nこの仕訳により、引当金残高は調整前の $13,000 から必要残高の $54,500 に増加します（$13,000 + $41,500 = $54,500）。",
+        "references": ["ASC 326-20-30-1"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Net Amount of Trade Receivables on the Balance Sheet",
+        "instruction": "Compute the net amount at which trade accounts receivable should be reported on Meridian's December 31, Year 3 balance sheet (amortized cost basis less the allowance for credit losses, in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 925500,
+        "tolerance": 1,
+        "explanation": "Net trade receivables = gross amortized cost basis $980,000 − allowance for credit losses $54,500 = $925,500. The allowance is presented as a deduction from the amortized cost basis of the receivables. The $25,000 officer note is reported separately and is not part of trade receivables.",
+        "explanationJa": "貸借対照表上の売掛金の純額表示:\n\n- 売掛金総額（償却原価）: $980,000\n- 貸倒引当金: −$54,500\n\n純額 = $980,000 − $54,500 = **$925,500**\n\n引当金は売掛金の償却原価からの控除項目として表示されます。役員に対する $25,000 の貸付手形は営業債権とは区分表示されるため、この計算には含めません。",
+        "references": ["ASC 326-20-45-1"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Concepts: The CECL Model",
+        "instruction": "Select **all** of the following statements that are correct under the CECL model in ASC 326 for trade accounts receivable.",
+        "answerType": "multiselect",
+        "options": [
+          "Expected credit losses are estimated over the contractual life of the receivables, considering historical experience, current conditions, and reasonable and supportable forecasts.",
+          "An allowance is recognized only when it is probable that a loss has already been incurred.",
+          "Recoveries of amounts previously written off are recorded as a credit to the allowance for credit losses.",
+          "The direct write-off method is an acceptable alternative to the allowance method under U.S. GAAP for material trade receivables.",
+          "Trade receivables are presented on the balance sheet at the amortized cost basis, net of the allowance for credit losses."
+        ],
+        "correctAnswer": [
+          "Expected credit losses are estimated over the contractual life of the receivables, considering historical experience, current conditions, and reasonable and supportable forecasts.",
+          "Recoveries of amounts previously written off are recorded as a credit to the allowance for credit losses.",
+          "Trade receivables are presented on the balance sheet at the amortized cost basis, net of the allowance for credit losses."
+        ],
+        "explanation": "CECL requires estimating lifetime expected credit losses using historical experience adjusted for current conditions and reasonable and supportable forecasts, so the first statement is correct. Recoveries are credited to the allowance when received, and receivables are presented at amortized cost net of the allowance, so those statements are also correct. The probable-incurred-loss threshold describes the superseded incurred loss model, and the direct write-off method is not acceptable under U.S. GAAP when credit losses are material, so those two statements are incorrect.",
+        "explanationJa": "CECLモデルのポイント:\n\n- **正しい**: CECLは債権の契約期間全体（lifetime）の予想信用損失を、過去実績・現在の状況・合理的で裏付け可能な予測に基づいて見積もります。\n- **誤り**: 「損失の発生が probable な場合にのみ引当金を認識する」のは廃止された発生損失モデル（incurred loss model）の考え方です。CECLでは損失が probable でなくても期日入り時点から予想損失を認識します。\n- **正しい**: 過年度に償却した債権の回収額は、受領時に引当金の貸方に記録します。\n- **誤り**: 直接償却法（direct write-off method）は、重要性のある営業債権については米国GAAPで認められません。\n- **正しい**: 売掛金は償却原価から貸倒引当金を控除した純額で表示されます。",
+        "references": ["ASC 326-20-30-1", "ASC 326-20-30-9", "ASC 326-20-35-8"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research: Measurement of Expected Credit Losses",
+        "instruction": "Meridian's controller asks you to identify the paragraph of the FASB Accounting Standards Codification that requires the allowance for credit losses to be measured as the portion of the amortized cost basis that the entity does not expect to collect, reflecting current expected credit losses. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "326-20-30-1",
+        "explanation": "ASC 326-20-30-1 requires an entity to measure the allowance for credit losses as a valuation account deducted from the amortized cost basis of the financial assets to present the net amount expected to be collected — the core measurement principle of the CECL model.",
+        "explanationJa": "**ASC 326-20-30-1** が、貸倒引当金（allowance for credit losses）を償却原価から控除する評価勘定として測定し、回収が見込まれる純額（net amount expected to be collected）を表示することを要求する、CECLモデルの中心的な測定規定です。Codificationの構造は「Topic 326（金融商品—信用損失）− Subtopic 20（償却原価測定資産）− Section 30（当初測定）− Paragraph 1」となっています。",
+        "references": ["ASC 326-20-30-1"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-recv-002",
+    "subject": "FAR",
+    "topic": "Receivables & CECL",
+    "title": "Notes Receivable Discounting and Factoring of Receivables",
+    "scenario": "Arden Distributors Inc. is a wholesale distributor with a December 31 fiscal year-end. To accelerate cash collections during Year 2, Arden monetized certain receivables.\n\nThe notes receivable held by Arden during Year 2 are described in **Exhibit 1**. On May 1, Year 2, Arden discounted one of the notes at a bank; the terms of the discounting are described in **Exhibit 2**. On July 1, Year 2, Arden also factored a portfolio of trade accounts receivable; the factoring agreement is summarized in **Exhibit 3**.\n\nUnless otherwise stated, compute interest using whole months (annual rate × number of months ÷ 12). Using the information in the exhibits, complete Work Tabs 1 through 7.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Notes Receivable Held During Year 2",
+        "content": "| Maker | Face amount | Annual interest rate | Date of note | Term |\n|---|---|---|---|---|\n| Baxter Wholesale Inc. | $150,000 | 8% | February 1, Year 2 | 9 months |\n| Copley Retail Group | $80,000 | 6% | March 1, Year 2 | 12 months |\n\nBoth notes were received from customers in settlement of open accounts receivable. Principal and interest on each note are due in a single payment at maturity. Arden held the Copley note to maturity and collected it in full when due."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Bank Discounting of the Baxter Note",
+        "content": "On May 1, Year 2, Arden discounted the Baxter Wholesale note at First Commerce Bank on a **without-recourse** basis. Terms of the discounting:\n\n| Item | Term |\n|---|---|\n| Date of discounting | May 1, Year 2 |\n| Annual bank discount rate | 10% |\n| Basis for the bank discount | Discount rate applied to the **maturity value** for the remaining term of the note |\n\nImmediately before the transfer, Arden recorded accrued interest receivable on the Baxter note through May 1, Year 2. The transfer satisfies all conditions for sale accounting in ASC 860-10-40-5."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Factoring Agreement with Gateway Financial Corp.",
+        "content": "On July 1, Year 2, Arden factored trade accounts receivable with a face amount of $300,000 to Gateway Financial Corp. on a **without-recourse** basis. Terms of the agreement:\n\n| Item | Term |\n|---|---|\n| Face amount of receivables transferred | $300,000 |\n| Factoring fee | 3% of the face amount of receivables transferred |\n| Factor's holdback (due from factor) | 5% of the face amount, retained by Gateway pending customer returns and allowances |\n\nThe transfer satisfies all conditions for sale accounting in ASC 860-10-40-5. Gateway also offers a with-recourse factoring program that carries a 2% factoring fee; under that program, the fair value of Arden's recourse obligation would have been estimated at $4,000. Arden did **not** use the with-recourse program in Year 2."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Maturity Value of the Baxter Note",
+        "instruction": "Using **Exhibit 1**, compute the maturity value (principal plus interest due at maturity) of the Baxter Wholesale note (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 159000,
+        "tolerance": 1,
+        "explanation": "Interest to maturity = $150,000 × 8% × 9/12 = $9,000. Maturity value = face amount $150,000 + interest $9,000 = $159,000. The note is dated February 1, Year 2, and matures November 1, Year 2.",
+        "explanationJa": "満期価額（maturity value）= 額面 + 満期までの利息 です。\n\n1. 満期までの利息 = $150,000 × 8% × 9/12 = **$9,000**\n2. 満期価額 = $150,000 + $9,000 = **$159,000**\n\nこの手形は Year 2 の2月1日振出・9か月満期なので、満期日は Year 2 の11月1日です。",
+        "references": ["ASC 310-10-25-1"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Bank Discount on the Baxter Note",
+        "instruction": "Using **Exhibit 2**, compute the discount charged by First Commerce Bank when the Baxter note was discounted on May 1, Year 2 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 7950,
+        "tolerance": 1,
+        "explanation": "The note matures November 1, Year 2, so the remaining term at May 1, Year 2 is 6 months. Bank discount = maturity value $159,000 × 10% × 6/12 = $7,950. The bank applies its discount rate to the maturity value, not to the face amount.",
+        "explanationJa": "銀行割引料は**満期価額**に対して、割引日から満期日までの残存期間分を計算します。\n\n1. 残存期間: 5月1日 → 11月1日 = **6か月**\n2. 割引料 = 満期価額 $159,000 × 10% × 6/12 = **$7,950**\n\n割引料の計算基礎は額面（$150,000）ではなく満期価額（$159,000）である点が頻出の引っかけです。",
+        "references": ["ASC 860-20-40-1"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Cash Proceeds from Discounting",
+        "instruction": "Compute the cash proceeds Arden received from First Commerce Bank on May 1, Year 2 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 151050,
+        "tolerance": 1,
+        "explanation": "Cash proceeds = maturity value $159,000 − bank discount $7,950 = $151,050.",
+        "explanationJa": "手取額（proceeds）= 満期価額 − 割引料 です。\n\n手取額 = $159,000 − $7,950 = **$151,050**",
+        "references": ["ASC 860-20-40-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Loss on Sale of the Note",
+        "instruction": "Compute the loss on the sale of the Baxter note that Arden should recognize on May 1, Year 2. The carrying amount of the note at the date of transfer includes the accrued interest receivable recorded through May 1, Year 2 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 1950,
+        "tolerance": 1,
+        "explanation": "Accrued interest from February 1 to May 1 (3 months) = $150,000 × 8% × 3/12 = $3,000. Carrying amount at transfer = face $150,000 + accrued interest $3,000 = $153,000. Loss on sale = carrying amount $153,000 − cash proceeds $151,050 = $1,950. Because the transfer qualifies as a sale, the difference is recognized in earnings immediately.",
+        "explanationJa": "売却損 = 帳簿価額 − 手取額 で計算します。\n\n1. 割引日までの未収利息（2/1〜5/1の3か月）= $150,000 × 8% × 3/12 = **$3,000**\n2. 譲渡時の帳簿価額 = 額面 $150,000 + 未収利息 $3,000 = **$153,000**\n3. 売却損 = $153,000 − $151,050 = **$1,950**\n\n売却（sale）の要件を満たす譲渡なので、差額は譲渡時に損失として損益計上します。",
+        "references": ["ASC 860-20-40-1"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Cash Received from the Factor",
+        "instruction": "Using **Exhibit 3**, compute the cash Arden received from Gateway Financial Corp. on July 1, Year 2, when the receivables were factored (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 276000,
+        "tolerance": 1,
+        "explanation": "Factoring fee = $300,000 × 3% = $9,000. Factor's holdback = $300,000 × 5% = $15,000. Cash received = $300,000 − $9,000 − $15,000 = $276,000. The holdback is a receivable due from the factor, not a loss.",
+        "explanationJa": "ファクタリングの手取額を計算します。\n\n1. ファクタリング手数料 = $300,000 × 3% = **$9,000**\n2. ファクター留保額（holdback）= $300,000 × 5% = **$15,000**\n3. 現金受取額 = $300,000 − $9,000 − $15,000 = **$276,000**\n\nholdbackは返品・値引に備えてファクターが留保する金額で、後日精算されるためファクターに対する債権（due from factor）として資産計上します。損失になるのは手数料部分のみです。",
+        "references": ["ASC 860-20-25-1"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Journal Entry for the Factoring",
+        "instruction": "Prepare Arden's journal entry on July 1, Year 2, to record the without-recourse factoring described in **Exhibit 3**. Enter each amount in whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Cash",
+            "Due from factor",
+            "Loss on sale of receivables",
+            "Accounts receivable"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 276000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Due from factor",
+              "colLabel": "Debit",
+              "correctValue": 15000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Due from factor",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Loss on sale of receivables",
+              "colLabel": "Debit",
+              "correctValue": 9000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Loss on sale of receivables",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Credit",
+              "correctValue": 300000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Debit Cash $276,000, debit Due from factor $15,000 (the 5% holdback), debit Loss on sale of receivables $9,000 (the 3% factoring fee), and credit Accounts receivable $300,000. Because the without-recourse transfer qualifies as a sale, the receivables are derecognized and the fee is recognized as a loss; total debits of $300,000 equal the credit.",
+        "explanationJa": "売却処理（without recourse・売却要件充足）の仕訳:\n\n| 勘定科目 | 借方 | 貸方 |\n|---|---|---|\n| Cash（現金） | $276,000 | |\n| Due from factor（ファクター未収金） | $15,000 | |\n| Loss on sale of receivables（債権売却損） | $9,000 | |\n| Accounts receivable（売掛金） | | $300,000 |\n\n- 現金: Work Tab 5 で計算した手取額 $276,000\n- ファクター未収金: 留保額 5% = $15,000（資産）\n- 売却損: 手数料 3% = $9,000\n\n借方合計 $276,000 + $15,000 + $9,000 = $300,000 で貸借一致します。売却要件を満たすため売掛金 $300,000 の認識を中止（derecognize）します。",
+        "references": ["ASC 860-20-25-1", "ASC 860-20-40-1"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Transfers That Fail Sale Accounting",
+        "instruction": "Assume instead that Arden had transferred the receivables with recourse and the transfer did **not** satisfy all of the conditions for sale accounting in ASC 860-10-40-5 (for example, because Arden maintained effective control over the receivables). How should Arden account for the transfer?",
+        "answerType": "select",
+        "options": [
+          "As a sale of the receivables, with the cash received recorded as proceeds and a gain or loss recognized",
+          "As a secured borrowing, with the receivables pledged as collateral and a liability recognized for the cash received",
+          "As a troubled debt restructuring of the receivables",
+          "As a deferral, with no entry recorded until the recourse provision expires"
+        ],
+        "correctAnswer": "As a secured borrowing, with the receivables pledged as collateral and a liability recognized for the cash received",
+        "explanation": "Under ASC 860, a transfer of financial assets is accounted for as a sale only if the transferred assets are legally isolated from the transferor, the transferee can pledge or exchange the assets, and the transferor does not maintain effective control. If any condition fails, the transferor keeps the receivables on its books, records the cash received as a liability, and accounts for the transaction as a secured borrowing with a pledge of collateral.",
+        "explanationJa": "ASC 860 では、金融資産の譲渡が**売却**として処理されるのは次の3要件をすべて満たす場合のみです。\n\n1. 譲渡資産が譲渡人から法的に隔離されている（isolation）\n2. 譲受人が資産を担保差入・交換できる\n3. 譲渡人が実効的支配（effective control）を保持していない\n\n1つでも満たさない場合、譲渡人は売掛金をオンバランスのまま維持し、受け取った現金を**負債**として計上する**担保付借入（secured borrowing）**として処理します。recourse の有無そのものではなく、売却3要件の充足が売却/借入処理の分かれ目である点に注意してください。",
+        "references": ["ASC 860-10-40-5", "ASC 860-30-25-2"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 24,
+    "source": "FAR TBS Practice (original)"
+  }
+]
