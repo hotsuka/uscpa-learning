@@ -70,5 +70,174 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 25,
     "source": "AICPA Sample / FAR Practice"
+  },
+  {
+    "id": "far-tbs-lease-002",
+    "subject": "FAR",
+    "topic": "Leases",
+    "title": "Lessee Operating Lease: Initial and Subsequent Measurement (ASC 842)",
+    "scenario": "Crestline Services Inc. (the lessee) signed a lease with Parkview Properties LLC for two floors of a multi-tenant office building. The lease commences on January 1, Year 1.\n\nThe lease terms are presented in **Exhibit 1**, the costs and incentives associated with the lease in **Exhibit 2**, and present value factors in **Exhibit 3**. Complete the tasks below in accordance with ASC 842.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Lease Agreement Terms",
+        "content": "| Item | Detail |\n|---|---|\n| Commencement date | January 1, Year 1 |\n| Lease term | 6 years; no renewal, termination, or purchase options |\n| Annual fixed lease payments | $80,000, due each December 31, beginning December 31, Year 1 |\n| Additional fixed lease payment due at commencement (January 1, Year 1) | $20,000 |\n| Transfer of ownership at end of lease | None |\n| Residual value guarantee | None |\n| Underlying asset | Two floors of a multi-tenant office building; not specialized |\n| Fair value of the leased portion of the building | $4,500,000 |\n| Remaining economic life of the building | 30 years |\n| Rate implicit in the lease | Not readily determinable |\n| Crestline's incremental borrowing rate | 7% per annum |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Costs and Incentives Related to the Lease",
+        "content": "| Item | Amount | Description |\n|---|---|---|\n| Broker commission | $12,000 | Paid by Crestline on January 1, Year 1, to the broker who arranged the lease; payable only upon execution of the lease |\n| Lease incentive | $14,000 | Cash received by Crestline from Parkview on January 1, Year 1 |\n| Moving and relocation costs | $9,000 | Paid by Crestline to a third-party moving company in January Year 1 |\n| Allocated internal legal salaries | $6,000 | Salaries of Crestline's in-house legal staff for time spent negotiating and reviewing the lease |\n| Common area maintenance (CAM) | $5,000 per year | Billed separately by Parkview as a non-lease component; Crestline accounts for it separately and expenses it as incurred |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Present Value Factors",
+        "content": "**Present value of an ordinary annuity of $1** (payments at the end of each period)\n\n| Periods | 6% | 7% | 8% |\n|---|---|---|---|\n| 5 | 4.2124 | 4.1002 | 3.9927 |\n| 6 | 4.9173 | 4.7665 | 4.6229 |\n| 7 | 5.5824 | 5.3893 | 5.2064 |\n\n**Present value of an annuity due of $1** (payments at the beginning of each period)\n\n| Periods | 6% | 7% | 8% |\n|---|---|---|---|\n| 6 | 5.2124 | 5.1002 | 4.9927 |\n\n**Present value of $1**\n\n| Periods | 6% | 7% | 8% |\n|---|---|---|---|\n| 6 | 0.7050 | 0.6663 | 0.6302 |"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Lease Classification",
+        "instruction": "Based on the classification criteria in ASC 842, how should Crestline classify this lease at the commencement date?",
+        "answerType": "select",
+        "options": ["Operating lease", "Finance lease"],
+        "correctAnswer": "Operating lease",
+        "explanation": "None of the finance lease criteria is met: (1) ownership does not transfer at the end of the lease; (2) there is no purchase option; (3) the 6-year lease term is not a major part of the building's 30-year remaining economic life (6 ÷ 30 = 20%, below the 75% threshold); (4) the present value of the lease payments, $381,320 + $20,000 = $401,320, is not substantially all of the $4,500,000 fair value (approximately 8.9%, below the 90% threshold); and (5) the office space is a standard multi-tenant asset, not specialized. Therefore the lease is classified as an operating lease.",
+        "explanationJa": "ASC 842 のファイナンスリース5基準をすべて満たさないため**オペレーティングリース**です。\n\n1. 所有権移転: なし\n2. 購入オプション: なし\n3. リース期間/経済的耐用年数: 6年 ÷ 30年 = **20%** < 75%\n4. リース料PV/公正価値: ($381,320 + $20,000) ÷ $4,500,000 = **約8.9%** < 90%\n5. 特殊資産: 汎用オフィスであり該当なし\n\n1つも満たさない → **オペレーティングリース**（借手）。",
+        "references": ["ASC 842-10-25-2", "ASC 842-10-25-3"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Lease Liability at Commencement",
+        "instruction": "Compute the lease liability Crestline recognizes at the commencement date, January 1, Year 1 (in whole dollars, no commas). Use the present value factors in Exhibit 3.",
+        "answerType": "number",
+        "correctAnswer": 381320,
+        "tolerance": 100,
+        "explanation": "The lease liability is the present value of the lease payments not yet paid, discounted at the incremental borrowing rate because the rate implicit in the lease is not readily determinable. The six remaining payments of $80,000 are due at the end of each year: $80,000 × 4.7665 (PV of an ordinary annuity, 7%, 6 periods) = $381,320. The $20,000 payment made at commencement is already paid, so it is excluded from the liability and instead included in the right-of-use asset.",
+        "explanationJa": "リース負債 = **未払リース料**の現在価値（実質金利が容易に算定できないため追加借入利率7%で割引）\n\n= $80,000 × PV普通年金係数(7%, 6期) = $80,000 × 4.7665 = **$381,320**\n\nポイント:\n- 支払いは毎年**末**なので普通年金係数（4.7665）を使用。年金現価（期首払い）係数 5.1002 を使わないこと\n- 開始日に支払済みの $20,000 は「既に支払った」ためリース負債には含めず、使用権資産に加算します",
+        "references": ["ASC 842-20-30-1", "ASC 842-20-30-3"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Initial Measurement of the Right-of-Use Asset",
+        "instruction": "Compute the right-of-use asset Crestline recognizes at the commencement date, January 1, Year 1 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 399320,
+        "tolerance": 100,
+        "explanation": "Right-of-use asset = initial lease liability $381,320 + lease payment made at commencement $20,000 + initial direct costs $12,000 (the broker commission, which is incremental and payable only upon execution) − lease incentive received $14,000 = $399,320. The moving costs and the allocated internal legal salaries are not initial direct costs because they would have been incurred even if the lease had not been obtained, and the CAM charges are a separately accounted non-lease component.",
+        "explanationJa": "使用権資産の当初測定（ASC 842-20-30-5）:\n\n| 構成要素 | 金額 |\n|---|---|\n| リース負債の当初測定額 | $381,320 |\n| 開始日以前に支払ったリース料 | +$20,000 |\n| 初期直接費用（ブローカー手数料） | +$12,000 |\n| 受領したリースインセンティブ | −$14,000 |\n| **使用権資産** | **$399,320** |\n\nポイント:\n- 引越費用 $9,000 と社内法務部の人件費配賦 $6,000 は「リース契約がなくても発生した費用」なので**初期直接費用に該当しない**（発生時費用処理）\n- CAM $5,000/年 は別個の非リース構成要素として発生時に費用処理",
+        "references": ["ASC 842-20-30-5"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Annual Single Lease Cost",
+        "instruction": "Compute the single lease cost Crestline recognizes in each year of the lease under the operating lease model (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 83000,
+        "tolerance": 1,
+        "explanation": "Under the operating lease model, a lessee recognizes a single lease cost on a straight-line basis over the lease term. Total cost = lease payments of $20,000 + ($80,000 × 6) = $500,000, plus initial direct costs of $12,000, minus the lease incentive of $14,000 = $498,000. Annual single lease cost = $498,000 ÷ 6 years = $83,000.",
+        "explanationJa": "オペレーティングリースの借手は、リース期間にわたり**単一のリース費用を定額**で認識します。\n\n1. リース料総額 = $20,000 + $80,000 × 6年 = $500,000\n2. + 初期直接費用 $12,000\n3. − リースインセンティブ $14,000\n4. 総リース費用 = **$498,000**\n\n年間リース費用 = $498,000 ÷ 6年 = **$83,000**\n\n※現在価値計算を使わない点に注意（費用総額ベースの定額配分）。",
+        "references": ["ASC 842-20-25-6"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Lease Liability at December 31, Year 1",
+        "instruction": "Compute the carrying amount of the lease liability at December 31, Year 1, after the December 31 payment (in whole dollars, no commas). Round the interest accretion to the nearest whole dollar.",
+        "answerType": "number",
+        "correctAnswer": 328012,
+        "tolerance": 10,
+        "explanation": "Even under the operating lease model, the lease liability is subsequently measured at the present value of the remaining lease payments, which is equivalent to accreting interest at the discount rate. Interest accretion for Year 1 = $381,320 × 7% = $26,692 (rounded). Ending liability = $381,320 + $26,692 − $80,000 payment = $328,012.",
+        "explanationJa": "オペレーティングリースでも、リース負債自体は**実効金利法と同じ方法**で残存リース料の現在価値に更新します。\n\n1. 利息増加分: $381,320 × 7% = **$26,692**（四捨五入）\n2. 支払い: $80,000（12/31）\n3. 期末リース負債 = $381,320 + $26,692 − $80,000 = **$328,012**\n\n※ファイナンスリースと異なるのは損益への表示（単一費用 vs 利息+償却）であり、負債の測定方法は同じです。",
+        "references": ["ASC 842-20-35-3"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Research: Initial Measurement of the Right-of-Use Asset",
+        "instruction": "Cite the ASC paragraph that prescribes the initial measurement of the right-of-use asset — that is, the paragraph stating that the cost of the right-of-use asset consists of the initial lease liability, any lease payments made at or before commencement less incentives received, and initial direct costs. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "842-20-30-5",
+        "explanation": "ASC 842-20-30-5 states that at the commencement date, the cost of the right-of-use asset consists of (a) the amount of the initial measurement of the lease liability, (b) any lease payments made to the lessor at or before the commencement date, minus any lease incentives received, and (c) any initial direct costs incurred by the lessee.",
+        "explanationJa": "**ASC 842-20-30-5** が使用権資産の当初測定を規定しています。\n\n構成: (a) リース負債の当初測定額、(b) 開始日以前に貸手へ支払ったリース料からインセンティブ受領額を控除した額、(c) 借手が負担した初期直接費用。\n\n分解: 842（リース）− 20（借手）− 30（当初測定）− 5（段落）。",
+        "references": ["ASC 842-20-30-5"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Journal Entry at December 31, Year 1",
+        "instruction": "Prepare the single journal entry Crestline records on December 31, Year 1, to recognize the annual lease expense and the $80,000 payment. Round the interest accretion on the lease liability to the nearest whole dollar. Enter amounts in whole dollars. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Lease expense",
+            "Lease liability",
+            "Cash",
+            "Right-of-use asset"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Lease expense",
+              "colLabel": "Debit",
+              "correctValue": 83000,
+              "tolerance": 2
+            },
+            {
+              "rowLabel": "Lease expense",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Lease liability",
+              "colLabel": "Debit",
+              "correctValue": 53308,
+              "tolerance": 2
+            },
+            {
+              "rowLabel": "Lease liability",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 80000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Right-of-use asset",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Right-of-use asset",
+              "colLabel": "Credit",
+              "correctValue": 56308,
+              "tolerance": 2
+            }
+          ]
+        },
+        "explanation": "The single operating lease entry on December 31, Year 1: debit Lease expense $83,000 (the straight-line single lease cost); credit Cash $80,000 (the annual payment); debit Lease liability $53,308 (the $80,000 payment less interest accretion of $381,320 × 7% = $26,692, which is the net decrease in the liability); and credit Right-of-use asset $56,308 (the plug: lease expense $83,000 less interest accretion $26,692, representing amortization of the ROU asset). Total debits $136,308 equal total credits $136,308.",
+        "explanationJa": "オペレーティングリース借手の年次仕訳（単一費用モデル）:\n\n| 勘定科目 | 借方 | 貸方 |\n|---|---|---|\n| リース費用 | $83,000 | |\n| リース負債 | $53,308 | |\n| 現金 | | $80,000 |\n| 使用権資産 | | $56,308 |\n\n計算手順:\n1. リース費用（定額）: **$83,000**\n2. 利息増加分: $381,320 × 7% = $26,692\n3. リース負債の純減少 = 支払 $80,000 − 利息 $26,692 = **$53,308**（借方）\n4. 使用権資産の償却（差額）= $83,000 − $26,692 = **$56,308**（貸方）\n\n検算: 借方合計 $136,308 = 貸方合計 $136,308 ✓",
+        "references": ["ASC 842-20-25-6", "ASC 842-20-35-3"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
   }
 ]

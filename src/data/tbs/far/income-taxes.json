@@ -65,5 +65,189 @@
     "difficulty": "advanced",
     "estimatedMinutes": 25,
     "source": "AICPA Sample / FAR Practice"
+  },
+  {
+    "id": "far-tbs-tax-002",
+    "subject": "FAR",
+    "topic": "Income Taxes",
+    "title": "Deferred Taxes with Enacted Rate Change and Valuation Allowance (ASC 740)",
+    "scenario": "Meridian Industries Inc. is a calendar-year manufacturer that began operations on January 1, Year 1, and is now closing its books for Year 2, its second year of operations. On September 1, Year 2, new tax legislation was enacted that changes the corporate income tax rate for future tax years.\n\nUsing the information in **Exhibit 1** (Year 2 financial data), **Exhibit 2** (detail of book/tax differences), and **Exhibit 3** (tax rates and beginning deferred tax balances), complete the tasks below in accordance with ASC 740.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Year 2 Financial Statement Information",
+        "content": "**Selected Year 2 financial statement data**\n\n| Item | Amount |\n|---|---|\n| Sales revenue | $8,400,000 |\n| Pretax financial (book) income | $1,200,000 |\n\n**Items included in Year 2 pretax financial income**\n\n| Item | Amount | Note |\n|---|---|---|\n| Interest income on State of Ohio municipal bonds | $30,000 | Exempt from federal income tax |\n| Premiums on officers' life insurance | $20,000 | Meridian is the beneficiary; not deductible for tax purposes |\n| Loss on sale of an equity investment | $40,000 | A capital loss for tax purposes (see Exhibit 2) |\n| Interest expense on a bank term loan | $45,000 | Fully deductible for tax purposes in Year 2 |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Detail of Book/Tax Differences",
+        "content": "**1. Depreciation**\n\nEquipment was acquired on January 1, Year 1, for $900,000 (no salvage value).\n\n| | Year 1 | Year 2 |\n|---|---|---|\n| Book depreciation (straight-line, 6-year life) | $150,000 | $150,000 |\n| Tax depreciation (accelerated) | $300,000 | $240,000 |\n\n**2. Product warranty**\n\nWarranty costs are expensed when accrued for book purposes and are deductible when paid for tax purposes.\n\n| Warranty liability | Amount |\n|---|---|\n| Balance, January 1, Year 2 | $60,000 |\n| Warranty expense accrued in Year 2 | $110,000 |\n| Warranty claims paid in Year 2 | $(80,000) |\n| Balance, December 31, Year 2 | $90,000 |\n\n**3. Advance payments from customers (unearned revenue)**\n\nIn December Year 2, Meridian received $50,000 from a customer for services to be performed evenly during Year 3. The amount is taxable when received and will be recognized as book revenue in Year 3.\n\n**4. Capital loss**\n\nThe $40,000 loss on the sale of the equity investment is a capital loss. For tax purposes, capital losses are deductible only against capital gains. Meridian reported no capital gains in Year 1 or Year 2, does not anticipate any capital gains in the foreseeable future, and has no prudent and feasible tax-planning strategies that would generate capital gains. The loss may be carried forward five years."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Tax Rates and Beginning Deferred Tax Balances",
+        "content": "**Enacted tax rates**\n\n| Description | Rate |\n|---|---|\n| Enacted rate applicable to Year 1 and Year 2 | 30% |\n| Rate enacted on September 1, Year 2, effective for tax years beginning after December 31, Year 2 | 25% |\n\nAll temporary differences existing at December 31, Year 2, are expected to reverse in Year 3 and later years.\n\n**Deferred tax balances at December 31, Year 1 (measured at 30%)**\n\n| Item | Balance |\n|---|---|\n| Deferred tax liability — depreciation | $45,000 |\n| Deferred tax asset — warranty liability | $18,000 |\n| Valuation allowance | $0 |\n\n**Other information**\n\n- Management expects substantial ordinary taxable income in Year 3 and future years.\n- Meridian made estimated federal income tax payments of $290,000 during Year 2.\n- Ignore state and foreign income taxes."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Taxable Income",
+        "instruction": "Compute Meridian's taxable income for Year 2 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 1220000,
+        "tolerance": 1,
+        "explanation": "Taxable income = pretax book income $1,200,000 − excess tax depreciation ($240,000 − $150,000 = $90,000) + warranty accrual in excess of payments ($110,000 − $80,000 = $30,000) + advance payments taxable when received $50,000 + nondeductible capital loss $40,000 − nontaxable municipal bond interest $30,000 + nondeductible officers' life insurance premiums $20,000 = $1,220,000. The bank loan interest is deductible for both book and tax, so it requires no adjustment.",
+        "explanationJa": "課税所得 = 税引前会計利益 ± 各調整\n\n1. 税引前会計利益: $1,200,000\n2. 減価償却の超過控除: 税務 $240,000 − 会計 $150,000 = **−$90,000**\n3. 製品保証: 会計費用 $110,000 − 税務控除（支払額）$80,000 = **+$30,000**\n4. 前受金（受取時課税）: **+$50,000**\n5. キャピタルロス（当期控除不可）: **+$40,000**\n6. 地方債利息（非課税）: **−$30,000**\n7. 役員生命保険料（損金不算入）: **+$20,000**\n\n課税所得 = $1,200,000 − $90,000 + $30,000 + $50,000 + $40,000 − $30,000 + $20,000 = **$1,220,000**\n\n※銀行借入の支払利息 $45,000 は会計・税務とも控除されるため調整不要です。",
+        "references": ["ASC 740-10-30-5"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Current Income Tax Expense",
+        "instruction": "Compute Meridian's current income tax expense for Year 2 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 366000,
+        "tolerance": 1,
+        "explanation": "Current income tax expense = taxable income × the enacted rate applicable to Year 2 = $1,220,000 × 30% = $366,000. The 25% rate enacted on September 1, Year 2, applies only to tax years beginning after December 31, Year 2, so it is not used for the Year 2 current provision.",
+        "explanationJa": "当期税金費用 = 課税所得 × 当期に適用される法定税率\n\n= $1,220,000 × 30% = **$366,000**\n\nYear 2 中に成立した新税率 25% は「Year 2 の12月31日より後に開始する事業年度」から適用されるため、Year 2 の当期税金には**旧税率30%**を使用します。",
+        "references": ["ASC 740-10-30-5"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Deferred Tax Balances at December 31, Year 2 (Before Valuation Allowance)",
+        "instruction": "For each item below, compute the deferred tax asset and deferred tax liability balances at December 31, Year 2, before considering any valuation allowance. Use the appropriate enacted tax rate. Enter amounts in whole dollars. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Deferred Tax Asset", "Deferred Tax Liability"],
+          "rows": [
+            "Depreciation (equipment)",
+            "Warranty liability",
+            "Unearned revenue (advance payments)",
+            "Capital loss carryforward"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Depreciation (equipment)",
+              "colLabel": "Deferred Tax Asset",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Depreciation (equipment)",
+              "colLabel": "Deferred Tax Liability",
+              "correctValue": 60000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Warranty liability",
+              "colLabel": "Deferred Tax Asset",
+              "correctValue": 22500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Warranty liability",
+              "colLabel": "Deferred Tax Liability",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Unearned revenue (advance payments)",
+              "colLabel": "Deferred Tax Asset",
+              "correctValue": 12500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Unearned revenue (advance payments)",
+              "colLabel": "Deferred Tax Liability",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Capital loss carryforward",
+              "colLabel": "Deferred Tax Asset",
+              "correctValue": 10000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Capital loss carryforward",
+              "colLabel": "Deferred Tax Liability",
+              "correctValue": 0,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Because all temporary differences existing at December 31, Year 2, will reverse in Year 3 and later, the ending deferred balances are measured at the newly enacted 25% rate. Depreciation: cumulative tax depreciation $540,000 − cumulative book depreciation $300,000 = $240,000 taxable temporary difference × 25% = $60,000 DTL. Warranty: $90,000 ending liability (deductible when paid) × 25% = $22,500 DTA. Unearned revenue: $50,000 already taxed × 25% = $12,500 DTA. Capital loss carryforward: $40,000 × 25% = $10,000 DTA before the valuation allowance.",
+        "explanationJa": "期末の一時差異はすべて Year 3 以降に解消するため、**解消時に適用される新税率25%**で測定します。\n\n| 項目 | 累積一時差異 | ×25% | 区分 |\n|---|---|---|---|\n| 減価償却 | 税務累計 $540,000 − 会計累計 $300,000 = $240,000（将来加算） | $60,000 | DTL |\n| 製品保証引当金 | 期末残高 $90,000（将来減算） | $22,500 | DTA |\n| 前受金 | $50,000（受取時課税済み、将来減算） | $12,500 | DTA |\n| キャピタルロス繰越 | $40,000（将来減算） | $10,000 | DTA（評価性引当金考慮前） |",
+        "references": ["ASC 740-10-30-8"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Valuation Allowance Assessment",
+        "instruction": "Under the more-likely-than-not standard of ASC 740, which deferred tax asset, if any, requires a valuation allowance at December 31, Year 2?",
+        "answerType": "select",
+        "options": [
+          "No valuation allowance is required for any deferred tax asset",
+          "The deferred tax asset related to the warranty liability",
+          "The deferred tax asset related to the unearned revenue",
+          "The deferred tax asset related to the capital loss carryforward"
+        ],
+        "correctAnswer": "The deferred tax asset related to the capital loss carryforward",
+        "explanation": "A valuation allowance is required when it is more likely than not (a likelihood of more than 50%) that some portion or all of a deferred tax asset will not be realized. The capital loss carryforward can be realized only against future capital gains. Meridian has no capital gains, anticipates none in the foreseeable future, and has no prudent and feasible tax-planning strategies to generate them, so a full valuation allowance of $40,000 × 25% = $10,000 is required. The warranty and unearned revenue deferred tax assets will reverse against the substantial ordinary taxable income management expects, so they require no allowance.",
+        "explanationJa": "評価性引当金は、DTAの一部または全部が実現しない可能性が **more likely than not（50%超）** の場合に計上します。\n\n- **キャピタルロス繰越**: 税務上、キャピタルゲインとしか相殺できません。当社はキャピタルゲインの実績・見込みがなく、実行可能なタックスプランニング戦略もないため、実現の見込みが立ちません → **全額 $10,000 の評価性引当金が必要**\n- 製品保証・前受金のDTA: 将来の十分な**通常の課税所得**で解消されるため引当金は不要です。\n\nポイント: DTAの実現可能性は差異の**種類ごとの所得源泉**（通常所得 vs キャピタルゲイン）で判断します。",
+        "references": [
+          "ASC 740-10-30-5",
+          "ASC 740-10-30-16",
+          "ASC 740-10-30-18"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Effect of the Enacted Rate Change",
+        "instruction": "What is the effect on Year 2 income tax expense of remeasuring the deferred tax balances that existed at January 1, Year 2, for the tax rate enacted on September 1, Year 2?",
+        "answerType": "select",
+        "options": [
+          "Decreases income tax expense by $4,500",
+          "Increases income tax expense by $4,500",
+          "Decreases income tax expense by $7,500",
+          "Decreases income tax expense by $10,500"
+        ],
+        "correctAnswer": "Decreases income tax expense by $4,500",
+        "explanation": "At January 1, Year 2, the cumulative temporary differences were a $150,000 taxable difference (depreciation) and a $60,000 deductible difference (warranty), a net taxable difference of $90,000 recorded at 30% as a net deferred tax liability of $27,000. Remeasured at the newly enacted 25% rate, the net deferred tax liability becomes $22,500. The reduction of $90,000 × (30% − 25%) = $4,500 in the net liability is recognized in income tax expense from continuing operations in the period of enactment, decreasing Year 2 income tax expense by $4,500.",
+        "explanationJa": "税率変更の影響は、**成立した期の継続事業に係る税金費用**で一括認識します（ASC 740-10-35-4, 45-15）。\n\n期首（1/1 Year 2）の一時差異:\n- 減価償却（将来加算）: $150,000\n- 製品保証（将来減算）: $(60,000)\n- 純額（将来加算）: $90,000 → 30%で純DTL $27,000\n\n新税率25%で再測定: $90,000 × 25% = $22,500\n\n純DTLの減少 = $90,000 × (30% − 25%) = **$4,500** → 税金費用を **$4,500 減少**させます（負債の減少 = 費用のマイナス）。",
+        "references": ["ASC 740-10-35-4", "ASC 740-10-45-15"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Deferred Income Tax Expense (Benefit)",
+        "instruction": "Compute deferred income tax expense or benefit for Year 2, including the effects of the enacted rate change and any required valuation allowance (in whole dollars, no commas). Enter an expense as a positive number and a net benefit as a negative number (e.g., -1000).",
+        "answerType": "number",
+        "correctAnswer": -2000,
+        "tolerance": 1,
+        "explanation": "Deferred tax expense (benefit) equals the change in the net deferred position. Beginning net position (at 30%): DTL $45,000 − DTA $18,000 = net DTL $27,000. Ending net position (at 25%, after the valuation allowance): DTL $60,000 − (gross DTA $45,000 − valuation allowance $10,000) = $60,000 − $35,000 = net DTL $25,000. The net DTL decreased by $2,000, so Year 2 deferred income tax is a net benefit of $2,000. Component check: depreciation DTL increase $15,000 − warranty DTA increase $4,500 − unearned revenue DTA increase $12,500 − capital loss DTA $10,000 + valuation allowance $10,000 = $(2,000).",
+        "explanationJa": "繰延税金費用（便益）= 純繰延ポジションの増減\n\n**期首**（30%測定）: DTL $45,000 − DTA $18,000 = 純DTL **$27,000**\n\n**期末**（25%測定・評価性引当金控除後）:\n- DTL $60,000\n- DTA総額 $45,000（$22,500 + $12,500 + $10,000）− 評価性引当金 $10,000 = 純DTA $35,000\n- 純DTL = $60,000 − $35,000 = **$25,000**\n\n純DTLが $27,000 → $25,000 に **$2,000 減少** → 繰延税金は **$2,000 の便益（−$2,000）**\n\n【内訳検算】DTL増加 $15,000 − 保証DTA増加 $4,500 − 前受金DTA増加 $12,500 − ロスDTA $10,000 + 評価性引当金 $10,000 = **−$2,000** ✓",
+        "references": ["ASC 740-10-30-2"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Total Income Tax Expense",
+        "instruction": "Compute total income tax expense reported on Meridian's Year 2 income statement (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 364000,
+        "tolerance": 1,
+        "explanation": "Total income tax expense = current tax expense $366,000 + deferred tax benefit $(2,000) = $364,000. Verification by rate reconciliation: pretax income $1,200,000 × 30% = $360,000; + officers' life insurance $20,000 × 30% = $6,000; − municipal interest $30,000 × 30% = $(9,000); − remeasurement of beginning deferred balances $(4,500); − Year 2 net originating temporary differences (other than the capital loss) of $10,000 measured at 25% rather than 30% = $(500); + capital loss subject to a full valuation allowance $40,000 × 30% = $12,000; total = $364,000.",
+        "explanationJa": "所得税費用合計 = 当期 $366,000 + 繰延（便益）$(2,000) = **$364,000**\n\n【税率調整表による検証】\n| 項目 | 金額 |\n|---|---|\n| 会計利益 × 30%（$1,200,000 × 30%） | $360,000 |\n| 役員生命保険（永久差異）$20,000 × 30% | +$6,000 |\n| 地方債利息（永久差異）$30,000 × 30% | −$9,000 |\n| 税率変更による期首残高の再測定 | −$4,500 |\n| 当期発生差異（ロス除く純額 $10,000）の25%測定 | −$500 |\n| 評価性引当金全額計上のキャピタルロス $40,000 × 30% | +$12,000 |\n| **合計** | **$364,000** ✓ |",
+        "references": ["ASC 740-10-30-5", "ASC 740-10-45-15"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "FAR TBS Practice (original)"
   }
 ]
