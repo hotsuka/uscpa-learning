@@ -82,6 +82,7 @@ export function TBSTaskPanel({
             </div>
 
             <TBSAnswerForm
+              key={activeTask.id}
               task={activeTask}
               onSubmit={(answer, isCorrect) =>
                 onTaskSubmit(activeTask.id, answer, isCorrect)
