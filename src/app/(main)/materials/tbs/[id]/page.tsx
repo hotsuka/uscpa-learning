@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { TBSViewer } from "@/components/materials/TBSViewer";
+import { MiniTimer } from "@/components/materials/MiniTimer";
 import { getTBSQuestionById, farTBSQuestions } from "@/data/tbs/far";
 
 interface Props {
@@ -22,6 +23,12 @@ export default async function TBSDetailPage({ params }: Props) {
   return (
     <div className="flex flex-col h-screen">
       <Header />
+      <div className="sm:hidden border-b bg-muted/30 p-2 flex justify-center shrink-0">
+        <MiniTimer />
+      </div>
+      <div className="hidden sm:flex justify-end px-3 py-1.5 border-b bg-muted/30 shrink-0">
+        <MiniTimer />
+      </div>
       <div className="flex-1 min-h-0">
         <TBSViewer question={question} />
       </div>
