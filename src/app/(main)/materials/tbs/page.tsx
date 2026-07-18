@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { TBSCard } from "@/components/materials/TBSCard";
@@ -15,7 +15,8 @@ import {
 import { ArrowLeft, BookOpen, CheckCircle2 } from "lucide-react";
 import { farTBSQuestions, getTBSTopics } from "@/data/tbs/far";
 import { useTBSBankStore } from "@/stores/tbsBankStore";
-import { MiniTimer } from "@/components/materials/MiniTimer";
+import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer";
+import { useTimerShortcuts } from "@/hooks/useTimerShortcuts";
 
 type StatusFilter = "all" | "unattempted" | "attempted";
 type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced";
@@ -34,6 +35,9 @@ export default function TBSListPage() {
 
   const getTBSScore = useTBSBankStore((s) => s.getTBSScore);
   const attemptedIds = useTBSBankStore((s) => s.getAttemptedTBSIds)();
+
+  const miniTimerRef = useRef<MiniTimerRef>(null);
+  useTimerShortcuts(miniTimerRef);
 
   const topics = useMemo(() => getTBSTopics(), []);
 
@@ -59,7 +63,7 @@ export default function TBSListPage() {
       </div>
       <div className="max-w-2xl mx-auto px-4 py-6">
         <div className="hidden sm:flex justify-end mb-2">
-          <MiniTimer />
+          <MiniTimer ref={miniTimerRef} />
         </div>
         <div className="flex items-center gap-2 mb-4">
           <Link
