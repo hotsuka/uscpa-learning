@@ -3,11 +3,13 @@
 import { useRef } from "react";
 import { MiniTimer, type MiniTimerRef } from "./MiniTimer";
 import { useTimerShortcuts } from "@/hooks/useTimerShortcuts";
+import { useTBSTimerContext } from "@/hooks/useTBSTimerContext";
 
 // TBS詳細ページ用のミニタイマーバー（Space/Q/Aのショートカット操作に対応）
 export function TBSTimerBar() {
   const miniTimerRef = useRef<MiniTimerRef>(null);
   useTimerShortcuts(miniTimerRef);
+  useTBSTimerContext();
 
   return (
     <>

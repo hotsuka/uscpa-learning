@@ -17,6 +17,7 @@ import { farTBSQuestions, getTBSTopics } from "@/data/tbs/far";
 import { useTBSBankStore } from "@/stores/tbsBankStore";
 import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer";
 import { useTimerShortcuts } from "@/hooks/useTimerShortcuts";
+import { useTBSTimerContext } from "@/hooks/useTBSTimerContext";
 
 type StatusFilter = "all" | "unattempted" | "attempted";
 type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced";
@@ -38,6 +39,7 @@ export default function TBSListPage() {
 
   const miniTimerRef = useRef<MiniTimerRef>(null);
   useTimerShortcuts(miniTimerRef);
+  useTBSTimerContext();
 
   const topics = useMemo(() => getTBSTopics(), []);
 

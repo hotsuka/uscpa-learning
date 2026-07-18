@@ -43,6 +43,7 @@ export const SUBJECT_SUBTOPICS: Record<Subject, string[]> = {
     "Consolidations",
     "Government Accounting",
     "Not-for-Profit Accounting",
+    "Module 9 Task-Based Simulation",
   ],
   AUD: [
     "Professional Responsibilities",
