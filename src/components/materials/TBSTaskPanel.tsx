@@ -4,6 +4,7 @@ import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { CheckCircle2, Circle } from "lucide-react";
 import { TBSAnswerForm } from "./TBSAnswerForm";
 import type { TBSTask, TBSTaskAttempt, TBSAnswerValue } from "@/types/tbs";
@@ -17,12 +18,16 @@ interface TBSTaskPanelProps {
     answer: TBSAnswerValue,
     isCorrect: boolean,
   ) => void;
+  allAnswered: boolean;
+  onComplete: () => void;
 }
 
 export function TBSTaskPanel({
   tasks,
   taskAttempts,
   onTaskSubmit,
+  allAnswered,
+  onComplete,
 }: TBSTaskPanelProps) {
   const [activeTaskId, setActiveTaskId] = useState(tasks[0]?.id ?? "");
 
@@ -127,6 +132,18 @@ export function TBSTaskPanel({
               >
                 次のタスクへ →
               </button>
+            )}
+
+            {allAnswered && (
+              <div className="flex items-center justify-between gap-3 rounded-lg border border-green-300 bg-green-50 p-3">
+                <p className="flex items-center gap-1.5 text-sm font-medium text-green-800">
+                  <CheckCircle2 className="h-4 w-4 shrink-0" />
+                  全問回答済みです。結果を記録してください。
+                </p>
+                <Button size="sm" onClick={onComplete} className="shrink-0">
+                  完了・採点
+                </Button>
+              </div>
             )}
           </div>
         </div>

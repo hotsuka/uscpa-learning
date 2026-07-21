@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, RotateCcw, ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -19,6 +20,7 @@ interface TBSViewerProps {
 }
 
 export function TBSViewer({ question }: TBSViewerProps) {
+  const router = useRouter();
   const [taskAttempts, setTaskAttempts] = useState<TBSTaskAttempt[]>([]);
   const [isCompleted, setIsCompleted] = useState(false);
   const [savedAttempt, setSavedAttempt] = useState<TBSAttempt | null>(null);
@@ -63,6 +65,29 @@ export function TBSViewer({ question }: TBSViewerProps) {
   };
 
   const allAnswered = taskAttempts.length === question.tasks.length;
+  // 完了・採点前の回答は未保存(ローカルstateのみ)なので離脱時に警告する
+  const hasUnsavedProgress = taskAttempts.length > 0 && !isCompleted;
+
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (hasUnsavedProgress) {
+        e.preventDefault();
+        e.returnValue = "";
+      }
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [hasUnsavedProgress]);
+
+  const handleBack = () => {
+    if (hasUnsavedProgress) {
+      const proceed = confirm(
+        "回答が保存されていません。完了・採点する前に戻ると記録が残りません。このまま戻りますか?",
+      );
+      if (!proceed) return;
+    }
+    router.push("/materials/tbs");
+  };
 
   if (isCompleted && savedAttempt) {
     const correctCount = savedAttempt.taskAttempts.filter(
@@ -127,12 +152,12 @@ export function TBSViewer({ question }: TBSViewerProps) {
   return (
     <div className="flex flex-col h-full">
       <div className="flex items-center gap-3 px-4 py-2 border-b bg-white shrink-0">
-        <Link
-          href="/materials/tbs"
+        <button
+          onClick={handleBack}
           className="text-gray-400 hover:text-gray-600 transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
-        </Link>
+        </button>
         <h1 className="text-sm font-semibold text-gray-800 flex-1 truncate">
           {question.title}
         </h1>
@@ -155,6 +180,8 @@ export function TBSViewer({ question }: TBSViewerProps) {
             tasks={question.tasks}
             taskAttempts={taskAttempts}
             onTaskSubmit={handleTaskSubmit}
+            allAnswered={allAnswered}
+            onComplete={handleComplete}
           />
         </div>
       </div>
