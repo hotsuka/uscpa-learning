@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 import { MarkdownPreview } from "@/components/notes/MarkdownPreview"
+import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
+import { useTimer } from "@/hooks/useTimer"
 import {
   buildMockExam,
   MOCK_EXAM_QUESTION_COUNT,
@@ -33,6 +35,7 @@ import {
   ChevronDown,
   ChevronUp,
   ClipboardCheck,
+  Keyboard,
 } from "lucide-react"
 
 type Phase = "intro" | "running" | "result"
@@ -194,6 +197,9 @@ export default function MockExamPage() {
   const startedAtRef = useRef<string>("")
   const deadlineRef = useRef<number>(0)
   const finishedRef = useRef(false)
+  const miniTimerRef = useRef<MiniTimerRef>(null)
+
+  const { isRunning, start, pause } = useTimer()
 
   const addAttempt = useQuestionBankStore((s) => s.addAttempt)
   const addResult = useMockExamStore((s) => s.addResult)
@@ -307,6 +313,91 @@ export default function MockExamPage() {
   const answeredCount = Object.keys(answers).length
   const currentEntry = entries[currentIndex]
 
+  // キーボードショートカット（通常モードと同じく 1-4 で選択、←→ で問題移動）
+  useEffect(() => {
+    if (phase !== "running") return
+    const handleKeyDown = (e: KeyboardEvent): void => {
+      // 提出確認ダイアログ表示中は無効化
+      if (confirmSubmitOpen) return
+
+      const activeElement = document.activeElement
+      const isInputFocused =
+        activeElement instanceof HTMLInputElement ||
+        activeElement instanceof HTMLTextAreaElement ||
+        activeElement?.getAttribute("contenteditable") === "true"
+
+      if (isInputFocused) return
+
+      // 1-4: 表示順の選択肢を選択（シャッフル後ラベルで保持する）
+      if (e.key >= "1" && e.key <= "4") {
+        const choice = currentEntry?.choices[Number(e.key) - 1]
+        if (!choice) return
+        e.preventDefault()
+        setAnswers((prev) => ({ ...prev, [currentIndex]: choice.label }))
+        return
+      }
+
+      // ←: 前の問題
+      if (e.key === "ArrowLeft") {
+        e.preventDefault()
+        setCurrentIndex((i) => Math.max(i - 1, 0))
+        return
+      }
+
+      // →: 次の問題
+      if (e.key === "ArrowRight") {
+        e.preventDefault()
+        setCurrentIndex((i) => Math.min(i + 1, entries.length - 1))
+        return
+      }
+
+      // Space: 学習タイマー開始/停止
+      if (e.key === " " && e.code === "Space") {
+        e.preventDefault()
+        if (isRunning) {
+          pause()
+        } else {
+          start()
+        }
+        return
+      }
+
+      // Q: 問題数を増減
+      if (e.key === "q" || e.key === "Q") {
+        e.preventDefault()
+        if (e.shiftKey) {
+          miniTimerRef.current?.decrementQuestions()
+        } else {
+          miniTimerRef.current?.incrementQuestions()
+        }
+        return
+      }
+
+      // A: 正解数を増減
+      if (e.key === "a" || e.key === "A") {
+        e.preventDefault()
+        if (e.shiftKey) {
+          miniTimerRef.current?.decrementCorrect()
+        } else {
+          miniTimerRef.current?.incrementCorrect()
+        }
+        return
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [
+    phase,
+    confirmSubmitOpen,
+    currentEntry,
+    currentIndex,
+    entries.length,
+    isRunning,
+    start,
+    pause,
+  ])
+
   const handleSubmitClick = (): void => {
     setConfirmSubmitOpen(true)
   }
@@ -323,7 +414,16 @@ export default function MockExamPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      {/* モバイル用ミニタイマー（学習時間・問題数・正解数） */}
+      <div className="sm:hidden border-b bg-muted/30 p-2 flex justify-center">
+        <MiniTimer />
+      </div>
       <main className="container max-w-3xl mx-auto p-4 pb-24">
+        {/* デスクトップ用ミニタイマー */}
+        <div className="hidden sm:flex justify-end mb-2">
+          <MiniTimer ref={miniTimerRef} />
+        </div>
+
         {phase !== "running" && (
           <Link
             href="/materials/questions"
@@ -362,6 +462,14 @@ export default function MockExamPage() {
                 <div className="flex items-center gap-2">
                   <Flag className="w-4 h-4 text-muted-foreground" />
                   <span>見直しフラグと問題番号グリッドで自由に行き来できます</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Keyboard className="w-4 h-4 text-muted-foreground" />
+                  <span>
+                    ショートカット: 1〜4 で選択肢を選択、← → で前後の問題へ移動、
+                    Space で学習タイマー開始/停止、Q / A で問題数・正解数を増減
+                    （Shift併用で減算）
+                  </span>
                 </div>
                 <Button onClick={handleStart} className="w-full mt-2">
                   模試を開始する
