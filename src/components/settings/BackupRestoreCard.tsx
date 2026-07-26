@@ -48,6 +48,7 @@ const formatBytes = (n: number): string => {
 const labelOfOriginalKey = (key: string): string => {
   if (key === "uscpa-question-bank") return "問題バンク"
   if (key === "uscpa-tbs-bank") return "TBS問題"
+  if (key === "uscpa-mock-exams") return "模試結果"
   return key
 }
 
@@ -190,7 +191,7 @@ export function BackupRestoreCard() {
           データバックアップ
         </CardTitle>
         <CardDescription>
-          問題バンク・TBS問題の回答履歴を保護します（Notion同期対象外のデータ）。データ更新の前には自動的にスナップショットが取られます。
+          問題バンク・TBS問題の回答履歴と模試結果を保護します（Notion同期対象外のデータ）。データ更新の前には自動的にスナップショットが取られます。
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">

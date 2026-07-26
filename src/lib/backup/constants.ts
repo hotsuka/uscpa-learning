@@ -1,6 +1,10 @@
 // バックアップ対象の localStorage キー
 // Notion 同期されていないストアのみが対象（同期済みデータは Notion から復元可能）
-export const TARGET_KEYS = ["uscpa-question-bank", "uscpa-tbs-bank"] as const;
+export const TARGET_KEYS = [
+  "uscpa-question-bank",
+  "uscpa-tbs-bank",
+  "uscpa-mock-exams",
+] as const;
 
 export type TargetKey = (typeof TARGET_KEYS)[number];
 
@@ -15,4 +19,5 @@ export type BackupType = "pre-migrate" | "manual";
 export const RECORD_ARRAY_PATH: Record<TargetKey, string> = {
   "uscpa-question-bank": "attempts",
   "uscpa-tbs-bank": "attempts",
+  "uscpa-mock-exams": "results",
 };
