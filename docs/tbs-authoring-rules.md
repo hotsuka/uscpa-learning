@@ -1,10 +1,46 @@
 # TBS作問ルール（FAR・英語出題・実試験相当）
 
+## 執筆順序（厳守）
+
+数値誤りを機械的に落とすため、この順序で書く。順序を崩すと検算が「答えを写すだけ」になり意味を失う。
+
+1. **scenario と exhibits を確定する**（数値・前提をここで固める）
+2. **1だけを見て検算スクリプトを書く** — `src/data/tbs/far/_staging/calc/<問題id>.calc.mjs`
+3. **2の結果を使って問題JSONを書く** — `src/data/tbs/far/_staging/<トピック>.json`
+4. `node scripts/check-tbs.mjs --strict src/data/tbs/far/_staging` と `node scripts/verify-tbs-calc.mjs` が通るまで直す
+
 ## 出力形式
 
 - 指定されたファイルに **TBSQuestionオブジェクトのJSON配列** をWriteする。トップレベルは `[ ... ]`。
 - 文字列内改行は `\n`。Markdownテーブルが exhibits.content で使える（既存問題と同形式）。
 - 金額はカンマなしの数値。表示用テキスト内では `$80,000` 形式可。
+
+## 検算スクリプト（全問必須）
+
+問題文とExhibitの数値から**独立に**正解を計算し、`expected` としてexportする。定数を直書きせず計算式で書くこと。
+
+```js
+// src/data/tbs/far/_staging/calc/far-tbs-lease-003.calc.mjs
+export const tbsId = "far-tbs-lease-003";
+
+const annualPayment = 50000;
+const rate = 0.06;
+const years = 5;
+const pvFactor = (1 - Math.pow(1 + rate, -years)) / rate;
+const leaseLiability = Math.round(annualPayment * pvFactor);
+
+export const expected = {
+  "task-1": leaseLiability, // number
+  "task-2": "Finance lease", // select（optionsの文字列と完全一致）
+  "task-3": ["Right-of-use asset", "Lease liability"], // multiselect
+  "task-4": { "Cash|Debit": 5000, "Cash|Credit": 0 }, // table（"行ラベル|列ラベル"）
+  "task-5": "842-20-30-1", // research
+};
+```
+
+- **全タスク**にエントリが必要（1つでも欠けると検証が落ちる）
+- table型は `tableConfig.cells` の全セルを過不足なく列挙する
+- 数値の照合には task/cell の `tolerance` が適用される
 
 ## スキーマ（全フィールド必須、optionalは型に応じて）
 
@@ -77,7 +113,8 @@
 3. correctAnswerと解説の結論を必ず一致させる。
 4. 解説で選択肢をA/B/C/D等のラベルで参照しない（「Choice B」「選択肢A」禁止）。**値・内容で参照する**。
 5. 問題文の数値スケールと解答値のスケールを揃える。
-6. **全ての数値を作問後に手計算で2回検算する**。tableの各セル値・各タスクの数値の整合（例: 表の合計とタスク解答の一致）も確認。
+6. **全ての数値を検算スクリプトで裏取りする**（上記「執筆順序」の2）。tableの各セル値・各タスクの数値の整合（例: 表の合計とタスク解答の一致）も `expected` に含めて突き合わせる。
+7. **仕訳tableは借方・貸方の両セルを必ず `cells` に入れる**（金額が入らない側は `correctValue: 0`）。片側だけだと入力欄の位置で正解の側がバレる。借方合計と貸方合計は一致させる。
 
 ## 出題範囲の制約（2026年ブループリント）
 
@@ -91,4 +128,18 @@ FAR範囲外（BAR領域）は出題禁止: 年金 / 株式報酬 / デリバテ
 
 ## 既存ID（衝突禁止）
 
-far-tbs-rev-001, far-tbs-lease-001, far-tbs-tax-001, far-tbs-gov-001, far-tbs-cons-001
+一覧は手で持たず、次のコマンドで取得する（既存問題の本文は読まないこと）。
+
+```bash
+node scripts/check-tbs.mjs --list-ids
+```
+
+## 検証コマンド
+
+```bash
+node scripts/check-tbs.mjs --strict src/data/tbs/far/_staging   # 構造・借貸バランス・構成ガイドライン
+node scripts/verify-tbs-calc.mjs                                 # 検算スクリプトとの突き合わせ
+node scripts/merge-staged-tbs.mjs <トピック名>                    # 本ファイルへ追記（バックアップ付き）
+```
+
+`--strict` は構成ガイドライン違反（タスク数・Exhibit数・estimatedMinutes・answerType混在・references欠落）も失敗扱いにする。新規作問は必ず `--strict` で通すこと。
