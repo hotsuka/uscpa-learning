@@ -124,5 +124,188 @@
     "difficulty": "advanced",
     "estimatedMinutes": 28,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-eps-002",
+    "subject": "FAR",
+    "topic": "EPS",
+    "title": "Basic and Diluted EPS with a Stock Split, Convertible Securities, and Options",
+    "scenario": "Calder Instruments, Inc. is a publicly traded manufacturer with a December 31 year end. You are assisting the controller with the earnings per share disclosures for the year ended December 31, Year 6.\n\nCommon stock transactions for Year 6 are summarized in **Exhibit 1**. The company's preferred stock and its potentially dilutive securities are described in **Exhibit 2**. Selected Year 6 financial data are presented in **Exhibit 3**.\n\nNo convertible security was converted and no stock option was exercised during Year 6. Complete each of the work tabs below. Unless a task states otherwise, round per-share amounts to two decimal places and enter share and dollar amounts in whole units without commas.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Common Stock Transactions - Year 6",
+        "content": "Share amounts for dates before October 1, Year 6 are stated on a pre-split basis.\n\n| Date | Transaction | Shares |\n| --- | --- | --- |\n| January 1, Year 6 | Common shares issued and outstanding | 600,000 |\n| April 1, Year 6 | Issued common shares for cash | 120,000 |\n| September 1, Year 6 | Reacquired common shares and held them as treasury stock | (60,000) |\n| October 1, Year 6 | Two-for-one common stock split | - |\n\nThe stock split was effected in the form of a split and required no capitalization of retained earnings. No other common stock transactions occurred during Year 6."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Preferred Stock and Potentially Dilutive Securities",
+        "content": "All of the securities below were outstanding for the entire Year 6. Share counts, conversion ratios, and exercise prices are stated after giving effect to the October 1 two-for-one common stock split, as required by the related agreements.\n\n**Preferred stock**\n\n| Issue | Shares | Par | Rate | Terms |\n| --- | --- | --- | --- | --- |\n| Series A preferred | 50,000 | $100 | 6% cumulative | Not convertible |\n| Series B preferred | 20,000 | $100 | 9% cumulative | Each share convertible into 3 shares of common stock |\n\nNo dividends were declared on either series of preferred stock during Year 6, and no dividends were in arrears at January 1, Year 6.\n\n**Debt**\n\n| Issue | Face amount | Rate | Terms |\n| --- | --- | --- | --- |\n| Convertible bonds | $2,000,000 | 5% | Issued at par on January 2, Year 3; each $1,000 bond is convertible into 40 shares of common stock |\n| Senior bonds | $5,000,000 | 7% | Issued at par on July 1, Year 2; not convertible |\n\n**Stock options** (granted in Year 4, fully vested, exercisable at all times during Year 6)\n\n| Grant | Options outstanding | Exercise price |\n| --- | --- | --- |\n| Year 4 grant, tranche 1 | 100,000 | $16 |\n| Year 4 grant, tranche 2 | 40,000 | $30 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Selected Year 6 Financial Data",
+        "content": "| Item | Amount |\n| --- | --- |\n| Net income for Year 6 | $3,000,000 |\n| Net income for Year 5 | $2,450,000 |\n| Effective income tax rate | 25% |\n| Average market price of common stock during Year 6 | $25 |\n| Market price of common stock at December 31, Year 6 | $28 |\n| Additional paid-in capital at December 31, Year 6 | $8,100,000 |\n| Retained earnings at December 31, Year 6 | $12,400,000 |\n\nThere were no discontinued operations and no items of other comprehensive income in Year 6."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Weighted-Average Common Shares",
+        "instruction": "Compute the weighted-average number of common shares outstanding to be used in the Year 6 basic earnings per share calculation. Give retroactive effect to the stock split described in Exhibit 1. Enter the number of shares (in whole shares, no commas).",
+        "answerType": "number",
+        "correctAnswer": 1340000,
+        "tolerance": 1,
+        "explanation": "Shares issued and reacquired during the year are weighted by the portion of the year they were outstanding, while a stock split is applied retroactively to the beginning of the earliest period presented because it provides no additional resources to the entity. On a pre-split basis: 600,000 x 12/12 = 600,000; 120,000 issued on April 1 x 9/12 = 90,000; 60,000 treasury shares acquired on September 1 x 4/12 = (20,000). The pre-split weighted average is 670,000 shares. Applying the two-for-one split factor gives 670,000 x 2 = 1,340,000 weighted-average common shares.",
+        "explanationJa": "**手順**\n\n1. 期首発行済株式: 600,000株 × 12/12 = 600,000株\n2. 4月1日発行: 120,000株 × 9/12 = 90,000株\n3. 9月1日自己株式取得: 60,000株 × 4/12 = △20,000株\n4. 分割前ベースの加重平均 = 600,000 + 90,000 − 20,000 = **670,000株**\n5. 10月1日の2対1株式分割は資源の流入を伴わないため期首まで遡及適用する: 670,000株 × 2 = **1,340,000株**\n\n**ポイント**: 現金発行・自己株式取得は「発行済であった期間」で按分するが、株式分割・株式配当は按分せず遡及して全期間に適用する。",
+        "references": ["ASC 260-10-45-10", "ASC 260-10-45-12"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Basic Earnings Per Share",
+        "instruction": "Compute basic earnings per common share for Year 6. Enter the amount rounded to two decimal places (for example, 1.23).",
+        "answerType": "number",
+        "correctAnswer": 1.88,
+        "tolerance": 0.01,
+        "explanation": "Income available to common shareholders equals net income less the current-period dividend requirement on cumulative preferred stock, whether or not the dividends are declared. Series A: 50,000 shares x $100 par x 6% = $300,000. Series B: 20,000 shares x $100 par x 9% = $180,000. Income available to common shareholders = $3,000,000 - $300,000 - $180,000 = $2,520,000. Basic EPS = $2,520,000 / 1,340,000 weighted-average shares = $1.88.",
+        "explanationJa": "**手順**\n\n1. 累積的優先株の当期配当要求額を控除する（宣言の有無を問わない）\n   - Series A: 50,000株 × $100 × 6% = **$300,000**\n   - Series B: 20,000株 × $100 × 9% = **$180,000**\n2. 普通株主に帰属する利益 = $3,000,000 − $300,000 − $180,000 = **$2,520,000**\n3. 基本EPS = $2,520,000 ÷ 1,340,000株 = **$1.88**\n\n**ポイント**: 累積的優先株は宣言されていなくても当期分を控除する。非累積的優先株なら宣言された分だけを控除する。",
+        "references": ["ASC 260-10-45-10", "ASC 260-10-45-11"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Incremental Effect of Each Potential Common Share",
+        "instruction": "For each security listed, enter the incremental effect on the numerator (in whole dollars) and on the denominator (in whole shares) that would result from assuming exercise or conversion as of January 1, Year 6. Apply the treasury stock method to the stock options using the average market price, and the if-converted method to the convertible securities. Do not consider in this task whether the effect is dilutive. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Increase in numerator", "Increase in denominator"],
+          "rows": [
+            "Stock options ($16 exercise price)",
+            "Stock options ($30 exercise price)",
+            "5% convertible bonds",
+            "9% convertible preferred stock"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Stock options ($16 exercise price)",
+              "colLabel": "Increase in numerator",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Stock options ($16 exercise price)",
+              "colLabel": "Increase in denominator",
+              "correctValue": 36000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Stock options ($30 exercise price)",
+              "colLabel": "Increase in numerator",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Stock options ($30 exercise price)",
+              "colLabel": "Increase in denominator",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "5% convertible bonds",
+              "colLabel": "Increase in numerator",
+              "correctValue": 75000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "5% convertible bonds",
+              "colLabel": "Increase in denominator",
+              "correctValue": 80000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "9% convertible preferred stock",
+              "colLabel": "Increase in numerator",
+              "correctValue": 180000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "9% convertible preferred stock",
+              "colLabel": "Increase in denominator",
+              "correctValue": 60000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Stock options affect only the denominator. Under the treasury stock method the assumed proceeds are used to repurchase shares at the $25 average market price. For the $16 tranche, proceeds are 100,000 x $16 = $1,600,000, which repurchases $1,600,000 / $25 = 64,000 shares, leaving 100,000 - 64,000 = 36,000 incremental shares. For the $30 tranche, the exercise price exceeds the average market price, so the assumed proceeds would repurchase more shares than would be issued; the treasury stock method never produces a negative adjustment, so the incremental shares are zero. Under the if-converted method, the 5% convertible bonds add back interest of $2,000,000 x 5% = $100,000 less tax at 25%, or $75,000, and add ($2,000,000 / $1,000) x 40 = 80,000 shares. The 9% convertible preferred stock adds back its $180,000 dividend requirement and adds 20,000 x 3 = 60,000 shares.",
+        "explanationJa": "**ストックオプション（自己株式法）**\n\n- $16行使価格: 想定入金額 100,000 × $16 = $1,600,000 → 平均市場価格$25で $1,600,000 ÷ $25 = 64,000株を買い戻したと仮定 → 増分株式 100,000 − 64,000 = **36,000株**（分子への影響なし = $0）\n- $30行使価格: 行使価格が平均市場価格$25を上回るため買い戻し株数が発行株数を超える。自己株式法でマイナス調整は行わないので増分株式は **0株**\n\n**転換社債（転換仮定法）**\n\n- 分子: $2,000,000 × 5% = $100,000 の利息 × (1 − 25%) = **$75,000**\n- 分母: ($2,000,000 ÷ $1,000) × 40株 = **80,000株**\n\n**転換優先株（転換仮定法）**\n\n- 分子: 配当要求額 **$180,000** を戻し入れる\n- 分母: 20,000株 × 3 = **60,000株**\n\n**ポイント**: 社債利息は税効果を考慮するが、優先配当は税務上損金にならないため税効果を考慮しない。",
+        "references": ["ASC 260-10-45-23", "ASC 260-10-45-40"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Securities Included in Diluted EPS",
+        "instruction": "Considering each issue separately, determine which securities are dilutive and select all securities that are included in the computation of diluted earnings per share for Year 6.",
+        "answerType": "multiselect",
+        "options": [
+          "Stock options with a $16 exercise price",
+          "Stock options with a $30 exercise price",
+          "5% convertible bonds",
+          "9% cumulative convertible preferred stock",
+          "6% cumulative nonconvertible preferred stock"
+        ],
+        "correctAnswer": [
+          "Stock options with a $16 exercise price",
+          "5% convertible bonds"
+        ],
+        "explanation": "Each issue is tested separately and added in sequence from the most dilutive to the least dilutive. Incremental EPS: the $16 options, $0 / 36,000 shares = $0.00; the convertible bonds, $75,000 / 80,000 shares = $0.9375; the convertible preferred, $180,000 / 60,000 shares = $3.00. Basic EPS is $1.88. Adding the $16 options gives $2,520,000 / 1,376,000 = $1.83, which is dilutive. Adding the convertible bonds gives $2,595,000 / 1,456,000 = $1.78, which is dilutive. Adding the convertible preferred stock would give $2,775,000 / 1,516,000 = $1.83, which increases the per-share amount and is therefore antidilutive, so that issue is excluded. The $30 options produce no incremental shares under the treasury stock method and are excluded. The 6% preferred stock is not convertible and is never a potential common share.",
+        "explanationJa": "**手順**\n\n1. 各証券の増分EPSを計算し、小さい順（希薄化効果の大きい順）に並べる\n   - $16オプション: $0 ÷ 36,000株 = **$0.00**\n   - 転換社債: $75,000 ÷ 80,000株 = **$0.9375**\n   - 転換優先株: $180,000 ÷ 60,000株 = **$3.00**\n2. 基本EPS $1.88 から順番に取り込み、EPSが下がる間だけ含める\n   - $16オプション追加: $2,520,000 ÷ 1,376,000株 = $1.83 → 低下するので**含める**\n   - 転換社債追加: $2,595,000 ÷ 1,456,000株 = $1.78 → 低下するので**含める**\n   - 転換優先株追加: $2,775,000 ÷ 1,516,000株 = $1.83 → 上昇するので**逆希薄化（除外）**\n3. $30オプションは増分株式が0のため対象外。6%優先株は転換権がないため潜在株式ではない。\n\n**ポイント**: 増分EPSの小さい順に取り込まないと、本来は希薄化する証券を逆希薄化と誤判定してしまう。",
+        "references": ["ASC 260-10-45-17", "ASC 260-10-45-18"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Diluted Earnings Per Share",
+        "instruction": "Compute diluted earnings per common share for Year 6. Enter the amount rounded to two decimal places (for example, 1.23).",
+        "answerType": "number",
+        "correctAnswer": 1.78,
+        "tolerance": 0.01,
+        "explanation": "The diluted numerator is income available to common shareholders of $2,520,000 plus the after-tax interest on the convertible bonds of $75,000, or $2,595,000. The diluted denominator is 1,340,000 weighted-average shares plus 36,000 incremental shares from the $16 stock options plus 80,000 shares from the convertible bonds, or 1,456,000 shares. Diluted EPS = $2,595,000 / 1,456,000 = $1.78. The convertible preferred stock and the $30 stock options are excluded because they are antidilutive.",
+        "explanationJa": "**手順**\n\n1. 分子 = $2,520,000 + 転換社債の税引後利息 $75,000 = **$2,595,000**\n2. 分母 = 1,340,000株 + オプション増分 36,000株 + 転換社債 80,000株 = **1,456,000株**\n3. 希薄化後EPS = $2,595,000 ÷ 1,456,000株 = **$1.78**\n\n逆希薄化と判定した9%転換優先株と$30オプションは分子・分母のどちらにも加えない。基本EPS $1.88 に対して希薄化後EPS $1.78 となる。",
+        "references": ["ASC 260-10-45-16", "ASC 260-10-45-40"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Treatment of Cumulative Preferred Dividends",
+        "instruction": "Select the treatment of the Year 6 dividend requirement on the 6% cumulative nonconvertible preferred stock in computing income available to common shareholders.",
+        "answerType": "select",
+        "options": [
+          "Deducted in full even though no dividend was declared in Year 6",
+          "Deducted only in the period in which the dividend is declared or paid",
+          "Not deducted because the preferred stock is not convertible",
+          "Deducted only to the extent of dividends in arrears from prior periods"
+        ],
+        "correctAnswer": "Deducted in full even though no dividend was declared in Year 6",
+        "explanation": "Income available to common shareholders is computed by deducting dividends declared in the period on noncumulative preferred stock and dividends accumulated for the period on cumulative preferred stock, whether or not those dividends have been earned or declared. The 6% issue is cumulative, so its entire $300,000 annual requirement reduces the Year 6 numerator even though the board declared nothing. Amounts that accumulated in earlier periods are not deducted a second time when they are eventually declared. The fact that the shares are not convertible affects only diluted EPS, not the basic EPS numerator.",
+        "explanationJa": "**結論**: 宣言されていなくても当期分 $300,000 を全額控除する。\n\n**理由**\n\n- 累積的優先株は、宣言の有無にかかわらず当期に累積した配当額を普通株主帰属利益の計算で控除する\n- 非累積的優先株の場合は「当期に宣言された額」だけを控除する\n- 過年度から繰り越された未払配当（arrears）は、それが累積した期にすでに控除済みなので、実際に宣言された期に再度控除しない\n- 転換権の有無は希薄化後EPSの計算にのみ影響し、基本EPSの分子には影響しない",
+        "references": ["ASC 260-10-45-11"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research",
+        "instruction": "The controller asks for authoritative support for the computation of income available to common shareholders, including the treatment of dividends on cumulative preferred stock. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "260-10-45-11",
+        "explanation": "ASC 260-10-45-11 states that income available to common stockholders is computed by deducting from income from continuing operations both dividends declared in the period on preferred stock and dividends accumulated for the period on cumulative preferred stock, whether or not they have been earned.",
+        "explanationJa": "ASC 260-10-45-11 は、普通株主に帰属する利益の計算方法を定めており、①当期に宣言された優先配当、②累積的優先株について当期に累積した配当額（稼得・宣言の有無を問わない）を控除すると規定している。本問の Series A・Series B はいずれも累積的優先株なので、宣言がなくても当期分を控除する根拠となる。",
+        "references": ["ASC 260-10-45-11"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]
