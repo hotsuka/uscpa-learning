@@ -1,10 +1,14 @@
 // TBS問題データの検証ロジック（check-tbs.mjs / merge-staged-tbs.mjs 共用）
 //
-// エラーは2段階に分かれる:
-//   - errors   : 構造的な不整合。アプリが正しく動作しない・採点が壊れるレベル。常に失敗扱い。
-//   - warnings : docs/tbs-authoring-rules.md の構成ガイドライン違反。既存の初期5問は
-//                ルール制定前に作られており該当するため、既定では失敗させない。
-//                新規作問（マージ時）は --strict で警告もエラー扱いにする。
+// 指摘は3段階に分かれる:
+//   - errors                    : 構造的な不整合。アプリが正しく動作しない・採点が壊れる
+//                                 レベル。常に失敗扱い。
+//   - warnings (advisory: false): docs/tbs-authoring-rules.md の構成ガイドライン違反。
+//                                 既存の初期5問はルール制定前に作られており該当するため
+//                                 既定では失敗させず、新規作問は --strict で必須化する。
+//   - warnings (advisory: true) : 機械では正否を判定できず人間/QCの判断を要するもの
+//                                 （出題範囲の逸脱など）。--strict でも失敗させない。
+//                                 自動修正しようのない指摘で作問を空回りさせないため。
 
 export const ANSWER_TYPES = [
   "number",
@@ -96,7 +100,11 @@ export function validateQuestion(q, ctx = {}) {
   const warnings = [];
   const qid = q.id ?? "(idなし)";
   const err = (id, message) => errors.push({ id, message });
-  const warn = (id, message) => warnings.push({ id, message });
+  const warn = (id, message) => warnings.push({ id, message, advisory: false });
+  // advisory: 機械では正否を判定できず人間/QCの判断を要するもの。--strict でも失敗させない
+  // （自動修正できない指摘で作問エージェントを無限ループさせないため）
+  const advise = (id, message) =>
+    warnings.push({ id, message, advisory: true });
 
   // --- 基本フィールド ---
   if (!/^far-tbs-[a-z0-9-]+-\d{3}$/.test(q.id ?? "")) {
@@ -321,7 +329,7 @@ export function validateQuestion(q, ctx = {}) {
   ].join("\n");
   for (const { re, label } of OUT_OF_SCOPE) {
     if (re.test(wholeText))
-      warn(qid, `FAR範囲外の可能性(${label}) — 出題論点になっていないか確認`);
+      advise(qid, `FAR範囲外の可能性(${label}) — 出題論点になっていないか確認`);
   }
 
   return { errors, warnings };

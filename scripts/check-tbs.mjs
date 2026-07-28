@@ -60,7 +60,10 @@ for (const file of files) {
     const res = validateQuestion(q, { seenIds });
     for (const e of res.errors) errors.push(`${file} [${e.id}] ${e.message}`);
     for (const w of res.warnings)
-      warnings.push(`${file} [${w.id}] ${w.message}`);
+      warnings.push({
+        advisory: w.advisory,
+        text: `${file} [${w.id}] ${w.message}`,
+      });
   }
 }
 
@@ -68,10 +71,19 @@ console.log(
   `TBSチェック: ${targetDir} — ${files.length}ファイル / ${totalQuestions}問 / ${totalTasks}タスク${strict ? " (strict)" : ""}`,
 );
 
-if (warnings.length > 0) {
+const guideline = warnings.filter((w) => !w.advisory);
+const advisories = warnings.filter((w) => w.advisory);
+
+if (guideline.length > 0) {
   const head = strict ? "❌" : "⚠";
-  console.error(`\n${head} ${warnings.length}件の警告（構成ガイドライン）:\n`);
-  for (const w of warnings) console.error(`  - ${w}`);
+  console.error(`\n${head} ${guideline.length}件の警告（構成ガイドライン）:\n`);
+  for (const w of guideline) console.error(`  - ${w.text}`);
+}
+
+// 機械では正否を判定できない指摘。--strict でも失敗させず、人間/QCの確認に回す
+if (advisories.length > 0) {
+  console.error(`\nℹ ${advisories.length}件の要確認（自動判定不可）:\n`);
+  for (const w of advisories) console.error(`  - ${w.text}`);
 }
 
 if (errors.length > 0) {
@@ -79,9 +91,9 @@ if (errors.length > 0) {
   for (const e of errors) console.error(`  - ${e}`);
 }
 
-if (errors.length > 0 || (strict && warnings.length > 0)) process.exit(1);
+if (errors.length > 0 || (strict && guideline.length > 0)) process.exit(1);
 console.log(
   warnings.length > 0
-    ? "\n✓ エラーなし（警告は上記を確認）"
+    ? "\n✓ エラーなし（上記の警告・要確認は目視すること）"
     : "✓ 全チェック通過",
 );

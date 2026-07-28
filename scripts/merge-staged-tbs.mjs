@@ -101,16 +101,25 @@ for (const file of stagingFiles) {
     continue;
   }
 
-  // 検証（警告もエラー扱い＝新規作問はガイドライン準拠を必須にする）
+  // 検証（構成ガイドライン違反もエラー扱い＝新規作問は準拠を必須にする）。
+  // advisory な警告は機械では正否を判定できないため、表示のみでマージは止めない。
   const issues = [];
+  const notices = [];
   for (const q of staged) {
     const { errors, warnings } = validateQuestion(q, { seenIds, existingIds });
     for (const e of errors) issues.push(`  [${e.id}] ${e.message}`);
-    for (const w of warnings) issues.push(`  [${w.id}] (警告) ${w.message}`);
+    for (const w of warnings) {
+      if (w.advisory) notices.push(`  [${w.id}] ${w.message}`);
+      else issues.push(`  [${w.id}] (警告) ${w.message}`);
+    }
     if (!existsSync(join(CALC_DIR, `${q.id}.calc.mjs`)))
       issues.push(
         `  [${q.id}] 検算スクリプトが無い — node scripts/verify-tbs-calc.mjs を先に通すこと`,
       );
+  }
+  if (notices.length) {
+    console.log(`ℹ ${topic}: 要確認（自動判定不可）`);
+    console.log(notices.join("\n"));
   }
   if (issues.length) {
     console.error(`✗ ${topic}: ${issues.length}件の不正 — マージ中止`);
