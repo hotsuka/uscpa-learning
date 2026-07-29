@@ -374,5 +374,371 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 25,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-eq-003",
+    "subject": "FAR",
+    "topic": "Equity",
+    "title": "Treasury Stock Transactions and Share Retirement",
+    "scenario": "Kestrel Manufacturing, Inc. is a calendar-year corporation whose common stock trades on a national exchange. Kestrel accounts for treasury stock using the cost method unless a task states otherwise. **Exhibit 1** presents the stockholders' equity section of the balance sheet at January 1, Year 6. **Exhibit 2** lists the equity transactions Kestrel entered into during Year 6. **Exhibit 3** provides additional information. Kestrel held no treasury shares at January 1, Year 6, and no dividends were declared or paid during Year 6. Round all amounts to the nearest whole dollar.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Stockholders' Equity Section at January 1, Year 6",
+        "content": "| Component | Amount |\n| --- | ---: |\n| Common stock, $5 par value; 500,000 shares authorized; 180,000 shares issued and outstanding | $900,000 |\n| Additional paid-in capital - common stock | 2,160,000 |\n| Retained earnings | 3,150,000 |\n| **Total stockholders' equity** | **$6,210,000** |\n\nKestrel has no preferred stock outstanding and held no treasury shares at this date."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Equity Transactions During Year 6",
+        "content": "| Date | Transaction |\n| --- | --- |\n| February 10 | Issued 20,000 previously unissued shares of common stock for cash at $27 per share. |\n| April 5 | Reacquired 12,000 shares of its own common stock at $25 per share. |\n| June 18 | Reissued 5,000 treasury shares at $31 per share. |\n| September 22 | Reissued 4,000 treasury shares at $16 per share. |\n| November 30 | Formally retired the 3,000 treasury shares still held. |\n\nWhenever shares are formally retired, and whenever the par value method is applied, Kestrel removes additional paid-in capital using the average additional paid-in capital per issued share of common stock determined immediately before the transaction."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "- Net income for Year 6 was $840,000.\n- No cash dividends and no stock dividends were declared or paid during Year 6.\n- The market price of Kestrel common stock was $28 per share at December 31, Year 6.\n- The board of directors authorized a $1,500,000 plant modernization program to be funded in Year 7.\n- Kestrel has an unused $2,000,000 revolving credit facility bearing interest at 5.5%.\n- Kestrel's effective income tax rate for Year 6 was 21%."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Additional Paid-in Capital - Common Stock",
+        "instruction": "Determine the balance of additional paid-in capital - common stock reported at December 31, Year 6. Exclude additional paid-in capital arising from treasury stock transactions. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 2561000,
+        "tolerance": 1,
+        "explanation": "Beginning additional paid-in capital - common stock is $2,160,000 on 180,000 issued shares. The February 10 issuance of 20,000 shares at $27 credits common stock for 20,000 x $5 = $100,000 and additional paid-in capital for 20,000 x ($27 - $5) = $440,000, raising the balance to $2,600,000 on 200,000 issued shares, or $13 of additional paid-in capital per issued share. Under the cost method the June 18 and September 22 reissuances are recorded in additional paid-in capital - treasury stock and do not touch this account. The November 30 retirement of 3,000 shares removes 3,000 x $13 = $39,000. Ending balance = $2,600,000 - $39,000 = $2,561,000.",
+        "explanationJa": "**手順**\n\n1. 期首APIC(普通株) = $2,160,000（発行済180,000株）\n2. 2/10の新株発行 20,000株 @ $27\n   - 資本金: 20,000 × $5 = $100,000\n   - APIC: 20,000 × ($27 - $5) = $440,000\n   - APIC残高 = $2,600,000、発行済200,000株 → **1株あたりAPIC = $13**\n3. 原価法では自己株式の再発行差額は「APIC—自己株式」で処理するため、6/18・9/22の取引はこの勘定に影響しない\n4. 11/30の消却3,000株でAPICから 3,000 × $13 = $39,000 を除去\n5. 期末 = $2,600,000 - $39,000 = **$2,561,000**",
+        "references": ["ASC 505-10-50-3", "ASC 505-30-30-8"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Journal Entry - September 22 Reissuance (Cost Method)",
+        "instruction": "Prepare the journal entry to record the September 22 reissuance of 4,000 treasury shares at $16 per share under the cost method. Enter whole dollars with no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Cash",
+            "Additional paid-in capital (treasury stock)",
+            "Retained earnings",
+            "Treasury stock"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 64000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Additional paid-in capital (treasury stock)",
+              "colLabel": "Debit",
+              "correctValue": 30000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Additional paid-in capital (treasury stock)",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Debit",
+              "correctValue": 6000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Treasury stock",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Treasury stock",
+              "colLabel": "Credit",
+              "correctValue": 100000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "The 4,000 treasury shares carry a cost of 4,000 x $25 = $100,000, and the reissuance produces cash of 4,000 x $16 = $64,000, a shortfall of $36,000. No gain or loss is recognized in earnings. The shortfall is charged first against the credit balance in additional paid-in capital from treasury stock transactions, which is $30,000 from the June 18 reissuance (5,000 x ($31 - $25)). The remaining $36,000 - $30,000 = $6,000 is charged to retained earnings. Debits total $64,000 + $30,000 + $6,000 = $100,000, equal to the $100,000 credit to treasury stock.",
+        "explanationJa": "**手順**\n\n1. 再発行する自己株式の原価 = 4,000 × $25 = $100,000\n2. 受取現金 = 4,000 × $16 = $64,000 → 不足額 $36,000\n3. 自己株式取引で損益は計上しない。不足額はまず「APIC—自己株式」の貸方残高に充当する\n   - 6/18の再発行で生じた残高 = 5,000 × ($31 - $25) = **$30,000**\n4. 充当しきれない $36,000 - $30,000 = **$6,000** を利益剰余金の借方に振り替える\n5. 借方合計 $64,000 + $30,000 + $6,000 = $100,000 = 貸方（自己株式）$100,000\n\n**APICを使い切ってから利益剰余金を減らす**という順序が要点。",
+        "references": ["ASC 505-30-30-10", "ASC 505-30-25-1"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Retained Earnings at December 31, Year 6",
+        "instruction": "Determine the balance of retained earnings reported at December 31, Year 6. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 3963000,
+        "tolerance": 1,
+        "explanation": "Retained earnings begins at $3,150,000 and increases by Year 6 net income of $840,000. Two treasury stock events reduce it. The September 22 reissuance below cost creates a $36,000 shortfall, of which $30,000 absorbs the additional paid-in capital from treasury stock transactions and $6,000 is charged to retained earnings. The November 30 retirement of 3,000 shares removes treasury stock of 3,000 x $25 = $75,000 against common stock of 3,000 x $5 = $15,000 and additional paid-in capital of 3,000 x $13 = $39,000, leaving $21,000 to be charged to retained earnings because no credit balance remains in additional paid-in capital from treasury stock transactions. Ending retained earnings = $3,150,000 + $840,000 - $6,000 - $21,000 = $3,963,000.",
+        "explanationJa": "**ロールフォワード**\n\n| 項目 | 金額 |\n| --- | ---: |\n| 期首 | $3,150,000 |\n| 当期純利益 | +840,000 |\n| 9/22 再発行の不足額のうちAPICで吸収しきれない分 | -6,000 |\n| 11/30 消却で生じた不足額 | -21,000 |\n| **期末** | **$3,963,000** |\n\n11/30の消却の内訳:\n- 自己株式（原価）3,000 × $25 = $75,000 を貸方で除去\n- 資本金 3,000 × $5 = $15,000、APIC(普通株) 3,000 × $13 = $39,000 を借方で除去\n- 差額 $75,000 - $15,000 - $39,000 = **$21,000**。この時点で「APIC—自己株式」の残高は0のため全額を利益剰余金の借方へ",
+        "references": ["ASC 505-30-30-8", "ASC 505-30-30-10"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Journal Entry - April 5 Reacquisition (Par Value Method)",
+        "instruction": "Assume instead that Kestrel accounts for treasury stock using the par value method. All other facts are unchanged. Prepare the journal entry to record the April 5 reacquisition of 12,000 shares at $25 per share. Enter whole dollars with no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Treasury stock",
+            "Additional paid-in capital (common stock)",
+            "Retained earnings",
+            "Cash"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Treasury stock",
+              "colLabel": "Debit",
+              "correctValue": 60000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Treasury stock",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Additional paid-in capital (common stock)",
+              "colLabel": "Debit",
+              "correctValue": 156000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Additional paid-in capital (common stock)",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Debit",
+              "correctValue": 84000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 300000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Under the par value method the treasury stock account is debited at par, not at cost: 12,000 x $5 = $60,000. The additional paid-in capital originally associated with those shares is also removed at 12,000 x $13 = $156,000, using the $13 average additional paid-in capital per issued share that exists immediately before April 5 ($2,600,000 on 200,000 issued shares). Cash paid is 12,000 x $25 = $300,000. Because the $25 reacquisition price exceeds the $18 average original issue price ($5 par plus $13), the excess of 12,000 x ($25 - $18) = $84,000 is charged to retained earnings. Debits of $60,000 + $156,000 + $84,000 equal the $300,000 credit to cash.",
+        "explanationJa": "**額面金額法（par value method）の取得仕訳**\n\n1. 自己株式は**額面**で借記: 12,000 × $5 = **$60,000**（原価法の $300,000 とは異なる）\n2. 当該株式に対応するAPICを除去: 4/5直前の1株あたりAPIC = $2,600,000 ÷ 200,000株 = $13\n   - 12,000 × $13 = **$156,000**\n3. 支払現金 = 12,000 × $25 = **$300,000**\n4. 取得価額 $25 > 平均発行価額 $18（額面$5 + APIC$13）のため、超過分 12,000 × $7 = **$84,000** を利益剰余金の借方へ\n5. 借方合計 $60,000 + $156,000 + $84,000 = $300,000 = 貸方（現金）\n\n額面金額法では取得時点で「実質的に消却したかのように」払込資本を取り崩す点が原価法との最大の違い。",
+        "references": ["ASC 505-30-30-7", "ASC 505-30-30-8"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Shares Outstanding at December 31, Year 6",
+        "instruction": "Use the original facts, under which Kestrel accounts for treasury stock using the cost method, and disregard the par value method assumption in Work Tab 4. Determine the number of shares of common stock outstanding at December 31, Year 6. Enter whole shares, no commas.",
+        "answerType": "number",
+        "correctAnswer": 197000,
+        "tolerance": 0,
+        "explanation": "Issued shares begin at 180,000 and increase by the 20,000 shares issued on February 10, giving 200,000 issued shares. The April 5 reacquisition of 12,000 shares moves them to treasury but does not change issued shares. Reissuances of 5,000 and 4,000 shares return 9,000 shares to outstanding status, leaving 3,000 treasury shares, all of which are retired on November 30. Retirement reduces issued shares to 200,000 - 3,000 = 197,000, and no treasury shares remain, so outstanding shares equal 197,000.",
+        "explanationJa": "**株式数の推移**\n\n| 項目 | 発行済 | 自己株式 | 流通株式 |\n| --- | ---: | ---: | ---: |\n| 期首 | 180,000 | 0 | 180,000 |\n| 2/10 新株発行 +20,000 | 200,000 | 0 | 200,000 |\n| 4/5 取得 12,000 | 200,000 | 12,000 | 188,000 |\n| 6/18 再発行 5,000 | 200,000 | 7,000 | 193,000 |\n| 9/22 再発行 4,000 | 200,000 | 3,000 | 197,000 |\n| 11/30 消却 3,000 | 197,000 | 0 | **197,000** |\n\n自己株式の取得は「発行済株式数」を減らさず「流通株式数」だけを減らす。消却して初めて発行済株式数が減る点に注意。",
+        "references": ["ASC 505-30-45-1", "ASC 505-10-50-3"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Research - Shortfall on Reissuance of Treasury Shares",
+        "instruction": "A reissuance of treasury shares at less than their cost produced a shortfall larger than the credit balance in additional paid-in capital from prior treasury stock transactions in the same class of stock. Cite the ASC reference that specifies where the remaining shortfall is charged. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "505-30-30-10",
+        "explanation": "ASC 505-30-30-10 provides that amounts by which reissuance proceeds exceed the cost of treasury shares are credited to paid-in capital, and that amounts by which cost exceeds proceeds may be charged to paid-in capital only to the extent of previous net credits from sales or retirements of the same class of stock included in that account, with any remainder charged to retained earnings. This is the authority for absorbing the $30,000 balance in additional paid-in capital from treasury stock transactions before charging $6,000 to retained earnings.",
+        "explanationJa": "**ASC 505-30-30-10**\n\n自己株式の再発行で生じた「益」は払込資本の貸方へ、「損」は同一種類株式の過去の純益が払込資本に残っている範囲で払込資本の借方へ、それを超える部分は**利益剰余金**の借方へ、と定めている条文。\n\n本問で「APIC—自己株式 $30,000 を先に充当し、残り $6,000 を利益剰余金へ」とした根拠がこれ。自己株式取引を損益計算書に計上してはならない点（ASC 505-30-25-1）とセットで押さえる。",
+        "references": ["ASC 505-30-30-10"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-eq-004",
+    "subject": "FAR",
+    "topic": "Equity",
+    "title": "Stock Dividends, Stock Splits, and the Statement of Stockholders' Equity",
+    "scenario": "Larkspur Foods, Inc. is a calendar-year corporation. Its capital structure consists of cumulative, nonparticipating preferred stock and a single class of common stock. **Exhibit 1** presents the stockholders' equity section of the balance sheet at January 1, Year 6. **Exhibit 2** summarizes the capital transactions and results of operations for Year 6. **Exhibit 3** provides additional information. Larkspur held no treasury shares at any time during Year 6 and issued no shares for cash during Year 6. Round all amounts to the nearest whole dollar.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Stockholders' Equity Section at January 1, Year 6",
+        "content": "| Component | Amount |\n| --- | ---: |\n| Preferred stock, $100 par value, 6% cumulative and nonparticipating; 10,000 shares authorized; 5,000 shares issued and outstanding | $500,000 |\n| Common stock, $1 par value; 1,000,000 shares authorized; 400,000 shares issued and outstanding | 400,000 |\n| Additional paid-in capital - common stock | 3,600,000 |\n| Retained earnings | 2,850,000 |\n| Accumulated other comprehensive income | 120,000 |\n| **Total stockholders' equity** | **$7,470,000** |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Year 6 Capital Transactions and Operating Results",
+        "content": "| Date | Event |\n| --- | --- |\n| March 15 | Declared a 10% common stock dividend, distributable April 10. The market price of the common stock was $24 per share on March 15 and $25 per share on April 10. |\n| September 30 | Effected a two-for-one stock split of the common stock. The par value per common share was reduced from $1.00 to $0.50 and the number of shares was doubled. |\n| November 15 | Declared total cash dividends of $266,000, with a record date of December 1, Year 6 and a payment date of January 15, Year 7. The declaration provides that the preferred shareholders are paid all cumulative dividends to which they are entitled, including any arrearages, and that the remainder is distributed to the common shareholders. |\n\nNet income for Year 6 was $1,240,000. Other comprehensive income for Year 6 was a $45,000 net increase in the unrealized gain on available-for-sale debt securities."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "- No dividends of any kind were declared or paid in Year 4 or in Year 5. All preferred dividends for Year 3 and prior years were declared and paid in the year to which they related.\n- The preferred stock is cumulative and nonparticipating, and its dividend rate has never changed since issuance.\n- The market price of the common stock was $27 per share immediately before the September 30 split and $14 per share at December 31, Year 6.\n- During Year 6, shareholders approved an amendment increasing authorized common shares from 1,000,000 to 2,000,000.\n- Larkspur's effective income tax rate for Year 6 was 24%.\n- The board of directors authorized a $500,000 capital expenditure program for Year 7."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Retained Earnings Charged for the March 15 Stock Dividend",
+        "instruction": "Determine the amount debited to retained earnings to record the March 15 stock dividend. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 960000,
+        "tolerance": 1,
+        "explanation": "A stock dividend of 10% of the previously outstanding shares is well below the 20% to 25% threshold, so it is accounted for as a stock dividend rather than as a split effected in the form of a dividend. The fair value of the additional shares at the declaration date is capitalized. Shares issued = 400,000 x 10% = 40,000, and the market price on the March 15 declaration date is $24, so retained earnings is debited for 40,000 x $24 = $960,000. Common stock is credited for 40,000 x $1 par = $40,000 and additional paid-in capital for the remaining $920,000. The $25 price on the April 10 distribution date is not used.",
+        "explanationJa": "**小規模株式配当（small stock dividend）**\n\n配当比率 10% は 20〜25% の閾値を下回るため、**公正価値**を利益剰余金から振り替える。\n\n1. 交付株式数 = 400,000 × 10% = **40,000株**\n2. 宣言日（3/15）の時価 $24 を使用 → 利益剰余金 借方 40,000 × $24 = **$960,000**\n3. 内訳: 資本金 40,000 × $1 = $40,000 / APIC $920,000\n\n分配日（4/10）の時価 $25 は使わない。**測定日は宣言日**であることに注意。",
+        "references": ["ASC 505-20-25-2", "ASC 505-20-30-3"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Alternative Assumption - A 40% Stock Dividend",
+        "instruction": "Assume instead that the March 15 distribution had been a 40% common stock dividend rather than a 10% common stock dividend, with all other facts unchanged and with state law requiring capitalization of par value. Determine the amount that would be debited to retained earnings. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 160000,
+        "tolerance": 1,
+        "explanation": "A distribution of 40% of the previously outstanding shares exceeds the 20% to 25% threshold and is so large that it materially reduces the market price per share. It is therefore accounted for as a stock split effected in the form of a stock dividend, and only the par value of the additional shares is capitalized when state law requires capitalization. Shares issued = 400,000 x 40% = 160,000, and retained earnings is debited for 160,000 x $1 par = $160,000. The $24 market price is not used for a distribution of this size.",
+        "explanationJa": "**大規模株式配当（large stock dividend）**\n\n配当比率 40% は 20〜25% の閾値を**超える**ため、実質は株式分割であり「株式配当の形式による株式分割」として処理する。\n\n1. 交付株式数 = 400,000 × 40% = **160,000株**\n2. 州法が資本金組入れを要求する場合、振替額は**額面のみ** = 160,000 × $1 = **$160,000**\n3. 時価 $24 は使わない\n\n小規模＝公正価値、大規模＝額面。この振替基準の切替えが最頻出の論点。",
+        "references": ["ASC 505-20-25-3", "ASC 505-20-30-4"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Cash Dividend Allocated to Common Shareholders",
+        "instruction": "Use the original facts, under which the stock dividend declared on March 15 was a 10% stock dividend, and disregard the hypothetical 40% stock dividend in Work Tab 2. Determine the portion of the $266,000 cash dividend declared on November 15 that is allocated to the common shareholders. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 176000,
+        "tolerance": 1,
+        "explanation": "The preferred stock is cumulative, so undeclared dividends accumulate and must be satisfied before any distribution to common shareholders. The annual preferred entitlement is 5,000 x $100 x 6% = $30,000. Dividends were omitted in Year 4 and Year 5, creating two years of arrearages of $60,000 at the beginning of Year 6, and the Year 6 dividend of $30,000 is also required. Total preferred = $30,000 x 3 = $90,000. The remainder allocated to common is $266,000 - $90,000 = $176,000. Because the preferred stock is nonparticipating, it shares in nothing beyond the $90,000.",
+        "explanationJa": "**累積的優先株の配当配分**\n\n1. 優先株の年間配当 = 5,000株 × $100 × 6% = **$30,000/年**\n2. Year 4・Year 5 は無配 → 期首の未払配当（arrearages）= $30,000 × 2年 = $60,000\n3. Year 6 分 $30,000 を加え、優先株への配分 = $30,000 × 3年 = **$90,000**\n4. 普通株への配分 = $266,000 - $90,000 = **$176,000**\n\n非参加型（nonparticipating）なので優先株は $90,000 を超えて分配を受けない。なお1株あたりでは $176,000 ÷ 880,000株（分割後）= $0.20。\n\n未払配当は負債ではなく**注記開示**である点も要注意（宣言されて初めて負債になる）。",
+        "references": ["ASC 505-10-50-5", "ASC 260-10-45-11"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Stockholders' Equity at December 31, Year 6",
+        "instruction": "Use the original facts, under which the stock dividend declared on March 15 was a 10% stock dividend, and disregard the hypothetical 40% stock dividend in Work Tab 2. Complete the stockholders' equity section at December 31, Year 6 by entering the balance of each component and the total. Enter whole dollars with no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Preferred stock",
+            "Common stock",
+            "Additional paid-in capital (common stock)",
+            "Retained earnings",
+            "Accumulated other comprehensive income",
+            "Total stockholders' equity"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Preferred stock",
+              "colLabel": "Amount",
+              "correctValue": 500000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Common stock",
+              "colLabel": "Amount",
+              "correctValue": 440000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Additional paid-in capital (common stock)",
+              "colLabel": "Amount",
+              "correctValue": 4520000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Retained earnings",
+              "colLabel": "Amount",
+              "correctValue": 2864000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accumulated other comprehensive income",
+              "colLabel": "Amount",
+              "correctValue": 165000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total stockholders' equity",
+              "colLabel": "Amount",
+              "correctValue": 8489000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Preferred stock is unchanged at $500,000. Common stock increases by the $40,000 par of the 40,000 stock dividend shares to $440,000; the two-for-one split doubles the share count to 880,000 while halving par to $0.50, so 880,000 x $0.50 = $440,000 and the balance is unaffected. Additional paid-in capital increases by the $920,000 excess of fair value over par on the stock dividend to $3,600,000 + $920,000 = $4,520,000. Retained earnings = $2,850,000 - $960,000 stock dividend + $1,240,000 net income - $266,000 cash dividends declared = $2,864,000. Accumulated other comprehensive income = $120,000 + $45,000 = $165,000. Total = $500,000 + $440,000 + $4,520,000 + $2,864,000 + $165,000 = $8,489,000, which also equals the beginning total of $7,470,000 plus net income and other comprehensive income less the cash dividends declared.",
+        "explanationJa": "**期末株主資本のロールフォワード**\n\n| 構成要素 | 期首 | 増減 | 期末 |\n| --- | ---: | --- | ---: |\n| 優先株式 | $500,000 | 変動なし | **$500,000** |\n| 普通株式 | 400,000 | 株式配当 +$40,000 / 分割は影響なし | **440,000** |\n| APIC(普通株) | 3,600,000 | 株式配当 +$920,000 | **4,520,000** |\n| 利益剰余金 | 2,850,000 | -960,000（株式配当）+1,240,000（純利益）-266,000（現金配当） | **2,864,000** |\n| AOCI | 120,000 | +45,000（AFS債券の評価差額） | **165,000** |\n| **合計** | **7,470,000** | | **8,489,000** |\n\n**株式分割の確認**: 880,000株 × $0.50 = $440,000 で資本金は不変。\n\n**全体検算**: $7,470,000 + $1,240,000 + $45,000 - $266,000 = **$8,489,000**。株式配当と株式分割は資本の内訳を動かすだけで総額を変えないことが確認できる。",
+        "references": ["ASC 505-10-50-3", "ASC 220-10-45-14"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Effect of the Two-for-One Stock Split",
+        "instruction": "Select the statement that correctly describes the effect of the September 30 two-for-one stock split on Larkspur's financial statements.",
+        "answerType": "select",
+        "options": [
+          "Total stockholders' equity is unchanged and the par value per share is reduced by half",
+          "Total stockholders' equity is unchanged and retained earnings is reduced by the par value of the additional shares",
+          "Total stockholders' equity is unchanged and additional paid-in capital is reduced by the fair value of the additional shares",
+          "Total stockholders' equity increases by the fair value of the additional shares distributed"
+        ],
+        "correctAnswer": "Total stockholders' equity is unchanged and the par value per share is reduced by half",
+        "explanation": "In a stock split the number of shares outstanding is increased and the par value per share is reduced proportionately, so the balance of the common stock account is unchanged and no amount is transferred out of retained earnings or additional paid-in capital. Here 440,000 shares at $1.00 par become 880,000 shares at $0.50 par, and common stock remains $440,000. Only a memorandum entry is required, and total stockholders' equity is unaffected because no assets are distributed. Capitalizing retained earnings occurs for a stock dividend, not for a split in which par value is reduced.",
+        "explanationJa": "**株式分割（stock split）の会計処理**\n\n- 株数を増やし、**額面を比例的に引き下げる** → 資本金勘定の残高は不変\n- 利益剰余金・APICからの振替は**行わない**（備忘記録 memorandum entry のみ）\n- 資産の流出がないため株主資本総額も不変\n\n本問: 440,000株 × $1.00 → 880,000株 × $0.50。いずれも資本金 $440,000 で変わらない。\n\n**株式配当との違い**: 株式配当は利益剰余金を資本金・APICへ振り替える（小規模＝公正価値、大規模＝額面）。額面を引き下げる分割では振替が発生しない。",
+        "references": ["ASC 505-20-25-3", "ASC 505-20-50-1"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Research - Measuring a Stock Dividend",
+        "instruction": "A corporation issues additional common shares as a stock dividend in a ratio small enough that it has no material effect on the market price per share. Cite the ASC reference that requires the fair value of the additional shares issued to be transferred from retained earnings to capital stock and additional paid-in capital. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "505-20-30-3",
+        "explanation": "ASC 505-20-30-3 requires that, for a stock dividend that is not large enough to be accounted for as a split, the corporation transfer from retained earnings to capital stock and additional paid-in capital an amount equal to the fair value of the additional shares issued. This is the authority for the $960,000 transfer computed on the 40,000 shares issued at the $24 declaration date price.",
+        "explanationJa": "**ASC 505-20-30-3**\n\n市場価格に重要な影響を与えない規模の株式配当について、**交付株式の公正価値**を利益剰余金から資本金およびAPICへ振り替えることを要求する条文。\n\n本問の 40,000株 × $24 = $960,000 の振替の根拠がこれ。\n\n関連して、20〜25%を超える大規模な交付は株式分割として扱う旨は ASC 505-20-25-3 に定められている。両者をセットで押さえること。",
+        "references": ["ASC 505-20-30-3", "ASC 505-20-25-3"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 24,
+    "source": "FAR TBS Practice (original)"
   }
 ]

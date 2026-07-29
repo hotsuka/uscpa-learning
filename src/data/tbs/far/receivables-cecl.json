@@ -370,5 +370,266 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 24,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-recv-003",
+    "subject": "FAR",
+    "topic": "Receivables & CECL",
+    "title": "Expected Credit Losses, Allowance Rollforward, and Transfers of Receivables",
+    "scenario": "Vantage Industrial Supply, Inc. is a calendar-year distributor that measures expected credit losses on its trade accounts receivable using the current expected credit loss model in ASC 326. **Exhibit 1** presents the aging of trade accounts receivable at December 31, Year 6 together with the historical loss rates and the adjustments management has determined to be appropriate. **Exhibit 2** presents the activity in the allowance for credit losses for Year 6. **Exhibit 3** describes other receivable transactions and provides additional information. Round all amounts to the nearest whole dollar.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Aging of Trade Accounts Receivable at December 31, Year 6",
+        "content": "| Days outstanding | Balance | Historical loss rate |\n| --- | ---: | ---: |\n| 1-30 days (current) | $1,850,000 | 1% |\n| 31-60 days | 620,000 | 4% |\n| 61-90 days | 310,000 | 12% |\n| 91-120 days | 145,000 | 25% |\n| Over 120 days | 90,000 | 60% |\n| **Total** | **$3,015,000** | |\n\nNotes to the aging schedule:\n\n1. The over-120-day balance includes $50,000 due from Delta Fabricators, which filed for bankruptcy protection in December Year 6. Delta no longer shares risk characteristics with the remainder of the portfolio and is evaluated individually. Management expects to collect 20% of the Delta balance.\n2. Management's reasonable and supportable forecast points to deteriorating conditions in the customer base. To reflect current conditions and that forecast, each historical loss rate is to be multiplied by 1.20 when applied to the pooled balances. This adjustment is not applied to the individually evaluated balance.\n3. The balances above exclude the receivables transferred to Meridian Capital described in Exhibit 3."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Allowance for Credit Losses Activity for Year 6",
+        "content": "| Item | Amount |\n| --- | ---: |\n| Balance, January 1, Year 6 | $162,000 |\n| Accounts written off during Year 6 | 138,500 |\n| Recoveries of accounts previously written off and collected in Year 6 | 21,400 |\n| Credit loss expense for Year 6 | to be determined |\n| Balance, December 31, Year 6 | to be determined |\n\nThe December 31, Year 6 balance of the allowance equals the total expected credit losses measured from the aging schedule in Exhibit 1."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Other Receivable Transactions and Additional Information",
+        "content": "**Transfer of receivables.** On November 1, Year 6, Vantage transferred $600,000 of trade accounts receivable to Meridian Capital without recourse. The transferred receivables have been isolated from Vantage and are beyond the reach of Vantage and its creditors, Meridian has the unconstrained right to pledge or exchange them, and Vantage retains neither an obligation nor a right to repurchase them. Vantage has no continuing servicing responsibility. Meridian charged a fee of 4% of the receivables transferred and withheld an additional 8% of the receivables transferred as a holdback for sales returns and allowances; the holdback is remitted to Vantage after the receivables are collected. Vantage received the remaining amount in cash on November 1.\n\n**Note receivable.** On September 1, Year 6, Vantage accepted a $240,000, 9%, six-month note receivable from a customer in settlement of an open trade account. Principal and all interest are due at maturity on March 1, Year 7. Vantage accrued interest on the note through December 31, Year 6. On March 1, Year 7, the customer dishonored the note.\n\n**Additional information.**\n\n- Credit sales for Year 6 were $22,600,000; total sales were $24,600,000.\n- Vantage offers credit terms of 2/10, n/30 to substantially all customers.\n- Inventory at December 31, Year 6 was $4,200,000.\n- Vantage's short-term line of credit bears interest at 7.5% and was undrawn at December 31, Year 6."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Expected Credit Losses by Aging Category",
+        "instruction": "Determine the expected credit loss for each category shown below at December 31, Year 6, applying the notes to the aging schedule in Exhibit 1. Enter whole dollars with no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Expected credit loss"],
+          "rows": [
+            "1-30 days (current)",
+            "31-60 days",
+            "61-90 days",
+            "91-120 days",
+            "Over 120 days - pooled",
+            "Over 120 days - individually evaluated"
+          ],
+          "cells": [
+            {
+              "rowLabel": "1-30 days (current)",
+              "colLabel": "Expected credit loss",
+              "correctValue": 22200,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "31-60 days",
+              "colLabel": "Expected credit loss",
+              "correctValue": 29760,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "61-90 days",
+              "colLabel": "Expected credit loss",
+              "correctValue": 44640,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "91-120 days",
+              "colLabel": "Expected credit loss",
+              "correctValue": 43500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Over 120 days - pooled",
+              "colLabel": "Expected credit loss",
+              "correctValue": 28800,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Over 120 days - individually evaluated",
+              "colLabel": "Expected credit loss",
+              "correctValue": 40000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Under ASC 326 expected credit losses are measured on a pool basis for assets sharing similar risk characteristics, and historical loss information is adjusted for current conditions and reasonable and supportable forecasts. Each pooled balance is multiplied by its historical rate and by the 1.20 forecast factor: current, $1,850,000 x 1% x 1.20 = $22,200; 31-60 days, $620,000 x 4% x 1.20 = $29,760; 61-90 days, $310,000 x 12% x 1.20 = $44,640; 91-120 days, $145,000 x 25% x 1.20 = $43,500. The over-120-day category is split because the $50,000 Delta balance no longer shares risk characteristics with the pool. The pooled remainder is $90,000 - $50,000 = $40,000, so $40,000 x 60% x 1.20 = $28,800. Delta is measured individually at the amount not expected to be collected, $50,000 x (100% - 20%) = $40,000. The six amounts total $208,900.",
+        "explanationJa": "**CECL（ASC 326）による予想信用損失の算定**\n\n基本式: 残高 × 歴史的損失率 × 将来予測調整（1.20倍）\n\n| 区分 | 計算 | 予想信用損失 |\n| --- | --- | ---: |\n| 1-30日 | 1,850,000 × 1% × 1.20 | **22,200** |\n| 31-60日 | 620,000 × 4% × 1.20 | **29,760** |\n| 61-90日 | 310,000 × 12% × 1.20 | **44,640** |\n| 91-120日 | 145,000 × 25% × 1.20 | **43,500** |\n| 120日超（プール） | (90,000 - 50,000) × 60% × 1.20 | **28,800** |\n| 120日超（個別評価） | 50,000 × (100% - 20%) | **40,000** |\n| **合計** | | **208,900** |\n\n**要点2つ**\n\n1. CECLは歴史的実績をそのまま使わず、**現在の状況と合理的で裏付け可能な予測**で調整する（→1.20倍）\n2. 他の債権と**リスク特性を共有しなくなった債権は個別評価**する。Deltaを120日超プールから外すのを忘れると 90,000 × 60% × 1.20 = 64,800 となり過大計上になる",
+        "references": ["ASC 326-20-30-2", "ASC 326-20-30-3", "ASC 326-20-30-9"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Allowance for Credit Losses Rollforward",
+        "instruction": "Complete the rollforward of the allowance for credit losses for Year 6. Enter all amounts as positive numbers; write-offs are deductions from the allowance. Enter whole dollars with no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Balance, January 1, Year 6",
+            "Accounts written off",
+            "Recoveries of accounts previously written off",
+            "Credit loss expense",
+            "Balance, December 31, Year 6"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Balance, January 1, Year 6",
+              "colLabel": "Amount",
+              "correctValue": 162000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accounts written off",
+              "colLabel": "Amount",
+              "correctValue": 138500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Recoveries of accounts previously written off",
+              "colLabel": "Amount",
+              "correctValue": 21400,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Credit loss expense",
+              "colLabel": "Amount",
+              "correctValue": 164000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Balance, December 31, Year 6",
+              "colLabel": "Amount",
+              "correctValue": 208900,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Write-offs are deducted from the allowance and recoveries are credited back to it; neither affects earnings. Before recording the current period provision the allowance stands at $162,000 - $138,500 + $21,400 = $44,900. The ending balance must equal the $208,900 of expected credit losses measured from the aging schedule, so credit loss expense is the amount that adjusts the allowance to that required balance: $208,900 - $44,900 = $164,000. The rollforward therefore reads $162,000 - $138,500 + $21,400 + $164,000 = $208,900.",
+        "explanationJa": "**貸倒引当金のロールフォワード**\n\n| 項目 | 金額 |\n| --- | ---: |\n| 期首残高 | 162,000 |\n| 貸倒償却（控除） | (138,500) |\n| 回収（戻入） | 21,400 |\n| **繰入前の残高** | **44,900** |\n| 貸倒引当金繰入額（差額） | 164,000 |\n| **期末残高** | **208,900** |\n\n**要点**\n\n- 貸倒償却（write-off）と回収（recovery）はいずれも**引当金の中だけで完結**し、損益には影響しない\n- 繰入額は「必要残高 − 繰入前残高」の**差額補充**で求める: 208,900 - 44,900 = **164,000**\n- 期末残高は Work Tab 1 で算定した予想信用損失の合計と一致しなければならない",
+        "references": ["ASC 326-20-35-1", "ASC 326-20-35-8"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Net Accounts Receivable",
+        "instruction": "Determine the amount of trade accounts receivable, net of the allowance for credit losses, reported on the December 31, Year 6 balance sheet. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 2806100,
+        "tolerance": 1,
+        "explanation": "The allowance for credit losses is a valuation account deducted from the amortized cost basis of the receivables to present the net amount expected to be collected. Gross trade accounts receivable total $3,015,000 and the required allowance is $208,900, so the net carrying amount is $3,015,000 - $208,900 = $2,806,100. The note receivable and the amount due from the factor are separate assets and are not included in trade accounts receivable.",
+        "explanationJa": "**売掛金の純額（回収可能見込額）**\n\n$3,015,000（総額）- $208,900（引当金）= **$2,806,100**\n\n引当金は償却原価から控除する**評価勘定**であり、貸借対照表では「回収が見込まれる純額」を表示する。\n\n含めないもの:\n- 受取手形 $240,000（別勘定）\n- ファクターに対する留保金 $48,000（Due from factor として別建て）\n- ファクターへ譲渡済の $600,000（売却処理により認識中止済み）",
+        "references": ["ASC 326-20-30-1", "ASC 326-20-45-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Journal Entry - Transfer of Receivables to Meridian Capital",
+        "instruction": "Prepare the journal entry Vantage records on November 1, Year 6 for the transfer of $600,000 of accounts receivable to Meridian Capital. Enter whole dollars with no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Cash",
+            "Due from factor",
+            "Loss on sale of receivables",
+            "Accounts receivable"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 528000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Due from factor",
+              "colLabel": "Debit",
+              "correctValue": 48000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Due from factor",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Loss on sale of receivables",
+              "colLabel": "Debit",
+              "correctValue": 24000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Loss on sale of receivables",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Credit",
+              "correctValue": 600000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Because Vantage surrendered control, the transfer is accounted for as a sale and the $600,000 of receivables is derecognized. The factoring fee is $600,000 x 4% = $24,000 and is recognized immediately as a loss on the sale. The holdback of $600,000 x 8% = $48,000 is not a cost; it is an amount Vantage will receive later and is recorded as a receivable due from the factor. Cash received is $600,000 - $24,000 - $48,000 = $528,000. Debits of $528,000 + $48,000 + $24,000 equal the $600,000 credit to accounts receivable.",
+        "explanationJa": "**ファクタリング（売却処理）の仕訳**\n\n1. 支配を移転しているため**売却**として処理し、売掛金 $600,000 を認識中止する\n2. ファクタリング手数料 = $600,000 × 4% = **$24,000** → 即時に売却損として費用計上\n3. 留保金（holdback）= $600,000 × 8% = **$48,000** → 後日回収できるため**資産（Due from factor）**として計上する。費用ではない\n4. 受取現金 = $600,000 - $24,000 - $48,000 = **$528,000**\n\n借方 528,000 + 48,000 + 24,000 = 600,000 = 貸方（売掛金）\n\n留保金を費用にしてしまうのが典型的な誤り。手数料と留保金の性質の違いを区別すること。",
+        "references": ["ASC 860-20-25-1", "ASC 860-20-40-1A"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Classification of the Transfer",
+        "instruction": "Select the statement that correctly describes how Vantage accounts for the November 1 transfer of receivables to Meridian Capital.",
+        "answerType": "select",
+        "options": [
+          "As a sale, because Vantage surrendered control over the transferred receivables",
+          "As a secured borrowing, because Meridian withheld a holdback amount from the proceeds",
+          "As a secured borrowing, because the receivables were transferred without recourse",
+          "As a sale, but only for the portion of the receivables not subject to the holdback"
+        ],
+        "correctAnswer": "As a sale, because Vantage surrendered control over the transferred receivables",
+        "explanation": "A transfer of financial assets is accounted for as a sale only when the transferor surrenders control, which requires that the assets be isolated from the transferor, that the transferee have the right to pledge or exchange them, and that the transferor not maintain effective control through a repurchase right or obligation. Exhibit 3 states that all three conditions are met, so the entire $600,000 is derecognized and a sale is recorded. A holdback is simply a receivable from the factor and does not indicate continuing control, and the absence of recourse strengthens rather than undermines sale treatment. If any condition failed, the transfer would be a secured borrowing with the receivables remaining on the balance sheet and a liability recognized.",
+        "explanationJa": "**売却か担保付借入かの判定（ASC 860-10-40-5）**\n\n売却として処理できるのは、譲渡人が**支配を放棄**した場合に限られ、次の3要件をすべて満たす必要がある。\n\n1. 譲渡資産が譲渡人およびその債権者の手の届かない状態に隔離されている\n2. 譲受人が担保差入れまたは交換する権利を持つ\n3. 譲渡人が買戻しの権利・義務等により実質的支配を維持していない\n\nExhibit 3 は3要件すべての充足を明示しているため、$600,000 全額を認識中止して**売却**処理する。\n\n- 留保金（holdback）はファクターに対する債権にすぎず、支配の継続を意味しない\n- 償還請求権なし（without recourse）は売却処理を**支持する**方向の事実\n- 要件を1つでも満たさない場合は担保付借入となり、売掛金は残したまま負債を計上する",
+        "references": ["ASC 860-10-40-5", "ASC 860-30-25-2"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Dishonored Note Receivable",
+        "instruction": "Determine the amount debited to accounts receivable on March 1, Year 7 when the customer dishonors the note described in Exhibit 3. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 250800,
+        "tolerance": 1,
+        "explanation": "When a note is dishonored, the note receivable is removed and the full amount owed by the customer, including all interest earned through maturity, is transferred to accounts receivable so that collection efforts continue against an open account. Total interest over the six-month term is $240,000 x 9% x 6/12 = $10,800, of which $240,000 x 9% x 4/12 = $7,200 was accrued as interest receivable through December 31, Year 6 and the remaining $3,600 is earned in Year 7. Accounts receivable is debited for $240,000 + $10,800 = $250,800, with credits to notes receivable of $240,000, interest receivable of $7,200, and interest revenue of $3,600.",
+        "explanationJa": "**手形の不渡り（dishonor）**\n\n1. 満期までの利息総額 = $240,000 × 9% × 6/12 = **$10,800**\n   - うち Year 6 に見越計上済 = $240,000 × 9% × 4/12（9/1〜12/31）= $7,200\n   - Year 7 の1〜2月分 = $3,600\n2. 不渡り時は元本と**満期までの利息全額**を売掛金へ振り替える\n   - 売掛金 借方 = $240,000 + $10,800 = **$250,800**\n   - 貸方: 受取手形 $240,000 / 未収利息 $7,200 / 受取利息 $3,600\n\n利息を落として元本 $240,000 だけを振り替えるのが典型的な誤り。不渡りになっても満期までの利息請求権は消滅しない。",
+        "references": ["ASC 310-10-35-2", "ASC 835-30-45-1"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research - Conditions for Sale Accounting",
+        "instruction": "An entity transferred trade receivables to a financing company and must determine whether the transfer qualifies for derecognition. Cite the ASC reference that sets out the conditions that must all be met for a transfer of financial assets to be accounted for as a sale. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "860-10-40-5",
+        "explanation": "ASC 860-10-40-5 states that a transfer of financial assets in which the transferor surrenders control is accounted for as a sale only if all of the specified conditions are met: the assets are isolated from the transferor and its creditors, the transferee has the right to pledge or exchange the assets, and the transferor does not maintain effective control over the transferred assets. This is the authority for treating the $600,000 transfer to Meridian Capital as a sale.",
+        "explanationJa": "**ASC 860-10-40-5**\n\n金融資産の譲渡を**売却**として処理できる要件（隔離・譲受人の担保差入/交換の権利・譲渡人が実質的支配を維持していないこと）を列挙した条文。すべてを満たして初めて認識中止できる。\n\n本問で Meridian への $600,000 の譲渡を売却処理した根拠がこれ。要件を満たさない場合は ASC 860-30 に従い担保付借入として処理する。",
+        "references": ["ASC 860-10-40-5"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "FAR TBS Practice (original)"
   }
 ]
