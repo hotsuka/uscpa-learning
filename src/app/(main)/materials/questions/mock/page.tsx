@@ -5,10 +5,10 @@ import Link from "next/link"
 import { Header } from "@/components/layout/Header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 import { MarkdownPreview } from "@/components/notes/MarkdownPreview"
 import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
+import { MockExamResultDetail } from "@/components/questions/MockExamResultDetail"
 import { useTimer } from "@/hooks/useTimer"
 import {
   buildMockExam,
@@ -30,27 +30,12 @@ import {
   Flag,
   ChevronLeft,
   ChevronRight,
-  CheckCircle2,
-  XCircle,
-  ChevronDown,
-  ChevronUp,
   ClipboardCheck,
   Keyboard,
 } from "lucide-react"
 
-type Phase = "intro" | "running" | "result"
-
-const AREA_LABELS: Record<string, string> = {
-  I: "Area I 財務報告",
-  II: "Area II B/S項目",
-  III: "Area III 個別取引",
-}
-
-const DIFFICULTY_LABELS: Record<string, string> = {
-  basic: "基礎",
-  intermediate: "標準",
-  advanced: "応用",
-}
+// review: 過去の模試結果を履歴から見直すフェーズ
+type Phase = "intro" | "running" | "result" | "review"
 
 const formatRemaining = (sec: number): string => {
   const m = Math.floor(sec / 60)
@@ -67,122 +52,6 @@ const formatDateTime = (iso: string): string =>
     minute: "2-digit",
   })
 
-// 内訳テーブル（Area別・難易度別・テーマ別で共用）
-function BreakdownTable({
-  title,
-  rows,
-}: {
-  title: string
-  rows: { label: string; correct: number; total: number }[]
-}) {
-  return (
-    <div>
-      <h4 className="text-sm font-medium mb-2">{title}</h4>
-      <div className="space-y-1.5">
-        {rows.map((row) => {
-          const rate = row.total > 0 ? Math.round((row.correct / row.total) * 100) : 0
-          return (
-            <div key={row.label} className="flex items-center justify-between text-sm">
-              <span className="truncate flex-1">{row.label}</span>
-              <div className="flex items-center gap-2 ml-2 shrink-0">
-                <div className="w-20 h-2 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className={`h-full rounded-full ${
-                      rate >= MOCK_EXAM_TARGET_RATE
-                        ? "bg-green-500"
-                        : rate >= 60
-                          ? "bg-yellow-500"
-                          : "bg-red-500"
-                    }`}
-                    style={{ width: `${rate}%` }}
-                  />
-                </div>
-                <span className="w-20 text-right text-muted-foreground text-xs">
-                  {row.correct}/{row.total}問 {rate}%
-                </span>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-// 誤答・未回答問題のレビュー（元ラベルの選択肢で表示するため解説のラベルと整合する）
-function WrongAnswerReview({
-  entry,
-  answer,
-}: {
-  entry: MockExamQuestionEntry
-  answer: MockExamAnswer
-}) {
-  const [open, setOpen] = useState(false)
-  return (
-    <div className="border rounded-lg">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center gap-2 p-3 text-left text-sm hover:bg-muted/50 transition-colors"
-      >
-        <XCircle className="w-4 h-4 text-red-500 shrink-0" />
-        <Badge variant="outline" className="text-xs font-mono shrink-0">
-          {entry.question.id.toUpperCase()}
-        </Badge>
-        <span className="truncate flex-1 text-muted-foreground">
-          {entry.question.subtopic}
-          {answer.selectedAnswer === null && "（未回答）"}
-        </span>
-        {open ? (
-          <ChevronUp className="w-4 h-4 shrink-0" />
-        ) : (
-          <ChevronDown className="w-4 h-4 shrink-0" />
-        )}
-      </button>
-      {open && (
-        <div className="p-4 border-t space-y-3">
-          <div className="text-sm leading-relaxed">
-            <MarkdownPreview content={entry.question.stem} />
-          </div>
-          <div className="space-y-1.5">
-            {entry.question.choices.map((choice) => {
-              const isCorrectChoice = choice.label === answer.correctAnswer
-              const isSelected = choice.label === answer.selectedAnswer
-              return (
-                <div
-                  key={choice.label}
-                  className={cn(
-                    "flex items-start gap-2 p-2 rounded text-sm border",
-                    isCorrectChoice && "border-green-500 bg-green-50",
-                    isSelected && !isCorrectChoice && "border-red-500 bg-red-50",
-                    !isCorrectChoice && !isSelected && "border-transparent"
-                  )}
-                >
-                  <span className="font-bold shrink-0">{choice.label}</span>
-                  <span className="leading-relaxed">{choice.text}</span>
-                  {isCorrectChoice && (
-                    <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 ml-auto" />
-                  )}
-                  {isSelected && !isCorrectChoice && (
-                    <XCircle className="w-4 h-4 text-red-600 shrink-0 ml-auto" />
-                  )}
-                </div>
-              )
-            })}
-          </div>
-          <div className="p-3 rounded-lg bg-muted/50 space-y-2">
-            <p className="text-sm leading-relaxed">{entry.question.explanation}</p>
-            {entry.question.explanationJa && (
-              <p className="text-sm leading-relaxed text-muted-foreground border-t pt-2">
-                {entry.question.explanationJa}
-              </p>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  )
-}
-
 export default function MockExamPage() {
   const [phase, setPhase] = useState<Phase>("intro")
   const [entries, setEntries] = useState<MockExamQuestionEntry[]>([])
@@ -192,6 +61,8 @@ export default function MockExamPage() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [remainingSec, setRemainingSec] = useState(MOCK_EXAM_MINUTES * 60)
   const [result, setResult] = useState<MockExamResult | null>(null)
+  // 履歴から見直し中の過去結果
+  const [reviewingResult, setReviewingResult] = useState<MockExamResult | null>(null)
   const [confirmSubmitOpen, setConfirmSubmitOpen] = useState(false)
 
   const startedAtRef = useRef<string>("")
@@ -212,6 +83,7 @@ export default function MockExamPage() {
     setCurrentIndex(0)
     setRemainingSec(MOCK_EXAM_MINUTES * 60)
     setResult(null)
+    setReviewingResult(null)
     startedAtRef.current = new Date().toISOString()
     deadlineRef.current = Date.now() + MOCK_EXAM_MINUTES * 60 * 1000
     finishedRef.current = false
@@ -424,7 +296,7 @@ export default function MockExamPage() {
           <MiniTimer ref={miniTimerRef} />
         </div>
 
-        {phase !== "running" && (
+        {(phase === "intro" || phase === "result") && (
           <Link
             href="/materials/questions"
             className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-4"
@@ -432,6 +304,19 @@ export default function MockExamPage() {
             <ArrowLeft className="w-4 h-4" />
             問題バンクに戻る
           </Link>
+        )}
+
+        {phase === "review" && (
+          <button
+            onClick={() => {
+              setReviewingResult(null)
+              setPhase("intro")
+            }}
+            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-4"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            模試トップに戻る
+          </button>
         )}
 
         {/* ===== 開始画面 ===== */}
@@ -483,28 +368,38 @@ export default function MockExamPage() {
                   <CardTitle className="text-base">過去の模試結果</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
+                  <p className="text-xs text-muted-foreground">
+                    タップすると誤答した問題の選択結果と解説を確認できます
+                  </p>
                   {pastResults.map((r) => (
-                    <div
+                    <button
                       key={r.id}
-                      className="flex items-center justify-between text-sm px-3 py-2 rounded-md border bg-muted/30"
+                      onClick={() => {
+                        setReviewingResult(r)
+                        setPhase("review")
+                      }}
+                      className="w-full flex items-center justify-between text-sm px-3 py-2 rounded-md border bg-muted/30 hover:bg-muted transition-colors text-left"
                     >
                       <span className="text-muted-foreground">
                         {formatDateTime(r.finishedAt)}
                       </span>
-                      <span
-                        className={cn(
-                          "font-bold",
-                          r.score >= MOCK_EXAM_TARGET_RATE
-                            ? "text-green-600"
-                            : "text-red-500"
-                        )}
-                      >
-                        {r.score}%
-                        <span className="font-normal text-muted-foreground text-xs ml-1">
-                          ({r.correctCount}/{r.totalQuestions})
+                      <span className="flex items-center gap-1.5">
+                        <span
+                          className={cn(
+                            "font-bold",
+                            r.score >= MOCK_EXAM_TARGET_RATE
+                              ? "text-green-600"
+                              : "text-red-500"
+                          )}
+                        >
+                          {r.score}%
+                          <span className="font-normal text-muted-foreground text-xs ml-1">
+                            ({r.correctCount}/{r.totalQuestions})
+                          </span>
                         </span>
+                        <ChevronRight className="w-4 h-4 text-muted-foreground shrink-0" />
                       </span>
-                    </div>
+                    </button>
                   ))}
                 </CardContent>
               </Card>
@@ -657,93 +552,42 @@ export default function MockExamPage() {
               </p>
             </div>
 
-            {/* スコア */}
-            <Card className="mb-6">
-              <CardContent className="p-6 text-center">
-                <div
-                  className={cn(
-                    "text-5xl font-bold mb-1",
-                    result.score >= MOCK_EXAM_TARGET_RATE ? "text-green-600" : "text-red-500"
-                  )}
-                >
-                  {result.score}%
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">
-                  {result.correctCount} / {result.totalQuestions} 問正解
-                </p>
-                <Badge
-                  variant={result.score >= MOCK_EXAM_TARGET_RATE ? "default" : "destructive"}
-                >
-                  目標{MOCK_EXAM_TARGET_RATE}%
-                  {result.score >= MOCK_EXAM_TARGET_RATE ? "達成" : `まで あと${MOCK_EXAM_TARGET_RATE - result.score}pt`}
-                </Badge>
-              </CardContent>
-            </Card>
-
-            {/* 内訳 */}
-            <Card className="mb-6">
-              <CardHeader>
-                <CardTitle className="text-base">内訳</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-5">
-                <BreakdownTable
-                  title="Area別"
-                  rows={Object.entries(result.areaBreakdown)
-                    .sort(([a], [b]) => a.localeCompare(b))
-                    .map(([key, v]) => ({
-                      label: AREA_LABELS[key] ?? key,
-                      ...v,
-                    }))}
-                />
-                <BreakdownTable
-                  title="難易度別"
-                  rows={(["basic", "intermediate", "advanced"] as const)
-                    .filter((d) => result.difficultyBreakdown[d])
-                    .map((d) => ({
-                      label: DIFFICULTY_LABELS[d],
-                      ...result.difficultyBreakdown[d],
-                    }))}
-                />
-                <BreakdownTable
-                  title="テーマ別"
-                  rows={Object.entries(result.topicBreakdown)
-                    .sort(
-                      ([, a], [, b]) =>
-                        a.correct / a.total - b.correct / b.total
-                    )
-                    .map(([key, v]) => ({ label: key, ...v }))}
-                />
-              </CardContent>
-            </Card>
-
-            {/* 誤答レビュー */}
-            {result.answers.some((a) => !a.isCorrect) && (
-              <Card className="mb-6">
-                <CardHeader>
-                  <CardTitle className="text-base">
-                    誤答・未回答の見直し（
-                    {result.answers.filter((a) => !a.isCorrect).length}問）
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  {entries.map((entry, i) => {
-                    const answer = result.answers[i]
-                    if (!answer || answer.isCorrect) return null
-                    return (
-                      <WrongAnswerReview
-                        key={entry.question.id}
-                        entry={entry}
-                        answer={answer}
-                      />
-                    )
-                  })}
-                </CardContent>
-              </Card>
-            )}
+            <MockExamResultDetail result={result} />
 
             <div className="flex gap-2">
               <Button onClick={handleStart} className="flex-1">
                 もう一度受ける
+              </Button>
+              <Button variant="outline" asChild className="flex-1">
+                <Link href="/materials/questions">問題バンクに戻る</Link>
+              </Button>
+            </div>
+          </>
+        )}
+
+        {/* ===== 過去結果の見直し画面 ===== */}
+        {phase === "review" && reviewingResult && (
+          <>
+            <div className="mb-6">
+              <h1 className="text-2xl font-bold mb-2">過去の模試結果</h1>
+              <p className="text-sm text-muted-foreground">
+                {formatDateTime(reviewingResult.startedAt)} 〜{" "}
+                {formatDateTime(reviewingResult.finishedAt)}
+              </p>
+            </div>
+
+            <MockExamResultDetail result={reviewingResult} />
+
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setReviewingResult(null)
+                  setPhase("intro")
+                }}
+                className="flex-1"
+              >
+                模試トップに戻る
               </Button>
               <Button variant="outline" asChild className="flex-1">
                 <Link href="/materials/questions">問題バンクに戻る</Link>

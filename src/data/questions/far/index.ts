@@ -1,4 +1,4 @@
-import type { QuestionSet } from "@/types/questions";
+import type { FARQuestion, QuestionSet } from "@/types/questions";
 
 import cashEquivalents from "./cash-equivalents.json";
 import cashFlows from "./cash-flows.json";
@@ -54,4 +54,18 @@ export const getQuestionSetByTopic = (
   topic: string,
 ): QuestionSet | undefined => {
   return farQuestionSets.find((set) => set.topic === topic);
+};
+
+// 問題ID → 問題。過去の解答履歴から問題本体を引くために使う
+let questionsById: Map<string, FARQuestion> | null = null;
+
+export const getQuestionById = (id: string): FARQuestion | undefined => {
+  if (!questionsById) {
+    questionsById = new Map(
+      farQuestionSets.flatMap((set) =>
+        set.questions.map((q) => [q.id, q] as const),
+      ),
+    );
+  }
+  return questionsById.get(id);
 };
