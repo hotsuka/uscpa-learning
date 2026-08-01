@@ -1,0 +1,313 @@
+[
+  {
+    "id": "far-tbs-invty-001",
+    "subject": "FAR",
+    "topic": "Inventory",
+    "title": "Year-End Inventory: Ownership Cutoff and Subsequent Measurement",
+    "scenario": "Harlow Distributors, Inc. is a wholesale distributor of industrial supplies with a December 31 year end. You are assisting with the Year 5 year-end close. The controller has provided the preliminary physical count and other closing information in **Exhibit 1**, a schedule of items whose ownership must be evaluated in **Exhibit 2**, and valuation data for the product lines flagged for possible write-down in **Exhibit 3**.\n\nHarlow applies the first-in, first-out (FIFO) cost flow assumption to some product lines, the last-in, first-out (LIFO) cost flow assumption to others, and the retail inventory method to one line. Answer each of the following work tabs based on the information provided. Ignore income taxes.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Preliminary Physical Count and Other Closing Information",
+        "content": "Harlow uses a periodic inventory system. A physical count of all merchandise located in the company's warehouse was taken on December 31, Year 5 and priced at cost. The count totaled **$842,000**.\n\nThe count includes every item that was physically present in the warehouse on December 31, Year 5, and excludes every item that was not physically present on that date, regardless of who holds legal title.\n\nOther information at December 31, Year 5:\n\n- Non-cancelable purchase commitments outstanding total $150,000. The market price of the committed goods exceeds the contract price.\n- Freight of $9,000 relating to the merchandise described in item 2 of Exhibit 2 is payable by the vendor under the shipping terms.\n- The allowance for credit losses on trade receivables is $22,000.\n- Trade accounts payable total $418,000."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Items Requiring Ownership Evaluation at December 31, Year 5",
+        "content": "| Item | Description | Cost | Included in the physical count |\n| --- | --- | --- | --- |\n| 1 | Merchandise purchased FOB shipping point; shipped by the vendor December 28 and received by Harlow January 4 | $56,000 | No |\n| 2 | Merchandise purchased FOB destination; shipped by the vendor December 29 and received by Harlow January 6 | $38,000 | No |\n| 3 | Merchandise sold FOB destination; shipped by Harlow December 30 and delivered to the customer January 3 | $44,000 | No |\n| 4 | Merchandise sold FOB shipping point; picked up by the common carrier December 30 | $27,000 | No |\n| 5 | Merchandise held in Harlow's warehouse on consignment from Trellis Supply Co. | $63,000 | Yes |\n| 6 | Merchandise out on consignment at Marlow Retail; unsold by the consignee at December 31 | $31,000 | No |\n| 7 | Merchandise shipped to Brantley Stores under a contract granting an unconditional right of return for 90 days. Harlow expects 20% of the units to be returned and expects to incur no cost to recover them. | $18,000 | No |\n\nRevenue on item 7 was recognized in Year 5 for the units not expected to be returned, and the related inventory was removed from the accounting records."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Valuation Data for Product Lines Reviewed at December 31, Year 5",
+        "content": "The following product lines were reviewed for possible write-down. All remaining inventory is carried at cost and requires no valuation adjustment. The costs shown are the amounts included in Harlow's adjusted inventory.\n\n| | Product line A | Product line B | Product line C | Product line D |\n| --- | --- | --- | --- | --- |\n| Cost flow assumption | FIFO | FIFO | LIFO | Retail inventory method |\n| Cost | $280,000 | $195,000 | $240,000 | $90,000 |\n| Estimated selling price | $300,000 | $250,000 | $260,000 | $120,000 |\n| Estimated cost of completion and disposal | $34,000 | $20,000 | $18,000 | $21,000 |\n| Current replacement cost | $272,000 | $206,000 | $214,000 | $96,000 |\n| Normal profit margin (percentage of selling price) | 10% | 12% | 8% | 10% |"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Inventory Cost After Ownership Adjustments",
+        "instruction": "Using Exhibit 1 and Exhibit 2, determine the cost of Harlow's inventory at December 31, Year 5 after adjusting the physical count for ownership, but before any valuation adjustment from Exhibit 3. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 910000,
+        "tolerance": 0,
+        "explanation": "Start with the physical count of $842,000. Item 1 (purchased FOB shipping point) passed to Harlow when the vendor shipped on December 28, so add $56,000. Item 2 (purchased FOB destination) does not pass to Harlow until delivery on January 6, so no adjustment is made. Item 3 (sold FOB destination) remains Harlow's until delivery on January 3, so add $44,000. Item 4 (sold FOB shipping point) passed to the customer on December 30, so no adjustment is made. Item 5 is held on consignment from another party; Harlow never holds title, but the goods were physically present and counted, so deduct $63,000. Item 6 is out on consignment; title remains with Harlow as consignor, so add $31,000. Item 7 is excluded from inventory because control transferred to the customer; the expected returns are recognized separately as an asset for the right to recover products. Adjusted cost = 842,000 + 56,000 + 44,000 - 63,000 + 31,000 = $910,000.",
+        "explanationJa": "実地棚卸額 $842,000 から出発する。\n\n1. 項目1（仕入 FOB shipping point）: 12/28の出荷時に所有権が移転済み。未入荷でカウントされていないため **+$56,000**\n2. 項目2（仕入 FOB destination）: 所有権移転は1/6の着荷時。期末時点で未所有のため調整なし\n3. 項目3（販売 FOB destination）: 1/3の引渡までは売手の資産。カウントされていないため **+$44,000**\n4. 項目4（販売 FOB shipping point）: 12/30の運送人引渡で所有権が移転済み。調整なし\n5. 項目5（受託販売品 consigned-in）: 倉庫にありカウント済みだが自社所有ではない **−$63,000**\n6. 項目6（委託販売品 consigned-out）: 受託者が未販売なら所有権は委託者に残る **+$31,000**\n7. 項目7（返品権付き販売）: 支配が顧客に移転しており棚卸資産から除外。返品見込分は別建ての「返品資産」として認識\n\n調整後原価 = 842,000 + 56,000 + 44,000 − 63,000 + 31,000 = **$910,000**",
+        "references": ["ASC 330-10-30-1", "ASC 606-10-55-23"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Asset for the Right to Recover Products",
+        "instruction": "Determine the amount Harlow should recognize at December 31, Year 5 as an asset for its right to recover products from Brantley Stores (item 7 of Exhibit 2). Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 3600,
+        "tolerance": 0,
+        "explanation": "When goods are sold with a right of return, the seller recognizes a refund liability for the consideration expected to be refunded and, separately from inventory, an asset for its right to recover products from the customer. That asset is measured at the former carrying amount of the inventory less any expected costs to recover the products. Expected returns are 20% of goods costing $18,000, and no recovery costs are expected: 18,000 x 20% = $3,600.",
+        "explanationJa": "返品権付き販売では、返金負債を計上するとともに、顧客から製品を回収する権利を**棚卸資産とは区別した資産**として認識する。\n\n測定額 = 従来の棚卸資産の帳簿価額 − 回収に要する見込費用\n\n返品見込率20%、対象原価 $18,000、回収費用ゼロのため:\n\n18,000 × 20% = **$3,600**\n\nこの $3,600 は Work Tab 1 の棚卸資産残高には含めない点に注意。",
+        "references": ["ASC 606-10-55-23", "ASC 606-10-55-25"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Carrying Amount of Each Reviewed Product Line",
+        "instruction": "Using Exhibit 3, determine the amount at which each product line should be carried in the December 31, Year 5 balance sheet. Enter each amount in whole dollars, no commas. If no write-down is required, enter the cost.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Carrying amount"],
+          "rows": [
+            "Product line A",
+            "Product line B",
+            "Product line C",
+            "Product line D"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Product line A",
+              "colLabel": "Carrying amount",
+              "correctValue": 266000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Product line B",
+              "colLabel": "Carrying amount",
+              "correctValue": 195000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Product line C",
+              "colLabel": "Carrying amount",
+              "correctValue": 221200,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Product line D",
+              "colLabel": "Carrying amount",
+              "correctValue": 90000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Inventory measured using FIFO is carried at the lower of cost and net realizable value (NRV); the replacement cost and normal profit margin are not used. Product line A: NRV = 300,000 - 34,000 = 266,000, which is below cost of 280,000, so carry at $266,000. Product line B: NRV = 250,000 - 20,000 = 230,000, which exceeds cost of 195,000, so carry at $195,000. Inventory measured using LIFO or the retail inventory method is carried at the lower of cost or market, where market is replacement cost limited to a ceiling of NRV and a floor of NRV less a normal profit margin. Product line C: ceiling = 260,000 - 18,000 = 242,000; floor = 242,000 - (8% x 260,000) = 221,200; replacement cost of 214,000 is below the floor, so market is the floor of 221,200, which is below cost of 240,000, so carry at $221,200. Product line D: ceiling = 120,000 - 21,000 = 99,000; floor = 99,000 - (10% x 120,000) = 87,000; replacement cost of 96,000 falls between the floor and ceiling, so market is 96,000, which exceeds cost of 90,000, so carry at $90,000.",
+        "explanationJa": "**FIFO・加重平均法の在庫 → LCNRV（低価法：原価と正味実現可能価額のいずれか低い方）**\n置換原価と通常利益率は使わない。\n\n- Product line A: NRV = 300,000 − 34,000 = 266,000 < 原価 280,000 → **266,000**（評価損 14,000）\n- Product line B: NRV = 250,000 − 20,000 = 230,000 > 原価 195,000 → **195,000**（評価損なし）\n\n**LIFO・小売棚卸法の在庫 → LCM（原価と市場価額のいずれか低い方）**\nmarket = 置換原価。ただし上限 = NRV、下限 = NRV − 通常利益 で挟む。\n\n- Product line C:\n  - 上限 = 260,000 − 18,000 = 242,000\n  - 下限 = 242,000 − (260,000 × 8%) = 242,000 − 20,800 = 221,200\n  - 置換原価 214,000 < 下限 → market = 221,200\n  - market 221,200 < 原価 240,000 → **221,200**（評価損 18,800）\n- Product line D:\n  - 上限 = 120,000 − 21,000 = 99,000\n  - 下限 = 99,000 − (120,000 × 10%) = 87,000\n  - 置換原価 96,000 は上下限の範囲内 → market = 96,000\n  - market 96,000 > 原価 90,000 → **90,000**（評価損なし）",
+        "references": [
+          "ASC 330-10-35-1B",
+          "ASC 330-10-35-1C",
+          "ASC 330-10-35-2"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Total Inventory Write-Down",
+        "instruction": "Determine the total write-down that Harlow must recognize in Year 5 for the product lines in Exhibit 3. Enter the amount as a positive number in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 32800,
+        "tolerance": 0,
+        "explanation": "The write-down is the excess of cost over the measured carrying amount for each product line. Product line A: 280,000 - 266,000 = 14,000. Product line B: none. Product line C: 240,000 - 221,200 = 18,800. Product line D: none. Total write-down = 14,000 + 18,800 = $32,800.",
+        "explanationJa": "各ラインについて「原価 − 評価後の帳簿価額」を集計する。\n\n| ライン | 原価 | 評価後 | 評価損 |\n| --- | --- | --- | --- |\n| A | 280,000 | 266,000 | 14,000 |\n| B | 195,000 | 195,000 | 0 |\n| C | 240,000 | 221,200 | 18,800 |\n| D | 90,000 | 90,000 | 0 |\n\n合計 = 14,000 + 18,800 = **$32,800**\n\n評価損は原則として売上原価に含めて処理する。",
+        "references": ["ASC 330-10-35-1B", "ASC 330-10-35-14"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Inventory Reported in the Balance Sheet",
+        "instruction": "Determine the amount of inventory that Harlow should report in its December 31, Year 5 balance sheet. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 877200,
+        "tolerance": 0,
+        "explanation": "Adjusted inventory cost of $910,000 less the total write-down of $32,800 equals $877,200. The $3,600 asset for the right to recover products is presented separately from inventory and is not added to this amount.",
+        "explanationJa": "帰属調整後の原価から評価損を控除する。\n\n910,000 − 32,800 = **$877,200**\n\n返品資産 $3,600 は棚卸資産とは**区分して表示**するため、この金額には加算しない。",
+        "references": ["ASC 330-10-35-1B", "ASC 606-10-55-23"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Measurement Basis for a LIFO Product Line",
+        "instruction": "Product line C is measured using the LIFO cost flow assumption. Select the subsequent measurement basis that GAAP requires for that product line at December 31, Year 5.",
+        "answerType": "select",
+        "options": [
+          "Lower of cost or market",
+          "Lower of cost and net realizable value",
+          "Net realizable value less a normal profit margin",
+          "Current replacement cost"
+        ],
+        "correctAnswer": "Lower of cost or market",
+        "explanation": "Inventory measured using LIFO or the retail inventory method is measured at the lower of cost or market. All other inventory, including inventory measured using FIFO or a weighted-average method, is measured at the lower of cost and net realizable value. Net realizable value less a normal profit margin is only the floor used in determining market, and current replacement cost is only the starting point for market, so neither is itself a measurement basis.",
+        "explanationJa": "在庫の期末評価基準は原価フロー仮定によって分かれる。\n\n- **LIFO・小売棚卸法** → 低価法（**lower of cost or market**）。market は置換原価を、上限 NRV・下限「NRV − 通常利益」で挟んだ値\n- **上記以外（FIFO・加重平均など）** → **lower of cost and net realizable value**（LCNRV）\n\nProduct line C は LIFO のため lower of cost or market を適用する。「NRV − 通常利益」は market を決める際の下限にすぎず、置換原価も market の出発点にすぎないため、いずれもそれ自体が測定基準にはならない。",
+        "references": ["ASC 330-10-35-1B", "ASC 330-10-35-1C"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research: Definition of Market",
+        "instruction": "Cite the FASB Accounting Standards Codification paragraph that defines market for inventories measured using the LIFO cost flow assumption, including the upper and lower limitations on that amount. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "330-10-35-2",
+        "explanation": "ASC 330-10-35-2 states that market means current replacement cost, except that market shall not exceed net realizable value and shall not be less than net realizable value reduced by an allowance for an approximately normal profit margin.",
+        "explanationJa": "ASC 330-10-35-2 は market を「現在の置換原価（current replacement cost）」と定義したうえで、次の2つの制限を課している。\n\n- **上限（ceiling）**: 正味実現可能価額（NRV）を超えてはならない\n- **下限（floor）**: NRV から通常利益相当額を控除した金額を下回ってはならない\n\nこれが Product line C で用いた天井・床の根拠となる。",
+        "references": ["ASC 330-10-35-2"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-invty-002",
+    "subject": "FAR",
+    "topic": "Inventory",
+    "title": "Cost Flow Assumptions and the Effect of Inventory Errors",
+    "scenario": "Kestrel Components, Inc. has a December 31 year end and uses a periodic inventory system. You are assisting with the Year 5 audit.\n\n**Exhibit 1** presents the Year 5 inventory records for Product ZX-9. Management is evaluating what its results would have been under the first-in, first-out (FIFO) cost flow assumption instead of the weighted-average method it currently uses. **Exhibit 2** describes two inventory errors identified during the audit, and **Exhibit 3** presents the draft Year 5 income statement before any correction. Ignore income taxes throughout.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Year 5 Inventory Records — Product ZX-9",
+        "content": "| Date | Transaction | Units | Unit cost | Total cost |\n| --- | --- | --- | --- | --- |\n| Jan 1 | Beginning inventory | 1,200 | $18.00 | $21,600 |\n| Mar 5 | Purchase | 2,000 | $19.55 | $39,100 |\n| Jun 18 | Purchase | 1,800 | $21.00 | $37,800 |\n| Sep 22 | Purchase | 2,500 | $22.40 | $56,000 |\n| Nov 30 | Purchase | 1,500 | $23.00 | $34,500 |\n| | **Goods available for sale** | **9,000** | | **$189,000** |\n\nUnits of Product ZX-9 sold during Year 5: **6,600 units** at an average selling price of $46 per unit.\n\nKestrel also stocks Product LM-4. Its December 31, Year 5 inventory of $63,400 is not affected by any matter described in this simulation."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Inventory Errors Identified During the Year 5 Audit",
+        "content": "Neither of the following errors has been recorded. Both errors affect the physical inventory amounts only; all related purchases were recorded in the correct period.\n\n1. The December 31, **Year 4** physical count was **overstated by $27,000** because one storage bay was counted twice. The Year 4 financial statements have been issued.\n2. Merchandise costing **$15,000** that was purchased FOB shipping point and was in transit at December 31, **Year 5** was **omitted** from the Year 5 ending inventory. The purchase was recorded in Year 5.\n\nThe errors were discovered before the Year 5 financial statements were issued."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Draft Year 5 Income Statement (Condensed)",
+        "content": "The draft statement below applies the weighted-average method to all products and reflects no correction of the errors in Exhibit 2.\n\n| | Year 5 |\n| --- | --- |\n| Sales | $1,480,000 |\n| Cost of goods sold | 902,000 |\n| Gross profit | 578,000 |\n| Selling and administrative expenses | 421,000 |\n| **Pretax income** | **$157,000** |\n\nSelling and administrative expenses include freight-out of $34,000 and advertising of $52,000."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "FIFO Ending Inventory",
+        "instruction": "Using Exhibit 1, determine the December 31, Year 5 ending inventory of Product ZX-9 under the FIFO cost flow assumption. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 54660,
+        "tolerance": 0,
+        "explanation": "Goods available for sale total 9,000 units; 6,600 units were sold, leaving 2,400 units in ending inventory. Under FIFO the earliest costs are charged to cost of goods sold, so ending inventory consists of the most recent purchases: 1,500 units from November 30 at $23.00 = $34,500, plus 900 units from September 22 at $22.40 = $20,160. Ending inventory = 34,500 + 20,160 = $54,660.",
+        "explanationJa": "販売可能数量 9,000個 − 販売 6,600個 = 期末数量 **2,400個**\n\nFIFO では古い原価から先に売上原価となるため、期末在庫は**直近の仕入**から構成される。\n\n| 仕入 | 数量 | 単価 | 金額 |\n| --- | --- | --- | --- |\n| 11/30 | 1,500 | $23.00 | $34,500 |\n| 9/22 | 900 | $22.40 | $20,160 |\n| 合計 | 2,400 | | **$54,660** |",
+        "references": ["ASC 330-10-30-9", "ASC 330-10-30-12"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Weighted-Average Cost of Goods Sold",
+        "instruction": "Using Exhibit 1, determine the Year 5 cost of goods sold for Product ZX-9 under the weighted-average method. Round to the nearest whole dollar and enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 138600,
+        "tolerance": 2,
+        "explanation": "The weighted-average unit cost is total cost of goods available for sale divided by total units available: 189,000 / 9,000 = $21.00 per unit. Ending inventory = 2,400 units x 21.00 = $50,400. Cost of goods sold = 189,000 - 50,400 = $138,600. The same result is obtained directly: 6,600 units x 21.00 = $138,600.",
+        "explanationJa": "加重平均単価 = 販売可能額 ÷ 販売可能数量\n\n189,000 ÷ 9,000 = **$21.00/個**\n\n売上原価 = 6,600個 × $21.00 = **$138,600**\n\n（検算）期末在庫 = 2,400個 × $21.00 = $50,400。189,000 − 50,400 = $138,600 で一致する。",
+        "references": ["ASC 330-10-30-9", "ASC 330-10-30-13"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Effect of the Cost Flow Assumption on Pretax Income",
+        "instruction": "Determine the amount by which Year 5 pretax income under FIFO would exceed Year 5 pretax income under the weighted-average method for Product ZX-9. Enter the amount as a positive number in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 4260,
+        "tolerance": 2,
+        "explanation": "FIFO cost of goods sold = 189,000 - 54,660 = $134,340. Weighted-average cost of goods sold = $138,600. FIFO cost of goods sold is lower by 138,600 - 134,340 = $4,260, so pretax income under FIFO is higher by $4,260. The same difference appears in ending inventory: 54,660 - 50,400 = $4,260.",
+        "explanationJa": "| | FIFO | 加重平均 |\n| --- | --- | --- |\n| 販売可能額 | 189,000 | 189,000 |\n| 期末在庫 | 54,660 | 50,400 |\n| 売上原価 | 134,340 | 138,600 |\n\n売上原価の差 = 138,600 − 134,340 = **$4,260**\n\n物価上昇局面では FIFO の方が売上原価が小さくなるため、税引前利益は **$4,260 大きくなる**。期末在庫の差（54,660 − 50,400 = 4,260）と一致する。",
+        "references": ["ASC 330-10-30-9", "ASC 330-10-50-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Effect of the Inventory Errors",
+        "instruction": "Using Exhibit 2, determine the misstatement in each reported amount below caused by the two errors, considered together. Enter a positive number if the reported amount is overstated and a negative number if the reported amount is understated. Enter amounts in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Misstatement"],
+          "rows": [
+            "Year 4 cost of goods sold",
+            "Year 4 pretax income",
+            "Year 5 cost of goods sold",
+            "Year 5 pretax income",
+            "Retained earnings at December 31, Year 5"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Year 4 cost of goods sold",
+              "colLabel": "Misstatement",
+              "correctValue": -27000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Year 4 pretax income",
+              "colLabel": "Misstatement",
+              "correctValue": 27000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Year 5 cost of goods sold",
+              "colLabel": "Misstatement",
+              "correctValue": 42000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Year 5 pretax income",
+              "colLabel": "Misstatement",
+              "correctValue": -42000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Retained earnings at December 31, Year 5",
+              "colLabel": "Misstatement",
+              "correctValue": -15000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Cost of goods sold equals beginning inventory plus purchases less ending inventory. Year 4: ending inventory overstated by 27,000 causes cost of goods sold to be understated by 27,000 (entered as -27,000) and pretax income to be overstated by 27,000. Year 5: the overstated beginning inventory causes cost of goods sold to be overstated by 27,000, and the understated ending inventory of 15,000 causes cost of goods sold to be overstated by a further 15,000, for a total overstatement of 42,000; pretax income is therefore understated by 42,000. Retained earnings: the Year 4 error is counterbalancing, so the 27,000 overstatement of Year 4 income is offset by the 27,000 understatement of Year 5 income and has no cumulative effect at December 31, Year 5. Only the Year 5 ending inventory error remains, leaving retained earnings understated by 15,000.",
+        "explanationJa": "売上原価 = 期首在庫 + 仕入 − 期末在庫、という関係から機械的に判定する。\n\n**Year 4**（期末在庫が $27,000 過大）\n- 期末在庫が過大 → 売上原価が **$27,000 過小** → 表示は −27,000\n- 売上原価が過小 → 税引前利益が **$27,000 過大** → 表示は +27,000\n\n**Year 5**（期首在庫が $27,000 過大 + 期末在庫が $15,000 過小）\n- 期首在庫が過大 → 売上原価 +27,000\n- 期末在庫が過小 → 売上原価 +15,000\n- 合計で売上原価が **$42,000 過大** → 表示は +42,000\n- 税引前利益は **$42,000 過小** → 表示は −42,000\n\n**Year 5 期末の利益剰余金**\n- Year 4 の誤謬は2期で相殺（counterbalancing）: +27,000 と −27,000 で累積効果ゼロ\n- 残るのは Year 5 期末在庫の過小計上のみ → 利益剰余金は **$15,000 過小** → 表示は −15,000",
+        "references": ["ASC 250-10-45-23", "ASC 330-10-30-1"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Corrected Year 5 Cost of Goods Sold",
+        "instruction": "Using Exhibit 2 and Exhibit 3, determine Kestrel's corrected Year 5 cost of goods sold. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 860000,
+        "tolerance": 0,
+        "explanation": "Reported Year 5 cost of goods sold of $902,000 is overstated by $42,000: $27,000 from the overstated beginning inventory and $15,000 from the omitted ending inventory. Corrected cost of goods sold = 902,000 - 42,000 = $860,000.",
+        "explanationJa": "報告値 $902,000 は $42,000 過大であった。\n\n- 期首在庫の過大計上による過大分: 27,000\n- 期末在庫の計上漏れによる過大分: 15,000\n\n修正後売上原価 = 902,000 − 42,000 = **$860,000**\n\n（参考）修正後の税引前利益は 157,000 + 42,000 = $199,000 となる。",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-45-24"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Nature of the Year 4 Error",
+        "instruction": "Select the statement that best describes the December 31, Year 4 inventory error described in item 1 of Exhibit 2.",
+        "answerType": "select",
+        "options": [
+          "Counterbalancing — it self-corrects in the Year 5 financial statements",
+          "Noncounterbalancing — it requires a prior period adjustment in Year 6",
+          "Counterbalancing — but only if the Year 5 ending inventory is also misstated",
+          "Noncounterbalancing — the effect remains in retained earnings indefinitely"
+        ],
+        "correctAnswer": "Counterbalancing — it self-corrects in the Year 5 financial statements",
+        "explanation": "An ending inventory error is counterbalancing: the amount that overstates Year 4 income becomes the beginning inventory that understates Year 5 income by the same amount, so the cumulative effect on retained earnings is eliminated by the end of Year 5. Self-correction is a property of the error itself and does not depend on whether the Year 5 ending inventory is also misstated. Because the Year 4 financial statements have been issued, the prior period is still restated when the comparative statements are presented, but the balance sheet at December 31, Year 5 is unaffected by this error.",
+        "explanationJa": "期末在庫の誤謬は **counterbalancing error（自動相殺型の誤謬）** である。\n\nYear 4 の期末在庫過大 → Year 4 利益が過大\nYear 5 の期首在庫過大 → Year 5 利益が同額過小\n\nしたがって Year 5 末時点で利益剰余金への累積影響はゼロになる。自己相殺は誤謬そのものの性質であり、Year 5 期末在庫が別途誤っているかどうかとは無関係である。\n\nなお Year 4 の財務諸表は既に発行済みのため、比較財務諸表を表示する際には Year 4 を修正再表示（restatement）する必要がある。",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-50-7"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research: Correction of an Error",
+        "instruction": "Cite the FASB Accounting Standards Codification paragraph that requires an error in previously issued financial statements to be reported as an error correction by restating the prior-period financial statements. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "250-10-45-23",
+        "explanation": "ASC 250-10-45-23 requires that any error in the financial statements of a prior period discovered after the financial statements are issued be reported as an error correction, by restating the prior-period financial statements.",
+        "explanationJa": "ASC 250-10-45-23 は、発行済みの過年度財務諸表に誤謬が発見された場合、**過年度の財務諸表を修正再表示（restatement）** して誤謬の訂正として報告することを求めている。\n\n累積的影響額は、比較表示される最も古い期の期首利益剰余金に対する修正として処理する。会計方針の変更（retrospective application）とは区別すること。",
+        "references": ["ASC 250-10-45-23"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
+  }
+]

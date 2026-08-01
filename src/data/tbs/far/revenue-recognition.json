@@ -265,5 +265,153 @@
     "difficulty": "advanced",
     "estimatedMinutes": 28,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-rev-003",
+    "subject": "FAR",
+    "topic": "Revenue Recognition",
+    "title": "ASC 606: Transaction Price, Allocation, and Contract Balances",
+    "scenario": "Vantage Systems Inc. is a calendar-year entity that sells network hardware together with installation and technical support services. On October 1, Year 5 Vantage entered into a contract with Halcyon Corp.\n\n**Exhibit 1** sets out the terms of the contract, **Exhibit 2** provides the standalone selling prices of the promised goods and services, and **Exhibit 3** summarizes the amounts recorded through December 31, Year 5. Vantage has concluded that the hardware, the installation services, and the technical support are each a separate performance obligation.\n\nDetermine the amounts Vantage should report for the year ended December 31, Year 5. Ignore income taxes.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Contract with Halcyon Corp — Terms",
+        "content": "Contract signed October 1, Year 5. Vantage promises to:\n\n1. Deliver 40 network appliances. Control transferred to Halcyon on **November 15, Year 5**.\n2. Install and configure the appliances. The installation was **completed December 1, Year 5**. The installation does not significantly modify or customize the hardware.\n3. Provide technical support for **24 months beginning December 1, Year 5**. Vantage transfers control of this service evenly over the support period.\n\n**Consideration**\n\n- Fixed consideration of **$960,000**, payable as follows: **$500,000 was paid by Halcyon on November 1, Year 5**; the remaining **$460,000 becomes payable only after Vantage completes the first 12 months of technical support (November 30, Year 6)**.\n- A **performance bonus of $120,000** is payable at the end of the 24-month support period if the **integrated system meets the contractual acceptance standards**. Those standards are assessed for the arrangement as a whole and measure the delivered hardware's performance against specification, the completeness and quality of the installation, and the responsiveness of technical support over the support period. Satisfaction of all three performance obligations contributes to meeting the standards, and the bonus is not attributable to any one of them. There are only two possible outcomes: the bonus is earned in full or it is not earned. Management assesses the probability that the acceptance standards will be met at **80%** and has concluded that it is probable that a significant reversal of cumulative revenue recognized will not occur.\n- Vantage will provide Halcyon a **$40,000 cooperative advertising allowance**, settled by reducing the final payment. Vantage does not receive a distinct good or service in exchange for the allowance.\n\n**Other information**\n\n- The contract does not contain a significant financing component; the payment schedule reflects industry practice.\n- Vantage paid a $30,000 sales commission to obtain the contract, which it capitalized as a contract cost asset.\n- The hardware delivered cost Vantage $420,000."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Standalone Selling Prices",
+        "content": "Vantage regularly sells each of the following separately at the prices shown.\n\n| Performance obligation | Standalone selling price |\n| --- | --- |\n| Hardware | $700,000 |\n| Installation | $140,000 |\n| Technical support | $460,000 |\n| **Total** | **$1,300,000** |\n\nA competitor publicly quotes $690,000 for comparable hardware and $475,000 for a comparable 24-month support arrangement."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Amounts Recorded Through December 31, Year 5",
+        "content": "- Cash received from Halcyon through December 31, Year 5: **$500,000** (received November 1, Year 5).\n- Amounts billed to Halcyon through December 31, Year 5: **none**.\n- Revenue recorded on the contract through December 31, Year 5: **none**. Vantage has deferred all recognition pending completion of this analysis.\n- The cooperative advertising allowance has not yet been settled at December 31, Year 5."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Transaction Price",
+        "instruction": "Determine the transaction price of the Halcyon contract at December 31, Year 5. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 1040000,
+        "tolerance": 0,
+        "explanation": "The transaction price is the consideration to which the entity expects to be entitled, adjusted for variable consideration and for consideration payable to a customer. The fixed consideration is $960,000. The performance bonus is variable consideration; because there are only two possible outcomes, the most likely amount is the better predictor, and the most likely outcome is that the bonus is earned, so $120,000 is added. Because it is probable that a significant reversal will not occur, no amount is constrained. The $40,000 cooperative advertising allowance is consideration payable to a customer for which Vantage receives no distinct good or service, so it reduces the transaction price. Transaction price = 960,000 + 120,000 - 40,000 = $1,040,000.",
+        "explanationJa": "取引価格 = 企業が権利を得ると見込む対価。変動対価と顧客に支払う対価を反映させる。\n\n| 構成要素 | 金額 |\n| --- | --- |\n| 固定対価 | 960,000 |\n| 業績ボーナス（変動対価） | +120,000 |\n| 協賛広告アローワンス（顧客に支払う対価） | −40,000 |\n| **取引価格** | **1,040,000** |\n\n**変動対価の見積り**: 結果が「獲得する／しない」の2通りしかないため **most likely amount（最頻値法）** が適切。80%の確率で獲得と見込むため全額 120,000 を含める。累積収益の重大な戻入れが生じない可能性が高い（probable）ため、制限（constraint）による減額はしない。\n\n**顧客に支払う対価**: 独立した財・サービスの対価でないため収益の減額として取引価格から控除する。",
+        "references": ["ASC 606-10-32-2", "ASC 606-10-32-8", "ASC 606-10-32-25"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Allocation of the Transaction Price",
+        "instruction": "Allocate the transaction price to each performance obligation using the relative standalone selling prices in Exhibit 2. Enter each amount in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Allocated transaction price"],
+          "rows": ["Hardware", "Installation", "Technical support"],
+          "cells": [
+            {
+              "rowLabel": "Hardware",
+              "colLabel": "Allocated transaction price",
+              "correctValue": 560000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Installation",
+              "colLabel": "Allocated transaction price",
+              "correctValue": 112000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Technical support",
+              "colLabel": "Allocated transaction price",
+              "correctValue": 368000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "The transaction price is allocated to each performance obligation in proportion to its standalone selling price. Total standalone selling prices are $1,300,000, so each obligation receives 1,040,000 / 1,300,000 = 80% of its standalone selling price. Hardware: 700,000 x 80% = $560,000. Installation: 140,000 x 80% = $112,000. Technical support: 460,000 x 80% = $368,000. The allocated amounts total $1,040,000. Before applying the proportional method, the exception for allocating variable consideration to a single performance obligation must be considered. That exception applies only when the variable payment terms relate specifically to the entity's efforts to satisfy one performance obligation, or to a specific outcome of satisfying it, and allocating the entire amount to that obligation is consistent with the allocation objective. Here the bonus depends on acceptance standards assessed for the arrangement as a whole, to which the hardware, the installation, and the support all contribute, so it does not relate specifically to any single performance obligation and the exception does not apply. The $120,000 is therefore included in the amount allocated proportionately. The competitor's quoted prices are not used because Vantage has observable standalone selling prices of its own.",
+        "explanationJa": "取引価格は各履行義務の**独立販売価格の比率**で配分する。\n\n配分率 = 取引価格 ÷ 独立販売価格合計 = 1,040,000 ÷ 1,300,000 = **80%**\n\n| 履行義務 | 独立販売価格 | 配分額 |\n| --- | --- | --- |\n| ハードウェア | 700,000 | 700,000 × 80% = **560,000** |\n| 据付 | 140,000 | 140,000 × 80% = **112,000** |\n| 技術サポート | 460,000 | 460,000 × 80% = **368,000** |\n| 合計 | 1,300,000 | **1,040,000** |\n\n**比例配分の前に「特定の履行義務への配分」の例外を検討する**\n\n変動対価は、次の2要件を**両方**満たす場合に限り、特定の履行義務（または区別できる財・サービス）に**全額を配分**しなければならない。\n\n1. 変動的な支払条件が、その履行義務を充足するための企業の努力、またはその充足による**特定の成果**に個別に関連していること\n2. 全額をその履行義務に配分することが、配分目的（企業が権利を得ると見込む対価を各履行義務に描写すること）と整合すること\n\n本問のボーナスは、ハードウェアの性能・据付の品質・サポートの対応力を合わせた**統合システム全体の受入基準**に紐づいており、いずれか一つの履行義務に個別に関連するものではない。したがって要件1を満たさず例外は適用できず、$120,000 を含めた取引価格全体を独立販売価格比で比例配分する。\n\nもしボーナスがサポートの成果のみに紐づいていれば、全額を技術サポートに配分することになる。この判断の分岐が得点差になりやすい。\n\nなお、自社に観察可能な独立販売価格があるため、競合他社の提示価格は使用しない。",
+        "references": [
+          "ASC 606-10-32-31",
+          "ASC 606-10-32-32",
+          "ASC 606-10-32-39",
+          "ASC 606-10-32-40"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Revenue Recognized in Year 5",
+        "instruction": "Determine the total revenue Vantage should recognize on the Halcyon contract for the year ended December 31, Year 5. Round to the nearest whole dollar and enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 687333,
+        "tolerance": 2,
+        "explanation": "Revenue is recognized when each performance obligation is satisfied. The hardware is satisfied at a point in time when control transferred on November 15, Year 5, so $560,000 is recognized. The installation was completed December 1, Year 5, so $112,000 is recognized. The technical support is satisfied over time evenly across 24 months beginning December 1, Year 5, so one month is earned in Year 5: 368,000 x 1/24 = $15,333. Total Year 5 revenue = 560,000 + 112,000 + 15,333 = $687,333.",
+        "explanationJa": "各履行義務の充足時点で収益を認識する。\n\n| 履行義務 | 充足 | Year 5 認識額 |\n| --- | --- | --- |\n| ハードウェア | 11/15 に支配移転（一時点） | 560,000 |\n| 据付 | 12/1 に完了（一時点） | 112,000 |\n| 技術サポート | 12/1 開始の24ヶ月にわたり均等（一定期間） | 368,000 × 1/24 = 15,333 |\n| **合計** | | **687,333** |\n\nサポートは Year 5 中に **1ヶ月分（12月分）**しか経過していない点に注意する。",
+        "references": [
+          "ASC 606-10-25-23",
+          "ASC 606-10-25-27",
+          "ASC 606-10-25-30"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Contract Asset at December 31, Year 5",
+        "instruction": "Determine the contract asset that Vantage should report at December 31, Year 5. Round to the nearest whole dollar and enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 187333,
+        "tolerance": 2,
+        "explanation": "A contract asset arises when an entity has satisfied a performance obligation but its right to consideration is conditional on something other than the passage of time. Revenue recognized through December 31, Year 5 is $687,333, while consideration received is $500,000 and nothing has been billed. The remaining $460,000 becomes payable only after Vantage completes 12 months of support, and the bonus depends on meeting the acceptance standards, so neither is an unconditional right to consideration. Contract asset = 687,333 - 500,000 = $187,333.",
+        "explanationJa": "**契約資産**は、履行義務を充足したが対価を受け取る権利が「時の経過以外の条件」に依存している場合に生じる。\n\n認識済み収益 687,333 − 受領済み対価 500,000 = **$187,333**\n\n残額 $460,000 はサポート12ヶ月完了後でなければ請求できず、ボーナス $120,000 も受入基準の達成が条件のため、いずれも**無条件の権利（受取債権）ではない**。したがって差額は受取債権ではなく契約資産として表示する。\n\nもし受領額が認識済み収益を上回っていれば、逆に契約負債を計上することになる。",
+        "references": ["ASC 606-10-45-1", "ASC 606-10-45-3", "ASC 606-10-45-4"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Method for Estimating the Performance Bonus",
+        "instruction": "Select the method that better predicts the amount of consideration to which Vantage will be entitled for the $120,000 performance bonus described in Exhibit 1.",
+        "answerType": "select",
+        "options": [
+          "Most likely amount",
+          "Expected value",
+          "Residual approach",
+          "Adjusted market assessment approach"
+        ],
+        "correctAnswer": "Most likely amount",
+        "explanation": "Variable consideration is estimated using either the expected value or the most likely amount, whichever better predicts the amount to which the entity will be entitled. The most likely amount is appropriate when the contract has only two possible outcomes, which is the case here because the bonus is either earned in full or not earned at all. The expected value, a probability-weighted sum, is better suited to contracts with a large number of possible outcomes. The residual approach and the adjusted market assessment approach are methods of estimating a standalone selling price, not variable consideration.",
+        "explanationJa": "変動対価は **expected value（期待値法）** と **most likely amount（最頻値法）** のうち、権利を得る金額をより適切に予測する方法で見積もる。\n\n- **最頻値法**: 起こり得る結果が**2つしかない**契約に適する → 本問はボーナスを「全額獲得する／しない」の2択のため該当\n- **期待値法**: 起こり得る結果が**多数ある**契約に適する（確率加重平均）\n\n残余アプローチ（residual approach）と調整済市場評価アプローチ（adjusted market assessment approach）は**独立販売価格**の見積方法であり、変動対価の見積方法ではない。",
+        "references": ["ASC 606-10-32-8", "ASC 606-10-32-34"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Support Revenue in Year 6",
+        "instruction": "Determine the revenue Vantage will recognize on the technical support performance obligation for the year ended December 31, Year 6, assuming the estimate of the transaction price does not change. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 184000,
+        "tolerance": 1,
+        "explanation": "The technical support is satisfied evenly over the 24-month period that began December 1, Year 5, so 12 of the 24 months fall in Year 6. Revenue = 368,000 x 12/24 = $184,000.",
+        "explanationJa": "技術サポートは Year 5 の12月1日から24ヶ月にわたり均等に充足される。Year 6 には **12ヶ月分**が属する。\n\n368,000 × 12/24 = **$184,000**\n\n（残りの11ヶ月分 368,000 × 11/24 = $168,667 は Year 7 に認識される。1 + 12 + 11 = 24ヶ月で整合する。）",
+        "references": ["ASC 606-10-25-27", "ASC 606-10-25-31"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research: Allocating the Transaction Price",
+        "instruction": "Cite the FASB Accounting Standards Codification paragraph that requires an entity to allocate the transaction price to each performance obligation on a relative standalone selling price basis. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "606-10-32-31",
+        "explanation": "ASC 606-10-32-31 requires an entity to allocate the transaction price to each performance obligation identified in the contract on a relative standalone selling price basis, except for the specified exceptions for discounts and variable consideration.",
+        "explanationJa": "ASC 606-10-32-31 は、取引価格を契約で識別された各履行義務に**独立販売価格の比率**で配分することを求めている。\n\n例外として、値引きの配分（ASC 606-10-32-36以降）と変動対価の配分（ASC 606-10-32-39以降）について別途の定めがあるが、本問はいずれにも該当しないため原則どおり比例配分する。",
+        "references": ["ASC 606-10-32-31"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]

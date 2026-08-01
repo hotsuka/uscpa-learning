@@ -133,5 +133,127 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 25,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-nfp-002",
+    "subject": "FAR",
+    "topic": "Not-for-Profit",
+    "title": "Contributions and Net Asset Classification for a Not-for-Profit Entity",
+    "scenario": "Harborview Community Center is a not-for-profit entity that reports on a calendar-year basis. The controller is preparing the statement of activities for the year ended December 31, Year 5 and must determine the amount and classification of contribution revenue and the ending balances of each net asset class.\n\nThe net asset balances at the beginning of Year 5 are shown in **Exhibit 1**. Contributions and other donor transactions occurring during Year 5 are described in **Exhibit 2**. Other Year 5 activity is summarized in **Exhibit 3**.\n\nHarborview's accounting policy is to report a restriction as satisfied when the restricted resources are expended for the specified purpose, and to report a restriction on a contribution of long-lived assets as satisfied when the asset is placed in service. Round all amounts to the nearest whole dollar. Ignore income taxes.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Net Assets at January 1, Year 5",
+        "content": "| Net asset class | Balance |\n| --- | --- |\n| Net assets without donor restrictions | $820,000 |\n| Net assets with donor restrictions | 460,000 |\n| **Total net assets** | **$1,280,000** |\n\nOf the beginning balance of net assets with donor restrictions, $95,000 related to contributions received in prior years that were restricted to the Center's after-school tutoring program."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Contributions and Donor Transactions During Year 5",
+        "content": "1. Cash contributions of $315,000 were received from the annual fund drive. Donors placed no restrictions on their use.\n2. On December 31, Year 5, a donor signed an unconditional promise to pay the Center $50,000 at the end of each of the next four years, with the first payment due December 31, Year 6. The Center measures the promise using a discount rate of 6%. The donor did not limit the use of the amounts promised to any particular program.\n3. A corporation promised $100,000 to the Center on the condition that the Center raise $100,000 in matching gifts from other donors by June 30, Year 6. As of December 31, Year 5, the Center had raised $40,000 of qualifying matching gifts. The corporation may withhold the entire amount if the matching goal is not met.\n4. A donor contributed $120,000 in cash that the donor specified must be used to purchase playground equipment. During Year 5 the Center used $85,000 of that cash to purchase qualifying equipment, which was placed in service in Year 5. The remaining cash was unspent at December 31, Year 5.\n5. A local attorney provided legal services to the Center at no charge. The services required specialized legal skills, were provided by an individual possessing those skills, and would have been purchased from a law firm if they had not been donated. Comparable services would have cost $18,000.\n6. Community members contributed 500 hours answering telephones and serving meals at Center events. The Center estimates the value of these hours at $12,000. The services do not require specialized skills and do not create or enhance a nonfinancial asset.\n7. A donor contributed a computer system with a fair value of $26,000. The donor placed no restrictions on the asset or on its use.\n8. During Year 5 the Center incurred $95,000 of qualifying expenses for the after-school tutoring program, satisfying the restriction on the prior-year contributions described in Exhibit 1."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Other Year 5 Activity",
+        "content": "| Item | Amount |\n| --- | --- |\n| Program service fees earned from participants (no donor restrictions) | $410,000 |\n| Investment return on board-designated investments (no donor restrictions) | 34,000 |\n| Total expenses for Year 5, including the donated legal services and all depreciation | 690,000 |\n\nAll Year 5 expenses were incurred for activities reported in net assets without donor restrictions. During Year 5 the governing board designated $200,000 of net assets without donor restrictions for a future building reserve. No donor restrictions were released other than those described in Exhibit 2."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Measurement of the Multiyear Promise",
+        "instruction": "Determine the amount at which the four-year unconditional promise to give is measured on December 31, Year 5. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 173255,
+        "tolerance": 10,
+        "explanation": "An unconditional promise to give cash in future periods is measured at the present value of the future cash flows. The present value factor for an ordinary annuity of four payments at 6% is (1 - 1.06^-4) / 0.06 = 3.465106. Multiplying $50,000 by 3.465106 gives $173,255.",
+        "explanationJa": "将来複数年にわたる無条件の寄付約束は、将来キャッシュ・フローの**現在価値**で測定する。\n\n1. 各年の受取額 $50,000、期間4年、割引率6%\n2. 年金現価係数 = (1 - 1.06^-4) ÷ 0.06 = **3.465106**\n3. 現在価値 = 50,000 × 3.465106 = **$173,255**\n\n約束は Year 5年12月31日に行われ、初回受取は Year 6年12月31日であるため、Year 5に割引額の戻入れ（利息）は生じない。",
+        "references": ["ASC 958-605-30-6", "ASC 958-605-25-8"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Contribution Revenue — With Donor Restrictions",
+        "instruction": "Determine the total contribution revenue recognized in Year 5 that increases net assets with donor restrictions. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 293255,
+        "tolerance": 10,
+        "explanation": "The $173,255 present value of the multiyear promise is restricted because the amounts are not available until future periods, and the $120,000 cash contribution is restricted to the purchase of playground equipment. Total = $293,255. The corporate promise is conditional and is not recognized.",
+        "explanationJa": "使途制約・時期制約のある寄付収益を集計する。\n\n1. 複数年約束の現在価値 **$173,255** — 将来期間まで使用できないため時期制約が付されたものとして扱う\n2. 遊具購入目的の現金寄付 **$120,000** — 使途制約あり\n3. マッチング条件付きの$100,000 — **条件付き約束**であり、条件（$100,000のマッチング達成）が未充足のため収益認識しない\n4. 合計 = 173,255 + 120,000 = **$293,255**",
+        "references": ["ASC 958-605-25-5", "ASC 958-605-45-4"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Contribution Revenue — Without Donor Restrictions",
+        "instruction": "Determine the total contribution revenue recognized in Year 5 that increases net assets without donor restrictions. Exclude amounts reclassified from net assets with donor restrictions, program service fees, and investment return. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 359000,
+        "tolerance": 1,
+        "explanation": "Unrestricted cash contributions of $315,000, contributed legal services of $18,000, and the donated computer system of $26,000 total $359,000. The 500 volunteer hours are not recognized. Program service fees and investment return are exchange and investment amounts rather than contributions.",
+        "explanationJa": "制約のない寄付収益を集計する。\n\n1. 年次募金の現金寄付 **$315,000**\n2. 弁護士による役務提供 **$18,000** — 専門技能を要し、寄贈がなければ購入していたため認識要件を満たす\n3. 現物寄付のコンピュータ **$26,000** — 公正価値で認識\n4. ボランティア500時間 $12,000 — 専門技能を要さず、非金融資産の創出・増価にも該当しないため**認識しない**\n5. 合計 = 315,000 + 18,000 + 26,000 = **$359,000**\n\n参加費$410,000は交換取引による収益、投資収益$34,000は投資からのリターンであり、いずれも寄付収益ではない。",
+        "references": ["ASC 958-605-25-2", "ASC 958-605-25-16"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Net Assets Released From Restrictions",
+        "instruction": "Determine the total amount reclassified from net assets with donor restrictions to net assets without donor restrictions in Year 5. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 180000,
+        "tolerance": 1,
+        "explanation": "The $95,000 of prior-year tutoring contributions was released when qualifying program expenses were incurred, and $85,000 of the playground contribution was released when the equipment was purchased and placed in service. Total reclassification = $180,000.",
+        "explanationJa": "制約の充足による純資産の振替額を集計する。\n\n1. 前年からの学習支援プログラム目的の寄付 **$95,000** — Year 5に対応する費用を計上して制約充足\n2. 遊具購入目的の寄付のうち支出済み **$85,000** — 設備を取得し供用開始した時点で制約充足\n3. 合計 = **$180,000**\n\n遊具寄付の残り$35,000は未支出のため、引き続き使途制約付純資産に留まる。",
+        "references": ["ASC 958-205-45-9", "ASC 958-605-45-4"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Ending Net Assets With Donor Restrictions",
+        "instruction": "Determine the balance of net assets with donor restrictions at December 31, Year 5. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 573255,
+        "tolerance": 10,
+        "explanation": "Beginning balance of $460,000 plus restricted contribution revenue of $293,255 less reclassifications of $180,000 equals $573,255.",
+        "explanationJa": "使途制約付純資産をロールフォワードする。\n\n1. 期首残高 $460,000\n2. 制約付寄付収益 +$293,255（複数年約束173,255 + 遊具目的120,000）\n3. 制約充足による振替 △$180,000（95,000 + 85,000）\n4. 期末残高 = 460,000 + 293,255 - 180,000 = **$573,255**\n\n条件付き約束$100,000は認識していないため、残高に影響しない。",
+        "references": ["ASC 958-205-45-1", "ASC 958-205-45-9"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Items Not Recognized as Contribution Revenue",
+        "instruction": "Select every item below that is NOT recognized as contribution revenue in Year 5.",
+        "answerType": "multiselect",
+        "options": [
+          "The $100,000 promise conditioned on raising matching gifts",
+          "The 500 hours of volunteer time valued at $12,000",
+          "The donated computer system with a fair value of $26,000",
+          "The legal services provided by the attorney, valued at $18,000",
+          "The $120,000 contribution restricted to the purchase of playground equipment",
+          "The four-year unconditional promise of $50,000 per year"
+        ],
+        "correctAnswer": [
+          "The $100,000 promise conditioned on raising matching gifts",
+          "The 500 hours of volunteer time valued at $12,000"
+        ],
+        "explanation": "A promise that contains a donor-imposed condition, here a measurable barrier plus a right of return, is not recognized until the barrier is overcome; only $40,000 of the required $100,000 in matching gifts had been raised. Volunteer services that neither require specialized skills nor create or enhance a nonfinancial asset fail the recognition criteria. The other four items meet the criteria for recognition in Year 5.",
+        "explanationJa": "認識要件を満たさない項目を選ぶ。\n\n**認識しない**\n- マッチング条件付きの$100,000 — 測定可能な障壁と返還請求権を伴う**条件付き約束**。Year 5末時点で$40,000しか集まっておらず障壁は未達\n- ボランティア500時間 $12,000 — 専門技能を要さず、非金融資産を創出・増価もしないため役務寄付の認識要件を満たさない\n\n**認識する**\n- 現物寄付のコンピュータ $26,000（公正価値で認識）\n- 弁護士の役務提供 $18,000（専門技能・購入代替性の要件を満たす）\n- 遊具目的の現金寄付 $120,000（使途制約付として認識）\n- 4年間の無条件約束（現在価値$173,255で認識）",
+        "references": ["ASC 958-605-25-11", "ASC 958-605-25-16"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research — Recognition of Contributed Services",
+        "instruction": "Which section of the FASB Accounting Standards Codification sets out the criteria for recognizing contributions of services? Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "958-605-25-16",
+        "explanation": "ASC 958-605-25-16 requires recognition of contributed services only if they create or enhance nonfinancial assets, or if they require specialized skills, are provided by individuals possessing those skills, and would typically need to be purchased if not provided by donation.",
+        "explanationJa": "ASC 958-605-25-16は役務の寄付を認識する要件を定めている。すなわち、(a) 非金融資産を創出または増価させる場合、または (b) 専門技能を要し、その技能を有する者が提供し、寄贈がなければ通常購入する必要があった場合に限り認識する。本問の弁護士の役務は(b)を満たし、ボランティアの電話対応・配膳はいずれも満たさない。",
+        "references": ["ASC 958-605-25-16"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 27,
+    "source": "FAR TBS Practice (original)"
   }
 ]

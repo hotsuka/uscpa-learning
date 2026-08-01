@@ -312,5 +312,234 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 24,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-cash-002",
+    "subject": "FAR",
+    "topic": "Cash",
+    "title": "Bank Reconciliation and Balance Sheet Presentation of Cash",
+    "scenario": "Ridgefield Supply Company maintains its general checking account at First National Bank. The controller is preparing the December 31, Year 1 bank reconciliation and determining the amount to report as cash and cash equivalents in the December 31, Year 1 statement of financial position.\n\nThe December bank statement is summarized in **Exhibit 1** and the general ledger cash account for December is summarized in **Exhibit 2**. A comparison of the bank statement with the accounting records produced the information in **Exhibit 3**. Other cash-related balances held by the company at December 31, Year 1 are listed in **Exhibit 4**.\n\nRidgefield uses the form of reconciliation that adjusts both the balance per bank and the balance per books to the correct cash balance. Round all amounts to the nearest whole dollar and ignore income taxes.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: First National Bank — December Year 1 Statement Summary",
+        "content": "| Item | Amount |\n| --- | --- |\n| Balance, December 1, Year 1 | $40,150 |\n| Deposits and other credits during December | 99,870 |\n| Checks and other debits during December | (92,700) |\n| **Balance, December 31, Year 1** | **$47,320** |\n\nThe bank statement carries the notation \"Items marked CM/DM are explained on the enclosed advices.\""
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: General Ledger — Cash in Bank (First National Bank)",
+        "content": "| Item | Amount |\n| --- | --- |\n| Balance, December 1, Year 1 | $38,600 |\n| Cash receipts recorded during December | 96,400 |\n| Cash disbursements recorded during December | (91,715) |\n| **Balance, December 31, Year 1** | **$43,285** |\n\nAll December cash receipts were deposited in the First National Bank account, and all December disbursements were made by check from that account."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Information Developed From the Comparison",
+        "content": "1. Deposits recorded by the company on December 30 and 31 totaling $8,450 were not credited by the bank until January Year 2.\n2. Checks written and recorded by the company in December totaling $12,730 had not cleared the bank as of December 31, Year 1.\n3. The bank charged the account a $95 service charge for December. No entry has been made on the company's books.\n4. A check for $1,240 received from customer J. Rowe and deposited in December was returned by the bank marked \"NSF.\" The bank also charged the account a $30 NSF fee. The company intends to bill Mr. Rowe for the full amount charged to the account. No entry has been made on the company's books.\n5. An electronic funds transfer of $2,400 for the December insurance premium was paid directly by the bank under a standing authorization. No entry has been made on the company's books.\n6. The bank collected a $5,000 note receivable from a customer on the company's behalf, together with $250 of interest, and charged a $50 collection fee. The net amount of $5,200 was credited to the account. No entry has been made on the company's books.\n7. Check No. 5148 was written for $860 to pay the December utility bill, but was recorded in the company's cash disbursements journal as $680. The bank paid the check for the correct amount.\n8. A check for $1,500 written by another depositor of First National Bank was erroneously charged to Ridgefield's account in December. The bank confirmed the error and will correct it in January Year 2."
+      },
+      {
+        "id": "ex-4",
+        "title": "Exhibit 4: Other Cash-Related Balances at December 31, Year 1",
+        "content": "| Item | Amount |\n| --- | --- |\n| Petty cash fund held on the premises (imprest basis, all currency and coin) | $500 |\n| Certificate of deposit purchased December 1, Year 1, original maturity 90 days | 20,000 |\n| U.S. Treasury note purchased November 1, Year 1, original maturity six months | 30,000 |\n| Cash on deposit at Merchants Bank, legally restricted as a compensating balance under a five-year term loan | 10,000 |\n| Payroll account at Second National Bank — negative balance | (3,100) |\n\nSecond National Bank is a separate financial institution, and Ridgefield has no right of offset between the payroll account and any other account. Ridgefield classifies as cash equivalents all short-term, highly liquid investments with an original maturity of three months or less."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Adjusted Cash Balance",
+        "instruction": "Determine the correct (adjusted) cash balance of the First National Bank general checking account at December 31, Year 1. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 44540,
+        "tolerance": 1,
+        "explanation": "Balance per bank of $47,320 plus deposits in transit of $8,450, less outstanding checks of $12,730, plus the $1,500 check charged in error by the bank equals $44,540. The books side produces the same amount: $43,285 - $95 - $1,270 - $2,400 + $5,200 - $180 = $44,540.",
+        "explanationJa": "両側から同じ修正後残高に到達することを確認する。\n\n**銀行側**\n1. 銀行残高 $47,320\n2. 未達預金 +$8,450\n3. 未取立小切手 △$12,730\n4. 他の預金者の小切手が誤って引き落とされた分 +$1,500\n5. 修正後 = **$44,540**\n\n**帳簿側**\n1. 帳簿残高 $43,285\n2. 銀行手数料 △$95\n3. NSF小切手と手数料 △$1,270\n4. 保険料の自動引落 △$2,400\n5. 手形の取立入金（純額）+$5,200\n6. 記帳誤り（860 - 680）△$180\n7. 修正後 = **$44,540**",
+        "references": ["ASC 305-10-05-1"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Adjusting Journal Entry on the Company's Books",
+        "instruction": "Prepare the single compound December 31, Year 1 journal entry required on the company's books to bring the cash account to the correct balance. Enter whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Cash",
+            "Accounts receivable",
+            "Bank service charge expense",
+            "Utilities expense",
+            "Insurance expense",
+            "Notes receivable",
+            "Interest revenue"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 1255,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Debit",
+              "correctValue": 1270,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Bank service charge expense",
+              "colLabel": "Debit",
+              "correctValue": 145,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Bank service charge expense",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Utilities expense",
+              "colLabel": "Debit",
+              "correctValue": 180,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Utilities expense",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Insurance expense",
+              "colLabel": "Debit",
+              "correctValue": 2400,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Insurance expense",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Notes receivable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Notes receivable",
+              "colLabel": "Credit",
+              "correctValue": 5000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Interest revenue",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Interest revenue",
+              "colLabel": "Credit",
+              "correctValue": 250,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Only the book-side reconciling items are journalized. Cash increases by the net of the note proceeds of $5,200 less the $95 service charge, the $1,270 NSF item, the $2,400 electronic payment, and the $180 recording error, or $1,255. The NSF check and fee are charged back to the customer as a receivable of $1,270. The $95 service charge and the $50 collection fee total $145 of bank charges. The understatement of check No. 5148 adds $180 of utilities expense, the electronic transfer records $2,400 of insurance expense, and the collection removes the $5,000 note and records $250 of interest revenue.",
+        "explanationJa": "仕訳が必要なのは**帳簿側の調整項目だけ**である。未達預金・未取立小切手・銀行の誤記入は銀行側の項目なので仕訳しない。\n\n1. Cash（純増）= 44,540 - 43,285 = **$1,255**（借方）\n2. Accounts receivable = NSF小切手1,240 + NSF手数料30 = **$1,270**（借方。顧客に請求するため債権に戻す）\n3. Bank service charge expense = 月次手数料95 + 取立手数料50 = **$145**（借方）\n4. Utilities expense = 860 - 680 = **$180**（借方。転記誤りの追加計上）\n5. Insurance expense = **$2,400**（借方。自動引落の未記帳）\n6. Notes receivable = **$5,000**（貸方。取立済みのため消去）\n7. Interest revenue = **$250**（貸方）\n\n借方合計 1,255 + 1,270 + 145 + 180 + 2,400 = 5,250、貸方合計 5,000 + 250 = 5,250で一致する。",
+        "references": ["ASC 305-10-05-1", "ASC 310-10-35-1"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Items Requiring an Entry on the Books",
+        "instruction": "Select every reconciling item below that requires an adjusting journal entry on the company's books at December 31, Year 1.",
+        "answerType": "multiselect",
+        "options": [
+          "Deposits in transit of $8,450",
+          "Outstanding checks totaling $12,730",
+          "Bank service charge of $95",
+          "NSF check of $1,240 plus the related $30 NSF fee",
+          "Note collected by the bank, net proceeds of $5,200",
+          "Check for $1,500 drawn by another depositor and charged to the account in error"
+        ],
+        "correctAnswer": [
+          "Bank service charge of $95",
+          "NSF check of $1,240 plus the related $30 NSF fee",
+          "Note collected by the bank, net proceeds of $5,200"
+        ],
+        "explanation": "Book-side items are those the company has not yet recorded: the service charge, the returned check with its fee, and the note collected by the bank. Deposits in transit, outstanding checks, and the bank's own posting error are bank-side items that the bank will clear or correct, so no entry is made on the company's books.",
+        "explanationJa": "調整項目は「帳簿側」と「銀行側」に分けて考える。仕訳が必要なのは**会社がまだ記帳していない事実**だけである。\n\n**仕訳が必要（帳簿側）**\n- 銀行手数料 $95\n- NSF小切手 $1,240 と手数料 $30\n- 銀行が取り立てた手形の入金（純額 $5,200）\n\n**仕訳が不要（銀行側）**\n- 未達預金 $8,450 — 会社は既に記帳済みで、銀行が翌期に処理する\n- 未取立小切手 $12,730 — 会社は既に記帳済み\n- 他の預金者の小切手 $1,500 — 銀行側の誤りであり銀行が訂正する\n\nなお保険料の自動引落と小切手の転記誤りも帳簿側の項目だが、この設問の選択肢には含まれていない。",
+        "references": ["ASC 305-10-05-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Cash and Cash Equivalents Reported",
+        "instruction": "Determine the amount reported as cash and cash equivalents in the December 31, Year 1 statement of financial position. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 65040,
+        "tolerance": 1,
+        "explanation": "The corrected general checking balance of $44,540, the $500 petty cash fund, and the $20,000 certificate of deposit with an original maturity of 90 days total $65,040. The six-month Treasury note, the legally restricted compensating balance, and the negative payroll account balance are excluded.",
+        "explanationJa": "現金及び現金同等物に含めるものを1件ずつ判定する。\n\n1. 修正後の当座預金 **$44,540** — 含める\n2. 小口現金 **$500** — 含める\n3. 譲渡性預金（当初満期90日）**$20,000** — 当初満期3か月以内なので現金同等物に**含める**\n4. 米国債（当初満期6か月）$30,000 — 当初満期が3か月超なので**含めない**\n5. 使途制限のある補償残高 $10,000 — 制限付きのため**含めない**\n6. 給与口座のマイナス残高 $3,100 — 別銀行で相殺権がないため**負債**として表示し、現金から控除しない\n\n合計 = 44,540 + 500 + 20,000 = **$65,040**",
+        "references": ["ASC 230-10-20", "ASC 210-10-45-1"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Presentation of the Negative Payroll Account",
+        "instruction": "Select how the $3,100 negative balance in the payroll account at Second National Bank should be presented in the December 31, Year 1 statement of financial position.",
+        "answerType": "select",
+        "options": [
+          "As a current liability; it is not netted against the cash held at First National Bank",
+          "As a reduction of cash and cash equivalents, because all bank accounts are aggregated",
+          "As a noncurrent liability, because the account is expected to remain negative",
+          "As a reduction of accounts payable, because the overdraft arose from vendor payments"
+        ],
+        "correctAnswer": "As a current liability; it is not netted against the cash held at First National Bank",
+        "explanation": "A negative bank balance represents an obligation to the bank. Offsetting is permitted only when a right of offset exists, generally when the accounts are with the same institution. Because Second National Bank is a separate institution and there is no right of offset, the $3,100 is reported as a current liability.",
+        "explanationJa": "銀行口座の残高がマイナスになった場合、それは銀行に対する**債務**である。\n\n相殺（ネッティング）が認められるのは相殺権が存在する場合、一般には同一銀行内の口座間に限られる。本問ではSecond National Bankは別の金融機関であり相殺権もないため、$3,100は現金と相殺せず**流動負債**として表示する。返済は短期に行われるため非流動負債にはならない。",
+        "references": ["ASC 210-20-45-1"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Amounts Excluded From Cash and Cash Equivalents",
+        "instruction": "Determine the total of the Exhibit 4 asset balances that are excluded from cash and cash equivalents at December 31, Year 1. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 40000,
+        "tolerance": 1,
+        "explanation": "The $30,000 Treasury note has an original maturity of six months and therefore is not a cash equivalent. The $10,000 compensating balance is legally restricted and is excluded from cash and cash equivalents. Total excluded = $40,000.",
+        "explanationJa": "Exhibit 4の**資産**のうち現金及び現金同等物から除外されるものを合計する。\n\n1. 米国債 $30,000 — 当初満期6か月。現金同等物は「当初満期3か月以内」が要件なので除外\n2. 補償残高 $10,000 — 5年ローンに紐づく法的な使途制限があるため除外（長期借入に対応するため非流動資産として表示）\n3. 合計 = **$40,000**\n\n給与口座のマイナス残高$3,100は資産ではなく負債であり、この合計には含めない。",
+        "references": ["ASC 230-10-20", "ASC 210-10-45-4"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research — Restricted Cash and Current Assets",
+        "instruction": "Which section of the FASB Accounting Standards Codification states that cash restricted as to withdrawal or use for other than current operations is excluded from current assets? Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "210-10-45-4",
+        "explanation": "ASC 210-10-45-4 lists resources excluded from current assets, including cash and cash equivalents restricted as to withdrawal or use for other than current operations.",
+        "explanationJa": "ASC 210-10-45-4は流動資産から除外される項目を列挙しており、その中に「通常の営業以外の目的のために引出しまたは使用が制限されている現金及び現金同等物」が含まれる。本問の補償残高$10,000がこれに該当する。",
+        "references": ["ASC 210-10-45-4"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
   }
 ]

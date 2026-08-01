@@ -254,5 +254,144 @@
     "difficulty": "advanced",
     "estimatedMinutes": 30,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-err-002",
+    "subject": "FAR",
+    "topic": "Accounting Changes & Errors",
+    "title": "Accounting Change, Change in Estimate, and Correction of Prior Period Errors",
+    "scenario": "Calder Manufacturing Company is preparing its December 31, Year 3 comparative financial statements, which will present Year 3 and Year 2. Before recording any of the matters described below, the company's accountant prepared the preliminary amounts shown in **Exhibit 1**.\n\nEffective January 1, Year 3, Calder changed its inventory costing method. Data supporting the change is presented in **Exhibit 2**. During the year-end closing process the company also identified matters relating to two long-lived assets, summarized in **Exhibit 3**, and two additional items, summarized in **Exhibit 4**.\n\nAll amounts are material. The company applies each accounting change and error correction in accordance with U.S. GAAP. Ignore income taxes and round all amounts to the nearest whole dollar.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Preliminary Amounts Before Any Adjustments",
+        "content": "| Item | Amount |\n| --- | --- |\n| Retained earnings, January 1, Year 3, as previously reported | $2,450,000 |\n| Net income for Year 3, as preliminarily computed | 610,000 |\n| Net income for Year 2, as previously reported | 520,000 |\n| Dividends declared during Year 3 | 150,000 |\n| Dividends declared during Year 2 | 120,000 |\n\nThe preliminary Year 3 net income was computed using the weighted-average inventory costing method described in Exhibit 2 and includes depreciation of $90,000 on the equipment described in Exhibit 3. It includes no depreciation on the machine described in Exhibit 3."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Change in Inventory Costing Method",
+        "content": "Effective January 1, Year 3, Calder changed from the first-in, first-out (FIFO) method to the weighted-average method of costing inventory. Management concluded that the weighted-average method is preferable and that the effects of the change can be determined for all prior periods presented.\n\n| Inventory balance | FIFO | Weighted average |\n| --- | --- | --- |\n| December 31, Year 1 | $700,000 | $655,000 |\n| December 31, Year 2 | 820,000 | 760,000 |\n| December 31, Year 3 | Not determined | 905,000 |\n\nThere was no inventory on hand before December 31, Year 1 that had not been sold by that date, and no inventory write-downs were required in any year."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Long-Lived Assets",
+        "content": "**Machine.** A machine was purchased and placed in service on January 1, Year 2 at a cost of $480,000. The machine has an eight-year useful life and no residual value, and the company uses the straight-line method. The purchase was correctly capitalized, but no depreciation on the machine has ever been recorded in any year, including Year 3.\n\n**Equipment.** Equipment was purchased and placed in service on January 1, Year 1 at a cost of $900,000. It was originally assigned a ten-year useful life with no residual value, and depreciation was correctly recorded on a straight-line basis in Year 1 and Year 2. On January 1, Year 3, based on the manufacturer's revised guidance and the company's operating experience, management revised the total useful life of the equipment to seven years from the date of purchase and estimated a residual value of $40,000. Depreciation of $90,000 on this equipment was recorded in the preliminary Year 3 amounts using the original estimates."
+      },
+      {
+        "id": "ex-4",
+        "title": "Exhibit 4: Other Items Identified",
+        "content": "**Insurance.** On July 1, Year 2, Calder paid $72,000 for a two-year insurance policy covering the period July 1, Year 2 through June 30, Year 4. The entire $72,000 was charged to insurance expense in Year 2, and no insurance expense relating to this policy has been recorded in the preliminary Year 3 amounts. The policy provides coverage evenly over its term.\n\n**Wages.** Wages of $28,000 earned by employees during the last week of December Year 2 were not accrued at December 31, Year 2. The wages were paid on January 5, Year 3 and were charged to wages expense in the preliminary Year 3 amounts."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Cumulative Effect of the Inventory Method Change",
+        "instruction": "Determine the cumulative effect of the change in inventory costing method on the retained earnings balance at January 1, Year 3. Enter the amount in whole dollars, no commas, and enter a decrease as a negative number.",
+        "answerType": "number",
+        "correctAnswer": -60000,
+        "tolerance": 1,
+        "explanation": "The cumulative effect equals the difference in the inventory balance at the beginning of Year 3, that is, at December 31, Year 2: $760,000 - $820,000 = -$60,000. Lower inventory means higher cumulative cost of goods sold, so retained earnings decreases by $60,000.",
+        "explanationJa": "会計方針の変更は遡及適用され、累積的影響額は変更後の期首利益剰余金に反映される。\n\n1. 累積的影響額は Year 3 期首（= Year 2年12月31日）の棚卸資産の差額で測る\n2. 加重平均法 $760,000 - FIFO $820,000 = **△$60,000**\n3. 棚卸資産が減る＝累積の売上原価が増えるため、期首利益剰余金は $60,000 減少する\n\nYear 3期首残高の調整であるため、Year 3の当期純利益には影響しない（Year 3の暫定値は既に加重平均法で算定されている）。",
+        "references": ["ASC 250-10-45-5", "ASC 250-10-45-6"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Restated Year 2 Net Income",
+        "instruction": "Determine the Year 2 net income as it should be presented in the Year 3 comparative financial statements. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 471000,
+        "tolerance": 1,
+        "explanation": "Start with $520,000 as previously reported. The inventory method change reduces Year 2 income by ($60,000) - ($45,000) = $15,000. The omitted machine depreciation of $480,000 / 8 = $60,000 reduces income. The insurance premium overcharged to Year 2 of $72,000 - ($3,000 x 6) = $54,000 increases income. The unaccrued wages of $28,000 reduce income. Restated Year 2 net income = $520,000 - $15,000 - $60,000 + $54,000 - $28,000 = $471,000.",
+        "explanationJa": "比較財務諸表の Year 2 は、方針変更の遡及適用と誤謬の訂正の両方を反映して修正再表示する。\n\n1. 従来報告の Year 2 純利益 $520,000\n2. 棚卸資産の方針変更: 期末差額 △60,000 - 期首差額 △45,000 = **△$15,000**\n3. 機械の減価償却の計上漏れ: 480,000 ÷ 8年 = **△$60,000**\n4. 保険料の過大計上: 72,000 - (72,000 ÷ 24か月 × 6か月 = 18,000) = **+$54,000**\n5. 未払賃金の計上漏れ: **△$28,000**\n6. 修正後 = 520,000 - 15,000 - 60,000 + 54,000 - 28,000 = **$471,000**\n\n設備の見積り変更は将来にわたる処理なので、Year 2 は修正しない。",
+        "references": ["ASC 250-10-45-5", "ASC 250-10-45-23"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Adjusted January 1, Year 3 Retained Earnings",
+        "instruction": "Determine the retained earnings balance at January 1, Year 3 after all required adjustments. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 2356000,
+        "tolerance": 1,
+        "explanation": "Beginning with $2,450,000 as previously reported: subtract the $60,000 cumulative effect of the inventory method change, subtract the $60,000 of machine depreciation omitted in Year 2, add the $54,000 of insurance that benefits later periods, and subtract the $28,000 of unaccrued wages. The adjusted balance is $2,356,000.",
+        "explanationJa": "Year 3 期首利益剰余金を、方針変更の累積的影響と過年度誤謬の訂正で調整する。\n\n1. 従来報告の期首残高 $2,450,000\n2. 棚卸資産の方針変更の累積的影響 **△$60,000**\n3. 機械の Year 2 減価償却の計上漏れ **△$60,000**\n4. Year 2末時点で前払いとなっている保険料 **+$54,000**（$3,000/月 × 18か月分は Year 3以降の費用）\n5. 未払賃金の計上漏れ **△$28,000**\n6. 調整後 = 2,450,000 - 60,000 - 60,000 + 54,000 - 28,000 = **$2,356,000**\n\n設備の見積り変更（将来処理）と Year 3 の配当は期首残高に影響しない。",
+        "references": ["ASC 250-10-45-5", "ASC 250-10-45-23"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Revised Depreciation on the Equipment",
+        "instruction": "Determine the depreciation expense on the equipment for Year 3 after giving effect to the revised useful life and residual value. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 136000,
+        "tolerance": 1,
+        "explanation": "Original annual depreciation was $900,000 / 10 = $90,000, so accumulated depreciation at January 1, Year 3 was $180,000 and the carrying amount was $720,000. The revised total life of seven years leaves five years remaining. Revised depreciation = ($720,000 - $40,000) / 5 = $136,000.",
+        "explanationJa": "会計上の見積りの変更は**将来にわたって**処理し、過年度は修正しない。\n\n1. 当初の年間減価償却費 = 900,000 ÷ 10年 = $90,000\n2. Year 1・Year 2 の減価償却累計額 = 90,000 × 2年 = $180,000\n3. Year 3期首の帳簿価額 = 900,000 - 180,000 = **$720,000**\n4. 改定後の総耐用年数7年 - 経過2年 = **残存耐用年数5年**\n5. Year 3 の減価償却費 = (720,000 - 40,000) ÷ 5年 = **$136,000**\n\n暫定値には$90,000が計上済みなので、追加で$46,000を計上する必要がある。",
+        "references": ["ASC 250-10-45-17", "ASC 360-10-35-22"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Adjusted Year 3 Net Income",
+        "instruction": "Determine the Year 3 net income after all required adjustments. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 496000,
+        "tolerance": 1,
+        "explanation": "Start with the preliminary $610,000. Record the machine's Year 3 depreciation of $60,000. Record the additional equipment depreciation of $136,000 - $90,000 = $46,000. Record the Year 3 insurance expense of $3,000 x 12 = $36,000. Remove the $28,000 of December Year 2 wages that were charged to Year 3. Adjusted Year 3 net income = $610,000 - $60,000 - $46,000 - $36,000 + $28,000 = $496,000.",
+        "explanationJa": "Year 3 の暫定純利益に、当期に帰属すべき費用の追加・除外を反映する。\n\n1. 暫定純利益 $610,000\n2. 機械の Year 3 減価償却費 **△$60,000**（480,000 ÷ 8年）\n3. 設備の追加減価償却費 **△$46,000**（136,000 - 既計上90,000）\n4. Year 3 の保険料 **△$36,000**（$3,000/月 × 12か月）\n5. Year 2 に帰属する賃金が Year 3 の費用になっている分の戻し **+$28,000**\n6. 調整後 = 610,000 - 60,000 - 46,000 - 36,000 + 28,000 = **$496,000**\n\n棚卸資産の方針変更は Year 3 の暫定値に既に反映済みのため、ここでの追加調整はない。",
+        "references": ["ASC 250-10-45-17", "ASC 250-10-45-23"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Treatment of the Revised Useful Life and Residual Value",
+        "instruction": "Select how the revision of the equipment's useful life and residual value is accounted for.",
+        "answerType": "select",
+        "options": [
+          "Prospectively, by allocating the remaining carrying amount less the new residual value over the remaining useful life",
+          "Retrospectively, by restating the Year 1 and Year 2 comparative financial statements",
+          "As a prior period adjustment to the January 1, Year 3 retained earnings balance",
+          "As a separate cumulative-effect line item reported in Year 3 income"
+        ],
+        "correctAnswer": "Prospectively, by allocating the remaining carrying amount less the new residual value over the remaining useful life",
+        "explanation": "A change in the estimated useful life or residual value of a depreciable asset is a change in accounting estimate. It is accounted for in the period of change and future periods, with no restatement of prior periods and no adjustment to opening retained earnings.",
+        "explanationJa": "耐用年数や残存価額の見直しは**会計上の見積りの変更**である。\n\n見積りの変更は変更した期以降に将来にわたって処理し、過年度の財務諸表の修正再表示も期首利益剰余金の調整も行わない。また、累積的影響額を当期の損益に単独の項目として表示することもしない。\n\n本問では Year 3期首の帳簿価額 $720,000 から新しい残存価額 $40,000 を控除し、残存耐用年数5年にわたって配分する。",
+        "references": ["ASC 250-10-45-17", "ASC 250-10-45-18"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Items Adjusting Opening Retained Earnings",
+        "instruction": "Select every item below that requires an adjustment to the January 1, Year 3 retained earnings balance as previously reported.",
+        "answerType": "multiselect",
+        "options": [
+          "The change from the FIFO method to the weighted-average method",
+          "The Year 2 depreciation on the machine that was never recorded",
+          "The revision of the equipment's useful life and residual value",
+          "The portion of the two-year insurance premium that benefits periods after December 31, Year 2",
+          "The accrued wages of $28,000 unrecorded at December 31, Year 2",
+          "The Year 3 depreciation on the machine acquired January 1, Year 2"
+        ],
+        "correctAnswer": [
+          "The change from the FIFO method to the weighted-average method",
+          "The Year 2 depreciation on the machine that was never recorded",
+          "The portion of the two-year insurance premium that benefits periods after December 31, Year 2",
+          "The accrued wages of $28,000 unrecorded at December 31, Year 2"
+        ],
+        "explanation": "A change in accounting principle applied retrospectively and the correction of errors affecting periods before Year 3 are both reflected in the opening balance of retained earnings. The revision of the equipment's estimates is applied prospectively, and the machine's Year 3 depreciation is a Year 3 expense, so neither affects the opening balance.",
+        "explanationJa": "期首利益剰余金を修正するのは、**遡及適用される方針変更**と**Year 3より前の期間に影響する誤謬**である。\n\n**調整が必要**\n- FIFOから加重平均法への変更（遡及適用の累積的影響 △60,000）\n- Year 2 の機械の減価償却の計上漏れ（△60,000）\n- 保険料のうち Year 2末時点で前払いとなっていた部分（+54,000）\n- Year 2末の未払賃金の計上漏れ（△28,000）\n\n**調整が不要**\n- 設備の耐用年数・残存価額の見直し — 将来にわたる処理であり過年度に遡らない\n- 機械の Year 3 分の減価償却 — Year 3 の費用であり期首残高には関係しない",
+        "references": [
+          "ASC 250-10-45-5",
+          "ASC 250-10-45-17",
+          "ASC 250-10-45-23"
+        ]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]

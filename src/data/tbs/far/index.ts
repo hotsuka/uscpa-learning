@@ -15,6 +15,8 @@ import changesErrors from "./changes-errors.json";
 import ratios from "./ratios.json";
 import cash from "./cash.json";
 import nfp from "./nfp.json";
+import inventory from "./inventory.json";
+import foreignCurrency from "./foreign-currency.json";
 
 export const farTBSQuestions: TBSQuestion[] = [
   ...(revenueRecognition as TBSQuestion[]),
@@ -33,6 +35,8 @@ export const farTBSQuestions: TBSQuestion[] = [
   ...(ratios as TBSQuestion[]),
   ...(cash as TBSQuestion[]),
   ...(nfp as TBSQuestion[]),
+  ...(inventory as TBSQuestion[]),
+  ...(foreignCurrency as TBSQuestion[]),
 ];
 
 export function getTBSQuestionById(id: string): TBSQuestion | undefined {

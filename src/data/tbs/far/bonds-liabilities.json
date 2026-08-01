@@ -400,5 +400,165 @@
     "difficulty": "advanced",
     "estimatedMinutes": 25,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-liab-001",
+    "subject": "FAR",
+    "topic": "Bonds & Liabilities",
+    "title": "Loss Contingencies, Product Warranties, and Compensated Absences",
+    "scenario": "Ridgeline Manufacturing Co. is preparing its financial statements for the year ended December 31, Year 6. You have been asked to determine the amounts that must be accrued as liabilities and to identify the matters that require note disclosure.\n\n**Exhibit 1** summarizes the legal and environmental matters described in the memorandum from Ridgeline's general counsel. **Exhibit 2** contains the product warranty data, and **Exhibit 3** contains payroll-related information. Ignore income taxes and present value considerations throughout.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Memorandum from General Counsel — Loss and Gain Contingencies",
+        "content": "| Matter | Assessment | Estimated amount |\n| --- | --- | --- |\n| Patent infringement suit | An unfavorable outcome is **probable** | The loss is estimated to fall between $400,000 and $900,000. No amount within that range is a better estimate than any other amount. |\n| Environmental remediation | Remediation of the Dorset site is **probable** and is required by an existing regulation | The loss is estimated to fall between $500,000 and $800,000, and $650,000 is the best estimate within that range. |\n| Product liability class action | An unfavorable outcome is **reasonably possible** | The loss is estimated at $1,200,000. |\n| Breach of contract claim | An unfavorable outcome is **remote** | The former distributor is claiming $300,000. |\n| Gain contingency on the supplier claim | Ridgeline's recovery from a supplier of defective components is **probable** | The expected recovery is $250,000. |\n\nAll amounts above can be reasonably estimated. Each matter arose from an event that occurred on or before December 31, Year 6."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Product Warranty Data",
+        "content": "Ridgeline sells equipment with a two-year assurance-type warranty that covers defects in materials and workmanship. The warranty is not sold separately.\n\n| | Amount |\n| --- | --- |\n| Warranty liability at January 1, Year 6 | $285,000 |\n| Year 6 sales | $12,400,000 |\n| Estimated warranty cost as a percentage of sales | 3% |\n| Actual warranty costs incurred during Year 6 (parts, labor, and freight) | $341,000 |\n\nManagement estimates that **60%** of the December 31, Year 6 warranty liability will be settled within one year of the balance sheet date.\n\nYear 5 sales were $11,600,000, and warranty costs incurred during Year 5 were $329,000."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Payroll-Related Information at December 31, Year 6",
+        "content": "- Employees earn 15 vacation days for each year of service. Vacation rights **vest**, accumulate, and carry forward to future years. Payment is probable.\n- Unused vacation days at December 31, Year 6 total **1,850 days**.\n- The average daily wage rate expected to be paid when those days are taken is **$246**.\n- Employer payroll taxes equal to **8% of wages** are payable when the vacation wages are paid.\n- Employees also accumulate sick days. Sick pay rights **do not vest** and are forfeited on termination. Unused sick days total 900 days. Ridgeline's policy is not to accrue nonvesting sick pay.\n- The officer bonus plan was terminated in Year 5, and no bonus is payable for Year 6.\n- Trade accounts payable total $1,340,000."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Liability Accrued for Contingencies",
+        "instruction": "Using Exhibit 1, determine the total amount that Ridgeline must accrue as a liability at December 31, Year 6 for the matters listed. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 1050000,
+        "tolerance": 0,
+        "explanation": "A loss contingency is accrued only when it is probable that a liability has been incurred and the amount can be reasonably estimated. The patent infringement suit is probable and estimable, but no amount within the range of $400,000 to $900,000 is a better estimate than any other, so the low end of the range, $400,000, is accrued. The environmental remediation is probable and $650,000 is the best estimate within its range, so $650,000 is accrued. The product liability class action is only reasonably possible and the breach of contract claim is remote, so neither is accrued. A gain contingency is not recognized because doing so would recognize revenue before it is realized. Total accrued = 400,000 + 650,000 = $1,050,000.",
+        "explanationJa": "損失の偶発事象は「発生の可能性が **probable**」かつ「金額が合理的に見積可能」の両方を満たす場合にのみ負債計上する。\n\n| 事案 | 可能性 | 計上額 |\n| --- | --- | --- |\n| 特許侵害訴訟 | probable | **400,000** |\n| 環境浄化 | probable | **650,000** |\n| 製造物責任集団訴訟 | reasonably possible | 0 |\n| 契約違反の請求 | remote | 0 |\n| 供給業者への請求（利得） | — | 0 |\n\n**範囲で見積もられる損失の扱い**\n- 範囲内に最善見積りがある場合 → その金額（環境浄化 = 650,000）\n- 範囲内のどの金額も他より優れていない場合 → **範囲の下限**（特許訴訟 = 400,000）\n\n利得の偶発事象は、実現前に収益を認識することになるため計上しない。\n\n合計 = 400,000 + 650,000 = **$1,050,000**",
+        "references": ["ASC 450-20-25-2", "ASC 450-20-30-1", "ASC 450-30-25-1"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Matters Not Accrued",
+        "instruction": "Select all of the matters in Exhibit 1 for which no amount is recognized in Ridgeline's December 31, Year 6 balance sheet.",
+        "answerType": "multiselect",
+        "options": [
+          "Patent infringement suit",
+          "Environmental remediation",
+          "Product liability class action",
+          "Breach of contract claim",
+          "Gain contingency on the supplier claim"
+        ],
+        "correctAnswer": [
+          "Product liability class action",
+          "Breach of contract claim",
+          "Gain contingency on the supplier claim"
+        ],
+        "explanation": "The patent infringement suit and the environmental remediation are both probable and reasonably estimable, so both are accrued. The product liability class action is only reasonably possible, which fails the probable criterion, so it is disclosed but not accrued. The breach of contract claim is remote, so it is neither accrued nor ordinarily disclosed. The gain contingency is not recognized in the balance sheet even though recovery is probable, because gain contingencies are recognized only when realized or realizable.",
+        "explanationJa": "貸借対照表に**計上しない**のは次の3件。\n\n- **製造物責任集団訴訟**: reasonably possible にとどまり probable の要件を満たさない → 注記で開示のみ\n- **契約違反の請求**: remote のため計上も通常の開示も不要\n- **供給業者への請求（利得の偶発事象）**: 回収が probable でも実現・実現可能となるまで認識しない\n\n一方、特許侵害訴訟（下限 400,000）と環境浄化（最善見積り 650,000）は probable かつ見積可能のため計上する。",
+        "references": ["ASC 450-20-25-2", "ASC 450-20-50-3", "ASC 450-30-25-1"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Disclosure for the Patent Infringement Suit",
+        "instruction": "Select the disclosure that Ridgeline must provide in the notes for the patent infringement suit, in addition to the amount accrued.",
+        "answerType": "select",
+        "options": [
+          "The possible additional loss of up to $500,000",
+          "The possible additional loss of up to $900,000",
+          "No further disclosure, because the low end of the range has been accrued",
+          "The midpoint of the range, $650,000"
+        ],
+        "correctAnswer": "The possible additional loss of up to $500,000",
+        "explanation": "When the accrued amount is the low end of a range, it is reasonably possible that a loss in excess of the amount accrued has been incurred. In that case the entity discloses the nature of the contingency and the additional exposure. The accrual is $400,000 and the upper end of the range is $900,000, so the additional exposure that must be disclosed is 900,000 - 400,000 = $500,000. The $900,000 figure is the total possible loss rather than the exposure in excess of the amount already recorded.",
+        "explanationJa": "範囲の**下限**を計上した場合、計上額を超える損失が発生する可能性が reasonably possible であるため、偶発事象の内容とともに**追加のエクスポージャー**を開示しなければならない。\n\n開示すべき追加額 = 範囲の上限 − 計上額\n= 900,000 − 400,000 = **$500,000**\n\n$900,000 は損失の総額であって、既に計上済みの金額を超える追加分ではない点に注意する。",
+        "references": ["ASC 450-20-50-1", "ASC 450-20-50-3", "ASC 450-20-50-4"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Warranty Liability Rollforward",
+        "instruction": "Using Exhibit 2, complete the Year 6 rollforward of the product warranty liability. Enter each amount as a positive number in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Balance, January 1, Year 6",
+            "Warranty expense accrued",
+            "Warranty costs incurred",
+            "Balance, December 31, Year 6"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Balance, January 1, Year 6",
+              "colLabel": "Amount",
+              "correctValue": 285000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Warranty expense accrued",
+              "colLabel": "Amount",
+              "correctValue": 372000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Warranty costs incurred",
+              "colLabel": "Amount",
+              "correctValue": 341000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Balance, December 31, Year 6",
+              "colLabel": "Amount",
+              "correctValue": 316000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "An assurance-type warranty is accounted for as a loss contingency; the estimated cost is accrued in the period of sale under the matching principle. Warranty expense for Year 6 = 12,400,000 x 3% = $372,000. Costs incurred during the period reduce the liability rather than being charged to expense. Ending balance = 285,000 + 372,000 - 341,000 = $316,000.",
+        "explanationJa": "保証型（assurance-type）の製品保証は損失の偶発事象として扱い、販売した期に見積費用を費用計上する。\n\n| 項目 | 金額 |\n| --- | --- |\n| 期首残高 | 285,000 |\n| 保証費用の計上 (12,400,000 × 3%) | +372,000 |\n| 実際に発生した保証費用 | −341,000 |\n| **期末残高** | **316,000** |\n\n実際に発生した費用は費用計上ではなく**引当金の取崩**として処理する点が重要。",
+        "references": ["ASC 460-10-25-5", "ASC 450-20-25-2"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Current Portion of the Warranty Liability",
+        "instruction": "Determine the amount of the December 31, Year 6 warranty liability that Ridgeline should classify as a current liability. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 189600,
+        "tolerance": 0,
+        "explanation": "A liability is classified as current to the extent it is expected to be settled within one year of the balance sheet date or within the operating cycle if longer. Management expects 60% of the $316,000 ending balance to be settled within one year: 316,000 x 60% = $189,600. The remaining $126,400 is classified as noncurrent.",
+        "explanationJa": "負債は、貸借対照表日から1年以内（または営業循環期間が1年超ならその期間内）に決済が見込まれる部分を**流動負債**に区分する。\n\n流動部分 = 316,000 × 60% = **$189,600**\n非流動部分 = 316,000 × 40% = $126,400\n\n2年保証のため、期末残高を流動・非流動に区分表示する必要がある。",
+        "references": ["ASC 210-10-45-5", "ASC 210-10-45-8"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Liability for Compensated Absences",
+        "instruction": "Using Exhibit 3, determine the total liability for compensated absences that Ridgeline must report at December 31, Year 6. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 491508,
+        "tolerance": 1,
+        "explanation": "An employer accrues a liability for compensated absences when the obligation relates to services already rendered, the rights vest or accumulate, payment is probable, and the amount can be reasonably estimated. The vacation days meet all four conditions and are measured using the wage rate expected to be paid: 1,850 days x $246 = $455,100. Employer payroll taxes that will be paid on those wages are part of the obligation: 455,100 x 8% = $36,408. Total liability = 455,100 + 36,408 = $491,508. The sick pay does not vest, so accrual is not required and Ridgeline's policy is not to accrue it.",
+        "explanationJa": "有給休暇（compensated absences）は次の4要件をすべて満たす場合に未払計上する。\n\n1. 既に提供された役務に起因する義務であること\n2. 権利が確定（vest）または繰越（accumulate）されること\n3. 支払が probable であること\n4. 金額が合理的に見積可能であること\n\n**計算**\n- 未消化有給休暇: 1,850日 × $246 = $455,100（支払時に見込まれる賃金率で測定）\n- 事業主負担の給与税: 455,100 × 8% = $36,408\n- 合計 = 455,100 + 36,408 = **$491,508**\n\n病気休暇は**権利が確定しない（nonvesting）**ため未払計上は要求されず、当社方針でも計上しない。",
+        "references": ["ASC 710-10-25-1", "ASC 710-10-25-2"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research: Accrual of a Loss Contingency",
+        "instruction": "Cite the FASB Accounting Standards Codification paragraph that sets out the two conditions that must both be met before an estimated loss from a loss contingency is accrued by a charge to income. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "450-20-25-2",
+        "explanation": "ASC 450-20-25-2 requires accrual of an estimated loss from a loss contingency by a charge to income if it is probable that an asset had been impaired or a liability had been incurred at the date of the financial statements and the amount of loss can be reasonably estimated.",
+        "explanationJa": "ASC 450-20-25-2 は、損失の偶発事象について次の**両方**が満たされる場合に費用処理を伴う負債計上を求めている。\n\n1. 財務諸表日時点で資産の減損または負債の発生が **probable** であること\n2. 損失額が**合理的に見積可能**であること\n\nこれが特許侵害訴訟と環境浄化を計上し、reasonably possible の集団訴訟を計上しない根拠となる。",
+        "references": ["ASC 450-20-25-2"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 26,
+    "source": "FAR TBS Practice (original)"
   }
 ]

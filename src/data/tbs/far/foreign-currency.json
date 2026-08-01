@@ -1,0 +1,158 @@
+[
+  {
+    "id": "far-tbs-fx-001",
+    "subject": "FAR",
+    "topic": "Foreign Currency",
+    "title": "Foreign Currency Denominated Receivables and Payables",
+    "scenario": "Meridian Instruments Inc. is a U.S. company that prepares its financial statements in U.S. dollars and reports on a calendar-year basis. During Year 1 the company entered into several sales and purchase transactions denominated in currencies other than the U.S. dollar. Some of these transactions were settled during Year 1 and others remained unsettled at December 31, Year 1.\n\nThe direct spot exchange rates on the relevant dates are presented in **Exhibit 1**. The transactions are described in **Exhibit 2**, and additional information taken from the Year 1 records is presented in **Exhibit 3**.\n\nMeridian records each transaction using the spot rate on the transaction date, adjusts monetary balances denominated in another currency to the spot rate at each reporting date, and reports the resulting gains and losses in income. Round all amounts to the nearest whole dollar and ignore income taxes.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Direct Spot Exchange Rates (U.S. dollars per unit of currency)",
+        "content": "| Date | Euro (€) | British pound (£) | Japanese yen (¥) |\n| --- | --- | --- | --- |\n| October 20, Year 1 | 1.192 | 1.335 | 0.00905 |\n| November 15, Year 1 | 1.180 | 1.328 | 0.00898 |\n| December 1, Year 1 | 1.165 | 1.320 | 0.00892 |\n| December 18, Year 1 | 1.152 | 1.345 | 0.00888 |\n| December 31, Year 1 | 1.145 | 1.360 | 0.00884 |\n| February 1, Year 2 | 1.178 | 1.290 | 0.00879 |\n| March 10, Year 2 | 1.205 | 1.302 | 0.00875 |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Transactions Denominated in Other Currencies",
+        "content": "**Transaction A.** On November 15, Year 1, Meridian sold laboratory equipment to a customer in Germany for €500,000. Title and control passed to the customer on November 15, Year 1. The customer paid the full €500,000 on March 10, Year 2.\n\n**Transaction B.** On December 1, Year 1, Meridian purchased component inventory from a supplier in the United Kingdom for £300,000 on account. The goods were received on December 1, Year 1 and none of them had been sold or used as of December 31, Year 1. Meridian paid the supplier in full on February 1, Year 2.\n\n**Transaction C.** On October 20, Year 1, Meridian sold instruments to a customer in Japan for ¥60,000,000. The customer paid the full ¥60,000,000 on December 18, Year 1.\n\n**Transaction D.** On December 5, Year 1, Meridian signed a noncancelable purchase order for €200,000 of components to be manufactured and delivered in April Year 2. Neither the goods nor an invoice had been received as of December 31, Year 1, and no payment had been made."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information From the Year 1 Records",
+        "content": "| Item | Amount |\n| --- | --- |\n| Total sales revenue for Year 1 (all currencies, translated to U.S. dollars at the transaction date rates) | $18,400,000 |\n| Accounts receivable denominated in U.S. dollars at December 31, Year 1 | $2,340,000 |\n| Accounts payable denominated in U.S. dollars at December 31, Year 1 | $1,105,000 |\n\nMeridian had no receivables or payables denominated in currencies other than the U.S. dollar at January 1, Year 1, and entered into no transactions denominated in another currency during Year 1 other than those described in Exhibit 2. Meridian did not enter into any contract to fix the exchange rate on any of these amounts."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Euro Receivable at Year End",
+        "instruction": "Determine the carrying amount, in U.S. dollars, of the receivable from the German customer reported in the December 31, Year 1 statement of financial position. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 572500,
+        "tolerance": 1,
+        "explanation": "A receivable denominated in another currency is a monetary item and is adjusted to the year-end spot rate. €500,000 x $1.145 = $572,500.",
+        "explanationJa": "外貨建ての売掛金は**貨幣性項目**であり、決算日の直物レートで換算し直す。\n\n1. 取引日（11月15日）: €500,000 × $1.180 = $590,000 で売上と売掛金を計上\n2. 決算日（12月31日）: €500,000 × $1.145 = **$572,500**\n3. B/S計上額は $572,500\n\n差額 $17,500 は為替差損として Year 1 の損益に計上される。",
+        "references": ["ASC 830-20-30-1", "ASC 830-20-35-2"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Pound Payable at Year End",
+        "instruction": "Determine the carrying amount, in U.S. dollars, of the payable to the United Kingdom supplier reported in the December 31, Year 1 statement of financial position. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 408000,
+        "tolerance": 1,
+        "explanation": "A payable denominated in another currency is a monetary item and is adjusted to the year-end spot rate. £300,000 x $1.360 = $408,000.",
+        "explanationJa": "外貨建ての買掛金も貨幣性項目であり、決算日レートで換算し直す。\n\n1. 取引日（12月1日）: £300,000 × $1.320 = $396,000 で仕入と買掛金を計上\n2. 決算日（12月31日）: £300,000 × $1.360 = **$408,000**\n3. 負債が $12,000 増加するため、同額が為替差損となる。",
+        "references": ["ASC 830-20-30-1", "ASC 830-20-35-2"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "December 31, Year 1 Adjusting Entry",
+        "instruction": "Prepare the single compound December 31, Year 1 adjusting entry required for the balances denominated in other currencies. Enter whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Foreign currency transaction loss",
+            "Accounts receivable (euro-denominated)",
+            "Accounts payable (pound-denominated)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Foreign currency transaction loss",
+              "colLabel": "Debit",
+              "correctValue": 29500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Foreign currency transaction loss",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable (euro-denominated)",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable (euro-denominated)",
+              "colLabel": "Credit",
+              "correctValue": 17500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accounts payable (pound-denominated)",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts payable (pound-denominated)",
+              "colLabel": "Credit",
+              "correctValue": 12000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "The euro receivable falls from $590,000 to $572,500, a $17,500 loss. The pound payable rises from $396,000 to $408,000, a $12,000 loss. The combined debit to the loss account is $29,500. The yen sale was settled on December 18, Year 1, so no year-end adjustment is required for it.",
+        "explanationJa": "決算日に残っている外貨建ての貨幣性項目だけを調整する。\n\n1. ユーロ建て売掛金: 590,000 → 572,500 → 貸方 $17,500（資産の減少）\n2. ポンド建て買掛金: 396,000 → 408,000 → 貸方 $12,000（負債の増加）\n3. 借方 為替差損 = 17,500 + 12,000 = **$29,500**\n\n円建ての売掛金は12月18日に決済済みのため、決算調整は不要である。借方合計と貸方合計はいずれも $29,500 で一致する。",
+        "references": ["ASC 830-20-35-1", "ASC 830-20-45-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Year 1 Net Transaction Gain or Loss",
+        "instruction": "Determine the net foreign currency transaction gain or loss included in Year 1 income from all of the transactions described in Exhibit 2. Enter the amount in whole dollars, no commas, and enter a net loss as a negative number.",
+        "answerType": "number",
+        "correctAnswer": -39700,
+        "tolerance": 1,
+        "explanation": "Transaction A produces a $17,500 loss ($590,000 to $572,500). Transaction B produces a $12,000 loss ($396,000 to $408,000). Transaction C was settled during Year 1: ¥60,000,000 recorded at $543,000 and collected for $532,800, a $10,200 loss. Transaction D required no entry. Net = -$39,700.",
+        "explanationJa": "Year 1中に生じた為替差損益をすべて合計する。\n\n1. 取引A（ユーロ売掛金・未決済）: 572,500 - 590,000 = **△$17,500**\n2. 取引B（ポンド買掛金・未決済）: 396,000 - 408,000 = **△$12,000**\n3. 取引C（円建て売掛金・期中決済）: 取引日 ¥60,000,000 × $0.00905 = $543,000、回収日 ¥60,000,000 × $0.00888 = $532,800 → **△$10,200**\n4. 取引D（購入コミットメント）: 商品の受領も支払もないため、Year 1に仕訳なし\n5. 純額 = -17,500 - 12,000 - 10,200 = **△$39,700**（純損失）",
+        "references": ["ASC 830-20-35-1", "ASC 830-20-35-2"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Year 2 Net Transaction Gain or Loss on Settlement",
+        "instruction": "Determine the net foreign currency transaction gain or loss recognized in Year 2 when the euro receivable and the pound payable are settled. Enter the amount in whole dollars, no commas, and enter a net loss as a negative number.",
+        "answerType": "number",
+        "correctAnswer": 51000,
+        "tolerance": 1,
+        "explanation": "The euro receivable carried at $572,500 is collected on March 10, Year 2 for €500,000 x $1.205 = $602,500, a $30,000 gain. The pound payable carried at $408,000 is settled on February 1, Year 2 for £300,000 x $1.290 = $387,000, a $21,000 gain. Net gain = $51,000.",
+        "explanationJa": "決済時の差額は、**決算日レートで換算した帳簿価額**と決済額の差として Year 2 に計上する。\n\n1. ユーロ売掛金: 回収額 €500,000 × $1.205 = $602,500、期末帳簿価額 $572,500 → **+$30,000**\n2. ポンド買掛金: 支払額 £300,000 × $1.290 = $387,000、期末帳簿価額 $408,000 → **+$21,000**（少ない支払で済んだため利益）\n3. 純額 = 30,000 + 21,000 = **+$51,000**（純利益）\n\n取引全体で見た損益は、Aが 602,500 - 590,000 = +12,500、Bが 396,000 - 387,000 = +9,000 となるが、GAAPでは期間ごとにレート変動を認識する。",
+        "references": ["ASC 830-20-35-1", "ASC 830-20-40-1"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Carrying Amount of the Purchased Inventory",
+        "instruction": "Select the amount at which the component inventory purchased from the United Kingdom supplier is reported in the December 31, Year 1 statement of financial position, assuming its cost does not exceed its net realizable value.",
+        "answerType": "select",
+        "options": ["$396,000", "$408,000", "$387,000", "$390,000"],
+        "correctAnswer": "$396,000",
+        "explanation": "Inventory is a nonmonetary asset. It is recorded using the spot rate on the date of the purchase, £300,000 x $1.320 = $396,000, and is not adjusted for later changes in the exchange rate even though the related payable is adjusted.",
+        "explanationJa": "棚卸資産は**非貨幣性資産**であり、取得日のレートで記録した金額のまま据え置く。\n\n1. 取得日（12月1日）: £300,000 × $1.320 = **$396,000**\n2. 決算日レート $1.360 で換算し直すのは**買掛金だけ**（貨幣性項目）\n3. したがって棚卸資産の計上額は $396,000 のまま\n\n買掛金は $408,000 に修正され、その差額 $12,000 が為替差損となる。棚卸資産と買掛金の金額が一致しなくなる点がこの論点の要である。",
+        "references": ["ASC 830-10-45-18", "ASC 830-20-30-1"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research — Recognition of Transaction Gains and Losses",
+        "instruction": "Which section of the FASB Accounting Standards Codification requires a foreign currency transaction gain or loss to be included in determining net income for the period in which the exchange rate changes? Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "830-20-35-1",
+        "explanation": "ASC 830-20-35-1 provides that a change in exchange rates between the reporting currency and the currency in which a transaction is denominated produces a transaction gain or loss that is included in determining net income for the period in which the rate changes.",
+        "explanationJa": "ASC 830-20-35-1は、外貨建取引について為替レートが変動した期間の**当期純利益**に為替差損益を含めることを定めている。決済まで損益を繰り延べるのではなく、決算日ごとに認識する点が重要である。",
+        "references": ["ASC 830-20-35-1"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
+  }
+]
