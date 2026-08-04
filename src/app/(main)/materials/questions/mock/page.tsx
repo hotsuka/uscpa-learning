@@ -12,6 +12,7 @@ import { MockExamResultDetail } from "@/components/questions/MockExamResultDetai
 import { useTimer } from "@/hooks/useTimer"
 import {
   buildMockExam,
+  countSeenQuestions,
   MOCK_EXAM_QUESTION_COUNT,
   MOCK_EXAM_MINUTES,
   MOCK_EXAM_TARGET_RATE,
@@ -77,7 +78,8 @@ export default function MockExamPage() {
   const pastResults = useMockExamStore((s) => s.results)
 
   const handleStart = (): void => {
-    setEntries(buildMockExam())
+    // 過去の模試で出題済みの問題を避けて未出題から優先的に出す
+    setEntries(buildMockExam(countSeenQuestions(pastResults)))
     setAnswers({})
     setFlagged(new Set())
     setCurrentIndex(0)

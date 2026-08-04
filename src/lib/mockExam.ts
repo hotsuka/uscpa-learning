@@ -19,6 +19,10 @@ export const MOCK_EXAM_TARGET_RATE = 75;
 const AREA_QUOTA: Record<FarArea, number> = { I: 18, II: 17, III: 15 };
 // 同一テーマからの偏り防止
 const MAX_PER_TOPIC = 5;
+// 過去の模試で出題済みの問題に掛ける重み（1回出題されるごとに乗算）。
+// 完全に除外はせず「未出題を強く優先する」挙動にして、
+// 未出題が枯渇したテーマでは出題回数の少ない問題から回るようにする。
+const SEEN_WEIGHT_DECAY = 0.12;
 
 export interface MockExamQuestionEntry {
   question: FARQuestion;
@@ -38,6 +42,42 @@ function shuffleArray<T>(arr: readonly T[]): T[] {
     [copied[i], copied[j]] = [copied[j], copied[i]];
   }
   return copied;
+}
+
+/**
+ * 重み付き非復元抽出（Efraimidis-Spirakis法）。
+ * 各要素に u^(1/w) をキーとして割り当て、上位k件を取ると
+ * 重みに比例した確率での非復元抽出になる。
+ */
+function weightedSample<T>(
+  items: readonly T[],
+  weightOf: (item: T) => number,
+  count: number,
+): T[] {
+  return items
+    .map((item) => ({
+      item,
+      key: Math.pow(Math.random(), 1 / Math.max(weightOf(item), 1e-12)),
+    }))
+    .sort((a, b) => b.key - a.key)
+    .slice(0, count)
+    .map((entry) => entry.item);
+}
+
+/**
+ * 過去の模試結果から questionId ごとの出題回数を集計する。
+ * mockExamStore への依存を避けるため必要最小限の形だけを受け取る。
+ */
+export function countSeenQuestions(
+  results: readonly { answers?: readonly { questionId: string }[] }[],
+): Record<string, number> {
+  const counts: Record<string, number> = {};
+  for (const result of results) {
+    for (const answer of result.answers ?? []) {
+      counts[answer.questionId] = (counts[answer.questionId] ?? 0) + 1;
+    }
+  }
+  return counts;
 }
 
 // QuestionCard と同じ方式で選択肢テキストのみシャッフルする
@@ -66,10 +106,18 @@ function shuffleChoices(question: FARQuestion): {
 
 /**
  * 模試1回分（50問）を層化抽出する。
- * Areaごとに各テーマから最大 MAX_PER_TOPIC 問をランダムに取り、
- * プールから所定数を無作為抽出したうえで全体をシャッフルする。
+ * Areaごとに各テーマから最大 MAX_PER_TOPIC 問を取り、
+ * プールから所定数を抽出したうえで全体をシャッフルする。
+ *
+ * seenCounts（過去の出題回数）を渡すと、未出題の問題を強く優先して抽出する。
+ * テーマ配分は Area 内で均等（従来どおり）。
  */
-export function buildMockExam(): MockExamQuestionEntry[] {
+export function buildMockExam(
+  seenCounts: Record<string, number> = {},
+): MockExamQuestionEntry[] {
+  const weightOf = (question: FARQuestion): number =>
+    Math.pow(SEEN_WEIGHT_DECAY, seenCounts[question.id] ?? 0);
+
   const setsByArea: Record<FarArea, (typeof farQuestionSets)[number][]> = {
     I: [],
     II: [],
@@ -85,9 +133,10 @@ export function buildMockExam(): MockExamQuestionEntry[] {
   for (const area of ["I", "II", "III"] as FarArea[]) {
     const pool: FARQuestion[] = [];
     for (const set of setsByArea[area]) {
-      pool.push(...shuffleArray(set.questions).slice(0, MAX_PER_TOPIC));
+      pool.push(...weightedSample(set.questions, weightOf, MAX_PER_TOPIC));
     }
-    const picked = shuffleArray(pool).slice(0, AREA_QUOTA[area]);
+    // プール段階で未出題が枯渇したテーマがあるため、抽出側でも重みを効かせる
+    const picked = weightedSample(pool, weightOf, AREA_QUOTA[area]);
     for (const question of picked) {
       result.push({ question, area, ...shuffleChoices(question) });
     }
