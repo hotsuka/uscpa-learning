@@ -1,0 +1,1842 @@
+<title>模試の誤答 81問 — 論点別 復習ノート</title>
+<style>
+:root{
+  --paper:#f4f5f0;--paper-2:#eceee6;--card:#fbfbf8;--ink:#16201a;--ink-2:#465049;--ink-3:#6f7973;
+  --rule:#cfd4cb;--rule-2:#dfe3da;--accent:#1d6647;--accent-soft:#dbe8e0;
+  --crit:#9d3129;--crit-soft:#f2e2df;--warn:#8a6414;--warn-soft:#f0e7d0;--good:#2c6f4e;--good-soft:#dcebe1;
+  --mono:"SFMono-Regular","Consolas","Roboto Mono",ui-monospace,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI","Yu Gothic UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#121714;--paper-2:#1a201c;--card:#171d19;--ink:#e6ebe5;--ink-2:#aab3ac;--ink-3:#7d867f;
+  --rule:#2e3833;--rule-2:#262f2a;--accent:#63b391;--accent-soft:#1c2f27;
+  --crit:#e08a80;--crit-soft:#33211f;--warn:#d5ab5c;--warn-soft:#2e2718;--good:#6fbb92;--good-soft:#1b2c22;}}
+:root[data-theme="dark"]{
+  --paper:#121714;--paper-2:#1a201c;--card:#171d19;--ink:#e6ebe5;--ink-2:#aab3ac;--ink-3:#7d867f;
+  --rule:#2e3833;--rule-2:#262f2a;--accent:#63b391;--accent-soft:#1c2f27;
+  --crit:#e08a80;--crit-soft:#33211f;--warn:#d5ab5c;--warn-soft:#2e2718;--good:#6fbb92;--good-soft:#1b2c22;}
+:root[data-theme="light"]{
+  --paper:#f4f5f0;--paper-2:#eceee6;--card:#fbfbf8;--ink:#16201a;--ink-2:#465049;--ink-3:#6f7973;
+  --rule:#cfd4cb;--rule-2:#dfe3da;--accent:#1d6647;--accent-soft:#dbe8e0;
+  --crit:#9d3129;--crit-soft:#f2e2df;--warn:#8a6414;--warn-soft:#f0e7d0;--good:#2c6f4e;--good-soft:#dcebe1;}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.75;margin:0;padding:0 20px 100px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.masthead{padding:52px 0 24px;border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 12px}
+h1{font-family:var(--serif);font-weight:600;font-size:32px;line-height:1.35;margin:0 0 12px;text-wrap:balance}
+.sub-meta{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);margin:0;display:flex;flex-wrap:wrap;gap:4px 18px}
+
+.howto{margin:26px 0 0;padding:18px 22px;background:var(--paper-2);border-left:3px solid var(--accent)}
+.howto p{margin:0 0 8px}
+.howto p:last-child{margin:0}
+.howto b{font-weight:700}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 0}
+.stat{background:var(--paper);padding:14px 16px}
+.stat dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:0 0 4px}
+.stat dd{margin:0;font-family:var(--mono);font-size:23px;font-variant-numeric:tabular-nums;line-height:1.2}
+.stat dd small{font-size:12px;color:var(--ink-3);font-family:var(--sans)}
+
+h2.big{font-family:var(--serif);font-size:21px;font-weight:600;margin:48px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.h2note{color:var(--ink-2);font-size:14.5px;margin:0 0 20px}
+
+.pat{border-left:3px solid var(--accent-soft);padding:2px 0 2px 18px;margin:0 0 22px}
+.pat h3{font-size:16px;margin:0 0 6px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.pat h3 em{font-family:var(--mono);font-style:normal;font-size:11.5px;color:var(--accent);background:var(--accent-soft);padding:1px 7px;border-radius:2px}
+.pat p{margin:0 0 8px}
+.pids{display:flex;flex-wrap:wrap;gap:6px}
+.pids a{text-decoration:none}
+.pids code{font-family:var(--mono);font-size:11.5px;border:1px solid var(--rule);padding:2px 7px;color:var(--ink-2);display:inline-block}
+.pids a:hover code{border-color:var(--accent);color:var(--accent)}
+
+.bar{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule);margin:44px 0 0;padding:10px 0 12px}
+.bar .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bar button{font-family:var(--sans);font-size:12.5px;background:none;border:1px solid var(--rule);color:var(--ink-2);padding:4px 10px;cursor:pointer;line-height:1.5}
+.bar button em{font-family:var(--mono);font-style:normal;font-size:10.5px;color:var(--ink-3);margin-left:6px}
+.bar button:hover{border-color:var(--accent);color:var(--accent)}
+.bar button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.bar button.on em{color:var(--paper)}
+.bar .row+.row{margin-top:8px}
+.bar .prog{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+.topic{margin-top:44px}
+.topic h2{font-family:var(--serif);font-size:20px;font-weight:600;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.topic h2 em{font-family:var(--mono);font-style:normal;font-size:12px;color:var(--ink-3)}
+.lead{color:var(--ink-2);font-size:14.5px;margin:0 0 22px}
+.lead b{color:var(--ink);font-weight:700}
+
+.q{background:var(--card);border:1px solid var(--rule-2);padding:16px 18px;margin:0 0 14px}
+.q.hide{display:none}
+.q.done{opacity:.45}
+.q header{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.q .hd{flex:1;min-width:0}
+.sub{margin:0;font-weight:700;font-size:14.5px;line-height:1.5}
+.ids{margin:2px 0 0;display:flex;flex-wrap:wrap;gap:5px 8px;align-items:center}
+.ids code{font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.chip{font-family:var(--mono);font-size:10px;letter-spacing:.06em;padding:1px 6px;border-radius:2px;text-transform:uppercase}
+.chip.d-basic{background:var(--good-soft);color:var(--good)}
+.chip.d-intermediate{background:var(--warn-soft);color:var(--warn)}
+.chip.d-advanced{background:var(--crit-soft);color:var(--crit)}
+.chip.rep{background:var(--crit);color:var(--paper)}
+.chip.openx{border:1px solid var(--crit);color:var(--crit)}
+.chip.fixed{border:1px solid var(--rule);color:var(--ink-3)}
+.dates{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.done{display:flex;align-items:center;gap:4px;cursor:pointer;user-select:none;padding-top:2px}
+.done input{width:16px;height:16px;accent-color:var(--accent);cursor:pointer;margin:0}
+.done span{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.rev{font-family:var(--sans);font-size:12px;background:none;border:1px solid var(--rule);color:var(--ink-2);padding:4px 10px;cursor:pointer;white-space:nowrap}
+.rev:hover{border-color:var(--accent);color:var(--accent)}
+
+.stem{font-size:14.5px;line-height:1.85;margin-bottom:12px;color:var(--ink)}
+ol.ch{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--rule-2);border:1px solid var(--rule-2)}
+ol.ch li{background:var(--card);display:flex;gap:10px;padding:7px 11px;font-size:14px;align-items:baseline}
+ol.ch li b{font-family:var(--mono);color:var(--ink-3);font-weight:400;flex:none;width:1.1em}
+ol.ch li span{flex:1}
+ol.ch li em{display:none;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.06em;padding:1px 6px;flex:none;align-self:center}
+.q.show ol.ch li.ok{background:var(--good-soft)}
+.q.show ol.ch li.ok b,.q.show ol.ch li.ok span{color:var(--good);font-weight:700}
+.q.show ol.ch li.ng{background:var(--crit-soft)}
+.q.show ol.ch li.ng b,.q.show ol.ch li.ng span{color:var(--crit)}
+.q.show ol.ch li em{display:inline-block}
+.q.show ol.ch li.ok em{background:var(--good);color:var(--paper)}
+.q.show ol.ch li.ng em{background:var(--crit);color:var(--paper)}
+
+.ans{display:none;margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule)}
+.q.show .ans{display:block}
+.trap{margin:0 0 10px;font-size:14.5px;background:var(--warn-soft);padding:10px 13px;line-height:1.75}
+.trap b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--warn);margin-bottom:3px}
+.exp{margin:0 0 8px;font-size:14.5px;line-height:1.85}
+.expen{margin:0 0 8px;font-size:13px;line-height:1.7;color:var(--ink-3)}
+.ref{margin:0;display:flex;flex-wrap:wrap;gap:5px}
+.ref code{font-family:var(--mono);font-size:11px;color:var(--ink-3);border:1px solid var(--rule-2);padding:1px 6px}
+
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:12px;color:var(--ink-3);line-height:1.8}
+@media (max-width:620px){
+  body{padding-left:14px;padding-right:14px;font-size:15px}
+  h1{font-size:25px}
+  .q header{flex-wrap:wrap}
+  .rev{width:100%;margin-top:4px}
+  .bar .prog{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+<header class="masthead">
+  <p class="eyebrow">FAR / 模試 誤答ノート</p>
+  <h1>模試で落とした81問を、論点の型で束ねて潰す</h1>
+  <p class="sub-meta"><span>模試11回（2026-07-26 → 2026-08-07）の全誤答</span><span>81問 / 延べ83回</span><span>uscpa-backup-20260808-0726.json</span></p>
+</header>
+
+<div class="howto">
+  <p><b>使い方</b> — 各問題は最初、選択肢だけが見える状態になっている。まず自分で答えを決めてから「解答を見る」を押す。正解・自分が選んだ選択肢・落とし方・解説がまとめて開く。</p>
+  <p>解けたら「済」にチェック。チェックはこの端末に保存されるので、続きから再開できる。</p>
+</div>
+
+<dl class="stats">
+  <div class="stat"><dt>誤答した問題</dt><dd>81<small> 問</small></dd></div>
+  <div class="stat"><dt>未解決</dt><dd>80<small> 問（その後も正解していない）</small></dd></div>
+  <div class="stat"><dt>模試で2回以上</dt><dd>2<small> 問</small></dd></div>
+  <div class="stat"><dt>難易度</dt><dd>35<small> 応用 / 29 標準 / 17 基礎</small></dd></div>
+</dl>
+
+<h2 class="big">再発している7つの型</h2>
+<p class="h2note">81問を個別に覚え直すより、同じ原因で落ちている問題をまとめて処理するほうが早い。各型のIDをクリックするとその問題に飛ぶ。</p>
+<article class="pat">
+  <h3>貸手（lessor）会計<em>6問</em></h3>
+  <p>Leases で落とした10問のうち6問が貸手側。<b>①売却損益は開始時に即時認識（損も繰り延べない）</b>、<b>②売価はリース料の現在価値であって定価ではない</b>、<b>③当初直接費用は売却利益がなければ正味投資に含めて実効利率で配分、オペレーティングならリース期間で費用配分</b>。この3点で全問説明がつく。</p>
+  <p class="pids"><a href="#" data-goto="lease-017"><code>lease-017</code></a><a href="#" data-goto="lease-110"><code>lease-110</code></a><a href="#" data-goto="lease-194"><code>lease-194</code></a><a href="#" data-goto="lease-104"><code>lease-104</code></a><a href="#" data-goto="lease-213"><code>lease-213</code></a><a href="#" data-goto="lease-015"><code>lease-015</code></a></p>
+</article>
+<article class="pat">
+  <h3>一体で発生する資産と負債は、当初の繰延税金影響がゼロ<em>2問</em></h3>
+  <p>ROU資産とリース負債、ARO資産と除去債務。いずれも当初認識額が同額なので一時差異が相殺され、<b>当初は純額の繰延税金影響が生じない</b>。両方ともDTA・DTLを立てて誤答している。同じ型なので1回で潰せる。</p>
+  <p class="pids"><a href="#" data-goto="tax-079"><code>tax-079</code></a><a href="#" data-goto="tax-075"><code>tax-075</code></a></p>
+</article>
+<article class="pat">
+  <h3>税効果を掛け忘れる<em>3問</em></h3>
+  <p>利益剰余金への累積効果調整、遡及修正、OCI計上額は<b>すべて税引後</b>。CECL移行では税効果$50,400だけを、遡及修正では税引前の一部だけを選んでいる。「剰余金・OCIに直接入る数字は税引後」と一本化して覚える。</p>
+  <p class="pids"><a href="#" data-goto="cecl-092"><code>cecl-092</code></a><a href="#" data-goto="chg-123"><code>chg-123</code></a><a href="#" data-goto="inv-i-181"><code>inv-i-181</code></a></p>
+</article>
+<article class="pat">
+  <h3>銀行勘定調整の加減方向<em>3問</em></h3>
+  <p><b>期首未達は控除、期末未達は加算</b>。銀行側の調整項目（未取立小切手・銀行の誤記帳）と帳簿側の調整項目（手数料・直接入金・直接取立）を混ぜない。3問とも符号か振り分けの誤りで、知識ではなく作業手順の問題。</p>
+  <p class="pids"><a href="#" data-goto="cce-074"><code>cce-074</code></a><a href="#" data-goto="cce-116"><code>cce-116</code></a><a href="#" data-goto="cce-140"><code>cce-140</code></a></p>
+</article>
+<article class="pat">
+  <h3>比例配分の分母<em>3問</em></h3>
+  <p>breakage は<b>実際償還額÷予想償還総額</b>（分母から予想breakageを除く）。CECLの未実行コミットメントは<b>予想実行率を掛けてから</b>損失率を掛ける。いずれも「何に対する割合か」を取り違えている。</p>
+  <p class="pids"><a href="#" data-goto="rev-069"><code>rev-069</code></a><a href="#" data-goto="liab-142"><code>liab-142</code></a><a href="#" data-goto="rec-117"><code>rec-117</code></a></p>
+</article>
+<article class="pat">
+  <h3>上限・短い方という制約<em>3問</em></h3>
+  <p>AFS信用損失の<b>公正価値フロア</b>、借地権改良の<b>耐用年数とリース期間の短い方</b>、変動対価の<b>制約</b>。計算そのものは合っているのに、上限を当てはめる一手が抜けて過大・過少になる。</p>
+  <p class="pids"><a href="#" data-goto="inv-i-134"><code>inv-i-134</code></a><a href="#" data-goto="ppe-038"><code>ppe-038</code></a><a href="#" data-goto="rev-059"><code>rev-059</code></a></p>
+</article>
+<article class="pat">
+  <h3>計算ではなく分類・定義<em>11問</em></h3>
+  <p>basic 難易度で落としている11問はすべてこの型。Cash Flows の4問は金額を1つも計算していない純粋な分類問題。<b>直前期はここが最も費用対効果が高い</b> — 覚えるだけで済み、本番でも確実に出る。</p>
+  <p class="pids"><a href="#" data-goto="gov-041"><code>gov-041</code></a><a href="#" data-goto="gov-144"><code>gov-144</code></a><a href="#" data-goto="gov-123"><code>gov-123</code></a><a href="#" data-goto="con-074"><code>con-074</code></a><a href="#" data-goto="con-186"><code>con-186</code></a><a href="#" data-goto="cf-132"><code>cf-132</code></a><a href="#" data-goto="cf-104"><code>cf-104</code></a><a href="#" data-goto="cf-085"><code>cf-085</code></a><a href="#" data-goto="cce-022"><code>cce-022</code></a><a href="#" data-goto="chg-061"><code>chg-061</code></a><a href="#" data-goto="nfp-187"><code>nfp-187</code></a></p>
+</article>
+
+<div class="bar">
+  <div class="row">
+    <button type="button" data-filter="all" class="on">すべて<em>81</em></button>
+    <button type="button" data-flag="open">未解決のみ<em>80</em></button>
+    <button type="button" data-flag="advanced">応用のみ<em>35</em></button>
+    <button type="button" data-flag="basic">基礎のみ<em>17</em></button>
+    <button type="button" id="toggleAll">解答を一括表示</button>
+    <span class="prog" id="prog">済 0 / 81</span>
+  </div>
+  <div class="row" id="topicNav"><button type="button" data-filter="leases-asc-842">Leases<em>10</em></button><button type="button" data-filter="government-accounting">Government<em>8</em></button><button type="button" data-filter="foreign-currency-eps">Foreign Currency &amp; EPS<em>7</em></button><button type="button" data-filter="consolidations">Consolidations<em>6</em></button><button type="button" data-filter="not-for-profit-accounting">Not-for-Profit<em>6</em></button><button type="button" data-filter="cash-and-cash-equivalents">Cash and Cash Equivalents<em>6</em></button><button type="button" data-filter="investments">Investments<em>5</em></button><button type="button" data-filter="inventory">Inventory<em>5</em></button><button type="button" data-filter="revenue-recognition-asc-606">Revenue Recognition<em>5</em></button><button type="button" data-filter="income-taxes">Income Taxes<em>5</em></button><button type="button" data-filter="statement-of-cash-flows">Statement of Cash Flows<em>4</em></button><button type="button" data-filter="accounting-changes-errors">Accounting Changes &amp; Errors<em>3</em></button><button type="button" data-filter="credit-loss-current-expected-credit-losses-asc-326">Credit Loss<em>3</em></button><button type="button" data-filter="receivables">Receivables<em>3</em></button><button type="button" data-filter="property-plant-equipment">Property, Plant &amp; Equipment<em>3</em></button><button type="button" data-filter="liabilities">Liabilities<em>1</em></button><button type="button" data-filter="equity">Equity<em>1</em></button></div>
+</div>
+
+<section class="topic" data-topic="leases-asc-842">
+  <h2 id="t-leases-asc-842"><span>Leases (ASC 842)</span><em>10問</em></h2>
+  <p class="lead">10問中6問が<b>貸手（lessor）側</b>。売却損益の認識時点、当初直接費用の扱い、正味投資に対する利息収益で落としている。借手側は「単一リース費用と負債利息の関係」と「短期リースの12か月判定」。</p>
+  <article class="q" data-id="lease-017" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-017" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Lessor Sales-Type Lease Income</p>
+        <p class="ids"><code>lease-017</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-26</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A lessor enters a sales-type lease on January 1, Year 1. The underlying equipment has a carrying amount of $450,000 and a fair value of $600,000. The present value of all lease payments equals $600,000. The implicit rate is 7%. What total income does the lessor recognize in Year 1 (selling profit plus interest income)?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$192,000</span><em>正解</em></li><li class="ng"><b>B</b><span>$150,000</span><em>選択</em></li><li class=""><b>C</b><span>$42,000</span></li><li class=""><b>D</b><span>$600,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>売却利益$150,000で止めた。販売型リースのYear 1収益は「開始時の売却利益＋正味投資に対する利息収益」の合計。</p>
+      <p class="exp">開始時: 売却利益 = FV - CV = $600,000 - $450,000 = $150,000。貸手はリースの正味投資$600,000を認識する。第1年利息収益 = $600,000 × 7% = $42,000。第1年の収益合計 = $150,000 + $42,000 = $192,000。</p>
+      <p class="expen">At commencement: Selling profit = FV - CV = $600,000 - $450,000 = $150,000. The lessor recognizes a net investment in the lease of $600,000. Year 1 interest income = $600,000 × 7% = $42,000. Total Year 1 income = $150,000 + $42,000 = $192,000.</p>
+      <p class="ref"><code>ASC 842-30-25-1</code> <code>ASC 842-30-25-2</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="lease-082" data-diff="intermediate" data-open="0">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-082" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Short-Term Lease Election Reassessment</p>
+        <p class="ids"><code>lease-082</code><span class="chip d-intermediate">標準</span><span class="chip fixed">その後正解</span><span class="dates">模試 2026-07-26</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">On January 1, Year 1, Lessee Corp enters into a 10-month lease for equipment and elects the short-term lease exemption. At month 8, the lease is modified to extend the term by an additional 6 months. What is the accounting impact of this modification?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Continue the short-term lease exemption because the original term was 10 months</span></li><li class="ng"><b>B</b><span>Recognize a lease liability and ROU asset at the modification date because the remaining term now exceeds 12 months from commencement</span><em>選択</em></li><li class="ok"><b>C</b><span>Recognize a lease liability and ROU asset at the modification date because the total lease term now exceeds 12 months</span><em>正解</em></li><li class=""><b>D</b><span>Continue expensing as a short-term lease because the extension was not part of the original contract</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>12か月判定の起点。「開始日から残り何か月か」ではなく、変更後の総リース期間で判定する。</p>
+      <p class="exp">ASC 842-20-25-2により、短期リースの免除は開始時にリース期間が12ヶ月以下のリースに適用される。リース変更により総期間が12ヶ月を超える場合（10ヶ月 + 6ヶ月 = 16ヶ月）、短期リースの要件を満たさなくなる。変更日に残存リース期間と支払額に基づき、変更日の割引率を使用してリース負債とROU資産を認識する。</p>
+      <p class="expen">Under ASC 842-20-25-2, the short-term lease exemption applies to leases with a term of 12 months or less at commencement. When a lease modification extends the total term beyond 12 months (10 months + 6 months = 16 months), the lease no longer qualifies as short-term. At the modification date, the lessee must recognize a lease liability and ROU asset for the modified lease based on the remaining lease term and payments, using a discount rate at the modification date.</p>
+      <p class="ref"><code>ASC 842-20-25-2</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="lease-162" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-162" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Operating Lease ROU - Ending Balance via Single Lease Cost</p>
+        <p class="ids"><code>lease-162</code><span class="chip d-advanced">応用</span><span class="chip rep">模試で2回</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-26 / 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">On January 1, Year 1, Lessee Corp records an operating lease ROU asset and lease liability of $250,000 each. The annual single (straight-line) lease cost is $60,000, and the interest accretion on the lease liability for Year 1 is $14,000. What is the carrying amount of the ROU asset at December 31, Year 1?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>$190,000</span><em>選択</em></li><li class=""><b>B</b><span>$236,000</span></li><li class="ok"><b>C</b><span>$204,000</span><em>正解</em></li><li class=""><b>D</b><span>$250,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>ROU資産の減少額＝単一リース費用−リース負債の利息。費用全額$60,000で減額したため$190,000になった。</p>
+      <p class="exp">オペレーティング・リースでは、各期の使用権資産の減少額は単一リース費用からリース負債の利息増加分を控除した額に等しい：$60,000 − $14,000 = $46,000。期末の使用権資産 = $250,000 − $46,000 = $204,000（ASC 842-20-35-3、35-4(b)）。$190,000はリース費用全額で資産を減額した誤り、$236,000は利息部分のみで減額した誤り、$250,000は償却を全く行わない誤りである。</p>
+      <p class="expen">For an operating lease, the ROU asset reduction each period equals the single lease cost minus the interest accretion on the liability: $60,000 - $14,000 = $46,000. Ending ROU = $250,000 - $46,000 = $204,000 (ASC 842-20-35-3 and 35-4(b)). A balance of $190,000 reduces the ROU by the full lease cost, $236,000 reduces it only by the interest component, and $250,000 assumes no amortization at all.</p>
+      <p class="ref"><code>ASC 842-20-35-3</code> <code>ASC 842-20-25-6</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="lease-110" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-110" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Lessor - Selling Loss Recognition</p>
+        <p class="ids"><code>lease-110</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-29</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Lessor Corp enters into a sales-type lease in which the fair value of the underlying asset is $250,000 and its carrying amount is $300,000. The lease meets the transfer-of-ownership criterion. How should the lessor recognize the difference between fair value and carrying amount at commencement?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Recognize a selling loss of $50,000 at commencement</span><em>正解</em></li><li class="ng"><b>B</b><span>Defer the $50,000 loss and recognize it over the lease term</span><em>選択</em></li><li class=""><b>C</b><span>Recognize no loss because sales-type leases only produce profits</span></li><li class=""><b>D</b><span>Reduce interest income over the lease term by $50,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>売却損は繰り延べない。販売型リースの selling loss は開始時に即時認識。</p>
+      <p class="exp">ASC 842-30-25-1により、セールス型リースの開始時に貸手は売却利益または売却損失を認識する。帳簿価額（$300,000）が公正価値（$250,000）を上回る場合、貸手は$300,000 − $250,000 = $50,000の売却損失を開始時に直ちに認識する。売却利益は直接金融型では繰り延べられるが、売却損失は分類にかかわらず開始時に認識する。</p>
+      <p class="expen">Under ASC 842-30-25-1, at commencement of a sales-type lease the lessor recognizes any selling profit OR selling loss. When the carrying amount ($300,000) exceeds the fair value ($250,000), the lessor recognizes a selling loss of $300,000 - $250,000 = $50,000 immediately at commencement. Unlike selling profit (which is deferred in a direct financing lease), a selling loss is recognized at commencement regardless of classification.</p>
+      <p class="ref"><code>ASC 842-30-25-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="lease-194" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-194" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Lessor Sales-Type - Initial Direct Costs When No Selling Profit</p>
+        <p class="ids"><code>lease-194</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Lessor Corp enters into a sales-type lease for equipment whose fair value at commencement equals its carrying amount of $300,000 (no selling profit or loss). Lessor Corp incurs $9,000 of initial direct costs. Under ASC 842, how should Lessor Corp account for the initial direct costs?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>Expense the $9,000 at lease commencement</span><em>選択</em></li><li class=""><b>B</b><span>Capitalize the $9,000 as a separate intangible asset amortized on a straight-line basis</span></li><li class=""><b>C</b><span>Net the $9,000 against sales revenue at commencement</span></li><li class="ok"><b>D</b><span>Defer the $9,000 by including it in the net investment in the lease, recognizing it over the term through the implicit rate</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>売却利益が生じない販売型リースの当初直接費用は費用処理せず、正味投資に含めて実効利率で期間配分する。</p>
+      <p class="exp">販売型リースにおける当初直接コストの処理は、原資産の公正価値が帳簿価額と異なるか否かで決まる。公正価値が帳簿価額と等しい（販売損益がない）場合、当初直接コストは繰り延べられ、リースに対する正味投資の測定に含められる。リースの計算利子率はこのコストが期間にわたり利息収益を通じて回収されるように定義される。開始時に費用処理するのは公正価値が帳簿価額と異なる（販売損益が存在する）場合のみ。独立の無形資産として定額償却する方法は規定されていない。売上高と相殺する処理も当初直接コストの処理として認められない。</p>
+      <p class="expen">In a sales-type lease, the treatment of initial direct costs depends on whether the fair value of the underlying asset differs from its carrying amount. When fair value equals carrying amount (no selling profit or loss), initial direct costs are deferred and included in the measurement of the net investment in the lease; the rate implicit in the lease is defined so that those costs are recovered through interest income over the term. Expensing at commencement applies only when fair value differs from the carrying amount (selling profit or loss exists). A separate straight-line intangible asset is not the prescribed mechanism. Netting against sales revenue is not permitted treatment for initial direct costs.</p>
+      <p class="ref"><code>ASC 842-30-25-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="lease-202" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-202" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Lease Liability</p>
+        <p class="ids"><code>lease-202</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">On December 30, Year 1, Rafferty Corp. leased equipment under a finance lease. Annual lease payments of $20,000 are due December 31 for 10 years. The equipment's useful life is 10 years, and the interest rate implicit in the lease is 10%. The finance lease obligation was recorded on December 30, Year 1, at $135,000, and the first lease payment was made on that date. What amount should Rafferty include in current liabilities for this finance lease in its December 31, Year 1, balance sheet for Year 2?</div>
+    <ol class="ch"><li class=""><b>A</b><span>6,500</span></li><li class="ok"><b>B</b><span>8,500</span><em>正解</em></li><li class="ng"><b>C</b><span>11,500</span><em>選択</em></li><li class=""><b>D</b><span>20,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>流動負債＝翌期支払額−翌期利息。選んだ$11,500は利息額そのもの。</p>
+      <p class="exp">Year 1の12月30日に第1回払い$20,000を支払い後の残高は$115,000。Year 2の利息は$115,000 × 10% = $11,500。Year 2末の支払$20,000のうち元本部分（流動負債）は$20,000 − $11,500 = $8,500となる。</p>
+      <p class="expen">After the first payment of $20,000 on December 30, Year 1, the lease liability balance is $135,000 − $20,000 = $115,000. Interest accruing during Year 2 = $115,000 × 10% = $11,500. The December 31 Year 2 payment of $20,000 reduces the liability by $20,000 − $11,500 = $8,500 (the principal portion). Current liabilities at December 31, Year 1 represent the principal portion of the next payment due — which is $8,500.</p>
+      <p class="ref"><code>ASC 842-20-35-4</code> <code>ASC 835-30</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="lease-213" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-213" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Lessor Accounting</p>
+        <p class="ids"><code>lease-213</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Jarvis Company leased a machine to Stark, Inc. on January 2, Year 1, for five years. Equal annual payments of $10,000 are due on December 31. The list selling price of the machine is $45,000, and its carrying value on Jarvis' books is $30,000. The lease is appropriately accounted for as a sales - type lease. The present value of the lease payments is $42,120. What amount of profit on the sale should Jarvis report for the year ended December 31, Year 1?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$7,880</span></li><li class="ok"><b>B</b><span>$12,120</span><em>正解</em></li><li class="ng"><b>C</b><span>$15,000</span><em>選択</em></li><li class=""><b>D</b><span>$20,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>売価は定価$45,000ではなくリース料の現在価値$42,120。</p>
+      <p class="exp">販売型リースでは、リース開始時に販売利益を認識する。利益 = リース料支払いの現在価値$42,120 − 帳簿価額$30,000 = $12,120。定価$45,000ではなく現在価値が「売価」として使用される（ASC 842-30-30-1）。</p>
+      <p class="expen">In a sales-type lease, the lessor recognizes a selling profit at lease commencement equal to the present value of lease payments minus the carrying value of the asset (ASC 842-30-30-1). Profit = $42,120 (PV of payments) − $30,000 (carrying value) = $12,120. The list selling price of $45,000 is not used; the relevant 'sale price' in a sales-type lease is the PV of the lease receivable.</p>
+      <p class="ref"><code>ASC 842-30-30-1</code> <code>ASC 842-30-25-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="lease-065" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-065" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Related Party Lease Enforceability</p>
+        <p class="ids"><code>lease-065</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Parent Co leases office space to its wholly-owned Subsidiary Co. The written lease agreement specifies annual rent of $50,000 for 5 years, but Parent Co has historically waived the rent entirely. Under ASC 842, how should Subsidiary Co classify and measure this lease?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Classify and measure based on the legally enforceable terms of $50,000 per year</span><em>正解</em></li><li class=""><b>B</b><span>No lease is recognized because no payments are actually made</span></li><li class=""><b>C</b><span>Classify and measure based on the economic substance, reflecting zero rent</span></li><li class="ng"><b>D</b><span>Record the lease at fair market rent regardless of the agreement</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>関連当事者間でも法的に強制可能な契約条件で会計処理する。市場家賃に置き換えない。</p>
+      <p class="exp">ASC 842-10-55-12により、関連当事者間のリースは法的に執行可能な条件に基づいて分類・会計処理する。親会社が歴史的に賃料を免除していても、法的に執行可能なリース条件は年間$50,000の支払いを規定している。会計処理は過去の免除の経済的実態ではなく、書面の契約に従う。</p>
+      <p class="expen">Under ASC 842-10-55-12, related-party leases should be classified and accounted for based on the legally enforceable terms and conditions of the arrangement. Even though Parent Co has historically waived the rent, the legally enforceable lease terms specify $50,000 annual payments. The accounting follows the written agreement, not the actual economic substance of the historical rent waivers. This ensures consistency in financial reporting for related-party transactions.</p>
+      <p class="ref"><code>ASC 842-10-55-12</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="lease-104" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-104" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Lessor Operating Lease - Initial Direct Costs Deferral</p>
+        <p class="ids"><code>lease-104</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-06</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Lessor Corp incurs $12,000 of initial direct costs to originate a 6-year operating lease. Under ASC 842, how should the lessor account for these initial direct costs?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Defer the costs and recognize them as expense over the lease term, generally on the same basis as lease income, resulting in $2,000 per year</span><em>正解</em></li><li class=""><b>B</b><span>Expense the entire $12,000 at lease commencement</span></li><li class="ng"><b>C</b><span>Add the $12,000 to the carrying amount of the leased asset and depreciate over its useful life</span><em>選択</em></li><li class=""><b>D</b><span>Recognize the $12,000 as a reduction of lease income in Year 1</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>貸手のオペレーティング・リースの当初直接費用は資産に加算せず、リース収益と同じ基礎で期間配分。</p>
+      <p class="exp">ASC 842-30-25-10により、オペレーティングリースでは貸手は当初直接コストを繰り延べ、リース収益と同じ基準（通常は定額）でリース期間にわたり費用認識する。$12,000 ÷ 6年 = $2,000/年。原資産の償却基礎には加算せず、即時費用化もしない（オペレーティングおよび直接金融型では繰延べ、即時費用化は売却利益を認識するセールス型のみ）。</p>
+      <p class="expen">Under ASC 842-30-25-10, for an operating lease the lessor defers initial direct costs and recognizes them as an expense over the lease term on the same basis as lease income (generally straight-line). $12,000 / 6 years = $2,000 per year. The costs are not added to the underlying asset's depreciable base, nor expensed immediately (for operating and direct financing leases, initial direct costs are deferred; they are expensed immediately only for a sales-type lease when selling profit is recognized).</p>
+      <p class="ref"><code>ASC 842-30-25-10</code> <code>ASC 842-30-25-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="lease-015" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="lease-015" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Sale-Leaseback Gain Calculation</p>
+        <p class="ids"><code>lease-015</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-07</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Seller Corp. sells a building (carrying value $700,000) to Buyer Corp. at its fair value of $1,000,000, and simultaneously leases it back under an operating lease. The present value of the leaseback payments is $250,000. How much gain does Seller Corp. recognize at the transaction date?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$225,000</span><em>正解</em></li><li class="ng"><b>B</b><span>$300,000</span><em>選択</em></li><li class=""><b>C</b><span>$75,000</span></li><li class=""><b>D</b><span>$150,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>セール・アンド・リースバックの利益は「移転した権利分」のみ認識。保持するROU比率25%分は繰延。</p>
+      <p class="exp">利益合計 = $1,000,000 - $700,000 = $300,000。認識される利益は移転した権利の割合に限定される。保持する権利(ROU比率) = リースバック支払いのPV / FV = $250,000 / $1,000,000 = 25%。繰延べる利益(保持権利分) = 25% × $300,000 = $75,000。認識される利益 = $300,000 - $75,000 = $225,000。</p>
+      <p class="expen">Total gain = $1,000,000 - $700,000 = $300,000. Under ASC 842-40-25-3, the gain recognized is limited to the proportion of rights transferred. Rights retained (ROU proportion) = PV of leaseback payments / FV = $250,000 / $1,000,000 = 25%. Gain deferred (related to retained rights) = 25% × $300,000 = $75,000. Gain recognized = $300,000 - $75,000 = $225,000.</p>
+      <p class="ref"><code>ASC 842-40-25-3</code> <code>ASC 842-40-30-1</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="government-accounting">
+  <h2 id="t-government-accounting"><span>Government Accounting</span><em>8問</em></h2>
+  <p class="lead">8問中4問が basic。測定焦点、非交換収益の分類、GASB 96の短期例外、fund balance の区分といった<b>定義そのもの</b>で落としており、計算問題（政府全体への転換）より基礎の取りこぼしが目立つ。</p>
+  <article class="q" data-id="gov-180" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="gov-180" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Government-wide Statements</p>
+        <p class="ids"><code>gov-180</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-29</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A city government reported a $9,000 increase in net position in the motor pool internal service fund, a $12,000 increase in net position in the water enterprise fund, and a $7,000 increase in the employee pension fund. The motor pool internal service fund provides service primarily to the police department. What amount should the city report as the change in net position for business-type activities in its statement of activities?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>$9,000</span><em>選択</em></li><li class="ok"><b>B</b><span>$12,000</span><em>正解</em></li><li class=""><b>C</b><span>$21,000</span></li><li class=""><b>D</b><span>$28,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>事業型活動は enterprise fund のみ。内部サービス基金は主たる利用者側（政府型）へ、受託基金は政府全体に含めない。</p>
+      <p class="exp">事業型活動（business-type activities）には企業会計型基金（enterprise fund）のみが含まれます。水道企業基金の$12,000増加が唯一の事業型活動項目です。モータープール内部サービス基金は主に警察部門（政府型活動）に奉仕するため、GASB 34に従い政府型活動に分類されます。受託基金（年金信託）は政府全体財務書類に含まれません。</p>
+      <p class="expen">Business-type activities include only enterprise funds. The water enterprise fund's $12,000 increase is the sole business-type activity item. The motor pool internal service fund primarily serves the police department (a governmental activity), so under GASB 34 it is reclassified into governmental activities rather than business-type activities. Fiduciary funds (pension trust) are never included in government-wide statements.</p>
+      <p class="ref"><code>GASB Statement No. 34</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="gov-091" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="gov-091" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Capital Projects Fund - Bonds Issued at a Discount</p>
+        <p class="ids"><code>gov-091</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-30</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A city issues $8,000,000 face value of general obligation bonds at 99 (a discount of $80,000) to finance construction of a fire station, with the proceeds deposited in a capital projects fund. How are the bond proceeds reported in the capital projects fund?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Other financing sources of $7,920,000</span><em>正解</em></li><li class=""><b>B</b><span>Other financing sources of $8,000,000</span></li><li class=""><b>C</b><span>Revenue of $7,920,000</span></li><li class="ng"><b>D</b><span>Other financing sources of $8,000,000 and an expenditure of $80,000</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>割引発行はその他財務源泉を入金額$7,920,000で計上。額面計上＋割引を支出とする処理はしない。</p>
+      <p class="exp">政府基金では、社債収入は実際に受け取った現金額に等しい「その他財源」として報告する。受取現金 = $8,000,000 × 99% = $7,920,000、したがってその他財源は$7,920,000。社債収入は借入であるため政府基金では収益にはならない。ディスカウントは少ない受取額に反映されるだけで、別個の支出計上や額面への割戻しは行わない。</p>
+      <p class="expen">In a governmental fund, bond proceeds are reported as an other financing source equal to the actual cash received. Cash received = $8,000,000 × 99% = $7,920,000, so the other financing source is $7,920,000. Bond proceeds are never reported as revenue in governmental funds because they represent borrowings. The discount is simply reflected in the lower proceeds; it is not recorded as a separate expenditure, nor are the proceeds grossed up to the $8,000,000 face amount.</p>
+      <p class="ref"><code>GASB Statement 34, par. 88</code> <code>GASB Codification 1800.102</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="gov-041" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="gov-041" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Measurement Focus Governmental Funds</p>
+        <p class="ids"><code>gov-041</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">What measurement focus is used for governmental fund financial statements?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Current financial resources measurement focus</span><em>正解</em></li><li class="ng"><b>B</b><span>Economic resources measurement focus</span><em>選択</em></li><li class=""><b>C</b><span>Cash basis measurement focus</span></li><li class=""><b>D</b><span>Fair value measurement focus</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>政府型基金は current financial resources。economic resources は政府全体と専有基金。</p>
+      <p class="exp">政府基金財務諸表は現在の財務資源測定焦点と修正発生主義を使用する。流動資産と流動負債のみを報告し、長期資産・長期負債は基金財務諸表から除外される。収益は測定可能かつ利用可能な時に認識する。</p>
+      <p class="expen">Governmental fund financial statements use the current financial resources measurement focus and modified accrual basis of accounting (GASB 34, par. 79). This means only current assets and current liabilities are generally reported; long-term assets and long-term liabilities are excluded from the fund financial statements. Revenue is recognized when measurable and available; expenditures are recognized when the fund liability is incurred.</p>
+      <p class="ref"><code>GASB Statement 34, par. 79</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="gov-123" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="gov-123" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">GASB 96 - Short-Term SBITA Exception</p>
+        <p class="ids"><code>gov-123</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A city enters into a subscription-based information technology arrangement (SBITA) with a maximum possible term, including options reasonably certain of exercise, of 12 months. Under GASB 96, how should the city account for this arrangement?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>Recognize a subscription asset and a subscription liability at the present value of payments</span><em>選択</em></li><li class=""><b>B</b><span>Capitalize only the implementation costs and expense the subscription payments</span></li><li class="ok"><b>C</b><span>Recognize expense or expenditure as the subscription payments come due</span><em>正解</em></li><li class=""><b>D</b><span>Defer all payments and amortize them over five years</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>GASB 96 の短期SBITA（12か月以内）は資産・負債を認識せず、支払期日到来時に費用処理。</p>
+      <p class="exp">GASB 96は短期SBITAの例外を定めており、行使が合理的に確実なオプションを含む契約期間が12か月以内の場合、サブスクリプション資産・負債を計上せず、支払期日到来に応じて費用（政府型ファンドでは支出）認識する。資産・負債計上は12か月超のSBITAに適用される。導入費用のみの資産化や恣意的な5年償却は基準に根拠がない。</p>
+      <p class="expen">GASB 96 provides a short-term SBITA exception: if the subscription term, including options reasonably certain of being exercised, is 12 months or less, the government recognizes expense (or expenditure in governmental funds) as payments come due rather than recording a subscription asset and liability. Recognizing an asset and liability applies only to SBITAs longer than 12 months; capitalizing implementation costs alone or amortizing payments over an arbitrary five-year period has no basis in the standard.</p>
+      <p class="ref"><code>GASB 96</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="gov-149" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="gov-149" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Government-wide Conversion - Accrued Interest</p>
+        <p class="ids"><code>gov-149</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A city's governmental funds reported interest expenditures of $480,000 for the year, representing interest payments that came due during the year. Accrued interest payable on general long-term debt was $60,000 at the beginning of the year and $90,000 at the end of the year. What amount of interest expense should be reported for governmental activities in the government-wide statement of activities?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>$480,000</span><em>選択</em></li><li class=""><b>B</b><span>$450,000</span></li><li class=""><b>C</b><span>$540,000</span></li><li class="ok"><b>D</b><span>$510,000</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>発生主義への転換は「期中支払額±未払利息の増減」。増加分$30,000の加算を落とした。</p>
+      <p class="exp">政府全体財務諸表は発生主義のため、支払利息費用＝期中期日到来額±未払利息の増減: $480,000＋($90,000−$60,000)=$510,000。$480,000は修正発生主義の支出額のまま調整していない誤り、$450,000は未払利息の増加を加算すべきところ減算した誤り、$540,000は純増減ではなく期首残高$60,000を加算した誤りである。</p>
+      <p class="expen">Government-wide statements use accrual accounting, so interest expense equals amounts due during the year adjusted for the change in accrued interest payable: $480,000 + ($90,000 - $60,000) = $510,000. $480,000 is the modified accrual expenditure without adjustment, $450,000 subtracts the increase in the accrual instead of adding it, and $540,000 incorrectly adds the beginning accrual balance rather than the net change.</p>
+      <p class="ref"><code>GASB 34</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="gov-090" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="gov-090" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Custodial Fund - Tax Collection for Other Governments</p>
+        <p class="ids"><code>gov-090</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-03</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A county acts as the collecting agent for property taxes levied by other governments within its boundaries. During the year it collects $5,000,000 of taxes on behalf of those governments and is authorized to retain a 2% administrative fee, remitting the balance. In the county's custodial (agency) fund, what amount is reported as additions (collections for others) and what amount is remitted to the other governments?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Additions $4,900,000; remittances $4,900,000</span></li><li class=""><b>B</b><span>Additions $5,000,000; remittances $5,000,000</span></li><li class="ok"><b>C</b><span>Additions $5,000,000; remittances $4,900,000</span><em>正解</em></li><li class="ng"><b>D</b><span>Additions $100,000; remittances $4,900,000</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>受託基金は総額表示。徴収額$5,000,000の全額を additions に計上する。</p>
+      <p class="exp">GASB 84では、管理基金は他者のために徴収した全額を増加（additions）として報告する。増加 = $5,000,000。2%の管理手数料$100,000は county自身の基金（通常は一般基金）の収益として認識し送金しないため、他の政府への送金額 = $5,000,000 − $100,000 = $4,900,000。手数料控除後で増加を計上すると総流入額を過少表示する。</p>
+      <p class="expen">Under GASB 84, a custodial fund reports the full amount collected on behalf of others as additions. Additions = $5,000,000. The 2% administrative fee ($100,000) is recognized as revenue of the county's own funds (typically the General Fund) and is not remitted, so the amount passed through to the other governments = $5,000,000 − $100,000 = $4,900,000. Reporting additions net of the fee would understate the gross flow through the custodial fund.</p>
+      <p class="ref"><code>GASB Statement 84, par. 11</code> <code>GASB Statement 84, par. 30</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="gov-144" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="gov-144" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Imposed Nonexchange Revenue - Identification</p>
+        <p class="ids"><code>gov-144</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Under GASB 33, which of the following is an example of an imposed nonexchange revenue?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>Sales taxes collected by merchants and remitted to the state</span><em>選択</em></li><li class=""><b>B</b><span>Personal income taxes withheld from employee wages</span></li><li class="ok"><b>C</b><span>Fines and forfeitures assessed by a municipal court</span><em>正解</em></li><li class=""><b>D</b><span>A federal grant that requires the government to provide specified services</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>imposed nonexchange は納税者の取引と無関係に賦課されるもの（罰金・財産税）。売上税は derived tax revenue。</p>
+      <p class="exp">賦課型非交換収入（imposed nonexchange revenue）は、交換取引以外に対する賦課から生じる収入で、固定資産税や罰金・没収金が典型例である（GASB 33）。売上税と所得税は基礎にある交換取引（販売・稼得）に課されるため派生税収入（derived tax revenue）に分類される。特定サービス提供を条件とする連邦補助金は政府指令型（government-mandated）非交換取引である。</p>
+      <p class="expen">Imposed nonexchange revenues result from assessments on nongovernmental entities other than assessments on exchange transactions—property taxes, fines, and forfeitures are the classic examples. Sales taxes and income taxes are derived tax revenues because they are imposed on underlying exchange transactions (sales and earnings). A federal grant requiring specified services is a government-mandated nonexchange transaction.</p>
+      <p class="ref"><code>GASB 33</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="gov-140" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="gov-140" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Fund Balance - Nonspendable Classification</p>
+        <p class="ids"><code>gov-140</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-06</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">At year-end, a city's General Fund includes the following items: supplies inventory $50,000; prepaid insurance $30,000; a long-term loan receivable from an employee not expected to be collected within the next year $20,000; and cash of $100,000 restricted by a grantor for road repairs. What total amount should be classified as nonspendable fund balance?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$80,000</span></li><li class="ng"><b>B</b><span>$200,000</span><em>選択</em></li><li class="ok"><b>C</b><span>$100,000</span><em>正解</em></li><li class=""><b>D</b><span>$50,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>nonspendable は形態として支出できないもの（棚卸資産・前払・長期貸付）。使途制限付き現金は restricted。</p>
+      <p class="exp">GASB 54のnonspendable（支出不能）区分は「支出可能な形態にない」金額で構成される: 棚卸資産$50,000＋前払保険料$30,000＋短期回収見込みのない長期貸付金$20,000=$100,000。補助金交付者による使途制限付き現金$100,000は支出可能な形態にあるためrestricted（制限付き）区分となる。$80,000は長期貸付金の漏れ、$200,000は制限付き現金の誤加算、$50,000は棚卸資産のみの計上である。</p>
+      <p class="expen">Nonspendable fund balance comprises amounts not in spendable form: inventory $50,000 + prepaid insurance $30,000 + long-term receivable $20,000 = $100,000. The grantor-restricted cash of $100,000 is in spendable form and is classified as restricted fund balance, not nonspendable. $80,000 omits the long-term receivable, $200,000 incorrectly adds the restricted cash, and $50,000 counts only the inventory.</p>
+      <p class="ref"><code>GASB 54</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="foreign-currency-eps">
+  <h2 id="t-foreign-currency-eps"><span>Foreign Currency &amp; EPS</span><em>7問</em></h2>
+  <p class="lead">2つの別論点が混在している。換算は<b>「その項目は貨幣性か非貨幣性か」</b>でレートが決まる点、EPSは<b>希薄化計算から除外する条件</b>（純損失の期・条件付発行株）。</p>
+  <article class="q" data-id="fx-121" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="fx-121" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Remeasurement - Deferred Taxes at Current Rate</p>
+        <p class="ids"><code>fx-121</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-26</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A foreign subsidiary's functional currency is the U.S. dollar, so its local-currency financial statements are remeasured using the temporal method. Which of the following items should be remeasured using the current (year-end) exchange rate?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Inventory carried at cost</span></li><li class="ng"><b>B</b><span>Prepaid rent</span><em>選択</em></li><li class=""><b>C</b><span>Patents, net of amortization</span></li><li class="ok"><b>D</b><span>Deferred income tax liability</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>テンポラル法で決算日レートを使うのは貨幣性項目。繰延税金負債は貨幣性、前払家賃は非貨幣性。</p>
+      <p class="exp">テンポラル法では、貨幣性項目は期末（現在）レートで再測定し、取得原価で計上される非貨幣性項目は取得時の歴史的レートで再測定する。繰延税金負債は、固定または確定可能な通貨額で決済される債務を表すため貨幣性項目として扱われ、期末レートで再測定される。原価で計上される棚卸資産、前払家賃、特許権はいずれも歴史的原価で測定される非貨幣性項目であり、取得時・支出時の歴史的レートで再測定される。</p>
+      <p class="expen">Under the temporal method, monetary items are remeasured at the current exchange rate, while nonmonetary items carried at historical cost are remeasured at historical rates. A deferred income tax liability is treated as a monetary item because it represents an obligation that will be settled in a fixed or determinable amount of currency, so it is remeasured at the current rate. Inventory carried at cost, prepaid rent, and patents are all nonmonetary items measured at historical cost; each is remeasured at the historical rate in effect when the item was acquired or the cost was incurred.</p>
+      <p class="ref"><code>ASC 830-10-45</code> <code>ASC 830-10-55-10</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="fx-055" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="fx-055" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Remeasurement - Prepaid Expense Rate</p>
+        <p class="ids"><code>fx-055</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-29</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A foreign subsidiary uses the U.S. dollar as its functional currency. The subsidiary prepaid LC 300,000 for rent on March 1, Year 1, when the exchange rate was $0.65/LC. At December 31, Year 1, the current rate is $0.70/LC and the average rate is $0.68/LC. LC 200,000 of the prepaid rent has been amortized. At what amount should the remaining prepaid rent of LC 100,000 be reported in the remeasured balance sheet?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$65,000</span><em>正解</em></li><li class="ng"><b>B</b><span>$70,000</span><em>選択</em></li><li class=""><b>C</b><span>$68,000</span></li><li class=""><b>D</b><span>$67,500</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>前払費用は非貨幣性なので取得日レート$0.65。決算日レートを当てた。</p>
+      <p class="exp">テンポラル法（再測定）では、前払費用は非貨幣性資産であり、当初記録時の取得日レートで再測定する。前払家賃残高LC 100,000×$0.65＝$65,000。再測定では非貨幣性資産に決算日レートや平均レートは使用しない。</p>
+      <p class="expen">Under the temporal method (remeasurement), prepaid expenses are nonmonetary assets and are remeasured at the historical exchange rate in effect when the prepaid was initially recorded. The remaining prepaid rent of LC 100,000 is remeasured at the historical rate of $0.65/LC = $65,000. The current rate and average rate are not used for nonmonetary assets under remeasurement. The correct answer is A.</p>
+      <p class="ref"><code>ASC 830-10-45-18</code> <code>ASC 830-10-55-10</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="fx-127" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="fx-127" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Net Loss Year - All Potential Shares Antidilutive</p>
+        <p class="ids"><code>fx-127</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Onyx Corp. reports a net loss from continuing operations for the year. Onyx has in-the-money stock options and convertible bonds outstanding that would be dilutive in a profitable year. How should these potential common shares be treated in computing Onyx's diluted EPS?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>Include the options under the treasury stock method but exclude the convertible bonds</span><em>選択</em></li><li class="ok"><b>B</b><span>Exclude all potential common shares; diluted loss per share equals basic loss per share</span><em>正解</em></li><li class=""><b>C</b><span>Include all potential common shares because they would be dilutive in a profitable year</span></li><li class=""><b>D</b><span>Include the convertible bonds under the if-converted method but exclude the options</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>純損失の期は潜在株式がすべて反希薄化。希薄化後EPS＝基本EPS。</p>
+      <p class="exp">継続事業からの損失（コントロールナンバー）を報告する年度では、潜在株式を分母に含めると損失がより多くの株式に分散され1株当たり損失が減少する＝逆希薄化（antidilutive）効果となる。ASC 260は逆希薄化証券の算入を禁止しているため、全ての潜在株式を除外し、損失年度の希薄化EPSは基本的EPSと等しくなる。オプションのみ、転換社債のみ、あるいは全ての潜在株式を含めるいずれの処理も、報告される1株当たり損失を不当に小さくしてしまう。利益年度であれば希薄化的であるという事実は無関係で、希薄化の判定は当期の実績に基づいて行う。</p>
+      <p class="expen">When an entity reports a loss from continuing operations (the control number), including any potential common shares in the denominator would spread the loss over more shares and reduce the loss per share — an antidilutive effect. ASC 260 prohibits including antidilutive securities, so all potential common shares are excluded and diluted EPS equals basic EPS in a loss year. Including the options alone, the bonds alone, or all potential shares would each improperly decrease the reported loss per share. The fact that the securities would be dilutive in a profitable year is irrelevant; dilution is assessed based on the current period's results.</p>
+      <p class="ref"><code>ASC 260-10-45-17</code> <code>ASC 260-10-45-18</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="fx-144" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="fx-144" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Earnings Per Share</p>
+        <p class="ids"><code>fx-144</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Craft Corporation had 100,000 shares of common stock and 50,000 shares of noncumulative and nonconvertible preferred stock issued and outstanding. Additional information for December 31 of the current year is as follows:
+
+| Item | Amount |
+|------|--------|
+| Net income | $1,200,000 |
+| Dividends on preferred stock | 300,000 |
+| The market price per share of common stock on December 31 | $72 |
+
+What is Craft's December 31 price-to-earnings ratio?</div>
+    <ol class="ch"><li class=""><b>A</b><span>4.8 to 1</span></li><li class="ng"><b>B</b><span>6.0 to 1</span><em>選択</em></li><li class="ok"><b>C</b><span>8.0 to 1</span><em>正解</em></li><li class=""><b>D</b><span>12.0 to 1</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>PER＝株価÷EPS。EPSの分子から非累積・非転換の優先配当$300,000を控除する。</p>
+      <p class="exp">普通株主に帰属するEPS = (当期純利益 − 優先配当) / 普通株式数 = ($1,200,000 − $300,000) / 100,000 = $9.00。株価収益率（PER）= 1株当たり市場価格 / EPS = $72 / $9.00 = 8.0。優先株式は非累積・非転換型のため、優先配当は優先株主に帰属し、普通株主のEPS計算から控除される。</p>
+      <p class="expen">EPS for common stockholders = (Net income − Preferred dividends) / Common shares = ($1,200,000 − $300,000) / 100,000 = $9.00 per share. The price-to-earnings (P/E) ratio = Market price per share / EPS = $72 / $9.00 = 8.0. The preferred dividends are deducted because the preferred stock is noncumulative and nonconvertible, so its dividends belong to preferred holders, not common holders.</p>
+      <p class="ref"><code>ASC 260</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="fx-102" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="fx-102" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Foreign Currency AFS Debt Security</p>
+        <p class="ids"><code>fx-102</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-03</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A U.S. company (USD functional currency) holds a euro-denominated debt security classified as available-for-sale. During the year, the security's fair value changed due to both interest rate movements and changes in the EUR/USD exchange rate. The security is not impaired and no portion is hedged. How should the company report the change in the security's fair value?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Report the entire change in fair value, including the portion attributable to exchange rate changes, in other comprehensive income</span><em>正解</em></li><li class="ng"><b>B</b><span>Report the exchange rate portion in earnings and the remaining fair value change in other comprehensive income</span><em>選択</em></li><li class=""><b>C</b><span>Report the entire change in fair value in earnings</span></li><li class=""><b>D</b><span>Defer the entire change in fair value until the security is sold</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>AFS債券は為替に起因する部分も含めて公正価値変動を全額OCI。為替部分だけ損益に切り出さない。</p>
+      <p class="exp">ASC 320 および ASC 830-20-35-15 に基づき、外貨建の売却可能（AFS）負債証券は公正価値で測定し、為替変動部分を含む公正価値変動の全額を実現するまでOCIに計上する。証券自体が公正価値で測定されるため、為替要素は公正価値変動に内包され、損益に分離計上しない。為替部分のみ損益計上するのは売掛金・買掛金等の貨幣性項目に対する処理であり、AFS証券には適用されない。全額損益計上は売買目的（trading）有価証券の処理である。売却まで全額繰り延べる処理は、各期末にOCIを通じて公正価値評価するというAFSの要求に反する。</p>
+      <p class="expen">For an available-for-sale debt security denominated in a foreign currency, the entire change in fair value—including the portion attributable to foreign exchange rate movements—is reported in other comprehensive income until realized. The security is carried at fair value, so the exchange component is embedded in the fair value change and is not separately recognized in earnings. Splitting out the exchange portion into earnings is the treatment for foreign-currency monetary items such as receivables and payables, not for AFS securities measured at fair value through OCI. Reporting the entire change in earnings describes trading securities. Deferring all changes until sale ignores the requirement to mark AFS securities to fair value each period through OCI.</p>
+      <p class="ref"><code>ASC 830-20-35-15</code> <code>ASC 320-10-35-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="fx-084" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="fx-084" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Translation - Current-Year CTA with Dividends</p>
+        <p class="ids"><code>fx-084</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-06</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A foreign subsidiary (functional currency = local currency) has beginning net assets of LC 3,000,000 (beginning rate $0.70/LC). During the year it earns net income of LC 500,000 (average rate $0.66/LC) and pays dividends of LC 100,000 (rate $0.64/LC on the declaration date). The year-end rate is $0.62/LC. What is the current-year translation adjustment (CTA)?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Loss of $266,000</span></li><li class="ng"><b>B</b><span>Gain of $258,000</span><em>選択</em></li><li class=""><b>C</b><span>Loss of $192,000</span></li><li class="ok"><b>D</b><span>Loss of $258,000</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>CTAの符号。純資産の換算差額はマイナス方向なので損失$258,000。</p>
+      <p class="exp">期末純資産（LC）= 3,000,000 + 500,000 − 100,000 = LC 3,400,000。決算日レート換算 = 3,400,000 × $0.62 = $2,108,000。期待USD純資産 = 期首純資産（期首レート）+ 純利益（平均レート）− 配当（宣言日レート）=（3,000,000 × $0.70）+（500,000 × $0.66）−（100,000 × $0.64）= $2,100,000 + $330,000 − $64,000 = $2,366,000。CTA = 実際 − 期待 = $2,108,000 − $2,366,000 = −$258,000（OCIに損失計上）。</p>
+      <p class="expen">Ending net assets in LC = 3,000,000 + 500,000 − 100,000 = LC 3,400,000. Translated at the current rate = 3,400,000 × $0.62 = $2,108,000. The expected USD net assets = beginning net assets at the beginning rate plus net income at the average rate minus dividends at the dividend-date rate = (3,000,000 × $0.70) + (500,000 × $0.66) − (100,000 × $0.64) = $2,100,000 + $330,000 − $64,000 = $2,366,000. CTA = actual − expected = $2,108,000 − $2,366,000 = −$258,000 (loss in OCI).</p>
+      <p class="ref"><code>ASC 830-10-45-3</code> <code>ASC 830-30-45-3</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="fx-067" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="fx-067" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Diluted EPS - Contingently Issuable Share Threshold</p>
+        <p class="ids"><code>fx-067</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-07</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Bravo Corp. has a contingent share agreement that requires issuance of 30,000 additional common shares if cumulative revenue exceeds $50,000,000 by December 31, Year 3. As of December 31, Year 1, cumulative revenue is $38,000,000. Year 1 revenue alone is $18,000,000. Weighted-average common shares for Year 1 are 400,000. How should the contingently issuable shares be treated in Year 1 diluted EPS?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>Include 30,000 shares because the revenue target would be met if Year 1 revenue continued</span><em>選択</em></li><li class="ok"><b>B</b><span>Exclude entirely because the contingency has not been met</span><em>正解</em></li><li class=""><b>C</b><span>Include a proportional 22,800 shares based on progress toward the target</span></li><li class=""><b>D</b><span>Include 30,000 shares only if the effect is dilutive</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>条件付発行可能株式は期末時点で条件未達なら除外。「このペースなら達成する」では含めない。</p>
+      <p class="exp">ASC 260-10-45-52に基づき、条件付発行株式は報告日時点で全ての必要条件が満たされている場合にのみ希薄化後EPSに含める（報告期間末が条件期間末であると仮定）。累積収益$38,000,000は閾値$50,000,000を超えていないため、Year 1の12月31日時点で条件は未達成であり、希薄化後EPSから除外する。比例按分での算入は認められない。</p>
+      <p class="expen">Under ASC 260-10-45-52, contingently issuable shares are included in diluted EPS only if all necessary conditions have been satisfied as of the reporting date (i.e., the shares would be issuable if the end of the reporting period were the end of the contingency period). Since cumulative revenue of $38,000,000 does not exceed the $50,000,000 threshold, the condition is not met as of December 31, Year 1, and the shares are excluded from diluted EPS. Proportional inclusion is not permitted. The correct answer is B.</p>
+      <p class="ref"><code>ASC 260-10-45-52</code> <code>ASC 260-10-45-53</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="consolidations">
+  <h2 id="t-consolidations"><span>Consolidations</span><em>6問</em></h2>
+  <p class="lead">6問中3問が概念問題（連結納税の80%要件、経済的単一体概念、持分法適用後の資本にNCIを足す）。残りは ASU 2021-08 の契約負債、VIEのサイロ、超過額の資産別償却。</p>
+  <article class="q" data-id="con-148" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="con-148" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Consolidated Total Stockholders' Equity</p>
+        <p class="ids"><code>con-148</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-29</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Pomo Corp owns 80% of Selt Inc and accounts for the investment using the equity method on its separate books. At December 31, Pomo's separate stockholders' equity is $8,000,000 and Selt's total stockholders' equity is $3,000,000. There is no acquisition differential and no intercompany profit. What is total consolidated stockholders' equity?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>$8,000,000</span><em>選択</em></li><li class=""><b>B</b><span>$11,000,000</span></li><li class=""><b>C</b><span>$10,400,000</span></li><li class="ok"><b>D</b><span>$8,600,000</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>持分法適用後の親会社資本にはすでに80%持分が含まれている。連結資本合計＝親会社資本＋NCI $600,000。</p>
+      <p class="exp">持分法を適用している親会社の単体資本$8,000,000には、子会社資本に対する80%持分がすでに含まれているため、連結上の親会社株主持分は$8,000,000となる。連結資本合計はこれにNCI（20%×$3,000,000＝$600,000）を加えた$8,600,000である。$8,000,000はNCIを欠落させた誤り。$11,000,000は子会社資本全額を持分法適用後の親会社資本に加えた二重計上、$10,400,000は親会社の80%持分を二重計上した誤りである。</p>
+      <p class="expen">Under the equity method, the parent's separate equity already includes its 80% share of the subsidiary's equity, so consolidated controlling interest equals the parent's equity of $8,000,000. Total consolidated equity adds the noncontrolling interest: 20% × $3,000,000 = $600,000. Total = $8,000,000 + $600,000 = $8,600,000. $8,000,000 omits the NCI. $11,000,000 double counts by adding the subsidiary's full equity to the parent's equity-method balance, and $10,400,000 double counts the parent's 80% share.</p>
+      <p class="ref"><code>ASC 810-10-45-15</code> <code>ASC 810-10-45-16</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="con-074" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="con-074" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Consolidated Tax Return vs Separate Return</p>
+        <p class="ids"><code>con-074</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-30</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Parent and its 80%-owned domestic Subsidiary file a consolidated federal income tax return. Which of the following is a requirement for filing a consolidated tax return under IRC regulations?</div>
+    <ol class="ch"><li class=""><b>A</b><span>The parent must own at least 51% of the subsidiary's voting stock</span></li><li class="ok"><b>B</b><span>The parent must own at least 80% of the subsidiary's voting power and value of stock</span><em>正解</em></li><li class="ng"><b>C</b><span>The parent must own 100% of the subsidiary</span><em>選択</em></li><li class=""><b>D</b><span>The parent must own more than 50% of the subsidiary's total assets</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>連結納税の要件は議決権・価値の80%以上。100%所有ではない。</p>
+      <p class="exp">IRC第1504条(a)により、連結税務申告が可能な関連グループでは、共通親会社が各対象法人の議決権総数の80%以上かつ株式価値合計の80%以上を保有する必要がある。これは財務会計上の連結基準（通常は議決権の50%超）とは異なる。80%基準は議決権と価値の両方に適用される。</p>
+      <p class="expen">Under IRC Section 1504(a), an affiliated group eligible to file a consolidated tax return requires the common parent to own at least 80% of the total voting power and at least 80% of the total value of the stock of each includable corporation. This is distinct from the financial accounting consolidation threshold of a controlling financial interest (typically more than 50% voting interest). The 80% threshold applies to both voting power and value.</p>
+      <p class="ref"><code>IRC Section 1504(a)</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="con-186" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="con-186" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Economic Entity Concept and NCI Classification</p>
+        <p class="ids"><code>con-186</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-30</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Under ASC 810, the noncontrolling interest is reported within consolidated stockholders' equity rather than as a liability or in a mezzanine section (absent redemption features). This presentation reflects which underlying concept of consolidated financial statements?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>The parent-company concept, under which the statements are prepared solely for the parent's shareholders</span><em>選択</em></li><li class=""><b>B</b><span>The proportionate consolidation concept, under which only the parent's share of each asset is included</span></li><li class="ok"><b>C</b><span>The economic entity concept, under which noncontrolling shareholders are owners of the consolidated group</span><em>正解</em></li><li class=""><b>D</b><span>The legal entity concept, under which each company reports only its own equity</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>経済的単一体概念。NCIは連結グループの持分保有者として資本の部に表示する。</p>
+      <p class="exp">現行GAAPは経済的単一体概念（economic entity concept）を採用している。連結財務諸表は親会社と子会社を単一の経済的単位として表示し、非支配株主もその単位の所有者とみなされるため、NCIは資本の部に表示される。親会社概念ではNCIを負債類似項目または資本外に表示することになるが、GAAPはこれを採用していない。比例連結（資産・負債を持分比率分だけ取り込む方法）は子会社には用いられない。</p>
+      <p class="expen">Current GAAP adopts the economic entity concept: the consolidated statements portray the parent and its subsidiaries as a single economic unit, and noncontrolling shareholders are viewed as owners of that unit, so their interest belongs in equity. Under the parent-company concept, the NCI would be presented as a quasi-liability or outside equity, which GAAP rejected. Proportionate consolidation, which would include only the parent's percentage of each asset and liability, is not used for subsidiaries. A strictly legal-entity view would preclude consolidation altogether.</p>
+      <p class="ref"><code>ASC 810-10-45-16</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="con-145" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="con-145" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Contract Liabilities Acquired (ASU 2021-08)</p>
+        <p class="ids"><code>con-145</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">In a business combination, the acquiree has deferred revenue (a contract liability) from customer contracts with a carrying amount of $300,000 measured under ASC 606. The estimated fair value of the obligation, based on the cost to fulfill plus a market margin, is $220,000. Under ASC 805 as amended by ASU 2021-08, at what amount should the acquirer recognize the contract liability at the acquisition date?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$300,000</span><em>正解</em></li><li class="ng"><b>B</b><span>$220,000</span><em>選択</em></li><li class=""><b>C</b><span>$0</span></li><li class=""><b>D</b><span>$260,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>ASU 2021-08。取得した契約負債は公正価値ではなくASC 606に従って測定する（ヘアカットしない）。</p>
+      <p class="exp">ASU 2021-08（ASC 805-20-30-28）により、顧客との契約から生じる契約資産・契約負債は公正価値ではなくASC 606に従って認識・測定する。したがって契約負債はASC 606に基づく金額$300,000で計上する。$220,000は改正前の公正価値アプローチ（取得した繰延収益が切り下げられる、いわゆるヘアカット）であり現行基準では誤り。未履行の履行義務が残るため認識ゼロは不適切で、$260,000は単なる平均値であり基準上の根拠がない。</p>
+      <p class="expen">ASU 2021-08 (codified in ASC 805-20-30-28) requires the acquirer to recognize and measure contract assets and contract liabilities from contracts with customers in accordance with ASC 606, rather than at fair value. The acquirer therefore records the contract liability at $300,000, the amount determined under ASC 606. $220,000 reflects the superseded fair value approach, which previously caused acquired deferred revenue to be written down (the so-called haircut). Recognizing nothing ignores the remaining performance obligations, and $260,000 is merely an average with no basis in the guidance.</p>
+      <p class="ref"><code>ASC 805-20-30-28</code> <code>ASU 2021-08</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="con-188" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="con-188" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">VIE - Silo Provisions</p>
+        <p class="ids"><code>con-188</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Finance Co holds a variable interest in specified assets of Vector LLC, a variable interest entity. Those specified assets are the only source of payment for specified liabilities of Vector, and they are essentially walled off from Vector's other assets and creditors. Finance Co has the power to direct the activities of, and absorbs the losses of, only that walled-off portion. Under ASC 810-10, how should Finance Co account for its interest?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>Consolidate all of Vector LLC, because a variable interest in any portion requires consolidating the whole entity</span><em>選択</em></li><li class=""><b>B</b><span>Apply the equity method to its interest in Vector LLC as a whole</span></li><li class=""><b>C</b><span>Disclose the interest but recognize nothing, because Finance Co holds no equity in Vector</span></li><li class="ok"><b>D</b><span>Treat the walled-off portion as a separate VIE (a silo) and consolidate that portion if Finance Co is its primary beneficiary</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>サイロ規定。切り離された部分を独立のVIEとして扱い、その部分の主たる受益者ならその部分のみ連結。</p>
+      <p class="exp">ASC 810-10にはシロ（silo）規定がある。VIEの特定資産が特定負債の実質的に唯一の返済原資であり、事業体の他の部分から隔離されている場合、その部分は別個のVIEとして扱う。シロの主たる受益者（その重要な活動に対するパワーと、損失負担義務またはリターン享受権を持つ企業）は、ホスト事業体全体ではなくシロ部分を連結する。Vector全体の連結はFinance Coのパワーとエクスポージャーを過大に反映する。持分法や開示のみの処理はシロ・レベルで適用される連結要求を無視している。</p>
+      <p class="expen">ASC 810-10 contains silo provisions: when specified assets of a VIE are essentially the only source of payment for specified liabilities and are walled off from the rest of the entity, that portion is treated as a separate VIE. A reporting entity that is the primary beneficiary of the silo — holding power over its significant activities and the obligation to absorb its losses or right to its returns — consolidates the silo, not the entire host entity. Consolidating all of Vector overstates Finance Co's exposure and power. The equity method and disclosure-only treatments ignore the consolidation requirement that applies at the silo level.</p>
+      <p class="ref"><code>ASC 810-10-25-57</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="con-099" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="con-099" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Excess Fair Value Amortization - Multiple Assets</p>
+        <p class="ids"><code>con-099</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-03</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">At acquisition, the fair value of Sub's net assets exceeded book value due to: inventory undervalued by $80,000 (sold during Year 1), a building undervalued by $300,000 (remaining life 20 years, straight-line), and a patent not previously recorded with a fair value of $120,000 (useful life 8 years). What is the total excess-fair-value amortization/expense that reduces consolidated income in Year 1?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$110,000</span><em>正解</em></li><li class=""><b>B</b><span>$30,000</span></li><li class=""><b>C</b><span>$500,000</span></li><li class="ng"><b>D</b><span>$95,000</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>超過額の償却は資産ごとに行う。在庫$80,000は販売時に全額、建物と特許は各耐用年数で償却。</p>
+      <p class="exp">各公正価値超過額は、関連資産が消費されるにつれて費用化する。在庫：Year 1に全て販売されるため$80,000全額が売上原価に計上。建物：$300,000 ÷ 20 = $15,000の追加減価償却。特許：$120,000 ÷ 8 = $15,000の追加償却。Year 1の超過費用合計 = $80,000 + $15,000 + $15,000 = $110,000。</p>
+      <p class="expen">Each fair value excess is expensed as the related asset is consumed. Inventory: fully sold in Year 1, so the entire $80,000 hits cost of goods sold. Building: $300,000 ÷ 20 = $15,000 of additional depreciation. Patent: $120,000 ÷ 8 = $15,000 of additional amortization. Total Year 1 excess expense = $80,000 + $15,000 + $15,000 = $110,000.</p>
+      <p class="ref"><code>ASC 805-20-30-1</code> <code>ASC 810-10-45-1</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="not-for-profit-accounting">
+  <h2 id="t-not-for-profit-accounting"><span>Not-for-Profit Accounting</span><em>6問</em></h2>
+  <p class="lead">制限の解除タイミング（供用開始時に全額）、charity care の非計上、合併の carryover method、variance power。<b>「収益に立てるか／どの列に入るか」</b>の判断で外している。</p>
+  <article class="q" data-id="nfp-138" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="nfp-138" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Gifts of Long-Lived Assets - Placed-in-Service Approach</p>
+        <p class="ids"><code>nfp-138</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-30</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">An NFP receives a cash gift restricted by the donor to the acquisition of a delivery van. The donor's agreement contains no stipulations about how long the van must be used. The NFP buys the van in November and places it in service in December of the same year. Under ASU 2016-14, when is the donor restriction released?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>In full when the van is placed in service in December</span><em>正解</em></li><li class="ng"><b>B</b><span>Ratably over the van's estimated useful life as an implied time restriction</span><em>選択</em></li><li class=""><b>C</b><span>When the cash gift is initially received</span></li><li class=""><b>D</b><span>Only when the van is eventually sold or retired</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>長期性資産の寄贈は placed-in-service アプローチ。供用開始時に全額制限解除。時間制限を推定しない。</p>
+      <p class="exp">ASU 2016-14（ASC 958-205-45-12）により、長期性資産の寄付またはその取得に制限された寄付については、使用期間に関する寄付者の明示的な定めがない限り、placed-in-service approachの適用が強制され、資産の供用開始時点で制限全額を解除する。耐用年数にわたり時間的制限を擬制して段階的に解除する従来の選択肢は廃止された。現金受領時点では使途制限は未充足であり、売却・除却時まで解除を待つ根拠は基準上存在しない。</p>
+      <p class="expen">ASU 2016-14 requires the placed-in-service approach for gifts of, or restricted to the acquisition of, long-lived assets absent explicit donor stipulations about how long the asset must be used: the entire restriction is released when the asset is placed in service. The former option of implying a time restriction and releasing the restriction over the useful life was eliminated. Receipt of the cash does not satisfy the purpose restriction, and deferring the release until disposal has no basis in the guidance.</p>
+      <p class="ref"><code>ASC 958-205-45-12</code> <code>ASU 2016-14</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="nfp-020" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="nfp-020" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Statement of Activities - Change in Net Assets</p>
+        <p class="ids"><code>nfp-020</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-30</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">An NFP has the following Year 1 activity: Contributions without donor restrictions $2,000,000; Contributions with donor restrictions $800,000; Net assets released from restrictions $500,000; Total expenses $1,900,000. What is the change in net assets without donor restrictions?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$600,000</span><em>正解</em></li><li class=""><b>B</b><span>$100,000</span></li><li class=""><b>C</b><span>$1,400,000</span></li><li class="ng"><b>D</b><span>$2,500,000</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>制限なし純資産の変動＝制限なし収入＋制限解除−費用。制限付寄付$800,000は別列に入る。</p>
+      <p class="exp">制限なし純資産の変動 = 制限なし収入 + 制限解除振替 - 費用 = $2,000,000 + $500,000 - $1,900,000 = $600,000。制限付き寄付$800,000は「制限付き」列にのみ影響する。制限解除$500,000は「制限なし」列に加算される。</p>
+      <p class="expen">Change in net assets without donor restrictions = Revenue without restrictions + Net assets released from restrictions − Expenses = $2,000,000 + $500,000 − $1,900,000 = $600,000. The $800,000 with donor restrictions affects only the 'with restrictions' column. Released restrictions ($500,000) are added to the 'without restrictions' column.</p>
+      <p class="ref"><code>ASC 958-205-45-1</code> <code>ASC 958-225-45-3</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="nfp-187" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="nfp-187" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Financial Statements</p>
+        <p class="ids"><code>nfp-187</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-30</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">How should operating expenses for a nongovernmental not-for-profit organization be reported on the statement of activities?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Cash flows from operating activities.</span></li><li class="ok"><b>B</b><span>Change in net assets without donor restrictions.</span><em>正解</em></li><li class="ng"><b>C</b><span>Net assets released from donor restrictions.</span><em>選択</em></li><li class=""><b>D</b><span>Net assets without donor restrictions.</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>制限なし列に表示されるのは change in net assets without donor restrictions。released は振替行。</p>
+      <p class="exp">ASC 958-205の下で、活動計算書は純資産を変動させる収益と費用を表示します。営業費用は制限なし純資産を減少させるため、「制限なし純資産の変動」の一部として報告されます。「営業活動からのキャッシュフロー」はキャッシュフロー計算書の概念です。「制限なし純資産」は残高を指し、変動を指しません。したがって正解は「制限なし純資産の変動」です。</p>
+      <p class="expen">Under ASC 958-205, the statement of activities shows revenues and expenses that change net assets. Operating expenses reduce net assets without donor restrictions and are therefore reported as part of the change in net assets without donor restrictions. Cash flows from operating activities is a statement of cash flows concept, not a statement of activities classification. 'Net assets without donor restrictions' refers to a balance, not a change, so the correct answer is 'change in net assets without donor restrictions.'</p>
+      <p class="ref"><code>ASC 958-205</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="nfp-074" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="nfp-074" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Healthcare NFP - Charity Care Reporting</p>
+        <p class="ids"><code>nfp-074</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A not-for-profit hospital provides $800,000 in charity care at established rates. The estimated cost of providing this charity care is $320,000. Under ASC 954, how is the charity care reported?</div>
+    <ol class="ch"><li class=""><b>A</b><span>As revenue of $800,000 with a corresponding bad debt expense</span></li><li class="ng"><b>B</b><span>As a deduction from gross patient service revenue</span><em>選択</em></li><li class="ok"><b>C</b><span>Not reported as revenue; disclosed in the notes with the cost of services provided</span><em>正解</em></li><li class=""><b>D</b><span>As operating expense of $320,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>charity care は収益に計上しない。売上高からの控除でもなく、注記でコストを開示する。</p>
+      <p class="exp">ASC 954-605-50-3に基づき、慈善医療は回収の意図がないため純患者サービス収入に含めない。慈善医療は財務諸表の注記で開示する。開示内容には慈善医療提供の方針と提供水準（通常は原価で測定）を含む。$800,000の定価は収入として報告せず、$320,000の原価は注記で開示する。</p>
+      <p class="expen">Under ASC 954-605-50-3, charity care is not included in net patient service revenue because the healthcare entity never intended to collect for these services. Charity care is disclosed in the notes to the financial statements, including the entity's policy for providing charity care and the level of charity care provided (typically measured at cost). The $800,000 at established rates is not reported as revenue, and the $320,000 cost is disclosed in the notes.</p>
+      <p class="ref"><code>ASC 954-605-50-3</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="nfp-036" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="nfp-036" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">NFP Mergers and Acquisitions (ASC 958-805)</p>
+        <p class="ids"><code>nfp-036</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-06</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Two NFPs decide to merge. NFP X has net assets of $2,000,000 and NFP Y has net assets of $800,000. Under ASC 958-805, how is a merger (as opposed to an acquisition) accounted for?</div>
+    <ol class="ch"><li class=""><b>A</b><span>The purchase method with goodwill recognition</span></li><li class="ok"><b>B</b><span>The carryover method, combining assets and liabilities at carrying values</span><em>正解</em></li><li class="ng"><b>C</b><span>The acquisition method with fair value measurement</span><em>選択</em></li><li class=""><b>D</b><span>The pooling of interests method</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>NFPの合併は carryover method（簿価の結合）。取得（acquisition method）と区別する。</p>
+      <p class="exp">ASC 958-805では、NFPの合併（単一の取得者が存在せず交換取引でない場合）は帳簿価額引継法（carryover method）で処理する。合併各団体の資産・負債を帳簿価額で合算し、純資産を適切に再分類する。合併ではのれんは認識しない。</p>
+      <p class="expen">Under ASC 958-805, NFP mergers (where no single entity is the acquirer and the combination is not an exchange transaction) are accounted for using the carryover method. Assets and liabilities of the merging entities are combined at their carrying values. Net assets are combined and reclassified as appropriate. No goodwill is recognized in a merger.</p>
+      <p class="ref"><code>ASC 958-805-25-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="nfp-072" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="nfp-072" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Pass-Through Contributions (Variance Power)</p>
+        <p class="ids"><code>nfp-072</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-07</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">NFP X receives $400,000 from a donor with instructions to transfer the funds to NFP Y. NFP X has variance power and also has a financial interest in NFP Y (an equity transaction). How should NFP X account for the $400,000?</div>
+    <ol class="ch"><li class=""><b>A</b><span>As a liability only</span></li><li class="ok"><b>B</b><span>As contribution revenue of $400,000</span><em>正解</em></li><li class="ng"><b>C</b><span>As contribution revenue and simultaneously recognize a grant expense to NFP Y</span><em>選択</em></li><li class=""><b>D</b><span>As an increase in its equity interest in NFP Y</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>variance power があれば自らの寄付収益として認識する。同時に費用を立てる pass-through 処理ではない。</p>
+      <p class="exp">ASC 958-605-25-24〜25-27に基づき、仲介NFPが転用権限（variance power）を有する場合、指定受益者に対する金融持分の有無にかかわらず、負債ではなく寄付収益を認識する。その後NFP Yに資金を移転した時点で助成金費用を計上する。受領時の寄付収益認識の決定要因は転用権限の有無である。</p>
+      <p class="expen">Under ASC 958-605-25-24 through 25-27, when an intermediary NFP has variance power, it recognizes contribution revenue rather than a liability, regardless of whether it also has a financial interest in the specified beneficiary. When the funds are subsequently transferred to NFP Y, NFP X records a grant expense. The variance power is the determining factor for recognizing contribution revenue at the time of receipt.</p>
+      <p class="ref"><code>ASC 958-605-25-24</code> <code>ASC 958-605-25-27</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="cash-and-cash-equivalents">
+  <h2 id="t-cash-and-cash-equivalents"><span>Cash and Cash Equivalents</span><em>6問</em></h2>
+  <p class="lead">6問中4問が<b>銀行勘定調整・proof of cash の加減方向</b>。期首未達を引くのか足すのか、銀行側の調整項目か帳簿側かで取り違えている。手を動かす型の練習が最も効く領域。</p>
+  <article class="q" data-id="cce-105" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cce-105" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Informal Compensating Balance Arrangement</p>
+        <p class="ids"><code>cce-105</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">In connection with a short-term borrowing arrangement, Kerr Co. has informally agreed with its bank to maintain an average balance of $200,000 in its demand deposit account. The arrangement is not a written contract, and no legal restriction prevents Kerr from withdrawing the funds at any time. How should Kerr treat the $200,000 in its financial statements?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Include the amount in cash and cash equivalents and disclose the arrangement in the notes</span><em>正解</em></li><li class=""><b>B</b><span>Reclassify the amount as a current restricted asset, separate from cash</span></li><li class="ng"><b>C</b><span>Reclassify the amount as a noncurrent asset until the borrowing is repaid</span><em>選択</em></li><li class=""><b>D</b><span>Exclude the amount from the balance sheet entirely as the bank's property</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>非公式の compensating balance は現金に含めたまま注記開示。区分振替はしない。</p>
+      <p class="exp">補償残高の取決めが非公式（informal）で、預金者の引出しに法的拘束がない場合、当該資金は一般目的に利用可能なため、現金及び現金同等物に含めたまま、取決めの存在と条件を注記で開示します（SEC Regulation S-X Rule 5-02の枠組み）。貸借対照表上、制限付き資産として区分掲記（流動・非流動）が必要となるのは、引出し・使用が法的に拘束されている場合のみです。資金は預金者の資産であり続けるため、貸借対照表から除外する処理は成り立ちません。</p>
+      <p class="expen">When a compensating balance arrangement is informal and the depositor is not legally restricted from withdrawing the funds, the cash remains available for general use. The amount stays within cash and cash equivalents, and the existence and terms of the arrangement are disclosed in the notes. Segregation on the balance sheet as a restricted asset (current or noncurrent) is required only when the funds are legally restricted as to withdrawal or use. The funds remain the depositor's asset, so removing them from the balance sheet is not supportable.</p>
+      <p class="ref"><code>SEC Regulation S-X Rule 5-02</code> <code>ASC 210-10-45</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cce-074" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cce-074" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Proof of Cash - Adjusted Disbursements</p>
+        <p class="ids"><code>cce-074</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-03</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">In preparing a four-column proof of cash, a company finds that bank disbursements (checks paid) for the month totaled $76,000. Outstanding checks were $8,200 at the beginning of the month and $10,500 at the end of the month. What amount should be reported as the company's adjusted (book) disbursements for the month?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>$73,700</span><em>選択</em></li><li class="ok"><b>B</b><span>$78,300</span><em>正解</em></li><li class=""><b>C</b><span>$76,000</span></li><li class=""><b>D</b><span>$94,700</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>修正後支出＝銀行支出−期首未取立＋期末未取立。加減を逆にして$73,700になった。</p>
+      <p class="exp">修正後帳簿支出額 = 銀行支出 - 期首未取立小切手 + 期末未取立小切手 = $76,000 - $8,200 + $10,500 = $78,300。期首の未取立小切手は当月に決済され$76,000に含まれるため控除し、期末の未取立小切手は会社記帳済み・銀行未払のため加算する。両調整を逆にすると$73,700になる。</p>
+      <p class="expen">Adjusted book disbursements = bank disbursements - beginning outstanding checks + ending outstanding checks = $76,000 - $8,200 + $10,500 = $78,300. The beginning outstanding checks cleared during the month and are included in the bank's $76,000, so they are removed; the ending outstanding checks were recorded by the company but not yet paid by the bank, so they are added. Reversing both adjustments yields $73,700.</p>
+      <p class="ref"><code>ASC 305-10-05-2</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cce-022" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cce-022" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Postdated Checks</p>
+        <p class="ids"><code>cce-022</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">On December 31, a company holds a $5,000 check from a customer that is dated January 15 of the following year. How should this postdated check be classified?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Cash</span></li><li class="ok"><b>B</b><span>Receivable</span><em>正解</em></li><li class="ng"><b>C</b><span>Cash equivalent</span><em>選択</em></li><li class=""><b>D</b><span>Prepaid asset</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>先日付小切手は現金ではなく債権。</p>
+      <p class="exp">先日付小切手は記載日まで換金できないため、B/S日時点で即時利用可能な現金には該当しない。換金可能日まで受取勘定（receivable）として分類する。</p>
+      <p class="expen">A postdated check cannot be deposited or cashed until the date shown on the check. Since it is not available for immediate use at the balance sheet date, it does not meet the definition of cash. It should be classified as a receivable until the date it becomes negotiable.</p>
+      <p class="ref"><code>ASC 305-10-05-2</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cce-067" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cce-067" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Petty Cash - Reportable Cash Amount</p>
+        <p class="ids"><code>cce-067</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">At month-end, a custodian counts a $300 imprest petty cash fund and finds $112 in currency, $8 in coins, $175 in expense receipts, and $5 of unused postage stamps. What amount should be reported as petty cash (cash) on the balance sheet?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$300</span></li><li class="ok"><b>B</b><span>$120</span><em>正解</em></li><li class="ng"><b>C</b><span>$125</span><em>選択</em></li><li class=""><b>D</b><span>$295</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>現金として報告できるのは通貨と硬貨のみ。切手$5は前払費用。</p>
+      <p class="exp">現金として報告できるのは通貨と硬貨のみ：$112 + $8 = $120。レシート$175は既発生費用、切手$5は前払費用であり現金ではない。定額$300は承認された基金額であって実際の現金ではない。切手を含めると$125と過大計上になる。</p>
+      <p class="expen">Only currency and coins represent cash in the fund: $112 + $8 = $120. The $175 in receipts represents expenses already incurred, and the $5 of postage stamps is a prepaid expense, not cash. The imprest amount of $300 is the authorized fund size, not the actual cash on hand. Including the stamps would overstate cash at $125.</p>
+      <p class="ref"><code>ASC 305-10-05-2</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cce-116" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cce-116" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Reconstructing Cash Receipts per Books</p>
+        <p class="ids"><code>cce-116</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-05</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Tomo Co. is reconstructing its cash receipts per books for the month of April. The April bank statement shows total deposits credited by the bank of $84,500, which includes a $5,000 credit for a note receivable the bank collected directly on Tomo's behalf. Deposits in transit were $6,200 at March 31 and $9,100 at April 30. What amount of cash receipts did Tomo record in its books during April?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>$87,400</span><em>選択</em></li><li class="ok"><b>B</b><span>$82,400</span><em>正解</em></li><li class=""><b>C</b><span>$76,600</span></li><li class=""><b>D</b><span>$84,500</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>帳簿入金の逆算。期首未達を控除・期末未達を加算し、銀行が直接取り立てた$5,000を除く。この除外を落とした。</p>
+      <p class="exp">4月の帳簿上の入金額 = 銀行が入金記録した預金 $84,500 − 3月31日の未達預金 $6,200（帳簿では3月計上、銀行では4月入金）+ 4月30日の未達預金 $9,100（帳簿では4月計上、銀行では未入金）− 手形取立 $5,000（銀行は入金記録したが帳簿の入金としては未記帳）= $82,400。$87,400は銀行が直接取り立てた手形を除外し忘れた誤り。$76,600は期首と期末の未達預金の加減を逆にした誤り。$84,500は銀行の預金合計を無調整で用いたものである。</p>
+      <p class="expen">Book receipts for April = deposits credited by the bank $84,500 − March 31 deposits in transit $6,200 (recorded in the books in March, credited by the bank in April) + April 30 deposits in transit $9,100 (recorded in the books in April, not yet credited by the bank) − note collection $5,000 (credited by the bank but never recorded as a book receipt) = $82,400. The amount $87,400 fails to remove the note collected directly by the bank; $76,600 reverses the treatment of the beginning and ending deposits in transit; $84,500 simply uses the bank's deposit total without any adjustment.</p>
+      <p class="ref"><code>ASC 305-10</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cce-140" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cce-140" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Bank Reconciliation</p>
+        <p class="ids"><code>cce-140</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-06</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">The following information pertains to Linton Co. at December 31, Year 4. Linton's cash balance per book is $10,000, and their cash balance per bank statement is $13,500. Reconciliation of the statement with the company books reveals the following information:
+
+| Item | Amount |
+|------|--------|
+| Bank statement error in Linton's favor | $1,525 |
+| Bank charge | $25 |
+| Deposit received by bank directly from customer | $500 |
+| Check drawn on Linton's account, payable to a vendor, dated and recorded December 31, Year 4 but not mailed until January 11, Year 5 | $1,500 |
+
+On Linton's December 31, Year 4, balance sheet, what is the net cash balance after reconciliation?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$10,475</span><em>正解</em></li><li class=""><b>B</b><span>$10,675</span></li><li class=""><b>C</b><span>$11,775</span></li><li class="ng"><b>D</b><span>$11,975</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>帳簿側の調整項目は手数料と直接入金だけ。銀行の誤記帳と未取立小切手は銀行側で調整する。</p>
+      <p class="exp">帳簿残高の調整（真の現金残高）：帳簿残高$10,000から銀行手数料$25を差し引き、銀行が顧客から直接受け取った入金$500を加算します。銀行側の誤り（$1,525）は銀行残高の調整項目、12月31日付で記録されたが1月11日まで未送付の小切手は未取立小切手として銀行残高側の調整項目です。調整後帳簿残高＝$10,000－$25＋$500＝$10,475。</p>
+      <p class="expen">The adjusted book balance (true cash balance) is determined by correcting the book balance for items not yet recorded in the books. Starting with book balance of $10,000: subtract bank charge of $25 (reduces cash), add deposit received directly by bank from customer of $500 (increases cash). The bank error of $1,525 in Linton's favor is an error on the bank statement — it adjusts the bank side, not the book side. The check dated and recorded December 31 but not mailed until January 11 was already recorded in the books (reducing cash), so it does not adjust the book balance. Adjusted book balance = $10,000 − $25 + $500 = $10,475. However, the check recorded but not mailed is an outstanding check — it adjusts the bank side. The adjusted book balance = $10,475. Checking $10,675: $10,000 + $500 − $25 + $200 = $10,675 does not fit. The answer is $10,475.</p>
+      <p class="ref"><code>ASC 305</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="investments">
+  <h2 id="t-investments"><span>Investments</span><em>5問</em></h2>
+  <p class="lead"><b>持分法の資本取引</b>（被投資会社の増資・自己株式取得）で2問。ほかにAFSの公正価値フロア、公正価値オプションの対象外、AFS未実現利益の表示区分。</p>
+  <article class="q" data-id="inv-i-181" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-i-181" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Available-for-Sale</p>
+        <p class="ids"><code>inv-i-181</code><span class="chip d-intermediate">標準</span><span class="chip rep">模試で2回</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-26 / 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">During the current year, Cooley Co. had an unrealized gain (related to changes in market risk) of $100,000 on a debt investment classified as available-for-sale. Cooley's corporate tax rate is 25%. What amount of the gain should be included in Cooley's net income and other comprehensive income at the end of the current year? Net Income Other Comprehensive Income</div>
+    <ol class="ch"><li class=""><b>A</b><span>$100,000 $0</span></li><li class=""><b>B</b><span>$75,000 $25,000</span></li><li class="ng"><b>C</b><span>$25,000 $75,000</span><em>選択</em></li><li class="ok"><b>D</b><span>$0 $75,000</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>AFSの未実現利益はOCIのみ。純利益への影響は$0。</p>
+      <p class="exp">ASC 320により、売却可能有価証券（AFS）の市場リスクに起因する非信用関連の未実現保有利益は、純利益に含めずその他包括利益（OCI）に税効果控除後で計上する。税引前未実現利益$100,000 × (1 − 25%) = $75,000がOCIに計上される。純利益への影響はゼロ。</p>
+      <p class="expen">Under ASC 320, unrealized holding gains and losses on available-for-sale (AFS) debt securities that are noncredit related (arising from changes in market risk) are excluded from net income and instead reported in other comprehensive income (OCI), net of tax. The pretax unrealized gain = $100,000. The tax effect = $100,000 × 25% = $25,000. The after-tax unrealized gain recognized in OCI = $100,000 − $25,000 = $75,000. Net income = $0 from this gain (it does not pass through the income statement).</p>
+      <p class="ref"><code>ASC 320</code> <code>ASC 740</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="inv-i-134" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-i-134" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">AFS Credit Loss - Fair Value Floor Limitation</p>
+        <p class="ids"><code>inv-i-134</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Anchor Corp. holds an AFS debt security with an amortized cost of $300,000 and a fair value of $282,000 at year-end. Anchor does not intend to sell the security and it is not more likely than not that it will be required to sell. The present value of expected cash flows is $270,000. What allowance for credit losses should Anchor record?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$30,000</span></li><li class="ng"><b>B</b><span>$12,000</span><em>選択</em></li><li class=""><b>C</b><span>$0</span></li><li class="ok"><b>D</b><span>$18,000</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>AFS債券の信用損失には公正価値フロアがあり、引当上限は償却原価−公正価値の$18,000。</p>
+      <p class="exp">ASC 326-30-35-2により、AFS負債証券の信用損失は「償却原価 − 期待キャッシュ・フローの現在価値」（$300,000 − $270,000 = $30,000）ですが、引当金は「償却原価 − 公正価値」（$300,000 − $282,000 = $18,000）を上限とします（公正価値フロア）。したがって計上する信用損失引当金は $18,000 です。フロアを無視した $30,000、公正価値と期待CF現在価値の差額 $12,000 は誤りです。</p>
+      <p class="expen">Under ASC 326-30, the credit loss on an AFS debt security is the excess of amortized cost over the present value of expected cash flows ($300,000 − $270,000 = $30,000), but the allowance is limited to the amount by which amortized cost exceeds fair value ($300,000 − $282,000 = $18,000), the fair value floor. The allowance recorded is therefore $18,000. $30,000 ignores the fair value floor. $12,000 is the difference between fair value and the present value of expected cash flows, which is not the allowance. Recording no allowance is wrong because a credit loss exists.</p>
+      <p class="ref"><code>ASC 326-30-35-2</code> <code>ASC 326-30-35-3</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="inv-i-146" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-i-146" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Fair Value Option - Ineligible Items</p>
+        <p class="ids"><code>inv-i-146</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-03</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Under ASC 825, the fair value option may NOT be elected for which of the following items?</div>
+    <ol class="ch"><li class=""><b>A</b><span>An investment that would otherwise be accounted for under the equity method</span></li><li class="ng"><b>B</b><span>A held-to-maturity debt security at initial recognition</span><em>選択</em></li><li class=""><b>C</b><span>A firm commitment involving only financial instruments</span></li><li class="ok"><b>D</b><span>An investment in a subsidiary that the entity is required to consolidate</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>公正価値オプションの対象外は連結が要求される子会社株式。HTM債券は当初認識時に選択できる。</p>
+      <p class="exp">ASC 825-10-15-5は、公正価値オプションの適用除外項目として「連結が要求される子会社への投資」を明示しています（ほかに年金債務、リース資産・負債、要求払預金負債等）。一方、持分法投資、当初認識時の金融資産（負債証券を含む）、金融商品のみが関係する確定約定はASC 825-10-15-4の適格項目です。</p>
+      <p class="expen">ASC 825-10-15-5 specifically excludes from the fair value option an investment in a subsidiary that the entity is required to consolidate, along with items such as pension obligations, lease assets and liabilities, and demand deposit liabilities. Equity method investments, recognized financial assets including debt securities at initial recognition, and firm commitments involving only financial instruments are all eligible items under ASC 825-10-15-4.</p>
+      <p class="ref"><code>ASC 825-10-15-4</code> <code>ASC 825-10-15-5</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="inv-i-070" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-i-070" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Equity Method - Investee Capital Contribution</p>
+        <p class="ids"><code>inv-i-070</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Birch Corp. owns 30% of Cedar Inc. and uses the equity method with an investment balance of $600,000. Cedar receives a capital contribution of $200,000 from another investor, increasing Cedar's total equity. How should Birch account for this event?</div>
+    <ol class="ch"><li class=""><b>A</b><span>No journal entry is required because Birch did not contribute</span></li><li class="ok"><b>B</b><span>Birch records an increase to its investment for its share of the increase in Cedar's equity</span><em>正解</em></li><li class="ng"><b>C</b><span>Birch records a decrease to its investment because its ownership percentage is diluted</span><em>選択</em></li><li class=""><b>D</b><span>Birch recognizes dividend income of $60,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>被投資会社の増資で持分額が増えれば投資勘定を増額する。持分比率の希薄化だけを見て減額しない。</p>
+      <p class="exp">ASC 323-10-35-4により、持分法投資者は被投資会社の資本変動に対する持分を調整。Cedarが他の投資者から$200,000の出資を受けると資本が増加。Birchの持分比率は希薄化する可能性があるが、純資産増加に対する持分を認識。出資が1株あたり簿価以上であれば、通常は投資勘定の増加となる。</p>
+      <p class="expen">Under ASC 323-10-35-4, an equity method investor adjusts its investment account for its proportionate share of changes in the investee's equity. When Cedar receives a $200,000 capital contribution from another investor, Cedar's equity increases. Although Birch's percentage ownership may be diluted, its share of the increase in net assets is recognized. Birch records the net effect of the change in its proportionate share of Cedar's equity, which typically results in an increase to the investment account when the contribution is at or above the per-share book value.</p>
+      <p class="ref"><code>ASC 323-10-35-4</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="inv-i-069" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-i-069" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Equity Method - Investee Treasury Stock Transaction</p>
+        <p class="ids"><code>inv-i-069</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">River Corp. owns 25% (100,000 shares) of Lake Inc. and uses the equity method. Lake has 400,000 shares outstanding with a book value of $2,000,000. Lake repurchases 50,000 of its own shares from other shareholders at $6.00 per share. What is the impact on River's equity method investment?</div>
+    <ol class="ch"><li class=""><b>A</b><span>No effect on River's investment</span></li><li class="ng"><b>B</b><span>River records a gain because its ownership percentage increased</span><em>選択</em></li><li class="ok"><b>C</b><span>River adjusts its investment for the change in its share of Lake's equity</span><em>正解</em></li><li class=""><b>D</b><span>River must purchase additional shares to maintain its 25% ownership</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>被投資会社の自己株式取得は、持分額の変化として投資勘定を調整する。比率上昇を利益にしない。</p>
+      <p class="exp">被投資会社が自己株式を取得すると投資者の持分比率が変動。取得前: 100,000/400,000=25%。取得後: 100,000/350,000=28.57%。Lake資本: $2,000,000-$300,000=$1,700,000。River持分: 25%×$2,000,000=$500,000→28.57%×$1,700,000=$485,714。ASC 323-10-35-4により投資者は被投資会社の資本変動に対する持分を調整。</p>
+      <p class="expen">When an investee repurchases its own shares, the investor's ownership percentage changes. Before: River owns 100,000 / 400,000 = 25%. After Lake repurchases 50,000 shares: River owns 100,000 / 350,000 = 28.57%. Lake's equity changes: original equity $2,000,000 minus treasury stock cost ($6.00 × 50,000 = $300,000) = $1,700,000. River's share of equity changes from 25% × $2,000,000 = $500,000 to 28.57% × $1,700,000 = $485,714. Under ASC 323-10-35-4, the investor adjusts its investment account for its share of changes in the investee's equity, which may result in a gain or loss recognized in income or an adjustment to additional paid-in capital.</p>
+      <p class="ref"><code>ASC 323-10-35-4</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="inventory">
+  <h2 id="t-inventory"><span>Inventory</span><em>5問</em></h2>
+  <p class="lead">小売棚卸法の欄操作（値下げ・従業員割引）が2問。ほかにFOB shipping point の title 移転時点、正常生産能力による固定費配賦、LIFO清算の損益方向。</p>
+  <article class="q" data-id="inv-168" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-168" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">FOB Shipping Point - Goods Not Yet Delivered to Carrier</p>
+        <p class="ids"><code>inv-168</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-29</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">On December 31, Year 1, Telford Co. completed a sale of goods costing $18,000 with terms FOB shipping point. The goods were packed and segregated on Telford's loading dock at year-end and were picked up by the common carrier on January 2, Year 2. How should Telford treat these goods in its December 31, Year 1 financial statements?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Exclude the goods from inventory because the sales agreement was final at year-end</span></li><li class="ng"><b>B</b><span>Exclude the goods from inventory because FOB shipping point transfers title at the seller's location</span><em>選択</em></li><li class="ok"><b>C</b><span>Include the goods in inventory because title does not pass until the goods are delivered to the carrier</span><em>正解</em></li><li class=""><b>D</b><span>Include half the cost in inventory to reflect the shared risk during the transfer period</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>FOB shipping point でも運送人に引き渡すまでは売主の在庫。</p>
+      <p class="exp">FOB shipping point条件では、売手が運送業者に商品を引き渡した時点で所有権が移転する。販売契約の締結時点や、商品が売手の構内にあるという事実だけでは移転しない。12月31日時点で商品はまだTelford社の搬出口にあり運送業者に引き渡されていないため、所有権（および支配）は移転しておらず、$18,000はTelford社の棚卸資産に含めたままにする。「契約が確定していた」という理由は、所有権移転の契機が運送業者への引渡しであることを無視している。「売手の所在地で所有権が移転する」という説明は不完全で、移転するのは運送業者への引渡し時である。原価を折半する処理にGAAP上の根拠はない。</p>
+      <p class="expen">Under FOB shipping point terms, title passes when the seller delivers the goods to the common carrier—not when the sales agreement is signed and not merely because the goods sit at the seller's location. At December 31 the goods were still on Telford's dock and had not been given to the carrier, so title (and control) had not passed, and the $18,000 remains in Telford's inventory. The reasoning that the contract was final ignores the shipping-term trigger for title transfer. The notion that title passes 'at the seller's location' is incomplete: it passes at the seller's location only upon delivery to the carrier. Splitting the cost has no basis in GAAP.</p>
+      <p class="ref"><code>ASC 330-10-30</code> <code>ASC 606-10-25-30</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="inv-068" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-068" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Retail Method - Employee Discounts Treatment</p>
+        <p class="ids"><code>inv-068</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-30</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">In applying the retail inventory method, how should employee discounts be treated?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Deducted from sales in computing ending inventory at retail</span></li><li class=""><b>B</b><span>Added to markdowns</span></li><li class="ok"><b>C</b><span>Deducted from the retail column similar to sales</span><em>正解</em></li><li class="ng"><b>D</b><span>Excluded from the calculation entirely</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>従業員割引は小売欄で売上と同様に控除する。計算から外さない。</p>
+      <p class="exp">従業員割引は小売法において、売上と同様に小売欄から控除して期末在庫小売額を計算する。値下げとは扱わない。値下げは原価率に影響するが、従業員割引は原価率を歪めることなく期末在庫小売額を減少させる既知の減少額である。</p>
+      <p class="expen">Employee discounts are treated as a reduction from the retail column, similar to sales, when computing ending inventory at retail. They are not treated as markdowns because markdowns affect the cost-to-retail percentage, while employee discounts represent a known reduction that should reduce ending inventory at retail without distorting the cost ratio. The answer is C.</p>
+      <p class="ref"><code>ASC 330-10-30-22</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="inv-113" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-113" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Cost Retail Method - Average Cost (Markdowns Included)</p>
+        <p class="ids"><code>inv-113</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Pinehill Co. uses the cost (average) retail method, which includes both net markups and net markdowns in the cost-to-retail ratio. Beginning inventory: cost $48,000, retail $80,000. Net purchases: cost $192,000, retail $304,000. Net markups $30,000. Net markdowns $14,000. Net sales $296,000. What is the estimated ending inventory at cost?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$62,400</span><em>正解</em></li><li class=""><b>B</b><span>$64,000</span></li><li class="ng"><b>C</b><span>$60,000</span><em>選択</em></li><li class=""><b>D</b><span>$68,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>原価（平均）小売法は値上げも値下げも原価率に含める。値下げを除くと低価法（従来型）になる。</p>
+      <p class="exp">原価（平均）小売法では値上げと値下げの両方を原価率に含める。原価率 = (原価：$48,000 + $192,000) / (売価：$80,000 + $304,000 + $30,000 − $14,000) = $240,000 / $400,000 = 60%。期末在庫（売価）= $400,000 − $296,000 = $104,000。期末在庫（原価）= $104,000 × 60% = $62,400。</p>
+      <p class="expen">The cost (average) retail method includes both net markups and net markdowns in the cost-to-retail ratio. Cost-to-retail ratio = (Cost: $48,000 + $192,000) / (Retail: $80,000 + $304,000 + $30,000 − $14,000) = $240,000 / $400,000 = 60%. Ending inventory at retail = $400,000 − $296,000 sales = $104,000. Ending inventory at cost = $104,000 × 60% = $62,400.</p>
+      <p class="ref"><code>ASC 330-10-30-22</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="inv-091" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-091" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Manufacturing Overhead Allocation</p>
+        <p class="ids"><code>inv-091</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-06</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A manufacturer produced 10,000 units during the period. Total manufacturing costs were:
+- Direct materials: $150,000
+- Direct labor: $100,000
+- Variable overhead: $50,000
+- Fixed overhead: $80,000 (based on normal capacity of 12,500 units)
+Under absorption costing per ASC 330, what is the inventoriable cost per unit?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>$38.00</span><em>選択</em></li><li class=""><b>B</b><span>$30.00</span></li><li class="ok"><b>C</b><span>$36.40</span><em>正解</em></li><li class=""><b>D</b><span>$34.40</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>固定間接費は正常生産能力12,500で配賦。未配賦の$16,000は期間費用に落とす。</p>
+      <p class="exp">ASC 330-10-30-3に基づき固定間接費は正常生産能力で配賦。固定間接費単価=$80,000÷12,500=$6.40/単位。10,000単位への配賦固定間接費=10,000×$6.40=$64,000。未配賦間接費($80,000-$64,000=$16,000)は期間費用。棚卸資産単価=($150,000+$100,000+$50,000+$64,000)÷10,000=$364,000÷10,000=$36.40。</p>
+      <p class="expen">Under ASC 330-10-30-3, fixed overhead is allocated based on normal capacity. Fixed overhead rate per unit = $80,000 / 12,500 = $6.40 per unit. Allocated fixed overhead for 10,000 units = 10,000 x $6.40 = $64,000. Unallocated overhead ($80,000 - $64,000 = $16,000) is expensed as a period cost. Inventoriable cost per unit = ($150,000 + $100,000 + $50,000 + $64,000) / 10,000 = $364,000 / 10,000 = $36.40. The answer is C.</p>
+      <p class="ref"><code>ASC 330-10-30-3</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="inv-010" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="inv-010" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">LIFO Liquidation</p>
+        <p class="ids"><code>inv-010</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-06</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">During a period of rising prices, Company W experiences a LIFO liquidation (selling more units than purchased). What is the likely effect on financial statements?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>Higher COGS and lower net income compared to normal operations</span><em>選択</em></li><li class="ok"><b>B</b><span>Lower COGS and higher net income due to dipping into old, low-cost layers</span><em>正解</em></li><li class=""><b>C</b><span>No effect on COGS</span></li><li class=""><b>D</b><span>Higher inventory values on the balance sheet</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>LIFO清算は古い低原価層を取り崩すのでCOGSは下がり利益は増える。方向が逆。</p>
+      <p class="exp">LIFO清算は販売数量が仕入数量を超え、古いLIFO層（低原価）がCOGSに含まれる現象である。物価上昇期には古い低原価がCOGSを引き下げ、純利益を人為的に押し上げる。企業はLIFO清算の影響を開示する義務がある。</p>
+      <p class="expen">A LIFO liquidation occurs when quantities sold exceed quantities purchased, causing old LIFO layers (with lower costs from prior periods) to be included in COGS. In periods of rising prices, these old lower costs reduce COGS and artificially inflate net income. Companies must disclose the effect of LIFO liquidations.</p>
+      <p class="ref"><code>ASC 330-10-50-2</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="revenue-recognition-asc-606">
+  <h2 id="t-revenue-recognition-asc-606"><span>Revenue Recognition (ASC 606)</span><em>5問</em></h2>
+  <p class="lead"><b>変動対価</b>に集中している。見積方法の選び分け（最頻値 vs 期待値）、制約による除外、breakage の按分分母、重要な金融要素の区分。</p>
+  <article class="q" data-id="rev-122" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="rev-122" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Step 3 - Most Likely Amount with Penalty</p>
+        <p class="ids"><code>rev-122</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-30</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Entity CC contracts to complete a project for $500,000, but the contract imposes a $50,000 penalty (reducing the price to $450,000) if the project is not completed by a specified deadline. The two outcomes are: on-time ($500,000) or late ($450,000). Entity CC believes there is a 90% probability of on-time completion. Using the most likely amount method, what transaction price should Entity CC use?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$500,000</span><em>正解</em></li><li class=""><b>B</b><span>$450,000</span></li><li class="ng"><b>C</b><span>$495,000</span><em>選択</em></li><li class=""><b>D</b><span>$475,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>結果が2つの契約は most likely amount。期待値$495,000ではなく最頻値$500,000。</p>
+      <p class="exp">ASC 606-10-32-8により、最頻値法は2つの結果がある契約から最も可能性の高い単一の結果を選択する。期限内完了の確率が90%（最も可能性の高い単一結果）であるため、取引価格は$500,000（ペナルティなし）。期待値法なら$495,000(0.90 × $500,000 + 0.10 × $450,000)だが、最頻値法は制約の評価を前提に単一の最頻結果を用いる。</p>
+      <p class="expen">Under ASC 606-10-32-8, the most likely amount method selects the single most likely outcome from a contract with two possible outcomes. Because on-time completion has a 90% probability (the single most likely outcome), the transaction price is $500,000 (no penalty). The expected-value figure would be $495,000 (0.90 x $500,000 + 0.10 x $450,000), but the most likely amount method uses the single most likely result, subject to the constraint.</p>
+      <p class="ref"><code>ASC 606-10-32-8</code> <code>ASC 606-10-32-11</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="rev-172" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="rev-172" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Variable Consideration - Selecting the Estimation Method</p>
+        <p class="ids"><code>rev-172</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Under ASC 606, an entity must estimate variable consideration using either the expected value method or the most likely amount method. The most likely amount method is generally the more appropriate method when:</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>The contract has only two possible outcomes, such as a performance bonus that is either fully earned or not earned at all</span><em>正解</em></li><li class=""><b>B</b><span>The entity has a large number of contracts with similar characteristics</span></li><li class="ng"><b>C</b><span>The variable consideration can take on a wide range of possible amounts</span><em>選択</em></li><li class=""><b>D</b><span>The entity wishes to minimize the transaction price to avoid revenue reversals</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>最頻値法を使うのは結果が2つの場合。取り得る金額の幅が広いときは期待値法。</p>
+      <p class="exp">ASC 606は、企業が受け取る権利を得る対価の金額をより適切に予測できる方法を用いることを求める。最頻値法（most likely amount）は、結果の数が限定的な場合、典型的にはボーナスを全額獲得するか全く獲得しないかという二者択一の場合に適切である。期待値法（確率加重平均）は、類似の特性を持つ多数の契約がある場合や、結果が広い範囲を取り得る場合に適している。方法の選択は取引価格を小さく見せるための会計方針の選択ではなく、収益の過大計上の防止は方法選択ではなく別途の制限（constraint）の規定で図られる。</p>
+      <p class="expen">ASC 606 requires the entity to use the method that better predicts the amount of consideration to which it will be entitled. The most likely amount method is appropriate when the contract has only a limited number of possible outcomes — typically a binary outcome such as a bonus that is either earned in full or not earned. The expected value (probability-weighted) method better predicts the outcome when the entity has a large number of contracts with similar characteristics or when there is a wide range of possible outcomes. The choice of method is not an accounting policy election made to manage the size of the transaction price; minimizing revenue is achieved through the separate constraint guidance, not through method selection.</p>
+      <p class="ref"><code>ASC 606-10-32-8</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="rev-185" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="rev-185" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Significant Financing - Three-Year Deferred Payment</p>
+        <p class="ids"><code>rev-185</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">On January 1, Year 1, Pemberton Co. delivers machinery to a customer in exchange for a single payment of $266,200 due on December 31, Year 3. The contract contains a significant financing component, and the rate that would be reflected in a separate financing transaction between Pemberton and the customer is 10%. ($266,200 / 1.10^3 = $200,000.) What amount of revenue from the sale of the machinery should Pemberton recognize on January 1, Year 1?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$266,200</span></li><li class=""><b>B</b><span>$242,000</span></li><li class="ok"><b>C</b><span>$200,000</span><em>正解</em></li><li class="ng"><b>D</b><span>$220,000</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>重要な金融要素は区分する。引渡時の収益は現在価値$200,000で、差額は利息収益。</p>
+      <p class="exp">契約に重要な金融要素が含まれる場合、取引価格は支配移転時点の現金販売価格を反映するよう調整する。$266,200を10%で3年割り引いた現在価値は$266,200÷1.331＝$200,000であり、これが引渡時に認識する収益となる。差額$66,200は実効金利法により3年間にわたり受取利息として認識する（Year 1: $20,000、Year 2: $22,000、Year 3: $24,200）。$266,200は金融要素を区分しない誤り、$220,000と$242,000は1年後・2年後の利息加算後の債権残高であり、販売時点の収益ではない。</p>
+      <p class="expen">When a contract contains a significant financing component, the transaction price is adjusted to reflect the cash selling price at the time control transfers. The present value of $266,200 discounted three years at 10% is $266,200 / 1.331 = $200,000, which is the revenue recognized on delivery. The $66,200 difference is recognized as interest income over the three years using the effective interest method ($20,000 in Year 1, $22,000 in Year 2, $24,200 in Year 3). $266,200 fails to separate the financing component; $220,000 and $242,000 are the receivable balances after one and two years of interest accretion, not the date-of-sale revenue.</p>
+      <p class="ref"><code>ASC 606-10-32-15</code> <code>ASC 606-10-32-20</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="rev-069" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="rev-069" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Gift Card Breakage - Proportional Method</p>
+        <p class="ids"><code>rev-069</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A retailer sells $500,000 of gift cards during December. Based on historical experience, the retailer expects 8% ($40,000) will never be redeemed (breakage). By year-end, $150,000 of gift cards have been redeemed. Assuming the entity expects to be entitled to the breakage amount and recognizes breakage proportionally, how much breakage revenue should be recognized by year-end?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$40,000</span></li><li class="ok"><b>B</b><span>$13,043</span><em>正解</em></li><li class="ng"><b>C</b><span>$12,000</span><em>選択</em></li><li class=""><b>D</b><span>$0</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>breakage の按分は「実際償還額÷予想償還総額」。分母から予想breakageを除く。</p>
+      <p class="exp">ASC 606-10-55-49により、企業がbreakage（未使用残高）に対する権利を見込む場合、顧客が権利を行使するパターンに比例してbreakage収益を認識する。償還割合 = $150,000 / ($500,000 − $40,000) = $150,000 / $460,000 = 32.609%。Breakage収益 = $40,000 × 32.609% = $13,043（端数処理後）。分母は予想償還額($460,000)、分子は実際の償還額($150,000)を使用。</p>
+      <p class="expen">Under ASC 606-10-55-49, when an entity expects to be entitled to a breakage amount, it recognizes breakage revenue in proportion to the pattern of rights exercised by the customer. The proportion redeemed = $150,000 / ($500,000 − $40,000) = $150,000 / $460,000 = 32.609%. Breakage revenue = $40,000 × 32.609% = $13,043 (rounded). Verification: the denominator uses expected redemptions ($460,000), and the numerator is actual redemptions ($150,000).</p>
+      <p class="ref"><code>ASC 606-10-55-49</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="rev-059" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="rev-059" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Constraint on Variable Consideration</p>
+        <p class="ids"><code>rev-059</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Biotech Corp. enters a licensing agreement with a $2,000,000 upfront fee and a $5,000,000 milestone payment contingent on FDA approval. Biotech estimates a 40% probability of FDA approval. Under the constraint guidance, how much of the milestone should be included in the transaction price?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$5,000,000</span></li><li class="ng"><b>B</b><span>$2,000,000 (milestone excluded due to constraint)</span><em>選択</em></li><li class=""><b>C</b><span>$3,000,000</span></li><li class="ok"><b>D</b><span>$0 for the milestone; only the $2,000,000 upfront fee</span><em>正解</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>承認確率40%の二値的マイルストーンは制約により全額除外。取引価格は前払$2,000,000のみ。</p>
+      <p class="exp">ASC 606-10-32-11により、変動対価は累積収益の重大な戻入が起きない可能性が非常に高い範囲でのみ取引価格に含める。FDA承認確率40%の二値的結果は高い不確実性があり、マイルストーン$5,000,000は制約により除外。前払金$2,000,000のみを含める。</p>
+      <p class="expen">Under ASC 606-10-32-11, variable consideration is included in the transaction price only to the extent that it is highly probable that a significant reversal in the amount of cumulative revenue recognized will NOT occur. A binary outcome (FDA approval with only 40% probability) involves high uncertainty — if the milestone is included and FDA approval is not obtained, a significant revenue reversal would occur. Therefore, the constraint prevents inclusion of the $5,000,000 milestone until the uncertainty is resolved. Only the $2,000,000 upfront fee is included.</p>
+      <p class="ref"><code>ASC 606-10-32-11</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="income-taxes">
+  <h2 id="t-income-taxes"><span>Income Taxes</span><em>5問</em></h2>
+  <p class="lead">5問中2問が<b>「一体で発生する資産と負債は当初の純額影響がゼロ」</b>（ROU資産／リース負債、ARO）。ほかに繰延税金費用＝純残高の変動、DTA/DTLの符号、開示項目。</p>
+  <article class="q" data-id="tax-079" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="tax-079" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Deferred Tax - Right-of-Use Asset vs Lease Liability</p>
+        <p class="ids"><code>tax-079</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Under ASC 842, a lessee recognizes a right-of-use (ROU) asset of $500,000 and a lease liability of $500,000 at lease commencement. For tax purposes, the lease payments are deducted as paid and no asset or liability is recognized. At inception, what is the net deferred tax effect at a 21% tax rate?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>No net deferred tax effect at inception</span><em>正解</em></li><li class=""><b>B</b><span>Net DTA of $105,000</span></li><li class=""><b>C</b><span>Net DTL of $105,000</span></li><li class="ng"><b>D</b><span>DTA of $105,000 and DTL of $105,000, shown separately</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>ROU資産とリース負債は当初同額で発生する一体取引。純額の繰延税金影響はゼロ。</p>
+      <p class="exp">ROU資産（帳簿$500,000、税務基準額$0）はDTL $105,000を、リース負債（帳簿$500,000、税務基準額$0）はDTA $105,000を生じさせる。同一管轄区域内で相殺すると純額はゼロ。リース期間中、ROU資産とリース負債が異なる速度で償却されるため、純繰延税金ポジションが変動する可能性がある。</p>
+      <p class="expen">At lease commencement, the ROU asset (book basis $500,000, tax basis $0) creates a DTL of $500,000 × 21% = $105,000. The lease liability (book basis $500,000, tax basis $0) creates a DTA of $500,000 × 21% = $105,000. Under ASC 740-10-45-6, these are netted within the same jurisdiction, resulting in zero net deferred tax effect at inception. Over the lease term, as the ROU asset and lease liability amortize at different rates, a temporary net deferred tax position may arise.</p>
+      <p class="ref"><code>ASC 740-10-25-20</code> <code>ASC 842-20-25-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="tax-215" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="tax-215" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Income Tax Disclosures – Required vs. Non-Required Items</p>
+        <p class="ids"><code>tax-215</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Regarding deferred taxes, each of the following is required to be disclosed in a company's financial statements except:</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>The types and amounts of existing temporary differences.</span><em>選択</em></li><li class="ok"><b>B</b><span>The types and amounts of existing permanent differences.</span><em>正解</em></li><li class=""><b>C</b><span>The total valuation allowance recognized for deferred assets.</span></li><li class=""><b>D</b><span>The nature and amount of each type of operating loss and tax credit carryforward.</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>開示が要求されるのは一時差異の種類と金額。永久差異の内訳開示は要求されない。</p>
+      <p class="exp">ASC 740-10-50に基づく法人税の開示要件には、重要な一時差異・繰越額の種類と金額、評価性引当金の合計とその重要な変動、営業損失と税額控除の繰越の種類・金額が含まれる。一方、永久差異は繰延税金資産・負債を生まず、すでに実効税率調整表に反映されるため、種類と金額を個別に開示することは要求されていない。</p>
+      <p class="expen">Under ASC 740-10-50, required income tax disclosures include: the types and amounts of significant temporary differences and carryforwards (which give rise to deferred tax assets and liabilities), the total valuation allowance and significant changes in it, and the nature and amount of each type of operating loss and tax credit carryforward. Permanent differences, however, are not required to be separately disclosed because they do not create deferred tax assets or liabilities and have already been reflected in the effective tax rate reconciliation. Therefore, the types and amounts of permanent differences are not a required disclosure.</p>
+      <p class="ref"><code>ASC 740-10-50</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="tax-213" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="tax-213" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Deferred Tax Expense – Change in Net Deferred Tax Balance</p>
+        <p class="ids"><code>tax-213</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-04</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Quinn Co. reported a net deferred tax asset of $9,000 in its December 31, Year 4, balance sheet. In addition, Quinn reported the following information in its Year 5 financial statements:
+
+| | |
+|---|---|
+| Pretax book income | $300,000 |
+| Temporary differences | $100,000 |
+| Taxable income | $200,000 |
+| Cumulative taxable differences | $70,000 |
+| Effective income tax rate | 30% |
+
+What amount should be reported as deferred income tax expense in Quinn's Year 5 income statement?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$12,000</span></li><li class="ng"><b>B</b><span>$21,000</span><em>選択</em></li><li class="ok"><b>C</b><span>$30,000</span><em>正解</em></li><li class=""><b>D</b><span>$60,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>繰延税金費用は純残高の変動。DTA $9,000 から DTL $21,000 への振れなので費用は$30,000。</p>
+      <p class="exp">繰延税金費用＝期中の繰延税金純残高の変動額。Year 5期首：繰延税金資産（純額）$9,000。Year 5期末：累積課税差異$70,000より繰延税金負債（純額）＝$70,000×30%＝$21,000。繰延税金純資産$9,000から繰延税金純負債$21,000への変動は繰延税金費用$9,000＋$21,000＝$30,000を意味する。</p>
+      <p class="expen">Deferred income tax expense equals the change in the net deferred tax position from beginning to end of year. Beginning Year 5: net deferred tax asset of $9,000. Ending Year 5: cumulative taxable differences are $70,000, so the ending balance is a net deferred tax liability of $70,000 × 30% = $21,000. The change from a net DTA of $9,000 to a net DTL of $21,000 represents a deferred tax expense of $9,000 + $21,000 = $30,000.</p>
+      <p class="ref"><code>ASC 740-10-25</code> <code>ASC 740-10-30</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="tax-023" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="tax-023" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Indefinite-Lived Intangible DTA/DTL</p>
+        <p class="ids"><code>tax-023</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-05</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Entity C acquires a trademark with an indefinite useful life. For book purposes, the trademark is not amortized but tested for impairment. For tax purposes, the trademark is amortized over 15 years. After Year 1, the book basis is $300,000 and the tax basis is $280,000. The tax rate is 21%. What deferred tax item should Entity C record?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Deferred tax liability of $4,200</span><em>正解</em></li><li class="ng"><b>B</b><span>Deferred tax asset of $4,200</span><em>選択</em></li><li class=""><b>C</b><span>No deferred tax because the difference will reverse</span></li><li class=""><b>D</b><span>Deferred tax liability of $63,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>非償却無形資産は税務上のみ償却され簿価＞税務簿価となるためDTL。符号が逆。</p>
+      <p class="exp">帳簿価額($300,000)が税務基準額($280,000)を上回り、課税一時差異$20,000が生じる。DTL = $20,000 × 21% = $4,200。帳簿上は償却しないが税務上は償却を続けるため、このDTLは増加し続ける。評価性引当額でDTLを相殺することはできない。</p>
+      <p class="expen">The book basis ($300,000) exceeds the tax basis ($280,000), creating a taxable temporary difference of $20,000. DTL = $20,000 × 21% = $4,200. This DTL will continue to grow because the book asset is not amortized while the tax basis continues to decline. A valuation allowance cannot offset a DTL, and the indefinite nature means no DTA can be used against this DTL.</p>
+      <p class="ref"><code>ASC 740-10-25-20</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="tax-075" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="tax-075" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Tax Effect of Asset Retirement Obligation</p>
+        <p class="ids"><code>tax-075</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-07</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Company M records an asset retirement obligation (ARO) of $180,000 and a corresponding increase to the related asset. For tax purposes, the ARO is not deductible until paid. At a 21% tax rate, what is the initial deferred tax effect of recognizing the ARO?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>No net deferred tax effect at initial recognition</span><em>正解</em></li><li class="ng"><b>B</b><span>DTA of $37,800</span><em>選択</em></li><li class=""><b>C</b><span>DTL of $37,800</span></li><li class=""><b>D</b><span>DTA of $37,800 and DTL of $37,800, presented separately</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>AROの資産計上額と負債は当初同額。純額の繰延税金影響はゼロ。</p>
+      <p class="exp">ARO負債はDTA（帳簿上の負債$180,000、税務基準額$0）を、対応する資産の増加はDTL（帳簿上の資産が税務基準額を$180,000上回る）を生じさせる。初期認識時は両者が完全に相殺し、純額の繰延税金効果はゼロ。時間の経過とともに資産の減価償却と負債の増加利息で純繰延税金ポジションが変動する。</p>
+      <p class="expen">At initial recognition, the ARO liability creates a DTA (book liability of $180,000 with no tax basis, creating a future deductible difference), while the corresponding increase to the asset creates a DTL (book basis exceeds tax basis by $180,000, creating a future taxable difference from lower depreciation deductions). These two effects exactly offset, resulting in no net deferred tax impact at inception. Under ASC 740-10-25-20 and ASC 740-10-45-6, the DTA and DTL within the same jurisdiction are netted, yielding zero. Over time, as the asset depreciates and the liability accretes, the net deferred tax position changes.</p>
+      <p class="ref"><code>ASC 740-10-25-20</code> <code>ASC 410-20-25-4</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="statement-of-cash-flows">
+  <h2 id="t-statement-of-cash-flows"><span>Statement of Cash Flows</span><em>4問</em></h2>
+  <p class="lead">金額計算ではなく<b>分類</b>で4問とも落としている。転売目的の貸付、証券化の残余持分、利息と配当の区分、株式配当の開示要否。</p>
+  <article class="q" data-id="cf-132" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cf-132" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Loans Held for Sale - Operating Classification</p>
+        <p class="ids"><code>cf-132</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Ironwood Mortgage Co. originates residential mortgage loans with the intent to sell them in the secondary market within 60 days. During the year, Ironwood disbursed $30,000,000 to originate such loans and received $28,500,000 from sales of loans. How should these cash flows be classified on the statement of cash flows?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Both as investing activities, because loans are financial assets</span></li><li class=""><b>B</b><span>Originations as investing outflows and sale proceeds as operating inflows</span></li><li class="ok"><b>C</b><span>Both as operating activities, because the loans are acquired specifically for resale</span><em>正解</em></li><li class="ng"><b>D</b><span>Originations as financing outflows and sale proceeds as financing inflows</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>転売目的で組成・取得した貸付は営業活動。</p>
+      <p class="exp">ASC 230-10-45-21により、転売目的で取得・組成され、公正価値または低価法で測定されるローンの組成・購入・売却によるキャッシュフローは営業活動に分類される。これらのローンは通常の営業過程で販売される棚卸資産に類似するためである。投資活動分類は長期保有目的（投資目的）のローンにのみ適用される。自社の資本・借入取引ではないため財務活動にも該当しない。</p>
+      <p class="expen">Under ASC 230, cash flows from purchases, originations, and sales of loans that are acquired specifically for resale and carried at fair value or the lower of cost or fair value are classified as operating activities, because such loans are similar to inventory held for sale in the ordinary course of business. Investing classification applies only to loans held for investment (held for the longer term to collect contractual cash flows). Financing classification is unrelated because no capital or borrowing transaction of Ironwood itself is involved.</p>
+      <p class="ref"><code>ASC 230-10-45-21</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cf-104" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cf-104" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Classification - Beneficial Interest in Securitization</p>
+        <p class="ids"><code>cf-104</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Under ASU 2016-15, when a transferor receives a beneficial interest in exchange for transferring trade receivables in a securitization, how are subsequent cash receipts from that beneficial interest classified on the statement of cash flows?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Investing activities</span><em>正解</em></li><li class="ng"><b>B</b><span>Operating activities</span><em>選択</em></li><li class=""><b>C</b><span>Financing activities</span></li><li class=""><b>D</b><span>Noncash activities only</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>証券化で受け取った残余持分（beneficial interest）の回収は投資活動。</p>
+      <p class="exp">ASC 230-10-45-21B（ASU 2016-15）により、金融資産の証券化で譲渡人が取得した受益持分に対する支払からの現金収入は投資活動に分類する。（受益持分と引き換えに行う売掛金の当初譲渡自体は開示すべき非現金活動である。）保有する受益持分に対するその後の回収は投資活動の流入である。</p>
+      <p class="expen">Under ASC 230-10-45-21B (per ASU 2016-15), cash receipts from payments on a transferor's beneficial interests obtained in a securitization of financial assets are classified as investing activities. (The initial transfer of the receivables in exchange for the beneficial interest is itself a noncash activity that must be disclosed.) The subsequent collections on the retained beneficial interest are investing inflows.</p>
+      <p class="ref"><code>ASC 230-10-45-21B</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cf-183" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cf-183" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Direct Method - Net Operating Cash Flow Total</p>
+        <p class="ids"><code>cf-183</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Vandermill Inc. prepares its operating section using the direct method and has the following cash flow data for the year: cash received from customers $2,150,000; cash paid to suppliers $1,280,000; cash paid for operating expenses $340,000; interest paid $60,000; income taxes paid $95,000; interest received $15,000; dividends paid to shareholders $50,000. What is net cash provided by operating activities?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$340,000</span></li><li class="ng"><b>B</b><span>$435,000</span><em>選択</em></li><li class="ok"><b>C</b><span>$390,000</span><em>正解</em></li><li class=""><b>D</b><span>$450,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>支払利息・受取利息・法人税は営業、配当支払は財務。利息を営業から外した。</p>
+      <p class="exp">US GAAPでは、支払利息、受取利息、法人税支払はすべて営業活動項目であり、株主への配当支払は財務活動である。営業活動によるキャッシュ・フロー = $2,150,000 − $1,280,000 − $340,000 − $60,000 − $95,000 + $15,000 = $390,000。$340,000は配当支払$50,000を誤って控除した誤り。$435,000は支払利息と受取利息の両方を誤って除外した誤り。$450,000は支払利息を除外し受取利息のみ含めた誤り。</p>
+      <p class="expen">Under US GAAP, interest paid, interest received, and income taxes paid are all operating items, while dividends paid to shareholders are a financing activity. Net operating cash flow = $2,150,000 − $1,280,000 − $340,000 − $60,000 − $95,000 + $15,000 = $390,000. The $340,000 figure incorrectly deducts the $50,000 of dividends paid. The $435,000 figure incorrectly excludes both interest paid and interest received. The $450,000 figure excludes interest paid but includes interest received.</p>
+      <p class="ref"><code>ASC 230-10-45-25</code> <code>ASC 230-10-45-17</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cf-085" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cf-085" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Non-Cash Activity - Stock Dividend</p>
+        <p class="ids"><code>cf-085</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-07</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Company DD declared and distributed a 10% stock dividend on its 200,000 outstanding shares when the market price was $30 per share. How is this transaction reported on the statement of cash flows?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>Not reported on the cash flow statement and not disclosed as a noncash activity</span><em>正解</em></li><li class="ng"><b>B</b><span>Disclosed as a noncash investing and financing activity</span><em>選択</em></li><li class=""><b>C</b><span>$600,000 financing outflow</span></li><li class=""><b>D</b><span>$600,000 operating outflow</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>株式配当は現金も資産も動かない。非現金投資財務活動としても開示しない。</p>
+      <p class="exp">株式配当は現金の授受がなく、当事者間の移転もない。資本内の組替（利益剰余金から資本金・資本剰余金へ）にすぎない。ASC 230-10-50-3の非現金の投資・財務活動の開示は、投資・財務取引に該当する場合のみ要求される。株式配当は投資・財務取引ではないため、CF計算書には一切表示されない。正解はA。</p>
+      <p class="expen">A stock dividend involves no cash exchange and no transfer between parties — it is a reclassification within equity (from retained earnings to common stock and APIC). Unlike a noncash investing/financing activity (e.g., converting debt to equity), a stock dividend does not qualify for noncash disclosure under ASC 230-10-50-3 because it does not involve an investing or financing transaction. It is simply excluded from the cash flow statement entirely. The correct answer is A.</p>
+      <p class="ref"><code>ASC 230-10-50-3</code> <code>ASC 505-20-25-3</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="accounting-changes-errors">
+  <h2 id="t-accounting-changes-errors"><span>Accounting Changes &amp; Errors</span><em>3問</em></h2>
+  <p class="lead">遡及修正の税効果、LIFOへの変更が将来法である理由、監査人の preferability letter。</p>
+  <article class="q" data-id="chg-123" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="chg-123" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Retrospective Application - Restated Beginning Retained Earnings</p>
+        <p class="ids"><code>chg-123</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-29</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Kendrick Co. changed from average cost to FIFO on January 1, Year 3. Retained earnings at January 1, Year 3, as previously reported under average cost was $850,000. Pretax income would have been higher under FIFO by $35,000 in Year 1 and $48,000 in Year 2. Kendrick's tax rate is 20%. What is the restated January 1, Year 3 retained earnings balance?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$916,400</span><em>正解</em></li><li class=""><b>B</b><span>$933,000</span></li><li class="ng"><b>C</b><span>$888,400</span><em>選択</em></li><li class=""><b>D</b><span>$878,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>遡及修正は累積影響$83,000に税効果を掛けた$66,400。単年度分だけを反映した。</p>
+      <p class="exp">遡及適用により、Year 3期首までの累積的影響額を期首利益剰余金に反映する（ASC 250-10-45-5）。税引前の累積影響は $35,000 + $48,000 = $83,000（FIFOの方が利益が大きい）。税効果考慮後は $83,000 × (1 − 20%) = $66,400。修正後期首利益剰余金 = $850,000 + $66,400 = $916,400。$933,000は税効果を無視して総額$83,000を加算した誤り、$888,400はYear 2分のみ（$48,000 × 80% = $38,400）、$878,000はYear 1分のみ（$35,000 × 80% = $28,000）を反映した誤りである。</p>
+      <p class="expen">The cumulative pretax effect through January 1, Year 3 is $35,000 + $48,000 = $83,000 of additional income under FIFO. Net of tax: $83,000 × (1 − 0.20) = $66,400. Restated retained earnings = $850,000 + $66,400 = $916,400. The $933,000 figure adds the gross $83,000 without the tax effect, $888,400 includes only the Year 2 effect net of tax ($48,000 × 0.80 = $38,400), and $878,000 includes only the Year 1 effect net of tax ($35,000 × 0.80 = $28,000).</p>
+      <p class="ref"><code>ASC 250-10-45-5</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="chg-107" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="chg-107" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Change to LIFO - Prospective Treatment</p>
+        <p class="ids"><code>chg-107</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-05</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Drummond Inc. changes its inventory cost flow assumption from FIFO to LIFO. In practice, how is this change usually accounted for, and why?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>Retrospectively, because all changes in inventory method must restate prior periods</span><em>選択</em></li><li class=""><b>B</b><span>As a cumulative-effect adjustment reported in current period net income</span></li><li class="ok"><b>C</b><span>Prospectively, because reconstructing prior-year LIFO layers is generally impracticable, so the opening inventory becomes the first LIFO layer</span><em>正解</em></li><li class=""><b>D</b><span>As a correction of an error, with a prior period adjustment to beginning retained earnings</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>LIFOへの変更は過年度層の復元が実務上困難なため将来法。期首在庫が最初のLIFO層になる。</p>
+      <p class="exp">会計方針の変更は原則遡及適用だが、ASC 250-10-45-9は遡及適用が実務上不可能（impracticable）な場合の例外を認めている。LIFOへの変更では、過年度に存在したはずのLIFO原価層（レイヤー）を事後的判断なしに再構築することが通常不可能なため、この例外に該当する典型例である。よって変更年度の期首棚卸資産を基準層（base layer）として将来に向かって適用する。累積的影響額を当期純利益に計上する処理は廃止された旧APB 20の方法であり、誤謬訂正として処理するのも誤り（LIFO採用は誤謬の訂正ではない）。</p>
+      <p class="expen">A change in accounting principle normally requires retrospective application, but ASC 250 provides an impracticability exception. A change to LIFO typically qualifies because the entity usually cannot reconstruct the LIFO cost layers that would have existed in prior years without using hindsight. Therefore the change is applied prospectively: the beginning inventory of the year of change becomes the base-year LIFO layer. Reporting a cumulative-effect adjustment in current income is the superseded APB 20 approach, and treating the change as an error correction is wrong because adopting LIFO is not the correction of a misstatement.</p>
+      <p class="ref"><code>ASC 250-10-45-9</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="chg-061" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="chg-061" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Change in Principle - Preferability Letter</p>
+        <p class="ids"><code>chg-061</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-05</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">When a public company makes a voluntary change in accounting principle, what role does the independent auditor play regarding the preferability of the new principle?</div>
+    <ol class="ch"><li class=""><b>A</b><span>The auditor must approve the change before it can be adopted</span></li><li class="ok"><b>B</b><span>The auditor provides a preferability letter indicating the new method is preferable under the circumstances</span><em>正解</em></li><li class=""><b>C</b><span>The auditor has no responsibility regarding the preferability assessment</span></li><li class="ng"><b>D</b><span>The auditor must recalculate all affected prior-period financial statements</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>監査人の役割は preferability letter の発行。過年度の再計算ではない。</p>
+      <p class="exp">SEC規則（Regulation S-Xの規則10-01(b)(6)）に基づき、公開会社が任意に会計方針を変更する場合、独立監査人は新方針がその状況下でより望ましい（preferable）ことを示す望ましさの確認書（preferability letter）を提出する。この書簡は変更後最初のForm 10-Qに添付される。監査人は変更を承認するのではなく、新方針が従前の方針より望ましいことを評価・確認する役割を果たす。</p>
+      <p class="expen">Under SEC requirements (Rule 10-01(b)(6) of Regulation S-X), when a registrant makes a voluntary change in accounting principle, the independent auditor must provide a preferability letter indicating that the newly adopted accounting principle is preferable in the circumstances. This letter is filed with the first Form 10-Q after the change. The auditor does not approve the change but rather evaluates and acknowledges that the new principle is preferable to the previously used principle.</p>
+      <p class="ref"><code>ASC 250-10-S99-4</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="credit-loss-current-expected-credit-losses-asc-326">
+  <h2 id="t-credit-loss-current-expected-credit-losses-asc-326"><span>Credit Loss - Current Expected Credit Losses (ASC 326)</span><em>3問</em></h2>
+  <p class="lead">移行時の累積効果は税引後、未実行コミットメントは負債、対象範囲の切り分け。<b>実行済＝資産の控除／未実行＝負債</b>の表示区分が要点。</p>
+  <article class="q" data-id="cecl-092" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cecl-092" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Transition - Cumulative-Effect Adjustment</p>
+        <p class="ids"><code>cecl-092</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-31</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">On adoption of ASC 326, Tidewater Bank's incurred-loss allowance was $400,000 and its CECL day-one allowance is $640,000. The applicable tax rate is 21%. Using the modified-retrospective transition method, what is the net-of-tax decrease to opening retained earnings?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$240,000</span></li><li class="ok"><b>B</b><span>$189,600</span><em>正解</em></li><li class="ng"><b>C</b><span>$50,400</span><em>選択</em></li><li class=""><b>D</b><span>$134,400</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>移行時の利益剰余金減少は税引後の$189,600。税効果$50,400だけを答えた。</p>
+      <p class="exp">引当金増加額 = $640,000 − $400,000 = $240,000（税引前）。繰延税金便益 = $240,000 × 21% = $50,400（DTA増加）。税引後の利益剰余金減少 = $240,000 − $50,400 = $189,600。税引前額のみは$240,000、税効果のみは$50,400、44%を適用すると$134,400となる。</p>
+      <p class="expen">Increase in allowance = $640,000 − $400,000 = $240,000 (pretax). Deferred tax benefit = $240,000 × 21% = $50,400, recorded as an increase in the deferred tax asset. Net-of-tax charge to retained earnings = $240,000 − $50,400 = $189,600. The pretax amount alone is $240,000. The tax effect alone is $50,400. Applying a 44% rate to the increase gives $134,400.</p>
+      <p class="ref"><code>ASC 326-10-65-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cecl-117" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cecl-117" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Combined Funded and Unfunded Exposure</p>
+        <p class="ids"><code>cecl-117</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Glenrock Bank originates a credit facility consisting of a funded loan balance of $3,000,000 and a non-cancellable unfunded commitment of $1,000,000. The expected loss rate is 2%, and the bank expects 50% of the unfunded commitment to be drawn. What total credit loss expense should be recognized at origination, and how is the unfunded portion presented?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$60,000; the entire amount is presented as a contra-asset allowance</span></li><li class=""><b>B</b><span>$80,000; $20,000 of which is presented as a liability</span></li><li class="ok"><b>C</b><span>$70,000; $10,000 of which is presented as a liability</span><em>正解</em></li><li class="ng"><b>D</b><span>$10,000; presented entirely as a liability</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>実行済部分は資産の控除項目、未実行部分は負債。費用合計$70,000のうち負債計上は$10,000。</p>
+      <p class="exp">実行済部分: $3,000,000 × 2% = $60,000（資産の控除項目である引当金）。未実行部分: $1,000,000 × 実行見込み50% × 2% = $10,000（オフバランス信用エクスポージャーに係る独立した負債、ASC 326-20-30-11）。信用損失費用合計 = $70,000。$60,000は未実行コミットメントを無視、$80,000（うち負債$20,000）は実行見込み50%を無視、$10,000は実行済貸付金の引当金を無視した誤りです。</p>
+      <p class="expen">Funded portion: $3,000,000 × 2% = $60,000, recognized as an allowance (contra-asset). Unfunded portion: $1,000,000 × 50% expected funding × 2% = $10,000, recognized as a separate liability for off-balance-sheet credit exposure. Total credit loss expense = $60,000 + $10,000 = $70,000. An answer of $60,000 omits the unfunded commitment exposure. An answer of $80,000 with a $20,000 liability ignores the 50% expected funding assumption. An answer of $10,000 omits the funded loan's allowance.</p>
+      <p class="ref"><code>ASC 326-20-30-11</code> <code>ASC 326-20-45-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="cecl-133" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="cecl-133" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">CECL Scope - Loans Held for Sale</p>
+        <p class="ids"><code>cecl-133</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-03</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Which of the following financial assets is excluded from the scope of the current expected credit loss (CECL) model in ASC 326-20?</div>
+    <ol class="ch"><li class=""><b>A</b><span>Trade accounts receivable arising from contracts with customers</span></li><li class=""><b>B</b><span>Corporate bonds classified as held-to-maturity</span></li><li class="ok"><b>C</b><span>Mortgage loans classified as held for sale and measured at the lower of amortized cost or fair value</span><em>正解</em></li><li class="ng"><b>D</b><span>The net investment in a sales-type lease recognized by a lessor</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>売却目的保有で低価法により測定される貸付はCECLの対象外。販売型リースの正味投資は対象。</p>
+      <p class="exp">ASC 326-20は償却原価で測定される金融資産（売掛金、満期保有目的の負債証券、貸手のセールスタイプリース・直接金融リースの正味リース投資未回収額など）に適用される。売却目的保有（held for sale）の貸付金は「償却原価と公正価値のいずれか低い方」で測定され、その測定属性自体が価値の下落を反映するため、CECLの引当金モデルの適用範囲から除外される。売掛金、満期保有目的の社債、セールスタイプリースの正味リース投資未回収額はいずれもASC 326-20の適用範囲内である。</p>
+      <p class="expen">ASC 326-20 applies to financial assets measured at amortized cost, including trade receivables, held-to-maturity debt securities, and a lessor's net investment in sales-type and direct financing leases. Loans held for sale are measured at the lower of amortized cost or fair value, and that measurement attribute already captures declines in value; therefore, held-for-sale loans are excluded from the CECL allowance model. Trade receivables, held-to-maturity bonds, and the net investment in a sales-type lease are all explicitly within the scope of ASC 326-20.</p>
+      <p class="ref"><code>ASC 326-20-15-3</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="receivables">
+  <h2 id="t-receivables"><span>Receivables</span><em>3問</em></h2>
+  <p class="lead">CECLのオフバランス・コミットメント、ファクタリングの遡及義務、表面利率＝市場利率のときの測定。</p>
+  <article class="q" data-id="rec-117" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="rec-117" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">CECL - Off-Balance-Sheet Commitment Liability</p>
+        <p class="ids"><code>rec-117</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Entity BB has an unfunded loan commitment of $4,000,000 that is not unconditionally cancellable by the entity. Under CECL, it estimates that 60% of the commitment is likely to be funded over its life and applies an expected lifetime loss rate of 2% to the funded exposure. What liability for expected credit losses should Entity BB record on the unfunded commitment?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$48,000</span><em>正解</em></li><li class=""><b>B</b><span>$80,000</span></li><li class=""><b>C</b><span>$2,400,000</span></li><li class="ng"><b>D</b><span>$0</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>無条件に取消不能でないコミットメントも、予想実行率60%を掛けて負債を計上する。ゼロにしない。</p>
+      <p class="exp">ASC 326-20-30-11により、無条件に取消不能でないオフバランスの信用エクスポージャーの予想信用損失は、資金供与が生じる可能性を考慮し契約期間にわたり見積もる。予想資金供与エクスポージャー = $4,000,000 × 60% = $2,400,000。予想信用損失負債 = $2,400,000 × 2% = $48,000で、contra-assetではなく負債として計上する。</p>
+      <p class="expen">Under ASC 326-20-30-11, expected credit losses on off-balance-sheet credit exposures that are not unconditionally cancellable are estimated over the contractual period, considering the likelihood that funding will occur. Expected funded exposure = $4,000,000 × 60% = $2,400,000. Expected credit loss liability = $2,400,000 × 2% = $48,000, recorded as a liability rather than a contra-asset.</p>
+      <p class="ref"><code>ASC 326-20-30-11</code> <code>ASC 326-20-30-12</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="rec-066" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="rec-066" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Factoring - Recourse Obligation Measurement</p>
+        <p class="ids"><code>rec-066</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-05</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Entity F factors $500,000 of receivables with recourse. The factor charges a 3% fee and withholds 5% as a holdback. Entity F estimates the fair value of the recourse obligation at $8,000. What is the loss on sale of receivables?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>$15,000</span><em>選択</em></li><li class="ok"><b>B</b><span>$23,000</span><em>正解</em></li><li class=""><b>C</b><span>$33,000</span></li><li class=""><b>D</b><span>$40,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>売却損には遡及義務$8,000を加える。留保金は未収金として対価に含める。</p>
+      <p class="exp">受取額 = $500,000 - 手数料$15,000 - 留保金$25,000 = $460,000。留保金$25,000はファクターからの未収金として認識。対価合計 = $460,000 + $25,000 = $485,000。売却損 = 帳簿価額 - 対価合計 + 遡及義務 = $500,000 - $485,000 + $8,000 = $23,000。</p>
+      <p class="expen">Proceeds received = $500,000 - 3% fee ($15,000) - 5% holdback ($25,000) = $460,000. The holdback of $25,000 is recognized as a receivable from the factor. Total consideration = $460,000 cash + $25,000 holdback receivable = $485,000. Loss on sale = Carrying value - Total consideration + Recourse obligation = $500,000 - $485,000 + $8,000 = $23,000. The answer is B.</p>
+      <p class="ref"><code>ASC 860-20-25-1</code> <code>ASC 860-20-30-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="rec-128" data-diff="basic" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="rec-128" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Note Receivable - Stated Rate Equals Market Rate</p>
+        <p class="ids"><code>rec-128</code><span class="chip d-basic">基礎</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-06</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">On January 1, Entity K accepts a 3-year, $150,000 note receivable from a customer in exchange for merchandise. The note bears interest at 7%, payable annually, and the prevailing market rate for notes of similar risk is also 7%. At what amount should the note be recorded at inception?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$150,000 face value</span><em>正解</em></li><li class=""><b>B</b><span>Face value less a discount for imputed interest</span></li><li class="ng"><b>C</b><span>Face value plus the present value of three years of interest payments</span><em>選択</em></li><li class=""><b>D</b><span>The undiscounted sum of all principal and interest cash flows</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>表面利率＝市場利率なら額面がそのまま現在価値。利息のPVを上乗せしない。</p>
+      <p class="exp">表面利率（7%）が市場利率（7%）と等しい場合、手形のキャッシュフロー（元本＋年次利息）を市場利率で割り引いた現在価値は額面と一致するため、割引額も打歩もなく額面$150,000で計上します（ASC 835-30）。割引額（discount）が生じるのは表面利率が市場利率を下回る場合のみです。額面に利息の現在価値を加える処理は利息キャッシュフローの二重計上であり、元利合計の未割引額（$181,500）は貨幣の時間価値を無視するため過大計上となります。</p>
+      <p class="expen">When the stated rate equals the market rate, the present value of the note's cash flows (principal plus annual interest discounted at 7%) exactly equals the face value, so the note is recorded at $150,000 with no discount or premium. A discount arises only when the stated rate is below the market rate, and recording face value plus the present value of interest would double count the interest cash flows. The undiscounted sum of all cash flows ($150,000 plus $31,500 of interest) overstates the receivable because it ignores the time value of money.</p>
+      <p class="ref"><code>ASC 835-30-25</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="property-plant-equipment">
+  <h2 id="t-property-plant-equipment"><span>Property, Plant &amp; Equipment</span><em>3問</em></h2>
+  <p class="lead">減耗費の基準数量、借地権改良の償却期間、土地原価に含める支出の範囲。</p>
+  <article class="q" data-id="ppe-037" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="ppe-037" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Natural Resource Depletion</p>
+        <p class="ids"><code>ppe-037</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A mining company acquires mineral rights for $5,000,000. Estimated recoverable reserves are 2,000,000 tons. During Year 1, 350,000 tons are extracted and 300,000 tons are sold. What is the depletion expense recognized in Year 1?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>$875,000</span><em>正解</em></li><li class="ng"><b>B</b><span>$750,000</span><em>選択</em></li><li class=""><b>C</b><span>$625,000</span></li><li class=""><b>D</b><span>$500,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>減耗費は採掘量ベース。販売量で計算した。未販売分の減耗費は在庫原価に含まれる。</p>
+      <p class="exp">減耗費は販売量ではなく採掘量に基づいて計算する。減耗率 = $5,000,000 / 2,000,000 = $2.50/トン。Year 1の減耗費 = 350,000トン × $2.50 = $875,000。未販売の50,000トンは在庫（減耗費を原価に含む）として計上。採掘された全ユニットが減耗費を負担するため$875,000を認識。</p>
+      <p class="expen">Depletion is calculated based on units extracted, not units sold. Depletion rate = $5,000,000 / 2,000,000 = $2.50 per ton. Year 1 depletion = 350,000 tons × $2.50 = $875,000. The 50,000 unsold tons remain in inventory (with depletion allocated to their cost). The depletion expense of $875,000 is recognized because all extracted units bear their share of depletion cost.</p>
+      <p class="ref"><code>ASC 930-360-35-1</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="ppe-038" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="ppe-038" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Leasehold Improvements Depreciation</p>
+        <p class="ids"><code>ppe-038</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-03</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">A lessee makes leasehold improvements costing $180,000 at the beginning of a 10-year lease with two 5-year renewal options that are not reasonably certain to be exercised. The improvements have an estimated useful life of 15 years. Over what period should the improvements be depreciated?</div>
+    <ol class="ch"><li class="ok"><b>A</b><span>10 years</span><em>正解</em></li><li class="ng"><b>B</b><span>15 years</span><em>選択</em></li><li class=""><b>C</b><span>20 years</span></li><li class=""><b>D</b><span>5 years</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>借地権改良は耐用年数と残存リース期間の短い方。更新が合理的に確実でなければ10年。</p>
+      <p class="exp">借地権改良は、耐用年数（15年）とリース残存期間（更新オプションが合理的に確実でないため10年）のいずれか短い方で減価償却する。したがって10年で償却。年間償却額 = $180,000 / 10 = $18,000。</p>
+      <p class="expen">Leasehold improvements are depreciated over the shorter of their useful life (15 years) or the remaining lease term (10 years, since renewal options are not reasonably certain). Therefore, the improvements should be depreciated over 10 years. Annual depreciation = $180,000 / 10 = $18,000.</p>
+      <p class="ref"><code>ASC 842-20-35-12</code> <code>ASC 360-10-35-4</code></p>
+    </div>
+  </article>
+  <article class="q" data-id="ppe-238" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="ppe-238" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Asset Acquisition</p>
+        <p class="ids"><code>ppe-238</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-05</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Sen Inc. incurred the following costs related to land: Purchase price $600,000 (includes existing building valued at 10% of purchase price); Demolition of existing building $15,000; Debris removal and grading $8,000; Fine for failure to obtain demolition permit $2,000; Surveying $12,000; Excavation for basement of new building $20,000; Building permits $10,000. What amount should Sen capitalize to land?</div>
+    <ol class="ch"><li class="ng"><b>A</b><span>$575,000</span><em>選択</em></li><li class=""><b>B</b><span>$577,000</span></li><li class="ok"><b>C</b><span>$635,000</span><em>正解</em></li><li class=""><b>D</b><span>$637,000</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>土地原価は取得価格に取壊・整地・測量を加える。罰金は資本化せず、掘削と建築許可は建物原価。</p>
+      <p class="exp">土地原価には、取得価格$600,000、既存建物の取壊費$15,000、がれき撤去・整地費$8,000、測量費$12,000が含まれ合計$635,000です。解体許可未取得の罰金$2,000は将来の経済的便益を生まないため資本化できません。新建物の地下掘削費$20,000と建築許可証$10,000は建物の取得原価です。</p>
+      <p class="expen">Land costs include the purchase price ($600,000), demolition of the existing structure ($15,000), debris removal and grading ($8,000), and surveying ($12,000), totaling $635,000. The fine for failure to obtain a demolition permit ($2,000) is not capitalizable because it provides no future economic benefit. Excavation for the new building's basement ($20,000) and building permits ($10,000) are costs of the new building, not the land.</p>
+      <p class="ref"><code>ASC 360-10-30</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="liabilities">
+  <h2 id="t-liabilities"><span>Liabilities</span><em>1問</em></h2>
+  <p class="lead">ギフトカードのbreakage按分。Revenue の rev-069 と同じ論点なので、2問を並べて確認する。</p>
+  <article class="q" data-id="liab-142" data-diff="intermediate" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="liab-142" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Gift Card Breakage - Proportional Method Computation</p>
+        <p class="ids"><code>liab-142</code><span class="chip d-intermediate">標準</span><span class="chip openx">未解決</span><span class="dates">模試 2026-07-26</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">During Year 1, Lindale Stores sells $1,200,000 of gift cards. Based on historical experience, Lindale expects 10% of the gift card value ($120,000) will never be redeemed (breakage), and it is entitled to the breakage. By December 31, Year 1, customers have redeemed $540,000 of gift cards, which is 50% of the total expected redemptions of $1,080,000. Using the proportional method, what breakage revenue should Lindale recognize in Year 1?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$120,000</span></li><li class="ng"><b>B</b><span>$54,000</span><em>選択</em></li><li class="ok"><b>C</b><span>$60,000</span><em>正解</em></li><li class=""><b>D</b><span>$0</span></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>breakage は償還進捗（$540,000÷$1,080,000＝50%）で按分。償還額×ブレイケージ率ではない。</p>
+      <p class="exp">ASC 606-10-55-48 により、ブレイケージ（未使用見込額）は顧客の権利行使パターンに比例して認識する。償還済額 $540,000 ÷ 予想総償還額 $1,080,000 = 50% の進捗であるため、ブレイケージ収益 = $120,000 × 50% = $60,000。$120,000 を即時に全額認識するのは償還パターンに先行した収益の前倒し計上となる。$54,000 は償還額にブレイケージ率10%を乗じた誤り（$540,000 × 10%）で、予想償還額に対する比例進捗で測定すべきである。カード失効まで認識しない処理は、ブレイケージへの権利が見込めないか見積不能な場合に限られる。</p>
+      <p class="expen">Under ASC 606-10-55-48, expected breakage is recognized in proportion to the pattern of rights exercised by customers. Customers have redeemed $540,000 / $1,080,000 = 50% of expected redemptions, so breakage revenue = $120,000 x 50% = $60,000. Recognizing the full $120,000 immediately would front-load revenue before the redemption pattern supports it. $54,000 incorrectly applies the 10% breakage rate to the dollars redeemed ($540,000 x 10%) rather than measuring proportional progress against expected redemptions. Recognizing nothing until cards expire is appropriate only when the entity does not expect to be entitled to breakage or cannot estimate it.</p>
+      <p class="ref"><code>ASC 606-10-55-48</code></p>
+    </div>
+  </article>
+</section>
+<section class="topic" data-topic="equity">
+  <h2 id="t-equity"><span>Equity</span><em>1問</em></h2>
+  <p class="lead">簿価計算での優先株控除額（償還価値＋累積未払配当）。</p>
+  <article class="q" data-id="eq-104" data-diff="advanced" data-open="1">
+    <header>
+      <label class="done"><input type="checkbox" data-check="eq-104" /><span>済</span></label>
+      <div class="hd">
+        <p class="sub">Book Value Per Common Share</p>
+        <p class="ids"><code>eq-104</code><span class="chip d-advanced">応用</span><span class="chip openx">未解決</span><span class="dates">模試 2026-08-02</span></p>
+      </div>
+      <button class="rev" type="button">解答を見る</button>
+    </header>
+    <div class="stem">Grouper Corp. has total stockholders' equity of $8,000,000. Its preferred stock consists of 30,000 shares of $50 par, 5% cumulative preferred, callable at $52 per share, with one year of dividends in arrears. There are 400,000 common shares outstanding. What is the book value per common share?</div>
+    <ol class="ch"><li class=""><b>A</b><span>$20.00</span></li><li class=""><b>B</b><span>$16.10</span></li><li class="ok"><b>C</b><span>$15.91</span><em>正解</em></li><li class="ng"><b>D</b><span>$16.06</span><em>選択</em></li></ol>
+    <div class="ans">
+      <p class="trap"><b>落とし方</b>優先株の控除額は償還価値$52＋累積未払配当。額面ベースで計算した。</p>
+      <p class="exp">優先株の請求額は償還（清算）価値に累積未払配当を加えたものである。償還価値 = 30,000 × $52 = $1,560,000。未払配当 = 30,000 × $50 × 5% × 1年 = $75,000。優先請求合計 = $1,635,000。普通株に帰属する資本 = $8,000,000 − $1,635,000 = $6,365,000。1株当たり簿価 = $6,365,000 / 400,000 = $15.91。</p>
+      <p class="expen">The preferred claim equals the call (liquidation) value plus cumulative dividends in arrears. Call value = 30,000 × $52 = $1,560,000. Dividends in arrears = 30,000 × $50 × 5% × 1 year = $75,000. Total preferred claim = $1,635,000. Equity available to common = $8,000,000 − $1,635,000 = $6,365,000. Book value per common share = $6,365,000 / 400,000 = $15.91.</p>
+      <p class="ref"><code>ASC 505-10-S99</code></p>
+    </div>
+  </article>
+</section>
+
+
+<footer>
+出典: uscpa-backup-20260808-0726.json の uscpa-mock-exams（模試11回・全550解答）から isCorrect=false の問題を抽出<br />
+問題文・選択肢・解説は src/data/questions/far/*.json の原文。「落とし方」は scripts/data/wrong-note-annotations.json<br />
+模試記録の correctAnswer が問題バンクと全件一致することを生成時に検証済み（シャッフル後ラベルではない）<br />
+再生成: node scripts/build-wrong-notes.mjs &lt;バックアップJSON&gt;
+</footer>
+</div>
+
+<script>
+(function(){
+  var qs=[].slice.call(document.querySelectorAll('.q'));
+  var store={};
+  try{store=JSON.parse(localStorage.getItem('far-wrong-done')||'{}');}catch(e){store={};}
+  function save(){try{localStorage.setItem('far-wrong-done',JSON.stringify(store));}catch(e){}}
+  function prog(){
+    var n=0;for(var k in store){if(store[k])n++;}
+    document.getElementById('prog').textContent='済 '+n+' / '+qs.length;
+  }
+  qs.forEach(function(q){
+    var id=q.dataset.id;
+    var box=q.querySelector('input[data-check]');
+    if(store[id]){box.checked=true;q.classList.add('done');}
+    box.addEventListener('change',function(){
+      store[id]=box.checked;q.classList.toggle('done',box.checked);save();prog();
+    });
+    var btn=q.querySelector('.rev');
+    btn.addEventListener('click',function(){
+      var on=q.classList.toggle('show');
+      btn.textContent=on?'解答を隠す':'解答を見る';
+    });
+  });
+  prog();
+
+  var filterTopic='all',flag=null;
+  function apply(){
+    qs.forEach(function(q){
+      var sec=q.closest('.topic');
+      var okT=filterTopic==='all'||sec.dataset.topic===filterTopic;
+      var okF=!flag||(flag==='open'?q.dataset.open==='1':q.dataset.diff===flag);
+      q.classList.toggle('hide',!(okT&&okF));
+    });
+    [].forEach.call(document.querySelectorAll('.topic'),function(sec){
+      var any=[].some.call(sec.querySelectorAll('.q'),function(q){return !q.classList.contains('hide');});
+      sec.style.display=any?'':'none';
+    });
+  }
+  [].forEach.call(document.querySelectorAll('[data-filter]'),function(b){
+    b.addEventListener('click',function(){
+      filterTopic=b.dataset.filter;
+      [].forEach.call(document.querySelectorAll('[data-filter]'),function(x){x.classList.toggle('on',x===b);});
+      apply();
+      if(filterTopic!=='all'){var h=document.getElementById('t-'+filterTopic);if(h)h.scrollIntoView({block:'start'});}
+    });
+  });
+  [].forEach.call(document.querySelectorAll('[data-flag]'),function(b){
+    b.addEventListener('click',function(){
+      flag=flag===b.dataset.flag?null:b.dataset.flag;
+      [].forEach.call(document.querySelectorAll('[data-flag]'),function(x){x.classList.toggle('on',x.dataset.flag===flag);});
+      apply();
+    });
+  });
+  var tg=document.getElementById('toggleAll'),allOn=false;
+  tg.addEventListener('click',function(){
+    allOn=!allOn;
+    qs.forEach(function(q){
+      q.classList.toggle('show',allOn);
+      q.querySelector('.rev').textContent=allOn?'解答を隠す':'解答を見る';
+    });
+    tg.textContent=allOn?'解答を一括で隠す':'解答を一括表示';
+    tg.classList.toggle('on',allOn);
+  });
+  [].forEach.call(document.querySelectorAll('[data-goto]'),function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      filterTopic='all';flag=null;
+      [].forEach.call(document.querySelectorAll('[data-filter]'),function(x){x.classList.toggle('on',x.dataset.filter==='all');});
+      [].forEach.call(document.querySelectorAll('[data-flag]'),function(x){x.classList.remove('on');});
+      apply();
+      var t=document.querySelector('.q[data-id="'+a.dataset.goto+'"]');
+      if(t){t.scrollIntoView({block:'center'});t.classList.add('show');t.querySelector('.rev').textContent='解答を隠す';}
+    });
+  });
+})();
+</script>
