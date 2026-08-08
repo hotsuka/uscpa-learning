@@ -309,5 +309,159 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 25,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-invty-003",
+    "subject": "FAR",
+    "topic": "Inventory",
+    "title": "Cost Flow Assumptions and Subsequent Measurement of Inventory",
+    "scenario": "Larkspur Supply Co. is preparing its December 31, Year 2 financial statements. The company uses a periodic inventory system.\n\n**Exhibit 1** presents the Year 2 inventory activity for Product X, which the company is evaluating under two alternative cost flow assumptions. **Exhibit 2** presents year-end data for four other products, each of which must be measured at an amount that does not exceed the applicable measurement ceiling. Additional information appears in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. Round all amounts to the nearest whole dollar.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Product X Inventory Activity for Year 2",
+        "content": "| Date | Transaction | Units | Unit cost |\n| --- | --- | --- | --- |\n| January 1 | Beginning inventory | 2,000 | $12.00 |\n| March 10 | Purchase | 3,000 | $13.50 |\n| July 22 | Purchase | 4,000 | $14.25 |\n| October 5 | Purchase | 1,000 | $15.00 |\n\nUnits sold during Year 2: **7,500 units**\n\nUnits on hand at December 31, Year 2: **2,500 units**\n\nA physical count on December 31, Year 2 confirmed the quantity on hand. Product X is measured at cost; no write-down is required for Product X."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Year-End Data for Products A through D",
+        "content": "| Product | Cost flow method | Units | Cost per unit | Selling price per unit | Cost to complete and sell per unit | Replacement cost per unit | Normal profit margin per unit |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Product A | FIFO | 1,000 | $20.00 | $24.00 | $5.00 | $18.00 | $3.00 |\n| Product B | FIFO | 800 | $30.00 | $40.00 | $4.00 | $28.00 | $5.00 |\n| Product C | LIFO | 600 | $50.00 | $58.00 | $6.00 | $44.00 | $7.00 |\n| Product D | LIFO | 400 | $15.00 | $22.00 | $3.00 | $16.00 | $2.00 |\n\nEach product is evaluated individually. No write-downs were recognized on these products in prior years."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. Larkspur uses a periodic inventory system for all products.\n2. Product X sold for $22.00 per unit throughout Year 2.\n3. Freight-out costs of $8,000 were incurred during Year 2 and are reported as selling expenses.\n4. Larkspur's effective income tax rate is 21%. All amounts requested below are pre-tax.\n5. Products A through D are held in a separate warehouse from Product X and are not included in the Product X quantities."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "FIFO ending inventory",
+        "instruction": "Determine the December 31, Year 2 ending inventory of Product X under the first-in, first-out cost flow assumption. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 36375,
+        "tolerance": 1,
+        "explanation": "Under FIFO the 2,500 units on hand come from the most recent purchases: 1,000 units x $15.00 = $15,000 plus 1,500 units x $14.25 = $21,375, for a total of $36,375.",
+        "explanationJa": "FIFO では、期末在庫は最も新しい仕入から構成されると考える。\n\n| 出所 | 数量 | 単価 | 金額 |\n| --- | --- | --- | --- |\n| 10月5日仕入 | 1,000 | $15.00 | $15,000 |\n| 7月22日仕入 | 1,500 | $14.25 | $21,375 |\n| **合計** | **2,500** | | **$36,375** |\n\n7月22日仕入は4,000単位あるが、期末在庫2,500単位を埋めるのに必要な1,500単位分のみを使う。",
+        "references": ["ASC 330-10-30-9", "ASC 330-10-30-12"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Weighted average cost of goods sold",
+        "instruction": "Determine Product X cost of goods sold for Year 2 under the weighted average cost flow assumption. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 102375,
+        "tolerance": 1,
+        "explanation": "Cost of goods available for sale = $24,000 + $40,500 + $57,000 + $15,000 = $136,500 for 10,000 units, or $13.65 per unit. Ending inventory = 2,500 x $13.65 = $34,125. Cost of goods sold = $136,500 - $34,125 = $102,375.",
+        "explanationJa": "定期棚卸法における加重平均法では、期中の全数量・全金額から単一の平均単価を求める。\n\n**1. 販売可能商品原価**\n\n| 出所 | 数量 | 単価 | 金額 |\n| --- | --- | --- | --- |\n| 期首 | 2,000 | $12.00 | $24,000 |\n| 3月10日 | 3,000 | $13.50 | $40,500 |\n| 7月22日 | 4,000 | $14.25 | $57,000 |\n| 10月5日 | 1,000 | $15.00 | $15,000 |\n| **合計** | **10,000** | | **$136,500** |\n\n**2. 加重平均単価**: $136,500 ÷ 10,000 = $13.65\n\n**3. 期末在庫**: 2,500 × $13.65 = $34,125\n\n**4. 売上原価**: $136,500 − $34,125 = **$102,375**",
+        "references": ["ASC 330-10-30-9", "ASC 330-10-30-13"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Difference in cost of goods sold",
+        "instruction": "Determine the amount by which Year 2 cost of goods sold for Product X under the weighted average method exceeds cost of goods sold under FIFO. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 2250,
+        "tolerance": 1,
+        "explanation": "FIFO cost of goods sold = $136,500 - $36,375 = $100,125. Weighted average cost of goods sold = $102,375. The difference is $2,250.",
+        "explanationJa": "同じ販売可能商品原価 $136,500 を、期末在庫と売上原価にどう配分するかの違いが差額となる。\n\n| 方法 | 期末在庫 | 売上原価 |\n| --- | --- | --- |\n| FIFO | $36,375 | $100,125 |\n| 加重平均 | $34,125 | $102,375 |\n| 差額 | $2,250 | $2,250 |\n\n差額 = **$2,250**\n\n仕入単価が上昇局面にあるため、FIFO は新しい（高い）原価を期末在庫に残し、売上原価が小さくなる。したがって加重平均のほうが売上原価は大きい。",
+        "references": ["ASC 330-10-30-9", "ASC 330-10-30-14"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Carrying amounts of Products A through D",
+        "instruction": "Determine the carrying amount of each product reported in the December 31, Year 2 balance sheet and the total. Enter all amounts in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Carrying amount"],
+          "rows": ["Product A", "Product B", "Product C", "Product D", "Total"],
+          "cells": [
+            {
+              "rowLabel": "Product A",
+              "colLabel": "Carrying amount",
+              "correctValue": 19000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Product B",
+              "colLabel": "Carrying amount",
+              "correctValue": 24000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Product C",
+              "colLabel": "Carrying amount",
+              "correctValue": 27000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Product D",
+              "colLabel": "Carrying amount",
+              "correctValue": 6000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total",
+              "colLabel": "Carrying amount",
+              "correctValue": 76000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Products A and B use FIFO, so they are measured at the lower of cost and net realizable value. Product A: NRV = $24.00 - $5.00 = $19.00, which is below the $20.00 cost, so 1,000 x $19.00 = $19,000. Product B: NRV = $40.00 - $4.00 = $36.00, which exceeds the $30.00 cost, so 800 x $30.00 = $24,000. Products C and D use LIFO, so they are measured at the lower of cost or market with market equal to replacement cost bounded by a ceiling of NRV and a floor of NRV less normal profit. Product C: ceiling $52.00, floor $45.00, replacement cost $44.00, so market is $45.00, which is below the $50.00 cost; 600 x $45.00 = $27,000. Product D: ceiling $19.00, floor $17.00, replacement cost $16.00, so market is $17.00, which exceeds the $15.00 cost; 400 x $15.00 = $6,000.",
+        "explanationJa": "採用している原価フロー方法によって適用する測定基準が変わる。\n\n**Products A・B（FIFO）→ LCNRV（原価と正味実現可能価額の低い方）**\n\n| 製品 | 原価 | NRV = 売価 − 販売費 | 採用単価 | 金額 |\n| --- | --- | --- | --- | --- |\n| A | $20.00 | $24.00 − $5.00 = $19.00 | $19.00 | 1,000 × $19.00 = $19,000 |\n| B | $30.00 | $40.00 − $4.00 = $36.00 | $30.00 | 800 × $30.00 = $24,000 |\n\n**Products C・D（LIFO）→ LCM（market = 再調達原価、上限=NRV、下限=NRV−通常利益）**\n\n| 製品 | 再調達原価 | 上限（NRV） | 下限 | market | 原価 | 採用単価 | 金額 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| C | $44.00 | $52.00 | $45.00 | $45.00 | $50.00 | $45.00 | 600 × $45.00 = $27,000 |\n| D | $16.00 | $19.00 | $17.00 | $17.00 | $15.00 | $15.00 | 400 × $15.00 = $6,000 |\n\nC は再調達原価 $44.00 が下限 $45.00 を下回るため、market は下限の $45.00 になる。D は market $17.00 が原価 $15.00 を上回るため、原価のまま据え置く。\n\n**合計**: $19,000 + $24,000 + $27,000 + $6,000 = **$76,000**",
+        "references": [
+          "ASC 330-10-35-1B",
+          "ASC 330-10-35-1C",
+          "ASC 330-10-35-4"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Total write-down",
+        "instruction": "Determine the total inventory write-down recognized on Products A through D at December 31, Year 2. Enter the amount as a positive number in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 4000,
+        "tolerance": 1,
+        "explanation": "Total cost = $20,000 + $24,000 + $30,000 + $6,000 = $80,000. Total carrying amount = $76,000. Write-down = $4,000, consisting of $1,000 on Product A and $3,000 on Product C.",
+        "explanationJa": "原価合計と評価後の帳簿価額合計の差が評価損となる。\n\n| 製品 | 原価 | 評価後 | 評価損 |\n| --- | --- | --- | --- |\n| A | $20,000 | $19,000 | $1,000 |\n| B | $24,000 | $24,000 | $0 |\n| C | $30,000 | $27,000 | $3,000 |\n| D | $6,000 | $6,000 | $0 |\n| **合計** | **$80,000** | **$76,000** | **$4,000** |\n\n評価損 **$4,000** は売上原価に含めるか、独立の損失として表示する。評価減後の金額が新たな原価基礎となり、後日回復しても戻し入れはできない。",
+        "references": ["ASC 330-10-35-14", "ASC 330-10-35-1B"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Measurement principle for LIFO inventory",
+        "instruction": "Select the subsequent measurement principle that applies to inventory measured using the last-in, first-out cost flow assumption.",
+        "answerType": "select",
+        "options": [
+          "Lower of cost or market, where market is replacement cost limited by a ceiling and a floor",
+          "Lower of cost and net realizable value",
+          "Fair value less costs to sell at each reporting date"
+        ],
+        "correctAnswer": "Lower of cost or market, where market is replacement cost limited by a ceiling and a floor",
+        "explanation": "Inventory measured using LIFO or the retail inventory method is measured at the lower of cost or market, where market is replacement cost bounded by a ceiling of net realizable value and a floor of net realizable value less a normal profit margin. All other inventory is measured at the lower of cost and net realizable value.",
+        "explanationJa": "LIFO および小売棚卸法（retail inventory method）を採用する棚卸資産には、従来の **lower of cost or market** が適用される。\n\n- market = 再調達原価\n- 上限（ceiling）= 正味実現可能価額（NRV）\n- 下限（floor）= NRV − 通常利益\n- market を上限・下限で挟み込んだうえで、原価と比較して低い方を採用する\n\nFIFO・平均法を採用する棚卸資産には、より単純な **lower of cost and net realizable value（LCNRV）** が適用される。どちらの方法を採用しているかで適用基準が変わる点が本問の核心。",
+        "references": ["ASC 330-10-35-1C", "ASC 330-10-35-4"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research",
+        "instruction": "Identify the authoritative guidance stating that inventory measured using a method other than last-in, first-out or the retail inventory method shall be measured at the lower of cost and net realizable value. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "330-10-35-1B",
+        "explanation": "ASC 330-10-35-1B requires inventory measured using a method other than LIFO or the retail inventory method, such as FIFO or average cost, to be measured at the lower of cost and net realizable value.",
+        "explanationJa": "ASC 330-10-35-1B は、LIFO および小売棚卸法**以外**の方法（FIFO・平均法など）で測定される棚卸資産を、原価と正味実現可能価額のいずれか低い方で測定することを求めている。\n\nこれに対し、LIFO と小売棚卸法については ASC 330-10-35-1C が lower of cost or market の適用を定めている。両者の適用範囲の違いを条文レベルで押さえること。",
+        "references": ["ASC 330-10-35-1B"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]

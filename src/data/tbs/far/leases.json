@@ -239,5 +239,171 @@
     "difficulty": "advanced",
     "estimatedMinutes": 25,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-lease-003",
+    "subject": "FAR",
+    "topic": "Leases",
+    "title": "Lessee Accounting for a Finance Lease",
+    "scenario": "Northwind Logistics, Inc. entered into a lease for automated sorting equipment with Pinnacle Equipment Co. The lease commences on January 1, Year 1. Northwind's fiscal year ends December 31.\n\nThe terms of the lease are summarized in **Exhibit 1**. Present value factors are provided in **Exhibit 2**, and additional information appears in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. Round all amounts to the nearest whole dollar. Northwind does not apply the short-term lease recognition exemption to this arrangement.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Lease Terms",
+        "content": "| Term | Detail |\n| --- | --- |\n| Commencement date | January 1, Year 1 |\n| Lease term | 5 years, non-cancelable |\n| Annual lease payment | $60,000, payable each December 31 beginning December 31, Year 1 |\n| Rate implicit in the lease | 8%, readily determinable by Northwind |\n| Remaining economic life of the equipment | 6 years at commencement |\n| Fair value of the equipment at commencement | $260,000 |\n| Initial direct costs paid by Northwind at commencement | $5,000 |\n\nAdditional contract facts:\n\n- Ownership of the equipment does not transfer to Northwind at the end of the lease term.\n- The lease contains no option for Northwind to purchase the equipment.\n- The equipment is a standard model that Pinnacle regularly places with other customers; it is not of a specialized nature.\n- There is no residual value guaranteed by Northwind and no termination penalty."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Present Value Factors",
+        "content": "**Present value of an ordinary annuity of $1**\n\n| Periods | 6% | 8% | 10% |\n| --- | --- | --- | --- |\n| 4 | 3.46511 | 3.31213 | 3.16987 |\n| 5 | 4.21236 | 3.99271 | 3.79079 |\n| 6 | 4.91732 | 4.62288 | 4.35526 |\n\n**Present value of $1**\n\n| Periods | 6% | 8% | 10% |\n| --- | --- | --- | --- |\n| 4 | 0.79209 | 0.73503 | 0.68301 |\n| 5 | 0.74726 | 0.68058 | 0.62092 |\n| 6 | 0.70496 | 0.63017 | 0.56447 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. Northwind's incremental borrowing rate at January 1, Year 1 is 10%.\n2. Northwind pays $3,000 annually directly to an insurance carrier to insure the equipment. This amount is not a payment to Pinnacle and is expensed as incurred.\n3. Northwind amortizes right-of-use assets on a straight-line basis and assumes no residual value at the end of the amortization period.\n4. Northwind's total revenue for Year 1 was $14,200,000."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Lease classification",
+        "instruction": "Select the classification of this lease in Northwind's financial statements.",
+        "answerType": "select",
+        "options": ["Finance lease", "Operating lease", "Short-term lease"],
+        "correctAnswer": "Finance lease",
+        "explanation": "The 5-year lease term is 83.3% of the 6-year remaining economic life, which is a major part of that life. In addition, the present value of the lease payments of $239,563 is 92.1% of the $260,000 fair value, which is substantially all of that fair value. Meeting either criterion requires finance lease classification.",
+        "explanationJa": "ファイナンス・リースの判定基準のうち1つでも満たせばファイナンス・リースとなる。\n\n1. 所有権移転: なし\n2. 購入オプション: なし\n3. リース期間 / 残存経済的耐用年数 = 5年 / 6年 = 83.3% → 「major part（概ね75%以上）」に該当\n4. リース料の現在価値 / 公正価値 = $239,563 / $260,000 = 92.1% → 「substantially all（概ね90%以上）」に該当\n5. 特殊仕様の資産: 該当なし\n\n3と4を満たすため、**Finance lease** に分類する。",
+        "references": ["ASC 842-10-25-2", "ASC 842-10-55-2"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Lease liability at commencement",
+        "instruction": "Determine the lease liability Northwind recognizes at the January 1, Year 1 commencement date. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 239563,
+        "tolerance": 100,
+        "explanation": "The lease liability is the present value of the five remaining annual payments discounted at the rate implicit in the lease: $60,000 x 3.99271 = $239,563.",
+        "explanationJa": "リース負債は未払リース料の現在価値。\n\n1. 割引率: 貸手の計算利子率 8%（借手が容易に把握できるためこちらを優先し、追加借入利子率 10% は使わない）\n2. 支払は各年末（期末払い＝通常年金）なので ordinary annuity の係数を使う\n3. 5期・8% の年金現価係数: 3.99271\n4. リース負債 = $60,000 × 3.99271 = **$239,563**\n\n初期直接費用 $5,000 はリース負債には含めない（ROU資産にのみ加算する）。",
+        "references": ["ASC 842-20-30-1", "ASC 842-20-30-3"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Right-of-use asset at commencement",
+        "instruction": "Determine the right-of-use asset Northwind recognizes at the January 1, Year 1 commencement date. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 244563,
+        "tolerance": 100,
+        "explanation": "Right-of-use asset = lease liability of $239,563 plus initial direct costs of $5,000 = $244,563. There were no prepaid lease payments and no lease incentives.",
+        "explanationJa": "ROU資産 = リース負債 + 開始日以前の支払リース料 + 初期直接費用 − 受領したリース・インセンティブ。\n\n1. リース負債: $239,563\n2. 開始日以前の支払: なし（支払は各年末）\n3. 初期直接費用: +$5,000\n4. インセンティブ: なし\n\nROU資産 = $239,563 + $5,000 = **$244,563**\n\n保険料 $3,000 は貸手への支払ではないためリース料に含めず、発生時費用処理する。",
+        "references": ["ASC 842-20-30-5", "ASC 842-20-30-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Lease liability amortization schedule",
+        "instruction": "Complete the lease liability amortization schedule for Year 1 and Year 2. Enter all amounts in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Year 1", "Year 2"],
+          "rows": [
+            "Interest expense",
+            "Reduction of lease liability",
+            "Lease liability, end of year"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Interest expense",
+              "colLabel": "Year 1",
+              "correctValue": 19165,
+              "tolerance": 100
+            },
+            {
+              "rowLabel": "Interest expense",
+              "colLabel": "Year 2",
+              "correctValue": 15898,
+              "tolerance": 100
+            },
+            {
+              "rowLabel": "Reduction of lease liability",
+              "colLabel": "Year 1",
+              "correctValue": 40835,
+              "tolerance": 100
+            },
+            {
+              "rowLabel": "Reduction of lease liability",
+              "colLabel": "Year 2",
+              "correctValue": 44102,
+              "tolerance": 100
+            },
+            {
+              "rowLabel": "Lease liability, end of year",
+              "colLabel": "Year 1",
+              "correctValue": 198728,
+              "tolerance": 100
+            },
+            {
+              "rowLabel": "Lease liability, end of year",
+              "colLabel": "Year 2",
+              "correctValue": 154626,
+              "tolerance": 100
+            }
+          ]
+        },
+        "explanation": "Year 1: interest = $239,563 x 8% = $19,165; principal reduction = $60,000 - $19,165 = $40,835; ending liability = $239,563 - $40,835 = $198,728. Year 2: interest = $198,728 x 8% = $15,898; principal reduction = $60,000 - $15,898 = $44,102; ending liability = $198,728 - $44,102 = $154,626.",
+        "explanationJa": "実効金利法で負債を償却する。各年の支払 $60,000 のうち、利息相当額を差し引いた残りが元本返済となる。\n\n**Year 1**\n1. 利息費用: $239,563 × 8% = $19,165\n2. 元本返済: $60,000 − $19,165 = $40,835\n3. 期末負債: $239,563 − $40,835 = $198,728\n\n**Year 2**\n1. 利息費用: $198,728 × 8% = $15,898\n2. 元本返済: $60,000 − $15,898 = $44,102\n3. 期末負債: $198,728 − $44,102 = $154,626\n\n利息費用は年々減少し、元本返済額は年々増加する。",
+        "references": ["ASC 842-20-35-1", "ASC 842-20-45-1"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Amortization of the right-of-use asset",
+        "instruction": "Determine the amortization expense on the right-of-use asset that Northwind recognizes for Year 1. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 48913,
+        "tolerance": 100,
+        "explanation": "Because ownership does not transfer and there is no purchase option, the right-of-use asset is amortized over the shorter of the useful life of the asset (6 years) and the lease term (5 years). $244,563 / 5 = $48,913.",
+        "explanationJa": "所有権移転がなく購入オプションもない場合、ROU資産は「資産の耐用年数」と「リース期間」の**短い方**で償却する。\n\n1. 耐用年数 6年 vs リース期間 5年 → 5年\n2. 償却費 = $244,563 ÷ 5年 = **$48,913**（定額法）\n\n所有権が移転する場合は耐用年数（6年）で償却する点と混同しないこと。",
+        "references": ["ASC 842-20-35-7", "ASC 842-20-35-8"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Classification criteria met",
+        "instruction": "Select all finance lease classification criteria that this lease meets based on the facts in Exhibit 1.",
+        "answerType": "multiselect",
+        "options": [
+          "Ownership of the equipment transfers to Northwind by the end of the lease term",
+          "The lease contains a purchase option that Northwind is reasonably certain to exercise",
+          "The lease term is for the major part of the remaining economic life of the equipment",
+          "The present value of the lease payments equals or exceeds substantially all of the fair value of the equipment",
+          "The equipment is of such a specialized nature that it is expected to have no alternative use at the end of the lease term"
+        ],
+        "correctAnswer": [
+          "The lease term is for the major part of the remaining economic life of the equipment",
+          "The present value of the lease payments equals or exceeds substantially all of the fair value of the equipment"
+        ],
+        "explanation": "Lease term of 5 years divided by remaining economic life of 6 years is 83.3%, a major part of the remaining economic life. Present value of lease payments of $239,563 divided by fair value of $260,000 is 92.1%, substantially all of the fair value. The other three criteria are not met.",
+        "explanationJa": "Exhibit 1 の条件を各基準に当てはめる。\n\n| 基準 | 判定 |\n| --- | --- |\n| 所有権移転 | 移転しないと明記 → 該当しない |\n| 購入オプション | 存在しないと明記 → 該当しない |\n| リース期間が経済的耐用年数の大部分 | 5 ÷ 6 = 83.3% → **該当する** |\n| リース料現在価値が公正価値のほぼ全部 | $239,563 ÷ $260,000 = 92.1% → **該当する** |\n| 特殊仕様の資産 | 標準機種と明記 → 該当しない |\n\n実務上は 75%・90% が目安として用いられる。",
+        "references": ["ASC 842-10-25-2", "ASC 842-10-55-2"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Total Year 1 lease expense",
+        "instruction": "Determine the total expense related to this lease that Northwind recognizes in its Year 1 income statement, excluding insurance. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 68078,
+        "tolerance": 100,
+        "explanation": "For a finance lease, amortization of the right-of-use asset and interest on the lease liability are presented separately: $48,913 + $19,165 = $68,078.",
+        "explanationJa": "ファイナンス・リースでは、ROU資産の償却費と負債の利息費用を**別々に**計上する（オペレーティング・リースのように単一の定額リース費用にはしない）。\n\n1. ROU資産償却費: $48,913\n2. 利息費用: $19,165\n3. 合計: **$68,078**\n\nこのため初年度の費用は定額のリース料 $60,000 を上回り、後年になるほど費用が逓減する（フロントロード型）。保険料 $3,000 は設問の除外指示によりここには含めない。",
+        "references": ["ASC 842-20-45-4", "ASC 842-20-35-1"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]

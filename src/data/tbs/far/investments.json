@@ -156,5 +156,146 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 25,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-inv-002",
+    "subject": "FAR",
+    "topic": "Investments",
+    "title": "Classification and Measurement of Debt Security Investments",
+    "scenario": "Meridian Corp. acquired three separate debt security investments on January 1, Year 1. Each investment was assigned to a classification category at acquisition, as shown in **Exhibit 1**. All of the bonds pay interest annually each December 31, and Meridian uses the effective interest method to amortize any discount or premium.\n\nFair value information at December 31, Year 1 is provided in **Exhibit 2**, and additional information appears in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. All amounts requested are pre-tax and should be rounded to the nearest whole dollar.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Debt Securities Acquired January 1, Year 1",
+        "content": "| Security | Face amount | Purchase price | Stated rate | Effective rate | Remaining term | Classification |\n| --- | --- | --- | --- | --- | --- | --- |\n| Alpha bonds | $500,000 | $500,000 | 6.0% | 6.0% | 5 years | Trading |\n| Beta bonds | $400,000 | $372,902 | 5.0% | 7.0% | 4 years | Available-for-sale |\n| Gamma bonds | $300,000 | $316,038 | 8.0% | 6.0% | 3 years | Held-to-maturity |\n\nInterest on all three securities is paid annually on December 31. Meridian paid no transaction costs on acquisition. All Year 1 interest was collected in cash on December 31, Year 1."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Fair Values at December 31, Year 1",
+        "content": "| Security | Fair value |\n| --- | --- |\n| Alpha bonds | $508,000 |\n| Beta bonds | $384,000 |\n| Gamma bonds | $305,000 |\n\nFair values were obtained from quoted prices in active markets for identical securities."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. Meridian has the intent and ability to hold the Gamma bonds until maturity.\n2. For any security carried at an amount above its fair value, management does not intend to sell the security and it is not more likely than not that Meridian will be required to sell it before recovery of its amortized cost basis. No credit losses were identified for any security at December 31, Year 1.\n3. Meridian also holds a $150,000 certificate of deposit that matures 60 days after purchase; it is reported as a cash equivalent.\n4. Meridian's effective income tax rate is 21%. All amounts requested below are pre-tax."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Interest revenue on the available-for-sale security",
+        "instruction": "Determine the interest revenue Meridian recognizes on the Beta bonds for Year 1 under the effective interest method. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 26103,
+        "tolerance": 10,
+        "explanation": "Interest revenue = carrying amount at the beginning of the period x effective rate = $372,902 x 7.0% = $26,103.",
+        "explanationJa": "実効金利法では、期首の帳簿価額に実効利子率を乗じて利息収益を計算する。\n\n1. 期首帳簿価額（取得価額）: $372,902\n2. 実効利子率: 7.0%\n3. 利息収益: $372,902 × 7.0% = **$26,103**\n\n受取現金は額面 $400,000 × 表面利率 5.0% = $20,000 なので、差額 $6,103 が割引額（discount）の償却額となる。\n\n分類が available-for-sale であっても、利息収益の計算は償却原価ベースで行う点に注意。",
+        "references": ["ASC 320-10-35-1", "ASC 310-20-35-18"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Amortized cost of the held-to-maturity security",
+        "instruction": "Determine the amortized cost of the Gamma bonds at December 31, Year 1. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 311000,
+        "tolerance": 10,
+        "explanation": "Interest revenue = $316,038 x 6.0% = $18,962. Cash interest = $300,000 x 8.0% = $24,000. Premium amortization = $24,000 - $18,962 = $5,038. Amortized cost = $316,038 - $5,038 = $311,000.",
+        "explanationJa": "プレミアム付きで取得した債券は、受取利息が利息収益を上回る分だけ帳簿価額が減少する。\n\n1. 利息収益: $316,038 × 6.0% = $18,962\n2. 受取現金利息: $300,000 × 8.0% = $24,000\n3. プレミアム償却額: $24,000 − $18,962 = $5,038\n4. 期末償却原価: $316,038 − $5,038 = **$311,000**\n\nheld-to-maturity に分類された債券は公正価値（$305,000）ではなく償却原価で貸借対照表に計上する。信用損失が認識されない前提のため、$305,000 との差額は帳簿に反映しない。",
+        "references": ["ASC 320-10-35-1", "ASC 310-20-35-18"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Unrealized holding gain or loss in other comprehensive income",
+        "instruction": "Determine the unrealized holding gain or loss on the Beta bonds reported in other comprehensive income for Year 1. Enter a gain as a positive number and a loss as a negative number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 4995,
+        "tolerance": 10,
+        "explanation": "Amortized cost at December 31, Year 1 = $372,902 + ($26,103 - $20,000) = $379,005. Fair value = $384,000. Unrealized holding gain in OCI = $384,000 - $379,005 = $4,995.",
+        "explanationJa": "available-for-sale 債券は公正価値で計上し、償却原価との差額を OCI に計上する。\n\n1. 期末償却原価: $372,902 + ($26,103 − $20,000) = $379,005\n2. 公正価値: $384,000\n3. 未実現保有利益: $384,000 − $379,005 = **$4,995**\n\n取得価額 $372,902 と比較しないこと。割引の償却後の帳簿価額（償却原価）が比較対象となる。",
+        "references": ["ASC 320-10-35-1", "ASC 320-10-45-8"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Effect of the trading security on net income",
+        "instruction": "Determine the total pre-tax amount related to the Alpha bonds that is included in Meridian's Year 1 net income. Enter a net increase as a positive number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 38000,
+        "tolerance": 1,
+        "explanation": "Interest revenue = $500,000 x 6.0% = $30,000 (the bonds were acquired at face amount, so there is no discount or premium). Unrealized holding gain = $508,000 - $500,000 = $8,000, which is included in earnings for a trading security. Total = $38,000.",
+        "explanationJa": "trading に分類された債券は公正価値で計上し、評価差額を当期純利益に含める。\n\n1. 利息収益: $500,000 × 6.0% = $30,000（額面取得のため償却額なし）\n2. 未実現保有利益: $508,000 − $500,000 = $8,000（当期純利益に計上）\n3. 純利益への合計影響: $30,000 + $8,000 = **$38,000**\n\navailable-for-sale との違いは、評価差額の計上先が OCI ではなく損益である点。",
+        "references": ["ASC 320-10-35-1", "ASC 320-10-45-1"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Balance sheet carrying amounts",
+        "instruction": "Determine the carrying amount of each security reported on Meridian's December 31, Year 1 balance sheet. Enter all amounts in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Carrying amount"],
+          "rows": ["Alpha bonds", "Beta bonds", "Gamma bonds"],
+          "cells": [
+            {
+              "rowLabel": "Alpha bonds",
+              "colLabel": "Carrying amount",
+              "correctValue": 508000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Beta bonds",
+              "colLabel": "Carrying amount",
+              "correctValue": 384000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Gamma bonds",
+              "colLabel": "Carrying amount",
+              "correctValue": 311000,
+              "tolerance": 10
+            }
+          ]
+        },
+        "explanation": "Trading and available-for-sale securities are reported at fair value ($508,000 and $384,000). Held-to-maturity securities are reported at amortized cost ($311,000).",
+        "explanationJa": "分類によって貸借対照表計上額が変わる。\n\n| 銘柄 | 分類 | 計上基礎 | 金額 |\n| --- | --- | --- | --- |\n| Alpha | Trading | 公正価値 | $508,000 |\n| Beta | Available-for-sale | 公正価値 | $384,000 |\n| Gamma | Held-to-maturity | 償却原価 | $311,000 |\n\nGamma の公正価値 $305,000 は開示のみで、帳簿価額には反映しない（売却意図がなく、信用損失も認識されないため）。",
+        "references": ["ASC 320-10-35-1", "ASC 320-10-45-1"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Securities measured at fair value",
+        "instruction": "Select all securities that are measured at fair value on Meridian's December 31, Year 1 balance sheet.",
+        "answerType": "multiselect",
+        "options": [
+          "Alpha bonds (trading)",
+          "Beta bonds (available-for-sale)",
+          "Gamma bonds (held-to-maturity)"
+        ],
+        "correctAnswer": [
+          "Alpha bonds (trading)",
+          "Beta bonds (available-for-sale)"
+        ],
+        "explanation": "Trading and available-for-sale debt securities are measured at fair value on the balance sheet. Held-to-maturity debt securities are measured at amortized cost.",
+        "explanationJa": "貸借対照表で公正価値測定されるのは trading と available-for-sale の2区分。\n\n- Alpha（trading）: 公正価値測定。評価差額は損益\n- Beta（available-for-sale）: 公正価値測定。評価差額は OCI\n- Gamma（held-to-maturity）: 償却原価測定\n\n「評価差額をどこに計上するか」は trading と available-for-sale で異なるが、「公正価値で計上するか」という観点では両者とも該当する。",
+        "references": ["ASC 320-10-35-1"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research",
+        "instruction": "Identify the authoritative guidance that specifies how investments in debt securities are subsequently measured based on their classification as trading, available-for-sale, or held-to-maturity. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "320-10-35-1",
+        "explanation": "ASC 320-10-35-1 specifies subsequent measurement of investments in debt securities: trading and available-for-sale securities are measured at fair value, and held-to-maturity securities are measured at amortized cost.",
+        "explanationJa": "ASC 320-10-35-1 が、債券投資の分類ごとの事後測定を定めている。\n\n- trading: 公正価値\n- available-for-sale: 公正価値\n- held-to-maturity: 償却原価\n\n本設問は「分類に応じた事後測定基礎」を問うているため、320-10-35-1 が該当する。",
+        "references": ["ASC 320-10-35-1"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]

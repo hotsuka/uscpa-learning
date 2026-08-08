@@ -154,5 +154,165 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 25,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-fx-002",
+    "subject": "FAR",
+    "topic": "Foreign Currency",
+    "title": "Foreign Currency Denominated Receivable and Payable",
+    "scenario": "Harbor Instruments, Inc. is a U.S. company that maintains its accounting records and prepares its financial statements in U.S. dollars. Its fiscal year ends December 31.\n\nDuring the fourth quarter of Year 1, Harbor entered into two transactions denominated in currencies other than the U.S. dollar. Both were still outstanding at December 31, Year 1 and were settled during Year 2. The transactions are described in **Exhibit 1**, and the relevant spot exchange rates are provided in **Exhibit 2**. Additional company information appears in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. Harbor does not use any risk-management contracts, and no allowance for credit losses is required on the receivable.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Foreign Currency Transactions",
+        "content": "**Transaction 1 — Sale on account**\n\nOn November 1, Year 1, Harbor sold laboratory equipment to a customer located in the United Kingdom. The invoice is denominated in British pounds (GBP) in the amount of GBP 400,000 and is payable on February 1, Year 2. Harbor recorded the sale and the related account receivable on November 1, Year 1.\n\n**Transaction 2 — Purchase on account**\n\nOn December 1, Year 1, Harbor purchased precision components from a supplier located in Switzerland. The invoice is denominated in Swiss francs (CHF) in the amount of CHF 250,000 and is payable on March 1, Year 2. Harbor recorded the purchase and the related account payable on December 1, Year 1.\n\nBoth invoices were paid in full on their respective due dates."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Spot Exchange Rates (U.S. dollars per one unit of foreign currency)",
+        "content": "| Date | GBP | CHF | EUR |\n| --- | --- | --- | --- |\n| November 1, Year 1 | 1.2500 | 1.0800 | 1.0900 |\n| December 1, Year 1 | 1.2700 | 1.1000 | 1.0750 |\n| December 31, Year 1 | 1.3000 | 1.0600 | 1.1000 |\n| February 1, Year 2 | 1.2850 | 1.0450 | 1.1100 |\n| March 1, Year 2 | 1.2600 | 1.0500 | 1.1200 |\n\nRates shown are the spot rates quoted by Harbor's principal bank at the close of business on each date."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. Harbor's accounts receivable balance denominated in U.S. dollars was $2,140,000 at December 31, Year 1.\n2. Harbor maintains a EUR-denominated bank account for travel expenses; the account balance was immaterial at all dates presented.\n3. Harbor's effective income tax rate is 21%. All amounts requested in the tasks below are pre-tax amounts.\n4. Harbor's fiscal year ends December 31. The Year 1 financial statements were issued on March 15, Year 2."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Receivable at the balance sheet date",
+        "instruction": "Determine the U.S. dollar carrying amount of the GBP-denominated account receivable reported on Harbor's December 31, Year 1 balance sheet. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 520000,
+        "tolerance": 1,
+        "explanation": "Receivables denominated in a currency other than the U.S. dollar are remeasured at the current spot rate at each balance sheet date. GBP 400,000 x 1.3000 = $520,000.",
+        "explanationJa": "外貨建の債権は各決算日の直物レートで換算し直す。\n\n1. 取引日（Nov 1, Year 1）の計上額: GBP 400,000 × 1.2500 = $500,000\n2. 決算日（Dec 31, Year 1）の換算額: GBP 400,000 × 1.3000 = **$520,000**\n\nしたがって貸借対照表計上額は $520,000。差額 $20,000 は為替差益として当期損益に計上される。",
+        "references": ["ASC 830-20-35-1", "ASC 830-20-35-2"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Payable at the balance sheet date",
+        "instruction": "Determine the U.S. dollar carrying amount of the CHF-denominated account payable reported on Harbor's December 31, Year 1 balance sheet. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 265000,
+        "tolerance": 1,
+        "explanation": "The payable is remeasured at the December 31, Year 1 spot rate: CHF 250,000 x 1.0600 = $265,000. It was initially recorded on December 1, Year 1 at CHF 250,000 x 1.1000 = $275,000.",
+        "explanationJa": "外貨建の債務も決算日レートで換算し直す。\n\n1. 取引日（Dec 1, Year 1）の計上額: CHF 250,000 × 1.1000 = $275,000\n2. 決算日（Dec 31, Year 1）の換算額: CHF 250,000 × 1.0600 = **$265,000**\n\n負債が $10,000 減少しているため、$10,000 の為替差益が Year 1 の損益に計上される。取引日レートは Dec 1 のもの（1.1000）を使う点に注意。",
+        "references": ["ASC 830-20-30-1", "ASC 830-20-35-1"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Year 1 net transaction gain or loss",
+        "instruction": "Determine the net foreign currency transaction gain or loss recognized in Harbor's Year 1 income statement from the two transactions. Enter a net gain as a positive number and a net loss as a negative number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 30000,
+        "tolerance": 1,
+        "explanation": "Receivable: $520,000 - $500,000 = $20,000 gain. Payable: $275,000 - $265,000 = $10,000 gain. Net Year 1 gain = $30,000.",
+        "explanationJa": "決算日換算による差額を合計する。\n\n| 項目 | 取引日 | 決算日 | 差額 |\n| --- | --- | --- | --- |\n| 売掛金（GBP） | $500,000 | $520,000 | +$20,000（利益） |\n| 買掛金（CHF） | $275,000 | $265,000 | +$10,000（利益） |\n\n資産は増加が利益、負債は減少が利益。合計 = **+$30,000（純為替差益）**。\n\nこれらは決済前でも当期の損益に計上する（実現主義ではない）点が重要。",
+        "references": ["ASC 830-20-35-2", "ASC 830-20-45-1"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Journal entry to record settlement of the receivable",
+        "instruction": "Prepare the journal entry Harbor records on February 1, Year 2 to record collection of the GBP-denominated receivable. Enter all amounts in whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Cash",
+            "Foreign currency transaction loss",
+            "Accounts receivable (GBP)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 514000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Foreign currency transaction loss",
+              "colLabel": "Debit",
+              "correctValue": 6000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Foreign currency transaction loss",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable (GBP)",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts receivable (GBP)",
+              "colLabel": "Credit",
+              "correctValue": 520000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Cash received = GBP 400,000 x 1.2850 = $514,000. The receivable was carried at $520,000 after the December 31, Year 1 remeasurement, so a $6,000 transaction loss is recognized in Year 2.",
+        "explanationJa": "決済日のレートで受取現金額を計算し、決算日換算後の帳簿価額との差額を為替差損益とする。\n\n1. 受取現金: GBP 400,000 × 1.2850 = $514,000\n2. 売掛金の帳簿価額（Dec 31, Year 1 換算後）: $520,000\n3. 差額: $520,000 − $514,000 = $6,000 の為替差損\n\n仕訳:\n\n| 科目 | 借方 | 貸方 |\n| --- | --- | --- |\n| Cash | 514,000 | — |\n| Foreign currency transaction loss | 6,000 | — |\n| Accounts receivable (GBP) | — | 520,000 |\n\n借方合計・貸方合計とも $520,000 で一致する。",
+        "references": ["ASC 830-20-35-2", "ASC 830-20-40-1"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Income statement classification",
+        "instruction": "Select how foreign currency transaction gains and losses on these two transactions are reported in Harbor's financial statements.",
+        "answerType": "select",
+        "options": [
+          "Included in income from continuing operations in the period in which the exchange rate changes",
+          "Reported in other comprehensive income until the related receivable or payable is settled",
+          "Deferred and recognized in income only at the settlement date"
+        ],
+        "correctAnswer": "Included in income from continuing operations in the period in which the exchange rate changes",
+        "explanation": "A change in exchange rates on a receivable or payable denominated in a foreign currency produces a transaction gain or loss that is included in determining net income for the period in which the rate changes.",
+        "explanationJa": "外貨建の債権債務に係る為替差損益は、レートが変動した期の当期純利益に含めて計上する。\n\n- 決済を待って認識するのではなく、決算日ごとに換算差額を損益計上する\n- その他の包括利益（OCI）ではなく、継続事業からの利益に含める\n\nしたがって正解は「レートが変動した期の継続事業利益に含める」。",
+        "references": ["ASC 830-20-35-2", "ASC 830-20-45-1"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Year 2 net transaction gain or loss",
+        "instruction": "Determine the net foreign currency transaction gain or loss recognized in Harbor's Year 2 income statement from settlement of the two transactions. Enter a net gain as a positive number and a net loss as a negative number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": -3500,
+        "tolerance": 1,
+        "explanation": "Receivable: $514,000 - $520,000 = $6,000 loss. Payable: $265,000 - $262,500 = $2,500 gain. Net Year 2 loss = $3,500.",
+        "explanationJa": "Year 2 は決算日換算後の帳簿価額から決済額への変動だけを認識する。\n\n| 項目 | Dec 31, Year 1 | 決済額 | 差額 |\n| --- | --- | --- | --- |\n| 売掛金（GBP） | $520,000 | 400,000 × 1.2850 = $514,000 | −$6,000（損失） |\n| 買掛金（CHF） | $265,000 | 250,000 × 1.0500 = $262,500 | +$2,500（利益） |\n\n合計 = −$6,000 + $2,500 = **−$3,500（純為替差損）**\n\n2期間を通算すると +$30,000 − $3,500 = +$26,500 となり、取引日から決済日までのレート変動の累計と一致する。",
+        "references": ["ASC 830-20-35-2", "ASC 830-20-40-1"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research",
+        "instruction": "Identify the authoritative guidance stating that a foreign currency transaction gain or loss resulting from a change in exchange rates shall be included in determining net income for the period in which the exchange rate changes. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "830-20-35-2",
+        "explanation": "ASC 830-20-35-2 requires a foreign currency transaction gain or loss to be included in determining net income for the period in which the exchange rate changes.",
+        "explanationJa": "ASC 830-20-35-2 は、外貨建取引に係る為替差損益を、為替レートが変動した期の当期純利益の算定に含めることを要求している。\n\n- ASC 830-20-35-1: 各決算日に外貨建残高を当日の直物レートで換算し直す\n- ASC 830-20-35-2: その換算差額を当期純利益に含める\n\n本設問が問う「損益計上のタイミング」を定めているのは 830-20-35-2。",
+        "references": ["ASC 830-20-35-2"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
   }
 ]

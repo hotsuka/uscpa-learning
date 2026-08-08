@@ -473,5 +473,177 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 27,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-cf-004",
+    "subject": "FAR",
+    "topic": "Statement of Cash Flows",
+    "title": "Indirect Method Statement of Cash Flows",
+    "scenario": "Halcyon Products, Inc. is preparing its statement of cash flows for the year ended December 31, Year 6 using the indirect method.\n\nInformation from the Year 6 income statement is presented in **Exhibit 1**, selected comparative balance sheet accounts are presented in **Exhibit 2**, and other Year 6 transactions are described in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. Enter cash inflows as positive numbers and cash outflows as negative numbers, in whole dollars. Halcyon reports interest paid and dividends received as operating activities and dividends paid as a financing activity.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Year 6 Income Statement Information",
+        "content": "Net income for Year 6: **$540,000**\n\nThe following items were included in the determination of net income:\n\n| Item | Amount |\n| --- | --- |\n| Depreciation expense | $185,000 |\n| Amortization of patent | $25,000 |\n| Gain on sale of equipment | $40,000 |\n| Loss on sale of investments | $12,000 |\n| Amortization of bond discount (included in interest expense) | $8,000 |\n| Equity in earnings of an equity method investee | $60,000 |\n| Income tax expense | $170,000 |\n\nDuring Year 6, Halcyon received $22,000 of cash dividends from the equity method investee."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Selected Comparative Balance Sheet Accounts",
+        "content": "| Account | December 31, Year 5 | December 31, Year 6 |\n| --- | --- | --- |\n| Cash | $210,000 | $822,000 |\n| Accounts receivable, net | $420,000 | $495,000 |\n| Inventory | $310,000 | $268,000 |\n| Prepaid expenses | $45,000 | $52,000 |\n| Accounts payable | $280,000 | $246,000 |\n| Accrued liabilities | $95,000 | $118,000 |\n| Income taxes payable | $60,000 | $54,000 |\n| Dividends payable | $40,000 | $55,000 |\n\nThe change in accounts receivable is entirely attributable to operating sales activity, and no receivables were written off during Year 6."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Other Year 6 Transactions",
+        "content": "1. Sold equipment with a carrying amount of $130,000 for $170,000 in cash.\n2. Purchased new equipment for $420,000 in cash.\n3. Sold investments with a carrying amount of $92,000 for $80,000 in cash.\n4. Issued bonds with a face amount of $300,000 for cash proceeds of $282,000.\n5. Declared cash dividends of $150,000 during Year 6.\n6. Acquired a distribution building with a fair value of $500,000 by issuing a note payable to the seller for the full amount.\n7. Acquired land with a fair value of $180,000 by issuing 10,000 shares of the company's common stock to the seller."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Net cash provided by operating activities",
+        "instruction": "Determine net cash provided by operating activities for Year 6 under the indirect method. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 635000,
+        "tolerance": 1,
+        "explanation": "$540,000 net income + $210,000 depreciation and amortization - $40,000 gain + $12,000 loss + $8,000 bond discount amortization - $60,000 equity in earnings + $22,000 dividends received - $75,000 receivable increase + $42,000 inventory decrease - $7,000 prepaid increase - $34,000 payable decrease + $23,000 accrued liability increase - $6,000 taxes payable decrease = $635,000.",
+        "explanationJa": "純利益から出発し、非資金項目・投資財務項目・運転資本増減を調整する。\n\n| 項目 | 金額 |\n| --- | --- |\n| 当期純利益 | $540,000 |\n| 減価償却費・特許償却費 | +$210,000 |\n| 設備売却益（投資活動へ振替） | −$40,000 |\n| 投資売却損（投資活動へ振替） | +$12,000 |\n| 社債ディスカウント償却（非資金の利息費用） | +$8,000 |\n| 持分法投資利益 | −$60,000 |\n| 投資先からの受取配当 | +$22,000 |\n| 売掛金の増加 | −$75,000 |\n| 棚卸資産の減少 | +$42,000 |\n| 前払費用の増加 | −$7,000 |\n| 買掛金の減少 | −$34,000 |\n| 未払費用の増加 | +$23,000 |\n| 未払法人税等の減少 | −$6,000 |\n| **営業活動によるCF** | **$635,000** |\n\n持分法投資については、損益に含めた利益を全額控除し、実際に受け取った配当を加算する。",
+        "references": ["ASC 230-10-45-28", "ASC 230-10-45-29"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Net cash used in investing activities",
+        "instruction": "Determine net cash provided by or used in investing activities for Year 6. Enter an inflow as a positive number and an outflow as a negative number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": -170000,
+        "tolerance": 1,
+        "explanation": "$170,000 proceeds from equipment sale + $80,000 proceeds from investment sale - $420,000 equipment purchase = $(170,000).",
+        "explanationJa": "投資活動には資産の取得・売却に係る実際の現金授受を、総額で計上する。\n\n| 項目 | 金額 |\n| --- | --- |\n| 設備の売却収入 | +$170,000 |\n| 投資の売却収入 | +$80,000 |\n| 設備の取得支出 | −$420,000 |\n| **投資活動によるCF** | **−$170,000** |\n\n売却益 $40,000・売却損 $12,000 ではなく、受取現金の総額を計上する点に注意。建物 $500,000 と土地 $180,000 の取得は現金の授受を伴わないため、ここには含めない。",
+        "references": ["ASC 230-10-45-12", "ASC 230-10-45-13"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Net cash provided by financing activities",
+        "instruction": "Determine net cash provided by or used in financing activities for Year 6. Enter an inflow as a positive number and an outflow as a negative number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 147000,
+        "tolerance": 1,
+        "explanation": "Bond proceeds of $282,000 less dividends paid. Dividends declared of $150,000 less the $15,000 increase in dividends payable equals $135,000 paid. $282,000 - $135,000 = $147,000.",
+        "explanationJa": "財務活動には資本・負債の調達と返済に係る現金授受を計上する。\n\n**1. 社債発行による収入**\n\n受取現金は額面 $300,000 ではなく実際の手取額 **$282,000**。\n\n**2. 支払配当**\n\n| 項目 | 金額 |\n| --- | --- |\n| 当期宣言額 | $150,000 |\n| 未払配当金の増加（$55,000 − $40,000） | −$15,000 |\n| 実際の支払額 | $135,000 |\n\n**3. 財務活動によるCF**: $282,000 − $135,000 = **$147,000**\n\n**検算**: $635,000 − $170,000 + $147,000 = $612,000。現金残高は $210,000 → $822,000 で $612,000 の増加となり一致する。",
+        "references": ["ASC 230-10-45-14", "ASC 230-10-45-15"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Reconciliation of net income to operating cash flow",
+        "instruction": "Determine each adjustment used to reconcile net income to net cash provided by operating activities. Enter increases to cash as positive numbers and decreases as negative numbers, in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Depreciation and amortization",
+            "Gain on sale of equipment",
+            "Loss on sale of investments",
+            "Amortization of bond discount",
+            "Equity in earnings, net of dividends received",
+            "Net change in operating working capital accounts"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Depreciation and amortization",
+              "colLabel": "Amount",
+              "correctValue": 210000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Gain on sale of equipment",
+              "colLabel": "Amount",
+              "correctValue": -40000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Loss on sale of investments",
+              "colLabel": "Amount",
+              "correctValue": 12000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Amortization of bond discount",
+              "colLabel": "Amount",
+              "correctValue": 8000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Equity in earnings, net of dividends received",
+              "colLabel": "Amount",
+              "correctValue": -38000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Net change in operating working capital accounts",
+              "colLabel": "Amount",
+              "correctValue": -57000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Depreciation $185,000 + patent amortization $25,000 = $210,000. The $40,000 gain is deducted and the $12,000 loss is added back because both relate to investing activities. Bond discount amortization of $8,000 is a noncash charge. Equity in earnings of $60,000 less dividends received of $22,000 equals $(38,000). Working capital: $(75,000) + $42,000 + $(7,000) + $(34,000) + $23,000 + $(6,000) = $(57,000). Net income of $540,000 plus these adjustments equals $635,000.",
+        "explanationJa": "調整項目を種類別に整理する。\n\n**非資金費用**: 減価償却 $185,000 + 特許償却 $25,000 = **+$210,000**、社債ディスカウント償却 **+$8,000**\n\n**投資・財務活動に属する損益の振替**: 設備売却益 **−$40,000**、投資売却損 **+$12,000**\n\n**持分法**: 投資利益 −$60,000 + 受取配当 +$22,000 = **−$38,000**\n\n**運転資本の増減**\n\n| 勘定 | 増減 | CFへの影響 |\n| --- | --- | --- |\n| 売掛金 | +$75,000 | −$75,000 |\n| 棚卸資産 | −$42,000 | +$42,000 |\n| 前払費用 | +$7,000 | −$7,000 |\n| 買掛金 | −$34,000 | −$34,000 |\n| 未払費用 | +$23,000 | +$23,000 |\n| 未払法人税等 | −$6,000 | −$6,000 |\n| **合計** | | **−$57,000** |\n\n**検算**: $540,000 + $210,000 − $40,000 + $12,000 + $8,000 − $38,000 − $57,000 = $635,000\n\n未払配当金は財務活動に属するため、運転資本の増減には含めない。",
+        "references": ["ASC 230-10-45-28", "ASC 230-10-45-29"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Noncash investing and financing activities",
+        "instruction": "Select all transactions from Exhibit 3 that are reported as noncash investing and financing activities rather than within the body of the statement of cash flows.",
+        "answerType": "multiselect",
+        "options": [
+          "Acquisition of a building in exchange for a note payable",
+          "Acquisition of land in exchange for shares of the company's common stock",
+          "Purchase of equipment for cash",
+          "Issuance of bonds for cash",
+          "Sale of investments for cash"
+        ],
+        "correctAnswer": [
+          "Acquisition of a building in exchange for a note payable",
+          "Acquisition of land in exchange for shares of the company's common stock"
+        ],
+        "explanation": "Investing and financing activities that affect recognized assets or liabilities but do not result in cash receipts or payments are excluded from the body of the statement and disclosed separately. The building acquired with a note payable and the land acquired with common stock meet that description; the other three transactions involved cash.",
+        "explanationJa": "現金の授受を伴わない投資・財務活動は、キャッシュ・フロー計算書の本体には含めず、注記等で別途開示する。\n\n**非資金取引に該当する**\n- 建物 $500,000 を約束手形の振出により取得\n- 土地 $180,000 を自社株式の交付により取得\n\n**現金取引のため本体に計上する**\n- 設備の現金購入 $420,000（投資活動）\n- 社債の現金発行 $282,000（財務活動）\n- 投資の現金売却 $80,000（投資活動）\n\n非資金取引を本体に含めてしまうと、現金増減額と各区分の合計が一致しなくなる。",
+        "references": ["ASC 230-10-50-3", "ASC 230-10-50-4"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Classification of dividends received",
+        "instruction": "Select the classification of the $22,000 of cash dividends Halcyon received from the equity method investee.",
+        "answerType": "select",
+        "options": [
+          "Operating activities",
+          "Investing activities",
+          "Financing activities"
+        ],
+        "correctAnswer": "Operating activities",
+        "explanation": "Cash receipts of dividends from returns on investments are classified as operating activities.",
+        "explanationJa": "投資に対する**リターン**としての受取配当金は、営業活動によるキャッシュ・フローに分類する。\n\n- 受取配当金・受取利息: 営業活動\n- 支払利息: 営業活動\n- 支払配当金: 財務活動\n\n持分法投資の場合、損益計算書には持分法投資利益 $60,000 が計上される一方、実際の現金流入は受取配当 $22,000 のみ。この差額を営業CFの調整で埋める。",
+        "references": ["ASC 230-10-45-16", "ASC 230-10-45-17"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research",
+        "instruction": "Identify the authoritative guidance requiring disclosure of information about investing and financing activities that affect recognized assets or liabilities but do not result in cash receipts or cash payments during the period. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "230-10-50-3",
+        "explanation": "ASC 230-10-50-3 requires disclosure of information about all investing and financing activities of an entity during a period that affect recognized assets or liabilities but that do not result in cash receipts or cash payments in the period.",
+        "explanationJa": "ASC 230-10-50-3 は、当期中に認識された資産・負債に影響を与えるが現金の収支を伴わない投資活動・財務活動について、その情報の開示を求めている。\n\n本問では、約束手形による建物取得と株式交付による土地取得がこれに該当し、キャッシュ・フロー計算書本体ではなく開示によって伝達される。",
+        "references": ["ASC 230-10-50-3"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]

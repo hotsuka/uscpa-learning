@@ -255,5 +255,174 @@
     "difficulty": "advanced",
     "estimatedMinutes": 27,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-nfp-003",
+    "subject": "FAR",
+    "topic": "Not-for-Profit",
+    "title": "Contribution Revenue Recognition and Net Asset Classification",
+    "scenario": "Riverside Community Alliance is a not-for-profit entity with a fiscal year ending June 30. The organization is preparing its statement of activities for the year ended June 30, Year 4.\n\nThe contributions received or promised during the year are described in **Exhibit 1**. Present value information is provided in **Exhibit 2**, and additional information appears in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. Round all amounts to the nearest whole dollar. Riverside reports contributions restricted by donors whose restrictions are met in the same reporting period as net assets with donor restrictions, and then reports the release.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Contributions for the Year Ended June 30, Year 4",
+        "content": "1. **Unrestricted cash contributions.** Riverside received $850,000 of cash contributions that donors did not restrict as to purpose or time.\n\n2. **Multi-year promise to give.** On June 30, Year 4, a donor signed an unconditional promise to give $300,000, payable in three equal annual installments of $100,000 on June 30 of Year 5, Year 6, and Year 7. Collection is considered probable and no allowance for uncollectible promises is required.\n\n3. **Purpose-restricted cash contribution.** A donor contributed $200,000 in cash with the stipulation that it be used only for Riverside's youth literacy program. During the year ended June 30, Year 4, Riverside spent $120,000 of that amount on the youth literacy program.\n\n4. **Matching gift promise.** A corporate donor promised $500,000, payable only if Riverside raises $500,000 of matching gifts from other donors by December 31, Year 4. The agreement includes a right of return if the matching threshold is not achieved. As of June 30, Year 4, Riverside had raised $180,000 of qualifying matching gifts. No cash has been received from the corporate donor.\n\n5. **Contributed equipment.** A donor contributed computer equipment with a fair value of $95,000. The donor placed no restrictions on its use, and Riverside would otherwise have purchased comparable equipment.\n\n6. **Contributed services.** Volunteers contributed 2,000 hours staffing the reception desk and performing general office assistance, with an estimated fair value of $40,000. These services do not require specialized skills, and Riverside would not have purchased them if they had not been donated. Separately, a licensed attorney contributed legal services with a fair value of $30,000; the services require specialized skills, were provided by an individual possessing those skills, and Riverside would have purchased them otherwise."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Present Value Factors",
+        "content": "Riverside uses a discount rate of **5%** to measure unconditional promises to give that are due in future periods.\n\n**Present value of an ordinary annuity of $1**\n\n| Periods | 5% | 6% | 7% |\n| --- | --- | --- | --- |\n| 2 | 1.85941 | 1.83339 | 1.80802 |\n| 3 | 2.72325 | 2.67301 | 2.62432 |\n| 4 | 3.54595 | 3.46511 | 3.38721 |\n\n**Present value of $1**\n\n| Periods | 5% | 6% | 7% |\n| --- | --- | --- | --- |\n| 1 | 0.95238 | 0.94340 | 0.93458 |\n| 2 | 0.90703 | 0.89000 | 0.87344 |\n| 3 | 0.86384 | 0.83962 | 0.81630 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. Riverside's program services expenses were $1,050,000 and management and general expenses were $260,000 for the year ended June 30, Year 4. Fundraising expenses were $185,000.\n2. Net assets without donor restrictions were $2,100,000 and net assets with donor restrictions were $640,000 at July 1, Year 3.\n3. Riverside has an accounting policy of implying a time restriction on gifts of long-lived assets only when the donor specifies one. No such specification was made for the contributed equipment.\n4. All cash contributions were received before June 30, Year 4."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Contribution revenue without donor restrictions",
+        "instruction": "Determine the contribution revenue Riverside recognizes without donor restrictions for the year ended June 30, Year 4, before any reclassification for net assets released from restrictions. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 975000,
+        "tolerance": 1,
+        "explanation": "Unrestricted cash of $850,000 + contributed equipment of $95,000 + contributed legal services of $30,000 = $975,000.",
+        "explanationJa": "制約のない寄付収益を集計する。\n\n| 項目 | 金額 | 理由 |\n| --- | --- | --- |\n| 制約なし現金寄付 | $850,000 | 使途・時期の制約なし |\n| 現物寄付（設備） | $95,000 | 制約なし。公正価値で収益認識 |\n| 弁護士による役務寄付 | $30,000 | 専門技能を要し、通常購入する役務のため認識 |\n| **合計** | **$975,000** | |\n\nボランティアによる一般事務 $40,000 は、専門技能を要さず通常購入しないため認識しない。設備の寄付は、寄付者が時の制約を付していないため制約なしの純資産に計上する。",
+        "references": ["ASC 958-605-25-2", "ASC 958-605-25-16"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Contribution revenue with donor restrictions",
+        "instruction": "Determine the contribution revenue Riverside recognizes with donor restrictions for the year ended June 30, Year 4, before any reclassification for net assets released from restrictions. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 472325,
+        "tolerance": 50,
+        "explanation": "Present value of the unconditional multi-year promise of $272,325 plus the $200,000 purpose-restricted cash contribution equals $472,325. The $500,000 matching gift promise is conditional and is not recognized.",
+        "explanationJa": "制約付きの寄付収益を集計する。\n\n| 項目 | 金額 | 制約の種類 |\n| --- | --- | --- |\n| 複数年の無条件約束（現在価値） | $272,325 | 時の制約 |\n| 使途制約付き現金寄付 | $200,000 | 使途制約 |\n| **合計** | **$472,325** | |\n\nマッチング条件付きの $500,000 は、条件（$500,000 のマッチング達成）が期末時点で未達成（$180,000 のみ）であるため、収益として認識しない。\n\n将来入金の約束は、将来期間に入金されるという事実自体が「時の制約」となるため、制約付き純資産に計上する。",
+        "references": ["ASC 958-605-25-2", "ASC 958-605-45-4"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Contributions receivable at present value",
+        "instruction": "Determine the carrying amount of the contributions receivable from the multi-year promise reported in Riverside's June 30, Year 4 statement of financial position. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 272325,
+        "tolerance": 50,
+        "explanation": "Unconditional promises to give cash in future periods are measured at the present value of the future cash flows: $100,000 x 2.72325 = $272,325.",
+        "explanationJa": "将来期間に入金される無条件の約束は、将来キャッシュ・フローの現在価値で測定する。\n\n1. 各回の入金額: $100,000（Year 5・Year 6・Year 7 の各6月30日）\n2. 割引率 5%、3期の年金現価係数: 2.72325\n3. 現在価値: $100,000 × 2.72325 = **$272,325**\n\n額面 $300,000 と現在価値 $272,325 の差額 $27,675 は割引額であり、以後の期間に寄付収益の追加として償却する（利息収益ではない）。",
+        "references": ["ASC 958-605-30-6", "ASC 958-310-35-7"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Statement of activities extract",
+        "instruction": "Complete the following extract from Riverside's statement of activities for the year ended June 30, Year 4. Enter increases as positive numbers and decreases as negative numbers, in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Without donor restrictions", "With donor restrictions"],
+          "rows": [
+            "Contribution revenue",
+            "Net assets released from restrictions",
+            "Total revenues, gains, and other support"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Contribution revenue",
+              "colLabel": "Without donor restrictions",
+              "correctValue": 975000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Contribution revenue",
+              "colLabel": "With donor restrictions",
+              "correctValue": 472325,
+              "tolerance": 50
+            },
+            {
+              "rowLabel": "Net assets released from restrictions",
+              "colLabel": "Without donor restrictions",
+              "correctValue": 120000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Net assets released from restrictions",
+              "colLabel": "With donor restrictions",
+              "correctValue": -120000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total revenues, gains, and other support",
+              "colLabel": "Without donor restrictions",
+              "correctValue": 1095000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total revenues, gains, and other support",
+              "colLabel": "With donor restrictions",
+              "correctValue": 352325,
+              "tolerance": 50
+            }
+          ]
+        },
+        "explanation": "Contribution revenue is $975,000 without donor restrictions and $472,325 with donor restrictions. The $120,000 spent on the youth literacy program is reclassified out of net assets with donor restrictions and into net assets without donor restrictions. Totals are $975,000 + $120,000 = $1,095,000 and $472,325 - $120,000 = $352,325.",
+        "explanationJa": "使途制約が満たされた分は、制約付き純資産から制約なし純資産へ振り替える（reclassification）。\n\n| 行 | 制約なし | 制約付き |\n| --- | --- | --- |\n| 寄付収益 | $975,000 | $472,325 |\n| 制約解除による振替 | +$120,000 | −$120,000 |\n| **合計** | **$1,095,000** | **$352,325** |\n\n振替は両欄で同額かつ反対符号となるため、組織全体の純資産合計には影響しない。振替額は制約付き寄付 $200,000 のうち当期に目的どおり支出された $120,000。",
+        "references": ["ASC 958-205-45-9", "ASC 958-605-45-5"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Items not recognized as contribution revenue",
+        "instruction": "Select all items from Exhibit 1 that Riverside does not recognize as contribution revenue for the year ended June 30, Year 4.",
+        "answerType": "multiselect",
+        "options": [
+          "The $500,000 promise contingent on raising matching gifts",
+          "The 2,000 volunteer hours of general office assistance valued at $40,000",
+          "The contributed equipment with a fair value of $95,000",
+          "The contributed legal services with a fair value of $30,000",
+          "The $200,000 cash contribution restricted to the youth literacy program"
+        ],
+        "correctAnswer": [
+          "The $500,000 promise contingent on raising matching gifts",
+          "The 2,000 volunteer hours of general office assistance valued at $40,000"
+        ],
+        "explanation": "The matching gift promise contains a measurable barrier and a right of return, so it is a conditional promise that is not recognized until the condition is substantially met. Contributed services are recognized only if they create or enhance a nonfinancial asset or require specialized skills that would otherwise be purchased; general office assistance meets neither test.",
+        "explanationJa": "**認識しない項目**\n\n1. マッチング条件付きの $500,000: 測定可能な障壁（$500,000 の資金調達）と返還請求権が存在するため条件付き約束にあたる。条件が実質的に充足されるまで収益認識しない。期末時点の達成額は $180,000 にとどまる。\n2. ボランティアによる一般事務 $40,000: 役務寄付は「非金融資産を創出・改良する」か「専門技能を要し、寄付がなければ購入していた」のいずれかを満たす場合のみ認識する。一般事務はどちらも満たさない。\n\n**認識する項目**\n\n- 現物寄付の設備 $95,000: 公正価値で収益認識\n- 弁護士の役務 $30,000: 専門技能要件を満たす\n- 使途制約付き現金 $200,000: 制約付き収益として認識",
+        "references": ["ASC 958-605-25-11", "ASC 958-605-25-16"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Reporting the matching gift promise",
+        "instruction": "Select how the $500,000 matching gift promise is reported in Riverside's June 30, Year 4 financial statements.",
+        "answerType": "select",
+        "options": [
+          "It is not recognized in the financial statements; the promise is disclosed in the notes",
+          "It is recognized as contribution revenue with donor restrictions of $500,000",
+          "It is recognized as a refundable advance liability of $500,000"
+        ],
+        "correctAnswer": "It is not recognized in the financial statements; the promise is disclosed in the notes",
+        "explanation": "A conditional promise to give is not recognized until the conditions are substantially met. Because no cash was received, there is no refundable advance to record; the conditional promise is disclosed.",
+        "explanationJa": "条件付きの寄付約束は、条件が実質的に充足されるまで財務諸表本体には計上しない。\n\n- 期末時点でマッチング達成額は $180,000 にとどまり、条件（$500,000）は未充足\n- 現金を受領していないため、返還義務のある前受金（refundable advance）も計上されない\n- したがって注記で開示するのみとなる\n\n仮に現金を先に受領していた場合は、条件充足まで refundable advance（負債）として計上する点を区別すること。",
+        "references": ["ASC 958-605-25-11", "ASC 958-605-25-13"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research",
+        "instruction": "Identify the authoritative guidance stating that a conditional promise to give shall be recognized when the conditions on which it depends are substantially met. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "958-605-25-11",
+        "explanation": "ASC 958-605-25-11 states that a conditional promise to give shall be recognized when the conditions on which it depends are substantially met, that is, when the conditional promise becomes unconditional.",
+        "explanationJa": "ASC 958-605-25-11 は、条件付きの寄付約束（conditional promise to give）は、その条件が実質的に充足された時点、すなわち約束が無条件となった時点で認識すると定めている。\n\n本問のマッチング条件は、測定可能な障壁と返還請求権を伴うため「条件」に該当し、この規定に従って期末時点では認識しない。",
+        "references": ["ASC 958-605-25-11"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]

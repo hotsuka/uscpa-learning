@@ -268,5 +268,365 @@
     "difficulty": "intermediate",
     "estimatedMinutes": 25,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-gov-003",
+    "subject": "FAR",
+    "topic": "Government Accounting",
+    "title": "Modified Accrual Revenue Recognition and Fund Balance Classification",
+    "scenario": "The City of Fairview is preparing the General Fund financial statements for the year ended December 31, Year 5. The General Fund is a governmental fund and is reported using the current financial resources measurement focus and the modified accrual basis of accounting. The city has formally adopted an availability period of 60 days after the end of the fiscal year.\n\nRevenue information for Year 5 is presented in **Exhibit 1**. Information needed to classify fund balance at December 31, Year 5 is presented in **Exhibit 2**. Additional information appears in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. Enter all amounts in whole dollars.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: General Fund Revenue Data for Year 5",
+        "content": "**Property taxes**\n\n| Item | Amount |\n| --- | --- |\n| Total property taxes levied for Year 5 | $8,000,000 |\n| Portion of the levy estimated to be uncollectible | $200,000 |\n| Collected during Year 5 | $7,300,000 |\n| Collected January 1 through March 1, Year 6 | $400,000 |\n| Expected to be collected after March 1, Year 6 | $100,000 |\n\n**Sales taxes** (collected by merchants and remitted to the city through the state)\n\n| Item | Amount |\n| --- | --- |\n| Remitted to the city during Year 5 | $950,000 |\n| Remitted to the city in January Year 6 | $180,000 |\n| Expected to be remitted to the city in May Year 6 | $70,000 |\n\n**Licenses and permits**\n\nCash of $300,000 was collected during Year 5. Licenses and permits are recognized when the cash is received.\n\n**Fines and forfeitures**\n\n| Item | Amount |\n| --- | --- |\n| Assessed during Year 5 | $120,000 |\n| Collected during Year 5 | $95,000 |\n| Collected in February Year 6 | $10,000 |\n| Not expected to be collected within the availability period | $15,000 |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: General Fund Balance Information at December 31, Year 5",
+        "content": "Total General Fund balance at December 31, Year 5 is **$1,400,000**. It includes the following items:\n\n| Item | Amount |\n| --- | --- |\n| Inventory of supplies (consumption method) | $85,000 |\n| Prepaid insurance | $25,000 |\n| Amount that state law requires be used only for public safety programs | $210,000 |\n| Amount set aside for a park renovation by formal ordinance of the city council, the city's highest level of decision-making authority | $150,000 |\n| Amount the city manager designated for equipment replacement under authority delegated by council policy | $90,000 |\n\nThe remainder of fund balance is not subject to any of the constraints listed above."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. The city's availability period for revenue recognition in governmental funds is 60 days after the end of the fiscal year.\n2. Total General Fund expenditures for Year 5 were $8,900,000.\n3. The city's Capital Projects Fund reported $2,300,000 of expenditures for a new fire station during Year 5.\n4. The city has no encumbrances outstanding at December 31, Year 5.\n5. Fairview's fiscal year ends December 31."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Property tax revenue",
+        "instruction": "Determine the property tax revenue the City of Fairview recognizes in the Year 5 General Fund statement of revenues, expenditures, and changes in fund balance. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 7700000,
+        "tolerance": 1,
+        "explanation": "Under modified accrual, revenue is recognized when measurable and available. Amounts collected during Year 5 of $7,300,000 plus amounts collected within the 60-day availability period of $400,000 equal $7,700,000.",
+        "explanationJa": "修正発生主義では、金額が測定可能（measurable）かつ利用可能（available）な時点で歳入を認識する。\n\n1. Year 5 中の収受額: $7,300,000\n2. 年度末後60日以内（Year 6 の1月1日〜3月1日）の収受額: $400,000\n3. 歳入認識額: $7,300,000 + $400,000 = **$7,700,000**\n\n貸倒見積額 $200,000 は歳入に含めない（賦課額 $8,000,000 − $200,000 = $7,800,000 が純額）。60日超で収受される $100,000 は歳入ではなく繰延収入（deferred inflows of resources）となる。",
+        "references": ["GASB Cod. Sec. 1600.106", "GASB Cod. Sec. P70"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Total General Fund revenues",
+        "instruction": "Determine total revenues recognized in the Year 5 General Fund statement of revenues, expenditures, and changes in fund balance. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 9235000,
+        "tolerance": 1,
+        "explanation": "Property taxes $7,700,000 + sales taxes ($950,000 + $180,000 = $1,130,000) + licenses and permits $300,000 + fines ($95,000 + $10,000 = $105,000) = $9,235,000.",
+        "explanationJa": "各歳入源ごとに「available」の判定を行って合算する。\n\n| 歳入源 | 計算 | 金額 |\n| --- | --- | --- |\n| 財産税 | $7,300,000 + $400,000 | $7,700,000 |\n| 売上税 | $950,000 + $180,000 | $1,130,000 |\n| 免許・許可料 | 現金収受額 | $300,000 |\n| 罰金 | $95,000 + $10,000 | $105,000 |\n| **合計** | | **$9,235,000** |\n\n売上税のように第三者が徴収する派生税収（derived tax revenue）も、60日以内に市へ交付される分までを歳入とする。",
+        "references": ["GASB Cod. Sec. 1600.106", "GASB Cod. Sec. N50"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Deferred inflows of resources",
+        "instruction": "Determine the total deferred inflows of resources for unavailable revenue reported in the General Fund balance sheet at December 31, Year 5. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 185000,
+        "tolerance": 1,
+        "explanation": "Amounts that are measurable but not available are reported as deferred inflows of resources: property taxes $100,000 + sales taxes $70,000 + fines $15,000 = $185,000.",
+        "explanationJa": "測定可能だが利用可能ではない（60日を超えて収受される）金額は、歳入ではなく繰延収入（deferred inflows of resources）として貸借対照表に計上する。\n\n| 項目 | 金額 |\n| --- | --- |\n| 財産税（3月1日以降収受予定） | $100,000 |\n| 売上税（5月交付予定） | $70,000 |\n| 罰金（利用可能期間外） | $15,000 |\n| **合計** | **$185,000** |\n\n繰延収入は負債ではなく、資産・負債とは区別された独立の要素として表示する。",
+        "references": ["GASB Cod. Sec. 1600.106", "GASB Cod. Sec. 1800.148"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Fund balance classification",
+        "instruction": "Classify the City of Fairview's $1,400,000 General Fund balance at December 31, Year 5 into the five fund balance categories. Enter all amounts in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Nonspendable",
+            "Restricted",
+            "Committed",
+            "Assigned",
+            "Unassigned"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Nonspendable",
+              "colLabel": "Amount",
+              "correctValue": 110000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Restricted",
+              "colLabel": "Amount",
+              "correctValue": 210000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Committed",
+              "colLabel": "Amount",
+              "correctValue": 150000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Assigned",
+              "colLabel": "Amount",
+              "correctValue": 90000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Unassigned",
+              "colLabel": "Amount",
+              "correctValue": 840000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Nonspendable = inventory $85,000 + prepaid insurance $25,000 = $110,000. Restricted = $210,000 constrained by state law. Committed = $150,000 set aside by council ordinance. Assigned = $90,000 designated by the city manager under delegated authority. Unassigned = $1,400,000 - $110,000 - $210,000 - $150,000 - $90,000 = $840,000.",
+        "explanationJa": "Fund balance は制約の強さの順に5区分される。\n\n| 区分 | 内容 | 金額 |\n| --- | --- | --- |\n| Nonspendable | 現金化できない形態の資産（棚卸資産 $85,000 + 前払保険料 $25,000） | $110,000 |\n| Restricted | 外部（州法）による制約 | $210,000 |\n| Committed | 最高意思決定機関（市議会）の正式な議決による制約 | $150,000 |\n| Assigned | 委任を受けた者（市支配人）の意図表明 | $90,000 |\n| Unassigned | 残額 | $840,000 |\n\n**Unassigned の計算**: $1,400,000 − $110,000 − $210,000 − $150,000 − $90,000 = $840,000\n\nCommitted と Assigned の区別は「誰が制約を課したか」と「解除に同レベルの手続が必要か」で判断する。",
+        "references": ["GASB Cod. Sec. 1800.142", "GASB Cod. Sec. 1800.150"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Measurement focus and basis of accounting",
+        "instruction": "Select the measurement focus and basis of accounting used in the General Fund financial statements.",
+        "answerType": "select",
+        "options": [
+          "Current financial resources measurement focus and modified accrual basis of accounting",
+          "Economic resources measurement focus and accrual basis of accounting",
+          "Current financial resources measurement focus and full accrual basis of accounting"
+        ],
+        "correctAnswer": "Current financial resources measurement focus and modified accrual basis of accounting",
+        "explanation": "Governmental funds, including the General Fund, use the current financial resources measurement focus and the modified accrual basis of accounting.",
+        "explanationJa": "Governmental funds（General Fund を含む）は、**current financial resources measurement focus** と **modified accrual basis** を用いる。\n\n- 測定焦点が「当期の財務的資源」であるため、資本資産や長期債務は fund の貸借対照表に計上されない\n- 歳入は measurable かつ available になった時点で認識する\n\n一方、政府全体（government-wide）財務諸表および proprietary funds は economic resources measurement focus と accrual basis を用いる。",
+        "references": ["GASB Cod. Sec. 1600.106", "GASB Cod. Sec. 1300.102"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Nonspendable fund balance items",
+        "instruction": "Select all items from Exhibit 2 that are reported as Nonspendable fund balance at December 31, Year 5.",
+        "answerType": "multiselect",
+        "options": [
+          "Inventory of supplies of $85,000",
+          "Prepaid insurance of $25,000",
+          "The $210,000 required by state law to be used for public safety programs",
+          "The $150,000 set aside for the park renovation by council ordinance",
+          "The $90,000 designated by the city manager for equipment replacement"
+        ],
+        "correctAnswer": [
+          "Inventory of supplies of $85,000",
+          "Prepaid insurance of $25,000"
+        ],
+        "explanation": "Nonspendable fund balance includes amounts that are not in spendable form, such as inventories and prepaid amounts. The other three items are spendable but constrained, and are classified as restricted, committed, and assigned, respectively.",
+        "explanationJa": "Nonspendable は「支出可能な形態にない」資産に対応する区分。\n\n**該当する**\n- 棚卸資産 $85,000: 消費されるまで現金化されない\n- 前払保険料 $25,000: 役務提供を受けるだけで現金化されない\n\n**該当しない**\n- 州法による制約 $210,000 → Restricted\n- 市議会議決による制約 $150,000 → Committed\n- 市支配人の指定 $90,000 → Assigned\n\nこれら3つは現金として支出可能であり、区分されるのは「制約の source」の違いによる。",
+        "references": ["GASB Cod. Sec. 1800.142"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 25,
+    "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-gov-004",
+    "subject": "FAR",
+    "topic": "Government Accounting",
+    "title": "Reconciling Governmental Funds to Government-Wide Statements",
+    "scenario": "The Village of Ashton must reconcile the net change in fund balances reported in its governmental funds statement of revenues, expenditures, and changes in fund balances to the change in net position of governmental activities reported in the government-wide statement of activities for the year ended December 31, Year 5.\n\nThe governmental funds result is presented in **Exhibit 1**, and the information needed for the reconciliation is presented in **Exhibit 2**. Additional information appears in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. Enter increases as positive numbers and decreases as negative numbers, in whole dollars.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Governmental Funds Results for Year 5",
+        "content": "Statement of revenues, expenditures, and changes in fund balances — total governmental funds:\n\n| Line | Amount |\n| --- | --- |\n| Total revenues | $9,840,000 |\n| Total expenditures | $10,120,000 |\n| Excess of expenditures over revenues | $(280,000) |\n| Other financing sources — bond proceeds | $900,000 |\n| Net change in fund balances — total governmental funds | $620,000 |\n\nExpenditures include capital outlay and debt service principal and interest."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Reconciling Information for Year 5",
+        "content": "| Item | Amount |\n| --- | --- |\n| Capital outlay reported as expenditures in the governmental funds | $1,450,000 |\n| Depreciation expense on capital assets used in governmental activities | $780,000 |\n| Cash proceeds from the sale of used equipment, reported in the governmental funds | $60,000 |\n| Carrying amount of the equipment sold | $75,000 |\n| Proceeds from issuance of general obligation bonds at par, reported as an other financing source | $900,000 |\n| Principal payments on long-term debt reported as expenditures | $310,000 |\n| Increase in accrued interest payable on long-term debt during Year 5 | $18,000 |\n| Increase in the compensated absences liability during Year 5 | $46,000 |\n| Unavailable property tax revenue reported as deferred inflows at December 31, Year 4 | $95,000 |\n| Unavailable property tax revenue reported as deferred inflows at December 31, Year 5 | $130,000 |\n\nAll capital outlay met the Village's capitalization threshold. The bonds were issued at par, so there is no premium or discount to amortize."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. The Village has no internal service funds.\n2. The Village's Water Enterprise Fund reported an increase in net position of $210,000 for Year 5. Enterprise fund activity is reported in business-type activities and is not part of this reconciliation.\n3. Total capital assets of governmental activities, net of accumulated depreciation, were $18,400,000 at December 31, Year 5.\n4. The Village's fiscal year ends December 31."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Capital asset adjustment",
+        "instruction": "Determine the net reconciling adjustment for capital asset activity, combining capital outlay, depreciation expense, and the carrying amount of the equipment disposed of. Enter an increase as a positive number and a decrease as a negative number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 595000,
+        "tolerance": 1,
+        "explanation": "Capital outlay of $1,450,000 is capitalized rather than expensed, depreciation of $780,000 is recognized only at the government-wide level, and the $75,000 carrying amount of the equipment sold is removed. $1,450,000 - $780,000 - $75,000 = $595,000.",
+        "explanationJa": "Governmental funds では資本的支出が「支出」として全額計上され、減価償却は計上されない。政府全体では逆に資産計上・減価償却を行う。\n\n| 調整項目 | 金額 |\n| --- | --- |\n| 資本的支出の資産計上（funds の支出を戻す） | +$1,450,000 |\n| 減価償却費の計上 | −$780,000 |\n| 売却設備の簿価の除却 | −$75,000 |\n| **合計** | **+$595,000** |\n\n売却については、funds が売却収入 $60,000 を全額収入計上しているのに対し、政府全体では簿価 $75,000 を落として売却損 $15,000 を認識するため、差額として簿価分を減算する。",
+        "references": ["GASB Cod. Sec. 2200.176", "GASB Cod. Sec. 1400.102"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Long-term debt adjustment",
+        "instruction": "Determine the net reconciling adjustment for long-term debt transactions, combining bond proceeds and principal payments. Enter an increase as a positive number and a decrease as a negative number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": -590000,
+        "tolerance": 1,
+        "explanation": "Bond proceeds of $900,000 increase fund balances but do not affect net position, so they are removed. Principal payments of $310,000 are expenditures in the funds but reduce a liability at the government-wide level, so they are added back. $310,000 - $900,000 = $(590,000).",
+        "explanationJa": "長期債務の取引は、funds と政府全体で扱いが正反対になる。\n\n| 調整項目 | funds での扱い | 政府全体での扱い | 調整額 |\n| --- | --- | --- | --- |\n| 地方債の発行 | Other financing source（fund balance 増） | 負債の増加のみ（純資産に影響なし） | −$900,000 |\n| 元本返済 | 支出（fund balance 減） | 負債の減少のみ（純資産に影響なし） | +$310,000 |\n\n合計 = $310,000 − $900,000 = **−$590,000**",
+        "references": ["GASB Cod. Sec. 2200.177", "GASB Cod. Sec. 1500.102"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Reconciliation schedule",
+        "instruction": "Complete the reconciliation from the net change in fund balances to the change in net position of governmental activities. Enter increases as positive numbers and decreases as negative numbers, in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Net change in fund balances — total governmental funds",
+            "Capital outlay capitalized",
+            "Depreciation expense",
+            "Carrying amount of equipment disposed of",
+            "Proceeds from issuance of general obligation bonds",
+            "Principal payments on long-term debt",
+            "Increase in accrued interest payable",
+            "Increase in compensated absences liability",
+            "Increase in unavailable property tax revenue",
+            "Change in net position of governmental activities"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Net change in fund balances — total governmental funds",
+              "colLabel": "Amount",
+              "correctValue": 620000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Capital outlay capitalized",
+              "colLabel": "Amount",
+              "correctValue": 1450000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Depreciation expense",
+              "colLabel": "Amount",
+              "correctValue": -780000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Carrying amount of equipment disposed of",
+              "colLabel": "Amount",
+              "correctValue": -75000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Proceeds from issuance of general obligation bonds",
+              "colLabel": "Amount",
+              "correctValue": -900000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Principal payments on long-term debt",
+              "colLabel": "Amount",
+              "correctValue": 310000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Increase in accrued interest payable",
+              "colLabel": "Amount",
+              "correctValue": -18000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Increase in compensated absences liability",
+              "colLabel": "Amount",
+              "correctValue": -46000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Increase in unavailable property tax revenue",
+              "colLabel": "Amount",
+              "correctValue": 35000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Change in net position of governmental activities",
+              "colLabel": "Amount",
+              "correctValue": 596000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "$620,000 + $1,450,000 - $780,000 - $75,000 - $900,000 + $310,000 - $18,000 - $46,000 + $35,000 = $596,000. The unavailable revenue adjustment equals the increase in deferred inflows, $130,000 - $95,000 = $35,000, because the accrual basis recognizes the revenue when it is earned regardless of availability.",
+        "explanationJa": "各調整を順に積み上げる。\n\n| 項目 | 金額 | 理由 |\n| --- | --- | --- |\n| Funds の fund balance 増減 | $620,000 | 出発点 |\n| 資本的支出の資産計上 | +$1,450,000 | funds では支出、政府全体では資産 |\n| 減価償却費 | −$780,000 | funds では認識されない |\n| 売却設備の簿価 | −$75,000 | 政府全体で除却 |\n| 地方債発行収入 | −$900,000 | 政府全体では負債の増加のみ |\n| 元本返済 | +$310,000 | 政府全体では負債の減少のみ |\n| 未払利息の増加 | −$18,000 | 発生主義で費用計上 |\n| 有給休暇引当の増加 | −$46,000 | 発生主義で費用計上 |\n| 利用不能歳入の増加 | +$35,000 | $130,000 − $95,000。発生主義では収益認識 |\n| **政府全体の純資産変動額** | **$596,000** | |\n\n上下の符号を機械的に暗記するのではなく、「funds は当期の財務的資源のみ、政府全体は経済的資源すべて」という測定焦点の違いから導く。",
+        "references": ["GASB Cod. Sec. 2200.176", "GASB Cod. Sec. 2200.177"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Government-wide measurement focus",
+        "instruction": "Select the measurement focus and basis of accounting used in the government-wide statement of activities.",
+        "answerType": "select",
+        "options": [
+          "Economic resources measurement focus and accrual basis of accounting",
+          "Current financial resources measurement focus and modified accrual basis of accounting",
+          "Current financial resources measurement focus and accrual basis of accounting"
+        ],
+        "correctAnswer": "Economic resources measurement focus and accrual basis of accounting",
+        "explanation": "Government-wide financial statements report all assets and liabilities, including capital assets and long-term debt, using the economic resources measurement focus and the accrual basis of accounting.",
+        "explanationJa": "政府全体（government-wide）財務諸表は、**economic resources measurement focus** と **accrual basis** を用いる。\n\nこのため、資本資産や長期債務が貸借対照表に計上され、減価償却費や発生主義に基づく利息費用・有給休暇費用が認識される。\n\nこの測定焦点の違いこそが、本問の調整表が必要になる理由である。",
+        "references": ["GASB Cod. Sec. 2200.102", "GASB Cod. Sec. 1600.104"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Items reported only at the government-wide level",
+        "instruction": "Select all items that are reported in the government-wide statement of activities but are not reported in the governmental funds statement of revenues, expenditures, and changes in fund balances.",
+        "answerType": "multiselect",
+        "options": [
+          "Depreciation expense on capital assets",
+          "Capital outlay expenditures",
+          "Proceeds from issuance of general obligation bonds",
+          "Loss on disposal of capital assets",
+          "The increase in the compensated absences liability that will not be liquidated with current financial resources"
+        ],
+        "correctAnswer": [
+          "Depreciation expense on capital assets",
+          "Loss on disposal of capital assets",
+          "The increase in the compensated absences liability that will not be liquidated with current financial resources"
+        ],
+        "explanation": "Governmental funds do not report capital assets or long-term liabilities, so they report no depreciation, no gain or loss on disposal, and no expense for the portion of compensated absences that will not be liquidated with current financial resources. Capital outlay and bond proceeds are reported in the funds statement but are eliminated in the government-wide statement.",
+        "explanationJa": "Governmental funds は資本資産・長期債務を計上しないため、それらに由来する費用・損益は funds では認識されない。\n\n**政府全体でのみ認識されるもの**\n- 減価償却費: 資本資産が funds に無いため\n- 資産処分損: 簿価が funds に無いため（funds は売却収入のみ計上）\n- 有給休暇引当の増加のうち当期財務的資源で決済されない部分: 長期負債であるため\n\n**funds でのみ計上されるもの**\n- 資本的支出: funds では支出、政府全体では資産計上\n- 地方債発行収入: funds では other financing source、政府全体では負債の増加",
+        "references": ["GASB Cod. Sec. 2200.176", "GASB Cod. Sec. 1600.106"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Loss on disposal",
+        "instruction": "Determine the loss on disposal of the used equipment reported in the government-wide statement of activities for Year 5. Enter the loss as a positive number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 15000,
+        "tolerance": 1,
+        "explanation": "Carrying amount of $75,000 less cash proceeds of $60,000 equals a $15,000 loss on disposal.",
+        "explanationJa": "政府全体財務諸表は発生主義であるため、資産の簿価と売却収入の差額を損益として認識する。\n\n1. 売却設備の簿価: $75,000\n2. 売却収入: $60,000\n3. 処分損: $75,000 − $60,000 = **$15,000**\n\nGovernmental funds ではこの処分損は認識されず、売却収入 $60,000 のみが計上される。",
+        "references": ["GASB Cod. Sec. 1400.121", "GASB Cod. Sec. 2200.176"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Reporting of general obligation bonds",
+        "instruction": "Select how the outstanding balance of the general obligation bonds is reported in the government-wide statement of net position at December 31, Year 5.",
+        "answerType": "select",
+        "options": [
+          "As a long-term liability of governmental activities",
+          "As an other financing source of governmental activities",
+          "It is not reported; only liabilities that will be liquidated with current financial resources are reported"
+        ],
+        "correctAnswer": "As a long-term liability of governmental activities",
+        "explanation": "Because the government-wide statements use the economic resources measurement focus, all long-term liabilities, including general obligation bonds, are reported in the statement of net position under governmental activities.",
+        "explanationJa": "政府全体財務諸表は経済的資源測定焦点を用いるため、長期債務を含むすべての負債が statement of net position に計上される。\n\n- 一般財源保証債（general obligation bonds）の未償還残高は governmental activities の**長期負債**として表示される\n- Governmental funds の貸借対照表には計上されない（当期の財務的資源に該当しないため）\n\n「Other financing source」は発行年度の funds 損益計算書上の区分であり、貸借対照表項目ではない。",
+        "references": ["GASB Cod. Sec. 2200.102", "GASB Cod. Sec. 1500.102"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]

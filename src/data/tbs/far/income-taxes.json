@@ -249,5 +249,131 @@
     "difficulty": "advanced",
     "estimatedMinutes": 30,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-tax-003",
+    "subject": "FAR",
+    "topic": "Income Taxes",
+    "title": "Temporary and Permanent Differences and the Income Tax Provision",
+    "scenario": "Cranfield Manufacturing, Inc. is preparing its income tax provision for the year ended December 31, Year 3. Pretax financial statement income and the items that cause its taxable income to differ from that amount are summarized in **Exhibit 1**.\n\nBeginning cumulative temporary differences and the enacted tax rate are provided in **Exhibit 2**. Additional information appears in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. Cranfield operates in a single tax jurisdiction, has no operating loss or tax credit carryforwards, and has concluded that it is more likely than not that all deferred tax assets will be realized. Round all amounts to the nearest whole dollar.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Year 3 Pretax Income and Differences",
+        "content": "Pretax financial statement income for Year 3: **$2,400,000**\n\nThe following items are reflected in pretax financial statement income or in the Year 3 tax return:\n\n| Item | Amount | Description |\n| --- | --- | --- |\n| Tax depreciation in excess of book depreciation | $300,000 | Deducted on the Year 3 tax return but not in book income; will reverse in later years |\n| Warranty expense accrued in excess of warranty costs paid | $75,000 | Deducted for book purposes in Year 3; deductible for tax purposes only when paid |\n| Rent collected in advance from a tenant | $60,000 | Taxable when received in Year 3; recognized as book revenue in Year 4 |\n| Interest revenue on municipal bonds | $90,000 | Included in book income; never taxable |\n| Fines and penalties assessed by a regulatory agency | $35,000 | Deducted in book income; never deductible for tax purposes |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Cumulative Temporary Differences at December 31, Year 2, and Tax Rate",
+        "content": "| Cumulative temporary difference | Balance at Dec 31, Year 2 | Type |\n| --- | --- | --- |\n| Depreciation | $500,000 | Taxable temporary difference |\n| Warranty liability | $90,000 | Deductible temporary difference |\n| Unearned rent | $0 | Deductible temporary difference |\n\nThe enacted income tax rate is **21%** for Year 3 and for all future years. No change in the enacted rate has been enacted or proposed."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. Book depreciation expense recorded in Year 3 was $520,000.\n2. Cranfield made estimated federal income tax payments of $430,000 during Year 3.\n3. Warranty costs actually paid in cash during Year 3 were $45,000.\n4. Cranfield files a single consolidated return in one tax jurisdiction and has no uncertain tax positions.\n5. There were no items recognized directly in other comprehensive income during Year 3."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Taxable income",
+        "instruction": "Determine Cranfield's taxable income for Year 3. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 2180000,
+        "tolerance": 1,
+        "explanation": "$2,400,000 - $90,000 municipal interest + $35,000 fines - $300,000 excess tax depreciation + $75,000 warranty accrual + $60,000 unearned rent = $2,180,000.",
+        "explanationJa": "税前会計利益から出発し、永久差異と一時差異を調整する。\n\n| 項目 | 調整額 |\n| --- | --- |\n| 税前会計利益 | $2,400,000 |\n| 地方債利息（非課税・永久差異） | −$90,000 |\n| 罰科金（損金不算入・永久差異） | +$35,000 |\n| 税務上の減価償却超過額（一時差異） | −$300,000 |\n| 保証引当金の繰入超過（一時差異） | +$75,000 |\n| 前受家賃（受領時課税・一時差異） | +$60,000 |\n| **課税所得** | **$2,180,000** |\n\n減算項目（会計利益より課税所得を小さくするもの）と加算項目の符号を取り違えないこと。",
+        "references": ["ASC 740-10-25-20", "ASC 740-10-55-3"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Current income tax expense",
+        "instruction": "Determine Cranfield's current income tax expense for Year 3. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 457800,
+        "tolerance": 1,
+        "explanation": "Current tax expense = taxable income x enacted rate = $2,180,000 x 21% = $457,800.",
+        "explanationJa": "当期税金費用は課税所得に制定税率を乗じて計算する。\n\n$2,180,000 × 21% = **$457,800**\n\n予定納税額 $430,000 は当期税金費用の金額には影響しない（未払法人税等の残高に影響するのみ）。",
+        "references": ["ASC 740-10-30-2", "ASC 740-10-30-8"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Deferred tax liability balance",
+        "instruction": "Determine the deferred tax liability balance reported at December 31, Year 3. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 168000,
+        "tolerance": 1,
+        "explanation": "Cumulative taxable temporary difference = $500,000 + $300,000 = $800,000. Deferred tax liability = $800,000 x 21% = $168,000.",
+        "explanationJa": "将来加算一時差異の累計額に制定税率を乗じる。\n\n1. 期首の累計差異（減価償却）: $500,000\n2. Year 3 の増加額: $300,000\n3. 期末累計差異: $800,000\n4. 繰延税金負債: $800,000 × 21% = **$168,000**\n\n税務上の償却が会計上の償却を上回る差異は、将来これが反転して課税所得を増やすため繰延税金「負債」となる。",
+        "references": ["ASC 740-10-30-5", "ASC 740-10-25-20"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Deferred tax asset balance",
+        "instruction": "Determine the total deferred tax asset balance reported at December 31, Year 3. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 47250,
+        "tolerance": 1,
+        "explanation": "Warranty cumulative difference = $90,000 + $75,000 = $165,000. Unearned rent cumulative difference = $0 + $60,000 = $60,000. Total = $225,000 x 21% = $47,250.",
+        "explanationJa": "将来減算一時差異の累計額に制定税率を乗じる。\n\n| 項目 | 期首累計 | 当期増加 | 期末累計 |\n| --- | --- | --- | --- |\n| 保証引当金 | $90,000 | $75,000 | $165,000 |\n| 前受家賃 | $0 | $60,000 | $60,000 |\n| 合計 | | | $225,000 |\n\n繰延税金資産 = $225,000 × 21% = **$47,250**\n\n実現可能性は「more likely than not」と判断されているため、評価性引当額（valuation allowance）は計上しない。",
+        "references": ["ASC 740-10-30-5", "ASC 740-10-30-17"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Total income tax expense",
+        "instruction": "Determine Cranfield's total income tax expense reported in the Year 3 income statement. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 492450,
+        "tolerance": 1,
+        "explanation": "Deferred tax expense = change in DTL ($168,000 - $105,000 = $63,000) less change in DTA ($47,250 - $18,900 = $28,350) = $34,650. Total = $457,800 + $34,650 = $492,450.",
+        "explanationJa": "総税金費用 = 当期税金費用 + 繰延税金費用。\n\n**繰延税金費用の計算**\n\n1. 繰延税金負債: 期首 $500,000 × 21% = $105,000 → 期末 $168,000（増加 $63,000）\n2. 繰延税金資産: 期首 $90,000 × 21% = $18,900 → 期末 $47,250（増加 $28,350）\n3. 繰延税金費用 = $63,000 − $28,350 = $34,650\n\n**総税金費用**\n\n$457,800 + $34,650 = **$492,450**\n\n**検算（実効税率調整）**\n\n$2,400,000 × 21% = $504,000\n地方債利息の影響: −$90,000 × 21% = −$18,900\n罰科金の影響: +$35,000 × 21% = +$7,350\n合計 = $504,000 − $18,900 + $7,350 = $492,450 で一致する。",
+        "references": ["ASC 740-10-45-4", "ASC 740-10-30-2"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Identification of permanent differences",
+        "instruction": "Select all items from Exhibit 1 that are permanent differences.",
+        "answerType": "multiselect",
+        "options": [
+          "Tax depreciation in excess of book depreciation",
+          "Warranty expense accrued in excess of warranty costs paid",
+          "Rent collected in advance from a tenant",
+          "Interest revenue on municipal bonds",
+          "Fines and penalties assessed by a regulatory agency"
+        ],
+        "correctAnswer": [
+          "Interest revenue on municipal bonds",
+          "Fines and penalties assessed by a regulatory agency"
+        ],
+        "explanation": "Municipal bond interest is never taxable and fines and penalties are never deductible, so neither reverses in a future period. The other three items reverse in future periods and are therefore temporary differences.",
+        "explanationJa": "永久差異とは、将来にわたって決して反転しない差異のこと。\n\n**永久差異**\n- 地方債の利息収益: 会計上は収益だが税務上は永久に非課税\n- 罰科金: 会計上は費用だが税務上は永久に損金不算入\n\n**一時差異（将来反転する）**\n- 減価償却の差: 税務上先に償却した分は将来反転する\n- 保証引当金: 支払時に将来損金算入される\n- 前受家賃: 会計上の収益認識時に将来反転する\n\n永久差異は繰延税金を発生させないが、実効税率を法定税率から乖離させる。",
+        "references": ["ASC 740-10-25-30", "ASC 740-10-55-3"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Balance sheet presentation",
+        "instruction": "Select the required balance sheet presentation of Cranfield's deferred tax assets and deferred tax liabilities at December 31, Year 3.",
+        "answerType": "select",
+        "options": [
+          "All deferred tax assets and liabilities of a tax-paying component within a jurisdiction are offset and presented as a single noncurrent amount",
+          "Deferred tax assets and liabilities are classified as current or noncurrent based on the classification of the related asset or liability",
+          "Deferred tax assets and liabilities are presented separately as a current asset and a current liability without offsetting"
+        ],
+        "correctAnswer": "All deferred tax assets and liabilities of a tax-paying component within a jurisdiction are offset and presented as a single noncurrent amount",
+        "explanation": "Deferred tax assets and liabilities for each tax-paying component within a jurisdiction are offset and presented as a single noncurrent amount on a classified balance sheet.",
+        "explanationJa": "米国会計基準では、繰延税金資産と繰延税金負債は、同一の納税主体・同一の税務管轄ごとに相殺し、**単一の非流動項目**として表示する。\n\n本問では $168,000（負債）と $47,250（資産）を相殺し、非流動の繰延税金負債 $120,750 として表示される。\n\n関連する資産・負債の流動／非流動区分に応じて分類する方法は現行基準では採用されていない。",
+        "references": ["ASC 740-10-45-4", "ASC 740-10-45-6"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]

@@ -393,5 +393,178 @@
     "difficulty": "advanced",
     "estimatedMinutes": 28,
     "source": "FAR TBS Practice (original)"
+  },
+  {
+    "id": "far-tbs-err-003",
+    "subject": "FAR",
+    "topic": "Accounting Changes & Errors",
+    "title": "Correction of Prior Period Errors and Restatement",
+    "scenario": "Kestrel Industries, Inc. is preparing comparative financial statements for Year 2 and Year 3. Before the Year 3 financial statements were issued, the controller identified three errors that affected previously issued statements.\n\n**Exhibit 1** presents amounts as previously reported. **Exhibit 2** describes the errors. Additional information appears in **Exhibit 3**.\n\nUse the exhibits to complete the tasks below. Enter increases as positive numbers and decreases as negative numbers, in whole dollars. Ignore any effect on earnings per share.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Amounts as Previously Reported",
+        "content": "| Item | Year 1 | Year 2 | Year 3 |\n| --- | --- | --- | --- |\n| Net income | $400,000 | $520,000 | $610,000 (preliminary, before correction) |\n| Dividends declared and paid | $80,000 | $100,000 | $120,000 |\n| Retained earnings, end of year | $1,200,000 | $1,620,000 | Not yet determined |\n\nThe Year 3 net income of $610,000 is the preliminary amount computed before any of the errors in Exhibit 2 were corrected."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Errors Identified",
+        "content": "**Error 1 — Inventory count**\n\nEnding inventory at December 31, Year 2 was overstated by $70,000 because of a counting error at one warehouse. Inventory at December 31, Year 1 and at December 31, Year 3 was counted and valued correctly.\n\n**Error 2 — Insurance policy**\n\nOn January 2, Year 2, Kestrel paid $90,000 for a three-year property insurance policy covering Year 2, Year 3, and Year 4. The entire $90,000 was charged to insurance expense in Year 2. No insurance expense related to this policy was recorded in Year 3.\n\n**Error 3 — Equipment**\n\nOn January 1, Year 2, Kestrel purchased specialized production equipment for $240,000 and charged the entire amount to repairs and maintenance expense. The equipment should have been capitalized and depreciated on a straight-line basis over an eight-year useful life with no salvage value. No depreciation was recorded on the equipment in Year 2 or Year 3. The equipment remained in service at December 31, Year 3."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Additional Information",
+        "content": "1. Kestrel's income tax rate is 21% for all years presented, and each of the three errors affects taxable income in the same period and by the same pretax amount as it affects book income.\n2. Weighted average common shares outstanding were 500,000 in each year presented.\n3. Comparative financial statements are presented for Year 2 and Year 3 only.\n4. No errors were identified that originated in Year 1 or earlier.\n5. The Year 3 financial statements had not been issued when the errors were identified."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Restated Year 2 net income",
+        "instruction": "Determine Kestrel's restated net income for Year 2. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 678000,
+        "tolerance": 1,
+        "explanation": "Pretax effect on Year 2 = $(70,000) inventory + $60,000 insurance + $210,000 equipment = $200,000 increase. After tax = $200,000 x 79% = $158,000. Restated net income = $520,000 + $158,000 = $678,000.",
+        "explanationJa": "Year 2 に影響する各誤謬の税前影響額を合算し、税引後に換算する。\n\n| 誤謬 | 税前影響 | 計算 |\n| --- | --- | --- |\n| 期末棚卸資産の過大計上 | −$70,000 | 売上原価が過少 → 利益が過大 |\n| 保険料の一括費用処理 | +$60,000 | $90,000 計上 − 正しい $30,000 = $60,000 の費用過大 |\n| 設備の費用処理 | +$210,000 | $240,000 の費用過大 − 減価償却漏れ $30,000 |\n| **合計（税前）** | **+$200,000** | |\n\n税引後: $200,000 × (1 − 0.21) = $158,000\n\n修正後 Year 2 純利益 = $520,000 + $158,000 = **$678,000**\n\n設備の年間減価償却費は $240,000 ÷ 8年 = $30,000。",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-50-7"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Corrected Year 3 net income",
+        "instruction": "Determine Kestrel's corrected net income for Year 3. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 617900,
+        "tolerance": 1,
+        "explanation": "Pretax effect on Year 3 = $70,000 inventory + $(30,000) insurance + $(30,000) depreciation = $10,000 increase. After tax = $10,000 x 79% = $7,900. Corrected net income = $610,000 + $7,900 = $617,900.",
+        "explanationJa": "Year 3 に影響する各誤謬の税前影響額を合算する。\n\n| 誤謬 | 税前影響 | 計算 |\n| --- | --- | --- |\n| 期首棚卸資産の過大計上 | +$70,000 | 売上原価が過大 → 利益が過少。修正で増加 |\n| 保険料の未計上 | −$30,000 | Year 3 分 $30,000 の費用計上漏れ |\n| 減価償却の未計上 | −$30,000 | $240,000 ÷ 8年 |\n| **合計（税前）** | **+$10,000** | |\n\n税引後: $10,000 × 0.79 = $7,900\n\n修正後 Year 3 純利益 = $610,000 + $7,900 = **$617,900**\n\n棚卸資産の誤謬は2期間で自動的に相殺される（Year 2 で −$70,000、Year 3 で +$70,000）点に注目する。",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-50-7"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Adjustment to beginning retained earnings",
+        "instruction": "Determine the adjustment to retained earnings as of January 1, Year 3 resulting from the correction of the errors. Enter an increase as a positive number and a decrease as a negative number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 158000,
+        "tolerance": 1,
+        "explanation": "The cumulative after-tax effect of the errors on periods before Year 3 is the Year 2 effect of $158,000, because all three errors originated in Year 2.",
+        "explanationJa": "Jan 1, Year 3 時点の利益剰余金修正額は、Year 3 より前の期間に生じた誤謬の税引後累積影響額に等しい。\n\n本問では3つの誤謬すべてが Year 2 に発生しているため、Year 2 の税引後影響額 $158,000 がそのまま修正額となる。\n\n修正額 = **+$158,000**\n\nこれにより Dec 31, Year 2（= Jan 1, Year 3）の利益剰余金は $1,620,000 + $158,000 = $1,778,000 に修正再表示される。Year 1 以前に発生した誤謬はないため、Jan 1, Year 2 の期首残高 $1,200,000 は修正しない。",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-45-24"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Restated retained earnings at December 31, Year 3",
+        "instruction": "Determine the restated retained earnings balance at December 31, Year 3. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 2275900,
+        "tolerance": 1,
+        "explanation": "Restated retained earnings at January 1, Year 3 = $1,620,000 + $158,000 = $1,778,000. Add corrected Year 3 net income of $617,900 and deduct Year 3 dividends of $120,000: $1,778,000 + $617,900 - $120,000 = $2,275,900.",
+        "explanationJa": "修正後の期首残高から利益剰余金をロールフォワードする。\n\n| 項目 | 金額 |\n| --- | --- |\n| Dec 31, Year 2 の報告額 | $1,620,000 |\n| 誤謬修正（税引後） | +$158,000 |\n| 修正後 Jan 1, Year 3 残高 | $1,778,000 |\n| Year 3 修正後純利益 | +$617,900 |\n| Year 3 配当 | −$120,000 |\n| **Dec 31, Year 3 残高** | **$2,275,900** |\n\n配当は誤謬の影響を受けないため、報告額 $120,000 をそのまま用いる。",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-50-7"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Pretax effect of each error by year",
+        "instruction": "Determine the effect of each error on pretax income for Year 2 and Year 3, and the total for each year. Enter increases as positive numbers and decreases as negative numbers, in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Year 2", "Year 3"],
+          "rows": [
+            "Inventory error",
+            "Insurance error",
+            "Equipment error",
+            "Total effect on pretax income"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Inventory error",
+              "colLabel": "Year 2",
+              "correctValue": -70000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Inventory error",
+              "colLabel": "Year 3",
+              "correctValue": 70000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Insurance error",
+              "colLabel": "Year 2",
+              "correctValue": 60000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Insurance error",
+              "colLabel": "Year 3",
+              "correctValue": -30000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Equipment error",
+              "colLabel": "Year 2",
+              "correctValue": 210000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Equipment error",
+              "colLabel": "Year 3",
+              "correctValue": -30000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total effect on pretax income",
+              "colLabel": "Year 2",
+              "correctValue": 200000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total effect on pretax income",
+              "colLabel": "Year 3",
+              "correctValue": 10000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Inventory: overstated Year 2 ending inventory understates Year 2 cost of goods sold and overstates Year 2 income by $70,000; the same overstatement becomes Year 3 beginning inventory, overstating Year 3 cost of goods sold by $70,000. Insurance: $90,000 was expensed in Year 2 instead of $30,000, so Year 2 expense was overstated by $60,000 and Year 3 expense was understated by $30,000. Equipment: $240,000 was expensed instead of recording $30,000 of depreciation, so Year 2 expense was overstated by $210,000, and Year 3 depreciation of $30,000 was omitted.",
+        "explanationJa": "各誤謬が両年度に与える税前影響を分解する。\n\n| 誤謬 | Year 2 | Year 3 | 説明 |\n| --- | --- | --- | --- |\n| 棚卸資産 | −$70,000 | +$70,000 | 期末在庫過大 → Year 2 の売上原価過少・利益過大。翌期は期首在庫過大となり売上原価過大・利益過少 |\n| 保険料 | +$60,000 | −$30,000 | Year 2 に $90,000 計上（正しくは $30,000）→ $60,000 の費用過大。Year 3 は $30,000 の計上漏れ |\n| 設備 | +$210,000 | −$30,000 | $240,000 の費用過大から減価償却 $30,000 を差し引く。Year 3 は減価償却 $30,000 の計上漏れ |\n| **合計** | **+$200,000** | **+$10,000** | |\n\n棚卸資産の誤謬は「counterbalancing error」であり2期間で相殺されるが、保険料と設備の誤謬は複数期にわたって影響が残る。",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-50-7"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Reporting the correction",
+        "instruction": "Select how Kestrel reports the correction of these errors in its comparative Year 2 and Year 3 financial statements.",
+        "answerType": "select",
+        "options": [
+          "Restate the prior period financial statements presented and adjust the opening balance of retained earnings of the earliest period presented",
+          "Report the cumulative effect of the errors as a separate line item in Year 3 income before extraordinary items",
+          "Apply the correction prospectively beginning in Year 3 and disclose the nature of the errors"
+        ],
+        "correctAnswer": "Restate the prior period financial statements presented and adjust the opening balance of retained earnings of the earliest period presented",
+        "explanation": "An error in previously issued financial statements is corrected by restating the prior period statements presented and adjusting the opening balance of retained earnings of the earliest period presented for the cumulative effect of errors that originated before that period, with disclosure of the nature of the error and its effect on each line item and per share amount.",
+        "explanationJa": "過年度の誤謬は、**遡及的な修正再表示（restatement）** によって処理する。\n\n1. 比較表示される過年度の財務諸表を修正再表示する（本問では Year 2）\n2. **表示される最も古い期間（earliest period presented）** の期首利益剰余金を、その期間より前に発生した誤謬の累積影響額だけ修正する\n3. 誤謬の内容、各表示科目・1株当たり金額への影響を注記開示する\n\n本問で表示される最も古い期間は Year 2 であり、3つの誤謬はいずれも Year 2 中に発生しているため、Jan 1, Year 2 の期首利益剰余金 $1,200,000 は結果として修正されない。仮に Year 1 以前に発生した誤謬があれば、その税引後累積影響額を Jan 1, Year 2 残高に反映することになる。\n\n当期の損益に累積影響額を一括計上する方法や、将来に向かって適用する方法（prospective）は誤謬の修正には認められない。将来に向かっての適用は会計上の見積りの変更に用いる。",
+        "references": ["ASC 250-10-45-23", "ASC 250-10-50-7"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Research",
+        "instruction": "Identify the authoritative guidance stating that an error in previously issued financial statements shall be reported as an error correction by restating the prior period financial statements. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "250-10-45-23",
+        "explanation": "ASC 250-10-45-23 requires that any error in the financial statements of a prior period discovered after the financial statements are issued or are available to be issued be reported as an error correction by restating the prior period financial statements.",
+        "explanationJa": "ASC 250-10-45-23 は、公表済み（または公表可能な状態にある）過年度財務諸表に誤謬が発見された場合、過年度財務諸表を修正再表示することにより誤謬の訂正として報告することを求めている。\n\n同項はあわせて、修正再表示にあたり誤謬の影響を受ける資産・負債・利益剰余金の各期首残高を修正することも定めている。",
+        "references": ["ASC 250-10-45-23"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "FAR TBS Practice (original)"
   }
 ]
