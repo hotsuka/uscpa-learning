@@ -31,7 +31,7 @@ const files = questionDirs.flatMap(dir =>
     : []
 );
 
-const issues = { INVALID_ANSWER: [], DUPLICATE_CHOICE: [], SUSPICIOUS_EXPLANATION: [] };
+const issues = { INVALID_ANSWER: [], DUPLICATE_CHOICE: [], SUSPICIOUS_EXPLANATION: [], ANSWER_NOT_IN_EXPLANATION: [] };
 let total = 0;
 
 for (const { dir, file } of files) {
@@ -69,6 +69,20 @@ for (const { dir, file } of files) {
         break;
       }
     }
+
+    // チェック4: 計算問題で、解説の中に正解の数値が現れるか
+    // 正解に至る計算を書かずに結論だけ述べている解説（＝逆算した嘘の論理）を検出する
+    const correct = q.choices.find(c => c.label === q.correctAnswer);
+    const nums = correct ? (correct.text.match(/\d[\d,]*(?:\.\d+)?/g) ?? []) : [];
+    const isCalc = nums.some(n => n.replace(/[,.]/g, '').length >= 2);
+    // 解説未記入（出典だけを入れてある問題）は対象外
+    const hasWrittenExplanation = !exp.includes('Refer to the video explanation');
+    if (isCalc && hasWrittenExplanation && !nums.some(n => exp.includes(n))) {
+      issues.ANSWER_NOT_IN_EXPLANATION.push({
+        file, id: q.id,
+        detail: `正解 ${q.correctAnswer}="${correct.text}" の値が解説に現れない`
+      });
+    }
   }
 }
 
@@ -98,11 +112,23 @@ if (issues.SUSPICIOUS_EXPLANATION.length) {
   console.log();
 }
 
-const totalIssues = Object.values(issues).reduce((s, a) => s + a.length, 0);
-if (totalIssues === 0) {
+// [4] は既存データにも該当が多いため警告に留め、コミットは止めない
+if (issues.ANSWER_NOT_IN_EXPLANATION.length) {
+  console.log(`[警告] 解説に正解の値が現れない (${issues.ANSWER_NOT_IN_EXPLANATION.length} 件)`);
+  console.log('  解説を新規に書いた問題がここに出た場合は、逆算した誤った論理の疑いがあるため要確認。');
+  for (const i of issues.ANSWER_NOT_IN_EXPLANATION.slice(0, 10))
+    console.log(`  ${i.id} (${i.file})`);
+  if (issues.ANSWER_NOT_IN_EXPLANATION.length > 10)
+    console.log(`  ... 他 ${issues.ANSWER_NOT_IN_EXPLANATION.length - 10} 件`);
+  console.log();
+}
+
+const blocking = issues.INVALID_ANSWER.length + issues.DUPLICATE_CHOICE.length
+  + issues.SUSPICIOUS_EXPLANATION.length;
+if (blocking === 0) {
   console.log('問題なし — すべて正常です。');
   process.exit(0);
 } else {
-  console.log(`合計 ${totalIssues} 件の問題を検出。コミット前に修正してください。`);
+  console.log(`合計 ${blocking} 件の問題を検出。コミット前に修正してください。`);
   process.exit(1);
 }
