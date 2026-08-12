@@ -9,32 +9,56 @@ interface QuestionStemProps {
 type Block =
   { type: "text"; lines: string[] } | { type: "table"; rows: string[][] };
 
+// これより長いセルがある行は、表ではなく箇条書きの字下げとみなす
+const MAX_CELL_LENGTH = 45;
+
 /**
- * 問題文を描画する。
+ * その行を表の一行として扱ってよいか判定する。
  *
- * 教材PDFから取り込んだ設問は「ラベル | 値」の行で表を表しているため、
- * そのまま流すと数値がどの項目のものか読み取れない。
- * 連続するパイプ区切り行だけを表として組み、それ以外は通常の本文として扱う。
- * データ側は変換しない（過去に問題データのテーブル化で数値を破損させたため）。
+ * 教材PDFから座標で列を復元しているため、箇条書きの記号と本文の間隔まで
+ * 列区切りとして拾ってしまっている行がある。それを表にすると本文が
+ * 右寄せの細いセルに押し込まれて読めなくなるので、値の一覧に見える行だけを表にする。
  */
+function isTableRow(line: string): boolean {
+  if (!line.includes(" | ")) return false;
+  const cells = line.split(" | ").map((c) => c.trim());
+  if (cells.length < 2) return false;
+  if (cells.some((c) => c.length > MAX_CELL_LENGTH)) return false;
+  // ラベル以外の列に数値がある（金額や数量の一覧）か、全セルが短い（Yes/No の対照表）
+  return (
+    cells.slice(1).some((c) => /\d/.test(c)) ||
+    cells.every((c) => c.length <= 20)
+  );
+}
+
 function toBlocks(content: string): Block[] {
   const blocks: Block[] = [];
 
-  for (const line of content.split("\n")) {
-    const isRow = line.includes(" | ");
+  const pushText = (line: string) => {
+    // 表にしない行に残ったパイプは区切り記号として意味を持たないので空白に均す
+    const text = line.replace(/\s*\|\s*/g, " ").trim();
     const last = blocks[blocks.length - 1];
+    if (last?.type === "text") last.lines.push(text);
+    else blocks.push({ type: "text", lines: [text] });
+  };
 
-    if (isRow) {
+  for (const line of content.split("\n")) {
+    if (isTableRow(line)) {
       const cells = line.split(" | ").map((c) => c.trim());
+      const last = blocks[blocks.length - 1];
       if (last?.type === "table") last.rows.push(cells);
       else blocks.push({ type: "table", rows: [cells] });
     } else {
-      if (last?.type === "text") last.lines.push(line);
-      else blocks.push({ type: "text", lines: [line] });
+      pushText(line);
     }
   }
 
-  return blocks;
+  // 1行しかない表は表の体をなさないので本文に戻す
+  return blocks.flatMap<Block>((b) =>
+    b.type === "table" && b.rows.length < 2
+      ? [{ type: "text", lines: [b.rows[0].join(" ")] }]
+      : [b],
+  );
 }
 
 export function QuestionStem({ content }: QuestionStemProps) {
@@ -49,17 +73,25 @@ export function QuestionStem({ content }: QuestionStemProps) {
           return <MarkdownPreview key={i} content={text} breaks />;
         }
 
-        // 見出し行はラベル列を持たないことがあるため、左側を空セルで埋めて列を揃える
         const columns = Math.max(...block.rows.map((r) => r.length));
+        // 表の冒頭に並ぶ「数値を含まない行」までを見出しとみなす
+        let headerRows = 0;
+        while (
+          headerRows < block.rows.length &&
+          !block.rows[headerRows].some((c) => /\d/.test(c))
+        ) {
+          headerRows++;
+        }
+
         return (
-          <div key={i} className="overflow-x-auto">
-            <table className="my-2 text-sm">
+          <div key={i} className="my-2 overflow-x-auto">
+            <table className="w-full text-sm">
               <tbody>
                 {block.rows.map((cells, r) => {
-                  const padded = [
-                    ...Array(columns - cells.length).fill(""),
-                    ...cells,
-                  ];
+                  // 見出しは値の列に合わせて右へ寄せ、データ行はラベル列から左詰めにする
+                  const pad: string[] = Array(columns - cells.length).fill("");
+                  const padded =
+                    r < headerRows ? [...pad, ...cells] : [...cells, ...pad];
                   return (
                     <tr
                       key={r}
@@ -71,7 +103,7 @@ export function QuestionStem({ content }: QuestionStemProps) {
                           className={
                             c === 0
                               ? "py-1 pr-6 align-top"
-                              : "py-1 pr-6 text-right align-top tabular-nums whitespace-nowrap"
+                              : "py-1 pl-4 text-right align-top tabular-nums whitespace-nowrap"
                           }
                         >
                           {cell}
