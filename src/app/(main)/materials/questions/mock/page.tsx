@@ -448,7 +448,7 @@ export default function MockExamPage() {
                   </Button>
                 </div>
                 <div className="text-base font-medium mb-6 leading-relaxed">
-                  <MarkdownPreview content={currentEntry.question.stem} />
+                  <MarkdownPreview content={currentEntry.question.stem} breaks />
                 </div>
                 <div className="space-y-3">
                   {currentEntry.choices.map((choice) => {

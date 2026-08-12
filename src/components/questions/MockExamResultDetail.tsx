@@ -93,7 +93,7 @@ function WrongAnswerReview({ answer }: { answer: MockExamAnswer }) {
         (question ? (
           <div className="p-4 border-t space-y-3">
             <div className="text-sm leading-relaxed">
-              <MarkdownPreview content={question.stem} />
+              <MarkdownPreview content={question.stem} breaks />
             </div>
             <div className="space-y-1.5">
               {question.choices.map((choice) => {

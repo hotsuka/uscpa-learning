@@ -215,7 +215,7 @@ export const QuestionCard = forwardRef<QuestionCardRef, QuestionCardProps>(funct
 
         {/* 問題文 */}
         <div className="text-base font-medium mb-6 leading-relaxed">
-          <MarkdownPreview content={question.stem} />
+          <MarkdownPreview content={question.stem} breaks />
         </div>
 
         {/* 選択肢 */}
@@ -296,11 +296,11 @@ export const QuestionCard = forwardRef<QuestionCardRef, QuestionCardProps>(funct
 
             {showExplanation && (
               <div className="p-4 rounded-lg bg-muted/50 space-y-3">
-                <p className="text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed whitespace-pre-line">
                   {replaceExplanationLabels(question.explanation, originalToShuffledLabel)}
                 </p>
                 {question.explanationJa && (
-                  <p className="text-sm leading-relaxed text-muted-foreground border-t pt-2">
+                  <p className="text-sm leading-relaxed text-muted-foreground border-t pt-2 whitespace-pre-line">
                     {replaceExplanationLabels(question.explanationJa, originalToShuffledLabel)}
                   </p>
                 )}
