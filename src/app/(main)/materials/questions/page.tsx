@@ -388,9 +388,12 @@ export default function QuestionsPage() {
         {/* ページヘッダー */}
         <div className="mb-6 flex items-start justify-between gap-2">
           <div>
-            <h1 className="text-2xl font-bold mb-2">FAR 問題バンク</h1>
+            <h1 className="text-2xl font-bold mb-2">{subject} 問題バンク</h1>
             <p className="text-sm text-muted-foreground">
-              AICPA公開問題ベースの追加演習（全{totalQuestions}問）
+              {subject === "BAR"
+                ? "Proactive過去問ベースの演習"
+                : "AICPA公開問題ベースの追加演習"}
+              （全{totalQuestions}問）
             </p>
           </div>
           <Button asChild variant="outline" size="sm" className="shrink-0">

@@ -596,9 +596,9 @@ export default function MaterialsPage() {
                   <BookOpen className="w-6 h-6 text-blue-600" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-blue-900">FAR 問題バンク</h3>
+                  <h3 className="font-semibold text-blue-900">問題バンク</h3>
                   <p className="text-sm text-blue-700">
-                    AICPA公開問題ベースの追加演習（150問）
+                    FAR・BAR の四択演習（科目は画面上部で切替）
                   </p>
                 </div>
                 <Badge variant="secondary" className="shrink-0">
@@ -620,7 +620,7 @@ export default function MaterialsPage() {
                 <div className="flex-1">
                   <h3 className="font-semibold text-purple-900">FAR TBS 問題バンク</h3>
                   <p className="text-sm text-purple-700">
-                    Task Based Simulation — シナリオ形式の演習問題（5問）
+                    Task Based Simulation — シナリオ形式の演習問題
                   </p>
                 </div>
                 <Badge variant="secondary" className="shrink-0 bg-purple-100 text-purple-700">
