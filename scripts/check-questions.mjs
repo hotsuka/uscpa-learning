@@ -1,7 +1,7 @@
-import { readFileSync, readdirSync } from 'fs';
+import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 
-const questionsDir = 'src/data/questions/far';
+const questionDirs = ['src/data/questions/far', 'src/data/questions/bar'];
 
 // 解説内に「自信がない・計算が合わない」ことを示す疑念パターン
 const SUSPICIOUS = [
@@ -22,14 +22,20 @@ const SUSPICIOUS = [
   { re: /answer is [A-D]\. but/i,        label: 'answer-but' },
 ];
 
-const files = readdirSync(questionsDir)
-  .filter(f => f.endsWith('.json') && !f.includes('.bak'));
+// 科目ごとのディレクトリを走査する（BAR以降の科目を追加してもチェック漏れが出ないように）
+const files = questionDirs.flatMap(dir =>
+  existsSync(dir)
+    ? readdirSync(dir)
+        .filter(f => f.endsWith('.json') && !f.includes('.bak'))
+        .map(f => ({ dir, file: f }))
+    : []
+);
 
 const issues = { INVALID_ANSWER: [], DUPLICATE_CHOICE: [], SUSPICIOUS_EXPLANATION: [] };
 let total = 0;
 
-for (const file of files) {
-  const raw = JSON.parse(readFileSync(join(questionsDir, file), 'utf8'));
+for (const { dir, file } of files) {
+  const raw = JSON.parse(readFileSync(join(dir, file), 'utf8'));
   const questions = raw.questions ?? raw;
 
   for (const q of questions) {
