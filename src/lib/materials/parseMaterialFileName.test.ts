@@ -53,6 +53,23 @@ describe("parseMaterialFileName", () => {
     ).toBe("FAR-Not-for-profit-Accounting");
   });
 
+  it("ASCII表記のファイル名も日本語表記と同じ教材名に揃える", () => {
+    expect(parseMaterialFileName("BAR_Pensions_text.pdf")).toEqual(
+      parseMaterialFileName("BAR_Pensions_テキスト.pdf"),
+    );
+    expect(
+      parseMaterialFileName("BAR_Cost Accounting_questions_CH53.pdf"),
+    ).toEqual(parseMaterialFileName("BAR_Cost Accounting_演習問題_CH53.pdf"));
+  });
+
+  it("ASCII表記の回答あり版も日本語表記の回答なし版とペアになる", () => {
+    const without = parseMaterialFileName("BAR_Pensions_text.pdf");
+    const withAnswers = parseMaterialFileName("BAR_Pensions_text_answers.pdf");
+    expect(withAnswers.variant).toBe("with");
+    expect(withAnswers.baseName).toBe(without.baseName);
+    expect(withAnswers.baseName).toBe("BAR_Pensions_テキスト");
+  });
+
   it("対象外の科目プレフィックスはsubjectをnullにする", () => {
     const parsed = parseMaterialFileName(
       "ISC_Information Technology_テキスト.pdf",

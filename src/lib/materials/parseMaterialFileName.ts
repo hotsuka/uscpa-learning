@@ -1,7 +1,15 @@
 import type { Subject } from "@/types";
 
 const SUBJECT_PREFIXES: Subject[] = ["FAR", "AUD", "REG", "BAR"];
-const ANSWER_SUFFIX = "_回答あり";
+
+// 日本語のファイル名を扱えない経路からアップロードされることがあるため、
+// ASCII表記のサフィックスも日本語表記と同じ意味に解釈する
+const ANSWER_SUFFIXES = ["_回答あり", "_answers"];
+const SECTION_SPLIT = /_(?:テキスト|演習問題|text|questions)/i;
+
+// ASCII表記でアップロードされても教材名は日本語表記に揃える
+const normalizeBaseName = (name: string): string =>
+  name.replace(/_text$/i, "_テキスト").replace(/_questions/i, "_演習問題");
 
 export interface ParsedMaterialFile {
   /** 教材名。拡張子と「_回答あり」を除いたファイル名をそのまま使う */
@@ -24,10 +32,15 @@ export function parseMaterialFileName(fileName: string): ParsedMaterialFile {
   let name = fileName.replace(/(\.pdf)+$/i, "");
 
   let variant: "with" | "without" = "without";
-  if (name.endsWith(ANSWER_SUFFIX)) {
-    variant = "with";
-    name = name.slice(0, -ANSWER_SUFFIX.length);
+  for (const suffix of ANSWER_SUFFIXES) {
+    if (name.toLowerCase().endsWith(suffix.toLowerCase())) {
+      variant = "with";
+      name = name.slice(0, -suffix.length);
+      break;
+    }
   }
+
+  name = normalizeBaseName(name);
 
   const subject =
     SUBJECT_PREFIXES.find((s) => name.startsWith(`${s}_`)) ?? null;
@@ -37,7 +50,7 @@ export function parseMaterialFileName(fileName: string): ParsedMaterialFile {
   let subtopic: string | null = null;
   if (subject) {
     const rest = name.slice(subject.length + 1);
-    subtopic = rest.split(/_(?:テキスト|演習問題)/)[0] || null;
+    subtopic = rest.split(SECTION_SPLIT)[0] || null;
   }
 
   return { baseName: name, subject, subtopic, variant };
