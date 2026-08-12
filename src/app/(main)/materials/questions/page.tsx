@@ -17,7 +17,8 @@ import { QuestionCard, type QuestionCardRef } from "@/components/materials/Quest
 import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
 import { useTimer } from "@/hooks/useTimer"
 import { useTimerStore } from "@/stores/timerStore"
-import { farQuestionSets, getTotalQuestionCount } from "@/data/questions/far"
+import { farQuestionSets } from "@/data/questions/far"
+import { barQuestionSets } from "@/data/questions/bar"
 import { getFarScopeForSet, FAR_SCOPE_LABELS } from "@/data/questions/far/farScope"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { useRecordStore } from "@/stores/recordStore"
@@ -57,6 +58,12 @@ const saveScopeFilter = (value: ScopeFilter) => {
 }
 
 export default function QuestionsPage() {
+  // 科目切替。出題範囲フィルターはFARブループリント基準なのでBARでは使わない
+  const [subject, setSubject] = useState<"FAR" | "BAR">("FAR")
+  const questionSets = subject === "BAR" ? barQuestionSets : farQuestionSets
+  const getTotalQuestionCount = () =>
+    questionSets.reduce((sum, set) => sum + set.questions.length, 0)
+
   const [selectedTopic, setSelectedTopic] = useState<string>("all")
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all")
   const [scopeFilter, setScopeFilter] = useState<ScopeFilter>(loadScopeFilter)
@@ -97,7 +104,7 @@ export default function QuestionsPage() {
   // 問題IDからQuestionSetのtopicへのマップ（個別問題のtopicではなくセット単位で集約）
   const questionSetTopicMap = useMemo(() => {
     const map = new Map<string, string>()
-    for (const set of farQuestionSets) {
+    for (const set of questionSets) {
       for (const q of set.questions) {
         map.set(q.id, set.topic)
       }
@@ -163,9 +170,9 @@ export default function QuestionsPage() {
 
     // 出題範囲フィルター（テーマ＝QuestionSet単位で判定）
     const scopedSets =
-      scopeFilter === "all"
-        ? farQuestionSets
-        : farQuestionSets.filter((set) => {
+      scopeFilter === "all" || subject === "BAR"
+        ? questionSets
+        : questionSets.filter((set) => {
             const { scope } = getFarScopeForSet(set.id)
             return scopeFilter === "far" ? scope !== "out" : scope === "out"
           })
@@ -214,12 +221,12 @@ export default function QuestionsPage() {
     }
 
     return questions
-  }, [selectedTopic, difficulty, scopeFilter, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
+  }, [subject, selectedTopic, difficulty, scopeFilter, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
 
   // 問題バンクのトピックをタイマーのサブトピックに反映
   useEffect(() => {
     if (selectedTopic !== "all") {
-      const set = farQuestionSets.find((s) => s.topic === selectedTopic)
+      const set = questionSets.find((s) => s.topic === selectedTopic)
       if (set) {
         useTimerStore.getState().setQuestionBankContext(set.name)
       }
@@ -314,7 +321,7 @@ export default function QuestionsPage() {
     setSelectedTopic(value)
     setCurrentIndex(0)
     if (value !== "all") {
-      const set = farQuestionSets.find((s) => s.topic === value)
+      const set = questionSets.find((s) => s.topic === value)
       if (set) {
         useTimerStore.getState().setQuestionBankContext(set.name)
       }
@@ -431,6 +438,30 @@ export default function QuestionsPage() {
         {/* フィルター */}
         <Card className="mb-6">
           <CardContent className="p-4 space-y-3">
+            {/* 科目切替 */}
+            <div className="flex gap-2">
+              {(["FAR", "BAR"] as const).map((s) => (
+                <Button
+                  key={s}
+                  variant={subject === s ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => {
+                    setSubject(s)
+                    setSelectedTopic("all")
+                  }}
+                >
+                  {s}
+                  <span className="ml-1 text-xs opacity-70">
+                    {(s === "BAR" ? barQuestionSets : farQuestionSets).reduce(
+                      (sum, set) => sum + set.questions.length,
+                      0,
+                    )}
+                    問
+                  </span>
+                </Button>
+              ))}
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex-1">
                 <Select value={selectedTopic} onValueChange={handleTopicChange}>
@@ -439,12 +470,12 @@ export default function QuestionsPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">全トピック</SelectItem>
-                    {farQuestionSets.map((set) => {
+                    {questionSets.map((set) => {
                       const scopeInfo = getFarScopeForSet(set.id)
                       return (
                         <SelectItem key={set.id} value={set.topic}>
                           {set.name}
-                          {scopeInfo.scope !== "in" && (
+                          {subject === "FAR" && scopeInfo.scope !== "in" && (
                             <span className="ml-2 text-xs text-muted-foreground">
                               [{FAR_SCOPE_LABELS[scopeInfo.scope]}]
                             </span>
@@ -641,7 +672,7 @@ export default function QuestionsPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                {farQuestionSets.map((set) => {
+                {questionSets.map((set) => {
                   const stat = topicStats[set.topic]
                   const first = firstAttemptStats[set.topic]
                   if (!stat && !first) return null
