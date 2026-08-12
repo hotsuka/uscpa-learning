@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { MarkdownPreview } from "@/components/notes/MarkdownPreview"
+import { QuestionStem } from "@/components/materials/QuestionStem";
 import { getQuestionById } from "@/data/questions/far"
 import { MOCK_EXAM_TARGET_RATE } from "@/lib/mockExam"
 import type { MockExamAnswer, MockExamResult } from "@/stores/mockExamStore"
@@ -93,7 +94,7 @@ function WrongAnswerReview({ answer }: { answer: MockExamAnswer }) {
         (question ? (
           <div className="p-4 border-t space-y-3">
             <div className="text-sm leading-relaxed">
-              <MarkdownPreview content={question.stem} breaks />
+              <QuestionStem content={question.stem} />
             </div>
             <div className="space-y-1.5">
               {question.choices.map((choice) => {

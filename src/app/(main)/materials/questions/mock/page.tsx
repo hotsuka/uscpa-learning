@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 import { MarkdownPreview } from "@/components/notes/MarkdownPreview"
+import { QuestionStem } from "@/components/materials/QuestionStem";
 import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
 import { MockExamResultDetail } from "@/components/questions/MockExamResultDetail"
 import { useTimer } from "@/hooks/useTimer"
@@ -448,7 +449,7 @@ export default function MockExamPage() {
                   </Button>
                 </div>
                 <div className="text-base font-medium mb-6 leading-relaxed">
-                  <MarkdownPreview content={currentEntry.question.stem} breaks />
+                  <QuestionStem content={currentEntry.question.stem} />
                 </div>
                 <div className="space-y-3">
                   {currentEntry.choices.map((choice) => {
