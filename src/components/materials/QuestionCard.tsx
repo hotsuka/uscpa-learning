@@ -252,7 +252,18 @@ export const QuestionCard = forwardRef<QuestionCardRef, QuestionCardProps>(funct
                   <span className="font-bold text-sm shrink-0 mt-0.5 w-6 h-6 rounded-full bg-muted flex items-center justify-center">
                     {choice.label}
                   </span>
-                  <span className="text-sm leading-relaxed">{choice.text}</span>
+                  {/* Yes/No の対照表など、複数の列を持つ選択肢は列ごとに区切って並べる */}
+                  {choice.text.includes(" | ") ? (
+                    <span className="flex flex-wrap gap-x-8 gap-y-1 text-sm leading-relaxed">
+                      {choice.text.split(" | ").map((part, i) => (
+                        <span key={i} className="min-w-[4rem]">
+                          {part}
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    <span className="text-sm leading-relaxed">{choice.text}</span>
+                  )}
                   {isAnswered && isCorrectChoice && (
                     <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 ml-auto" />
                   )}

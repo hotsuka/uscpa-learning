@@ -74,14 +74,11 @@ export function QuestionStem({ content }: QuestionStemProps) {
         }
 
         const columns = Math.max(...block.rows.map((r) => r.length));
-        // 表の冒頭に並ぶ「数値を含まない行」までを見出しとみなす
-        let headerRows = 0;
-        while (
-          headerRows < block.rows.length &&
-          !block.rows[headerRows].some((c) => /\d/.test(c))
-        ) {
-          headerRows++;
-        }
+        // セル数が足りない行の寄せ方を決める。
+        // 行頭が語（英字3文字以上）ならラベル列から始まるデータ行なので左詰め、
+        // 金額や "No.150" のように語を持たない行は見出しか値だけの行なので右へ寄せる。
+        const startsWithLabel = (cells: string[]) =>
+          /[A-Za-z]{3,}/.test(cells[0]);
 
         return (
           <div key={i} className="my-2 overflow-x-auto">
@@ -90,8 +87,9 @@ export function QuestionStem({ content }: QuestionStemProps) {
                 {block.rows.map((cells, r) => {
                   // 見出しは値の列に合わせて右へ寄せ、データ行はラベル列から左詰めにする
                   const pad: string[] = Array(columns - cells.length).fill("");
-                  const padded =
-                    r < headerRows ? [...pad, ...cells] : [...cells, ...pad];
+                  const padded = startsWithLabel(cells)
+                    ? [...cells, ...pad]
+                    : [...pad, ...cells];
                   return (
                     <tr
                       key={r}
