@@ -21,6 +21,11 @@ import { SUBJECTS, type Subject, type Material } from "@/types"
 import { EmptyState } from "@/components/common/EmptyState"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 import { savePDFToIndexedDB, exportPDFFromIndexedDB } from "@/lib/indexeddb"
+import { pdfjs } from "react-pdf"
+import {
+  groupMaterialFiles,
+  type MaterialFileGroup,
+} from "@/lib/materials/parseMaterialFileName"
 import {
   Plus,
   FileText,
@@ -36,6 +41,26 @@ import {
 } from "lucide-react"
 
 const STORAGE_KEY = "uscpa-materials"
+
+// PDF.jsワーカーの設定（PDFViewerと同じCDNを使う）
+if (typeof window !== "undefined") {
+  pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
+}
+
+// PDFの実ページ数を読む。失敗しても登録は続行したいので0を返す
+const getPdfPageCount = async (file: File): Promise<number> => {
+  try {
+    const buffer = await file.arrayBuffer()
+    // pdf.jsは渡したバッファをdetachするため、コピーを渡す
+    const doc = await pdfjs.getDocument({ data: new Uint8Array(buffer) }).promise
+    const pageCount = doc.numPages
+    await doc.destroy()
+    return pageCount
+  } catch (error) {
+    console.error("Failed to read page count:", error)
+    return 0
+  }
+}
 
 // 教材データが有効かどうかチェック
 // indexeddb: で始まるか、pdfWithoutAnswersがnull（PDFなし）の場合のみ有効
@@ -99,8 +124,14 @@ export default function MaterialsPage() {
   const [downloadingId, setDownloadingId] = useState<string | null>(null)
   const [isBulkDownloading, setIsBulkDownloading] = useState(false)
 
+  // 一括アップロード用state
+  const [bulkGroups, setBulkGroups] = useState<MaterialFileGroup[]>([])
+  const [isBulkUploading, setIsBulkUploading] = useState(false)
+  const [bulkDoneCount, setBulkDoneCount] = useState(0)
+
   const fileInputWithoutRef = useRef<HTMLInputElement>(null)
   const fileInputWithRef = useRef<HTMLInputElement>(null)
+  const bulkInputRef = useRef<HTMLInputElement>(null)
 
   const triggerDownload = (blob: Blob, filename: string) => {
     const url = URL.createObjectURL(blob)
@@ -235,6 +266,8 @@ export default function MaterialsPage() {
         await savePDFToIndexedDB(materialId, pdfWithAnswers, "with")
       }
 
+      const totalPages = await getPdfPageCount(pdfWithoutAnswers)
+
       // メタデータのみをlocalStorageに保存（blob URLは保存しない）
       const newMaterial: Material = {
         id: materialId,
@@ -243,7 +276,7 @@ export default function MaterialsPage() {
         subtopic: uploadSubtopic || null,
         pdfWithoutAnswers: `indexeddb:${materialId}-without`, // IndexedDBへの参照
         pdfWithAnswers: pdfWithAnswers ? `indexeddb:${materialId}-with` : null,
-        totalPages: 0,
+        totalPages,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       }
@@ -261,6 +294,64 @@ export default function MaterialsPage() {
       alert("PDFの保存に失敗しました")
     } finally {
       setIsUploading(false)
+    }
+  }
+
+  // 一括アップロード：ファイル名から科目・分野・回答あり版を判定してプレビューを作る
+  const handleBulkFilesSelected = (fileList: FileList | null) => {
+    if (!fileList || fileList.length === 0) return
+    setBulkGroups(groupMaterialFiles(Array.from(fileList)))
+    setBulkDoneCount(0)
+  }
+
+  const handleBulkUpload = async () => {
+    const targets = bulkGroups.filter((g) => g.without || g.with)
+    if (targets.length === 0) return
+
+    setIsBulkUploading(true)
+    setBulkDoneCount(0)
+
+    try {
+      const created: Material[] = []
+
+      for (const [index, group] of targets.entries()) {
+        // 回答なし版がなければ回答あり版を主PDFとして登録する
+        const primary = group.without ?? group.with
+        if (!primary) continue
+
+        const materialId = `${Date.now()}-${index}`
+        const hasPair = Boolean(group.without && group.with)
+
+        await savePDFToIndexedDB(materialId, primary, "without")
+        if (hasPair && group.with) {
+          await savePDFToIndexedDB(materialId, group.with, "with")
+        }
+
+        created.push({
+          id: materialId,
+          name: group.baseName,
+          subject: group.subject ?? uploadSubject,
+          subtopic: group.subtopic,
+          pdfWithoutAnswers: `indexeddb:${materialId}-without`,
+          pdfWithAnswers: hasPair ? `indexeddb:${materialId}-with` : null,
+          totalPages: await getPdfPageCount(primary),
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        })
+
+        setBulkDoneCount(index + 1)
+      }
+
+      const updatedMaterials = [...created, ...materials]
+      setMaterials(updatedMaterials)
+      saveMaterials(updatedMaterials)
+      setBulkGroups([])
+      if (bulkInputRef.current) bulkInputRef.current.value = ""
+    } catch (error) {
+      console.error("Failed to bulk upload:", error)
+      alert("一括アップロードに失敗しました")
+    } finally {
+      setIsBulkUploading(false)
     }
   }
 
@@ -474,12 +565,87 @@ export default function MaterialsPage() {
                 {isBulkDownloading ? "ダウンロード中..." : "一括DL"}
               </Button>
             )}
+            <input
+              ref={bulkInputRef}
+              type="file"
+              accept=".pdf"
+              multiple
+              onChange={(e) => handleBulkFilesSelected(e.target.files)}
+              className="hidden"
+            />
+            <Button
+              variant="outline"
+              onClick={() => bulkInputRef.current?.click()}
+              disabled={isBulkUploading}
+            >
+              <Upload className="h-4 w-4 mr-2" />
+              一括アップロード
+            </Button>
             <Button onClick={() => setShowUploadForm(!showUploadForm)}>
               <Plus className="h-4 w-4 mr-2" />
               アップロード
             </Button>
           </div>
         </div>
+
+        {/* 一括アップロードのプレビュー */}
+        {bulkGroups.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">
+                一括アップロード（{bulkGroups.length}件）
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-xs text-muted-foreground">
+                ファイル名から科目・分野・回答あり版を判定しました。
+                科目を判定できなかったものは {uploadSubject} として登録します。
+              </p>
+              <div className="max-h-80 overflow-y-auto space-y-2">
+                {bulkGroups.map((group) => (
+                  <div
+                    key={group.baseName}
+                    className="flex items-center justify-between gap-2 border-b pb-2 text-sm"
+                  >
+                    <span className="truncate">{group.baseName}</span>
+                    <div className="flex shrink-0 items-center gap-1">
+                      <Badge variant="outline">
+                        {group.subject ?? uploadSubject}
+                      </Badge>
+                      {group.without && group.with && (
+                        <Badge variant="secondary" className="text-xs">
+                          回答あり版あり
+                        </Badge>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-4">
+                <Button
+                  variant="outline"
+                  className="flex-1"
+                  disabled={isBulkUploading}
+                  onClick={() => {
+                    setBulkGroups([])
+                    if (bulkInputRef.current) bulkInputRef.current.value = ""
+                  }}
+                >
+                  キャンセル
+                </Button>
+                <Button
+                  className="flex-1"
+                  onClick={handleBulkUpload}
+                  disabled={isBulkUploading}
+                >
+                  {isBulkUploading
+                    ? `登録中... (${bulkDoneCount}/${bulkGroups.length})`
+                    : `${bulkGroups.length}件を登録`}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         {/* アップロードフォーム */}
         {showUploadForm && (
