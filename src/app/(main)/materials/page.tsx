@@ -20,7 +20,11 @@ import { SubtopicSelector } from "@/components/timer/SubtopicSelector"
 import { SUBJECTS, type Subject, type Material } from "@/types"
 import { EmptyState } from "@/components/common/EmptyState"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
-import { savePDFToIndexedDB, exportPDFFromIndexedDB } from "@/lib/indexeddb"
+import {
+  savePDFToIndexedDB,
+  exportPDFFromIndexedDB,
+  deleteAllPDFsForMaterial,
+} from "@/lib/indexeddb"
 import { pdfjs } from "react-pdf"
 import JSZip from "jszip"
 import {
@@ -46,6 +50,19 @@ const STORAGE_KEY = "uscpa-materials"
 // PDF.jsワーカーの設定（PDFViewerと同じCDNを使う）
 if (typeof window !== "undefined") {
   pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
+}
+
+// PDFの内容ハッシュ。教材名を変えて再アップロードしても同一と判定するために使う
+const getContentHash = async (file: File): Promise<string | undefined> => {
+  try {
+    const digest = await crypto.subtle.digest("SHA-256", await file.arrayBuffer())
+    return Array.from(new Uint8Array(digest))
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("")
+  } catch (error) {
+    console.error("Failed to hash file:", error)
+    return undefined
+  }
 }
 
 // PDFの実ページ数を読む。失敗しても登録は続行したいので0を返す。
@@ -137,6 +154,10 @@ export default function MaterialsPage() {
 
   const [downloadingId, setDownloadingId] = useState<string | null>(null)
   const [isBulkDownloading, setIsBulkDownloading] = useState(false)
+
+  // 複数選択削除用state
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
+  const [showDeleteSelectedDialog, setShowDeleteSelectedDialog] = useState(false)
 
   // 一括アップロード用state
   const [bulkGroups, setBulkGroups] = useState<MaterialFileGroup[]>([])
@@ -282,6 +303,69 @@ export default function MaterialsPage() {
     setMaterials(updatedMaterials.filter(isValidMaterial))
   }
 
+  // 同じ教材名で二重に登録されたものを検出する。
+  // 教材名を変えて再アップロードすると重複スキップが効かないため後片付けが要る
+  const duplicateGroups = (() => {
+    const byName = new Map<string, Material[]>()
+    for (const m of materials) {
+      byName.set(m.name, [...(byName.get(m.name) ?? []), m])
+    }
+    return [...byName.values()].filter((g) => g.length > 1)
+  })()
+
+  const toggleSelect = (id: string) => {
+    setSelectedIds((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) {
+        next.delete(id)
+      } else {
+        next.add(id)
+      }
+      return next
+    })
+  }
+
+  // 選択した教材をまとめて削除する（絞り込みと組み合わせて科目単位で消せる）
+  const handleDeleteSelected = async () => {
+    const ids = [...selectedIds]
+    for (const id of ids) {
+      try {
+        await deleteAllPDFsForMaterial(id)
+      } catch (error) {
+        console.error(`Failed to delete PDFs for ${id}:`, error)
+      }
+    }
+    const kept = materials.filter((m) => !selectedIds.has(m.id))
+    setMaterials(kept)
+    saveMaterials(kept)
+    setSelectedIds(new Set())
+  }
+
+  // 重複のうち最新の1件だけを残し、古い方を削除する
+  const handleDedupe = async () => {
+    const removeIds: string[] = []
+    for (const group of duplicateGroups) {
+      const sorted = [...group].sort((a, b) =>
+        b.createdAt.localeCompare(a.createdAt),
+      )
+      removeIds.push(...sorted.slice(1).map((m) => m.id))
+    }
+    if (removeIds.length === 0) return
+
+    for (const id of removeIds) {
+      try {
+        await deleteAllPDFsForMaterial(id)
+      } catch (error) {
+        console.error(`Failed to delete PDFs for ${id}:`, error)
+      }
+    }
+
+    const kept = materials.filter((m) => !removeIds.includes(m.id))
+    setMaterials(kept)
+    saveMaterials(kept)
+    alert(`${removeIds.length}件の重複を削除しました`)
+  }
+
   // 全ての無効な教材を一括削除
   const handleDeleteAllInvalidMaterials = () => {
     const validOnly = materials.filter(isValidMaterial)
@@ -318,6 +402,7 @@ export default function MaterialsPage() {
         pdfWithoutAnswers: `indexeddb:${materialId}-without`, // IndexedDBへの参照
         pdfWithAnswers: pdfWithAnswers ? `indexeddb:${materialId}-with` : null,
         totalPages,
+        contentHash: await getContentHash(pdfWithoutAnswers),
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       }
@@ -352,9 +437,12 @@ export default function MaterialsPage() {
     setIsBulkUploading(true)
     setBulkDoneCount(0)
 
-    // 同名で登録済みのものは飛ばす。
-    // これにより、失敗した分だけを同じ操作でやり直して補充できる
+    // 登録済みのものは飛ばす。名前だけで見ると教材名を変えたときに二重登録されるため、
+    // PDFの内容ハッシュでも判定する
     const existingNames = new Set(materials.map((m) => m.name))
+    const existingHashes = new Set(
+      materials.map((m) => m.contentHash).filter((h): h is string => !!h),
+    )
     let current = materials
     let addedCount = 0
     let skippedCount = 0
@@ -367,7 +455,8 @@ export default function MaterialsPage() {
       const primary = group.without ?? group.with
       if (!primary) continue
 
-      if (existingNames.has(group.baseName)) {
+      const hash = await getContentHash(primary)
+      if (existingNames.has(group.baseName) || (hash && existingHashes.has(hash))) {
         skippedCount++
         continue
       }
@@ -389,6 +478,7 @@ export default function MaterialsPage() {
           pdfWithoutAnswers: `indexeddb:${materialId}-without`,
           pdfWithAnswers: hasPair ? `indexeddb:${materialId}-with` : null,
           totalPages: await getPdfPageCount(primary),
+          contentHash: hash,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
         }
@@ -825,6 +915,57 @@ export default function MaterialsPage() {
           </Card>
         )}
 
+        {/* 選択操作・重複整理 */}
+        {filteredMaterials.length > 0 && (
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <label className="flex cursor-pointer items-center gap-2">
+              <input
+                type="checkbox"
+                checked={filteredMaterials.every((m) => selectedIds.has(m.id))}
+                onChange={(e) => {
+                  const checked = e.target.checked
+                  setSelectedIds((prev) => {
+                    const next = new Set(prev)
+                    for (const m of filteredMaterials) {
+                      if (checked) next.add(m.id)
+                      else next.delete(m.id)
+                    }
+                    return next
+                  })
+                }}
+                className="h-4 w-4"
+              />
+              表示中の{filteredMaterials.length}件を選択
+            </label>
+
+            {selectedIds.size > 0 && (
+              <>
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  onClick={() => setShowDeleteSelectedDialog(true)}
+                >
+                  <Trash2 className="mr-1 h-4 w-4" />
+                  選択した{selectedIds.size}件を削除
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setSelectedIds(new Set())}
+                >
+                  選択解除
+                </Button>
+              </>
+            )}
+
+            {duplicateGroups.length > 0 && (
+              <Button variant="outline" size="sm" onClick={handleDedupe}>
+                重複{duplicateGroups.reduce((s, g) => s + g.length - 1, 0)}件を整理
+              </Button>
+            )}
+          </div>
+        )}
+
         {/* 教材一覧 */}
         {materials.length === 0 ? (
           <Card>
@@ -868,6 +1009,18 @@ export default function MaterialsPage() {
                     <CardContent className="p-4 space-y-3">
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex items-center gap-2">
+                          <input
+                            type="checkbox"
+                            checked={selectedIds.has(material.id)}
+                            onChange={() => {}}
+                            onClick={(e) => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                              toggleSelect(material.id)
+                            }}
+                            className="h-4 w-4 shrink-0 cursor-pointer"
+                            aria-label={`${material.name} を選択`}
+                          />
                           <FileText className="h-5 w-5 text-muted-foreground" />
                           <h3 className="font-medium line-clamp-2">{material.name}</h3>
                         </div>
@@ -948,6 +1101,15 @@ export default function MaterialsPage() {
         )}
       </div>
 
+      <ConfirmDialog
+        open={showDeleteSelectedDialog}
+        onOpenChange={setShowDeleteSelectedDialog}
+        title="選択した教材を削除"
+        description={`選択した${selectedIds.size}件の教材とPDFを削除します。元に戻せません。`}
+        confirmLabel={`${selectedIds.size}件を削除`}
+        variant="destructive"
+        onConfirm={handleDeleteSelected}
+      />
       <ConfirmDialog
         open={showDeleteInvalidDialog}
         onOpenChange={setShowDeleteInvalidDialog}

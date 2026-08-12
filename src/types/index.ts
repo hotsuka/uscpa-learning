@@ -220,6 +220,8 @@ export interface Material {
   pdfWithAnswers: string | null; // URL or base64
   // ページ数
   totalPages: number;
+  // 回答なし版PDFの内容ハッシュ。教材名を変えて再アップロードしても重複を検出できるようにする
+  contentHash?: string;
   createdAt: string;
   updatedAt: string;
 }
