@@ -48,12 +48,25 @@ if (typeof window !== "undefined") {
   pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
 }
 
-// PDFの実ページ数を読む。失敗しても登録は続行したいので0を返す
+// PDFの実ページ数を読む。失敗しても登録は続行したいので0を返す。
+// 大きいPDFやworkerのCDN取得で止まることがあるため、待ち続けない
+const PAGE_COUNT_TIMEOUT_MS = 8000
+
 const getPdfPageCount = async (file: File): Promise<number> => {
   try {
     const buffer = await file.arrayBuffer()
     // pdf.jsは渡したバッファをdetachするため、コピーを渡す
-    const doc = await pdfjs.getDocument({ data: new Uint8Array(buffer) }).promise
+    const task = pdfjs.getDocument({ data: new Uint8Array(buffer) })
+    const doc = await Promise.race([
+      task.promise,
+      new Promise<null>((resolve) =>
+        setTimeout(() => resolve(null), PAGE_COUNT_TIMEOUT_MS),
+      ),
+    ])
+    if (!doc) {
+      void task.destroy()
+      return 0
+    }
     const pageCount = doc.numPages
     await doc.destroy()
     return pageCount
@@ -339,14 +352,27 @@ export default function MaterialsPage() {
     setIsBulkUploading(true)
     setBulkDoneCount(0)
 
-    try {
-      const created: Material[] = []
+    // 同名で登録済みのものは飛ばす。
+    // これにより、失敗した分だけを同じ操作でやり直して補充できる
+    const existingNames = new Set(materials.map((m) => m.name))
+    let current = materials
+    let addedCount = 0
+    let skippedCount = 0
+    const failedNames: string[] = []
 
-      for (const [index, group] of targets.entries()) {
-        // 回答なし版がなければ回答あり版を主PDFとして登録する
-        const primary = group.without ?? group.with
-        if (!primary) continue
+    for (const [index, group] of targets.entries()) {
+      setBulkDoneCount(index + 1)
 
+      // 回答なし版がなければ回答あり版を主PDFとして登録する
+      const primary = group.without ?? group.with
+      if (!primary) continue
+
+      if (existingNames.has(group.baseName)) {
+        skippedCount++
+        continue
+      }
+
+      try {
         const materialId = `${Date.now()}-${index}`
         const hasPair = Boolean(group.without && group.with)
 
@@ -355,7 +381,7 @@ export default function MaterialsPage() {
           await savePDFToIndexedDB(materialId, group.with, "with")
         }
 
-        created.push({
+        const material: Material = {
           id: materialId,
           name: group.baseName,
           subject: group.subject ?? uploadSubject,
@@ -365,21 +391,37 @@ export default function MaterialsPage() {
           totalPages: await getPdfPageCount(primary),
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
-        })
+        }
 
-        setBulkDoneCount(index + 1)
+        // 1件ごとに保存する。途中で失敗してもここまでの分は残る
+        current = [material, ...current]
+        existingNames.add(material.name)
+        setMaterials(current)
+        saveMaterials(current)
+        addedCount++
+      } catch (error) {
+        console.error(`Failed to upload ${group.baseName}:`, error)
+        failedNames.push(group.baseName)
       }
+    }
 
-      const updatedMaterials = [...created, ...materials]
-      setMaterials(updatedMaterials)
-      saveMaterials(updatedMaterials)
-      setBulkGroups([])
-      if (bulkInputRef.current) bulkInputRef.current.value = ""
-    } catch (error) {
-      console.error("Failed to bulk upload:", error)
-      alert("一括アップロードに失敗しました")
-    } finally {
-      setIsBulkUploading(false)
+    setBulkGroups([])
+    if (bulkInputRef.current) bulkInputRef.current.value = ""
+    setIsBulkUploading(false)
+
+    if (skippedCount > 0 || failedNames.length > 0) {
+      const lines = [`${addedCount}件を登録しました`]
+      if (skippedCount > 0) {
+        lines.push(`${skippedCount}件は登録済みのため飛ばしました`)
+      }
+      if (failedNames.length > 0) {
+        lines.push(
+          `${failedNames.length}件は失敗しました:`,
+          ...failedNames,
+          "もう一度同じファイルを選び直すと、失敗した分だけ登録されます。",
+        )
+      }
+      alert(lines.join("\n"))
     }
   }
 
