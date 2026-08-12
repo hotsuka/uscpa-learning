@@ -37,6 +37,21 @@ export const QuestionCard = forwardRef<QuestionCardRef, QuestionCardProps>(funct
   const [showExplanation, setShowExplanation] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
   // 選択肢テキストのみシャッフル（ラベルA～Dは固定）
+  // 組合せで答える設問（全選択肢が複数列）は、問題文の最終行が選択肢の列見出しになっている。
+  // 本文に紛れたままだとどの列がどの項目か読み取れないため、選択肢側の見出しとして切り出す。
+  const stemLines = question.stem.split("\n")
+  const lastStemLine = (stemLines[stemLines.length - 1] ?? "").trim()
+  const isMatrixChoice =
+    question.choices.length > 0 &&
+    question.choices.every((c) => c.text.includes(" | "))
+  const matrixHeader =
+    isMatrixChoice && lastStemLine && lastStemLine.length < 90 && !/[?.]$/.test(lastStemLine)
+      ? lastStemLine.includes(" | ")
+        ? lastStemLine.split(" | ").map((s) => s.trim())
+        : [lastStemLine]
+      : null
+  const stemBody = matrixHeader ? stemLines.slice(0, -1).join("\n") : question.stem
+
   const { choices: shuffledChoices, correctAnswer: shuffledCorrectAnswer, shuffledToOriginalLabel, originalToShuffledLabel } = useRef(
     (() => {
       const labels = question.choices.map((c) => c.label)
@@ -214,13 +229,25 @@ export const QuestionCard = forwardRef<QuestionCardRef, QuestionCardProps>(funct
           </div>
         )}
 
-        {/* 問題文 */}
+        {/* 問題文。組合せ問題は最終行が選択肢の列見出しなので切り離して選択肢側に付ける */}
         <div className="text-base font-medium mb-6 leading-relaxed">
-          <QuestionStem content={question.stem} />
+          <QuestionStem content={matrixHeader ? stemBody : question.stem} />
         </div>
 
         {/* 選択肢 */}
         <div className="space-y-3 mb-6">
+          {matrixHeader && (
+            <div className="flex gap-3 px-4 pb-1 text-xs font-medium text-muted-foreground">
+              <span className="w-8 shrink-0" aria-hidden />
+              <span className="flex flex-wrap gap-x-8 gap-y-1">
+                {matrixHeader.map((h, i) => (
+                  <span key={i} className="min-w-[4rem]">
+                    {h}
+                  </span>
+                ))}
+              </span>
+            </div>
+          )}
           {shuffledChoices.map((choice) => {
             const isSelected = selectedAnswer === choice.label
             const isCorrectChoice = choice.label === shuffledCorrectAnswer
