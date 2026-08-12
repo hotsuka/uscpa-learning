@@ -7,7 +7,33 @@ interface QuestionStemProps {
 }
 
 type Block =
-  { type: "text"; lines: string[] } | { type: "table"; rows: string[][] };
+  | { type: "text"; lines: string[] }
+  | { type: "table"; rows: string[][]; caption?: string };
+
+/**
+ * 表の直前にある列見出しの行を、表の見出しとして取り込む。
+ *
+ * PDFによっては見出し行の単語間の空きが狭く列として復元できないため、
+ * 「Product Units produced Market value ...」のような行が本文として残ってしまう。
+ * 列の対応までは付けられないが、表と切り離して出すよりは読み取れる。
+ */
+function attachCaptions(blocks: Block[]): Block[] {
+  for (let i = 0; i < blocks.length - 1; i++) {
+    const cur = blocks[i];
+    const next = blocks[i + 1];
+    if (cur.type !== "text" || next.type !== "table") continue;
+
+    const last = (cur.lines[cur.lines.length - 1] ?? "").trim();
+    // 文の途中や導入文（「〜は以下のとおり:」）は見出しではない
+    if (!last || last.length >= 100 || /[?.:;,]$/.test(last)) continue;
+
+    next.caption = last;
+    cur.lines.pop();
+  }
+  return blocks.filter(
+    (b) => b.type !== "text" || b.lines.some((l) => l.trim()),
+  );
+}
 
 // これより長いセルがある行は、表ではなく箇条書きの字下げとみなす
 const MAX_CELL_LENGTH = 45;
@@ -71,11 +97,12 @@ function toBlocks(content: string): Block[] {
   }
 
   // 1行しかない表は表の体をなさないので本文に戻す
-  return blocks.flatMap<Block>((b) =>
+  const merged = blocks.flatMap<Block>((b) =>
     b.type === "table" && b.rows.length < 2
       ? [{ type: "text", lines: [b.rows[0].join(" ")] }]
       : [b],
   );
+  return attachCaptions(merged);
 }
 
 export function QuestionStem({ content }: QuestionStemProps) {
@@ -104,6 +131,11 @@ export function QuestionStem({ content }: QuestionStemProps) {
 
         return (
           <div key={i} className="my-2 overflow-x-auto">
+            {block.caption && (
+              <div className="pb-1 text-xs font-medium text-muted-foreground">
+                {block.caption}
+              </div>
+            )}
             <table className="w-full text-sm">
               <tbody>
                 {block.rows.map((cells, r) => {
