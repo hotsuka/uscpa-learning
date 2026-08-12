@@ -31,6 +31,23 @@ function isTableRow(line: string): boolean {
   );
 }
 
+/**
+ * 列数が足りない行に空セルを補って列位置を揃える。
+ *
+ * - 列見出し（表の冒頭に並ぶ数値を含まない行）は値の列の上に来るよう右へ寄せる
+ * - 行頭が語ならラベル始まりのデータ行なので左詰め
+ * - "$99,000" や "No.150" のように語を持たない行は値だけの行なので右へ寄せる
+ */
+export function padRow(
+  cells: string[],
+  columns: number,
+  isHeader: boolean,
+): string[] {
+  const pad: string[] = Array(Math.max(0, columns - cells.length)).fill("");
+  const startsWithLabel = /[A-Za-z]{3,}/.test(cells[0] ?? "");
+  return isHeader || !startsWithLabel ? [...pad, ...cells] : [...cells, ...pad];
+}
+
 function toBlocks(content: string): Block[] {
   const blocks: Block[] = [];
 
@@ -74,11 +91,16 @@ export function QuestionStem({ content }: QuestionStemProps) {
         }
 
         const columns = Math.max(...block.rows.map((r) => r.length));
-        // セル数が足りない行の寄せ方を決める。
-        // 行頭が語（英字3文字以上）ならラベル列から始まるデータ行なので左詰め、
-        // 金額や "No.150" のように語を持たない行は見出しか値だけの行なので右へ寄せる。
-        const startsWithLabel = (cells: string[]) =>
-          /[A-Za-z]{3,}/.test(cells[0]);
+
+        // 表の冒頭に並ぶ「数値を含まない行」までが列見出し（Number of / units など）。
+        // 見出しは値の列の上に来るよう右へ寄せる。
+        let headerRows = 0;
+        while (
+          headerRows < block.rows.length &&
+          !block.rows[headerRows].some((c) => /\d/.test(c))
+        ) {
+          headerRows++;
+        }
 
         return (
           <div key={i} className="my-2 overflow-x-auto">
@@ -86,10 +108,7 @@ export function QuestionStem({ content }: QuestionStemProps) {
               <tbody>
                 {block.rows.map((cells, r) => {
                   // 見出しは値の列に合わせて右へ寄せ、データ行はラベル列から左詰めにする
-                  const pad: string[] = Array(columns - cells.length).fill("");
-                  const padded = startsWithLabel(cells)
-                    ? [...cells, ...pad]
-                    : [...pad, ...cells];
+                  const padded = padRow(cells, columns, r < headerRows);
                   return (
                     <tr
                       key={r}
