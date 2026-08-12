@@ -22,6 +22,7 @@ import { EmptyState } from "@/components/common/EmptyState"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
 import { savePDFToIndexedDB, exportPDFFromIndexedDB } from "@/lib/indexeddb"
 import { pdfjs } from "react-pdf"
+import JSZip from "jszip"
 import {
   groupMaterialFiles,
   type MaterialFileGroup,
@@ -168,13 +169,25 @@ export default function MaterialsPage() {
     let successCount = 0
     let failCount = 0
     try {
+      const zip = new JSZip()
+
+      // 教材名が重複してもZIP内で上書きされないよう連番を付ける
+      const usedNames = new Set<string>()
+      const addToZip = (filename: string, blob: Blob) => {
+        let name = filename
+        for (let i = 2; usedNames.has(name); i++) {
+          name = `${filename.replace(/\.pdf$/, "")} (${i}).pdf`
+        }
+        usedNames.add(name)
+        zip.file(name, blob)
+      }
+
       for (const material of materials) {
         if (material.pdfWithoutAnswers?.startsWith("indexeddb:")) {
           const blob = await exportPDFFromIndexedDB(material.id, "without")
           if (blob) {
-            triggerDownload(blob, `${material.name}.pdf`)
+            addToZip(`${material.name}.pdf`, blob)
             successCount++
-            await new Promise((r) => setTimeout(r, 300))
           } else {
             failCount++
           }
@@ -182,16 +195,31 @@ export default function MaterialsPage() {
         if (material.pdfWithAnswers?.startsWith("indexeddb:")) {
           const blob = await exportPDFFromIndexedDB(material.id, "with")
           if (blob) {
-            triggerDownload(blob, `${material.name}_回答あり.pdf`)
+            addToZip(`${material.name}_回答あり.pdf`, blob)
             successCount++
-            await new Promise((r) => setTimeout(r, 300))
           } else {
             failCount++
           }
         }
       }
+
+      if (successCount === 0) {
+        alert("ダウンロードできる教材がありませんでした")
+        return
+      }
+
+      // PDFは既に圧縮済みなので再圧縮せず格納のみ（生成時間を抑える）
+      const zipBlob = await zip.generateAsync({
+        type: "blob",
+        compression: "STORE",
+      })
+      const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "")
+      triggerDownload(zipBlob, `uscpa-materials-${stamp}.zip`)
+
       if (failCount > 0) {
-        alert(`${successCount}件ダウンロード完了、${failCount}件失敗`)
+        alert(
+          `${successCount}件をZIPにまとめました。${failCount}件は取得できませんでした`,
+        )
       }
     } catch (error) {
       console.error("Failed to bulk export PDFs:", error)
@@ -562,7 +590,7 @@ export default function MaterialsPage() {
                 disabled={isBulkDownloading}
               >
                 <Download className="h-4 w-4 mr-2" />
-                {isBulkDownloading ? "ダウンロード中..." : "一括DL"}
+                {isBulkDownloading ? "ZIP作成中..." : "一括DL"}
               </Button>
             )}
             <input
