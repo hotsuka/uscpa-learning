@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import { Timer, BookOpen, CalendarDays, TrendingUp, Target, Clock, AlertCircle, CheckCircle } from "lucide-react"
 import { Header } from "@/components/layout/Header"
@@ -8,6 +9,23 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { SubjectBadge } from "@/components/common/SubjectBadge"
+
+// 問題バンク(FAR/BAR 約5,000問)を読み込むため、ダッシュボードの初期表示を
+// 遅らせないよう遅延ロードする。start_url であるこのページの First Load JS を
+// 増やさないことが目的。
+const BarExamGate = dynamic(
+  () => import("@/components/dashboard/BarExamGate").then((m) => m.BarExamGate),
+  {
+    ssr: false,
+    loading: () => (
+      <Card>
+        <CardContent className="pt-6 text-sm text-muted-foreground">
+          BAR受験ゲートを読み込み中…
+        </CardContent>
+      </Card>
+    ),
+  }
+)
 import { formatMinutes, daysUntil, getJSTDateString } from "@/lib/utils"
 import { SUBJECTS, SUBJECT_OPTIONS, type Subject } from "@/types"
 import { useRecordStore } from "@/stores/recordStore"
@@ -144,6 +162,9 @@ export default function DashboardPage() {
               </div>
             </CardContent>
           </Card>
+
+          {/* BAR受験ゲート（2026年10月window） */}
+          <BarExamGate />
 
           {/* 今日のサマリー */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
