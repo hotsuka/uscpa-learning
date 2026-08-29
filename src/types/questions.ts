@@ -3,6 +3,8 @@ export interface FARQuestion {
   topic: string;
   subtopic: string;
   stem: string;
+  // 問題文が参照する図（グラフ・ダイアグラム）。public/questions/ 配下のSVGを指す
+  figure?: { src: string; alt: string; caption?: string };
   choices: { label: string; text: string }[];
   correctAnswer: string;
   explanation: string;

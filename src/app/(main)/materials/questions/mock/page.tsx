@@ -449,7 +449,10 @@ export default function MockExamPage() {
                   </Button>
                 </div>
                 <div className="text-base font-medium mb-6 leading-relaxed">
-                  <QuestionStem content={currentEntry.question.stem} />
+                  <QuestionStem
+                    content={currentEntry.question.stem}
+                    figure={currentEntry.question.figure}
+                  />
                 </div>
                 <div className="space-y-3">
                   {currentEntry.choices.map((choice) => {

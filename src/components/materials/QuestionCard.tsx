@@ -231,7 +231,10 @@ export const QuestionCard = forwardRef<QuestionCardRef, QuestionCardProps>(funct
 
         {/* 問題文。組合せ問題は最終行が選択肢の列見出しなので切り離して選択肢側に付ける */}
         <div className="text-base font-medium mb-6 leading-relaxed">
-          <QuestionStem content={matrixHeader ? stemBody : question.stem} />
+          <QuestionStem
+            content={matrixHeader ? stemBody : question.stem}
+            figure={question.figure}
+          />
         </div>
 
         {/* 選択肢 */}
