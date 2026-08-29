@@ -4,6 +4,8 @@ import { MarkdownPreview } from "@/components/notes/MarkdownPreview";
 
 interface QuestionStemProps {
   content: string;
+  /** 問題文が参照する図。「chart below」等の図はMarkdownに含められないため別で渡す */
+  figure?: { src: string; alt: string; caption?: string };
 }
 
 type Block =
@@ -105,7 +107,7 @@ function toBlocks(content: string): Block[] {
   return attachCaptions(merged);
 }
 
-export function QuestionStem({ content }: QuestionStemProps) {
+export function QuestionStem({ content, figure }: QuestionStemProps) {
   const blocks = toBlocks(content);
 
   return (
@@ -166,6 +168,22 @@ export function QuestionStem({ content }: QuestionStemProps) {
           </div>
         );
       })}
+      {figure && (
+        <figure className="my-3">
+          {/* 線画のSVGなのでダークテーマでは反転させて可読性を保つ */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={figure.src}
+            alt={figure.alt}
+            className="w-full max-w-md mx-auto dark:invert"
+          />
+          {figure.caption && (
+            <figcaption className="mt-1 text-center text-xs text-muted-foreground">
+              {figure.caption}
+            </figcaption>
+          )}
+        </figure>
+      )}
     </div>
   );
 }
