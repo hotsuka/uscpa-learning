@@ -80,15 +80,51 @@ export default function QuestionsPage() {
   const { isRunning, start, pause } = useTimer()
 
   const attempts = useQuestionBankStore((s) => s.attempts)
-  const getFirstAttemptStats = useQuestionBankStore((s) => s.getFirstAttemptStats)
   const records = useRecordStore((s) => s.records)
 
-  // 初見正答率（各問題の最初の解答のみ。attemptsが変わったら再計算）
-  const firstAttemptStats = useMemo(
-    () => getFirstAttemptStats(),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [attempts]
+  // 問題IDからQuestionSetのtopicへのマップ（個別問題のtopicではなくセット単位で集約）
+  // 現在の科目の問題だけを持つので、科目スコープの判定にも使う
+  const questionSetTopicMap = useMemo(() => {
+    const map = new Map<string, string>()
+    for (const set of questionSets) {
+      for (const q of set.questions) {
+        map.set(q.id, set.topic)
+      }
+    }
+    return map
+  }, [questionSets])
+
+  // 現在の科目の解答履歴のみ。統計カード・フィルターはこれを基準に算出する
+  // （FARとBARのattemptsは同じstoreに入るため、絞らないと合算値になる）
+  const subjectAttempts = useMemo(
+    () => attempts.filter((a) => questionSetTopicMap.has(a.questionId)),
+    [attempts, questionSetTopicMap]
   )
+
+  // 初見正答率（各問題の最初の解答のみ）。トピックは現在の科目のQuestionSet基準
+  const firstAttemptStats = useMemo(() => {
+    const firstByQuestion = new Map<string, (typeof attempts)[0]>()
+    for (const a of subjectAttempts) {
+      // 正誤不明(null)は初見判定・分母の両方から除外
+      if (a.isCorrect === null) continue
+      const existing = firstByQuestion.get(a.questionId)
+      if (!existing || new Date(a.attemptedAt) < new Date(existing.attemptedAt)) {
+        firstByQuestion.set(a.questionId, a)
+      }
+    }
+    const stats: Record<string, { correct: number; total: number; rate: number }> = {}
+    for (const attempt of firstByQuestion.values()) {
+      const setTopic = questionSetTopicMap.get(attempt.questionId) ?? attempt.topic
+      if (!stats[setTopic]) stats[setTopic] = { correct: 0, total: 0, rate: 0 }
+      stats[setTopic].total++
+      if (attempt.isCorrect === true) stats[setTopic].correct++
+    }
+    for (const topic of Object.keys(stats)) {
+      stats[topic].rate =
+        stats[topic].total > 0 ? Math.round((stats[topic].correct / stats[topic].total) * 100) : 0
+    }
+    return stats
+  }, [subjectAttempts, questionSetTopicMap])
 
   // 初見正答率の全体値（統計カード用）
   const overallFirstRate = useMemo(() => {
@@ -101,21 +137,10 @@ export default function QuestionsPage() {
     return total > 0 ? Math.round((correct / total) * 100) : null
   }, [firstAttemptStats])
 
-  // 問題IDからQuestionSetのtopicへのマップ（個別問題のtopicではなくセット単位で集約）
-  const questionSetTopicMap = useMemo(() => {
-    const map = new Map<string, string>()
-    for (const set of questionSets) {
-      for (const q of set.questions) {
-        map.set(q.id, set.topic)
-      }
-    }
-    return map
-  }, [])
-
   // attemptsからトピック別統計を算出（QuestionSetのtopic基準、同一問題は最新回答のみ）
   const topicStats = useMemo(() => {
     const latestAttempts = new Map<string, (typeof attempts)[0]>()
-    for (const attempt of attempts) {
+    for (const attempt of subjectAttempts) {
       const existing = latestAttempts.get(attempt.questionId)
       if (!existing || new Date(attempt.attemptedAt) > new Date(existing.attemptedAt)) {
         latestAttempts.set(attempt.questionId, attempt)
@@ -135,16 +160,19 @@ export default function QuestionsPage() {
       stats[topic].rate = stats[topic].total > 0 ? Math.round((stats[topic].correct / stats[topic].total) * 100) : 0
     }
     return stats
-  }, [attempts, questionSetTopicMap])
+  }, [subjectAttempts, questionSetTopicMap])
 
-  const attemptedIds = useMemo(() => new Set(attempts.map((a) => a.questionId)), [attempts])
+  const attemptedIds = useMemo(
+    () => new Set(subjectAttempts.map((a) => a.questionId)),
+    [subjectAttempts]
+  )
   const attemptedCount = attemptedIds.size
 
   // recordStoreから弱点トピック（正答率60%未満）を抽出
   const weakTopics = useMemo(() => {
     const stats: Record<string, { correct: number; total: number }> = {}
     for (const record of records) {
-      if (record.subject !== "FAR") continue
+      if (record.subject !== subject) continue
       if (!record.subtopic || !record.totalQuestions || !record.correctAnswers) continue
       if (!stats[record.subtopic]) stats[record.subtopic] = { correct: 0, total: 0 }
       stats[record.subtopic].total += record.totalQuestions
@@ -153,16 +181,16 @@ export default function QuestionsPage() {
     return Object.entries(stats)
       .filter(([, s]) => s.total >= 5 && Math.round((s.correct / s.total) * 100) < 60)
       .map(([topic]) => topic)
-  }, [records])
+  }, [records, subject])
 
   // 1回でも正解したことがある問題IDのセット (isCorrect===true のみ。null は正解判定不可)
   const everCorrectIds = useMemo(() => {
     const ids = new Set<string>()
-    for (const a of attempts) {
+    for (const a of subjectAttempts) {
       if (a.isCorrect === true) ids.add(a.questionId)
     }
     return ids
-  }, [attempts])
+  }, [subjectAttempts])
 
   // 問題をフィルタリング
   const filteredQuestions = useMemo(() => {
@@ -231,7 +259,7 @@ export default function QuestionsPage() {
         useTimerStore.getState().setQuestionBankContext(set.name)
       }
     }
-  }, [selectedTopic])
+  }, [selectedTopic, questionSets])
 
   // キーボードショートカット
   useEffect(() => {
@@ -344,7 +372,7 @@ export default function QuestionsPage() {
   // 各 questionId の最新 attempt で判定する
   const questionStatusMap = useMemo(() => {
     const latestByQuestion = new Map<string, (typeof attempts)[0]>()
-    for (const a of attempts) {
+    for (const a of subjectAttempts) {
       const existing = latestByQuestion.get(a.questionId)
       if (!existing || new Date(a.attemptedAt) > new Date(existing.attemptedAt)) {
         latestByQuestion.set(a.questionId, a)
@@ -357,7 +385,7 @@ export default function QuestionsPage() {
       else map.set(qid, "unknown")
     }
     return map
-  }, [attempts])
+  }, [subjectAttempts])
 
   const [showGrid, setShowGrid] = useState(false)
 
