@@ -1,7 +1,12 @@
 import { describe, it, expect } from "vitest"
 import { practiceRecordSchema } from "../validations/practice"
 import { noteSchema } from "../validations/note"
-import { pomodoroSchema, dailyTargetSchema } from "../validations/settings"
+import {
+  pomodoroSchema,
+  dailyTargetSchema,
+  examDateSchema,
+  targetHoursSchema,
+} from "../validations/settings"
 
 describe("practiceRecordSchema", () => {
   it("有効な過去問記録を受け入れる", () => {
@@ -177,6 +182,45 @@ describe("dailyTargetSchema", () => {
       weekdayTargetHours: 25,
       weekendTargetHours: 5,
     })
+    expect(result.success).toBe(false)
+  })
+})
+
+describe("examDateSchema", () => {
+  it("科目と試験日の組を受け入れる", () => {
+    const result = examDateSchema.safeParse({ subject: "FAR", date: "2026-08-01" })
+    expect(result.success).toBe(true)
+  })
+
+  it("試験日未設定を表す null を許可する", () => {
+    const result = examDateSchema.safeParse({ subject: "BAR", date: null })
+    expect(result.success).toBe(true)
+  })
+
+  it("4科目以外を拒否する", () => {
+    const result = examDateSchema.safeParse({ subject: "TCP", date: null })
+    expect(result.success).toBe(false)
+  })
+})
+
+describe("targetHoursSchema", () => {
+  it("下限の0時間を受け入れる", () => {
+    const result = targetHoursSchema.safeParse({ subject: "AUD", hours: 0 })
+    expect(result.success).toBe(true)
+  })
+
+  it("上限の10000時間を受け入れる", () => {
+    const result = targetHoursSchema.safeParse({ subject: "AUD", hours: 10000 })
+    expect(result.success).toBe(true)
+  })
+
+  it("負の時間を拒否する", () => {
+    const result = targetHoursSchema.safeParse({ subject: "AUD", hours: -1 })
+    expect(result.success).toBe(false)
+  })
+
+  it("上限を超える時間を拒否する", () => {
+    const result = targetHoursSchema.safeParse({ subject: "AUD", hours: 10001 })
     expect(result.success).toBe(false)
   })
 })
