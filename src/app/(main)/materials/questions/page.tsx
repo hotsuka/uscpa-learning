@@ -20,6 +20,11 @@ import { useTimerStore } from "@/stores/timerStore"
 import { farQuestionSets } from "@/data/questions/far"
 import { barQuestionSets } from "@/data/questions/bar"
 import { getFarScopeForSet, FAR_SCOPE_LABELS } from "@/data/questions/far/farScope"
+import {
+  getBarScopeForSet,
+  getBarScopeForQuestion,
+  BAR_SCOPE_LABELS,
+} from "@/data/questions/bar/barScope"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { useRecordStore } from "@/stores/recordStore"
 import type { FARQuestion } from "@/types/questions"
@@ -39,16 +44,19 @@ import {
 
 type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced"
 
-// 出題範囲フィルター: far = FAR範囲（in + partial）、out = FAR範囲外（BAR領域）のみ
-type ScopeFilter = "all" | "far" | "out"
+// 出題範囲フィルター: in = 現在の科目の出題範囲内、out = 範囲外のみ
+// FARはテーマ（QuestionSet）単位、BARは問題ID単位で判定する（合本教材由来のセットは
+// 1セット内に範囲内と範囲外が混在するため）
+type ScopeFilter = "all" | "in" | "out"
 
 const SCOPE_STORAGE_KEY = "uscpa-scope-filter"
 
-// 出題範囲フィルターをlocalStorageから読み込み
+// 出題範囲フィルターをlocalStorageから読み込み。旧値 "far" は "in" として扱う
 const loadScopeFilter = (): ScopeFilter => {
   if (typeof window === "undefined") return "all"
   const stored = localStorage.getItem(SCOPE_STORAGE_KEY)
-  return stored === "far" || stored === "out" ? stored : "all"
+  if (stored === "far" || stored === "in") return "in"
+  return stored === "out" ? "out" : "all"
 }
 
 // 出題範囲フィルターをlocalStorageに保存
@@ -58,11 +66,9 @@ const saveScopeFilter = (value: ScopeFilter) => {
 }
 
 export default function QuestionsPage() {
-  // 科目切替。出題範囲フィルターはFARブループリント基準なのでBARでは使わない
+  // 科目切替。出題範囲フィルターは科目ごとのブループリント判定を使う
   const [subject, setSubject] = useState<"FAR" | "BAR">("FAR")
   const questionSets = subject === "BAR" ? barQuestionSets : farQuestionSets
-  const getTotalQuestionCount = () =>
-    questionSets.reduce((sum, set) => sum + set.questions.length, 0)
 
   const [selectedTopic, setSelectedTopic] = useState<string>("all")
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all")
@@ -94,11 +100,33 @@ export default function QuestionsPage() {
     return map
   }, [questionSets])
 
-  // 現在の科目の解答履歴のみ。統計カード・フィルターはこれを基準に算出する
+  // 出題範囲フィルター適用後の問題IDの集合。統計カードもこの母集団に連動させる。
+  // FARはテーマ単位（getFarScopeForSet）、BARは問題単位（getBarScopeForQuestion）で判定。
+  // 判定が out のものだけを範囲外とし、gray / unverified は安全側に倒して範囲内に含める
+  const scopedQuestionIds = useMemo(() => {
+    const ids = new Set<string>()
+    for (const set of questionSets) {
+      for (const q of set.questions) {
+        if (scopeFilter === "all") {
+          ids.add(q.id)
+          continue
+        }
+        const scope =
+          subject === "BAR"
+            ? getBarScopeForQuestion(set.id, q.id)
+            : getFarScopeForSet(set.id).scope
+        const isOut = scope === "out"
+        if (scopeFilter === "in" ? !isOut : isOut) ids.add(q.id)
+      }
+    }
+    return ids
+  }, [questionSets, scopeFilter, subject])
+
+  // 現在の科目かつ出題範囲内の解答履歴のみ。統計カード・フィルターはこれを基準に算出する
   // （FARとBARのattemptsは同じstoreに入るため、絞らないと合算値になる）
   const subjectAttempts = useMemo(
-    () => attempts.filter((a) => questionSetTopicMap.has(a.questionId)),
-    [attempts, questionSetTopicMap]
+    () => attempts.filter((a) => scopedQuestionIds.has(a.questionId)),
+    [attempts, scopedQuestionIds]
   )
 
   // 初見正答率（各問題の最初の解答のみ）。トピックは現在の科目のQuestionSet基準
@@ -196,21 +224,15 @@ export default function QuestionsPage() {
   const filteredQuestions = useMemo(() => {
     let questions: FARQuestion[] = []
 
-    // 出題範囲フィルター（テーマ＝QuestionSet単位で判定）
-    const scopedSets =
-      scopeFilter === "all" || subject === "BAR"
-        ? questionSets
-        : questionSets.filter((set) => {
-            const { scope } = getFarScopeForSet(set.id)
-            return scopeFilter === "far" ? scope !== "out" : scope === "out"
-          })
-
     if (selectedTopic === "all") {
-      questions = scopedSets.flatMap((set) => set.questions)
+      questions = questionSets.flatMap((set) => set.questions)
     } else {
-      const set = scopedSets.find((s) => s.topic === selectedTopic)
+      const set = questionSets.find((s) => s.topic === selectedTopic)
       questions = set ? set.questions : []
     }
+
+    // 出題範囲フィルター（scopedQuestionIds は科目・スコープ判定済み）
+    questions = questions.filter((q) => scopedQuestionIds.has(q.id))
 
     if (difficulty !== "all") {
       questions = questions.filter((q) => q.difficulty === difficulty)
@@ -249,7 +271,7 @@ export default function QuestionsPage() {
     }
 
     return questions
-  }, [subject, selectedTopic, difficulty, scopeFilter, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
+  }, [questionSets, selectedTopic, difficulty, scopedQuestionIds, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
 
   // 問題バンクのトピックをタイマーのサブトピックに反映
   useEffect(() => {
@@ -389,8 +411,8 @@ export default function QuestionsPage() {
 
   const [showGrid, setShowGrid] = useState(false)
 
-  // 統計計算
-  const totalQuestions = getTotalQuestionCount()
+  // 統計計算。出題範囲フィルターを適用した母集団で数える
+  const totalQuestions = scopedQuestionIds.size
 
   return (
     <div className="min-h-screen bg-background">
@@ -502,14 +524,22 @@ export default function QuestionsPage() {
                   <SelectContent>
                     <SelectItem value="all">全トピック</SelectItem>
                     {questionSets.map((set) => {
-                      const scopeInfo = getFarScopeForSet(set.id)
+                      // 範囲内のみのセットにはラベルを出さない（FARの in / BARの未登録セット）
+                      const label =
+                        subject === "BAR"
+                          ? (() => {
+                              const { scope } = getBarScopeForSet(set.id)
+                              return scope === "unverified" ? null : BAR_SCOPE_LABELS[scope]
+                            })()
+                          : (() => {
+                              const { scope } = getFarScopeForSet(set.id)
+                              return scope === "in" ? null : FAR_SCOPE_LABELS[scope]
+                            })()
                       return (
                         <SelectItem key={set.id} value={set.topic}>
                           {set.name}
-                          {subject === "FAR" && scopeInfo.scope !== "in" && (
-                            <span className="ml-2 text-xs text-muted-foreground">
-                              [{FAR_SCOPE_LABELS[scopeInfo.scope]}]
-                            </span>
+                          {label && (
+                            <span className="ml-2 text-xs text-muted-foreground">[{label}]</span>
                           )}
                         </SelectItem>
                       )
@@ -537,8 +567,8 @@ export default function QuestionsPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">全範囲</SelectItem>
-                    <SelectItem value="far">FAR範囲のみ</SelectItem>
-                    <SelectItem value="out">FAR範囲外のみ</SelectItem>
+                    <SelectItem value="in">{subject}範囲のみ</SelectItem>
+                    <SelectItem value="out">{subject}範囲外のみ</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -581,7 +611,7 @@ export default function QuestionsPage() {
                 <BookOpen className="w-4 h-4 mr-2" />
                 未解答のみ
                 <Badge variant="secondary" className="ml-2">
-                  {getTotalQuestionCount() - attemptedCount}
+                  {totalQuestions - attemptedCount}
                 </Badge>
               </Button>
               <Button
@@ -707,18 +737,27 @@ export default function QuestionsPage() {
                   const stat = topicStats[set.topic]
                   const first = firstAttemptStats[set.topic]
                   if (!stat && !first) return null
-                  const scopeInfo = getFarScopeForSet(set.id)
+                  const scopeBadge =
+                    subject === "BAR"
+                      ? (() => {
+                          const { scope } = getBarScopeForSet(set.id)
+                          return scope === "unverified" ? null : BAR_SCOPE_LABELS[scope]
+                        })()
+                      : (() => {
+                          const { scope } = getFarScopeForSet(set.id)
+                          return scope === "in" ? null : FAR_SCOPE_LABELS[scope]
+                        })()
                   const firstRate = first?.rate ?? 0
                   return (
                     <div key={set.id} className="flex items-center justify-between text-sm">
                       <span className="truncate flex-1">
                         {set.name}
-                        {scopeInfo.scope !== "in" && (
+                        {scopeBadge && (
                           <Badge
                             variant="outline"
                             className="ml-2 px-1 py-0 text-[10px] font-normal text-muted-foreground"
                           >
-                            {FAR_SCOPE_LABELS[scopeInfo.scope]}
+                            {scopeBadge}
                           </Badge>
                         )}
                       </span>
