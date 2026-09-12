@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo, useEffect, useRef } from "react"
+import { useState, useMemo, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import { Header } from "@/components/layout/Header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select"
 import { QuestionCard, type QuestionCardRef } from "@/components/materials/QuestionCard"
 import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
+import { PracticeSessionBar } from "@/components/materials/PracticeSessionBar"
 import { useTimer } from "@/hooks/useTimer"
 import { useTimerStore } from "@/stores/timerStore"
 import { farQuestionSets } from "@/data/questions/far"
@@ -27,6 +28,7 @@ import {
 } from "@/data/questions/bar/barScope"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { useRecordStore } from "@/stores/recordStore"
+import { usePracticeSession } from "@/hooks/usePracticeSession"
 import type { FARQuestion } from "@/types/questions"
 import { cn } from "@/lib/utils"
 import {
@@ -121,6 +123,23 @@ export default function QuestionsPage() {
     }
     return ids
   }, [questionSets, scopeFilter, subject])
+
+  // 演習セッション計測用の科目判定。出題範囲フィルターとは独立に、
+  // 現在の科目の問題であれば範囲外でも学習時間として数える
+  const isOwnQuestion = useCallback(
+    (questionId: string) => questionSetTopicMap.has(questionId),
+    [questionSetTopicMap]
+  )
+
+  const {
+    session: practiceSession,
+    studyMinutes: practiceMinutes,
+    accuracy: practiceAccuracy,
+    dominantTopic: practiceTopic,
+    isIdle: practiceIdle,
+    saveSession: savePracticeSession,
+    discardSession: discardPracticeSession,
+  } = usePracticeSession({ subject, attempts, isOwnQuestion })
 
   // 現在の科目かつ出題範囲内の解答履歴のみ。統計カード・フィルターはこれを基準に算出する
   // （FARとBARのattemptsは同じstoreに入るため、絞らないと合算値になる）
@@ -487,6 +506,17 @@ export default function QuestionsPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* 演習セッション（学習記録への保存） */}
+        <PracticeSessionBar
+          session={practiceSession}
+          studyMinutes={practiceMinutes}
+          accuracy={practiceAccuracy}
+          dominantTopic={practiceTopic}
+          isIdle={practiceIdle}
+          onSave={savePracticeSession}
+          onDiscard={discardPracticeSession}
+        />
 
         {/* フィルター */}
         <Card className="mb-6">
