@@ -9,6 +9,7 @@ export const TBS_TIMER_SUBTOPIC = "Module 9 Task-Based Simulation";
 
 export function useTBSTimerContext() {
   useEffect(() => {
-    useTimerStore.getState().setQuestionBankContext(TBS_TIMER_SUBTOPIC);
+    // TBS問題バンクはFARのみ
+    useTimerStore.getState().setQuestionBankContext("FAR", TBS_TIMER_SUBTOPIC);
   }, []);
 }

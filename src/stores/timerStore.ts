@@ -30,7 +30,7 @@ interface TimerState {
   setCorrectAnswers: (value: string) => void;
   setMemo: (value: string) => void;
   setFromQuestionBank: (value: boolean) => void;
-  setQuestionBankContext: (subtopic: string | null) => void;
+  setQuestionBankContext: (subject: Subject, subtopic: string | null) => void;
   start: () => void;
   pause: () => void;
   stop: () => {
@@ -98,9 +98,10 @@ export const useTimerStore = create<TimerState>()(
       setMemo: (value) => set({ memo: value }),
       setFromQuestionBank: (value) => set({ fromQuestionBank: value }),
 
-      // タイマー稼働中でもサブトピックを変更可能（問題バンクからの設定用）
-      setQuestionBankContext: (subtopic) => {
-        set({ subtopic, fromQuestionBank: true });
+      // タイマー稼働中でも科目・サブトピックを変更可能（問題バンクからの設定用）
+      // 科目も合わせて切り替えないと、BARの演習がFARの記録として保存されてしまう
+      setQuestionBankContext: (subject, subtopic) => {
+        set({ subject, subtopic, fromQuestionBank: true });
       },
 
       resetRecordFields: () =>

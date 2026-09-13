@@ -292,15 +292,13 @@ export default function QuestionsPage() {
     return questions
   }, [questionSets, selectedTopic, difficulty, scopedQuestionIds, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
 
-  // 問題バンクのトピックをタイマーのサブトピックに反映
+  // 表示中の科目とトピックをタイマーに反映する
+  // 全トピック表示のときは、前に選んだ別科目のトピック名が残らないよう null にする
   useEffect(() => {
-    if (selectedTopic !== "all") {
-      const set = questionSets.find((s) => s.topic === selectedTopic)
-      if (set) {
-        useTimerStore.getState().setQuestionBankContext(set.name)
-      }
-    }
-  }, [selectedTopic, questionSets])
+    const set =
+      selectedTopic !== "all" ? questionSets.find((s) => s.topic === selectedTopic) : undefined
+    useTimerStore.getState().setQuestionBankContext(subject, set ? set.name : null)
+  }, [subject, selectedTopic, questionSets])
 
   // キーボードショートカット
   useEffect(() => {
@@ -385,16 +383,10 @@ export default function QuestionsPage() {
   const goNext = () => setCurrentIndex((i) => Math.min(i + 1, filteredQuestions.length - 1))
   const goPrev = () => setCurrentIndex((i) => Math.max(i - 1, 0))
 
-  // トピック変更時にインデックスリセット＋タイマーコンテキスト更新
+  // トピック変更時にインデックスリセット（タイマーへの反映は上のuseEffectで行う）
   const handleTopicChange = (value: string) => {
     setSelectedTopic(value)
     setCurrentIndex(0)
-    if (value !== "all") {
-      const set = questionSets.find((s) => s.topic === value)
-      if (set) {
-        useTimerStore.getState().setQuestionBankContext(set.name)
-      }
-    }
   }
 
   const handleDifficultyChange = (value: string) => {
