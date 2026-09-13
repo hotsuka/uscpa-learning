@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { Subject, RecordType, StudyRecord, RecordSource } from "@/types";
 import { generateUUID, getDeviceId, getJSTDateString } from "@/lib/utils";
+import { mergeNotionRecords } from "@/lib/sync/mergeRecords";
 
 // 記録作成時の入力データ（source, sessionIdを含む）
 interface RecordInput {
@@ -218,61 +219,12 @@ export const useRecordStore = create<RecordState>()(
             const notionRecords: StudyRecord[] = await response.json();
 
             // 既存のローカル記録とマージ（Last-Write-Wins戦略）
-            const localRecords = get().records;
-            const existingNotionIdMap = get().notionIdMap;
-            const newNotionIdMap: Record<string, string> = {
-              ...existingNotionIdMap,
-            };
-
-            // NotionレコードのIDでマップを作成
-            const notionRecordMap = new Map<string, StudyRecord>();
-            for (const record of notionRecords) {
-              notionRecordMap.set(record.id, record);
-              newNotionIdMap[record.id] = record.id;
-            }
-
-            // マージされた記録リスト
-            const mergedRecords: StudyRecord[] = [];
-
-            // ローカル記録を処理
-            for (const localRecord of localRecords) {
-              const notionId = existingNotionIdMap[localRecord.id];
-              if (notionId && notionRecordMap.has(notionId)) {
-                // Notionにも存在する → updatedAtで比較（Last-Write-Wins）
-                const notionRecord = notionRecordMap.get(notionId)!;
-                const localUpdated = new Date(localRecord.updatedAt).getTime();
-                const notionUpdated = new Date(
-                  notionRecord.updatedAt,
-                ).getTime();
-
-                if (localUpdated >= notionUpdated) {
-                  // ローカルが新しい → ローカルを採用
-                  mergedRecords.push(localRecord);
-                } else {
-                  // Notionが新しい → Notionを採用
-                  mergedRecords.push(notionRecord);
-                }
-                // 処理済みとしてマークからNotionレコードを削除
-                notionRecordMap.delete(notionId);
-              } else {
-                // まだNotion同期されていないローカル記録、または
-                // notionIdマッピングがあるがNotion側にない場合 → ローカルを保持
-                // （ローカルデータを優先保護）
-                mergedRecords.push(localRecord);
-              }
-            }
-
-            // Notionにのみ存在する記録を追加
-            for (const notionRecord of notionRecordMap.values()) {
-              mergedRecords.push(notionRecord);
-            }
-
-            // 日付の新しい順にソート
-            mergedRecords.sort(
-              (a, b) =>
-                new Date(b.createdAt).getTime() -
-                new Date(a.createdAt).getTime(),
-            );
+            const { records: mergedRecords, notionIdMap: newNotionIdMap } =
+              mergeNotionRecords(
+                get().records,
+                notionRecords,
+                get().notionIdMap,
+              );
 
             set({
               records: mergedRecords,
