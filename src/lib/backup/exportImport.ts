@@ -1,11 +1,11 @@
-import { TARGET_KEYS, type TargetKey } from "./constants"
+import { BACKUP_KEYS, type BackupKey } from "./constants"
 import { writeBackupMeta } from "./autoBackup"
 
 export interface ExportPayload {
   schema: "uscpa-backup"
   schemaVersion: 1
   exportedAt: string
-  data: Partial<Record<TargetKey, string>> // 各キーの localStorage 生文字列
+  data: Partial<Record<BackupKey, string>> // 各キーの localStorage 生文字列
 }
 
 const isBrowser = (): boolean => typeof window !== "undefined" && typeof localStorage !== "undefined"
@@ -16,12 +16,13 @@ const formatFilenameTimestamp = (d: Date): string => {
 }
 
 /**
- * 現在の localStorage のうち TARGET_KEYS の生文字列を JSON 化してダウンロードする。
+ * 現在の localStorage のうちバックアップ対象（BACKUP_KEYS）の生文字列を JSON 化してダウンロードする。
+ * 問題演習の履歴に加え、学習記録・ノート・ページメモも含める。
  */
 export function downloadCurrentStateAsJson(): void {
   if (!isBrowser()) return
-  const data: Partial<Record<TargetKey, string>> = {}
-  for (const key of TARGET_KEYS) {
+  const data: Partial<Record<BackupKey, string>> = {}
+  for (const key of BACKUP_KEYS) {
     const raw = localStorage.getItem(key)
     if (raw !== null) data[key] = raw
   }
@@ -54,7 +55,8 @@ const isExportPayload = (obj: unknown): obj is ExportPayload => {
 }
 
 /**
- * JSON ファイルから localStorage を復元する。
+ * JSON ファイルから localStorage を復元する。ファイルに含まれているデータだけを上書きする
+ * （学習記録などを含まない古い書き出しファイルでは、それらは今のまま残る）。
  * 呼び出し側で `window.location.reload()` を行うこと。
  */
 export async function importFromJsonFile(
@@ -68,7 +70,7 @@ export async function importFromJsonFile(
       return { ok: false, importedKeys: [], error: "JSON 形式が不正です" }
     }
     const imported: string[] = []
-    for (const key of TARGET_KEYS) {
+    for (const key of BACKUP_KEYS) {
       const raw = parsed.data[key]
       if (typeof raw === "string") {
         localStorage.setItem(key, raw)

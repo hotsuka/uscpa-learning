@@ -6,6 +6,7 @@ import {
   type BackupType,
   type TargetKey,
 } from "./constants";
+import { collectBackupEntries, saveSnapshots } from "./autoBackup";
 
 export interface BackupItem {
   originalKey: TargetKey;
@@ -40,45 +41,37 @@ const byteSizeOf = (s: string | null): number => (s ? s.length : 0);
 
 /**
  * migrate 関数の冒頭で呼ぶ。
- * 現在の localStorage の生の文字列を `${key}.pre-v{fromVersion}.{ISO8601}` キーに退避する。
- * 失敗しても migrate を止めないように try/catch で握る。
+ * 現在の localStorage の生の文字列を、移行前バックアップとしてIndexedDBに退避する。
+ * localStorageに退避すると容量上限（約5MB）を圧迫し、本体データの保存が失敗するため使わない。
+ * 値はここで同期的に読み取るので、書き込み完了前にmigrateが進んでも移行前の内容が残る。
+ * 失敗しても migrate を止めないように握る。
  */
 export function backupBeforeMigrate(key: string, fromVersion: number): void {
   if (!isBrowser()) return;
   try {
     const current = localStorage.getItem(key);
     if (!current) return;
-    const backupKey = `${key}${PRE_MIGRATE_INFIX}${fromVersion}.${new Date().toISOString()}`;
-    localStorage.setItem(backupKey, current);
+    saveSnapshots("pre-migrate", [{ originalKey: key, data: current }], `v${fromVersion}`).catch(
+      (error) => console.error("[Backup] 移行前バックアップの保存に失敗:", key, error),
+    );
   } catch {
     // バックアップ失敗で本体処理を止めるのは本末転倒
   }
 }
 
 /**
- * 「今すぐバックアップ」ボタン用。
- * 対象ストアそれぞれの現在値を `${key}.manual.{ISO8601}` キーに保存する。
+ * 「今すぐバックアップ」ボタンと、復元・読み込み前のスナップショット用。
+ * バックアップ対象のデータをまとめてIndexedDBに保存する。
  */
-export function createManualBackup(): { savedKeys: string[] } {
-  if (!isBrowser()) return { savedKeys: [] };
-  const timestamp = new Date().toISOString();
-  const saved: string[] = [];
-  for (const key of TARGET_KEYS) {
-    try {
-      const current = localStorage.getItem(key);
-      if (!current) continue;
-      const backupKey = `${key}${MANUAL_INFIX}${timestamp}`;
-      localStorage.setItem(backupKey, current);
-      saved.push(backupKey);
-    } catch {
-      // 個別失敗はスキップ
-    }
-  }
-  return { savedKeys: saved };
+export async function createManualBackup(): Promise<{ savedKeys: string[] }> {
+  const entries = collectBackupEntries();
+  if (entries.length === 0) return { savedKeys: [] };
+  await saveSnapshots("manual", entries);
+  return { savedKeys: entries.map((entry) => entry.originalKey) };
 }
 
 /**
- * localStorage 全体を走査して、TARGET_KEYS に紐づくバックアップキーを列挙する。
+ * 旧形式（localStorageに保存していた頃）のバックアップキーを列挙する。
  * 日時降順で返す。
  */
 export function listBackups(): BackupItem[] {
