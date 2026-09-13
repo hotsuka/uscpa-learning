@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware";
 import type { Subject, RecordType, StudyRecord, RecordSource } from "@/types";
 import { generateUUID, getDeviceId, getJSTDateString } from "@/lib/utils";
 import { mergeNotionRecords } from "@/lib/sync/mergeRecords";
+import { planNotionPush, type NotionPushPlan } from "@/lib/sync/pushPlan";
 
 // 記録作成時の入力データ（source, sessionIdを含む）
 interface RecordInput {
@@ -57,6 +58,8 @@ interface RecordState {
   syncRecordToNotion: (record: StudyRecord) => Promise<string | null>;
   fetchRecordsFromNotion: () => Promise<void>;
   deleteRecordFromNotion: (id: string) => Promise<void>;
+  // Notionに届いていない作成・編集を送り直す
+  pushPendingToNotion: (plan: NotionPushPlan) => Promise<void>;
 
   // 集計
   getTotalStudyHours: (subject: Subject) => number;
@@ -108,15 +111,27 @@ export const useRecordStore = create<RecordState>()(
           ),
         }));
 
-        // NotionページIDがあれば同期
-        const notionId = get().notionIdMap[id];
-        if (notionId) {
-          fetch("/api/notion/records", {
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ id: notionId, ...updates }),
-          }).catch(console.error);
-        }
+        // Notionへ反映する。IDはサーバー側でrecordIdからページIDに変換される
+        // 失敗しても次回の同期で、Notionより新しい記録として送り直される
+        const notionId = get().notionIdMap[id] ?? id;
+        fetch("/api/notion/records", {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: notionId, ...updates, updatedAt }),
+        })
+          .then(async (response) => {
+            if (!response.ok) {
+              console.error(
+                "[Sync] Failed to update record in Notion:",
+                id,
+                response.status,
+                await response.text(),
+              );
+            }
+          })
+          .catch((error) =>
+            console.error("[Sync] Failed to update record in Notion:", id, error),
+          );
       },
 
       deleteRecord: (id) => {
@@ -203,9 +218,16 @@ export const useRecordStore = create<RecordState>()(
             }));
             return result.id;
           }
+          // 失敗しても次回の同期で送り直される
+          console.error(
+            "[Sync] Failed to create record in Notion:",
+            record.id,
+            response.status,
+            await response.text(),
+          );
           return null;
         } catch (error) {
-          console.error("Failed to sync record to Notion:", error);
+          console.error("[Sync] Failed to create record in Notion:", record.id, error);
           return null;
         }
       },
@@ -231,6 +253,17 @@ export const useRecordStore = create<RecordState>()(
               notionIdMap: newNotionIdMap,
               lastSyncedAt: new Date().toISOString(),
             });
+
+            // Notionに届いていない作成・編集を送り直す（バックグラウンド）
+            const plan = planNotionPush({
+              localRecords: mergedRecords,
+              notionRecords,
+              notionIdMap: newNotionIdMap,
+              deviceId: getDeviceId(),
+            });
+            if (plan.toCreate.length > 0 || plan.toUpdate.length > 0) {
+              get().pushPendingToNotion(plan).catch(console.error);
+            }
           }
         } catch (error) {
           console.error("Failed to fetch records from Notion:", error);
@@ -240,15 +273,71 @@ export const useRecordStore = create<RecordState>()(
       },
 
       deleteRecordFromNotion: async (id) => {
-        const notionId = get().notionIdMap[id];
-        if (!notionId) return;
+        // IDはサーバー側でrecordIdからページIDに変換される
+        const notionId = get().notionIdMap[id] ?? id;
 
         try {
-          await fetch(`/api/notion/records?id=${notionId}`, {
-            method: "DELETE",
-          });
+          const response = await fetch(
+            `/api/notion/records?id=${encodeURIComponent(notionId)}`,
+            { method: "DELETE" },
+          );
+          if (!response.ok) {
+            console.error(
+              "[Sync] Failed to delete record from Notion:",
+              id,
+              response.status,
+              await response.text(),
+            );
+          }
         } catch (error) {
-          console.error("Failed to delete record from Notion:", error);
+          console.error("[Sync] Failed to delete record from Notion:", id, error);
+        }
+      },
+
+      pushPendingToNotion: async ({ toCreate, toUpdate }) => {
+        console.log(
+          `[Sync] Pushing to Notion: create ${toCreate.length}, update ${toUpdate.length}`,
+        );
+        // Notion APIのレート制限（3リクエスト/秒）を超えないよう1件ずつ送る
+        const wait = () => new Promise((resolve) => setTimeout(resolve, 400));
+        for (const record of toCreate) {
+          await get().syncRecordToNotion(record);
+          await wait();
+        }
+        for (const record of toUpdate) {
+          try {
+            const response = await fetch("/api/notion/records", {
+              method: "PATCH",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                id: get().notionIdMap[record.id] ?? record.id,
+                recordType: record.recordType,
+                subject: record.subject,
+                subtopic: record.subtopic,
+                studyMinutes: record.studyMinutes,
+                totalQuestions: record.totalQuestions,
+                correctAnswers: record.correctAnswers,
+                roundNumber: record.roundNumber,
+                chapter: record.chapter,
+                pageRange: record.pageRange,
+                memo: record.memo,
+                studiedAt: record.studiedAt,
+                fromQuestionBank: record.fromQuestionBank,
+                updatedAt: record.updatedAt,
+              }),
+            });
+            if (!response.ok) {
+              console.error(
+                "[Sync] Failed to push update to Notion:",
+                record.id,
+                response.status,
+                await response.text(),
+              );
+            }
+          } catch (error) {
+            console.error("[Sync] Failed to push update to Notion:", record.id, error);
+          }
+          await wait();
         }
       },
 
