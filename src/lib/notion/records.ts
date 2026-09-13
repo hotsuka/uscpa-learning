@@ -38,14 +38,23 @@ export async function getRecords(options?: {
     })
   }
 
-  const response = await notion.databases.query({
-    database_id: dbIds.records,
-    filter: filter.length > 0 ? { and: filter } : undefined,
-    sorts: [{ property: "演習日", direction: "descending" }],
-    page_size: options?.limit || 100,
-  })
+  // limit指定が無ければ全件を取得する（Notionは1回100件までなのでページングする）
+  const pages: any[] = []
+  let cursor: string | undefined
+  do {
+    const response = await notion.databases.query({
+      database_id: dbIds.records,
+      filter: filter.length > 0 ? { and: filter } : undefined,
+      sorts: [{ property: "演習日", direction: "descending" }],
+      page_size: Math.min(options?.limit || 100, 100),
+      start_cursor: cursor,
+    })
+    pages.push(...response.results)
+    cursor = response.has_more && !options?.limit ? (response.next_cursor ?? undefined) : undefined
+  } while (cursor)
 
-  return response.results.map((page: any) => {
+  const results = options?.limit ? pages.slice(0, options.limit) : pages
+  return results.map((page: any) => {
     const props = page.properties
     return {
       id: props["recordId"]?.rich_text?.[0]?.text?.content || page.id,
@@ -69,6 +78,29 @@ export async function getRecords(options?: {
       updatedAt: props["更新日時"]?.date?.start || page.last_edited_time,
     }
   })
+}
+
+// recordId（ローカルで発行したID）からNotionのページIDを探す。見つからなければnull
+export async function findPageIdByRecordId(recordId: string): Promise<string | null> {
+  const notion = getNotionClient()
+  const dbIds = getDbIds()
+
+  if (!dbIds.records) {
+    throw new Error("NOTION_RECORDS_DB_ID is not set")
+  }
+
+  const response = await notion.databases.query({
+    database_id: dbIds.records,
+    filter: { property: "recordId", rich_text: { equals: recordId } },
+    page_size: 1,
+  })
+  return response.results[0]?.id ?? null
+}
+
+// 更新・削除で受け取ったIDをNotionのページIDに変換する
+// クライアントはrecordIdを送るが、初期の記録はページIDで対応付けられているため両方を受け付ける
+export async function resolveRecordPageId(id: string): Promise<string> {
+  return (await findPageIdByRecordId(id)) ?? id
 }
 
 // 学習記録を1件取得
@@ -136,6 +168,15 @@ export async function createRecord(
 
   if (!dbIds.records) {
     throw new Error("NOTION_RECORDS_DB_ID is not set")
+  }
+
+  // 同じrecordIdのページが既にあれば作らない（再送や通信断による二重作成を防ぐ）
+  if (record.recordId) {
+    const existingPageId = await findPageIdByRecordId(record.recordId)
+    if (existingPageId) {
+      const existing = await getRecordById(existingPageId)
+      if (existing) return existing
+    }
   }
 
   // 名前を自動生成: "2026/01/17 FAR Ch.5"
@@ -229,10 +270,11 @@ export async function createRecord(
 
 // 学習記録を更新（v1.11: 新フィールド対応）
 export async function updateRecord(
-  pageId: string,
+  id: string,
   updates: Partial<Omit<StudyRecord, "id" | "createdAt" | "deviceId" | "source" | "sessionId">>
 ): Promise<void> {
   const notion = getNotionClient()
+  const pageId = await resolveRecordPageId(id)
 
   const properties: Record<string, any> = {}
 
@@ -299,8 +341,9 @@ export async function updateRecord(
 }
 
 // 学習記録を削除（アーカイブ）
-export async function deleteRecord(pageId: string): Promise<void> {
+export async function deleteRecord(id: string): Promise<void> {
   const notion = getNotionClient()
+  const pageId = await resolveRecordPageId(id)
 
   await notion.pages.update({
     page_id: pageId,
