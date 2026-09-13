@@ -49,7 +49,16 @@ const labelOfOriginalKey = (key: string): string => {
   if (key === "uscpa-question-bank") return "問題バンク"
   if (key === "uscpa-tbs-bank") return "TBS問題"
   if (key === "uscpa-mock-exams") return "模試結果"
+  if (key === "uscpa-records") return "学習記録"
+  if (key === "uscpa-notes") return "ノート"
+  if (key === "uscpa-page-memos") return "ページメモ"
   return key
+}
+
+const labelOfSnapshotType = (item: IndexedDbBackupItem): string => {
+  if (item.type === "manual") return "手動"
+  if (item.type === "pre-migrate") return item.label ? `移行前(${item.label})` : "移行前"
+  return "自動"
 }
 
 export function BackupRestoreCard() {
@@ -78,11 +87,15 @@ export function BackupRestoreCard() {
     reload()
   }, [reload])
 
-  const handleManualBackup = (): void => {
-    const result = createManualBackup()
-    if (result.savedKeys.length === 0) {
-      alert("バックアップ対象のデータがありません")
-      return
+  const handleManualBackup = async (): Promise<void> => {
+    try {
+      const result = await createManualBackup()
+      if (result.savedKeys.length === 0) {
+        alert("バックアップ対象のデータがありません")
+        return
+      }
+    } catch (error) {
+      alert(`バックアップに失敗しました: ${error instanceof Error ? error.message : "不明なエラー"}`)
     }
     reload()
   }
@@ -111,8 +124,8 @@ export function BackupRestoreCard() {
     setPendingAction({
       type: "restore-auto",
       backupKey: item.id,
-      title: `${labelOfOriginalKey(item.originalKey)}を自動バックアップから復元しますか？`,
-      description: `${formatDateTime(item.createdAt)} の自動バックアップで現在のデータを上書きします。復元後はページがリロードされます。`,
+      title: `${labelOfOriginalKey(item.originalKey)}をバックアップから復元しますか？`,
+      description: `${formatDateTime(item.createdAt)} のバックアップ（${labelOfSnapshotType(item)}）で現在のデータを上書きします。復元後はページがリロードされます。`,
     })
     setConfirmOpen(true)
   }
@@ -121,8 +134,8 @@ export function BackupRestoreCard() {
     setPendingAction({
       type: "delete-auto",
       backupKey: item.id,
-      title: "この自動バックアップを削除しますか？",
-      description: `${labelOfOriginalKey(item.originalKey)} / ${formatDateTime(item.createdAt)} の自動バックアップを削除します。`,
+      title: "このバックアップを削除しますか？",
+      description: `${labelOfOriginalKey(item.originalKey)} / ${formatDateTime(item.createdAt)} のバックアップ（${labelOfSnapshotType(item)}）を削除します。`,
     })
     setConfirmOpen(true)
   }
@@ -145,7 +158,7 @@ export function BackupRestoreCard() {
     if (!pendingAction) return
     if (pendingAction.type === "restore" && pendingAction.backupKey) {
       // 復元前のスナップショットを取る
-      createManualBackup()
+      await createManualBackup()
       const restored = restoreBackup(pendingAction.backupKey)
       if (restored) {
         window.location.reload()
@@ -158,7 +171,7 @@ export function BackupRestoreCard() {
       reload()
     } else if (pendingAction.type === "import" && pendingAction.file) {
       // 復元前のスナップショットを取る
-      createManualBackup()
+      await createManualBackup()
       const result = await importFromJsonFile(pendingAction.file)
       if (result.ok) {
         window.location.reload()
@@ -168,7 +181,7 @@ export function BackupRestoreCard() {
       }
     } else if (pendingAction.type === "restore-auto" && pendingAction.backupKey) {
       // 復元前のスナップショットを取る
-      createManualBackup()
+      await createManualBackup()
       const result = await restoreFromIndexedDbBackup(pendingAction.backupKey)
       if (result.ok) {
         window.location.reload()
@@ -191,7 +204,7 @@ export function BackupRestoreCard() {
           データバックアップ
         </CardTitle>
         <CardDescription>
-          問題バンク・TBS問題の回答履歴と模試結果を保護します（Notion同期対象外のデータ）。データ更新の前には自動的にスナップショットが取られます。
+          問題バンク・TBS問題の回答履歴、模試結果、学習記録、ノート、ページメモを保護します。バックアップはブラウザ内のIndexedDBに保存し、復元やデータ移行の前には自動的にスナップショットが取られます。端末の故障に備えて、定期的にJSONもダウンロードしてください。
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -233,10 +246,10 @@ export function BackupRestoreCard() {
 
         {/* バックアップ一覧 */}
         <div className="space-y-2">
-          <h4 className="text-sm font-medium">バックアップ一覧 ({items.length}件)</h4>
+          <h4 className="text-sm font-medium">旧形式のバックアップ（localStorage） ({items.length}件)</h4>
           {items.length === 0 ? (
             <p className="text-sm text-muted-foreground">
-              バックアップはまだありません。「今すぐバックアップ」ボタンで手動作成できます。
+              旧形式のバックアップはありません。新しいバックアップは下の一覧に保存されます。
             </p>
           ) : (
             <div className="space-y-1.5 max-h-96 overflow-y-auto">
@@ -290,11 +303,11 @@ export function BackupRestoreCard() {
         <div className="space-y-2">
           <h4 className="text-sm font-medium flex items-center gap-1.5">
             <HardDrive className="w-4 h-4" />
-            自動バックアップ ({autoItems.length}件)
+            バックアップ一覧 ({autoItems.length}件)
           </h4>
           {autoItems.length === 0 ? (
             <p className="text-sm text-muted-foreground">
-              自動バックアップはまだありません。アプリ起動時に24時間間隔で作成されます。
+              バックアップはまだありません。アプリ起動時に24時間間隔で自動作成されるほか、「今すぐバックアップ」で手動作成できます。
             </p>
           ) : (
             <div className="space-y-1.5 max-h-96 overflow-y-auto">
@@ -307,8 +320,11 @@ export function BackupRestoreCard() {
                     <Badge variant="outline" className="shrink-0">
                       {labelOfOriginalKey(item.originalKey)}
                     </Badge>
-                    <Badge variant="secondary" className="shrink-0 text-xs">
-                      自動
+                    <Badge
+                      variant={item.type === "auto" ? "secondary" : "default"}
+                      className="shrink-0 text-xs"
+                    >
+                      {labelOfSnapshotType(item)}
                     </Badge>
                     <span className="text-muted-foreground truncate">
                       {formatDateTime(item.createdAt)}
