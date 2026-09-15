@@ -19,7 +19,7 @@ import { PracticeSessionBar } from "@/components/materials/PracticeSessionBar"
 import { useTimer } from "@/hooks/useTimer"
 import { useTimerStore } from "@/stores/timerStore"
 import { farQuestionSets } from "@/data/questions/far"
-import { barQuestionSets } from "@/data/questions/bar"
+import { barPracticeQuestionSets, getBarAreaForSet } from "@/data/questions/bar"
 import { getFarScopeForSet, FAR_SCOPE_LABELS } from "@/data/questions/far/farScope"
 import {
   getBarScopeForSet,
@@ -51,30 +51,47 @@ type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced"
 // 1セット内に範囲内と範囲外が混在するため）
 type ScopeFilter = "all" | "in" | "out"
 
-const SCOPE_STORAGE_KEY = "uscpa-scope-filter"
+type Subject = "FAR" | "BAR"
 
-// 出題範囲フィルターをlocalStorageから読み込み。旧値 "far" は "in" として扱う
-const loadScopeFilter = (): ScopeFilter => {
+// 出題範囲フィルターは科目ごとに保存する。共通の1キーだと、BAR画面で選んだ「範囲のみ」が
+// FAR画面では「FAR範囲のみ」として効き、BAR論点のFARセット（デリバティブ等）が0問になるため
+const scopeStorageKey = (subject: Subject) => `uscpa-scope-filter-${subject}`
+
+// 出題範囲フィルターをlocalStorageから読み込み
+const loadScopeFilter = (subject: Subject): ScopeFilter => {
   if (typeof window === "undefined") return "all"
-  const stored = localStorage.getItem(SCOPE_STORAGE_KEY)
-  if (stored === "far" || stored === "in") return "in"
-  return stored === "out" ? "out" : "all"
+  const stored = localStorage.getItem(scopeStorageKey(subject))
+  return stored === "in" || stored === "out" ? stored : "all"
 }
 
 // 出題範囲フィルターをlocalStorageに保存
-const saveScopeFilter = (value: ScopeFilter) => {
+const saveScopeFilter = (subject: Subject, value: ScopeFilter) => {
   if (typeof window === "undefined") return
-  localStorage.setItem(SCOPE_STORAGE_KEY, value)
+  localStorage.setItem(scopeStorageKey(subject), value)
+}
+
+// テーマ一覧に出す区分ラベル。範囲内のみのセットは null（FARの in / BARの未登録セット）。
+// BAR画面でFARから借りたセットは、範囲区分ではなくBAR上のAreaを示す
+const getSetLabel = (subject: Subject, setId: string): string | null => {
+  if (subject === "FAR") {
+    const { scope } = getFarScopeForSet(setId)
+    return scope === "in" ? null : FAR_SCOPE_LABELS[scope]
+  }
+  const area = getBarAreaForSet(setId)
+  if (area !== "I") return `Area ${area}`
+  const { scope } = getBarScopeForSet(setId)
+  return scope === "unverified" ? null : BAR_SCOPE_LABELS[scope]
 }
 
 export default function QuestionsPage() {
   // 科目切替。出題範囲フィルターは科目ごとのブループリント判定を使う
-  const [subject, setSubject] = useState<"FAR" | "BAR">("FAR")
-  const questionSets = subject === "BAR" ? barQuestionSets : farQuestionSets
+  const [subject, setSubject] = useState<Subject>("FAR")
+  // BARは Area I（BAR問題バンク）に Area II/III（FARセットを参照）を加えた全体
+  const questionSets = subject === "BAR" ? barPracticeQuestionSets : farQuestionSets
 
   const [selectedTopic, setSelectedTopic] = useState<string>("all")
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all")
-  const [scopeFilter, setScopeFilter] = useState<ScopeFilter>(loadScopeFilter)
+  const [scopeFilter, setScopeFilter] = useState<ScopeFilter>(() => loadScopeFilter("FAR"))
   const [weaknessMode, setWeaknessMode] = useState(false)
   const [neverCorrectOnly, setNeverCorrectOnly] = useState(false)
   const [unattemptedOnly, setUnattemptedOnly] = useState(false)
@@ -104,7 +121,8 @@ export default function QuestionsPage() {
 
   // 出題範囲フィルター適用後の問題IDの集合。統計カードもこの母集団に連動させる。
   // FARはテーマ単位（getFarScopeForSet）、BARは問題単位（getBarScopeForQuestion）で判定。
-  // 判定が out のものだけを範囲外とし、gray / unverified は安全側に倒して範囲内に含める
+  // 判定が out のものだけを範囲外とし、gray / unverified は安全側に倒して範囲内に含める。
+  // BAR画面の Area II/III（FARセット）は barScope に登録がなく unverified なので「BAR範囲のみ」に残る
   const scopedQuestionIds = useMemo(() => {
     const ids = new Set<string>()
     for (const set of questionSets) {
@@ -397,7 +415,7 @@ export default function QuestionsPage() {
   const handleScopeChange = (value: string) => {
     const scope = value as ScopeFilter
     setScopeFilter(scope)
-    saveScopeFilter(scope)
+    saveScopeFilter(subject, scope)
     setCurrentIndex(0)
   }
 
@@ -523,11 +541,12 @@ export default function QuestionsPage() {
                   onClick={() => {
                     setSubject(s)
                     setSelectedTopic("all")
+                    setScopeFilter(loadScopeFilter(s))
                   }}
                 >
                   {s}
                   <span className="ml-1 text-xs opacity-70">
-                    {(s === "BAR" ? barQuestionSets : farQuestionSets).reduce(
+                    {(s === "BAR" ? barPracticeQuestionSets : farQuestionSets).reduce(
                       (sum, set) => sum + set.questions.length,
                       0,
                     )}
@@ -546,17 +565,7 @@ export default function QuestionsPage() {
                   <SelectContent>
                     <SelectItem value="all">全トピック</SelectItem>
                     {questionSets.map((set) => {
-                      // 範囲内のみのセットにはラベルを出さない（FARの in / BARの未登録セット）
-                      const label =
-                        subject === "BAR"
-                          ? (() => {
-                              const { scope } = getBarScopeForSet(set.id)
-                              return scope === "unverified" ? null : BAR_SCOPE_LABELS[scope]
-                            })()
-                          : (() => {
-                              const { scope } = getFarScopeForSet(set.id)
-                              return scope === "in" ? null : FAR_SCOPE_LABELS[scope]
-                            })()
+                      const label = getSetLabel(subject, set.id)
                       return (
                         <SelectItem key={set.id} value={set.topic}>
                           {set.name}
@@ -759,16 +768,7 @@ export default function QuestionsPage() {
                   const stat = topicStats[set.topic]
                   const first = firstAttemptStats[set.topic]
                   if (!stat && !first) return null
-                  const scopeBadge =
-                    subject === "BAR"
-                      ? (() => {
-                          const { scope } = getBarScopeForSet(set.id)
-                          return scope === "unverified" ? null : BAR_SCOPE_LABELS[scope]
-                        })()
-                      : (() => {
-                          const { scope } = getFarScopeForSet(set.id)
-                          return scope === "in" ? null : FAR_SCOPE_LABELS[scope]
-                        })()
+                  const scopeBadge = getSetLabel(subject, set.id)
                   const firstRate = first?.rate ?? 0
                   return (
                     <div key={set.id} className="flex items-center justify-between text-sm">

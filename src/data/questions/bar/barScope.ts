@@ -169,8 +169,9 @@ export const BAR_SCOPE_LABELS: Record<BarScope, string> = {
 //
 // barQuestionSets（11セット・1019問）は全て Area I（Business Analysis, 40-50%）に対応する。
 // Area II（Technical Accounting and Reporting, 35-45%）と Area III（State and Local
-// Governments, 10-20%）に対応する問題は farQuestionSets 側にあり、BAR画面からは辿れない。
-// 配点で見ると BAR の半分以上が BAR問題バンクの外にある。
+// Governments, 10-20%）に対応する問題は farQuestionSets 側にある。配点で見ると BAR の
+// 半分以上が BAR問題バンクの外にあるため、BAR画面ではこの対応表から FARセットを丸ごと
+// 参照して表示する（index.ts の barAreaIIIIIQuestionSets）。
 //
 // FARを合格済みでも、FAR範囲とBAR範囲は同じ論点でも深度が違う（例: リースは借手がFAR、
 // 貸手・セール&リースバックがBAR）。farScope.ts の partial 判定と合わせて参照すること。
