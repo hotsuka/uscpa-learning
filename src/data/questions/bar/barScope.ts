@@ -165,11 +165,116 @@ export const BAR_SCOPE_LABELS: Record<BarScope, string> = {
   unverified: "未照合",
 };
 
+// BAR Area II / III の問題がどこにあるかの対応表。
+//
+// barQuestionSets（11セット・1019問）は全て Area I（Business Analysis, 40-50%）に対応する。
+// Area II（Technical Accounting and Reporting, 35-45%）と Area III（State and Local
+// Governments, 10-20%）に対応する問題は farQuestionSets 側にある。配点で見ると BAR の
+// 半分以上が BAR問題バンクの外にあるため、BAR画面ではこの対応表から FARセットを丸ごと
+// 参照して表示する（index.ts の barAreaIIIIIQuestionSets）。
+//
+// FARを合格済みでも、FAR範囲とBAR範囲は同じ論点でも深度が違う（例: リースは借手がFAR、
+// 貸手・セール&リースバックがBAR）。farScope.ts の partial 判定と合わせて参照すること。
+export interface BarAreaSource {
+  area: "II" | "III";
+  /** ブループリント上のトピック記号と名称 */
+  topic: string;
+  /** 対応する問題を含む QuestionSet.id（farQuestionSets 側） */
+  farSetIds: string[];
+  note: string;
+}
+
+// 2026-09-10 時点。ブループリント BAR節 p65-81 の Area II / III 全トピックを列挙した
+export const BAR_AREA_II_III_SOURCES: BarAreaSource[] = [
+  {
+    area: "II",
+    topic: "A. Indefinite-lived intangible assets, including goodwill",
+    farSetIds: ["far-ppe-intangibles"],
+    note: "のれん・無期限無形資産の減損指標と帳簿価額",
+  },
+  {
+    area: "II",
+    topic: "B. Internally developed software",
+    farSetIds: ["far-ppe-intangibles"],
+    note: "自社利用・販売目的ソフトウェアの資産計上と償却。far-ppe-intangibles に20問",
+  },
+  {
+    area: "II",
+    topic: "C. Revenue recognition",
+    farSetIds: ["far-revenue-recognition"],
+    note: "5ステップモデル。BARではデータ分析の出力から不整合を検出する出題も含む",
+  },
+  {
+    area: "II",
+    topic: "D. Stock compensation (share-based payments)",
+    farSetIds: ["far-stock-compensation"],
+    note: "farScope.ts で out 判定（FAR範囲外＝BAR領域）",
+  },
+  {
+    area: "II",
+    topic: "E. Research and development costs",
+    farSetIds: ["far-ppe-intangibles"],
+    note: "far-ppe-intangibles に22問",
+  },
+  {
+    area: "II",
+    topic: "F. Business combinations / G. Consolidated financial statements",
+    farSetIds: ["far-consolidations"],
+    note: "farScope.ts で partial 判定。基本連結+NCIはFAR、VIE・在外子会社換算がBAR",
+  },
+  {
+    area: "II",
+    topic: "H. Derivatives and hedge accounting",
+    farSetIds: ["far-derivatives-hedging"],
+    note: "farScope.ts で out 判定（FAR範囲外＝BAR領域）",
+  },
+  {
+    area: "II",
+    topic: "I. Leases",
+    farSetIds: ["far-leases"],
+    note: "farScope.ts で partial 判定。借手会計はFAR、貸手・セール&リースバックがBAR",
+  },
+  {
+    area: "II",
+    topic: "J. Public company reporting topics",
+    farSetIds: ["far-revenue-recognition"],
+    note: "Regulation S-X / S-K・XBRL・セグメント報告。まとまった問題セットが存在しない（BAR_KNOWN_GAPS 参照）",
+  },
+  {
+    area: "II",
+    topic: "K. Financial statements of employee benefit plans",
+    farSetIds: ["far-pensions"],
+    note: "far-pensions 154問は確定給付『会計』であって、給付制度自体の財務諸表（ASC 960）は pen-137 の1問のみ（BAR_KNOWN_GAPS 参照）",
+  },
+  {
+    area: "III",
+    topic: "A. 州・地方政府の年次財務報告",
+    farSetIds: ["far-government-accounting"],
+    note: "farScope.ts で partial 判定。概念（測定焦点・会計基礎・ファンド区分）はFAR、政府財務諸表の作成詳細がBAR",
+  },
+];
+
 // ブループリントに出題が明記されているのに問題バンクに存在しない論点。
 // 作問時の優先候補として記録する。
 export const BAR_KNOWN_GAPS: { topic: string; note: string }[] = [
   {
     topic: "COSO ERM × ESGリスク",
     note: "ブループリントに『apply the COSO ERM framework to identify, respond to and report environmental, social and governance (ESG) related risks』と明記され、参照文献にも COSO『Applying ERM to ESG-related Risks』が挙がっているが、bar-risk-management-erm 51問中ESGに言及する問題は0件",
+  },
+  {
+    topic: "Area II-J. XBRL",
+    note: "『Recall the purpose, objective and key characteristics of XBRL business reporting』と明記。FAR/BAR全問題を xbrl で走査して0件",
+  },
+  {
+    topic: "Area II-J. Regulation S-X / S-K",
+    note: "『Recall public company reporting requirements of Regulation S-X and Regulation S-K』と明記。走査で4問ヒットしたが、主題として扱うのは rev-247（SECの財務諸表表示・開示規則）のみで、他3問は文中の言及",
+  },
+  {
+    topic: "Area II-J. セグメント報告",
+    note: "『Recall the criteria used to identify reportable segments』『the financial statement note disclosure requirements for reportable segments』と明記。far-revenue-recognition に5問あるのみで、専用セットがない",
+  },
+  {
+    topic: "Area II-K. 従業員給付制度の財務諸表",
+    note: "確定給付・確定拠出の『制度自体』の財務諸表（statement of net assets available for benefits / statement of changes in net assets available for benefits）の作成が明示タスク。該当は pen-137 の1問のみ",
   },
 ];
