@@ -1,0 +1,247 @@
+[
+  {
+    "id": "bar-tbs-swap-001",
+    "subject": "BAR",
+    "topic": "Derivatives & Hedging",
+    "title": "Interest Rate Swaps: Cash Flow Hedge and Fair Value Hedge",
+    "scenario": "Harborline Manufacturing, Inc. (Harborline) is a calendar-year public business entity that reports under U.S. GAAP. Harborline's outstanding borrowings and its interest rate risk management activities for Year 5 are summarized in **Exhibit 1**.\n\nOn January 1, Year 5, Harborline entered into two interest rate swaps with a money-center bank. Swap A is described in **Exhibit 2** and Swap B is described in **Exhibit 3**. Neither swap required an upfront premium, each swap has an annual net settlement that is exchanged in cash on December 31, and each swap was formally designated and documented as a hedge at inception. Each hedging relationship is highly effective and no hedge ineffectiveness arose in Year 5.\n\nFor each swap, Harborline records the annual net cash settlement as an adjustment of interest expense, and records the change in the fair value of the swap that remains after that settlement in accordance with the swap's hedge designation. Ignore income taxes and ignore discounting of the annual net settlement amounts. All amounts are stated in U.S. dollars.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Borrowings Outstanding and Risk Management Summary",
+        "content": "Extract from the treasurer's Year 5 debt schedule (all borrowings outstanding for the full year):\n\n| Borrowing | Principal | Stated rate | Interest paid | Maturity | Hedged? |\n| --- | --- | --- | --- | --- | --- |\n| Term Loan | $10,000,000 | SOFR + 1.00% | Annually, each December 31 | December 31, Year 8 | Yes — Swap A |\n| Series A Notes | $6,000,000 | 5.00% fixed | Annually, each December 31 | December 31, Year 9 | Yes — Swap B |\n| Equipment note | $2,500,000 | 6.25% fixed | Monthly | June 30, Year 7 | No |\n\nAdditional information from the treasurer's memorandum:\n\n- The Series A Notes were issued at par and were carried at $6,000,000 on January 1, Year 5. No discount, premium or issuance costs remain unamortized.\n- Harborline renewed its unused revolving credit facility on January 2, Year 5 and paid the lender a $25,000 arrangement fee, which was charged to expense when paid.\n- A $4,000,000 notional pay-fixed interest rate swap entered into in Year 2 matured on December 31, Year 4 and was not replaced.\n- Harborline's policy is to manage the mix of fixed-rate and floating-rate interest exposure across the debt portfolio using interest rate swaps, and to designate every swap in a qualifying hedging relationship at the date the swap is executed."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Swap A — Terms, Rates and Fair Values",
+        "content": "| Item | Terms |\n| --- | --- |\n| Notional amount | $10,000,000 |\n| Harborline pays | Fixed rate of 4.50% |\n| Harborline receives | One-year SOFR |\n| Net settlement | Annually, each December 31 |\n| Effective date | January 1, Year 5 |\n| Termination date | December 31, Year 8 |\n\nDesignation: On January 1, Year 5, Swap A was designated as a hedge of the variability in the interest payments on the $10,000,000 Term Loan that is attributable to changes in SOFR.\n\n| Rate and fair value data | Amount |\n| --- | --- |\n| One-year SOFR determined on January 1, Year 5 (applies to the Year 5 settlement and to the Year 5 interest on the Term Loan) | 3.80% |\n| Fair value of Swap A on January 1, Year 5 | $0 |\n| Fair value of Swap A on December 31, Year 5, immediately before the Year 5 net settlement was exchanged | $190,000 liability |\n\nThe Year 5 net settlement on Swap A was exchanged in cash on December 31, Year 5."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Swap B — Terms, Rates and Fair Values",
+        "content": "| Item | Terms |\n| --- | --- |\n| Notional amount | $6,000,000 |\n| Harborline receives | Fixed rate of 5.00% |\n| Harborline pays | One-year SOFR |\n| Net settlement | Annually, each December 31 |\n| Effective date | January 1, Year 5 |\n| Termination date | December 31, Year 9 |\n\nDesignation: On January 1, Year 5, Swap B was designated as a hedge of the changes in the fair value of the $6,000,000 Series A Notes that are attributable to changes in the benchmark interest rate.\n\n| Rate and fair value data | Amount |\n| --- | --- |\n| One-year SOFR determined on January 1, Year 5 (applies to the Year 5 settlement) | 3.80% |\n| Fair value of Swap B on January 1, Year 5 | $0 |\n| Fair value of Swap B on December 31, Year 5, immediately before the Year 5 net settlement was exchanged | $167,000 asset |\n\nThe Year 5 net settlement on Swap B was exchanged in cash on December 31, Year 5. For Year 5, the change in the fair value of the Series A Notes attributable to the hedged risk exactly offsets the change in the fair value of Swap B that remains after that settlement."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Swap A — Year 5 net settlement",
+        "instruction": "Using Exhibit 2, determine the net amount Harborline paid to the counterparty on December 31, Year 5 to settle Swap A for the Year 5 period. Enter the amount paid as a positive number (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 70000,
+        "tolerance": 1,
+        "explanation": "On Swap A, Harborline pays a fixed rate of 4.50% and receives one-year SOFR on a notional amount of $10,000,000. The SOFR determined on January 1, Year 5 is 3.80%, which is below the fixed rate, so Harborline is the net payer for Year 5. Fixed leg paid: $10,000,000 x 4.50% = $450,000. Variable leg received: $10,000,000 x 3.80% = $380,000. Net settlement paid: $450,000 - $380,000 = $70,000. The swap works as intended: interest on the Term Loan itself is (3.80% + 1.00%) x $10,000,000 = $480,000, so total Year 5 interest expense on the hedged borrowing is $480,000 + $70,000 = $550,000, which equals the fixed all-in rate of (4.50% + 1.00%) x $10,000,000.",
+        "explanationJa": "Swap A は想定元本 $10,000,000 について、固定 4.50% を支払い、SOFR を受け取る契約。\n\n1. 固定支払: $10,000,000 × 4.50% = $450,000\n2. 変動受取: $10,000,000 × 3.80%（Year 5 期首に決定したSOFR）= $380,000\n3. 純額決済: $450,000 - $380,000 = **$70,000 の支払**\n\n変動金利が固定金利を下回っているため、当社が支払側になる。ローン本体の利息は (3.80% + 1.00%) × $10,000,000 = $480,000 であり、これに純額決済 $70,000 を加えた $550,000 が当期の支払利息。これは固定化後の実効レート (4.50% + 1.00%) × $10,000,000 と一致し、変動金利が固定化されていることが確認できる。",
+        "references": ["ASC 815-10-35-2", "ASC 815-30-35-3"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Swap A — amount recognized in other comprehensive income",
+        "instruction": "Determine the pre-tax loss Harborline recognized in other comprehensive income for Year 5 on Swap A, measured after the amount reclassified out of accumulated other comprehensive income into interest expense. Enter the loss as a positive number (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 120000,
+        "tolerance": 1,
+        "explanation": "For a qualifying cash flow hedge, the entire change in the fair value of the hedging instrument is recorded in other comprehensive income, and amounts are reclassified out of accumulated other comprehensive income into earnings in the period in which the hedged interest payments affect earnings. The fair value of Swap A moved from $0 at inception to a $190,000 liability immediately before the net settlement, a change of $190,000 recorded in other comprehensive income. Of that amount, the $70,000 net settlement relates to the Year 5 interest payments and is reclassified into interest expense in Year 5. The amount remaining in other comprehensive income for Year 5 is therefore $190,000 - $70,000 = $120,000. This ties to the balance sheet: after the settlement the swap is a liability of $190,000 - $70,000 = $120,000, and the debit balance in accumulated other comprehensive income is also $120,000.",
+        "explanationJa": "キャッシュフロー・ヘッジでは、デリバティブの公正価値変動を全額いったん OCI に計上し、ヘッジ対象が損益に影響する期に AOCI から損益へ組み替える。\n\n1. 公正価値変動: $0 → $190,000 の負債 = **$190,000 の損失**（OCI計上）\n2. 当期の純額決済 $70,000 は Year 5 の利息支払に対応するため、AOCI から支払利息へ**組替**\n3. 当期のOCI（組替後の純額）: $190,000 - $70,000 = **$120,000 の損失**\n\n貸借の整合: 決済後のスワップ負債は $190,000 - $70,000 = $120,000、AOCI の借方残高も $120,000 で一致する。純額決済額をOCIに残したまま $190,000 と答えないこと。",
+        "references": ["ASC 815-30-35-3"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Swap A — December 31, Year 5 journal entry",
+        "instruction": "Prepare the single journal entry Harborline records on December 31, Year 5 for Swap A. The entry must combine the net cash settlement, the reclassification into interest expense, and the year-end fair value adjustment of the swap. Do not include the interest paid on the Term Loan itself. Enter whole dollars with no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Interest expense",
+            "Other comprehensive income",
+            "Cash",
+            "Interest rate swap liability"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Interest expense",
+              "colLabel": "Debit",
+              "correctValue": 70000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Interest expense",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Other comprehensive income",
+              "colLabel": "Debit",
+              "correctValue": 120000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Other comprehensive income",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 70000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Interest rate swap liability",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Interest rate swap liability",
+              "colLabel": "Credit",
+              "correctValue": 120000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Two things happen on December 31, Year 5. First, the $70,000 net settlement is paid in cash and the corresponding amount is reclassified out of accumulated other comprehensive income into interest expense, because the Year 5 interest payments on the Term Loan affect earnings in Year 5: debit interest expense $70,000 and credit cash $70,000. Second, the swap must be carried at its post-settlement fair value of $120,000 ($190,000 liability before the settlement less the $70,000 settled in cash), and because Swap A is a cash flow hedge the offsetting charge is reported in other comprehensive income: debit other comprehensive income $120,000 and credit the interest rate swap liability $120,000. Combined, debits of $70,000 + $120,000 equal credits of $70,000 + $120,000. No portion of the swap adjustment is recorded against the carrying amount of the Term Loan, because in a cash flow hedge the hedged item is the future interest cash flow, not the recorded balance of the debt.",
+        "explanationJa": "12月31日に起きることは2つ。\n\n**(1) 純額決済と組替**\n- 支払利息 70,000 / 現金 70,000\n- 純額決済 $70,000 は Year 5 の利息支払に対応するため、AOCI から支払利息へ組み替えられる。\n\n**(2) 期末の公正価値調整**\n- OCI 120,000 / 金利スワップ負債 120,000\n- 決済後のスワップ公正価値は $190,000 - $70,000 = $120,000 の負債。キャッシュフロー・ヘッジなので相手勘定は OCI。\n\n借方合計 $190,000 = 貸方合計 $190,000。\n\n注意: キャッシュフロー・ヘッジではヘッジ対象は「将来の利息キャッシュフロー」であり、ターム・ローンの簿価を調整する仕訳は**入らない**（簿価調整が入るのは公正価値ヘッジ）。",
+        "references": ["ASC 815-30-35-3", "ASC 815-10-35-2"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Hedge designation of each swap",
+        "instruction": "Select the statement that correctly describes the hedge designation of Swap A and of Swap B and the reason for each designation.",
+        "answerType": "select",
+        "options": [
+          "Swap A is a cash flow hedge because it hedges the variability of future interest cash flows on variable-rate debt; Swap B is a fair value hedge because it hedges changes in the fair value of fixed-rate debt attributable to interest rate risk.",
+          "Swap A is a fair value hedge because it hedges changes in the fair value of the Term Loan; Swap B is a cash flow hedge because it fixes the amount of cash that will be paid on the Series A Notes.",
+          "Both swaps are cash flow hedges because each swap hedges interest rate risk on an outstanding debt instrument that requires periodic cash interest payments.",
+          "Both swaps are fair value hedges because every derivative is remeasured to fair value at each reporting date."
+        ],
+        "correctAnswer": "Swap A is a cash flow hedge because it hedges the variability of future interest cash flows on variable-rate debt; Swap B is a fair value hedge because it hedges changes in the fair value of fixed-rate debt attributable to interest rate risk.",
+        "explanation": "The designation follows the exposure being hedged, not the fact that a derivative is involved. The Term Loan pays SOFR plus a spread, so the exposure is the variability of the future interest payments; a pay-fixed, receive-variable swap eliminates that variability and qualifies as a cash flow hedge. The Series A Notes pay a fixed 5.00%, so the cash flows are already certain; what changes with interest rates is the fair value of the obligation, and a receive-fixed, pay-variable swap that converts the fixed payments into variable payments qualifies as a fair value hedge. Remeasuring a derivative to fair value each period is required for all derivatives and therefore says nothing about which hedge designation applies.",
+        "explanationJa": "ヘッジの種類は「何のエクスポージャーをヘッジしているか」で決まる。デリバティブであること自体は判定材料にならない。\n\n- **Swap A（変動 → 固定）**: ターム・ローンは SOFR + 1.00% で、将来の利息キャッシュフローが変動する。これを固定化するので**キャッシュフロー・ヘッジ**。\n- **Swap B（固定 → 変動）**: Series A Notes は固定 5.00% でキャッシュフローは確定しており、金利変動で動くのは**債務の公正価値**。これをヘッジするので**公正価値ヘッジ**。\n\n覚え方: 変動金利の借入を固定化する = キャッシュフロー・ヘッジ、固定金利の借入を変動化する = 公正価値ヘッジ。なお「デリバティブは毎期公正価値で再測定される」ことは全てのデリバティブに共通で、ヘッジ種類の判定根拠にはならない。",
+        "references": ["ASC 815-20-25-12", "ASC 815-20-25-15"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Swap B — December 31, Year 5 journal entry",
+        "instruction": "Prepare the single journal entry Harborline records on December 31, Year 5 for Swap B and the hedged Series A Notes. The entry must combine the net cash settlement received, the change in the fair value of the swap that remains after that settlement, and the related adjustment of the carrying amount of the hedged notes. Do not include the 5.00% coupon paid on the Series A Notes. Enter whole dollars with no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Cash",
+            "Interest expense",
+            "Interest rate swap asset",
+            "Gain on hedging instrument",
+            "Loss on hedged item",
+            "Notes payable"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 72000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Interest expense",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Interest expense",
+              "colLabel": "Credit",
+              "correctValue": 72000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Interest rate swap asset",
+              "colLabel": "Debit",
+              "correctValue": 95000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Interest rate swap asset",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Gain on hedging instrument",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Gain on hedging instrument",
+              "colLabel": "Credit",
+              "correctValue": 95000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Loss on hedged item",
+              "colLabel": "Debit",
+              "correctValue": 95000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Loss on hedged item",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Notes payable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Notes payable",
+              "colLabel": "Credit",
+              "correctValue": 95000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "On Swap B, Harborline receives fixed 5.00% and pays SOFR of 3.80% on a notional amount of $6,000,000, so it receives a net settlement of ($6,000,000 x 5.00%) - ($6,000,000 x 3.80%) = $300,000 - $228,000 = $72,000, recorded as a debit to cash and a credit to interest expense. That receipt reduces the fair value of the swap from the $167,000 asset measured immediately before the settlement to $167,000 - $72,000 = $95,000. Because the swap began the year at $0, the change to be recognized is a $95,000 gain in earnings, with a corresponding debit to the swap asset. In a fair value hedge, the offsetting loss on the hedged item attributable to the hedged risk adjusts the carrying amount of that item, so the notes payable balance is increased by $95,000 to $6,095,000 and a $95,000 loss is recognized in earnings. The gain and the loss offset, so the net effect on Year 5 earnings from the fair value adjustments is zero, and the $72,000 receipt leaves interest expense on the Series A Notes at $300,000 - $72,000 = $228,000, which is SOFR of 3.80% on $6,000,000. Both the gain on the swap and the loss on the hedged notes are presented in the same income statement line item used for the earnings effect of the hedged item, which for this hedge is interest expense.",
+        "explanationJa": "**(1) 純額決済（受取）**\n- 固定受取: $6,000,000 × 5.00% = $300,000\n- 変動支払: $6,000,000 × 3.80% = $228,000\n- 純額受取: $72,000 → 現金 72,000 / 支払利息 72,000\n\n**(2) スワップの公正価値**\n- 決済直前 $167,000 の資産から決済受取 $72,000 を差し引き、決済後は $167,000 - $72,000 = **$95,000 の資産**\n- 期首は $0 なので、当期の利益計上額は $95,000 の利益 → 金利スワップ資産 95,000 / ヘッジ手段に係る利益 95,000\n\n**(3) ヘッジ対象のベーシス調整**\n- 公正価値ヘッジでは、ヘッジ対象のヘッジ対象リスクに起因する損益で**ヘッジ対象の簿価を直接調整**する。\n- ヘッジ対象に係る損失 95,000 / 社債（Notes payable）95,000 → 簿価は $6,000,000 + $95,000 = **$6,095,000**\n\n利益 $95,000 と損失 $95,000 が相殺されるため、公正価値調整による当期純損益への影響はゼロ。支払利息は $300,000 - $72,000 = $228,000（= $6,000,000 × 3.80%）となり、固定金利が変動化されていることが確認できる。ヘッジ手段の損益とヘッジ対象の損益は、ヘッジ対象の損益が表示される区分（本問では支払利息）に表示する。",
+        "references": ["ASC 815-25-35-1", "ASC 815-10-35-2"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Research — reclassification for the cash flow hedge",
+        "instruction": "Harborline's controller asks for the authoritative support for the timing of the amount taken out of accumulated other comprehensive income and charged to interest expense on Swap A. Identify the FASB ASC paragraph that requires amounts reported in accumulated other comprehensive income for a cash flow hedge to be reclassified into earnings in the same period or periods during which the hedged transaction affects earnings. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "815-30-35-38",
+        "explanation": "ASC 815-30-35-38 requires that amounts in accumulated other comprehensive income be reclassified into earnings in the same period or periods during which the hedged transaction affects earnings. For Swap A, the hedged transactions are the interest payments on the Term Loan, so the $70,000 relating to the Year 5 interest payments is reclassified into interest expense in Year 5 while the remaining $120,000 stays in accumulated other comprehensive income until the Year 6 through Year 8 interest payments affect earnings.",
+        "explanationJa": "**ASC 815-30-35-38** は、AOCI に計上した金額を「ヘッジ対象取引が損益に影響する期と同じ期」に損益へ組み替えることを求めている。\n\nSwap A のヘッジ対象はターム・ローンの各期の利息支払であるため、Year 5 の利息に対応する $70,000 だけを Year 5 の支払利息へ組み替え、残る $120,000 は Year 6〜Year 8 の利息支払が損益に影響する時点まで AOCI に残る。決済したからといって全額を一度に損益へ落とすわけではない。\n\n（採点は数字の区切りを無視して比較するため、815-30-35-38 の形式で入力すればよい）",
+        "references": ["ASC 815-30-35-38"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "BAR TBS Practice (original)"
+  }
+]

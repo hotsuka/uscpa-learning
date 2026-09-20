@@ -13,7 +13,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ArrowLeft, BookOpen, CheckCircle2 } from "lucide-react";
-import { farTBSQuestions, getTBSTopics } from "@/data/tbs/far";
+import {
+  TBS_SUBJECTS,
+  getTBSQuestionsBySubject,
+  getTBSTopicsBySubject,
+  type TBSSubject,
+} from "@/data/tbs";
 import { useTBSBankStore } from "@/stores/tbsBankStore";
 import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer";
 import { useTimerShortcuts } from "@/hooks/useTimerShortcuts";
@@ -30,6 +35,7 @@ const difficultyLabel: Record<string, string> = {
 };
 
 export default function TBSListPage() {
+  const [subject, setSubject] = useState<TBSSubject>("BAR");
   const [topic, setTopic] = useState<string>("all");
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all");
   const [status, setStatus] = useState<StatusFilter>("all");
@@ -41,21 +47,29 @@ export default function TBSListPage() {
   useTimerShortcuts(miniTimerRef);
   useTBSTimerContext();
 
-  const topics = useMemo(() => getTBSTopics(), []);
+  const questions = useMemo(
+    () => getTBSQuestionsBySubject(subject),
+    [subject],
+  );
+  const topics = useMemo(() => getTBSTopicsBySubject(subject), [subject]);
 
   const filtered = useMemo(() => {
-    return farTBSQuestions.filter((q) => {
+    return questions.filter((q) => {
       if (topic !== "all" && q.topic !== topic) return false;
       if (difficulty !== "all" && q.difficulty !== difficulty) return false;
       if (status === "unattempted" && attemptedIds.has(q.id)) return false;
       if (status === "attempted" && !attemptedIds.has(q.id)) return false;
       return true;
     });
-  }, [topic, difficulty, status, attemptedIds]);
+  }, [questions, topic, difficulty, status, attemptedIds]);
 
-  const totalAttempted = farTBSQuestions.filter((q) =>
-    attemptedIds.has(q.id),
-  ).length;
+  const totalAttempted = questions.filter((q) => attemptedIds.has(q.id)).length;
+
+  // 科目を変えるとトピックの選択肢が入れ替わるため、絞り込みを初期化する
+  const handleSubjectChange = (next: TBSSubject) => {
+    setSubject(next);
+    setTopic("all");
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -77,7 +91,7 @@ export default function TBSListPage() {
           <div>
             <h1 className="text-lg font-bold text-gray-900 flex items-center gap-2">
               <BookOpen className="h-5 w-5 text-purple-500" />
-              FAR TBS 問題バンク
+              {subject} TBS 問題バンク
             </h1>
             <p className="text-xs text-gray-500 mt-0.5">
               Task Based Simulation — シナリオ形式の演習問題
@@ -88,14 +102,14 @@ export default function TBSListPage() {
         <div className="bg-white rounded-lg border p-3 mb-4 flex items-center gap-4 text-sm">
           <div className="flex items-center gap-1.5 text-gray-600">
             <BookOpen className="h-4 w-4 text-purple-400" />
-            <span>全 {farTBSQuestions.length} 問</span>
+            <span>全 {questions.length} 問</span>
           </div>
           <div className="flex items-center gap-1.5 text-green-600">
             <CheckCircle2 className="h-4 w-4" />
             <span>
               {totalAttempted} 問完了（
-              {farTBSQuestions.length > 0
-                ? Math.round((totalAttempted / farTBSQuestions.length) * 100)
+              {questions.length > 0
+                ? Math.round((totalAttempted / questions.length) * 100)
                 : 0}
               %）
             </span>
@@ -103,6 +117,25 @@ export default function TBSListPage() {
         </div>
 
         <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex gap-1">
+            {TBS_SUBJECTS.map((s) => (
+              <button
+                key={s}
+                onClick={() => handleSubjectChange(s)}
+                className={`px-3 h-8 rounded text-xs font-medium transition-colors ${
+                  subject === s
+                    ? "bg-purple-500 text-white"
+                    : "bg-white border text-gray-500 hover:bg-gray-50"
+                }`}
+              >
+                {s}
+                <span className="ml-1 opacity-70">
+                  {getTBSQuestionsBySubject(s).length}問
+                </span>
+              </button>
+            ))}
+          </div>
+
           <Select value={topic} onValueChange={setTopic}>
             <SelectTrigger className="w-44 h-8 text-xs">
               <SelectValue placeholder="トピック" />

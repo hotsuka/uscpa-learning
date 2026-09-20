@@ -1,0 +1,220 @@
+[
+  {
+    "id": "bar-tbs-var-001",
+    "subject": "BAR",
+    "topic": "Variance Analysis",
+    "title": "Standard Cost Variances and Sales Price, Volume, and Mix Analysis",
+    "scenario": "Calderon Outdoor Products, Inc. manufactures two lines of powered hand tools: the Ridgeline line, produced at the Bellwether plant, and the Summit line, produced at the Kearny plant. The company uses a standard cost system and reviews its manufacturing and selling variances each month.\n\nYou are assisting the corporate controller with the March Year 6 operating review. Production cost variances for the month have been requested for the Ridgeline line only, because the Kearny plant reports its manufacturing results on a different closing calendar. Standard cost data appear in **Exhibit 1**, the March manufacturing results of the Bellwether plant appear in **Exhibit 2**, and budgeted and actual sales data for both product lines appear in **Exhibit 3**.\n\nMarch unit sales of the Ridgeline line exceeded March production; the difference was filled from beginning finished goods inventory. Use only the data provided, do not round intermediate amounts, and state all answers in whole dollars.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Standard Cost Cards",
+        "content": "**Ridgeline line — Bellwether plant (standard cost per unit)**\n\n| Cost element | Standard quantity | Standard price or rate | Standard cost per unit |\n| --- | --- | --- | --- |\n| Direct materials | 4.00 pounds | $6.50 per pound | $26.00 |\n| Direct labor | 1.50 direct labor hours | $22.00 per hour | $33.00 |\n| Variable manufacturing overhead | 1.50 direct labor hours | $9.00 per hour | $13.50 |\n| Fixed manufacturing overhead | 1.50 direct labor hours | $12.00 per hour | $18.00 |\n| **Total standard cost per unit** | | | **$90.50** |\n\nVariable and fixed manufacturing overhead are applied to the Ridgeline line on the basis of direct labor hours. The fixed overhead rate was set from a monthly fixed overhead budget of $216,000 and denominator activity of 18,000 direct labor hours.\n\n**Summit line — Kearny plant (standard cost per unit)**\n\n| Cost element | Standard quantity | Standard price or rate |\n| --- | --- | --- |\n| Direct materials | 6.00 pounds | $7.25 per pound |\n| Direct labor | 2.00 direct labor hours | $24.50 per hour |\n| Variable manufacturing overhead | 2.00 direct labor hours | $10.00 per hour |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Bellwether Plant — March Year 6 Manufacturing Results (Ridgeline line)",
+        "content": "| Item | Amount |\n| --- | --- |\n| Units completed | 12,000 units |\n| Direct materials purchased and placed into production | 50,400 pounds |\n| Actual direct materials cost | $6.70 per pound |\n| Actual direct labor hours worked | 17,600 hours |\n| Actual direct labor cost | $394,240 |\n| Actual variable manufacturing overhead incurred | $163,680 |\n| Actual fixed manufacturing overhead incurred | $221,400 |\n\nNo direct materials were held in the storeroom at the beginning or the end of March; every pound purchased during the month was placed into production.\n\nPlant notes for March:\n\n- The contracted steel supplier missed its March delivery. Purchasing covered the requirement on the spot market at a premium, and the spot lots were an off-specification grade. The plant reported scrap above the standard allowance.\n- To protect the delivery schedule, the plant scheduled a larger share of senior operators, whose hourly rates are above the standard rate."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Budgeted and Actual Sales — March Year 6",
+        "content": "| Product line | Budgeted units | Budgeted selling price per unit | Budgeted contribution margin per unit | Actual units sold | Actual average selling price per unit |\n| --- | --- | --- | --- | --- | --- |\n| Ridgeline | 12,000 | $95.00 | $30.00 | 14,300 | $92.50 |\n| Summit | 8,000 | $140.00 | $50.00 | 7,700 | $143.00 |\n| **Total** | **20,000** | | | **22,000** | |\n\nThe Ridgeline average selling price reflects a promotional discount offered through a national retailer during March. Budgeted fixed selling and administrative expenses for March were $310,000."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Direct Materials Price Variance",
+        "instruction": "Compute the direct materials price variance for the Ridgeline line for March Year 6 (in whole dollars, no commas). Enter an unfavorable variance as a positive number and a favorable variance as a negative number.",
+        "answerType": "number",
+        "correctAnswer": 10080,
+        "tolerance": 1,
+        "explanation": "The direct materials price variance is (actual price - standard price) x actual quantity purchased and used.\n\nActual price: $6.70 per pound. Standard price: $6.50 per pound. Difference: $0.20 per pound.\nActual quantity purchased and placed into production: 50,400 pounds.\n\nVariance: $0.20 x 50,400 = $10,080. The price paid exceeded the standard price, so the variance is unfavorable and is entered as a positive $10,080.",
+        "explanationJa": "直接材料価格差異 =（実際単価 − 標準単価）× 実際購入・投入数量\n\n1. 単価差: $6.70 − $6.50 = $0.20/ポンド\n2. 実際数量: 50,400ポンド（月初・月末の材料在庫はなく、購入量＝投入量）\n3. 差異: $0.20 × 50,400 = **$10,080**\n\n実際単価が標準単価を上回っているため**不利差異（U）**。約束どおり正の数 10080 を入力する。\n\n価格差異は「購入量（ここでは投入量と同じ）」に単価差を掛ける点に注意する。生産量から計算した標準許容量（48,000ポンド）を使うのは数量差異の側である。",
+        "references": [
+          "Cost accounting — standard costing: direct materials price variance"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Direct Materials Quantity Variance",
+        "instruction": "Compute the direct materials quantity (usage) variance for the Ridgeline line for March Year 6 (in whole dollars, no commas). Enter an unfavorable variance as a positive number and a favorable variance as a negative number.",
+        "answerType": "number",
+        "correctAnswer": 15600,
+        "tolerance": 1,
+        "explanation": "The direct materials quantity variance is (actual quantity used - standard quantity allowed for actual output) x standard price.\n\nStandard quantity allowed: 12,000 units completed x 4.00 pounds = 48,000 pounds.\nActual quantity used: 50,400 pounds.\nExcess usage: 50,400 - 48,000 = 2,400 pounds.\n\nVariance: 2,400 x $6.50 standard price = $15,600 unfavorable, entered as a positive $15,600. The quantity variance is measured at the standard price so that the price effect stays in the price variance.",
+        "explanationJa": "直接材料数量差異 =（実際消費量 − 実際生産量に対する標準許容量）× **標準**単価\n\n1. 標準許容量: 12,000個 × 4.00ポンド = 48,000ポンド\n2. 実際消費量: 50,400ポンド\n3. 超過量: 50,400 − 48,000 = 2,400ポンド\n4. 差異: 2,400 × $6.50 = **$15,600**\n\n標準より多く消費しているため**不利差異（U）**。正の数 15600 を入力する。\n\n数量差異は**標準単価**で評価する（実際単価 $6.70 を使わない）。実際単価との差は価格差異側で既に切り出しているため、ここで実際単価を使うと価格効果を二重計上することになる。\n\nなお直接材料の総差異は $10,080 + $15,600 = $25,680 の不利差異であり、実際原価 50,400 × $6.70 = $337,680 と標準原価 48,000 × $6.50 = $312,000 の差と一致する。",
+        "references": [
+          "Cost accounting — standard costing: direct materials quantity variance"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Direct Labor and Variable Overhead Variance Schedule",
+        "instruction": "Complete the schedule of direct labor and variable manufacturing overhead variances for the Ridgeline line for March Year 6. In the Amount column, enter each variance as a positive amount in whole dollars, with no commas and no minus sign. In the F or U column, enter F if the variance is favorable or U if the variance is unfavorable.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Direct labor rate variance",
+            "Direct labor efficiency variance",
+            "Variable overhead spending variance",
+            "Variable overhead efficiency variance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Direct labor rate variance",
+              "colLabel": "Amount",
+              "correctValue": 7040,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Direct labor rate variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Direct labor efficiency variance",
+              "colLabel": "Amount",
+              "correctValue": 8800,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Direct labor efficiency variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Variable overhead spending variance",
+              "colLabel": "Amount",
+              "correctValue": 5280,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Variable overhead spending variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Variable overhead efficiency variance",
+              "colLabel": "Amount",
+              "correctValue": 3600,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Variable overhead efficiency variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            }
+          ]
+        },
+        "explanation": "Actual direct labor rate: $394,240 / 17,600 hours = $22.40 per hour.\nStandard hours allowed: 12,000 units x 1.50 hours = 18,000 hours.\n\nDirect labor rate variance: ($22.40 - $22.00) x 17,600 actual hours = $7,040 unfavorable. The senior operators scheduled in March earn more than the standard rate.\n\nDirect labor efficiency variance: (17,600 actual hours - 18,000 standard hours) x $22.00 standard rate = $8,800 favorable. The plant used 400 fewer hours than the standard allows for 12,000 units.\n\nVariable overhead spending variance: actual variable overhead of $163,680 - (17,600 actual hours x $9.00 standard rate = $158,400) = $5,280 unfavorable.\n\nVariable overhead efficiency variance: (17,600 actual hours - 18,000 standard hours) x $9.00 = $3,600 favorable. Because variable overhead is applied on direct labor hours, the hours saved produce a favorable overhead efficiency variance as well.",
+        "explanationJa": "**1. 実際賃率と標準許容時間**\n- 実際賃率: $394,240 ÷ 17,600時間 = $22.40/時間\n- 標準許容時間: 12,000個 × 1.50時間 = 18,000時間\n\n**2. 直接労務**\n- 賃率差異 =（$22.40 − $22.00）× 17,600時間（**実際**時間）= $7,040 → 実際賃率が高いので **U**\n- 能率差異 =（17,600 − 18,000）× $22.00（**標準**賃率）= −$8,800 → 標準より400時間少ないので **F**\n- 検算: 実際 $394,240 と標準 18,000 × $22.00 = $396,000 の差は $1,760 の有利差異。$7,040 U と $8,800 F の合計と一致する。\n\n**3. 変動製造間接費（直接労務時間基準で配賦）**\n- 予算（支出）差異 = 実際発生額 $163,680 −（17,600時間 × $9.00 = $158,400）= $5,280 → **U**\n- 能率差異 =（17,600 − 18,000）× $9.00 = −$3,600 → **F**\n- 検算: 実際 $163,680 と配賦額 18,000 × $9.00 = $162,000 の差は $1,680 の不利差異。$5,280 U と $3,600 F の合計と一致する。\n\n**覚え方**: 価格系（賃率差異・変動間接費予算差異）は**実際時間**を基準に単価差を測り、能率系は**標準単価**で時間差を測る。固定製造間接費は本問では問われていない。",
+        "references": [
+          "Cost accounting — standard costing: direct labor rate and efficiency variances",
+          "Cost accounting — standard costing: variable overhead spending and efficiency variances"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Total Sales Price Variance",
+        "instruction": "Compute the total sales price variance for March Year 6 for the two product lines combined, using actual units sold and the difference between the actual average selling price and the budgeted selling price (in whole dollars, no commas). Enter an unfavorable variance as a positive number and a favorable variance as a negative number.",
+        "answerType": "number",
+        "correctAnswer": 12650,
+        "tolerance": 1,
+        "explanation": "The sales price variance is (actual selling price - budgeted selling price) x actual units sold, computed for each product line.\n\nRidgeline: ($92.50 - $95.00) x 14,300 units = $35,750 unfavorable, because the promotional discount pushed the average price $2.50 below budget.\nSummit: ($143.00 - $140.00) x 7,700 units = $23,100 favorable.\n\nTotal: $35,750 unfavorable - $23,100 favorable = $12,650 unfavorable, entered as a positive $12,650.",
+        "explanationJa": "販売価格差異 =（実際販売単価 − 予算販売単価）× **実際**販売数量（製品ごとに計算して合算）\n\n1. Ridgeline:（$92.50 − $95.00）× 14,300個 = −$35,750 → 値引きにより **$35,750 の不利差異**\n2. Summit:（$143.00 − $140.00）× 7,700個 = +$23,100 → **$23,100 の有利差異**\n3. 合計: $35,750 U − $23,100 F = **$12,650 の不利差異** → 正の数 12650 を入力\n\n価格差異では数量は**実際販売数量**で固定する。数量の増減の影響は数量差異・ミックス差異の側で測るため、ここで予算数量を使うと効果が混ざる。",
+        "references": ["Cost accounting — sales price variance analysis"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Sales Mix and Sales Quantity Variance Schedule",
+        "instruction": "Complete the schedule of sales mix and sales quantity variances for March Year 6. Compute both variances using the budgeted contribution margin per unit and the budgeted sales mix. Enter whole dollars with no commas, entering an unfavorable variance as a positive number and a favorable variance as a negative number.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Sales mix variance", "Sales quantity variance"],
+          "rows": ["Ridgeline", "Summit", "Total"],
+          "cells": [
+            {
+              "rowLabel": "Ridgeline",
+              "colLabel": "Sales mix variance",
+              "correctValue": -33000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Ridgeline",
+              "colLabel": "Sales quantity variance",
+              "correctValue": -36000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Summit",
+              "colLabel": "Sales mix variance",
+              "correctValue": 55000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Summit",
+              "colLabel": "Sales quantity variance",
+              "correctValue": -40000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total",
+              "colLabel": "Sales mix variance",
+              "correctValue": 22000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total",
+              "colLabel": "Sales quantity variance",
+              "correctValue": -76000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Budgeted sales mix: Ridgeline 12,000 / 20,000 = 60%; Summit 8,000 / 20,000 = 40%. Actual total units sold: 22,000.\n\nUnits at actual total volume and budgeted mix: Ridgeline 22,000 x 60% = 13,200; Summit 22,000 x 40% = 8,800.\n\nSales mix variance = (actual units - units at budgeted mix) x budgeted contribution margin per unit.\nRidgeline: (14,300 - 13,200) x $30 = $33,000 favorable, entered as -33,000.\nSummit: (7,700 - 8,800) x $50 = $55,000 unfavorable, entered as 55,000.\nTotal: $22,000 unfavorable, entered as 22,000.\n\nSales quantity variance = (actual total units - budgeted total units) x budgeted mix percentage x budgeted contribution margin per unit.\nRidgeline: (22,000 - 20,000) x 60% x $30 = $36,000 favorable, entered as -36,000.\nSummit: (22,000 - 20,000) x 40% x $50 = $40,000 favorable, entered as -40,000.\nTotal: $76,000 favorable, entered as -76,000.\n\nProof: the two components sum to the total sales volume variance of $54,000 favorable ($22,000 unfavorable mix + $76,000 favorable quantity). The same total is obtained directly as (14,300 - 12,000) x $30 = $69,000 favorable for Ridgeline plus (7,700 - 8,000) x $50 = $15,000 unfavorable for Summit.",
+        "explanationJa": "販売数量差異（volume variance）は、**ミックス差異**と**数量差異**に分解できる。どちらも**予算貢献利益（CM）単価**で評価する。\n\n**準備**\n- 予算ミックス: Ridgeline 12,000/20,000 = 60%、Summit 8,000/20,000 = 40%\n- 実際販売合計: 22,000個\n- 「実際合計数量 × 予算ミックス」: Ridgeline 13,200個、Summit 8,800個\n\n**1. ミックス差異 =（実際数量 − 実際合計×予算ミックス）× 予算CM単価**\n- Ridgeline:（14,300 − 13,200）× $30 = +$33,000 → 有利なので **−33000**\n- Summit:（7,700 − 8,800）× $50 = −$55,000 → 不利なので **55000**\n- 合計: **22000**（$22,000 の不利差異）\n\nCM単価の低いRidgeline（$30）へ構成比が傾き、高いSummit（$50）の比率が下がったため、合計では不利になる。\n\n**2. 数量差異 =（実際合計数量 − 予算合計数量）× 予算ミックス × 予算CM単価**\n- Ridgeline:（22,000 − 20,000）× 60% × $30 = +$36,000 → **−36000**\n- Summit:（22,000 − 20,000）× 40% × $50 = +$40,000 → **−40000**\n- 合計: **−76000**（$76,000 の有利差異）\n\n**3. 検算**\n$22,000 U + $76,000 F = $54,000 の有利差異。\n製品別に直接計算しても、（14,300 − 12,000）× $30 = $69,000 F と（7,700 − 8,000）× $50 = −$15,000 U の合計で $54,000 F となり一致する。\n\n総販売数量は予算を10%上回った一方で、構成比は低採算品に傾いた、というのが3月の売上の姿である。",
+        "references": [
+          "Cost accounting — sales mix variance analysis",
+          "Cost accounting — sales quantity variance analysis"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Interpretation of the March Variances",
+        "instruction": "Select each statement that is supported by the variances computed in the preceding work tabs and by the information in the exhibits. Select all that apply.",
+        "answerType": "multiselect",
+        "options": [
+          "The favorable direct labor efficiency variance is consistent with staffing the March schedule with senior operators, who completed the output in fewer hours than the standard allows.",
+          "The unfavorable direct materials quantity variance is consistent with the off-specification steel bought on the spot market, which generated scrap above the standard allowance.",
+          "The unfavorable sales mix variance reflects a shift in the sales mix toward Ridgeline, which carries the lower budgeted contribution margin per unit.",
+          "The unfavorable variable overhead spending variance arose because the plant worked fewer direct labor hours than the standard hours allowed for the output produced.",
+          "The favorable sales quantity variance shows that both product lines were sold at average selling prices above their budgeted selling prices.",
+          "The total direct materials variance is favorable, because the premium paid per pound was more than offset by the pounds saved in production."
+        ],
+        "correctAnswer": [
+          "The favorable direct labor efficiency variance is consistent with staffing the March schedule with senior operators, who completed the output in fewer hours than the standard allows.",
+          "The unfavorable direct materials quantity variance is consistent with the off-specification steel bought on the spot market, which generated scrap above the standard allowance.",
+          "The unfavorable sales mix variance reflects a shift in the sales mix toward Ridgeline, which carries the lower budgeted contribution margin per unit."
+        ],
+        "explanation": "Supported statements:\n\n- The direct labor efficiency variance is $8,800 favorable because 17,600 hours were worked against 18,000 standard hours allowed. Scheduling senior operators is consistent with completing the output in fewer hours, and the same crew decision explains the $7,040 unfavorable rate variance.\n- The direct materials quantity variance is $15,600 unfavorable, reflecting 2,400 pounds used above the standard allowance, which is consistent with the scrap reported on the off-specification spot-market lots.\n- The sales mix variance is $22,000 unfavorable because Ridgeline rose to 65% of actual units (14,300 of 22,000) against a budgeted 60%, and Ridgeline carries a $30 budgeted contribution margin against $50 for Summit.\n\nStatements that are not supported:\n\n- The variable overhead spending variance of $5,280 unfavorable compares the $163,680 incurred with the $158,400 that should have been incurred for the 17,600 hours actually worked. Working fewer hours than standard produces the $3,600 favorable variable overhead efficiency variance instead.\n- The sales quantity variance isolates the effect of total volume (22,000 actual units against 20,000 budgeted) while holding the budgeted mix and budgeted contribution margin constant, so it carries no information about selling prices. Ridgeline in fact sold at $92.50 against a budgeted $95.00.\n- The total direct materials variance is $10,080 + $15,600 = $25,680 unfavorable, because both the price paid per pound and the pounds consumed exceeded standard.",
+        "explanationJa": "**支持される記述**\n\n1. 直接労務の能率差異は $8,800 の有利差異（17,600時間 対 標準許容18,000時間）。熟練工を多く配置したという記述と整合し、同じ人員配置が賃率差異 $7,040 の不利差異も説明する。\n2. 直接材料の数量差異は $15,600 の不利差異（標準より2,400ポンド超過）。規格外のスポット材で仕損が増えたという記述と整合する。\n3. ミックス差異は $22,000 の不利差異。実際構成比はRidgelineが65%（14,300/22,000）で予算の60%を上回り、CM単価の低い製品（$30 対 Summit $50）へ寄ったためである。\n\n**支持されない記述**\n\n- 変動製造間接費の予算差異 $5,280 U は、実際発生額 $163,680 と「実際作業時間17,600時間に対して発生すべき額 $158,400」の比較である。時間が標準より少なかったことの効果は能率差異 $3,600 F の側に出る。両者を取り違えないこと。\n- 数量差異は予算ミックスと予算CMを固定したまま**総販売数量**（22,000個 対 予算20,000個）の効果だけを切り出すもので、販売単価の情報は含まない。実際、Ridgelineは $92.50 と予算 $95.00 を下回って販売している。\n- 直接材料の総差異は $10,080 + $15,600 = $25,680 の**不利**差異。単価も消費量も標準を超過しており、有利差異は生じていない。",
+        "references": [
+          "Cost accounting — interpretation of standard cost variances",
+          "Cost accounting — sales price, volume, and mix analysis"
+        ]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "BAR TBS Practice (original)"
+  }
+]

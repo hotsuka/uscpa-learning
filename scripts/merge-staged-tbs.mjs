@@ -9,6 +9,7 @@
 // 使い方:
 //   node scripts/merge-staged-tbs.mjs                # _staging 配下の全 json をマージ
 //   node scripts/merge-staged-tbs.mjs leases equity  # 指定トピックのみ
+//   node scripts/merge-staged-tbs.mjs --dir=src/data/tbs/bar  # 科目ディレクトリを指定
 //
 // 非破壊・追記のみ。マージ後は対象ファイルに prettier をかけること。
 import {
@@ -21,7 +22,9 @@ import {
 import { join } from "path";
 import { validateQuestion } from "./lib/tbs-validate.mjs";
 
-const TBS_DIR = "src/data/tbs/far";
+// 科目ディレクトリは --dir= で切り替える（既定はFAR）。BAR等の科目を追加しても同じ手順で使える
+const dirArg = process.argv.find((a) => a.startsWith("--dir="));
+const TBS_DIR = dirArg ? dirArg.slice("--dir=".length) : "src/data/tbs/far";
 const STAGING_DIR = join(TBS_DIR, "_staging");
 const CALC_DIR = join(STAGING_DIR, "calc");
 
@@ -56,7 +59,7 @@ function serializeQuestion(q) {
     .join("\n");
 }
 
-const argTopics = process.argv.slice(2);
+const argTopics = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 const stagingFiles = argTopics.length
   ? argTopics.map((t) => `${t}.json`)
   : existsSync(STAGING_DIR)
@@ -166,12 +169,12 @@ summary.forEach((s) => console.log(s));
 console.log(`合計 +${totalAdded}問`);
 if (createdFiles.length) {
   console.log(
-    "\n※ 新規ファイルは src/data/tbs/far/index.ts への import 追加が必要:",
+    `\n※ 新規ファイルは ${TBS_DIR}/index.ts への import 追加が必要:`,
   );
   createdFiles.forEach((f) => console.log(`   - ${f}`));
 }
 console.log(
-  "※ マージ後は `npx prettier --write src/data/tbs/far/*.json` で整形を統一し、",
+  `※ マージ後は \`npx prettier --write ${TBS_DIR}/*.json\` で整形を統一し、`,
 );
 console.log(
   "   `node scripts/check-tbs.mjs` を再実行してから _staging を削除すること。",

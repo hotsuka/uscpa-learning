@@ -1,0 +1,242 @@
+[
+  {
+    "id": "bar-tbs-capbud-001",
+    "subject": "BAR",
+    "topic": "Capital Budgeting & Cost of Capital",
+    "title": "Marchetti Industrial Products: Cost of Capital and Project Selection",
+    "scenario": "Marchetti Industrial Products, Inc. (Marchetti) manufactures precision metal components. At its December 2026 meeting, the board of directors asked the controller to evaluate a proposal to install an automated finishing line and to review the company's financing mix. Marchetti's marginal income tax rate is 25%.\n\nThe capital committee has narrowed the expansion to two mutually exclusive proposals and will fund only one of them. Separately, the chief financial officer has proposed a recapitalization in which Marchetti would issue $15,000,000 of additional long-term debt and use the entire proceeds to repurchase common shares having an equal market value. Total capital measured at market value would be unchanged.\n\nUse **Exhibit 1** through **Exhibit 4** to complete the tasks. All amounts are in U.S. dollars.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Capital Structure, Market Data, and Loan Covenants at December 31, 2026",
+        "content": "| Item | Amount or rate |\n| --- | --- |\n| Long-term debt — market value | $40,000,000 |\n| Common equity — market value | $60,000,000 |\n| Pretax yield on outstanding long-term debt | 8.0% |\n| Risk-free rate | 4.5% |\n| Market risk premium | 5.5% |\n| Beta of Marchetti common shares | 1.30 |\n| Marginal income tax rate | 25% |\n\nThe master loan agreement with Marchetti's lending group contains the following covenants:\n\n- Total debt may not exceed 50% of total capital, with debt and equity measured at market value.\n- Interest coverage, defined as earnings before interest and taxes divided by interest expense, must be at least 4.0 times. Coverage for 2026 was 5.1 times."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Project Alpha — Automated Finishing Line",
+        "content": "| Item | Amount |\n| --- | --- |\n| Equipment cost, payable at inception | $6,000,000 |\n| Increase in net working capital at inception | $500,000 |\n| Economic life and tax recovery period | 4 years |\n| Tax depreciation method | Straight-line to a zero tax basis |\n| Annual incremental revenue less incremental cash operating expenses | $2,600,000 |\n| Estimated cash proceeds on disposal at the end of Year 4 | $800,000 |\n| Engineering feasibility study completed and paid in September 2026 | $180,000 |\n\nAdditional information:\n\n- The increase in net working capital is recovered in full at the end of Year 4.\n- Incremental operating amounts are level in each of Years 1 through 4 and are assumed to occur at each year-end.\n- Any gain on disposal is taxed at the marginal income tax rate.\n- Marchetti evaluates expansion proposals at a risk-adjusted discount rate of 10%, which exceeds its weighted average cost of capital because of the process technology risk of the finishing line."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Alternative Proposals Reviewed by the Capital Committee",
+        "content": "**Project Beta — Rebuild of the existing finishing cells.** Project Beta is mutually exclusive with Project Alpha. Its net incremental after-tax cash flows are:\n\n| Year | Net incremental after-tax cash flow |\n| --- | --- |\n| 0 | $(6,500,000) |\n| 1 | $3,200,000 |\n| 2 | $2,600,000 |\n| 3 | $1,300,000 |\n| 4 | $900,000 |\n\nUsing the same 10% risk-adjusted discount rate, the controller's staff computed the following for Project Beta:\n\n| Measure | Result |\n| --- | --- |\n| Net present value | $149,273 |\n| Payback period | 2.5 years |\n\n**Project Gamma — Second distribution warehouse.** The sponsoring division withdrew Project Gamma in March 2026 and the capital committee removed it from the 2027 capital plan. No further analysis of Project Gamma was performed."
+      },
+      {
+        "id": "ex-4",
+        "title": "Exhibit 4: Present Value Factors at 10%",
+        "content": "| Period | Present value of $1 | Present value of an ordinary annuity of $1 |\n| --- | --- | --- |\n| 1 | 0.9091 | 0.9091 |\n| 2 | 0.8264 | 1.7355 |\n| 3 | 0.7513 | 2.4869 |\n| 4 | 0.6830 | 3.1699 |"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Weighted average cost of capital",
+        "instruction": "Using the market values in Exhibit 1, calculate Marchetti's weighted average cost of capital. Determine the cost of equity under the capital asset pricing model and the cost of debt on an after-tax basis. Enter the answer as a percentage rounded to one decimal place (for example, enter 8.75% as 8.8). Do not enter a percent sign.",
+        "answerType": "number",
+        "correctAnswer": 9.4,
+        "tolerance": 0.1,
+        "explanation": "Cost of equity under the capital asset pricing model = risk-free rate + (beta x market risk premium) = 4.5% + (1.30 x 5.5%) = 4.5% + 7.15% = 11.65%. After-tax cost of debt = 8.0% x (1 - 0.25) = 6.0%. Market-value weights: debt = $40,000,000 / $100,000,000 = 40%; equity = $60,000,000 / $100,000,000 = 60%. Weighted average cost of capital = (0.40 x 6.0%) + (0.60 x 11.65%) = 2.40% + 6.99% = 9.39%, which is 9.4% rounded to one decimal place.",
+        "explanationJa": "1. 自己資本コスト（CAPM）: 4.5% + 1.30 × 5.5% = 4.5% + 7.15% = **11.65%**\n2. 税引後の負債コスト: 8.0% × (1 − 0.25) = **6.0%**（支払利息は損金算入されるため税効果を差し引く）\n3. 市場価値ウェイト: 負債 $40,000,000 ÷ $100,000,000 = 40%、自己資本 $60,000,000 ÷ $100,000,000 = 60%（簿価ではなく市場価値で加重する）\n4. WACC = 0.40 × 6.0% + 0.60 × 11.65% = 2.40% + 6.99% = 9.39% → 小数第1位に丸めて **9.4%**",
+        "references": [
+          "Corporate finance — weighted average cost of capital",
+          "Corporate finance — capital asset pricing model"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Incremental cash flow schedule for Project Alpha",
+        "instruction": "Complete the incremental cash flow schedule for Project Alpha using Exhibit 2. Years 2 and 3 are identical to Year 1 and are therefore not shown. Enter cash outflows as negative amounts, enter 0 in any cell in which no amount belongs, and enter whole dollars without commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Year 0", "Year 1", "Year 4"],
+          "rows": [
+            "Equipment purchase",
+            "Change in net working capital",
+            "After-tax operating cash flow",
+            "After-tax proceeds from disposal",
+            "Net incremental cash flow"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Equipment purchase",
+              "colLabel": "Year 0",
+              "correctValue": -6000000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Equipment purchase",
+              "colLabel": "Year 1",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Equipment purchase",
+              "colLabel": "Year 4",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Change in net working capital",
+              "colLabel": "Year 0",
+              "correctValue": -500000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Change in net working capital",
+              "colLabel": "Year 1",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Change in net working capital",
+              "colLabel": "Year 4",
+              "correctValue": 500000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "After-tax operating cash flow",
+              "colLabel": "Year 0",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "After-tax operating cash flow",
+              "colLabel": "Year 1",
+              "correctValue": 2325000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "After-tax operating cash flow",
+              "colLabel": "Year 4",
+              "correctValue": 2325000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "After-tax proceeds from disposal",
+              "colLabel": "Year 0",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "After-tax proceeds from disposal",
+              "colLabel": "Year 1",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "After-tax proceeds from disposal",
+              "colLabel": "Year 4",
+              "correctValue": 600000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Net incremental cash flow",
+              "colLabel": "Year 0",
+              "correctValue": -6500000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Net incremental cash flow",
+              "colLabel": "Year 1",
+              "correctValue": 2325000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Net incremental cash flow",
+              "colLabel": "Year 4",
+              "correctValue": 3425000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Annual tax depreciation = $6,000,000 / 4 = $1,500,000. Annual after-tax operating cash flow = ($2,600,000 x 0.75) + ($1,500,000 x 0.25) = $1,950,000 + $375,000 = $2,325,000; the second term is the depreciation tax shield. Year 0 consists of the $6,000,000 equipment outlay and the $500,000 increase in net working capital, for a net outflow of $6,500,000. The engineering feasibility study was paid before the decision date and is not an incremental cash flow of the proposal. Year 4 adds the recovery of the $500,000 of net working capital and the after-tax disposal proceeds. The tax basis of the equipment at the end of Year 4 is zero, so the entire $800,000 of proceeds is a taxable gain and the after-tax amount is $800,000 - ($800,000 x 0.25) = $600,000. Net Year 4 cash flow = $2,325,000 + $500,000 + $600,000 = $3,425,000.",
+        "explanationJa": "1. **年間の税務上の減価償却費**: $6,000,000 ÷ 4年 = $1,500,000（残存価額ゼロの定額法）\n2. **年間の税引後営業CF**: $2,600,000 × (1 − 0.25) + $1,500,000 × 0.25 = $1,950,000 + $375,000 = **$2,325,000**\n   - 後半の $375,000 が減価償却のタックスシールド（減価償却自体は現金支出ではないが、課税所得を減らす分だけ現金を生む）\n3. **Year 0**: 設備 −$6,000,000 と運転資本の増加 −$500,000 で、正味 **−$6,500,000**\n   - 2026年9月に支払済みの技術調査費 $180,000 は意思決定前に発生した支出であり、増分キャッシュフローに含めない\n4. **Year 4 の追加項目**:\n   - 運転資本の回収 **+$500,000**\n   - 処分: 税務簿価がゼロなので売却額 $800,000 の全額が課税対象の利得。税引後 = $800,000 − $800,000 × 0.25 = **+$600,000**\n   - 合計 $2,325,000 + $500,000 + $600,000 = **$3,425,000**",
+        "references": [
+          "Capital budgeting — incremental after-tax cash flows",
+          "Capital budgeting — depreciation tax shield and working capital recovery"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Net present value of Project Alpha",
+        "instruction": "Using the net incremental cash flows of Project Alpha and the 10% present value factors in Exhibit 4, calculate the net present value of Project Alpha. Enter the answer in whole dollars, no commas. Enter a negative amount with a leading minus sign.",
+        "answerType": "number",
+        "correctAnswer": 1621252,
+        "tolerance": 2000,
+        "explanation": "Discount each net incremental cash flow at 10%: Year 1 through Year 3 = $2,325,000 each and Year 4 = $3,425,000. Years 1 through 3 = $2,325,000 x 2.4869 = $5,782,043. Year 4 = $3,425,000 x 0.6830 = $2,339,275. Total present value of the inflows = $8,121,318. Net present value = $8,121,318 - $6,500,000 initial investment = $1,621,318, which is approximately $1,621,252 when unrounded present value factors are used. The net present value is positive, so Project Alpha increases shareholder value at the 10% risk-adjusted rate.",
+        "explanationJa": "1. Year 1〜3 は毎年 $2,325,000、Year 4 は $3,425,000（Work Tab 2 のスケジュール）\n2. **Year 1〜3**: $2,325,000 × 2.4869（3年の年金現価係数）= $5,782,043\n3. **Year 4**: $3,425,000 × 0.6830 = $2,339,275\n4. キャッシュインフローの現在価値合計 = $5,782,043 + $2,339,275 = $8,121,318\n5. **NPV** = $8,121,318 − $6,500,000（Year 0 の正味投資額）= 約 **$1,621,300**\n   - 係数を丸めずに計算すると $1,621,252。丸め幅の違いは許容範囲に収まる\n6. NPV がプラスなので、割引率10%のもとで Project Alpha は企業価値を増加させる",
+        "references": [
+          "Capital budgeting — net present value",
+          "Corporate finance — present value of future cash flows"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Payback period of Project Alpha",
+        "instruction": "Calculate the payback period of Project Alpha, measured against the total initial investment including the increase in net working capital and assuming that cash flows accrue evenly within each year. Enter the number of years rounded to one decimal place (for example, enter three and one quarter years as 3.3).",
+        "answerType": "number",
+        "correctAnswer": 2.8,
+        "tolerance": 0.1,
+        "explanation": "The initial investment is $6,500,000, made up of the $6,000,000 equipment cost and the $500,000 increase in net working capital. Cumulative cash inflows are $2,325,000 after Year 1 and $4,650,000 after Year 2, leaving $6,500,000 - $4,650,000 = $1,850,000 to be recovered during Year 3. Year 3 provides $2,325,000, so the fraction of Year 3 required is $1,850,000 / $2,325,000 = 0.80 of a year. Payback period = 2 + 0.80 = 2.8 years.",
+        "explanationJa": "1. **初期投資額** = 設備 $6,000,000 + 運転資本の増加 $500,000 = **$6,500,000**\n2. 累計回収額: Year 1 末 $2,325,000 / Year 2 末 $4,650,000\n3. Year 2 末の未回収額 = $6,500,000 − $4,650,000 = **$1,850,000**\n4. Year 3 のCF $2,325,000 のうち必要な割合 = $1,850,000 ÷ $2,325,000 = 0.80年\n5. **回収期間 = 2 + 0.80 = 2.8年**\n   - 回収期間法は貨幣の時間価値と回収後のキャッシュフローを無視する点に注意",
+        "references": [
+          "Capital budgeting — payback period",
+          "Capital budgeting — limitations of non-discounted measures"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Recommendation to the capital committee",
+        "instruction": "The capital committee will fund only one of the two mutually exclusive proposals. Select the recommendation that is supported by the analysis.",
+        "answerType": "select",
+        "options": [
+          "Project Alpha, because it has the higher net present value",
+          "Project Beta, because it has the shorter payback period",
+          "Project Beta, because it recovers the initial investment before the equipment is fully depreciated",
+          "Neither proposal, because the payback period of each exceeds two years"
+        ],
+        "correctAnswer": "Project Alpha, because it has the higher net present value",
+        "explanation": "For mutually exclusive proposals, the measure that ranks alternatives correctly is net present value, because it measures the dollar amount of value added at the required rate of return. Project Alpha's net present value of approximately $1,621,252 far exceeds Project Beta's net present value of $149,273. Project Beta recovers its initial investment sooner, 2.5 years against 2.8 years, but the payback period ignores the time value of money and ignores every cash flow arising after the investment is recovered, so it is not a valid basis for ranking. Both proposals have a positive net present value, so rejecting both would forgo value. Project Alpha should be recommended.",
+        "explanationJa": "相互排他的な案の順位づけには **NPV** を使う。NPV は要求収益率を満たしたうえで企業価値がいくら増えるかを金額で示すためである。\n\n| | Project Alpha | Project Beta |\n| --- | --- | --- |\n| NPV | 約 $1,621,252 | $149,273 |\n| 回収期間 | 2.8年 | 2.5年 |\n\n- 回収期間は Beta の方が短いが、回収期間法は**貨幣の時間価値**と**回収後のキャッシュフロー**を無視する。Alpha は Year 4 に運転資本の回収と処分収入が入るが、回収期間法ではこれが評価に反映されない\n- 両案とも NPV はプラスなので「どちらも却下」は価値を捨てることになる\n- したがって **NPV の大きい Project Alpha** を推奨する",
+        "references": [
+          "Capital budgeting — ranking mutually exclusive projects",
+          "Capital budgeting — net present value versus payback period"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Effects of the proposed recapitalization",
+        "instruction": "The chief financial officer proposes to issue $15,000,000 of additional long-term debt and to repurchase common shares of an equal market value. Select every statement that correctly describes an effect of the proposed recapitalization.",
+        "answerType": "multiselect",
+        "options": [
+          "The covenant limiting total debt to 50% of total capital would be violated.",
+          "The cost of equity would rise because financial leverage increases the risk borne by common shareholders.",
+          "Interest expense would increase, which lowers the interest coverage ratio.",
+          "The after-tax cost of debt would stay at 6.0% no matter how much leverage is added.",
+          "The weighted average cost of capital must decline because debt is a cheaper source of funds than equity.",
+          "Substituting debt for equity reduces the amount of financing cost that is deductible for income tax purposes."
+        ],
+        "correctAnswer": [
+          "The covenant limiting total debt to 50% of total capital would be violated.",
+          "The cost of equity would rise because financial leverage increases the risk borne by common shareholders.",
+          "Interest expense would increase, which lowers the interest coverage ratio."
+        ],
+        "explanation": "After the recapitalization, debt is $40,000,000 + $15,000,000 = $55,000,000 and equity is $60,000,000 - $15,000,000 = $45,000,000, so total capital remains $100,000,000 and the debt ratio becomes 55%. That exceeds the 50% ceiling in the master loan agreement, so the leverage covenant would be violated. Additional borrowing raises interest expense, and because earnings before interest and taxes are unaffected by how the company is financed, interest coverage falls from the 5.1 times reported for 2026 and moves toward the 4.0 times floor. Higher leverage also makes the residual claim of the common shareholders more variable, so the cost of equity rises. The after-tax cost of debt does not stay fixed at 6.0%: as leverage rises, lenders price additional default risk into the yield they require. The weighted average cost of capital does not necessarily decline, because the lower weight on the more expensive equity is offset by the higher cost of equity and, beyond some level of leverage, by a higher cost of debt as well. Substituting debt for equity increases deductible financing cost rather than reducing it, because interest is deductible while dividends paid on common shares are not.",
+        "explanationJa": "**組替後の資本構成**: 負債 $40,000,000 + $15,000,000 = $55,000,000、自己資本 $60,000,000 − $15,000,000 = $45,000,000、総資本は $100,000,000 のまま → 負債比率 **55%**\n\n正しい記述:\n\n1. **財務制限条項の抵触** — 負債比率 55% は融資契約の上限 50% を超えるため、レバレッジ条項に抵触する\n2. **自己資本コストの上昇** — レバレッジが上がると残余請求権である株主のリターンの振れ幅が大きくなるため、株主が要求する収益率は上昇する\n3. **インタレスト・カバレッジの低下** — 借入残高が増えれば支払利息が増える。EBIT は資金調達方法に左右されないため、2026年の5.1倍から下限の4.0倍に近づく\n\n誤りの記述:\n\n- **税引後の負債コストが6.0%のまま** — レバレッジが上がれば貸手はデフォルト・リスクの増大を利回りに織り込むため、税引前利回り自体が上昇する\n- **WACCは必ず下がる** — 割安な負債のウェイトが増える効果は、自己資本コストの上昇（および一定水準を超えた後の負債コストの上昇）で相殺される。必ず下がるとは言えない\n- **損金算入できる資金調達コストが減る** — 逆である。支払利息は損金算入できるが普通株式の配当はできないため、負債への置換は損金算入額を**増やす**",
+        "references": [
+          "Corporate finance — capital structure and financial leverage",
+          "Debt covenants — leverage and interest coverage ratios"
+        ]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "BAR TBS Practice (original)"
+  }
+]

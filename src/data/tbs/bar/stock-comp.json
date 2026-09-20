@@ -1,0 +1,151 @@
+[
+  {
+    "id": "bar-tbs-sbc-001",
+    "subject": "BAR",
+    "topic": "Stock Compensation",
+    "title": "Share-Based Compensation: Equity-Classified Options and Cash-Settled SARs",
+    "scenario": "Cordell Instruments, Inc. (Cordell) is a public business entity with a December 31 fiscal year end. Cordell is closing its Year 3 financial statements.\n\nOn January 1, Year 1, Cordell granted two share-based payment awards that remain outstanding: Plan A, a stock option award settled in shares of Cordell common stock, and Plan B, a stock appreciation rights (SAR) award settled only in cash. The terms of both awards are summarized in **Exhibit 1**. Market and fair value data at each measurement date are in **Exhibit 2**. Forfeiture estimates and other equity plan information are in **Exhibit 3**.\n\nCordell recognizes compensation cost on a straight-line basis over the requisite service period and estimates forfeitures rather than accounting for them as they occur. Cordell does not elect the intrinsic value practical expedient available to certain nonpublic entities. Ignore income taxes and round all amounts to the nearest whole dollar.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Terms of Awards Granted January 1, Year 1",
+        "content": "| Item | Plan A - Stock options | Plan B - Cash-settled SARs |\n| --- | --- | --- |\n| Units granted | 60,000 options | 20,000 SARs |\n| Exercise price / base price | $25.00 per share | $25.00 per share |\n| Form of settlement | Shares of Cordell common stock | Cash only; no share settlement permitted |\n| Requisite service period | 4 years, cliff vesting on December 31, Year 4 | 3 years, cliff vesting on December 31, Year 3 |\n| Contractual term | 10 years from grant date | 7 years from grant date |\n| Fair value per unit at January 1, Year 1 grant date | $9.00 | $5.40 |\n\nNeither award contains a performance condition or a market condition. No award had been exercised or settled as of December 31, Year 3."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Market and Fair Value Data at Each Year End",
+        "content": "| Measurement date | Market price of common stock | Fair value per Plan B SAR | Fair value per Plan A option |\n| --- | --- | --- | --- |\n| December 31, Year 1 | $30.00 | $6.00 | $10.20 |\n| December 31, Year 2 | $33.00 | $9.00 | $12.40 |\n| December 31, Year 3 | $32.00 | $8.25 | $11.10 |\n\nThe fair values above were developed by an independent valuation specialist using a lattice model that reflects the terms of each award and Cordell's expected volatility and dividend yield."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Forfeiture Estimates and Other Equity Plan Information",
+        "content": "Plan A - stock options:\n\n- At the January 1, Year 1 grant date, Cordell estimated that 10% of the options granted would be forfeited before the December 31, Year 4 vesting date.\n- Cordell continued to apply the 10% estimate throughout Year 1 and Year 2. No Plan A options had actually been forfeited as of December 31, Year 2.\n- During the fourth quarter of Year 3, employee turnover in the engineering group rose sharply. Cordell revised its estimate and now expects 20% of the options granted to be forfeited before the December 31, Year 4 vesting date. The revised estimate was used in preparing the Year 3 financial statements.\n\nPlan B - cash-settled SARs:\n\n- Cordell expects all 20,000 SARs to vest. No SARs had been forfeited as of December 31, Year 3.\n\nLegacy 2017 plan:\n\n- Under a prior plan, 15,000 options with a $40.00 exercise price became fully vested on December 31, Year 0. Total compensation cost of $96,000 for those options was fully recognized in periods before Year 1. All 15,000 options remained unexercised and expired on June 30, Year 3."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Plan A compensation cost for Year 3",
+        "instruction": "Determine the compensation cost Cordell should recognize for the Plan A stock options for the year ended December 31, Year 3, after giving effect to the revised forfeiture estimate. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 81000,
+        "tolerance": 1,
+        "explanation": "Equity-classified awards are measured once, at grant-date fair value, and are not remeasured for later changes in the fair value of the shares or of the award. Total grant-date fair value is 60,000 options x $9.00 = $540,000.\n\nYear 1 and Year 2 were recorded using the original 10% forfeiture estimate: $540,000 x 90% = $486,000 expected cost, recognized straight-line over 4 years, or $121,500 per year. Cumulative cost recognized through December 31, Year 2 was $243,000.\n\nThe Year 3 revision to a 20% forfeiture estimate is a change in accounting estimate accounted for through a cumulative catch-up in the period of change. Revised expected cost is $540,000 x 80% = $432,000. Cumulative cost that should be recognized after 3 of the 4 years of service is $432,000 x 3/4 = $324,000. Year 3 compensation cost is therefore $324,000 - $243,000 = $81,000.",
+        "explanationJa": "**ステップ1: 付与日公正価値の総額を求める**\n\n資本分類の報酬は付与日の公正価値で一度だけ測定し、その後の株価や公正価値の変動では再測定しない。\n\n60,000オプション x $9.00 = $540,000\n\n**ステップ2: Year1・Year2の計上額（当初見積り10%失効）**\n\n$540,000 x 90% = $486,000（確定見込み総額）\n$486,000 ÷ 4年 = 各年 $121,500\nYear2末までの累計 = $243,000\n\n**ステップ3: Year3の見積り改訂（失効20%）を累計で調整する**\n\n改訂後の確定見込み総額 = $540,000 x 80% = $432,000\n4年のうち3年が経過しているので、あるべき累計 = $432,000 x 3/4 = $324,000\n\n**ステップ4: 当期費用は累計の差額**\n\n$324,000 - $243,000 = **$81,000**\n\n失効見積りの改訂は会計上の見積りの変更であり、過年度を遡及修正せず、変更した期に累計差額（キャッチアップ）をまとめて反映する。",
+        "references": ["ASC 718-10-35-2", "ASC 718-10-35-3"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Plan B SAR liability at December 31, Year 2",
+        "instruction": "Determine the balance of the share-based compensation liability related to the Plan B cash-settled SARs that Cordell should report on its December 31, Year 2 balance sheet. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 120000,
+        "tolerance": 1,
+        "explanation": "Because the SARs can be settled only in cash, they are liability-classified. A public entity remeasures a liability award at fair value at every reporting date until settlement, and accrues that remeasured amount over the requisite service period.\n\nAt December 31, Year 2 the fair value is $9.00 per SAR and 2 of the 3 years of requisite service have been rendered:\n\n20,000 SARs x $9.00 x 2/3 = $120,000.",
+        "explanationJa": "**ステップ1: 分類を判定する**\n\n現金決済のみで株式決済が認められていないため、この SAR は**負債分類**になる。負債分類は各報告日に公正価値を再測定し、決済日まで洗い替える。\n\n**ステップ2: 期末の公正価値を使う**\n\nYear2末の1単位あたり公正価値 = $9.00（付与日の $5.40 ではない点に注意）\n\n**ステップ3: 経過した勤務期間の割合を掛ける**\n\n権利確定期間3年のうち2年が経過。\n\n20,000単位 x $9.00 x 2/3 = **$120,000**\n\n負債分類では「期末公正価値 x 経過割合」で負債残高をその都度作り直すため、残高は株価の動きに応じて増減する。",
+        "references": ["ASC 718-30-35-3", "ASC 718-10-25-2"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Plan B compensation cost for Year 3",
+        "instruction": "Determine the compensation cost Cordell should recognize for the Plan B cash-settled SARs for the year ended December 31, Year 3. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 45000,
+        "tolerance": 1,
+        "explanation": "The SARs are fully vested at December 31, Year 3, so the liability equals the full remeasured fair value of the award: 20,000 SARs x $8.25 x 3/3 = $165,000.\n\nThe liability at December 31, Year 2 was 20,000 x $9.00 x 2/3 = $120,000. Compensation cost for Year 3 is the change in the liability: $165,000 - $120,000 = $45,000.\n\nThe decline in fair value from $9.00 to $8.25 reduces Year 3 cost below the amount that straight-line accrual alone would produce, but the liability is still trued up to fair value because remeasurement continues through settlement.",
+        "explanationJa": "**ステップ1: Year3末の負債残高を計算する**\n\nYear3末で権利確定（3年経過）しているため経過割合は 3/3。\n\n20,000単位 x $8.25 x 3/3 = $165,000\n\n**ステップ2: 前期末残高を差し引く**\n\nYear2末残高 = 20,000 x $9.00 x 2/3 = $120,000\n\n**ステップ3: 当期費用は負債の増加額**\n\n$165,000 - $120,000 = **$45,000**\n\n公正価値が $9.00 から $8.25 に下落したため、単純な定額配分よりも当期費用は小さくなる。負債分類では決済まで再測定を続けるので、公正価値の下落は当期の費用を減らす形で取り込まれる。",
+        "references": ["ASC 718-30-35-3", "ASC 718-30-35-4"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "December 31, Year 2 compensation entry",
+        "instruction": "Prepare the combined journal entry Cordell should record at December 31, Year 2 to recognize compensation cost for Plan A and Plan B for the year then ended. Enter whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Compensation expense",
+            "Additional paid-in capital - stock options",
+            "Share-based compensation liability"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Compensation expense",
+              "colLabel": "Debit",
+              "correctValue": 201500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Compensation expense",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Additional paid-in capital - stock options",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Additional paid-in capital - stock options",
+              "colLabel": "Credit",
+              "correctValue": 121500,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Share-based compensation liability",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Share-based compensation liability",
+              "colLabel": "Credit",
+              "correctValue": 80000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Plan A for Year 2 still uses the original 10% forfeiture estimate: $540,000 x 90% / 4 years = $121,500. Because the award is equity-classified, the credit goes to additional paid-in capital and the award is not remeasured.\n\nPlan B for Year 2 is the change in the liability: (20,000 x $9.00 x 2/3) - (20,000 x $6.00 x 1/3) = $120,000 - $40,000 = $80,000. Because the award is liability-classified, the credit goes to a liability account.\n\nCombined entry at December 31, Year 2:\nDebit Compensation expense $201,500; Credit Additional paid-in capital - stock options $121,500; Credit Share-based compensation liability $80,000.",
+        "explanationJa": "**ステップ1: Plan A（資本分類）のYear2費用**\n\nYear2時点では当初の失効見積り10%を使う。\n$540,000 x 90% ÷ 4年 = $121,500\n貸方は資本（追加払込資本）へ。付与日公正価値のまま再測定しない。\n\n**ステップ2: Plan B（負債分類）のYear2費用**\n\nYear1末負債 = 20,000 x $6.00 x 1/3 = $40,000\nYear2末負債 = 20,000 x $9.00 x 2/3 = $120,000\n当期費用 = $120,000 - $40,000 = **$80,000**\n貸方は負債へ。\n\n**ステップ3: 合算仕訳**\n\n| 勘定 | 借方 | 貸方 |\n| --- | --- | --- |\n| Compensation expense | 201,500 | |\n| Additional paid-in capital - stock options | | 121,500 |\n| Share-based compensation liability | | 80,000 |\n\n同じ「株式報酬費用」でも、**貸方が資本か負債かで分類が分かれる**点が本問の核心。株式で決済するものは資本、現金で決済するものは負債に貸記する。",
+        "references": ["ASC 718-10-35-2", "ASC 718-30-35-3"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Classification and subsequent measurement of Plan B",
+        "instruction": "Select the statement that correctly describes how Cordell must classify the Plan B SARs and measure them after the grant date.",
+        "answerType": "select",
+        "options": [
+          "Equity-classified; measure the award at grant-date fair value and do not remeasure it",
+          "Liability-classified; remeasure the award at fair value at each reporting date through settlement",
+          "Liability-classified; measure the award at grant-date fair value and do not remeasure it",
+          "Equity-classified; remeasure the award at intrinsic value at each reporting date"
+        ],
+        "correctAnswer": "Liability-classified; remeasure the award at fair value at each reporting date through settlement",
+        "explanation": "A share-based payment award that requires the entity to transfer cash, rather than issue equity instruments, upon settlement creates an obligation that meets the definition of a liability. The Plan B SARs can be settled only in cash, so they are liability-classified.\n\nA public entity measures a liability award at fair value and remeasures that fair value at each reporting date until the award is settled. Intrinsic value measurement is available only to nonpublic entities that elect it, and equity classification with no remeasurement applies to awards settled in shares, such as Plan A.",
+        "explanationJa": "**判定の分かれ目は決済方法**\n\n- 株式で決済 → **資本分類**。付与日公正価値で測定し、その後は再測定しない（Plan A）。\n- 現金で決済する義務がある → **負債分類**。負債の定義を満たすため負債に計上する（Plan B）。\n\n**負債分類の事後測定**\n\n公開企業は負債分類の報酬を**各報告日に公正価値で再測定**し、決済日まで洗い替える。株価が上がれば負債と費用が増え、下がれば減る。\n\n本源的価値（intrinsic value）による測定は、非公開企業が選択した場合にのみ認められる方法であり、公開企業である本問では使えない。",
+        "references": ["ASC 718-10-25-11", "ASC 718-30-30-1", "ASC 718-30-35-3"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Research: subsequent measurement of liability awards",
+        "instruction": "Identify the FASB ASC paragraph that requires a public entity to measure a liability award under a share-based payment arrangement based on the award's fair value remeasured at each reporting date until the date of settlement. Cite the ASC reference in XXX-XX-XX-XX format.",
+        "answerType": "research",
+        "correctAnswer": "718-30-35-3",
+        "explanation": "ASC 718-30 covers awards classified as liabilities. ASC 718-30-35-3 states that a public entity shall measure a liability award under a share-based payment arrangement based on the award's fair value remeasured at each reporting date until the date of settlement, with compensation cost for each period based on the change in fair value for that period.",
+        "explanationJa": "**ASC 718-30-35-3**\n\nASC 718-30 は「負債に分類される報奨（Awards Classified as Liabilities）」を扱うサブトピック。35 セクションは事後測定（Subsequent Measurement）を定めている。\n\n718-30-35-3 は、公開企業が負債分類の株式報酬を**決済日まで各報告日に公正価値で再測定**し、各期の報酬費用はその期の公正価値の変動（権利未確定の場合はその一部）に基づくと規定している。\n\n資本分類の事後測定は再測定しないため、対比して覚えるとよい。",
+        "references": ["ASC 718-30-35-3"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "BAR TBS Practice (original)"
+  }
+]

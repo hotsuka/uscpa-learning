@@ -107,7 +107,8 @@ export function validateQuestion(q, ctx = {}) {
     warnings.push({ id, message, advisory: true });
 
   // --- 基本フィールド ---
-  if (!/^far-tbs-[a-z0-9-]+-\d{3}$/.test(q.id ?? "")) {
+  // BAR版TBS（bar-tbs-...）も同じ検証ロジックを通すためidの科目接頭辞を許容する
+  if (!/^(far|bar)-tbs-[a-z0-9-]+-\d{3}$/.test(q.id ?? "")) {
     err(qid, `id形式が不正: ${q.id}`);
   }
   if (ctx.existingIds?.has(q.id)) err(qid, `id が既存問題と衝突: ${q.id}`);
@@ -327,9 +328,12 @@ export function validateQuestion(q, ctx = {}) {
         `${t.title} ${t.instruction} ${(t.options ?? []).join(" ")} ${t.explanation}`,
     ),
   ].join("\n");
-  for (const { re, label } of OUT_OF_SCOPE) {
-    if (re.test(wholeText))
-      advise(qid, `FAR範囲外の可能性(${label}) — 出題論点になっていないか確認`);
+  // FAR範囲外リストは BAR では逆に出題対象なので、BARの問題には適用しない
+  if (q.subject !== "BAR") {
+    for (const { re, label } of OUT_OF_SCOPE) {
+      if (re.test(wholeText))
+        advise(qid, `FAR範囲外の可能性(${label}) — 出題論点になっていないか確認`);
+    }
   }
 
   return { errors, warnings };
