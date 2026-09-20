@@ -9,14 +9,22 @@
 // 使い方:
 //   node scripts/merge-staged-questions.mjs                 # _staging 配下の全 json をマージ
 //   node scripts/merge-staged-questions.mjs leases inventory # 指定セクションのみ
+//   node scripts/merge-staged-questions.mjs --dir=src/data/questions/bar  # 科目ディレクトリを指定
 //
 // 非破壊・追記のみ。既存問題は一切変更しない。マージ後は対象ファイルに prettier をかけること。
+// 本ファイルが存在しないセクションは、_staging/_sets.json の定義から新規セットを作成する
+// （BAR のように既存セットが無い科目へ問題を投入するケース）。定義が無ければエラーで中止する。
 
 import { readFileSync, writeFileSync, readdirSync, existsSync, copyFileSync } from "fs";
 import { join } from "path";
 
-const FAR_DIR = "src/data/questions/far";
-const STAGING_DIR = join(FAR_DIR, "_staging");
+const dirArg = process.argv.find((a) => a.startsWith("--dir="));
+const TARGET_DIR = dirArg ? dirArg.slice("--dir=".length) : "src/data/questions/far";
+const STAGING_DIR = join(TARGET_DIR, "_staging");
+// 新規セットの定義（セクション名 → { id, name, topic, prefix }）。無ければ空。
+// _staging/ は作業後に破棄するため、定義は科目ディレクトリ直下の _sets.json に置く。
+const manifestPath = [join(TARGET_DIR, "_sets.json"), join(STAGING_DIR, "_sets.json")].find(existsSync);
+const SETS_MANIFEST = manifestPath ? JSON.parse(readFileSync(manifestPath, "utf8")) : {};
 
 const PREFIX = {
   "accounting-changes": "chg", "cash-equivalents": "cce", "cash-flows": "cf",
@@ -107,10 +115,12 @@ function loadStaged(path) {
   return Array.isArray(raw) ? raw : raw.questions ?? [];
 }
 
-const argSections = process.argv.slice(2);
+const argSections = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 const stagingFiles = argSections.length
   ? argSections.map((s) => `${s}.json`)
-  : existsSync(STAGING_DIR) ? readdirSync(STAGING_DIR).filter((f) => f.endsWith(".json")) : [];
+  : existsSync(STAGING_DIR)
+    ? readdirSync(STAGING_DIR).filter((f) => f.endsWith(".json") && !f.startsWith("_"))
+    : [];
 
 if (!stagingFiles.length) { console.log("ステージングファイルがありません。"); process.exit(0); }
 
@@ -120,17 +130,25 @@ const summary = [];
 
 for (const file of stagingFiles) {
   const section = file.replace(/\.json$/, "");
-  const prefix = PREFIX[section];
+  const manifest = SETS_MANIFEST[section];
+  const prefix = manifest?.prefix ?? PREFIX[section];
   const stagePath = join(STAGING_DIR, file);
-  const realPath = join(FAR_DIR, file);
+  const realPath = join(TARGET_DIR, file);
 
   if (!prefix) { console.error(`✗ ${section}: 未知のセクション`); hadError = true; continue; }
   if (!existsSync(stagePath)) { console.error(`✗ ${section}: ステージング無し`); hadError = true; continue; }
-  if (!existsSync(realPath)) { console.error(`✗ ${section}: 本ファイル無し`); hadError = true; continue; }
+  if (!existsSync(realPath)) {
+    // 新規セット: マニフェストの定義から空のセットファイルを作ってから通常の追記処理に流す
+    if (!manifest) { console.error(`✗ ${section}: 本ファイルも _sets.json の定義も無い`); hadError = true; continue; }
+    const empty = `{\n  "id": ${JSON.stringify(manifest.id)},\n  "name": ${JSON.stringify(manifest.name)},\n  "topic": ${JSON.stringify(manifest.topic)},\n  "version": "1.0.0",\n  "questions": [\n  ]\n}\n`;
+    writeFileSync(realPath, empty, "utf8");
+    console.log(`+ ${section}: 新規セットを作成 (${manifest.id})`);
+  }
 
   const staged = loadStaged(stagePath);
   const realText = readFileSync(realPath, "utf8");
   const real = JSON.parse(realText);
+  const isNewSet = real.questions.length === 0;
   const existingIds = new Set(real.questions.map((q) => q.id));
   const seenIds = new Set();
 
@@ -146,13 +164,14 @@ for (const file of stagingFiles) {
     hadError = true; continue;
   }
 
-  // version をテキスト置換（既存整形を保持）
+  // version をテキスト置換（既存整形を保持）。新規セットは 1.0.0 のまま据え置く
   const oldVer = real.version;
+  const newVer = isNewSet ? oldVer : bumpMinor(oldVer);
   const verFind = `"version": ${JSON.stringify(oldVer)}`;
   if (realText.split(verFind).length - 1 !== 1) {
     console.error(`✗ ${section}: version 行を一意特定できず`); hadError = true; continue;
   }
-  let out = realText.replace(verFind, `"version": ${JSON.stringify(bumpMinor(oldVer))}`);
+  let out = realText.replace(verFind, `"version": ${JSON.stringify(newVer)}`);
 
   // questions 配列の閉じ括弧（2スペース "  ]"）の直前へ新規問題を挿入
   const closeIdx = out.lastIndexOf("\n  ]");
@@ -160,13 +179,14 @@ for (const file of stagingFiles) {
   const head = out.slice(0, closeIdx);     // ... 最後の既存問題 "    }" で終わる
   const tail = out.slice(closeIdx);        // "\n  ]\n}\n"
   const block = staged.map(serializeQuestion).join(",\n");
-  out = head + ",\n" + block + tail;
+  // 既存問題があるときだけカンマで繋ぐ（新規セットは配列が空なので先頭カンマを付けない）
+  out = head + (isNewSet ? "\n" : ",\n") + block + tail;
 
-  copyFileSync(realPath, `${realPath}.bak-far-bulk-${ts}`);
+  if (!isNewSet) copyFileSync(realPath, `${realPath}.bak-bulk-${ts}`);
   writeFileSync(realPath, out, "utf8");
 
   totalAdded += staged.length;
-  summary.push(`✓ ${section}: +${staged.length}問 (${real.questions.length}→${real.questions.length + staged.length}) v${oldVer}→v${bumpMinor(oldVer)}`);
+  summary.push(`✓ ${section}: +${staged.length}問 (${real.questions.length}→${real.questions.length + staged.length}) v${oldVer}→v${newVer}`);
 }
 
 console.log("\n=== マージ結果 ===");

@@ -26,7 +26,8 @@ const SUSPICIOUS = [
 const files = questionDirs.flatMap(dir =>
   existsSync(dir)
     ? readdirSync(dir)
-        .filter(f => f.endsWith('.json') && !f.includes('.bak'))
+        // _sets.json のような作問用メタファイルは問題セットではないので除く
+        .filter(f => f.endsWith('.json') && !f.includes('.bak') && !f.startsWith('_'))
         .map(f => ({ dir, file: f }))
     : []
 );
