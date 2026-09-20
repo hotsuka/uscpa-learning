@@ -21,9 +21,11 @@ import area2Derivatives from "./derivatives.json";
 import area2FxTranslation from "./fx-translation.json";
 import area2LeasesLessor from "./leases-lessor.json";
 import area2PublicReporting from "./public-reporting.json";
+import area2RevenueAnalytics from "./revenue-analytics.json";
 import area2SoftwareIntangibles from "./software-intangibles.json";
 import area2StockComp from "./stock-comp.json";
 import area3GovernmentFunds from "./government-funds.json";
+import area3GovernmentWide from "./government-wide.json";
 
 export type BarArea = "I" | "II" | "III";
 
@@ -76,6 +78,8 @@ const barOwnAreaBySetId = new Map<string, Exclude<BarArea, "I">>([
   [area2FxTranslation.id, "II"],
   [area2SoftwareIntangibles.id, "II"],
   [area2BenefitPlans.id, "II"],
+  [area2RevenueAnalytics.id, "II"],
+  [area3GovernmentWide.id, "III"],
   [area3GovernmentFunds.id, "III"],
 ]);
 
@@ -88,6 +92,8 @@ export const barOwnAreaIIIIIQuestionSets: QuestionSet[] = [
   area2FxTranslation,
   area2SoftwareIntangibles,
   area2BenefitPlans,
+  area2RevenueAnalytics,
+  area3GovernmentWide,
   area3GovernmentFunds,
 ] as QuestionSet[];
 
