@@ -1,0 +1,281 @@
+{
+  "id": "bar-area2-revenue-analytics",
+  "name": "Revenue Recognition with Data Analytics (Area II)",
+  "topic": "Revenue Recognition & Data Analytics",
+  "version": "1.0.0",
+  "questions": [
+    {
+      "id": "bar2-rev-001",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Analytics Output — Monthly Revenue Trend Anomaly",
+      "stem": "Kestrel Manufacturing's controller reviews the following dashboard output for its single product line. All sales are made at a list price that has not changed during the year, and credit memos are issued only for returned or rejected goods.\n\nMonth | Revenue recorded | Units shipped | Credit memos issued in the following month\nOctober, Year 1 | $4,200,000 | 42,000 | $60,000\nNovember, Year 1 | $4,350,000 | 43,500 | $55,000\nDecember, Year 1 | $7,800,000 | 44,000 | $910,000\nJanuary, Year 2 | $2,100,000 | 21,000 | $40,000\n\nWhich observation from this output most strongly indicates that December revenue may include amounts recognized before control of the goods transferred to customers?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "December revenue and December units shipped both increased over November, which is consistent with normal year-end seasonality in this industry."
+        },
+        {
+          "label": "B",
+          "text": "Revenue per unit shipped in December was consistent with the revenue per unit shipped in October and November, so the increase is attributable solely to volume."
+        },
+        {
+          "label": "C",
+          "text": "December revenue rose approximately 79% over November while units shipped rose only about 1%, and the credit memos issued in January equaled roughly 12% of December revenue."
+        },
+        {
+          "label": "D",
+          "text": "January revenue fell below the October and November levels, which is fully explained by the credit memos issued during January."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Revenue per unit shipped was $100 in October ($4,200,000 / 42,000), $100 in November ($4,350,000 / 43,500), and $100 in January ($2,100,000 / 21,000), but $177 in December ($7,800,000 / 44,000). Because the list price did not change, revenue of $7,800,000 cannot be supported by only 44,000 units shipped; revenue grew about 79% while shipments grew about 1%. The $910,000 of credit memos issued in January, roughly 12% of December revenue, corroborates that a large portion of the December entries were later reversed. Together these two findings point to revenue recorded for goods that were billed but not shipped, or shipped subject to rights the entity did not evaluate, so control had not transferred under ASC 606-10-25-30. Saying that both revenue and units increased consistently with seasonality ignores that the two measures moved by very different magnitudes. Saying revenue per unit was consistent is factually wrong: December was $177 per unit against $100 in every other month. Attributing the January decline to the credit memos is also wrong, because credit memos reduce revenue rather than explain a low volume of new shipments, and January units of 21,000 were about half the normal monthly volume, which is itself consistent with December pull-forward.",
+      "explanationJa": "出荷1単位あたりの収益は10月が$100（$4,200,000÷42,000）、11月が$100（$4,350,000÷43,500）、1月が$100（$2,100,000÷21,000）であるのに対し、12月だけが$177（$7,800,000÷44,000）である。定価は年間を通じて変わっていないため、44,000単位の出荷で$7,800,000の収益は説明できない。収益は約79%増えたのに出荷数量は約1%しか増えていない。さらに翌1月に発行されたクレジットメモ$910,000は12月収益の約12%にあたり、12月計上分の多くが後で取り消されたことを裏付ける。この2点は、出荷されていない商品を請求計上した、あるいは支配の移転を妨げる条項を評価せずに計上したことを示唆し、ASC 606-10-25-30の支配移転の要件を満たしていない疑いがある。収益も出荷数量もともに増えており季節性と整合するという説明は、両者の増加率が大きく食い違う点を無視している。単位あたり収益が各月で一貫しているという説明は事実に反する（12月のみ$177）。1月の減少をクレジットメモで説明するのも誤りで、クレジットメモは収益を減額するものであって新規出荷の少なさを説明しない。1月の出荷21,000単位は通常月の約半分であり、これ自体が12月への前倒し計上と整合する。",
+      "references": ["ASC 606-10-25-23", "ASC 606-10-25-30"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-rev-002",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Gap Analysis — Revenue Date vs. Shipping Date Cutoff",
+      "stem": "Halloran Co. has a December 31 year end. A data analytics routine compares the revenue recognition date in the sales ledger with the shipping and delivery dates in the warehouse system for every December invoice over $300,000. All of Halloran's sales contracts are FOB destination, no contract contains an acceptance clause, and control transfers on delivery to the customer. The routine produced the following exceptions report.\n\nInvoice | Amount | Date revenue recorded | Date shipped | Date received by customer\n1041 | $480,000 | December 27, Year 1 | December 22, Year 1 | December 26, Year 1\n1052 | $620,000 | December 29, Year 1 | December 29, Year 1 | January 3, Year 2\n1066 | $350,000 | December 30, Year 1 | January 2, Year 2 | January 6, Year 2\n1078 | $540,000 | December 31, Year 1 | December 26, Year 1 | December 30, Year 1\n1085 | $410,000 | December 31, Year 1 | December 30, Year 1 | January 4, Year 2\n\nWhat amount of the revenue recorded in December, Year 1 should be deferred to Year 2?",
+      "choices": [
+        { "label": "A", "text": "$970,000" },
+        { "label": "B", "text": "$1,380,000" },
+        { "label": "C", "text": "$760,000" },
+        { "label": "D", "text": "$2,400,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under FOB destination terms, control transfers when the customer receives the goods, so revenue belongs in the period of the receipt date. Three invoices were received by the customer in Year 2 and must be deferred: $620,000 received January 3, $350,000 received January 6, and $410,000 received January 4, for a total of $1,380,000. The $480,000 invoice was received December 26 and the $540,000 invoice was received December 30, so both are properly recorded in Year 1 even though the recording date does not match the shipping date. Deferring only $970,000 correctly captures invoices 1052 ($620,000) and 1066 ($350,000) but omits the $410,000 invoice (1085), which shipped in Year 1 yet was received in Year 2. Deferring $760,000 omits the $620,000 invoice. Deferring the entire $2,400,000 population treats every flagged exception as an error, but an exceptions report identifies items for investigation, not items that are automatically misstated.",
+      "explanationJa": "FOB destination条件では顧客が商品を受領した時点で支配が移転するため、収益は受領日の属する期に帰属する。顧客の受領がYear 2となった3件、$620,000（1月3日受領）、$350,000（1月6日受領）、$410,000（1月4日受領）の合計$1,380,000を繰り延べる必要がある。$480,000は12月26日受領、$540,000は12月30日受領であり、計上日と出荷日がずれていてもYear 1計上で正しい。$970,000とするのは請求書1052（$620,000）と1066（$350,000）は正しく拾っているが、Year 1に出荷したがYear 2に受領された請求書1085の$410,000を落としている。$760,000は$620,000を落としている。$2,400,000として全件を繰り延べるのは、例外レポートの抽出項目をすべて誤りとみなす扱いであり、例外レポートは調査対象を示すものであって自動的に誤謬を示すものではない。",
+      "references": ["ASC 606-10-25-30", "ASC 606-10-55-83"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-rev-003",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Analytics Output — Customer-Level Revenue and Year-End Concentration",
+      "stem": "An analyst at Trenton Products reviews the following report of the company's largest customers. Year 1 ended December 31, and all four customers buy the same product mix on the same stated credit terms of net 45 days.\n\nCustomer | Year 1 revenue | Revenue recorded in the last 5 business days of Year 1 | Days sales outstanding\nAdler Foods | $3,100,000 | $180,000 | 42\nBrixton Retail | $2,750,000 | $2,600,000 | 186\nCorley Supply | $2,400,000 | $210,000 | 38\nDelmar Group | $1,900,000 | $150,000 | 45\n\nWhich customer's revenue should be selected first for detailed investigation, and on what basis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Adler Foods, because it has the largest annual revenue balance in the population and therefore the largest absolute exposure."
+        },
+        {
+          "label": "B",
+          "text": "Corley Supply, because its days sales outstanding is the lowest in the population, which indicates that revenue was recognized earlier than it should have been."
+        },
+        {
+          "label": "C",
+          "text": "Delmar Group, because its year-end revenue is the smallest dollar amount in the population and small balances are most often omitted from review."
+        },
+        {
+          "label": "D",
+          "text": "Brixton Retail, because approximately 95% of its annual revenue was recorded in the final five business days and its days sales outstanding is more than four times that of the comparable customers."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Brixton Retail recorded $2,600,000 of its $2,750,000 annual total, about 95%, in the last five business days of the year, while the other three customers each recorded less than 9% of their annual revenue in that window. Brixton's days sales outstanding of 186 days is also more than four times the 38 to 45 days of customers on identical net 45 credit terms. The combination of extreme year-end concentration and slow collection is the classic signature of goods pushed to a customer under terms that do not transfer control, such as an unrecorded right of return or a consignment-like arrangement, or of an arrangement in which collection is not probable so that no contract exists under Step 1. Selecting the customer with the largest annual revenue ignores that the pattern of recognition, not the size of the balance, is the risk indicator here. A low days sales outstanding of 38 days indicates prompt collection and supports, rather than contradicts, the recorded revenue. Selecting the smallest year-end amount is not responsive to any indicator in the data.",
+      "explanationJa": "Brixton Retailは年間$2,750,000のうち$2,600,000、約95%を年度末の最後の5営業日に計上している。他の3社は同じ期間の計上がいずれも年間収益の9%未満にとどまる。さらにBrixtonのDSOは186日で、同一のnet 45条件である他社の38〜45日の4倍を超える。年度末への極端な集中と回収の遅さの組み合わせは、未記録の返品権や委託販売に近い取決めなど支配を移転しない条件での押し込み販売、あるいは回収可能性が高いとはいえずStep 1で契約が成立していない状況の典型的な兆候である。年間収益が最大という理由で選ぶのは、ここでの危険信号が残高の大きさではなく計上パターンである点を見落としている。DSOが38日と短いことは回収が順調であることを示し、計上された収益を否定するのではなくむしろ裏付ける。年度末計上額が最小であることは、このデータ上のどの兆候にも対応していない。",
+      "references": ["ASC 606-10-25-1", "ASC 606-10-25-30", "ASC 606-10-55-22"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-rev-004",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Analytics Output — Gross Margin Outlier and Gross vs. Net Correction",
+      "stem": "Wexford Inc.'s revenue dashboard disaggregates Year 1 revenue by product line as follows.\n\nProduct line | Revenue recorded | Cost of revenue | Gross margin %\nHardware | $8,000,000 | $5,600,000 | 30.0%\nSoftware | $3,000,000 | $900,000 | 70.0%\nMarketplace | $6,000,000 | $5,700,000 | 5.0%\nServices | $2,000,000 | $1,200,000 | 40.0%\n\nThe analyst investigates the Marketplace line because its margin is a significant outlier. The investigation establishes that in this line Wexford lists goods owned by third-party sellers, never obtains control of the goods, does not set the selling prices, bears no inventory risk, and is not responsible for fulfillment. Wexford collects the full price from the buyer, retains a 5% commission, and remits $5,700,000 to the sellers, which it has been reporting as cost of revenue. After correcting the presentation of the Marketplace line, what is Wexford's total Year 1 revenue?",
+      "choices": [
+        { "label": "A", "text": "$13,300,000" },
+        { "label": "B", "text": "$19,000,000" },
+        { "label": "C", "text": "$13,000,000" },
+        { "label": "D", "text": "$18,700,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Wexford does not control the marketplace goods before they transfer to the buyer, does not set prices, has no inventory risk, and is not responsible for fulfillment, so it is an agent for that line and must present revenue net at the amount of the commission it retains. Net marketplace revenue is $6,000,000 less the $5,700,000 remitted to the sellers, or $300,000. Total corrected revenue is $8,000,000 plus $3,000,000 plus $300,000 plus $2,000,000, which equals $13,300,000. Reporting $19,000,000 leaves the gross presentation in place and ignores the agent conclusion. Reporting $13,000,000 eliminates the marketplace line entirely, but an agent still recognizes revenue for the commission it earns for arranging the transaction. Reporting $18,700,000 reduces revenue by the $300,000 commission rather than by the $5,700,000 remitted to the sellers, which is the opposite of the required net presentation. Note that the correction reduces revenue and cost of revenue by the same $5,700,000, so gross profit and net income are unaffected.",
+      "explanationJa": "Wexfordはマーケットプレイス商品の買主への移転前に支配を有さず、価格も決定せず、在庫リスクも負わず、履行にも責任を負わないため、この製品ラインでは代理人であり、収益は留保する手数料の額で純額表示しなければならない。純額のマーケットプレイス収益は$6,000,000から出品者へ送金した$5,700,000を差し引いた$300,000である。修正後の収益合計は$8,000,000＋$3,000,000＋$300,000＋$2,000,000＝$13,300,000となる。$19,000,000は総額表示のままで代理人という結論を反映していない。$13,000,000はマーケットプレイス収益を全額消してしまっているが、代理人であっても取引を手配したことで得る手数料は収益として認識する。$18,700,000は出品者への送金額$5,700,000ではなく手数料$300,000の分だけ収益を減らしており、求められる純額表示と逆になっている。なおこの修正は収益と売上原価を同額の$5,700,000だけ減らすため、売上総利益と当期純利益には影響しない。",
+      "references": ["ASC 606-10-55-36", "ASC 606-10-55-39"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-rev-005",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Resolving an Exception — Unrecorded Right of Return Estimate",
+      "stem": "An exception report at Lindmark Co. flagged a December shipment to a newly signed distributor because the gross margin on the transaction differed from the margin on all other shipments of the same product. Investigation of the signed contract shows that the distributor has a 90-day right to return any unsold units for a full cash refund, a term the sales ledger did not capture. Lindmark shipped 12,000 units at $45 per unit; the cost of each unit is $28. Lindmark sells this product to many similar distributors, has extensive and reliable return experience with it, and expects 10% of the units to be returned. Returned units can be resold at the normal price after Lindmark incurs $2 per unit of restoration cost. What amount of revenue should Lindmark recognize in December, and what refund liability should it record?",
+      "choices": [
+        { "label": "A", "text": "Revenue of $540,000 and no refund liability" },
+        {
+          "label": "B",
+          "text": "Revenue of $540,000 and a refund liability of $54,000"
+        },
+        {
+          "label": "C",
+          "text": "Revenue of $486,000 and a refund liability of $54,000"
+        },
+        {
+          "label": "D",
+          "text": "Revenue of $486,000 and a refund liability of $33,600"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A right of return makes the consideration variable. Because Lindmark has extensive reliable experience with this product, it can estimate returns and is not required to constrain the estimate beyond the expected 10%. Revenue is recognized only for the units it expects to keep: 12,000 units less 1,200 expected returns equals 10,800 units at $45, or $486,000. The refund liability is measured at the consideration the entity expects to refund, which is 1,200 units at the $45 selling price, or $54,000. Lindmark also records an asset for its right to recover the returned products, measured at the former carrying amount less expected restoration cost, or 1,200 units at $28 less $2, which equals $31,200, with a corresponding reduction of cost of sales. Recognizing the full $540,000 with no liability ignores the return right altogether. Recognizing $540,000 together with a $54,000 liability double counts, because revenue must be reduced by the same amount recorded as the refund liability. Measuring the refund liability at $33,600 uses the $28 cost of the 1,200 units, but the refund liability is the cash owed to the customer, not the cost of the goods; $33,600 relates instead to the measurement of the return asset before the restoration cost.",
+      "explanationJa": "返品権が付されると対価は変動対価となる。Lindmarkはこの製品について豊富で信頼できる返品実績を有するため返品を見積もることができ、見込み10%を超えて制限をかける必要はない。収益は保持が見込まれる数量分のみ認識する。12,000単位から返品見込み1,200単位を差し引いた10,800単位×$45＝$486,000である。返金負債は顧客へ返金すると見込む対価で測定するため、1,200単位×販売価格$45＝$54,000となる。あわせて返品製品を回収する権利を資産計上し、従前の帳簿価額から回収に要する原価を控除した1,200単位×（$28－$2）＝$31,200を売上原価の減額とともに計上する。$540,000を全額認識して負債を計上しない処理は返品権を無視している。$540,000の収益と$54,000の負債を同時に計上するのは二重計上で、収益は返金負債と同額だけ減額しなければならない。返金負債を$33,600とするのは1,200単位の原価$28を使ったもので、返金負債は顧客へ支払うべき現金であって商品の原価ではない。$33,600は回収に要する原価を控除する前の返品資産の測定に関係する金額である。",
+      "references": [
+        "ASC 606-10-55-23",
+        "ASC 606-10-55-25",
+        "ASC 606-10-32-11"
+      ],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-rev-006",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Resolving an Exception — Effect of Correcting a Principal vs. Agent Error",
+      "stem": "A channel-level margin visualization at Norbury Co. shows that the drop-ship channel reports a 4% gross margin while every other channel reports margins between 32% and 45%. Investigation establishes that in the drop-ship channel the supplier sets the price charged to the end customer, ships directly to that customer, is solely responsible for fulfillment and for any defects, and Norbury never obtains control of the goods and bears no inventory risk. Norbury recorded these transactions gross because it issues the invoice to the customer and collects the cash, and it reports the amount remitted to the supplier as cost of revenue. Which statement correctly describes the effect of correcting the presentation of this channel?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Revenue decreases by the amount remitted to the supplier and net income decreases by the same amount."
+        },
+        {
+          "label": "B",
+          "text": "Revenue and cost of revenue each decrease by the amount remitted to the supplier; gross profit in dollars and net income are unchanged, while the reported gross margin percentage increases."
+        },
+        {
+          "label": "C",
+          "text": "Revenue is unchanged because Norbury invoices the customer and collects the cash, and only the disclosure of the arrangement must be added."
+        },
+        {
+          "label": "D",
+          "text": "Revenue decreases by the amount remitted to the supplier and the gross margin percentage decreases, because the commission Norbury retains is much smaller than the gross amount billed."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Norbury does not control the goods before they transfer, does not set the price, has no inventory risk, and is not responsible for fulfillment, so it is an agent and must present revenue net at the amount it retains. The correction removes the amount remitted to the supplier from revenue and removes the identical amount from cost of revenue, so gross profit in dollars, operating income, and net income are all unchanged. Because the same dollar amount of gross profit is now divided by a much smaller revenue figure, the reported gross margin percentage rises, which is what makes the 4% figure an outlier worth investigating in the first place. A reduction in net income does not occur, because the offsetting cost is removed at the same time. Revenue cannot remain unchanged; invoicing and collecting cash are administrative facts and are not among the indicators that the entity controls the good before transfer. The gross margin percentage rises rather than falls, since the numerator of the ratio is unaffected while the denominator shrinks.",
+      "explanationJa": "Norburyは商品の移転前に支配を有さず、価格も決定せず、在庫リスクも負わず、履行の責任も負わないため代理人であり、収益は留保額で純額表示しなければならない。修正により供給者への送金額が収益から除かれ、同額が売上原価からも除かれるため、金額ベースの売上総利益、営業利益、当期純利益はいずれも変わらない。売上総利益の金額が変わらないまま収益が大幅に小さくなるため、報告上の売上総利益率は上昇する。そもそもこの4%という数値が調査すべき外れ値になっていたのはこのためである。当期純利益が減るという結果にはならない。対応する原価も同時に除かれるからである。収益が変わらないということもあり得ない。請求書の発行や現金の回収は事務的な事実にすぎず、移転前に企業が商品を支配していることを示す指標には含まれない。売上総利益率は低下ではなく上昇する。比率の分子は影響を受けず分母だけが小さくなるためである。",
+      "references": [
+        "ASC 606-10-55-36",
+        "ASC 606-10-55-37",
+        "ASC 606-10-55-38"
+      ],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-rev-007",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Resolving an Exception — Overlooked Clause Creating an Additional Obligation",
+      "stem": "An automated exception report at Caldwell Systems flags contracts in which 100% of the contract price was recognized on a single date. One flagged contract has a price of $900,000 for equipment that was delivered to the customer on December 1, Year 1, and Caldwell recognized the entire $900,000 on that date. A reading of the contract appendix shows a clause, not captured in the revenue system, obligating Caldwell to provide on-site maintenance for three years beginning on the delivery date at no additional charge. The maintenance is distinct from the equipment. Caldwell's observable standalone selling prices are $840,000 for the equipment and $210,000 for three years of the maintenance service, and the maintenance is a stand-ready obligation satisfied evenly over the three-year period. What amount of revenue should Caldwell recognize in Year 1 from this contract?",
+      "choices": [
+        { "label": "A", "text": "$900,000" },
+        { "label": "B", "text": "$720,000" },
+        { "label": "C", "text": "$690,000" },
+        { "label": "D", "text": "$725,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The maintenance clause creates a second performance obligation, so the $900,000 transaction price must be allocated on a relative standalone selling price basis. Total standalone selling price is $840,000 plus $210,000, or $1,050,000. The equipment receives $900,000 multiplied by $840,000 divided by $1,050,000, which equals $720,000, recognized on delivery. The maintenance receives $900,000 multiplied by $210,000 divided by $1,050,000, which equals $180,000, recognized evenly over 36 months at $5,000 per month. One month, December, falls in Year 1, so Year 1 revenue is $720,000 plus $5,000, or $725,000. Recognizing $900,000 is the original error and ignores the second obligation entirely. Recognizing $720,000 correctly allocates the equipment but omits the one month of maintenance earned in December. Recognizing $690,000 subtracts the $210,000 standalone selling price of the maintenance directly from the $900,000 price instead of allocating the contractual discount proportionately across both obligations.",
+      "explanationJa": "保守条項は第2の履行義務を生じさせるため、取引価格$900,000を独立販売価格の比率で配分しなければならない。独立販売価格の合計は$840,000＋$210,000＝$1,050,000である。設備への配分額は$900,000×$840,000÷$1,050,000＝$720,000で、引渡時に認識する。保守への配分額は$900,000×$210,000÷$1,050,000＝$180,000で、36か月にわたり毎月$5,000ずつ均等に認識する。Year 1に属するのは12月の1か月分のみであるから、Year 1の収益は$720,000＋$5,000＝$725,000となる。$900,000は当初の誤りそのもので、第2の履行義務を全く考慮していない。$720,000は設備への配分は正しいが、12月に稼得した保守の1か月分を落としている。$690,000は契約上の値引きを両履行義務に比例配分せず、保守の独立販売価格$210,000を$900,000から直接差し引いている。",
+      "references": [
+        "ASC 606-10-25-19",
+        "ASC 606-10-32-31",
+        "ASC 606-10-32-33"
+      ],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-rev-008",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Interpreting Supplemental Documents — Side Letter Granting Return Rights",
+      "stem": "While investigating a year-end revenue outlier at Ferngate Co., an analyst obtains correspondence between Ferngate's regional sales manager, who has authority to commit the company to sales terms, and a customer. In the correspondence the manager grants the customer an unlimited right to return for full cash refund any units that remain unsold twelve months after delivery. The correspondence is not filed with the signed contract and was not provided to the accounting department. Ferngate recognized $1,200,000 on shipment in December, Year 1. The product is newly introduced, Ferngate has no history of selling it or any similar product, and it has no other basis on which to estimate the level of returns. How should Ferngate account for this arrangement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The correspondence is part of the contract because the terms are enforceable; because Ferngate has no basis to estimate returns, the consideration is fully constrained, so no revenue is recognized until the return right lapses or a reliable estimate becomes possible, and Ferngate records a refund liability and an asset for its right to recover the products."
+        },
+        {
+          "label": "B",
+          "text": "The correspondence is disregarded because it was not filed with the signed contract and was not communicated to the accounting department, so the $1,200,000 remains properly recognized."
+        },
+        {
+          "label": "C",
+          "text": "The full $1,200,000 remains revenue, and Ferngate accrues an expense for returns only in the period in which the customer physically returns the goods."
+        },
+        {
+          "label": "D",
+          "text": "The arrangement is a contract modification that is accounted for prospectively beginning on the date the correspondence was discovered by the analyst."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A contract under ASC 606 comprises all enforceable rights and obligations, whether written, oral, or implied by the entity's customary business practices. Because the sales manager had authority to commit Ferngate, the return right is enforceable and forms part of the contract from inception, regardless of where the document was filed. The return right makes the consideration variable, and variable consideration is included in the transaction price only to the extent it is probable that a significant revenue reversal will not occur. With a brand-new product, no history with it or similar products, and an unlimited return right running for twelve months, the estimate is fully constrained, so no revenue may be recognized. Ferngate recognizes a refund liability for the consideration received and an asset for its right to recover the products, and recognizes revenue when the return right lapses or when a reliable estimate becomes possible. Disregarding the correspondence because of where it was filed confuses document control with enforceability. Leaving the full amount in revenue and accruing for returns as they occur applies an incurred-loss approach that ASC 606 does not permit. Treating the arrangement as a modification is wrong because the return right existed at inception and was never a subsequent change to the contract's scope or price.",
+      "explanationJa": "ASC 606における契約とは、書面か口頭か企業の慣行から黙示的に生じるかを問わず、強制可能な権利と義務のすべてを指す。営業部長にはFerngateを拘束する権限があったため、この返品権は強制可能であり、書類がどこに保管されていたかにかかわらず当初から契約の一部を構成する。返品権により対価は変動対価となり、変動対価は重大な収益の戻入れが生じない可能性が高い範囲でのみ取引価格に含める。新製品で自社にも類似製品にも実績がなく、12か月間の無制限の返品権が付されている状況では見積りは全額が制限されるため、収益を認識できない。Ferngateは受領した対価について返金負債を、製品を回収する権利について資産を計上し、返品権が消滅した時点または信頼できる見積りが可能になった時点で収益を認識する。保管場所を理由に書簡を無視する扱いは、文書管理と強制可能性を混同している。全額を収益に残して返品発生時に費用を計上する扱いは、ASC 606が認めない発生損失アプローチである。契約変更として扱うのも誤りで、返品権は当初から存在しており、契約の範囲や価格を事後的に変更したものではない。",
+      "references": ["ASC 606-10-25-2", "ASC 606-10-32-11", "ASC 606-10-55-23"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-rev-009",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Interpreting Supplemental Documents — Acceptance Clauses and Price Concessions",
+      "stem": "An analyst at Rowan Industries reviews the supporting contracts for three transactions recorded in the last week of Year 1.\n\nTransaction | Relevant contract feature | Rowan's accounting\nAlpha | Acceptance clause requiring the customer to confirm after on-site testing that the machine meets specifications unique to that customer; Rowan cannot objectively determine compliance with those specifications before installation | Revenue recorded on shipment\nBeta | Stated contract price of $500,000; Rowan has consistently granted concessions of 8% off the stated price to every customer in this class and intends to do so here | Revenue recorded at $500,000\nGamma | Acceptance clause based on standard published specifications that Rowan routinely verifies in its own facility before shipment; the customer trial period is a formality | Revenue recorded on shipment\n\nWhich statement correctly describes the required treatment of these three transactions?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "All three transactions must be deferred until the customer provides formal written acceptance, because each contract contains a customer-protective term."
+        },
+        {
+          "label": "B",
+          "text": "Alpha and Gamma must be deferred until acceptance is obtained, and Beta's transaction price is appropriate because the price is stated in the signed contract."
+        },
+        {
+          "label": "C",
+          "text": "Alpha must be deferred until acceptance is obtained, Beta's transaction price must be reduced to $460,000 for the expected price concession, and Gamma's recognition on shipment is appropriate."
+        },
+        {
+          "label": "D",
+          "text": "Only Beta requires adjustment, and that adjustment is recorded as bad debt expense rather than as a reduction of the transaction price."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "For Alpha, the specifications are customer-specific and Rowan cannot objectively determine before installation that they are met, so acceptance is substantive and control does not transfer until the customer accepts; revenue must be deferred. For Beta, an entity's customary practice of granting concessions makes the consideration variable even though a fixed price is stated, so the transaction price is the amount the entity expects to be entitled to, which is $500,000 multiplied by 92%, or $460,000. For Gamma, the specifications are standard and objectively verifiable before shipment, so the acceptance clause is a formality that does not prevent control from transferring, and recognition on shipment is appropriate. Deferring all three ignores the distinction ASC 606 draws between acceptance clauses based on objectively verifiable standard criteria and those based on subjective or customer-specific criteria. Deferring Gamma applies the Alpha analysis to facts that do not support it, and accepting the $500,000 stated price ignores the customary concession practice. Recording the Beta adjustment as bad debt expense is wrong because an expected price concession is a reduction of the transaction price, not a credit loss; the entity intends to accept less, rather than being unable to collect what it is owed.",
+      "explanationJa": "Alphaでは仕様が顧客固有であり、据付前にRowanが客観的に充足を判断できないため、検収は実質的であり顧客の検収まで支配は移転しない。したがって収益を繰り延べる。Betaでは固定価格が明示されていても、値引きを付与する企業の慣行により対価は変動対価となるため、取引価格は企業が権利を得ると見込む額、すなわち$500,000×92%＝$460,000となる。Gammaでは仕様が標準的で出荷前に客観的に検証できるため、検収条項は形式的なものであり支配の移転を妨げない。出荷時の認識で適切である。3件すべてを繰り延べる扱いは、客観的に検証可能な標準基準に基づく検収条項と、主観的または顧客固有の基準に基づく検収条項をASC 606が区別している点を無視している。Gammaを繰り延べるのはAlphaの分析を事実関係の異なる取引に当てはめたもので、$500,000をそのまま認めるのは慣行としての値引き付与を無視している。Betaの調整を貸倒費用として処理するのは誤りで、見込まれる価格譲歩は取引価格の減額であって信用損失ではない。企業は請求額を回収できないのではなく、自ら少ない額を受け入れる意思を持っている。",
+      "references": ["ASC 606-10-55-86", "ASC 606-10-32-7", "ASC 606-10-32-11"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-rev-010",
+      "topic": "Revenue Recognition & Data Analytics",
+      "subtopic": "Completeness and Accuracy of the Revenue Data Set",
+      "stem": "Before running analytics over Year 1 revenue, an analyst at Kingsley Co. receives an extract of the revenue transaction file. The extract was produced by the sales department and contains four fields: invoice number, customer name, invoice date, and invoice amount. The analyst intends to use the extract to identify transactions for which control may not have transferred by year end. Which procedure best establishes that the extract is complete and accurate and is suitable for the intended analysis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Recalculate the gross margin percentage for each product line in the extract and compare it with the prior-year percentage, investigating any line that moved by more than two percentage points."
+        },
+        {
+          "label": "B",
+          "text": "Agree the total dollar amount and the record count in the extract to the general ledger revenue accounts for the period, test the invoice number sequence for gaps and duplicates, and obtain the shipping date, delivery terms, and contract terms fields, which the extract does not contain but the intended analysis requires."
+        },
+        {
+          "label": "C",
+          "text": "Sort the extract by invoice amount and examine only the 25 largest invoices, because those carry the greatest dollar risk of misstatement."
+        },
+        {
+          "label": "D",
+          "text": "Confirm with management that the extract was generated by the information technology department rather than the sales department, which is sufficient evidence of both completeness and accuracy."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Completeness is established by agreeing the population in the extract back to an independent control total, which is the general ledger revenue for the period, by both dollar amount and record count, and by testing the invoice number sequence for gaps and duplicates so that omitted or double-counted transactions are detected. Accuracy is supported by the same reconciliation, because a matching dollar total and record count demonstrate that field values were not altered or truncated in the extraction. Suitability is a separate requirement: the stated objective is to identify transactions for which control had not transferred by year end, and that cannot be evaluated without the shipping date, the delivery terms, and the contract terms, none of which appear in the four fields provided. Recalculating gross margin is an analytical procedure performed on the data; it presumes the data are already reliable and cannot establish that presumption. Examining only the largest invoices is a selection strategy, not a completeness or accuracy procedure, and it leaves the rest of the population untested, where cutoff errors involving many smaller invoices would reside. Confirming the source department of the extract addresses the risk of management bias in preparation, but it is not by itself evidence that the extract ties to the accounting records or that any necessary field is present.",
+      "explanationJa": "完全性は、抽出データの母集団を独立した統制合計、すなわち当期の総勘定元帳の収益に金額とレコード件数の両面で突合すること、および請求書番号の連番に欠番や重複がないかを検証して脱漏や二重計上を検出することで確かめる。正確性も同じ突合によって裏付けられる。金額合計とレコード件数が一致することは、抽出の過程で項目の値が改変されたり欠落したりしていないことを示すからである。目的適合性はこれとは別の要件である。ここでの目的は期末時点で支配が移転していない取引を識別することであり、その評価には出荷日、引渡条件、契約条件が不可欠だが、与えられた4項目にはいずれも含まれていない。売上総利益率の再計算はデータに対して実施する分析的手続であり、データが既に信頼できることを前提とするため、その前提自体を立証できない。金額上位のみを検討するのは抽出方針であって完全性や正確性の手続ではなく、母集団の残りが未検証のまま残る。期ズレの誤りは金額の小さい多数の請求書に潜むことが多い。抽出元の部署を確認することは作成時の経営者バイアスのリスクには対応するが、それだけでは抽出データが会計記録と一致することや必要な項目が揃っていることの証拠にはならない。",
+      "references": ["ASC 606-10-25-30", "ASC 606-10-50-5"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    }
+  ]
+}

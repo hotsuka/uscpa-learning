@@ -14,6 +14,19 @@ import planningControl from "./planning-control.json";
 import riskManagementErm from "./risk-management-erm.json";
 import strategicPlanning from "./strategic-planning.json";
 
+// Area II / III 用にBAR専用で作問したセット（FARセットから借りたものとは別枠）
+import area2BenefitPlans from "./benefit-plans.json";
+import area2BusinessCombinations from "./business-combinations.json";
+import area2Derivatives from "./derivatives.json";
+import area2FxTranslation from "./fx-translation.json";
+import area2LeasesLessor from "./leases-lessor.json";
+import area2PublicReporting from "./public-reporting.json";
+import area2RevenueAnalytics from "./revenue-analytics.json";
+import area2SoftwareIntangibles from "./software-intangibles.json";
+import area2StockComp from "./stock-comp.json";
+import area3GovernmentFunds from "./government-funds.json";
+import area3GovernmentWide from "./government-wide.json";
+
 export type BarArea = "I" | "II" | "III";
 
 // BAR Area I（Business Analysis, 配点40-50%）に対応する問題セット。
@@ -54,12 +67,43 @@ export const barAreaIIIIIQuestionSets: QuestionSet[] = [
   .map((setId) => farQuestionSets.find((set) => set.id === setId))
   .filter((set): set is QuestionSet => set !== undefined);
 
+// BAR専用に作問した Area II / III のセット。FARセットは科目の深度が違う（借手リースなど）ため、
+// BARで問われる深度の問題はこちら側に持つ。setId → Area の対応もここで持つ。
+const barOwnAreaBySetId = new Map<string, Exclude<BarArea, "I">>([
+  [area2LeasesLessor.id, "II"],
+  [area2BusinessCombinations.id, "II"],
+  [area2StockComp.id, "II"],
+  [area2Derivatives.id, "II"],
+  [area2PublicReporting.id, "II"],
+  [area2FxTranslation.id, "II"],
+  [area2SoftwareIntangibles.id, "II"],
+  [area2BenefitPlans.id, "II"],
+  [area2RevenueAnalytics.id, "II"],
+  [area3GovernmentWide.id, "III"],
+  [area3GovernmentFunds.id, "III"],
+]);
+
+export const barOwnAreaIIIIIQuestionSets: QuestionSet[] = [
+  area2LeasesLessor,
+  area2BusinessCombinations,
+  area2StockComp,
+  area2Derivatives,
+  area2PublicReporting,
+  area2FxTranslation,
+  area2SoftwareIntangibles,
+  area2BenefitPlans,
+  area2RevenueAnalytics,
+  area3GovernmentWide,
+  area3GovernmentFunds,
+] as QuestionSet[];
+
 // BAR画面で演習対象にする全セット（Area I → II → III）
 export const barPracticeQuestionSets: QuestionSet[] = [
   ...barQuestionSets,
+  ...barOwnAreaIIIIIQuestionSets,
   ...barAreaIIIIIQuestionSets,
 ];
 
 /** BAR画面のセットがどのAreaに属するか。FAR側から借りたセットは II / III */
 export const getBarAreaForSet = (setId: string): BarArea =>
-  barAreaByFarSetId.get(setId) ?? "I";
+  barOwnAreaBySetId.get(setId) ?? barAreaByFarSetId.get(setId) ?? "I";

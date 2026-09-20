@@ -1,0 +1,383 @@
+{
+  "id": "bar-area2-derivatives",
+  "name": "Derivatives & Hedging (Area II)",
+  "topic": "Derivatives & Hedging (BAR Area II)",
+  "version": "1.0.0",
+  "questions": [
+    {
+      "id": "bar2-deriv-001",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedge Type Selection — Fixed-to-Variable Conversion",
+      "stem": "Langford Corp. has $12,000,000 of 6% fixed-rate notes payable that pay interest annually on December 31. Management expects market interest rates to decline, and on January 1, Year 1, Langford enters into an interest rate swap with a notional amount of $12,000,000 under which it receives 6% fixed and pays SOFR plus 1%, with net settlement each December 31. SOFR for the Year 1 settlement period was set at 3.5% on January 1, Year 1. Langford designates the swap in a qualifying hedging relationship. How should the swap be designated, and what is the net settlement amount on December 31, Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cash flow hedge; Langford receives a net settlement of $180,000"
+        },
+        {
+          "label": "B",
+          "text": "Fair value hedge; Langford receives a net settlement of $180,000"
+        },
+        {
+          "label": "C",
+          "text": "Fair value hedge; Langford pays a net settlement of $180,000"
+        },
+        {
+          "label": "D",
+          "text": "Cash flow hedge; Langford pays a net settlement of $1,260,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A receive-fixed, pay-variable swap converts fixed-rate debt into synthetic variable-rate debt. The exposure being hedged is the change in the fair value of the fixed-rate notes attributable to interest rate risk, so the relationship is a fair value hedge. A cash flow hedge would be appropriate only in the reverse case, where variable-rate debt is converted to fixed and the exposure is variability in future interest cash flows. Net settlement: Langford receives 6% x $12,000,000 = $720,000 and pays (3.5% + 1%) = 4.5% x $12,000,000 = $540,000, for a net receipt of $180,000. The $180,000 net payment answer reverses the legs; the variable leg of 4.5% is below the 6% fixed leg, so Langford is a net receiver. The $1,260,000 answer adds the two legs ($720,000 + $540,000) instead of netting them, which contradicts the net-settlement feature of the contract.",
+      "explanationJa": "固定を受け取り変動を支払うスワップは、固定金利債務を実質的に変動金利債務へ転換する。ヘッジ対象のエクスポージャーは固定金利ノートの金利リスクに起因する公正価値の変動であるため、公正価値ヘッジとなる。キャッシュフロー・ヘッジが適切なのは逆のケース、すなわち変動金利債務を固定に転換し、将来の利息キャッシュフローの変動性をヘッジする場合である。純額決済額は、受取が6% x $12,000,000 = $720,000、支払が(3.5% + 1%) = 4.5% x $12,000,000 = $540,000 で、差額 $180,000 の受取となる。$180,000 の支払とする解答は受払いを逆にしている（変動レート4.5%は固定6%を下回るため純受取）。$1,260,000 は両レッグを合計（$720,000 + $540,000）しており、純額決済という契約条件に反する。",
+      "references": ["ASC 815-20-25-12", "ASC 815-25-35-1"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-002",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Designated Hedged Risk — Nonfinancial Asset",
+      "stem": "Harrow Industries holds 200,000 pounds of aluminum inventory and wants to designate a fair value hedge of that inventory using exchange-traded aluminum futures. Under ASC 815, which risk may Harrow designate as the hedged risk in a fair value hedge of a nonfinancial asset?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The change in the benchmark interest rate component of the inventory's fair value"
+        },
+        {
+          "label": "B",
+          "text": "The change in the contractually specified aluminum price component of the inventory's fair value"
+        },
+        {
+          "label": "C",
+          "text": "The change in the overall fair value of the aluminum inventory"
+        },
+        {
+          "label": "D",
+          "text": "The change in the credit spread of the supplier from whom the aluminum was purchased"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "For a fair value hedge of a nonfinancial asset or liability, ASC 815 permits designation of only two risks: the risk of changes in the overall fair value of the hedged item, or foreign currency risk. Designating a single price component is not permitted in a fair value hedge. The contractually specified component alternative added by ASU 2017-12 applies only to cash flow hedges of forecasted purchases or sales of a nonfinancial item, not to fair value hedges of a recognized nonfinancial asset, so the aluminum price component answer applies the right concept to the wrong hedge type. Benchmark interest rate risk may be designated only for financial instruments, and supplier credit risk is a risk of a financial asset, not of the inventory itself.",
+      "explanationJa": "非金融資産・負債の公正価値ヘッジでは、ASC 815 が指定を認めるリスクは2つだけである。ヘッジ対象の公正価値全体の変動リスク、または為替リスクである。単一の価格構成要素の指定は公正価値ヘッジでは認められない。ASU 2017-12 が追加した「契約で特定された構成要素」は、非金融項目の予定購入・予定販売に係るキャッシュフロー・ヘッジにのみ適用され、認識済みの非金融資産の公正価値ヘッジには適用されない。アルミ価格構成要素という解答は、正しい概念を誤ったヘッジ種類に当てはめている。ベンチマーク金利リスクは金融商品にのみ指定でき、仕入先の信用スプレッドは金融資産のリスクであって棚卸資産自体のリスクではない。",
+      "references": ["ASC 815-20-25-12", "ASC 815-20-25-22A"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-003",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Benchmark Rate vs Contractually Specified Rate",
+      "stem": "Meridian Bank has two hedging relationships. The first is a fair value hedge of the interest rate risk of its own outstanding fixed-rate debt. The second is a cash flow hedge of the variability in interest receipts on a loan receivable whose contract rate resets to the prime rate plus 1.5%. Under ASC 815 as amended by ASU 2017-12 and ASU 2018-16, which statement about the designated interest rate risk is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Prime may be designated as the hedged risk in the cash flow hedge, but interest rate risk in the fair value hedge may be designated only as an eligible benchmark interest rate component or as the total contractual coupon rate."
+        },
+        {
+          "label": "B",
+          "text": "Prime may not be designated in either hedge because it is not an eligible benchmark interest rate."
+        },
+        {
+          "label": "C",
+          "text": "Prime may be designated in both hedges because ASU 2017-12 eliminated the benchmark interest rate concept for all hedging relationships."
+        },
+        {
+          "label": "D",
+          "text": "The fair value hedge must designate the total contractual coupon rate; designating only a benchmark interest rate component is prohibited."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In a cash flow hedge of a variable-rate financial instrument, the hedged risk is the variability in cash flows attributable to the contractually specified interest rate. That rate need not be an eligible benchmark rate, so prime plus 1.5% is a valid designation. In a fair value hedge of a fixed-rate instrument there is no contractually specified variable rate, so ASC 815 limits the designation to an eligible benchmark rate component (U.S. Treasury rate, the Fed Funds Effective Swap Rate, the SIFMA Municipal Swap Rate, or the SOFR OIS rate) or, under ASU 2017-12, the total contractual coupon rate. The answer that prohibits prime in both hedges ignores the contractually specified rate rule for variable-rate cash flow hedges. ASU 2017-12 expanded but did not eliminate the benchmark rate concept, and it added the total coupon alternative rather than making it mandatory.",
+      "explanationJa": "変動金利の金融商品に係るキャッシュフロー・ヘッジでは、ヘッジ対象リスクは契約で特定された金利に起因するキャッシュフローの変動性である。この金利は適格なベンチマーク金利である必要がなく、プライム＋1.5%の指定は有効である。他方、固定金利商品の公正価値ヘッジには契約上の変動金利が存在しないため、ASC 815 は適格なベンチマーク金利構成要素（米国債金利、Fed Funds Effective Swap Rate、SIFMA Municipal Swap Rate、SOFR OIS レート）、または ASU 2017-12 により認められた契約上のクーポン全体のいずれかに指定を限定する。両方のヘッジでプライムを認めないとする解答は、変動金利のキャッシュフロー・ヘッジにおける契約特定金利の規定を見落としている。ASU 2017-12 はベンチマーク金利の概念を拡張したが廃止しておらず、クーポン全体は選択肢を追加したものであって強制ではない。",
+      "references": ["ASC 815-20-25-6A", "ASC 815-20-25-15"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-004",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Contractually Specified Component — OCI Measurement",
+      "stem": "Halstead Foods will purchase 500,000 bushels of wheat in six months under a supply agreement whose price formula is explicitly stated as the CBOT wheat futures settlement price plus a fixed handling charge of $0.40 per bushel. Halstead designates wheat futures contracts on 500,000 bushels as a cash flow hedge of the contractually specified CBOT component of the forecasted purchase price. During the current period the CBOT component increases by $0.25 per bushel, the handling charge is unchanged, and the futures contracts increase in fair value by $125,000. The hedge is highly effective and no amounts are reclassified in the current period. What amount does Halstead recognize in other comprehensive income for the period?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$200,000" },
+        { "label": "C", "text": "$325,000" },
+        { "label": "D", "text": "$125,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASU 2017-12 permits an entity to designate the contractually specified component of the price of a forecasted purchase of a nonfinancial item as the hedged risk, provided the component is explicitly stated in the contract. The CBOT settlement price is so stated, so the designation is valid. The entire change in the fair value of the hedging futures contracts is recorded in other comprehensive income until the hedged purchase affects earnings: $0.25 x 500,000 bushels = $125,000, which equals the $125,000 change in the futures' fair value. The $200,000 answer applies the $0.40 fixed handling charge, which is not variable and is not part of the hedged component. The $325,000 answer adds the handling charge to the price movement ($0.65 x 500,000). Recognizing $0 would be correct only if the designation failed and the derivative were marked to earnings instead.",
+      "explanationJa": "ASU 2017-12 は、契約で明示された構成要素であれば、非金融項目の予定購入価格の「契約で特定された構成要素」をヘッジ対象リスクに指定することを認める。CBOT 決済価格は契約に明示されているため指定は有効である。ヘッジ手段である先物の公正価値変動は、ヘッジ対象の購入が損益に影響するまで全額その他の包括利益に計上する。$0.25 x 500,000ブッシェル = $125,000 であり、先物の公正価値変動 $125,000 と一致する。$200,000 は変動しない固定の取扱手数料 $0.40 を用いており、これはヘッジ対象構成要素に含まれない。$325,000 は取扱手数料を価格変動に加算している（$0.65 x 500,000）。$0 となるのは指定が認められずデリバティブを損益処理する場合のみである。",
+      "references": ["ASC 815-20-25-22A", "ASC 815-30-35-3"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-005",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedged Item Eligibility — Held-to-Maturity Securities",
+      "stem": "Calder Bank holds a euro-denominated fixed-rate corporate bond that it classifies as held-to-maturity. Calder's functional currency is the U.S. dollar. Under ASC 815, which of the following hedging relationships involving that bond qualifies for hedge accounting?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A fair value hedge of the benchmark interest rate risk of the bond"
+        },
+        {
+          "label": "B",
+          "text": "A fair value hedge of the foreign exchange risk of the bond"
+        },
+        {
+          "label": "C",
+          "text": "A fair value hedge of changes in the overall fair value of the bond"
+        },
+        {
+          "label": "D",
+          "text": "A cash flow hedge of the variability in the bond's fixed interest receipts"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A held-to-maturity security may not be the hedged item in a fair value hedge of interest rate risk or of changes in overall fair value, because designating those risks is inconsistent with the asserted intent and ability to hold the security to maturity regardless of rate movements. ASC 815 does permit a held-to-maturity security to be hedged for foreign exchange risk, credit risk, or both, since those exposures affect the amounts ultimately collected in the functional currency and do not contradict the holding intent. A cash flow hedge of the fixed interest receipts fails because fixed contractual cash flows have no variability to hedge; cash flow hedge treatment of a held-to-maturity security is limited to foreign currency exposure.",
+      "explanationJa": "満期保有目的有価証券は、金利リスクまたは公正価値全体の変動リスクに係る公正価値ヘッジのヘッジ対象にできない。これらのリスクを指定することは、金利変動にかかわらず満期まで保有するという意図と能力の主張と矛盾するためである。一方で ASC 815 は、満期保有目的有価証券について為替リスク・信用リスク（またはその双方）のヘッジを認める。これらは最終的に機能通貨で回収される金額に影響し、保有意図と矛盾しないためである。固定利息受取のキャッシュフロー・ヘッジは、固定の契約キャッシュフローにはヘッジすべき変動性が存在しないため不適格であり、満期保有目的有価証券のキャッシュフロー・ヘッジは為替エクスポージャーに限定される。",
+      "references": ["ASC 815-20-25-43", "ASC 815-20-25-15"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-006",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Hedged Item Eligibility — Net Position Prohibition",
+      "stem": "For the quarter ending September 30, Torvald Inc., a U.S. company, forecasts euro-denominated export sales of EUR 900,000 and euro-denominated inventory purchases of EUR 400,000. Both forecasted transactions are highly probable. Torvald wants to hedge its euro exposure for the quarter using forward contracts. Which designation is permitted under ASC 815?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A cash flow hedge of the EUR 500,000 net forecasted euro exposure for the quarter"
+        },
+        {
+          "label": "B",
+          "text": "A cash flow hedge of 55.6% of the net forecasted euro exposure for the quarter"
+        },
+        {
+          "label": "C",
+          "text": "A fair value hedge of the EUR 900,000 of forecasted export sales"
+        },
+        {
+          "label": "D",
+          "text": "A cash flow hedge of the first EUR 400,000 of forecasted export sales occurring in the quarter"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "ASC 815 prohibits designating a net position as the hedged item. The hedged item must be a single transaction or a group of individual transactions that share the same risk exposure and move proportionately, so offsetting forecasted inflows and outflows cannot be combined into one net designation. Both the EUR 500,000 net exposure answer and the percentage-of-net answer violate this prohibition; expressing the net position as a percentage does not cure it. Designating a specified portion of a gross group, such as the first EUR 400,000 of forecasted export sales in the quarter, is permitted and achieves substantially the same economic result. The fair value hedge answer is wrong because a forecasted transaction is not a recognized asset, liability, or firm commitment and therefore can only be hedged as a cash flow hedge.",
+      "explanationJa": "ASC 815 はネットポジションをヘッジ対象に指定することを禁じている。ヘッジ対象は単一の取引、または同一のリスクに晒され比例的に変動する個別取引のグループでなければならず、相殺関係にある予定流入と予定流出を1つのネット指定にまとめることはできない。EUR 500,000 のネットエクスポージャーを指定する解答も、ネットの割合で指定する解答もこの禁止に抵触する。ネットポジションを百分率で表現しても適格にはならない。一方、グロスのグループのうち特定部分、例えば当四半期に発生する予定輸出売上のうち最初の EUR 400,000 を指定することは認められ、経済的にはほぼ同等の効果が得られる。公正価値ヘッジとする解答は、予定取引が認識済み資産・負債でも確定約定でもないため誤りであり、予定取引はキャッシュフロー・ヘッジでしかヘッジできない。",
+      "references": ["ASC 815-20-25-12", "ASC 815-20-25-15"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-007",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Forecasted Transaction — Probability Reassessment",
+      "stem": "Ellery Corp. designated a forward contract as a cash flow hedge of a forecasted purchase of raw materials originally specified to occur in March, Year 2. At December 31, Year 1, $48,000 of net gains on the forward contract are accumulated in other comprehensive income. In January, Year 2, management concludes that the purchase is no longer probable of occurring in March, but it is still reasonably possible that the purchase will occur by May, Year 2, which is within two months of the originally specified date. What amount of the accumulated gain should Ellery reclassify from accumulated other comprehensive income to earnings in January, Year 2?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$0; the gain remains in accumulated other comprehensive income"
+        },
+        {
+          "label": "B",
+          "text": "$48,000; the entire gain is immediately reclassified to earnings"
+        },
+        {
+          "label": "C",
+          "text": "$24,000; half of the gain is reclassified and half remains in accumulated other comprehensive income"
+        },
+        {
+          "label": "D",
+          "text": "$48,000; hedge accounting is reversed retrospectively and the entire gain is removed from accumulated other comprehensive income"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When a forecasted transaction is no longer probable, hedge accounting is discontinued prospectively and subsequent changes in the derivative's fair value go directly to earnings. The amount already accumulated in other comprehensive income, however, is not immediately reclassified. It stays in accumulated other comprehensive income until the forecasted transaction affects earnings, or until it becomes probable that the transaction will not occur. ASC 815 provides an additional two-month window after the originally specified date, so a transaction still reasonably possible by May, Year 2, has not yet reached the probable-of-not-occurring threshold and no amount is reclassified in January. Immediate reclassification of the full $48,000 would be correct only if the purchase were probable of not occurring at all. Splitting the balance in half has no basis in the standard, and hedge accounting is never reversed retrospectively.",
+      "explanationJa": "予定取引が発生可能性が高い（probable）と言えなくなった場合、ヘッジ会計は将来に向かって中止され、以後のデリバティブの公正価値変動は損益に直接計上される。ただし、すでにその他の包括利益に累積した金額は直ちに組替えない。ヘッジ対象の予定取引が損益に影響するまで、または当該取引が発生しない可能性が高い（probable of not occurring）と判断されるまで、累積その他の包括利益に留め置かれる。ASC 815 は当初特定した日から2か月の追加期間を認めているため、Year 2 の5月までに発生する可能性がなお合理的にあるのであれば「発生しない可能性が高い」水準には達しておらず、1月に組替える金額はない。$48,000 全額の即時組替えは、購入がまったく発生しない可能性が高い場合にのみ正しい。残高を半分に分ける処理は基準上の根拠がなく、ヘッジ会計を遡及的に取り消すこともない。",
+      "references": ["ASC 815-30-40-4", "ASC 815-30-40-5"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-008",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Basis Adjustment — Inventory and Cost of Goods Sold",
+      "stem": "Norwood Co. designated commodity futures contracts as a cash flow hedge of a highly probable forecasted purchase of 40,000 units of raw material, and elects to apply the basis adjustment approach. When the purchase occurs, $90,000 of net gains are accumulated in other comprehensive income and Norwood pays $1,200,000 cash for the inventory. By year-end, 75% of the units purchased have been sold. What amount of the hedging gain is recognized in earnings for the year, and what is the carrying amount of the remaining inventory?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$67,500 recognized in earnings; remaining inventory of $277,500"
+        },
+        {
+          "label": "B",
+          "text": "$90,000 recognized in earnings; remaining inventory of $300,000"
+        },
+        {
+          "label": "C",
+          "text": "$0 recognized in earnings; remaining inventory of $277,500"
+        },
+        {
+          "label": "D",
+          "text": "$67,500 recognized in earnings; remaining inventory of $300,000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under the basis adjustment approach, the amount accumulated in other comprehensive income is removed and applied against the initial carrying amount of the asset acquired. A gain reduces the recorded cost, so inventory is recognized at $1,200,000 - $90,000 = $1,110,000. The hedging gain then enters earnings through cost of goods sold as the inventory is sold. With 75% sold, $90,000 x 75% = $67,500 of the gain reaches earnings as a reduction of cost of goods sold, and the remaining inventory is carried at $1,110,000 x 25% = $277,500. The $300,000 inventory figure applies 25% to the unadjusted $1,200,000 cash price and ignores the basis adjustment entirely. Recognizing the full $90,000 in earnings would treat the hedge as ineffective or immediately reclassified, and recognizing $0 ignores that 75% of the hedged inventory has already affected earnings.",
+      "explanationJa": "ベーシス調整（basis adjustment）を選択した場合、その他の包括利益に累積した金額は取り崩され、取得した資産の当初帳簿価額に加減される。利益は取得原価を減額するため、棚卸資産は $1,200,000 - $90,000 = $1,110,000 で計上される。ヘッジ損益はその後、棚卸資産の販売に伴い売上原価を通じて損益に計上される。75%が販売済みであるため、$90,000 x 75% = $67,500 が売上原価の減額として損益に達し、残る棚卸資産は $1,110,000 x 25% = $277,500 となる。$300,000 という解答は調整前の支払額 $1,200,000 に25%を乗じており、ベーシス調整をまったく反映していない。$90,000 全額を損益計上するのはヘッジが非有効であるか即時組替えの場合の処理であり、$0 とするのはヘッジ対象棚卸資産の75%がすでに損益に影響している事実を無視している。",
+      "references": ["ASC 815-30-35-38", "ASC 815-30-35-39"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-009",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Partial Reclassification from AOCI",
+      "stem": "Ashgrove Mills designated futures contracts as a cash flow hedge of a highly probable forecasted purchase of 100,000 pounds of cocoa. At the end of the hedge period, $80,000 of net losses are accumulated in other comprehensive income. Ashgrove purchases only 60,000 pounds; management concludes that the remaining 40,000 pounds will not be purchased. Ashgrove does not elect the basis adjustment approach, so amounts are reclassified when the hedged item affects earnings. What amount of the accumulated loss is reclassified from accumulated other comprehensive income to earnings immediately?",
+      "choices": [
+        { "label": "A", "text": "$80,000" },
+        { "label": "B", "text": "$48,000" },
+        { "label": "C", "text": "$32,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The accumulated balance is allocated pro rata between the portion of the forecasted transaction that occurred and the portion that will not occur. For the 40,000 pounds that are now probable of not being purchased, the related amount must be reclassified to earnings immediately: $80,000 x 40,000/100,000 = $32,000. The $48,000 relating to the 60,000 pounds actually purchased ($80,000 x 60%) stays in accumulated other comprehensive income and is reclassified only as that inventory affects earnings through cost of goods sold. Reclassifying the entire $80,000 ignores that 60% of the hedged forecasted purchase did occur and remains a valid hedged item. Reclassifying $48,000 reverses the two portions. Reclassifying $0 ignores the requirement to release amounts immediately once a forecasted transaction is probable of not occurring.",
+      "explanationJa": "累積残高は、発生した予定取引部分と発生しない部分とに按分される。購入されない可能性が高いと判断された 40,000ポンドに対応する金額は直ちに損益へ組み替える。$80,000 x 40,000/100,000 = $32,000 である。実際に購入した 60,000ポンドに対応する $48,000（$80,000 x 60%）は累積その他の包括利益に留まり、当該棚卸資産が売上原価を通じて損益に影響する時点で組み替えられる。$80,000 全額の組替えは、ヘッジ対象予定取引の60%が実際に発生し引き続き有効なヘッジ対象である事実を無視している。$48,000 は2つの部分を取り違えている。$0 とするのは、予定取引が発生しない可能性が高くなった時点で即時に取り崩す要求を無視している。",
+      "references": ["ASC 815-30-40-5", "ASC 815-30-35-38"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-010",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Fair Value Hedge — Hedged Item Carrying Amount",
+      "stem": "Bramwell Finance holds a $4,000,000 fixed-rate note receivable carried at $4,000,000 and designates a pay-fixed, receive-variable interest rate swap as a fair value hedge of the benchmark interest rate risk of the note. During the period, benchmark interest rates rise. The fair value of the note attributable to the hedged risk decreases by $145,000, and the fair value of the swap increases by $138,000. What is the carrying amount of the note at the end of the period, and what is the net effect on earnings for the period?",
+      "choices": [
+        { "label": "A", "text": "$4,000,000; net loss of $7,000" },
+        { "label": "B", "text": "$3,855,000; net gain of $138,000" },
+        { "label": "C", "text": "$3,855,000; net loss of $7,000" },
+        { "label": "D", "text": "$4,145,000; net loss of $145,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "In a fair value hedge, the carrying amount of the hedged item is adjusted for the change in its fair value attributable to the hedged risk, and that adjustment runs through earnings along with the full change in the derivative's fair value. The note's carrying amount becomes $4,000,000 - $145,000 = $3,855,000. Earnings reflect the $138,000 gain on the swap offset by the $145,000 loss on the note, a net loss of $7,000 representing the ineffectiveness of the relationship. Leaving the note at $4,000,000 is the cash flow hedge model, where the hedged item is not remeasured. Reporting only the $138,000 swap gain omits the required basis adjustment to the hedged item. Increasing the carrying amount to $4,145,000 moves the adjustment in the wrong direction; rising rates reduce the fair value of a fixed-rate receivable.",
+      "explanationJa": "公正価値ヘッジでは、ヘッジ対象の帳簿価額をヘッジ対象リスクに起因する公正価値変動分だけ調整し、その調整額をデリバティブの公正価値変動全額とともに損益に計上する。ノートの帳簿価額は $4,000,000 - $145,000 = $3,855,000 となる。損益にはスワップの利益 $138,000 とノートの損失 $145,000 が計上され、差引 $7,000 の純損失となる。これが当該関係の非有効部分である。ノートを $4,000,000 のまま据え置くのはキャッシュフロー・ヘッジの処理であり、その場合ヘッジ対象は再測定されない。スワップ利益 $138,000 のみを計上する解答は、ヘッジ対象に対する必要な簿価調整を省いている。$4,145,000 へ増額する解答は調整の方向が逆で、金利上昇は固定金利債権の公正価値を低下させる。",
+      "references": ["ASC 815-25-35-1", "ASC 815-25-35-4"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-011",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Basis Adjustment Amortization After Discontinuation",
+      "stem": "Rockport Co. has $10,000,000 of 5% fixed-rate bonds payable with interest paid annually and five years remaining to maturity. On January 1, Year 1, Rockport discontinues a fair value hedge of the bonds. At that date the cumulative basis adjustment that increased the carrying amount of the bonds is $400,000, and the carrying amount of the bonds is $10,400,000. Rockport amortizes the remaining basis adjustment on a straight-line basis over the remaining five-year term. What amount of interest expense will Rockport report for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$580,000" },
+        { "label": "B", "text": "$500,000" },
+        { "label": "C", "text": "$80,000" },
+        { "label": "D", "text": "$420,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When a fair value hedge is discontinued, the hedged item stops being remeasured for the hedged risk, but the existing basis adjustment is not written off. It is amortized into earnings over the remaining life of the hedged item, beginning no later than the date hedge accounting ceases. Because the adjustment increased the carrying amount of the debt, it behaves like a premium and reduces interest expense. Annual amortization is $400,000 / 5 = $80,000, so interest expense is the $500,000 coupon (5% x $10,000,000) less $80,000, or $420,000. Reporting $500,000 ignores the amortization entirely. Reporting $580,000 adds the amortization instead of subtracting it, which would be correct only if the basis adjustment had reduced the carrying amount. Reporting $80,000 states the amortization alone and omits the coupon interest.",
+      "explanationJa": "公正価値ヘッジを中止すると、ヘッジ対象のヘッジ対象リスクに係る再測定は止まるが、既存の簿価調整額は消去しない。ヘッジ会計を終了する日までに償却を開始し、ヘッジ対象の残存期間にわたり損益へ償却する。本問の調整額は負債の帳簿価額を増加させているため、プレミアムと同様に機能し、支払利息を減額する。年間償却額は $400,000 / 5 = $80,000 であり、支払利息はクーポン $500,000（5% x $10,000,000）から $80,000 を控除した $420,000 となる。$500,000 は償却をまったく考慮していない。$580,000 は償却を減算ではなく加算しており、これは簿価調整が帳簿価額を減少させていた場合にのみ正しい。$80,000 は償却額のみを示しクーポン利息を欠いている。",
+      "references": ["ASC 815-25-35-9", "ASC 815-25-40-8"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-012",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Option — Intrinsic Value and Time Value",
+      "stem": "On April 1, Year 1, Delmar Co. pays a premium of $5,400 for a put option on 30,000 pounds of copper with a strike price of $4.20 per pound, expiring March 31, Year 2. The spot price of copper on April 1, Year 1, is $4.20 per pound. At December 31, Year 1, the spot price of copper is $3.95 per pound and the fair value of the option is $9,300. What are the intrinsic value and the time value of the option at December 31, Year 1?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intrinsic value of $7,500; time value of $1,800"
+        },
+        { "label": "B", "text": "Intrinsic value of $9,300; time value of $0" },
+        {
+          "label": "C",
+          "text": "Intrinsic value of $7,500; time value of $5,400"
+        },
+        {
+          "label": "D",
+          "text": "Intrinsic value of $1,800; time value of $7,500"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Intrinsic value of a put option is the amount by which the strike price exceeds the spot price, applied to the contract quantity: ($4.20 - $3.95) x 30,000 pounds = $7,500. Time value is the excess of total fair value over intrinsic value: $9,300 - $7,500 = $1,800. The option was at the money at inception, so the entire $5,400 premium was time value; time value has therefore declined by $3,600 during the period. Treating the full $9,300 fair value as intrinsic value with no time value would be correct only at expiration. Carrying forward the original $5,400 premium as the December 31 time value ignores that time value decays as expiration approaches. Reversing $7,500 and $1,800 swaps the two components.",
+      "explanationJa": "プット・オプションの本源的価値は、行使価格が現物価格を上回る額に契約数量を乗じた金額である。($4.20 - $3.95) x 30,000ポンド = $7,500。時間的価値は公正価値総額から本源的価値を差し引いた残りであり、$9,300 - $7,500 = $1,800 となる。当初はアット・ザ・マネーであったためプレミアム $5,400 は全額が時間的価値であり、当期中に時間的価値は $3,600 減少している。公正価値 $9,300 全額を本源的価値とし時間的価値をゼロとする処理が正しいのは満期時のみである。当初プレミアム $5,400 をそのまま12月31日の時間的価値とする解答は、満期が近づくにつれ時間的価値が逓減することを無視している。$7,500 と $1,800 を入れ替えた解答は2つの構成要素を取り違えている。",
+      "references": ["ASC 815-20-25-82", "ASC 815-20-25-83A"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-013",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Interest Rate Floor — Settlement Receipt",
+      "stem": "Kestrel Savings holds $15,000,000 of variable-rate loans receivable that reset annually to SOFR. To protect its interest income against falling rates, Kestrel purchases a one-year interest rate floor with a strike rate of 3.00% on a notional amount of $15,000,000, paying a premium of $60,000, and designates it as a cash flow hedge of the variability in interest receipts. At the annual settlement date, SOFR is 2.25%. What amount does Kestrel receive under the floor at the settlement date?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$112,500" },
+        { "label": "C", "text": "$52,500" },
+        { "label": "D", "text": "$337,500" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "An interest rate floor pays the holder when the reference rate settles below the strike rate, which is what protects a lender whose asset yields decline. The settlement is the rate shortfall applied to the notional amount: (3.00% - 2.25%) x $15,000,000 = 0.75% x $15,000,000 = $112,500. The $60,000 premium is a separate cost recorded as the initial carrying amount of the option and does not reduce the settlement receipt, so $52,500 is incorrect. A receipt of $0 would be the result under an interest rate cap, which pays only when the rate exceeds the strike and therefore protects a borrower rather than a lender. The $337,500 figure applies the 2.25% SOFR rate to the notional amount, which measures interest on the loans rather than the floor settlement.",
+      "explanationJa": "金利フロアは参照金利が行使金利を下回って確定したときに保有者へ支払われ、これにより資産利回りが低下する貸手が保護される。決済額は金利の不足幅に想定元本を乗じた金額である。(3.00% - 2.25%) x $15,000,000 = 0.75% x $15,000,000 = $112,500。プレミアム $60,000 はオプションの当初帳簿価額として別個に計上される費用であり決済受取額を減額しないため、$52,500 は誤りである。受取額 $0 となるのは金利キャップの場合で、キャップは金利が行使金利を上回ったときにのみ支払われ、貸手ではなく借手を保護する。$337,500 は SOFR 2.25% を想定元本に乗じたもので、フロアの決済額ではなく貸付金の利息を計算している。",
+      "references": ["ASC 815-20-25-15", "ASC 815-30-35-3"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-014",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Written Swaption and Non-Designated Swap — Earnings Effect",
+      "stem": "During Year 1, Ansley Corp. entered into two derivative transactions, neither of which was designated in a hedging relationship.\n\nOn January 1, Year 1, Ansley wrote (sold) a swaption and received a premium of $70,000. At December 31, Year 1, the fair value of the swaption is a liability of $95,000.\n\nAlso on January 1, Year 1, Ansley entered into an interest rate swap with a notional amount of $20,000,000 under which it pays 4.5% fixed and receives SOFR, with net settlement each December 31. SOFR for the Year 1 settlement period was set at 5.1% on January 1, Year 1. The swap had a fair value of zero at inception and a fair value of $240,000 (an asset) at December 31, Year 1, after the annual settlement.\n\nWhat is the total effect of these two derivatives on Ansley's Year 1 earnings?",
+      "choices": [
+        { "label": "A", "text": "$430,000 net gain" },
+        { "label": "B", "text": "$335,000 net gain" },
+        { "label": "C", "text": "$215,000 net gain" },
+        { "label": "D", "text": "$95,000 net gain" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A derivative that is not designated in a hedging relationship is measured at fair value with all changes recognized immediately in earnings. For the written swaption, the $70,000 premium received is not income; it establishes the initial carrying amount of the option liability. The liability grows to $95,000, producing a loss of $95,000 - $70,000 = $25,000. For the swap, the annual net settlement is (5.1% - 4.5%) x $20,000,000 = 0.6% x $20,000,000 = $120,000 received in cash, and the swap's fair value rose from zero to $240,000 after that settlement, for a total swap gain of $120,000 + $240,000 = $360,000. Combining the two gives $360,000 - $25,000 = $335,000. The $430,000 answer treats the $70,000 premium as revenue and ignores the swaption liability. The $215,000 answer omits the $120,000 cash settlement, and the $95,000 answer omits the change in the swap's fair value. Note also that because a net written option exposes the entity to unfavorable outcomes without offsetting favorable ones, it could not have been designated as a hedging instrument in any case.",
+      "explanationJa": "ヘッジ関係に指定されていないデリバティブは公正価値で測定し、変動額はすべて直ちに損益へ計上する。売建スワップションについて、受け取ったプレミアム $70,000 は収益ではなく、オプション負債の当初計上額となる。負債は $95,000 に増加するため、$95,000 - $70,000 = $25,000 の損失が生じる。スワップについては、年次の純額決済が (5.1% - 4.5%) x $20,000,000 = 0.6% x $20,000,000 = $120,000 の現金受取であり、決済後の公正価値がゼロから $240,000 に上昇しているため、スワップの利益合計は $120,000 + $240,000 = $360,000 となる。両者を合算すると $360,000 - $25,000 = $335,000 である。$430,000 はプレミアム $70,000 を収益として扱いスワップション負債を無視している。$215,000 は現金決済額 $120,000 を落としており、$95,000 はスワップの公正価値変動を落としている。なお、ネットの売建オプションは有利な結果を伴わずに不利な結果のみに晒されるため、そもそもヘッジ手段として指定することはできない。",
+      "references": ["ASC 815-10-35-2", "ASC 815-20-25-94"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-deriv-015",
+      "topic": "Derivatives & Hedging",
+      "subtopic": "Embedded Derivative — Bifurcation and Subsequent Accounting",
+      "stem": "Redmond Corp. issues a $5,000,000 note payable whose periodic interest payments are indexed to the percentage change in a broad equity market index. The note is not measured at fair value in its entirety, and the embedded feature would meet the definition of a derivative if it were freestanding. Under ASC 815, which statement about the accounting for this hybrid instrument is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The equity-indexed feature is clearly and closely related to the debt host, so no bifurcation is required."
+        },
+        {
+          "label": "B",
+          "text": "The feature must be bifurcated, and both the host debt and the embedded derivative are subsequently measured at fair value with changes recognized in other comprehensive income."
+        },
+        {
+          "label": "C",
+          "text": "Bifurcation is prohibited; Redmond must instead elect the fair value option for the entire hybrid instrument."
+        },
+        {
+          "label": "D",
+          "text": "The feature must be bifurcated; the host debt is accounted for under the guidance applicable to debt, and the embedded derivative is measured at fair value with changes recognized in earnings."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bifurcation is required when three conditions are met: the embedded feature is not clearly and closely related to the host, the hybrid instrument is not already measured at fair value through earnings, and the feature would be a derivative on a standalone basis. Equity price risk is not clearly and closely related to a debt host, because the economic characteristics and risks of an equity index differ fundamentally from the interest rate and credit risks that drive a debt instrument. Interest indexed to inflation or to the debtor's own creditworthiness, by contrast, is generally considered clearly and closely related to a debt host. After bifurcation, the host contract continues to be accounted for under the guidance that applies to that instrument, here the debt guidance, and the separated derivative is measured at fair value with changes recognized in earnings. Neither component is remeasured through other comprehensive income. Electing the fair value option for the entire hybrid is an available alternative to bifurcation, not a required substitute for it.",
+      "explanationJa": "区分処理（bifurcation）が求められるのは次の3要件をすべて満たす場合である。組込特性が主契約と密接に関連していないこと、ハイブリッド商品全体が損益を通じた公正価値で測定されていないこと、そして当該特性が独立していればデリバティブの定義を満たすことである。株価リスクは負債の主契約と密接に関連していない。株価指数の経済的特徴およびリスクは、負債性金融商品を動かす金利リスク・信用リスクとは本質的に異なるためである。これに対し、インフレ指数や債務者自身の信用力に連動する利息は、一般に負債の主契約と密接に関連しているとされる。区分処理後は、主契約は当該商品に適用される会計基準（ここでは負債の基準）に従って引き続き会計処理し、分離したデリバティブは公正価値で測定して変動額を損益に計上する。いずれの構成部分もその他の包括利益を通じて再測定することはない。ハイブリッド商品全体について公正価値オプションを選択することは区分処理に代わる選択肢であって、区分処理を禁じて置き換えるものではない。",
+      "references": ["ASC 815-15-25-1", "ASC 815-15-25-26", "ASC 815-15-25-4"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    }
+  ]
+}
