@@ -35,6 +35,16 @@ export function openDB(): Promise<IDBDatabase> {
       resolve(request.result);
     };
 
+    // 他のタブが古いバージョンのDBを開いたままだと、完了も失敗もしないまま止まる。
+    // 呼び出し側が黙って待ち続けないよう、理由を付けて失敗させる
+    request.onblocked = () => {
+      reject(
+        new Error(
+          "他のタブでアプリが開いているため、ブラウザ内のデータベースを開けません。他のタブを閉じてから再度お試しください",
+        ),
+      );
+    };
+
     request.onupgradeneeded = (event) => {
       const db = (event.target as IDBOpenDBRequest).result;
       // 既存ストアは温存し、存在しないものだけ作成する（PDFデータを消さない）

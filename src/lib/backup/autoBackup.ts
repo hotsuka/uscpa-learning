@@ -107,6 +107,8 @@ const pruneOldSnapshots = async (db: IDBDatabase): Promise<void> => {
     for (const id of idsToDelete) store.delete(id);
     tx.oncomplete = () => resolve();
     tx.onerror = () => reject(tx.error);
+    // 容量不足などでのコミット失敗は error ではなく abort だけが発火する。拾わないと Promise が永久に未確定になる
+    tx.onabort = () => reject(tx.error ?? new Error("ブラウザ内のデータベースへの保存が中断されました"));
   });
 };
 
@@ -137,6 +139,8 @@ export async function saveSnapshots(
     }
     tx.oncomplete = () => resolve();
     tx.onerror = () => reject(tx.error);
+    // 容量不足などでのコミット失敗は error ではなく abort だけが発火する。拾わないと Promise が永久に未確定になる
+    tx.onabort = () => reject(tx.error ?? new Error("ブラウザ内のデータベースへの保存が中断されました"));
   });
   await pruneOldSnapshots(db);
 }
@@ -247,5 +251,7 @@ export async function deleteIndexedDbBackup(id: string): Promise<void> {
     tx.objectStore(BACKUP_STORE_NAME).delete(id);
     tx.oncomplete = () => resolve();
     tx.onerror = () => reject(tx.error);
+    // 容量不足などでのコミット失敗は error ではなく abort だけが発火する。拾わないと Promise が永久に未確定になる
+    tx.onabort = () => reject(tx.error ?? new Error("ブラウザ内のデータベースへの保存が中断されました"));
   });
 }

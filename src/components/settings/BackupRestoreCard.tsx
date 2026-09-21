@@ -154,46 +154,82 @@ export function BackupRestoreCard() {
     e.target.value = ""
   }
 
+  // 復元前のスナップショットを取る。保存が止まったまま戻らないと、画面上は何も起きずに
+  // 復元されない状態になる（2026-09-22 に実際に発生）。時間切れと失敗を検出し、続行するか尋ねる
+  const takeSnapshotBeforeRestore = async (): Promise<boolean> => {
+    const SNAPSHOT_TIMEOUT_MS = 15_000
+    try {
+      await Promise.race([
+        createManualBackup(),
+        new Promise<never>((_, reject) =>
+          setTimeout(
+            () => reject(new Error("15秒待っても保存が終わりませんでした")),
+            SNAPSHOT_TIMEOUT_MS,
+          ),
+        ),
+      ])
+      return true
+    } catch (error) {
+      const reason = error instanceof Error ? error.message : "不明なエラー"
+      return window.confirm(
+        `復元前のスナップショットを保存できませんでした（${reason}）。
+
+` +
+          "直前に「JSONダウンロード」で現在のデータを保存してあれば、そのまま復元を続けても問題ありません。続けますか？",
+      )
+    }
+  }
+
+  // 復元が終わったことを目で確認できるようにしてからリロードする
+  const finishRestore = (restoredLabels: string[]): void => {
+    alert(`復元しました（${restoredLabels.join("・")}）。ページを再読み込みします。`)
+    window.location.reload()
+  }
+
   const handleConfirm = async (): Promise<void> => {
     if (!pendingAction) return
-    if (pendingAction.type === "restore" && pendingAction.backupKey) {
-      // 復元前のスナップショットを取る
-      await createManualBackup()
-      const restored = restoreBackup(pendingAction.backupKey)
-      if (restored) {
-        window.location.reload()
-      } else {
-        alert("復元に失敗しました")
+    try {
+      if (pendingAction.type === "restore" && pendingAction.backupKey) {
+        if (!(await takeSnapshotBeforeRestore())) return
+        const restored = restoreBackup(pendingAction.backupKey)
+        if (restored) {
+          finishRestore([pendingAction.title.replace(/を復元しますか？$/, "")])
+        } else {
+          alert("復元に失敗しました")
+          reload()
+        }
+      } else if (pendingAction.type === "delete" && pendingAction.backupKey) {
+        deleteBackup(pendingAction.backupKey)
+        reload()
+      } else if (pendingAction.type === "import" && pendingAction.file) {
+        if (!(await takeSnapshotBeforeRestore())) return
+        const result = await importFromJsonFile(pendingAction.file)
+        if (result.ok) {
+          finishRestore(result.importedKeys.map(labelOfOriginalKey))
+        } else {
+          alert(`インポートに失敗しました: ${result.error ?? "不明なエラー"}`)
+          reload()
+        }
+      } else if (pendingAction.type === "restore-auto" && pendingAction.backupKey) {
+        if (!(await takeSnapshotBeforeRestore())) return
+        const result = await restoreFromIndexedDbBackup(pendingAction.backupKey)
+        if (result.ok) {
+          finishRestore([pendingAction.title.replace(/をバックアップから復元しますか？$/, "")])
+        } else {
+          alert(`復元に失敗しました: ${result.error ?? "不明なエラー"}`)
+          reload()
+        }
+      } else if (pendingAction.type === "delete-auto" && pendingAction.backupKey) {
+        await deleteIndexedDbBackup(pendingAction.backupKey)
         reload()
       }
-    } else if (pendingAction.type === "delete" && pendingAction.backupKey) {
-      deleteBackup(pendingAction.backupKey)
+    } catch (error) {
+      // ここで握りつぶすと「押したのに何も起きない」になる。必ず理由を表示する
+      alert(`処理に失敗しました: ${error instanceof Error ? error.message : "不明なエラー"}`)
       reload()
-    } else if (pendingAction.type === "import" && pendingAction.file) {
-      // 復元前のスナップショットを取る
-      await createManualBackup()
-      const result = await importFromJsonFile(pendingAction.file)
-      if (result.ok) {
-        window.location.reload()
-      } else {
-        alert(`インポートに失敗しました: ${result.error ?? "不明なエラー"}`)
-        reload()
-      }
-    } else if (pendingAction.type === "restore-auto" && pendingAction.backupKey) {
-      // 復元前のスナップショットを取る
-      await createManualBackup()
-      const result = await restoreFromIndexedDbBackup(pendingAction.backupKey)
-      if (result.ok) {
-        window.location.reload()
-      } else {
-        alert(`復元に失敗しました: ${result.error ?? "不明なエラー"}`)
-        reload()
-      }
-    } else if (pendingAction.type === "delete-auto" && pendingAction.backupKey) {
-      await deleteIndexedDbBackup(pendingAction.backupKey)
-      reload()
+    } finally {
+      setPendingAction(null)
     }
-    setPendingAction(null)
   }
 
   return (
