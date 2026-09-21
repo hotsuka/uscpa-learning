@@ -45,7 +45,7 @@ export default function TBSListPage() {
 
   const miniTimerRef = useRef<MiniTimerRef>(null);
   useTimerShortcuts(miniTimerRef);
-  useTBSTimerContext();
+  useTBSTimerContext(subject);
 
   const questions = useMemo(
     () => getTBSQuestionsBySubject(subject),

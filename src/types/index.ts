@@ -90,6 +90,7 @@ export const SUBJECT_SUBTOPICS: Record<Subject, string[]> = {
     "Risk Management",
     "Operations Management",
     "Strategic Planning",
+    "Task-Based Simulation",
   ],
 };
 
