@@ -1,22 +1,35 @@
 /**
  * 模試モードの問題抽出ロジック
  *
- * FAR本番のMCQセクション相当（50問）を、現行ブループリントの出題範囲内
- * （farScope が in / partial のテーマ）から Area 配分で層化抽出する。
- * Area配分はブループリットの比重 I:30-40% / II:30-40% / III:25-35% に対応。
+ * 本番のMCQセクション相当（50問）を、ブループリントの出題範囲内から Area 配分で層化抽出する。
+ * - FAR: farScope が in / partial のテーマ。I:30-40% / II:30-40% / III:25-35%
+ * - BAR: Area I は BAR問題バンク（範囲外判定の問題を除く）、Area II/III は BAR画面と同じセット
+ *        （BAR専用セット＋借りているFARセット）。I:40-50% / II:35-45% / III:10-20%
  */
 
 import { farQuestionSets } from "@/data/questions/far";
 import { getFarScopeForSet, type FarArea } from "@/data/questions/far/farScope";
-import type { FARQuestion } from "@/types/questions";
+import {
+  barAreaIIIIIQuestionSets,
+  barOwnAreaIIIIIQuestionSets,
+  barQuestionSets,
+  getBarAreaForSet,
+} from "@/data/questions/bar";
+import { getBarScopeForQuestion } from "@/data/questions/bar/barScope";
+import type { FARQuestion, QuestionSet } from "@/types/questions";
+
+export type MockExamSubject = "FAR" | "BAR";
 
 export const MOCK_EXAM_QUESTION_COUNT = 50;
 export const MOCK_EXAM_MINUTES = 90;
 // 本番のMCQスコアで合格圏とされる目安
 export const MOCK_EXAM_TARGET_RATE = 75;
 
-// Area別の出題数（合計50問）
-const AREA_QUOTA: Record<FarArea, number> = { I: 18, II: 17, III: 15 };
+// Area別の出題数（合計50問）。ブループリントの配点の中央値に比例させる
+export const MOCK_EXAM_AREA_QUOTA: Record<MockExamSubject, Record<FarArea, number>> = {
+  FAR: { I: 18, II: 17, III: 15 },
+  BAR: { I: 22, II: 20, III: 8 },
+};
 // 同一テーマからの偏り防止
 const MAX_PER_TOPIC = 5;
 // 過去の模試で出題済みの問題に掛ける重み（1回出題されるごとに乗算）。
@@ -104,6 +117,41 @@ function shuffleChoices(question: FARQuestion): {
   };
 }
 
+/** 抽出元のセットと、そのセットから出題してよい問題を Area ごとに並べる */
+function collectPools(
+  subject: MockExamSubject,
+): Record<FarArea, { set: QuestionSet; questions: FARQuestion[] }[]> {
+  const pools: Record<FarArea, { set: QuestionSet; questions: FARQuestion[] }[]> = {
+    I: [],
+    II: [],
+    III: [],
+  };
+
+  if (subject === "FAR") {
+    for (const set of farQuestionSets) {
+      const info = getFarScopeForSet(set.id);
+      if (info.scope === "out" || !info.area) continue;
+      pools[info.area].push({ set, questions: set.questions });
+    }
+    return pools;
+  }
+
+  // BAR Area I: 範囲外と判定済みの問題（ERMの一部など）だけ除く。判断保留・未照合は残す
+  for (const set of barQuestionSets) {
+    const questions = set.questions.filter(
+      (q) => getBarScopeForQuestion(set.id, q.id) !== "out",
+    );
+    if (questions.length > 0) pools.I.push({ set, questions });
+  }
+  // BAR Area II/III: BAR画面で演習できるセットと同じもの
+  for (const set of [...barOwnAreaIIIIIQuestionSets, ...barAreaIIIIIQuestionSets]) {
+    const area = getBarAreaForSet(set.id);
+    if (area === "I") continue;
+    pools[area].push({ set, questions: set.questions });
+  }
+  return pools;
+}
+
 /**
  * 模試1回分（50問）を層化抽出する。
  * Areaごとに各テーマから最大 MAX_PER_TOPIC 問を取り、
@@ -114,29 +162,22 @@ function shuffleChoices(question: FARQuestion): {
  */
 export function buildMockExam(
   seenCounts: Record<string, number> = {},
+  subject: MockExamSubject = "FAR",
 ): MockExamQuestionEntry[] {
   const weightOf = (question: FARQuestion): number =>
     Math.pow(SEEN_WEIGHT_DECAY, seenCounts[question.id] ?? 0);
 
-  const setsByArea: Record<FarArea, (typeof farQuestionSets)[number][]> = {
-    I: [],
-    II: [],
-    III: [],
-  };
-  for (const set of farQuestionSets) {
-    const info = getFarScopeForSet(set.id);
-    if (info.scope === "out" || !info.area) continue;
-    setsByArea[info.area].push(set);
-  }
+  const pools = collectPools(subject);
+  const quota = MOCK_EXAM_AREA_QUOTA[subject];
 
   const result: MockExamQuestionEntry[] = [];
   for (const area of ["I", "II", "III"] as FarArea[]) {
     const pool: FARQuestion[] = [];
-    for (const set of setsByArea[area]) {
-      pool.push(...weightedSample(set.questions, weightOf, MAX_PER_TOPIC));
+    for (const { questions } of pools[area]) {
+      pool.push(...weightedSample(questions, weightOf, MAX_PER_TOPIC));
     }
     // プール段階で未出題が枯渇したテーマがあるため、抽出側でも重みを効かせる
-    const picked = weightedSample(pool, weightOf, AREA_QUOTA[area]);
+    const picked = weightedSample(pool, weightOf, quota[area]);
     for (const question of picked) {
       result.push({ question, area, ...shuffleChoices(question) });
     }

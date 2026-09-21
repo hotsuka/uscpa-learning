@@ -4,6 +4,8 @@ import {
   countSeenQuestions,
   MOCK_EXAM_QUESTION_COUNT,
 } from "@/lib/mockExam"
+import { getBarScopeForQuestion } from "@/data/questions/bar/barScope"
+import { barQuestionSets } from "@/data/questions/bar"
 
 describe("countSeenQuestions", () => {
   it("questionIdごとの出題回数を集計する", () => {
@@ -65,5 +67,43 @@ describe("buildMockExam", () => {
     for (const entry of buildMockExam()) seenCounts[entry.question.id] = 1
     // 重みが同値に潰れても抽出が成立すること
     expect(buildMockExam(seenCounts)).toHaveLength(MOCK_EXAM_QUESTION_COUNT)
+  })
+})
+
+describe("buildMockExam（BAR）", () => {
+  it("50問をArea配分22/20/8で抽出する", () => {
+    const entries = buildMockExam({}, "BAR")
+    expect(entries).toHaveLength(MOCK_EXAM_QUESTION_COUNT)
+    const byArea = entries.reduce<Record<string, number>>((acc, e) => {
+      acc[e.area] = (acc[e.area] ?? 0) + 1
+      return acc
+    }, {})
+    expect(byArea).toEqual({ I: 22, II: 20, III: 8 })
+  })
+
+  it("同一模試内で問題が重複しない", () => {
+    const ids = buildMockExam({}, "BAR").map((e) => e.question.id)
+    expect(new Set(ids).size).toBe(ids.length)
+  })
+
+  it("Area I に範囲外と判定済みの問題を出さない", () => {
+    const setIdByQuestionId = new Map<string, string>()
+    for (const set of barQuestionSets)
+      for (const q of set.questions) setIdByQuestionId.set(q.id, set.id)
+    // 抽出は乱数なので複数回回して取りこぼしを減らす
+    for (let i = 0; i < 20; i++) {
+      for (const entry of buildMockExam({}, "BAR").filter((e) => e.area === "I")) {
+        const setId = setIdByQuestionId.get(entry.question.id)
+        expect(setId).toBeDefined()
+        expect(getBarScopeForQuestion(setId!, entry.question.id)).not.toBe("out")
+      }
+    }
+  })
+
+  it("企業側の年金会計（出題範囲外）を出さない", () => {
+    for (let i = 0; i < 20; i++) {
+      const ids = buildMockExam({}, "BAR").map((e) => e.question.id)
+      expect(ids.filter((id) => id.startsWith("pen-"))).toEqual([])
+    }
   })
 })

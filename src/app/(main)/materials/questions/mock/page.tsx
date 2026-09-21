@@ -14,17 +14,21 @@ import { useTimer } from "@/hooks/useTimer"
 import {
   buildMockExam,
   countSeenQuestions,
+  MOCK_EXAM_AREA_QUOTA,
   MOCK_EXAM_QUESTION_COUNT,
   MOCK_EXAM_MINUTES,
   MOCK_EXAM_TARGET_RATE,
   type MockExamQuestionEntry,
+  type MockExamSubject,
 } from "@/lib/mockExam"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import {
+  getMockExamSubject,
   useMockExamStore,
   type MockExamAnswer,
   type MockExamResult,
 } from "@/stores/mockExamStore"
+import { useTimerStore } from "@/stores/timerStore"
 import { cn } from "@/lib/utils"
 import {
   ArrowLeft,
@@ -38,6 +42,8 @@ import {
 
 // review: 過去の模試結果を履歴から見直すフェーズ
 type Phase = "intro" | "running" | "result" | "review"
+
+const MOCK_EXAM_SUBJECTS: MockExamSubject[] = ["FAR", "BAR"]
 
 const formatRemaining = (sec: number): string => {
   const m = Math.floor(sec / 60)
@@ -56,6 +62,7 @@ const formatDateTime = (iso: string): string =>
 
 export default function MockExamPage() {
   const [phase, setPhase] = useState<Phase>("intro")
+  const [subject, setSubject] = useState<MockExamSubject>("FAR")
   const [entries, setEntries] = useState<MockExamQuestionEntry[]>([])
   // index -> シャッフル後ラベル
   const [answers, setAnswers] = useState<Record<number, string>>({})
@@ -76,11 +83,22 @@ export default function MockExamPage() {
 
   const addAttempt = useQuestionBankStore((s) => s.addAttempt)
   const addResult = useMockExamStore((s) => s.addResult)
-  const pastResults = useMockExamStore((s) => s.results)
+  const allResults = useMockExamStore((s) => s.results)
+  // 履歴と出題済み判定は選択中の科目の結果だけで行う
+  const pastResults = allResults.filter((r) => getMockExamSubject(r) === subject)
+
+  // 問題バンク画面から ?subject=BAR で来たときはその科目で開く。
+  // useSearchParams は静的生成時に Suspense 境界を要求するため、マウント後に読む
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("subject")
+    if (requested === "FAR" || requested === "BAR") setSubject(requested)
+  }, [])
 
   const handleStart = (): void => {
+    // 学習タイマーの記録が別科目・別単元で保存されないよう、模試の科目に合わせる
+    useTimerStore.getState().setQuestionBankContext(subject, "模試モード")
     // 過去の模試で出題済みの問題を避けて未出題から優先的に出す
-    setEntries(buildMockExam(countSeenQuestions(pastResults)))
+    setEntries(buildMockExam(countSeenQuestions(pastResults), subject))
     setAnswers({})
     setFlagged(new Set())
     setCurrentIndex(0)
@@ -143,6 +161,7 @@ export default function MockExamPage() {
     const correctCount = answerRecords.filter((a) => a.isCorrect).length
     const mockResult: MockExamResult = {
       id: crypto.randomUUID(),
+      subject,
       startedAt: startedAtRef.current,
       finishedAt,
       totalQuestions: answerRecords.length,
@@ -159,7 +178,7 @@ export default function MockExamPage() {
     addResult(mockResult)
     setResult(mockResult)
     setPhase("result")
-  }, [entries, answers, addAttempt, addResult])
+  }, [entries, answers, addAttempt, addResult, subject])
 
   // タイマー（0で自動提出）
   useEffect(() => {
@@ -326,18 +345,36 @@ export default function MockExamPage() {
         {phase === "intro" && (
           <>
             <div className="mb-6">
-              <h1 className="text-2xl font-bold mb-2">FAR 模試モード</h1>
+              <h1 className="text-2xl font-bold mb-2">{subject} 模試モード</h1>
               <p className="text-sm text-muted-foreground">
                 本番のMCQセクション相当の演習（解答中は正誤・解説が表示されません）
               </p>
+              <div className="flex gap-1 mt-3">
+                {MOCK_EXAM_SUBJECTS.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => setSubject(s)}
+                    className={cn(
+                      "px-3 h-8 rounded text-xs font-medium transition-colors",
+                      subject === s
+                        ? "bg-primary text-primary-foreground"
+                        : "border text-muted-foreground hover:bg-muted"
+                    )}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
             </div>
             <Card className="mb-6">
               <CardContent className="p-6 space-y-3 text-sm">
                 <div className="flex items-center gap-2">
                   <ClipboardCheck className="w-4 h-4 text-muted-foreground" />
                   <span>
-                    全{MOCK_EXAM_QUESTION_COUNT}問 — FAR出題範囲からArea配分
-                    （I:18問 / II:17問 / III:15問）で自動抽出
+                    全{MOCK_EXAM_QUESTION_COUNT}問 — {subject}出題範囲からArea配分
+                    （I:{MOCK_EXAM_AREA_QUOTA[subject].I}問 / II:
+                    {MOCK_EXAM_AREA_QUOTA[subject].II}問 / III:
+                    {MOCK_EXAM_AREA_QUOTA[subject].III}問）で自動抽出
                   </span>
                 </div>
                 <div className="flex items-center gap-2">

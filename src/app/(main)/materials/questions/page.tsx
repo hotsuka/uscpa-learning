@@ -476,7 +476,7 @@ export default function QuestionsPage() {
             </p>
           </div>
           <Button asChild variant="outline" size="sm" className="shrink-0">
-            <Link href="/materials/questions/mock">
+            <Link href={`/materials/questions/mock?subject=${subject}`}>
               <ClipboardCheck className="w-4 h-4 mr-1.5" />
               模試モード
             </Link>

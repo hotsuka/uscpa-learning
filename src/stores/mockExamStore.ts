@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { FarArea } from "@/data/questions/far/farScope";
+import type { MockExamSubject } from "@/lib/mockExam";
 
 export interface MockExamAnswer {
   questionId: string;
@@ -17,6 +18,8 @@ export interface MockExamAnswer {
 
 export interface MockExamResult {
   id: string;
+  /** 模試の科目。BAR模試の追加（2026-09）より前の結果には無く、それらはFARとして扱う */
+  subject?: MockExamSubject;
   startedAt: string;
   finishedAt: string;
   totalQuestions: number;
@@ -28,6 +31,10 @@ export interface MockExamResult {
   topicBreakdown: Record<string, { correct: number; total: number }>;
   answers: MockExamAnswer[];
 }
+
+/** 科目が記録されていない過去の結果はFAR模試しか存在しなかった時期のもの */
+export const getMockExamSubject = (result: MockExamResult): MockExamSubject =>
+  result.subject ?? "FAR";
 
 interface MockExamState {
   results: MockExamResult[];
