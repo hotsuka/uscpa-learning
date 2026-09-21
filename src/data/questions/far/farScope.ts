@@ -98,7 +98,7 @@ export const FAR_SCOPE_BY_SET_ID: Record<string, FarScopeInfo> = {
   "far-pensions": {
     scope: "out",
     area: null,
-    note: "確定給付年金はBAR。FARは未払給与・有給休暇等（Liabilitiesで学習）のみ",
+    note: "企業側の確定給付年金会計はFAR/BARどちらのブループリントにも無い（BARは給付制度そのものの財務諸表のみ）。FARは未払給与・有給休暇等（Liabilitiesで学習）のみ",
   },
   "far-ppe-intangibles": {
     scope: "in",

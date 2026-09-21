@@ -243,14 +243,27 @@ export const BAR_AREA_II_III_SOURCES: BarAreaSource[] = [
   {
     area: "II",
     topic: "K. Financial statements of employee benefit plans",
-    farSetIds: ["far-pensions"],
-    note: "far-pensions 154問は確定給付『会計』であって、給付制度自体の財務諸表（ASC 960）は pen-137 の1問のみ（BAR_KNOWN_GAPS 参照）",
+    // 企業側の年金会計（ASC 715）はFAR/BARどちらのブループリントにも無いため、FARの年金セットは借りない。
+    // 制度そのものの財務諸表はBAR専用セット bar-area2-benefit-plans で扱う
+    farSetIds: [],
+    note: "給付制度そのものの財務諸表（ASC 960/962）。BAR専用セット bar-area2-benefit-plans（10問）で扱う",
   },
   {
     area: "III",
     topic: "A. 州・地方政府の年次財務報告",
     farSetIds: ["far-government-accounting"],
     note: "farScope.ts で partial 判定。概念（測定焦点・会計基礎・ファンド区分）はFAR、政府財務諸表の作成詳細がBAR",
+  },
+];
+
+// 以前はBAR画面に載せていたが、出題範囲外と判明して外したFARセット。
+// これらのセットをBAR画面で解いた当時の記録（科目BAR）は正しい履歴なので、
+// scripts/study-log-audit.mjs はここも読んで「科目の誤登録」と判定しないようにしている。
+export const BAR_RETIRED_FAR_SET_IDS: { setId: string; retiredOn: string; reason: string }[] = [
+  {
+    setId: "far-pensions",
+    retiredOn: "2026-09-21",
+    reason: "企業側の確定給付年金会計（ASC 715）は2026年ブループリントのFAR/BARどちらにも無い。BARの II-K は制度そのものの財務諸表のみ",
   },
 ];
 
@@ -263,18 +276,18 @@ export const BAR_KNOWN_GAPS: { topic: string; note: string }[] = [
   },
   {
     topic: "Area II-J. XBRL",
-    note: "『Recall the purpose, objective and key characteristics of XBRL business reporting』と明記。FAR/BAR全問題を xbrl で走査して0件",
+    note: "『Recall the purpose, objective and key characteristics of XBRL business reporting』と明記。2026-09-20 に bar-area2-public-reporting で3問を新設（それ以前は0件）",
   },
   {
     topic: "Area II-J. Regulation S-X / S-K",
-    note: "『Recall public company reporting requirements of Regulation S-X and Regulation S-K』と明記。走査で4問ヒットしたが、主題として扱うのは rev-247（SECの財務諸表表示・開示規則）のみで、他3問は文中の言及",
+    note: "『Recall public company reporting requirements of Regulation S-X and Regulation S-K』と明記。走査で4問ヒットしたが、主題として扱うのは rev-247 のみだった。2026-09-20 に bar-area2-public-reporting で7問を新設",
   },
   {
     topic: "Area II-J. セグメント報告",
-    note: "『Recall the criteria used to identify reportable segments』『the financial statement note disclosure requirements for reportable segments』と明記。far-revenue-recognition に5問あるのみで、専用セットがない",
+    note: "『Recall the criteria used to identify reportable segments』『the financial statement note disclosure requirements for reportable segments』と明記。far-revenue-recognition に5問あるのみだった。2026-09-20 に bar-area2-public-reporting で4問を新設",
   },
   {
     topic: "Area II-K. 従業員給付制度の財務諸表",
-    note: "確定給付・確定拠出の『制度自体』の財務諸表（statement of net assets available for benefits / statement of changes in net assets available for benefits）の作成が明示タスク。該当は pen-137 の1問のみ",
+    note: "確定給付・確定拠出の『制度自体』の財務諸表（statement of net assets available for benefits / statement of changes in net assets available for benefits）の作成が明示タスク。pen-137 の1問のみだったが、2026-09-20 に bar-area2-benefit-plans で10問を新設",
   },
 ];
