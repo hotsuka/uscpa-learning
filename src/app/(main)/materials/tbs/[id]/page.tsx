@@ -23,7 +23,8 @@ export default async function TBSDetailPage({ params }: Props) {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <TBSTimerBar />
+      {/* 問題の科目でタイマーを記録する（BARのTBSがFARで記録されないように） */}
+      <TBSTimerBar subject={question.subject === "BAR" ? "BAR" : "FAR"} />
       <div className="flex-1 min-h-0">
         <TBSViewer question={question} />
       </div>
