@@ -2,7 +2,7 @@
   "id": "bar-area2-software-intangibles",
   "name": "Software, R&D & Indefinite-Lived Intangibles (Area II)",
   "topic": "Software, R&D & Indefinite-Lived Intangibles (Area II)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "bar2-swi-001",
@@ -527,6 +527,150 @@
       "explanation": "The carrying amount of a reporting unit includes the assets and the liabilities assigned to it together with its goodwill, and the fair value must be determined on the same basis. The carrying amount is $9,400,000 + $2,100,000 - $3,500,000 = $8,000,000, which exceeds the fair value of $7,200,000 by $800,000. Because that excess is less than the $2,100,000 of goodwill, the impairment loss is the full excess of $800,000 and goodwill is reduced to $1,300,000. The $2,100,000 amount writes off all goodwill as if the cap applied, the $4,300,000 amount compares gross assets of $11,500,000 with fair value while ignoring the assigned liabilities, and concluding there is no impairment ignores that the carrying amount exceeds fair value.",
       "explanationJa": "報告単位の帳簿価額には、配分された資産・負債とのれんが含まれ、公正価値も同じ基準で測定しなければならない。帳簿価額は $9,400,000 + $2,100,000 − $3,500,000 = $8,000,000 で、公正価値 $7,200,000 を $800,000 上回る。この超過額はのれん $2,100,000 を下回るため、減損損失は超過額全額の $800,000 となり、のれんは $1,300,000 に減額される。$2,100,000 は上限規定を誤って適用しのれん全額を償却したもの、$4,300,000 は負債を無視して総資産 $11,500,000 と公正価値を比較した誤り、ゼロは帳簿価額が公正価値を上回る事実を無視している。",
       "references": ["ASC 350-20-35-8", "ASC 350-20-35-39", "ASC 350-20-35-45"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-swi-024",
+      "topic": "Software, R&D & Intangibles",
+      "subtopic": "Cloud Computing Arrangement — License vs. Service Contract",
+      "stem": "On January 1, Year 1, Oakmont Corp. entered into a five-year arrangement with a vendor to use inventory management software that the vendor hosts on its own servers. Under the contract, Oakmont may download a copy of the software at any time during the five-year term for a nominal fee and without any other penalty. Oakmont's existing data center has the capacity to run the software, and several third-party hosting firms could also run it for Oakmont. How should Oakmont account for the arrangement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "As a service contract; the hosting fees are expensed as the services are received and no asset is recognized for the software"
+        },
+        {
+          "label": "B",
+          "text": "As a service contract; the total fees for the five-year term are recognized as a prepaid asset at inception and expensed straight-line"
+        },
+        {
+          "label": "C",
+          "text": "As a lease of the vendor's servers under ASC 842, with a right-of-use asset and a lease liability"
+        },
+        {
+          "label": "D",
+          "text": "As the acquisition of a software license; an intangible asset is recognized, together with a liability for fees payable over time"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under ASC 350-40-15-4A, a hosting arrangement includes a software license only if both criteria are met: (1) the customer has the contractual right to take possession of the software at any time during the hosting period without significant penalty, and (2) it is feasible for the customer either to run the software on its own hardware or to contract with an unrelated party to host it. Oakmont can download the software at any time for only a nominal fee (no significant penalty), and both its own data center and third-party hosts can run it, so both criteria are met. The license element is accounted for as internal-use software: Oakmont recognizes an intangible asset for the license and, to the extent the fees are paid over time, a liability for the present value of those payments. Service-contract treatment (expensing fees as incurred, or recording the fees as a prepaid asset) applies only when either criterion fails. The arrangement is not a lease of the vendor's servers, because Oakmont does not control any identified hardware, and ASC 842 does not apply to licenses of internal-use software.",
+      "explanationJa": "ASC 350-40-15-4Aでは、ホスティング契約がソフトウェアのライセンスを含むのは次の2要件を両方満たす場合に限られる。(1) 重大なペナルティなしに、ホスティング期間中いつでもソフトウェアを引き取る契約上の権利がある、(2) 自社のハードウェアで動かすこと、または無関係の第三者にホスティングを委託することが実現可能である。Oakmontは名目的な手数料だけでいつでもダウンロードでき（重大なペナルティなし）、自社データセンターでも第三者業者でも稼働できるため、両要件を満たす。したがってライセンス部分は社内利用目的ソフトウェアとして処理し、ライセンスを無形資産として計上するとともに、料金を分割で支払う部分については支払額の現在価値で負債を計上する。料金を発生時に費用処理する、または前払資産として計上するサービス契約の処理は、どちらかの要件を満たさない場合にだけ適用される。また、Oakmontは特定のハードウェアを支配していないのでベンダーのサーバーのリースには当たらず、社内利用ソフトウェアのライセンスにASC 842は適用されない。",
+      "references": ["ASC 350-40-15-4A", "ASC 350-40-25"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-swi-025",
+      "topic": "Software, R&D & Intangibles",
+      "subtopic": "Cloud Computing Arrangement — Capitalizable Implementation Costs by Stage",
+      "stem": "During Year 2, Pellham Industries implemented a cloud-based enterprise resource planning system under a hosting arrangement that is a service contract. Pellham incurred the following costs related to the implementation:\n\nEvaluating alternative vendors and making the final vendor selection | $40,000\nConfiguring the hosted software to Pellham's workflows | $210,000\nCoding interfaces between the hosted software and Pellham's on-premises payroll system | $95,000\nTesting the configured system, including parallel processing | $60,000\nManually cleansing and converting legacy data | $48,000\nTraining employees to use the new system | $52,000\nHelp-desk support and maintenance after the system went live | $30,000\nAllocated general and administrative overhead | $22,000\n\nWhat amount of implementation costs should Pellham capitalize?",
+      "choices": [
+        { "label": "A", "text": "$305,000" },
+        { "label": "B", "text": "$365,000" },
+        { "label": "C", "text": "$413,000" },
+        { "label": "D", "text": "$465,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 350-40-25 requires a customer in a hosting arrangement that is a service contract to apply the internal-use software stage model to its implementation costs. Only application development stage costs are capitalized: configuration ($210,000), coding of interfaces ($95,000), and testing, including parallel processing ($60,000), for a total of $365,000. Vendor evaluation and selection ($40,000) is a preliminary project stage cost and is expensed. Data conversion ($48,000) and training ($52,000) are expensed as incurred even though they occur during development. Post-go-live help-desk support and maintenance ($30,000) are operation stage costs, and general and administrative overhead ($22,000) is never capitalized. The $305,000 answer wrongly expenses testing, which is an application development activity. The $413,000 answer capitalizes data conversion ($365,000 + $48,000), and the $465,000 answer capitalizes both data conversion and training ($365,000 + $48,000 + $52,000).",
+      "explanationJa": "ASC 350-40-25により、サービス契約であるホスティング契約の顧客は、実装費用に社内利用ソフトウェアの段階モデルを適用する。資産計上するのはアプリケーション開発段階の費用だけで、構成（$210,000）、インターフェースのコーディング（$95,000）、並行稼働を含むテスト（$60,000）の合計$365,000となる。ベンダーの評価・選定（$40,000）は予備調査段階の費用なので費用処理する。データ変換（$48,000）と研修（$52,000）は開発期間中に発生しても発生時に費用処理する。稼働後のヘルプデスク・保守（$30,000）は運用段階の費用であり、一般管理費の配賦額（$22,000）は資産計上しない。$305,000はアプリケーション開発段階の作業であるテストを費用処理した誤り。$413,000はデータ変換を資産計上した誤り（$365,000 + $48,000）、$465,000はデータ変換と研修の両方を資産計上した誤り（$365,000 + $48,000 + $52,000）。",
+      "references": ["ASC 350-40-25", "ASC 350-40-30"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-swi-026",
+      "topic": "Software, R&D & Intangibles",
+      "subtopic": "Cloud Computing Arrangement — Amortization Period for Implementation Costs",
+      "stem": "Fenwick Corp. entered into a hosting arrangement that is a service contract for a cloud-based human resources system. The arrangement has a noncancelable term of five years beginning January 1, Year 1, and gives Fenwick two consecutive one-year renewal options. Because the system will be deeply integrated into its operations and switching vendors would be costly, Fenwick is reasonably certain to exercise the first renewal option but not the second. Fenwick capitalized $504,000 of implementation costs, and the system was ready for its intended use on January 1, Year 1. Fenwick estimates the underlying software itself has a useful life of eight years. Using the straight-line method, what amount of amortization of the capitalized implementation costs should Fenwick recognize for Year 1?",
+      "choices": [
+        { "label": "A", "text": "$63,000" },
+        { "label": "B", "text": "$72,000" },
+        { "label": "C", "text": "$84,000" },
+        { "label": "D", "text": "$100,800" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Capitalized implementation costs of a hosting arrangement that is a service contract are amortized on a straight-line basis over the term of the hosting arrangement (ASC 350-40-35). The term is the noncancelable period plus periods covered by options to extend that the customer is reasonably certain to exercise, options to terminate that the customer is reasonably certain not to exercise, and options controlled by the vendor. Fenwick's term is therefore the five-year noncancelable period plus the first renewal year, or six years. Year 1 amortization is $504,000 / 6 = $84,000. The $100,800 answer ignores the renewal option that is reasonably certain to be exercised ($504,000 / 5). The $72,000 answer includes both renewal options even though the second is not reasonably certain ($504,000 / 7). The $63,000 answer uses the eight-year life of the software, which is not relevant because Fenwick does not own the software; the costs are amortized over the term of the service arrangement.",
+      "explanationJa": "サービス契約であるホスティング契約について資産計上した実装費用は、ホスティング契約の期間にわたり定額法で償却する（ASC 350-40-35）。この期間は、解約不能期間に、行使が合理的に確実な延長オプションの期間、行使しないことが合理的に確実な解約オプションの期間、ベンダーが支配するオプションの期間を加えたものである。Fenwickの場合は解約不能期間5年に1回目の更新1年を加えた6年となる。Year 1の償却額は $504,000 ÷ 6 = $84,000。$100,800は行使が合理的に確実な更新期間を無視した誤り（$504,000 ÷ 5）。$72,000は合理的に確実でない2回目の更新まで含めた誤り（$504,000 ÷ 7）。$63,000はソフトウェア自体の耐用年数8年を使った誤りで、Fenwickはソフトウェアを所有していないため関係がない。実装費用はサービス契約の期間で償却する。",
+      "references": ["ASC 350-40-35"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-swi-027",
+      "topic": "Software, R&D & Intangibles",
+      "subtopic": "Cloud Computing Arrangement — Balance Sheet and Income Statement Presentation",
+      "stem": "Brixton Co. capitalized implementation costs incurred in a hosting arrangement that is a service contract. Brixton also prepays its hosting fees quarterly. How should Brixton present the capitalized implementation costs on its balance sheet and the related amortization on its income statement?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Balance sheet: in the same line item as prepaid hosting fees. Income statement: in the same line item as the hosting fees"
+        },
+        {
+          "label": "B",
+          "text": "Balance sheet: as an intangible asset. Income statement: in amortization expense"
+        },
+        {
+          "label": "C",
+          "text": "Balance sheet: in the same line item as prepaid hosting fees. Income statement: in depreciation and amortization expense"
+        },
+        {
+          "label": "D",
+          "text": "Balance sheet: as property, plant, and equipment (capitalized software). Income statement: in the same line item as the hosting fees"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under ASC 350-40-45, capitalized implementation costs of a hosting arrangement that is a service contract are presented in the balance sheet in the same line item in which a prepayment of the fees for the associated hosting arrangement would be presented, and the amortization is presented in the income statement in the same line item as the fees for the associated hosting arrangement. Because the arrangement is a service contract, Brixton has no software asset; the deferred costs are not presented as an intangible asset or as property, plant, and equipment. Likewise, the amortization is not reported in depreciation and amortization expense even though the costs are capitalized and amortized.",
+      "explanationJa": "ASC 350-40-45では、サービス契約であるホスティング契約について資産計上した実装費用は、貸借対照表上、そのホスティング契約の料金を前払いした場合に表示される区分と同じ区分に表示し、償却費は損益計算書上、そのホスティング料と同じ区分に表示する。サービス契約なのでBrixtonはソフトウェア資産を持っておらず、繰り延べた費用を無形資産や有形固定資産として表示しない。同様に、資産計上して償却していても、償却費を減価償却費・償却費の区分に表示しない。",
+      "references": ["ASC 350-40-45"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-swi-028",
+      "topic": "Software, R&D & Intangibles",
+      "subtopic": "Cloud Computing Arrangement — Cash Flow Classification of Implementation Costs",
+      "stem": "During Year 3, Garnet Corp. paid $270,000 of implementation costs that it capitalized in connection with a hosting arrangement that is a service contract, and paid $400,000 of hosting fees under the same arrangement. How should Garnet classify the $270,000 payment in its Year 3 statement of cash flows?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Investing activities, because the costs are capitalized as an asset"
+        },
+        {
+          "label": "B",
+          "text": "Operating activities, in the same manner as the payments for hosting fees"
+        },
+        {
+          "label": "C",
+          "text": "Financing activities, because the payment is made to the vendor that provides the hosting service"
+        },
+        {
+          "label": "D",
+          "text": "Investing activities, in the same line item as purchases of internal-use software"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ASC 350-40-45 requires cash flows for capitalized implementation costs of a hosting arrangement that is a service contract to be classified in the statement of cash flows in the same manner as payments made for the fees of the associated hosting arrangement. Hosting fees are payments for services and are operating cash outflows, so the $270,000 is an operating outflow as well. The fact that the costs are capitalized does not make the payment an investing outflow; the deferred costs relate to a service contract rather than to an acquired asset such as internal-use software, which is why investing classification is not appropriate. Nothing about the payment involves borrowing, repaying debt, or equity transactions, so financing classification is also incorrect.",
+      "explanationJa": "ASC 350-40-45では、サービス契約であるホスティング契約について資産計上した実装費用のキャッシュ・フローは、そのホスティング料の支払いと同じ方法でキャッシュ・フロー計算書に分類する。ホスティング料はサービスへの支払いで営業活動の支出なので、$270,000も営業活動の支出となる。資産計上したからといって投資活動の支出にはならない。繰り延べた費用はサービス契約に関するもので、社内利用ソフトウェアのように取得した資産ではないため、投資活動に分類するのは誤り。借入・返済や資本取引とも無関係なので、財務活動も誤り。",
+      "references": ["ASC 350-40-45", "ASC 230-10-45"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar2-swi-029",
+      "topic": "Software, R&D & Intangibles",
+      "subtopic": "Cloud Computing Arrangement — Module-by-Module Amortization and Abandonment",
+      "stem": "Ashby Corp. entered into a hosting arrangement that is a service contract for a cloud-based enterprise resource planning system. The hosting term is four years, from January 1, Year 1 through December 31, Year 4, with no renewal options. Ashby capitalized the following implementation costs by module. Each module functions independently of the others.\n\nGeneral ledger module, ready for its intended use on April 1, Year 1 | $270,000\nProcurement module, ready for its intended use on October 1, Year 1 | $195,000\nCustomer relationship module, abandoned in December, Year 1 before completion because Ashby decided not to use it | $60,000\n\nAshby amortizes capitalized implementation costs on a straight-line basis over the remaining term of the hosting arrangement. What total amount should Ashby charge to expense in Year 1 for its capitalized implementation costs?",
+      "choices": [
+        { "label": "A", "text": "$129,000" },
+        { "label": "B", "text": "$69,000" },
+        { "label": "C", "text": "$176,250" },
+        { "label": "D", "text": "$116,250" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Amortization of capitalized implementation costs begins for each module when that module is ready for its intended use, and the costs are amortized over the remaining term of the hosting arrangement (ASC 350-40-35). The general ledger module is amortized over the 45 months from April 1, Year 1 to December 31, Year 4: $270,000 / 45 = $6,000 per month × 9 months = $54,000. The procurement module is amortized over the 39 months from October 1, Year 1 to December 31, Year 4: $195,000 / 39 = $5,000 per month × 3 months = $15,000. Impairment of capitalized implementation costs is evaluated under ASC 360-10 as if the costs were a long-lived asset, and when a module is no longer expected to be used, its costs are accounted for as abandoned, so the $60,000 for the customer relationship module is written off. Total Year 1 expense is $54,000 + $15,000 + $60,000 = $129,000. The $69,000 answer omits the write-off of the abandoned module. The $116,250 answer starts amortization of both completed modules on January 1, Year 1 when hosting began ($270,000 / 4 + $195,000 / 4 = $116,250) and omits the write-off, and the $176,250 answer makes the same timing error but includes the $60,000 write-off.",
+      "explanationJa": "資産計上した実装費用の償却は、モジュールごとに意図した用途に使用可能になった時点から開始し、ホスティング契約の残存期間にわたって償却する（ASC 350-40-35）。総勘定元帳モジュールはYear 1の4月1日からYear 4の12月31日までの45か月で償却する：$270,000 ÷ 45 = 月$6,000 × 9か月 = $54,000。購買モジュールはYear 1の10月1日からYear 4の12月31日までの39か月で償却する：$195,000 ÷ 39 = 月$5,000 × 3か月 = $15,000。資産計上した実装費用の減損はASC 360-10に従い長期性資産とみなして判定し、使用が見込まれなくなったモジュールの費用は放棄として処理するため、顧客管理モジュールの$60,000は全額費用化する。Year 1の費用合計は $54,000 + $15,000 + $60,000 = $129,000。$69,000は放棄したモジュールの費用化を漏らした誤り。$116,250は完成した2モジュールの償却をホスティング開始日のYear 1の1月1日から始め（$270,000 ÷ 4 + $195,000 ÷ 4 = $116,250）、放棄分も漏らした誤り。$176,250は同じ開始時点の誤りに放棄分$60,000を加えたもの。",
+      "references": ["ASC 350-40-35", "ASC 360-10-35"],
       "difficulty": "advanced",
       "source": "Original - BAR Practice"
     }
