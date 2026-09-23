@@ -141,6 +141,8 @@ function loadQuestionSets() {
       const questions = raw.questions ?? raw;
       const topics = new Set();
       if (raw.topic) topics.add(raw.topic);
+      // 練習画面はセットの表示名(name)を学習記録の単元名に使うので、表示名も正の語彙に含める
+      if (raw.name) topics.add(raw.name);
       for (const q of questions) if (q.topic) topics.add(q.topic);
       sets.push({
         setId: raw.id ?? f.replace(/\.json$/, ""),
