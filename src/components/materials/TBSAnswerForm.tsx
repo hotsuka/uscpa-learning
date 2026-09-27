@@ -177,7 +177,7 @@ export function TBSAnswerForm({
       {task.answerType === "research" && (
         <div>
           <label className="text-xs text-gray-500 mb-1 block">
-            該当するASC引用を入力（例: 606-10-32-28）
+            該当するASCの段落番号を入力（形式: XXX-XX-XX-XX）
           </label>
           <div className="flex items-center gap-2">
             <span className="text-gray-500 text-sm">ASC</span>
@@ -185,7 +185,7 @@ export function TBSAnswerForm({
               type="text"
               value={researchInput}
               onChange={(e) => setResearchInput(e.target.value)}
-              placeholder="例: 606-10-32-28"
+              placeholder="XXX-XX-XX-XX"
               disabled={isAnswered}
               className="max-w-64"
             />
