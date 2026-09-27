@@ -5,6 +5,7 @@ import {
   barOwnAreaIIIIIQuestionSets,
   barPracticeQuestionSets,
   getBarAreaForSet,
+  getBarQuestionById,
 } from "./index";
 import { BAR_AREA_II_III_SOURCES } from "./barScope";
 
@@ -52,5 +53,24 @@ describe("BAR画面の演習セット", () => {
     const ids = barAreaIIIIIQuestionSets.map((set) => set.id);
     expect(ids).not.toContain("far-partnerships");
     expect(ids).not.toContain("far-cash-flows");
+  });
+});
+
+describe("getBarQuestionById", () => {
+  it("BAR専用セット・FARから借りたセットの両方の問題を引ける", () => {
+    // BAR模試の誤答見直しで解説が出なかった問題（Area I / III のBAR専用セット）
+    expect(getBarQuestionById("bar3-gw-009")?.id).toBe("bar3-gw-009");
+    expect(getBarQuestionById("bar-erm-051")?.id).toBe("bar-erm-051");
+    expect(getBarQuestionById("bar-sp-046")?.id).toBe("bar-sp-046");
+    // FARから借りた政府会計セットの問題
+    expect(getBarQuestionById("gov-234")?.id).toBe("gov-234");
+  });
+
+  it("BAR画面で演習できる全問題を引ける", () => {
+    for (const set of barPracticeQuestionSets) {
+      for (const q of set.questions) {
+        expect(getBarQuestionById(q.id)).toBe(q);
+      }
+    }
   });
 });

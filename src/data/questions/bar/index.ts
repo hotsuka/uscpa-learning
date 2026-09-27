@@ -1,4 +1,4 @@
-import type { QuestionSet } from "@/types/questions";
+import type { FARQuestion, QuestionSet } from "@/types/questions";
 import { farQuestionSets } from "@/data/questions/far";
 import { BAR_AREA_II_III_SOURCES } from "./barScope";
 
@@ -107,3 +107,17 @@ export const barPracticeQuestionSets: QuestionSet[] = [
 /** BAR画面のセットがどのAreaに属するか。FAR側から借りたセットは II / III */
 export const getBarAreaForSet = (setId: string): BarArea =>
   barOwnAreaBySetId.get(setId) ?? barAreaByFarSetId.get(setId) ?? "I";
+
+// 問題ID → 問題。BAR模試の結果から問題本体を引くために使う（FARから借りたセットも含む）
+let barQuestionsById: Map<string, FARQuestion> | null = null;
+
+export const getBarQuestionById = (id: string): FARQuestion | undefined => {
+  if (!barQuestionsById) {
+    barQuestionsById = new Map(
+      barPracticeQuestionSets.flatMap((set) =>
+        set.questions.map((q) => [q.id, q] as const),
+      ),
+    );
+  }
+  return barQuestionsById.get(id);
+};

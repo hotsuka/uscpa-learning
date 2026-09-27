@@ -6,15 +6,28 @@ import { Badge } from "@/components/ui/badge"
 import { MarkdownPreview } from "@/components/notes/MarkdownPreview"
 import { QuestionStem } from "@/components/materials/QuestionStem";
 import { getQuestionById } from "@/data/questions/far"
-import { MOCK_EXAM_TARGET_RATE } from "@/lib/mockExam"
-import type { MockExamAnswer, MockExamResult } from "@/stores/mockExamStore"
+import { getBarQuestionById } from "@/data/questions/bar"
+import { MOCK_EXAM_TARGET_RATE, type MockExamSubject } from "@/lib/mockExam"
+import {
+  getMockExamSubject,
+  type MockExamAnswer,
+  type MockExamResult,
+} from "@/stores/mockExamStore"
 import { cn } from "@/lib/utils"
 import { CheckCircle2, XCircle, ChevronDown, ChevronUp } from "lucide-react"
 
-const AREA_LABELS: Record<string, string> = {
-  I: "Area I 財務報告",
-  II: "Area II B/S項目",
-  III: "Area III 個別取引",
+// Areaの区分はブループリント上で科目ごとに異なる
+const AREA_LABELS: Record<MockExamSubject, Record<string, string>> = {
+  FAR: {
+    I: "Area I 財務報告",
+    II: "Area II B/S項目",
+    III: "Area III 個別取引",
+  },
+  BAR: {
+    I: "Area I 業務分析",
+    II: "Area II 技術的会計・報告",
+    III: "Area III 州・地方政府",
+  },
 }
 
 const DIFFICULTY_LABELS: Record<string, string> = {
@@ -66,9 +79,19 @@ function BreakdownTable({
 }
 
 // 誤答・未回答問題のレビュー（元ラベルの選択肢で表示するため解説のラベルと整合する）
-function WrongAnswerReview({ answer }: { answer: MockExamAnswer }) {
+function WrongAnswerReview({
+  answer,
+  subject,
+}: {
+  answer: MockExamAnswer
+  subject: MockExamSubject
+}) {
   const [open, setOpen] = useState(false)
-  const question = getQuestionById(answer.questionId)
+  // BAR模試はBAR専用セットからも出題するため、科目ごとの問題バンクから引く
+  const question =
+    subject === "BAR"
+      ? getBarQuestionById(answer.questionId)
+      : getQuestionById(answer.questionId)
 
   return (
     <div className="border rounded-lg">
@@ -150,6 +173,7 @@ function WrongAnswerReview({ answer }: { answer: MockExamAnswer }) {
  * MockExamResult だけを入力にするため、直後の結果画面でも履歴からの閲覧でも同じ表示になる。
  */
 export function MockExamResultDetail({ result }: { result: MockExamResult }) {
+  const subject = getMockExamSubject(result)
   const wrongAnswers = result.answers.filter((a) => !a.isCorrect)
 
   return (
@@ -187,7 +211,7 @@ export function MockExamResultDetail({ result }: { result: MockExamResult }) {
             title="Area別"
             rows={Object.entries(result.areaBreakdown)
               .sort(([a], [b]) => a.localeCompare(b))
-              .map(([key, v]) => ({ label: AREA_LABELS[key] ?? key, ...v }))}
+              .map(([key, v]) => ({ label: AREA_LABELS[subject][key] ?? key, ...v }))}
           />
           <BreakdownTable
             title="難易度別"
@@ -217,7 +241,11 @@ export function MockExamResultDetail({ result }: { result: MockExamResult }) {
           </CardHeader>
           <CardContent className="space-y-2">
             {wrongAnswers.map((answer, i) => (
-              <WrongAnswerReview key={`${answer.questionId}-${i}`} answer={answer} />
+              <WrongAnswerReview
+                key={`${answer.questionId}-${i}`}
+                answer={answer}
+                subject={subject}
+              />
             ))}
           </CardContent>
         </Card>
