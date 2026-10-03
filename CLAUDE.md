@@ -429,5 +429,6 @@ git pre-commit hookが自動実行するが、コミット前に手動確認す�
 | `correctAnswer` が A/B/C/D 以外 | `"correctAnswer": "$42,000"`        |
 | 選択肢テキスト重複              | A と C が同じ値                     |
 | 解説に疑念語句                  | "Hmm, that's not among the choices" |
+| 表崩れの疑い（警告のみ）        | 表の行の間に「Number of frames」のような断片行が挟まる（PDF抽出で行が割れた形） |
 
 計算の正誤（数値が本当に正しいか）は自動検証できないため、作成者が必ず手計算で確認すること。

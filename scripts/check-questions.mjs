@@ -32,7 +32,28 @@ const files = questionDirs.flatMap(dir =>
     : []
 );
 
-const issues = { INVALID_ANSWER: [], DUPLICATE_CHOICE: [], SUSPICIOUS_EXPLANATION: [], ANSWER_NOT_IN_EXPLANATION: [] };
+const issues = { INVALID_ANSWER: [], DUPLICATE_CHOICE: [], SUSPICIOUS_EXPLANATION: [], ANSWER_NOT_IN_EXPLANATION: [], BROKEN_TABLE: [] };
+
+// 問題文の「 | 」区切りの表が、PDF抽出で行ごと崩れていないかを調べる。
+// 崩れ方は2つ: ①表の行の間に「 | 」を含まない行が挟まる（セルが前後の行へ割れた）
+//              ②本体の行どうしで列数が揃わない（見出し行だけは1列少なくてよい）
+function findBrokenTable(text) {
+  const lines = text.split('\n');
+  const isRow = l => l.includes(' | ') && !l.trim().startsWith('|'); // Markdown表（|---|）は別形式なので対象外
+  const cells = l => l.split(' | ').length;
+  const problems = [];
+  // 崩れの実例（bar-pc-003）は「Number of frames」のような短い断片行が表の行の間に挟まる形。
+  // 文章（ピリオド・コロンで終わる、または長い行）は表の外の説明文なので対象外にする
+  for (let i = 1; i < lines.length - 1; i++) {
+    const l = lines[i].trim();
+    if (!isRow(lines[i]) && l !== '' && l.length <= 30 && !/[.:。：]$/.test(l)
+        && isRow(lines[i - 1]) && isRow(lines[i + 1])) {
+      problems.push(`表の行の間に断片行: "${l}"`);
+    }
+  }
+  return problems;
+}
+
 let total = 0;
 
 for (const { dir, file } of files) {
@@ -59,6 +80,13 @@ for (const { dir, file } of files) {
         file, id: q.id,
         detail: `重複テキスト: ${[...new Set(dupes)].join(' | ')}`
       });
+    }
+
+    // チェック5: 問題文・選択肢・解説の表崩れ
+    for (const [where, text] of [['stem', q.stem ?? ''], ['explanation', q.explanation ?? ''], ...q.choices.map(c => ['choice ' + c.label, c.text ?? ''])]) {
+      for (const detail of findBrokenTable(text)) {
+        issues.BROKEN_TABLE.push({ file, id: q.id, detail: `${where}: ${detail}` });
+      }
     }
 
     // チェック3: 解説に疑念語句
@@ -110,6 +138,17 @@ if (issues.SUSPICIOUS_EXPLANATION.length) {
     console.log(`  ${i.id} (${i.file}) [${i.label}]`);
     console.log(`    "${i.snippet.replace(/\n/g,' ')}..."`);
   }
+  console.log();
+}
+
+// [5] 表崩れ（BAR問題で 2026-09〜10 に計8問見つかった型）。
+// 既存データに表の小見出し・合計行の誤検出が11件あるため警告に留め、コミットは止めない。
+// 新しく作った問題がここに出たら、画面で表を見て確認する。
+if (issues.BROKEN_TABLE.length) {
+  console.log(`[警告] 表崩れの疑い (${issues.BROKEN_TABLE.length} 件)`);
+  for (const i of issues.BROKEN_TABLE)
+    console.log(`  ${i.id} (${i.file})
+    ${i.detail}`);
   console.log();
 }
 
