@@ -1,4 +1,5 @@
 import type { TBSQuestion } from "@/types/tbs";
+import businessCombinations from "./business-combinations.json";
 import capitalBudgeting from "./capital-budgeting.json";
 import derivatives from "./derivatives.json";
 import fxTranslation from "./fx-translation.json";
@@ -14,6 +15,7 @@ export const barTBSQuestions: TBSQuestion[] = [
   ...(capitalBudgeting as TBSQuestion[]),
   ...(stockComp as TBSQuestion[]),
   ...(leasesLessor as TBSQuestion[]),
+  ...(businessCombinations as TBSQuestion[]),
   ...(derivatives as TBSQuestion[]),
   ...(fxTranslation as TBSQuestion[]),
   ...(governmentFunds as TBSQuestion[]),
