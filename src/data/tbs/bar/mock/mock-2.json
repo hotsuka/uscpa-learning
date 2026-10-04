@@ -1,0 +1,1845 @@
+[
+  {
+    "id": "bar-tbs-wacc-001",
+    "subject": "BAR",
+    "topic": "Capital Structure & Cost of Capital",
+    "title": "Halvorsen Industries — Debt-Financed Share Repurchase",
+    "scenario": "Halvorsen Industries, Inc. is evaluating a leveraged recapitalization. Management proposes to borrow additional funds and use the entire proceeds to repurchase common shares. The CFO has asked you to compare the current capital structure with the proposed structure.\n\nCurrent capital and market data are presented in **Exhibit 1**, the terms of the proposal in **Exhibit 2**, and the operating forecast and loan covenant in **Exhibit 3**.\n\nHalvorsen relevers beta using βL = βU × [1 + (1 − t) × (D/E)], where D and E are measured at market values, and estimates the cost of equity with the capital asset pricing model. Use market-value weights for the weighted-average cost of capital (WACC). Assume that EBIT is not affected by the recapitalization.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Current Capital Structure and Market Data",
+        "content": "| Item | Amount |\n|---|---|\n| Bonds outstanding (market value equals face value) | $20,000,000 |\n| Pretax yield on existing bonds | 6.0% |\n| Common shares outstanding | 4,000,000 |\n| Current market price per share | $40.00 |\n| Book value of common equity | $96,000,000 |\n| Unlevered (asset) beta of Halvorsen's operations | 0.96 |\n| Risk-free rate | 4.0% |\n| Market risk premium | 6.0% |\n| Marginal income tax rate | 25% |\n| Annual dividend per share | $1.60 |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Recapitalization Proposal (Term Sheet Summary)",
+        "content": "- The lender will provide a $60,000,000 term facility. $20,000,000 will refinance the existing bonds at par, and the remaining $40,000,000 is new borrowing.\n- The entire $60,000,000 facility bears a pretax interest rate of 6.5% per year.\n- The $40,000,000 of new borrowing will be used to repurchase common shares at $40.00 per share.\n- For analysis purposes, assume the share price remains $40.00 immediately after the repurchase and that there are no transaction costs.\n- The facility matures in seven years with no scheduled principal payments before maturity."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Operating Forecast and Loan Covenant",
+        "content": "| Item | Amount |\n|---|---|\n| Expected annual EBIT | $30,000,000 |\n| Downside-scenario annual EBIT | $22,000,000 |\n| Planned annual capital expenditures | $9,000,000 |\n| Annual depreciation expense | $7,500,000 |\n\n**Covenant (proposed facility):** The ratio of EBIT to interest expense must be at least 6.0 times in every fiscal year."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Cost of Capital Components",
+        "instruction": "Complete the table for the current and the proposed capital structures. Enter percentages as numbers (for example, enter 9.25 for 9.25%). Round all amounts to two decimal places. Do not use commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Current", "Proposed"],
+          "rows": [
+            "After-tax cost of debt (%)",
+            "Levered equity beta",
+            "Cost of equity (%)",
+            "WACC (%)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "After-tax cost of debt (%)",
+              "colLabel": "Current",
+              "correctValue": 4.5,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "After-tax cost of debt (%)",
+              "colLabel": "Proposed",
+              "correctValue": 4.88,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Levered equity beta",
+              "colLabel": "Current",
+              "correctValue": 1.05,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Levered equity beta",
+              "colLabel": "Proposed",
+              "correctValue": 1.32,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Cost of equity (%)",
+              "colLabel": "Current",
+              "correctValue": 10.3,
+              "tolerance": 0.02
+            },
+            {
+              "rowLabel": "Cost of equity (%)",
+              "colLabel": "Proposed",
+              "correctValue": 11.92,
+              "tolerance": 0.02
+            },
+            {
+              "rowLabel": "WACC (%)",
+              "colLabel": "Current",
+              "correctValue": 9.66,
+              "tolerance": 0.02
+            },
+            {
+              "rowLabel": "WACC (%)",
+              "colLabel": "Proposed",
+              "correctValue": 9.57,
+              "tolerance": 0.02
+            }
+          ]
+        },
+        "explanation": "After-tax cost of debt = pretax rate × (1 − 0.25): current 6.0% × 0.75 = 4.50%; proposed 6.5% × 0.75 = 4.875%, or 4.88%.\nMarket values: current D = $20,000,000 and E = 4,000,000 × $40 = $160,000,000 (D/E = 0.125). Under the proposal, 1,000,000 shares are repurchased ($40,000,000 / $40), so E = 3,000,000 × $40 = $120,000,000 and D = $60,000,000 (D/E = 0.50).\nLevered beta: current 0.96 × [1 + 0.75 × 0.125] = 1.05; proposed 0.96 × [1 + 0.75 × 0.50] = 1.32.\nCost of equity (CAPM): current 4.0% + 1.05 × 6.0% = 10.30%; proposed 4.0% + 1.32 × 6.0% = 11.92%.\nWACC: current (20/180 × 4.50%) + (160/180 × 10.30%) = 0.50% + 9.16% = 9.66%; proposed (60/180 × 4.875%) + (120/180 × 11.92%) = 1.625% + 7.947% = 9.57%. Book value of equity is not used because the weights are based on market values.",
+        "explanationJa": "**ステップ1 税引後負債コスト** = 税引前利率 ×（1 − 25%）\n- 現状: 6.0% × 0.75 = **4.50%**\n- 提案: 6.5% × 0.75 = 4.875% → **4.88%**\n\n**ステップ2 時価ベースの D/E**\n- 現状: D = $20,000,000、E = 4,000,000株 × $40 = $160,000,000 → D/E = 0.125\n- 提案: 買戻し株数 = $40,000,000 ÷ $40 = 1,000,000株 → 残り3,000,000株、E = $120,000,000、D = $60,000,000 → D/E = 0.50\n\n**ステップ3 β の再レバー**（βL = βU × [1 + (1 − t) × D/E]）\n- 現状: 0.96 × (1 + 0.75 × 0.125) = 0.96 × 1.09375 = **1.05**\n- 提案: 0.96 × (1 + 0.75 × 0.50) = 0.96 × 1.375 = **1.32**\n\n**ステップ4 株主資本コスト（CAPM）** = 4.0% + β × 6.0%\n- 現状: 4.0% + 6.30% = **10.30%**\n- 提案: 4.0% + 7.92% = **11.92%**\n\n**ステップ5 WACC（時価ウエイト）**\n- 現状: 20/180 × 4.50% + 160/180 × 10.30% = 0.50% + 9.16% = **9.66%**\n- 提案: 60/180 × 4.875% + 120/180 × 11.92% = 1.625% + 7.947% = **9.57%**\n\n簿価の株主資本（$96,000,000）はウエイトに使いません。負債比率が上がると株主資本コストは上がりますが、より安い税引後負債の比重が増えるため、この数値では WACC はわずかに下がります。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Cost of capital and capital structure"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "EPS and Leverage Metrics at Expected EBIT",
+        "instruction": "Using the expected annual EBIT, complete the table for the current and the proposed capital structures. Round all amounts to two decimal places. Do not use commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Current", "Proposed"],
+          "rows": [
+            "Earnings per share ($)",
+            "Degree of financial leverage",
+            "Interest coverage (times)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Earnings per share ($)",
+              "colLabel": "Current",
+              "correctValue": 5.4,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Earnings per share ($)",
+              "colLabel": "Proposed",
+              "correctValue": 6.53,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Degree of financial leverage",
+              "colLabel": "Current",
+              "correctValue": 1.04,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Degree of financial leverage",
+              "colLabel": "Proposed",
+              "correctValue": 1.15,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Interest coverage (times)",
+              "colLabel": "Current",
+              "correctValue": 25,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Interest coverage (times)",
+              "colLabel": "Proposed",
+              "correctValue": 7.69,
+              "tolerance": 0.01
+            }
+          ]
+        },
+        "explanation": "Interest expense: current $20,000,000 × 6.0% = $1,200,000; proposed $60,000,000 × 6.5% = $3,900,000.\nEPS: current ($30,000,000 − $1,200,000) × 0.75 / 4,000,000 = $21,600,000 / 4,000,000 = $5.40; proposed ($30,000,000 − $3,900,000) × 0.75 / 3,000,000 = $19,575,000 / 3,000,000 = $6.525, or $6.53.\nDegree of financial leverage = EBIT / (EBIT − interest): current $30,000,000 / $28,800,000 = 1.04; proposed $30,000,000 / $26,100,000 = 1.15.\nInterest coverage = EBIT / interest: current $30,000,000 / $1,200,000 = 25.00; proposed $30,000,000 / $3,900,000 = 7.69.",
+        "explanationJa": "**ステップ1 支払利息**\n- 現状: $20,000,000 × 6.0% = $1,200,000\n- 提案: $60,000,000 × 6.5% = $3,900,000\n\n**ステップ2 EPS** =（EBIT − 利息）×（1 − 税率）÷ 株式数\n- 現状: ($30,000,000 − $1,200,000) × 0.75 ÷ 4,000,000 = $21,600,000 ÷ 4,000,000 = **$5.40**\n- 提案: ($30,000,000 − $3,900,000) × 0.75 ÷ 3,000,000 = $19,575,000 ÷ 3,000,000 = $6.525 → **$6.53**\n\n**ステップ3 財務レバレッジ度（DFL）** = EBIT ÷（EBIT − 利息）\n- 現状: 30,000,000 ÷ 28,800,000 = **1.04**\n- 提案: 30,000,000 ÷ 26,100,000 = **1.15**\n\n**ステップ4 インタレスト・カバレッジ** = EBIT ÷ 利息\n- 現状: 30,000,000 ÷ 1,200,000 = **25.00倍**\n- 提案: 30,000,000 ÷ 3,900,000 = **7.69倍**\n\n配当・設備投資・減価償却費はこの計算に使いません。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Cost of capital and capital structure"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "EBIT-EPS Indifference Point",
+        "instruction": "Calculate the level of annual EBIT at which EPS is the same under the current and the proposed capital structures. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 12000000,
+        "tolerance": 1,
+        "explanation": "Set EPS equal: (EBIT − $1,200,000)(1 − 0.25) / 4,000,000 = (EBIT − $3,900,000)(1 − 0.25) / 3,000,000. The tax factor cancels, so 3,000,000 × (EBIT − $1,200,000) = 4,000,000 × (EBIT − $3,900,000). Then 3 EBIT − $3,600,000 = 4 EBIT − $15,600,000, so EBIT = $12,000,000. At that level EPS is $2.025 under both structures.",
+        "explanationJa": "**ステップ1** 両案の EPS を等しいと置く\n(EBIT − $1,200,000) × 0.75 ÷ 4,000,000 = (EBIT − $3,900,000) × 0.75 ÷ 3,000,000\n\n**ステップ2** 税率の項（0.75）は両辺で消えるので、株式数をたすき掛けする\n3 ×（EBIT − 1,200,000）= 4 ×（EBIT − 3,900,000）\n3EBIT − 3,600,000 = 4EBIT − 15,600,000\n\n**ステップ3** EBIT = **$12,000,000**\n\n確認: EBIT $12,000,000 のとき EPS は現状 (10,800,000 × 0.75) ÷ 4,000,000 = $2.025、提案 (8,100,000 × 0.75) ÷ 3,000,000 = $2.025 で一致します。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Cost of capital and capital structure"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Preferred Structure at Expected EBIT",
+        "instruction": "Based on EPS at the expected annual EBIT, select the statement that is correct.",
+        "answerType": "select",
+        "options": [
+          "Proposed plan, because expected EBIT exceeds the indifference EBIT",
+          "Current structure, because expected EBIT is below the indifference EBIT",
+          "Current structure, because the proposed plan raises the cost of equity",
+          "Neither structure, because EPS is identical at the expected EBIT"
+        ],
+        "correctAnswer": "Proposed plan, because expected EBIT exceeds the indifference EBIT",
+        "explanation": "Expected EBIT of $30,000,000 is well above the $12,000,000 indifference point. Above the indifference point, the structure with more debt and fewer shares produces higher EPS ($6.53 versus $5.40). A higher cost of equity does not by itself mean EPS is lower; it reflects the added financial risk borne by shareholders. EPS is identical only when EBIT equals the indifference point.",
+        "explanationJa": "予想 EBIT $30,000,000 は無差別点 $12,000,000 を大きく上回っています。無差別点より上では、負債が多く株式数が少ない構成の方が EPS が高くなります（提案 $6.53 > 現状 $5.40）。したがって正解は「提案案。予想 EBIT が無差別点を上回るため」です。\n\n株主資本コストの上昇は株主が負う財務リスクの増加を表すもので、それだけで EPS が低くなることを意味しません。また、EPS が両案で同じになるのは EBIT が無差別点にあるときだけです。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Cost of capital and capital structure"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Covenant Test Under the Downside Scenario",
+        "instruction": "Under the proposed capital structure, determine whether the loan covenant in Exhibit 3 would be met if the downside-scenario EBIT occurs.",
+        "answerType": "select",
+        "options": [
+          "The covenant would be met; interest coverage would be 7.69x",
+          "The covenant would be met; interest coverage would be 18.33x",
+          "The covenant would be breached; interest coverage would be 5.64x",
+          "The covenant would be breached; interest coverage would be 4.23x"
+        ],
+        "correctAnswer": "The covenant would be breached; interest coverage would be 5.64x",
+        "explanation": "Downside EBIT of $22,000,000 / proposed interest of $3,900,000 = 5.64 times, which is below the 6.0 minimum, so the covenant would be breached. Coverage of 7.69x applies only at the expected EBIT, and 18.33x divides by the current interest of $1,200,000, which no longer applies after the refinancing.",
+        "explanationJa": "**ステップ1** 提案後の支払利息は $3,900,000（$60,000,000 × 6.5%）\n\n**ステップ2** 下振れ EBIT のカバレッジ = $22,000,000 ÷ $3,900,000 = **5.64倍**\n\n**ステップ3** コベナンツの下限 6.0倍を下回るため、**コベナンツ違反**となります。\n\n7.69倍は予想 EBIT（$30,000,000）での値、18.33倍は借換え前の利息 $1,200,000 で割った値で、いずれも下振れシナリオにおける提案後の数値ではありません。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Cost of capital and capital structure"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Effects of Increasing Financial Leverage",
+        "instruction": "Select all statements that correctly describe the effects of the proposed recapitalization.",
+        "answerType": "multiselect",
+        "options": [
+          "The levered equity beta increases because shareholders bear more financial risk",
+          "Book-value weights should replace market-value weights because book values are more stable",
+          "The cost of equity increases even though the unlevered beta is unchanged",
+          "The after-tax cost of debt rises because the interest tax shield is lost",
+          "EPS becomes more sensitive to a given percentage change in EBIT",
+          "The unlevered beta increases because operating risk rises with leverage"
+        ],
+        "correctAnswer": [
+          "The levered equity beta increases because shareholders bear more financial risk",
+          "The cost of equity increases even though the unlevered beta is unchanged",
+          "EPS becomes more sensitive to a given percentage change in EBIT"
+        ],
+        "explanation": "The unlevered beta reflects operating (business) risk and is unchanged at 0.96; adding debt raises the levered beta from 1.05 to 1.32 because shareholders bear more financial risk, which raises the cost of equity from 10.30% to 11.92%. The degree of financial leverage rises from 1.04 to 1.15, so EPS changes by a larger percentage for a given percentage change in EBIT. The after-tax cost of debt rises only because the pretax rate rises to 6.5%; the interest tax shield is still available. WACC should use market-value weights because they reflect the current claims of investors.",
+        "explanationJa": "**正しい記述**\n- レバード β は 1.05 → 1.32 に上昇します。負債が増え、株主が負う財務リスクが大きくなるためです。\n- アンレバード β（事業リスク）は 0.96 のまま変わりませんが、株主資本コストは 10.30% → 11.92% に上がります。\n- DFL が 1.04 → 1.15 に上がるので、EBIT の変化率に対する EPS の変化率が大きくなります。\n\n**誤りの記述**\n- 簿価ウエイトへの置き換え: WACC は投資家の現在の請求権を表す時価ウエイトで計算します。\n- 税引後負債コストの上昇理由を「節税効果がなくなるため」とする記述: 上昇は税引前利率が 6.5% に上がったためで、支払利息の節税効果は引き続き得られます。\n- アンレバード β の上昇: アンレバード β は事業リスクだけを表し、資本構成の変更では変わりません。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Cost of capital and capital structure"
+        ]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-budget-001",
+    "subject": "BAR",
+    "topic": "Budgeting & Forecasting",
+    "title": "Cordova Products — Third-Quarter Master Budget",
+    "scenario": "Cordova Products, Inc. manufactures a single product and is preparing its master budget for the third quarter (July through September). The controller has asked you to prepare portions of the operating budgets and the August cash budget.\n\nBudgeted sales and inventory policies are presented in **Exhibit 1**, and production cost, collection, and payment data in **Exhibit 2**. Cordova estimates factory overhead with the regression results in **Exhibit 3**. Other August cash budget data are in **Exhibit 4**.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Sales Forecast and Inventory Policies",
+        "content": "| Month | Sales (units) |\n|---|---|\n| June (actual) | 8,000 |\n| July | 10,000 |\n| August | 12,000 |\n| September | 9,000 |\n| October | 11,000 |\n| November | 10,000 |\n\n- Selling price: $50 per unit.\n- Ending finished goods inventory is maintained at 20% of the following month's sales in units.\n- Ending raw materials inventory is maintained at 25% of the following month's production needs in pounds.\n- Inventories at June 30 are consistent with these policies.\n- Standard cost of a finished unit for inventory valuation: $32."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Production Inputs, Collections, and Payments",
+        "content": "**Direct materials:** 3 pounds per unit at $4.00 per pound.\n\n**Direct labor:** 0.5 hours per unit at $20.00 per hour, paid in the month incurred.\n\n**Collections:** All sales are on credit. 25% is collected in the month of sale, 70% in the following month, and 5% is uncollectible.\n\n**Payments for materials:** 40% of purchases are paid in the month of purchase and 60% in the following month."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Factory Overhead Regression Output (24 Monthly Observations)",
+        "content": "**Model A — Dependent variable: total monthly factory overhead ($); independent variable: units produced**\n\n| Statistic | Intercept | Units produced |\n|---|---|---|\n| Coefficient | 84,500 | 7.25 |\n| Standard error | 13,629 | 0.74 |\n| t-statistic | 6.20 | 9.80 |\n\nR-squared: 0.89. Range of units produced in the observations: 8,000 to 14,000.\n\n**Model B — Dependent variable: total monthly factory overhead ($); independent variable: direct labor cost ($)**\n\n| Statistic | Intercept | Direct labor cost |\n|---|---|---|\n| Coefficient | 101,200 | 0.52 |\n| t-statistic | 3.10 | 2.30 |\n\nR-squared: 0.42.\n\nCordova budgets overhead with Model A. Monthly factory overhead includes $18,000 of depreciation."
+      },
+      {
+        "id": "ex-4",
+        "title": "Exhibit 4: Other August Cash Budget Data",
+        "content": "| Item | Amount |\n|---|---|\n| Cash balance, August 1 | $45,000 |\n| Selling and administrative expenses paid in cash | $60,000 per month plus 5% of the month's sales revenue |\n| Equipment purchase paid in August | $70,000 |\n| Quarterly dividend payable September 15 | $25,000 |\n| Minimum required month-end cash balance | $40,000 |\n\nCordova has a line of credit with no balance outstanding on August 1. Borrowings are made at the beginning of the month in multiples of $5,000, and interest is paid when principal is repaid."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Production Budget",
+        "instruction": "Calculate the number of units to be produced in each month. Enter whole units, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["July", "August", "September"],
+          "rows": ["Units to be produced"],
+          "cells": [
+            {
+              "rowLabel": "Units to be produced",
+              "colLabel": "July",
+              "correctValue": 10400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Units to be produced",
+              "colLabel": "August",
+              "correctValue": 11400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Units to be produced",
+              "colLabel": "September",
+              "correctValue": 9400,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Units to be produced = budgeted sales + desired ending finished goods − beginning finished goods.\nJuly: 10,000 + (20% × 12,000 = 2,400) − (20% × 10,000 = 2,000) = 10,400.\nAugust: 12,000 + (20% × 9,000 = 1,800) − 2,400 = 11,400.\nSeptember: 9,000 + (20% × 11,000 = 2,200) − 1,800 = 9,400.",
+        "explanationJa": "**製造量 = 当月販売量 + 月末製品在庫 − 月初製品在庫**（月末在庫 = 翌月販売量 × 20%）\n\n| 月 | 販売量 | + 月末在庫 | − 月初在庫 | 製造量 |\n|---|---|---|---|---|\n| 7月 | 10,000 | 2,400（8月12,000×20%） | 2,000（7月10,000×20%） | **10,400** |\n| 8月 | 12,000 | 1,800（9月9,000×20%） | 2,400 | **11,400** |\n| 9月 | 9,000 | 2,200（10月11,000×20%） | 1,800 | **9,400** |\n\n6月末在庫も方針どおりなので、7月の月初在庫は7月販売量の20%です。",
+        "references": ["AICPA BAR Blueprint, Area I: Budgeting and forecasting"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Direct Materials Purchases Budget",
+        "instruction": "Calculate the pounds of direct materials to be purchased and the cost of those purchases in each month. Enter whole numbers, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["July", "August", "September"],
+          "rows": ["Pounds to be purchased", "Cost of purchases ($)"],
+          "cells": [
+            {
+              "rowLabel": "Pounds to be purchased",
+              "colLabel": "July",
+              "correctValue": 31950,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Pounds to be purchased",
+              "colLabel": "August",
+              "correctValue": 32700,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Pounds to be purchased",
+              "colLabel": "September",
+              "correctValue": 29250,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cost of purchases ($)",
+              "colLabel": "July",
+              "correctValue": 127800,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cost of purchases ($)",
+              "colLabel": "August",
+              "correctValue": 130800,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cost of purchases ($)",
+              "colLabel": "September",
+              "correctValue": 117000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Production needs (3 pounds per unit): July 31,200; August 34,200; September 28,200; October 32,400 (October production = 11,000 + 20% × 10,000 − 2,200 = 10,800 units).\nPounds purchased = production needs + desired ending materials (25% of next month's needs) − beginning materials.\nJuly: 31,200 + 8,550 − 7,800 = 31,950 pounds × $4 = $127,800.\nAugust: 34,200 + 7,050 − 8,550 = 32,700 pounds × $4 = $130,800.\nSeptember: 28,200 + 8,100 − 7,050 = 29,250 pounds × $4 = $117,000.",
+        "explanationJa": "**ステップ1 製造に必要な材料（1単位3ポンド）**\n- 7月 10,400 × 3 = 31,200、8月 11,400 × 3 = 34,200、9月 9,400 × 3 = 28,200\n- 9月末在庫の計算に10月の製造量が必要: 10月製造量 = 11,000 + 11月10,000 × 20% − 2,200 = 10,800 → 32,400ポンド\n\n**ステップ2 購入量 = 当月所要量 + 月末材料在庫 − 月初材料在庫**（月末在庫 = 翌月所要量 × 25%）\n\n| 月 | 所要量 | + 月末在庫 | − 月初在庫 | 購入量 | 金額（×$4） |\n|---|---|---|---|---|---|\n| 7月 | 31,200 | 8,550 | 7,800 | **31,950** | **$127,800** |\n| 8月 | 34,200 | 7,050 | 8,550 | **32,700** | **$130,800** |\n| 9月 | 28,200 | 8,100 | 7,050 | **29,250** | **$117,000** |\n\n7月の月初在庫は 31,200 × 25% = 7,800ポンドです。",
+        "references": ["AICPA BAR Blueprint, Area I: Budgeting and forecasting"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "August Cash Collections",
+        "instruction": "Calculate budgeted cash collections from customers in August. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 500000,
+        "tolerance": 1,
+        "explanation": "August sales revenue = 12,000 × $50 = $600,000; July sales revenue = 10,000 × $50 = $500,000. August collections = 25% × $600,000 + 70% × $500,000 = $150,000 + $350,000 = $500,000. The 5% uncollectible portion is never collected.",
+        "explanationJa": "**ステップ1 売上高**\n- 8月: 12,000 × $50 = $600,000\n- 7月: 10,000 × $50 = $500,000\n\n**ステップ2 8月の回収額**\n- 当月分: $600,000 × 25% = $150,000\n- 前月分: $500,000 × 70% = $350,000\n- 合計 **$500,000**\n\n貸倒れになる5%は回収されないので含めません。",
+        "references": ["AICPA BAR Blueprint, Area I: Budgeting and forecasting"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "August Factory Overhead Estimate",
+        "instruction": "Using the regression model Cordova uses for budgeting, estimate total factory overhead for August. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 167150,
+        "tolerance": 1,
+        "explanation": "Model A: overhead = $84,500 + $7.25 × units produced. August production is 11,400 units, which is within the observed range of 8,000 to 14,000 units. Overhead = $84,500 + $7.25 × 11,400 = $84,500 + $82,650 = $167,150.",
+        "explanationJa": "**ステップ1** 予算に使うのはモデルA（製造量を説明変数とする回帰）: 間接費 = $84,500 + $7.25 × 製造量\n\n**ステップ2** 8月の製造量 11,400単位（観測範囲 8,000〜14,000 の内側）を代入\n$84,500 + $7.25 × 11,400 = $84,500 + $82,650 = **$167,150**\n\nこれは減価償却費を含む総額です。現金予算では減価償却費 $18,000 を差し引きます。",
+        "references": ["AICPA BAR Blueprint, Area I: Budgeting and forecasting"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "August Cash Budget",
+        "instruction": "Complete the August cash budget. Cash disbursements include direct materials, direct labor, cash factory overhead, selling and administrative expenses, and the equipment purchase. Enter amounts in whole dollars, no commas. Enter 0 if no borrowing is required.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["August"],
+          "rows": [
+            "Total cash available",
+            "Payments for direct materials",
+            "Total cash disbursements",
+            "Amount borrowed",
+            "Ending cash balance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Total cash available",
+              "colLabel": "August",
+              "correctValue": 545000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Payments for direct materials",
+              "colLabel": "August",
+              "correctValue": 129000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total cash disbursements",
+              "colLabel": "August",
+              "correctValue": 552150,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Amount borrowed",
+              "colLabel": "August",
+              "correctValue": 50000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Ending cash balance",
+              "colLabel": "August",
+              "correctValue": 42850,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Total cash available = $45,000 + $500,000 = $545,000.\nMaterials payments = 40% × $130,800 + 60% × $127,800 = $52,320 + $76,680 = $129,000.\nDirect labor = 11,400 units × $10 = $114,000. Cash overhead = $167,150 − $18,000 depreciation = $149,150. Selling and administrative = $60,000 + 5% × $600,000 = $90,000. Equipment = $70,000.\nTotal disbursements = $129,000 + $114,000 + $149,150 + $90,000 + $70,000 = $552,150.\nExcess (deficiency) = $545,000 − $552,150 = ($7,150). To reach the $40,000 minimum, $47,150 is needed, so Cordova borrows $50,000 (next multiple of $5,000). Ending cash = −$7,150 + $50,000 = $42,850. The September dividend is not an August disbursement.",
+        "explanationJa": "**ステップ1 利用可能現金** = 月初 $45,000 + 回収 $500,000 = **$545,000**\n\n**ステップ2 支出**\n- 材料代: 8月購入 $130,800 × 40% + 7月購入 $127,800 × 60% = $52,320 + $76,680 = **$129,000**\n- 直接労務費: 11,400単位 × (0.5時間 × $20) = $114,000\n- 製造間接費（現金分）: $167,150 − 減価償却費 $18,000 = $149,150\n- 販売費・一般管理費: $60,000 + $600,000 × 5% = $90,000\n- 設備購入: $70,000\n- 合計 **$552,150**\n\n**ステップ3 資金過不足** = $545,000 − $552,150 = −$7,150\n\n**ステップ4 借入** 最低残高 $40,000 にするには $47,150 必要 → $5,000 単位に切り上げて **$50,000**\n\n**ステップ5 月末残高** = −$7,150 + $50,000 = **$42,850**\n\n9月15日支払の配当 $25,000 は8月の支出に含めません。利息は元本返済時に払うため、8月には発生しません。",
+        "references": ["AICPA BAR Blueprint, Area I: Budgeting and forecasting"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Interpreting the Regression Output",
+        "instruction": "Select all statements that are supported by the regression output in Exhibit 3.",
+        "answerType": "multiselect",
+        "options": [
+          "Units produced is the more appropriate cost driver because Model A explains more of the variation in overhead than Model B",
+          "An R-squared of 0.89 demonstrates that production volume causes 89% of total overhead cost",
+          "The t-statistic of the slope coefficient indicates that the variable overhead rate is statistically significant",
+          "Model A can reliably estimate overhead for a month with 25,000 units because its R-squared is high",
+          "The intercept of Model A is an estimate of monthly fixed overhead only within the relevant range of the observations",
+          "The coefficient of 7.25 means overhead rises by $7.25 for each $1 of direct labor cost"
+        ],
+        "correctAnswer": [
+          "Units produced is the more appropriate cost driver because Model A explains more of the variation in overhead than Model B",
+          "The t-statistic of the slope coefficient indicates that the variable overhead rate is statistically significant",
+          "The intercept of Model A is an estimate of monthly fixed overhead only within the relevant range of the observations"
+        ],
+        "explanation": "Model A's R-squared of 0.89 means 89% of the variation in monthly overhead is associated with units produced, compared with 42% for direct labor cost, so units produced is the better driver. A slope t-statistic of 9.80 (well above approximately 2) indicates the variable rate of $7.25 per unit is statistically significant. The intercept of $84,500 approximates fixed overhead only within the 8,000 to 14,000 unit range observed. R-squared measures association, not causation, and it describes the share of variation explained, not the share of total cost. Extrapolating to 25,000 units is outside the relevant range. The 7.25 coefficient relates to units produced; the direct labor cost coefficient in Model B is 0.52.",
+        "explanationJa": "**正しい記述**\n- モデルA の R² 0.89 はモデルB の 0.42 より高く、製造量の方が間接費の変動をよく説明するため、コスト・ドライバーとして適切です。\n- 傾きの t 値 9.80 は目安の 2 を大きく上回り、変動費率 $7.25/単位は統計的に有意です。\n- 切片 $84,500 は月次固定費の推定値ですが、観測範囲（8,000〜14,000単位）＝関連範囲の内側でのみ意味を持ちます。\n\n**誤りの記述**\n- R² 0.89 は「間接費の変動のうち89%が製造量の変動と連動する」という意味で、因果関係も総額の89%も示しません。\n- 25,000単位は観測範囲外で、R² が高くても外挿の信頼性は保証されません。\n- 7.25 は製造量1単位あたりの係数です。直接労務費の係数はモデルB の 0.52 です。",
+        "references": ["AICPA BAR Blueprint, Area I: Budgeting and forecasting"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-flex-001",
+    "subject": "BAR",
+    "topic": "Variance Analysis",
+    "title": "Brightline Audio — Flexible-Budget Performance Report",
+    "scenario": "Brightline Audio, Inc.'s Consumer Division sells two speaker models, Standard and Premium. The division manager is evaluated on the division's results for the year. Corporate management has asked you to analyze the division's performance against its static budget.\n\nThe static budget is presented in **Exhibit 1** and actual results in **Exhibit 2**. **Exhibit 3** details the actual fixed costs, and **Exhibit 4** describes the division manager's decision authority.\n\nUnless otherwise stated, compute variances in terms of operating income or contribution margin, and use budgeted contribution margins per unit for the sales-mix and sales-quantity variances.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Static Budget for the Year",
+        "content": "| Item | Standard | Premium |\n|---|---|---|\n| Units sold | 30,000 | 10,000 |\n| Selling price per unit | $80 | $200 |\n| Variable cost per unit | $50 | $120 |\n| Traceable fixed costs | $360,000 | $240,000 |\n\nAllocated corporate costs (budget): $250,000.\n\nIndustry unit sales of comparable speakers were budgeted at 400,000 units."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Actual Results for the Year",
+        "content": "| Item | Standard | Premium |\n|---|---|---|\n| Units sold | 27,000 | 15,000 |\n| Selling price per unit | $78 | $195 |\n| Variable cost per unit | $51 | $118 |\n\nAllocated corporate costs (actual): $280,000, consisting of IT and legal costs of $190,000 allocated on the basis of revenue and interest on corporate debt of $90,000.\n\nActual industry unit sales of comparable speakers were 420,000 units. The division had 64 employees at year-end."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Actual Traceable Fixed Costs by Product Line",
+        "content": "| Cost | Standard | Premium | Total |\n|---|---|---|---|\n| Division supervisory salaries | $120,000 | $90,000 | $210,000 |\n| Advertising | $40,000 | $120,000 | $160,000 |\n| Depreciation on production equipment | $220,000 | $40,000 | $260,000 |\n| Total traceable fixed costs | $380,000 | $250,000 | $630,000 |"
+      },
+      {
+        "id": "ex-4",
+        "title": "Exhibit 4: Excerpt from the Division Manager's Authority Memo",
+        "content": "1. The division manager sets selling prices for both product lines within corporate pricing guidelines.\n2. The division manager hires division supervisors and sets their salaries.\n3. The division manager determines the advertising budget and campaigns for both product lines.\n4. Production equipment was acquired under a corporate capital mandate approved by the board of directors; the division manager had no role in the acquisition decision.\n5. Corporate IT and legal costs are allocated to divisions based on revenue.\n6. All borrowing is arranged by corporate treasury, and corporate interest cost is allocated to divisions."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Static-Budget Variance Decomposition",
+        "instruction": "Compute the operating income variances for the division. Enter amounts as positive whole dollars, no commas, and enter F (favorable) or U (unfavorable) in the F or U column.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Flexible-budget variance",
+            "Sales-volume variance",
+            "Static-budget variance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Flexible-budget variance",
+              "colLabel": "Amount",
+              "correctValue": 186000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Flexible-budget variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Sales-volume variance",
+              "colLabel": "Amount",
+              "correctValue": 310000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Sales-volume variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Static-budget variance",
+              "colLabel": "Amount",
+              "correctValue": 124000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Static-budget variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            }
+          ]
+        },
+        "explanation": "Static budget: CM = 30,000 × $30 + 10,000 × $80 = $1,700,000; fixed costs = $360,000 + $240,000 + $250,000 = $850,000; operating income = $850,000.\nFlexible budget (actual units at budgeted prices and costs): CM = 27,000 × $30 + 15,000 × $80 = $2,010,000; fixed costs $850,000; operating income = $1,160,000.\nActual: CM = 27,000 × ($78 − $51) + 15,000 × ($195 − $118) = $729,000 + $1,155,000 = $1,884,000; fixed costs = $630,000 + $280,000 = $910,000; operating income = $974,000.\nFlexible-budget variance = $974,000 − $1,160,000 = $186,000 U. Sales-volume variance = $1,160,000 − $850,000 = $310,000 F. Static-budget variance = $974,000 − $850,000 = $124,000 F (= $310,000 F − $186,000 U).",
+        "explanationJa": "**ステップ1 3つの営業利益を作る**\n\n| | 実績 | 変動予算 | 静的予算 |\n|---|---|---|---|\n| 貢献利益 | $1,884,000 | $2,010,000 | $1,700,000 |\n| 固定費 | $910,000 | $850,000 | $850,000 |\n| 営業利益 | **$974,000** | **$1,160,000** | **$850,000** |\n\n- 静的予算 CM: 30,000 × $30 + 10,000 × $80 = $1,700,000\n- 変動予算 CM（実際数量 × 予算単価）: 27,000 × $30 + 15,000 × $80 = $2,010,000\n- 実績 CM: 27,000 × $27 + 15,000 × $77 = $729,000 + $1,155,000 = $1,884,000\n- 実績固定費: 製品別 $630,000 + 本社配賦 $280,000 = $910,000\n\n**ステップ2 差異**\n- 変動予算差異 = 実績 − 変動予算 = $974,000 − $1,160,000 = **$186,000 U**\n- 販売数量差異 = 変動予算 − 静的予算 = $1,160,000 − $850,000 = **$310,000 F**\n- 静的予算差異 = 実績 − 静的予算 = **$124,000 F**（$310,000 F − $186,000 U）",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Variance analysis and responsibility accounting"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Components of the Flexible-Budget Variance",
+        "instruction": "Break the flexible-budget variance for operating income into its components, combining both product lines. Enter amounts as positive whole dollars, no commas, and enter F or U in the F or U column.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Selling-price variance",
+            "Variable-cost variance",
+            "Fixed-cost variance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Selling-price variance",
+              "colLabel": "Amount",
+              "correctValue": 129000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Selling-price variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Variable-cost variance",
+              "colLabel": "Amount",
+              "correctValue": 3000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Variable-cost variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Fixed-cost variance",
+              "colLabel": "Amount",
+              "correctValue": 60000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Fixed-cost variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            }
+          ]
+        },
+        "explanation": "Selling-price variance = (actual price − budgeted price) × actual units: Standard ($78 − $80) × 27,000 = $54,000 U; Premium ($195 − $200) × 15,000 = $75,000 U; total $129,000 U.\nVariable-cost variance = (budgeted cost − actual cost) × actual units: Standard ($50 − $51) × 27,000 = $27,000 U; Premium ($120 − $118) × 15,000 = $30,000 F; net $3,000 F.\nFixed-cost variance = $850,000 budgeted − $910,000 actual = $60,000 U.\nCheck: $129,000 U − $3,000 F + $60,000 U = $186,000 U, the flexible-budget variance.",
+        "explanationJa": "**販売価格差異** =（実際単価 − 予算単価）× 実際数量\n- Standard: ($78 − $80) × 27,000 = $54,000 U\n- Premium: ($195 − $200) × 15,000 = $75,000 U\n- 合計 **$129,000 U**\n\n**変動費差異** =（予算単位変動費 − 実際単位変動費）× 実際数量\n- Standard: ($50 − $51) × 27,000 = $27,000 U\n- Premium: ($120 − $118) × 15,000 = $30,000 F\n- 純額 **$3,000 F**\n\n**固定費差異** = 予算 $850,000 − 実績 $910,000 = **$60,000 U**\n\n検算: $129,000 U + $60,000 U − $3,000 F = $186,000 U（変動予算差異と一致）",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Variance analysis and responsibility accounting"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Sales-Mix and Sales-Quantity Variances",
+        "instruction": "Split the sales-volume variance into the sales-mix variance and the sales-quantity variance for the division as a whole. Enter amounts as positive whole dollars, no commas, and enter F or U in the F or U column.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": ["Sales-mix variance", "Sales-quantity variance"],
+          "cells": [
+            {
+              "rowLabel": "Sales-mix variance",
+              "colLabel": "Amount",
+              "correctValue": 225000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Sales-mix variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Sales-quantity variance",
+              "colLabel": "Amount",
+              "correctValue": 85000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Sales-quantity variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            }
+          ]
+        },
+        "explanation": "Budgeted mix: Standard 30,000 / 40,000 = 75%; Premium 25%. Budgeted average CM per unit = $1,700,000 / 40,000 = $42.50.\nSales-quantity variance = (actual total units − budgeted total units) × budgeted average CM = (42,000 − 40,000) × $42.50 = $85,000 F.\nSales-mix variance = Σ (actual units − actual total units × budgeted mix) × budgeted CM per unit: Standard (27,000 − 31,500) × $30 = $135,000 U; Premium (15,000 − 10,500) × $80 = $360,000 F; net $225,000 F.\nCheck: $225,000 F + $85,000 F = $310,000 F, the sales-volume variance.",
+        "explanationJa": "**ステップ1 予算の構成比と平均 CM**\n- 予算構成比: Standard 30,000 ÷ 40,000 = 75%、Premium 25%\n- 予算平均 CM/単位 = $1,700,000 ÷ 40,000 = $42.50\n\n**ステップ2 販売数量（quantity）差異** =（実際総数量 − 予算総数量）× 予算平均 CM\n(42,000 − 40,000) × $42.50 = **$85,000 F**\n\n**ステップ3 セールスミックス差異** =（実際数量 − 実際総数量 × 予算構成比）× 予算単位 CM\n- Standard: (27,000 − 42,000 × 75% = 31,500) × $30 = −$135,000（U）\n- Premium: (15,000 − 42,000 × 25% = 10,500) × $80 = +$360,000（F）\n- 純額 **$225,000 F**\n\n検算: $225,000 F + $85,000 F = $310,000 F（販売数量差異と一致）\n\n業界販売数量のデータは市場占有率差異・市場規模差異を求めるときに使うもので、この分解には使いません。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Variance analysis and responsibility accounting"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Segment Margin — Standard Line",
+        "instruction": "Calculate the actual segment margin of the Standard product line. Do not allocate corporate costs to product lines. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 349000,
+        "tolerance": 1,
+        "explanation": "Standard contribution margin = 27,000 × ($78 − $51) = $729,000. Traceable fixed costs = $120,000 + $40,000 + $220,000 = $380,000. Segment margin = $729,000 − $380,000 = $349,000. Allocated corporate costs are common costs and are excluded from segment margin.",
+        "explanationJa": "**ステップ1 Standard の貢献利益** = 27,000 × ($78 − $51) = $729,000\n\n**ステップ2 Standard の個別固定費** = 監督者給与 $120,000 + 広告費 $40,000 + 減価償却費 $220,000 = $380,000\n\n**ステップ3 セグメント・マージン** = $729,000 − $380,000 = **$349,000**\n\n本社配賦費は製品ラインに固有でない共通費なので、セグメント・マージンの計算では差し引きません。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Variance analysis and responsibility accounting"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Cause of the Sales-Mix Variance",
+        "instruction": "Select the statement that best explains the sales-mix variance computed in Work Tab 3.",
+        "answerType": "select",
+        "options": [
+          "Actual sales shifted toward the product with the higher budgeted contribution margin per unit",
+          "Actual sales shifted toward the product with the lower budgeted contribution margin per unit",
+          "Actual selling prices were below budgeted selling prices for both products",
+          "Total actual unit sales exceeded total budgeted unit sales"
+        ],
+        "correctAnswer": "Actual sales shifted toward the product with the higher budgeted contribution margin per unit",
+        "explanation": "Premium's budgeted contribution margin is $80 per unit versus $30 for Standard. Premium's share of units rose from 25% budgeted to about 35.7% actual (15,000 / 42,000), which produced the $225,000 favorable mix variance. Lower selling prices are captured in the selling-price variance, and the increase in total units is captured in the sales-quantity variance.",
+        "explanationJa": "予算の単位 CM は Premium $80、Standard $30 です。Premium の数量構成比は予算 25% から実績 約35.7%（15,000 ÷ 42,000）に上がりました。単位 CM の高い製品へ構成がシフトしたため、ミックス差異が $225,000 の有利差異になっています。\n\n販売単価の下落は販売価格差異に、総販売数量の増加は販売数量（quantity）差異に表れるもので、ミックス差異の原因ではありません。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Variance analysis and responsibility accounting"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Responsibility Accounting Classification",
+        "instruction": "Based on Exhibit 4, classify each item as controllable or not controllable by the division manager. Enter C for controllable or N for not controllable.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Code"],
+          "rows": [
+            "Selling-price variance",
+            "Division supervisory salaries",
+            "Advertising for the Premium line",
+            "Depreciation on equipment acquired under the corporate mandate",
+            "Allocated corporate IT and legal costs",
+            "Interest on corporate debt allocated to the division"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Selling-price variance",
+              "colLabel": "Code",
+              "correctValue": "C"
+            },
+            {
+              "rowLabel": "Division supervisory salaries",
+              "colLabel": "Code",
+              "correctValue": "C"
+            },
+            {
+              "rowLabel": "Advertising for the Premium line",
+              "colLabel": "Code",
+              "correctValue": "C"
+            },
+            {
+              "rowLabel": "Depreciation on equipment acquired under the corporate mandate",
+              "colLabel": "Code",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Allocated corporate IT and legal costs",
+              "colLabel": "Code",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Interest on corporate debt allocated to the division",
+              "colLabel": "Code",
+              "correctValue": "N"
+            }
+          ]
+        },
+        "explanation": "Under responsibility accounting, a manager is held accountable for items the manager can significantly influence. The division manager sets selling prices, supervisory salaries, and advertising, so the selling-price variance, supervisory salaries, and advertising are controllable (C). Depreciation on equipment acquired under a board-approved corporate mandate, revenue-based allocations of corporate IT and legal costs, and allocated corporate interest result from corporate decisions, so they are not controllable (N) by the division manager.",
+        "explanationJa": "責任会計では、管理者が大きく影響を与えられる項目だけをその管理者の責任とします。Exhibit 4 の権限に照らして判定します。\n\n| 項目 | 判定 | 根拠 |\n|---|---|---|\n| 販売価格差異 | C | 部門長が販売価格を決める（1） |\n| 監督者給与 | C | 部門長が採用・給与を決める（2） |\n| Premium の広告費 | C | 部門長が広告予算を決める（3） |\n| 本社指示で取得した設備の減価償却費 | N | 取得は取締役会承認の本社決定で、部門長は関与していない（4） |\n| 本社 IT・法務費の配賦額 | N | 本社費を売上基準で配賦したもの（5） |\n| 本社借入利息の配賦額 | N | 資金調達は本社財務部が行う（6） |",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Variance analysis and responsibility accounting"
+        ]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Controllable Margin of the Division",
+        "instruction": "Calculate the division's actual controllable margin, defined as total contribution margin less the fixed costs controllable by the division manager. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 1514000,
+        "tolerance": 1,
+        "explanation": "Actual contribution margin = $729,000 + $1,155,000 = $1,884,000. Fixed costs controllable by the division manager = supervisory salaries $210,000 + advertising $160,000 = $370,000. Controllable margin = $1,884,000 − $370,000 = $1,514,000. Depreciation on corporate-mandated equipment ($260,000) and allocated corporate costs ($280,000) are excluded because the division manager cannot control them.",
+        "explanationJa": "**ステップ1 実績貢献利益（2製品合計）** = $729,000 + $1,155,000 = $1,884,000\n\n**ステップ2 部門長が管理可能な固定費** = 監督者給与 $210,000 + 広告費 $160,000 = $370,000\n\n**ステップ3 管理可能利益** = $1,884,000 − $370,000 = **$1,514,000**\n\n本社指示で取得した設備の減価償却費 $260,000 と本社配賦費 $280,000 は部門長が管理できないため差し引きません。",
+        "references": [
+          "AICPA BAR Blueprint, Area I: Variance analysis and responsibility accounting"
+        ]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-seg-001",
+    "subject": "BAR",
+    "topic": "Public Company Reporting",
+    "title": "Segment Reporting, Filer Status, and XBRL Scope",
+    "scenario": "Harlow Industrial Holdings, Inc. is a U.S. public company with a December 31 fiscal year-end. It is preparing its Form 10-K for the year ended December 31, 2025, and its first-quarter 2026 Form 10-Q. The financial reporting team ran a segment analytics query against the management reporting system; the output is presented in **Exhibit 1**. Management's aggregation analysis and its policy for the 75% test are summarized in **Exhibit 2**. **Exhibit 3** is an excerpt from the monthly reporting package reviewed by the chief operating decision maker (CODM). **Exhibit 4** contains information for determining Harlow's SEC filer status.\n\nHarlow has adopted ASU 2023-07, *Improvements to Reportable Segment Disclosures*. Ignore materiality other than the quantitative thresholds in ASC 280.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Segment Analytics Output — FY2025 ($ millions)",
+        "content": "Query: SEG_PERF_FY2025 | Source: management reporting ledger | Run date: January 22, 2026\n\n| Operating segment | External revenue | Intersegment revenue | Total revenue | Segment profit (loss) | Segment assets |\n|---|---|---|---|---|---|\n| Aerospace Components | 400 | 0 | 400 | 62 | 520 |\n| Industrial Pumps | 150 | 25 | 175 | 21 | 150 |\n| Valves & Controls | 100 | 15 | 115 | 13 | 120 |\n| Rail Services | 110 | 95 | 205 | 9 | 110 |\n| Energy Storage | 70 | 0 | 70 | (44) | 240 |\n| Water Treatment | 125 | 5 | 130 | 11 | 100 |\n| Precision Tools | 132 | 0 | 132 | 12 | 85 |\n| Digital Monitoring | 113 | 10 | 123 | (7) | 60 |\n| **Total operating segments** | **1,200** | **150** | **1,350** | **77** | **1,385** |\n\nReconciling items (not operating segments):\n\n| Item | Revenue | Profit (loss) | Assets |\n|---|---|---|---|\n| Intersegment eliminations | (150) | — | (35) |\n| Unallocated corporate headquarters | — | (38) | 215 |\n\nSegment profit (loss) is Segment Adjusted EBITDA, the measure the CODM uses to allocate resources."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Aggregation Analysis and Management Policies",
+        "content": "1. **Industrial Pumps and Valves & Controls.** Both segments manufacture fluid-handling equipment using similar production processes, sell to industrial OEMs through the same distributor network, operate under the same regulatory requirements, and have five-year average gross margins of 34% and 33%, respectively. Management has concluded that the two segments meet all of the aggregation criteria in ASC 280 and aggregates them into a single operating segment, **Flow Solutions**, before applying the quantitative thresholds.\n2. **Energy Storage and Water Treatment.** The two segments have similar gross margins, but Energy Storage sells to rate-regulated electric utilities while Water Treatment sells to municipalities under public procurement rules. Management has concluded that the segments are not similar in type of customer or regulatory environment and does not aggregate them.\n3. **Digital Monitoring** was acquired on March 1, 2025. Its results are included from the acquisition date.\n4. **Policy for the 75% test.** If the external revenue of the reportable segments identified through the quantitative thresholds is less than 75% of consolidated revenue, management designates the fewest additional operating segments necessary, selected in descending order of external revenue.\n5. Unallocated corporate headquarters costs are not reported to the CODM by segment and are presented as a reconciling item."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: CODM Reporting Package Excerpt — FY2025 ($ millions)",
+        "content": "The CODM is Harlow's Chief Executive Officer, who uses Segment Adjusted EBITDA to compare segment results to budget and to allocate capital. The monthly package provides the following expense categories for each segment. Management has concluded that cost of sales, selling, general and administrative (SG&A) expenses, and research and development (R&D) expenses are significant segment expenses.\n\n| Line item | Aerospace Components | Rail Services |\n|---|---|---|\n| Total segment revenue | 400 | 205 |\n| Cost of sales | 228 | 141 |\n| SG&A expenses | 52 | 30 |\n| R&D expenses | 31 | 4 |\n| Segment Adjusted EBITDA | 62 | 9 |\n\nItems not separately presented in the package (for example, restructuring charges, foreign exchange gains and losses, and equity-method results) account for the remaining difference between revenue less the significant expenses and Segment Adjusted EBITDA."
+      },
+      {
+        "id": "ex-4",
+        "title": "Exhibit 4: Filer Status Data",
+        "content": "| Item | Amount |\n|---|---|\n| Common shares outstanding, June 30, 2025 | 48,000,000 |\n| Shares held by executive officers, directors, and 10%-or-greater holders (affiliates), June 30, 2025 | 8,000,000 |\n| Closing share price, June 30, 2025 (last business day of second fiscal quarter) | $16.25 |\n| Closing share price, December 31, 2025 | $19.80 |\n| Annual revenues, FY2025 | $1,200 million |\n| Filer status in the prior fiscal year | Accelerated filer |\n\nHarlow has been subject to the reporting requirements of Section 13(a) of the Securities Exchange Act of 1934 since 2014 and has filed all required annual reports. Harlow's first fiscal quarter of 2026 ends March 31, 2026."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Quantitative Threshold Tests",
+        "instruction": "Using Exhibits 1 and 2, apply each of the three 10% quantitative thresholds in ASC 280 to each operating segment listed (after aggregation). Enter Y if the segment meets the test or N if it does not. Enter only the code Y or N in each cell.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Revenue test", "Profit (loss) test", "Asset test"],
+          "rows": [
+            "Aerospace Components",
+            "Flow Solutions (aggregated)",
+            "Rail Services",
+            "Energy Storage",
+            "Water Treatment",
+            "Precision Tools",
+            "Digital Monitoring"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Aerospace Components",
+              "colLabel": "Revenue test",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Aerospace Components",
+              "colLabel": "Profit (loss) test",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Aerospace Components",
+              "colLabel": "Asset test",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Flow Solutions (aggregated)",
+              "colLabel": "Revenue test",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Flow Solutions (aggregated)",
+              "colLabel": "Profit (loss) test",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Flow Solutions (aggregated)",
+              "colLabel": "Asset test",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Rail Services",
+              "colLabel": "Revenue test",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Rail Services",
+              "colLabel": "Profit (loss) test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Rail Services",
+              "colLabel": "Asset test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Energy Storage",
+              "colLabel": "Revenue test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Energy Storage",
+              "colLabel": "Profit (loss) test",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Energy Storage",
+              "colLabel": "Asset test",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Water Treatment",
+              "colLabel": "Revenue test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Water Treatment",
+              "colLabel": "Profit (loss) test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Water Treatment",
+              "colLabel": "Asset test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Precision Tools",
+              "colLabel": "Revenue test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Precision Tools",
+              "colLabel": "Profit (loss) test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Precision Tools",
+              "colLabel": "Asset test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Digital Monitoring",
+              "colLabel": "Revenue test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Digital Monitoring",
+              "colLabel": "Profit (loss) test",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Digital Monitoring",
+              "colLabel": "Asset test",
+              "correctValue": "N"
+            }
+          ]
+        },
+        "explanation": "Thresholds (aggregation does not change the combined totals): Revenue test = 10% x combined internal and external revenue of all operating segments = 10% x 1,350 = 135. Profit (loss) test = 10% x the greater of combined profit of profitable segments (62 + 21 + 13 + 9 + 11 + 12 = 128) or combined loss of loss segments (44 + 7 = 51) = 12.8, compared with the absolute value of each segment's result. Asset test = 10% x 1,385 = 138.5.\nAerospace Components: 400, 62, 520 - all Y. Flow Solutions (175 + 115 = 290 revenue; 21 + 13 = 34 profit; 150 + 120 = 270 assets) - all Y. Rail Services: total revenue 205 >= 135 (Y; the test uses total revenue including intersegment revenue, not the 110 of external revenue), profit 9 (N), assets 110 (N). Energy Storage: revenue 70 (N), absolute loss 44 >= 12.8 (Y), assets 240 (Y). Water Treatment (130, 11, 100), Precision Tools (132, 12, 85), and Digital Monitoring (123, 7, 60) fail all three tests. Using the net result of 77 (threshold 7.7) instead of the greater of total profits or total losses would incorrectly qualify Water Treatment and Precision Tools.",
+        "explanationJa": "**ステップ1: 閾値を出す**（集約しても合計額は変わらない）\n- 収益テスト: 全事業セグメントの収益合計（外部＋セグメント間）1,350 × 10% = **135**\n- 損益テスト: 黒字セグメントの利益合計 128（62+21+13+9+11+12）と赤字セグメントの損失合計 51（44+7）の**大きい方** 128 × 10% = **12.8**。各セグメントは損益の**絶対値**で比較する\n- 資産テスト: 1,385 × 10% = **138.5**\n\n**ステップ2: セグメントごとに判定**\n\n| セグメント | 収益 | 損益(絶対値) | 資産 | 判定 |\n|---|---|---|---|---|\n| Aerospace Components | 400 Y | 62 Y | 520 Y | 報告 |\n| Flow Solutions（Pumps+Valves） | 290 Y | 34 Y | 270 Y | 報告 |\n| Rail Services | 205 Y | 9 N | 110 N | 報告 |\n| Energy Storage | 70 N | 44 Y | 240 Y | 報告 |\n| Water Treatment | 130 N | 11 N | 100 N | — |\n| Precision Tools | 132 N | 12 N | 85 N | — |\n| Digital Monitoring | 123 N | 7 N | 60 N | — |\n\n**注意点**\n- Rail Services は外部収益だけなら 110 で不合格だが、収益テストは**セグメント間収益を含む総収益**（205）で判定する\n- Valves & Controls は単独なら3テストとも不合格だが、集約後の Flow Solutions として判定する\n- 損益テストを純額 77（閾値 7.7）で計算すると Water Treatment と Precision Tools が誤って合格になる",
+        "references": ["ASC 280-10"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Profit (Loss) Threshold",
+        "instruction": "Calculate the dollar threshold (in $ millions, rounded to one decimal place) that an operating segment's reported profit or loss, in absolute amount, must equal or exceed to meet the profit (loss) quantitative threshold.",
+        "answerType": "number",
+        "correctAnswer": 12.8,
+        "tolerance": 0.05,
+        "explanation": "Combined reported profit of all operating segments that did not report a loss = 62 + 21 + 13 + 9 + 11 + 12 = 128. Combined reported loss of all operating segments that reported a loss = 44 + 7 = 51. The threshold is 10% of the greater amount: 10% x 128 = 12.8. Unallocated corporate costs are not an operating segment and are excluded.",
+        "explanationJa": "1. 黒字セグメントの利益合計: 62 + 21 + 13 + 9 + 11 + 12 = 128\n2. 赤字セグメントの損失合計: 44 + 7 = 51\n3. 大きい方（128）の10% = **12.8**（$ millions）\n\n本社の未配賦費用（38）は事業セグメントではないので計算に入れない。純額（77）の10%ではない点に注意。",
+        "references": ["ASC 280-10"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "75% External Revenue Test",
+        "instruction": "Based on your results in Work Tab 1 and the policy in Exhibit 2, select the outcome of the 75% external revenue test.",
+        "answerType": "select",
+        "options": [
+          "No additional segments are required; four reportable segments in total",
+          "Add Precision Tools as a reportable segment; five reportable segments in total",
+          "Add Precision Tools and Water Treatment as reportable segments; six reportable segments in total",
+          "Add Digital Monitoring as a reportable segment; five reportable segments in total"
+        ],
+        "correctAnswer": "Add Precision Tools as a reportable segment; five reportable segments in total",
+        "explanation": "Segments meeting a 10% test: Aerospace Components, Flow Solutions, Rail Services, and Energy Storage. Their external revenue = 400 + (150 + 100) + 110 + 70 = 830. Consolidated revenue = total external revenue of 1,200; 75% x 1,200 = 900. Because 830 < 900, additional operating segments must be designated even though they do not meet a 10% test. Under the policy (fewest segments, largest external revenue first), Precision Tools (external revenue 132) is added: 830 + 132 = 962 >= 900. Harlow therefore reports five segments; Water Treatment and Digital Monitoring are combined in an \"all other\" category.",
+        "explanationJa": "1. Work Tab 1 で報告セグメントになったのは4つ。外部収益の合計 = 400 + 250（150+100）+ 110 + 70 = **830**\n2. 75%テストは**外部収益**で判定する: 連結収益 1,200 × 75% = **900**\n3. 830 < 900 なので不足 70。10%基準を満たさないセグメントを追加で報告セグメントに指定する\n4. 方針は「最少数・外部収益の大きい順」→ Precision Tools（132）を追加: 830 + 132 = 962 ≥ 900\n5. 報告セグメントは**5つ**。Water Treatment と Digital Monitoring は「その他」に含める",
+        "references": ["ASC 280-10"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Other Segment Items",
+        "instruction": "Using Exhibit 3, calculate the amount Harlow must disclose as \"other segment items\" for the Aerospace Components segment under ASU 2023-07 (in $ millions, whole number).",
+        "answerType": "number",
+        "correctAnswer": 27,
+        "tolerance": 0,
+        "explanation": "Other segment items = segment revenue - significant segment expenses - reported segment profit measure = 400 - (228 + 52 + 31) - 62 = 400 - 311 - 62 = 27. The disclosure of other segment items is accompanied by a qualitative description of its composition (here, restructuring charges, foreign exchange gains and losses, and equity-method results).",
+        "explanationJa": "「その他のセグメント項目」= セグメント収益 − 重要なセグメント費用 − セグメント損益指標\n\n1. 重要なセグメント費用: 売上原価 228 + 販管費 52 + 研究開発費 31 = 311\n2. 400 − 311 − 62（Segment Adjusted EBITDA）= **27**\n\nこの金額とあわせて、構成内容（リストラ費用、為替差損益、持分法損益など）の定性的な説明も開示する。",
+        "references": ["ASC 280-10"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "ASU 2023-07 Disclosure Requirements",
+        "instruction": "Select all of the disclosures that Harlow is required to provide under ASC 280 as amended by ASU 2023-07.",
+        "answerType": "multiselect",
+        "options": [
+          "Significant segment expenses regularly provided to the CODM and included in each reported measure of segment profit or loss",
+          "An amount for other segment items for each reportable segment, with a qualitative description of its composition",
+          "The title and position of the CODM and how the CODM uses the reported measure of segment profit or loss",
+          "Significant segment expenses only for reportable segments whose expenses exceed 10% of consolidated expenses",
+          "A reconciliation of each significant segment expense category to the corresponding consolidated income statement line item",
+          "Segment profit or loss disclosures in annual reports only; interim reports may omit segment information"
+        ],
+        "correctAnswer": [
+          "Significant segment expenses regularly provided to the CODM and included in each reported measure of segment profit or loss",
+          "An amount for other segment items for each reportable segment, with a qualitative description of its composition",
+          "The title and position of the CODM and how the CODM uses the reported measure of segment profit or loss"
+        ],
+        "explanation": "ASU 2023-07 requires a public entity to disclose, for each reportable segment, the significant expense categories and amounts that are regularly provided to the CODM and included in each reported measure of segment profit or loss; an amount for other segment items with a description of its composition; and the title and position of the CODM with an explanation of how the CODM uses the reported measure(s) to assess performance and allocate resources. The significance of an expense is not determined by a 10%-of-consolidated-expenses test. The required reconciliation is of total reportable segment profit or loss to consolidated income before income taxes, not of each expense category to income statement line items. The ASU also requires interim disclosure of the segment profit or loss and asset information currently required annually, so segment information cannot be omitted from interim reports.",
+        "explanationJa": "**必要な開示（正解）**\n- CODMに定期的に提供され、セグメント損益に含まれる**重要なセグメント費用**（報告セグメントごと）\n- **その他のセグメント項目**の金額と、その構成の定性的説明\n- **CODMの役職名**と、CODMが損益指標をどのように業績評価・資源配分に使っているか\n\n**誤り**\n- 「連結費用の10%超のセグメントだけ」という基準は存在しない。重要性は CODM への提供状況と判断で決まる\n- 調整表は「報告セグメント損益の合計 → 連結税引前利益」であり、費用科目ごとに損益計算書の各行へ調整する要求はない\n- ASU 2023-07 は年次で求めるセグメント損益・資産の開示を**四半期にも**求めるので、四半期報告で省略はできない",
+        "references": ["ASC 280-10"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Public Float, Filer Status, and Filing Deadlines",
+        "instruction": "Using Exhibit 4, complete the table. Enter the public float in whole dollars (no commas). For the filer category, enter only one of these codes: LAF (large accelerated filer), AF (accelerated filer), or NAF (non-accelerated filer). Enter the filing deadlines as the number of calendar days after the period-end.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Answer"],
+          "rows": [
+            "Public float (whole dollars)",
+            "Filer category code",
+            "Form 10-K due (days after fiscal year-end)",
+            "Form 10-Q due (days after quarter-end)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Public float (whole dollars)",
+              "colLabel": "Answer",
+              "correctValue": 650000000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Filer category code",
+              "colLabel": "Answer",
+              "correctValue": "AF"
+            },
+            {
+              "rowLabel": "Form 10-K due (days after fiscal year-end)",
+              "colLabel": "Answer",
+              "correctValue": 75,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Form 10-Q due (days after quarter-end)",
+              "colLabel": "Answer",
+              "correctValue": 40,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Public float is measured as of the last business day of the most recently completed second fiscal quarter, using only shares held by non-affiliates: (48,000,000 - 8,000,000) x $16.25 = $650,000,000. The December 31 price and the total shares outstanding are not used. A public float of at least $75 million but less than $700 million, with annual revenues of $100 million or more (so the company cannot use the smaller reporting company revenue test) and at least 12 months of reporting history including one annual report, makes Harlow an accelerated filer. An accelerated filer must file Form 10-K within 75 days after fiscal year-end and Form 10-Q within 40 days after quarter-end.",
+        "explanationJa": "**ステップ1: 浮動株時価総額（public float）**\n- 測定日は**直近の第2四半期末の最終営業日**（2025/6/30）。12月末株価は使わない\n- 対象は**非関係者（non-affiliates）保有株**のみ: 48,000,000 − 8,000,000 = 40,000,000株\n- 40,000,000 × $16.25 = **$650,000,000**\n\n**ステップ2: 提出会社区分**\n- $75M以上 $700M未満 → accelerated filer の範囲\n- 年間売上 $1,200M ≥ $100M なので、小規模報告会社（SRC）の売上基準は使えない\n- 12か月以上の報告実績・年次報告書の提出あり → **AF（accelerated filer）**\n\n**ステップ3: 提出期限**\n- 10-K: 期末後 **75日**（LAF 60日、NAF 90日）\n- 10-Q: 四半期末後 **40日**（LAF も 40日、NAF 45日）\n\n誤りやすい点: 12月末株価で計算すると $792M、全株式で計算すると $780M となり、いずれも誤って LAF と判定してしまう。",
+        "references": [
+          "Exchange Act Rule 12b-2",
+          "Form 10-K and Form 10-Q General Instructions"
+        ]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "XBRL Tagging Scope",
+        "instruction": "Select all of the items in Harlow's Form 10-K that must be tagged using Inline XBRL.",
+        "answerType": "multiselect",
+        "options": [
+          "Face financial statements",
+          "Notes to the financial statements, including accounting policies",
+          "Cover page data (for example, registrant name and public float)",
+          "Management's discussion and analysis (MD&A) narrative",
+          "Risk factors (Item 1A)",
+          "Officer certifications filed as Exhibits 31.1 and 31.2"
+        ],
+        "correctAnswer": [
+          "Face financial statements",
+          "Notes to the financial statements, including accounting policies",
+          "Cover page data (for example, registrant name and public float)"
+        ],
+        "explanation": "Operating companies must tag the financial statements, including the face statements and the notes (with detail tagging of amounts within the notes and policies), and the cover page data of Form 10-K using Inline XBRL. Narrative sections outside the financial statements, such as MD&A and risk factors, and the officer certifications filed as exhibits are not subject to XBRL tagging requirements.",
+        "explanationJa": "**Inline XBRL のタグ付け対象（正解）**\n- 財務諸表本表\n- 財務諸表注記（会計方針を含む。注記内の金額は詳細タグ付け）\n- 表紙（cover page）の情報（会社名・浮動株時価総額など）\n\n**対象外**\n- MD&A の記述部分\n- リスク要因（Item 1A）\n- 経営者の証明書（Exhibit 31.1/31.2）",
+        "references": ["Regulation S-T"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-lessor-002",
+    "subject": "BAR",
+    "topic": "Leases — Lessor & Sale-Leaseback",
+    "title": "Direct Financing Lease and Sale-Leaseback Above Fair Value",
+    "scenario": "Corvane Equipment Finance, LLC is an equipment and real estate lessor with a December 31 year-end that follows ASC 842. On January 1, 2026, Corvane entered into two transactions:\n\n1. Corvane purchased an automated parcel sorting system and immediately leased it to Brightwater Logistics, Inc. The key terms are summarized in **Exhibit 1**, and present value factors are provided in **Exhibit 2**. **Exhibit 3** describes alternative residual value guarantee structures that Corvane's credit committee considered.\n2. Corvane purchased a distribution warehouse from Tamsin Foods Corp. and leased it back to Tamsin. Excerpts from the agreement and Tamsin's accounting records are provided in **Exhibit 4**.\n\nUse the present value factors in **Exhibit 2** and round all amounts to the nearest whole dollar. Ignore income taxes.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Sorting System Lease — Key Terms",
+        "content": "| Term | Detail |\n|---|---|\n| Commencement date | January 1, 2026 |\n| Fair value of the sorting system at commencement | $1,000,000 |\n| Corvane's cost (carrying amount), purchased January 1, 2026 | $1,000,000 |\n| Lease term | 5 years (noncancelable) |\n| Remaining economic life | 8 years |\n| Annual lease payment | $195,432, due each January 1, beginning January 1, 2026 (5 payments) |\n| Expected residual value at end of lease term | $200,000 |\n| Residual value guarantee | Sentinel Asset Assurance Co., an insurer unrelated to Corvane and to Brightwater, guarantees $150,000 of the residual value |\n| Transfer of ownership / purchase option | None |\n| Specialized nature | The system can be redeployed to other users without major modification |\n| Rate implicit in the lease | 7% |\n| Brightwater's incremental borrowing rate | 9% |\n| Collectibility of lease payments | Probable |\n| Initial direct costs | None |\n\nCorvane's accounting policy uses 75% of remaining economic life as a \"major part\" and 90% of fair value as \"substantially all.\""
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Present Value Factors",
+        "content": "| Factor | 6% | 7% | 9% |\n|---|---|---|---|\n| Present value of $1, 5 periods | 0.74726 | 0.71299 | 0.64993 |\n| Present value of an annuity due of $1, 5 periods | 4.46511 | 4.38721 | 4.23972 |\n| Present value of $1, 10 periods | 0.55839 | 0.50835 | 0.42241 |\n| Present value of an ordinary annuity of $1, 10 periods | 7.36009 | 7.02358 | 6.41766 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Residual Value Guarantee Structures Considered",
+        "content": "All other terms in Exhibit 1 are identical in each scenario.\n\n| Scenario | Residual value guarantee |\n|---|---|\n| Scenario A (executed) | $150,000 guaranteed by Sentinel Asset Assurance Co. (unrelated third party) |\n| Scenario B | $150,000 guaranteed by Brightwater (the lessee); no third-party guarantee |\n| Scenario C | $20,000 guaranteed by Sentinel Asset Assurance Co.; no lessee guarantee |"
+      },
+      {
+        "id": "ex-4",
+        "title": "Exhibit 4: Warehouse Purchase and Leaseback Agreement (Excerpts) and Tamsin Records",
+        "content": "**Section 2.1 Purchase price.** Buyer (Corvane) shall pay Seller (Tamsin) $6,300,000 in cash at closing on January 1, 2026.\n\n**Section 2.2 Appraisal.** The parties acknowledge that an independent appraisal dated December 15, 2025, established the fair value of the property at $6,000,000.\n\n**Section 3.1 Leaseback.** Buyer leases the property to Seller for a term of 10 years commencing at closing. Seller shall pay annual rent of $500,000 on each December 31, beginning December 31, 2026.\n\n**Section 3.2 Taxes and insurance.** Seller shall pay property taxes and insurance directly to the taxing authority and insurer (estimated at $45,000 per year).\n\n**Section 4.1 No repurchase.** Seller has no option or obligation to repurchase the property. The lease contains no renewal or purchase options. Legal title transfers at closing, and control of the property transfers to Buyer under ASC 606.\n\n**Section 5.1 Economic life.** The remaining economic life of the building is 30 years.\n\n**Tamsin records at January 1, 2026:** Building cost $7,000,000; accumulated depreciation $2,200,000. The rate implicit in the leaseback is not readily determinable by Tamsin; Tamsin's incremental borrowing rate is 6%. Both parties use 6% as the interest rate on any additional financing arising from the transaction. The leaseback is classified as an operating lease by both Tamsin and Corvane."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Lessor Classification Under Alternative Guarantees",
+        "instruction": "Using Exhibits 1 through 3, determine how Corvane classifies the sorting system lease under each scenario. Enter only one of these codes in each cell: ST (sales-type lease), DF (direct financing lease), or OL (operating lease).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Classification"],
+          "rows": ["Scenario A", "Scenario B", "Scenario C"],
+          "cells": [
+            {
+              "rowLabel": "Scenario A",
+              "colLabel": "Classification",
+              "correctValue": "DF"
+            },
+            {
+              "rowLabel": "Scenario B",
+              "colLabel": "Classification",
+              "correctValue": "ST"
+            },
+            {
+              "rowLabel": "Scenario C",
+              "colLabel": "Classification",
+              "correctValue": "OL"
+            }
+          ]
+        },
+        "explanation": "PV of lease payments = $195,432 x 4.38721 = $857,401 (85.7% of fair value). Lease term = 5 / 8 = 62.5% of economic life. There is no ownership transfer, purchase option, or specialized asset.\nSales-type test (only lessee-guaranteed residual counts): Scenario A and C = $857,401 (85.7%) < 90%, not sales-type. Scenario B = $857,401 + $150,000 x 0.71299 = $964,350 (96.4%) >= 90%, so Scenario B is a sales-type lease.\nDirect financing test (residual guaranteed by the lessee or any unrelated third party counts, and collectibility is probable): Scenario A = $857,401 + $106,949 = $964,350 (96.4%) >= 90%, so Scenario A is a direct financing lease. Scenario C = $857,401 + $20,000 x 0.71299 = $871,661 (87.2%) < 90%, so Scenario C is an operating lease.",
+        "explanationJa": "**共通の数値**\n- リース料の現在価値: $195,432 × 4.38721 = $857,401（公正価値の85.7%）\n- リース期間 5年 ÷ 経済的耐用年数 8年 = 62.5%（75%未満）\n- 所有権移転・購入オプション・特殊仕様資産はいずれもなし\n\n**sales-type 判定**（借手が保証した残価のみ加算。第三者保証は加算しない）\n- A・C: $857,401（85.7%）< 90% → sales-type ではない\n- B: 借手保証 $150,000 × 0.71299 = $106,949 を加算 → $964,350（96.4%）≥ 90% → **ST**\n\n**direct financing 判定**（借手**または第三者**の保証残価を加算し、回収可能性が probable）\n- A: $857,401 + $106,949 = $964,350（96.4%）≥ 90% → **DF**\n- C: $857,401 + $20,000 × 0.71299（$14,260）= $871,661（87.2%）< 90% → **OL**\n\n同じ $150,000 の保証でも、保証者が借手なら sales-type、第三者なら direct financing になる点がポイント。",
+        "references": ["ASC 842-10", "ASC 842-30"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Measurement at Commencement (Scenario A)",
+        "instruction": "For the executed lease (Scenario A), calculate the amounts Corvane recognizes at January 1, 2026, before receiving the first payment. Round to the nearest whole dollar.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Lease receivable",
+            "Unguaranteed residual asset",
+            "Net investment in the lease"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Lease receivable",
+              "colLabel": "Amount",
+              "correctValue": 964350,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "Unguaranteed residual asset",
+              "colLabel": "Amount",
+              "correctValue": 35650,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "Net investment in the lease",
+              "colLabel": "Amount",
+              "correctValue": 999999,
+              "tolerance": 10
+            }
+          ]
+        },
+        "explanation": "Lease receivable = PV of lease payments + PV of the residual guaranteed by the unrelated third party = $857,401 + ($150,000 x 0.71299 = $106,949) = $964,350. Unguaranteed residual asset = PV of ($200,000 - $150,000) = $50,000 x 0.71299 = $35,650. Net investment = $964,350 + $35,650 = $999,999 (equal to the $1,000,000 fair value except for rounding of the factors). Because fair value equals Corvane's carrying amount, there is no selling profit to defer and the net investment is not reduced.",
+        "explanationJa": "1. リース債権 = リース料の現在価値 + 第三者保証残価の現在価値\n   = $857,401 + $150,000 × 0.71299（$106,949）= **$964,350**\n2. 無保証残価 = ($200,000 − $150,000) × 0.71299 = **$35,650**\n3. 正味リース投資 = $964,350 + $35,650 = **$999,999**（係数の端数で $1,000,000 と $1 ずれるだけで、公正価値に一致）\n\n公正価値＝帳簿価額なので販売利益は生じず、direct financing lease で繰り延べる利益もない。",
+        "references": ["ASC 842-30"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Net Investment Schedule (Scenario A)",
+        "instruction": "Complete Corvane's net investment schedule for 2026 and 2027 using the effective interest method at the 7% rate implicit in the lease. Payments are received on January 1. Round to the nearest whole dollar.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": [
+            "Net investment, January 1 (before receipt)",
+            "Payment received, January 1",
+            "Interest income for the year",
+            "Net investment, December 31"
+          ],
+          "rows": ["2026", "2027"],
+          "cells": [
+            {
+              "rowLabel": "2026",
+              "colLabel": "Net investment, January 1 (before receipt)",
+              "correctValue": 999999,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "2026",
+              "colLabel": "Payment received, January 1",
+              "correctValue": 195432,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "2026",
+              "colLabel": "Interest income for the year",
+              "correctValue": 56320,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "2026",
+              "colLabel": "Net investment, December 31",
+              "correctValue": 860887,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "2027",
+              "colLabel": "Net investment, January 1 (before receipt)",
+              "correctValue": 860887,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "2027",
+              "colLabel": "Payment received, January 1",
+              "correctValue": 195432,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "2027",
+              "colLabel": "Interest income for the year",
+              "correctValue": 46582,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "2027",
+              "colLabel": "Net investment, December 31",
+              "correctValue": 712037,
+              "tolerance": 10
+            }
+          ]
+        },
+        "explanation": "Because payments are received at the beginning of each year, interest accrues on the balance after the January 1 receipt. 2026: $999,999 - $195,432 = $804,567; interest = $804,567 x 7% = $56,320; December 31 balance = $860,887. 2027: $860,887 - $195,432 = $665,455; interest = $665,455 x 7% = $46,582; December 31 balance = $712,037.",
+        "explanationJa": "期首払いなので、**1月1日の受取後の残高**に7%を掛ける。\n\n| 年 | 期首残高 | 1/1受取 | 受取後残高 | 利息収益(7%) | 期末残高 |\n|---|---|---|---|---|---|\n| 2026 | 999,999 | 195,432 | 804,567 | 56,320 | 860,887 |\n| 2027 | 860,887 | 195,432 | 665,455 | 46,582 | 712,037 |\n\n期首残高に利率を掛けて 70,000 とするのは期末払いの計算で、誤り。",
+        "references": ["ASC 842-30"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Seller-Lessee Entry at Closing",
+        "instruction": "Based on the agreement in Exhibit 4, prepare Tamsin's journal entry on January 1, 2026, to record the sale and the leaseback. Round to the nearest whole dollar. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Cash",
+            "Accumulated depreciation — building",
+            "Right-of-use asset",
+            "Building",
+            "Lease liability",
+            "Financial liability",
+            "Gain on sale of building"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Debit",
+              "correctValue": 6300000,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "Cash",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accumulated depreciation — building",
+              "colLabel": "Debit",
+              "correctValue": 2200000,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "Accumulated depreciation — building",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Right-of-use asset",
+              "colLabel": "Debit",
+              "correctValue": 3380045,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "Right-of-use asset",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Building",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Building",
+              "colLabel": "Credit",
+              "correctValue": 7000000,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "Lease liability",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Lease liability",
+              "colLabel": "Credit",
+              "correctValue": 3380045,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "Financial liability",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Financial liability",
+              "colLabel": "Credit",
+              "correctValue": 300000,
+              "tolerance": 10
+            },
+            {
+              "rowLabel": "Gain on sale of building",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Gain on sale of building",
+              "colLabel": "Credit",
+              "correctValue": 1200000,
+              "tolerance": 10
+            }
+          ]
+        },
+        "explanation": "The transfer is a sale (control transfers and there is no repurchase option). The sale price of $6,300,000 exceeds fair value of $6,000,000, so the $300,000 excess is accounted for as additional financing provided by Corvane to Tamsin (a financial liability). The gain is measured using fair value: $6,000,000 - ($7,000,000 - $2,200,000) = $1,200,000. Lease liability = PV of the contractual rent less the portion attributable to the additional financing = $500,000 x 7.36009 - $300,000 = $3,680,045 - $300,000 = $3,380,045. The right-of-use asset equals the lease liability. Debits ($6,300,000 + $2,200,000 + $3,380,045 = $11,880,045) equal credits ($7,000,000 + $3,380,045 + $300,000 + $1,200,000 = $11,880,045). Property taxes and insurance paid directly by Tamsin are not lease payments.",
+        "explanationJa": "**ステップ1: 売却の成立** — 支配が移転し、買戻しオプションもないので売却として処理する\n\n**ステップ2: 公正価値を超える部分** — 売却価格 $6,300,000 − 公正価値 $6,000,000 = **$300,000** は Corvane からの**追加融資**（金融負債）\n\n**ステップ3: 売却益** — 公正価値で測定: $6,000,000 − 帳簿価額($7,000,000 − $2,200,000) = **$1,200,000**\n\n**ステップ4: リース負債・使用権資産**\n- 契約賃料の現在価値: $500,000 × 7.36009 = $3,680,045\n- 追加融資分 $300,000 を控除 → リース負債 **$3,380,045**、使用権資産も同額\n\n| 勘定 | 借方 | 貸方 |\n|---|---|---|\n| Cash | 6,300,000 | |\n| Accumulated depreciation | 2,200,000 | |\n| Right-of-use asset | 3,380,045 | |\n| Building | | 7,000,000 |\n| Lease liability | | 3,380,045 |\n| Financial liability | | 300,000 |\n| Gain on sale | | 1,200,000 |\n\n借方合計 = 貸方合計 = $11,880,045。固定資産税・保険（年$45,000）は Tamsin が直接支払うのでリース料に含めない。",
+        "references": ["ASC 842-40"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Buyer-Lessor Lease Income",
+        "instruction": "Calculate the lease income Corvane recognizes from the warehouse leaseback for 2026 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 459240,
+        "tolerance": 2,
+        "explanation": "Corvane records the building at its $6,000,000 fair value and a $300,000 loan receivable from Tamsin. Each annual rent payment is allocated between the loan and the operating lease. The level annual payment that repays $300,000 over 10 years at 6% = $300,000 / 7.36009 = $40,760. Lease income = $500,000 - $40,760 = $459,240 per year, recognized on a straight-line basis.",
+        "explanationJa": "1. Corvane は建物を公正価値 $6,000,000 で計上し、超過分 $300,000 は Tamsin への**貸付金**として計上する\n2. 毎年の賃料 $500,000 のうち、貸付金の元利返済に充てる部分 = $300,000 ÷ 7.36009 = **$40,760**\n3. オペレーティング・リースの賃貸収益 = $500,000 − $40,760 = **$459,240**（定額で認識）\n\n賃料 $500,000 全額を収益にするのは誤り。",
+        "references": ["ASC 842-40", "ASC 842-30"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Buyer-Lessor Loan Receivable Balance",
+        "instruction": "Calculate the carrying amount of Corvane's loan receivable from Tamsin at December 31, 2026, after the first rent payment (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 277240,
+        "tolerance": 2,
+        "explanation": "Interest income on the loan for 2026 = $300,000 x 6% = $18,000. The portion of the December 31, 2026, payment applied to the loan is $40,760, of which $18,000 is interest and $22,760 is principal. Ending balance = $300,000 + $18,000 - $40,760 = $277,240.",
+        "explanationJa": "1. 2026年の貸付金利息: $300,000 × 6% = $18,000\n2. 12/31 の賃料のうち貸付金に充てる額 $40,760（利息 $18,000 + 元本 $22,760）\n3. 期末残高 = $300,000 + $18,000 − $40,760 = **$277,240**",
+        "references": ["ASC 842-40"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-sbc-002",
+    "subject": "BAR",
+    "topic": "Stock Compensation",
+    "title": "Modifications, Performance vs. Market Conditions, and Graded Vesting",
+    "scenario": "Nortessa Biotech, Inc. is a public company with a December 31 year-end. All of its share-based payment awards are granted to employees and are classified as equity. Nortessa's accounting policy is to account for forfeitures when they occur. No awards contain dividend rights, and Nortessa does not pay dividends.\n\nThe terms of Nortessa's outstanding award programs are summarized in **Exhibit 1**. Events affecting the awards are described in **Exhibit 2**, and valuation data prepared by Nortessa's external valuation specialist are provided in **Exhibit 3**. Ignore income taxes.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Award Program Summary",
+        "content": "| Program | Grant date | Award | Quantity | Vesting conditions | Grant-date fair value per unit |\n|---|---|---|---|---|---|\n| Grant 1 | January 1, 2024 | Stock options, exercise price $40 | 100,000 | Cliff vest December 31, 2027 (service only) | $12.00 |\n| Grant 2 | January 1, 2025 | Restricted stock units (RSUs) | 50,000 | Service through December 31, 2027, and cumulative 2025–2027 revenue of at least $900 million (performance condition) | $30.00 |\n| Grant 3 | January 1, 2025 | Performance share units (PSUs) | 40,000 | Service through December 31, 2027, and Nortessa's 3-year total shareholder return (TSR) ranking at or above the 50th percentile of a peer index (market condition) | $21.00 (Monte Carlo) |\n| Grant 4 | January 1, 2026 | Stock options, exercise price $20 | 60,000 | Graded: 20,000 vest on each of December 31, 2026, 2027, and 2028 (service only) | By tranche: $5.00 / $5.60 / $6.10 |\n| Grant 5 | January 1, 2020 | Stock options, exercise price $55 | 15,000 | Fully vested December 31, 2022 | $9.00 |\n\nGrant 4 has only a service condition. If Nortessa elects straight-line attribution for Grant 4, it measures total compensation cost as the sum of the three tranche values."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Events Log",
+        "content": "| Date | Event |\n|---|---|\n| September 30, 2025 | Employees holding 8,000 Grant 1 options terminated employment; their unvested options were forfeited. |\n| December 31, 2025 | Management assessed the Grant 2 revenue target as not probable of achievement; no cost has been recognized for Grant 2. |\n| January 1, 2026 | Because the share price had declined, the board reduced the exercise price of all 92,000 outstanding Grant 1 options from $40 to $22. All other terms, including the December 31, 2027, vesting date, were unchanged. Vesting of the options was probable both before and after the change. |\n| January 1, 2026 | The board reduced the Grant 2 revenue target to $700 million. Management assessed the revised target as probable of achievement. The service period was unchanged. |\n| March 31, 2026 | All 15,000 Grant 5 options expired unexercised. |\n| July 1, 2026 | An employee holding 4,000 Grant 3 PSUs resigned and forfeited them. |\n| December 31, 2026 | Nortessa's TSR ranked at the 22nd percentile of the peer index; the remaining Grant 3 holders are expected to complete the service period. No other forfeitures occurred in 2026. |\n| December 31, 2027 | Final TSR ranking was the 35th percentile. All remaining Grant 3 holders were still employed on that date. |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Valuation Data",
+        "content": "| Item | Amount |\n|---|---|\n| Closing share price, January 1, 2024 | $40.00 |\n| Closing share price, January 1, 2025 | $30.00 |\n| Closing share price, January 1, 2026 | $18.00 |\n| Closing share price, December 31, 2026 | $16.50 |\n| Closing share price, December 31, 2027 | $24.00 |\n| Fair value per Grant 1 option immediately before the January 1, 2026, repricing | $3.00 |\n| Fair value per Grant 1 option immediately after the January 1, 2026, repricing | $7.00 |\n| Expected volatility used for January 1, 2026, valuations | 52% |\n| Risk-free interest rate used for January 1, 2026, valuations | 4.1% |"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Modification Type",
+        "instruction": "Classify each January 1, 2026, modification by type based on the probability of vesting before and after the modification. Enter only one of these codes in each cell: I (probable-to-probable), II (probable-to-improbable), III (improbable-to-probable), or IV (improbable-to-improbable).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Modification type"],
+          "rows": [
+            "Grant 1 — exercise price reduction",
+            "Grant 2 — revenue target revision"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Grant 1 — exercise price reduction",
+              "colLabel": "Modification type",
+              "correctValue": "I"
+            },
+            {
+              "rowLabel": "Grant 2 — revenue target revision",
+              "colLabel": "Modification type",
+              "correctValue": "III"
+            }
+          ]
+        },
+        "explanation": "Grant 1: vesting (a service condition only) was probable both before and after the repricing, so it is a Type I (probable-to-probable) modification. Grant 2: before the change the revenue target was not probable, and after the change the revised target is probable, so it is a Type III (improbable-to-probable) modification.",
+        "explanationJa": "条件変更は「変更前に権利確定が probable か」「変更後に probable か」の組み合わせで4類型に分ける。\n\n- **Grant 1**: 勤務条件のみで、変更前・後とも権利確定は probable → **Type I**（probable → probable）\n- **Grant 2**: 変更前の売上目標 $900M は improbable、変更後の $700M は probable → **Type III**（improbable → probable）",
+        "references": ["ASC 718-20"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Grant 1 — 2026 Compensation Cost",
+        "instruction": "Calculate the total compensation cost Nortessa recognizes in 2026 for Grant 1, including the effect of the repricing (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 460000,
+        "tolerance": 0,
+        "explanation": "Original award: cumulative cost through 2025 for the 92,000 options still outstanding = 92,000 x $12 x 2/4 = $552,000; through 2026 = 92,000 x $12 x 3/4 = $828,000; 2026 original cost = $276,000. Incremental fair value from the Type I modification = 92,000 x ($7.00 - $3.00) = $368,000, recognized over the remaining 2-year service period: $184,000 in 2026. Total 2026 cost = $276,000 + $184,000 = $460,000.",
+        "explanationJa": "Type I の条件変更では、**当初の付与日公正価値の残り**をそのまま認識し続け、**増分公正価値**を残存勤務期間で上乗せする。\n\n**ステップ1: 当初分**（失効した8,000個は除いた92,000個）\n- 2025年末までの累計: 92,000 × $12 × 2/4 = $552,000\n- 2026年末までの累計: 92,000 × $12 × 3/4 = $828,000\n- 2026年の当初分: $828,000 − $552,000 = **$276,000**\n\n**ステップ2: 増分公正価値**\n- 92,000 × ($7.00 − $3.00) = $368,000\n- 残存期間2年（2026〜2027）で按分 → 2026年 **$184,000**\n\n**ステップ3: 合計** $276,000 + $184,000 = **$460,000**",
+        "references": ["ASC 718-20"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Grant 2 — 2026 Compensation Cost",
+        "instruction": "Calculate the compensation cost Nortessa recognizes in 2026 for Grant 2 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 450000,
+        "tolerance": 0,
+        "explanation": "For a Type III modification, the original grant-date fair value is no longer relevant because the original award was not expected to vest. Compensation cost is measured at the fair value of the modified award on the modification date. For RSUs without dividend rights, that is the January 1, 2026, share price: 50,000 x $18 = $900,000, recognized over the remaining service period of 2 years: $450,000 in 2026. No cost was recognized in 2025 because the performance condition was not probable.",
+        "explanationJa": "Type III では当初の付与日公正価値（$30）は使わず、**条件変更日の公正価値**で測り直す。\n\n1. 無配当のRSUなので公正価値 = 変更日の株価 $18\n2. 総費用: 50,000 × $18 = $900,000\n3. 残存勤務期間2年で按分 → 2026年 **$450,000**\n\n2025年は業績条件が improbable だったため費用計上はゼロ（追いつき計上も不要）。$30 × 50,000 を使うと $500,000 となり誤り。",
+        "references": ["ASC 718-20", "ASC 718-10"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Grant 3 — 2026 Compensation Cost",
+        "instruction": "Calculate the compensation cost Nortessa recognizes in 2026 for Grant 3 (in whole dollars, no commas).",
+        "answerType": "number",
+        "correctAnswer": 224000,
+        "tolerance": 0,
+        "explanation": "The TSR ranking is a market condition, which is reflected in the $21 grant-date fair value; cost is not adjusted for the probability of meeting the market condition. 2025 cost = 40,000 x $21 / 3 = $280,000. The July 1, 2026, resignation is a failure of the service condition, so cost for the 4,000 forfeited PSUs is reversed. Cumulative cost at December 31, 2026 = 36,000 x $21 x 2/3 = $504,000. 2026 cost = $504,000 - $280,000 = $224,000. The 22nd-percentile TSR ranking does not affect the amount.",
+        "explanationJa": "**市場条件**（相対TSR）は付与日公正価値 $21（モンテカルロ法）に織り込み済みなので、達成見込みで費用を調整しない。一方、**退職による失効は勤務条件の未達**なので戻し入れる。\n\n1. 2025年: 40,000 × $21 ÷ 3 = $280,000\n2. 2026年末の累計（残り36,000個）: 36,000 × $21 × 2/3 = $504,000\n3. 2026年の費用: $504,000 − $280,000 = **$224,000**\n\nTSRが22パーセンタイルでも費用は減らさない。",
+        "references": ["ASC 718-10"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Grant 4 — Attribution Alternatives",
+        "instruction": "Nortessa may elect either attribution method for Grant 4. Calculate the compensation cost under each method. Round to the nearest whole dollar.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": [
+            "2026 expense",
+            "Cumulative expense through December 31, 2027"
+          ],
+          "rows": [
+            "Accelerated (tranche-by-tranche) attribution",
+            "Straight-line attribution"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Accelerated (tranche-by-tranche) attribution",
+              "colLabel": "2026 expense",
+              "correctValue": 196667,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accelerated (tranche-by-tranche) attribution",
+              "colLabel": "Cumulative expense through December 31, 2027",
+              "correctValue": 293333,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Straight-line attribution",
+              "colLabel": "2026 expense",
+              "correctValue": 111333,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Straight-line attribution",
+              "colLabel": "Cumulative expense through December 31, 2027",
+              "correctValue": 222667,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Tranche values: 20,000 x $5.00 = $100,000 (1-year); 20,000 x $5.60 = $112,000 (2-year); 20,000 x $6.10 = $122,000 (3-year); total $334,000.\nAccelerated: 2026 = $100,000 + $112,000/2 + $122,000/3 = $100,000 + $56,000 + $40,667 = $196,667. Cumulative through 2027 = $100,000 + $112,000 + $122,000 x 2/3 = $293,333.\nStraight-line: 2026 = $334,000 / 3 = $111,333. Cumulative through 2027 = $334,000 x 2/3 = $222,667. Under straight-line attribution, cumulative cost must be at least the grant-date value of the portion vested: $100,000 at the end of 2026 and $212,000 at the end of 2027, so no adjustment is required.",
+        "explanationJa": "勤務条件のみの段階的権利確定では、**加速法（トランシェごと）**と**定額法**のどちらかを会計方針として選べる。\n\n**トランシェ価値**: 第1 $100,000（1年）、第2 $112,000（2年）、第3 $122,000（3年）、合計 $334,000\n\n**加速法**\n- 2026年: $100,000 + $112,000 ÷ 2 + $122,000 ÷ 3 = $100,000 + $56,000 + $40,667 = **$196,667**\n- 2027年末累計: $100,000 + $112,000 + $122,000 × 2/3 = **$293,333**\n\n**定額法**\n- 2026年: $334,000 ÷ 3 = **$111,333**\n- 2027年末累計: $334,000 × 2/3 = **$222,667**\n- 下限チェック: 累計は確定済みトランシェの価値以上でなければならない（2026年末 $100,000、2027年末 $212,000）→ いずれも上回るので調整不要",
+        "references": ["ASC 718-10"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Grant 3 — Market Condition Not Satisfied",
+        "instruction": "Select the correct accounting for Grant 3 at December 31, 2027, when the final TSR ranking is below the 50th percentile and the PSUs do not vest.",
+        "answerType": "select",
+        "options": [
+          "Cumulative cost of $756,000 remains recognized; no reversal because the requisite service was rendered",
+          "Cumulative cost of $840,000 remains recognized; no reversal because the requisite service was rendered",
+          "All previously recognized cost is reversed in 2027 because the PSUs do not vest",
+          "Cumulative cost is remeasured using the December 31, 2027, share price"
+        ],
+        "correctAnswer": "Cumulative cost of $756,000 remains recognized; no reversal because the requisite service was rendered",
+        "explanation": "Compensation cost for an award with a market condition is recognized if the requisite service is rendered, regardless of whether the market condition is satisfied. The 36,000 PSUs held by employees who completed the service period result in cumulative cost of 36,000 x $21 = $756,000, which is not reversed. The 4,000 PSUs forfeited on July 1, 2026, were excluded when that service condition failed, so $840,000 (40,000 x $21) overstates the cost. The cost is based on grant-date fair value and is not remeasured.",
+        "explanationJa": "市場条件付きの報酬は、**勤務を提供し終えれば市場条件が未達でも費用を戻さない**（市場条件の不確実性は付与日公正価値に織り込み済み）。\n\n- 最終累計: 36,000 × $21 = **$756,000** をそのまま残す\n- 40,000 × $21 = $840,000 は、2026年に退職で失効した4,000個（勤務条件未達）を除いていないので誤り\n- 持分分類なので期末株価で再測定もしない\n\n業績条件（Grant 2 のような売上目標）なら、未達の場合は計上済み費用を戻し入れる点と対比して覚える。",
+        "references": ["ASC 718-10"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Forfeitures, Expirations, and Cancellations",
+        "instruction": "Select all of the statements that are correct under ASC 718.",
+        "answerType": "multiselect",
+        "options": [
+          "Compensation cost previously recognized for unvested options forfeited by employees who terminate before vesting is reversed in the period of forfeiture",
+          "Compensation cost previously recognized for vested options that expire unexercised is reversed in the period of expiration",
+          "Compensation cost previously recognized for market-condition awards forfeited because the employee leaves before completing the requisite service is reversed",
+          "Under an improbable-to-probable (Type III) modification, total compensation cost cannot be less than the original grant-date fair value",
+          "Cancellation of an unvested award without a concurrent replacement award requires immediate recognition of any previously unrecognized compensation cost"
+        ],
+        "correctAnswer": [
+          "Compensation cost previously recognized for unvested options forfeited by employees who terminate before vesting is reversed in the period of forfeiture",
+          "Compensation cost previously recognized for market-condition awards forfeited because the employee leaves before completing the requisite service is reversed",
+          "Cancellation of an unvested award without a concurrent replacement award requires immediate recognition of any previously unrecognized compensation cost"
+        ],
+        "explanation": "Correct: (1) under a policy of accounting for forfeitures when they occur, cost previously recognized for unvested awards forfeited on termination is reversed when the forfeiture occurs; (2) a market-condition award forfeited because the employee does not complete the requisite service is a service-condition failure, so its cost is reversed; (3) a cancellation without a concurrent replacement is treated as a repurchase for no consideration, so any unrecognized cost is recognized immediately. Incorrect: cost for vested options that expire unexercised, such as the $135,000 recognized for Grant 5, is not reversed (it remains in additional paid-in capital). The grant-date fair value floor applies to Type I modifications; in a Type III modification, cost is based solely on the modification-date fair value of the modified award.",
+        "explanationJa": "**正しい記述**\n- 退職で失効した**未確定**オプションの計上済み費用は、失効時に戻し入れる（失効を発生時に認識する方針）\n- 市場条件付き報酬でも、**勤務条件の未達**（退職）による失効なら費用を戻し入れる\n- 代替報酬を伴わない未確定報酬の**取消し**は、未認識の費用を直ちに全額認識する\n\n**誤った記述**\n- **権利確定済み**オプションが行使されずに満期失効しても費用は戻さない（Grant 5 の計上済み $135,000 = 15,000 × $9 は資本剰余金に残す）\n- 付与日公正価値を下限とするのは Type I の条件変更。Type III は条件変更日の公正価値だけで測定する",
+        "references": ["ASC 718-10", "ASC 718-20"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-gov-007",
+    "subject": "BAR",
+    "topic": "State & Local Governments",
+    "title": "Fiduciary Funds, Component Units, and the Structure of the ACFR",
+    "scenario": "Brookfield County is preparing its annual comprehensive financial report (ACFR) for the fiscal year ended June 30, 2026. The County's governing body is the five-member Board of County Commissioners.\n\n**Exhibit 1** describes resources that the County holds or administers. **Exhibit 2** presents the activity of the Brookfield County Employees' Retirement System, which the County reports as a pension trust fund. **Exhibit 3** describes legally separate entities associated with the County.\n\nFor each entity in Exhibit 3, the County has determined that the entity is not a fiduciary component unit and that excluding an entity for which the County is not financially accountable would not cause the County's financial statements to be misleading.\n\nComplete the tasks on each work tab.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Resources Held or Administered by the County",
+        "content": "| # | Description |\n|---|---|\n| 1 | **County employees' defined benefit pension plan.** The County, through its Retirement Board, administers the plan and controls its assets. Contributions are held in a trust that is irrevocable, dedicated solely to paying benefits to plan members, and legally protected from the creditors of the County and of the plan administrator. |\n| 2 | **Retiree health care (OPEB) plan.** The County administers the plan and controls its assets. Assets are held in a trust that meets the same irrevocability, dedication, and creditor-protection criteria as the pension plan. |\n| 3 | **External participants' share of the County Investment Pool.** The County Treasurer invests the cash of County funds together with the cash of 14 school districts and special districts. These districts are legally separate and are not part of the County's financial reporting entity. This item is the districts' share of the pool. |\n| 4 | **County's own funds' share of the County Investment Pool.** The portion of the pool that belongs to the County's General Fund, special revenue funds, and enterprise funds. |\n| 5 | **Hargrove scholarship trust.** Under a trust agreement with a private donor, investment earnings are used to award college scholarships to individual graduating high school students in the County. The trust is irrevocable and legally protected from the County's creditors. The County cannot use the resources for its own programs. |\n| 6 | **Property taxes collected for cities and school districts.** The County bills and collects property taxes for the cities and school districts within its borders and remits the collections within 30 days. The resources are not held in a trust. |\n| 7 | **Jail inmate accounts.** Cash belonging to inmates, held for commissary purchases and returned to inmates on release. The resources are not held in a trust. |\n| 8 | **Library endowment.** A donor gift whose principal must be maintained in perpetuity; the earnings support the operations of the County public library. |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Brookfield County Employees' Retirement System — FY 2026 Data",
+        "content": "| Item | Amount |\n|---|---|\n| Fiduciary net position restricted for pensions, July 1, 2025 | $84,500,000 |\n| Employer contributions | $6,200,000 |\n| Plan member contributions | $2,300,000 |\n| Interest and dividends | $3,100,000 |\n| Net increase in fair value of investments | $4,700,000 |\n| Investment management fees | $400,000 |\n| Benefit payments to retirees | $7,800,000 |\n| Refunds of contributions to terminated members | $350,000 |\n| Administrative expenses | $250,000 |\n| Total pension liability, June 30, 2026 (actuarial valuation) | $112,000,000 |\n| Actuarially determined contribution for FY 2026 | $6,500,000 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Legally Separate Entities Associated with the County",
+        "content": "**Brookfield County Building Authority.** The Authority's governing board consists of the five County Commissioners serving ex officio. The Authority's only activity is financing and constructing office buildings that are leased exclusively to the County. Its revenue bonds are repaid entirely from the County's lease payments.\n\n**Brookfield County Hospital Authority.** The County Commissioners appoint all seven members of the Authority's board, which is not substantively the same as the County's governing body. The Authority sets its own rates, adopts its own budget, and serves the general public. The County is legally obligated to fund any operating deficit of the Authority. The Authority's revenue bonds are repaid from patient service revenues.\n\n**Tri-County Regional Transit District.** The County appoints 2 of the 9 members of the District's board; the remaining members are appointed by two neighboring counties. The County cannot impose its will on the District, has no financial benefit or burden relationship with it, and the District is not fiscally dependent on the County.\n\n**Brookfield Parks Foundation.** The Foundation is a legally separate not-for-profit corporation whose bylaws name the County as its sole corporate member. The County is financially accountable for the Foundation, and the Foundation is a component unit of the County. Its resources are used to support County parks.\n\n**Brookfield County Housing Authority.** The County Commissioners appoint all five members of the Authority's board and may remove them at will. The board is not substantively the same as the County's governing body. The County may approve and modify the Authority's budget. The Authority provides housing to low-income residents of the County, and its debt is repaid from rental revenues and federal subsidies; the County is not obligated for the debt."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Fiduciary Fund Classification",
+        "instruction": "For each item in Exhibit 1, enter the code for the fund in which the County reports the item. Use the following codes:\nPT = Pension (and other employee benefit) trust fund\nIT = Investment trust fund\nPP = Private-purpose trust fund\nCU = Custodial fund\nNF = Not a fiduciary fund\nA code may be used once, more than once, or not at all.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Code"],
+          "rows": [
+            "1. County employees' defined benefit pension plan",
+            "2. Retiree health care (OPEB) plan",
+            "3. External participants' share of the County Investment Pool",
+            "4. County's own funds' share of the County Investment Pool",
+            "5. Hargrove scholarship trust",
+            "6. Property taxes collected for cities and school districts",
+            "7. Jail inmate accounts",
+            "8. Library endowment"
+          ],
+          "cells": [
+            {
+              "rowLabel": "1. County employees' defined benefit pension plan",
+              "colLabel": "Code",
+              "correctValue": "PT"
+            },
+            {
+              "rowLabel": "2. Retiree health care (OPEB) plan",
+              "colLabel": "Code",
+              "correctValue": "PT"
+            },
+            {
+              "rowLabel": "3. External participants' share of the County Investment Pool",
+              "colLabel": "Code",
+              "correctValue": "IT"
+            },
+            {
+              "rowLabel": "4. County's own funds' share of the County Investment Pool",
+              "colLabel": "Code",
+              "correctValue": "NF"
+            },
+            {
+              "rowLabel": "5. Hargrove scholarship trust",
+              "colLabel": "Code",
+              "correctValue": "PP"
+            },
+            {
+              "rowLabel": "6. Property taxes collected for cities and school districts",
+              "colLabel": "Code",
+              "correctValue": "CU"
+            },
+            {
+              "rowLabel": "7. Jail inmate accounts",
+              "colLabel": "Code",
+              "correctValue": "CU"
+            },
+            {
+              "rowLabel": "8. Library endowment",
+              "colLabel": "Code",
+              "correctValue": "NF"
+            }
+          ]
+        },
+        "explanation": "The pension plan and the OPEB plan are fiduciary activities controlled by the County and administered through qualifying trusts, so both are reported in pension (and other employee benefit) trust funds (PT). The external portion of an investment pool, the share belonging to legally separate entities outside the reporting entity, is reported in an investment trust fund (IT). The County's own funds' share of the pool is reported in the funds that own it, not in a fiduciary fund (NF). The scholarship trust benefits individuals, not the County's programs, and is held under a trust agreement, so it is a private-purpose trust fund (PP). Fiduciary activities not held in a trust, such as taxes collected for other governments and inmate accounts, are reported in custodial funds (CU). The library endowment supports the County's own program; it is a permanent fund (a governmental fund), not a fiduciary fund (NF).",
+        "explanationJa": "**受託ファンドの判定**\n\n| # | 項目 | 判定 | 理由 |\n|---|---|---|---|\n| 1 | 職員の確定給付年金 | PT | 要件を満たす信託で管理される年金 |\n| 2 | 退職者医療（OPEB） | PT | 年金と同じ信託要件を満たす OPEB も pension (and other employee benefit) trust fund |\n| 3 | 投資プールの外部参加者分 | IT | 報告主体外の別法人の持分は投資信託ファンド |\n| 4 | 投資プールの郡自身の持分 | NF | 持分を持つ各ファンド（一般ファンド等）で報告し、受託ファンドにしない |\n| 5 | 奨学金信託 | PP | 受益者が個人（郡の事業ではない）で、信託契約あり |\n| 6 | 他の政府のための税徴収 | CU | 信託がない受託活動はカストディアル |\n| 7 | 受刑者の預り金 | CU | 同上 |\n| 8 | 図書館基金 | NF | 郡自身の事業を支える元本維持の基金は永久基金（governmental fund） |\n\n**ポイント**：「誰のための資源か」で判定する。郡自身の事業に使えるなら受託ファンドではない。",
+        "references": ["GASB 84", "GASB 31", "GASB 34"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Statement of Changes in Fiduciary Net Position — Pension Trust Fund",
+        "instruction": "Using Exhibit 2, complete the following amounts for the pension trust fund's statement of changes in fiduciary net position for the year ended June 30, 2026. Report investment expense as a reduction of investment income. Enter amounts in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Total contributions",
+            "Net investment income",
+            "Total additions",
+            "Total deductions",
+            "Net increase in fiduciary net position",
+            "Fiduciary net position, end of year"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Total contributions",
+              "colLabel": "Amount",
+              "correctValue": 8500000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Net investment income",
+              "colLabel": "Amount",
+              "correctValue": 7400000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Total additions",
+              "colLabel": "Amount",
+              "correctValue": 15900000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Total deductions",
+              "colLabel": "Amount",
+              "correctValue": 8400000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Net increase in fiduciary net position",
+              "colLabel": "Amount",
+              "correctValue": 7500000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Fiduciary net position, end of year",
+              "colLabel": "Amount",
+              "correctValue": 92000000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Contributions = employer $6,200,000 + plan members $2,300,000 = $8,500,000. Net investment income = interest and dividends $3,100,000 + net increase in fair value $4,700,000 − investment management fees $400,000 = $7,400,000. Total additions = $8,500,000 + $7,400,000 = $15,900,000. Deductions = benefit payments $7,800,000 + refunds $350,000 + administrative expenses $250,000 = $8,400,000. Net increase = $15,900,000 − $8,400,000 = $7,500,000. Ending fiduciary net position = $84,500,000 + $7,500,000 = $92,000,000. The total pension liability and the actuarially determined contribution are reported in the notes and required supplementary information, not in the statement of changes in fiduciary net position.",
+        "explanationJa": "**ステップ1：拠出（Additions）**\n\n事業主拠出 6,200,000 + 加入者拠出 2,300,000 = **8,500,000**\n\n**ステップ2：純投資収益（Additions）**\n\n利息・配当 3,100,000 + 公正価値の純増加 4,700,000 − 運用報酬 400,000 = **7,400,000**\n（運用報酬は Deductions ではなく投資収益から控除する）\n\n**ステップ3：Additions 合計**\n\n8,500,000 + 7,400,000 = **15,900,000**\n\n**ステップ4：Deductions 合計**\n\n年金給付 7,800,000 + 退職者への拠出金返還 350,000 + 管理費 250,000 = **8,400,000**\n\n**ステップ5：受託純資産の純増加**\n\n15,900,000 − 8,400,000 = **7,500,000**\n\n**ステップ6：期末受託純資産**\n\n84,500,000 + 7,500,000 = **92,000,000**\n\n※総年金負債 112,000,000 と数理計算上の要拠出額 6,500,000 は注記・RSI の情報で、この計算書には載らない。",
+        "references": ["GASB 67", "GASB 84"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Reporting of Fiduciary Activities",
+        "instruction": "Select all statements that correctly describe how the County reports its fiduciary activities.",
+        "answerType": "multiselect",
+        "options": [
+          "Among the basic financial statements, fiduciary activities are reported only in the statement of fiduciary net position and the statement of changes in fiduciary net position.",
+          "The pension trust fund's fiduciary net position is reported as restricted net position in the governmental activities column of the government-wide statement of net position.",
+          "Fiduciary fund resources are excluded from the government-wide financial statements because they cannot be used to support the County's own programs.",
+          "Fiduciary funds are reported by major fund, in the same manner as governmental funds and enterprise funds.",
+          "Fiduciary fund financial statements are prepared using the economic resources measurement focus and the accrual basis of accounting.",
+          "The external participants' share of the County Investment Pool is reported in the County's General Fund because the County Treasurer manages the pool."
+        ],
+        "correctAnswer": [
+          "Among the basic financial statements, fiduciary activities are reported only in the statement of fiduciary net position and the statement of changes in fiduciary net position.",
+          "Fiduciary fund resources are excluded from the government-wide financial statements because they cannot be used to support the County's own programs.",
+          "Fiduciary fund financial statements are prepared using the economic resources measurement focus and the accrual basis of accounting."
+        ],
+        "explanation": "Fiduciary activities are reported in the fiduciary fund financial statements, which consist of the statement of fiduciary net position and the statement of changes in fiduciary net position. They are excluded from the government-wide financial statements because the resources are not available to support the government's own programs; therefore, the pension trust fund is not part of governmental activities. Fiduciary funds use the economic resources measurement focus and the accrual basis. Fiduciary funds are reported by fund type, not by major fund; the major fund reporting requirement applies to governmental and enterprise funds. The external participants' share of the investment pool is reported in an investment trust fund, not in the General Fund.",
+        "explanationJa": "**受託活動の報告方法**\n\n- **報告する計算書**：基本財務諸表のうち受託ファンド財務諸表（受託純資産計算書・受託純資産変動計算書）だけで報告する。\n- **政府全体の財務諸表には含めない**：受託資源は政府自身の事業に使えないため。年金信託ファンドの純資産を政府活動の restricted net position として表示するのは誤り。\n- **測定の焦点と会計基準**：経済資源の測定の焦点・発生主義。\n- **表示単位**：受託ファンドは**ファンドの種類別**に表示する。主要ファンド（major fund）別表示は政府ファンドとエンタープライズファンドの要件。\n- **投資プールの外部参加者分**：投資信託ファンドで報告し、一般ファンドには入れない。",
+        "references": ["GASB 34", "GASB 84"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Component Unit Determination and Display",
+        "instruction": "For each entity in Exhibit 3, enter the code that describes how the entity is reported in the County's financial statements. Use the following codes:\nB = Blended component unit\nD = Discretely presented component unit\nE = Not a component unit; excluded from the County's financial reporting entity\nA code may be used once, more than once, or not at all.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Code"],
+          "rows": [
+            "Brookfield County Building Authority",
+            "Brookfield County Hospital Authority",
+            "Tri-County Regional Transit District",
+            "Brookfield Parks Foundation",
+            "Brookfield County Housing Authority"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Brookfield County Building Authority",
+              "colLabel": "Code",
+              "correctValue": "B"
+            },
+            {
+              "rowLabel": "Brookfield County Hospital Authority",
+              "colLabel": "Code",
+              "correctValue": "D"
+            },
+            {
+              "rowLabel": "Tri-County Regional Transit District",
+              "colLabel": "Code",
+              "correctValue": "E"
+            },
+            {
+              "rowLabel": "Brookfield Parks Foundation",
+              "colLabel": "Code",
+              "correctValue": "B"
+            },
+            {
+              "rowLabel": "Brookfield County Housing Authority",
+              "colLabel": "Code",
+              "correctValue": "D"
+            }
+          ]
+        },
+        "explanation": "A component unit is blended when any of the following applies: its governing body is substantively the same as the primary government's and there is a financial benefit or burden relationship or primary government management has operational responsibility; it provides services entirely or almost entirely to the primary government; its total debt is expected to be repaid entirely or almost entirely with resources of the primary government; or it is a not-for-profit corporation in which the primary government is the sole corporate member. Otherwise, a component unit is discretely presented. Building Authority: it serves only the County and its debt is repaid entirely from County lease payments, so it is blended. Hospital Authority: the County appoints the voting majority and has a financial burden (obligation to fund deficits), so the County is financially accountable; no blending criterion is met because the board differs and the Authority serves the public, so it is discretely presented. Transit District: the County does not appoint a voting majority, has no financial benefit or burden, and the District is not fiscally dependent, so it is not a component unit. Parks Foundation: a not-for-profit corporation with the County as sole corporate member, so it is blended. Housing Authority: the County appoints the voting majority and can impose its will (removal at will and budget approval), so the County is financially accountable; no blending criterion is met, so it is discretely presented.",
+        "explanationJa": "**ステップ1：構成単位か（財務的説明責任）**\n\n次のいずれかなら構成単位：\n- 理事の過半数を任命し、かつ「意思を押し付けられる」または「財務的便益・負担の関係」がある\n- 財政的に依存しており、財務的便益・負担の関係がある\n\n**ステップ2：ブレンディングの条件（いずれか1つで blending）**\n\n1. 理事会が実質的にプライマリーガバメントと同じ ＋（財務的便益・負担の関係 または PG の経営陣が運営責任を持つ）\n2. サービスの全部またはほぼ全部を PG に提供\n3. 負債の全部またはほぼ全部が PG の資源で返済される見込み\n4. PG が唯一の法人社員である非営利法人\n\nどれにも当たらなければ discrete presentation。\n\n**判定**\n\n| 団体 | 構成単位か | ブレンディング条件 | 判定 |\n|---|---|---|---|\n| Building Authority | 該当 | 郡にのみ建物を賃貸（条件2）、債務は郡のリース料で全額返済（条件3） | **B** |\n| Hospital Authority | 過半数任命 ＋ 赤字補填義務（財務的負担） | 理事会は別、一般住民向け、債務は患者収入で返済 → なし | **D** |\n| Regional Transit District | 9人中2人の任命のみ、意思の押し付け・財務関係・財政的依存なし | ― | **E** |\n| Parks Foundation | 該当（問題文で確定） | 郡が唯一の法人社員である非営利法人（条件4） | **B** |\n| Housing Authority | 過半数任命 ＋ 意のままの解任・予算の承認修正（意思の押し付け） | 理事会は別、住民向け、郡は債務を負わない → なし | **D** |",
+        "references": ["GASB 14", "GASB 61", "GASB 80"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Structure of the ACFR",
+        "instruction": "For each item, enter the code for the section of the County's ACFR in which the item is presented. Use the following codes:\nI = Introductory section\nF = Financial section\nS = Statistical section\nA code may be used once, more than once, or not at all.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Section"],
+          "rows": [
+            "Letter of transmittal",
+            "Organizational chart",
+            "List of principal officials",
+            "Independent auditor's report",
+            "Management's discussion and analysis",
+            "Notes to the basic financial statements",
+            "Combining statements for nonmajor governmental funds",
+            "Net position by component, last ten fiscal years",
+            "Principal property taxpayers",
+            "Demographic and economic statistics"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Letter of transmittal",
+              "colLabel": "Section",
+              "correctValue": "I"
+            },
+            {
+              "rowLabel": "Organizational chart",
+              "colLabel": "Section",
+              "correctValue": "I"
+            },
+            {
+              "rowLabel": "List of principal officials",
+              "colLabel": "Section",
+              "correctValue": "I"
+            },
+            {
+              "rowLabel": "Independent auditor's report",
+              "colLabel": "Section",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Management's discussion and analysis",
+              "colLabel": "Section",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Notes to the basic financial statements",
+              "colLabel": "Section",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Combining statements for nonmajor governmental funds",
+              "colLabel": "Section",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Net position by component, last ten fiscal years",
+              "colLabel": "Section",
+              "correctValue": "S"
+            },
+            {
+              "rowLabel": "Principal property taxpayers",
+              "colLabel": "Section",
+              "correctValue": "S"
+            },
+            {
+              "rowLabel": "Demographic and economic statistics",
+              "colLabel": "Section",
+              "correctValue": "S"
+            }
+          ]
+        },
+        "explanation": "The introductory section contains the letter of transmittal, the organizational chart, and the list of principal officials. The financial section contains the independent auditor's report, management's discussion and analysis (required supplementary information presented before the basic financial statements; GASB 103 limits its content to five specified sections), the basic financial statements and notes, other required supplementary information, and combining and individual fund statements for nonmajor funds. The statistical section presents multiyear trend and other information, including ten-year net position by component, principal property taxpayers, and demographic and economic statistics.",
+        "explanationJa": "**ACFR の3セクション**\n\n| セクション | 主な内容 |\n|---|---|\n| Introductory（I） | 送付状（letter of transmittal）、組織図、主要職員一覧 |\n| Financial（F） | 監査報告書 → MD&A（RSI、基本財務諸表の前）→ 基本財務諸表と注記 → その他の RSI（年金スケジュール等）→ 非主要ファンドの結合計算書・個別ファンド計算書 |\n| Statistical（S） | 10年間の純資産の構成推移、主要な固定資産税納税者、人口・経済統計などの複数年の傾向情報 |\n\n※ GASB 103 で MD&A の記載内容は5つの節に限定されたが、RSI として基本財務諸表の前に置く位置づけは変わらない。\n\n**よくある誤り**：MD&A は文章なので Introductory と思いがちだが、RSI の一部として **Financial セクション**に入る。非主要ファンドの結合計算書も Financial セクション。",
+        "references": ["GASB 34", "GASB 44", "GASB 103"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Display of Component Units and Required Supplementary Information",
+        "instruction": "Select all statements that correctly describe the display of information in the County's ACFR.",
+        "answerType": "multiselect",
+        "options": [
+          "The Hospital Authority and the Housing Authority are reported in a column separate from, and to the right of, the total primary government column in the government-wide financial statements.",
+          "The discretely presented component units' financial data are also included in the County's governmental fund financial statements.",
+          "The Building Authority's balances and transactions are reported as if they were part of the County's own funds and activities.",
+          "Management's discussion and analysis is presented in the introductory section, following the letter of transmittal.",
+          "The schedule of changes in the net pension liability is required supplementary information presented after the notes to the basic financial statements.",
+          "The Tri-County Regional Transit District is reported as a discretely presented component unit because the County appoints members to its board."
+        ],
+        "correctAnswer": [
+          "The Hospital Authority and the Housing Authority are reported in a column separate from, and to the right of, the total primary government column in the government-wide financial statements.",
+          "The Building Authority's balances and transactions are reported as if they were part of the County's own funds and activities.",
+          "The schedule of changes in the net pension liability is required supplementary information presented after the notes to the basic financial statements."
+        ],
+        "explanation": "Discretely presented component units are reported in one or more columns separate from, and to the right of, the total primary government column in the government-wide statements; they are not included in the primary government's fund financial statements. Under GASB 103, information about each major component unit is presented within the basic financial statements (in separate columns in the government-wide statements or in combining statements after the fund financial statements); condensed presentation in the notes is no longer permitted. Blended component units are reported as if they were part of the primary government's funds and activities. Management's discussion and analysis is required supplementary information presented before the basic financial statements in the financial section, not in the introductory section. Other required supplementary information, such as the schedule of changes in the net pension liability, is presented after the notes. The Transit District is not a component unit because the County appoints only 2 of 9 board members and has no other basis for financial accountability.",
+        "explanationJa": "**表示方法の整理**\n\n- **Discrete presentation**：政府全体の財務諸表で、プライマリーガバメント合計列の**右側の別列**に表示する。プライマリーガバメントのファンド財務諸表には含めない。→ Hospital Authority・Housing Authority が該当。\n  - GASB 103 により、主要な構成単位の情報は基本財務諸表の中（政府全体の財務諸表の別列、またはファンド財務諸表の後の結合財務諸表）で示す。注記での要約表示は認められない。\n- **Blending**：構成単位の残高・取引を、プライマリーガバメント自身のファンド・活動の一部として表示する。→ Building Authority（および Parks Foundation）が該当。\n- **MD&A**：RSI であり、Financial セクションで**基本財務諸表の前**に置く。Introductory セクションではない。\n- **その他の RSI**（年金負債の変動スケジュール等）：**注記の後**に置く。\n- **Regional Transit District**：理事の任命は9人中2人だけで、他に財務的説明責任の根拠がないため構成単位ではない（報告主体から除外）。",
+        "references": ["GASB 14", "GASB 34", "GASB 61", "GASB 103"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  }
+]

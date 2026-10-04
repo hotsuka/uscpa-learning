@@ -1,6 +1,6 @@
 import type { TBSQuestion } from "@/types/tbs";
 import { farTBSQuestions } from "./far";
-import { barTBSQuestions } from "./bar";
+import { barMockTBSSets, barTBSQuestions, type TBSMockSet } from "./bar";
 
 /** TBSを持つ科目。問題が用意できた科目だけを並べる */
 export const TBS_SUBJECTS = ["FAR", "BAR"] as const;
@@ -14,10 +14,20 @@ const questionsBySubject: Record<TBSSubject, TBSQuestion[]> = {
 export const getTBSQuestionsBySubject = (subject: TBSSubject): TBSQuestion[] =>
   questionsBySubject[subject];
 
-/** 全科目のTBS。詳細ページの静的生成やID検索に使う */
+/** 通し模試用のTBS（演習一覧には出さない）。模試を用意した科目だけ */
+const mockSetsBySubject: Record<TBSSubject, TBSMockSet[]> = {
+  FAR: [],
+  BAR: barMockTBSSets,
+};
+
+export const getTBSMockSetsBySubject = (subject: TBSSubject): TBSMockSet[] =>
+  mockSetsBySubject[subject];
+
+/** 全科目のTBS（通し模試用を含む）。詳細ページの静的生成やID検索に使う */
 export const allTBSQuestions: TBSQuestion[] = [
   ...farTBSQuestions,
   ...barTBSQuestions,
+  ...barMockTBSSets.flatMap((set) => set.questions),
 ];
 
 export const findTBSQuestionById = (id: string): TBSQuestion | undefined =>
