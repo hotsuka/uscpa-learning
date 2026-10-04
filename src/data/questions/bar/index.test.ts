@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   barQuestionSets,
   barAreaIIIIIQuestionSets,
+  barFreshMockQuestionSets,
   barOwnAreaIIIIIQuestionSets,
   barPracticeQuestionSets,
   getBarAreaForSet,
@@ -71,6 +72,25 @@ describe("getBarQuestionById", () => {
       for (const q of set.questions) {
         expect(getBarQuestionById(q.id)).toBe(q);
       }
+    }
+  });
+});
+
+describe("初見模試用のセット", () => {
+  const freshSets = barFreshMockQuestionSets.map(({ set }) => set);
+
+  it("演習画面のセットに含めない（演習で解くと初見でなくなる）", () => {
+    const practiceIds = new Set(barPracticeQuestionSets.map((set) => set.id));
+    expect(freshSets.filter((set) => practiceIds.has(set.id))).toEqual([]);
+  });
+
+  it("問題IDが演習用の問題と衝突せず、模試結果から引ける", () => {
+    const practiceQuestionIds = new Set(
+      barPracticeQuestionSets.flatMap((set) => set.questions.map((q) => q.id)),
+    );
+    for (const q of freshSets.flatMap((set) => set.questions)) {
+      expect(practiceQuestionIds.has(q.id)).toBe(false);
+      expect(getBarQuestionById(q.id)).toBe(q);
     }
   });
 });

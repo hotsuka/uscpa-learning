@@ -216,5 +216,326 @@
     "difficulty": "advanced",
     "estimatedMinutes": 28,
     "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-var-002",
+    "subject": "BAR",
+    "topic": "Variance Analysis",
+    "title": "Cast-Iron Cookware: Manufacturing Cost and Sales Variances",
+    "scenario": "Ironwood Cookware, Inc. manufactures cast-iron skillets and uses a standard costing system. Direct materials price variances are isolated at the time of purchase, and raw materials inventory is carried at standard cost. Variable and fixed manufacturing overhead are applied on the basis of standard direct labor hours (DLH) allowed for actual output. The controller has asked you to prepare the March 20X5 variance report for the 10-inch skillet line, analyze the sales results for the two skillet sizes, and interpret the results using the operations memo. Use the standard cost card in **Exhibit 1**, the March actual production data in **Exhibit 2**, the sales data in **Exhibit 3**, and the operations memo in **Exhibit 4**.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Standard Cost Card — 10-Inch Skillet (per unit)",
+        "content": "| Cost element | Standard quantity | Standard price | Standard cost per skillet |\n|---|---|---|---|\n| Direct materials (pig iron) | 4.0 lb | $1.50 per lb | $6.00 |\n| Direct labor | 0.5 DLH | $24.00 per DLH | $12.00 |\n| Variable manufacturing overhead | 0.5 DLH | $10.00 per DLH | $5.00 |\n| Fixed manufacturing overhead | 0.5 DLH | $18.00 per DLH | $9.00 |\n| **Total standard manufacturing cost** | | | **$32.00** |\n\nThe fixed overhead rate is based on budgeted monthly fixed overhead of $360,000 and a denominator level of 20,000 DLH (40,000 skillets)."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: March 20X5 Actual Production Data — 10-Inch Skillet",
+        "content": "| Item | Actual |\n|---|---|\n| Skillets produced (all good units) | 38,000 |\n| Pig iron purchased | 170,000 lb for $241,400 |\n| Pig iron used in production | 158,000 lb |\n| Pig iron on hand, March 1 | 22,000 lb |\n| Direct labor | 19,800 hours costing $485,100 |\n| Variable manufacturing overhead incurred | $205,900 |\n| Fixed manufacturing overhead incurred | $368,500 |\n| Variable selling cost per skillet sold | $3.00 |\n| Fixed selling and administrative costs | $210,000 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: March 20X5 Sales Data",
+        "content": "| Product | Budgeted units | Budgeted price | Budgeted contribution margin per unit | Actual units sold | Actual price |\n|---|---|---|---|---|---|\n| 10-inch skillet | 30,000 | $42.00 | $16.00 | 31,200 | $41.00 |\n| 12-inch skillet | 20,000 | $55.00 | $22.00 | 16,800 | $57.00 |\n\nSales variances are measured on a contribution margin basis using budgeted contribution margins per unit."
+      },
+      {
+        "id": "ex-4",
+        "title": "Exhibit 4: Operations Memo — March 20X5",
+        "content": "To: Controller\nFrom: Plant Manager\n\n1. Effective March 1, purchasing switched to a new supplier offering a lower grade of pig iron at a discount. The casting line reported more defective castings that had to be scrapped and re-poured, and finishing crews spent additional time grinding rough surfaces.\n2. A new wage agreement took effect on March 1, raising the average hourly rate paid to casting and finishing crews.\n3. The main furnace was shut down for two days in mid-March for an unscheduled refractory repair, reducing the number of skillets produced below the monthly plan.\n4. The regional utility increased its electricity tariff during March."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Direct Materials and Direct Labor Variances",
+        "instruction": "Compute each variance for March 20X5. Enter the amount in whole dollars, no commas, as a positive number. In the F or U column, enter F for favorable or U for unfavorable.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Direct materials price variance",
+            "Direct materials quantity variance",
+            "Direct labor rate variance",
+            "Direct labor efficiency variance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Direct materials price variance",
+              "colLabel": "Amount",
+              "correctValue": 13600,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Direct materials price variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Direct materials quantity variance",
+              "colLabel": "Amount",
+              "correctValue": 9000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Direct materials quantity variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Direct labor rate variance",
+              "colLabel": "Amount",
+              "correctValue": 9900,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Direct labor rate variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Direct labor efficiency variance",
+              "colLabel": "Amount",
+              "correctValue": 19200,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Direct labor efficiency variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            }
+          ]
+        },
+        "explanation": "Materials price variance (isolated at purchase) = (actual price - standard price) x quantity PURCHASED. Actual price = $241,400 / 170,000 lb = $1.42; ($1.42 - $1.50) x 170,000 = $13,600 F. Using the 158,000 lb used would give $12,640, which is incorrect when the variance is isolated at purchase. Materials quantity variance = (actual quantity USED - standard quantity allowed) x standard price = (158,000 - 38,000 x 4.0 = 152,000) x $1.50 = $9,000 U. Labor rate variance = (actual rate - standard rate) x actual hours; actual rate = $485,100 / 19,800 = $24.50; ($24.50 - $24.00) x 19,800 = $9,900 U. Labor efficiency variance = (actual hours - standard hours allowed) x standard rate = (19,800 - 38,000 x 0.5 = 19,000) x $24 = $19,200 U.",
+        "explanationJa": "**直接材料価格差異（購入時点）** = (実際単価 − 標準単価) × **購入量**\n- 実際単価 = 241,400 ÷ 170,000 = 1.42\n- (1.42 − 1.50) × 170,000 = **13,600 F**\n- 誤答: 使用量158,000で計算すると12,640（購入時点認識なので誤り）\n\n**直接材料数量差異** = (実際**使用量** − 標準許容量) × 標準単価\n- 標準許容量 = 38,000個 × 4.0 = 152,000 lb\n- (158,000 − 152,000) × 1.50 = **9,000 U**\n- 誤答: 購入量170,000を使うと27,000になる\n\n**直接労務賃率差異** = (実際賃率 − 標準賃率) × 実際時間\n- 実際賃率 = 485,100 ÷ 19,800 = 24.50\n- 0.50 × 19,800 = **9,900 U**\n\n**直接労務能率差異** = (実際時間 − 標準許容時間) × 標準賃率\n- 標準許容時間 = 38,000 × 0.5 = 19,000\n- 800 × 24 = **19,200 U**",
+        "references": ["Standard costing — direct cost variance analysis"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Journal Entry for the Pig Iron Purchase",
+        "instruction": "Prepare the journal entry to record the March purchase of pig iron on account. Enter amounts in whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Raw materials inventory",
+            "Direct materials price variance",
+            "Accounts payable"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Raw materials inventory",
+              "colLabel": "Debit",
+              "correctValue": 255000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Raw materials inventory",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Direct materials price variance",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Direct materials price variance",
+              "colLabel": "Credit",
+              "correctValue": 13600,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts payable",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accounts payable",
+              "colLabel": "Credit",
+              "correctValue": 241400,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Because raw materials inventory is carried at standard cost and the price variance is isolated at purchase, raw materials inventory is debited at standard: 170,000 lb x $1.50 = $255,000. Accounts payable is credited for the actual cost of $241,400. The $13,600 difference is a favorable price variance and is recorded as a credit. Debits $255,000 = credits $241,400 + $13,600.",
+        "explanationJa": "原材料は**標準原価**で計上し、価格差異を購入時点で分離する。\n\n| 勘定 | 借方 | 貸方 |\n|---|---|---|\n| 原材料 (170,000 × 1.50) | 255,000 | |\n| 買掛金（実際額） | | 241,400 |\n| 材料価格差異（有利） | | 13,600 |\n\n有利差異は**貸方**。借方255,000 = 貸方241,400 + 13,600 で一致。",
+        "references": ["Standard costing — journal entries for variances"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Manufacturing Overhead Variances",
+        "instruction": "Using a four-variance analysis, compute each overhead variance for March 20X5. Enter the amount in whole dollars, no commas, as a positive number. In the F or U column, enter F for favorable or U for unfavorable.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Variable overhead spending variance",
+            "Variable overhead efficiency variance",
+            "Fixed overhead budget (spending) variance",
+            "Fixed overhead production-volume variance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Variable overhead spending variance",
+              "colLabel": "Amount",
+              "correctValue": 7900,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Variable overhead spending variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Variable overhead efficiency variance",
+              "colLabel": "Amount",
+              "correctValue": 8000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Variable overhead efficiency variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Fixed overhead budget (spending) variance",
+              "colLabel": "Amount",
+              "correctValue": 8500,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Fixed overhead budget (spending) variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Fixed overhead production-volume variance",
+              "colLabel": "Amount",
+              "correctValue": 18000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Fixed overhead production-volume variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            }
+          ]
+        },
+        "explanation": "Variable overhead spending = actual VOH - (actual hours x standard rate) = $205,900 - 19,800 x $10 ($198,000) = $7,900 U. Variable overhead efficiency = (actual hours - standard hours allowed) x standard rate = (19,800 - 19,000) x $10 = $8,000 U. Fixed overhead budget variance = actual FOH - budgeted FOH = $368,500 - $360,000 = $8,500 U. Fixed overhead production-volume variance = budgeted FOH - applied FOH = $360,000 - (19,000 standard hours x $18 = $342,000) = $18,000 U. Applied fixed overhead is based on standard hours allowed for actual output, not on actual hours.",
+        "explanationJa": "**変動製造間接費**\n- 予算差異(spending) = 実際 205,900 − 実際時間19,800 × 10 = 198,000 → **7,900 U**\n- 能率差異 = (19,800 − 19,000) × 10 → **8,000 U**\n\n**固定製造間接費**\n- 予算差異 = 実際 368,500 − 予算 360,000 → **8,500 U**\n- 操業度差異 = 予算 360,000 − 配賦額（標準時間19,000 × 18 = 342,000） → **18,000 U**\n\n注意: 固定費の配賦は**実際時間ではなく標準許容時間**で行う。実際時間19,800で配賦すると操業度差異を3,600と誤る。",
+        "references": ["Standard costing — overhead variance analysis"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Total Underapplied Overhead",
+        "instruction": "Compute the total manufacturing overhead (variable plus fixed) underapplied or overapplied for March 20X5. Enter the amount in whole dollars, no commas, as a positive number if underapplied and as a negative number if overapplied.",
+        "answerType": "number",
+        "correctAnswer": 42400,
+        "tolerance": 0,
+        "explanation": "Actual overhead = $205,900 + $368,500 = $574,400. Applied overhead = 19,000 standard hours x ($10 + $18) = $532,000. Underapplied overhead = $574,400 - $532,000 = $42,400, which equals the sum of the four overhead variances ($7,900 + $8,000 + $8,500 + $18,000).",
+        "explanationJa": "- 実際発生額 = 205,900 + 368,500 = 574,400\n- 配賦額 = 標準時間19,000 × (10 + 18) = 532,000\n- 配賦不足 = 574,400 − 532,000 = **42,400**（正の値で入力）\n\n検証: 4差異の合計 7,900 + 8,000 + 8,500 + 18,000 = 42,400 と一致。",
+        "references": ["Standard costing — overhead variance analysis"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Interpreting the Variance Pattern",
+        "instruction": "The controller notes that the direct materials price variance is favorable while the direct materials quantity variance and the direct labor efficiency variance are both unfavorable. Select the event in Exhibit 4 that most likely explains this combination of variances.",
+        "answerType": "select",
+        "options": [
+          "The switch to the lower-grade pig iron supplier",
+          "The new wage agreement effective March 1",
+          "The two-day furnace shutdown",
+          "The increase in the electricity tariff"
+        ],
+        "correctAnswer": "The switch to the lower-grade pig iron supplier",
+        "explanation": "Buying lower-grade pig iron at a discount produces a favorable price variance. Lower-grade material causes more defective castings (more pounds used per good skillet, an unfavorable quantity variance) and more re-pouring and grinding time (more hours per good skillet, an unfavorable labor efficiency variance and, because overhead is applied on DLH, an unfavorable variable overhead efficiency variance). The wage agreement explains only the unfavorable labor rate variance. The furnace shutdown reduced output and explains the unfavorable fixed overhead production-volume variance, not a favorable materials price variance. The electricity tariff increase explains the unfavorable variable overhead spending variance. Purchasing should not be evaluated solely on its favorable price variance when it causes larger unfavorable variances downstream.",
+        "explanationJa": "**低品質材料を値引きで購入** → 価格差異は**有利**\n→ 不良鋳物が増え材料を多く使う → 数量差異**不利**\n→ 再鋳造・研磨に時間がかかる → 労務能率差異**不利**（DLH基準の変動間接費能率差異も不利）\n\nこの3つを同時に説明できるのは材料サプライヤー変更のみ。\n\n他の事象との対応:\n- 新賃金協定 → 労務**賃率**差異の不利のみ\n- 炉の停止 → 生産量減 → 固定費**操業度**差異の不利（材料価格の有利は説明できない）\n- 電気料金の値上げ → 変動間接費**予算差異**の不利\n\n実務上の含意: 購買部門を価格差異の有利だけで評価すると、製造部門の不利差異（合計 9,000 + 19,200 + 8,000 = 36,200）が価格差異の有利 13,600 を上回る点を見落とす。",
+        "references": [
+          "Standard costing — variance investigation and responsibility"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Sales Price, Mix, and Quantity Variances",
+        "instruction": "Using Exhibit 3, compute the total sales price variance, the sales mix variance, and the sales quantity variance for both skillet sizes combined, on a contribution margin basis. Enter the amount in whole dollars, no commas, as a positive number. In the F or U column, enter F for favorable or U for unfavorable.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Sales price variance",
+            "Sales mix variance",
+            "Sales quantity variance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Sales price variance",
+              "colLabel": "Amount",
+              "correctValue": 2400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Sales price variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Sales mix variance",
+              "colLabel": "Amount",
+              "correctValue": 14400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Sales mix variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Sales quantity variance",
+              "colLabel": "Amount",
+              "correctValue": 36800,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Sales quantity variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            }
+          ]
+        },
+        "explanation": "Sales price variance = (actual price - budgeted price) x actual units: 10-inch ($41 - $42) x 31,200 = $31,200 U; 12-inch ($57 - $55) x 16,800 = $33,600 F; net $2,400 F. Budgeted mix = 30,000 / 50,000 = 60% 10-inch and 40% 12-inch. Actual total units = 48,000. Sales mix variance = (actual units - actual total units x budgeted mix %) x budgeted CM: 10-inch (31,200 - 28,800) x $16 = $38,400 F; 12-inch (16,800 - 19,200) x $22 = $52,800 U; net $14,400 U. The mix shifted toward the lower-margin 10-inch skillet. Sales quantity variance = (actual total units - budgeted total units) x budgeted weighted-average CM per unit = (48,000 - 50,000) x $18.40 (0.60 x $16 + 0.40 x $22) = $36,800 U. Check: mix $14,400 U + quantity $36,800 U = sales volume variance of $51,200 U = 10-inch (1,200 x $16 = $19,200 F) + 12-inch (-3,200 x $22 = $70,400 U).",
+        "explanationJa": "**売上価格差異** = (実際価格 − 予算価格) × 実際数量\n- 10インチ: (41 − 42) × 31,200 = 31,200 U\n- 12インチ: (57 − 55) × 16,800 = 33,600 F\n- 合計 **2,400 F**\n\n**ミックス差異** = (実際数量 − 実際総数量 × 予算構成比) × 予算CM\n- 予算構成比: 10インチ 60%（30,000/50,000）、12インチ 40%\n- 実際総数量 48,000\n- 10インチ: (31,200 − 28,800) × 16 = 38,400 F\n- 12インチ: (16,800 − 19,200) × 22 = 52,800 U\n- 合計 **14,400 U**（低CMの10インチに構成がシフト）\n\n**数量差異** = (実際総数量 − 予算総数量) × 予算加重平均CM\n- 加重平均CM = 0.6 × 16 + 0.4 × 22 = 18.40\n- (48,000 − 50,000) × 18.40 = **36,800 U**\n\n検証: ミックス14,400 U + 数量36,800 U = 販売数量差異51,200 U（製品別: 19,200 F − 70,400 U）。\n\n誤答パターン: 10インチの数量が予算を上回っているので「有利」と考えがちだが、ミックス差異は**実際総数量に予算構成比を掛けた量**と比べる。",
+        "references": ["Sales variance analysis — price, mix, and quantity"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Meaning of the Production-Volume Variance",
+        "instruction": "Select the statement that best describes the cause and meaning of the March fixed overhead production-volume variance.",
+        "answerType": "select",
+        "options": [
+          "Fixed overhead costs incurred exceeded the monthly fixed overhead budget",
+          "Actual direct labor hours exceeded the standard hours allowed for the skillets produced",
+          "Good output required fewer standard direct labor hours than the 20,000-hour denominator level, so less fixed overhead was applied than budgeted",
+          "The wage agreement increased the fixed overhead rate per direct labor hour"
+        ],
+        "correctAnswer": "Good output required fewer standard direct labor hours than the 20,000-hour denominator level, so less fixed overhead was applied than budgeted",
+        "explanation": "The production-volume variance compares budgeted fixed overhead ($360,000) with fixed overhead applied to good output (19,000 standard hours x $18 = $342,000). Producing 38,000 skillets instead of the 40,000-unit denominator level (the furnace shutdown) left $18,000 of fixed capacity cost unabsorbed. It does not represent a spending overrun; spending above budget is the $8,500 fixed overhead budget variance. Actual hours exceeding standard hours is the efficiency variance, and the wage agreement affects the labor rate variance, not the fixed overhead rate.",
+        "explanationJa": "操業度差異 = 予算固定費 360,000 − 配賦額（標準時間19,000 × 18 = 342,000）= 18,000 U。\n\n実際の良品生産38,000個が基準操業度40,000個（20,000 DLH）を下回ったため（炉の停止）、固定費が配賦しきれなかったことを示す。**支出の超過ではない**。\n\n他の記述の誤り:\n- 固定費の実際額が予算を超過 → それは**予算差異**（8,500 U）\n- 実際時間が標準時間を超過 → それは**能率差異**\n- 賃金協定 → 労務**賃率**差異に影響し、固定費配賦率は変わらない",
+        "references": ["Standard costing — overhead variance analysis"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
   }
 ]
