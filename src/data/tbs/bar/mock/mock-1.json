@@ -1,0 +1,1793 @@
+[
+  {
+    "id": "bar-tbs-proc-001",
+    "subject": "BAR",
+    "topic": "Cost Accounting",
+    "title": "Process Costing and Activity-Based Overhead Reassignment",
+    "scenario": "Halvorsen Coatings Inc. manufactures industrial coatings in a single plant. Production flows through a Mixing Department and then a Finishing Department. In the Mixing Department, all direct materials are added at the start of the process and conversion costs are incurred evenly. The controller is evaluating whether the department's process-costing method affects reported inventory values. Production data for March are provided in **Exhibit 1**.\n\nSeparately, the plant currently applies all manufacturing overhead using a single plantwide rate based on direct labor hours. The product-line manager for Marine coatings has questioned this practice because Marine is produced in small batches that require frequent setups and extensive quality testing. Annual product data are provided in **Exhibit 2**, and the activity-based costing (ABC) study prepared by the cost accounting team is provided in **Exhibit 3**.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Mixing Department — March Production Report",
+        "content": "| Item | Units (gallons) | Conversion % complete | Direct materials | Conversion costs |\n|---|---|---|---|---|\n| Beginning work in process, March 1 | 4,000 | 60% | $18,400 | $15,010 |\n| Units started in March | 36,000 | — | — | — |\n| Units completed and transferred to Finishing | 34,000 | 100% | — | — |\n| Ending work in process, March 31 | 6,000 | 30% | — | — |\n| Costs added during March | — | — | $172,800 | $233,800 |\n\nOther March data:\n- Finishing Department costs incurred in March: $286,500\n- Finished goods inventory, March 31: 7,200 gallons\n- Mixing Department normal spoilage was negligible in March."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Annual Product Data",
+        "content": "| Item | Standard | Marine |\n|---|---|---|\n| Gallons produced and sold | 50,000 | 10,000 |\n| Selling price per gallon | $60.00 | $95.00 |\n| Direct materials per gallon | $14.00 | $30.00 |\n| Direct labor hours per gallon | 0.8 | 1.0 |\n| Number of distributors served | 42 | 15 |\n\n- All direct labor is paid $20 per hour.\n- Budgeted annual manufacturing overhead: $1,200,000, currently applied at a plantwide rate based on direct labor hours.\n- Selling and administrative expenses (not manufacturing overhead): $410,000 per year."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: ABC Study — Activity Cost Pools and Annual Driver Volumes",
+        "content": "| Activity cost pool | Annual cost | Cost driver | Standard | Marine |\n|---|---|---|---|---|\n| Machine setups | $360,000 | Number of setups | 60 | 120 |\n| Quality inspections | $240,000 | Number of inspections | 200 | 400 |\n| Machine operations | $480,000 | Machine hours | 30,000 | 10,000 |\n| Material handling | $120,000 | Number of material moves | 300 | 300 |\n| **Total** | **$1,200,000** | | | |\n\nNote from the cost accounting team: Of the setup and inspection costs, approximately 40% consists of salaries of engineers and inspectors who would be retained and reassigned if the Marine line were discontinued."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Equivalent Units",
+        "title": "Equivalent units of production",
+        "instruction": "Using the information in Exhibit 1, calculate the March equivalent units of production for the Mixing Department under the weighted-average method and under the FIFO method. Enter whole numbers, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Weighted-average", "FIFO"],
+          "rows": ["Direct materials", "Conversion costs"],
+          "cells": [
+            {
+              "rowLabel": "Direct materials",
+              "colLabel": "Weighted-average",
+              "correctValue": 40000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Direct materials",
+              "colLabel": "FIFO",
+              "correctValue": 36000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Conversion costs",
+              "colLabel": "Weighted-average",
+              "correctValue": 35800,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Conversion costs",
+              "colLabel": "FIFO",
+              "correctValue": 33400,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Ending WIP = 4,000 + 36,000 - 34,000 = 6,000 units.\nWeighted-average: DM = 34,000 completed + 6,000 x 100% = 40,000; conversion = 34,000 + 6,000 x 30% = 35,800.\nFIFO excludes work done on beginning WIP in February: DM = 0 (materials for beginning WIP were added in February) + 30,000 started and completed + 6,000 = 36,000; conversion = 4,000 x 40% + 30,000 + 6,000 x 30% = 1,600 + 30,000 + 1,800 = 33,400.",
+        "explanationJa": "**ステップ1: 期末仕掛品の数量**\n4,000 + 36,000 − 34,000 = 6,000 ガロン\n\n**ステップ2: 加重平均法**（完成品＋期末仕掛品の換算量）\n- 材料費: 34,000 + 6,000 × 100% = **40,000**\n- 加工費: 34,000 + 6,000 × 30% = **35,800**\n\n**ステップ3: 先入先出法**（期首仕掛品の前月作業分を除く）\n- 当月着手・当月完成 = 34,000 − 4,000 = 30,000\n- 材料費: 期首仕掛品の材料は前月に投入済みなので 0 + 30,000 + 6,000 = **36,000**\n- 加工費: 4,000 × (1 − 60%) + 30,000 + 6,000 × 30% = 1,600 + 30,000 + 1,800 = **33,400**\n\n両法の差（材料4,000、加工費2,400）は、期首仕掛品に前月施された作業量そのものです。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Process costing — weighted-average and FIFO methods"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Cost Assignment",
+        "title": "Assignment of Mixing Department costs",
+        "instruction": "Using Exhibit 1, assign the total Mixing Department costs to units completed and transferred out and to ending work in process under each method. Round cost per equivalent unit to the nearest cent and enter results in whole dollars, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Weighted-average", "FIFO"],
+          "rows": [
+            "Cost of units completed and transferred out",
+            "Cost of ending work in process"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Cost of units completed and transferred out",
+              "colLabel": "Weighted-average",
+              "correctValue": 398820,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cost of units completed and transferred out",
+              "colLabel": "FIFO",
+              "correctValue": 398610,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cost of ending work in process",
+              "colLabel": "Weighted-average",
+              "correctValue": 41190,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cost of ending work in process",
+              "colLabel": "FIFO",
+              "correctValue": 41400,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Total costs to account for = 18,400 + 15,010 + 172,800 + 233,800 = $440,010.\nWeighted-average: DM rate = (18,400 + 172,800) / 40,000 = $4.78; conversion rate = (15,010 + 233,800) / 35,800 = $6.95. Completed = 34,000 x 11.73 = $398,820. Ending WIP = 6,000 x 4.78 + 1,800 x 6.95 = 28,680 + 12,510 = $41,190.\nFIFO: DM rate = 172,800 / 36,000 = $4.80; conversion rate = 233,800 / 33,400 = $7.00. Ending WIP = 6,000 x 4.80 + 1,800 x 7.00 = 28,800 + 12,600 = $41,400. Completed = beginning WIP 33,410 + 1,600 x 7.00 to complete it (11,200) + 30,000 x 11.80 (354,000) = $398,610. Both methods account for $440,010.",
+        "explanationJa": "**総原価** = 18,400 + 15,010 + 172,800 + 233,800 = $440,010\n\n**加重平均法**\n- 材料費単価 = (18,400 + 172,800) ÷ 40,000 = $4.78\n- 加工費単価 = (15,010 + 233,800) ÷ 35,800 = $6.95\n- 完成品原価 = 34,000 × (4.78 + 6.95) = **$398,820**\n- 期末仕掛品 = 6,000 × 4.78 + 1,800 × 6.95 = 28,680 + 12,510 = **$41,190**\n\n**先入先出法**（当月原価 ÷ 当月換算量）\n- 材料費単価 = 172,800 ÷ 36,000 = $4.80\n- 加工費単価 = 233,800 ÷ 33,400 = $7.00\n- 期末仕掛品 = 6,000 × 4.80 + 1,800 × 7.00 = 28,800 + 12,600 = **$41,400**\n- 完成品原価 = 期首仕掛品 33,410 + 期首分の仕上げ 1,600 × 7.00 = 11,200 + 当月着手完成 30,000 × 11.80 = 354,000 → **$398,610**\n\n検証: どちらも 合計 $440,010 に一致します。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Process costing — cost of production report"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Method Comparison",
+        "title": "Comparison of process-costing methods",
+        "instruction": "Based on your results for Exhibit 1 and general process-costing principles, select all statements that are correct.",
+        "answerType": "multiselect",
+        "options": [
+          "The difference between weighted-average and FIFO equivalent units equals the work performed on beginning work in process in the prior period.",
+          "FIFO cost per equivalent unit reflects only current-period costs and current-period work.",
+          "Weighted-average equivalent units can never exceed FIFO equivalent units.",
+          "When input costs are rising, FIFO assigns a higher cost to ending work in process than the weighted-average method.",
+          "The total costs to account for differ between the two methods.",
+          "If there were no beginning work in process, the two methods would produce identical results."
+        ],
+        "correctAnswer": [
+          "The difference between weighted-average and FIFO equivalent units equals the work performed on beginning work in process in the prior period.",
+          "FIFO cost per equivalent unit reflects only current-period costs and current-period work.",
+          "When input costs are rising, FIFO assigns a higher cost to ending work in process than the weighted-average method.",
+          "If there were no beginning work in process, the two methods would produce identical results."
+        ],
+        "explanation": "Weighted-average equivalent units exceed FIFO equivalent units by the prior-period work in beginning WIP (DM 40,000 - 36,000 = 4,000 = 4,000 x 100%; conversion 35,800 - 33,400 = 2,400 = 4,000 x 60%), so weighted-average units are greater than or equal to FIFO units, never smaller. FIFO rates use only current costs and current work. Conversion cost per equivalent unit rose from $6.25 in beginning WIP (15,010 / 2,400) to $7.00 in March, and FIFO values ending WIP entirely at the higher current rates ($41,400 versus $41,190). Total costs to account for ($440,010) are the same under both methods; only the split between transferred-out units and ending WIP changes. Without beginning WIP, there is no prior-period work or cost to treat differently, so the methods converge.",
+        "explanationJa": "- **正しい**: 換算量の差は期首仕掛品の前月作業分に等しい（材料 40,000 − 36,000 = 4,000 = 4,000 × 100%、加工費 35,800 − 33,400 = 2,400 = 4,000 × 60%）。\n- **正しい**: 先入先出法の単価は当月原価 ÷ 当月作業量のみで計算する。\n- **誤り**: 加重平均法の換算量は先入先出法以上になる（期首仕掛品の前月作業分だけ多い）。「超えることはない」は逆。\n- **正しい**: 期首仕掛品の加工費単価は 15,010 ÷ 2,400 = $6.25、当月は $7.00 と上昇。先入先出法は期末仕掛品を当月単価で評価するため $41,400 > $41,190 となる。\n- **誤り**: 総原価 $440,010 は両法で同じ。変わるのは完成品と期末仕掛品への配分だけ。\n- **正しい**: 期首仕掛品がなければ前月分の作業・原価が存在しないので両法の結果は一致する。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Process costing — weighted-average and FIFO methods"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "ABC Product Costs",
+        "title": "Overhead and product cost per gallon",
+        "instruction": "Using Exhibits 2 and 3, calculate for each product line (1) overhead per gallon under the current plantwide direct-labor-hour rate, (2) overhead per gallon under ABC, and (3) total manufacturing cost per gallon under ABC (direct materials + direct labor + ABC overhead). Enter amounts in dollars rounded to two decimal places (for example, 12.34).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": [
+            "Overhead per gallon — plantwide DLH rate",
+            "Overhead per gallon — ABC",
+            "Total manufacturing cost per gallon — ABC"
+          ],
+          "rows": ["Standard", "Marine"],
+          "cells": [
+            {
+              "rowLabel": "Standard",
+              "colLabel": "Overhead per gallon — plantwide DLH rate",
+              "correctValue": 19.2,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Standard",
+              "colLabel": "Overhead per gallon — ABC",
+              "correctValue": 12.4,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Standard",
+              "colLabel": "Total manufacturing cost per gallon — ABC",
+              "correctValue": 42.4,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Marine",
+              "colLabel": "Overhead per gallon — plantwide DLH rate",
+              "correctValue": 24,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Marine",
+              "colLabel": "Overhead per gallon — ABC",
+              "correctValue": 58,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Marine",
+              "colLabel": "Total manufacturing cost per gallon — ABC",
+              "correctValue": 108,
+              "tolerance": 0.01
+            }
+          ]
+        },
+        "explanation": "Plantwide rate: total DLH = 50,000 x 0.8 + 10,000 x 1.0 = 50,000; rate = 1,200,000 / 50,000 = $24 per DLH. Standard = 0.8 x 24 = $19.20; Marine = 1.0 x 24 = $24.00 per gallon.\nABC activity rates: setups 360,000 / 180 = $2,000; inspections 240,000 / 600 = $400; machine operations 480,000 / 40,000 = $12 per machine hour; material handling 120,000 / 600 = $200 per move.\nStandard overhead = 60 x 2,000 + 200 x 400 + 30,000 x 12 + 300 x 200 = 120,000 + 80,000 + 360,000 + 60,000 = $620,000; / 50,000 = $12.40.\nMarine overhead = 120 x 2,000 + 400 x 400 + 10,000 x 12 + 300 x 200 = 240,000 + 160,000 + 120,000 + 60,000 = $580,000; / 10,000 = $58.00.\nABC total cost: Standard = 14.00 + 0.8 x 20 + 12.40 = $42.40; Marine = 30.00 + 1.0 x 20 + 58.00 = $108.00.",
+        "explanationJa": "**ステップ1: 工場全体配賦率**\n直接作業時間 = 50,000 × 0.8 + 10,000 × 1.0 = 50,000時間\n配賦率 = 1,200,000 ÷ 50,000 = $24/時間\n- Standard: 0.8 × 24 = **$19.20**\n- Marine: 1.0 × 24 = **$24.00**\n\n**ステップ2: 活動別配賦率**\n- 段取り: 360,000 ÷ (60 + 120) = $2,000/回\n- 検査: 240,000 ÷ (200 + 400) = $400/回\n- 機械運転: 480,000 ÷ (30,000 + 10,000) = $12/機械時間\n- 運搬: 120,000 ÷ (300 + 300) = $200/回\n\n**ステップ3: ABCによる製品別間接費**\n- Standard: 120,000 + 80,000 + 360,000 + 60,000 = $620,000 → ÷ 50,000 = **$12.40**\n- Marine: 240,000 + 160,000 + 120,000 + 60,000 = $580,000 → ÷ 10,000 = **$58.00**\n（合計 $1,200,000 で総額は不変）\n\n**ステップ4: ABCによる製造原価/ガロン**\n- Standard: 材料 14.00 + 労務 0.8 × 20 = 16.00 + 12.40 = **$42.40**\n- Marine: 材料 30.00 + 労務 1.0 × 20 = 20.00 + 58.00 = **$108.00**",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Activity-based costing — activity rates and cost assignment"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Marine Gross Margin",
+        "title": "Marine gross margin under ABC",
+        "instruction": "Using your ABC product cost, calculate the total annual gross margin of the Marine product line. Enter the amount in whole dollars, no commas; enter a negative gross margin with a minus sign (for example, -50000).",
+        "answerType": "number",
+        "correctAnswer": -130000,
+        "tolerance": 1,
+        "explanation": "Marine gross margin under ABC = (95.00 - 108.00) x 10,000 = -$130,000. Under the plantwide rate the line reported (95.00 - 74.00) x 10,000 = $210,000. The $340,000 swing equals the overhead reassigned to Marine (580,000 - 240,000).",
+        "explanationJa": "ABCによるMarineの売上総利益 = (売価 95.00 − ABC原価 108.00) × 10,000 = **−$130,000**\n\n参考: 従来の工場全体配賦率では原価 = 30 + 20 + 24 = $74.00 なので (95 − 74) × 10,000 = +$210,000 と黒字に見えていました。差額 $340,000 は Marineへ追加配賦された間接費（580,000 − 240,000）と一致します。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Activity-based costing — product profitability"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Decision Implications",
+        "title": "Implications of the ABC results",
+        "instruction": "Based on Exhibits 2 and 3 and your ABC results, select all statements that are appropriate conclusions for management.",
+        "answerType": "multiselect",
+        "options": [
+          "Under the plantwide rate, Standard is overcosted and Marine is undercosted.",
+          "The cost distortion arises because Marine consumes setup and inspection resources out of proportion to its direct labor hours.",
+          "Discontinuing the Marine line would eliminate $580,000 of annual overhead.",
+          "ABC increases the total manufacturing overhead incurred by the plant.",
+          "Management should evaluate a price increase or fewer, larger production runs for Marine before considering discontinuing the line.",
+          "A cost-plus price for Standard based on the plantwide cost could leave Standard overpriced relative to competitors."
+        ],
+        "correctAnswer": [
+          "Under the plantwide rate, Standard is overcosted and Marine is undercosted.",
+          "The cost distortion arises because Marine consumes setup and inspection resources out of proportion to its direct labor hours.",
+          "Management should evaluate a price increase or fewer, larger production runs for Marine before considering discontinuing the line.",
+          "A cost-plus price for Standard based on the plantwide cost could leave Standard overpriced relative to competitors."
+        ],
+        "explanation": "Standard overhead falls from $19.20 to $12.40 per gallon and Marine overhead rises from $24.00 to $58.00, so the plantwide rate overcosts Standard and undercosts Marine. Marine uses 20% of direct labor hours (10,000 of 50,000) but two-thirds of setups (120 of 180) and inspections (400 of 600); batch-level costs are driven by setups, not labor hours. Not all of the $580,000 assigned to Marine is avoidable: Exhibit 3 states that about 40% of setup and inspection costs are salaries that would be retained, and machine and handling costs may be partly fixed, so discontinuation would not eliminate the full amount. ABC reallocates the same $1,200,000; it does not change the overhead incurred. Because the loss arises from batch-level activity, raising Marine's price or reducing the number of setups are relevant alternatives to discontinuation. Overcosting Standard by $6.80 per gallon inflates a cost-plus price and can make Standard uncompetitive.",
+        "explanationJa": "- **正しい**: Standardの間接費は $19.20 → $12.40、Marineは $24.00 → $58.00。従来法はStandardを過大、Marineを過小に原価計算していた。\n- **正しい**: Marineの直接作業時間シェアは 10,000 ÷ 50,000 = 20% なのに、段取りは 120/180 = 2/3、検査も 400/600 = 2/3 を使う。バッチレベルの原価は作業時間ではなく段取り回数で発生する。\n- **誤り**: Marineに配賦された $580,000 がすべて回避可能とは限らない。Exhibit 3 の注記どおり段取り・検査費の約40%は廃止後も残る人件費で、機械運転費等にも固定部分がありうる。\n- **誤り**: ABCは同じ $1,200,000 を配り直すだけで、発生総額は変わらない。\n- **正しい**: 赤字の原因がバッチレベル活動なので、値上げや段取り回数の削減（ロットの大型化）を廃止より先に検討すべき。\n- **正しい**: Standardはガロン当たり $6.80 過大に原価計算されており、原価加算方式の価格が競合より高くなるおそれがある。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Activity-based costing — decision making and cost hierarchy"
+        ]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 28,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-cvp-001",
+    "subject": "BAR",
+    "topic": "Decision Making",
+    "title": "Multiproduct CVP, Constrained Product Mix, and a Special Order",
+    "scenario": "Brightline Audio Corp. manufactures three wireless speaker models — Compact, Studio, and Tower — on a single assembly line whose capacity is limited by machine hours. Product data and the current-year operating budget are provided in **Exhibit 1**. The sales mix in units is expected to remain constant throughout the current year.\n\nFor next year, the marketing department has issued a revised demand forecast, and engineering has confirmed that machine-hour capacity will not change (**Exhibit 2**). Fixed costs and per-unit amounts are expected to be the same as in the current year.\n\nA national retailer has offered to purchase a private-label version of the Studio model. The terms of the offer are summarized in **Exhibit 3**. Management wants to know whether the order should be accepted if it is filled in the current year or, alternatively, next year.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Product Data and Current-Year Budget",
+        "content": "| Per unit | Compact | Studio | Tower |\n|---|---|---|---|\n| Selling price | $120 | $250 | $400 |\n| Variable costs (manufacturing and selling) | $72 | $150 | $220 |\n| Allocated fixed manufacturing overhead | $30.00 | $62.50 | $75.00 |\n| Machine hours required | 0.5 | 2.0 | 2.5 |\n| Sales mix (% of total units) | 50% | 30% | 20% |\n\nCurrent-year budget and other information:\n- Budgeted total sales: 24,000 units in the mix above\n- Fixed manufacturing overhead: $1,170,000; fixed selling and administrative costs: $450,000\n- Studio variable costs include a $12 sales commission per unit.\n- Income tax rate: 25%\n- Practical capacity: 40,000 machine hours per year\n- Weighted-average cost of capital: 9%"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Next-Year Demand Forecast (Marketing Department)",
+        "content": "| Model | Maximum units that can be sold next year | Forecast change in industry demand |\n|---|---|---|\n| Compact | 30,000 | +18% |\n| Studio | 10,000 | +4% |\n| Tower | 8,000 | +9% |\n\n- Machine-hour capacity next year: 40,000 hours (no expansion planned)\n- Any combination of models may be produced and sold up to the maximums shown; the sales mix in Exhibit 1 does not apply next year.\n- Inventory levels are expected to remain at zero."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Special Order Terms — Private-Label Studio",
+        "content": "- Quantity: 2,000 Studio units, to be delivered in a single shipment\n- Price: $190 per unit\n- No sales commission would be paid on this order.\n- Custom labeling would require a one-time setup cost of $8,000.\n- Production requirements per unit are identical to the regular Studio model.\n- The order would not affect regular sales of any model unless capacity must be reallocated.\n- The retailer's payment terms: net 45 days."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Break-Even",
+        "title": "Break-even point by product",
+        "instruction": "Using Exhibit 1, calculate the current-year break-even point in units and in sales revenue for each model and in total, assuming the budgeted sales mix. Enter whole numbers, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Units", "Sales revenue"],
+          "rows": ["Compact", "Studio", "Tower", "Total"],
+          "cells": [
+            {
+              "rowLabel": "Compact",
+              "colLabel": "Units",
+              "correctValue": 9000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Compact",
+              "colLabel": "Sales revenue",
+              "correctValue": 1080000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Studio",
+              "colLabel": "Units",
+              "correctValue": 5400,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Studio",
+              "colLabel": "Sales revenue",
+              "correctValue": 1350000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Tower",
+              "colLabel": "Units",
+              "correctValue": 3600,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Tower",
+              "colLabel": "Sales revenue",
+              "correctValue": 1440000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total",
+              "colLabel": "Units",
+              "correctValue": 18000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Total",
+              "colLabel": "Sales revenue",
+              "correctValue": 3870000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Contribution margin per unit: Compact 120 - 72 = $48; Studio 250 - 150 = $100; Tower 400 - 220 = $180. Weighted-average CM per unit = 0.5 x 48 + 0.3 x 100 + 0.2 x 180 = 24 + 30 + 36 = $90. Total fixed costs = 1,170,000 + 450,000 = $1,620,000. Break-even units = 1,620,000 / 90 = 18,000: Compact 9,000, Studio 5,400, Tower 3,600. Revenue = 9,000 x 120 + 5,400 x 250 + 3,600 x 400 = 1,080,000 + 1,350,000 + 1,440,000 = $3,870,000. Allocated fixed overhead per unit is not used; fixed costs enter only in total.",
+        "explanationJa": "**ステップ1: 単位当たり貢献利益**\n- Compact: 120 − 72 = $48\n- Studio: 250 − 150 = $100\n- Tower: 400 − 220 = $180\n\n**ステップ2: 加重平均貢献利益**\n0.5 × 48 + 0.3 × 100 + 0.2 × 180 = 24 + 30 + 36 = $90\n\n**ステップ3: 損益分岐点**\n固定費合計 = 1,170,000 + 450,000 = $1,620,000\n損益分岐点販売量 = 1,620,000 ÷ 90 = **18,000台**\n- Compact: 18,000 × 50% = 9,000台 → 9,000 × 120 = $1,080,000\n- Studio: 18,000 × 30% = 5,400台 → 5,400 × 250 = $1,350,000\n- Tower: 18,000 × 20% = 3,600台 → 3,600 × 400 = $1,440,000\n- 合計売上高 **$3,870,000**\n\n単位当たり配賦固定製造間接費はCVPでは使いません（固定費は総額で扱う）。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Cost-volume-profit analysis — multiproduct break-even"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Target Profit",
+        "title": "Units required for target after-tax income",
+        "instruction": "Using Exhibit 1, calculate the total number of units (all models combined, in the budgeted mix) that Brightline must sell in the current year to earn after-tax net income of $540,000. Enter a whole number, no commas.",
+        "answerType": "number",
+        "correctAnswer": 26000,
+        "tolerance": 1,
+        "explanation": "Required pretax income = 540,000 / (1 - 0.25) = $720,000. Units = (1,620,000 + 720,000) / 90 = 26,000 units (Compact 13,000; Studio 7,800; Tower 5,200).",
+        "explanationJa": "**ステップ1: 税引前目標利益**\n540,000 ÷ (1 − 25%) = $720,000\n\n**ステップ2: 必要販売量**\n(固定費 1,620,000 + 720,000) ÷ 加重平均貢献利益 90 = **26,000台**\n（内訳: Compact 13,000、Studio 7,800、Tower 5,200）",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Cost-volume-profit analysis — target income"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Margin of Safety",
+        "title": "Margin of safety",
+        "instruction": "Using Exhibit 1 and your break-even result, calculate the current-year budgeted margin of safety in sales dollars. Enter whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 1290000,
+        "tolerance": 1,
+        "explanation": "Average revenue per unit in the mix = 0.5 x 120 + 0.3 x 250 + 0.2 x 400 = $215. Budgeted revenue = 24,000 x 215 = $5,160,000. Margin of safety = 5,160,000 - 3,870,000 = $1,290,000 (25% of budgeted sales).",
+        "explanationJa": "**ステップ1: 予算売上高**\nミックス平均売価 = 0.5 × 120 + 0.3 × 250 + 0.2 × 400 = $215\n予算売上高 = 24,000 × 215 = $5,160,000\n\n**ステップ2: 安全余裕額**\n5,160,000 − 損益分岐点売上高 3,870,000 = **$1,290,000**（安全余裕率 25%）",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Cost-volume-profit analysis — margin of safety"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Optimal Mix",
+        "title": "Optimal product mix under the machine-hour constraint",
+        "instruction": "Using Exhibits 1 and 2, determine the production plan that maximizes next year's operating income. Enter the units of each model to produce and the machine hours each model would use. Enter whole numbers, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Units to produce", "Machine hours used"],
+          "rows": ["Compact", "Studio", "Tower"],
+          "cells": [
+            {
+              "rowLabel": "Compact",
+              "colLabel": "Units to produce",
+              "correctValue": 30000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Compact",
+              "colLabel": "Machine hours used",
+              "correctValue": 15000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Studio",
+              "colLabel": "Units to produce",
+              "correctValue": 2500,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Studio",
+              "colLabel": "Machine hours used",
+              "correctValue": 5000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Tower",
+              "colLabel": "Units to produce",
+              "correctValue": 8000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Tower",
+              "colLabel": "Machine hours used",
+              "correctValue": 20000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Hours needed to meet maximum demand = 30,000 x 0.5 + 10,000 x 2.0 + 8,000 x 2.5 = 15,000 + 20,000 + 20,000 = 55,000, which exceeds the 40,000 available, so machine hours are the binding constraint. Rank by CM per machine hour: Compact 48 / 0.5 = $96; Tower 180 / 2.5 = $72; Studio 100 / 2.0 = $50. Produce Compact to its maximum (30,000 units, 15,000 hours), then Tower (8,000 units, 20,000 hours), leaving 5,000 hours for Studio (2,500 units). Ranking by CM per unit would put Tower and Studio first and leave no hours for Compact, producing total CM of only $2,440,000.",
+        "explanationJa": "**ステップ1: 制約の確認**\n最大需要に必要な機械時間 = 30,000 × 0.5 + 10,000 × 2.0 + 8,000 × 2.5 = 55,000時間 > 40,000時間 → 機械時間が制約資源\n\n**ステップ2: 機械時間当たり貢献利益で順位付け**\n- Compact: 48 ÷ 0.5 = $96/時間（1位）\n- Tower: 180 ÷ 2.5 = $72/時間（2位）\n- Studio: 100 ÷ 2.0 = $50/時間（3位）\n\n**ステップ3: 上位から配分**\n- Compact 30,000台 × 0.5 = 15,000時間\n- Tower 8,000台 × 2.5 = 20,000時間\n- 残り 40,000 − 35,000 = 5,000時間 → Studio 5,000 ÷ 2.0 = 2,500台\n\n注意: 単位当たり貢献利益（Tower > Studio > Compact）で順位付けすると Compact を作れず、貢献利益は $2,440,000 にとどまります。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Decision making — constrained resources and product mix"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Next-Year Income",
+        "title": "Operating income under the optimal mix",
+        "instruction": "Calculate Brightline's next-year operating income (before income taxes) if the optimal production plan is followed and all units produced are sold. Enter whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 1510000,
+        "tolerance": 1,
+        "explanation": "Total CM = 30,000 x 48 + 2,500 x 100 + 8,000 x 180 = 1,440,000 + 250,000 + 1,440,000 = $3,130,000. Operating income = 3,130,000 - 1,620,000 = $1,510,000.",
+        "explanationJa": "貢献利益合計 = 30,000 × 48 + 2,500 × 100 + 8,000 × 180 = 1,440,000 + 250,000 + 1,440,000 = $3,130,000\n営業利益 = 3,130,000 − 固定費 1,620,000 = **$1,510,000**",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Decision making — constrained resources and product mix"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Special Order",
+        "title": "Special order analysis",
+        "instruction": "Using Exhibits 1 through 3, evaluate the special order under two scenarios. Scenario A: the order is filled in the current year, when production follows the budget in Exhibit 1. Scenario B: the order is filled next year, when production otherwise follows the optimal plan from Work Tab 'Optimal Mix'. For each scenario, enter the incremental operating income (loss) from accepting the order at $190 per unit and the minimum price per unit that would leave operating income unchanged. Enter whole dollars, no commas; enter a loss with a minus sign.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": [
+            "Incremental operating income (loss)",
+            "Minimum acceptable price per unit"
+          ],
+          "rows": ["Scenario A — current year", "Scenario B — next year"],
+          "cells": [
+            {
+              "rowLabel": "Scenario A — current year",
+              "colLabel": "Incremental operating income (loss)",
+              "correctValue": 96000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Scenario A — current year",
+              "colLabel": "Minimum acceptable price per unit",
+              "correctValue": 142,
+              "tolerance": 0.5
+            },
+            {
+              "rowLabel": "Scenario B — next year",
+              "colLabel": "Incremental operating income (loss)",
+              "correctValue": -104000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Scenario B — next year",
+              "colLabel": "Minimum acceptable price per unit",
+              "correctValue": 242,
+              "tolerance": 0.5
+            }
+          ]
+        },
+        "explanation": "Relevant variable cost = 150 - 12 commission = $138 per unit. The order needs 2,000 x 2.0 = 4,000 machine hours.\nScenario A: budgeted hours = 12,000 x 0.5 + 7,200 x 2.0 + 4,800 x 2.5 = 6,000 + 14,400 + 12,000 = 32,400, leaving 7,600 idle hours, so no regular sales are displaced. Incremental income = 2,000 x (190 - 138) - 8,000 = 104,000 - 8,000 = $96,000. Minimum price = 138 + 8,000 / 2,000 = $142.\nScenario B: the plant is at full capacity. The 4,000 hours must come from the lowest-ranked product, regular Studio ($50 CM per hour), giving up 2,000 regular Studio units: opportunity cost = 4,000 x 50 = $200,000. Incremental income = 96,000 - 200,000 = -$104,000. Minimum price = 138 + 4 + 200,000 / 2,000 = $242. Allocated fixed overhead is irrelevant in both scenarios.",
+        "explanationJa": "**共通**: 関連する変動費 = 150 − 販売手数料 12 = $138/台。必要機械時間 = 2,000 × 2.0 = 4,000時間\n\n**シナリオA（当年度・遊休能力あり）**\n- 予算の機械時間 = 12,000 × 0.5 + 7,200 × 2.0 + 4,800 × 2.5 = 6,000 + 14,400 + 12,000 = 32,400時間 → 遊休 7,600時間 ≥ 4,000時間\n- 増分利益 = 2,000 × (190 − 138) − 8,000 = 104,000 − 8,000 = **$96,000**\n- 最低価格 = 138 + 8,000 ÷ 2,000 = **$142**\n\n**シナリオB（翌年度・フル稼働）**\n- 4,000時間は機械時間当たり貢献利益が最も低い通常Studio（$50/時間）から振り替える → 通常Studio 2,000台を失う\n- 機会原価 = 4,000 × 50 = $200,000\n- 増分利益 = 96,000 − 200,000 = **−$104,000**（受注すべきでない）\n- 最低価格 = 138 + 4 + 200,000 ÷ 2,000 = **$242**\n\n配賦固定製造間接費（$62.50）はどちらのシナリオでも無関連です。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Decision making — special orders and opportunity cost"
+        ]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Qualitative Factors",
+        "title": "Qualitative factors for the special order",
+        "instruction": "Assume management is considering the special order in Scenario A. Select all factors that are relevant to the decision.",
+        "answerType": "multiselect",
+        "options": [
+          "Whether the special-order price could undermine Studio's regular price with existing retailers",
+          "The allocated fixed manufacturing overhead per Studio unit",
+          "Whether the idle machine hours could be used for a more profitable alternative",
+          "The cost of Studio tooling that was purchased two years ago",
+          "Whether accepting the order is likely to create expectations of repeat orders at the same price"
+        ],
+        "correctAnswer": [
+          "Whether the special-order price could undermine Studio's regular price with existing retailers",
+          "Whether the idle machine hours could be used for a more profitable alternative",
+          "Whether accepting the order is likely to create expectations of repeat orders at the same price"
+        ],
+        "explanation": "Relevant factors are future items that differ between accepting and rejecting: possible erosion of the $250 regular price if existing retailers learn of a $190 private-label price, alternative uses of the idle hours (which would create an opportunity cost), and the risk that the retailer expects the same low price on future orders when capacity may be constrained, as in Scenario B. Allocated fixed overhead does not change with the decision, and the cost of tooling purchased two years ago is sunk.",
+        "explanationJa": "関連要因は「受注する・しないで将来変わるもの」です。\n- **関連する**: $190 の価格が既存小売店に知られ、通常価格 $250 が崩れるおそれ\n- **関連しない**: 配賦固定製造間接費は意思決定で総額が変わらない\n- **関連する**: 遊休時間により有利な代替用途があれば機会原価が生じる\n- **関連しない**: 2年前に購入した金型の原価は埋没原価\n- **関連する**: 同じ低価格での継続発注を期待されると、シナリオBのようなフル稼働時に不利になる",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Decision making — relevant costs and qualitative factors"
+        ]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-fsa-001",
+    "subject": "BAR",
+    "topic": "Financial Statement Analysis",
+    "title": "Ratio Dashboard, DuPont Analysis, and Adjusted EBITDA",
+    "scenario": "Corvane Logistics Inc. is a publicly traded provider of warehousing and freight services. A lender's credit analyst is reviewing Corvane's results before the company's annual covenant certification. The analyst's business-intelligence tool has produced a three-year financial summary for Corvane (**Exhibit 1**) and a peer benchmark panel (**Exhibit 2**). Corvane's fourth-quarter earnings release and the relevant terms of its credit agreement are summarized in **Exhibit 3**.\n\nUnless otherwise stated, use year-end balances. Corvane has no short-term borrowings or current portion of long-term debt, and its effective income tax rate was 25% in each year.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Three-Year Financial Summary (in $ thousands)",
+        "content": "**Income statement**\n\n| Line item | 20X3 | 20X4 | 20X5 |\n|---|---|---|---|\n| Revenue | 48,000 | 54,000 | 60,000 |\n| Cost of services | 33,600 | 38,340 | 43,800 |\n| Selling, general, and administrative | 7,200 | 8,100 | 9,000 |\n| Depreciation and amortization | 1,800 | 2,000 | 2,400 |\n| Restructuring charges | 0 | 0 | 900 |\n| Operating income | 5,400 | 5,560 | 3,900 |\n| Interest expense | 600 | 700 | 1,100 |\n| Income before income taxes | 4,800 | 4,860 | 2,800 |\n| Income tax expense | 1,200 | 1,215 | 700 |\n| Net income | 3,600 | 3,645 | 2,100 |\n\n**Balance sheet (December 31)**\n\n| Line item | 20X3 | 20X4 | 20X5 |\n|---|---|---|---|\n| Cash | 2,400 | 2,000 | 1,500 |\n| Accounts receivable, net | 6,000 | 7,200 | 9,600 |\n| Inventory (supplies and parts) | 3,000 | 3,600 | 4,000 |\n| Prepaid expenses | 600 | 600 | 500 |\n| Total current assets | 12,000 | 13,400 | 15,600 |\n| Property and equipment, net | 18,000 | 20,600 | 24,400 |\n| Total assets | 30,000 | 34,000 | 40,000 |\n| Accounts payable | 4,000 | 4,600 | 5,200 |\n| Accrued liabilities | 2,000 | 2,100 | 2,600 |\n| Total current liabilities | 6,000 | 6,700 | 7,800 |\n| Long-term debt | 8,000 | 9,300 | 14,200 |\n| Total stockholders' equity | 16,000 | 18,000 | 18,000 |\n| Total liabilities and equity | 30,000 | 34,000 | 40,000 |\n\n**Operating KPIs**\n\n| KPI | 20X3 | 20X4 | 20X5 |\n|---|---|---|---|\n| Warehouse square feet (millions) | 3.1 | 3.4 | 4.0 |\n| Employees at year-end | 1,180 | 1,260 | 1,410 |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Peer Benchmark Panel — 20X5 Medians (8 Public Logistics Companies)",
+        "content": "| Metric | Peer median |\n|---|---|\n| Current ratio | 1.60 |\n| Quick (acid-test) ratio | 1.10 |\n| Days sales outstanding (365-day basis) | 42.0 |\n| Inventory turnover | 11.00 |\n| Gross margin | 28.5% |\n| Net profit margin | 5.8% |\n| Total asset turnover | 1.45 |\n| Equity multiplier | 1.90 |\n| Return on equity | 16.0% |\n| Price-to-earnings ratio | 17.4 |\n| Dividend yield | 2.1% |\n| Revenue per employee ($000) | 41.5 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Earnings Release Excerpt and Credit Agreement Terms",
+        "content": "**Earnings release (headline and first paragraph)**\n\n\"Corvane Delivers Record Adjusted EBITDA of $8.2 Million.\" The release's first paragraph discusses Adjusted EBITDA and its growth; net income is first presented in the reconciliation table at the end of the release. The release includes a reconciliation of Adjusted EBITDA to net income and explains why management believes the measure is useful to investors.\n\nManagement defines Adjusted EBITDA as net income plus income tax expense, interest expense, and depreciation and amortization, further adjusted to exclude:\n- Restructuring charges (20X5: $900 thousand, related to closing two terminals)\n- Share-based compensation expense included in SG&A (20X5: $600 thousand)\n- Customer-onboarding costs included in SG&A (20X5: $400 thousand). These are the cash costs of staff and systems used to set up new customer accounts; Corvane has incurred similar costs every year as it adds customers.\n\n**Credit agreement — financial covenants (tested annually at December 31)**\n- Net leverage ratio (net debt / Covenant EBITDA) may not exceed 1.75x.\n- Net debt = total debt less cash.\n- Covenant EBITDA = net income plus income tax expense, interest expense, depreciation and amortization, and restructuring charges. No other adjustments are permitted.\n- Interest coverage (Covenant EBITDA / interest expense) must be at least 3.00x."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Liquidity & Efficiency",
+        "title": "20X5 liquidity and efficiency ratios",
+        "instruction": "Using Exhibit 1, calculate the following ratios for 20X5. For days sales outstanding and inventory turnover, use the average of the beginning and ending balances and a 365-day year; use cost of services as the numerator of inventory turnover. Round the current ratio, quick ratio, and inventory turnover to two decimal places and days sales outstanding to one decimal place.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["20X5"],
+          "rows": [
+            "Current ratio",
+            "Quick (acid-test) ratio",
+            "Days sales outstanding",
+            "Inventory turnover"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Current ratio",
+              "colLabel": "20X5",
+              "correctValue": 2,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Quick (acid-test) ratio",
+              "colLabel": "20X5",
+              "correctValue": 1.42,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Days sales outstanding",
+              "colLabel": "20X5",
+              "correctValue": 51.1,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Inventory turnover",
+              "colLabel": "20X5",
+              "correctValue": 11.53,
+              "tolerance": 0.01
+            }
+          ]
+        },
+        "explanation": "Current ratio = 15,600 / 7,800 = 2.00. Quick ratio = (cash 1,500 + receivables 9,600) / 7,800 = 11,100 / 7,800 = 1.42; inventory and prepaid expenses are excluded. Average receivables = (7,200 + 9,600) / 2 = 8,400; DSO = 8,400 / 60,000 x 365 = 51.1 days. Average inventory = (3,600 + 4,000) / 2 = 3,800; inventory turnover = 43,800 / 3,800 = 11.53.",
+        "explanationJa": "- **流動比率** = 流動資産 15,600 ÷ 流動負債 7,800 = **2.00**\n- **当座比率** = (現金 1,500 + 売掛金 9,600) ÷ 7,800 = 11,100 ÷ 7,800 = **1.42**（棚卸資産・前払費用は除く）\n- **売上債権回転日数** = 平均売掛金 (7,200 + 9,600) ÷ 2 = 8,400 → 8,400 ÷ 60,000 × 365 = **51.1日**\n- **棚卸資産回転率** = 売上原価 43,800 ÷ 平均棚卸資産 (3,600 + 4,000) ÷ 2 = 3,800 → **11.53回**",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Financial statement analysis — liquidity and activity ratios"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "DuPont Analysis",
+        "title": "Three-factor DuPont decomposition",
+        "instruction": "Using Exhibit 1 and year-end balances, complete the three-factor DuPont analysis for 20X4 and 20X5. Enter net profit margin and return on equity as percentages rounded to two decimal places (for example, enter 12.34 for 12.34%). Round total asset turnover and the equity multiplier to two decimal places. Calculate return on equity directly as net income divided by year-end equity.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": [
+            "Net profit margin (%)",
+            "Total asset turnover",
+            "Equity multiplier",
+            "Return on equity (%)"
+          ],
+          "rows": ["20X4", "20X5"],
+          "cells": [
+            {
+              "rowLabel": "20X4",
+              "colLabel": "Net profit margin (%)",
+              "correctValue": 6.75,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "20X4",
+              "colLabel": "Total asset turnover",
+              "correctValue": 1.59,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "20X4",
+              "colLabel": "Equity multiplier",
+              "correctValue": 1.89,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "20X4",
+              "colLabel": "Return on equity (%)",
+              "correctValue": 20.25,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "20X5",
+              "colLabel": "Net profit margin (%)",
+              "correctValue": 3.5,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "20X5",
+              "colLabel": "Total asset turnover",
+              "correctValue": 1.5,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "20X5",
+              "colLabel": "Equity multiplier",
+              "correctValue": 2.22,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "20X5",
+              "colLabel": "Return on equity (%)",
+              "correctValue": 11.67,
+              "tolerance": 0.01
+            }
+          ]
+        },
+        "explanation": "20X4: net profit margin = 3,645 / 54,000 = 6.75%; asset turnover = 54,000 / 34,000 = 1.59; equity multiplier = 34,000 / 18,000 = 1.89; ROE = 3,645 / 18,000 = 20.25% (6.75% x 1.5882 x 1.8889).\n20X5: net profit margin = 2,100 / 60,000 = 3.50%; asset turnover = 60,000 / 40,000 = 1.50; equity multiplier = 40,000 / 18,000 = 2.22; ROE = 2,100 / 18,000 = 11.67% (3.50% x 1.50 x 2.2222).",
+        "explanationJa": "DuPont 3要素: ROE = 売上高純利益率 × 総資産回転率 × 財務レバレッジ（総資産 ÷ 自己資本）\n\n**20X4**\n- 純利益率 = 3,645 ÷ 54,000 = **6.75%**\n- 総資産回転率 = 54,000 ÷ 34,000 = 1.5882 → **1.59**\n- 財務レバレッジ = 34,000 ÷ 18,000 = 1.8889 → **1.89**\n- ROE = 3,645 ÷ 18,000 = **20.25%**\n\n**20X5**\n- 純利益率 = 2,100 ÷ 60,000 = **3.50%**\n- 総資産回転率 = 60,000 ÷ 40,000 = **1.50**\n- 財務レバレッジ = 40,000 ÷ 18,000 = 2.2222 → **2.22**\n- ROE = 2,100 ÷ 18,000 = **11.67%**\n\n検証: 3.50% × 1.50 × 2.2222 = 11.67% で直接計算と一致します。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Financial statement analysis — DuPont analysis"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "ROE Driver",
+        "title": "Primary driver of the change in ROE",
+        "instruction": "Based on your DuPont analysis, select the factor that was the primary cause of the change in Corvane's return on equity from 20X4 to 20X5.",
+        "answerType": "select",
+        "options": [
+          "Decline in net profit margin",
+          "Decline in total asset turnover",
+          "Increase in equity multiplier"
+        ],
+        "correctAnswer": "Decline in net profit margin",
+        "explanation": "ROE fell from 20.25% to 11.67%. Net profit margin nearly halved (6.75% to 3.50%, about -48%), while asset turnover declined only slightly (1.59 to 1.50, about -6%). The equity multiplier rose from 1.89 to 2.22 (about +18%), which increased ROE and partially offset the decline. The margin compression, reflecting a lower gross margin, the $900 thousand restructuring charge, and higher interest expense, was the primary cause.",
+        "explanationJa": "ROEは 20.25% → 11.67% に低下。各要因の変化率:\n- 純利益率: 6.75% → 3.50%（約 −48%）← 最大の押し下げ要因\n- 総資産回転率: 1.59 → 1.50（約 −6%）\n- 財務レバレッジ: 1.89 → 2.22（約 +18%）→ ROEを**押し上げ**、低下を一部相殺\n\nしたがって主因は**純利益率の低下**。背景は粗利率の低下（29.0% → 27.0%）、リストラ費用 $900千、支払利息の増加です。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Financial statement analysis — DuPont analysis"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Trends & Outliers",
+        "title": "Interpreting the dashboard",
+        "instruction": "Using Exhibits 1 and 2 and your calculations, select all statements that are supported by the data.",
+        "answerType": "multiselect",
+        "options": [
+          "Liquidity ratios exceed the peer medians, but the gap is driven largely by growth in receivables while cash declined.",
+          "Revenue grew faster than accounts receivable in 20X5.",
+          "The 20X5 ROE is below the peer median, and the shortfall is not explained by low financial leverage.",
+          "Inventory turnover in 20X5 is below the peer median.",
+          "Long-term debt increased by more than 50% in 20X5 while total equity was unchanged.",
+          "Gross margin improved in each year presented."
+        ],
+        "correctAnswer": [
+          "Liquidity ratios exceed the peer medians, but the gap is driven largely by growth in receivables while cash declined.",
+          "The 20X5 ROE is below the peer median, and the shortfall is not explained by low financial leverage.",
+          "Long-term debt increased by more than 50% in 20X5 while total equity was unchanged."
+        ],
+        "explanation": "Current (2.00) and quick (1.42) ratios exceed the peer medians (1.60 and 1.10), but cash fell from 2,000 to 1,500 while receivables rose from 7,200 to 9,600; with DSO of 51.1 days versus a 42.0-day peer median, the higher liquidity ratios reflect slower collections rather than stronger cash. Revenue grew 11.1% (54,000 to 60,000) while receivables grew 33.3%, so receivables grew faster. ROE of 11.67% is below the 16.0% peer median even though Corvane's equity multiplier (2.22) is above the peer median (1.90); the shortfall comes from the 3.50% net margin versus 5.8%. Inventory turnover of 11.53 is above the 11.00 peer median. Long-term debt rose 52.7% (9,300 to 14,200) while equity stayed at 18,000. Gross margin declined each year: 30.0%, 29.0%, 27.0%.",
+        "explanationJa": "- **支持される**: 流動比率 2.00・当座比率 1.42 はピア（1.60・1.10）を上回るが、現金は 2,000 → 1,500 に減少、売掛金は 7,200 → 9,600 に増加。回転日数 51.1日（ピア 42.0日）で回収の遅れが比率を押し上げている。\n- **支持されない**: 売上高の伸び 60,000 ÷ 54,000 − 1 = 11.1% に対し、売掛金は 9,600 ÷ 7,200 − 1 = 33.3% 増。売掛金のほうが速く伸びた。\n- **支持される**: ROE 11.67% < ピア 16.0%。一方レバレッジ 2.22 はピア 1.90 より高く、レバレッジ不足が原因ではない（純利益率 3.50% vs ピア 5.8% が原因）。\n- **支持されない**: 棚卸資産回転率 11.53 はピア 11.00 を上回る。\n- **支持される**: 長期借入金 14,200 ÷ 9,300 − 1 = 52.7% 増、自己資本は 18,000 で横ばい。\n- **支持されない**: 粗利率は (54,000 − 38,340) ÷ 54,000 = 29.0% など、30.0% → 29.0% → 27.0% と毎年悪化。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Financial statement analysis — trend and benchmark analysis"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Adjusted EBITDA",
+        "title": "EBITDA and Adjusted EBITDA",
+        "instruction": "Using Exhibits 1 and 3, calculate the following 20X5 measures in thousands of dollars. Enter whole numbers, no commas.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["20X5 amount ($000)"],
+          "rows": [
+            "EBITDA (no adjustments)",
+            "Adjusted EBITDA as presented by management",
+            "Adjusted EBITDA excluding the customer-onboarding add-back"
+          ],
+          "cells": [
+            {
+              "rowLabel": "EBITDA (no adjustments)",
+              "colLabel": "20X5 amount ($000)",
+              "correctValue": 6300,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Adjusted EBITDA as presented by management",
+              "colLabel": "20X5 amount ($000)",
+              "correctValue": 8200,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Adjusted EBITDA excluding the customer-onboarding add-back",
+              "colLabel": "20X5 amount ($000)",
+              "correctValue": 7800,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "EBITDA = net income 2,100 + income taxes 700 + interest 1,100 + D&A 2,400 = 6,300. Management's Adjusted EBITDA = 6,300 + restructuring 900 + share-based compensation 600 + customer onboarding 400 = 8,200. Removing the onboarding add-back gives 8,200 - 400 = 7,800.",
+        "explanationJa": "- **EBITDA** = 純利益 2,100 + 法人税 700 + 支払利息 1,100 + 減価償却費 2,400 = **6,300**\n- **経営者の調整後EBITDA** = 6,300 + リストラ費用 900 + 株式報酬 600 + 顧客導入費用 400 = **8,200**（見出しの $8.2百万と一致）\n- **顧客導入費用の加算を除いた調整後EBITDA** = 8,200 − 400 = **7,800**",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Non-GAAP financial measures — reconciliation to GAAP"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Covenant Test",
+        "title": "Net leverage covenant compliance",
+        "instruction": "Using Exhibits 1 and 3, determine whether Corvane complied with the net leverage covenant at December 31, 20X5.",
+        "answerType": "select",
+        "options": [
+          "In compliance — net leverage of 1.55x",
+          "In compliance — net leverage of 1.63x",
+          "Not in compliance — net leverage of 1.76x",
+          "Not in compliance — net leverage of 2.02x"
+        ],
+        "correctAnswer": "Not in compliance — net leverage of 1.76x",
+        "explanation": "Net debt = long-term debt 14,200 - cash 1,500 = 12,700. Covenant EBITDA = EBITDA 6,300 + restructuring 900 = 7,200. Net leverage = 12,700 / 7,200 = 1.76x, which exceeds the 1.75x maximum. Using management's Adjusted EBITDA (12,700 / 8,200 = 1.55x) or the measure excluding onboarding (12,700 / 7,800 = 1.63x) would wrongly suggest compliance, because the credit agreement does not permit those adjustments; unadjusted EBITDA (12,700 / 6,300 = 2.02x) ignores the permitted restructuring add-back.",
+        "explanationJa": "**ステップ1: 純有利子負債**\n長期借入金 14,200 − 現金 1,500 = 12,700（短期借入金なし）\n\n**ステップ2: 契約上のEBITDA**\nEBITDA 6,300 + リストラ費用 900 = 7,200（株式報酬・顧客導入費用の加算は契約で認められない）\n\n**ステップ3: 判定**\n12,700 ÷ 7,200 = **1.76倍** > 上限 1.75倍 → **財務制限条項に抵触**\n\n参考: 経営者の調整後EBITDA 8,200 を使うと 1.55倍、7,800 なら 1.63倍で「遵守」に見えますが、契約定義と異なるため誤り。調整なしEBITDA 6,300 では 2.02倍となり、認められたリストラ費用の加算を漏らしています。",
+        "references": [
+          "AICPA BAR Blueprint — Area I: Business Analysis",
+          "Non-GAAP financial measures — use in debt covenants"
+        ]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Non-GAAP Presentation",
+        "title": "Concerns with the non-GAAP presentation",
+        "instruction": "Considering SEC requirements for non-GAAP financial measures in an earnings release, select all aspects of Corvane's presentation described in Exhibit 3 that are likely to draw regulatory concern.",
+        "answerType": "multiselect",
+        "options": [
+          "Presenting Adjusted EBITDA more prominently than net income in the earnings release",
+          "Adding back the customer-onboarding costs, which are normal, recurring cash operating expenses",
+          "Providing a reconciliation of Adjusted EBITDA to net income",
+          "Adding back depreciation and amortization",
+          "Explaining why management believes Adjusted EBITDA is useful to investors"
+        ],
+        "correctAnswer": [
+          "Presenting Adjusted EBITDA more prominently than net income in the earnings release",
+          "Adding back the customer-onboarding costs, which are normal, recurring cash operating expenses"
+        ],
+        "explanation": "When a non-GAAP measure is presented in an earnings release furnished to the SEC, the most directly comparable GAAP measure must be presented with equal or greater prominence; a headline and opening paragraph built around Adjusted EBITDA, with net income first appearing in the closing reconciliation, gives the non-GAAP measure greater prominence. Excluding normal, recurring cash operating expenses necessary to operate the business, such as onboarding costs incurred every year, can make a non-GAAP measure misleading. A reconciliation to the most directly comparable GAAP measure and a statement of why the measure is useful are required disclosures, and adding back depreciation and amortization is inherent in the definition of EBITDA.",
+        "explanationJa": "- **懸念あり**: 決算発表で非GAAP指標を示す場合、最も直接比較可能なGAAP指標（純利益）を**同等以上の目立ち方**で示す必要がある。見出しと冒頭段落が調整後EBITDAで、純利益は末尾の調整表にしか出ないのは不適切。\n- **懸念あり**: 顧客導入費用は毎年発生する通常の現金営業費用。事業運営に必要な経常的現金費用を除外すると、指標が誤解を招くおそれがある。\n- **懸念なし**: GAAP指標への調整表（reconciliation）は**必須の開示**。\n- **懸念なし**: 減価償却費の加算はEBITDAの定義そのもの。\n- **懸念なし**: 指標が投資家に有用である理由の説明も**求められる開示**。",
+        "references": ["SEC Regulation G", "SEC Regulation S-K, Item 10(e)"]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-gw-001",
+    "subject": "BAR",
+    "topic": "Intangibles & Software",
+    "title": "Goodwill, Indefinite-Lived Intangible, and Internal-Use Software — Halvorsen Technologies",
+    "scenario": "Halvorsen Technologies, Inc. is a public company with a December 31 year-end. Halvorsen performs its annual goodwill impairment test as of December 31 and has three reporting units: Platform, Devices, and Services. During 20X5, Halvorsen also completed Project Atlas, an enterprise resource planning (ERP) system developed solely for internal use.\n\nData for the reporting units are presented in **Exhibit 1**. Identifiable intangible assets other than goodwill that were reviewed for impairment at December 31, 20X5, are presented in **Exhibit 2**. Costs incurred on Project Atlas during 20X5 are presented in **Exhibit 3**.\n\nHalvorsen applies the current goodwill impairment guidance, under which a goodwill impairment loss is measured as the amount by which a reporting unit's carrying amount exceeds its fair value. Ignore income tax effects.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Reporting Unit Data at December 31, 20X5",
+        "content": "Carrying amounts below are **before** recognizing any impairment loss for 20X5.\n\n| Reporting unit | Carrying amount of net assets (including goodwill) | Goodwill included in carrying amount | Estimated fair value of reporting unit | Optional qualitative assessment |\n|---|---|---|---|---|\n| Platform | $64,000,000 | $12,000,000 | $58,500,000 | Performed; management concluded it is more likely than not that the fair value of the unit is less than its carrying amount |\n| Devices | $31,000,000 | $4,800,000 | Not measured in 20X5 (most recent quantitative test, 20X3: $41,000,000) | Performed; management concluded it is not more likely than not that the fair value of the unit is less than its carrying amount |\n| Services | $27,400,000 | $3,200,000 | $22,900,000 | Not performed; Halvorsen elected to bypass the qualitative assessment |\n\nOther information:\n- The Platform carrying amount includes the Halvo trade name; the Services carrying amount includes the customer relationships intangible (see Exhibit 2).\n- Halvorsen's market capitalization at December 31, 20X5, was $128,000,000.\n- Halvorsen's weighted average cost of capital is 9.5%."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Intangible Assets Other Than Goodwill",
+        "content": "| Asset | Reporting unit | Useful life | Carrying amount, Dec 31, 20X5 (after 20X5 amortization, before impairment) | Fair value, Dec 31, 20X5 | Undiscounted future net cash flows |\n|---|---|---|---|---|---|\n| Halvo trade name | Platform | Indefinite | $6,000,000 | $4,400,000 | $7,900,000 |\n| Customer relationships | Services | Finite (8 years remaining) | $2,500,000 | $2,200,000 | $3,100,000 |\n\nNotes:\n1. A rebranding initiative approved in November 20X5 reduced the projected royalty savings attributable to the Halvo trade name. The trade name continues to have an indefinite useful life.\n2. The loss of a major Services customer in the fourth quarter of 20X5 caused management to test the customer relationships intangible for recoverability. This intangible is the lowest level for which identifiable cash flows are largely independent of other assets (its own asset group)."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Project Atlas Costs Incurred in 20X5",
+        "content": "| Period | Activity | Amount |\n|---|---|---|\n| Jan 10 – Mar 31 | Vendor evaluation and selection (consultants comparing alternative ERP packages) | $420,000 |\n| Apr – Sep | Consultant fees for design, coding and configuration | $1,350,000 |\n| Apr – Sep | Payroll of employees coding and configuring (time devoted directly to the project) | $610,000 |\n| April | Purchased software modules installed on Halvorsen's own servers | $280,000 |\n| Jul – Sep | Testing, including parallel processing | $220,000 |\n| Aug – Sep | Data conversion and cleansing (purging and reconciling legacy data) | $190,000 |\n| September | Employee training | $150,000 |\n| Apr – Dec | Allocated IT department overhead | $95,000 |\n| Oct – Dec | Post-go-live help desk and maintenance | $75,000 |\n\nAdditional information:\n- On March 31, 20X5, the board authorized and committed funding for Project Atlas, and management concluded that completion of the project was probable and that the software would be used to perform its intended function.\n- All testing was completed and the system was substantially complete and ready for its intended use on October 1, 20X5.\n- Capitalized costs are amortized on a straight-line basis over a 5-year useful life with no residual value, beginning in the month the software is ready for its intended use.\n- A vendor quoted $3,000,000 for a cloud-based alternative that Halvorsen did not pursue."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Impairment of Intangible Assets Other Than Goodwill",
+        "instruction": "Using Exhibit 2, enter the impairment loss, if any, that Halvorsen should recognize for each intangible asset for the year ended December 31, 20X5. Enter amounts in whole dollars, no commas. Enter 0 if no impairment loss should be recognized.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Impairment loss"],
+          "rows": ["Halvo trade name", "Customer relationships"],
+          "cells": [
+            {
+              "rowLabel": "Halvo trade name",
+              "colLabel": "Impairment loss",
+              "correctValue": 1600000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Customer relationships",
+              "colLabel": "Impairment loss",
+              "correctValue": 0,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "An indefinite-lived intangible asset is not subject to a recoverability (undiscounted cash flow) test. Its fair value is compared directly with its carrying amount: $6,000,000 - $4,400,000 = $1,600,000 impairment loss for the Halvo trade name. The undiscounted cash flows of $7,900,000 are irrelevant for this asset.\n\nThe customer relationships intangible has a finite life and is tested under the long-lived asset model. Step 1 (recoverability): undiscounted future net cash flows of $3,100,000 exceed the carrying amount of $2,500,000, so the asset is recoverable and no impairment loss is recognized, even though fair value ($2,200,000) is below the carrying amount.",
+        "explanationJa": "**Halvo商標（耐用年数を確定できない無形資産）**\n- 回収可能性テスト（割引前CF）は**行わない**。公正価値と簿価を直接比較する。\n- 減損額 = 簿価 $6,000,000 − 公正価値 $4,400,000 = **$1,600,000**\n- 割引前CF $7,900,000 はこの資産の判定には使わない。\n\n**顧客関係（耐用年数が有限の無形資産）**\n- 長期性資産のモデル（2段階）で判定する。\n- ステップ1（回収可能性）: 割引前CF $3,100,000 ≧ 簿価 $2,500,000 → 回収可能。\n- 回収可能なのでステップ2（公正価値での測定）に進まず、減損は **$0**。公正価値 $2,200,000 が簿価を下回っていても減損は認識しない。",
+        "references": ["ASC 350-30", "ASC 360-10"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Goodwill Impairment by Reporting Unit",
+        "instruction": "For each reporting unit, indicate whether a quantitative goodwill impairment test is required at December 31, 20X5, by entering Y (required) or N (not required), and enter the goodwill impairment loss to be recognized for 20X5. Consider the results of Work Tab 1. Enter amounts in whole dollars, no commas. Enter 0 if no goodwill impairment loss should be recognized.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": [
+            "Quantitative test required (Y/N)",
+            "Goodwill impairment loss"
+          ],
+          "rows": ["Platform", "Devices", "Services"],
+          "cells": [
+            {
+              "rowLabel": "Platform",
+              "colLabel": "Quantitative test required (Y/N)",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Platform",
+              "colLabel": "Goodwill impairment loss",
+              "correctValue": 3900000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Devices",
+              "colLabel": "Quantitative test required (Y/N)",
+              "correctValue": "N"
+            },
+            {
+              "rowLabel": "Devices",
+              "colLabel": "Goodwill impairment loss",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Services",
+              "colLabel": "Quantitative test required (Y/N)",
+              "correctValue": "Y"
+            },
+            {
+              "rowLabel": "Services",
+              "colLabel": "Goodwill impairment loss",
+              "correctValue": 3200000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Platform: the qualitative assessment concluded it is more likely than not that fair value is below carrying amount, so the quantitative test is required. Other assets (including the indefinite-lived trade name) are tested before goodwill, so the unit's carrying amount is first reduced by the $1,600,000 trade name impairment: $64,000,000 - $1,600,000 = $62,400,000. Goodwill impairment = $62,400,000 - $58,500,000 = $3,900,000, which is less than goodwill of $12,000,000.\n\nDevices: the qualitative assessment concluded it is not more likely than not that fair value is below carrying amount, so no quantitative test is required and no impairment is recognized.\n\nServices: an entity that bypasses the qualitative assessment proceeds directly to the quantitative test. The customer relationships asset is not impaired, so the carrying amount remains $27,400,000. The excess over fair value is $27,400,000 - $22,900,000 = $4,500,000, but the loss is limited to the goodwill allocated to the unit, $3,200,000.",
+        "explanationJa": "**Platform**\n- 定性評価で「公正価値が簿価を下回る可能性が50%超」→ 定量テストが必要（**Y**）。\n- のれん以外の資産（無期限の商標を含む）の減損を**先に**認識し、その後の簿価でのれんを判定する。\n- 修正後簿価 = $64,000,000 − 商標減損 $1,600,000 = $62,400,000\n- のれん減損 = $62,400,000 − 公正価値 $58,500,000 = **$3,900,000**（のれん $12,000,000 以内なのでそのまま）\n\n**Devices**\n- 定性評価で「50%超ではない」→ 定量テスト不要（**N**）、減損 **$0**。\n- 20X3年の公正価値は判定に使わない。\n\n**Services**\n- 定性評価を省略（バイパス）した場合は直ちに定量テストを行う（**Y**）。\n- 顧客関係は減損なし（Work Tab 1）なので簿価は $27,400,000 のまま。\n- 超過額 = $27,400,000 − $22,900,000 = $4,500,000\n- 減損はその報告単位ののれん簿価が上限 → **$3,200,000**",
+        "references": ["ASC 350-20"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Goodwill Balance After Impairment",
+        "instruction": "Calculate Halvorsen's total consolidated goodwill balance at December 31, 20X5, after recognizing all 20X5 impairment losses. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 12900000,
+        "tolerance": 0,
+        "explanation": "Total goodwill before impairment = $12,000,000 + $4,800,000 + $3,200,000 = $20,000,000. Goodwill impairment losses = $3,900,000 (Platform) + $0 (Devices) + $3,200,000 (Services) = $7,100,000. Goodwill after impairment = $20,000,000 - $7,100,000 = $12,900,000. The trade name impairment reduces intangible assets, not goodwill.",
+        "explanationJa": "1. 減損前のれん合計 = $12,000,000 + $4,800,000 + $3,200,000 = $20,000,000\n2. のれん減損合計 = $3,900,000（Platform）+ $0（Devices）+ $3,200,000（Services）= $7,100,000\n3. 減損後のれん = $20,000,000 − $7,100,000 = **$12,900,000**\n\n商標の減損 $1,600,000 は無形資産の減少であり、のれん残高には含めない。",
+        "references": ["ASC 350-20"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Classification of Project Atlas Costs",
+        "instruction": "For each cost in Exhibit 3, indicate whether Halvorsen should capitalize the cost as internal-use software or expense it as incurred. Enter C for capitalize or E for expense.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Treatment (C/E)"],
+          "rows": [
+            "Vendor evaluation and selection",
+            "Consultant fees for design, coding and configuration",
+            "Payroll of employees coding and configuring",
+            "Purchased software modules",
+            "Testing, including parallel processing",
+            "Data conversion and cleansing",
+            "Employee training",
+            "Allocated IT department overhead",
+            "Post-go-live help desk and maintenance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Vendor evaluation and selection",
+              "colLabel": "Treatment (C/E)",
+              "correctValue": "E"
+            },
+            {
+              "rowLabel": "Consultant fees for design, coding and configuration",
+              "colLabel": "Treatment (C/E)",
+              "correctValue": "C"
+            },
+            {
+              "rowLabel": "Payroll of employees coding and configuring",
+              "colLabel": "Treatment (C/E)",
+              "correctValue": "C"
+            },
+            {
+              "rowLabel": "Purchased software modules",
+              "colLabel": "Treatment (C/E)",
+              "correctValue": "C"
+            },
+            {
+              "rowLabel": "Testing, including parallel processing",
+              "colLabel": "Treatment (C/E)",
+              "correctValue": "C"
+            },
+            {
+              "rowLabel": "Data conversion and cleansing",
+              "colLabel": "Treatment (C/E)",
+              "correctValue": "E"
+            },
+            {
+              "rowLabel": "Employee training",
+              "colLabel": "Treatment (C/E)",
+              "correctValue": "E"
+            },
+            {
+              "rowLabel": "Allocated IT department overhead",
+              "colLabel": "Treatment (C/E)",
+              "correctValue": "E"
+            },
+            {
+              "rowLabel": "Post-go-live help desk and maintenance",
+              "colLabel": "Treatment (C/E)",
+              "correctValue": "E"
+            }
+          ]
+        },
+        "explanation": "Internal-use software costs are capitalized only during the application development stage, which began on March 31, 20X5, when the preliminary project stage was complete and management authorized and committed funding, and ended when the software was ready for its intended use on October 1, 20X5.\n\nCapitalize: external consultant fees for design, coding and configuration; payroll of employees directly devoting time to coding and configuration; purchased software modules; and testing, including parallel processing.\n\nExpense: vendor evaluation and selection (preliminary project stage); data conversion and cleansing (not capitalizable, other than software developed to convert data); training (expensed regardless of stage); allocated general and overhead costs; and post-implementation help desk and maintenance.",
+        "explanationJa": "社内利用ソフトウェアは3段階で判定する。\n\n| 段階 | 期間 | 処理 |\n|---|---|---|\n| 予備的プロジェクト段階 | 〜3/31（資金承認まで） | 費用 |\n| アプリケーション開発段階 | 3/31〜10/1（使用可能となるまで） | 一定の直接費を資本化 |\n| 導入後・運用段階 | 10/1〜 | 費用 |\n\n- **C（資本化）**: 外部コンサルタントの設計・コーディング・設定費、直接従事した従業員の給与、購入したソフトウェアモジュール、並行稼働を含むテスト費用\n- **E（費用）**: ベンダー評価・選定（予備段階）、データ変換・クレンジング（データ変換用ソフトの開発費を除き費用）、研修（段階を問わず費用）、配賦された間接費、稼働後のヘルプデスク・保守",
+        "references": ["ASC 350-40"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Capitalized Software Cost",
+        "instruction": "Calculate the total cost of Project Atlas that Halvorsen should capitalize as internal-use software (gross amount, before amortization). Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 2460000,
+        "tolerance": 0,
+        "explanation": "Capitalized cost = consultant fees $1,350,000 + employee payroll $610,000 + purchased software modules $280,000 + testing $220,000 = $2,460,000.",
+        "explanationJa": "資本化対象（Work Tab 4 で C としたもの）を合計する。\n\n$1,350,000（コンサル費）+ $610,000（従業員給与）+ $280,000（購入モジュール）+ $220,000（テスト）= **$2,460,000**",
+        "references": ["ASC 350-40"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Software Amortization for 20X5",
+        "instruction": "Calculate the amortization expense on Project Atlas that Halvorsen should recognize for the year ended December 31, 20X5. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 123000,
+        "tolerance": 0,
+        "explanation": "Amortization begins when the software is ready for its intended use (October 1, 20X5), not when costs are first incurred or when the project is authorized. Annual amortization = $2,460,000 / 5 = $492,000. Amortization for October through December = $492,000 x 3/12 = $123,000.",
+        "explanationJa": "1. 償却開始は**使用可能となった日（20X5年10月1日）**。資本化開始日（3/31）ではない。\n2. 年間償却額 = $2,460,000 ÷ 5年 = $492,000\n3. 20X5年分（10〜12月の3か月）= $492,000 × 3/12 = **$123,000**",
+        "references": ["ASC 350-40"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 25,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-cfh-001",
+    "subject": "BAR",
+    "topic": "Derivatives & Hedging",
+    "title": "Cash Flow Hedges of Forecasted Purchases — Corvalis Foods",
+    "scenario": "Corvalis Foods, Inc. is a calendar-year public company that reports quarterly. Corvalis uses derivatives to hedge price and currency risk on forecasted purchases.\n\nThe treasury group is evaluating several other hedging relationships, which are described in **Exhibit 1**. During 20X5, Corvalis entered into two forward contracts that it designated and documented as cash flow hedges of forecasted transactions: Hedge A, a corn forward (**Exhibit 2**), and Hedge B, a Swiss franc (CHF) forward (**Exhibit 3**).\n\nFor both hedges, ignore the time value of money: the fair value of each forward contract at any date equals the difference between the forward price (rate) for the settlement date and the contract price (rate), multiplied by the notional quantity. Ignore income taxes. Corvalis's incremental borrowing rate is 6%.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Hedging Relationships Under Evaluation",
+        "content": "| Relationship | Hedging instrument | Hedged item and risk |\n|---|---|---|\n| Relationship 1 | Receive-fixed, pay-variable interest rate swap | Changes in the fair value of Corvalis's outstanding fixed-rate notes payable attributable to changes in the benchmark interest rate |\n| Relationship 2 | Forward contract to sell euros | Foreign currency exposure of Corvalis's investment in the net assets of its wholly owned subsidiary whose functional currency is the euro |\n| Relationship 3 | Receive-variable, pay-fixed interest rate swap | Variability in interest payments on Corvalis's variable-rate term loan |\n| Relationship 4 | Wheat futures contracts (sell position) | Decline in the fair value of wheat inventory currently held in Corvalis's silos |\n| Relationship 5 | Purchased Canadian-dollar put options | Variability in U.S.-dollar cash flows from forecasted, probable sales to Canadian customers denominated in Canadian dollars |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Hedge A — Corn Forward",
+        "content": "On October 1, 20X5, Corvalis entered into a forward contract to buy 200,000 bushels of corn at $5.00 per bushel, to be net settled in cash on March 31, 20X6. The contract was designated as a cash flow hedge of the forecasted purchase of 200,000 bushels of corn on March 31, 20X6. The critical terms of the forward and the forecasted purchase match, and the hedge is perfectly effective in all periods.\n\n| Date | Spot price per bushel | Forward price per bushel for March 31, 20X6 delivery |\n|---|---|---|\n| October 1, 20X5 | $4.85 | $5.00 |\n| December 31, 20X5 | $5.20 | $5.30 |\n| March 31, 20X6 | $5.45 | $5.45 |\n\nAdditional information:\n- On March 31, 20X6, the forward was net settled in cash, and Corvalis purchased 200,000 bushels of corn from a supplier for cash at the spot price.\n- The corn was processed into finished goods during April 20X6. Of those finished goods, 60% were sold in the second quarter of 20X6 and the remaining 40% were sold in the third quarter of 20X6."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Hedge B — Swiss Franc Forward",
+        "content": "On November 1, 20X5, Corvalis entered into a forward contract to buy CHF 1,000,000 at $1.10 per CHF, to be net settled on June 30, 20X6. The contract was designated as a cash flow hedge of a forecasted purchase of packaging components from a Swiss supplier, priced at CHF 1,000,000 and expected to occur on June 30, 20X6.\n\n| Date | Spot rate ($ per CHF) | Forward rate ($ per CHF) for June 30, 20X6 settlement |\n|---|---|---|\n| November 1, 20X5 | $1.09 | $1.10 |\n| December 31, 20X5 | $1.07 | $1.08 |\n| March 31, 20X6 | $1.05 | $1.07 |\n| June 30, 20X6 | $1.06 | $1.06 |\n\nAdditional information:\n- On March 31, 20X6, the Swiss supplier entered liquidation. Corvalis concluded on that date that it is probable that the forecasted purchase will not occur, either by June 30, 20X6, or within two months thereafter. Corvalis has no alternative supplier for these components.\n- Corvalis did not terminate the forward contract; it was net settled in cash on June 30, 20X6.\n- Corvalis's accounting policy for Hedge B: the hedge was highly effective through March 31, 20X6, and changes in the fair value of the forward through March 31, 20X6, are first recorded in other comprehensive income. Hedge accounting is discontinued as of March 31, 20X6, after that quarter's fair value change is recorded, and Corvalis then applies the guidance for forecasted transactions that are probable of not occurring. Changes in fair value after March 31, 20X6, are recognized in earnings."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Hedge Type Identification",
+        "instruction": "For each hedging relationship in Exhibit 1, identify the type of hedge, assuming all hedge accounting criteria are met. Enter FV for a fair value hedge, CF for a cash flow hedge, or NI for a hedge of a net investment in a foreign operation.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Hedge type (FV/CF/NI)"],
+          "rows": [
+            "Relationship 1",
+            "Relationship 2",
+            "Relationship 3",
+            "Relationship 4",
+            "Relationship 5"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Relationship 1",
+              "colLabel": "Hedge type (FV/CF/NI)",
+              "correctValue": "FV"
+            },
+            {
+              "rowLabel": "Relationship 2",
+              "colLabel": "Hedge type (FV/CF/NI)",
+              "correctValue": "NI"
+            },
+            {
+              "rowLabel": "Relationship 3",
+              "colLabel": "Hedge type (FV/CF/NI)",
+              "correctValue": "CF"
+            },
+            {
+              "rowLabel": "Relationship 4",
+              "colLabel": "Hedge type (FV/CF/NI)",
+              "correctValue": "FV"
+            },
+            {
+              "rowLabel": "Relationship 5",
+              "colLabel": "Hedge type (FV/CF/NI)",
+              "correctValue": "CF"
+            }
+          ]
+        },
+        "explanation": "Relationship 1 converts fixed-rate debt to variable and hedges the debt's exposure to changes in fair value: fair value hedge. Relationship 2 hedges the foreign currency exposure of the net assets of a foreign subsidiary: net investment hedge. Relationship 3 converts variable interest payments to fixed and hedges variability in cash flows: cash flow hedge. Relationship 4 hedges the fair value of a recognized asset (inventory on hand): fair value hedge. Relationship 5 hedges the variability in functional-currency cash flows of forecasted foreign-currency-denominated sales: cash flow hedge.",
+        "explanationJa": "ヘッジ対象が「何の変動」にさらされているかで判定する。\n\n| 関係 | ヘッジ対象のリスク | 種類 |\n|---|---|---|\n| 1 | 固定利付債の**公正価値**の変動（固定→変動スワップ） | FV |\n| 2 | 在外子会社の**純資産への投資**の為替リスク | NI |\n| 3 | 変動金利借入の**利払いキャッシュフロー**の変動（変動→固定スワップ） | CF |\n| 4 | 保有中の在庫（認識済み資産）の**公正価値**の下落 | FV |\n| 5 | 予定外貨建売上の**キャッシュフロー**の変動 | CF |\n\n覚え方: 固定のものを守る＝FV、変動するキャッシュフローを固める＝CF。",
+        "references": ["ASC 815-20", "ASC 815-25", "ASC 815-30", "ASC 815-35"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Hedge A — OCI and AOCI Schedule",
+        "instruction": "Complete the schedule for Hedge A for each quarter from Q4 20X5 through Q3 20X6. For each quarter, enter the gain recognized in other comprehensive income from the change in the forward contract's fair value, the amount reclassified from accumulated other comprehensive income (AOCI) to earnings, and the AOCI balance related to Hedge A at quarter-end. Enter all amounts as positive whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": [
+            "Gain recognized in OCI",
+            "Reclassified from AOCI to earnings",
+            "AOCI balance at quarter-end"
+          ],
+          "rows": ["Q4 20X5", "Q1 20X6", "Q2 20X6", "Q3 20X6"],
+          "cells": [
+            {
+              "rowLabel": "Q4 20X5",
+              "colLabel": "Gain recognized in OCI",
+              "correctValue": 60000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q4 20X5",
+              "colLabel": "Reclassified from AOCI to earnings",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q4 20X5",
+              "colLabel": "AOCI balance at quarter-end",
+              "correctValue": 60000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q1 20X6",
+              "colLabel": "Gain recognized in OCI",
+              "correctValue": 30000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q1 20X6",
+              "colLabel": "Reclassified from AOCI to earnings",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q1 20X6",
+              "colLabel": "AOCI balance at quarter-end",
+              "correctValue": 90000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q2 20X6",
+              "colLabel": "Gain recognized in OCI",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q2 20X6",
+              "colLabel": "Reclassified from AOCI to earnings",
+              "correctValue": 54000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q2 20X6",
+              "colLabel": "AOCI balance at quarter-end",
+              "correctValue": 36000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q3 20X6",
+              "colLabel": "Gain recognized in OCI",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q3 20X6",
+              "colLabel": "Reclassified from AOCI to earnings",
+              "correctValue": 36000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Q3 20X6",
+              "colLabel": "AOCI balance at quarter-end",
+              "correctValue": 0,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Fair value of the forward = (forward price - $5.00) x 200,000 bushels. December 31, 20X5: ($5.30 - $5.00) x 200,000 = $60,000. March 31, 20X6: ($5.45 - $5.00) x 200,000 = $90,000.\n\nQ4 20X5: gain in OCI $60,000; AOCI $60,000. Q1 20X6: gain in OCI $90,000 - $60,000 = $30,000; AOCI $90,000. The forward settles on March 31, 20X6, so there are no further fair value changes.\n\nThe $90,000 remains in AOCI until the hedged forecasted transaction affects earnings, which occurs when the finished goods containing the corn are sold. Q2 20X6: $90,000 x 60% = $54,000 reclassified; AOCI $36,000. Q3 20X6: $90,000 x 40% = $36,000 reclassified; AOCI $0. Spot prices are not used because the hedge is perfectly effective and fair value is measured using forward prices.",
+        "explanationJa": "**先渡の公正価値** =（決済日向けフォワード価格 − $5.00）× 200,000ブッシェル\n- 20X5/12/31: ($5.30 − $5.00) × 200,000 = $60,000\n- 20X6/3/31: ($5.45 − $5.00) × 200,000 = $90,000\n\n**四半期ごとの処理**\n| 四半期 | OCI計上（公正価値変動） | 損益への組替 | AOCI残高 |\n|---|---|---|---|\n| Q4 20X5 | $60,000 | $0 | $60,000 |\n| Q1 20X6 | $90,000 − $60,000 = $30,000 | $0 | $90,000 |\n| Q2 20X6 | $0（3/31に決済済み） | $90,000 × 60% = $54,000 | $36,000 |\n| Q3 20X6 | $0 | $90,000 × 40% = $36,000 | $0 |\n\n- 予定取引（コーン購入）が実行された3/31時点では組替えない。ヘッジ対象が**損益に影響する時点**（コーンを含む製品が販売され売上原価になる時点）に、販売割合に応じて組替える。\n- 完全に有効なヘッジでフォワード価格で測定するため、スポット価格は使わない。",
+        "references": ["ASC 815-30"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Hedge A — Initial Carrying Amount of Corn",
+        "instruction": "Calculate the amount at which Corvalis should initially record the 200,000 bushels of corn purchased on March 31, 20X6, under U.S. GAAP. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 1090000,
+        "tolerance": 0,
+        "explanation": "Under U.S. GAAP, the gain deferred in AOCI on a cash flow hedge of a forecasted purchase of inventory is not used to adjust the basis of the inventory. The corn is recorded at its cash purchase price: 200,000 x $5.45 = $1,090,000. The $90,000 gain remains in AOCI and is reclassified to earnings as the inventory is sold.",
+        "explanationJa": "1. US GAAPでは、キャッシュフロー・ヘッジのAOCIを棚卸資産の取得原価に振り替える**ベーシス調整は行わない**。\n2. コーンは実際の購入価格で計上する: 200,000 × $5.45 = **$1,090,000**\n3. 先渡の利益 $90,000 はAOCIに残り、販売時に損益へ組替える（実質的な調達コストは $1,090,000 − $90,000 = $1,000,000 = 契約価格 $5.00 × 200,000 となり、ヘッジの効果が損益で実現する）。",
+        "references": ["ASC 815-30"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Hedge A — Income Statement Presentation",
+        "instruction": "Select the income statement line item in which Corvalis should present the amounts reclassified from AOCI for Hedge A in 20X6.",
+        "answerType": "select",
+        "options": [
+          "Cost of goods sold",
+          "Other income — gain on derivative instruments",
+          "Sales revenue",
+          "None; the amount is presented as an adjustment to inventory"
+        ],
+        "correctAnswer": "Cost of goods sold",
+        "explanation": "Amounts reclassified from AOCI for a cash flow hedge are presented in the same income statement line item as the earnings effect of the hedged item. The hedged item is the cost of corn, which affects earnings through cost of goods sold when the finished goods are sold. The reclassification reduces cost of goods sold. No inventory basis adjustment is made under U.S. GAAP.",
+        "explanationJa": "- キャッシュフロー・ヘッジでAOCIから組替える金額は、**ヘッジ対象が損益に影響する表示科目と同じ科目**に表示する。\n- ヘッジ対象はコーンの購入コストで、製品販売時に**売上原価**として損益に影響する → 組替額は売上原価の減額として表示する。\n- デリバティブ損益の別科目や売上高には表示しない。また US GAAP ではベーシス調整を行わないので、棚卸資産の修正にもならない。",
+        "references": ["ASC 815-20", "ASC 815-30"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Hedge B — Reclassification Entry on March 31, 20X6",
+        "instruction": "Prepare the journal entry that Corvalis records on March 31, 20X6, to reclassify accumulated other comprehensive income related to Hedge B, after the change in the forward contract's fair value for the first quarter of 20X6 has been recorded. Enter amounts in whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Debit", "Credit"],
+          "rows": [
+            "Loss on hedging derivative (earnings)",
+            "Accumulated other comprehensive income",
+            "Forward contract liability",
+            "Cost of goods sold"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Loss on hedging derivative (earnings)",
+              "colLabel": "Debit",
+              "correctValue": 30000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Loss on hedging derivative (earnings)",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accumulated other comprehensive income",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Accumulated other comprehensive income",
+              "colLabel": "Credit",
+              "correctValue": 30000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Forward contract liability",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Forward contract liability",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cost of goods sold",
+              "colLabel": "Debit",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cost of goods sold",
+              "colLabel": "Credit",
+              "correctValue": 0,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Fair value of the forward = (forward rate - $1.10) x CHF 1,000,000. December 31, 20X5: ($1.08 - $1.10) x 1,000,000 = $(20,000), a liability, recorded as a loss in OCI. March 31, 20X6: ($1.07 - $1.10) x 1,000,000 = $(30,000); the Q1 change of $(10,000) is recorded in OCI, bringing the AOCI debit balance to $30,000.\n\nBecause it is probable that the forecasted purchase will not occur by the originally specified date or within two months thereafter, the entire loss in AOCI is reclassified into earnings immediately: debit Loss on hedging derivative $30,000; credit AOCI $30,000. The forward contract liability is unaffected by the reclassification, and nothing is recorded in cost of goods sold because no purchase occurs. Spot rates are not used because fair value is measured using forward rates.",
+        "explanationJa": "**先渡の公正価値** =（決済日向けフォワードレート − $1.10）× CHF 1,000,000\n1. 20X5/12/31: ($1.08 − $1.10) × 1,000,000 = −$20,000（負債）→ OCIに損失 $20,000\n2. 20X6/3/31: ($1.07 − $1.10) × 1,000,000 = −$30,000 → Q1の変動 −$10,000 をOCIに計上\n3. 組替前のAOCI（Hedge B）= 借方残 $20,000 + $10,000 = $30,000\n\n**予定取引が発生しない可能性が高くなった場合**（当初予定日まで、または追加2か月以内に発生しない）、AOCIに累積した損益は**直ちに全額**損益へ組替える。\n\n| 勘定 | 借方 | 貸方 |\n|---|---|---|\n| デリバティブ損失（損益） | $30,000 | |\n| AOCI | | $30,000 |\n\n先渡負債の残高は組替えでは動かない。購入が発生しないので売上原価も関係しない。",
+        "references": ["ASC 815-30"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Hedge B — Second Quarter 20X6 Earnings Effect",
+        "instruction": "Calculate the loss that Corvalis should recognize in earnings in the second quarter of 20X6 (April 1 through June 30, 20X6) related to Hedge B. Enter the amount as a positive number in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 10000,
+        "tolerance": 0,
+        "explanation": "After hedge accounting is discontinued on March 31, 20X6, changes in the forward's fair value are recognized directly in earnings. Fair value at June 30, 20X6 = ($1.06 - $1.10) x 1,000,000 = $(40,000). Change in Q2 = $(40,000) - $(30,000) = $(10,000), a $10,000 loss recognized in earnings. The amounts recorded through March 31 were already reclassified to earnings in Q1, so no further reclassification from AOCI occurs.",
+        "explanationJa": "1. 3/31にヘッジ会計を中止したため、それ以降の公正価値変動は**直ちに損益**に計上する（OCIは使わない）。\n2. 6/30の公正価値 = ($1.06 − $1.10) × 1,000,000 = −$40,000\n3. Q2の変動 = −$40,000 −（−$30,000）= −$10,000 → 損失 **$10,000**\n4. 3/31までの累計 $30,000 はQ1に組替済みなので、Q2にAOCIからの組替はない。",
+        "references": ["ASC 815-30"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 25,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-rev-001",
+    "subject": "BAR",
+    "topic": "Revenue Recognition",
+    "title": "Software License, Implementation, and Support Contract — Northbeam Software",
+    "scenario": "Northbeam Software, Inc. is a calendar-year public company that develops clinical workflow software. On July 1, 20X5, Northbeam signed a contract with Delmar Health System, a new customer. Excerpts from the contract are presented in **Exhibit 1**. Northbeam's standalone selling price analysis and other information from the revenue accounting team are presented in **Exhibit 2**.\n\nAs part of the year-end close, Northbeam's data analytics tool generated a reconciliation of invoices and revenue posted in the revenue subledger for the Delmar contract, presented in **Exhibit 3**. You have been asked to evaluate the accounting for the contract and the subledger output for the year ended December 31, 20X5.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Contract Excerpts — Northbeam / Delmar Health System (effective July 1, 20X5)",
+        "content": "**Section 2 — License.** Northbeam grants Delmar a perpetual, non-exclusive license to install and use ClinicalFlow v8 on Delmar's own servers. The license key was delivered and the license period began on July 1, 20X5. The software is fully functional without updates.\n\n**Section 3 — Implementation Services.** Northbeam will install ClinicalFlow v8, configure standard workflows, and set up interfaces to Delmar's existing systems using Northbeam's standard tools. The services do not significantly modify or customize the software. Several third-party consulting firms routinely perform these services.\n\n**Section 4 — Support.** Northbeam will provide telephone support and when-and-if-available updates for 24 months beginning July 1, 20X5.\n\n**Section 5 — Fees.**\n\n| Fee | Amount | Invoiced |\n|---|---|---|\n| License fee | $500,000 | July 1, 20X5 |\n| Implementation fee | $200,000 | Last day of the month in which implementation is completed |\n| Support fee (both years) | $200,000 | July 1, 20X6 |\n\n**Section 6 — Go-Live Bonus.** Delmar will pay Northbeam a bonus of $60,000 if the system goes live on or before September 30, 20X5. Any bonus earned is invoiced together with the implementation fee.\n\n**Section 7 — Additional Seats.** During the contract term, Delmar may purchase additional user seats at $1,200 per seat, which is the price Northbeam charges all customers for additional seats.\n\n**Section 8 — Payment Terms.** All invoices are due within 30 days."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Standalone Selling Prices and Other Information",
+        "content": "**Standalone selling price (SSP) analysis**\n\n| Item | Evidence | SSP |\n|---|---|---|\n| Implementation services | Sold separately to many customers at $140,000 to $160,000 | $150,000 |\n| Support | Annual renewals sold separately at $120,000 per year | $120,000 per year |\n| ClinicalFlow v8 license | Sold to 38 customers in the past 24 months at prices from $280,000 to $790,000 with no discernible pattern; not sold separately at a consistent price | Highly variable; not directly observable |\n| Training workshop (not purchased by Delmar) | Sold separately | $25,000 per session |\n\n**Go-live bonus**\n- At contract inception, Northbeam estimated a 30% probability of meeting the September 30 deadline because the schedule depended on the availability of Delmar's IT staff. The outcome is binary, so Northbeam uses the most likely amount method.\n- Northbeam has concluded that the bonus relates specifically to its efforts to satisfy the implementation services and that allocating the bonus entirely to the implementation services is consistent with the allocation objective.\n- The system went live on September 26, 20X5.\n\n**Other information**\n- Implementation services are satisfied over time, measured using labor hours. All implementation work was completed on October 30, 20X5.\n- Support is a stand-ready obligation satisfied ratably over the 24-month support period.\n- The contract does not contain a significant financing component.\n- The July 1, 20X5, invoice was collected on July 20, 20X5. The October 31, 20X5, invoice was collected on January 12, 20X6. Delmar purchased no additional seats in 20X5."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Data Analytics Output — Invoices vs. Revenue Posted, Delmar Contract, Year Ended December 31, 20X5",
+        "content": "| Line | Item | Invoiced in 20X5 | Revenue posted in 20X5 | Invoiced less revenue posted |\n|---|---|---|---|---|\n| 1 | Software license | $500,000 | $510,000 | $(10,000) |\n| 2 | Implementation services | $200,000 | $200,000 | $0 |\n| 3 | Go-live bonus | $60,000 | $60,000 | $0 |\n| 4 | Post-contract support | $0 | $120,000 | $(120,000) |\n| | **Total** | **$760,000** | **$890,000** | **$(130,000)** |\n\nTool note: Revenue posted equals the amounts recorded by the subledger's allocation and recognition schedules. Line 2 covers the implementation services excluding the go-live bonus; the bonus is reported separately on Line 3."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Performance Obligations",
+        "instruction": "Select all items that are separate performance obligations in the Delmar contract.",
+        "answerType": "multiselect",
+        "options": [
+          "Software license",
+          "Implementation services",
+          "Post-contract support",
+          "Go-live bonus",
+          "Option to purchase additional user seats",
+          "Software license and implementation services combined as a single performance obligation"
+        ],
+        "correctAnswer": [
+          "Software license",
+          "Implementation services",
+          "Post-contract support"
+        ],
+        "explanation": "The license is capable of being distinct (the software is fully functional without updates) and distinct in the context of the contract. The implementation services do not significantly modify or customize the software and are routinely performed by third parties, so they are distinct from the license and are not combined with it. Support (telephone support and when-and-if-available updates) is a separate stand-ready service. The go-live bonus is variable consideration, not a promised good or service. The option to purchase additional seats is priced at the standard price charged to all customers, so it does not provide a material right and is not a performance obligation.",
+        "explanationJa": "**履行義務は3つ**: ソフトウェアライセンス、導入サービス、保守（PCS）\n\n- **ライセンス**: 更新なしでも完全に機能するため単独で便益を得られ、契約上も区別できる。\n- **導入サービス**: ソフトを大幅に改変・カスタマイズせず、第三者も日常的に提供している → ライセンスと区別でき、結合しない。\n- **保守**: 電話サポートと随時アップデートを24か月提供する待機型サービス。\n- **go-liveボーナス**: 約束した財・サービスではなく**変動対価**（取引価格の要素）。\n- **追加シート購入オプション**: 全顧客と同じ標準価格 → **重要な権利（material right）を与えない**ので履行義務ではない（追加購入時に別契約として扱う）。",
+        "references": ["ASC 606-10"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Use of the Residual Approach",
+        "instruction": "Select the statement that correctly describes whether Northbeam may use the residual approach to estimate a standalone selling price in the Delmar contract.",
+        "answerType": "select",
+        "options": [
+          "Yes, for the license only, because its price is highly variable and the other services have observable standalone prices",
+          "No, because the residual approach may never be used in a contract that includes any form of variable consideration",
+          "No, because the license is sold separately to other customers and therefore has an observable standalone selling price",
+          "Yes, for the support only, because support fees are commonly priced as a fixed percentage of the license fee"
+        ],
+        "correctAnswer": "Yes, for the license only, because its price is highly variable and the other services have observable standalone prices",
+        "explanation": "The residual approach may be used when the standalone selling price of a good or service is highly variable or uncertain. Northbeam sells the license to different customers for a broad range of amounts ($280,000 to $790,000) with no discernible pattern, so its SSP is highly variable. The implementation services and support have observable SSPs ($150,000 and $120,000 per year), so the residual approach is applied to the license only. Selling the license separately does not make its SSP observable when prices vary this widely. The presence of variable consideration does not prohibit the residual approach; here the bonus is allocated entirely to the implementation services.",
+        "explanationJa": "- 残余法は、独立販売価格が**大きく変動する、または不確定**な場合に使える見積方法。\n- ライセンスは過去24か月に $280,000〜$790,000 で販売され、一定のパターンがない → SSPは高度に変動する。\n- 導入サービス（$150,000）と保守（年$120,000）は観察可能なSSPがある。\n- よって**ライセンスにのみ**残余法を適用できる。\n- 個別販売の実績があっても価格がこれほどばらつけば観察可能なSSPとはいえない。変動対価があることは残余法の禁止事由ではない（ボーナスは導入サービスに個別配分済み）。",
+        "references": ["ASC 606-10"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Transaction Price at Contract Inception",
+        "instruction": "Calculate the transaction price of the Delmar contract at contract inception on July 1, 20X5. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 900000,
+        "tolerance": 0,
+        "explanation": "Fixed consideration = $500,000 + $200,000 + $200,000 = $900,000. The $60,000 go-live bonus is variable consideration with a binary outcome, estimated using the most likely amount method. At inception, the probability of earning the bonus was 30%, so the most likely amount is $0, and including any amount would not meet the constraint (it is not probable that a significant reversal would not occur). Transaction price at inception = $900,000. The additional seat option is not part of the transaction price.",
+        "explanationJa": "1. 固定対価 = ライセンス $500,000 + 導入 $200,000 + 保守 $200,000 = $900,000\n2. go-liveボーナス $60,000 は結果が二値の変動対価 → **最頻値法**で見積る。\n3. 契約開始時の達成確率は30% → 最頻値は $0。また、含めると重大な戻入れが生じないことが「可能性が高い」とはいえず、**制約**によっても含められない。\n4. 契約開始時の取引価格 = **$900,000**\n\n追加シートのオプションは取引価格に含めない。",
+        "references": ["ASC 606-10"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Allocation and 20X5 Revenue",
+        "instruction": "Complete the schedule showing the transaction price allocated to each performance obligation as of December 31, 20X5 (after the resolution of the go-live bonus), and the revenue Northbeam should recognize for each performance obligation for the year ended December 31, 20X5. Enter amounts in whole dollars, no commas. Enter 0 in cells that should have no amount.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": [
+            "Allocated transaction price",
+            "Revenue recognized in 20X5"
+          ],
+          "rows": [
+            "Software license",
+            "Implementation services",
+            "Post-contract support",
+            "Total"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Software license",
+              "colLabel": "Allocated transaction price",
+              "correctValue": 510000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Software license",
+              "colLabel": "Revenue recognized in 20X5",
+              "correctValue": 510000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Implementation services",
+              "colLabel": "Allocated transaction price",
+              "correctValue": 210000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Implementation services",
+              "colLabel": "Revenue recognized in 20X5",
+              "correctValue": 210000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Post-contract support",
+              "colLabel": "Allocated transaction price",
+              "correctValue": 240000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Post-contract support",
+              "colLabel": "Revenue recognized in 20X5",
+              "correctValue": 60000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Total",
+              "colLabel": "Allocated transaction price",
+              "correctValue": 960000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Total",
+              "colLabel": "Revenue recognized in 20X5",
+              "correctValue": 780000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Fixed consideration of $900,000 is allocated using SSPs, with the residual approach for the license: implementation $150,000; support $120,000 x 2 years = $240,000; license $900,000 - $150,000 - $240,000 = $510,000. The contractually stated fees ($500,000, $200,000 and $200,000) are not the basis for allocation.\n\nThe system went live on September 26, 20X5, so the uncertainty is resolved and the $60,000 bonus is included in the transaction price. Because it relates specifically to the implementation services, it is allocated entirely to them: $150,000 + $60,000 = $210,000. Total transaction price = $960,000.\n\n20X5 revenue: license $510,000 at a point in time on July 1, 20X5 (key delivered and license period begun); implementation $210,000 (fully satisfied by October 30, 20X5); support $240,000 x 6/24 = $60,000. Total = $780,000.",
+        "explanationJa": "**① 固定対価 $900,000 の配分（ライセンスは残余法）**\n- 導入サービス: SSP $150,000\n- 保守: $120,000 × 2年 = $240,000\n- ライセンス（残余）: $900,000 − $150,000 − $240,000 = $510,000\n- 契約書上の請求額（$500,000／$200,000／$200,000）は配分の基礎にしない。\n\n**② 変動対価の確定**\n- 9/26にgo-live → 不確実性が解消し、ボーナス $60,000 を取引価格に含める。\n- 導入サービスに個別配分（Exhibit 2の結論）: $150,000 + $60,000 = $210,000\n- 取引価格合計 = $510,000 + $210,000 + $240,000 = $960,000\n\n**③ 20X5年の収益**\n| 履行義務 | 認識パターン | 20X5年収益 |\n|---|---|---|\n| ライセンス | 一時点（7/1 キー引渡し・使用期間開始） | $510,000 |\n| 導入サービス | 一定期間（10/30に完了） | $210,000 |\n| 保守 | 24か月で均等（7〜12月の6か月） | $240,000 × 6/24 = $60,000 |\n| 合計 | | $780,000 |",
+        "references": ["ASC 606-10"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Contract Balances at Year-End",
+        "instruction": "Enter the balances related to the Delmar contract that Northbeam should report at December 31, 20X5. Enter amounts in whole dollars, no commas. Enter 0 if there is no balance.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Balance at December 31, 20X5"],
+          "rows": [
+            "Accounts receivable",
+            "Contract asset",
+            "Contract liability"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Accounts receivable",
+              "colLabel": "Balance at December 31, 20X5",
+              "correctValue": 260000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Contract asset",
+              "colLabel": "Balance at December 31, 20X5",
+              "correctValue": 20000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Contract liability",
+              "colLabel": "Balance at December 31, 20X5",
+              "correctValue": 0,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Invoiced in 20X5: $500,000 on July 1 and $260,000 ($200,000 implementation fee plus $60,000 bonus) on October 31, totaling $760,000. The July invoice was collected in July; the October invoice was collected in January 20X6, so accounts receivable = $260,000.\n\nRevenue recognized through December 31, 20X5, of $780,000 exceeds amounts invoiced of $760,000. The contract is presented as a single net position, so Northbeam reports a contract asset of $780,000 - $760,000 = $20,000 and no contract liability. The right to the remaining consideration is conditional on Northbeam's continued performance of support until it is invoiced on July 1, 20X6.",
+        "explanationJa": "1. 20X5年の請求額 = 7/1 $500,000 + 10/31 $260,000（導入 $200,000 + ボーナス $60,000）= $760,000\n2. 7/1請求分は7/20に回収、10/31請求分は翌年1/12回収 → **売掛金 $260,000**\n3. 累計収益 $780,000 − 累計請求 $760,000 = $20,000 → 収益が請求を上回るので**契約資産 $20,000**\n4. 1契約は純額で1つのポジションとして表示するため、**契約負債は $0**\n\n残りの対価（保守料 $200,000）は保守の履行が続くことを条件とし、20X6/7/1の請求まで無条件の権利ではない。",
+        "references": ["ASC 606-10"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Evaluate the Data Analytics Output",
+        "instruction": "Based on your analysis, select all lines in Exhibit 3 for which the revenue posted in 20X5 is incorrect.",
+        "answerType": "multiselect",
+        "options": [
+          "Line 1 — Software license",
+          "Line 2 — Implementation services",
+          "Line 3 — Go-live bonus",
+          "Line 4 — Post-contract support"
+        ],
+        "correctAnswer": [
+          "Line 2 — Implementation services",
+          "Line 4 — Post-contract support"
+        ],
+        "explanation": "Software license: posted $510,000 equals the residual allocation recognized at a point in time; correct, even though it differs from the $500,000 invoiced. Implementation services: posted $200,000 reflects the invoiced fee rather than the allocated amount of $150,000; incorrect. Go-live bonus: posted $60,000 is correct because the bonus was earned on September 26 and relates to the completed implementation services. Post-contract support: posted $120,000 equals 6/12 of $240,000, which recognizes the 24-month obligation as though it were a 12-month obligation; the correct amount is $240,000 x 6/24 = $60,000; incorrect. A difference between invoiced amounts and revenue is not, by itself, evidence of an error.",
+        "explanationJa": "各行を正しい計上額（Work Tab 4）と比べる。\n\n| 行 | システム計上 | 正しい額 | 判定 |\n|---|---|---|---|\n| ソフトウェアライセンス | $510,000 | $510,000 | 正しい（請求 $500,000 と違っても残余法の配分額どおり） |\n| 導入サービス | $200,000 | $150,000 | **誤り**（請求額を計上しており、配分額ではない） |\n| go-liveボーナス | $60,000 | $60,000 | 正しい（9/26に達成、導入サービスは完了済み） |\n| 保守 | $120,000 | $60,000 | **誤り**（$240,000 × 6/12。24か月の義務を12か月で計算している） |\n\nポイント: 「請求額と収益の差異」があること自体は誤りの証拠ではない。配分・認識パターンと照合して判断する。",
+        "references": ["ASC 606-10"]
+      },
+      {
+        "id": "task-7",
+        "workTab": "Work Tab 7",
+        "title": "Revenue Misstatement",
+        "instruction": "Calculate the amount by which the total revenue posted in Exhibit 3 overstates (understates) the revenue that Northbeam should recognize on the Delmar contract for 20X5. Enter an overstatement as a positive number and an understatement as a negative number, in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 110000,
+        "tolerance": 0,
+        "explanation": "Revenue posted = $510,000 + $200,000 + $60,000 + $120,000 = $890,000. Correct 20X5 revenue = $780,000. Overstatement = $890,000 - $780,000 = $110,000, consisting of $50,000 on implementation services ($200,000 - $150,000) and $60,000 on post-contract support ($120,000 - $60,000).",
+        "explanationJa": "1. システム計上合計 = $510,000 + $200,000 + $60,000 + $120,000 = $890,000\n2. 正しい20X5年収益 = $780,000（Work Tab 4）\n3. 過大計上額 = $890,000 − $780,000 = **$110,000**\n\n内訳: 導入サービス $50,000（$200,000 − $150,000）+ 保守 $60,000（$120,000 − $60,000）= $110,000",
+        "references": ["ASC 606-10"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-gov-006",
+    "subject": "BAR",
+    "topic": "State & Local Governments",
+    "title": "Government-Wide Statement of Activities: Program Revenues, General Revenues, and Unusual or Infrequent Items",
+    "scenario": "The City of Harlow is preparing its government-wide statement of activities for the fiscal year ended June 30, 2026, the first year in which the City applies the financial reporting model as amended by GASB Statement No. 103.\n\nThe City's primary government consists of governmental activities (five functions) and business-type activities (the Water Utility and the Parking System, both enterprise funds). The City has no internal service funds and no component units.\n\n**Exhibit 1** presents expenses by function on the government-wide basis. **Exhibit 2** lists revenues, transfers, and other inflows recorded during the year. **Exhibit 3** describes other events and additional information.\n\nComplete the tasks on each work tab.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Expenses by Function (Government-Wide Basis)",
+        "content": "Amounts are measured on the economic resources measurement focus and accrual basis, including depreciation.\n\n| Activity | Function / program | Expenses |\n|---|---|---|\n| Governmental | General government | $4,200,000 |\n| Governmental | Public safety | $9,600,000 |\n| Governmental | Public works | $5,300,000 |\n| Governmental | Culture and recreation | $2,100,000 |\n| Governmental | Interest on long-term debt | $900,000 |\n| Business-type | Water | $6,400,000 |\n| Business-type | Parking | $1,150,000 |\n\nGeneral government expenses include $180,000 of water purchased from the Water Utility for City buildings."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Revenues, Transfers, and Other Inflows — FY 2026",
+        "content": "| # | Item | Amount |\n|---|---|---|\n| 1 | Property taxes levied for general purposes | $11,800,000 |\n| 2 | Property taxes levied for debt service | $1,500,000 |\n| 3 | Local option sales tax; by ordinance, may be spent only on street maintenance (public works function) | $2,200,000 |\n| 4 | Building permit and inspection fees (public safety function) | $640,000 |\n| 5 | Municipal court fines and forfeitures (general government function) | $310,000 |\n| 6 | Recreation program and pool admission fees (culture and recreation function) | $450,000 |\n| 7 | State grant restricted to police training and overtime (public safety function) | $820,000 |\n| 8 | State highway aid; may be spent on either street maintenance or street construction at the City's discretion; the City spent all of it on street maintenance in FY 2026 (public works function) | $700,000 |\n| 9 | Federal grant restricted to construction of a new library wing (culture and recreation function) | $1,600,000 |\n| 10 | Streets and storm sewers contributed by developers, at acquisition value (public works function) | $2,400,000 |\n| 11 | State-shared revenue distributed on a per capita basis; no restrictions on use | $1,300,000 |\n| 12 | Investment earnings — governmental funds (unrestricted) | $260,000 |\n| 13 | Investment earnings — Water Utility (unrestricted) | $90,000 |\n| 14 | Water charges billed to customers, including $180,000 billed to City departments | $6,900,000 |\n| 15 | Parking meter and garage fees | $1,020,000 |\n| 16 | Transfer from the Water Fund to the General Fund | $500,000 |\n| 17 | Transfer from the General Fund to the Debt Service Fund for principal and interest | $1,200,000 |\n| 18 | Proceeds of general obligation bonds issued to finance the library wing | $5,000,000 |\n| 19 | Property taxes collected on behalf of the County School District and remitted to it (custodial fund) | $3,000,000 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Other Events and Additional Information",
+        "content": "1. In March 2026, the City Council voted to sell the City's former landfill site, the first sale of City land in more than 30 years. Sale proceeds were $1,250,000; the carrying amount of the land was $400,000. The land was a governmental capital asset.\n2. In May 2026, a tornado, the first ever recorded in the region, destroyed part of the Water Utility's treatment facility. The facility was not insured. The carrying amount of the destroyed portion was $1,300,000.\n3. Net position at July 1, 2025 was $48,600,000 for governmental activities and $22,300,000 for business-type activities.\n4. The governmental funds reported capital outlay expenditures of $3,900,000 and debt principal repayments of $1,000,000. These amounts were already considered in determining the Exhibit 1 expenses."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Classification of Items in the Statement of Activities",
+        "instruction": "For each item, enter the code that describes how the item is reported in the City's government-wide statement of activities. Use the following codes:\nCS = Program revenue — charges for services\nOG = Program revenue — operating grants and contributions\nCG = Program revenue — capital grants and contributions\nGR = General revenue\nUI = Unusual or infrequent item\nTR = Transfers (between governmental and business-type activities)\nX = Not reported in the statement of activities\nA code may be used once, more than once, or not at all.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Code"],
+          "rows": [
+            "Property taxes levied for debt service",
+            "Local option sales tax restricted to street maintenance",
+            "Municipal court fines",
+            "State grant for police training and overtime",
+            "State highway aid",
+            "Streets and storm sewers contributed by developers",
+            "State-shared revenue",
+            "Sale of former landfill site",
+            "Tornado damage to water treatment facility",
+            "Transfer from Water Fund to General Fund",
+            "Transfer from General Fund to Debt Service Fund",
+            "Property taxes collected for County School District"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Property taxes levied for debt service",
+              "colLabel": "Code",
+              "correctValue": "GR"
+            },
+            {
+              "rowLabel": "Local option sales tax restricted to street maintenance",
+              "colLabel": "Code",
+              "correctValue": "GR"
+            },
+            {
+              "rowLabel": "Municipal court fines",
+              "colLabel": "Code",
+              "correctValue": "CS"
+            },
+            {
+              "rowLabel": "State grant for police training and overtime",
+              "colLabel": "Code",
+              "correctValue": "OG"
+            },
+            {
+              "rowLabel": "State highway aid",
+              "colLabel": "Code",
+              "correctValue": "OG"
+            },
+            {
+              "rowLabel": "Streets and storm sewers contributed by developers",
+              "colLabel": "Code",
+              "correctValue": "CG"
+            },
+            {
+              "rowLabel": "State-shared revenue",
+              "colLabel": "Code",
+              "correctValue": "GR"
+            },
+            {
+              "rowLabel": "Sale of former landfill site",
+              "colLabel": "Code",
+              "correctValue": "UI"
+            },
+            {
+              "rowLabel": "Tornado damage to water treatment facility",
+              "colLabel": "Code",
+              "correctValue": "UI"
+            },
+            {
+              "rowLabel": "Transfer from Water Fund to General Fund",
+              "colLabel": "Code",
+              "correctValue": "TR"
+            },
+            {
+              "rowLabel": "Transfer from General Fund to Debt Service Fund",
+              "colLabel": "Code",
+              "correctValue": "X"
+            },
+            {
+              "rowLabel": "Property taxes collected for County School District",
+              "colLabel": "Code",
+              "correctValue": "X"
+            }
+          ]
+        },
+        "explanation": "Taxes are always general revenues, even when levied for a specific purpose: property taxes for debt service and the sales tax restricted to street maintenance are GR. Fines and forfeitures are charges for services (CS) of the function that generates them. Grants restricted to a specific function are program revenues: the police grant is OG, and the highway aid, which could have been used for either maintenance or construction but was spent entirely on street maintenance (an operating use), is reported as an operating grant (OG). Contributed infrastructure from developers is a capital contribution (CG). Unrestricted state-shared revenue is a general revenue (GR). Under GASB 103, the former special item and extraordinary item classifications are replaced by a single category, unusual or infrequent items, regardless of whether the event is within management's control. The landfill sale (the first City land sale in more than 30 years) and the tornado loss (the first tornado ever recorded in the region) are both reported as unusual or infrequent items (UI), presented separately after net (expense) revenue and general revenues. The Water Fund-to-General Fund transfer crosses activity types and is reported as transfers (TR). The General Fund-to-Debt Service Fund transfer is internal to governmental activities and is eliminated (X). Taxes collected for the School District belong to another government and are reported only in the custodial fund (X).",
+        "explanationJa": "**判定のポイント**\n\n1. **税は目的が限定されていても一般収益（GR）**：債務返済用の固定資産税、道路維持に使途が限定された地方売上税はいずれも GR。目的税をプログラム収益に入れるのが典型的な誤り。\n2. **罰金・没収金は charges for services（CS）**：それを生み出した機能（一般行政）のプログラム収益。\n3. **特定の機能に限定された補助金はプログラム収益**：警察研修・残業補助は運営補助（OG）。州の道路補助は運営にも資本にも使える裁量があるが、実際は全額を道路維持（運営目的）に使っているため、**運営補助（OG）**として表示する。\n4. **開発業者からの道路・雨水管の寄贈は資本寄付（CG）**。\n5. **使途制限のない州分与収入は一般収益（GR）**。\n6. **旧埋立地の売却**：30年以上ぶりの市有地売却で稀な取引 → unusual or infrequent item（UI）。\n7. **竜巻被害**：観測史上初の竜巻による損失 → unusual or infrequent item（UI）。\n   - GASB 103 により、従来の特別項目（経営者の支配下）と異常項目（支配外・異常かつ稀）の区別は廃止され、**経営者の支配の内外を問わず「異常または稀な項目」1区分**になった。net (expense) revenue と一般収益の後に区分表示する。\n8. **水道ファンド→一般ファンドの移転**：政府活動と事業型活動の間なので Transfers（TR）として表示。\n9. **一般ファンド→債務返済ファンドの移転**：政府活動内部の移転なので政府全体では消去（X）。\n10. **学区のために徴収した固定資産税**：他の政府の資源でありカストディアルファンドのみで報告（X）。",
+        "references": ["GASB 34", "GASB 103"]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Program Revenues and Net (Expense) Revenue by Function",
+        "instruction": "Complete the program revenue and net (expense) revenue columns of the statement of activities for each function or program. Enter amounts in whole dollars, no commas. Enter net expense as a negative number (for example, -100000). Enter 0 where a function has no program revenues.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Total program revenues", "Net (expense) revenue"],
+          "rows": [
+            "General government",
+            "Public safety",
+            "Public works",
+            "Culture and recreation",
+            "Interest on long-term debt",
+            "Water",
+            "Parking"
+          ],
+          "cells": [
+            {
+              "rowLabel": "General government",
+              "colLabel": "Total program revenues",
+              "correctValue": 310000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "General government",
+              "colLabel": "Net (expense) revenue",
+              "correctValue": -3890000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Public safety",
+              "colLabel": "Total program revenues",
+              "correctValue": 1460000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Public safety",
+              "colLabel": "Net (expense) revenue",
+              "correctValue": -8140000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Public works",
+              "colLabel": "Total program revenues",
+              "correctValue": 3100000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Public works",
+              "colLabel": "Net (expense) revenue",
+              "correctValue": -2200000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Culture and recreation",
+              "colLabel": "Total program revenues",
+              "correctValue": 2050000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Culture and recreation",
+              "colLabel": "Net (expense) revenue",
+              "correctValue": -50000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Interest on long-term debt",
+              "colLabel": "Total program revenues",
+              "correctValue": 0,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Interest on long-term debt",
+              "colLabel": "Net (expense) revenue",
+              "correctValue": -900000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Water",
+              "colLabel": "Total program revenues",
+              "correctValue": 6900000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Water",
+              "colLabel": "Net (expense) revenue",
+              "correctValue": 500000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Parking",
+              "colLabel": "Total program revenues",
+              "correctValue": 1020000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Parking",
+              "colLabel": "Net (expense) revenue",
+              "correctValue": -130000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Program revenues: General government = court fines $310,000. Public safety = permit fees $640,000 + police grant $820,000 = $1,460,000. Public works = highway aid $700,000 + developer contributions $2,400,000 = $3,100,000 (the street sales tax is a general revenue). Culture and recreation = fees $450,000 + library grant $1,600,000 = $2,050,000. Interest on long-term debt has no program revenues; the debt service property tax is a general revenue. Water = $6,900,000, including the $180,000 billed to City departments, which is not eliminated. Parking = $1,020,000.\nNet (expense) revenue = program revenues − expenses: General government $310,000 − $4,200,000 = −$3,890,000; Public safety $1,460,000 − $9,600,000 = −$8,140,000; Public works $3,100,000 − $5,300,000 = −$2,200,000; Culture and recreation $2,050,000 − $2,100,000 = −$50,000; Interest −$900,000; Water $6,900,000 − $6,400,000 = $500,000; Parking $1,020,000 − $1,150,000 = −$130,000.",
+        "explanationJa": "**ステップ1：機能別にプログラム収益を集計**\n\n| 機能 | 内訳 | プログラム収益 |\n|---|---|---|\n| 一般行政 | 裁判所の罰金 310,000 | 310,000 |\n| 公共安全 | 許認可手数料 640,000 + 警察補助 820,000 | 1,460,000 |\n| 公共事業 | 道路補助 700,000 + 開発業者寄贈 2,400,000 | 3,100,000 |\n| 文化・レクリエーション | 利用料 450,000 + 図書館建設補助 1,600,000 | 2,050,000 |\n| 長期債務の利息 | なし | 0 |\n| 水道 | 水道料金 6,900,000（市部局分180,000を含む） | 6,900,000 |\n| 駐車場 | 駐車料金 1,020,000 | 1,020,000 |\n\n- 道路維持目的の売上税は一般収益なので公共事業に入れない。\n- 債務返済用の固定資産税も一般収益なので、利息機能のプログラム収益は 0。\n- 市部局への水道料金 180,000 は機能間のサービス取引なので消去しない。\n\n**ステップ2：Net (expense) revenue = プログラム収益 − 費用**\n\n- 一般行政：310,000 − 4,200,000 = **−3,890,000**\n- 公共安全：1,460,000 − 9,600,000 = **−8,140,000**\n- 公共事業：3,100,000 − 5,300,000 = **−2,200,000**\n- 文化・レクリエーション：2,050,000 − 2,100,000 = **−50,000**\n- 利息：0 − 900,000 = **−900,000**\n- 水道：6,900,000 − 6,400,000 = **+500,000**\n- 駐車場：1,020,000 − 1,150,000 = **−130,000**",
+        "references": ["GASB 34"]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "General Revenues, Unusual or Infrequent Items, and Transfers — Governmental Activities",
+        "instruction": "Calculate the total of general revenues, unusual or infrequent items, and transfers reported in the governmental activities column of the statement of activities. Enter the amount in whole dollars, no commas.",
+        "answerType": "number",
+        "correctAnswer": 18410000,
+        "tolerance": 0,
+        "explanation": "General revenues: property taxes for general purposes $11,800,000 + property taxes for debt service $1,500,000 + street sales tax $2,200,000 + unrestricted state-shared revenue $1,300,000 + investment earnings $260,000 = $17,060,000. Unusual or infrequent item: gain on sale of the landfill site = $1,250,000 − $400,000 = $850,000 (the government-wide statement reports the gain, not the proceeds). Transfers in from the Water Fund: $500,000. Total = $17,060,000 + $850,000 + $500,000 = $18,410,000. The General Fund-to-Debt Service Fund transfer and the bond proceeds are not reported.",
+        "explanationJa": "**ステップ1：一般収益（政府活動）**\n\n11,800,000（一般目的の固定資産税）+ 1,500,000（債務返済用の固定資産税）+ 2,200,000（道路維持目的の売上税）+ 1,300,000（使途制限なしの州分与収入）+ 260,000（投資収益）= **17,060,000**\n\n**ステップ2：異常または稀な項目（unusual or infrequent item）**\n\n政府全体（発生主義）では売却代金ではなく売却益を表示する。\n1,250,000 − 400,000 = **850,000**\n\n**ステップ3：Transfers**\n\n水道ファンドからの受入 **+500,000**（一般ファンド→債務返済ファンドの1,200,000は政府活動内部なので消去。債券発行5,000,000は負債であり収益ではない）\n\n**合計**：17,060,000 + 850,000 + 500,000 = **18,410,000**",
+        "references": ["GASB 34"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Change in Net Position — Governmental Activities",
+        "instruction": "Calculate the change in net position reported for governmental activities for the year ended June 30, 2026. Enter the amount in whole dollars, no commas. Enter a decrease as a negative number.",
+        "answerType": "number",
+        "correctAnswer": 3230000,
+        "tolerance": 0,
+        "explanation": "Total net (expense) revenue of governmental activities = −$3,890,000 − $8,140,000 − $2,200,000 − $50,000 − $900,000 = −$15,180,000. Add general revenues, unusual or infrequent items, and transfers of $18,410,000. Change in net position = −$15,180,000 + $18,410,000 = $3,230,000.",
+        "explanationJa": "**ステップ1：政府活動の Net (expense) revenue 合計**\n\n−3,890,000 − 8,140,000 − 2,200,000 − 50,000 − 900,000 = **−15,180,000**\n\n**ステップ2：一般収益・異常または稀な項目・移転を加える**\n\n−15,180,000 + 18,410,000 = **3,230,000**（純資産の増加）",
+        "references": ["GASB 34"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Change in Net Position — Business-Type Activities",
+        "instruction": "Calculate the change in net position reported for business-type activities for the year ended June 30, 2026. Enter the amount in whole dollars, no commas. Enter a decrease as a negative number.",
+        "answerType": "number",
+        "correctAnswer": -1340000,
+        "tolerance": 0,
+        "explanation": "Net (expense) revenue of business-type activities = Water $500,000 + Parking −$130,000 = $370,000. General revenues: Water Utility investment earnings $90,000. Unusual or infrequent item: uninsured tornado loss equal to the carrying amount destroyed = −$1,300,000. Transfers out to the General Fund: −$500,000. Change in net position = $370,000 + $90,000 − $1,300,000 − $500,000 = −$1,340,000.",
+        "explanationJa": "**ステップ1：事業型活動の Net (expense) revenue**\n\n水道 +500,000 + 駐車場 −130,000 = **370,000**\n\n**ステップ2：一般収益**\n\n水道ユーティリティの投資収益 **+90,000**\n\n**ステップ3：異常または稀な項目**\n\n竜巻による損失（無保険のため、滅失部分の帳簿価額がそのまま損失）= **−1,300,000**\n\n**ステップ4：Transfers**\n\n一般ファンドへの移転 **−500,000**（政府活動側は +500,000 なので、合計列では相殺されて 0）\n\n**合計**：370,000 + 90,000 − 1,300,000 − 500,000 = **−1,340,000**（純資産の減少）",
+        "references": ["GASB 34", "GASB 103"]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Internal Activity in the Statement of Activities",
+        "instruction": "Select all statements that correctly describe how the City's internal activity is reported in the government-wide statement of activities.",
+        "answerType": "multiselect",
+        "options": [
+          "The $180,000 of water billed to City departments remains in Water charges for services and in General government expenses.",
+          "The $180,000 of water billed to City departments is eliminated from both Water charges for services and General government expenses.",
+          "The $1,200,000 transfer from the General Fund to the Debt Service Fund is not reported in the statement of activities.",
+          "The $1,200,000 transfer from the General Fund to the Debt Service Fund is reported as a transfer in the governmental activities column.",
+          "The $500,000 transfer from the Water Fund increases governmental activities and decreases business-type activities, with no net effect on the total primary government column.",
+          "The $500,000 transfer from the Water Fund is reported as a program revenue of the General government function."
+        ],
+        "correctAnswer": [
+          "The $180,000 of water billed to City departments remains in Water charges for services and in General government expenses.",
+          "The $1,200,000 transfer from the General Fund to the Debt Service Fund is not reported in the statement of activities.",
+          "The $500,000 transfer from the Water Fund increases governmental activities and decreases business-type activities, with no net effect on the total primary government column."
+        ],
+        "explanation": "Interfund services provided and used between functions, such as the sale of water by a utility to the general government, are not eliminated; the $180,000 stays in both Water charges for services and General government expenses. Transfers between funds within governmental activities, such as the General Fund-to-Debt Service Fund transfer, are eliminated in the government-wide statements. Transfers between governmental and business-type activities are reported in the transfers line after general revenues: they increase governmental activities and decrease business-type activities by the same amount and net to zero in the total primary government column. Transfers are never reported as program revenues.",
+        "explanationJa": "**内部活動の扱い（政府全体の活動計算書）**\n\n- **機能間のサービス取引（水道の販売など）は消去しない**：180,000 は水道の charges for services と一般行政の費用の両方に残る。消去してしまうと、各機能の本来の費用・収益が分からなくなるため。\n- **政府活動内部の移転は消去する**：一般ファンド→債務返済ファンドの 1,200,000 は、政府活動列の中で受入と支出が相殺される。Transfers 行にも表示しない。\n- **政府活動と事業型活動の間の移転は Transfers 行に表示**：政府活動 +500,000、事業型活動 −500,000 で、プライマリーガバメント合計列では 0 になる。\n- 移転をプログラム収益として表示することはない。",
+        "references": ["GASB 34"]
+      }
+    ],
+    "difficulty": "advanced",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  }
+]

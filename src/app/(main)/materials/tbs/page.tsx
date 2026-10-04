@@ -15,6 +15,7 @@ import {
 import { ArrowLeft, BookOpen, CheckCircle2 } from "lucide-react";
 import {
   TBS_SUBJECTS,
+  getTBSMockSetsBySubject,
   getTBSQuestionsBySubject,
   getTBSTopicsBySubject,
   type TBSSubject,
@@ -52,6 +53,10 @@ export default function TBSListPage() {
     [subject],
   );
   const topics = useMemo(() => getTBSTopicsBySubject(subject), [subject]);
+  const mockSets = useMemo(
+    () => getTBSMockSetsBySubject(subject).filter((set) => set.questions.length > 0),
+    [subject],
+  );
 
   const filtered = useMemo(() => {
     return questions.filter((q) => {
@@ -115,6 +120,36 @@ export default function TBSListPage() {
             </span>
           </div>
         </div>
+
+        {mockSets.length > 0 && (
+          <div className="bg-white rounded-lg border p-3 mb-4 space-y-2">
+            <div>
+              <p className="text-sm font-medium text-gray-900">通し模試用TBS</p>
+              <p className="text-xs text-gray-500 mt-0.5">
+                本番形式の通し模試（4択の初見模試50問＋TBS 7問）で初見として解くため、下の演習一覧には出していません。模試の日まで開かないでください。
+              </p>
+            </div>
+            {mockSets.map((set) => {
+              const done = set.questions.filter((q) => attemptedIds.has(q.id)).length;
+              const minutes = set.questions.reduce((sum, q) => sum + q.estimatedMinutes, 0);
+              return (
+                <details key={set.id} className="rounded-md border bg-gray-50">
+                  <summary className="cursor-pointer px-3 py-2 text-sm flex items-center justify-between">
+                    <span className="font-medium">{set.name}</span>
+                    <span className="text-xs text-gray-500">
+                      {set.questions.length}問・目安{minutes}分・{done}問完了
+                    </span>
+                  </summary>
+                  <div className="space-y-3 p-3 pt-1">
+                    {set.questions.map((q) => (
+                      <TBSCard key={q.id} question={q} latestScore={getTBSScore(q.id)} />
+                    ))}
+                  </div>
+                </details>
+              );
+            })}
+          </div>
+        )}
 
         <div className="flex flex-wrap gap-2 mb-4">
           <div className="flex gap-1">
