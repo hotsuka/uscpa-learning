@@ -12,7 +12,9 @@ import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer"
 import { MockExamResultDetail } from "@/components/questions/MockExamResultDetail"
 import { useTimer } from "@/hooks/useTimer"
 import {
+  buildFreshMockExam,
   buildMockExam,
+  countFreshMockRuns,
   countSeenQuestions,
   MOCK_EXAM_AREA_QUOTA,
   MOCK_EXAM_QUESTION_COUNT,
@@ -63,6 +65,9 @@ const formatDateTime = (iso: string): string =>
 export default function MockExamPage() {
   const [phase, setPhase] = useState<Phase>("intro")
   const [subject, setSubject] = useState<MockExamSubject>("FAR")
+  // BARのみ: 一度も解いていない初見模試用の問題だけで組むか
+  const [freshMode, setFreshMode] = useState(false)
+  const [runningFresh, setRunningFresh] = useState(false)
   const [entries, setEntries] = useState<MockExamQuestionEntry[]>([])
   // index -> シャッフル後ラベル
   const [answers, setAnswers] = useState<Record<number, string>>({})
@@ -82,6 +87,12 @@ export default function MockExamPage() {
   const { isRunning, start, pause } = useTimer()
 
   const addAttempt = useQuestionBankStore((s) => s.addAttempt)
+  const questionAttempts = useQuestionBankStore((s) => s.attempts)
+  const freshRunsLeft =
+    subject === "BAR"
+      ? countFreshMockRuns(new Set(questionAttempts.map((a) => a.questionId)))
+      : 0
+  const useFresh = subject === "BAR" && freshMode && freshRunsLeft > 0
   const addResult = useMockExamStore((s) => s.addResult)
   const allResults = useMockExamStore((s) => s.results)
   // 履歴と出題済み判定は選択中の科目の結果だけで行う
@@ -97,8 +108,15 @@ export default function MockExamPage() {
   const handleStart = (): void => {
     // 学習タイマーの記録が別科目・別単元で保存されないよう、模試の科目に合わせる
     useTimerStore.getState().setQuestionBankContext(subject, "模試モード")
-    // 過去の模試で出題済みの問題を避けて未出題から優先的に出す
-    setEntries(buildMockExam(countSeenQuestions(pastResults), subject))
+    if (useFresh) {
+      const fresh = buildFreshMockExam(new Set(questionAttempts.map((a) => a.questionId)))
+      if (!fresh) return
+      setEntries(fresh)
+    } else {
+      // 過去の模試で出題済みの問題を避けて未出題から優先的に出す
+      setEntries(buildMockExam(countSeenQuestions(pastResults), subject))
+    }
+    setRunningFresh(useFresh)
     setAnswers({})
     setFlagged(new Set())
     setCurrentIndex(0)
@@ -162,6 +180,7 @@ export default function MockExamPage() {
     const mockResult: MockExamResult = {
       id: crypto.randomUUID(),
       subject,
+      ...(runningFresh ? { mode: "fresh" as const } : {}),
       startedAt: startedAtRef.current,
       finishedAt,
       totalQuestions: answerRecords.length,
@@ -178,7 +197,7 @@ export default function MockExamPage() {
     addResult(mockResult)
     setResult(mockResult)
     setPhase("result")
-  }, [entries, answers, addAttempt, addResult, subject])
+  }, [entries, answers, addAttempt, addResult, subject, runningFresh])
 
   // タイマー（0で自動提出）
   useEffect(() => {
@@ -396,8 +415,36 @@ export default function MockExamPage() {
                     （Shift併用で減算）
                   </span>
                 </div>
+                {subject === "BAR" && (
+                  <div className="pt-2 space-y-1.5">
+                    <div className="flex gap-1">
+                      {[
+                        { fresh: false, label: "通常" },
+                        { fresh: true, label: `初見（残り${freshRunsLeft}回分）` },
+                      ].map(({ fresh, label }) => (
+                        <button
+                          key={label}
+                          onClick={() => setFreshMode(fresh)}
+                          disabled={fresh && freshRunsLeft === 0}
+                          className={cn(
+                            "px-3 h-8 rounded text-xs font-medium transition-colors disabled:opacity-50",
+                            useFresh === fresh
+                              ? "bg-primary text-primary-foreground"
+                              : "border text-muted-foreground hover:bg-muted"
+                          )}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      初見: 演習画面に出していない模試専用の問題から、まだ解いていないものだけで出題します。
+                      通常: 演習で解いた問題も含めて出題します（点数は実力より高めに出ます）。
+                    </p>
+                  </div>
+                )}
                 <Button onClick={handleStart} className="w-full mt-2">
-                  模試を開始する
+                  {useFresh ? "初見模試を開始する" : "模試を開始する"}
                 </Button>
               </CardContent>
             </Card>
@@ -422,6 +469,9 @@ export default function MockExamPage() {
                     >
                       <span className="text-muted-foreground">
                         {formatDateTime(r.finishedAt)}
+                        {r.mode === "fresh" && (
+                          <span className="ml-2 text-xs font-medium text-primary">初見</span>
+                        )}
                       </span>
                       <span className="flex items-center gap-1.5">
                         <span

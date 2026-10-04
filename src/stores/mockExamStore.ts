@@ -20,6 +20,8 @@ export interface MockExamResult {
   id: string;
   /** 模試の科目。BAR模試の追加（2026-09）より前の結果には無く、それらはFARとして扱う */
   subject?: MockExamSubject;
+  /** "fresh" は一度も解いていない初見模試用の問題だけで組んだ模試。無ければ通常の模試 */
+  mode?: "fresh";
   startedAt: string;
   finishedAt: string;
   totalQuestions: number;

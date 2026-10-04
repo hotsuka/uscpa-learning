@@ -27,6 +27,11 @@ import area2StockComp from "./stock-comp.json";
 import area3GovernmentFunds from "./government-funds.json";
 import area3GovernmentWide from "./government-wide.json";
 
+// 初見模試用（演習画面には出さず、模試の「初見」モードだけで出題する）
+import freshMockArea1 from "./fresh-mock-area1.json";
+import freshMockArea2 from "./fresh-mock-area2.json";
+import freshMockArea3 from "./fresh-mock-area3.json";
+
 export type BarArea = "I" | "II" | "III";
 
 // BAR Area I（Business Analysis, 配点40-50%）に対応する問題セット。
@@ -108,13 +113,21 @@ export const barPracticeQuestionSets: QuestionSet[] = [
 export const getBarAreaForSet = (setId: string): BarArea =>
   barOwnAreaBySetId.get(setId) ?? barAreaByFarSetId.get(setId) ?? "I";
 
-// 問題ID → 問題。BAR模試の結果から問題本体を引くために使う（FARから借りたセットも含む）
+// 初見模試用のセット。既存の模試は演習で一度解いた問題からしか出せず、初見の実力が測れないため、
+// 演習画面（barPracticeQuestionSets）には含めず模試の「初見」モードだけで使う。
+export const barFreshMockQuestionSets: { set: QuestionSet; area: BarArea }[] = [
+  { set: freshMockArea1 as QuestionSet, area: "I" },
+  { set: freshMockArea2 as QuestionSet, area: "II" },
+  { set: freshMockArea3 as QuestionSet, area: "III" },
+];
+
+// 問題ID → 問題。BAR模試の結果から問題本体を引くために使う（FARから借りたセット・初見模試用も含む）
 let barQuestionsById: Map<string, FARQuestion> | null = null;
 
 export const getBarQuestionById = (id: string): FARQuestion | undefined => {
   if (!barQuestionsById) {
     barQuestionsById = new Map(
-      barPracticeQuestionSets.flatMap((set) =>
+      [...barPracticeQuestionSets, ...barFreshMockQuestionSets.map((f) => f.set)].flatMap((set) =>
         set.questions.map((q) => [q.id, q] as const),
       ),
     );

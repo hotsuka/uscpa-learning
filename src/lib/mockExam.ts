@@ -11,6 +11,7 @@ import { farQuestionSets } from "@/data/questions/far";
 import { getFarScopeForSet, type FarArea } from "@/data/questions/far/farScope";
 import {
   barAreaIIIIIQuestionSets,
+  barFreshMockQuestionSets,
   barOwnAreaIIIIIQuestionSets,
   barQuestionSets,
   getBarAreaForSet,
@@ -178,6 +179,61 @@ export function buildMockExam(
     }
     // プール段階で未出題が枯渇したテーマがあるため、抽出側でも重みを効かせる
     const picked = weightedSample(pool, weightOf, quota[area]);
+    for (const question of picked) {
+      result.push({ question, area, ...shuffleChoices(question) });
+    }
+  }
+  return shuffleArray(result);
+}
+
+/** 初見模試用の問題のうち、まだ一度も解いていないものを Area ごとに集める */
+function collectUnseenFreshPools(
+  attemptedIds: ReadonlySet<string>,
+): Record<FarArea, FARQuestion[]> {
+  const pools: Record<FarArea, FARQuestion[]> = { I: [], II: [], III: [] };
+  for (const { set, area } of barFreshMockQuestionSets) {
+    pools[area].push(...set.questions.filter((q) => !attemptedIds.has(q.id)));
+  }
+  return pools;
+}
+
+/**
+ * BARの初見模試を何回分組めるか。Area ごとの「未解答数 ÷ 出題数」の最小値。
+ * attemptedIds は演習・模試を問わず一度でも解いた問題ID（問題バンクの解答履歴）。
+ */
+export function countFreshMockRuns(attemptedIds: ReadonlySet<string>): number {
+  const pools = collectUnseenFreshPools(attemptedIds);
+  const quota = MOCK_EXAM_AREA_QUOTA.BAR;
+  return Math.min(
+    ...(["I", "II", "III"] as FarArea[]).map((area) =>
+      Math.floor(pools[area].length / quota[area]),
+    ),
+  );
+}
+
+/**
+ * BARの初見模試（50問）を組む。一度も解いていない初見模試用の問題だけから出題する。
+ * どれかの Area で未解答が出題数に満たなければ null（解いたことのある問題で埋めない）。
+ * テーマが偏らないよう、Area 内では1テーマ MAX_PER_TOPIC 問までを優先して抽出する。
+ */
+export function buildFreshMockExam(
+  attemptedIds: ReadonlySet<string>,
+): MockExamQuestionEntry[] | null {
+  if (countFreshMockRuns(attemptedIds) < 1) return null;
+  const pools = collectUnseenFreshPools(attemptedIds);
+  const quota = MOCK_EXAM_AREA_QUOTA.BAR;
+
+  const result: MockExamQuestionEntry[] = [];
+  for (const area of ["I", "II", "III"] as FarArea[]) {
+    const byTopic = new Map<string, FARQuestion[]>();
+    for (const q of pools[area]) byTopic.set(q.topic, [...(byTopic.get(q.topic) ?? []), q]);
+    const capped = [...byTopic.values()].flatMap((qs) =>
+      shuffleArray(qs).slice(0, MAX_PER_TOPIC),
+    );
+    // テーマ数が少なく上限内で足りないときは残りから補う
+    const cappedIds = new Set(capped.map((q) => q.id));
+    const rest = shuffleArray(pools[area].filter((q) => !cappedIds.has(q.id)));
+    const picked = [...shuffleArray(capped), ...rest].slice(0, quota[area]);
     for (const question of picked) {
       result.push({ question, area, ...shuffleChoices(question) });
     }

@@ -1,11 +1,13 @@
 import { describe, it, expect } from "vitest"
 import {
+  buildFreshMockExam,
   buildMockExam,
+  countFreshMockRuns,
   countSeenQuestions,
   MOCK_EXAM_QUESTION_COUNT,
 } from "@/lib/mockExam"
 import { getBarScopeForQuestion } from "@/data/questions/bar/barScope"
-import { barQuestionSets } from "@/data/questions/bar"
+import { barFreshMockQuestionSets, barQuestionSets } from "@/data/questions/bar"
 
 describe("countSeenQuestions", () => {
   it("questionIdごとの出題回数を集計する", () => {
@@ -105,5 +107,33 @@ describe("buildMockExam（BAR）", () => {
       const ids = buildMockExam({}, "BAR").map((e) => e.question.id)
       expect(ids.filter((id) => id.startsWith("pen-"))).toEqual([])
     }
+  })
+})
+
+describe("buildFreshMockExam（BAR初見模試）", () => {
+  const freshIds = barFreshMockQuestionSets.flatMap(({ set }) => set.questions.map((q) => q.id))
+
+  it("初見模試用の問題をすべて解いていれば組めない", () => {
+    const attempted = new Set(freshIds)
+    expect(countFreshMockRuns(attempted)).toBe(0)
+    expect(buildFreshMockExam(attempted)).toBeNull()
+  })
+
+  it("未解答の初見模試用の問題だけで Area 配分どおりに組む", () => {
+    const runs = countFreshMockRuns(new Set())
+    if (runs < 1) return // 問題を投入する前は組めない
+    // 1回分を解いた扱いにすると残り回数が1減り、その問題は二度と出ない
+    const first = buildFreshMockExam(new Set())!
+    const firstIds = new Set(first.map((e) => e.question.id))
+    expect(first).toHaveLength(MOCK_EXAM_QUESTION_COUNT)
+    expect(first.every((e) => freshIds.includes(e.question.id))).toBe(true)
+    const byArea = first.reduce<Record<string, number>>((acc, e) => {
+      acc[e.area] = (acc[e.area] ?? 0) + 1
+      return acc
+    }, {})
+    expect(byArea).toEqual({ I: 22, II: 20, III: 8 })
+    expect(countFreshMockRuns(firstIds)).toBe(runs - 1)
+    const second = buildFreshMockExam(firstIds)
+    if (second) expect(second.some((e) => firstIds.has(e.question.id))).toBe(false)
   })
 })
