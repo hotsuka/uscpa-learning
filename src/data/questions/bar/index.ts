@@ -2,6 +2,7 @@ import type { FARQuestion, QuestionSet } from "@/types/questions";
 import { farQuestionSets } from "@/data/questions/far";
 import { BAR_AREA_II_III_SOURCES } from "./barScope";
 
+import becReleased from "./bec-released.json";
 import costAccounting from "./cost-accounting.json";
 import costMeasurement from "./cost-measurement.json";
 import decisionMaking from "./decision-making.json";
@@ -48,6 +49,8 @@ export const barQuestionSets: QuestionSet[] = [
   financialRiskCapitalBudgeting,
   riskManagementErm,
   economicTheory,
+  // BEC時代の公開問題・添削課題からBAR範囲内の20問を抜き出したセット（XBRL1問はArea II-Jだが1問のため同居）
+  becReleased,
 ] as QuestionSet[];
 
 export const getBarTotalQuestionCount = (): number =>
