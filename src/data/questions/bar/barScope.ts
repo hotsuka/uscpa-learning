@@ -123,6 +123,21 @@ export const BAR_SCOPE_BY_SET_ID: Record<string, BarScopeInfo> = {
       },
     ],
   },
+
+  // 2026-10-08 検証。AICPA 2021 Recently Released Questions (BEC) と Proactive添削課題から、
+  // BAR節（p65-81）に該当するタスクがある20問だけを取り込んだセット。BEC時代の問題だが、
+  // 経済・財務管理・管理会計・ERM・XBRLは現行BARに引き継がれている。
+  "bar-bec-released": {
+    scope: "mixed",
+    note: "Area I B-5『supply and demand and elasticity』、A-3 variance analysis、B-1 budget・breakeven、B-3 payback・NPV・IRR、B-4 COSO ERM、Area II-J XBRL に対応。18問は範囲内。関税・為替の2問はマクロ経済で、ブループリントに tariff / exchange rate の語は無い",
+    questionGroups: [
+      {
+        ids: ["bar-brq-016", "bar-brq-017"],
+        scope: "gray",
+        note: "関税とドル安の影響。Area I B-5『effect of changes in economic conditions and market influences』の上位論点には含まれうるが、明示タスクは supply and demand / elasticity / inflation のみで tariff・exchange rate の語はBAR節に0件。安全側で演習対象に残す",
+      },
+    ],
+  },
 };
 
 // 未検証のセットは "unverified"。"in" に倒さないこと（範囲内と誤認させないため）
