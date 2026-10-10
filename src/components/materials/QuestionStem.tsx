@@ -47,7 +47,7 @@ const MAX_CELL_LENGTH = 45;
  * 列区切りとして拾ってしまっている行がある。それを表にすると本文が
  * 右寄せの細いセルに押し込まれて読めなくなるので、値の一覧に見える行だけを表にする。
  */
-function isTableRow(line: string): boolean {
+export function isTableRow(line: string): boolean {
   if (!line.includes(" | ")) return false;
   const cells = line.split(" | ").map((c) => c.trim());
   if (cells.length < 2) return false;

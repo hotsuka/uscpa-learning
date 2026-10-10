@@ -84,6 +84,22 @@ npx prettier --write src/data/tbs/far/*.json && node scripts/check-tbs.mjs
 - `.bak-tbs-*` はコミットしない（`git status` で確認）
 - コミットメッセージは「なぜ」を書く（例: `feat: リースTBSを3問追加し実試験のタスク数に合わせる`）
 
+### 6. 全問検査（不備ゼロを確認してから完了）
+
+```bash
+npm run lint:questions
+```
+
+アプリが読み込む全問題（4択・TBS・模試セット）に対して、参照している Exhibit の欠落・Markdown表の列数不整合や空見出し・
+解説や見出しの欠落・通し模試の時間超過を検査する（`src/lib/questionLint/`）。
+**テストが通る＝追加した問題の不備がゼロ**になるまで完了にしない。
+
+- 「既知の一覧に無い不備」が出たら、そこに出た問題IDのデータを直す（作問エージェントに `SendMessage` で差し戻す）。
+  `known-issues.json` に足して通すのは、ユーザが「このままでよい」と判断したときだけ
+- 通し模試用（`src/data/tbs/bar/mock/`）に足した場合は、`estimatedMinutes` の合計が持ち時間（240分 − 4択90分 = 150分）を
+  超えると `mock-time-over` が出る
+- 既存の不備を直して「もう出なくなった不備」と言われたら、`known-issues.json` からその行を消す
+
 ## 注意
 
 - `_staging` を消す前に `node scripts/check-tbs.mjs` が通っていることを必ず確認する。作問エージェントの成果物はここにしか無い。
