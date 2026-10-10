@@ -28,10 +28,16 @@ import area2StockComp from "./stock-comp.json";
 import area3GovernmentFunds from "./government-funds.json";
 import area3GovernmentWide from "./government-wide.json";
 
-// 初見模試用（演習画面には出さず、模試の「初見」モードだけで出題する）
+// 旧初見模試用（v1）。長い多段計算に偏り本番より重かったため、初見模試から外して計算演習として演習画面に出す
 import freshMockArea1 from "./fresh-mock-area1.json";
 import freshMockArea2 from "./fresh-mock-area2.json";
 import freshMockArea3 from "./fresh-mock-area3.json";
+
+// 初見模試用（v2。演習画面には出さず、模試の「初見」モードだけで出題する）。
+// 過去問の統計（語数・計算問題の比率・論点の比率）に形をそろえて作り直したもの
+import freshMock2Area1 from "./fresh-mock2-area1.json";
+import freshMock2Area2 from "./fresh-mock2-area2.json";
+import freshMock2Area3 from "./fresh-mock2-area3.json";
 
 export type BarArea = "I" | "II" | "III";
 
@@ -51,6 +57,8 @@ export const barQuestionSets: QuestionSet[] = [
   economicTheory,
   // BEC時代の公開問題・添削課題からBAR範囲内の20問を抜き出したセット（XBRL1問はArea II-Jだが1問のため同居）
   becReleased,
+  // 旧初見模試（v1）の Area I 分。計算演習用
+  freshMockArea1,
 ] as QuestionSet[];
 
 export const getBarTotalQuestionCount = (): number =>
@@ -89,6 +97,8 @@ const barOwnAreaBySetId = new Map<string, Exclude<BarArea, "I">>([
   [area2RevenueAnalytics.id, "II"],
   [area3GovernmentWide.id, "III"],
   [area3GovernmentFunds.id, "III"],
+  [freshMockArea2.id, "II"],
+  [freshMockArea3.id, "III"],
 ]);
 
 export const barOwnAreaIIIIIQuestionSets: QuestionSet[] = [
@@ -103,6 +113,9 @@ export const barOwnAreaIIIIIQuestionSets: QuestionSet[] = [
   area2RevenueAnalytics,
   area3GovernmentWide,
   area3GovernmentFunds,
+  // 旧初見模試（v1）の Area II / III 分。計算演習用
+  freshMockArea2,
+  freshMockArea3,
 ] as QuestionSet[];
 
 // BAR画面で演習対象にする全セット（Area I → II → III）
@@ -119,9 +132,9 @@ export const getBarAreaForSet = (setId: string): BarArea =>
 // 初見模試用のセット。既存の模試は演習で一度解いた問題からしか出せず、初見の実力が測れないため、
 // 演習画面（barPracticeQuestionSets）には含めず模試の「初見」モードだけで使う。
 export const barFreshMockQuestionSets: { set: QuestionSet; area: BarArea }[] = [
-  { set: freshMockArea1 as QuestionSet, area: "I" },
-  { set: freshMockArea2 as QuestionSet, area: "II" },
-  { set: freshMockArea3 as QuestionSet, area: "III" },
+  { set: freshMock2Area1 as QuestionSet, area: "I" },
+  { set: freshMock2Area2 as QuestionSet, area: "II" },
+  { set: freshMock2Area3 as QuestionSet, area: "III" },
 ];
 
 // 問題ID → 問題。BAR模試の結果から問題本体を引くために使う（FARから借りたセット・初見模試用も含む）
