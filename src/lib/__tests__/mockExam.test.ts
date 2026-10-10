@@ -136,4 +136,22 @@ describe("buildFreshMockExam（BAR初見模試）", () => {
     const second = buildFreshMockExam(firstIds)
     if (second) expect(second.some((e) => firstIds.has(e.question.id))).toBe(false)
   })
+
+  it("Area 内のテーマ別出題数は未解答数に比例する（過去問の論点比率を保つ）", () => {
+    if (countFreshMockRuns(new Set()) < 1) return
+    const exam = buildFreshMockExam(new Set())!
+    const quota: Record<string, number> = { I: 22, II: 20, III: 8 }
+    for (const { set, area } of barFreshMockQuestionSets) {
+      const total = barFreshMockQuestionSets
+        .filter((f) => f.area === area)
+        .reduce((sum, f) => sum + f.set.questions.length, 0)
+      const topics = new Set(set.questions.map((q) => q.topic))
+      for (const topic of topics) {
+        const expected = (quota[area] * set.questions.filter((q) => q.topic === topic).length) / total
+        const actual = exam.filter((e) => e.area === area && e.question.topic === topic).length
+        expect(actual).toBeGreaterThanOrEqual(Math.floor(expected))
+        expect(actual).toBeLessThanOrEqual(Math.ceil(expected))
+      }
+    }
+  })
 })

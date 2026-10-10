@@ -27,7 +27,10 @@ export const MOCK_EXAM_MINUTES = 90;
 export const MOCK_EXAM_TARGET_RATE = 75;
 
 // Area別の出題数（合計50問）。ブループリントの配点の中央値に比例させる
-export const MOCK_EXAM_AREA_QUOTA: Record<MockExamSubject, Record<FarArea, number>> = {
+export const MOCK_EXAM_AREA_QUOTA: Record<
+  MockExamSubject,
+  Record<FarArea, number>
+> = {
   FAR: { I: 18, II: 17, III: 15 },
   BAR: { I: 22, II: 20, III: 8 },
 };
@@ -122,7 +125,10 @@ function shuffleChoices(question: FARQuestion): {
 function collectPools(
   subject: MockExamSubject,
 ): Record<FarArea, { set: QuestionSet; questions: FARQuestion[] }[]> {
-  const pools: Record<FarArea, { set: QuestionSet; questions: FARQuestion[] }[]> = {
+  const pools: Record<
+    FarArea,
+    { set: QuestionSet; questions: FARQuestion[] }[]
+  > = {
     I: [],
     II: [],
     III: [],
@@ -145,7 +151,10 @@ function collectPools(
     if (questions.length > 0) pools.I.push({ set, questions });
   }
   // BAR Area II/III: BAR画面で演習できるセットと同じもの
-  for (const set of [...barOwnAreaIIIIIQuestionSets, ...barAreaIIIIIQuestionSets]) {
+  for (const set of [
+    ...barOwnAreaIIIIIQuestionSets,
+    ...barAreaIIIIIQuestionSets,
+  ]) {
     const area = getBarAreaForSet(set.id);
     if (area === "I") continue;
     pools[area].push({ set, questions: set.questions });
@@ -214,7 +223,9 @@ export function countFreshMockRuns(attemptedIds: ReadonlySet<string>): number {
 /**
  * BARの初見模試（50問）を組む。一度も解いていない初見模試用の問題だけから出題する。
  * どれかの Area で未解答が出題数に満たなければ null（解いたことのある問題で埋めない）。
- * テーマが偏らないよう、Area 内では1テーマ MAX_PER_TOPIC 問までを優先して抽出する。
+ * 初見模試用の問題は過去問の論点比率に合わせて問題数を配分してあるため、
+ * Area 内ではテーマごとの未解答数に比例して出題数を割り当てる（最大剰余法）。
+ * 一律の上限で均すと、過去問で多い論点（財務管理など）が薄まってしまう。
  */
 export function buildFreshMockExam(
   attemptedIds: ReadonlySet<string>,
@@ -226,14 +237,25 @@ export function buildFreshMockExam(
   const result: MockExamQuestionEntry[] = [];
   for (const area of ["I", "II", "III"] as FarArea[]) {
     const byTopic = new Map<string, FARQuestion[]>();
-    for (const q of pools[area]) byTopic.set(q.topic, [...(byTopic.get(q.topic) ?? []), q]);
-    const capped = [...byTopic.values()].flatMap((qs) =>
-      shuffleArray(qs).slice(0, MAX_PER_TOPIC),
-    );
-    // テーマ数が少なく上限内で足りないときは残りから補う
-    const cappedIds = new Set(capped.map((q) => q.id));
-    const rest = shuffleArray(pools[area].filter((q) => !cappedIds.has(q.id)));
-    const picked = [...shuffleArray(capped), ...rest].slice(0, quota[area]);
+    for (const q of pools[area])
+      byTopic.set(q.topic, [...(byTopic.get(q.topic) ?? []), q]);
+    const total = pools[area].length;
+    const shares = shuffleArray([...byTopic.values()]).map((qs) => {
+      const exact = (quota[area] * qs.length) / total;
+      return {
+        qs,
+        count: Math.floor(exact),
+        remainder: exact - Math.floor(exact),
+      };
+    });
+    // 切り捨てで足りない分は、端数の大きいテーマから1問ずつ足す
+    let shortfall = quota[area] - shares.reduce((sum, s) => sum + s.count, 0);
+    for (const share of [...shares].sort((a, b) => b.remainder - a.remainder)) {
+      if (shortfall <= 0) break;
+      share.count += 1;
+      shortfall -= 1;
+    }
+    const picked = shares.flatMap((s) => shuffleArray(s.qs).slice(0, s.count));
     for (const question of picked) {
       result.push({ question, area, ...shuffleChoices(question) });
     }

@@ -84,6 +84,14 @@ describe("初見模試用のセット", () => {
     expect(freshSets.filter((set) => practiceIds.has(set.id))).toEqual([]);
   });
 
+  it("旧初見模試（v1）は計算演習として演習画面に出し、元の Area で扱う", () => {
+    const practiceIds = new Set(barPracticeQuestionSets.map((set) => set.id));
+    expect(practiceIds.has("bar-fresh-mock-area1")).toBe(true);
+    expect(getBarAreaForSet("bar-fresh-mock-area1")).toBe("I");
+    expect(getBarAreaForSet("bar-fresh-mock-area2")).toBe("II");
+    expect(getBarAreaForSet("bar-fresh-mock-area3")).toBe("III");
+  });
+
   it("問題IDが演習用の問題と衝突せず、模試結果から引ける", () => {
     const practiceQuestionIds = new Set(
       barPracticeQuestionSets.flatMap((set) => set.questions.map((q) => q.id)),

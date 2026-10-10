@@ -1,0 +1,1450 @@
+{
+  "id": "bar-fresh-mock2-area1",
+  "name": "初見模試用 Area I",
+  "topic": "初見模試用 Area I",
+  "version": "2.0.0",
+  "questions": [
+    {
+      "id": "bar-fv2-a1-001",
+      "topic": "Financial Management (CH51)",
+      "subtopic": "EOQ Model Properties",
+      "stem": "A distributor uses the economic order quantity (EOQ) model to set order sizes for a product with constant, known demand. Which statement about the EOQ is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "At the EOQ, the cost of placing one order equals the carrying cost of one unit."
+        },
+        {
+          "label": "B",
+          "text": "At the EOQ, total annual ordering cost equals total annual carrying cost."
+        },
+        {
+          "label": "C",
+          "text": "The EOQ increases when the annual carrying cost per unit increases."
+        },
+        {
+          "label": "D",
+          "text": "The EOQ is the order size that minimizes the purchase price per unit."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The EOQ minimizes the sum of annual ordering cost and annual carrying cost. Ordering cost falls and carrying cost rises as order size grows, and the total is lowest where the two annual totals are equal. The statement comparing the cost of one order with the carrying cost of one unit confuses per-unit amounts with annual totals. Carrying cost is in the denominator of the EOQ formula (square root of 2DS/H), so a higher carrying cost per unit lowers the EOQ rather than raising it. The basic EOQ model assumes a constant purchase price, so it does not choose order size to minimize price (quantity discounts require a separate analysis).",
+      "explanationJa": "EOQは年間発注費と年間保管費の合計を最小にする発注量である。発注量を増やすと発注費は減り保管費は増えるため、両者の年間合計額が等しくなる点で総費用が最小になる。「1回の発注費＝1単位の保管費」とする記述は、単位当たりの金額と年間合計額を混同している。保管費はEOQ公式（√(2DS/H)）の分母にあるため、1単位当たり保管費が上がるとEOQは小さくなり、大きくはならない。基本的なEOQモデルは購入単価を一定と仮定しており、単価を最小化する発注量を求めるものではない（数量割引は別途分析が必要）。",
+      "references": ["Inventory management - economic order quantity"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-002",
+      "topic": "Financial Management (CH51)",
+      "subtopic": "Reorder Point",
+      "stem": "Halden Co. uses 30 units of a component per working day. The supplier's lead time is 8 working days, Halden keeps a safety stock of 60 units, and its economic order quantity is 500 units. At what inventory level should Halden place a new order?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "240 units"
+        },
+        {
+          "label": "B",
+          "text": "560 units"
+        },
+        {
+          "label": "C",
+          "text": "300 units"
+        },
+        {
+          "label": "D",
+          "text": "800 units"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Reorder point = (daily usage x lead time) + safety stock = (30 x 8) + 60 = 240 + 60 = 300 units. The 240-unit answer covers expected usage during the lead time but omits the safety stock. The 560-unit answer adds the safety stock to the EOQ, and the 800-unit answer adds the EOQ to lead-time usage plus safety stock; the EOQ determines how much to order, not when to order.",
+      "explanationJa": "発注点＝（1日当たり使用量×リードタイム）＋安全在庫＝（30×8）＋60＝240＋60＝300単位。240単位はリードタイム中の予想使用量のみで安全在庫を加えていない。560単位は安全在庫にEOQを加えたもの、800単位はリードタイム使用量と安全在庫にさらにEOQを加えたものである。EOQは「いくら発注するか」を決めるもので、「いつ発注するか」（発注点）には含めない。",
+      "references": ["Inventory management - reorder point and safety stock"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-003",
+      "topic": "Financial Management (CH51)",
+      "subtopic": "Optimal Safety Stock",
+      "stem": "A retailer is deciding how much safety stock to hold for a product with uncertain daily demand. The optimal level of safety stock is the level at which",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The carrying cost of safety stock plus expected stockout cost is minimized"
+        },
+        {
+          "label": "B",
+          "text": "Total annual ordering cost equals total annual carrying cost"
+        },
+        {
+          "label": "C",
+          "text": "The probability of a stockout during the lead time is reduced to zero"
+        },
+        {
+          "label": "D",
+          "text": "Safety stock equals the average usage expected during the lead time"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Each additional unit of safety stock adds carrying cost but lowers expected stockout cost (lost sales, rush orders, lost goodwill). The optimal safety stock minimizes the total of these two costs. Equality of annual ordering and carrying costs is the condition that defines the EOQ, not the safety stock level. Eliminating all stockout risk is normally uneconomical because carrying cost keeps rising while each added unit avoids less and less expected stockout cost. Average usage during the lead time is part of the reorder point, but it is not the safety stock; safety stock is held in addition to expected lead-time usage.",
+      "explanationJa": "安全在庫を1単位増やすごとに保管費は増えるが、品切れの期待コスト（販売機会の逸失、緊急発注、信用の低下）は減る。最適な安全在庫は、この2つのコストの合計を最小にする水準である。「年間発注費＝年間保管費」はEOQを決める条件であり、安全在庫の水準ではない。品切れリスクをゼロにするのは、保管費が増え続ける一方で追加1単位が減らす品切れコストは小さくなっていくため、通常は経済的でない。リードタイム中の平均使用量は発注点の構成要素だが安全在庫そのものではなく、安全在庫はそれに上乗せして持つものである。",
+      "references": ["Inventory management - safety stock"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-004",
+      "topic": "Financial Management (CH51)",
+      "subtopic": "Cash Conversion Cycle",
+      "stem": "Marlow Corp. has days inventory outstanding of 55 days and days sales outstanding of 30 days. Management wants to shorten its cash conversion cycle to 40 days by negotiating longer payment terms with suppliers, without changing its inventory or receivables policies. How many days payables outstanding must Marlow achieve?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "15 days"
+        },
+        {
+          "label": "B",
+          "text": "125 days"
+        },
+        {
+          "label": "C",
+          "text": "85 days"
+        },
+        {
+          "label": "D",
+          "text": "45 days"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cash conversion cycle = days inventory outstanding + days sales outstanding - days payables outstanding. 40 = 55 + 30 - DPO, so DPO = 85 - 40 = 45 days. The 85-day answer is the operating cycle (inventory days plus receivable days), not the payables period. The 15-day answer subtracts the target only from inventory days and ignores receivable days. The 125-day answer adds the target cycle to the operating cycle instead of subtracting it.",
+      "explanationJa": "キャッシュ・コンバージョン・サイクル（CCC）＝在庫日数＋売上債権日数－仕入債務日数。40＝55＋30－DPO より、DPO＝85－40＝45日。85日は営業循環（在庫日数＋売上債権日数）であり、仕入債務日数ではない。15日は在庫日数から目標値を引いただけで売上債権日数を無視している。125日は営業循環から目標値を引くべきところを足している。",
+      "references": ["Working capital management - cash conversion cycle"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-005",
+      "topic": "Financial Management (CH51)",
+      "subtopic": "Cash Discount Terms",
+      "stem": "A company that currently sells on terms of net 30 begins offering terms of 2/10, net 30. If many customers take the discount, what is the most likely effect on the following?\nAverage collection period | Net revenue per dollar of gross sales",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Increase | Decrease"
+        },
+        {
+          "label": "B",
+          "text": "Decrease | Increase"
+        },
+        {
+          "label": "C",
+          "text": "Decrease | Decrease"
+        },
+        {
+          "label": "D",
+          "text": "Increase | Increase"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Customers who take the discount pay by day 10 instead of day 30, so the average collection period decreases and the investment in receivables falls. The cost of that faster collection is the 2% discount given up on each discounted sale, so the company keeps less net revenue per dollar of gross sales. The combinations showing a longer collection period misread the incentive, which encourages earlier payment. The combination showing higher net revenue per dollar ignores that the discount is a reduction of the amount collected.",
+      "explanationJa": "割引を利用する顧客は30日目ではなく10日目までに支払うため、平均回収期間は短くなり、売掛金への投資も減る。その代わり、割引を受けた売上ごとに2%を手放すため、総売上1ドル当たりの純収入は減る。回収期間が長くなるとする組み合わせは、早期支払いを促すという割引の効果を読み違えている。総売上1ドル当たりの純収入が増えるとする組み合わせは、割引が回収額の減少であることを無視している。",
+      "references": ["Accounts receivable management - credit terms"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-006",
+      "topic": "Financial Management (CH51)",
+      "subtopic": "Discounted Bank Loan",
+      "stem": "Pratt Co. borrows from its bank on a one-year, $200,000 note with a 9% stated interest rate. The loan is discounted, meaning the bank deducts the full year's interest from the face amount when the loan is made. What is the effective annual interest rate on the loan?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "9.89%"
+        },
+        {
+          "label": "B",
+          "text": "9.00%"
+        },
+        {
+          "label": "C",
+          "text": "8.26%"
+        },
+        {
+          "label": "D",
+          "text": "8.19%"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Interest = $200,000 x 9% = $18,000. Because the interest is deducted in advance, Pratt receives only $200,000 - $18,000 = $182,000. Effective rate = $18,000 / $182,000 = 9.89%. The 9.00% answer is the stated rate, which ignores the reduced proceeds. The 8.26% answer divides the interest by the face amount plus interest ($218,000). The 8.19% answer multiplies the stated rate by the proceeds ratio (9% x 0.91), which lowers the rate instead of raising it.",
+      "explanationJa": "利息＝200,000ドル×9%＝18,000ドル。利息が前払いで差し引かれるため、Prattが実際に受け取るのは200,000－18,000＝182,000ドルのみ。実効金利＝18,000÷182,000＝9.89%。9.00%は表面金利で、受取額の減少を考慮していない。8.26%は利息を額面＋利息（218,000ドル）で割っている。8.19%は表面金利に受取比率を掛けたもの（9%×0.91）で、実効金利を上げるべきところを下げている。",
+      "references": ["Short-term financing - discounted loans"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-007",
+      "topic": "Financial Management (CH51)",
+      "subtopic": "Marketable Securities Selection",
+      "stem": "A treasurer has surplus cash that must be available in 90 days to pay a known tax liability. She is considering 10-year U.S. Treasury notes instead of 90-day Treasury bills. What is the primary risk that makes the Treasury notes unsuitable for this purpose?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Default risk"
+        },
+        {
+          "label": "B",
+          "text": "Interest rate risk"
+        },
+        {
+          "label": "C",
+          "text": "Marketability risk"
+        },
+        {
+          "label": "D",
+          "text": "Reinvestment rate risk"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The notes would have to be sold after 90 days, nearly ten years before maturity. If market interest rates rise in the meantime, their price falls and the treasurer could receive less than the amount invested; long maturities carry much greater price sensitivity to rate changes than 90-day bills. Default risk is essentially absent for both instruments because both are U.S. Treasury obligations. Treasury notes trade in a deep, active market, so marketability is not the concern. Reinvestment rate risk is actually greater for short-term bills, which must be rolled over at uncertain future rates.",
+      "explanationJa": "国債ノートは90日後、満期まで約10年を残した時点で売却しなければならない。その間に市場金利が上昇すると価格が下落し、投資額を下回る金額しか回収できないおそれがある。長期債は90日物の短期国債より金利変動に対する価格感応度がはるかに大きい（金利リスク）。どちらも米国財務省の債務であるため、デフォルトリスクは実質的にない。米国債は厚みのある活発な市場で取引されるため、市場性リスクも問題にならない。再投資リスクはむしろ、将来の不確実な金利で乗り換えが必要な短期国債の方が大きい。",
+      "references": ["Cash and marketable securities management"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-008",
+      "topic": "Financial Management (CH51)",
+      "subtopic": "Working Capital Financing Policy",
+      "stem": "Assume short-term interest rates are lower than long-term rates. Compared with a conservative financing policy, an aggressive policy that finances part of permanent current assets with short-term debt will most likely result in\nExpected profitability | Risk of being unable to refinance",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lower | Lower"
+        },
+        {
+          "label": "B",
+          "text": "Lower | Higher"
+        },
+        {
+          "label": "C",
+          "text": "Higher | Lower"
+        },
+        {
+          "label": "D",
+          "text": "Higher | Higher"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "An aggressive policy uses cheaper short-term debt to fund assets the firm needs permanently, so interest cost is lower and expected profitability is higher. The trade-off is greater risk: the short-term debt must be renewed repeatedly, exposing the firm to refinancing risk and to increases in short-term rates. The combinations showing lower profitability ignore the stated rate advantage of short-term debt, and the combination showing lower refinancing risk describes a conservative (or matching) policy that funds permanent needs with long-term sources.",
+      "explanationJa": "積極的（アグレッシブ）な資金調達方針は、恒常的に必要な資産を安い短期借入で賄うため、利息負担が小さく期待収益性は高くなる。その代償として、短期借入を繰り返し借り換える必要があり、借り換えができないリスクや短期金利上昇のリスクが高まる。収益性が下がるとする組み合わせは、問題文にある短期借入の金利面の有利さを無視している。借り換えリスクが下がるとする組み合わせは、恒常的な資金需要を長期資金で賄う保守的（またはマッチング）方針の特徴である。",
+      "references": ["Working capital management - financing policies"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-009",
+      "topic": "Financial Management (M44)",
+      "subtopic": "Modigliani-Miller Theory",
+      "stem": "According to Modigliani and Miller's capital structure theory in a world with no taxes, bankruptcy costs, or transaction costs, what happens when a firm replaces part of its equity with lower-cost debt?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The cost of equity rises enough to leave the WACC unchanged."
+        },
+        {
+          "label": "B",
+          "text": "The WACC falls because debt is cheaper than equity."
+        },
+        {
+          "label": "C",
+          "text": "The cost of equity is unchanged, so the value of the firm rises."
+        },
+        {
+          "label": "D",
+          "text": "The WACC falls until financial distress costs offset the savings."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Without taxes, Modigliani and Miller show that capital structure is irrelevant to firm value. Adding debt makes equity riskier, so shareholders demand a higher return; the higher cost of equity exactly offsets the benefit of the cheaper debt, and the WACC and firm value stay the same. The view that the WACC falls simply because debt is cheaper ignores this rise in the cost of equity. An unchanged cost of equity contradicts the theory's central result. A WACC that falls until distress costs offset the benefit describes the trade-off theory, which relies on the tax deductibility of interest and on bankruptcy costs that this setting excludes.",
+      "explanationJa": "税金のない世界では、モジリアーニ＝ミラーは資本構成が企業価値に影響しない（無関連）ことを示した。負債を増やすと株式のリスクが高まり、株主の要求収益率が上がる。この株主資本コストの上昇が安い負債の効果をちょうど打ち消すため、WACCも企業価値も変わらない。「負債が安いからWACCが下がる」という見方は株主資本コストの上昇を無視している。株主資本コストが変わらないとする記述は理論の中心的な結論に反する。財務困窮コストと釣り合うまでWACCが下がるとするのはトレードオフ理論であり、利息の税控除と倒産コストを前提とするため、この設定（税・倒産コストなし）には当てはまらない。",
+      "references": ["Capital structure theory - Modigliani and Miller"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-010",
+      "topic": "Financial Management (M44)",
+      "subtopic": "Pecking Order Theory",
+      "stem": "Under the pecking order theory of capital structure, a firm that needs to finance a new project will prefer financing sources in which order?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "New common stock, then debt, then retained earnings"
+        },
+        {
+          "label": "B",
+          "text": "Debt, then retained earnings, then new common stock"
+        },
+        {
+          "label": "C",
+          "text": "Retained earnings, then debt, then new common stock"
+        },
+        {
+          "label": "D",
+          "text": "Retained earnings, then new common stock, then debt"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The pecking order theory is based on asymmetric information between managers and investors. Internal funds (retained earnings) come first because they involve no issuance costs and send no signal to the market. If external funds are needed, debt comes next because it is less sensitive to managers' private information. New common stock comes last because investors tend to read an equity issue as a sign that management believes the shares are overvalued. The orders that place debt ahead of internal funds, or new stock ahead of debt, reverse these preferences.",
+      "explanationJa": "ペッキングオーダー理論は、経営者と投資家の間の情報の非対称性に基づく。発行コストがかからず市場へのシグナルも生じない内部資金（留保利益）が最優先となる。外部資金が必要な場合は、経営者の私的情報の影響を受けにくい負債が次に来る。新株発行は、投資家が「経営者が株価を割高と考えている」というシグナルと受け止めやすいため最後になる。負債を内部資金より先にする順序や、新株を負債より先にする順序は、この優先順位を逆にしている。",
+      "references": ["Capital structure theory - pecking order"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-011",
+      "topic": "Financial Management (M44)",
+      "subtopic": "Weighted Average Cost of Capital",
+      "stem": "Corwin Inc. finances its operations with 40% debt and 60% common equity, based on market values. Its pre-tax cost of debt is 7%, its cost of equity is 12%, and its income tax rate is 25%. What is Corwin's weighted-average cost of capital?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "10.00%"
+        },
+        {
+          "label": "B",
+          "text": "9.30%"
+        },
+        {
+          "label": "C",
+          "text": "7.95%"
+        },
+        {
+          "label": "D",
+          "text": "8.63%"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "After-tax cost of debt = 7% x (1 - 0.25) = 5.25%. WACC = (0.40 x 5.25%) + (0.60 x 12%) = 2.10% + 7.20% = 9.30%. The 10.00% answer uses the pre-tax cost of debt (0.40 x 7% + 7.20%). The 7.95% answer reverses the weights (0.60 x 5.25% + 0.40 x 12%). The 8.63% answer takes a simple average of 5.25% and 12% without weighting.",
+      "explanationJa": "税引後負債コスト＝7%×（1－0.25）＝5.25%。WACC＝（0.40×5.25%）＋（0.60×12%）＝2.10%＋7.20%＝9.30%。10.00%は税引前の負債コストを使っている（0.40×7%＋7.20%）。7.95%はウエイトを逆にしている（0.60×5.25%＋0.40×12%）。8.63%は5.25%と12%を加重せずに単純平均している。",
+      "references": ["Cost of capital - weighted-average cost of capital"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-012",
+      "topic": "Financial Management (M44)",
+      "subtopic": "Capital Asset Pricing Model",
+      "stem": "Dalby Co.'s common stock has a beta of 1.4. The risk-free rate is 3%, and the market risk premium is 7%. Using the capital asset pricing model, what is Dalby's cost of equity?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "8.6%"
+        },
+        {
+          "label": "B",
+          "text": "9.8%"
+        },
+        {
+          "label": "C",
+          "text": "10.0%"
+        },
+        {
+          "label": "D",
+          "text": "12.8%"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "CAPM: cost of equity = risk-free rate + beta x market risk premium = 3% + 1.4 x 7% = 3% + 9.8% = 12.8%. The 7% is already the market risk premium (market return minus the risk-free rate), so subtracting 3% again gives the incorrect 8.6% (3% + 1.4 x 4%). The 9.8% answer omits the risk-free rate, and the 10.0% answer adds the premium without adjusting it for beta.",
+      "explanationJa": "CAPM：株主資本コスト＝リスクフリーレート＋β×市場リスクプレミアム＝3%＋1.4×7%＝3%＋9.8%＝12.8%。7%はすでに市場リスクプレミアム（市場収益率－リスクフリーレート）なので、さらに3%を引くと誤りの8.6%（3%＋1.4×4%）になる。9.8%はリスクフリーレートを加えていない。10.0%はプレミアムをβで調整せずにそのまま加えている。",
+      "references": ["Cost of capital - capital asset pricing model"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-013",
+      "topic": "Financial Management (M44)",
+      "subtopic": "Operating Leverage",
+      "stem": "Which of the following actions would most likely increase a manufacturer's degree of operating leverage?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Issuing long-term bonds to repurchase common stock"
+        },
+        {
+          "label": "B",
+          "text": "Paying sales staff on commission instead of fixed salaries"
+        },
+        {
+          "label": "C",
+          "text": "Replacing hourly production labor with automated equipment"
+        },
+        {
+          "label": "D",
+          "text": "Increasing sales volume further above the breakeven point"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Operating leverage comes from fixed operating costs. Automation replaces variable labor cost with fixed costs such as depreciation and maintenance, so a given change in sales causes a larger change in operating income. Issuing bonds to buy back stock adds fixed interest charges, which raises financial leverage rather than operating leverage. Switching to commissions converts fixed salaries into variable costs, which lowers operating leverage. As sales rise further above breakeven, operating income grows relative to contribution margin, and the degree of operating leverage declines.",
+      "explanationJa": "営業レバレッジは固定営業費から生じる。自動化は変動費である労務費を減価償却費や保守費などの固定費に置き換えるため、売上の変動が営業利益により大きく響くようになる。社債を発行して自社株を買い戻すと固定の支払利息が増えるが、これは財務レバレッジを高めるもので営業レバレッジではない。歩合制への切り替えは固定給を変動費に変えるため、営業レバレッジは下がる。売上が損益分岐点をさらに上回ると、限界利益に対する営業利益の比率が大きくなり、営業レバレッジ度は低下する。",
+      "references": ["Leverage - degree of operating leverage"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-014",
+      "topic": "Financial Management (M44)",
+      "subtopic": "Degree of Total Leverage",
+      "stem": "Ember Corp. has a degree of operating leverage of 2.0 and a degree of financial leverage of 1.5. If Ember's sales increase by 10%, by what percentage should its earnings per share increase?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "30%"
+        },
+        {
+          "label": "B",
+          "text": "35%"
+        },
+        {
+          "label": "C",
+          "text": "20%"
+        },
+        {
+          "label": "D",
+          "text": "15%"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Degree of total leverage = DOL x DFL = 2.0 x 1.5 = 3.0. Percentage change in EPS = 3.0 x 10% = 30%. The 35% answer adds the two leverage measures (2.0 + 1.5) instead of multiplying them. The 20% answer applies only operating leverage, which measures the change in operating income (EBIT), not EPS. The 15% answer applies only financial leverage to the sales change, but financial leverage magnifies the change in EBIT, not the change in sales.",
+      "explanationJa": "総合レバレッジ度＝営業レバレッジ度×財務レバレッジ度＝2.0×1.5＝3.0。EPSの変化率＝3.0×10%＝30%。35%は2つのレバレッジを掛けずに足している（2.0＋1.5）。20%は営業レバレッジだけを使っており、これは営業利益（EBIT）の変化率でありEPSの変化率ではない。15%は売上の変化率に財務レバレッジだけを掛けているが、財務レバレッジが拡大するのはEBITの変化であり売上の変化ではない。",
+      "references": ["Leverage - degree of total leverage"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-015",
+      "topic": "Financial Management (M44)",
+      "subtopic": "Residual Dividend Policy",
+      "stem": "A company that follows a residual dividend policy is most likely to",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Keep its dividend per share stable and raise it only when higher earnings appear permanent"
+        },
+        {
+          "label": "B",
+          "text": "Pay dividends that vary from year to year as its capital spending needs change"
+        },
+        {
+          "label": "C",
+          "text": "Pay out a constant percentage of each year's net income as cash dividends"
+        },
+        {
+          "label": "D",
+          "text": "Issue new common stock whenever needed to maintain its regular dividend"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under a residual dividend policy, the firm first uses earnings to fund the equity portion of acceptable investment projects at its target capital structure and pays out only what is left over. Because investment opportunities change from year to year, dividends fluctuate. Keeping the dividend per share stable and raising it only for permanent earnings increases describes a stable (smoothed) dividend policy. Paying a fixed percentage of net income describes a constant payout ratio policy. Issuing new stock to protect the dividend is the opposite of the residual approach, which avoids costly external equity by funding projects with retained earnings first.",
+      "explanationJa": "残余配当政策では、利益をまず目標資本構成に基づく有望な投資案件の自己資本部分に充て、残った分だけを配当する。投資機会は年ごとに変わるため、配当額も変動する。1株当たり配当を安定させ、利益の増加が恒久的と判断したときだけ増配するのは安定配当政策である。純利益の一定割合を配当するのは配当性向一定政策である。配当を維持するために新株を発行するのは、まず内部留保で投資を賄って高コストな外部株式調達を避けるという残余配当の考え方と正反対である。",
+      "references": ["Dividend policy - residual dividend policy"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-016",
+      "topic": "Economic Theory",
+      "subtopic": "Perfect Competition - Long Run",
+      "stem": "Firms in a perfectly competitive industry are currently earning economic profits. Assuming there are no barriers to entry, what will most likely happen in the long run?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Firms keep the economic profits because each firm is a price taker."
+        },
+        {
+          "label": "B",
+          "text": "Existing firms exit until market supply falls and the price rises."
+        },
+        {
+          "label": "C",
+          "text": "Price falls to minimum average variable cost and firms shut down."
+        },
+        {
+          "label": "D",
+          "text": "New firms enter until price falls to minimum average total cost."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Economic profit attracts new firms into a perfectly competitive industry. Entry increases market supply and pushes the price down until it equals minimum average total cost, where economic profit is zero. Being a price taker does not protect profits; it means each firm cannot stop the market price from falling. Exit occurs when firms suffer economic losses, not when they earn profits. Minimum average variable cost is the short-run shutdown point, and entry stops once price reaches minimum average total cost, so price does not fall that far.",
+      "explanationJa": "完全競争市場では経済的利益が新規参入を呼び込む。参入により市場供給が増え、価格は平均総費用の最低点まで下がり、そこで経済的利益はゼロになる。プライス・テイカーであることは利益を守るものではなく、個々の企業が価格下落を止められないことを意味する。退出は経済的損失が出ているときに起こるもので、利益が出ているときではない。平均可変費用の最低点は短期の操業停止点であり、価格が平均総費用の最低点に達した時点で参入が止まるため、そこまでは下がらない。",
+      "references": ["Market structure - perfect competition"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-017",
+      "topic": "Economic Theory",
+      "subtopic": "Monopolistic Competition - Long Run",
+      "stem": "In long-run equilibrium, a firm in a monopolistically competitive industry",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Earns economic profit because its product is differentiated"
+        },
+        {
+          "label": "B",
+          "text": "Produces where price equals both marginal cost and minimum average total cost"
+        },
+        {
+          "label": "C",
+          "text": "Earns zero economic profit and charges a price above marginal cost"
+        },
+        {
+          "label": "D",
+          "text": "Earns zero economic profit and produces at minimum average total cost"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Entry is easy in monopolistic competition, so in the long run new rivals take away demand until price equals average total cost and economic profit is zero. Because each firm sells a differentiated product, it faces a downward-sloping demand curve; it produces where marginal revenue equals marginal cost and charges a price above marginal cost. Product differentiation allows short-run profit, but free entry eliminates it in the long run. Price equal to marginal cost and minimum average total cost describes perfect competition. A monopolistically competitive firm reaches zero profit at the point where its downward-sloping demand curve is tangent to the average total cost curve, which lies to the left of minimum average total cost (excess capacity).",
+      "explanationJa": "独占的競争では参入が容易なため、長期的には新規参入者が需要を奪い、価格が平均総費用と等しくなって経済的利益はゼロになる。各企業は差別化された製品を売るため右下がりの需要曲線に直面し、限界収入＝限界費用となる量を生産して、限界費用を上回る価格を付ける。製品差別化は短期的な利益をもたらすが、自由な参入により長期的には消滅する。価格が限界費用と平均総費用の最低点の両方に等しいのは完全競争の特徴である。独占的競争の企業は右下がりの需要曲線が平均総費用曲線に接する点で利益ゼロとなり、その点は平均総費用の最低点より左側にある（過剰生産能力）。",
+      "references": ["Market structure - monopolistic competition"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-018",
+      "topic": "Economic Theory",
+      "subtopic": "Oligopoly - Kinked Demand Curve",
+      "stem": "The kinked demand curve model is used to explain why prices in an oligopoly tend to remain stable. The model assumes that when one firm changes its price, rival firms will",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Match a price cut but not follow a price increase"
+        },
+        {
+          "label": "B",
+          "text": "Follow a price increase but not match a price cut"
+        },
+        {
+          "label": "C",
+          "text": "Match both a price increase and a price cut"
+        },
+        {
+          "label": "D",
+          "text": "Ignore both a price increase and a price cut"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In the kinked demand curve model, rivals ignore a price increase so they can win the raising firm's customers, which makes demand above the current price very elastic. Rivals match a price cut so they do not lose customers, which makes demand below the current price relatively inelastic. Because raising the price loses many sales and cutting it gains few, the firm keeps its price where it is. If rivals followed increases but not cuts, every firm would want to cut prices, so prices would not be stable. Matching or ignoring every change would produce a demand curve with no kink.",
+      "explanationJa": "屈折需要曲線モデルでは、ある企業が値上げしても競合は追随せずにその顧客を奪おうとするため、現在価格より上の需要は非常に弾力的になる。一方、値下げには競合が顧客を失わないよう追随するため、現在価格より下の需要は比較的非弾力的になる。値上げすると売上を大きく失い、値下げしても得るものが少ないため、企業は価格を据え置く。競合が値上げには追随し値下げには追随しないなら、各社は値下げしたくなるため価格は安定しない。すべての変更に追随する、またはすべて無視する場合は、需要曲線に屈折が生じない。",
+      "references": ["Market structure - oligopoly"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-019",
+      "topic": "Economic Theory",
+      "subtopic": "Cross-Price Elasticity",
+      "stem": "When the price of product M increased by 8%, the quantity demanded of product N decreased by 12%, with all other factors unchanged. What is the cross-price elasticity of demand for N with respect to M's price, and how are the two goods related?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "-1.5; substitutes"
+        },
+        {
+          "label": "B",
+          "text": "-1.5; complements"
+        },
+        {
+          "label": "C",
+          "text": "-0.67; complements"
+        },
+        {
+          "label": "D",
+          "text": "+1.5; substitutes"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cross-price elasticity = % change in quantity demanded of N / % change in price of M = -12% / +8% = -1.5. A negative cross-price elasticity means the goods are complements: a higher price for M reduces purchases of M and also of N, which is used with it. Substitutes have a positive cross-price elasticity, so pairing -1.5 with substitutes is inconsistent. The -0.67 answer inverts the ratio (8% / 12%). The +1.5 answer drops the negative sign of the quantity change.",
+      "explanationJa": "交差価格弾力性＝Nの需要量の変化率÷Mの価格の変化率＝－12%÷＋8%＝－1.5。交差価格弾力性が負であれば補完財である。Mが値上がりするとMの購入が減り、一緒に使われるNの購入も減る。代替財の交差価格弾力性は正なので、－1.5と代替財の組み合わせは矛盾している。－0.67は比率を逆にしている（8%÷12%）。＋1.5は需要量の変化のマイナス符号を落としている。",
+      "references": ["Elasticity - cross-price elasticity of demand"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-020",
+      "topic": "Economic Theory",
+      "subtopic": "Tax Incidence and Elasticity",
+      "stem": "A per-unit excise tax is imposed on the sellers of a product. Demand for the product is highly inelastic, and supply is highly elastic. Who will bear most of the tax burden, and how will the quantity sold change?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sellers; quantity falls sharply"
+        },
+        {
+          "label": "B",
+          "text": "Sellers; quantity falls slightly"
+        },
+        {
+          "label": "C",
+          "text": "Buyers; quantity falls sharply"
+        },
+        {
+          "label": "D",
+          "text": "Buyers; quantity falls slightly"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The tax burden falls mainly on the side of the market that is less elastic, regardless of who legally pays the tax. Buyers with highly inelastic demand keep buying even when the price rises, so sellers can pass most of the tax on through a higher price. Because quantity demanded responds little to the price increase, the quantity sold declines only slightly. Sellers would bear most of the tax only if supply were less elastic than demand. A sharp drop in quantity would require elastic demand, which is the opposite of the facts given.",
+      "explanationJa": "税負担は、法律上だれが納税するかにかかわらず、主に弾力性の低い側が負う。需要が非常に非弾力的な買い手は価格が上がっても買い続けるため、売り手は税の大部分を価格の引き上げで転嫁できる。需要量は価格上昇にほとんど反応しないため、販売量の減少はわずかにとどまる。売り手が主に負担するのは、供給が需要より非弾力的な場合である。販売量が大きく減るには需要が弾力的である必要があり、問題文の条件と逆である。",
+      "references": ["Supply and demand - elasticity and tax incidence"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-021",
+      "topic": "Economic Theory",
+      "subtopic": "Unanticipated Inflation",
+      "stem": "Inflation over the next several years turns out to be much higher than anyone expected. Which of the following is most likely to benefit?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A bank holding long-term, fixed-rate mortgage loans"
+        },
+        {
+          "label": "B",
+          "text": "A retiree receiving a fixed annual pension payment"
+        },
+        {
+          "label": "C",
+          "text": "A company that issued long-term, fixed-rate bonds"
+        },
+        {
+          "label": "D",
+          "text": "A household holding most of its savings in cash"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Unanticipated inflation redistributes purchasing power from lenders to borrowers when the interest rate is fixed. The bond issuer repays principal and interest in dollars that are worth less than expected, so its real borrowing cost falls. The bank holding fixed-rate mortgages is the lender on the other side of such contracts and loses in real terms. A fixed pension buys less as prices rise, and cash loses purchasing power because it earns no return that adjusts for inflation.",
+      "explanationJa": "予想外のインフレは、金利が固定されている場合、貸し手から借り手へ購買力を移転させる。社債の発行会社は、予想より価値の下がったドルで元利金を返済するため、実質的な借入コストが下がる。固定金利の住宅ローンを保有する銀行は貸し手側であり、実質的に損失を被る。固定年金は物価上昇により購買力が落ち、現金もインフレに応じた利回りが付かないため購買力を失う。",
+      "references": ["Inflation - effects on borrowers and lenders"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-022",
+      "topic": "Financial Risk Management & Capital Budgeting",
+      "subtopic": "NPV vs. IRR Ranking Conflicts",
+      "stem": "Two mutually exclusive projects rank differently under the net present value (NPV) and internal rate of return (IRR) methods. Which statement best explains why the NPV ranking is generally preferred?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NPV assumes cash flows are reinvested at the cost of capital, a more realistic rate."
+        },
+        {
+          "label": "B",
+          "text": "IRR ignores the time value of money, while NPV takes it into account."
+        },
+        {
+          "label": "C",
+          "text": "NPV assumes cash flows are reinvested at the project's own internal rate of return."
+        },
+        {
+          "label": "D",
+          "text": "IRR cannot be calculated when a project's cash inflows are uneven."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "NPV implicitly assumes that interim cash flows are reinvested at the cost of capital, while IRR assumes reinvestment at the project's own IRR, which may be unrealistically high. NPV also measures the dollar increase in firm value, so it is the better guide when the two methods conflict. IRR is a discounted cash flow method and does consider the time value of money. Reinvestment at the project's own IRR is the assumption of the IRR method, not NPV. IRR can be found for uneven cash flows (by trial and error or software); uneven flows only make the calculation harder.",
+      "explanationJa": "NPVは途中のキャッシュフローが資本コストで再投資されると暗黙に仮定するが、IRRはプロジェクト自身のIRRで再投資されると仮定し、それは非現実的に高い場合がある。またNPVは企業価値の増加額をドルで測るため、両手法の評価が食い違うときにはNPVの方が適切な判断基準となる。IRRも割引キャッシュフロー法であり、貨幣の時間価値を考慮している。プロジェクト自身のIRRで再投資すると仮定するのはIRR法であり、NPV法ではない。キャッシュインフローが不均等でもIRRは（試行錯誤やソフトウェアで）計算でき、計算が手間になるだけである。",
+      "references": ["Capital budgeting - NPV and IRR"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-023",
+      "topic": "Financial Risk Management & Capital Budgeting",
+      "subtopic": "Payback Period - Uneven Cash Flows",
+      "stem": "Larsen Co. is evaluating a project with the following data. Cash inflows are received evenly throughout each year.\nInitial investment | $50,000\nYear 1 net cash inflow | $15,000\nYear 2 net cash inflow | $20,000\nYear 3 net cash inflow | $25,000\nAnnual straight-line depreciation | $10,000\nWhat is the project's payback period?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "2.5 years"
+        },
+        {
+          "label": "B",
+          "text": "3.0 years"
+        },
+        {
+          "label": "C",
+          "text": "5.0 years"
+        },
+        {
+          "label": "D",
+          "text": "2.6 years"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "After two years, cumulative inflows are $15,000 + $20,000 = $35,000, leaving $15,000 to recover. Year 3 inflow is $25,000, so the remaining fraction is $15,000 / $25,000 = 0.6 year. Payback = 2.6 years. The 2.5-year answer divides the investment by the average annual inflow ($50,000 / $20,000), which is not valid for uneven cash flows. The 3.0-year answer counts only whole years. The 5.0-year answer divides the investment by depreciation, which is a noncash expense and is not used in the payback calculation.",
+      "explanationJa": "2年経過時点の累計インフローは15,000＋20,000＝35,000ドルで、回収残高は15,000ドル。3年目のインフローは25,000ドルなので、残りは15,000÷25,000＝0.6年。回収期間＝2.6年。2.5年は投資額を年平均インフローで割っており（50,000÷20,000）、不均等なキャッシュフローには使えない。3.0年は年単位でしか数えていない。5.0年は投資額を減価償却費で割っているが、減価償却費は非資金費用であり回収期間の計算には使わない。",
+      "references": ["Capital budgeting - payback period"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-024",
+      "topic": "Financial Risk Management & Capital Budgeting",
+      "subtopic": "Interest Rate Risk and Bond Prices",
+      "stem": "Market interest rates rise by one percentage point. Which of the following bonds will most likely experience the largest percentage decline in price?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A 5-year bond paying a 9% annual coupon"
+        },
+        {
+          "label": "B",
+          "text": "A 20-year zero-coupon bond"
+        },
+        {
+          "label": "C",
+          "text": "A 20-year bond paying a 9% annual coupon"
+        },
+        {
+          "label": "D",
+          "text": "A 5-year zero-coupon bond"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A bond's price sensitivity to interest rate changes increases with its duration. Duration is longer when maturity is longer and when coupons are lower, because more of the bond's value comes from cash received far in the future. The 20-year zero-coupon bond pays everything at maturity in 20 years, giving it the longest duration and the largest percentage price drop. The 20-year coupon bond has the same maturity, but its coupons return cash earlier and shorten its duration. Both 5-year bonds have much shorter durations, and the 5-year coupon bond is the least sensitive.",
+      "explanationJa": "債券価格の金利感応度はデュレーションが長いほど大きい。デュレーションは、満期が長いほど、またクーポンが低いほど長くなる。価値の多くがより遠い将来に受け取るキャッシュに依存するためである。20年のゼロクーポン債は20年後の満期にすべてを支払うため、デュレーションが最も長く、価格の下落率も最大となる。20年のクーポン債は満期は同じだが、クーポンで早めに資金が戻るためデュレーションは短くなる。5年債はいずれもデュレーションがずっと短く、5年のクーポン債が最も感応度が低い。",
+      "references": ["Financial risk - interest rate risk"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-025",
+      "topic": "Financial Risk Management & Capital Budgeting",
+      "subtopic": "Hedging an Anticipated Debt Issue",
+      "stem": "Thorne Corp. plans to issue $10 million of fixed-rate bonds in four months and is concerned that interest rates will rise before the issue date. Which of the following actions would best hedge this risk?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sell Treasury bond futures contracts"
+        },
+        {
+          "label": "B",
+          "text": "Buy Treasury bond futures contracts"
+        },
+        {
+          "label": "C",
+          "text": "Purchase call options on Treasury bonds"
+        },
+        {
+          "label": "D",
+          "text": "Purchase an interest rate floor"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "If interest rates rise, bond prices and bond futures prices fall. A short position in Treasury bond futures gains when prices fall, offsetting the higher interest cost Thorne will pay on its new bonds. A long futures position gains only when rates fall, so it adds to Thorne's exposure instead of offsetting it. Call options on bonds increase in value when bond prices rise (rates fall), which also fails to protect against rising rates. An interest rate floor pays when rates fall below a set level, protecting lenders or investors rather than a future borrower.",
+      "explanationJa": "金利が上昇すると、債券価格も債券先物価格も下落する。米国債先物の売り（ショート）ポジションは価格下落時に利益が出るため、新規社債で負担が増える利息を相殺できる。先物の買い（ロング）は金利低下時にしか利益が出ず、リスクを相殺するどころか上乗せしてしまう。債券のコール・オプションは債券価格が上昇（金利が低下）したときに価値が上がるため、金利上昇への備えにならない。金利フロアは金利が一定水準を下回ったときに支払いを受けるもので、将来の借り手ではなく貸し手や投資家を守る手段である。",
+      "references": ["Financial risk management - hedging with derivatives"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-026",
+      "topic": "Risk Management & ERM",
+      "subtopic": "COSO ERM 2017 Components",
+      "stem": "Which of the following is one of the five components of COSO's Enterprise Risk Management - Integrating with Strategy and Performance (2017) framework?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Control Activities"
+        },
+        {
+          "label": "B",
+          "text": "Event Identification"
+        },
+        {
+          "label": "C",
+          "text": "Review and Revision"
+        },
+        {
+          "label": "D",
+          "text": "Monitoring Activities"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The 2017 COSO ERM framework has five components: Governance and Culture; Strategy and Objective-Setting; Performance; Review and Revision; and Information, Communication, and Reporting. These are supported by 20 principles. Control Activities and Monitoring Activities are components of COSO's Internal Control - Integrated Framework (2013), not the 2017 ERM framework. Event Identification was one of the eight components of the earlier 2004 ERM framework and was replaced in 2017; identifying risk is now a principle within the Performance component.",
+      "explanationJa": "COSO ERM（2017年版）の構成要素は、ガバナンスとカルチャー、戦略と目標設定、パフォーマンス、レビューと修正、情報・伝達および報告の5つで、これを20の原則が支えている。統制活動とモニタリング活動は、COSOの内部統制の統合的フレームワーク（2013年版）の構成要素であり、2017年版ERMのものではない。事象の識別は旧2004年版ERMの8つの構成要素の1つで、2017年版では置き換えられた。現在、リスクの識別はパフォーマンス構成要素の中の原則の1つとなっている。",
+      "references": [
+        "COSO Enterprise Risk Management - Integrating with Strategy and Performance (2017)"
+      ],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-027",
+      "topic": "Decision Making",
+      "subtopic": "Special Order at Full Capacity",
+      "stem": "Tarrant Co. is operating at full capacity when a customer requests a one-time special order. Accepting the order would require Tarrant to give up some regular sales. For short-term decision purposes, the minimum acceptable price per unit for the special order equals",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Absorption manufacturing cost per unit, including allocated fixed overhead"
+        },
+        {
+          "label": "B",
+          "text": "Variable cost per unit, because fixed costs do not change"
+        },
+        {
+          "label": "C",
+          "text": "Variable cost per unit plus the lost contribution margin per unit"
+        },
+        {
+          "label": "D",
+          "text": "Variable cost per unit plus a normal profit markup on that cost"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "At full capacity, accepting the special order displaces regular sales, so the order must cover its own variable cost plus the opportunity cost of the contribution margin given up on the displaced sales. Variable cost alone is the floor only when there is idle capacity and no sales are displaced. Absorption cost includes allocated fixed overhead that does not change with a one-time order, so it is not the relevant minimum. Adding a normal profit markup is a pricing policy, not a measure of the incremental cost of accepting the order, and it ignores the specific contribution margin forgone.",
+      "explanationJa": "フル稼働の状態で特別注文を受けると通常販売の一部を失うため、最低受入価格は「特別注文の変動費＋失われる通常販売の貢献利益（機会原価）」となる。変動費だけで足りるのは遊休能力があり通常販売を押しのけない場合に限られる。全部原価には一回限りの注文では変化しない固定製造間接費の配賦額が含まれるため、最低価格の基準にはならない。変動費に通常の利益マークアップを加える方法は価格設定方針であり、実際に失う貢献利益を反映していない。",
+      "references": ["Relevant costing - special orders", "Opportunity cost"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-028",
+      "topic": "Decision Making",
+      "subtopic": "Make or Buy - Relevant Costs",
+      "stem": "Hollis Co. is deciding whether to continue making a component internally or to buy it from an outside supplier. Which of the following is relevant to the decision?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rent Hollis could earn by leasing out the space used to make the component"
+        },
+        {
+          "label": "B",
+          "text": "Net book value of the equipment now used to make the component"
+        },
+        {
+          "label": "C",
+          "text": "Corporate overhead allocated to the component that continues if it is bought"
+        },
+        {
+          "label": "D",
+          "text": "Depreciation on special equipment for the component that has no resale value"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Relevant costs are future costs or benefits that differ between the alternatives. Rent that could be earned on freed-up space exists only if the component is bought, so it is an opportunity cost of continuing to make it and is relevant. The net book value of existing equipment is a sunk cost. Allocated corporate overhead that continues under either alternative does not differ and is irrelevant. Depreciation on equipment with no resale value is an allocation of a sunk cost and does not change with the decision.",
+      "explanationJa": "関連原価とは、代替案の間で異なる将来の原価・便益である。空いたスペースを賃貸して得られる賃料は購入を選んだ場合にのみ生じるため、自製を続けることの機会原価として関連する。既存設備の帳簿価額は埋没原価である。どちらを選んでも発生し続ける本社費の配賦額は差額が生じないため無関連。売却価値のない専用設備の減価償却費は埋没原価の配分にすぎず、意思決定によって変化しない。",
+      "references": ["Relevant costing - make or buy", "Sunk costs"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-029",
+      "topic": "Decision Making",
+      "subtopic": "Dropping a Product Line",
+      "stem": "A product line reports an operating loss after an allocation of companywide fixed costs. Assuming no effect on the sales of other product lines, dropping the line would increase company operating income only if",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Its revenue is less than its total costs, including allocated fixed costs"
+        },
+        {
+          "label": "B",
+          "text": "Its contribution margin is less than its avoidable fixed costs"
+        },
+        {
+          "label": "C",
+          "text": "Its contribution margin is less than the common costs allocated to it"
+        },
+        {
+          "label": "D",
+          "text": "Its contribution margin ratio is lower than the company average"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dropping the line eliminates its contribution margin and saves only the fixed costs that are avoidable. Company income rises only when the contribution margin lost is smaller than the avoidable fixed costs saved. Revenue below fully allocated costs is the reported loss itself, and common costs allocated to the line will continue after it is dropped, so neither comparison determines the effect on company income. A below-average contribution margin ratio says nothing about whether the line covers its avoidable costs.",
+      "explanationJa": "製品ラインを廃止すると、その貢献利益を失う一方で節約できるのは回避可能な固定費だけである。したがって、失う貢献利益が回避可能固定費より小さい場合にのみ全社の営業利益が増加する。全部配賦後の原価が売上を上回ることは報告上の損失そのものであり、また配賦された共通費は廃止後も残るため、これらとの比較では全社利益への影響は判断できない。貢献利益率が全社平均より低いことは、回避可能原価を回収できているかとは無関係である。",
+      "references": ["Relevant costing - segment discontinuance"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-030",
+      "topic": "Decision Making",
+      "subtopic": "CVP - Effect of Variable Cost Change",
+      "stem": "The variable cost per unit of a company's only product increases. Selling price, total fixed costs, and expected sales volume are unchanged. What is the effect on the break-even point in units and on the margin of safety in units?\nBreak-even point | Margin of safety",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Increase | Increase"
+        },
+        {
+          "label": "B",
+          "text": "Decrease | Increase"
+        },
+        {
+          "label": "C",
+          "text": "No change | Decrease"
+        },
+        {
+          "label": "D",
+          "text": "Increase | Decrease"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Break-even units equal fixed costs divided by contribution margin per unit. A higher variable cost per unit lowers the unit contribution margin, so more units are needed to cover the same fixed costs and the break-even point increases. Margin of safety in units is expected sales minus break-even sales; with expected sales unchanged and break-even higher, the margin of safety decreases. The combination in which both increase ignores that margin of safety moves opposite to break-even, and the no-change answer treats break-even as depending only on fixed costs.",
+      "explanationJa": "損益分岐点販売量＝固定費÷単位当たり貢献利益。単位変動費が増えると単位当たり貢献利益が減るため、同じ固定費を回収するのに必要な販売量が増え、損益分岐点は上昇する。安全余裕（数量）＝予想販売量−損益分岐点販売量であり、予想販売量が不変で損益分岐点が上がるので安全余裕は減少する。両方増加とする組合せは安全余裕が損益分岐点と逆方向に動くことを見落としており、損益分岐点不変とする組合せは損益分岐点が固定費だけで決まると誤解している。",
+      "references": ["Cost-volume-profit analysis"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-031",
+      "topic": "Decision Making",
+      "subtopic": "Margin of Safety",
+      "stem": "Brennan Co. projects sales of $800,000, variable costs of $480,000, and fixed costs of $240,000 for next year. Brennan is subject to a 25% income tax rate, and management wants to know how far sales could fall before a loss occurs. What is Brennan's projected margin of safety as a percentage of sales?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "25%"
+        },
+        {
+          "label": "B",
+          "text": "40%"
+        },
+        {
+          "label": "C",
+          "text": "75%"
+        },
+        {
+          "label": "D",
+          "text": "10%"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Contribution margin is $800,000 - $480,000 = $320,000, a 40% contribution margin ratio. Break-even sales are $240,000 / 40% = $600,000. Margin of safety is $800,000 - $600,000 = $200,000, which is $200,000 / $800,000 = 25% of sales. The 40% answer is the contribution margin ratio, 75% is break-even sales as a percentage of projected sales, and 10% is operating income ($80,000) as a percentage of sales.",
+      "explanationJa": "貢献利益＝$800,000−$480,000＝$320,000で、貢献利益率は40%。損益分岐点売上高＝$240,000÷40%＝$600,000。安全余裕額＝$800,000−$600,000＝$200,000で、安全余裕率＝$200,000÷$800,000＝25%。40%は貢献利益率、75%は損益分岐点売上高の予想売上高に対する比率、10%は営業利益（$80,000）の売上高利益率である。",
+      "references": ["Cost-volume-profit analysis - margin of safety"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-032",
+      "topic": "Cost Accounting",
+      "subtopic": "Labor Variances - Interpretation",
+      "stem": "To meet a rush order, a supervisor assigned more experienced workers who earn a higher wage than the standard rate. They completed the job in fewer hours than the standard hours allowed for the output. Which direct labor variances most likely resulted?\nRate variance | Efficiency variance",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Favorable | Unfavorable"
+        },
+        {
+          "label": "B",
+          "text": "Unfavorable | Favorable"
+        },
+        {
+          "label": "C",
+          "text": "Unfavorable | Unfavorable"
+        },
+        {
+          "label": "D",
+          "text": "Favorable | Favorable"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The labor rate variance compares the actual wage rate with the standard rate for the actual hours worked; paying a higher rate than standard makes it unfavorable. The labor efficiency variance compares actual hours with standard hours allowed at the standard rate; using fewer hours than allowed makes it favorable. The opposite pairing reverses both effects, and the pairings with the same direction for both variances ignore that the higher-skilled workers raise the rate while reducing the hours.",
+      "explanationJa": "賃率差異は実際作業時間について実際賃率と標準賃率を比較するもので、標準より高い賃率を支払えば不利差異となる。作業時間差異は実際作業時間と実際生産量に対する標準許容時間を標準賃率で比較するもので、許容時間より少ない時間で済めば有利差異となる。逆の組合せは両方の影響を取り違えており、両差異を同じ方向とする組合せは、熟練工の起用が賃率を上げる一方で作業時間を減らすというトレードオフを見落としている。",
+      "references": ["Standard costing - direct labor variances"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-033",
+      "topic": "Cost Accounting",
+      "subtopic": "Direct Materials Quantity Variance",
+      "stem": "Calder Co.'s standard for each unit of product is 3 pounds of material at $4.00 per pound. In March, Calder produced 2,000 units, using 6,300 pounds of material that cost $4.20 per pound. What was Calder's direct materials quantity (usage) variance for March?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$1,260 unfavorable"
+        },
+        {
+          "label": "B",
+          "text": "$2,460 unfavorable"
+        },
+        {
+          "label": "C",
+          "text": "$1,200 unfavorable"
+        },
+        {
+          "label": "D",
+          "text": "$1,200 favorable"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Standard quantity allowed is 2,000 units x 3 pounds = 6,000 pounds. The quantity variance is (actual quantity - standard quantity) x standard price = (6,300 - 6,000) x $4.00 = $1,200, unfavorable because more material was used than allowed. The $1,260 amount is the price variance ($0.20 x 6,300), $2,460 is the total materials variance, and the favorable $1,200 answer reverses the direction.",
+      "explanationJa": "標準許容数量＝2,000単位×3ポンド＝6,000ポンド。数量差異＝（実際数量−標準数量）×標準価格＝（6,300−6,000）×$4.00＝$1,200で、許容量より多く使用したため不利差異。$1,260は価格差異（$0.20×6,300）、$2,460は材料費総差異であり、有利差異$1,200は方向を逆にしている。",
+      "references": ["Standard costing - direct materials variances"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-034",
+      "topic": "Cost Accounting",
+      "subtopic": "Fixed Overhead Volume Variance",
+      "stem": "Under standard absorption costing, a fixed manufacturing overhead volume (production-volume) variance arises because",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Actual fixed overhead differs from budgeted fixed overhead"
+        },
+        {
+          "label": "B",
+          "text": "Actual input hours differ from standard hours allowed for actual output"
+        },
+        {
+          "label": "C",
+          "text": "Actual prices paid for overhead items differ from budgeted prices"
+        },
+        {
+          "label": "D",
+          "text": "Standard hours allowed for actual output differ from the denominator level"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The fixed overhead rate is set by dividing budgeted fixed overhead by a denominator activity level. Fixed overhead applied equals standard hours allowed for actual output times that rate, so whenever standard hours allowed differ from the denominator level, applied fixed overhead differs from the budget and a volume variance results. A difference between actual and budgeted fixed overhead, including from prices paid for overhead items, is the spending (budget) variance. A difference between actual hours and standard hours allowed creates an efficiency variance, which arises for variable overhead, not fixed overhead.",
+      "explanationJa": "固定製造間接費の配賦率は、固定費予算額を基準操業度で割って設定する。配賦額は実際生産量に対する標準許容時間×配賦率であるため、標準許容時間が基準操業度と異なると配賦額が予算額と食い違い、操業度差異が生じる。実際固定費と予算額の差（間接費項目の支払価格差による場合を含む）は予算差異（消費差異）である。実際時間と標準許容時間の差は能率差異を生むが、これは変動製造間接費について生じるものであり固定費の差異ではない。",
+      "references": ["Standard costing - overhead variances"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-035",
+      "topic": "Cost Accounting",
+      "subtopic": "Absorption vs. Variable Costing Income",
+      "stem": "During the year, a manufacturer produced more units than it sold, and unit costs were stable. How does operating income under absorption costing compare with operating income under variable costing?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Higher, because some fixed manufacturing overhead is deferred in inventory"
+        },
+        {
+          "label": "B",
+          "text": "Lower, because fixed manufacturing overhead is expensed as incurred"
+        },
+        {
+          "label": "C",
+          "text": "Higher, because variable selling costs are included in inventory"
+        },
+        {
+          "label": "D",
+          "text": "The same, because total fixed costs are identical under both methods"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Absorption costing treats fixed manufacturing overhead as a product cost. When production exceeds sales, part of the period's fixed overhead stays in ending inventory instead of being expensed, so absorption-costing income is higher than variable-costing income. Expensing fixed overhead as incurred describes variable costing, not absorption costing. Variable selling costs are period costs under both methods. Although total fixed costs incurred are the same, the timing of their expense differs when inventory changes, so income is not the same.",
+      "explanationJa": "全部原価計算では固定製造間接費を製品原価として扱う。生産量が販売量を上回ると、当期の固定製造間接費の一部が費用化されずに期末棚卸資産に繰り延べられるため、全部原価計算の営業利益は直接原価計算より大きくなる。固定製造間接費を発生時に費用処理するのは直接原価計算の処理である。変動販売費はどちらの方法でも期間原価。発生した固定費総額は同じでも、在庫が変動すると費用化のタイミングが異なるため利益は一致しない。",
+      "references": ["Absorption and variable costing"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-036",
+      "topic": "Cost Accounting",
+      "subtopic": "Process Costing - Weighted-Average vs. FIFO",
+      "stem": "In a process costing system that has beginning work-in-process inventory, equivalent units of production computed under the weighted-average method exceed those computed under FIFO by the equivalent units",
+      "choices": [
+        {
+          "label": "A",
+          "text": "In ending work-in-process inventory"
+        },
+        {
+          "label": "B",
+          "text": "Started and completed during the current period"
+        },
+        {
+          "label": "C",
+          "text": "Of work done on beginning inventory in the prior period"
+        },
+        {
+          "label": "D",
+          "text": "Needed to complete beginning inventory in the current period"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Weighted-average equivalent units equal units completed plus the equivalent units in ending work in process, which counts the work already done on beginning inventory in the prior period as if it were done this period. FIFO counts only current-period work, so it excludes that prior-period work. The difference is therefore the equivalent units of work performed on beginning inventory last period. Ending work in process and units started and completed are included under both methods, and the work needed to complete beginning inventory this period is also counted under both.",
+      "explanationJa": "平均法の完成品換算量＝完成品数量＋期末仕掛品換算量であり、期首仕掛品について前期に済んだ作業分も当期の作業として数える。先入先出法は当期に行った作業だけを数えるため、前期作業分を除外する。したがって両者の差は、期首仕掛品に対して前期に行われた作業の換算量である。期末仕掛品換算量と当期着手完成量はどちらの方法にも含まれ、期首仕掛品を当期に完成させるための作業量も両方法で計上される。",
+      "references": ["Process costing - equivalent units"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-037",
+      "topic": "Cost Measurement & Assignment",
+      "subtopic": "Applied vs. Actual Overhead",
+      "stem": "Rowan Co. set its predetermined overhead rate at $25 per machine hour, based on estimated overhead of $1,000,000 and 40,000 estimated machine hours. Actual machine hours were 38,000, and actual overhead was $980,000. For the year, overhead was",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Overapplied by $20,000"
+        },
+        {
+          "label": "B",
+          "text": "Underapplied by $30,000"
+        },
+        {
+          "label": "C",
+          "text": "Underapplied by $50,000"
+        },
+        {
+          "label": "D",
+          "text": "Overapplied by $30,000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Applied overhead is 38,000 actual machine hours x $25 = $950,000. Actual overhead of $980,000 exceeds applied overhead by $30,000, so overhead was underapplied by $30,000. The overapplied $20,000 answer compares actual overhead with estimated overhead instead of applied overhead. The underapplied $50,000 answer compares estimated overhead with applied overhead. The overapplied $30,000 answer has the correct amount but the wrong direction.",
+      "explanationJa": "配賦額＝実際機械時間38,000×$25＝$950,000。実際発生額$980,000が配賦額を$30,000上回るため、$30,000の配賦不足。過大配賦$20,000は実際発生額を配賦額ではなく予定額と比較した誤り。配賦不足$50,000は予定額と配賦額を比較した誤り。過大配賦$30,000は金額は正しいが方向が逆である。",
+      "references": ["Job order costing - overhead application"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-038",
+      "topic": "Cost Measurement & Assignment",
+      "subtopic": "Activity-Based Costing - Cost Shifts",
+      "stem": "A manufacturer makes a high-volume standard product and a low-volume custom product that requires frequent setups and engineering changes. It currently applies all overhead on direct labor hours. Switching to activity-based costing would most likely",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Shift overhead from the custom product to the standard product"
+        },
+        {
+          "label": "B",
+          "text": "Increase the total manufacturing overhead incurred by the company"
+        },
+        {
+          "label": "C",
+          "text": "Shift overhead from the standard product to the custom product"
+        },
+        {
+          "label": "D",
+          "text": "Leave unit costs unchanged because total overhead is the same"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A single volume-based rate spreads batch-level and product-level costs such as setups and engineering changes in proportion to labor hours, so the high-volume product absorbs most of them. Activity-based costing traces these costs to the products that cause them, shifting overhead from the standard product to the low-volume custom product. Shifting overhead toward the standard product reverses this effect. ABC changes how overhead is assigned, not how much is incurred, and even with the same total overhead, unit costs of individual products change.",
+      "explanationJa": "操業度基準の単一配賦率では、段取りや設計変更などのバッチレベル・製品レベルの原価も直接作業時間に比例して配賦されるため、大量生産品が大部分を負担する。活動基準原価計算ではこれらの原価を発生原因となった製品に直接賦課するため、間接費は標準品から少量生産のカスタム品へ移る。標準品へ移るとする見解は逆方向。ABCは配賦方法を変えるだけで発生総額は変わらず、また総額が同じでも個々の製品の単位原価は変化する。",
+      "references": ["Activity-based costing"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-039",
+      "topic": "Cost Measurement & Assignment",
+      "subtopic": "Prime and Conversion Costs",
+      "stem": "Kemble Co. reported the following costs for the month:\nDirect materials | $50,000\nDirect labor | 30,000\nIndirect labor | 10,000\nFactory rent | 20,000\nSales commissions | 15,000\nWhat was Kemble's conversion cost for the month?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$80,000"
+        },
+        {
+          "label": "B",
+          "text": "$110,000"
+        },
+        {
+          "label": "C",
+          "text": "$75,000"
+        },
+        {
+          "label": "D",
+          "text": "$60,000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Conversion cost is direct labor plus manufacturing overhead. Manufacturing overhead here is indirect labor $10,000 + factory rent $20,000 = $30,000, so conversion cost is $30,000 + $30,000 = $60,000. The $80,000 amount is prime cost (direct materials plus direct labor), $110,000 is total manufacturing cost, and $75,000 incorrectly adds sales commissions, which are a selling (period) cost, to conversion cost.",
+      "explanationJa": "加工費＝直接労務費＋製造間接費。製造間接費は間接労務費$10,000＋工場家賃$20,000＝$30,000なので、加工費＝$30,000＋$30,000＝$60,000。$80,000は素価（直接材料費＋直接労務費）、$110,000は製造原価総額、$75,000は販売費（期間原価）である販売手数料を誤って加工費に含めた金額である。",
+      "references": ["Cost classification"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-040",
+      "topic": "Cost Measurement & Assignment",
+      "subtopic": "Joint Cost Allocation Methods",
+      "stem": "A refinery's joint process yields two products. Neither has a market at the split-off point, so each is processed further before it is sold. Which joint cost allocation method results in the same gross-margin percentage on each product's final sales?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Constant gross-margin percentage NRV method"
+        },
+        {
+          "label": "B",
+          "text": "Sales value at split-off method"
+        },
+        {
+          "label": "C",
+          "text": "Estimated net realizable value method"
+        },
+        {
+          "label": "D",
+          "text": "Physical-units method"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The constant gross-margin percentage NRV method first computes the overall gross-margin percentage for the joint products combined, then allocates joint costs so that each product earns that same percentage on its final sales. The estimated NRV method allocates joint cost in proportion to NRV at split-off, but because separable costs differ, final gross-margin percentages generally differ. The sales value at split-off method cannot be applied here because neither product has a market price at split-off. The physical-units method ignores revenue-generating ability entirely.",
+      "explanationJa": "一定売上総利益率NRV法は、まず結合製品全体の売上総利益率を算出し、各製品が最終売上高に対して同じ利益率となるよう結合原価を配分する。見積正味実現可能価額法は分離点でのNRVに比例して配分するが、追加加工費が製品ごとに異なるため最終的な売上総利益率は一般に一致しない。分離点販売価値法は、両製品とも分離点で市場価格がないため適用できない。物量基準法は収益獲得能力を全く考慮しない。",
+      "references": ["Joint product costing"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-041",
+      "topic": "Planning Control & Analysis",
+      "subtopic": "Regression Analysis - Interpreting R-squared",
+      "stem": "Using 30 months of data, Lister Co. regressed monthly utility cost on machine hours and obtained: Utility cost = $4,200 + $1.80 x Machine hours; R-squared = 0.64. Which interpretation is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Machine hours and utility cost have a correlation coefficient of 0.64"
+        },
+        {
+          "label": "B",
+          "text": "Machine hours explain 64% of the variation in monthly utility cost"
+        },
+        {
+          "label": "C",
+          "text": "Utility cost increases by $0.64 for each additional machine hour"
+        },
+        {
+          "label": "D",
+          "text": "64% of total monthly utility cost is variable with machine hours"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "R-squared (the coefficient of determination) measures the proportion of the variation in the dependent variable explained by the independent variable, so machine hours explain 64% of the variation in utility cost. The correlation coefficient is the square root of R-squared, 0.80 here (positive because the slope is positive), not 0.64. The cost increase per machine hour is the slope, $1.80. R-squared describes goodness of fit, not the share of total cost that is variable.",
+      "explanationJa": "決定係数（R²）は、従属変数の変動のうち独立変数で説明される割合を示すため、機械時間は光熱費の変動の64%を説明している。相関係数はR²の平方根で、傾きが正なので0.80であり0.64ではない。機械時間1時間当たりの原価増加額は傾きの$1.80である。R²は当てはまりの良さを示す指標であり、総原価に占める変動費の割合ではない。",
+      "references": ["Forecasting - regression analysis"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-042",
+      "topic": "Planning Control & Analysis",
+      "subtopic": "Time Series Components",
+      "stem": "A forecaster decomposing ten years of quarterly sales for a home builder finds fluctuations that rise and fall over periods of several years, in line with economic expansions and contractions. These movements are separate from the long-run growth in sales. Which component of the time series is this?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Trend"
+        },
+        {
+          "label": "B",
+          "text": "Seasonal"
+        },
+        {
+          "label": "C",
+          "text": "Irregular"
+        },
+        {
+          "label": "D",
+          "text": "Cyclical"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The cyclical component consists of multi-year rises and falls associated with the business cycle of expansion and contraction. The trend component is the long-run general direction of the series, not repeated rises and falls. The seasonal component repeats within a year (for example, every fourth quarter). The irregular component is random, unpredictable variation that does not follow a pattern.",
+      "explanationJa": "循環変動は、景気の拡大・後退に伴って数年単位で上下する変動である。傾向変動（トレンド）は系列の長期的な方向性であり、上下の繰り返しではない。季節変動は1年以内に繰り返すもの（例: 毎年第4四半期）。不規則変動はパターンを持たないランダムで予測不能な変動である。",
+      "references": ["Forecasting - time series analysis"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-043",
+      "topic": "Planning Control & Analysis",
+      "subtopic": "Cash Budget - Collections",
+      "stem": "Pryor Co. collects 30% of each month's credit sales in the month of sale and 65% in the following month; the remaining 5% is uncollectible. Credit sales were $200,000 in April and $250,000 in May. What cash collections should Pryor budget for May?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$222,500"
+        },
+        {
+          "label": "B",
+          "text": "$237,500"
+        },
+        {
+          "label": "C",
+          "text": "$205,000"
+        },
+        {
+          "label": "D",
+          "text": "$215,000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "May collections are 30% of May sales ($250,000 x 30% = $75,000) plus 65% of April sales ($200,000 x 65% = $130,000), for a total of $205,000. The $222,500 amount reverses the percentages between the two months. The $237,500 amount treats 95% of May sales as collected in May. The $215,000 amount collects 70% of April sales, ignoring the 5% that is uncollectible.",
+      "explanationJa": "5月の回収額＝5月売上の30%（$250,000×30%＝$75,000）＋4月売上の65%（$200,000×65%＝$130,000）＝$205,000。$222,500は両月の回収率を逆に当てはめた金額。$237,500は5月売上の95%を5月に回収したとした金額。$215,000は貸倒れとなる5%を無視して4月売上の70%を回収したとした金額である。",
+      "references": ["Budgeting - cash budget"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-044",
+      "topic": "Planning Control & Analysis",
+      "subtopic": "Sensitivity Analysis - Selling Price",
+      "stem": "Delancey Co.'s base-case plan is 50,000 units sold at $40 per unit, with variable cost of $24 per unit and fixed costs of $480,000. In a sensitivity analysis, management tests a 5% decrease in selling price with all other inputs unchanged. By what percentage does operating income decrease?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "31.25%"
+        },
+        {
+          "label": "B",
+          "text": "5.00%"
+        },
+        {
+          "label": "C",
+          "text": "12.50%"
+        },
+        {
+          "label": "D",
+          "text": "20.83%"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Base operating income is 50,000 x ($40 - $24) - $480,000 = $320,000. A 5% price decrease is $2 per unit, reducing operating income by 50,000 x $2 = $100,000 to $220,000, a decrease of $100,000 / $320,000 = 31.25%. Because fixed costs do not change, operating income is far more sensitive than revenue. The 5.00% answer is the change in revenue, 12.50% is the change in unit contribution margin ($2 / $16), and 20.83% divides the decrease by fixed costs rather than by base operating income.",
+      "explanationJa": "基本ケースの営業利益＝50,000×（$40−$24）−$480,000＝$320,000。販売価格5%の下落は1単位$2で、営業利益は50,000×$2＝$100,000減少して$220,000となり、減少率は$100,000÷$320,000＝31.25%。固定費が変わらないため、営業利益は売上高よりはるかに敏感に変動する。5.00%は売上高の変化率、12.50%は単位貢献利益の変化率（$2÷$16）、20.83%は減少額を基本営業利益ではなく固定費で割った値である。",
+      "references": ["Planning techniques - sensitivity analysis"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-045",
+      "topic": "Performance Measures",
+      "subtopic": "ROI vs. Residual Income - Limitations",
+      "stem": "Which of the following is a weakness of return on investment (ROI) as a divisional performance measure that residual income avoids?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It relies on historical-cost book values of divisional assets"
+        },
+        {
+          "label": "B",
+          "text": "It favors large divisions because it is an absolute dollar amount"
+        },
+        {
+          "label": "C",
+          "text": "It may lead managers to reject projects earning above the required return"
+        },
+        {
+          "label": "D",
+          "text": "It ignores the amount of assets used to generate divisional income"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A manager evaluated on ROI may reject a project whose return exceeds the company's required rate but is below the division's current ROI, because accepting it would lower the division's ROI. Residual income avoids this goal-congruence problem because any project earning more than the required return increases residual income. Reliance on historical-cost book values affects both measures. Favoring larger divisions because the result is a dollar amount is a weakness of residual income, not ROI. Both measures consider the assets employed.",
+      "explanationJa": "ROIで評価される事業部長は、全社の要求収益率を上回るが事業部の現在のROIを下回る投資案を、ROIを引き下げるという理由で却下しかねない。残余利益では要求収益率を上回る投資は必ず残余利益を増やすため、この目標整合性の問題を回避できる。取得原価ベースの帳簿価額への依存は両指標に共通する。金額指標であるため大規模事業部に有利になるのは残余利益の弱点であってROIの弱点ではない。両指標とも使用資産を考慮している。",
+      "references": ["Performance measurement - ROI and residual income"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-046",
+      "topic": "Performance Measures",
+      "subtopic": "Return on Equity and Leverage",
+      "stem": "Alder Co. and a competitor in the same industry each report a return on assets of 6%. Alder has total assets of $10,000,000 and stockholders' equity of $4,000,000, while the competitor has no debt. What is Alder's return on equity?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "2.4%"
+        },
+        {
+          "label": "B",
+          "text": "15.0%"
+        },
+        {
+          "label": "C",
+          "text": "6.0%"
+        },
+        {
+          "label": "D",
+          "text": "10.0%"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Return on equity equals return on assets times the equity multiplier (total assets / equity). The equity multiplier is $10,000,000 / $4,000,000 = 2.5, so ROE is 6% x 2.5 = 15.0%. Equivalently, net income is $600,000 and $600,000 / $4,000,000 = 15%. The 2.4% answer multiplies ROA by the equity-to-assets ratio instead of dividing by it, 6.0% ignores financial leverage, and 10.0% divides ROA by the 60% debt ratio.",
+      "explanationJa": "ROE＝ROA×財務レバレッジ（総資産÷自己資本）。財務レバレッジは$10,000,000÷$4,000,000＝2.5なので、ROE＝6%×2.5＝15.0%。言い換えると純利益は$600,000で、$600,000÷$4,000,000＝15%。2.4%はROAに自己資本比率を掛けてしまった誤り、6.0%は財務レバレッジを無視した値、10.0%はROAを負債比率60%で割った誤りである。",
+      "references": ["Financial ratio analysis - DuPont"],
+      "difficulty": "intermediate",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-047",
+      "topic": "Performance Measures",
+      "subtopic": "Economic Value Added vs. Residual Income",
+      "stem": "Compared with traditional residual income, economic value added (EVA) typically",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Measures performance as a percentage return rather than a dollar amount"
+        },
+        {
+          "label": "B",
+          "text": "Uses pretax accounting income and a hurdle rate set by management"
+        },
+        {
+          "label": "C",
+          "text": "Excludes the cost of equity capital from the capital charge"
+        },
+        {
+          "label": "D",
+          "text": "Uses after-tax operating profit and a WACC-based capital charge"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "EVA is a form of residual income that subtracts a capital charge, computed as invested capital times the weighted-average cost of capital, from after-tax operating profit, often after adjusting GAAP amounts. Like residual income, EVA is a dollar amount, not a percentage return. Using pretax income and a management-selected hurdle rate describes the traditional residual income approach, not EVA. Because WACC includes the cost of equity, EVA's capital charge includes equity capital rather than excluding it.",
+      "explanationJa": "EVAは残余利益の一種で、税引後営業利益から資本コスト額（投下資本×加重平均資本コスト）を差し引いて求め、GAAP上の数値を調整することも多い。残余利益と同様に金額指標であり、収益率（%）ではない。税引前利益と経営者が定めたハードルレートを使うのは従来型の残余利益の方法でありEVAではない。WACCには株主資本コストが含まれるため、EVAの資本コスト額は株主資本を除外せず含んでいる。",
+      "references": ["Performance measurement - economic value added"],
+      "difficulty": "advanced",
+      "source": "Original - BAR Practice"
+    },
+    {
+      "id": "bar-fv2-a1-048",
+      "topic": "Performance Measures",
+      "subtopic": "Balanced Scorecard - Leading Indicators",
+      "stem": "A specialty retailer is designing a balanced scorecard and wants its measures to signal problems before they appear in reported results. Which of the following is most likely a leading indicator of future financial performance?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Customer satisfaction index"
+        },
+        {
+          "label": "B",
+          "text": "Return on investment"
+        },
+        {
+          "label": "C",
+          "text": "Earnings per share growth"
+        },
+        {
+          "label": "D",
+          "text": "Operating income margin"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nonfinancial measures in the customer, internal business process, and learning and growth perspectives tend to be leading indicators because improvements in them are expected to drive later financial results. Customer satisfaction is such a measure. Return on investment, earnings per share growth, and operating income margin are financial perspective measures that report the outcome of past performance, so they are lagging indicators.",
+      "explanationJa": "顧客、内部ビジネスプロセス、学習と成長の各視点の非財務指標は、その改善が後の財務成果につながると期待されるため先行指標となりやすい。顧客満足度指数はその代表例である。投資利益率（ROI）、1株当たり利益の成長率、営業利益率は財務の視点の指標で、過去の業績の結果を示す遅行指標である。",
+      "references": ["Balanced scorecard"],
+      "difficulty": "basic",
+      "source": "Original - BAR Practice"
+    }
+  ]
+}
