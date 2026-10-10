@@ -390,6 +390,15 @@ node scripts/check-questions.mjs
 git pre-commit hookが自動実行するが、コミット前に手動確認することを推奨する。
 新しいマシンでクローンした場合は `node scripts/install-hooks.mjs` でhookをインストールすること。
 
+続けて全問検査を実行し、テストが通る（既知の一覧 `src/lib/questionLint/known-issues.json` に無い不備がゼロ）ことを確認してから完了とする。
+
+```bash
+npm run lint:questions
+```
+
+画面で表示して初めて分かる不備（参照資料の欠落・表の崩れ・列見出しの割れ・解説の欠落・模試の時間超過）を作成時点で機械的に落とすためのもの。
+検出内容と既知の一覧の扱いは `src/lib/questionLint/questionLint.test.ts` の冒頭を参照。
+
 ### 作成時の絶対禁止事項
 
 以下のバグは過去に実際に発生したもの。繰り返さないこと。
