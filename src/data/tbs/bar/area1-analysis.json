@@ -1,0 +1,898 @@
+[
+  {
+    "id": "bar-tbs-cvp-002",
+    "subject": "BAR",
+    "topic": "Decision Making",
+    "title": "Multiproduct CVP Analysis and a Special Order — Kestrel Outdoor Gear",
+    "scenario": "Kestrel Outdoor Gear, Inc. manufactures two backpacks, the Trail pack and the Summit pack. Management is preparing the 20X6 operating plan and has asked you to perform cost-volume-profit (CVP) analysis and to evaluate two proposals.\n\nAssumptions:\n- The sales mix of 3 Trail packs to 1 Summit pack (in units) remains constant unless a task states otherwise.\n- Production equals sales; there are no inventories.\n- Unless a task states otherwise, enter dollar amounts and units in whole numbers (no commas).\n- The two proposals in **Exhibit 3** are evaluated independently of each other.\n\nUse **Exhibit 1** (budgeted product data), **Exhibit 2** (cost report and planning targets), and **Exhibit 3** (proposals) to complete the tasks.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Budgeted Product Data — 20X6",
+        "content": "**Per-unit data**\n\n| Item | Trail pack | Summit pack |\n|---|---|---|\n| Selling price | $60 | $100 |\n| Direct materials | $18 | $30 |\n| Direct labor | $8 | $12 |\n| Variable manufacturing overhead | $6 | $8 |\n| Sales commission (variable) | $4 | $5 |\n| Machine hours per unit | 0.5 | 1.5 |\n| Budgeted sales volume (units) | 21,000 | 7,000 |\n\n**Annual fixed costs**\n\n| Item | Amount |\n|---|---|\n| Fixed manufacturing overhead | $315,000 |\n| Fixed selling and administrative expenses | $153,000 |\n\nPractical capacity of the plant is 24,000 machine hours per year."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Accounting Department Cost Report and Planning Targets",
+        "content": "**Absorption cost per unit (used for inventory reporting)**\n\nFixed manufacturing overhead is allocated at $15 per machine hour ($315,000 / 21,000 budgeted machine hours).\n\n| Item | Trail pack | Summit pack |\n|---|---|---|\n| Variable manufacturing cost | $32.00 | $50.00 |\n| Allocated fixed manufacturing overhead | 7.50 | 22.50 |\n| Full manufacturing cost per unit | $39.50 | $72.50 |\n\n**Planning targets and other data**\n\n| Item | Amount |\n|---|---|\n| Target net income (after tax) for 20X6 | $175,500 |\n| Income tax rate | 25% |\n| Actual 20X5 sales volume — Trail pack | 19,400 units |\n| Actual 20X5 sales volume — Summit pack | 6,900 units |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Proposals Under Consideration",
+        "content": "**Proposal 1 — Trail pack price reduction**\nReduce the Trail pack selling price from $60 to $57. Marketing expects Trail pack volume to increase to 25,200 units, with Summit pack volume unchanged at 7,000 units. An additional $20,000 of fixed advertising would be incurred. Variable costs per unit, including sales commissions, would not change.\n\n**Proposal 2 — Special order**\nA regional retailer has offered to buy 2,000 Trail packs at $38 each, to be sold under the retailer's own label. No sales commission would be paid on this order. Custom labels require a one-time setup cost of $3,000. The order would use idle capacity and would not affect regular sales or other fixed costs. Assume Proposal 1 is not adopted when evaluating Proposal 2."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Break-even point and target net income",
+        "instruction": "Using Exhibits 1 and 2 and the constant 3:1 sales mix, calculate the units of each product and total sales revenue required (a) to break even and (b) to earn the target after-tax net income. Enter units and dollars in whole numbers (no commas).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Break-even", "Target net income"],
+          "rows": [
+            "Trail pack (units)",
+            "Summit pack (units)",
+            "Total sales revenue ($)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Trail pack (units)",
+              "colLabel": "Break-even",
+              "correctValue": 12000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Summit pack (units)",
+              "colLabel": "Break-even",
+              "correctValue": 4000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Total sales revenue ($)",
+              "colLabel": "Break-even",
+              "correctValue": 1120000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Trail pack (units)",
+              "colLabel": "Target net income",
+              "correctValue": 18000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Summit pack (units)",
+              "colLabel": "Target net income",
+              "correctValue": 6000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Total sales revenue ($)",
+              "colLabel": "Target net income",
+              "correctValue": 1680000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Unit contribution margins: Trail $60 - ($18 + $8 + $6 + $4) = $24; Summit $100 - ($30 + $12 + $8 + $5) = $45. A composite unit of 3 Trail + 1 Summit has CM = 3 x $24 + $45 = $117. Total fixed costs = $315,000 + $153,000 = $468,000. Break-even = $468,000 / $117 = 4,000 composite units = 12,000 Trail and 4,000 Summit; revenue = 12,000 x $60 + 4,000 x $100 = $1,120,000. Target pre-tax income = $175,500 / (1 - 0.25) = $234,000. Required composite units = ($468,000 + $234,000) / $117 = 6,000 = 18,000 Trail and 6,000 Summit; revenue = $1,080,000 + $600,000 = $1,680,000. Allocated fixed overhead per unit in Exhibit 2 is not used; total fixed costs are covered by the composite contribution margin.",
+        "explanationJa": "**ステップ1：単位当たり貢献利益**\n- Trail：$60 − ($18 + $8 + $6 + $4) = $24\n- Summit：$100 − ($30 + $12 + $8 + $5) = $45\n- 構成単位（Trail 3個 + Summit 1個）の貢献利益 = 3 × $24 + $45 = **$117**\n\n**ステップ2：損益分岐点**\n固定費合計 $315,000 + $153,000 = $468,000\n$468,000 ÷ $117 = 4,000構成単位 → **Trail 12,000個、Summit 4,000個**\n売上高 = 12,000 × $60 + 4,000 × $100 = **$1,120,000**\n\n**ステップ3：目標利益達成点**\n税引前目標利益 = $175,500 ÷ (1 − 25%) = $234,000\n($468,000 + $234,000) ÷ $117 = 6,000構成単位 → **Trail 18,000個、Summit 6,000個**\n売上高 = $1,080,000 + $600,000 = **$1,680,000**\n\nExhibit 2 の配賦固定費（単位当たり）はCVP分析には使わない。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Cost-volume-profit analysis (multiproduct)"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Margin of safety and operating leverage",
+        "instruction": "Based on the budgeted sales volumes in Exhibit 1, calculate the margin of safety in dollars, the margin of safety ratio, and the degree of operating leverage. Enter the margin of safety in whole dollars (no commas), the ratio as a percentage rounded to two decimal places (for example, enter 12.34 for 12.34%), and the degree of operating leverage rounded to two decimal places.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Budget"],
+          "rows": [
+            "Margin of safety ($)",
+            "Margin of safety ratio (%)",
+            "Degree of operating leverage"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Margin of safety ($)",
+              "colLabel": "Budget",
+              "correctValue": 840000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Margin of safety ratio (%)",
+              "colLabel": "Budget",
+              "correctValue": 42.86,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Degree of operating leverage",
+              "colLabel": "Budget",
+              "correctValue": 2.33,
+              "tolerance": 0.01
+            }
+          ]
+        },
+        "explanation": "Budgeted revenue = 21,000 x $60 + 7,000 x $100 = $1,260,000 + $700,000 = $1,960,000. Margin of safety = $1,960,000 - $1,120,000 break-even revenue = $840,000; ratio = $840,000 / $1,960,000 = 42.86%. Budgeted contribution margin = 21,000 x $24 + 7,000 x $45 = $504,000 + $315,000 = $819,000; operating income = $819,000 - $468,000 = $351,000. Degree of operating leverage = $819,000 / $351,000 = 2.33.",
+        "explanationJa": "**ステップ1：予算売上高**\n21,000 × $60 + 7,000 × $100 = $1,260,000 + $700,000 = $1,960,000\n\n**ステップ2：安全余裕**\n- 安全余裕額 = $1,960,000 − 損益分岐点売上高 $1,120,000 = **$840,000**\n- 安全余裕率 = $840,000 ÷ $1,960,000 = **42.86%**\n\n**ステップ3：営業レバレッジ度**\n- 貢献利益 = 21,000 × $24 + 7,000 × $45 = $504,000 + $315,000 = $819,000\n- 営業利益 = $819,000 − $468,000 = $351,000\n- DOL = $819,000 ÷ $351,000 = **2.33**",
+        "references": [
+          "AICPA BAR Blueprint Area I — Cost-volume-profit analysis (margin of safety, operating leverage)"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Using the degree of operating leverage",
+        "instruction": "If 20X6 sales volume is 10% higher than budgeted for both products (sales mix unchanged) and fixed costs do not change, by approximately what percentage would operating income increase?",
+        "answerType": "select",
+        "options": ["10.0%", "23.3%", "33.3%", "42.9%"],
+        "correctAnswer": "23.3%",
+        "explanation": "The percentage change in operating income equals the degree of operating leverage multiplied by the percentage change in sales: 2.33 x 10% = 23.3%. Check: contribution margin rises to $819,000 x 1.10 = $900,900; operating income = $900,900 - $468,000 = $432,900, an increase of $81,900 / $351,000 = 23.3%.",
+        "explanationJa": "営業利益の変化率 = 営業レバレッジ度 × 売上（数量）の変化率 = 2.33 × 10% = **23.3%**\n\n検証：貢献利益 $819,000 × 1.10 = $900,900、営業利益 = $900,900 − $468,000 = $432,900。増加額 $81,900 ÷ $351,000 = 23.3%。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Cost-volume-profit analysis (operating leverage)"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Proposal 1 — projected operating income",
+        "instruction": "Using Exhibits 1 and 3, calculate projected 20X6 operating income if Proposal 1 is adopted. Enter the amount in whole dollars (no commas).",
+        "answerType": "number",
+        "correctAnswer": 356200,
+        "tolerance": 0,
+        "explanation": "New Trail pack contribution margin = $57 - $36 = $21. Contribution margin: Trail 25,200 x $21 = $529,200; Summit 7,000 x $45 = $315,000; total $844,200. Fixed costs = $468,000 + $20,000 = $488,000. Operating income = $844,200 - $488,000 = $356,200, which is $5,200 higher than the budgeted $351,000. Required machine hours of 25,200 x 0.5 + 7,000 x 1.5 = 23,100 are within the 24,000-hour capacity.",
+        "explanationJa": "**ステップ1：値下げ後のTrailの貢献利益**\n$57 − 変動費 $36 = $21\n\n**ステップ2：貢献利益合計**\n- Trail：25,200 × $21 = $529,200\n- Summit：7,000 × $45 = $315,000\n- 合計 $844,200\n\n**ステップ3：営業利益**\n固定費 $468,000 + 広告費 $20,000 = $488,000\n営業利益 = $844,200 − $488,000 = **$356,200**（予算 $351,000 より $5,200 増加）\n\n必要機械時間 25,200 × 0.5 + 7,000 × 1.5 = 23,100時間で、能力 24,000時間の範囲内。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Cost-volume-profit analysis (what-if analysis)"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Proposal 2 — special order analysis",
+        "instruction": "Using Exhibits 1 and 3, prepare an incremental analysis of the special order in Proposal 2. Enter all amounts in whole dollars (no commas) as positive numbers, except enter a decrease in operating income as a negative number.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "Incremental revenue",
+            "Incremental variable costs",
+            "Incremental fixed costs",
+            "Change in operating income"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Incremental revenue",
+              "colLabel": "Amount",
+              "correctValue": 76000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Incremental variable costs",
+              "colLabel": "Amount",
+              "correctValue": 64000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Incremental fixed costs",
+              "colLabel": "Amount",
+              "correctValue": 3000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Change in operating income",
+              "colLabel": "Amount",
+              "correctValue": 9000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Incremental revenue = 2,000 x $38 = $76,000. Relevant variable costs exclude the sales commission, which is not paid on this order: ($18 + $8 + $6) x 2,000 = $64,000. The only incremental fixed cost is the $3,000 label setup. Existing fixed manufacturing overhead is unaffected because the order uses idle capacity (21,000 + 1,000 = 22,000 machine hours, below 24,000). Change in operating income = $76,000 - $64,000 - $3,000 = $9,000 increase.",
+        "explanationJa": "**増分収益**：2,000 × $38 = **$76,000**\n\n**増分変動費**：この注文では販売手数料を支払わないため除外し、変動製造原価のみ：($18 + $8 + $6) × 2,000 = **$64,000**\n\n**増分固定費**：ラベルの段取費 **$3,000** のみ。既存の固定製造間接費は遊休能力を使う（21,000 + 1,000 = 22,000機械時間 < 24,000）ため変わらない。\n\n**営業利益への影響**：$76,000 − $64,000 − $3,000 = **$9,000 増加**",
+        "references": [
+          "AICPA BAR Blueprint Area I — Relevant costing (special orders)"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Special order decision",
+        "instruction": "Considering only the quantitative factors, which statement best supports the appropriate decision on the special order?",
+        "answerType": "select",
+        "options": [
+          "Accept, because the $38.00 price exceeds the relevant cost of $33.50 per unit and idle capacity is available",
+          "Reject, because the $38.00 price is below the $39.50 full manufacturing cost per unit",
+          "Reject, because the $38.00 price is below the $43.50 cost per unit including sales commissions and allocated fixed overhead",
+          "Accept, because the order earns the same $24.00 contribution margin per unit as regular Trail pack sales"
+        ],
+        "correctAnswer": "Accept, because the $38.00 price exceeds the relevant cost of $33.50 per unit and idle capacity is available",
+        "explanation": "The relevant cost per unit is the variable manufacturing cost of $32.00 plus the $3,000 setup spread over 2,000 units ($1.50), or $33.50. Because the plant has idle capacity and regular sales are unaffected, allocated fixed overhead ($7.50 per unit) is not relevant, and the sales commission is not incurred. Comparing the price with the $39.50 full manufacturing cost or the $43.50 cost including commissions and allocated overhead would wrongly reject an order that increases operating income by $9,000. The order's contribution is $38.00 - $32.00 = $6.00 per unit before setup costs, not $24.00.",
+        "explanationJa": "単位当たりの関連原価 = 変動製造原価 $32.00 + 段取費 $3,000 ÷ 2,000個（$1.50）= **$33.50**。遊休能力があり通常販売に影響しないため、配賦固定費（$7.50/個）は無関連原価であり、販売手数料も発生しない。価格 $38.00 が関連原価 $33.50 を上回るので**受注すべき**（営業利益 $9,000 増加）。\n\n全部製造原価 $39.50 や、手数料・配賦固定費込みの $43.50 と比べて断るのは誤り。また、この注文の単位当たり貢献利益は段取費控除前で $38.00 − $32.00 = $6.00 であり、通常品の $24.00 とは異なる。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Relevant costing (special orders)"
+        ]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 27,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-budget-002",
+    "subject": "BAR",
+    "topic": "Budgeting & Forecasting",
+    "title": "First-Quarter Master Budget and Budget-to-Actual Review — Norcliff Housewares",
+    "scenario": "Norcliff Housewares Co. manufactures a single product, a cast-iron skillet. You are preparing components of the master budget for the first quarter of 20X6 (January through March) and reviewing March results against the budget.\n\nAll sales are on account. Unless a task states otherwise, enter units, pounds, and dollar amounts in whole numbers (no commas). No rounding is required because all budgeted amounts work out to whole numbers.\n\nUse **Exhibit 1** (sales forecast and inventory policies), **Exhibit 2** (collection, payment, and other cash data), and **Exhibit 3** (March actual results) to complete the tasks.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Sales Forecast and Inventory Policies",
+        "content": "**Sales in units (selling price $50 per unit in all months)**\n\n| Month | Units |\n|---|---|\n| December 20X5 (actual) | 9,000 |\n| January 20X6 | 10,000 |\n| February 20X6 | 12,000 |\n| March 20X6 | 15,000 |\n| April 20X6 | 14,000 |\n| May 20X6 | 16,000 |\n\n**Inventory policies**\n\n| Item | Policy |\n|---|---|\n| Finished goods | Ending inventory equals 20% of the following month's sales units. Finished goods on December 31, 20X5: 2,000 units. |\n| Raw materials | Each skillet requires 3 pounds of iron at $4.00 per pound. Ending raw materials equal 25% of the following month's production needs. Raw materials on December 31, 20X5: 7,800 pounds. |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Collection, Payment, and Other Cash Data",
+        "content": "| Item | Data |\n|---|---|\n| Collections of sales | 40% in the month of sale, 58% in the following month, 2% uncollectible |\n| Payments for materials purchases | 50% in the month of purchase, 50% in the following month. December 20X5 purchases: $120,000 |\n| Direct labor | 0.5 hours per unit at $24 per hour, paid in the month incurred |\n| Manufacturing overhead | Variable: $3 per unit produced. Fixed: $85,000 per month, including $25,000 of depreciation. Paid in the month incurred. |\n| Selling and administrative expenses | Variable: 5% of sales revenue. Fixed: $90,000 per month (all cash). Paid in the month incurred. |\n| Equipment purchase | $200,000, paid in cash in March |\n| Cash balance, March 1 (budgeted) | $85,000 |\n| Financing policy | Minimum ending cash balance of $50,000. Borrowings are made at the beginning of the month in multiples of $10,000. Interest is paid when principal is repaid; no repayments are planned in the first quarter. No borrowing is needed in January or February, and no loans are outstanding on March 1. |\n| Dividend | A dividend of $0.20 per share will be declared on March 31 and paid on April 15. |\n| Income taxes | Estimated tax rate of 25%; the first quarterly estimated payment is due April 15. |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: March 20X6 Actual Results",
+        "content": "| Item | Actual |\n|---|---|\n| Units sold | 14,200 |\n| Average selling price per unit | $51 |\n| Sales revenue | $724,200 |\n| Units produced | 14,000 |\n| Direct labor hours | 7,000 |\n| Direct labor cost | $171,500 |\n| Number of retail customers | 312 |"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Production budget",
+        "instruction": "Using Exhibit 1, prepare the production budget for January, February, and March. Enter units in whole numbers (no commas).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Jan", "Feb", "Mar"],
+          "rows": [
+            "Ending finished goods (units)",
+            "Required production (units)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Ending finished goods (units)",
+              "colLabel": "Jan",
+              "correctValue": 2400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Ending finished goods (units)",
+              "colLabel": "Feb",
+              "correctValue": 3000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Ending finished goods (units)",
+              "colLabel": "Mar",
+              "correctValue": 2800,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Required production (units)",
+              "colLabel": "Jan",
+              "correctValue": 10400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Required production (units)",
+              "colLabel": "Feb",
+              "correctValue": 12600,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Required production (units)",
+              "colLabel": "Mar",
+              "correctValue": 14800,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "Ending finished goods = 20% of next month's sales: January 12,000 x 20% = 2,400; February 15,000 x 20% = 3,000; March 14,000 x 20% = 2,800. Required production = sales + ending finished goods - beginning finished goods: January 10,000 + 2,400 - 2,000 = 10,400; February 12,000 + 3,000 - 2,400 = 12,600; March 15,000 + 2,800 - 3,000 = 14,800.",
+        "explanationJa": "**期末製品在庫 = 翌月販売量 × 20%**\n- 1月：12,000 × 20% = 2,400\n- 2月：15,000 × 20% = 3,000\n- 3月：14,000 × 20% = 2,800\n\n**必要生産量 = 販売量 + 期末在庫 − 期首在庫**\n- 1月：10,000 + 2,400 − 2,000 = **10,400**\n- 2月：12,000 + 3,000 − 2,400 = **12,600**\n- 3月：15,000 + 2,800 − 3,000 = **14,800**",
+        "references": [
+          "AICPA BAR Blueprint Area I — Budgeting (production budget)"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Direct materials purchases budget",
+        "instruction": "Using Exhibit 1 and your production budget, prepare the direct materials purchases budget for January, February, and March. (Hint: April production is needed to determine the March 31 raw materials inventory.) Enter pounds and dollars in whole numbers (no commas).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Jan", "Feb", "Mar"],
+          "rows": [
+            "Pounds of materials to purchase",
+            "Cost of materials purchases ($)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Pounds of materials to purchase",
+              "colLabel": "Jan",
+              "correctValue": 32850,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Pounds of materials to purchase",
+              "colLabel": "Feb",
+              "correctValue": 39450,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Pounds of materials to purchase",
+              "colLabel": "Mar",
+              "correctValue": 44100,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cost of materials purchases ($)",
+              "colLabel": "Jan",
+              "correctValue": 131400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cost of materials purchases ($)",
+              "colLabel": "Feb",
+              "correctValue": 157800,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Cost of materials purchases ($)",
+              "colLabel": "Mar",
+              "correctValue": 176400,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "April production = 14,000 sales + 3,200 ending finished goods (20% x 16,000) - 2,800 beginning = 14,400 units. Production needs (x 3 pounds): January 31,200; February 37,800; March 44,400; April 43,200. Ending raw materials (25% of next month's needs): January 9,450; February 11,100; March 10,800. Purchases = needs + ending - beginning: January 31,200 + 9,450 - 7,800 = 32,850 pounds ($131,400); February 37,800 + 11,100 - 9,450 = 39,450 pounds ($157,800); March 44,400 + 10,800 - 11,100 = 44,100 pounds ($176,400).",
+        "explanationJa": "**ステップ1：4月の生産量**\n14,000 + 期末 3,200（16,000 × 20%）− 期首 2,800 = 14,400個\n\n**ステップ2：月別の材料必要量（生産量 × 3ポンド）**\n1月 31,200／2月 37,800／3月 44,400／4月 43,200\n\n**ステップ3：期末材料在庫（翌月必要量 × 25%）**\n1月 9,450／2月 11,100／3月 10,800\n\n**ステップ4：購入量 = 必要量 + 期末 − 期首**\n- 1月：31,200 + 9,450 − 7,800 = **32,850ポンド**（× $4 = **$131,400**）\n- 2月：37,800 + 11,100 − 9,450 = **39,450ポンド**（**$157,800**）\n- 3月：44,400 + 10,800 − 11,100 = **44,100ポンド**（**$176,400**）",
+        "references": [
+          "AICPA BAR Blueprint Area I — Budgeting (direct materials purchases budget)"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Cash collections",
+        "instruction": "Using Exhibits 1 and 2, calculate budgeted cash collections from customers for each month and the collectible accounts receivable balance expected at March 31 (excluding amounts expected to be uncollectible). Enter dollar amounts in whole numbers (no commas).",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Jan", "Feb", "Mar"],
+          "rows": ["Cash collections", "Accounts receivable, March 31"],
+          "cells": [
+            {
+              "rowLabel": "Cash collections",
+              "colLabel": "Jan",
+              "correctValue": 461000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash collections",
+              "colLabel": "Feb",
+              "correctValue": 530000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Cash collections",
+              "colLabel": "Mar",
+              "correctValue": 648000,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Accounts receivable, March 31",
+              "colLabel": "Mar",
+              "correctValue": 435000,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Sales revenue: December $450,000; January $500,000; February $600,000; March $750,000. January collections = 40% x $500,000 + 58% x $450,000 = $200,000 + $261,000 = $461,000. February = 40% x $600,000 + 58% x $500,000 = $240,000 + $290,000 = $530,000. March = 40% x $750,000 + 58% x $600,000 = $300,000 + $348,000 = $648,000. Collectible receivables at March 31 = 58% x $750,000 = $435,000; the 2% of each month's sales is never collected.",
+        "explanationJa": "**月別売上高**：12月 $450,000／1月 $500,000／2月 $600,000／3月 $750,000\n\n**回収額 = 当月売上 × 40% + 前月売上 × 58%**\n- 1月：$200,000 + $261,000 = **$461,000**\n- 2月：$240,000 + $290,000 = **$530,000**\n- 3月：$300,000 + $348,000 = **$648,000**\n\n**3月末の回収可能な売掛金**：3月売上 $750,000 × 58% = **$435,000**（2%は回収不能のため含めない）",
+        "references": [
+          "AICPA BAR Blueprint Area I — Budgeting (cash collections)"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "March cash budget",
+        "instruction": "Using Exhibits 1 and 2 and your prior results, complete the following lines of the March cash budget. No borrowing occurred in January or February, and no loans are outstanding on March 1. \"Excess (deficiency) before financing\" equals beginning cash plus collections minus total cash disbursements. Enter dollar amounts in whole numbers (no commas); enter a deficiency as a negative number.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["March"],
+          "rows": [
+            "Disbursements for materials",
+            "Disbursements for direct labor",
+            "Disbursements for manufacturing overhead",
+            "Total cash disbursements",
+            "Excess (deficiency) before financing",
+            "Borrowing",
+            "Ending cash balance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Disbursements for materials",
+              "colLabel": "March",
+              "correctValue": 167100,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Disbursements for direct labor",
+              "colLabel": "March",
+              "correctValue": 177600,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Disbursements for manufacturing overhead",
+              "colLabel": "March",
+              "correctValue": 104400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Total cash disbursements",
+              "colLabel": "March",
+              "correctValue": 776600,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Excess (deficiency) before financing",
+              "colLabel": "March",
+              "correctValue": -43600,
+              "tolerance": 1
+            },
+            {
+              "rowLabel": "Borrowing",
+              "colLabel": "March",
+              "correctValue": 100000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Ending cash balance",
+              "colLabel": "March",
+              "correctValue": 56400,
+              "tolerance": 1
+            }
+          ]
+        },
+        "explanation": "Materials = 50% x $176,400 (March) + 50% x $157,800 (February) = $88,200 + $78,900 = $167,100. Direct labor = 14,800 units x 0.5 hours x $24 = $177,600. Manufacturing overhead = 14,800 x $3 + ($85,000 - $25,000 depreciation) = $44,400 + $60,000 = $104,400. Selling and administrative = 5% x $750,000 + $90,000 = $127,500. Total disbursements = $167,100 + $177,600 + $104,400 + $127,500 + $200,000 equipment = $776,600. The dividend is paid in April, so it is not a March disbursement. Excess (deficiency) = $85,000 + $648,000 - $776,600 = -$43,600. To reach the $50,000 minimum, $93,600 is needed; in multiples of $10,000, borrowing = $100,000. Ending cash = -$43,600 + $100,000 = $56,400.",
+        "explanationJa": "**支出の内訳**\n- 材料：3月購入 $176,400 × 50% + 2月購入 $157,800 × 50% = $88,200 + $78,900 = **$167,100**\n- 直接労務費：生産量 14,800 × 0.5時間 × $24 = **$177,600**\n- 製造間接費：14,800 × $3 + (固定 $85,000 − 減価償却費 $25,000) = $44,400 + $60,000 = **$104,400**（減価償却費は非資金費用）\n- 販管費：$750,000 × 5% + $90,000 = $127,500\n- 設備購入：$200,000\n- 支出合計 = **$776,600**（配当は4月支払なので3月の支出に含めない）\n\n**資金過不足**\n$85,000 + $648,000 − $776,600 = **−$43,600**\n\n**借入**\n最低残高 $50,000 に必要な額は $93,600 → $10,000単位に切り上げて **$100,000**\n期末現金 = −$43,600 + $100,000 = **$56,400**",
+        "references": ["AICPA BAR Blueprint Area I — Budgeting (cash budget)"]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "March budget-to-actual variances",
+        "instruction": "Using Exhibits 1, 2, and 3, calculate the following March variances. Measure the sales volume variance in terms of revenue at the budgeted selling price, and measure the direct labor flexible-budget variance against a budget flexed to actual units produced. Enter each amount in whole dollars (no commas) as a positive number, and enter F (favorable) or U (unfavorable) in the second column.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Sales price variance",
+            "Sales volume variance (revenue)",
+            "Direct labor flexible-budget variance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Sales price variance",
+              "colLabel": "Amount",
+              "correctValue": 14200,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Sales price variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Sales volume variance (revenue)",
+              "colLabel": "Amount",
+              "correctValue": 40000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Sales volume variance (revenue)",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Direct labor flexible-budget variance",
+              "colLabel": "Amount",
+              "correctValue": 3500,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Direct labor flexible-budget variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            }
+          ]
+        },
+        "explanation": "Sales price variance = ($51 - $50) x 14,200 = $14,200 F. Sales volume variance = (14,200 - 15,000) x $50 = $40,000 U. Together they explain the $25,800 U revenue shortfall ($724,200 - $750,000). Flexible budget for direct labor at 14,000 units produced = 14,000 x 0.5 x $24 = $168,000; actual $171,500 exceeds it by $3,500 U. Compared with the master budget of $177,600 (14,800 units), actual labor appears $6,100 favorable, but that comparison mixes the effect of lower production volume with labor performance.",
+        "explanationJa": "**販売価格差異**：($51 − $50) × 14,200 = **$14,200 F**\n\n**販売数量差異（売上高ベース）**：(14,200 − 15,000) × $50 = **$40,000 U**\n（合計 $25,800 U = 実際売上 $724,200 − 予算 $750,000）\n\n**直接労務費のフレキシブル予算差異**\n- 実際生産量 14,000個に組み替えた予算：14,000 × 0.5 × $24 = $168,000\n- 実際 $171,500 − $168,000 = **$3,500 U**\n\n静態予算（14,800個分 $177,600）と比べると $6,100 有利に見えるが、それは生産量の減少効果を含んでおり、労務の業績評価には使えない。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Budgeting (budget-to-actual analysis)"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Interpreting March budget-to-actual results",
+        "instruction": "Based on Exhibits 1 through 3 and your results, select each conclusion that is supported. Select all that apply.",
+        "answerType": "multiselect",
+        "options": [
+          "The revenue shortfall versus the master budget is explained by lower unit sales, partially offset by a higher average selling price.",
+          "Direct labor cost appears favorable when compared with the master budget but is unfavorable relative to a budget flexed to actual production.",
+          "Because actual sales units were below budget, the budgeted March borrowing of $100,000 was unnecessary.",
+          "The higher average selling price caused the 800-unit shortfall in sales volume.",
+          "Depreciation on manufacturing equipment should have been included in budgeted March cash disbursements."
+        ],
+        "correctAnswer": [
+          "The revenue shortfall versus the master budget is explained by lower unit sales, partially offset by a higher average selling price.",
+          "Direct labor cost appears favorable when compared with the master budget but is unfavorable relative to a budget flexed to actual production."
+        ],
+        "explanation": "Supported: the $40,000 U sales volume variance partly offset by the $14,200 F sales price variance explains the $25,800 revenue shortfall; and direct labor is $6,100 favorable against the static budget but $3,500 unfavorable against the flexible budget. Not supported: lower sales reduce cash collections, so they do not show that borrowing was unnecessary; the data do not establish that the price increase caused the volume shortfall; and depreciation is a noncash expense excluded from the cash budget.",
+        "explanationJa": "**支持される結論**\n- 売上未達 $25,800 は、販売数量差異 $40,000 U を販売価格差異 $14,200 F が一部相殺したもの。\n- 直接労務費は静態予算比では $6,100 有利だが、実際生産量に組み替えた予算比では $3,500 不利。\n\n**支持されない結論**\n- 販売数量の減少は回収額を減らす方向に働くため、借入が不要だったとは言えない。\n- 値上げが数量減少の原因だと示すデータはない。\n- 減価償却費は非資金費用で、現金予算の支出には含めない。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Budgeting (variance interpretation)"
+        ]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-fsa-002",
+    "subject": "BAR",
+    "topic": "Financial Statement Analysis",
+    "title": "Two-Year Ratio Analysis, Covenant Compliance, and Data Validation — Ardent Tool Supply",
+    "scenario": "Ardent Tool Supply, Inc. is a wholesale distributor of industrial tools. Its lender requires an annual covenant compliance review, and the CFO has asked you to analyze the 20X5 and 20X4 financial statements and to validate a ratio dashboard prepared by a staff analyst.\n\nAll amounts are in thousands of dollars. Unless a task states otherwise:\n- Use year-end balances for all ratios (do not average balances).\n- Use 365 days per year.\n\nUse **Exhibit 1** (balance sheets), **Exhibit 2** (income statements and other data), **Exhibit 3** (loan covenant excerpt), and **Exhibit 4** (analyst dashboard inputs) to complete the tasks.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Balance Sheets at December 31 ($000)",
+        "content": "| Item | 20X5 | 20X4 |\n|---|---|---|\n| Cash | 120 | 150 |\n| Accounts receivable, net | 480 | 400 |\n| Inventory | 730 | 600 |\n| Prepaid expenses | 70 | 50 |\n| Total current assets | 1,400 | 1,200 |\n| Property and equipment, net | 2,600 | 2,300 |\n| Total assets | 4,000 | 3,500 |\n| Accounts payable | 420 | 350 |\n| Accrued liabilities | 180 | 150 |\n| Current portion of long-term debt | 100 | 100 |\n| Total current liabilities | 700 | 600 |\n| Long-term debt | 1,300 | 1,000 |\n| Total liabilities | 2,000 | 1,600 |\n| Total stockholders' equity | 2,000 | 1,900 |\n| Total liabilities and equity | 4,000 | 3,500 |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Income Statements and Other Data for the Years Ended December 31 ($000)",
+        "content": "| Item | 20X5 | 20X4 |\n|---|---|---|\n| Net sales | 7,300 | 6,570 |\n| Cost of goods sold | 5,110 | 4,380 |\n| Gross profit | 2,190 | 2,190 |\n| Operating expenses | 1,590 | 1,500 |\n| Operating income | 600 | 690 |\n| Interest expense | 100 | 70 |\n| Income before income taxes | 500 | 620 |\n| Income tax expense (25%) | 125 | 155 |\n| Net income | 375 | 465 |\n\n**Other data (20X5):** Depreciation included in operating expenses, 210; cash dividends declared and paid, 275; weighted-average common shares outstanding, 500 thousand. All purchases of inventory are on account."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Loan Agreement — Financial Covenants (Excerpt)",
+        "content": "Section 7.1. The Borrower shall maintain, as of each fiscal year-end, measured using year-end balances:\n\n(a) a ratio of total current assets to total current liabilities of not less than 1.80 to 1.00;\n\n(b) a ratio of total liabilities to total stockholders' equity of not more than 1.10 to 1.00;\n\n(c) a ratio of operating income to interest expense (times interest earned) of not less than 6.50 to 1.00; and\n\n(d) cash dividends paid during the fiscal year not exceeding 75% of net income for that year."
+      },
+      {
+        "id": "ex-4",
+        "title": "Exhibit 4: Analyst Ratio Dashboard — 20X5 Inputs ($000)",
+        "content": "The staff analyst populated the dashboard from an ERP data extract. Net sales were taken as the sum of a quarterly sales extract: Q1 1,750; Q2 1,800; Q3 1,850; Q4 1,800.\n\n| Dashboard input | Amount used |\n|---|---|\n| Net sales | 7,200 |\n| Cost of goods sold | 5,110 |\n| Inventory | 703 |\n| Accounts payable | 420 |\n| Interest expense | 70 |\n| Total equity | 2,000 |\n\nDashboard conclusion: \"Times interest earned is 8.57x; all covenants are met.\""
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Activity ratios and cash conversion cycle",
+        "instruction": "Using Exhibits 1 and 2, calculate the following for each year using year-end balances and 365 days. Use net sales for days sales outstanding and cost of goods sold for days inventory outstanding and days payables outstanding. Round each of the three components to one decimal place, and compute the cash conversion cycle from the rounded components.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["20X5", "20X4"],
+          "rows": [
+            "Days sales outstanding",
+            "Days inventory outstanding",
+            "Days payables outstanding",
+            "Cash conversion cycle"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Days sales outstanding",
+              "colLabel": "20X5",
+              "correctValue": 24,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Days sales outstanding",
+              "colLabel": "20X4",
+              "correctValue": 22.2,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Days inventory outstanding",
+              "colLabel": "20X5",
+              "correctValue": 52.1,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Days inventory outstanding",
+              "colLabel": "20X4",
+              "correctValue": 50,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Days payables outstanding",
+              "colLabel": "20X5",
+              "correctValue": 30,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Days payables outstanding",
+              "colLabel": "20X4",
+              "correctValue": 29.2,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Cash conversion cycle",
+              "colLabel": "20X5",
+              "correctValue": 46.1,
+              "tolerance": 0.1
+            },
+            {
+              "rowLabel": "Cash conversion cycle",
+              "colLabel": "20X4",
+              "correctValue": 43,
+              "tolerance": 0.1
+            }
+          ]
+        },
+        "explanation": "Daily sales: 20X5 7,300 / 365 = 20; 20X4 6,570 / 365 = 18. Daily COGS: 20X5 5,110 / 365 = 14; 20X4 4,380 / 365 = 12. 20X5: DSO = 480 / 20 = 24.0; DIO = 730 / 14 = 52.1; DPO = 420 / 14 = 30.0; CCC = 24.0 + 52.1 - 30.0 = 46.1 days. 20X4: DSO = 400 / 18 = 22.2; DIO = 600 / 12 = 50.0; DPO = 350 / 12 = 29.2; CCC = 22.2 + 50.0 - 29.2 = 43.0 days. The cycle lengthened by about 3 days, mainly because inventory and receivables are being held longer.",
+        "explanationJa": "**1日当たり売上高・売上原価**\n- 売上：20X5 7,300 ÷ 365 = 20／20X4 6,570 ÷ 365 = 18\n- 売上原価：20X5 5,110 ÷ 365 = 14／20X4 4,380 ÷ 365 = 12\n\n**20X5**\n- DSO = 480 ÷ 20 = **24.0日**\n- DIO = 730 ÷ 14 = **52.1日**\n- DPO = 420 ÷ 14 = **30.0日**\n- CCC = 24.0 + 52.1 − 30.0 = **46.1日**\n\n**20X4**\n- DSO = 400 ÷ 18 = **22.2日**\n- DIO = 600 ÷ 12 = **50.0日**\n- DPO = 350 ÷ 12 = **29.2日**\n- CCC = 22.2 + 50.0 − 29.2 = **43.0日**\n\n在庫と売掛金の滞留が延びたことで、CCCが約3日長くなった。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Financial statement analysis (activity ratios)"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "DuPont analysis",
+        "instruction": "Using Exhibits 1 and 2 and year-end balances, decompose return on equity for each year. Compute each component from the unrounded amounts, and compute return on equity directly as net income divided by year-end total stockholders' equity (not as the product of the rounded components). Enter net profit margin and return on equity as percentages rounded to two decimal places (for example, enter 12.34 for 12.34%), and total asset turnover and the equity multiplier rounded to two decimal places.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["20X5", "20X4"],
+          "rows": [
+            "Net profit margin (%)",
+            "Total asset turnover",
+            "Equity multiplier",
+            "Return on equity (%)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Net profit margin (%)",
+              "colLabel": "20X5",
+              "correctValue": 5.14,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Net profit margin (%)",
+              "colLabel": "20X4",
+              "correctValue": 7.08,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Total asset turnover",
+              "colLabel": "20X5",
+              "correctValue": 1.83,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Total asset turnover",
+              "colLabel": "20X4",
+              "correctValue": 1.88,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Equity multiplier",
+              "colLabel": "20X5",
+              "correctValue": 2,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Equity multiplier",
+              "colLabel": "20X4",
+              "correctValue": 1.84,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Return on equity (%)",
+              "colLabel": "20X5",
+              "correctValue": 18.75,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Return on equity (%)",
+              "colLabel": "20X4",
+              "correctValue": 24.47,
+              "tolerance": 0.01
+            }
+          ]
+        },
+        "explanation": "20X5: net profit margin = 375 / 7,300 = 5.14%; total asset turnover = 7,300 / 4,000 = 1.825 (1.83); equity multiplier = 4,000 / 2,000 = 2.00; ROE = 375 / 2,000 = 18.75%. 20X4: net profit margin = 465 / 6,570 = 7.08%; asset turnover = 6,570 / 3,500 = 1.88; equity multiplier = 3,500 / 1,900 = 1.84; ROE = 465 / 1,900 = 24.47%. The product of the three components equals ROE (5.137% x 1.825 x 2.00 = 18.75%).",
+        "explanationJa": "**20X5**\n- 売上高純利益率 = 375 ÷ 7,300 = **5.14%**\n- 総資産回転率 = 7,300 ÷ 4,000 = 1.825 → **1.83**\n- 財務レバレッジ（自己資本乗数）= 4,000 ÷ 2,000 = **2.00**\n- ROE = 375 ÷ 2,000 = **18.75%**\n\n**20X4**\n- 売上高純利益率 = 465 ÷ 6,570 = **7.08%**\n- 総資産回転率 = 6,570 ÷ 3,500 = **1.88**\n- 自己資本乗数 = 3,500 ÷ 1,900 = **1.84**\n- ROE = 465 ÷ 1,900 = **24.47%**\n\n3要素の積はROEに一致する（5.137% × 1.825 × 2.00 = 18.75%）。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Financial statement analysis (DuPont analysis)"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Primary driver of the change in ROE",
+        "instruction": "Based on your DuPont analysis, which factor was the primary cause of the decline in return on equity from 20X4 to 20X5?",
+        "answerType": "select",
+        "options": [
+          "Lower net profit margin",
+          "Lower total asset turnover",
+          "Higher equity multiplier",
+          "Lower equity multiplier"
+        ],
+        "correctAnswer": "Lower net profit margin",
+        "explanation": "ROE fell from 24.47% to 18.75%. Net profit margin fell sharply from 7.08% to 5.14% (about 27%), driven by flat gross profit on higher sales, higher operating expenses, and higher interest expense. Total asset turnover declined only slightly (1.88 to 1.83, about 3%). The equity multiplier rose from 1.84 to 2.00, which increased ROE and partly offset the decline. The lower profit margin was therefore the primary cause.",
+        "explanationJa": "ROEは 24.47% → 18.75% に低下した。\n- 売上高純利益率：7.08% → 5.14%（約27%の低下）。売上が伸びても売上総利益が横ばいで、営業費用と支払利息が増えたため。\n- 総資産回転率：1.88 → 1.83（約3%の低下）でわずか。\n- 自己資本乗数：1.84 → 2.00 に**上昇**しており、ROEを押し上げる方向（低下を一部相殺）。\n\nしたがって主因は**売上高純利益率の低下**である。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Financial statement analysis (DuPont analysis)"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Covenant compliance",
+        "instruction": "Using Exhibits 1 through 3, calculate each 20X5 covenant measure and enter Yes or No to indicate whether Ardent is in compliance with that covenant. Enter the dividend measure as a percentage of net income rounded to two decimal places (for example, enter 12.34 for 12.34%); round all other ratios to two decimal places.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["20X5 ratio", "In compliance (Yes/No)"],
+          "rows": [
+            "Current ratio",
+            "Total liabilities to equity",
+            "Times interest earned",
+            "Dividends paid to net income (%)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Current ratio",
+              "colLabel": "20X5 ratio",
+              "correctValue": 2,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Current ratio",
+              "colLabel": "In compliance (Yes/No)",
+              "correctValue": "Yes"
+            },
+            {
+              "rowLabel": "Total liabilities to equity",
+              "colLabel": "20X5 ratio",
+              "correctValue": 1,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Total liabilities to equity",
+              "colLabel": "In compliance (Yes/No)",
+              "correctValue": "Yes"
+            },
+            {
+              "rowLabel": "Times interest earned",
+              "colLabel": "20X5 ratio",
+              "correctValue": 6,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Times interest earned",
+              "colLabel": "In compliance (Yes/No)",
+              "correctValue": "No"
+            },
+            {
+              "rowLabel": "Dividends paid to net income (%)",
+              "colLabel": "20X5 ratio",
+              "correctValue": 73.33,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Dividends paid to net income (%)",
+              "colLabel": "In compliance (Yes/No)",
+              "correctValue": "Yes"
+            }
+          ]
+        },
+        "explanation": "Current ratio = 1,400 / 700 = 2.00, which meets the 1.80 minimum. Total liabilities to equity = 2,000 / 2,000 = 1.00, which is within the 1.10 maximum. Times interest earned = operating income 600 / interest expense 100 = 6.00, which is below the 6.50 minimum, so Ardent is not in compliance with covenant (c). In 20X4 the ratio was 690 / 70 = 9.86; higher borrowing raised interest expense while operating income fell. Dividends paid to net income = 275 / 375 = 73.33%, which does not exceed the 75% limit in covenant (d), so Ardent is in compliance with that covenant.",
+        "explanationJa": "- 流動比率 = 1,400 ÷ 700 = **2.00** → 下限1.80以上なので **Yes**\n- 負債資本比率 = 2,000 ÷ 2,000 = **1.00** → 上限1.10以内なので **Yes**\n- インタレスト・カバレッジ = 営業利益 600 ÷ 支払利息 100 = **6.00** → 下限6.50未満なので **No**（条項(c)に抵触）\n- 配当性向 = 配当支払額 275 ÷ 純利益 375 = **73.33%** → 上限75%以内なので **Yes**（条項(d)）\n\n20X4は 690 ÷ 70 = 9.86 だったが、借入増加で利息が増え、営業利益は減少したため悪化した。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Financial statement analysis (leverage and coverage ratios)"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Effect of transactions on ratios",
+        "instruction": "Consider each of the following transactions separately, as if it had occurred on December 31, 20X5, and indicate its effect on the 20X5 year-end ratios. Quick ratio means (cash + accounts receivable, net) divided by total current liabilities. Debt-to-equity ratio means total liabilities divided by total stockholders' equity. Enter Increase, Decrease, or No effect in each cell.\n\nTransaction 1: Purchased inventory of $100 on account.\nTransaction 2: Paid $50 of accounts payable in cash.\nTransaction 3: Borrowed $300 of long-term debt and used the proceeds to repurchase the company's common stock.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Current ratio", "Quick ratio", "Debt-to-equity ratio"],
+          "rows": ["Transaction 1", "Transaction 2", "Transaction 3"],
+          "cells": [
+            {
+              "rowLabel": "Transaction 1",
+              "colLabel": "Current ratio",
+              "correctValue": "Decrease"
+            },
+            {
+              "rowLabel": "Transaction 1",
+              "colLabel": "Quick ratio",
+              "correctValue": "Decrease"
+            },
+            {
+              "rowLabel": "Transaction 1",
+              "colLabel": "Debt-to-equity ratio",
+              "correctValue": "Increase"
+            },
+            {
+              "rowLabel": "Transaction 2",
+              "colLabel": "Current ratio",
+              "correctValue": "Increase"
+            },
+            {
+              "rowLabel": "Transaction 2",
+              "colLabel": "Quick ratio",
+              "correctValue": "Decrease"
+            },
+            {
+              "rowLabel": "Transaction 2",
+              "colLabel": "Debt-to-equity ratio",
+              "correctValue": "Decrease"
+            },
+            {
+              "rowLabel": "Transaction 3",
+              "colLabel": "Current ratio",
+              "correctValue": "No effect"
+            },
+            {
+              "rowLabel": "Transaction 3",
+              "colLabel": "Quick ratio",
+              "correctValue": "No effect"
+            },
+            {
+              "rowLabel": "Transaction 3",
+              "colLabel": "Debt-to-equity ratio",
+              "correctValue": "Increase"
+            }
+          ]
+        },
+        "explanation": "Starting ratios: current 1,400 / 700 = 2.00; quick (cash + receivables) 600 / 700 = 0.857; debt-to-equity 2,000 / 2,000 = 1.00. Transaction 1: current 1,500 / 800 = 1.875 (decrease, because an equal increase in both terms lowers a ratio above 1); quick 600 / 800 = 0.75 (decrease); debt-to-equity 2,100 / 2,000 = 1.05 (increase). Transaction 2: current 1,350 / 650 = 2.08 (increase, because an equal decrease in both terms raises a ratio above 1); quick 550 / 650 = 0.846 (decrease, because the ratio was below 1); debt-to-equity 1,950 / 2,000 = 0.975 (decrease). Transaction 3: no current accounts change; debt-to-equity 2,300 / 1,700 = 1.35 (increase).",
+        "explanationJa": "**取引前**：流動比率 1,400/700 = 2.00、当座比率（現金＋売掛金）600/700 = 0.857、D/E 2,000/2,000 = 1.00\n\n**取引1（在庫の掛け仕入れ $100）**\n- 流動比率 1,500/800 = 1.875 → **Decrease**（1を超える比率は分子・分母が同額増えると低下）\n- 当座比率 600/800 = 0.75 → **Decrease**（在庫は当座資産でない）\n- D/E 2,100/2,000 → **Increase**\n\n**取引2（買掛金 $50 を現金で支払）**\n- 流動比率 1,350/650 = 2.08 → **Increase**（1を超える比率は同額減ると上昇）\n- 当座比率 550/650 = 0.846 → **Decrease**（1未満の比率は同額減ると低下）\n- D/E 1,950/2,000 → **Decrease**\n\n**取引3（長期借入 $300 で自己株式取得）**\n- 流動項目は不変 → 流動・当座比率とも **No effect**\n- D/E 2,300/1,700 = 1.35 → **Increase**",
+        "references": [
+          "AICPA BAR Blueprint Area I — Financial statement analysis (effect of transactions on ratios)"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Validating the dashboard inputs",
+        "instruction": "Compare the dashboard inputs in Exhibit 4 with the financial statements in Exhibits 1 and 2. Select each dashboard input that does not agree with the financial statements. Select all that apply.",
+        "answerType": "multiselect",
+        "options": [
+          "Net sales",
+          "Cost of goods sold",
+          "Inventory",
+          "Accounts payable",
+          "Interest expense",
+          "Total equity"
+        ],
+        "correctAnswer": ["Net sales", "Inventory", "Interest expense"],
+        "explanation": "Net sales: the quarterly extract totals 1,750 + 1,800 + 1,850 + 1,800 = 7,200, which is 100 less than the 7,300 reported, indicating the extract is incomplete (a completeness exception). Inventory: 703 versus 730 reported, a transposition error (an accuracy exception). Interest expense: 70 is the 20X4 amount; 20X5 interest expense is 100. Cost of goods sold (5,110), accounts payable (420), and total equity (2,000) agree. Because the dashboard used the wrong interest expense, its conclusion that all covenants are met is unsupported: times interest earned is 600 / 100 = 6.00, not 600 / 70 = 8.57.",
+        "explanationJa": "**一致しない項目**\n- **Net sales**：四半期抽出の合計 1,750 + 1,800 + 1,850 + 1,800 = 7,200 で、報告額 7,300 より 100 少ない → 抽出データが不完全（**網羅性**の問題）\n- **Inventory**：703 と入力されているが正しくは 730（数字の入れ替わり＝**正確性**の問題）\n- **Interest expense**：70 は20X4の金額。20X5は 100\n\n**一致する項目**：売上原価 5,110、買掛金 420、純資産 2,000\n\n支払利息を誤って使ったため、ダッシュボードの「全条項を遵守」という結論は裏付けられない（正しいインタレスト・カバレッジは 600 ÷ 100 = 6.00 で、8.57 ではない）。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Data analytics (completeness and accuracy of source data)"
+        ]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 30,
+    "source": "BAR TBS Practice (original)"
+  }
+]

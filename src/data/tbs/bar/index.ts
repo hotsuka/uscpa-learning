@@ -1,4 +1,5 @@
 import type { TBSQuestion } from "@/types/tbs";
+import area1Analysis from "./area1-analysis.json";
 import businessCombinations from "./business-combinations.json";
 import capitalBudgeting from "./capital-budgeting.json";
 import derivatives from "./derivatives.json";
@@ -15,6 +16,7 @@ import mock2 from "./mock/mock-2.json";
 export const barTBSQuestions: TBSQuestion[] = [
   ...(varianceAnalysis as TBSQuestion[]),
   ...(capitalBudgeting as TBSQuestion[]),
+  ...(area1Analysis as TBSQuestion[]),
   ...(stockComp as TBSQuestion[]),
   ...(leasesLessor as TBSQuestion[]),
   ...(businessCombinations as TBSQuestion[]),

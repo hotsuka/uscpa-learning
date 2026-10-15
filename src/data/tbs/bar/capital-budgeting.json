@@ -238,5 +238,220 @@
     "difficulty": "advanced",
     "estimatedMinutes": 28,
     "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-capbud-002",
+    "subject": "BAR",
+    "topic": "Capital Budgeting & Cost of Capital",
+    "title": "Mutually Exclusive Equipment Projects — Brightwater Packaging",
+    "scenario": "Brightwater Packaging Co. is evaluating two mutually exclusive projects to expand capacity at its bottling plant: Project A, a new automated filling line, and Project B, an upgrade of the existing line. Both projects have 4-year lives, and the company is not subject to capital rationing.\n\nAssumptions:\n- The income tax rate is 25%, and taxes are paid in the year the related income arises.\n- For tax purposes, equipment is depreciated straight-line over 4 years to a zero salvage value (no half-year convention).\n- Operating cash flows occur at the end of each year. For payback calculations only, assume cash flows occur evenly throughout each year.\n- The hurdle rate is the company's weighted average cost of capital (WACC), computed with market-value weights and rounded to the nearest whole percent.\n- Use the present value factors in **Exhibit 3** (do not compute your own factors).\n\nUse **Exhibit 1** (project data), **Exhibit 2** (capital structure data), and **Exhibit 3** (present value factors and treasury summary) to complete the tasks.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Project Data",
+        "content": "| Item | Project A: Automated line | Project B: Line upgrade |\n|---|---|---|\n| Equipment cost (Year 0) | $400,000 | $150,000 |\n| Useful life | 4 years | 4 years |\n| Annual pre-tax cash operating savings (Years 1-4) | $150,000 | $65,000 |\n| Working capital required at Year 0 (fully recovered at end of Year 4) | $40,000 | $0 |\n| Expected selling price of equipment at end of Year 4 | $30,000 | $0 |\n| Feasibility study paid last year | $12,000 | $5,000 |\n\nProject A would be installed in floor space that is currently unused and has no alternative use."
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: Capital Structure and Cost of Capital Data",
+        "content": "| Source | Book value | Market value |\n|---|---|---|\n| Long-term debt | $3,200,000 | $3,000,000 |\n| Common equity | $4,500,000 | $7,000,000 |\n\n| Item | Rate |\n|---|---|\n| Coupon rate on outstanding bonds | 6.5% |\n| Yield to maturity on outstanding bonds (pre-tax cost of debt) | 8.0% |\n| Risk-free rate | 4.0% |\n| Expected return on the market portfolio | 10.0% |\n| Brightwater's equity beta | 1.3 |\n| Income tax rate | 25% |\n\nThe cost of equity is estimated using the capital asset pricing model."
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Present Value Factors and Treasury Summary",
+        "content": "**Present value of $1 (rounded to three decimals)**\n\n| Year | 10% | 12% |\n|---|---|---|\n| 1 | 0.909 | 0.893 |\n| 2 | 0.826 | 0.797 |\n| 3 | 0.751 | 0.712 |\n| 4 | 0.683 | 0.636 |\n\n**Preliminary results prepared by the treasury staff**\n\n| Measure | Project A | Project B |\n|---|---|---|\n| Internal rate of return | 13.8% | 20.2% |"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Weighted average cost of capital",
+        "instruction": "Using Exhibit 2, calculate Brightwater's after-tax WACC using market-value weights and the CAPM cost of equity. Enter the WACC as a percentage rounded to two decimal places (for example, enter 9.25 for 9.25%).",
+        "answerType": "number",
+        "correctAnswer": 10.06,
+        "tolerance": 0.01,
+        "explanation": "Cost of equity (CAPM) = 4.0% + 1.3 x (10.0% - 4.0%) = 11.8%. After-tax cost of debt = 8.0% x (1 - 0.25) = 6.0% (the yield to maturity, not the coupon rate, is the current cost of debt). Market-value weights: debt $3,000,000 / $10,000,000 = 30%; equity $7,000,000 / $10,000,000 = 70%. WACC = 0.30 x 6.0% + 0.70 x 11.8% = 1.80% + 8.26% = 10.06%. Rounded to the nearest whole percent, the hurdle rate is 10%.",
+        "explanationJa": "**ステップ1：株主資本コスト（CAPM）**\n4.0% + 1.3 × (10.0% − 4.0%) = **11.8%**\n\n**ステップ2：税引後負債コスト**\n現在の調達コストは表面利率ではなく**最終利回り 8.0%** を使う：8.0% × (1 − 25%) = **6.0%**\n\n**ステップ3：時価ウェイト**\n負債 $3,000,000 ÷ $10,000,000 = 30%、株主資本 $7,000,000 ÷ $10,000,000 = 70%（簿価は使わない）\n\n**ステップ4：WACC**\n0.30 × 6.0% + 0.70 × 11.8% = 1.80% + 8.26% = **10.06%**\n→ 整数%に丸めたハードルレートは **10%**",
+        "references": [
+          "AICPA BAR Blueprint Area I — Cost of capital (WACC, CAPM)"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Project A cash flows",
+        "instruction": "Using Exhibit 1 and the scenario assumptions, determine the following after-tax cash flows for Project A. Enter amounts in whole dollars (no commas). Enter net cash outflows as negative numbers.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount"],
+          "rows": [
+            "After-tax cash operating savings (each year, Years 1-4)",
+            "Depreciation tax shield (each year, Years 1-4)",
+            "After-tax proceeds from sale of equipment (Year 4)",
+            "Net cash flow - Year 0",
+            "Net cash flow - Year 4"
+          ],
+          "cells": [
+            {
+              "rowLabel": "After-tax cash operating savings (each year, Years 1-4)",
+              "colLabel": "Amount",
+              "correctValue": 112500,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Depreciation tax shield (each year, Years 1-4)",
+              "colLabel": "Amount",
+              "correctValue": 25000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "After-tax proceeds from sale of equipment (Year 4)",
+              "colLabel": "Amount",
+              "correctValue": 22500,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Net cash flow - Year 0",
+              "colLabel": "Amount",
+              "correctValue": -440000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Net cash flow - Year 4",
+              "colLabel": "Amount",
+              "correctValue": 200000,
+              "tolerance": 0
+            }
+          ]
+        },
+        "explanation": "After-tax savings = $150,000 x (1 - 0.25) = $112,500. Annual tax depreciation = $400,000 / 4 = $100,000; tax shield = $100,000 x 25% = $25,000. At the end of Year 4 the tax basis is zero, so the entire $30,000 sale price is a taxable gain: after-tax proceeds = $30,000 - ($30,000 x 25%) = $22,500. Year 0 = -($400,000 equipment + $40,000 working capital) = -$440,000. Year 4 = $112,500 + $25,000 + $22,500 salvage + $40,000 working capital recovery = $200,000 (Years 1-3 are $137,500 each). The $12,000 feasibility study is a sunk cost and the unused floor space has no opportunity cost, so neither is included.",
+        "explanationJa": "**ステップ1：税引後の現金節約額**\n$150,000 × (1 − 25%) = **$112,500**\n\n**ステップ2：減価償却のタックスシールド**\n年間償却費 $400,000 ÷ 4 = $100,000 → $100,000 × 25% = **$25,000**\n\n**ステップ3：設備売却の税引後手取り**\n4年後の税務簿価は0なので売却額 $30,000 が全額課税対象の売却益：$30,000 − $30,000 × 25% = **$22,500**\n\n**ステップ4：年度別の正味キャッシュフロー**\n- 0年度：−($400,000 + 運転資本 $40,000) = **−$440,000**\n- 1〜3年度：$112,500 + $25,000 = $137,500\n- 4年度：$137,500 + 売却 $22,500 + 運転資本の回収 $40,000 = **$200,000**\n\n昨年支払ったフィージビリティ調査費 $12,000 は埋没原価、遊休スペースには機会費用がないため、いずれも含めない。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Capital budgeting (after-tax cash flows)"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "NPV and profitability index",
+        "instruction": "Using the hurdle rate and the present value factors in Exhibit 3, calculate the net present value and the profitability index for each project. Define the profitability index as the present value of Years 1-4 cash flows divided by the Year 0 net investment. Enter NPV in whole dollars (no commas) and the profitability index rounded to two decimal places.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["NPV", "Profitability index"],
+          "rows": ["Project A", "Project B"],
+          "cells": [
+            {
+              "rowLabel": "Project A",
+              "colLabel": "NPV",
+              "correctValue": 38425,
+              "tolerance": 5
+            },
+            {
+              "rowLabel": "Project A",
+              "colLabel": "Profitability index",
+              "correctValue": 1.09,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Project B",
+              "colLabel": "NPV",
+              "correctValue": 34198,
+              "tolerance": 5
+            },
+            {
+              "rowLabel": "Project B",
+              "colLabel": "Profitability index",
+              "correctValue": 1.23,
+              "tolerance": 0.01
+            }
+          ]
+        },
+        "explanation": "The hurdle rate is 10%; the sum of the 10% factors for Years 1-4 is 0.909 + 0.826 + 0.751 + 0.683 = 3.169. Project A: PV of inflows = $137,500 x 3.169 + ($200,000 - $137,500) x 0.683 = $435,737.50 + $42,687.50 = $478,425; NPV = $478,425 - $440,000 = $38,425; PI = $478,425 / $440,000 = 1.09. Project B: annual cash flow = $65,000 x 0.75 + ($150,000 / 4) x 0.25 = $48,750 + $9,375 = $58,125; PV of inflows = $58,125 x 3.169 = $184,198; NPV = $184,198 - $150,000 = $34,198; PI = $184,198 / $150,000 = 1.23.",
+        "explanationJa": "**ハードルレート 10%**、1〜4年の現価係数の合計 = 0.909 + 0.826 + 0.751 + 0.683 = 3.169\n\n**案A**\n- 流入の現在価値 = $137,500 × 3.169 + 4年度の追加分 ($200,000 − $137,500) × 0.683 = $435,737.50 + $42,687.50 = $478,425\n- NPV = $478,425 − $440,000 = **$38,425**\n- 収益性指数 = $478,425 ÷ $440,000 = **1.09**\n\n**案B**\n- 年間CF = $65,000 × 75% + 償却費 $37,500 × 25% = $48,750 + $9,375 = $58,125\n- 流入の現在価値 = $58,125 × 3.169 = $184,198\n- NPV = $184,198 − $150,000 = **$34,198**\n- 収益性指数 = $184,198 ÷ $150,000 = **1.23**",
+        "references": [
+          "AICPA BAR Blueprint Area I — Capital budgeting (NPV, profitability index)"
+        ]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Project B payback periods",
+        "instruction": "Calculate the payback period and the discounted payback period for Project B, assuming cash flows occur evenly throughout each year. For the discounted payback period, use the hurdle rate and the factors in Exhibit 3. Enter each answer in years rounded to two decimal places.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Project B"],
+          "rows": [
+            "Payback period (years)",
+            "Discounted payback period (years)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Payback period (years)",
+              "colLabel": "Project B",
+              "correctValue": 2.58,
+              "tolerance": 0.01
+            },
+            {
+              "rowLabel": "Discounted payback period (years)",
+              "colLabel": "Project B",
+              "correctValue": 3.14,
+              "tolerance": 0.01
+            }
+          ]
+        },
+        "explanation": "Payback = $150,000 / $58,125 = 2.58 years. Discounted cash flows at 10%: Year 1 $58,125 x 0.909 = $52,836; Year 2 x 0.826 = $48,011; Year 3 x 0.751 = $43,652; Year 4 x 0.683 = $39,699. Cumulative after Year 3 = $144,499, leaving $150,000 - $144,499 = $5,501 to recover. Discounted payback = 3 + $5,501 / $39,699 = 3.14 years.",
+        "explanationJa": "**回収期間**\n毎年のCFが一定なので $150,000 ÷ $58,125 = **2.58年**\n\n**割引回収期間（10%）**\n- 1年目：$58,125 × 0.909 = $52,836\n- 2年目：$58,125 × 0.826 = $48,011\n- 3年目：$58,125 × 0.751 = $43,652\n- 3年目までの累計 = $144,499 → 未回収 $150,000 − $144,499 = $5,501\n- 4年目：$58,125 × 0.683 = $39,699\n- 割引回収期間 = 3 + $5,501 ÷ $39,699 = **3.14年**",
+        "references": [
+          "AICPA BAR Blueprint Area I — Capital budgeting (payback and discounted payback)"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Investment decision",
+        "instruction": "Considering your results and the IRRs in Exhibit 3, which recommendation is most appropriate?",
+        "answerType": "select",
+        "options": [
+          "Accept Project A, because it has the higher NPV and the projects are mutually exclusive with no capital rationing",
+          "Accept Project B, because it has the higher IRR",
+          "Accept Project B, because it has the higher profitability index",
+          "Accept both projects, because each has a positive NPV"
+        ],
+        "correctAnswer": "Accept Project A, because it has the higher NPV and the projects are mutually exclusive with no capital rationing",
+        "explanation": "Both projects have IRRs above the 10% hurdle rate and positive NPVs, but only one can be chosen. When mutually exclusive projects are ranked differently by NPV and IRR (or the profitability index) and capital is not rationed, NPV governs because it measures the absolute increase in shareholder wealth: Project A adds $38,425 versus $34,198 for Project B. The profitability index is useful for ranking under capital rationing, which does not apply here.",
+        "explanationJa": "両案ともIRRがハードルレート10%を上回りNPVも正だが、相互排他なので1案しか選べない。NPVとIRR（または収益性指数）で順位が食い違い、資本制約がない場合は、株主価値の増加額を直接示す**NPVを優先**する。案AのNPV $38,425 は案Bの $34,198 を上回るため、**案Aを採用**する。収益性指数は資本制約下での順位付けに有用だが、本問には当てはまらない。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Capital budgeting (mutually exclusive projects)"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Why NPV and IRR rankings conflict",
+        "instruction": "Select each statement that helps explain why NPV and IRR rank Projects A and B differently. Select all that apply.",
+        "answerType": "multiselect",
+        "options": [
+          "The projects differ significantly in the scale of the initial investment.",
+          "The IRR method implicitly assumes interim cash flows are reinvested at each project's IRR, while NPV assumes reinvestment at the cost of capital.",
+          "Project A receives a larger share of its total cash inflows at the end of its life than Project B does.",
+          "NPV ignores cash flows that occur after the payback period.",
+          "The feasibility study costs were included in the IRR calculation but not in the NPV calculation."
+        ],
+        "correctAnswer": [
+          "The projects differ significantly in the scale of the initial investment.",
+          "The IRR method implicitly assumes interim cash flows are reinvested at each project's IRR, while NPV assumes reinvestment at the cost of capital.",
+          "Project A receives a larger share of its total cash inflows at the end of its life than Project B does."
+        ],
+        "explanation": "Ranking conflicts arise from differences in scale ($440,000 versus $150,000 invested) and in the timing of cash flows, combined with the different reinvestment rate assumptions of the two methods. Project A's Year 4 inflow of $200,000 is about 33% of its total inflows of $612,500, compared with 25% for Project B, so Project A is relatively more back-loaded and is penalized more heavily at higher discount rates. NPV includes all cash flows over the project life (it is payback that ignores later cash flows), and the feasibility costs are sunk and excluded from both measures.",
+        "explanationJa": "NPVとIRRの順位が食い違う主な原因は次のとおり。\n- **投資規模の差**：案A $440,000 に対し案B $150,000\n- **再投資率の仮定の違い**：IRRは中間CFを各案のIRRで、NPVは資本コストで再投資すると暗黙に仮定する\n- **CFのタイミングの差**：案Aは4年目の流入 $200,000 が総流入 $612,500 の約33%（案Bは25%）と後半に偏るため、高い割引率で不利になる\n\n誤り：NPVは全期間のCFを含む（後半のCFを無視するのは回収期間法）。フィージビリティ調査費は埋没原価でどちらの指標にも含めない。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Capital budgeting (NPV versus IRR)"
+        ]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 28,
+    "source": "BAR TBS Practice (original)"
   }
 ]
