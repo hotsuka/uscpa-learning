@@ -537,5 +537,279 @@
     "difficulty": "advanced",
     "estimatedMinutes": 30,
     "source": "BAR TBS Practice (original)"
+  },
+  {
+    "id": "bar-tbs-var-003",
+    "subject": "BAR",
+    "topic": "Variance Analysis",
+    "title": "Standard Cost Variances and Flexible Budget Analysis — Halvorsen Fixtures",
+    "scenario": "Halvorsen Fixtures, Inc. manufactures a single product, a steel mounting bracket, and uses a standard costing system. Variable and fixed manufacturing overhead are applied on the basis of standard direct labor hours (DLH). The company isolates the materials price variance at the time of purchase. There was no beginning raw materials inventory, and there were no beginning or ending work-in-process or finished goods inventories in March; all units produced were sold.\n\nYou are the cost analyst preparing the March performance review. Use **Exhibit 1** (standard cost card and static budget), **Exhibit 2** (March actual results), and **Exhibit 3** (operations review notes) to complete the tasks.\n\nUnless a task states otherwise, enter each variance as a positive amount in whole dollars (no commas) and indicate whether it is favorable (enter F) or unfavorable (enter U). All standard amounts are exact; no rounding is required.",
+    "exhibits": [
+      {
+        "id": "ex-1",
+        "title": "Exhibit 1: Standard Cost Card and March Static Budget",
+        "content": "**Standard cost per bracket**\n\n| Cost element | Standard quantity | Standard price | Standard cost per unit |\n|---|---|---|---|\n| Direct materials | 4 pounds | $3.00 per pound | $12.00 |\n| Direct labor | 1.5 hours | $20.00 per hour | $30.00 |\n| Variable manufacturing overhead | 1.5 DLH | $6.00 per DLH | $9.00 |\n| Fixed manufacturing overhead | 1.5 DLH | $10.00 per DLH | $15.00 |\n| Total standard manufacturing cost | | | $66.00 |\n\nThe fixed overhead rate is based on budgeted fixed manufacturing overhead of $120,000 per month and a denominator level of 12,000 DLH (8,000 brackets).\n\n**March static budget (contribution format)**\n\n| Line item | Amount |\n|---|---|\n| Sales (8,000 units at $90) | $720,000 |\n| Variable manufacturing costs (8,000 units at $51) | 408,000 |\n| Variable selling expenses (8,000 units at $4) | 32,000 |\n| Contribution margin | 280,000 |\n| Fixed manufacturing overhead | 120,000 |\n| Fixed selling and administrative expenses | 60,000 |\n| Operating income | $100,000 |"
+      },
+      {
+        "id": "ex-2",
+        "title": "Exhibit 2: March Actual Results",
+        "content": "**Operating data**\n\n| Item | Actual |\n|---|---|\n| Brackets produced and sold | 7,600 units |\n| Direct materials purchased | 33,000 pounds at $2.90 per pound ($95,700) |\n| Direct materials used in production | 31,200 pounds |\n| Raw materials inventory, March 31 | 1,800 pounds |\n| Direct labor hours worked | 11,800 hours |\n| Direct labor cost | $241,900 |\n| Variable manufacturing overhead incurred | $72,000 |\n| Fixed manufacturing overhead incurred | $123,500 |\n| Production employees on payroll | 74 |\n\n**March actual income statement (contribution format)**\n\n| Line item | Amount |\n|---|---|\n| Sales (7,600 units) | $699,200 |\n| Direct materials used (31,200 pounds at $2.90) | 90,480 |\n| Direct labor | 241,900 |\n| Variable manufacturing overhead | 72,000 |\n| Variable selling expenses | 31,000 |\n| Contribution margin | 263,820 |\n| Fixed manufacturing overhead | 123,500 |\n| Fixed selling and administrative expenses | 61,000 |\n| Operating income | $79,320 |"
+      },
+      {
+        "id": "ex-3",
+        "title": "Exhibit 3: Operations Review Notes — March",
+        "content": "**Purchasing (prepared by the purchasing manager):** To meet a quarterly cost-reduction target, purchasing moved all March steel orders to a new supplier offering a lower price per pound. Purchasing did not obtain production's approval before changing suppliers.\n\n**Production (prepared by the production supervisor):** Steel from the new supplier had more surface defects than in prior months, which increased scrap. Additional time was spent reworking defective brackets, and senior welders (paid above the standard rate) worked overtime to clear the rework backlog.\n\n**Sales (prepared by the sales manager):** A competitor's plant outage allowed Halvorsen to raise the selling price by $2 per unit for March. A key customer deferred an order of 400 units to April for reasons unrelated to price.\n\n**Plant controller:** Property insurance premiums increased upon renewal in March. Utility rates are expected to rise by 3% beginning in July. The maintenance department plans to replace two welding robots in the third quarter; the capital request is $180,000.\n\n**Quality control (receiving inspection log):** Receiving inspection rejected approximately twice the prior month's percentage of incoming steel for surface defects, all from the new supplier's shipments. Production methods, equipment, and work crews were unchanged from February."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "task-1",
+        "workTab": "Work Tab 1",
+        "title": "Direct materials and direct labor variances",
+        "instruction": "Using Exhibits 1 and 2, calculate the March direct materials and direct labor variances. Remember that the materials price variance is isolated at the time of purchase. Enter each amount in whole dollars (no commas) as a positive number, and enter F (favorable) or U (unfavorable) in the second column.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Materials price variance",
+            "Materials quantity variance",
+            "Labor rate variance",
+            "Labor efficiency variance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Materials price variance",
+              "colLabel": "Amount",
+              "correctValue": 3300,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Materials price variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Materials quantity variance",
+              "colLabel": "Amount",
+              "correctValue": 2400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Materials quantity variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Labor rate variance",
+              "colLabel": "Amount",
+              "correctValue": 5900,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Labor rate variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Labor efficiency variance",
+              "colLabel": "Amount",
+              "correctValue": 8000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Labor efficiency variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            }
+          ]
+        },
+        "explanation": "Standard quantities allowed for actual output of 7,600 units: materials 7,600 x 4 = 30,400 pounds; labor 7,600 x 1.5 = 11,400 hours. Materials price variance (at purchase) = (AP - SP) x quantity purchased = ($2.90 - $3.00) x 33,000 = $3,300 F. Materials quantity variance = (AQ used - SQ) x SP = (31,200 - 30,400) x $3.00 = $2,400 U. Actual labor rate = $241,900 / 11,800 = $20.50. Labor rate variance = ($20.50 - $20.00) x 11,800 = $5,900 U. Labor efficiency variance = (11,800 - 11,400) x $20.00 = $8,000 U.",
+        "explanationJa": "**ステップ1：実際生産量に対する標準数量**\n- 材料：7,600個 × 4ポンド = 30,400ポンド\n- 作業時間：7,600個 × 1.5時間 = 11,400時間\n\n**ステップ2：材料差異**\n- 価格差異は購入時点で分離するため、**購入数量 33,000ポンド**を使う：($2.90 − $3.00) × 33,000 = **$3,300 有利(F)**\n- 数量差異は**使用数量 31,200ポンド**を使う：(31,200 − 30,400) × $3.00 = **$2,400 不利(U)**\n\n**ステップ3：労務差異**\n- 実際賃率 = $241,900 ÷ 11,800 = $20.50\n- 賃率差異：($20.50 − $20.00) × 11,800 = **$5,900 U**\n- 能率差異：(11,800 − 11,400) × $20.00 = **$8,000 U**",
+        "references": [
+          "AICPA BAR Blueprint Area I — Variance analysis (standard costing)"
+        ]
+      },
+      {
+        "id": "task-2",
+        "workTab": "Work Tab 2",
+        "title": "Manufacturing overhead variances",
+        "instruction": "Using Exhibits 1 and 2, calculate the March variable and fixed manufacturing overhead variances using the four-variance approach. Enter each amount in whole dollars (no commas) as a positive number, and enter F (favorable) or U (unfavorable) in the second column.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Variable overhead spending variance",
+            "Variable overhead efficiency variance",
+            "Fixed overhead budget (spending) variance",
+            "Fixed overhead production volume variance"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Variable overhead spending variance",
+              "colLabel": "Amount",
+              "correctValue": 1200,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Variable overhead spending variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Variable overhead efficiency variance",
+              "colLabel": "Amount",
+              "correctValue": 2400,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Variable overhead efficiency variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Fixed overhead budget (spending) variance",
+              "colLabel": "Amount",
+              "correctValue": 3500,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Fixed overhead budget (spending) variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Fixed overhead production volume variance",
+              "colLabel": "Amount",
+              "correctValue": 6000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Fixed overhead production volume variance",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            }
+          ]
+        },
+        "explanation": "Variable overhead spending variance = actual VOH - (actual hours x standard rate) = $72,000 - (11,800 x $6) = $72,000 - $70,800 = $1,200 U. Variable overhead efficiency variance = (11,800 - 11,400) x $6 = $2,400 U. Fixed overhead budget variance = actual fixed OH - budgeted fixed OH = $123,500 - $120,000 = $3,500 U. Fixed overhead production volume variance = budgeted fixed OH - applied fixed OH = $120,000 - (11,400 standard hours x $10) = $120,000 - $114,000 = $6,000 U.",
+        "explanationJa": "**変動製造間接費（配賦基準は直接作業時間）**\n- 予算差異（spending）：実際額 $72,000 − 実際時間 11,800 × $6 = $72,000 − $70,800 = **$1,200 U**\n- 能率差異：(実際時間 11,800 − 標準時間 11,400) × $6 = **$2,400 U**\n\n**固定製造間接費**\n- 予算差異：実際額 $123,500 − 予算額 $120,000 = **$3,500 U**\n- 操業度差異：予算額 $120,000 − 配賦額（標準時間 11,400 × $10 = $114,000）= **$6,000 U**\n\n操業度差異は、実際生産量に対する標準時間（11,400時間）が基準操業度（12,000時間）を下回ったために生じる固定費の配賦不足であり、支出の超過ではない点に注意。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Variance analysis (overhead variances)"
+        ]
+      },
+      {
+        "id": "task-3",
+        "workTab": "Work Tab 3",
+        "title": "Flexible budget operating income",
+        "instruction": "Using Exhibit 1, calculate March operating income under a flexible budget prepared for the actual level of output. Enter the amount in whole dollars (no commas).",
+        "answerType": "number",
+        "correctAnswer": 86000,
+        "tolerance": 0,
+        "explanation": "Budgeted contribution margin per unit = $90 - $51 variable manufacturing cost - $4 variable selling = $35. Flexible budget operating income = 7,600 x $35 - $120,000 fixed manufacturing overhead - $60,000 fixed selling and administrative = $266,000 - $180,000 = $86,000. Fixed costs are not flexed for volume.",
+        "explanationJa": "**ステップ1：予算上の単位当たり貢献利益**\n$90 − 変動製造原価 $51（$12 + $30 + $9）− 変動販売費 $4 = **$35**\n\n**ステップ2：実際販売量 7,600個で予算を組み替える**\n- 貢献利益：7,600 × $35 = $266,000\n- 固定費は操業度に応じて変動させない：固定製造間接費 $120,000 + 固定販管費 $60,000 = $180,000\n- フレキシブル予算の営業利益 = $266,000 − $180,000 = **$86,000**",
+        "references": ["AICPA BAR Blueprint Area I — Flexible budgeting"]
+      },
+      {
+        "id": "task-4",
+        "workTab": "Work Tab 4",
+        "title": "Reconciling static budget to actual operating income",
+        "instruction": "Using Exhibits 1 and 2, calculate the variances that explain the difference between static budget operating income and actual operating income for March. The sales-volume variance and the flexible-budget variance should be measured in terms of operating income. Enter each amount in whole dollars (no commas) as a positive number, and enter F (favorable) or U (unfavorable) in the second column.",
+        "answerType": "table",
+        "tableConfig": {
+          "columns": ["Amount", "F or U"],
+          "rows": [
+            "Sales price variance",
+            "Sales-volume variance (operating income)",
+            "Flexible-budget variance (operating income)"
+          ],
+          "cells": [
+            {
+              "rowLabel": "Sales price variance",
+              "colLabel": "Amount",
+              "correctValue": 15200,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Sales price variance",
+              "colLabel": "F or U",
+              "correctValue": "F"
+            },
+            {
+              "rowLabel": "Sales-volume variance (operating income)",
+              "colLabel": "Amount",
+              "correctValue": 14000,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Sales-volume variance (operating income)",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            },
+            {
+              "rowLabel": "Flexible-budget variance (operating income)",
+              "colLabel": "Amount",
+              "correctValue": 6680,
+              "tolerance": 0
+            },
+            {
+              "rowLabel": "Flexible-budget variance (operating income)",
+              "colLabel": "F or U",
+              "correctValue": "U"
+            }
+          ]
+        },
+        "explanation": "Sales price variance = (actual price - budgeted price) x actual units = ($699,200 / 7,600 = $92 - $90) x 7,600 = $15,200 F. Sales-volume variance = static budget operating income $100,000 - flexible budget operating income $86,000 = $14,000 U (equivalently, 400 fewer units x $35 contribution margin). Flexible-budget variance = flexible budget operating income $86,000 - actual operating income $79,320 = $6,680 U. Total: $14,000 U + $6,680 U = $20,680 U, which equals $100,000 - $79,320. The $6,680 U flexible-budget variance comprises the $15,200 F sales price variance, $720 F direct materials ($91,200 flexible budget vs. $90,480 actual), $13,900 U direct labor, $3,600 U variable overhead, $600 U variable selling, $3,500 U fixed manufacturing overhead, and $1,000 U fixed selling and administrative. The $720 F materials component differs from the net of the Work Tab 1 materials variances ($3,300 F - $2,400 U = $900 F) because the price variance in Work Tab 1 is isolated at purchase on 33,000 pounds. Measured on the 31,200 pounds used, the price variance is 31,200 x $0.10 = $3,120 F, and $3,120 F - $2,400 U = $720 F. The $180 difference relates to the 1,800 pounds remaining in raw materials inventory (1,800 x $0.10).",
+        "explanationJa": "**ステップ1：販売価格差異**\n実際単価 = $699,200 ÷ 7,600 = $92\n($92 − $90) × 7,600 = **$15,200 F**\n\n**ステップ2：販売数量差異（営業利益ベース）**\n静態予算の営業利益 $100,000 − フレキシブル予算の営業利益 $86,000 = **$14,000 U**\n（= 販売不足 400個 × 単位当たり貢献利益 $35）\n\n**ステップ3：フレキシブル予算差異（営業利益ベース）**\nフレキシブル予算の営業利益 $86,000 − 実際営業利益 $79,320 = **$6,680 U**\n\n**検証**：$14,000 U + $6,680 U = $20,680 U = $100,000 − $79,320\n\nフレキシブル予算差異 $6,680 U の内訳：販売価格 $15,200 F、直接材料 $720 F（予算 $91,200 に対し実際 $90,480）、直接労務 $13,900 U、変動間接費 $3,600 U、変動販売費 $600 U、固定製造間接費 $3,500 U、固定販管費 $1,000 U。\n\n**材料の内訳 $720 F が Work Tab 1 の差異の純額（$3,300 F − $2,400 U = $900 F）と一致しない理由**\nWork Tab 1 の価格差異は購入時点で分離しているため購入量 33,000ポンドで測っている。損益比較では使用量 31,200ポンド分だけが費用になるので、使用量ベースの価格差異は 31,200 × $0.10 = $3,120 F、これと数量差異 $2,400 U の純額が $720 F となる。差額 $180 は期末材料在庫 1,800ポンド分（1,800 × $0.10）の価格差異である。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Flexible budget and sales variances"
+        ]
+      },
+      {
+        "id": "task-5",
+        "workTab": "Work Tab 5",
+        "title": "Interpreting the variances",
+        "instruction": "Considering your results and the operations review notes in Exhibit 3, select each statement that is supported by the March data. Select all that apply.",
+        "answerType": "multiselect",
+        "options": [
+          "The favorable materials price variance and the unfavorable materials quantity variance are likely related to the same purchasing decision.",
+          "The unfavorable variable overhead efficiency variance arises from the same excess labor hours that caused the unfavorable labor efficiency variance.",
+          "The unfavorable fixed overhead production volume variance indicates that actual fixed overhead spending exceeded the budget.",
+          "The unfavorable fixed overhead production volume variance arose because standard hours allowed for actual output were below the 12,000-hour denominator level.",
+          "The flexible-budget variance in operating income is attributable entirely to the 400-unit shortfall in sales volume.",
+          "The materials quantity variance should be computed using the 33,000 pounds purchased rather than the 31,200 pounds used."
+        ],
+        "correctAnswer": [
+          "The favorable materials price variance and the unfavorable materials quantity variance are likely related to the same purchasing decision.",
+          "The unfavorable variable overhead efficiency variance arises from the same excess labor hours that caused the unfavorable labor efficiency variance.",
+          "The unfavorable fixed overhead production volume variance arose because standard hours allowed for actual output were below the 12,000-hour denominator level."
+        ],
+        "explanation": "Supported: (1) The lower-priced steel from the new supplier produced the $3,300 F price variance but had more defects, causing the $2,400 U quantity variance. (2) Variable overhead is applied on DLH, so the 400 excess hours drive both the $8,000 U labor efficiency variance and the $2,400 U variable overhead efficiency variance. (3) The production volume variance of $6,000 U arises because only 11,400 standard hours were allowed versus the 12,000-hour denominator, leaving fixed overhead under-applied. Not supported: the volume variance does not measure spending (the budget variance of $3,500 U does); the flexible-budget variance by definition excludes the volume effect, which is captured separately in the $14,000 U sales-volume variance; and the quantity variance is based on materials used, not purchased.",
+        "explanationJa": "**正しい記述**\n1. 新仕入先の安価な鋼材が価格差異 $3,300 F を生んだ一方、欠陥が多く数量差異 $2,400 U の原因となった（同一の購買判断に起因）。\n2. 変動間接費は直接作業時間で配賦されるため、超過時間 400時間が労務能率差異 $8,000 U と変動間接費能率差異 $2,400 U の両方を生む。\n3. 操業度差異 $6,000 U は、標準時間 11,400時間が基準操業度 12,000時間を下回り固定費が配賦不足になったことによる。\n\n**誤った記述**\n- 操業度差異は支出の超過を示さない（支出の超過は予算差異 $3,500 U が示す）。\n- フレキシブル予算差異は実際操業度に組み替えた後の差異なので、販売数量の影響（販売数量差異 $14,000 U）を含まない。\n- 数量差異は購入量ではなく**使用量**で計算する。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Variance analysis (interpretation)"
+        ]
+      },
+      {
+        "id": "task-6",
+        "workTab": "Work Tab 6",
+        "title": "Responsibility for the materials quantity variance",
+        "instruction": "Based on Exhibit 3, which manager is most appropriately held responsible for the unfavorable materials quantity variance in March?",
+        "answerType": "select",
+        "options": [
+          "Purchasing manager",
+          "Production supervisor",
+          "Sales manager",
+          "Plant maintenance manager"
+        ],
+        "correctAnswer": "Purchasing manager",
+        "explanation": "Materials quantity variances are ordinarily the responsibility of production. In March, however, the excess usage was caused by defective steel from the new supplier. The quality control receiving inspection log, an independent record, shows that rejection rates for incoming steel roughly doubled, all from the new supplier's shipments, while production methods, equipment, and work crews were unchanged from February. The purchasing manager selected that supplier without production's approval to obtain a lower price. Because the root cause lies in the purchasing decision rather than in production performance, the purchasing manager is most appropriately held responsible, and the favorable price variance should be evaluated together with the resulting unfavorable quantity (and labor efficiency) variances.",
+        "explanationJa": "通常、材料数量差異の責任は製造部門にある。しかし3月は、購買部長が価格の安さを理由に製造部門の承認なく仕入先を変更し、その鋼材の欠陥によって使用量が増えた。品質管理部門の受入検査記録でも、新仕入先の鋼材の不合格率が前月の約2倍となる一方、製造方法・設備・作業班は2月から変わっていない（製造部門側に原因がないことを第三者の記録が裏付けている）。原因が購買判断にあるため、責任を負うのは**購買部長**が最も適切である。価格差異の有利分だけで購買を評価せず、それが招いた数量差異・作業能率差異の不利分と合わせて評価すべきである。",
+        "references": [
+          "AICPA BAR Blueprint Area I — Variance analysis (responsibility accounting)"
+        ]
+      }
+    ],
+    "difficulty": "intermediate",
+    "estimatedMinutes": 28,
+    "source": "BAR TBS Practice (original)"
   }
 ]
