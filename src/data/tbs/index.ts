@@ -14,7 +14,7 @@ const questionsBySubject: Record<TBSSubject, TBSQuestion[]> = {
 export const getTBSQuestionsBySubject = (subject: TBSSubject): TBSQuestion[] =>
   questionsBySubject[subject];
 
-/** 通し模試用のTBS（演習一覧には出さない）。模試を用意した科目だけ */
+/** 通し模試用のTBS（一覧画面では「初見用」として演習と並べる）。模試を用意した科目だけ */
 const mockSetsBySubject: Record<TBSSubject, TBSMockSet[]> = {
   FAR: [],
   BAR: barMockTBSSets,

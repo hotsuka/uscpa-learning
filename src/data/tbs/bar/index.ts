@@ -26,7 +26,7 @@ export const barTBSQuestions: TBSQuestion[] = [
   ...(governmentWide as TBSQuestion[]),
 ];
 
-// 本番形式の通し模試用（4択50問＋TBS 7問）。初見で解くために、演習一覧（barTBSQuestions）には含めない
+// 本番形式の通し模試用（4択50問＋TBS 7問）。barTBSQuestions とは分けて持ち、一覧画面では「初見用」として1問ずつ並べる
 export interface TBSMockSet {
   id: string;
   name: string;
