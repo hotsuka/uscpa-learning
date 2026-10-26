@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 interface TBSCardProps {
   question: TBSQuestion;
   latestScore: number | null;
+  /** 通し模試用に作った初見用の問題か */
+  isFresh?: boolean;
 }
 
 const difficultyLabel: Record<string, string> = {
@@ -24,7 +26,7 @@ const difficultyColor: Record<string, string> = {
   advanced: "bg-red-100 text-red-800",
 };
 
-export function TBSCard({ question, latestScore }: TBSCardProps) {
+export function TBSCard({ question, latestScore, isFresh = false }: TBSCardProps) {
   const isAttempted = latestScore !== null;
 
   return (
@@ -38,6 +40,11 @@ export function TBSCard({ question, latestScore }: TBSCardProps) {
                   {question.subject}
                 </span>
                 <span className="text-xs text-gray-500">{question.topic}</span>
+                {isFresh && (
+                  <span className="text-xs font-medium text-purple-700 bg-purple-50 px-2 py-0.5 rounded">
+                    初見用
+                  </span>
+                )}
               </div>
               <h3 className="font-medium text-sm leading-snug text-gray-900 line-clamp-2">
                 {question.title}

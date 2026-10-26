@@ -25,7 +25,7 @@ import { MiniTimer, type MiniTimerRef } from "@/components/materials/MiniTimer";
 import { useTimerShortcuts } from "@/hooks/useTimerShortcuts";
 import { useTBSTimerContext } from "@/hooks/useTBSTimerContext";
 
-type StatusFilter = "all" | "unattempted" | "attempted";
+type StatusFilter = "all" | "unattempted" | "attempted" | "fresh";
 type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced";
 
 const difficultyLabel: Record<string, string> = {
@@ -34,6 +34,12 @@ const difficultyLabel: Record<string, string> = {
   intermediate: "標準",
   advanced: "応用",
 };
+
+// 通し模試用TBSも演習一覧に並べ、1問ずつ解けるようにする（まとめて7問解く時間が取れないため）
+const getListQuestions = (subject: TBSSubject) => [
+  ...getTBSQuestionsBySubject(subject),
+  ...getTBSMockSetsBySubject(subject).flatMap((set) => set.questions),
+];
 
 export default function TBSListPage() {
   const [subject, setSubject] = useState<TBSSubject>("BAR");
@@ -48,14 +54,18 @@ export default function TBSListPage() {
   useTimerShortcuts(miniTimerRef);
   useTBSTimerContext(subject);
 
-  const questions = useMemo(
-    () => getTBSQuestionsBySubject(subject),
+  const questions = useMemo(() => getListQuestions(subject), [subject]);
+  // 通し模試用（初見用）の問題ID。カードの目印と「初見用」の絞り込みに使う
+  const freshIds = useMemo(
+    () =>
+      new Set(
+        getTBSMockSetsBySubject(subject).flatMap((set) => set.questions.map((q) => q.id)),
+      ),
     [subject],
   );
-  const topics = useMemo(() => getTBSTopicsBySubject(subject), [subject]);
-  const mockSets = useMemo(
-    () => getTBSMockSetsBySubject(subject).filter((set) => set.questions.length > 0),
-    [subject],
+  const topics = useMemo(
+    () => [...new Set([...getTBSTopicsBySubject(subject), ...questions.map((q) => q.topic)])],
+    [subject, questions],
   );
 
   const filtered = useMemo(() => {
@@ -64,9 +74,10 @@ export default function TBSListPage() {
       if (difficulty !== "all" && q.difficulty !== difficulty) return false;
       if (status === "unattempted" && attemptedIds.has(q.id)) return false;
       if (status === "attempted" && !attemptedIds.has(q.id)) return false;
+      if (status === "fresh" && !freshIds.has(q.id)) return false;
       return true;
     });
-  }, [questions, topic, difficulty, status, attemptedIds]);
+  }, [questions, topic, difficulty, status, attemptedIds, freshIds]);
 
   const totalAttempted = questions.filter((q) => attemptedIds.has(q.id)).length;
 
@@ -121,35 +132,6 @@ export default function TBSListPage() {
           </div>
         </div>
 
-        {mockSets.length > 0 && (
-          <div className="bg-white rounded-lg border p-3 mb-4 space-y-2">
-            <div>
-              <p className="text-sm font-medium text-gray-900">通し模試用TBS</p>
-              <p className="text-xs text-gray-500 mt-0.5">
-                本番形式の通し模試（4択の初見模試50問＋TBS 7問）で初見として解くため、下の演習一覧には出していません。模試の日まで開かないでください。
-              </p>
-            </div>
-            {mockSets.map((set) => {
-              const done = set.questions.filter((q) => attemptedIds.has(q.id)).length;
-              const minutes = set.questions.reduce((sum, q) => sum + q.estimatedMinutes, 0);
-              return (
-                <details key={set.id} className="rounded-md border bg-gray-50">
-                  <summary className="cursor-pointer px-3 py-2 text-sm flex items-center justify-between">
-                    <span className="font-medium">{set.name}</span>
-                    <span className="text-xs text-gray-500">
-                      {set.questions.length}問・目安{minutes}分・{done}問完了
-                    </span>
-                  </summary>
-                  <div className="space-y-3 p-3 pt-1">
-                    {set.questions.map((q) => (
-                      <TBSCard key={q.id} question={q} latestScore={getTBSScore(q.id)} />
-                    ))}
-                  </div>
-                </details>
-              );
-            })}
-          </div>
-        )}
 
         <div className="flex flex-wrap gap-2 mb-4">
           <div className="flex gap-1">
@@ -165,7 +147,7 @@ export default function TBSListPage() {
               >
                 {s}
                 <span className="ml-1 opacity-70">
-                  {getTBSQuestionsBySubject(s).length}問
+                  {getListQuestions(s).length}問
                 </span>
               </button>
             ))}
@@ -206,6 +188,9 @@ export default function TBSListPage() {
                 { value: "all", label: "すべて" },
                 { value: "unattempted", label: "未挑戦" },
                 { value: "attempted", label: "挑戦済み" },
+                ...(freshIds.size > 0
+                  ? [{ value: "fresh", label: `初見用 ${freshIds.size}問` } as const]
+                  : []),
               ] as const
             ).map(({ value, label }) => (
               <button
@@ -235,6 +220,7 @@ export default function TBSListPage() {
                 key={q.id}
                 question={q}
                 latestScore={getTBSScore(q.id)}
+                isFresh={freshIds.has(q.id)}
               />
             ))}
           </div>

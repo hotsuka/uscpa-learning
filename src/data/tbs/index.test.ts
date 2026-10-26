@@ -9,7 +9,7 @@ import {
 describe("通し模試用TBS", () => {
   const mockQuestions = getTBSMockSetsBySubject("BAR").flatMap((set) => set.questions);
 
-  it("演習一覧に含めない（演習で解くと初見でなくなる）", () => {
+  it("演習用の問題と重複させない（一覧に二重に並ぶため）", () => {
     const practiceIds = new Set(getTBSQuestionsBySubject("BAR").map((q) => q.id));
     expect(mockQuestions.filter((q) => practiceIds.has(q.id)).map((q) => q.id)).toEqual([]);
   });
