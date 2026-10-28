@@ -93,6 +93,17 @@ const measureLocalStorageChars = (): number => {
   return total;
 };
 
+/** Notionの問題演習ログAPIが失敗したときのエラー。503 なら未設定 */
+export class PracticeLogHttpError extends Error {
+  constructor(
+    message: string,
+    readonly status: number,
+  ) {
+    super(message);
+    this.name = "PracticeLogHttpError";
+  }
+}
+
 export interface PullResult {
   added: PracticeLogCounts;
   /** 他の端末のチャンクの数 */
@@ -110,7 +121,10 @@ export async function pullPracticeLog(): Promise<PullResult> {
   );
   if (!response.ok) {
     const body: { error?: string } = await response.json().catch(() => ({}));
-    throw new Error(body.error ?? `HTTP ${response.status}`);
+    throw new PracticeLogHttpError(
+      body.error ?? `HTTP ${response.status}`,
+      response.status,
+    );
   }
   const { chunks }: { chunks: PracticeLogRemoteChunk[] } =
     await response.json();
@@ -142,7 +156,7 @@ export async function pullPracticeLog(): Promise<PullResult> {
     return raw === null ? [] : [{ originalKey: key, data: raw }];
   });
   try {
-    await saveSnapshots("pre-migrate", entries, "Notion取り込み前");
+    await saveSnapshots("pre-import", entries);
   } catch (error) {
     throw new Error(
       `バックアップに失敗したため取り込みを中止しました: ${error instanceof Error ? error.message : String(error)}`,

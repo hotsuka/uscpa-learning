@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useSyncOnMount, useSyncOnOnline } from "@/hooks/useSyncOnMount";
+import { usePracticeLogAutoSync } from "@/hooks/usePracticeLogAutoSync";
 import { runAutoBackupIfNeeded } from "@/lib/backup/autoBackup";
 
 /**
@@ -14,6 +15,9 @@ export function SyncProvider({ children }: { children: React.ReactNode }) {
 
   // オンライン復帰時に同期
   useSyncOnOnline();
+
+  // 問題演習ログ（回答・TBS・模試）の取り込みと送信
+  usePracticeLogAutoSync();
 
   // 起動時に回答履歴の自動バックアップ（24時間間隔）をIndexedDBへ保存
   useEffect(() => {

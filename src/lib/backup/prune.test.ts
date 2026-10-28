@@ -20,7 +20,7 @@ describe("selectSnapshotsToPrune", () => {
       snapshot("uscpa-question-bank", "2026-09-02T00:00:00.000Z", "auto"),
     ];
 
-    const ids = selectSnapshotsToPrune(items, { auto: 2, manual: 10, "pre-migrate": 10 });
+    const ids = selectSnapshotsToPrune(items, { auto: 2, manual: 10, "pre-migrate": 10, "pre-import": 10 });
 
     expect(ids).toEqual(["uscpa-question-bank.auto.2026-09-01T00:00:00.000Z"]);
   });
@@ -31,7 +31,7 @@ describe("selectSnapshotsToPrune", () => {
       snapshot("uscpa-question-bank", "2026-09-02T00:00:00.000Z", "auto"),
     ];
 
-    const ids = selectSnapshotsToPrune(items, { auto: 1, manual: 10, "pre-migrate": 10 });
+    const ids = selectSnapshotsToPrune(items, { auto: 1, manual: 10, "pre-migrate": 10, "pre-import": 10 });
 
     expect(ids).toEqual(["uscpa-question-bank.auto.2026-09-01T00:00:00.000Z"]);
   });
@@ -44,7 +44,7 @@ describe("selectSnapshotsToPrune", () => {
       snapshot("uscpa-question-bank", "2026-09-02T00:00:00.000Z", "auto"),
     ];
 
-    const ids = selectSnapshotsToPrune(items, { auto: 1, manual: 1, "pre-migrate": 1 });
+    const ids = selectSnapshotsToPrune(items, { auto: 1, manual: 1, "pre-migrate": 1, "pre-import": 10 });
 
     expect(ids).toEqual(["uscpa-question-bank.auto.2026-09-01T00:00:00.000Z"]);
   });
@@ -55,12 +55,28 @@ describe("selectSnapshotsToPrune", () => {
       snapshot("uscpa-records", "2026-09-01T00:00:00.000Z", "manual"),
     ];
 
-    expect(selectSnapshotsToPrune(items, { auto: 7, manual: 1, "pre-migrate": 10 })).toEqual([]);
+    expect(selectSnapshotsToPrune(items, { auto: 7, manual: 1, "pre-migrate": 10, "pre-import": 10 })).toEqual([]);
   });
 
   it("上限以内なら何も消さない", () => {
     const items = [snapshot("uscpa-notes", "2026-09-01T00:00:00.000Z", "manual")];
 
     expect(selectSnapshotsToPrune(items)).toEqual([]);
+  });
+
+  it("取り込み前のバックアップが増えても、移行前のバックアップは消さない", () => {
+    const items = [
+      snapshot("uscpa-question-bank", "2026-09-01T00:00:00.000Z", "pre-migrate"),
+      ...Array.from({ length: 12 }, (_, i) =>
+        snapshot("uscpa-question-bank", `2026-10-${String(i + 10).padStart(2, "0")}T00:00:00.000Z`, "pre-import"),
+      ),
+    ];
+
+    const ids = selectSnapshotsToPrune(items);
+
+    expect(ids).toEqual([
+      "uscpa-question-bank.pre-import.2026-10-11T00:00:00.000Z",
+      "uscpa-question-bank.pre-import.2026-10-10T00:00:00.000Z",
+    ]);
   });
 });

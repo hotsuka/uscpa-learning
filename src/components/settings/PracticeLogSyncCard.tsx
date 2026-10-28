@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -18,6 +18,11 @@ import {
   type VerificationResult,
 } from "@/lib/sync/practiceLogPush";
 import { pullPracticeLog, type PullResult } from "@/lib/sync/practiceLogPull";
+import {
+  readAutoSyncStatus,
+  withPracticeLogLock,
+  type AutoSyncStatus,
+} from "@/lib/sync/practiceLogAutoSync";
 import type { PracticeLogKind } from "@/lib/sync/practiceLog";
 
 const KIND_LABEL: Record<PracticeLogKind, string> = {
@@ -41,13 +46,22 @@ export function PracticeLogSyncCard() {
     null,
   );
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [autoStatus, setAutoStatus] = useState<AutoSyncStatus | null>(null);
+
+  // localStorage を読むのでマウント後に表示する（サーバー描画と食い違わないように）
+  useEffect(() => {
+    setAutoStatus(readAutoSyncStatus());
+  }, []);
 
   const handlePush = async (force: boolean) => {
     setBusy("push");
     setErrorMessage(null);
     setPushResult(null);
     try {
-      const result = await pushPracticeLog({ force, onProgress: setProgress });
+      // 自動同期が送っている最中なら、終わるのを待ってから送る
+      const result = await withPracticeLogLock(() =>
+        pushPracticeLog({ force, onProgress: setProgress }),
+      );
       setPushResult(result);
     } catch (error) {
       setErrorMessage(
@@ -64,7 +78,7 @@ export function PracticeLogSyncCard() {
     setErrorMessage(null);
     setPullResult(null);
     try {
-      setPullResult(await pullPracticeLog());
+      setPullResult(await withPracticeLogLock(() => pullPracticeLog()));
     } catch (error) {
       setErrorMessage(
         `取り込みに失敗しました: ${error instanceof Error ? error.message : "不明なエラー"}`,
@@ -96,7 +110,7 @@ export function PracticeLogSyncCard() {
           問題演習ログのNotion同期
         </CardTitle>
         <CardDescription>
-          四択MC・TBS・模試の回答履歴をNotionの「問題演習ログ」へ送り、他の端末で解いた分を取り込みます。取り込みはこの端末に無い回答を足すだけで、この端末の回答は消しません。取り込む前にバックアップを取ります。
+          四択MC・TBS・模試の回答履歴をNotionの「問題演習ログ」へ送り、他の端末で解いた分を取り込みます。取り込みはこの端末に無い回答を足すだけで、この端末の回答は消しません。取り込む前にバックアップを取ります。起動時・オンライン復帰時・回答の後には自動で同期します。
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -130,6 +144,17 @@ export function PracticeLogSyncCard() {
             すべて送り直す
           </Button>
         </div>
+
+        {autoStatus && (
+          <p
+            className={`text-sm ${autoStatus.ok ? "text-muted-foreground" : "text-destructive"}`}
+          >
+            最終自動同期: {new Date(autoStatus.lastRunAt).toLocaleString("ja-JP")}
+            {autoStatus.ok
+              ? `（取り込み ${autoStatus.added.toLocaleString()} 件・送信 ${autoStatus.sent.toLocaleString()} ページ）`
+              : `（失敗: ${autoStatus.error ?? "不明なエラー"}）`}
+          </p>
+        )}
 
         {busy === "push" && progress && (
           <p className="text-sm text-muted-foreground">
@@ -183,7 +208,7 @@ export function PracticeLogSyncCard() {
                 </p>
                 {pullResult.backedUp && (
                   <p className="text-muted-foreground">
-                    取り込む前の状態は下の「データバックアップ」に「移行前(Notion取り込み前)」として保存しました。
+                    取り込む前の状態は下の「データバックアップ」に「Notion取り込み前」として保存しました。
                   </p>
                 )}
               </>
