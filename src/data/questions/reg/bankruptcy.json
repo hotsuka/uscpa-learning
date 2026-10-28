@@ -2,7 +2,7 @@
   "id": "reg-bankruptcy",
   "name": "Bankruptcy",
   "topic": "Bankruptcy",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "reg-bkr-001",
@@ -907,6 +907,258 @@
       ],
       "difficulty": "basic",
       "source": "Proactive AICPA過去問DB REG 2021 Recently Released Q.24 (AICPA No. 82872)"
+    },
+    {
+      "id": "reg-bkr-032",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the Secured Transactions Article of the UCC, which of the following requirements is necessary to have a security interest attach?\n\nDebtor's rights in collateral | Filing of security agreement | Value given",
+      "choices": [
+        { "label": "A", "text": "Yes | Yes | Yes" },
+        { "label": "B", "text": "Yes | Yes | No" },
+        { "label": "C", "text": "Yes | No | Yes" },
+        { "label": "D", "text": "No | Yes | Yes" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under UCC §9-203(b), a security interest attaches (becomes enforceable against the debtor) when three conditions are met: (1) the secured party gives value, (2) the debtor has rights in the collateral, and (3) the debtor has authenticated a security agreement describing the collateral, or the secured party has possession or control of the collateral under the agreement. Value given by the creditor and the debtor's rights in the collateral are therefore both required.\n\nProper filing of a security agreement is not a requirement for attachment. Filing a financing statement is a method of perfection under §9-310, which protects the secured party against third parties; it plays no role in making the security interest enforceable between the debtor and the creditor. Any combination that requires filing, or that omits the debtor's rights in the collateral or the creditor's giving of value, misstates §9-203.",
+      "explanationJa": "UCC §9-203(b) により、担保権が設定（attach）されるには、(1) 債権者が対価（value）を与えたこと、(2) 債務者が担保物に権利を持つこと、(3) 債務者が担保物を記載した担保契約を認証（authenticate）したこと、または債権者が担保物を占有・支配していること、の3つがそろう必要があります。したがって「債務者の権利」と「債権者による対価」はどちらも必要です。\n\n一方、担保契約や融資説明書の届出（filing）は対抗要件具備（perfection, §9-310）の方法であり、第三者に対する優先のためのものです。当事者間で担保権を有効にする attachment の要件ではありません。届出を必要とする組み合わせや、債務者の権利・債権者の対価のどちらかを不要とする組み合わせは誤りです。",
+      "references": ["UCC §9-203(b)", "UCC §9-310"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Secured Transaction Q.1"
+    },
+    {
+      "id": "reg-bkr-033",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Winslow Co., which is in the business of selling furniture, borrowed $60,000 from Pine Bank. Winslow executed a promissory note for that amount and used all of its accounts receivable as collateral for the loan. Winslow executed a security agreement that described the collateral. Winslow did not file a financing statement. Which of the following statements best describes this transaction?",
+      "choices": [
+        { "label": "A", "text": "Perfection of the security interest occurred even though Winslow did not file a financing statement." },
+        { "label": "B", "text": "Perfection of the security interest occurred by Pine having an interest in accounts receivable." },
+        { "label": "C", "text": "Attachment of the security interest did not occur because Winslow failed to file a financing statement." },
+        { "label": "D", "text": "Attachment of the security interest occurred when the loan was made and Winslow executed the security agreement." }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under UCC §9-203(b), attachment occurs when value is given, the debtor has rights in the collateral, and the debtor authenticates a security agreement describing the collateral. Pine gave value by making the $60,000 loan, Winslow owned the accounts receivable, and Winslow executed a security agreement describing them, so the security interest attached when the loan was made and the security agreement was executed.\n\nPerfection did not occur. Under §9-310(a), a financing statement must be filed to perfect a security interest in accounts; the only automatic-perfection exception for accounts (§9-309(2)) covers an assignment of an insignificant portion of the debtor's accounts, and here all of Winslow's accounts were assigned. Pine merely having an interest in the accounts is attachment, not perfection. Filing is not a condition of attachment, so the statement that attachment failed because no financing statement was filed confuses attachment with perfection.",
+      "explanationJa": "UCC §9-203(b) により、対価の提供・債務者の権利・担保契約の認証がそろえば担保権は attach します。Pine は $60,000 を貸し付けて対価を与え、Winslow は売掛金を保有し、担保物を記載した担保契約を締結しているので、貸付と担保契約の締結の時点で attach しています。\n\n一方、対抗要件は具備されていません。売掛金（accounts）の担保権は §9-310(a) により融資説明書の届出が必要で、自動的に対抗要件が備わる例外（§9-309(2)）は売掛金のごく一部の譲渡に限られます。本問は売掛金のすべてが担保なので例外に当たりません。「Pine が売掛金に権利を持つ」ことは attach にすぎず perfection ではありません。また届出は attach の要件ではないため、届出が無いから attach していないという説明は attach と perfection を混同しています。",
+      "references": ["UCC §9-203(b)", "UCC §9-310(a)", "UCC §9-309(2)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Secured Transaction Q.3"
+    },
+    {
+      "id": "reg-bkr-034",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the UCC Secured Transactions Article, which of the following after-acquired property may be attached to a security agreement given to a secured lender?\n\nInventory | Equipment",
+      "choices": [
+        { "label": "A", "text": "Yes | Yes" },
+        { "label": "B", "text": "Yes | No" },
+        { "label": "C", "text": "No | Yes" },
+        { "label": "D", "text": "No | No" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "UCC §9-204(a) permits a security agreement to create a security interest in after-acquired collateral. Both inventory and equipment may be covered by an after-acquired property clause; the security interest attaches to each new item as soon as the debtor acquires rights in it. The statutory limits in §9-204(b) apply only to consumer goods (other than an accession given as additional security, or consumer goods the debtor acquires within 10 days after the secured party gives value) and to commercial tort claims, neither of which is involved here.\n\nTherefore an answer stating that inventory cannot be covered, that equipment cannot be covered, or that neither can be covered is incorrect.",
+      "explanationJa": "UCC §9-204(a) により、担保契約で将来取得する財産（after-acquired property）を担保の対象にできます。棚卸資産（inventory）も設備（equipment）も after-acquired property 条項の対象にでき、債務者が新たに取得した時点で担保権が及びます。§9-204(b) の制限は消費財（追加担保としての付合物（accession）と、対価提供から10日以内に取得したものを除く）と商業上の不法行為請求権だけで、本問には当たりません。\n\nしたがって、棚卸資産または設備の一方（あるいは両方）を対象にできないとする組み合わせは誤りです。",
+      "references": ["UCC §9-204"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Secured Transaction Q.5"
+    },
+    {
+      "id": "reg-bkr-035",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the Secured Transactions Article of the UCC, which of the following statements is (are) correct regarding the filing of the financing statement?\nI. A financing statement must be filed before attachment of the security interest can occur.\nII. Once filed, a financing statement is effective for an indefinite period of time provided continuation statements are timely filed.",
+      "choices": [
+        { "label": "A", "text": "I only" },
+        { "label": "B", "text": "II only" },
+        { "label": "C", "text": "Both I and II" },
+        { "label": "D", "text": "Neither I nor II" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Statement II is correct. Under UCC §9-515(a), a filed financing statement is generally effective for five years. Under §9-515(c)–(e), a continuation statement filed within six months before the lapse date extends effectiveness for another five years, and continuation statements may be filed successively, so the filing can remain effective indefinitely as long as each continuation is timely.\n\nStatement I is incorrect. Filing a financing statement is a method of perfection (§9-310), not a requirement for attachment. Attachment under §9-203 requires only value, the debtor's rights in the collateral, and an authenticated security agreement (or possession/control). A financing statement may be filed before or after attachment (§9-502(d)), so it is not a prerequisite to attachment.",
+      "explanationJa": "II は正しい記述です。UCC §9-515(a) により融資説明書の効力は原則5年で、失効前6か月以内に継続届（continuation statement）を出せばさらに5年延長され（§9-515(c)〜(e)）、これを繰り返すことができます。したがって期限内に継続届を出し続ければ、効力は期限なく続きます。\n\nI は誤りです。融資説明書の届出は対抗要件（perfection, §9-310）の方法であり、attach の要件ではありません。attach に必要なのは対価・債務者の権利・認証された担保契約（または占有・支配）だけです（§9-203）。届出は attach の前でも後でもできます（§9-502(d)）。",
+      "references": ["UCC §9-515", "UCC §9-203(b)", "UCC §9-502(d)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Secured Transaction Q.7"
+    },
+    {
+      "id": "reg-bkr-036",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "On June 15, Harper purchased equipment for $100,000 from Imperial Corp. for use in its manufacturing process. Harper paid for the equipment with funds borrowed from Eastern Bank. Harper gave Eastern a security agreement and financing statement covering Harper's existing and after-acquired equipment. On June 21, Harper was petitioned involuntarily into bankruptcy under Chapter 7 of the Federal Bankruptcy Code. A bankruptcy trustee was appointed. On June 23, Eastern filed the financing statement. Which of the parties will have a superior security interest in the equipment?",
+      "choices": [
+        { "label": "A", "text": "The trustee in bankruptcy, because the filing of the financing statement after the commencement of the bankruptcy case would be deemed a preferential transfer." },
+        { "label": "B", "text": "The trustee in bankruptcy, because the trustee became a lien creditor before Eastern perfected its security interest." },
+        { "label": "C", "text": "Eastern, because it had a perfected purchase money security interest without having to file a financing statement." },
+        { "label": "D", "text": "Eastern, because it perfected its security interest within the permissible time limits." }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Eastern lent Harper the funds used to buy the equipment, so Eastern holds a purchase money security interest (PMSI) under UCC §9-103. Under §9-317(e), if a PMSI is perfected by filing within 20 days after the debtor receives delivery of the collateral, it takes priority over the rights of a lien creditor that arise between attachment and filing. Eastern filed on June 23, eight days after Harper acquired the equipment on June 15, so its filing relates back. The bankruptcy trustee has the status of a hypothetical lien creditor as of the June 21 petition (Bankruptcy Code §544(a)), but Bankruptcy Code §546(b) and §362(b)(3) allow this kind of grace-period perfection after the petition, so Eastern's interest is superior.\n\nThe filing is not a voidable preference: a transfer that secures new value given to enable the debtor to acquire the property and is perfected within 30 days is protected by Bankruptcy Code §547(c)(3). The trustee's lien creditor status does not defeat Eastern because of the PMSI grace period. Eastern did need to file: automatic perfection of a PMSI on attachment applies only to consumer goods (§9-309(1)), and this equipment was used in Harper's manufacturing process.",
+      "explanationJa": "Eastern は設備購入の資金を貸し付けたので、UCC §9-103 の購入代金担保権（PMSI）を持ちます。§9-317(e) により、債務者が担保物の引渡しを受けてから20日以内に届出して対抗要件を備えた PMSI は、attach から届出までの間に生じた差押債権者（lien creditor）の権利に優先します。Eastern は6月15日の取得から8日後の6月23日に届出しているので、この猶予期間内です。破産管財人は申立日（6月21日）時点の仮想的な差押債権者の地位を持ちますが（破産法 §544(a)）、破産法 §546(b) と §362(b)(3) はこのような猶予期間内の申立後の対抗要件具備を認めているため、Eastern が優先します。\n\n申立後の届出が偏頗行為（preference）として否認されるという説明は誤りです。取得資金としての新たな対価を担保し30日以内に対抗要件を備えた移転は、破産法 §547(c)(3) で保護されます。管財人が先に差押債権者になったという説明も、PMSI の猶予期間があるため当たりません。また、設備は製造に使う事業用資産で消費財ではないため、届出なしで対抗要件が備わる（§9-309(1)）という説明も誤りです。",
+      "references": ["UCC §9-317(e)", "UCC §9-309(1)", "Bankruptcy Code §547(c)(3)"],
+      "difficulty": "advanced",
+      "source": "Proactive REG テキスト Secured Transaction Q.9"
+    },
+    {
+      "id": "reg-bkr-037",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the UCC Secured Transactions Article, which of the following actions will best perfect a security interest in a negotiable instrument against any other party?",
+      "choices": [
+        { "label": "A", "text": "Filing a security agreement" },
+        { "label": "B", "text": "Taking possession of the instrument" },
+        { "label": "C", "text": "Perfecting by attachment" },
+        { "label": "D", "text": "Obtaining a duly executed financing statement" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Taking possession of the instrument gives the strongest protection. Under UCC §9-313(a), a security interest in a negotiable instrument may be perfected by the secured party taking possession. Current §9-312(a) also allows perfection by filing, but a filed interest is vulnerable: under §9-330(d), a purchaser of an instrument who gives value and takes possession in good faith without knowledge of the security interest has priority over a security interest perfected only by filing, and a holder in due course takes free of it (§9-331). Possession prevents these purchasers from arising, so it best protects the secured party against any other party.\n\nFiling a security agreement or obtaining a duly executed financing statement would at most perfect by filing, which can be defeated by a later purchaser who takes possession. Attachment alone makes the interest enforceable against the debtor but is not perfection, except in narrow cases such as a PMSI in consumer goods, which does not include instruments.",
+      "explanationJa": "最も強い保護を与えるのは証券の占有です。UCC §9-313(a) により、流通証券（negotiable instrument）の担保権は担保権者の占有で対抗要件を備えられます。現行の §9-312(a) は届出による対抗要件具備も認めていますが、届出だけの担保権は弱く、対価を払い善意で占有を取得した証券の買主に劣後し（§9-330(d)）、正当所持人（holder in due course）は担保権の負担なく取得します（§9-331）。占有していればこうした買主が現れないため、あらゆる第三者に対して最も確実です。\n\n担保契約の届出や融資説明書の取得は、せいぜい届出による対抗要件具備であり、後から占有を取得した買主に負けます。attach だけでは債務者に対して有効になるにとどまり、対抗要件ではありません（消費財の PMSI のような例外は証券には当たりません）。",
+      "references": ["UCC §9-313(a)", "UCC §9-312(a)", "UCC §9-330(d)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Secured Transaction Q.11"
+    },
+    {
+      "id": "reg-bkr-038",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the UCC Secured Transactions Article, perfection of a security interest by a creditor provides added protection against other parties in the event the debtor does not pay its debts. Which of the following parties is not affected by perfection of a security interest?",
+      "choices": [
+        { "label": "A", "text": "Other prospective creditors of the debtor" },
+        { "label": "B", "text": "The trustee in a bankruptcy case" },
+        { "label": "C", "text": "A buyer in the ordinary course of business" },
+        { "label": "D", "text": "A subsequent personal injury judgment creditor" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under UCC §9-320(a), a buyer in the ordinary course of business takes free of a security interest created by the buyer's seller, even if the security interest is perfected and even if the buyer knows of its existence. Perfection therefore gives the secured party no protection against such a buyer (for example, a customer buying inventory from a retailer).\n\nPerfection does matter against the other parties listed. Other prospective creditors who later take security interests generally rank behind an earlier perfected interest under the first-to-file-or-perfect rule of §9-322(a). The bankruptcy trustee, who has the rights of a lien creditor under Bankruptcy Code §544(a), can avoid an unperfected security interest but not a perfected one (§9-317(a)(2)). A subsequent judgment creditor who obtains a lien also takes subject to a security interest perfected before the lien arises.",
+      "explanationJa": "UCC §9-320(a) により、通常の営業過程の買主（buyer in the ordinary course of business）は、売主が設定した担保権について、それが対抗要件を備えていても、また買主がその存在を知っていても、担保権の負担なく取得します。つまり対抗要件を備えても、この買主に対しては保護になりません（小売店から在庫品を買う顧客など）。\n\nほかの当事者には対抗要件具備が意味を持ちます。後から担保権を取得する債権者は、先に届出・対抗要件を備えた担保権に劣後します（§9-322(a)）。破産管財人は差押債権者の地位（破産法 §544(a)）で対抗要件の無い担保権を否認できますが、対抗要件を備えた担保権は否認できません（§9-317(a)(2)）。後から判決に基づき差押えをした人身損害の判決債権者も、それ以前に対抗要件を備えた担保権に劣後します。",
+      "references": ["UCC §9-320(a)", "UCC §9-317(a)(2)", "UCC §9-322(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Secured Transaction Q.12"
+    },
+    {
+      "id": "reg-bkr-039",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Wine purchased a computer using the proceeds of a loan from MJC Finance Company. Wine gave MJC a security interest in the computer. Wine executed a security agreement and financing statement, which was filed by MJC. Wine used the computer to monitor Wine's personal investments. Later, Wine sold the computer to Jacobs, for Jacobs' family use. Jacobs was unaware of MJC's security interest. Wine now is in default under the MJC loan. May MJC repossess the computer from Jacobs?",
+      "choices": [
+        { "label": "A", "text": "No, because Jacobs was unaware of the MJC security interest" },
+        { "label": "B", "text": "No, because Jacobs intended to use the computer for family or household purposes" },
+        { "label": "C", "text": "Yes, because MJC's security interest was perfected before Jacobs' purchase" },
+        { "label": "D", "text": "Yes, because Jacobs' purchase of the computer made Jacobs personally liable to MJC" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Wine used the computer for personal purposes, so it is a consumer good, and MJC financed its purchase, so MJC has a purchase money security interest. Under UCC §9-320(b), a buyer of consumer goods from a consumer who buys without knowledge of the security interest, for value, and for personal, family, or household use takes free of the security interest only if the secured party had not filed a financing statement before the purchase. MJC filed before Jacobs bought the computer, so the security interest was perfected by filing and continues in the computer in Jacobs' hands (§9-315(a)(1)); MJC may repossess it after Wine's default (§9-609).\n\nJacobs' lack of knowledge and Jacobs' family use are elements of the consumer-to-consumer buyer protection, but that protection is unavailable because MJC filed. Jacobs is also not a buyer in the ordinary course of business, because Wine is not in the business of selling computers. Jacobs does not become personally liable on Wine's debt; MJC's right is against the collateral, not a personal claim against Jacobs.",
+      "explanationJa": "Wine はコンピュータを個人の投資管理に使っていたので消費財であり、MJC はその購入資金を融資したので購入代金担保権（PMSI）を持ちます。UCC §9-320(b) により、消費者から消費財を、担保権を知らずに、対価を払って、個人・家族・家庭用に買った買主は担保権の負担なく取得できますが、それは購入前に担保権者が融資説明書を届出していない場合に限られます。MJC は Jacobs の購入前に届出済みなので、担保権は Jacobs の手元のコンピュータにも及び（§9-315(a)(1)）、Wine の債務不履行後に MJC は取り戻せます（§9-609）。\n\nJacobs が担保権を知らなかったことや家族用であることは消費者間取引の買主保護の要件ですが、MJC が届出しているため保護は受けられません。Wine はコンピュータの販売業者ではないので、Jacobs は通常の営業過程の買主でもありません。また、購入によって Jacobs が Wine の債務を個人的に負うことはなく、MJC の権利は担保物に対するものです。",
+      "references": ["UCC §9-320(b)", "UCC §9-315(a)(1)", "UCC §9-609"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Secured Transaction Q.13"
+    },
+    {
+      "id": "reg-bkr-040",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the Secured Transactions Article of the UCC, what would be the order of priority for the following security interests in consumer goods?\nI. Financing agreement filed on April 1\nII. Possession of the collateral by a creditor on April 10\nIII. Financing agreement perfected on April 15",
+      "choices": [
+        { "label": "A", "text": "I, II, III" },
+        { "label": "B", "text": "II, I, III" },
+        { "label": "C", "text": "II, III, I" },
+        { "label": "D", "text": "III, II, I" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under UCC §9-322(a)(1), conflicting perfected security interests in the same collateral rank according to priority in time of filing or perfection, whichever occurs first. The interest filed on April 1 ranks first, the interest perfected by possession on April 10 ranks second (possession is a valid method of perfection for goods under §9-313(a)), and the interest perfected on April 15 ranks third.\n\nAn order that places the April 10 possession or the April 15 perfection ahead of the April 1 filing is incorrect, because perfection by possession has no special priority over an earlier filing, and a later perfection cannot outrank an earlier filing.",
+      "explanationJa": "UCC §9-322(a)(1) により、同じ担保物に対する対抗要件を備えた担保権どうしは、届出または対抗要件具備のいずれか早い時点の順で優先します。4月1日に届出された担保権が1位、4月10日に占有で対抗要件を備えた担保権が2位（物品は占有で対抗要件を備えられます、§9-313(a)）、4月15日に対抗要件を備えた担保権が3位です。\n\n占有による対抗要件具備に、先行する届出より優先する特別の効力はありません。また後から対抗要件を備えた担保権が先の届出を追い越すこともないため、4月10日や4月15日の担保権を先に置く順序は誤りです。",
+      "references": ["UCC §9-322(a)(1)", "UCC §9-313(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Secured Transaction Q.14"
+    },
+    {
+      "id": "reg-bkr-041",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Larkin is a wholesaler of computers. Larkin sold 40 computers to Elk Appliance for $80,000. Elk paid $20,000 down and signed a promissory note for the balance. Elk also executed a security agreement giving Larkin a security interest in Elk's inventory, including the computers. Larkin perfected its security interest by properly filing a financing statement in the state of Whiteacre. Six months later, Elk moved its business to the state of Blackacre, taking the computers. On arriving in Blackacre, Elk secured a loan from Quarry Bank and signed a security agreement putting up all inventory (including the computers) as collateral. Quarry perfected its security interest by properly filing a financing statement in the state of Blackacre. Two months after arriving in Blackacre, Elk went into default on both debts. Which of the following statements is correct?",
+      "choices": [
+        { "label": "A", "text": "Quarry's security interest is superior because Larkin's time to file a financing statement in Blackacre had expired prior to Quarry's filing." },
+        { "label": "B", "text": "Quarry's security interest is superior because Quarry had no actual notice of Larkin's security interest." },
+        { "label": "C", "text": "Larkin's security interest is superior even though at the time of Elk's default Larkin had not perfected its security interest in the state of Blackacre." },
+        { "label": "D", "text": "Larkin's security interest is superior provided it repossesses the computers before Quarry does." }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Larkin perfected first by filing in Whiteacre. Under UCC §9-316(a)(2), when the debtor relocates to another jurisdiction, a security interest perfected by filing in the old jurisdiction remains perfected for four months after the change of the debtor's location (and longer if the old filing would otherwise lapse later). Elk defaulted only two months after moving to Blackacre, so Larkin's security interest was still perfected even though Larkin had not filed in Blackacre. (If Elk is a registered organization, its location stays in its state of organization under §9-307(e), and the Whiteacre filing simply remains effective.) Under the first-to-file-or-perfect rule of §9-322(a)(1), Larkin's earlier perfected interest is superior to Quarry's later filing.\n\nLarkin's time to file in Blackacre had not expired when Quarry filed, because Quarry filed shortly after the move, well within four months. Priority between filed security interests does not depend on whether a later creditor had actual notice; the filing system gives constructive notice. Larkin's priority also does not depend on repossessing the computers first.",
+      "explanationJa": "Larkin は Whiteacre 州で届出して先に対抗要件を備えています。UCC §9-316(a)(2) により、債務者が別の州へ所在地を移しても、旧州での届出による対抗要件は移転後4か月間（旧届出がそれより後に失効する場合はその時点まで）継続します。Elk は Blackacre 州へ移ってから2か月で債務不履行になっているので、Blackacre 州で届出していなくても Larkin の担保権は対抗要件を備えたままです（Elk が登録組織であれば、所在地は設立州のままなので（§9-307(e)）Whiteacre 州の届出がそのまま有効です）。§9-322(a)(1) の「先に届出・対抗要件を備えた者が優先」のルールにより、Larkin が Quarry に優先します。\n\nQuarry は移転直後に届出しており、4か月の猶予期間は過ぎていないので、期限切れを理由に Quarry が優先するという説明は誤りです。届出された担保権どうしの優先は、後順位債権者が実際に知っていたかどうかでは決まりません（届出が擬制的な通知になります）。また、Larkin の優先は先に担保物を取り戻すことを条件としません。",
+      "references": ["UCC §9-316(a)(2)", "UCC §9-322(a)(1)", "UCC §9-307"],
+      "difficulty": "advanced",
+      "source": "Proactive REG テキスト Secured Transaction Q.15"
+    },
+    {
+      "id": "reg-bkr-042",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "A party who filed a security interest in inventory on April 1, Year 4, would have a superior interest to which of the following parties?",
+      "choices": [
+        { "label": "A", "text": "A holder of a mechanic's lien whose lien was filed on March 15, Year 4" },
+        { "label": "B", "text": "A holder of a purchase money security interest in after-acquired property filed on March 20, Year 4" },
+        { "label": "C", "text": "A purchaser in the ordinary course of business who purchased on April 10, Year 4" },
+        { "label": "D", "text": "A judgment lien creditor who filed its judgment on April 15, Year 4" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A judgment lien creditor whose lien arises on April 15 is subordinate to a security interest perfected by filing on April 1. Under UCC §9-317(a)(2), a security interest is subordinate to a lien creditor only if the lien arises before the security interest is perfected (or before a financing statement is filed and the conditions of attachment are met), so the earlier-filed security interest prevails.\n\nThe holder of the mechanic's lien filed on March 15 is not subordinate, because that lien arose before the April 1 filing, so the later-filed security interest cannot take priority over it. The holder of the purchase money security interest filed on March 20 filed first and therefore has priority under §9-322(a)(1) (and a properly perfected inventory PMSI has special priority under §9-324(b)). A buyer in the ordinary course of business who purchases inventory on April 10 takes free of the seller's security interest even though it is perfected (§9-320(a)).",
+      "explanationJa": "4月15日に差押えの効力が生じた判決債権者（judgment lien creditor）は、4月1日に届出された担保権に劣後します。UCC §9-317(a)(2) により、担保権が差押債権者に劣後するのは、差押えが担保権の対抗要件具備（または届出と attach 要件の充足）より前に生じた場合だけなので、先に届出した担保権が優先します。\n\n3月15日に届け出られた修理業者の先取特権（mechanic's lien）は4月1日の届出より前に成立しているので、後から届出した担保権がこれに優先することはありません。3月20日に届出された PMSI は先に届出しているので §9-322(a)(1) で優先します（棚卸資産の PMSI には §9-324(b) の特別の優先もあります）。4月10日に在庫を買った通常の営業過程の買主は、対抗要件を備えた担保権であっても負担なく取得します（§9-320(a)）。",
+      "references": ["UCC §9-317(a)(2)", "UCC §9-322(a)(1)", "UCC §9-320(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Secured Transaction Q.16"
+    },
+    {
+      "id": "reg-bkr-043",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "In what order are the following obligations paid after a secured creditor rightfully sells the debtor's collateral after repossession?\nI. Debt owed to any junior security holder\nII. Secured party's reasonable sale expenses\nIII. Debt owed to the secured party",
+      "choices": [
+        { "label": "A", "text": "I, II, III" },
+        { "label": "B", "text": "II, I, III" },
+        { "label": "C", "text": "II, III, I" },
+        { "label": "D", "text": "III, II, I" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "UCC §9-615(a) sets the order for applying the cash proceeds of a disposition after default: first, the reasonable expenses of retaking, holding, preparing for disposition, and disposing of the collateral (including reasonable attorney's fees if provided for in the agreement); second, the obligation secured by the security interest under which the disposition is made; third, obligations secured by subordinate security interests whose holders made an authenticated demand before distribution. Any surplus goes to the debtor (§9-615(d)).\n\nTherefore the sale expenses come first, then the debt owed to the foreclosing secured party, then the debt owed to junior security holders. An order that pays junior security holders before the foreclosing secured party, or pays the secured debt before the sale expenses, is contrary to §9-615(a).",
+      "explanationJa": "UCC §9-615(a) は、債務不履行後の処分代金の充当順序を定めています。1番目に担保物の取戻し・保管・処分準備・処分の合理的な費用（契約に定めがあれば合理的な弁護士費用を含む）、2番目に処分を行った担保権者の被担保債務、3番目に分配前に認証された請求をした後順位担保権者の債務です。残余は債務者に返します（§9-615(d)）。\n\nしたがって「売却費用 → 担保権者への債務 → 後順位担保権者への債務」の順です。後順位担保権者を担保権者より先にする順序や、被担保債務を売却費用より先にする順序は §9-615(a) に反します。",
+      "references": ["UCC §9-615(a)", "UCC §9-615(d)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Secured Transaction Q.17"
+    },
+    {
+      "id": "reg-bkr-044",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Drew bought a computer for personal use from Hale Corp. for $3,000. Drew paid $2,000 in cash and signed a security agreement for the balance. Hale properly filed the security agreement. Drew defaulted in paying the balance of the purchase price. Hale asked Drew to pay the balance. When Drew refused, Hale peacefully repossessed the computer.\n\nUnder the UCC Secured Transactions Article, which of the following rights will Drew have?",
+      "choices": [
+        { "label": "A", "text": "Redeem the computer after Hale sells it" },
+        { "label": "B", "text": "Recover the sale price from Hale after Hale sells the computer" },
+        { "label": "C", "text": "Force Hale to sell the computer" },
+        { "label": "D", "text": "Prevent Hale from selling the computer" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hale holds a purchase money security interest in consumer goods, and Drew has paid $2,000 of the $3,000 price, which is more than 60% of the cash price. Under UCC §9-620(e), a secured party that has taken possession of such collateral must dispose of it within 90 days after taking possession (§9-620(f)) and may not keep it in full satisfaction of the debt (strict foreclosure), unless the debtor waives this right in an agreement authenticated after default (§9-624(b)). Drew can therefore force Hale to sell the computer.\n\nDrew's right to redeem under §9-623 exists only until the secured party has disposed of the collateral (or contracted to dispose of it), so Drew cannot redeem after the sale. Drew is not entitled to the sale price; the proceeds go first to expenses and the secured debt, and Drew receives only any surplus (§9-615). Drew cannot prevent the sale, because after default a secured party may take possession and dispose of the collateral in a commercially reasonable manner (§9-609, §9-610).",
+      "explanationJa": "Hale は消費財に対する購入代金担保権（PMSI）を持ち、Drew は代金 $3,000 のうち $2,000（現金価格の60%超）を支払っています。UCC §9-620(e) により、この場合に担保物を占有した担保権者は、占有から90日以内に処分しなければならず（§9-620(f)）、債務の代わりに担保物を取得すること（strict foreclosure）はできません。例外は、債務者が債務不履行後に認証した合意でこの権利を放棄した場合だけです（§9-624(b)）。したがって Drew は Hale に売却を強制できます。\n\n受戻し権（§9-623）は担保権者が処分（または処分の契約）をするまでしか行使できないので、売却後に受け戻すことはできません。売却代金は費用と被担保債務に充当され、Drew が受け取れるのは残余だけです（§9-615）。また債務不履行後、担保権者は担保物を取り戻して商業上合理的な方法で処分できるので（§9-609、§9-610）、Drew が売却を止めることもできません。",
+      "references": ["UCC §9-620(e)", "UCC §9-623", "UCC §9-615"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Secured Transaction Q.19"
+    },
+    {
+      "id": "reg-bkr-045",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Drew bought a computer for personal use from Hale Corp. for $3,000. Drew paid $2,000 in cash and signed a security agreement for the balance. Hale properly filed the security agreement. Drew defaulted in paying the balance of the purchase price. Hale asked Drew to pay the balance. When Drew refused, Hale peacefully repossessed the computer.\n\nUnder the UCC Secured Transactions Article, which of the following remedies will Hale have?",
+      "choices": [
+        { "label": "A", "text": "Obtain a deficiency judgment against Drew for the amount owed" },
+        { "label": "B", "text": "Sell the computer and retain any surplus over the amount owed" },
+        { "label": "C", "text": "Retain the computer over Drew's objection" },
+        { "label": "D", "text": "Sell the computer without notifying Drew" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under UCC §9-615(d)(2), if the proceeds of the disposition of collateral are insufficient to satisfy the secured obligation, the obligor is liable for any deficiency. Hale may therefore sell the computer and, if the proceeds do not cover the balance owed, obtain a deficiency judgment against Drew for the amount still owed.\n\nHale cannot keep any surplus; under §9-615(d)(1) the surplus must be paid to the debtor. Hale cannot retain the computer over Drew's objection, because Drew has paid more than 60% of the cash price of consumer goods subject to a PMSI, so Hale must dispose of it (§9-620(e)); acceptance in satisfaction also requires the debtor's consent or lack of objection (§9-620(a)). Hale cannot sell without notice, because a secured party must send the debtor an authenticated notification of disposition (§9-611(b)).",
+      "explanationJa": "UCC §9-615(d)(2) により、担保物の処分代金で被担保債務を弁済しきれない場合、債務者は不足額（deficiency）について責任を負います。したがって Hale はコンピュータを売却し、残額に足りなければ Drew に対して不足額の支払いを求める判決（deficiency judgment）を得ることができます。\n\n余剰が出た場合は債務者に支払わなければならず（§9-615(d)(1)）、Hale が保持することはできません。Drew は消費財の PMSI で現金価格の60%超を支払っているので Hale は処分しなければならず（§9-620(e)）、また債務の代わりの取得には債務者の同意または異議の不存在が必要なので（§9-620(a)）、Drew の異議を押し切って保持することもできません。さらに処分前には債務者に認証された通知を送る必要があり（§9-611(b)）、通知なしの売却もできません。",
+      "references": ["UCC §9-615(d)", "UCC §9-620(e)", "UCC §9-611(b)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Secured Transaction Q.20"
     }
   ]
 }
