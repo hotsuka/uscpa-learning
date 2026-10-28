@@ -7,7 +7,7 @@ export const IDLE_GAP_MS = 5 * 60 * 1000;
 // 1問目・中断明けの1問に加算する想定解答時間（MCQの標準ペース）
 export const DEFAULT_ANSWER_SECONDS = 90;
 
-export type PracticeSubject = "FAR" | "BAR";
+export type PracticeSubject = "FAR" | "BAR" | "REG";
 
 export interface PracticeSession {
   /** セッション開始時刻（ISO文字列）。学習記録の日付にはこの日付を使う */

@@ -11,6 +11,7 @@ import {
   barOwnAreaIIIIIQuestionSets,
   barQuestionSets,
 } from "@/data/questions/bar";
+import { regQuestionSets } from "@/data/questions/reg";
 import { allTBSQuestions, getTBSMockSetsBySubject } from "@/data/tbs";
 import { MOCK_EXAM_AREA_QUOTA, MOCK_EXAM_MINUTES } from "@/lib/mockExam";
 import type { FARQuestion } from "@/types/questions";
@@ -28,13 +29,14 @@ import {
 const publicFileExists = (publicPath: string): boolean =>
   existsSync(join(process.cwd(), "public", publicPath.replace(/^\//, "")));
 
-/** 全MCQ（FAR・BAR・初見模試用）。FARセットはBAR画面でも借りているが、1問1回だけ検査する */
+/** 全MCQ（FAR・BAR・REG・初見模試用）。FARセットはBAR画面でも借りているが、1問1回だけ検査する */
 export function allMcqQuestions(): FARQuestion[] {
   const sets = [
     ...farQuestionSets,
     ...barQuestionSets,
     ...barOwnAreaIIIIIQuestionSets,
     ...barFreshMockQuestionSets.map(({ set }) => set),
+    ...regQuestionSets,
   ];
   const seen = new Set<string>();
   return sets

@@ -598,7 +598,7 @@ export default function MaterialsPage() {
                 <div className="flex-1">
                   <h3 className="font-semibold text-blue-900">問題バンク</h3>
                   <p className="text-sm text-blue-700">
-                    FAR・BAR の四択演習（科目は画面上部で切替）
+                    FAR・BAR・REG の四択演習（科目は画面上部で切替）
                   </p>
                 </div>
                 <Badge variant="secondary" className="shrink-0">

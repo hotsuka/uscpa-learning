@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 
-const questionDirs = ['src/data/questions/far', 'src/data/questions/bar'];
+const questionDirs = ['src/data/questions/far', 'src/data/questions/bar', 'src/data/questions/reg'];
 
 // 解説内に「自信がない・計算が合わない」ことを示す疑念パターン
 const SUSPICIOUS = [
