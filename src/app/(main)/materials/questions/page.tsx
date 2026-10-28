@@ -81,6 +81,21 @@ const saveScopeFilter = (subject: Subject, value: ScopeFilter) => {
   localStorage.setItem(scopeStorageKey(subject), value)
 }
 
+const SUBJECT_STORAGE_KEY = "uscpa-question-bank-subject"
+const isBankSubject = (value: unknown): value is Subject =>
+  value === "FAR" || value === "BAR" || value === "REG"
+
+// 開いたときの科目。毎回FARから始めると、REGで動かしているタイマーの科目がFARに
+// 書き換わり、REGの演習がFARの記録として保存される（BARで起きた事故と同じ形）。
+// 動いているタイマーの科目を優先し、無ければ前回選んだ科目を使う
+const loadInitialSubject = (): Subject => {
+  const { status, subject } = useTimerStore.getState()
+  if (status !== "idle" && isBankSubject(subject)) return subject
+  if (typeof window === "undefined") return "FAR"
+  const stored = localStorage.getItem(SUBJECT_STORAGE_KEY)
+  return isBankSubject(stored) ? stored : "FAR"
+}
+
 // テーマ一覧に出す区分ラベル。範囲内のみのセットは null（FARの in / BARの未登録セット / REGの全セット）。
 // BAR画面でFARから借りたセットは、範囲区分ではなくBAR上のAreaを示す
 const getSetLabel = (subject: Subject, setId: string): string | null => {
@@ -99,6 +114,8 @@ const getSetLabel = (subject: Subject, setId: string): string | null => {
 export default function QuestionsPage() {
   // 科目切替。出題範囲フィルターは科目ごとのブループリント判定を使う
   const [subject, setSubject] = useState<Subject>("FAR")
+  // 科目の復元が終わるまではタイマーへ反映しない（初期値のFARで上書きしないため）
+  const [subjectRestored, setSubjectRestored] = useState(false)
   const questionSets = QUESTION_SETS_BY_SUBJECT[subject]
 
   const [selectedTopic, setSelectedTopic] = useState<string>("all")
@@ -324,13 +341,24 @@ export default function QuestionsPage() {
     return questions
   }, [questionSets, selectedTopic, difficulty, scopedQuestionIds, weaknessMode, weakTopics, neverCorrectOnly, everCorrectIds, frozenEverCorrectIds, unattemptedOnly, attemptedIds, frozenAttemptedIds])
 
+  // 前回の科目を復元する。SSRとの不一致を避けるためマウント後に行う
+  useEffect(() => {
+    const restored = loadInitialSubject()
+    if (restored !== "FAR") {
+      setSubject(restored)
+      setScopeFilter(loadScopeFilter(restored))
+    }
+    setSubjectRestored(true)
+  }, [])
+
   // 表示中の科目とトピックをタイマーに反映する
   // 全トピック表示のときは、前に選んだ別科目のトピック名が残らないよう null にする
   useEffect(() => {
+    if (!subjectRestored) return
     const set =
       selectedTopic !== "all" ? questionSets.find((s) => s.topic === selectedTopic) : undefined
     useTimerStore.getState().setQuestionBankContext(subject, set ? set.name : null)
-  }, [subject, selectedTopic, questionSets])
+  }, [subjectRestored, subject, selectedTopic, questionSets])
 
   // キーボードショートカット
   useEffect(() => {
@@ -558,6 +586,7 @@ export default function QuestionsPage() {
                     setSubject(s)
                     setSelectedTopic("all")
                     setScopeFilter(loadScopeFilter(s))
+                    localStorage.setItem(SUBJECT_STORAGE_KEY, s)
                   }}
                 >
                   {s}

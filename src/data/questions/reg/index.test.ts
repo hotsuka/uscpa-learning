@@ -3,6 +3,7 @@ import { join } from "path";
 import { describe, it, expect } from "vitest";
 import { farQuestionSets } from "@/data/questions/far";
 import { barPracticeQuestionSets } from "@/data/questions/bar";
+import { SUBJECT_SUBTOPICS } from "@/types";
 import { regQuestionSets } from "./index";
 
 describe("REG問題バンク", () => {
@@ -17,6 +18,11 @@ describe("REG問題バンク", () => {
   it("テーマ名が衝突しない（画面のテーマ選択は topic をキーにしている）", () => {
     const topics = regQuestionSets.map((set) => set.topic);
     expect(new Set(topics).size).toBe(topics.length);
+  });
+
+  it("タイマーのREGテーマ一覧がセット名と一致する（違うと記録のテーマが割れる）", () => {
+    // 演習中はセット名がタイマーのサブテーマに入るため、一覧に無い名前だと選択欄が空になる
+    expect(SUBJECT_SUBTOPICS.REG).toEqual(regQuestionSets.map((set) => set.name));
   });
 
   it("問題IDがFAR・BARを含めて重複しない（解答履歴は1つのstoreに問題ID単位で入るため）", () => {
