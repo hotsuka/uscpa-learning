@@ -2,7 +2,7 @@
   "id": "reg-trusts-gift-exempt",
   "name": "Trusts, Gift Taxes & Tax-Exempt Organizations",
   "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "questions": [
     {
       "id": "reg-tge-001",
@@ -932,6 +932,492 @@
       "references": ["IRC §652(b)", "IRC §662(b)", "IRC §1(e)"],
       "difficulty": "basic",
       "source": "Proactive AICPA過去問DB REG 2021 Recently Released Q.38 (AICPA No. 64307)"
+    },
+    {
+      "id": "reg-tge-039",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "If the executor of a decedent's estate elects the alternate valuation date and none of the property included in the gross estate has been sold or distributed, the estate assets must be valued as of how many months after the decedent's death?",
+      "choices": [
+        { "label": "A", "text": "12" },
+        { "label": "B", "text": "9" },
+        { "label": "C", "text": "6" },
+        { "label": "D", "text": "3" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under IRC §2032, the executor may elect to value the gross estate as of the alternate valuation date, which is six months after the decedent's death. Property sold, distributed, or otherwise disposed of within the six-month period is valued as of the date of disposition; because none of the property was sold or distributed here, all assets are valued six months after death. The election is available only if it reduces both the value of the gross estate and the estate tax (plus GST tax) liability (§2032(c)).\nThe 12-month figure has no role in the alternate valuation rules. Nine months is the original due date of the estate tax return (Form 706), not the valuation date. Three months is not a period used for alternate valuation.",
+      "explanationJa": "遺言執行者は代替評価日を選択でき、その日は死亡日から6か月後です（IRC §2032）。6か月以内に売却・分配された財産はその処分日で評価しますが、本問では売却・分配が無いので、すべての財産を死亡6か月後の時価で評価します。この選択は総遺産額と遺産税額（世代飛越税を含む）の両方が減る場合に限り認められます（§2032(c)）。\n12か月は代替評価とは関係のない期間です。9か月は遺産税申告書（Form 706）の当初の提出期限で、評価日ではありません。3か月も代替評価には使われません。",
+      "references": ["IRC §2032"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.33"
+    },
+    {
+      "id": "reg-tge-040",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Following are the fair market values of Walters' assets at the date of death. The land was bought by Walters with Walters' funds five years prior to death and held with Walters' sister as joint tenants with right of survivorship.\n\nAsset | Fair market value\nPersonal effects and jewelry | $100,000\nLand held in joint tenancy with sister | $700,000\n\nThe executor of Walters' estate did not elect the alternate valuation date. The amount includible as Walters' gross estate in the federal estate tax return is",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$450,000" },
+        { "label": "C", "text": "$700,000" },
+        { "label": "D", "text": "$800,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §2040(a), property held as joint tenants with right of survivorship by persons other than spouses is included in the decedent's gross estate in full, except to the extent the surviving joint tenant can show that he or she furnished part of the consideration. Walters bought the land entirely with Walters' own funds, so the full $700,000 is included. The personal effects and jewelry are included under §2033.\nGross estate = $100,000 personal effects and jewelry + $700,000 land = $800,000\nThe $100,000 amount omits the jointly held land, which passes outside probate but is still included under §2040. The $450,000 amount includes only half of the land; the automatic 50% rule of §2040(b) applies only to qualified joint interests between spouses, not to a joint tenancy with a sister. The $700,000 amount omits the personal effects and jewelry.",
+      "explanationJa": "配偶者以外との生存者権付き合有財産は、生存した合有者が対価を負担したことを立証できる部分を除き、全額が被相続人の総遺産に含まれます（IRC §2040(a)）。土地は全額 Walters の資金で購入されたので、$700,000 全額を含めます。身の回り品・宝飾品は§2033により含まれます。\n総遺産 = 身の回り品・宝飾品 $100,000 + 土地 $700,000 = $800,000\n$100,000 は合有の土地を外していますが、検認を経ずに移転する財産でも§2040で総遺産に入ります。$450,000 は土地の半分だけを入れた額で、50%だけ含める§2040(b)は配偶者間の合有に限られ、姉妹との合有には適用されません。$700,000 は身の回り品・宝飾品を外しています。",
+      "references": ["IRC §2040(a)", "IRC §2033"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.34"
+    },
+    {
+      "id": "reg-tge-041",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Income in respect of a cash basis decedent",
+      "choices": [
+        { "label": "A", "text": "Covers income earned before the taxpayer's death but not collected until after death" },
+        { "label": "B", "text": "Receives a stepped-up basis in the decedent's estate" },
+        { "label": "C", "text": "Must be included in the decedent's final income tax return" },
+        { "label": "D", "text": "Cannot receive capital gain treatment" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Income in respect of a decedent (IRD) under IRC §691 is income the decedent had earned or had a right to receive before death but that was not includible on the decedent's final return under the decedent's (cash) method of accounting. It is taxed to the estate or beneficiary who receives it, when it is received, and it keeps the same character it would have had in the decedent's hands.\nThe statement that IRD receives a stepped-up basis is incorrect: §1014(c) denies a basis step-up for IRD, which is why its full amount is taxed when collected. The statement that it must be included on the decedent's final return is incorrect because, for a cash basis decedent, uncollected income is by definition not reported on the final return. The statement that it cannot receive capital gain treatment is incorrect because IRD retains its character, so an item such as the unpaid balance of an installment sale of a capital asset produces capital gain to the recipient.",
+      "explanationJa": "死亡後に受領する被相続人の所得（IRD、IRC §691）とは、被相続人が生前に稼得し受け取る権利があったが、現金主義のため最終申告書に含まれなかった所得です。実際に受け取った遺産または受益者が、受け取った時に課税され、所得の性質は被相続人の手にあった場合と同じです。\nIRD は§1014(c)により取得価額のステップアップを受けないため、「ステップアップを受ける」は誤りです。現金主義の被相続人が未回収の所得は最終申告書に含まれないので、「最終申告書に含める」も誤りです。IRD は性質を引き継ぐため、資本資産の割賦販売の未回収分のようにキャピタルゲインとなるものもあり、「キャピタルゲインにならない」も誤りです。",
+      "references": ["IRC §691(a)", "IRC §1014(c)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.35"
+    },
+    {
+      "id": "reg-tge-042",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Rose, a calendar-year, cash-basis taxpayer who died in June was entitled to receive a $10,000 fee that had not been collected before the date of death. The executor of Rose's estate collected the full $10,000 in July. This $10,000 should appear in",
+      "choices": [
+        { "label": "A", "text": "Only the decedent's final individual income tax return" },
+        { "label": "B", "text": "Only the estate's fiduciary income tax return" },
+        { "label": "C", "text": "Only the estate tax return" },
+        { "label": "D", "text": "Both the fiduciary income tax return and the estate tax return" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The $10,000 fee is income in respect of a decedent under IRC §691: Rose earned it before death, but as a cash basis taxpayer she had not received it, so it is not reported on her final Form 1040. When the executor collects it, it is gross income of the estate and is reported on the estate's fiduciary income tax return (Form 1041). In addition, the right to receive the fee was property Rose owned at death, so its value is included in her gross estate under §2033 and appears on the estate tax return (Form 706). The double exposure is relieved by the §691(c) deduction for the estate tax attributable to the IRD.\nReporting the fee only on the final individual return is incorrect because a cash basis taxpayer reports income when received, and Rose never received it. Reporting it only on the fiduciary return ignores that the uncollected fee is an asset of the gross estate. Reporting it only on the estate tax return ignores that IRD is taxable income to the estate when collected.",
+      "explanationJa": "$10,000 の報酬は IRC §691 の IRD です。Rose は生前に稼得していましたが、現金主義で未受領だったため最終の Form 1040 には含めません。遺言執行者が回収した時点で遺産の総所得となり、遺産の受託者所得税申告書（Form 1041）に記載します。さらに、報酬を受け取る権利は死亡時に Rose が所有していた財産なので、§2033により総遺産に含まれ、遺産税申告書（Form 706）にも載ります。二重課税は、IRD に係る遺産税を所得から控除する§691(c)で調整されます。\n最終の個人申告書だけとするのは、現金主義では受領時に所得計上するのに Rose は受け取っていないので誤りです。受託者申告書だけとするのは、未回収の報酬が総遺産の財産であることを見落としています。遺産税申告書だけとするのは、IRD が回収時に遺産の課税所得となることを見落としています。",
+      "references": ["IRC §691(a)", "IRC §691(c)", "IRC §2033"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.36"
+    },
+    {
+      "id": "reg-tge-043",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following credits may be offset against the gross estate tax to determine the net estate tax of a U.S. citizen? (The second column is the credit for gift taxes paid on gifts made after 1976.)\n\nUnified credit | Gift tax credit (post-1976 gifts)",
+      "choices": [
+        { "label": "A", "text": "Yes | Yes" },
+        { "label": "B", "text": "No | No" },
+        { "label": "C", "text": "No | Yes" },
+        { "label": "D", "text": "Yes | No" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The unified credit (applicable credit amount) under IRC §2010 is subtracted from the tentative estate tax to determine the net estate tax, so it is allowed.\nGift taxes paid on gifts made after 1976 are not allowed as a credit. Instead, under §2001(b), post-1976 adjusted taxable gifts are added to the taxable estate to compute the tentative tax, and the gift tax payable on those gifts is then subtracted in computing the estate tax itself. Because this subtraction is built into the unified computation, there is no separate credit; the §2012 credit for gift tax applies only to gifts made before 1977.\nThe combinations that answer Yes for the post-1976 gift tax credit treat the §2001(b)(2) subtraction as a credit, which it is not. The combination answering No for the unified credit is incorrect because §2010 expressly allows that credit against the estate tax.",
+      "explanationJa": "統一税額控除（適用控除額、IRC §2010）は、遺産税の暫定税額から差し引いて納付すべき遺産税を求めるので、認められます。\n1976年より後の贈与について支払った贈与税は、税額控除としては認められません。§2001(b) では、1976年後の調整課税贈与額を課税遺産額に加算して暫定税額を計算し、その贈与について支払うべき贈与税を税額計算の中で差し引きます。この減算は統一税額計算に組み込まれているため別個の税額控除はなく、§2012の贈与税額控除は1977年前の贈与に限られます。\n1976年後の贈与税控除を Yes とする組み合わせは、§2001(b)(2) の減算を税額控除と取り違えています。統一税額控除を No とする組み合わせは、§2010が遺産税からの控除を明文で認めているので誤りです。",
+      "references": ["IRC §2010", "IRC §2001(b)", "IRC §2012"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.37"
+    },
+    {
+      "id": "reg-tge-044",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Under the provisions of a decedent's will, the following cash disbursements were made by the estate's executor:\nI. A charitable bequest to the American Red Cross\nII. Payment of the decedent's funeral expenses\nWhat deduction(s) is(are) allowable in determining the decedent's taxable estate?",
+      "choices": [
+        { "label": "A", "text": "I only" },
+        { "label": "B", "text": "II only" },
+        { "label": "C", "text": "Both I and II" },
+        { "label": "D", "text": "Neither I nor II" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Both disbursements are deductible from the gross estate in arriving at the taxable estate. A bequest to a qualified charity such as the American Red Cross is deductible without limit under IRC §2055. Funeral expenses are deductible under §2053(a)(1), along with administration expenses, claims against the estate, and unpaid mortgages.\nSelecting only the charitable bequest omits the §2053 deduction for funeral expenses. Selecting only the funeral expenses omits the unlimited §2055 charitable deduction. Selecting neither ignores both statutory deductions.",
+      "explanationJa": "どちらも総遺産から控除して課税遺産額を求めます。American Red Cross のような適格慈善団体への遺贈は IRC §2055により上限なく控除できます。葬儀費用は、管理費用・遺産に対する債務・未払抵当債務と同じく§2053(a)(1)で控除できます。\n慈善遺贈だけとすると§2053の葬儀費用控除が漏れ、葬儀費用だけとすると上限の無い§2055の慈善控除が漏れます。どちらも控除できないとするのは両方の規定を無視しています。",
+      "references": ["IRC §2055", "IRC §2053(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.38"
+    },
+    {
+      "id": "reg-tge-045",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Within how many months after the date of a decedent's death is the federal estate tax return (Form 706) due if no extension of time for filing is granted?",
+      "choices": [
+        { "label": "A", "text": "9" },
+        { "label": "B", "text": "6" },
+        { "label": "C", "text": "4½" },
+        { "label": "D", "text": "3½" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under IRC §6075(a), the estate tax return (Form 706) is due nine months after the date of the decedent's death. An automatic six-month extension of time to file is available by filing Form 4768 (Treas. Reg. §20.6081-1).\nSix months is the length of the extension (and of the alternate valuation period under §2032), not the original due date. The 4½-month and 3½-month periods are not filing deadlines for Form 706.",
+      "explanationJa": "遺産税申告書（Form 706）の提出期限は死亡日から9か月後です（IRC §6075(a)）。Form 4768 を提出すれば6か月の自動延長が受けられます（Treas. Reg. §20.6081-1）。\n6か月は延長期間（および§2032の代替評価日までの期間）であって当初の期限ではありません。4½か月や3½か月は Form 706 の期限とは関係ありません。",
+      "references": ["IRC §6075(a)", "Treas. Reg. §20.6081-1"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.39"
+    },
+    {
+      "id": "reg-tge-046",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Abby and Tom Kehls, both U.S. citizens, are married. All of their real and personal property is owned by them as tenants by the entirety or as joint tenants with right of survivorship. The gross estate of the first spouse to die",
+      "choices": [
+        { "label": "A", "text": "Includes 50% of the value of all property owned by the couple, regardless of which spouse furnished the original consideration" },
+        { "label": "B", "text": "Includes only the property that had been acquired with the funds of the deceased spouse" },
+        { "label": "C", "text": "Is governed by the federal statutory provisions relating to jointly held property, rather than by the decedent's interest in community property vested by state law, if the Kehls reside in a community property state" },
+        { "label": "D", "text": "Includes one-third of the value of all real estate owned by the Kehls, as the dower right in the case of the wife or curtesy right in the case of the husband" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under IRC §2040(b), a qualified joint interest, meaning property held by spouses as tenants by the entirety or as joint tenants with right of survivorship where the spouses are the only joint tenants, is treated as owned one-half by each spouse. The gross estate of the first spouse to die therefore includes 50% of the value of the property, regardless of which spouse furnished the consideration.\nIncluding only the property bought with the deceased spouse's funds describes the consideration-furnished test of §2040(a), which applies to joint tenancies with persons other than a spouse. The statement that federal joint-property rules override the decedent's state-law community property interest is incorrect: community property is included under §2033 according to the one-half interest vested in the decedent by state law. There is no one-third dower or curtesy rule for spousal joint property; §2040(b) fixes the inclusion at one-half.",
+      "explanationJa": "配偶者だけが合有者である夫婦全体保有（tenancy by the entirety）または生存者権付き合有の財産は「適格合有持分」とされ、各配偶者が2分の1ずつ所有するものとして扱われます（IRC §2040(b)）。したがって先に死亡した配偶者の総遺産には、どちらが購入資金を出したかにかかわらず財産の50%が含まれます。\n「死亡した配偶者の資金で取得した財産だけ」は、配偶者以外との合有に適用される§2040(a)の対価負担基準です。共有財産制の州では、被相続人の持分は州法上帰属する2分の1として§2033で含まれるので、連邦の合有財産の規定が優先するという記述は誤りです。配偶者間の合有財産について dower・curtesy による3分の1の規定はなく、§2040(b)で2分の1と決まっています。",
+      "references": ["IRC §2040(b)", "IRC §2033"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.40"
+    },
+    {
+      "id": "reg-tge-047",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Proceeds of a life insurance policy payable to the estate's executor, as the estate's representative, are",
+      "choices": [
+        { "label": "A", "text": "Includible in the decedent's gross estate only if the premiums had been paid by the insured" },
+        { "label": "B", "text": "Includible in the decedent's gross estate only if the policy was taken out within three years of the insured's death under the \"contemplation of death\" rule" },
+        { "label": "C", "text": "Never includible in the decedent's gross estate" },
+        { "label": "D", "text": "Always includible in the decedent's gross estate" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §2042(1), the gross estate includes the proceeds of insurance on the decedent's life receivable by the executor, that is, payable to or for the benefit of the estate. Inclusion does not depend on who owned the policy, who paid the premiums, or when the policy was purchased, so such proceeds are always includible.\nThe premium-payment condition is not part of §2042(1); premium payment by the insured is not a test for inclusion of proceeds payable to the estate. The three-year rule of §2035 applies to a transfer of a life insurance policy (or incidents of ownership) within three years of death, not to the date a policy was taken out, and it is irrelevant when the proceeds are payable to the executor. Proceeds payable to the executor cannot be never includible, because §2042(1) expressly includes them.",
+      "explanationJa": "被相続人を被保険者とする生命保険金のうち、遺言執行者が受け取るもの（遺産に支払われるもの）は総遺産に含まれます（IRC §2042(1)）。保険契約の所有者、保険料の負担者、加入時期にかかわらず含まれるので、常に総遺産に入ります。\n保険料を被保険者が負担した場合に限るという条件は§2042(1)にはありません。§2035の3年ルールは死亡前3年以内に保険契約（所有権の諸権利）を移転した場合の規定で、加入時期の規定ではなく、遺言執行者に支払われる保険金には関係しません。§2042(1)が明文で含めているため、「決して含まれない」も誤りです。",
+      "references": ["IRC §2042(1)", "IRC §2035(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.41"
+    },
+    {
+      "id": "reg-tge-048",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following is (are) deductible from a decedent's gross estate?\nI. Expenses of administering and settling the estate\nII. State inheritance or estate tax",
+      "choices": [
+        { "label": "A", "text": "I only" },
+        { "label": "B", "text": "II only" },
+        { "label": "C", "text": "Both I and II" },
+        { "label": "D", "text": "Neither I nor II" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Expenses of administering and settling the estate (executor's commissions, attorney's fees, court costs) are deductible under IRC §2053(a)(2). Estate, inheritance, legacy, or succession taxes actually paid to any state or the District of Columbia are deductible under §2058, which replaced the former state death tax credit for decedents dying after 2004. Both items are therefore deductible from the gross estate.\nSelecting only administration expenses omits the §2058 deduction for state death taxes. Selecting only the state tax omits the §2053 deduction for administration expenses. Selecting neither ignores both statutory deductions. (Administration expenses may alternatively be deducted on the estate's income tax return, but under §642(g) they cannot be deducted on both returns.)",
+      "explanationJa": "遺産の管理・清算費用（遺言執行者報酬、弁護士費用、裁判費用など）は IRC §2053(a)(2)で控除できます。州に実際に納付した遺産税・相続税は§2058で控除でき、これは2005年以降に死亡した者について従来の州遺産税額控除に代わった規定です。したがって両方とも総遺産から控除できます。\n管理費用だけとすると§2058の州税の控除が漏れ、州税だけとすると§2053の管理費用の控除が漏れます。どちらも控除できないとするのは両方の規定を無視しています。（管理費用は遺産の所得税申告書で控除することもできますが、§642(g)により両方で控除することはできません。）",
+      "references": ["IRC §2053(a)(2)", "IRC §2058", "IRC §642(g)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.42"
+    },
+    {
+      "id": "reg-tge-049",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "A complex trust is a trust that",
+      "choices": [
+        { "label": "A", "text": "Is exempt from payment of income tax since the tax is paid by the beneficiaries" },
+        { "label": "B", "text": "Invests only in corporate securities and is prohibited from engaging in short-term transactions" },
+        { "label": "C", "text": "Permits accumulation of current income, provides for charitable contributions, or distributes principal during the taxable year" },
+        { "label": "D", "text": "Must distribute income currently, but is prohibited from distributing principal during the taxable year" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A simple trust under IRC §651 is one that must distribute all of its income currently, makes no charitable contributions, and does not distribute principal during the year. Any trust that does not meet all of those conditions, because it may accumulate income, provides for charitable contributions, or distributes principal, is a complex trust taxed under §§661-663.\nThe statement that a complex trust is exempt from income tax is incorrect; a complex trust is a separate taxpayer that pays tax on income it accumulates and deducts only amounts distributed. The statement about investing only in corporate securities describes an investment restriction, which has nothing to do with the simple/complex classification. The statement that the trust must distribute income currently and may not distribute principal describes a simple trust.",
+      "explanationJa": "単純信託（IRC §651）は、所得を毎年すべて分配し、慈善寄附を行わず、その年に元本を分配しない信託です。所得の留保を認める、慈善寄附を予定する、元本を分配する、のいずれかに当たる信託は単純信託の要件を満たさず、複合信託として§661〜663で課税されます。\n複合信託は独立した納税者で、留保した所得には信託自身が課税され、分配額だけを控除するので、「所得税が免除される」は誤りです。社債などの投資対象の制限は単純・複合の区分と無関係です。「所得を毎年分配し、元本の分配は禁止」は単純信託の説明です。",
+      "references": ["IRC §651", "IRC §661"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.43"
+    },
+    {
+      "id": "reg-tge-050",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "The standard deduction for a trust or an estate in the fiduciary income tax return is",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$100" },
+        { "label": "C", "text": "$300" },
+        { "label": "D", "text": "$600" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under IRC §63(c)(6), which covers estates and trusts, the standard deduction is zero for an estate or trust. Instead of a standard deduction, a fiduciary is allowed a personal exemption under §642(b): $600 for an estate, $300 for a trust required to distribute all income currently, and $100 for any other trust.\nThe $100, $300, and $600 amounts are the §642(b) exemption amounts for a complex trust, a trust required to distribute all income currently, and an estate, respectively; they are exemptions, not a standard deduction.",
+      "explanationJa": "遺産と信託の標準控除はゼロです（IRC §63(c)(6)）。標準控除の代わりに§642(b)の人的控除があり、遺産は $600、所得を毎年全額分配すべき信託は $300、その他の信託は $100 です。\n$100・$300・$600 はそれぞれ複合信託・全額分配義務のある信託・遺産の§642(b)の人的控除額で、標準控除ではありません。",
+      "references": ["IRC §63(c)(6)(D)", "IRC §642(b)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.44"
+    },
+    {
+      "id": "reg-tge-051",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following fiduciary entities are required to use the calendar year as their taxable period for income tax purposes?\n\nEstates | Trusts (except those that are tax exempt)",
+      "choices": [
+        { "label": "A", "text": "Yes | Yes" },
+        { "label": "B", "text": "No | No" },
+        { "label": "C", "text": "Yes | No" },
+        { "label": "D", "text": "No | Yes" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §644, a trust (other than a tax-exempt trust or a charitable trust described in §4947(a)(1)) must use the calendar year as its taxable year. An estate is not subject to this rule; the executor may choose a calendar year or any fiscal year ending on the last day of a month within 12 months after the date of death.\nThe combinations answering Yes for estates are incorrect because §644 applies only to trusts and an estate may adopt a fiscal year. The combination answering No for trusts is incorrect because §644 requires non-exempt trusts to use the calendar year.",
+      "explanationJa": "信託（免税信託と§4947(a)(1)の慈善信託を除く）は暦年を課税年度としなければなりません（IRC §644）。遺産にはこの規定が適用されず、遺言執行者は暦年か、死亡後12か月以内のいずれかの月末に終わる事業年度を選べます。\n遺産を Yes とする組み合わせは、§644が信託にだけ適用され遺産は事業年度を選べるので誤りです。信託を No とする組み合わせは、§644が免税でない信託に暦年を義務付けているので誤りです。",
+      "references": ["IRC §644", "IRC §441"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.45"
+    },
+    {
+      "id": "reg-tge-052",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Raff died in Year 1 leaving her entire estate to her only child. Raff's will gave full discretion to the estate's executor with regard to distributions of income. For Year 2, the estate's distributable net income was $15,000, of which $9,000 was paid to the beneficiary. None of the income was tax exempt. What amount can be claimed on the estate's Year 2 fiduciary income tax return for the distributions deduction?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$6,000" },
+        { "label": "C", "text": "$9,000" },
+        { "label": "D", "text": "$15,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under IRC §661(a) and (c), an estate's distribution deduction equals the amounts properly paid, credited, or required to be distributed to beneficiaries, limited to distributable net income (reduced by tax-exempt income included in DNI). Because the executor had discretion, only the amount actually paid counts.\nDistribution deduction = lesser of amount distributed $9,000 or DNI $15,000 = $9,000\nThe $0 amount denies the deduction, but discretionary distributions actually paid qualify under §661(a)(2). The $6,000 amount is the undistributed DNI ($15,000 - $9,000) that remains taxable to the estate. The $15,000 amount is the full DNI, which is only the ceiling; the deduction cannot exceed the $9,000 actually distributed.",
+      "explanationJa": "遺産の分配控除は、受益者に実際に支払った（または分配が義務付けられた）額で、分配可能純所得（DNI、免税所得を除く）が上限です（IRC §661(a)(c)）。執行者に裁量があるので、実際に支払った額だけが対象です。\n分配控除 = 分配額 $9,000 と DNI $15,000 の小さい方 = $9,000\n$0 は控除を認めていませんが、実際に支払った裁量分配は§661(a)(2)で控除できます。$6,000 は分配されなかった DNI（$15,000 - $9,000）で、遺産自身に課税される部分です。$15,000 は DNI 全額で、上限にすぎず、実際の分配額 $9,000 を超えて控除はできません。",
+      "references": ["IRC §661(a)", "IRC §661(c)", "IRC §643(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.46"
+    },
+    {
+      "id": "reg-tge-053",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "A distribution from estate income, that was currently required, was made to the estate's sole beneficiary during its calendar year. The maximum amount of the distribution to be included in the beneficiary's gross income is limited to the estate's",
+      "choices": [
+        { "label": "A", "text": "Capital gain income" },
+        { "label": "B", "text": "Ordinary gross income" },
+        { "label": "C", "text": "Distributable net income" },
+        { "label": "D", "text": "Net investment income" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under IRC §662(a), a beneficiary includes in gross income the amounts required to be distributed and other amounts properly paid, but the total included cannot exceed the estate's distributable net income (DNI) as defined in §643(a). DNI acts as the ceiling on both the estate's distribution deduction (§661) and the beneficiary's income inclusion.\nCapital gain income is not the limit; capital gains allocated to corpus are generally excluded from DNI. Ordinary gross income is not the limit because DNI is computed after deducting expenses. Net investment income is a concept used for the §1411 surtax and for the investment interest limitation, not for measuring a beneficiary's taxable distribution.",
+      "explanationJa": "受益者は、分配が義務付けられた額とその他の分配額を総所得に含めますが、その合計は遺産の分配可能純所得（DNI、§643(a)）が上限です（IRC §662(a)）。DNI は遺産の分配控除（§661）と受益者の所得算入の両方の上限になります。\nキャピタルゲインは上限ではなく、元本に配分されたキャピタルゲインは原則として DNI から除かれます。総所得（通常の総収入）は費用控除前の額なので上限ではありません。純投資所得は§1411の追加税や投資利息控除の限度で使う概念で、受益者の課税分配額を測るものではありません。",
+      "references": ["IRC §662(a)", "IRC §643(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.47"
+    },
+    {
+      "id": "reg-tge-054",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "A distribution to an estate's sole beneficiary for the calendar Year 1 equaled $15,000, the amount currently required to be distributed by the will. The estate's Year 1 records were as follows:\n\nCategory | Amount | Description\nEstate income | $40,000 | Taxable interest\nEstate disbursements | $34,000 | Expenses attributable to taxable interest\n\nWhat amount of the distribution was taxable to the beneficiary?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$15,000" },
+        { "label": "C", "text": "$6,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under IRC §662(a)(1), a beneficiary includes a required distribution in gross income only to the extent of the estate's distributable net income (DNI). DNI under §643(a) is the estate's taxable income before the distribution deduction, here the taxable interest less the expenses attributable to it.\nDNI = $40,000 taxable interest - $34,000 expenses = $6,000\nTaxable to beneficiary = lesser of distribution $15,000 or DNI $6,000 = $6,000\nThe $40,000 amount is the estate's gross interest income and ignores both the expenses and the DNI ceiling. The $15,000 amount is the entire distribution; the $9,000 excess over DNI is a nontaxable distribution of corpus. The $0 amount ignores that required distributions carry out DNI to the beneficiary.",
+      "explanationJa": "受益者は、分配が義務付けられた額を、遺産の分配可能純所得（DNI）を上限として総所得に含めます（IRC §662(a)(1)）。DNI（§643(a)）は分配控除前の遺産の課税所得で、本問では課税利息からそれに対応する費用を差し引いた額です。\nDNI = 課税利息 $40,000 - 費用 $34,000 = $6,000\n受益者の課税額 = 分配額 $15,000 と DNI $6,000 の小さい方 = $6,000\n$40,000 は遺産の利息収入の総額で、費用も DNI の上限も考慮していません。$15,000 は分配額全額で、DNI を超える $9,000 は課税されない元本の分配です。$0 は、義務的分配によって DNI が受益者へ移ることを無視しています。",
+      "references": ["IRC §662(a)(1)", "IRC §643(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.48"
+    },
+    {
+      "id": "reg-tge-055",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Mill, a cash basis taxpayer, died on January 15, Year 1. In Year 1, the estate executor made the required periodic distribution of $8,000 from estate income to Mill's sole heir. The following pertains to the estate's income and disbursements in Year 1:\n\nCategory | Amount | Description\nEstate income | $40,000 | Taxable interest\nEstate income | $20,000 | Net LT capital gains allocable to corpus\nEstate disbursements | $10,000 | Admin expenses allocable to taxable income\n\nFor the calendar Year 1, what was the estate's distributable net income (DNI)?",
+      "choices": [
+        { "label": "A", "text": "$30,000" },
+        { "label": "B", "text": "$40,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$60,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under IRC §643(a), distributable net income is the estate's taxable income computed without the distribution deduction and the personal exemption, and excluding capital gains that are allocated to corpus and not paid, credited, or required to be distributed to beneficiaries.\nDNI = $40,000 taxable interest - $10,000 administrative expenses = $30,000\nThe $20,000 of net long-term capital gains is allocated to corpus, so it is excluded under §643(a)(3).\nThe $40,000 amount omits the deduction for administrative expenses. The $50,000 amount ($40,000 + $20,000 - $10,000) wrongly includes the capital gains allocated to corpus. The $60,000 amount is total gross income, including the corpus capital gains and ignoring the expenses.",
+      "explanationJa": "分配可能純所得（DNI）は、分配控除と人的控除を差し引く前の遺産の課税所得から、元本に配分され受益者に分配されないキャピタルゲインを除いた額です（IRC §643(a)）。\nDNI = 課税利息 $40,000 - 管理費用 $10,000 = $30,000\n長期キャピタルゲイン $20,000 は元本に配分されるので、§643(a)(3)により DNI から除きます。\n$40,000 は管理費用を差し引いていません。$50,000（$40,000 + $20,000 - $10,000）は元本に配分されたキャピタルゲインを誤って含めています。$60,000 は元本のキャピタルゲインを含めた総収入で、費用も差し引いていません。",
+      "references": ["IRC §643(a)", "IRC §643(a)(3)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.49"
+    },
+    {
+      "id": "reg-tge-056",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Mill, a cash basis taxpayer, died on January 15, Year 1. In Year 1, the estate executor made the required periodic distribution of $8,000 from estate income to Mill's sole heir. The following pertains to the estate's income and disbursements in Year 1:\n\nCategory | Amount | Description\nEstate income | $40,000 | Taxable interest\nEstate income | $20,000 | Net LT capital gains allocable to corpus\nEstate disbursements | $10,000 | Admin expenses allocable to taxable income\n\nMill's executor does not intend to file an extension request for the estate fiduciary income tax return. By what date must the executor file the Form 1041, U.S. Fiduciary Income Tax Return, for the estate's calendar Year 1?",
+      "choices": [
+        { "label": "A", "text": "Wednesday, March 15, Year 2" },
+        { "label": "B", "text": "Monday, April 17, Year 2" },
+        { "label": "C", "text": "Thursday, June 15, Year 2" },
+        { "label": "D", "text": "Friday, September 15, Year 2" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under IRC §6072(a), Form 1041 for a calendar-year estate is due on the 15th day of the fourth month after the close of the taxable year, which is April 15. Under §7503, when the due date falls on a Saturday, Sunday, or legal holiday, the return is timely if filed on the next business day; in the year described, that moves the deadline to Monday, April 17, Year 2.\nMarch 15 is the due date for calendar-year partnership (Form 1065) and S corporation (Form 1120-S) returns, not Form 1041. June 15 is not a filing deadline for Form 1041. September 15 is the extended due date for partnership and S corporation returns; an estate that requests the automatic extension for Form 1041 has until September 30, and Mill's executor is not requesting an extension in any case.",
+      "explanationJa": "暦年の遺産の Form 1041 の期限は、課税年度終了後4か月目の15日、すなわち4月15日です（IRC §6072(a)）。期限が土曜・日曜・法定休日に当たる場合は翌営業日に提出すれば期限内とされ（§7503）、本問の年はYear 2 の4月17日（月曜日）が期限になります。\n3月15日は暦年のパートナーシップ（Form 1065）と S 法人（Form 1120-S）の期限で、Form 1041 の期限ではありません。6月15日は Form 1041 の期限ではありません。9月15日はパートナーシップと S 法人の延長後の期限で、Form 1041 の自動延長後の期限は9月30日です。そもそも本問の執行者は延長を申請しません。",
+      "references": ["IRC §6072(a)", "IRC §7503"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.50"
+    },
+    {
+      "id": "reg-tge-057",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Under the unified rate schedule,",
+      "choices": [
+        { "label": "A", "text": "Lifetime taxable gifts are taxed on a noncumulative basis." },
+        { "label": "B", "text": "Transfers at death are taxed on a noncumulative basis." },
+        { "label": "C", "text": "Lifetime taxable gifts and transfers at death are taxed on a cumulative basis." },
+        { "label": "D", "text": "The gift tax rates are 5% higher than the estate tax rates." }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The gift tax and the estate tax share a single unified rate schedule (IRC §2001(c), §2502(a)). Both taxes are computed cumulatively: the gift tax for the current year is computed on all taxable gifts made in the current and prior periods, less the tax on prior-period gifts (§2502(a)), and the estate tax is computed on the taxable estate plus adjusted taxable gifts made after 1976, less gift tax payable on those gifts (§2001(b)). Therefore lifetime taxable gifts and transfers at death are taxed on a cumulative basis.\n\nThe statement that lifetime taxable gifts are taxed on a noncumulative basis is wrong because each year's gift tax takes all prior taxable gifts into account. The statement that transfers at death are taxed on a noncumulative basis is wrong because adjusted taxable gifts are added to the taxable estate. The statement that gift tax rates are 5% higher than estate tax rates is wrong because one rate schedule applies to both taxes.",
+      "explanationJa": "贈与税と遺産税は統一税率表（IRC §2001(c)、§2502(a)）を共有し、どちらも累積ベースで課税されます。贈与税は当年と過去の課税贈与の合計に税率を当て、過去分の税額を差し引いて計算します。遺産税も課税遺産に1976年後の調整課税贈与を加えて計算し、その贈与に係る贈与税を差し引きます。したがって「生前の課税贈与と死亡時の移転はいずれも累積ベースで課税される」が正しい記述です。\n\n生前贈与を非累積で課税するという記述は、過去の贈与を合算する仕組みと矛盾します。死亡時の移転を非累積で課税するという記述も、調整課税贈与を加算する点と矛盾します。贈与税率が遺産税率より5%高いという記述は、同一の税率表を使うことと矛盾します。",
+      "references": ["IRC §2001(b)", "IRC §2001(c)", "IRC §2502(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.52"
+    },
+    {
+      "id": "reg-tge-058",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "The generation-skipping transfer tax is imposed",
+      "choices": [
+        { "label": "A", "text": "Instead of the gift tax" },
+        { "label": "B", "text": "Instead of the estate tax" },
+        { "label": "C", "text": "As a separate tax in addition to the gift and estate taxes" },
+        { "label": "D", "text": "On transfers of future interest to beneficiaries who are more than one generation above the donor's generation" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The generation-skipping transfer (GST) tax under IRC §2601 is a separate tax imposed on every generation-skipping transfer (a direct skip, taxable termination, or taxable distribution). It applies in addition to any gift tax or estate tax due on the same transfer, at the maximum estate tax rate times the inclusion ratio (§2641), subject to the GST exemption (§2631).\n\nThe GST tax does not replace the gift tax or the estate tax; a direct skip made by gift can owe both gift tax and GST tax, and a direct skip at death can owe both estate tax and GST tax. The description of transfers to beneficiaries more than one generation above the donor is wrong because a skip person is a beneficiary two or more generations below the transferor (§2613), and the tax is not limited to future interests.",
+      "explanationJa": "世代跳躍移転税（GST税、IRC §2601）は、直接スキップ・課税終了・課税分配といった世代跳躍移転に課される独立の税で、同じ移転に対する贈与税や遺産税に「上乗せ」して課されます。税率は遺産税の最高税率に包含比率を掛けたもの（§2641）で、GST非課税枠（§2631）があります。\n\n贈与税や遺産税の「代わりに」課されるわけではなく、贈与による直接スキップでは贈与税とGST税の両方が生じ得ます。また、スキップ・パーソンは移転者より2世代以上「下」の受益者であり（§2613）、「上」の世代への将来権の移転という記述は誤りです。",
+      "references": ["IRC §2601", "IRC §2613", "IRC §2641"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.53"
+    },
+    {
+      "id": "reg-tge-059",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "During Year 1, Morgan transferred a corporate bond with a face amount and fair market value of $20,000 to a trust for the benefit of her 16-year old child. Annual interest on this bond is $2,000, which is to be accumulated in the trust and distributed to the child on reaching the age of 21. The bond is then to be distributed to the donor or her successor-in-interest in liquidation of the trust. Present value of the total interest to be received by the child is $8,710. The amount of the gift that is excludable from taxable gifts is",
+      "choices": [
+        { "label": "A", "text": "$20,000" },
+        { "label": "B", "text": "$10,000" },
+        { "label": "C", "text": "$8,710" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The annual gift tax exclusion applies only to gifts of present interests (IRC §2503(b); Treas. Reg. §25.2503-3). The only gift here is the child's income interest, worth $8,710 (the bond itself reverts to Morgan or her successor, so it is not a gift). Because the interest must be accumulated and is not paid to the child until age 21, the child has no unrestricted right to the immediate use or enjoyment of the income, so the gift is a future interest.\n\nThe §2503(c) exception for gifts to minors does not apply because the trust does not permit the income to be expended for the child before age 21; it requires accumulation. Excludable amount = $0.\n\nThe $8,710 amount is the value of the gift, but it is a future interest and is not excludable. The $10,000 amount corresponds to the annual exclusion of earlier years (the exclusion is indexed for inflation and is higher today), but no annual exclusion is available for a future interest in any year. The $20,000 amount is the value of the bond, which is not given to the child because it returns to the donor.",
+      "explanationJa": "贈与税の年間非課税枠は「現在権（present interest）」の贈与にしか使えません（IRC §2503(b)、Treas. Reg. §25.2503-3）。本問で子に贈与されたのは利息の受益権（現在価値 $8,710）だけで、債券本体は信託終了時に贈与者側へ戻るため贈与ではありません。利息は信託内で積み立てられ21歳まで子に支払われないので、子は直ちに使用・享受する権利を持たず、将来権の贈与になります。\n\n未成年者向けの §2503(c) の例外も、21歳前に子のために支出できる定めがなく積立が義務付けられているため適用されません。よって非課税となる額は $0 です。\n\n$8,710 は贈与額そのものですが将来権のため除外できません。$10,000 は過去の年度の年間非課税枠の額で（非課税枠は物価調整され現在はより高額です）、どの年度でも将来権には使えません。$20,000 は債券の価額で、贈与者へ戻るため子への贈与ではありません。",
+      "references": ["IRC §2503(b)", "IRC §2503(c)", "Treas. Reg. §25.2503-3"],
+      "difficulty": "advanced",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.54"
+    },
+    {
+      "id": "reg-tge-060",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following requires filing a gift tax return, if the transfer exceeds the available annual gift tax exclusion?",
+      "choices": [
+        { "label": "A", "text": "Medical expenses paid directly to a physician on behalf of an individual unrelated to the donor" },
+        { "label": "B", "text": "Tuition paid directly to an accredited university on behalf of an individual unrelated to the donor" },
+        { "label": "C", "text": "Payments for college books, supplies, and dormitory fees on behalf of an individual unrelated to the donor" },
+        { "label": "D", "text": "Campaign expenses paid to a political organization" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "IRC §2503(e) excludes from taxable gifts, without limit and regardless of the relationship to the donor, amounts paid directly to a qualifying educational organization for tuition and amounts paid directly to a provider for medical care. The exclusion covers tuition only; books, supplies, and dormitory (room and board) fees are not qualified transfers. Payments for college books, supplies, and dormitory fees are therefore ordinary gifts, and a gift tax return (Form 709) is required when they exceed the annual exclusion (§6019).\n\nMedical expenses paid directly to a physician and tuition paid directly to an accredited university are qualified transfers under §2503(e), so no return is required for them. Transfers to a political organization for its use are not subject to gift tax under §2501(a)(4), so campaign contributions do not require a return.",
+      "explanationJa": "IRC §2503(e) により、教育機関へ直接支払う授業料と医療提供者へ直接支払う医療費は、金額の上限なく、受贈者との関係を問わず課税贈与から除外されます。ただし対象は授業料だけで、教科書・用品・寮費は含まれません。そのため大学の教科書・用品・寮費の支払いは通常の贈与となり、年間非課税枠を超えれば贈与税申告書（Form 709）の提出が必要です（§6019）。\n\n医師へ直接支払った医療費と大学へ直接支払った授業料は §2503(e) の適格移転なので申告は不要です。政治団体への移転は §2501(a)(4) により贈与税の対象外で、選挙資金の支払いも申告は不要です。",
+      "references": ["IRC §2503(e)", "IRC §2501(a)(4)", "IRC §6019"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Partnerships, Estate, Trust Q.56"
+    },
+    {
+      "id": "reg-tge-061",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following credits may be offset against the gross estate tax to determine the net estate tax of a U.S. Citizen?\nUnified credit | Credit for gift taxes paid on gifts made after 1976",
+      "choices": [
+        { "label": "A", "text": "Yes | Yes" },
+        { "label": "B", "text": "No | No" },
+        { "label": "C", "text": "No | Yes" },
+        { "label": "D", "text": "Yes | No" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The unified (applicable) credit under IRC §2010 is subtracted from the estate tax. Gift taxes on gifts made after 1976 are not a credit. Instead, under §2001(b), adjusted taxable gifts are added to the taxable estate to compute the tentative tax, and the gift tax payable on those post-1976 gifts is then subtracted in arriving at the estate tax. The §2012 credit for gift tax applies only to gifts made before 1977.\nYes | Yes and No | Yes treat post-1976 gift taxes as a credit, which they are not. No | No and No | Yes deny the unified credit, which every U.S. citizen's estate may claim.",
+      "explanationJa": "統一税額控除（IRC §2010）は遺産税から差し引けます。一方、1976年より後の贈与に係る贈与税は「税額控除」ではありません。§2001(b) により調整課税贈与を課税遺産に加算して仮の税額を計算し、その贈与について支払うべき贈与税を差し引く仕組みです。贈与税の税額控除（§2012）は1977年より前の贈与だけが対象です。\nしたがって統一税額控除は Yes、1976年後の贈与税の税額控除は No です。",
+      "references": ["IRC §2010", "IRC §2001(b)", "IRC §2012"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Property Taxation Q.29"
+    },
+    {
+      "id": "reg-tge-062",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Under the provisions of a decedent's will, the following cash disbursements were made by the estate's executor:\nI. A charitable bequest to the American Red Cross\nII. Payment of the decedent's funeral expenses\nWhat deduction(s) is(are) allowable in determining the decedent's taxable estate?",
+      "choices": [
+        { "label": "A", "text": "I only" },
+        { "label": "B", "text": "II only" },
+        { "label": "C", "text": "Both I and II" },
+        { "label": "D", "text": "Neither I nor II" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The taxable estate equals the gross estate less allowable deductions. IRC §2055 allows an unlimited deduction for bequests to qualified charitable organizations such as the American Red Cross, and IRC §2053(a)(1) allows a deduction for funeral expenses. Both disbursements are therefore deductible.\n\"I only\" overlooks the funeral expense deduction, \"II only\" overlooks the charitable deduction, and \"Neither I nor II\" denies both.",
+      "explanationJa": "課税遺産額は総遺産額から控除額を差し引いて求めます。適格な慈善団体（米国赤十字など）への遺贈は IRC §2055 により上限なく控除でき、葬儀費用は §2053(a)(1) により控除できます。したがって両方とも控除可能です。",
+      "references": ["IRC §2055(a)", "IRC §2053(a)(1)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Property Taxation Q.30"
+    },
+    {
+      "id": "reg-tge-063",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Proceeds of a life insurance policy payable to the estate's executor, as the estate's representative, are",
+      "choices": [
+        { "label": "A", "text": "Includible in the decedent's gross estate only if the premiums had been paid by the insured" },
+        { "label": "B", "text": "Includible in the decedent's gross estate only if the policy was taken out within three years of the insured's death under the \"contemplation of death\" rule" },
+        { "label": "C", "text": "Never includable in the decedent's gross estate" },
+        { "label": "D", "text": "Always includable in the decedent's gross estate" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "IRC §2042(1) includes in the gross estate the proceeds of insurance on the decedent's life that are receivable by the executor (as representative of the estate), regardless of who paid the premiums, who owned the policy, or when it was purchased.\nThe premium-payment test is not a condition for §2042(1) inclusion. The three-year \"contemplation of death\" rule (§2035) concerns transfers of a policy within three years of death, not proceeds payable to the executor. Proceeds payable to the executor are never excluded.",
+      "explanationJa": "被相続人の生命保険金のうち、遺産の代表者としての遺言執行者が受け取るものは、保険料の負担者・契約者・加入時期にかかわらず、IRC §2042(1) によりすべて総遺産に含まれます。\n保険料の負担者は §2042(1) の要件ではありません。死亡前3年以内のルール（§2035）は保険契約の移転に関するもので、執行者が受け取る保険金には関係しません。執行者受取りの保険金が除外されることはありません。",
+      "references": ["IRC §2042(1)", "IRC §2035"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Property Taxation Q.31"
+    },
+    {
+      "id": "reg-tge-064",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Following are the fair market values of Wald's assets at the date of death. The land was bought by Wald with Wald's funds five years prior to death and was held with Wald's sister as joint tenants with right of survivorship.\n\nAsset | Fair market value\nPersonal effects and jewelry | $150,000\nLand held in JTWROS with sister | $1,800,000\n\nThe executor of Wald's estate did not elect the alternate valuation date. The amount includible as Wald's gross estate in the federal estate tax return is",
+      "choices": [
+        { "label": "A", "text": "$150,000" },
+        { "label": "B", "text": "$1,150,000" },
+        { "label": "C", "text": "$1,800,000" },
+        { "label": "D", "text": "$1,950,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §2040(a), property held as joint tenants with right of survivorship by persons other than spouses is included in the decedent's gross estate in full, except to the extent the survivor can show contribution to the purchase price. Wald furnished all of the funds, so the entire $1,800,000 is included. Personal effects are included under §2033.\nGross estate = $150,000 + $1,800,000 = $1,950,000\nThe $150,000 amount omits the jointly held land. The $1,150,000 amount includes only half of the land, which is the rule for spouses' qualified joint interests under §2040(b), not for a sister. The $1,800,000 amount omits the personal effects and jewelry.",
+      "explanationJa": "配偶者以外との生存者権付き共有（JTWROS）の財産は、IRC §2040(a) により、生存者が購入資金を拠出したと証明できる部分を除き、全額が総遺産に含まれます。Wald が全額を負担しているので土地 $1,800,000 は全額算入され、身の回り品も §2033 により算入されます。\n総遺産 = $150,000 + $1,800,000 = $1,950,000\n$150,000 は土地を落とした額、$1,150,000 は土地の半分だけを算入した額で、これは配偶者間の共有（§2040(b)）の扱いです。$1,800,000 は身の回り品を落としています。",
+      "references": ["IRC §2040(a)", "IRC §2033"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Property Taxation Q.32"
+    },
+    {
+      "id": "reg-tge-065",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Under the unified rate schedule,",
+      "choices": [
+        { "label": "A", "text": "Lifetime taxable gifts are taxed on a noncumulative basis." },
+        { "label": "B", "text": "Transfers at death are taxed on a noncumulative basis." },
+        { "label": "C", "text": "Lifetime taxable gifts and transfers at death are taxed on a cumulative basis." },
+        { "label": "D", "text": "The gift tax rates are 5% higher than the estate tax rates." }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The gift tax and estate tax share a single unified rate schedule (IRC §2001(c)), and both are computed cumulatively. Gift tax for a year is computed on all taxable gifts made in prior periods plus the current year, less the tax on prior gifts (§2502(a)). At death, adjusted taxable gifts are added to the taxable estate to compute the tentative estate tax (§2001(b)). Lifetime gifts and transfers at death are therefore taxed on a cumulative basis.\nThe statements that lifetime gifts or transfers at death are taxed on a noncumulative basis contradict this cumulative computation. Gift tax rates are not 5% higher than estate tax rates; the same rate schedule applies to both.",
+      "explanationJa": "贈与税と遺産税は同一の統一税率表（IRC §2001(c)）を使い、どちらも累積ベースで計算します。各年の贈与税は過去分を含む累計の課税贈与に対する税額から過去分の税額を差し引いて求め（§2502(a)）、死亡時には調整課税贈与を課税遺産に加算して税額を計算します（§2001(b)）。\n生前贈与や死亡時の移転を非累積で課税するという記述は誤りです。贈与税率が遺産税率より5%高いという事実もなく、同じ税率表が適用されます。",
+      "references": ["IRC §2001(b)", "IRC §2001(c)", "IRC §2502(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Property Taxation Q.33"
     }
   ]
 }
