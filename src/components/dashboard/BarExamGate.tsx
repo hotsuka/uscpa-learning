@@ -86,6 +86,9 @@ export function BarExamGate() {
 
   const examDateMismatch = examDates.BAR !== BAR_EXAM_DATE;
 
+  // 受験日を過ぎたら役目を終えるので出さない（次の科目のダッシュボードの邪魔になる）
+  if (status.daysUntilExam < 0) return null;
+
   return (
     <Card>
       <CardHeader className="pb-2">
