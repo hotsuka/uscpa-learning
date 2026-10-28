@@ -37,6 +37,7 @@ import {
   getThisWeekMonday,
 } from "@/lib/holidays"
 import { BackupRestoreCard } from "@/components/settings/BackupRestoreCard"
+import { PracticeLogSyncCard } from "@/components/settings/PracticeLogSyncCard"
 
 export default function SettingsPage() {
   // 設定ストアから値を取得
@@ -717,6 +718,9 @@ export default function SettingsPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* 問題演習ログのNotion送信 */}
+        <PracticeLogSyncCard />
 
         {/* バックアップ・復元 */}
         <BackupRestoreCard />
