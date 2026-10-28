@@ -58,6 +58,7 @@ const labelOfOriginalKey = (key: string): string => {
 const labelOfSnapshotType = (item: IndexedDbBackupItem): string => {
   if (item.type === "manual") return "手動"
   if (item.type === "pre-migrate") return item.label ? `移行前(${item.label})` : "移行前"
+  if (item.type === "pre-import") return "Notion取り込み前"
   return "自動"
 }
 

@@ -26,13 +26,15 @@ export const MANUAL_INFIX = ".manual.";
 export type BackupType = "pre-migrate" | "manual";
 
 // IndexedDBに保存するバックアップの種別
-export type SnapshotType = "auto" | "manual" | "pre-migrate";
+// pre-import はNotionから他の端末の回答を取り込む直前の分。自動同期で頻繁に増えるため、移行前とは別に数える
+export type SnapshotType = "auto" | "manual" | "pre-migrate" | "pre-import";
 
 // 種別ごとに残す世代数（データの種類ごとに数える）
 export const MAX_GENERATIONS: Record<SnapshotType, number> = {
   auto: 7,
   manual: 10,
   "pre-migrate": 10,
+  "pre-import": 10,
 };
 
 // 主要配列のキー名（件数の表示用）。配列を持たないデータは含めない
