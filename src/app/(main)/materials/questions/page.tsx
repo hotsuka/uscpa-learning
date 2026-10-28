@@ -20,6 +20,7 @@ import { useTimer } from "@/hooks/useTimer"
 import { useTimerStore } from "@/stores/timerStore"
 import { farQuestionSets } from "@/data/questions/far"
 import { barPracticeQuestionSets, getBarAreaForSet } from "@/data/questions/bar"
+import { regQuestionSets } from "@/data/questions/reg"
 import { getFarScopeForSet, FAR_SCOPE_LABELS } from "@/data/questions/far/farScope"
 import {
   getBarScopeForSet,
@@ -51,7 +52,17 @@ type DifficultyFilter = "all" | "basic" | "intermediate" | "advanced"
 // 1セット内に範囲内と範囲外が混在するため）
 type ScopeFilter = "all" | "in" | "out"
 
-type Subject = "FAR" | "BAR"
+type Subject = "FAR" | "BAR" | "REG"
+
+// 科目ごとの演習対象セット。BARは Area I（BAR問題バンク）に Area II/III（FARセットを参照）を加えた全体
+const QUESTION_SETS_BY_SUBJECT = {
+  FAR: farQuestionSets,
+  BAR: barPracticeQuestionSets,
+  REG: regQuestionSets,
+} satisfies Record<Subject, typeof farQuestionSets>
+
+// 模試モードがある科目（REGは模試の出題配分が未整備）
+const hasMockExam = (subject: Subject) => subject !== "REG"
 
 // 出題範囲フィルターは科目ごとに保存する。共通の1キーだと、BAR画面で選んだ「範囲のみ」が
 // FAR画面では「FAR範囲のみ」として効き、BAR論点のFARセット（デリバティブ等）が0問になるため
@@ -70,9 +81,11 @@ const saveScopeFilter = (subject: Subject, value: ScopeFilter) => {
   localStorage.setItem(scopeStorageKey(subject), value)
 }
 
-// テーマ一覧に出す区分ラベル。範囲内のみのセットは null（FARの in / BARの未登録セット）。
+// テーマ一覧に出す区分ラベル。範囲内のみのセットは null（FARの in / BARの未登録セット / REGの全セット）。
 // BAR画面でFARから借りたセットは、範囲区分ではなくBAR上のAreaを示す
 const getSetLabel = (subject: Subject, setId: string): string | null => {
+  // REGは過去問DBの「現行科目での分類：REG」の問題だけなので、全セットを範囲内として扱う
+  if (subject === "REG") return null
   if (subject === "FAR") {
     const { scope } = getFarScopeForSet(setId)
     return scope === "in" ? null : FAR_SCOPE_LABELS[scope]
@@ -86,8 +99,7 @@ const getSetLabel = (subject: Subject, setId: string): string | null => {
 export default function QuestionsPage() {
   // 科目切替。出題範囲フィルターは科目ごとのブループリント判定を使う
   const [subject, setSubject] = useState<Subject>("FAR")
-  // BARは Area I（BAR問題バンク）に Area II/III（FARセットを参照）を加えた全体
-  const questionSets = subject === "BAR" ? barPracticeQuestionSets : farQuestionSets
+  const questionSets = QUESTION_SETS_BY_SUBJECT[subject]
 
   const [selectedTopic, setSelectedTopic] = useState<string>("all")
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all")
@@ -132,9 +144,11 @@ export default function QuestionsPage() {
           continue
         }
         const scope =
-          subject === "BAR"
-            ? getBarScopeForQuestion(set.id, q.id)
-            : getFarScopeForSet(set.id).scope
+          subject === "REG"
+            ? "in"
+            : subject === "BAR"
+              ? getBarScopeForQuestion(set.id, q.id)
+              : getFarScopeForSet(set.id).scope
         const isOut = scope === "out"
         if (scopeFilter === "in" ? !isOut : isOut) ids.add(q.id)
       }
@@ -469,18 +483,20 @@ export default function QuestionsPage() {
           <div>
             <h1 className="text-2xl font-bold mb-2">{subject} 問題バンク</h1>
             <p className="text-sm text-muted-foreground">
-              {subject === "BAR"
-                ? "Proactive過去問ベースの演習"
-                : "AICPA公開問題ベースの追加演習"}
+              {subject === "FAR"
+                ? "AICPA公開問題ベースの追加演習"
+                : "Proactive過去問ベースの演習"}
               （全{totalQuestions}問）
             </p>
           </div>
-          <Button asChild variant="outline" size="sm" className="shrink-0">
-            <Link href={`/materials/questions/mock?subject=${subject}`}>
-              <ClipboardCheck className="w-4 h-4 mr-1.5" />
-              模試モード
-            </Link>
-          </Button>
+          {hasMockExam(subject) && (
+            <Button asChild variant="outline" size="sm" className="shrink-0">
+              <Link href={`/materials/questions/mock?subject=${subject}`}>
+                <ClipboardCheck className="w-4 h-4 mr-1.5" />
+                模試モード
+              </Link>
+            </Button>
+          )}
         </div>
 
         {/* 統計カード */}
@@ -533,7 +549,7 @@ export default function QuestionsPage() {
           <CardContent className="p-4 space-y-3">
             {/* 科目切替 */}
             <div className="flex gap-2">
-              {(["FAR", "BAR"] as const).map((s) => (
+              {(["FAR", "BAR", "REG"] as const).map((s) => (
                 <Button
                   key={s}
                   variant={subject === s ? "default" : "outline"}
@@ -546,7 +562,7 @@ export default function QuestionsPage() {
                 >
                   {s}
                   <span className="ml-1 text-xs opacity-70">
-                    {(s === "BAR" ? barPracticeQuestionSets : farQuestionSets).reduce(
+                    {QUESTION_SETS_BY_SUBJECT[s].reduce(
                       (sum, set) => sum + set.questions.length,
                       0,
                     )}
