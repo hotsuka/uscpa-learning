@@ -2,7 +2,7 @@
   "id": "reg-corporate-taxation",
   "name": "Corporate Taxation",
   "topic": "Corporate Taxation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "reg-corp-001",
@@ -2883,6 +2883,1023 @@
       "references": [],
       "difficulty": "intermediate",
       "source": "Proactive AICPA過去問DB REG Corporate Taxation Q.97"
+    },
+    {
+      "id": "reg-corp-097",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "In calculating the tax of a corporation for a short period, which of the following processes is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Divide current-year income by prior-year income, then multiply the result by prior-year tax."
+        },
+        {
+          "label": "B",
+          "text": "Compute tax on short-period income, then multiply the result by 12 divided by the number of months in the short period."
+        },
+        {
+          "label": "C",
+          "text": "Determine the average taxable income for the past three years, then multiply the result by the number of months in the short period divided by 12."
+        },
+        {
+          "label": "D",
+          "text": "Annualize income and calculate the tax on annualized income, then multiply the computed tax by the number of months in the short period divided by 12."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §443(b)(1), when a short period return is required because of a change in annual accounting period, taxable income for the short period is annualized: it is multiplied by 12 and divided by the number of months in the short period. Tax is computed on the annualized income, and the resulting tax is then multiplied by the number of months in the short period divided by 12.\n\nDividing current-year income by prior-year income and applying the ratio to prior-year tax is not a method found in the Code.\nComputing tax on the short-period income and then multiplying by 12/months reverses the process and would overstate the tax.\nAveraging three years of income is not the annualization method.",
+      "explanationJa": "会計期間の変更により短期間の申告が必要な場合、短期間の課税所得を年換算（×12÷短期間の月数）し、その年換算所得に対して税額を計算し、その税額に（短期間の月数÷12）を掛けて短期間の税額とする（IRC §443(b)(1)）。\n前年所得との比率を前年税額に掛ける方法や、過去3年平均を使う方法は規定に無い。短期間所得の税額に12/月数を掛ける方法は順序が逆で、税額を過大にする。",
+      "references": ["IRC §443(b)(1)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2011 Recently Released Q.8 (AICPA No. 9848)"
+    },
+    {
+      "id": "reg-corp-098",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Simon, a C corporation, had a deficit in accumulated earnings and profits of $50,000 at the beginning of the year and had current earnings and profits of $10,000. At year end, Simon paid a dividend of $15,000 to its sole shareholder. What amount of the dividend is reported as income?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$ 5,000" },
+        { "label": "C", "text": "$ 10,000" },
+        { "label": "D", "text": "$ 15,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A distribution from a C corporation is a dividend to the extent of earnings and profits (IRC §316(a)). A distribution is first treated as made out of current E&P, computed at year end without regard to any deficit in accumulated E&P. Accumulated E&P is used only after current E&P is exhausted, and a deficit in accumulated E&P does not reduce current E&P.\n\nDividend from current E&P = $10,000\nRemaining distribution = $15,000 - $10,000 = $5,000 (return of capital, then capital gain if it exceeds stock basis)\nDividend income = $10,000\n\nThe $0 amount incorrectly nets the accumulated deficit against current E&P.\nThe $5,000 amount is the portion of the distribution in excess of current E&P, which is not a dividend.\nThe $15,000 amount treats the entire distribution as a dividend even though total E&P available is only $10,000.",
+      "explanationJa": "C法人の分配は、E&P（利益積立金）の範囲内で配当となる（IRC §316(a)）。まず当期E&P（期末時点で算定し、累積E&Pの欠損とは相殺しない）から分配されたものとし、当期E&Pを使い切った後に累積E&Pが充当される。\n当期E&P $10,000 → 配当 $10,000。残り $5,000 は資本の払戻し（株式の取得価額を超えれば譲渡益）。\n$0 は累積欠損を当期E&Pと相殺しており誤り。$5,000 は当期E&Pを超える部分で配当ではない。$15,000 は全額を配当としている。",
+      "references": ["IRC §316(a)", "Treas. Reg. §1.316-2"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2011 Recently Released Q.19 (AICPA No. 9959)"
+    },
+    {
+      "id": "reg-corp-099",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Stone owns 100% of an S corporation and materially participates in its operations. The stock basis at the beginning of the year is $5,000. During the year, the corporation makes a distribution of $3,500 and passes through a loss from operations of $2,000 for the year. What loss can Stone deduct on Stone's personal tax return?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$1,500" },
+        { "label": "C", "text": "$2,000" },
+        { "label": "D", "text": "$5,500" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "An S corporation shareholder's stock basis is adjusted in this order: increased by income items, decreased by distributions, then decreased by nondeductible expenses and losses (IRC §1368(d), Treas. Reg. §1.1367-1(f)). A shareholder may deduct losses only to the extent of stock basis (plus debt basis) remaining after these adjustments (IRC §1366(d)(1)).\n\nBeginning stock basis = $5,000\nLess distribution = ($3,500)\nBasis available for loss = $1,500\nDeductible loss = lesser of $2,000 loss or $1,500 basis = $1,500 (the remaining $500 is suspended)\n\nThe $0 amount ignores the basis remaining after the distribution.\nThe $2,000 amount applies the loss before the distribution, which reverses the required ordering.\nThe $5,500 amount adds the distribution to the loss; a distribution is not a deductible loss.",
+      "explanationJa": "S法人株主の株式取得価額（stock basis）は、①所得項目で増額 → ②分配で減額 → ③損失で減額、の順で調整し、損失は残った basis の範囲内でのみ控除できる（IRC §1366(d)(1)、§1368(d)）。\n期首 $5,000 − 分配 $3,500 = $1,500 → 損失 $2,000 のうち控除できるのは $1,500（残り $500 は繰越）。\n$0 は分配後に残る basis を無視している。$2,000 は分配より先に損失を充てており順序が逆。$5,500 は分配を損失に加えているが、分配は損失ではない。",
+      "references": [
+        "IRC §1366(d)(1)",
+        "IRC §1368(d)",
+        "Treas. Reg. §1.1367-1(f)"
+      ],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2011 Recently Released Q.34 (AICPA No. 9974)"
+    },
+    {
+      "id": "reg-corp-100",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "On January 1 of the current year, Locke Corp., an accrual-basis calendar-year C corporation, had $30,000 in accumulated earnings and profits. For the current year, Locke had current earnings and profits of $20,000, and made two $40,000 cash distributions to its shareholders, one in April and one in September. What amount of the distributions is classified as dividend income to Locke's shareholders?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$20,000" },
+        { "label": "C", "text": "$50,000" },
+        { "label": "D", "text": "$80,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Distributions are dividends to the extent of E&P (IRC §316). Current E&P is allocated pro rata to all distributions made during the year. Accumulated E&P is then allocated to distributions in chronological order (Treas. Reg. §1.316-2(b), (c)).\n\nCurrent E&P allocated to each distribution = $20,000 x ($40,000 / $80,000) = $10,000\nApril distribution: $10,000 current + $30,000 accumulated = $40,000 dividend\nSeptember distribution: $10,000 current + $0 accumulated (exhausted) = $10,000 dividend\nTotal dividend income = $40,000 + $10,000 = $50,000\n\nThe $0 amount ignores both current and accumulated E&P.\nThe $20,000 amount counts only current E&P and ignores accumulated E&P.\nThe $80,000 amount treats the entire distributions as dividends although total E&P is only $50,000.",
+      "explanationJa": "分配は E&P の範囲内で配当となる（IRC §316）。当期E&Pは全分配に分配額の比で按分し、累積E&Pは日付の早い分配から順に充当する（Treas. Reg. §1.316-2）。\n当期E&Pの按分 = $20,000 × 1/2 = 各 $10,000。4月分 = $10,000 + 累積 $30,000 = $40,000、9月分 = $10,000 + 累積 $0 = $10,000、配当合計 $50,000。\n$0 は E&P を無視している。$20,000 は当期E&Pのみで累積E&Pを考慮していない。$80,000 は分配全額を配当としているが、E&Pの合計は $50,000 しかない。",
+      "references": ["IRC §316(a)", "Treas. Reg. §1.316-2"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2012 Recently Released Q.1 (AICPA No. 89801)"
+    },
+    {
+      "id": "reg-corp-101",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "For year 2, Quest Corp., an accrual-basis calendar-year C corporation, had an $8,000 unexpired charitable contribution carryover from year 1. Quest's year 2 taxable income before the deduction for charitable contributions was $200,000. On December 12, year 2, Quest's board of directors authorized a $15,000 cash contribution to a qualified charity, which was made on January 6, year 3. What is the maximum allowable deduction that Quest may take as a charitable contribution on its year 2 income tax return?",
+      "choices": [
+        { "label": "A", "text": "$23,000" },
+        { "label": "B", "text": "$20,000" },
+        { "label": "C", "text": "$15,000" },
+        { "label": "D", "text": "$8,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A corporation's charitable contribution deduction is limited to 10% of taxable income computed without the charitable deduction, the dividends-received deduction, NOL carrybacks, and capital loss carrybacks (IRC §170(b)(2)). An accrual-basis corporation may deduct a contribution authorized by its board during the year if it is paid within 3½ months after year end (IRC §170(a)(2)); the January 6, year 3 payment qualifies. Unused carryovers from prior years are added to the current-year contributions, subject to the same limit.\n\n10% limit = $200,000 x 10% = $20,000\nContributions available = $15,000 (year 2) + $8,000 (carryover) = $23,000\nMaximum deduction = $20,000\n\nFor tax years beginning after December 31, 2025, corporate contributions are deductible only to the extent they exceed 1% of taxable income ($2,000). The contributions remaining after this floor ($15,000 - $2,000 + $8,000 = $21,000) still exceed the 10% limit, so the deduction remains $20,000.\n\nThe $23,000 amount ignores the 10% limitation.\nThe $15,000 amount deducts only the year 2 contribution and ignores the $8,000 carryover.\nThe $8,000 amount deducts only the carryover and disregards the board-authorized contribution paid within 3½ months.",
+      "explanationJa": "法人の寄附金控除は、寄附金控除・受取配当控除等の前の課税所得の10%が上限（IRC §170(b)(2)）。発生主義の法人は、年内に取締役会が承認し年度末後3か月半以内に支払った寄附金をその年度に控除できる（§170(a)(2)）。1月6日の支払いは要件を満たす。前年からの繰越額も同じ上限の中で控除する。\n上限 = $200,000 × 10% = $20,000、対象額 = $15,000 + 繰越 $8,000 = $23,000 → 控除額 $20,000。\n2026年以降開始の年度は課税所得の1%（$2,000）を超える部分のみ控除できるが、$15,000 − $2,000 + $8,000 = $21,000 でなお10%上限を超えるので、控除額は $20,000 のまま。\n$23,000 は10%上限を無視。$15,000 は繰越額を漏らしている。$8,000 は年度末後に支払った当期分を認めていない。",
+      "references": ["IRC §170(b)(2)", "IRC §170(a)(2)", "IRC §170(d)(2)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2012 Recently Released Q.3 (AICPA No. 89803)"
+    },
+    {
+      "id": "reg-corp-102",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "For which of the following entities is the owner's basis increased by the owner's share of profits and decreased by the owner's share of losses but is not affected by the entity's bank loan increases or decreases?",
+      "choices": [
+        { "label": "A", "text": "S corporation" },
+        { "label": "B", "text": "C corporation" },
+        { "label": "C", "text": "Partnership" },
+        { "label": "D", "text": "Limited liability company" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An S corporation shareholder's basis in stock is increased by the shareholder's share of income and decreased by losses and distributions (IRC §1367), but it is not increased by the corporation's borrowing from third parties. Only loans made directly by the shareholder to the corporation create debt basis. By contrast, a partner's (or an LLC member's, when the LLC is taxed as a partnership) basis includes a share of entity liabilities, so increases or decreases in the entity's bank loans change the owner's basis (IRC §752).\n\nA C corporation shareholder's stock basis is not adjusted for the corporation's profits or losses at all.\nA partnership's increase or decrease in bank loans changes the partners' bases under §752.\nA limited liability company taxed as a partnership is treated the same way as a partnership, so entity debt affects the members' bases.",
+      "explanationJa": "S法人の株主の株式 basis は、所得の持分で増え、損失・分配で減るが（IRC §1367）、法人が第三者から借り入れても増えない（株主が直接法人に貸し付けた場合にのみ debt basis が生じる）。一方、パートナーシップ（およびパートナーシップ課税の LLC）では、事業体の負債の持分が持分の basis に含まれるので、借入の増減で basis が変わる（§752）。\nC法人の株主の basis は法人の損益で調整されない。パートナーシップと LLC は借入の増減が basis に影響する。",
+      "references": ["IRC §1367(a)", "IRC §752(a)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2012 Recently Released Q.27 (AICPA No. 89827)"
+    },
+    {
+      "id": "reg-corp-103",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A sole proprietorship incorporated on January 1 and elected S corporation status. The owner contributed the following assets to the S corporation:\n\nAsset | Basis | Fair market value\nMachinery | $ 7,000 | $ 8,000\nBuilding | 11,000 | 100,000\nCash | 1,000 | 1,000\n\nTwo years later, the corporation sold the machinery for $4,000 and the building for $110,000. The machinery had accumulated depreciation of $2,000, and the building had accumulated depreciation of $1,000. What is the built-in gain recognized on the sale?",
+      "choices": [
+        { "label": "A", "text": "$100,000" },
+        { "label": "B", "text": "$99,000" },
+        { "label": "C", "text": "$6,000" },
+        { "label": "D", "text": "$0" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The built-in gains tax of IRC §1374 applies only to an S corporation that was formerly a C corporation, or that acquired assets from a C corporation in a carryover basis transaction, with respect to appreciation that arose while the assets were held by a C corporation. Here the sole proprietorship incorporated on January 1 and elected S corporation status from the start, so the corporation was never a C corporation, and the assets were contributed by an individual, not acquired from a C corporation.\n\nBuilt-in gain recognized = $0\n\nThe $100,000 and $99,000 amounts treat the building's appreciation as built-in gain, but §1374 does not apply to a corporation that has always been an S corporation.\nThe $6,000 amount likewise assumes that a built-in gain computation applies to the assets sold; because §1374 does not apply, no built-in gain is recognized on either asset. The gains on the sales pass through to the shareholder as S corporation items, without any corporate-level built-in gains tax.",
+      "explanationJa": "§1374 の含み益課税（built-in gains tax）は、かつて C法人だった S法人、または C法人から簿価引継ぎで資産を取得した S法人に対し、C法人時代に生じた含み益について課される（IRC §1374）。本問は個人事業を1月1日に法人化し、当初から S法人を選択しているので、一度も C法人だったことがなく、資産も個人から拠出されている。\n認識する built-in gain = $0。\n$100,000・$99,000 は建物の値上がりを built-in gain としているが、当初から S法人なら §1374 は適用されない。$6,000 も同様に §1374 の対象ではない。売却益は通常の S法人の項目として株主にパススルーされる。",
+      "references": ["IRC §1374(a)", "IRC §1374(d)(8)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2012 Recently Released Q.30 (AICPA No. 89830)"
+    },
+    {
+      "id": "reg-corp-104",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Azure, a C corporation, reports the following:\n\nPretax book income of $543,000.\n\nDepreciation on the tax return is $20,000 greater than depreciation on the financial statements.\n\nRent income reportable on the tax return is $36,000 greater than rent income per the financial statements.\n\nFines for pollution appear as a $10,000 expense in the financial statements.\n\nInterest earned on municipal bonds is $25,000.\n\nWhat is Azure's taxable income?",
+      "choices": [
+        { "label": "A", "text": "$528,000" },
+        { "label": "B", "text": "$543,000" },
+        { "label": "C", "text": "$544,000" },
+        { "label": "D", "text": "$559,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Taxable income is reconciled from pretax book income by adjusting for book/tax differences (Schedule M-1).\n\nPretax book income: $543,000\nExcess tax depreciation (deduct): - $20,000\nExcess rent income taxable on return (add): + $36,000\nPollution fines, not deductible under IRC §162(f) (add back): + $10,000\nMunicipal bond interest, excluded under IRC §103 (subtract): - $25,000\nTaxable income = $544,000\n\nThe $528,000 amount ($543,000 + $10,000 - $25,000) makes only the permanent adjustments and ignores the temporary differences for depreciation and rent. The $543,000 amount makes no adjustments to book income. The $559,000 amount ($543,000 - $20,000 + $36,000) makes only the temporary adjustments and ignores the permanent differences for the fines and municipal bond interest.",
+      "explanationJa": "税引前会計利益から申告上の差異（Schedule M-1）を調整して課税所得を求める。\n\n税引前会計利益 $543,000\n税務上の減価償却の超過分 −$20,000\n申告上の受取家賃の超過分 ＋$36,000\n公害の罰金（§162(f)で損金不算入）＋$10,000\n地方債利息（§103で非課税）−$25,000\n課税所得 = $544,000\n\n$528,000（$543,000＋$10,000−$25,000）は永久差異だけを調整し、減価償却と家賃の一時差異を無視している。$543,000は何も調整していない。$559,000（$543,000−$20,000＋$36,000）は一時差異だけを調整し、罰金と地方債利息の永久差異を無視している。",
+      "references": ["IRC §162(f)", "IRC §103", "IRC §167"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2013 Recently Released Q.8 (AICPA No. 90208)"
+    },
+    {
+      "id": "reg-corp-105",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Which of the following cannot be amortized for tax purposes?",
+      "choices": [
+        { "label": "A", "text": "Incorporation costs" },
+        { "label": "B", "text": "Temporary directors’ fees" },
+        { "label": "C", "text": "Stock issuance costs" },
+        { "label": "D", "text": "Organizational meeting costs" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under IRC §248, a corporation may deduct (up to the statutory limit) and amortize over 180 months its organizational expenditures, which are costs incident to the creation of the corporation, chargeable to capital account, and of a character that would be amortizable over the life of a corporation with a limited life. Treas. Reg. §1.248-1(b) lists legal fees for drafting the charter and bylaws, fees paid to the state for incorporation, necessary accounting services, expenses of temporary directors, and costs of organizational meetings as organizational expenditures.\n\nCosts of issuing or selling stock (commissions, professional fees, printing) are specifically excluded from organizational expenditures; they reduce the proceeds of the stock issuance and cannot be deducted or amortized.\n\nIncorporation costs, temporary directors' fees, and organizational meeting costs are all organizational expenditures that qualify for the §248 deduction and amortization.",
+      "explanationJa": "IRC §248により、法人は組織費（法人設立に付随し資本勘定に計上される費用）を限度額まで即時控除し、残額を180か月で償却できる。Treas. Reg. §1.248-1(b)は、定款・付属定款作成の弁護士費用、州への設立手数料、必要な会計サービス、臨時取締役の費用、設立総会の費用を組織費として挙げている。\n\n株式の発行・販売費用（手数料、専門家報酬、印刷費等）は組織費から明示的に除外され、発行手取額の減額として扱われるため、控除も償却もできない。\n\n設立費用、臨時取締役の報酬、設立総会の費用はいずれも組織費として控除・償却の対象となる。",
+      "references": ["IRC §248", "Treas. Reg. §1.248-1(b)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2013 Recently Released Q.9 (AICPA No. 90209)"
+    },
+    {
+      "id": "reg-corp-106",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A corporate taxpayer plans to switch from the FIFO method to the LIFO method of valuing inventory. Which of the following statements is accurate regarding the use of the LIFO method?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "In periods of rising prices, the LIFO method results in a lower cost of sales and higher taxable income, when compared to the FIFO method."
+        },
+        {
+          "label": "B",
+          "text": "The taxpayer is required to receive permission each year from the Internal Revenue Service to continue the use of the LIFO method."
+        },
+        {
+          "label": "C",
+          "text": "The LIFO method can be used for tax purposes even if the FIFO method is used for financial statement purposes."
+        },
+        {
+          "label": "D",
+          "text": "Under the LIFO method, the inventory on hand at the end of the year is treated as being composed of the earliest acquired goods."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under the LIFO (last-in, first-out) method of IRC §472, the most recently acquired goods are treated as sold first, so the inventory remaining on hand at year end is treated as consisting of the earliest acquired goods.\n\nIn periods of rising prices, LIFO produces a higher (not lower) cost of sales and lower taxable income than FIFO. Once LIFO is adopted, the taxpayer continues to use it without annual IRS permission; permission is needed only to change methods. Under the LIFO conformity rule of IRC §472(c), a taxpayer using LIFO for tax purposes must also use LIFO for financial statement reporting to owners and creditors, so it cannot use FIFO for financial statements.",
+      "explanationJa": "IRC §472の後入先出法（LIFO）では、最後に取得した物品から先に販売されたものとみなすので、期末在庫は最も早く取得した物品で構成されているものとして扱われる。\n\n物価上昇局面ではLIFOはFIFOより売上原価が大きく（小さくではなく）、課税所得は小さくなる。いったん採用すれば毎年IRSの許可を得る必要はなく、許可が要るのは方法の変更時のみ。§472(c)のLIFO一致要件により、税務上LIFOを使うなら株主・債権者向けの財務諸表でもLIFOを使う必要があり、財務諸表でFIFOを使うことはできない。",
+      "references": ["IRC §472(a)", "IRC §472(c)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2013 Recently Released Q.16 (AICPA No. 90216)"
+    },
+    {
+      "id": "reg-corp-107",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "The sole shareholder of an S corporation contributed equipment with a fair market value of $20,000 and a basis of $6,000 subject to $12,000 liability. What amount is the gain, if any, that the shareholder must recognize?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$6,000" },
+        { "label": "C", "text": "$8,000" },
+        { "label": "D", "text": "$12,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A transfer of property to a corporation by a shareholder who is in control (at least 80%) immediately afterward is generally tax-free under IRC §351. The sole shareholder owns 100% of the S corporation, so the control requirement is met. However, under IRC §357(c), if the liabilities assumed by the corporation exceed the total adjusted basis of the property transferred, the excess is recognized as gain.\n\nLiability assumed: $12,000\nAdjusted basis of equipment: $6,000\nRecognized gain = $12,000 - $6,000 = $6,000\n\nThe $0 amount ignores the §357(c) excess-liability rule. The $8,000 amount is the difference between the $20,000 fair market value and the $12,000 liability, which is not the measure of gain. The $12,000 amount treats the entire liability as boot, but only the excess over basis is taxed.",
+      "explanationJa": "支配株主（直後に80%以上を保有）による法人への資産拠出は、IRC §351により原則として非課税。唯一の株主は100%保有なので支配要件を満たす。ただし§357(c)により、法人が引き受けた負債が拠出資産の調整後ベーシス合計を超える場合、その超過額は利得として認識される。\n\n引受負債 $12,000\n設備の調整後ベーシス $6,000\n認識利得 = $12,000 − $6,000 = $6,000\n\n$0は§357(c)を無視している。$8,000は時価$20,000と負債$12,000の差額で、利得の算定方法ではない。$12,000は負債全額をboot扱いしているが、課税されるのはベーシス超過分のみ。",
+      "references": ["IRC §351(a)", "IRC §357(c)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2013 Recently Released Q.25 (AICPA No. 90225)"
+    },
+    {
+      "id": "reg-corp-108",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "The selection of an accounting method for tax purposes by a newly incorporated C corporation",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Is made on the initial tax return by using the chosen method"
+        },
+        {
+          "label": "B",
+          "text": "Is made by filing a request for a private letter ruling from the IRS"
+        },
+        {
+          "label": "C",
+          "text": "Must first be approved by the company’s board of directors"
+        },
+        {
+          "label": "D",
+          "text": "Must be disclosed in the company’s organizing documents"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under Treas. Reg. §1.446-1(e)(1), a taxpayer filing its first return may adopt any permissible method of accounting simply by using that method in computing taxable income on its initial return. No advance IRS approval is required for the initial choice; IRS consent is required only to change a method later (IRC §446(e)).\n\nA private letter ruling is not needed to adopt an initial method. Federal tax law does not require board approval of the method. There is no requirement that the method be disclosed in the corporation's organizing documents.",
+      "explanationJa": "Treas. Reg. §1.446-1(e)(1)により、初めて申告する納税者は、初年度の申告書で課税所得の計算にその方法を用いるだけで、認められた会計方法を採用できる。当初の選択にIRSの事前承認は不要で、承認が要るのは後で変更する場合（§446(e)）のみ。\n\n当初の方法の採用にプライベート・レター・ルーリングは不要。税法上、取締役会の承認も要求されない。定款等の設立書類に記載する必要もない。",
+      "references": ["IRC §446(a)", "Treas. Reg. §1.446-1(e)(1)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2013 Recently Released Q.33 (AICPA No. 90233)"
+    },
+    {
+      "id": "reg-corp-109",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Beech Corp., an accrual-basis, calendar-year S corporation, has been an S corporation since its inception. At the beginning of the current year, Gold owned 50% of the 100 issued shares of Beech stock, and had a $3,000 tax basis in the Beech stock. During the current year, Beech had $200,000 in net business income and $4,000 in Oak County municipal bond interest income. Beech made no distributions to its shareholders. What was Gold's tax basis in Beech stock at year end?",
+      "choices": [
+        { "label": "A", "text": "$102,000" },
+        { "label": "B", "text": "$103,000" },
+        { "label": "C", "text": "$104,000" },
+        { "label": "D", "text": "$105,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §1366 and §1367(a)(1), an S corporation shareholder's stock basis is increased by the shareholder's pro rata share of all income items, including nonseparately computed business income and separately stated tax-exempt income such as municipal bond interest. Basis is decreased by distributions, but none were made.\n\nBeginning basis: $3,000\nShare of business income (50% x $200,000): + $100,000\nShare of tax-exempt interest (50% x $4,000): + $2,000\nEnding basis = $105,000\n\nThe $102,000 amount ($100,000 + $2,000) omits the $3,000 beginning basis. The $103,000 amount ($3,000 + $100,000) omits the $2,000 share of tax-exempt interest. The $104,000 amount ($100,000 + $4,000) omits the beginning basis and allocates all $4,000 of tax-exempt interest instead of Gold's 50% share.",
+      "explanationJa": "IRC §1366・§1367(a)(1)により、S法人株主の株式ベーシスは、非個別計算の事業所得や地方債利息などの非課税所得を含むすべての所得項目の持分相当額だけ増加する。分配があれば減少するが、本問では分配はない。\n\n期首ベーシス $3,000\n事業所得の持分（50%×$200,000）＋$100,000\n非課税利息の持分（50%×$4,000）＋$2,000\n期末ベーシス = $105,000\n\n$102,000（$100,000＋$2,000）は期首ベーシス$3,000を落としている。$103,000（$3,000＋$100,000）は非課税利息の持分$2,000を加算していない。$104,000（$100,000＋$4,000）は期首ベーシスを落とし、非課税利息を持分50%でなく全額$4,000加算している。",
+      "references": ["IRC §1366(a)(1)", "IRC §1367(a)(1)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2014 Recently Released Q.19 (AICPA No. 90569)"
+    },
+    {
+      "id": "reg-corp-110",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "What is the maximum amount of capital losses in excess of capital gains that a C corporation may deduct in a year?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$3,000" },
+        { "label": "C", "text": "$5,000" },
+        { "label": "D", "text": "$10,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under IRC §1211(a), a C corporation may deduct capital losses only to the extent of capital gains. Net capital losses cannot offset ordinary income at all; instead, they are carried back 3 years and forward 5 years as short-term capital losses under IRC §1212(a)(1).\n\nThe $3,000 amount is the annual limit on net capital losses that an individual (not a corporation) may deduct against ordinary income. Neither $5,000 nor $10,000 is a capital loss allowance for a corporation.",
+      "explanationJa": "IRC §1211(a)により、C法人は資本損失を資本利得の範囲内でしか控除できない。純資本損失は通常所得と一切相殺できず、§1212(a)(1)により短期資本損失として3年繰戻し・5年繰越しされる。\n\n$3,000は個人（法人ではない）が純資本損失を通常所得と相殺できる年間上限。$5,000や$10,000という法人の資本損失控除枠は存在しない。",
+      "references": ["IRC §1211(a)", "IRC §1212(a)(1)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2014 Recently Released Q.20 (AICPA No. 90570)"
+    },
+    {
+      "id": "reg-corp-111",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A corporate taxpayer's capital gains and losses are as follows:\n\nShort-term capital gain | $ 7,000\nShort-term capital loss | ($43,000)\nLong-term capital gain | $9,000\nLong-term capital loss | $ 21,000\n\nWhat amount of capital loss deduction is the taxpayer entitled to use to offset against ordinary income?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$ 3,000" },
+        { "label": "C", "text": "$12,000" },
+        { "label": "D", "text": "$48,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under IRC §1211(a), a corporation may deduct capital losses only to the extent of capital gains; no net capital loss may be deducted against ordinary income. The net capital loss is carried back 3 years and forward 5 years under IRC §1212(a)(1).\n\nNet short-term: $7,000 - $43,000 = $36,000 net short-term loss\nNet long-term: $9,000 - $21,000 = $12,000 net long-term loss\nNet capital loss = $48,000\nDeduction against ordinary income = $0\n\nThe $3,000 amount is the individual limit on capital losses against ordinary income and does not apply to corporations. The $12,000 amount is only the net long-term loss. The $48,000 amount is the total net capital loss, which a corporation cannot deduct against ordinary income.",
+      "explanationJa": "IRC §1211(a)により、法人は資本損失を資本利得の範囲内でしか控除できず、純資本損失を通常所得と相殺することはできない。純資本損失は§1212(a)(1)により3年繰戻し・5年繰越しされる。\n\n純短期: $7,000 − $43,000 = 純短期損失$36,000\n純長期: $9,000 − $21,000 = 純長期損失$12,000\n純資本損失 = $48,000\n通常所得との相殺額 = $0\n\n$3,000は個人の通常所得との相殺上限で法人には適用されない。$12,000は純長期損失にすぎない。$48,000は純資本損失の総額であり、法人は通常所得と相殺できない。",
+      "references": ["IRC §1211(a)", "IRC §1212(a)(1)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2014 Recently Released Q.30 (AICPA No. 90580)"
+    },
+    {
+      "id": "reg-corp-112",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Which of the following corporations would be taxed as a personal service corporation?",
+      "choices": [
+        { "label": "A", "text": "A real estate brokerage" },
+        { "label": "B", "text": "A catering service" },
+        { "label": "C", "text": "An architecture and engineering firm" },
+        { "label": "D", "text": "A groundskeeping firm" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A qualified personal service corporation is one in which substantially all of the activities involve the performance of services in the fields of health, law, engineering, architecture, accounting, actuarial science, performing arts, or consulting, and substantially all of the stock is held by employees performing those services (IRC §448(d)(2)). An architecture and engineering firm performs services in two of the listed fields.\n\nSince the TCJA, every C corporation (including a personal service corporation) pays the flat 21% rate under §11(b), but personal service corporation status still matters for other rules (e.g., cash-method eligibility under §448, the required tax year under §441(i), and the passive activity rules).\n\nA real estate brokerage, a catering service, and a groundskeeping firm provide services, but brokerage, catering, and groundskeeping are not fields listed in §448(d)(2).",
+      "explanationJa": "適格人的役務法人（personal service corporation）とは、実質的にすべての活動が医療・法律・エンジニアリング・建築・会計・保険数理・舞台芸術・コンサルティングの役務提供で、株式の実質的にすべてをその役務に従事する従業員が保有する法人をいう（IRC §448(d)(2)）。建築・エンジニアリング事務所は列挙分野のうち2つに該当する。\n\nTCJA以降はPSCを含むすべてのC法人に一律21%（§11(b)）が適用されるが、PSCかどうかは現金主義の可否（§448）、事業年度（§441(i)）、パッシブ活動規則などで引き続き意味を持つ。\n\n不動産仲介、ケータリング、造園管理はいずれも役務提供だが、§448(d)(2)の列挙分野には含まれない。",
+      "references": ["IRC §448(d)(2)", "IRC §11(b)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2014 Recently Released Q.34 (AICPA No. 90584)"
+    },
+    {
+      "id": "reg-corp-113",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Which of the following increases the accumulated adjustments account of an S corporation?",
+      "choices": [
+        { "label": "A", "text": "Capital contributions by the shareholders" },
+        { "label": "B", "text": "Distribution to shareholders" },
+        { "label": "C", "text": "Interest and dividends" },
+        { "label": "D", "text": "Charitable contributions" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The accumulated adjustments account (AAA) of an S corporation is increased by the corporation's items of income (both ordinary business income and separately stated taxable income such as interest and dividends) and decreased by losses, deductions, nondeductible expenses (other than those related to tax-exempt income), and distributions (IRC §1368(e)(1); Treas. Reg. §1.1368-2(a)). Interest and dividend income therefore increases AAA.\n\nCapital contributions by shareholders increase the shareholders' stock basis but do not affect AAA, because AAA tracks only income that has been taxed at the shareholder level. Distributions to shareholders decrease AAA. Charitable contributions are a separately stated deduction and decrease AAA.",
+      "explanationJa": "S法人のAAA（accumulated adjustments account）は、通常事業所得や利子・配当などの区分表示される課税所得項目で増加し、損失・控除、非控除費用（免税所得に係るものを除く）、分配で減少する（IRC §1368(e)(1)、Treas. Reg. §1.1368-2(a)）。したがって利子・配当所得はAAAを増加させる。\n\n株主の資本拠出は株式の取得価額（ストックベーシス）を増やすが、AAAは株主段階で課税済みの所得を追跡する勘定なので影響しない。株主への分配はAAAを減少させる。寄附金は区分表示される控除項目でAAAを減少させる。",
+      "references": ["IRC §1368(e)(1)", "Treas. Reg. §1.1368-2(a)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2014 Recently Released Q.36 (AICPA No. 90586)"
+    },
+    {
+      "id": "reg-corp-114",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A personal services corporation may deduct payments made to owner-employees only in the year in which the",
+      "choices": [
+        { "label": "A", "text": "Corporation is formed" },
+        {
+          "label": "B",
+          "text": "Expense is accrued on the books and records of the corporation"
+        },
+        { "label": "C", "text": "Corporation makes a valid S election" },
+        { "label": "D", "text": "Owner-employee includes it in income" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §267(a)(2), an accrual-method payor may not deduct an amount owed to a related cash-method payee until the day the payee includes the amount in gross income. For this purpose, a personal service corporation (as defined in §441(i)) and any employee-owner are treated as related persons regardless of the employee-owner's percentage of ownership. Therefore, the corporation deducts payments to owner-employees only in the year the owner-employee includes them in income.\n\nAccrual on the corporation's books is exactly the timing that §267(a)(2) overrides. The year the corporation is formed has no bearing on the deduction. An S election does not change the matching rule, because §267(a)(2) applies to an S corporation and any shareholder as well.",
+      "explanationJa": "IRC §267(a)(2)により、発生主義の支払者は、現金主義の関連者に対する未払額を、受取側が総所得に算入する日まで控除できない。人的役務法人（§441(i)の定義）とその従業員株主は、持株割合にかかわらずこの規定上の関連者とされる。したがって、従業員株主への支払は、その者が所得に算入した年にしか控除できない。\n\n会社帳簿上の計上時期こそ§267(a)(2)が否定するタイミングである。会社の設立年は控除時期と関係ない。S選択をしても、S法人と株主にも§267(a)(2)が適用されるため結論は変わらない。",
+      "references": ["IRC §267(a)(2)", "IRC §441(i)", "IRC §267(e)(1)(B)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2015 Recently Released Q.10 (AICPA No. 90810)"
+    },
+    {
+      "id": "reg-corp-115",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A company terminated its S corporation status for the current tax year. When can the company reelect S status?",
+      "choices": [
+        { "label": "A", "text": "Immediately" },
+        { "label": "B", "text": "Third year from the current tax year" },
+        { "label": "C", "text": "Fifth year from the current tax year" },
+        { "label": "D", "text": "Cannot reelect in future" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When an S election is terminated or revoked, the corporation (and any successor corporation) may not make a new S election for any tax year before its fifth tax year beginning after the first tax year for which the termination is effective, unless the IRS consents to an earlier election (IRC §1362(g)). The company may therefore reelect S status in the fifth year from the current (termination) year.\n\nAn immediate reelection and a reelection in the third year are both earlier than the five-year waiting period permits without IRS consent. A terminated corporation is not permanently barred from reelecting S status.",
+      "explanationJa": "S選択が終了・撤回されると、IRSの同意が無い限り、終了の効力が生じた最初の事業年度の後に始まる5年目の事業年度より前には再選択できない（IRC §1362(g)）。したがって再選択できるのは当年（終了年）から5年目である。\n\n即時の再選択や3年目の再選択は、IRSの同意なしには5年の待機期間に反する。終了した法人が永久に再選択できないわけではない。",
+      "references": ["IRC §1362(g)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2015 Recently Released Q.19 (AICPA No. 90819)"
+    },
+    {
+      "id": "reg-corp-116",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "What is the tax rate for an S corporation that pays tax on built-in gains?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The calculated income tax rate of the corporation"
+        },
+        { "label": "B", "text": "The income tax rate of the shareholder" },
+        { "label": "C", "text": "The highest individual income tax rate" },
+        { "label": "D", "text": "The highest corporate income tax rate" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "IRC §1374(b)(1) imposes the built-in gains tax on an S corporation's net recognized built-in gain at the highest rate of tax specified in §11(b), the corporate income tax rate. Since the TCJA, §11(b) imposes a flat 21% rate, so the built-in gains tax is computed at 21%.\n\nThe tax is not computed using a separately calculated rate for the corporation or using the shareholders' individual rates, and it does not use the highest individual income tax rate.",
+      "explanationJa": "IRC §1374(b)(1)は、S法人の純認識ビルトイン・ゲインに対し、§11(b)に定める法人税の最高税率で課税する。TCJA以降、§11(b)は一律21%なので、ビルトイン・ゲイン税は21%で計算する。\n\n法人ごとに計算した税率や株主の個人税率は使わず、個人の最高税率も使わない。",
+      "references": ["IRC §1374(b)(1)", "IRC §11(b)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2015 Recently Released Q.40 (AICPA No. 90840)"
+    },
+    {
+      "id": "reg-corp-117",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Which of the following items reported on a C corporation's tax return would not require an adjustment to taxable income in computing current earnings and profits?",
+      "choices": [
+        { "label": "A", "text": "Straight-line depreciation." },
+        { "label": "B", "text": "Installment sale income." },
+        { "label": "C", "text": "Amortization of organizational expenses." },
+        { "label": "D", "text": "Meals and entertainment expenses." }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Current earnings and profits (E&P) start from taxable income and are adjusted to reflect the corporation's economic income. For E&P, depreciation must be computed using the straight-line method under the alternative depreciation system (IRC §312(k)(3)), so accelerated methods, bonus depreciation, and §179 expensing require adjustments. Straight-line depreciation is already computed under the method required for E&P, so it is the item that does not call for a method adjustment.\n\nInstallment sale income: for E&P, the entire gain is recognized in the year of sale rather than as payments are received (§312(n)(5)), so an adjustment is required.\nAmortization of organizational expenses: E&P does not follow the tax amortization of organizational expenditures under §248 (see §312(n)(3)), so an adjustment is required.\nMeals and entertainment: the nondeductible portion (50% of business meals and all entertainment) is an actual outlay that reduces E&P, so it is subtracted from taxable income.",
+      "explanationJa": "当期の利益剰余金（E&P）は課税所得を出発点に、法人の経済的な所得を反映するよう調整して求める。E&Pでは減価償却を代替減価償却制度（ADS）の定額法で計算するため（IRC §312(k)(3)）、加速償却、ボーナス償却、§179の即時償却は調整が必要になる。定額法の減価償却は既にE&Pが求める方法で計算されているので、償却方法の調整を要しない項目である。\n\n割賦販売の所得: E&Pでは代金の受取時ではなく販売年に利得全額を認識するため（§312(n)(5)）調整が必要。\n創立費の償却: E&Pは§248による税務上の償却をそのまま採用しない（§312(n)(3)参照）ため、調整が必要。\n飲食・接待費: 損金不算入部分（事業上の飲食費の50%と接待費の全額）も実際の支出なのでE&Pを減らし、課税所得から減算する。",
+      "references": ["IRC §312(k)(3)", "IRC §312(n)(5)", "IRC §312(n)(3)"],
+      "difficulty": "advanced",
+      "source": "Proactive AICPA過去問DB REG 2016 Recently Released Q.8 (AICPA No. null)"
+    },
+    {
+      "id": "reg-corp-118",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Filler-Up is an accrual-basis calendar-year C corporation. Filler-Up uses an allowance method for accounting for bad debts. The allowance for bad debts was $20,000 at the beginning of the year and $30,000 at the end of the year. During the year, Filler-Up wrote off $5,000 of uncollectible receivables and accrued an additional $15,000 of expenses for accounts estimated to be uncollectible. What is the Schedule M-1 adjustment on Filler-Up's federal income tax return?",
+      "choices": [
+        { "label": "A", "text": "$10,000 decrease in taxable income." },
+        { "label": "B", "text": "$10,000 increase in taxable income." },
+        { "label": "C", "text": "$5,000 decrease in taxable income." },
+        { "label": "D", "text": "$5,000 increase in taxable income." }
+      ],
+      "correctAnswer": "B",
+      "explanation": "For tax purposes, a C corporation (other than certain financial institutions) may not use the allowance (reserve) method; it deducts bad debts only under the specific charge-off method when accounts are written off (IRC §166(a)).\n\nBook bad debt expense (addition to the allowance): $15,000\nTax bad debt deduction (accounts written off): $5,000\nSchedule M-1 adjustment: $15,000 − $5,000 = $10,000 added back to book income\nCheck of allowance: $20,000 + $15,000 − $5,000 = $30,000\n\nBook expense exceeds the tax deduction by $10,000, so taxable income increases by $10,000. A $10,000 decrease reverses the direction of the adjustment. The $5,000 amounts use the write-offs rather than the difference between book expense and the tax deduction.",
+      "explanationJa": "税務上、C法人（一部の金融機関を除く）は貸倒引当金法を使えず、債権を実際に償却した時点で控除する個別償却法による（IRC §166(a)）。\n\n帳簿上の貸倒費用（引当金繰入）: $15,000\n税務上の貸倒控除（償却額）: $5,000\nSchedule M-1の調整: $15,000 − $5,000 = $10,000を帳簿利益に加算\n引当金の検算: $20,000 + $15,000 − $5,000 = $30,000\n\n帳簿費用が税務上の控除を$10,000上回るので、課税所得は$10,000増加する。$10,000の減少は調整の方向が逆である。$5,000は償却額そのものを使っており、帳簿費用と税務上の控除の差になっていない。",
+      "references": ["IRC §166(a)", "Form 1120 Schedule M-1"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2016 Recently Released Q.9 (AICPA No. null)"
+    },
+    {
+      "id": "reg-corp-119",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "On December 31, a C corporation made a nonliquidating distribution of the following assets to its sole shareholder:\n\nAsset | Fair market value | Adjusted basis\nLand | $100,000 | $50,000\nPatent | 25,000 | 0\nBuilding | 50,000 | 150,000\n\nWhat gain or loss should the corporation recognize as a result of the distribution?",
+      "choices": [
+        { "label": "A", "text": "$50,000 loss." },
+        { "label": "B", "text": "No gain or loss." },
+        { "label": "C", "text": "$25,000 gain." },
+        { "label": "D", "text": "$75,000 gain." }
+      ],
+      "correctAnswer": "D",
+      "explanation": "When a C corporation makes a nonliquidating distribution of property, it recognizes gain on appreciated property as if the property were sold at fair market value (IRC §311(b)), but it may not recognize loss on property whose basis exceeds fair market value (§311(a)).\n\nLand: $100,000 − $50,000 = $50,000 gain recognized\nPatent: $25,000 − $0 = $25,000 gain recognized\nBuilding: $50,000 − $150,000 = $100,000 loss not recognized\nTotal recognized gain: $50,000 + $25,000 = $75,000\n\nThe $50,000 loss nets the building loss against the gains, which §311(a) does not allow. \"No gain or loss\" ignores §311(b), which taxes the appreciation on distributed property. The $25,000 gain includes only the patent and omits the land.",
+      "explanationJa": "C法人が資産を非清算分配すると、含み益のある資産は時価で売却したものとして利得を認識する（IRC §311(b)）が、取得価額が時価を上回る資産の損失は認識できない（§311(a)）。\n\n土地: $100,000 − $50,000 = $50,000の利得を認識\n特許: $25,000 − $0 = $25,000の利得を認識\n建物: $50,000 − $150,000 = $100,000の損失は認識しない\n認識利得の合計: $50,000 + $25,000 = $75,000\n\n$50,000の損失は建物の損失を利得と相殺しているが、§311(a)により認められない。「損益なし」は分配資産の含み益に課税する§311(b)を無視している。$25,000の利得は特許だけで土地を落としている。",
+      "references": ["IRC §311(a)", "IRC §311(b)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2016 Recently Released Q.17 (AICPA No. null)"
+    },
+    {
+      "id": "reg-corp-120",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "HDF, a calendar-year corporation, began business in year 1. HDF made a valid S corporation election on December 1, year 2. Assuming the eligibility requirements for S corporation status continued to be met throughout year 3, on which of the following dates did HDF's S corporation status become effective?",
+      "choices": [
+        { "label": "A", "text": "January 1, year 2." },
+        { "label": "B", "text": "December 1, year 2." },
+        { "label": "C", "text": "January 1, year 3." },
+        { "label": "D", "text": "December 1, year 3." }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under IRC §1362(b), an S election is effective for the current tax year only if it is made during the preceding tax year or on or before the 15th day of the third month of the current tax year (March 15 for a calendar-year corporation). An election made after that date is treated as made for the following tax year. HDF made its election on December 1, year 2, which is after March 15, year 2, so the election becomes effective on January 1, year 3.\n\nJanuary 1, year 2 would require the election to be made by March 15, year 2. An election is not effective on the date it is filed (December 1, year 2) or one year later (December 1, year 3); S status begins on the first day of a tax year.",
+      "explanationJa": "IRC §1362(b)により、S選択がその年度から有効となるのは、前年度中か当年度の3か月目の15日（暦年法人なら3月15日）までに選択した場合に限られ、それより後の選択は翌年度から有効となる。HDFは2年目の3月15日を過ぎた12月1日に選択したので、3年目の1月1日から有効となる。\n\n2年目の1月1日から有効とするには2年目の3月15日までに選択する必要がある。選択は提出日（2年目12月1日）やその1年後（3年目12月1日）から有効になるのではなく、事業年度の初日から有効となる。",
+      "references": ["IRC §1362(b)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2016 Recently Released Q.33 (AICPA No. null)"
+    },
+    {
+      "id": "reg-corp-121",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A sole proprietor wants to incorporate and has requested a projection of the first-year tax results as a C corporation and as an S corporation. Taxable income from ordinary operations is projected to be $100,000. The company expects to make a $20,000 charitable contribution and projects a long-term capital loss on stock of $7,000. Which of the following projections is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "C corporation, $73,000 taxable income; S corporation, $80,000 ordinary business income; long-term capital loss is separately stated."
+        },
+        {
+          "label": "B",
+          "text": "C corporation, $90,000 taxable income; S corporation, $80,000 ordinary business income; long-term capital loss is separately stated."
+        },
+        {
+          "label": "C",
+          "text": "C corporation, $90,000 taxable income; S corporation, $100,000 ordinary business income; remaining items are separately stated."
+        },
+        {
+          "label": "D",
+          "text": "C corporation, $80,000 taxable income; S corporation, $100,000 ordinary business income; remaining items are separately stated."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A C corporation's charitable contribution deduction is limited to 10% of taxable income computed before the contribution deduction (IRC §170(b)(2)). For tax years beginning after 2025, only contributions exceeding 1% of that taxable income are deductible (P.L. 119-21), but this floor does not change the result here. A C corporation also may not deduct a capital loss against ordinary income (IRC §1211(a)); the $7,000 long-term capital loss is carried over (§1212(a)) and does not reduce taxable income.\n\nC corporation:\nTaxable income before contributions: $100,000 (the capital loss is not deductible)\nContribution remaining after the 1% floor: $20,000 − $1,000 = $19,000\n10% limit: $100,000 × 10% = $10,000\nDeduction: lesser of $19,000 or $10,000 = $10,000\nTaxable income: $100,000 − $10,000 = $90,000\n\nS corporation: there is no entity-level contribution limit or capital loss limit. The charitable contribution and the long-term capital loss are separately stated items passed through to the shareholders (IRC §1366(a)(1)), so ordinary business income is $100,000 (§1363(b)).\n\nThe $73,000 C corporation figure deducts the full contribution and the capital loss. The $80,000 S corporation figure deducts the contribution in ordinary income, although it is a separately stated item. The $80,000 C corporation figure deducts the entire $20,000 contribution and ignores the 10% limit.",
+      "explanationJa": "C法人の寄附金控除は、寄附金控除前の課税所得の10%が上限である（IRC §170(b)(2)）。2025年12月31日後に開始する課税年度は、その課税所得の1%を超える部分だけが控除でき（P.L. 119-21）、この1%の足切りは本問の結論を変えない。またC法人は資本損失を通常所得から控除できない（§1211(a)）ため、$7,000の長期キャピタルロスは繰り越され（§1212(a)）、課税所得を減らさない。\n\nC法人:\n寄附金控除前の課税所得: $100,000（資本損失は控除不可）\n1%足切り後の寄附金: $20,000 − $1,000 = $19,000\n10%上限: $100,000 × 10% = $10,000\n控除額: $19,000と$10,000の小さい方 = $10,000\n課税所得: $100,000 − $10,000 = $90,000\n\nS法人: 事業体段階の寄附金の上限や資本損失の制限は無い。寄附金と長期キャピタルロスは区分表示項目として株主に配分される（§1366(a)(1)）ため、通常事業所得は$100,000となる（§1363(b)）。\n\nC法人$73,000は寄附金全額と資本損失を控除している。S法人$80,000は区分表示項目である寄附金を通常所得から控除している。C法人$80,000は寄附金$20,000全額を控除し、10%上限を無視している。",
+      "references": ["IRC §170(b)(2)", "IRC §1211(a)", "IRC §1363(b)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2016 Recently Released Q.35 (AICPA No. null)"
+    },
+    {
+      "id": "reg-corp-122",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A C corporation had a federal income tax liability of $40,000 for each of the last five years, each covering a 12-month period. The tax for the current year is $48,000. What is the lowest amount that must have been paid as estimated taxes for the current year so that no penalty for underpayment is applicable?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$44,000" },
+        { "label": "C", "text": "$48,000" },
+        { "label": "D", "text": "$52,800" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under IRC §6655(d)(1), a corporation avoids the underpayment penalty if its required annual payment equals the lesser of (1) 100% of the current-year tax or (2) 100% of the prior-year tax, provided the prior year was a 12-month year with a positive tax liability. The prior-year safe harbor is unavailable only to a large corporation (taxable income of $1 million or more in any of the 3 preceding years) under §6655(d)(2), and nothing in the facts indicates large-corporation status.\n\nLesser of $48,000 (current-year tax) and $40,000 (prior-year tax) = $40,000\n\nThe $48,000 amount is 100% of the current-year tax, which is higher than the prior-year safe harbor. The $52,800 amount is 110% of the current-year tax; the 110% rule applies to certain high-income individuals, not corporations, and applies to prior-year tax. The $44,000 amount is not a safe harbor under §6655.",
+      "explanationJa": "IRC §6655(d)(1)により、法人は (1) 当年度税額の100% と (2) 前年度税額の100%（前年度が12か月で税額が正の場合）のいずれか少ない額を予定納税すれば過少納付ペナルティを避けられる。前年度基準が使えないのは大法人（過去3年のいずれかで課税所得$1百万以上、§6655(d)(2)）のみで、問題文に大法人を示す事実はない。\n\n$48,000（当年度税額）と$40,000（前年度税額）の少ない方 = $40,000\n\n$48,000は当年度税額の100%で、前年度基準より多い。$52,800は当年度税額の110%だが、110%ルールは高所得の個人に適用されるもので、しかも前年度税額に対する率である。$44,000は§6655のどの基準にも当たらない。",
+      "references": ["IRC §6655(d)(1)", "IRC §6655(d)(2)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.14 (AICPA No. null)"
+    },
+    {
+      "id": "reg-corp-123",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A corporation that intends to make an election to become an S corporation seeks advice. An accountant would most appropriately make which of the following recommendations?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Limit the number of shareholders to 120 unrelated individuals."
+        },
+        {
+          "label": "B",
+          "text": "Limit the issuance of stock to common and preferred."
+        },
+        {
+          "label": "C",
+          "text": "Ensure that no shareholders are resident aliens."
+        },
+        {
+          "label": "D",
+          "text": "Evaluate the eligibility of all shareholders."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §1361(b)(1), a small business corporation may have no more than 100 shareholders, only eligible shareholders (individuals who are U.S. citizens or residents, estates, certain trusts, and certain exempt organizations), no nonresident alien shareholders, and only one class of stock. Because eligibility depends on who the shareholders are, an accountant should evaluate the eligibility of every shareholder before the election.\n\nThe shareholder limit is 100, not 120, and shareholders need not be unrelated (family members may be treated as one shareholder). Issuing both common and preferred stock would create a second class of stock and terminate eligibility; only differences in voting rights are permitted under §1361(c)(4). Resident aliens are eligible shareholders; only nonresident aliens are prohibited.",
+      "explanationJa": "IRC §1361(b)(1)により、S法人になれる小規模事業法人は、株主100人以下、適格株主（米国市民・居住者である個人、遺産財団、一定の信託・免税団体）のみ、非居住外国人の株主なし、株式は1種類のみ、という要件を満たす必要がある。適格性は株主の属性で決まるため、選択前に全株主の適格性を確認するのが適切な助言である。\n\n株主数の上限は120人ではなく100人で、無関係の者である必要もない（家族は1人として数えられる）。普通株と優先株を発行すると2種類目の株式となり要件を満たさない（議決権の差だけは認められる、§1361(c)(4)）。居住外国人は適格株主であり、禁止されるのは非居住外国人のみである。",
+      "references": ["IRC §1361(b)(1)", "IRC §1361(c)(4)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.15 (AICPA No. null)"
+    },
+    {
+      "id": "reg-corp-124",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A taxpayer owns 50% of the stock of an S corporation and materially participated in the corporation's activities. At the beginning of the year, the taxpayer had an adjusted basis in the stock of $25,000 and made a loan to the corporation of $13,000. During the year, $3,000 of the loan was repaid, and the taxpayer's share of the corporation's loss for the year was $40,000. What is the amount of the loss that may be deducted on the taxpayer's tax return?",
+      "choices": [
+        { "label": "A", "text": "$25,000" },
+        { "label": "B", "text": "$35,000" },
+        { "label": "C", "text": "$38,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under IRC §1366(d)(1), an S corporation shareholder may deduct a pass-through loss only to the extent of the shareholder's adjusted basis in stock plus the adjusted basis of any indebtedness of the corporation to the shareholder. Debt basis is measured at year-end, after the $3,000 repayment. Because the shareholder materially participates, the passive loss rules do not further limit the loss.\n\nStock basis = $25,000\nDebt basis = $13,000 − $3,000 repaid = $10,000\nDeductible loss = $25,000 + $10,000 = $35,000 (the remaining $5,000 of the $40,000 loss is suspended and carried forward)\n\nThe $25,000 amount ignores debt basis. The $38,000 amount uses the original $13,000 loan without reducing it for the $3,000 repayment. The $40,000 amount ignores the basis limitation altogether.",
+      "explanationJa": "IRC §1366(d)(1)により、S法人の株主がパススルー損失を控除できるのは、株式の取得価額と、法人に対する貸付金の取得価額（debt basis）の合計までである。debt basisは年度末時点、つまり$3,000の返済後で測る。実質的関与があるのでパッシブ損失の制限は追加でかからない。\n\n株式basis = $25,000\ndebt basis = $13,000 − $3,000 = $10,000\n控除できる損失 = $25,000 + $10,000 = $35,000（$40,000のうち残り$5,000は繰越）\n\n$25,000はdebt basisを無視している。$38,000は返済$3,000を差し引く前の貸付金$13,000を使っている。$40,000はbasisの制限そのものを無視している。",
+      "references": ["IRC §1366(d)(1)", "Treas. Reg. §1.1366-2(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.16 (AICPA No. null)"
+    },
+    {
+      "id": "reg-corp-125",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A corporation distributed land with a basis of $20,000 and a fair market value of $60,000, but was subject to a non-recourse liability of $70,000 to its sole shareholder. What amount represents the corporation's recognized gain?",
+      "choices": [
+        { "label": "A", "text": "$20,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$60,000" },
+        { "label": "D", "text": "$70,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under IRC §311(b), a corporation that distributes appreciated property recognizes gain as if it sold the property at fair market value. When the property is subject to a liability, its fair market value is treated as not less than the amount of the liability (§311(b)(2), incorporating §336(b)).\n\nDeemed fair market value = greater of $60,000 FMV or $70,000 liability = $70,000\nLess adjusted basis = ($20,000)\nRecognized gain = $50,000\n\nThe $20,000 amount is the land's basis, the $60,000 amount is its fair market value, and the $70,000 amount is the liability; none of these is the gain. Using the $60,000 fair market value instead of the liability would understate the gain, because the liability floor applies.",
+      "explanationJa": "IRC §311(b)により、含み益のある資産を分配した法人は、その資産を時価で売却したものとして利益を認識する。資産に負債が付いている場合、時価は負債額を下回らないものとされる（§311(b)(2)、§336(b)）。\n\nみなし時価 = 時価$60,000と負債$70,000の大きい方 = $70,000\n調整後取得価額 = ($20,000)\n認識する利益 = $50,000\n\n$20,000は土地の取得価額、$60,000は時価、$70,000は負債額であり、いずれも利益の額ではない。負債額の下限があるため、時価$60,000を使うと利益を過少に計算することになる。",
+      "references": ["IRC §311(b)", "IRC §336(b)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.36 (AICPA No. null)"
+    },
+    {
+      "id": "reg-corp-126",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "An accrual-basis C corporation that prepared its financial statements based on GAAP recorded $800,000 of bad debt expense. The total amount of bad debts that actually became worthless was $930,000. In respect to bad debt expense, what type of disclosure should the corporation show on Schedule M-3?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A permanent bad debt expense difference of $130,000."
+        },
+        {
+          "label": "B",
+          "text": "A temporary difference in which book deductions exceed tax deductions by $130,000."
+        },
+        {
+          "label": "C",
+          "text": "A temporary difference in which tax deductions exceed book deductions by $130,000."
+        },
+        {
+          "label": "D",
+          "text": "No difference between bad debt expense per income statement and deduction per tax return."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "For tax purposes, a corporation deducts bad debts under the specific charge-off method when the debts become worthless (IRC §166(a)); the GAAP allowance method is not permitted. The tax deduction is therefore $930,000, while book bad debt expense is $800,000. Because the same receivables are eventually expensed for both book and tax purposes, the difference is a timing (temporary) difference, reported on Schedule M-3 as tax deductions exceeding book deductions.\n\nTax deduction ($930,000) − book expense ($800,000) = $130,000\n\nThe difference is not permanent, because it reverses over time. Book deductions do not exceed tax deductions here; the tax deduction is the larger amount. Reporting no difference ignores that the tax return uses the direct write-off amount rather than the book expense.",
+      "explanationJa": "税務上、法人は貸倒損失を実際に回収不能となった時点で控除する直接償却法による（IRC §166(a)）。GAAPの貸倒引当金法は認められない。税務上の控除は$930,000、会計上の貸倒費用は$800,000である。同じ債権が最終的には会計・税務の両方で費用化されるので、この差異は一時差異であり、Schedule M-3では税務上の控除が会計上の費用を上回るものとして開示する。\n\n税務上の控除$930,000 − 会計上の費用$800,000 = $130,000\n\n時間の経過で解消する差異なので永久差異ではない。本問では税務上の控除の方が大きいので、会計上の費用が上回るという記述は誤り。差異なしとする記述は、税務上は会計上の費用ではなく直接償却額を使うことを無視している。",
+      "references": ["IRC §166(a)", "Schedule M-3 (Form 1120) instructions"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2018 Recently Released Q.12 (AICPA No. 76345)"
+    },
+    {
+      "id": "reg-corp-127",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Aqua Corp. had an operating income of $500,000 and operating expenses of $350,000 in the current year. Aqua had a long-term capital gain of $30,000 and a $50,000 short-term capital loss. What is Aqua's taxable income for the current year?",
+      "choices": [
+        { "label": "A", "text": "$130,000" },
+        { "label": "B", "text": "$147,000" },
+        { "label": "C", "text": "$150,000" },
+        { "label": "D", "text": "$180,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under IRC §1211(a), a corporation may deduct capital losses only to the extent of capital gains; unlike individuals, it may not offset ordinary income with any net capital loss. The excess net capital loss is carried back 3 years and forward 5 years as a short-term capital loss (§1212(a)(1)).\n\nOperating income − operating expenses = $500,000 − $350,000 = $150,000\nNet capital loss = $30,000 LTCG − $50,000 STCL = ($20,000), not deductible currently\nTaxable income = $150,000\n\nThe $130,000 amount deducts the $20,000 net capital loss against ordinary income. The $147,000 amount applies the $3,000 net capital loss deduction available only to individuals. The $180,000 amount includes the $30,000 long-term capital gain without netting it against the short-term capital loss.",
+      "explanationJa": "IRC §1211(a)により、法人はキャピタルロスをキャピタルゲインの範囲内でしか控除できず、個人と違って純キャピタルロスを通常所得と相殺できない。控除しきれない純キャピタルロスは短期キャピタルロスとして3年繰戻し・5年繰越しとなる（§1212(a)(1)）。\n\n営業収益 − 営業費用 = $500,000 − $350,000 = $150,000\n純キャピタルロス = 長期キャピタルゲイン$30,000 − 短期キャピタルロス$50,000 = ($20,000) → 当期は控除不可\n課税所得 = $150,000\n\n$130,000は純キャピタルロス$20,000を通常所得から控除した額。$147,000は個人にだけ認められる$3,000の控除を適用した額。$180,000は長期キャピタルゲイン$30,000を短期キャピタルロスと相殺せずに加えた額である。",
+      "references": ["IRC §1211(a)", "IRC §1212(a)(1)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2018 Recently Released Q.13 (AICPA No. 61893)"
+    },
+    {
+      "id": "reg-corp-128",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Tracy, an owner of an S corporation, has beginning basis of $13,000 in stock of the S corporation. During the year, Tracy contributed an additional $4,000 to partially offset the share of the S corporation's net operating loss, which was $7,000 for this year. At the beginning of the year, Tracy received a $1,000 distribution from the S corporation. What was Tracy's basis at year end in the S corporation stock?",
+      "choices": [
+        { "label": "A", "text": "$9,000" },
+        { "label": "B", "text": "$11,000" },
+        { "label": "C", "text": "$15,000" },
+        { "label": "D", "text": "$17,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An S corporation shareholder's stock basis is adjusted in the order prescribed by Treas. Reg. §1.1367-1(f): first increased by contributions and income items, then decreased by distributions, then by nondeductible expenses, and finally by losses and deductions (IRC §1367(a)).\n\nBeginning basis = $13,000\nAdd capital contribution = $4,000\nLess distribution = ($1,000)\nBasis before loss = $16,000\nLess share of net operating loss = ($7,000)\nEnding basis = $9,000\n\nThe $17,000 amount adds the contribution but ignores both the distribution and the loss. No combination of the $4,000 contribution, the $1,000 distribution, and the $7,000 loss applied to the $13,000 beginning basis produces the $15,000 amount. The $11,000 amount treats the $1,000 distribution as an increase to basis ($13,000 + $4,000 + $1,000 − $7,000) instead of a decrease.",
+      "explanationJa": "S法人株主の株式basisは、Treas. Reg. §1.1367-1(f)の順序で調整する。まず出資・所得項目で増やし、次に分配、次に控除不能費用、最後に損失・控除項目で減らす（IRC §1367(a)）。\n\n期首basis = $13,000\n追加出資 = $4,000\n分配 = ($1,000)\n損失控除前のbasis = $16,000\nNOLの持分 = ($7,000)\n期末basis = $9,000\n\n$17,000は追加出資だけを加えて分配と損失を無視した額。$15,000は、期首basis $13,000に出資$4,000・分配$1,000・損失$7,000をどう組み合わせても得られない額である。$11,000は分配$1,000をbasisの減少ではなく増加として扱った額（$13,000 + $4,000 + $1,000 − $7,000）である。",
+      "references": ["IRC §1367(a)", "Treas. Reg. §1.1367-1(f)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2018 Recently Released Q.14 (AICPA No. 60845)"
+    },
+    {
+      "id": "reg-corp-129",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "For year 1, a taxpayer reported its taxable income using the accrual method of accounting. For year 2, the taxpayer will change its accounting method from the accrual method to the cash method of accounting. At December 31, year 1, the taxpayer had $1,100,000 of accounts receivable and $750,000 of accounts payable and accrued expenses. What is the amount of the adjustment required to effect the change in accounting method and over what period will the change be recognized?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The adjustment results in an increase to taxable income of $350,000, and it will be recognized over four years, beginning in the year of change."
+        },
+        {
+          "label": "B",
+          "text": "The adjustment results in a reduction to taxable income of $350,000, and it will be recognized over four years, beginning in the year of change."
+        },
+        {
+          "label": "C",
+          "text": "The adjustment results in a reduction to taxable income of $350,000, and all of it will be recognized in the year of change."
+        },
+        {
+          "label": "D",
+          "text": "The adjustment results in an increase to taxable income of $350,000, and all of it will be recognized in the year of change."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "When a taxpayer changes its method of accounting, IRC §481(a) requires an adjustment to prevent items from being duplicated or omitted. Under Rev. Proc. 2015-13, §7.03, a negative (taxpayer-favorable) §481(a) adjustment is taken into account entirely in the year of change, while a positive adjustment is generally spread ratably over four tax years.\n\nAccounts receivable of $1,100,000 were already included in income under the accrual method and would be taxed again when collected under the cash method, so they reduce taxable income. Accounts payable and accrued expenses of $750,000 were already deducted and would be deducted again when paid, so they increase taxable income.\n\nAdjustment = -$1,100,000 + $750,000 = -$350,000 (a reduction to taxable income)\nBecause the adjustment is negative, all of it is recognized in the year of change.\n\nAn increase to taxable income of $350,000 has the direction reversed: switching from accrual to cash with receivables exceeding payables produces a reduction. Spreading a $350,000 reduction over four years applies the period used for positive adjustments, not negative ones.",
+      "explanationJa": "会計方法を変更する場合、IRC §481(a) により所得の二重計上や計上漏れを防ぐための調整が必要となる。Rev. Proc. 2015-13 §7.03 では、納税者に有利なマイナスの調整は変更年度に全額を計上し、プラスの調整は原則として4年間で均等に計上する。\n\n売掛金 $1,100,000 は発生主義で既に所得に含めており、現金主義では回収時に再び課税されるため、課税所得を減らす方向に調整する。買掛金・未払費用 $750,000 は既に控除済みで、支払時に再び控除されるため、課税所得を増やす方向に調整する。\n\n調整額 = −$1,100,000 + $750,000 = −$350,000（課税所得の減少）\nマイナスの調整なので変更年度に全額を計上する。\n\n$350,000 の課税所得の増加とする文言は方向が逆である。$350,000 の減少を4年間に分けて計上する文言は、プラスの調整に適用される期間をマイナスの調整に当てはめており誤り。",
+      "references": ["IRC §481(a)", "Rev. Proc. 2015-13, §7.03"],
+      "difficulty": "advanced",
+      "source": "Proactive AICPA過去問DB REG 2018 Recently Released Q.29 (AICPA No. 65969)"
+    },
+    {
+      "id": "reg-corp-130",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A corporation elected S corporation status. All shareholders gave their written consent, except for a missing shareholder who owns 1% of the outstanding stock. Which of the following statements about this situation is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The election is valid if the board of directors gives its written consent."
+        },
+        {
+          "label": "B",
+          "text": "The election is invalid because all shareholders must give their written consent."
+        },
+        {
+          "label": "C",
+          "text": "The election requires two-thirds of the shareholders' written consent to be valid."
+        },
+        {
+          "label": "D",
+          "text": "The election requires 51% of the shareholders to give their written consent to be valid."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "An S corporation election is valid only if all persons who are shareholders at the time the election is made consent to it (IRC §1362(a)(2)). There is no exception for small holdings, so the missing consent of the shareholder who owns 1% of the stock makes the election invalid.\n\nConsent by the board of directors does not substitute for shareholder consent. There is no two-thirds or 51% shareholder consent threshold; consent must be unanimous.",
+      "explanationJa": "S法人の選択は、選択時点の株主全員の同意があって初めて有効となる（IRC §1362(a)(2)）。持株比率が小さい株主の例外はないため、1%を保有する株主の同意がなければ選択は無効である。\n\n取締役会の同意は株主の同意の代わりにならない。3分の2や51%といった同意要件はなく、全員の同意が必要である。",
+      "references": ["IRC §1362(a)(2)", "Treas. Reg. §1.1362-6(b)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2018 Recently Released Q.31 (AICPA No. 82570)"
+    },
+    {
+      "id": "reg-corp-131",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Lilac Corp., a C corporation with earnings and profits, redeemed shares of stock from an individual shareholder. The distribution in redemption of stock will likely result in dividend income treatment to the redeeming shareholder if",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The redemption is proportionate with respect to the shareholder."
+        },
+        {
+          "label": "B",
+          "text": "The redemption is due to a complete liquidation of the corporation."
+        },
+        {
+          "label": "C",
+          "text": "The redemption is due to a partial liquidation of the corporation."
+        },
+        {
+          "label": "D",
+          "text": "The redemption results in a complete termination of the shareholder's interest in the corporation."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A redemption is treated as an exchange (sale) only if it qualifies under IRC §302(b): it is not essentially equivalent to a dividend, it is substantially disproportionate, it completely terminates the shareholder's interest, or it is a partial liquidation for a noncorporate shareholder. Otherwise, under §302(d), the distribution is treated as a §301 distribution, which is a dividend to the extent of earnings and profits. A redemption that is proportionate with respect to the shareholder leaves the shareholder's relative ownership unchanged, so it meets none of the §302(b) tests and results in dividend treatment.\n\nA distribution in complete liquidation of the corporation is treated as payment in exchange for the stock (IRC §331). A redemption in partial liquidation is treated as an exchange for a noncorporate shareholder (IRC §302(b)(4)). A redemption that completely terminates the shareholder's interest qualifies for exchange treatment (IRC §302(b)(3)).",
+      "explanationJa": "株式の償還は、IRC §302(b) の要件（配当と実質的に同等でない、著しく不均衡、株主の持分の完全な終了、非法人株主に対する部分清算）のいずれかを満たす場合に限り交換（売却）として扱われる。満たさない場合は §302(d) により §301 の分配として扱われ、E&P の範囲で配当となる。株主にとって持分比率に比例した償還は相対的な持株割合が変わらないので、§302(b) のどの要件も満たさず配当として扱われる。\n\n会社の完全清算による分配は株式との交換として扱われる（IRC §331）。部分清算による償還は非法人株主にとって交換として扱われる（IRC §302(b)(4)）。株主の持分を完全に終了させる償還は交換として扱われる（IRC §302(b)(3)）。",
+      "references": ["IRC §302(b)", "IRC §302(d)", "IRC §301"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2019 Recently Released Q.16 (AICPA No. 66427)"
+    },
+    {
+      "id": "reg-corp-132",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "An S corporation has income of $72,000 after the following deductions:\n\nSection 179 expense election | $15,000\nCharitable contributions | 11,000\nSalary to owner who worked as CEO | 84,000\n\nWhat is the amount of nonseparately-stated income shown on the S corporation's income tax return?",
+      "choices": [
+        { "label": "A", "text": "$83,000" },
+        { "label": "B", "text": "$87,000" },
+        { "label": "C", "text": "$98,000" },
+        { "label": "D", "text": "$156,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "An S corporation's nonseparately stated (ordinary business) income excludes items that could affect shareholders' tax liabilities differently and must be passed through separately (IRC §1366(a); IRC §1363(b)). The Section 179 expense and charitable contributions are separately stated, so they are added back to the $72,000. The salary paid to the shareholder-employee is an ordinary business deduction and remains deducted.\n\nIncome after deductions = $72,000\nAdd back Section 179 expense = $15,000\nAdd back charitable contributions = $11,000\nNonseparately stated income = $98,000\n\nThe $83,000 amount adds back only the charitable contributions, and the $87,000 amount adds back only the Section 179 expense. The $156,000 amount also adds back the $84,000 salary, which is a deductible compensation expense in computing ordinary business income.",
+      "explanationJa": "S法人の非区分記載所得（通常の事業所得）には、株主ごとに税額への影響が異なりうるため区分して配賦すべき項目を含めない（IRC §1366(a)、§1363(b)）。Section 179 の即時償却と寄附金は区分記載項目なので、$72,000 に足し戻す。株主である CEO への給与は通常の事業経費として控除したままにする。\n\n控除後の所得 $72,000 + Section 179 $15,000 + 寄附金 $11,000 = $98,000\n\n$83,000 は寄附金だけを、$87,000 は Section 179 だけを足し戻した額。$156,000 は給与 $84,000 まで足し戻しているが、給与は事業所得の計算上控除できる費用なので誤り。",
+      "references": ["IRC §1366(a)", "IRC §1363(b)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2019 Recently Released Q.18 (AICPA No. 60835)"
+    },
+    {
+      "id": "reg-corp-133",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "The tax on built-in gains is a corporate-level tax on S corporations that dispose of assets that",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Appreciated while the company was an S corporation."
+        },
+        {
+          "label": "B",
+          "text": "Appreciated while the company was a C corporation."
+        },
+        {
+          "label": "C",
+          "text": "Appreciated during a 10-year period from when an S election is effective."
+        },
+        {
+          "label": "D",
+          "text": "Appreciated within 12 months of electing S corporation status."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The built-in gains tax (IRC §1374) is imposed at the corporate level on an S corporation that was formerly a C corporation (or acquired assets from a C corporation in a carryover-basis transaction) when it recognizes built-in gain during the recognition period. Built-in gain is the appreciation that existed on the first day the S election was effective, that is, appreciation that accrued while the company was a C corporation (IRC §1374(d)).\n\nAppreciation that arises after the S election is effective is not built-in gain; it passes through to shareholders with no corporate-level tax. The recognition period is the five-year period beginning with the first day of the first S corporation year (IRC §1374(d)(7)), so a 10-year period of appreciation after the election is incorrect. There is no rule limited to appreciation occurring within 12 months before the S election; all appreciation inherent at the election date counts.",
+      "explanationJa": "built-in gains tax（IRC §1374）は、以前 C法人だった S法人（または C法人から引継価額で資産を取得した S法人）が、認識期間中に built-in gain を実現したときに法人段階で課される税である。built-in gain とは、S選択が効力を生じた初日に存在していた含み益、つまり C法人だった期間に生じた値上がり益をいう（IRC §1374(d)）。\n\nS選択の効力発生後に生じた値上がりは built-in gain ではなく、法人段階の税なしで株主に配賦される。認識期間は最初の S法人年度の初日から5年間であり（IRC §1374(d)(7)）、S選択後10年間の値上がりとする文言は誤り。S選択前12か月以内の値上がりに限る規定もなく、選択日時点の含み益全体が対象となる。",
+      "references": ["IRC §1374(a)", "IRC §1374(d)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2019 Recently Released Q.38 (AICPA No. 59323)"
+    },
+    {
+      "id": "reg-corp-134",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Prime Corp. is an accrual-basis, calendar-year C corporation. Its current-year reported book income before federal income taxes was $300,000, which included $17,000 corporate bond interest income. A $20,000 expense for term life insurance premiums on corporate officers was incurred. Prime was the policy owner and beneficiary. What was Prime's current-year taxable income as reconciled on Prime's Schedule M-1, Reconciliation of Income (Loss) per Books With Income per Return, of Form 1120, U.S. Corporation Income Tax Return?",
+      "choices": [
+        { "label": "A", "text": "$320,000" },
+        { "label": "B", "text": "$300,000" },
+        { "label": "C", "text": "$283,000" },
+        { "label": "D", "text": "$280,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Schedule M-1 starts with book income and adjusts for items treated differently for tax purposes. Premiums on a life insurance policy covering an officer are not deductible when the corporation is directly or indirectly a beneficiary of the policy (IRC §264(a)(1)), so the $20,000 expense is added back. Interest on corporate bonds is taxable income (IRC §61(a)(4)) and is already included in book income, so no adjustment is needed.\n\nBook income before federal income taxes = $300,000\nAdd: nondeductible officers' life insurance premiums = $20,000\nTaxable income = $320,000\n\nThe $300,000 amount fails to add back the nondeductible premiums. The $283,000 amount wrongly subtracts the taxable corporate bond interest and does not add back the premiums. The $280,000 amount subtracts the premiums a second time instead of adding them back.",
+      "explanationJa": "Schedule M-1 は会計上の利益から出発し、税務上の取扱いが異なる項目を調整する。法人が保険金受取人となっている役員の生命保険料は控除できない（IRC §264(a)(1)）ので、$20,000 を加算する。社債の利息は課税所得であり（IRC §61(a)(4)）、既に会計上の利益に含まれているので調整は不要である。\n\n税引前会計利益 $300,000 + 損金不算入の役員生命保険料 $20,000 = 課税所得 $320,000\n\n$300,000 は損金不算入の保険料を加算していない。$283,000 は課税される社債利息を差し引き、保険料も加算していない。$280,000 は保険料を加算せずにさらに差し引いている。",
+      "references": ["IRC §264(a)(1)", "IRC §61(a)(4)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part1 Q.19 (AICPA No. 56627)"
+    },
+    {
+      "id": "reg-corp-135",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Vital Corp. is an accrual-basis, calendar-year C corporation. Its year 2 reported book income before federal income taxes was $500,000. Included in that amount were the following items:\n\nYear 1 state franchise tax refund | $50,000\nMunicipal bond interest income | 7,500\n\nWhat should be the amount of Vital's year 2 taxable income as reconciled on Vital's Schedule M-1 of Form 1120, U.S. Corporation Income Tax Return?",
+      "choices": [
+        { "label": "A", "text": "$500,000" },
+        { "label": "B", "text": "$492,500" },
+        { "label": "C", "text": "$450,000" },
+        { "label": "D", "text": "$442,500" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Schedule M-1 removes book income that is not taxable. Municipal bond interest is excluded from gross income (IRC §103(a)), so the $7,500 is subtracted. A state franchise tax is deductible when paid or accrued (IRC §164(a)), and a refund of a previously deducted tax is included in income under the tax benefit rule (IRC §111(a)); the $50,000 refund is already in book income and is taxable, so no adjustment is needed.\n\nBook income before federal income taxes = $500,000\nLess: municipal bond interest = ($7,500)\nTaxable income = $492,500\n\nThe $500,000 amount fails to subtract the tax-exempt municipal interest. The $450,000 amount wrongly subtracts the taxable franchise tax refund, and the $442,500 amount subtracts both the refund and the municipal interest.",
+      "explanationJa": "Schedule M-1 では、会計上の利益のうち課税されない項目を差し引く。地方債利息は総所得から除外される（IRC §103(a)）ので $7,500 を減算する。州のフランチャイズ税は支払・発生時に控除でき（IRC §164(a)）、過去に控除した税の還付は tax benefit rule により所得に含まれる（IRC §111(a)）。還付金 $50,000 は既に会計上の利益に含まれ課税対象なので、調整は不要である。\n\n税引前会計利益 $500,000 − 地方債利息 $7,500 = 課税所得 $492,500\n\n$500,000 は非課税の地方債利息を差し引いていない。$450,000 は課税される還付金を差し引いており、$442,500 は還付金と地方債利息の両方を差し引いている。",
+      "references": ["IRC §103(a)", "IRC §111(a)", "IRC §164(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part1 Q.20 (AICPA No. 56603)"
+    },
+    {
+      "id": "reg-corp-136",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Sunshine Corp., a wholly owned subsidiary of Pierpoint Corp., purchased land from Pierpoint for its fair market value of $10,000 on January 1 of the previous tax year. Pierpoint's adjusted basis of the land on the date of sale was $8,000. During the current tax year, Sunshine sold the land for $9,000 to an unrelated taxpayer. What gain or loss will be reported on a consolidated tax return filed by Sunshine and Pierpoint for the current tax year?",
+      "choices": [
+        { "label": "A", "text": "($1,000)" },
+        { "label": "B", "text": "$0" },
+        { "label": "C", "text": "$1,000" },
+        { "label": "D", "text": "$2,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "In a consolidated group, gain on an intercompany sale between members is deferred and taken into account when the property leaves the group (Treas. Reg. §1.1502-13). Under the matching and acceleration rules, the selling member's intercompany gain is recognized when the buying member sells the property to an unrelated party, so the group as a whole reports the gain measured from the group's original basis.\n\nPierpoint's deferred intercompany gain = $10,000 - $8,000 = $2,000\nSunshine's loss on sale to the unrelated party = $9,000 - $10,000 = ($1,000)\nNet gain on the consolidated return = $2,000 - $1,000 = $1,000\n(Equivalent to $9,000 sale price - $8,000 group basis)\n\nThe ($1,000) amount reports only Sunshine's loss and ignores the deferred intercompany gain. The $0 amount ignores both. The $2,000 amount reports only Pierpoint's intercompany gain and ignores the decline in value while Sunshine held the land.",
+      "explanationJa": "連結納税グループでは、メンバー間の資産売買による利得は繰り延べられ、その資産がグループ外へ出たときに計上される（Treas. Reg. §1.1502-13）。matching rule により、購入メンバーが外部の第三者へ売却した時点で売却メンバーの会社間利得も認識されるので、グループ全体としてはグループの当初の取得価額を基準とした利得を報告する。\n\nPierpoint の繰延会社間利得 = $10,000 − $8,000 = $2,000\nSunshine の外部売却損 = $9,000 − $10,000 = ($1,000)\n連結申告上の純利得 = $2,000 − $1,000 = $1,000（売却価格 $9,000 − グループの取得価額 $8,000 と同じ）\n\n($1,000) は Sunshine の損失だけを計上し、繰延利得を無視している。$0 は両方を無視している。$2,000 は Pierpoint の会社間利得だけを計上し、Sunshine 保有中の値下がりを無視している。",
+      "references": ["Treas. Reg. §1.1502-13(c)", "Treas. Reg. §1.1502-13(d)"],
+      "difficulty": "advanced",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part1 Q.23 (AICPA No. 58443)"
+    },
+    {
+      "id": "reg-corp-137",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Which of the following statements regarding the election to file a consolidated tax return is correct?",
+      "choices": [
+        { "label": "A", "text": "Intercompany gains are eliminated." },
+        {
+          "label": "B",
+          "text": "The election may be revoked by the parent of the group at any time."
+        },
+        {
+          "label": "C",
+          "text": "Each member of the consolidated group is liable only for its own tax liability."
+        },
+        {
+          "label": "D",
+          "text": "Net operating losses arising after the election must first offset their income from separate return years."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "In a consolidated return, gains and losses on intercompany transactions between members of the group are deferred and eliminated from consolidated taxable income until the property leaves the group or another triggering event occurs (Treas. Reg. §1.1502-13). Intercompany gains are therefore eliminated.\n\nThe election to file a consolidated return is binding for later years and may be discontinued only with the IRS's permission for good cause (Treas. Reg. §1.1502-75(c)); the parent cannot revoke it at any time. Each member of the group is severally liable for the entire consolidated tax liability (Treas. Reg. §1.1502-6), not only its own share. Net operating losses arising after the election are consolidated NOLs that offset consolidated taxable income; they are not required to be applied first against the member's income from separate return years.",
+      "explanationJa": "連結申告では、グループ内の会社間取引による損益は繰り延べられ、資産がグループ外に出る等の事由が生じるまで連結課税所得から除かれる（Treas. Reg. §1.1502-13）。したがってグループ内取引の利得は消去される。\n\n連結申告の選択は翌年以降も拘束し、正当な理由がありIRSの許可を得た場合にしかやめられない（§1.1502-75(c)）ので、親会社がいつでも撤回できるわけではない。各構成会社は自社分だけでなく連結税額全体について責任を負う（§1.1502-6）。選択後に生じたNOLは連結NOLとして連結課税所得と相殺され、単体申告年度の所得から先に相殺しなければならないわけではない。",
+      "references": [
+        "Treas. Reg. §1.1502-13",
+        "Treas. Reg. §1.1502-6",
+        "Treas. Reg. §1.1502-75(c)"
+      ],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part2 Q.16 (AICPA No. 94998)"
+    },
+    {
+      "id": "reg-corp-138",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Classic, Inc., a C corporation, distributed property to its sole shareholder as part of a complete liquidation. Classic's adjusted basis in the property was $660,000. The property had a fair market value of $730,000 at the time of the distribution and was subject to a liability of $700,000. The shareholder's tax basis in Classic's stock was $740,000. As a result of the distribution of the property, Classic will recognize a",
+      "choices": [
+        { "label": "A", "text": "$10,000 loss" },
+        { "label": "B", "text": "$40,000 gain" },
+        { "label": "C", "text": "$70,000 gain" },
+        { "label": "D", "text": "$80,000 loss" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A corporation recognizes gain or loss on the distribution of property in complete liquidation as if the property were sold to the shareholder at its fair market value (IRC §336(a)). If the property is subject to a liability, the fair market value is treated as not less than the amount of the liability (IRC §336(b)). Here the $730,000 fair market value already exceeds the $700,000 liability, so the fair market value is used.\n\nAmount treated as realized: $730,000 (greater of fair market value of $730,000 or liability of $700,000)\nLess Classic's adjusted basis: - $660,000\nGain recognized by Classic: $70,000\n\nThe $40,000 gain uses the $700,000 liability as the amount realized, but the liability rule only sets a floor and does not replace a higher fair market value. The $10,000 loss compares the property's $730,000 fair market value with the shareholder's $740,000 stock basis, which determines the shareholder's result, not the corporation's. The $80,000 loss compares Classic's $660,000 basis with the shareholder's $740,000 stock basis, which is irrelevant to the corporation's gain.",
+      "explanationJa": "完全清算で資産を分配する法人は、その資産を時価で株主に売却したものとして損益を認識する（IRC §336(a)）。資産に負債が付いている場合、時価は負債額を下回らないものとして扱う（§336(b)）。本問では時価$730,000が負債$700,000を上回るので、時価をそのまま使う。\n\n実現額: $730,000（時価$730,000と負債$700,000の大きい方）\nClassicの調整後取得価額: −$660,000\nClassicが認識する利得: $70,000\n\n$40,000の利得は負債$700,000を実現額にしているが、負債の規定は下限を定めるだけで、それより高い時価を置き換えない。$10,000の損失は資産の時価$730,000と株主の株式簿価$740,000を比べており、これは株主側の損益の計算である。$80,000の損失はClassicの簿価$660,000と株主の株式簿価$740,000を比べており、法人の損益とは関係がない。",
+      "references": ["IRC §336(a)", "IRC §336(b)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part2 Q.36 (AICPA No. 66473)"
+    },
+    {
+      "id": "reg-corp-139",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Blue Bridge, Inc., a C corporation with 50 shareholders, filed an election to become an S corporation. This election was denied by the IRS based on the \"ineligible shareholder\" qualification. Each of the following shareholders would be eligible to be a shareholder in the S corporation except",
+      "choices": [
+        { "label": "A", "text": "Jones, a limited liability company." },
+        { "label": "B", "text": "Smythe, a resident alien." },
+        { "label": "C", "text": "Young, an estate." },
+        {
+          "label": "D",
+          "text": "Apple Plan, a qualified retirement plan trust."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An S corporation may have as shareholders only individuals (other than nonresident aliens), estates, certain trusts, and certain tax-exempt organizations (IRC §1361(b)(1), (c)(6)). A limited liability company is not a permitted shareholder, so Jones, a limited liability company, is the ineligible shareholder.\n\nA resident alien is an individual who is not a nonresident alien and is eligible. An estate is expressly permitted. A qualified retirement plan trust exempt under §501(a) is a permitted tax-exempt shareholder under §1361(c)(6).",
+      "explanationJa": "S法人の株主になれるのは、個人（非居住外国人を除く）、遺産財団、一定の信託、一定の免税団体に限られる（IRC §1361(b)(1), (c)(6)）。有限責任会社（LLC）は株主として認められないため、LLCであるJonesが不適格株主である。\n\n居住外国人は非居住外国人ではない個人なので株主になれる。遺産財団は明文で認められている。§501(a)で非課税の適格退職年金信託は、§1361(c)(6)により株主になれる免税団体に当たる。",
+      "references": ["IRC §1361(b)(1)(B)", "IRC §1361(c)(6)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part2 Q.37 (AICPA No. 60669)"
+    },
+    {
+      "id": "reg-corp-140",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Mark and Mary formed MM, Inc. as an S corporation. Each contributed $50,000 in exchange for five shares of corporate stock. In addition, MM obtained a $60,000 loan from a local bank that was still outstanding at the end of the year. In MM's first year of operation, it reported a loss of $20,000 and did not make any distributions to the shareholders. What is Mark's basis in his MM shares at the beginning of the second year?",
+      "choices": [
+        { "label": "A", "text": "$40,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$70,000" },
+        { "label": "D", "text": "$100,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "An S corporation shareholder's stock basis starts with the cash contributed and is reduced by the shareholder's pro rata share of losses (IRC §1367(a)(2)). Unlike a partnership, an S corporation's liabilities to third parties are not included in the shareholder's basis; only loans made directly by the shareholder to the corporation create debt basis.\n\nInitial stock basis: $50,000\nLess Mark's share of loss ($20,000 × 50%): - $10,000\nBasis at the beginning of year 2: $40,000\n\nThe $50,000 amount ignores the pass-through loss. The $70,000 amount adds half of the $60,000 bank loan ($30,000) and subtracts the $10,000 loss, but bank debt of the corporation does not increase shareholder basis. The $100,000 amount is the total capital contributed by both shareholders.",
+      "explanationJa": "S法人株主の株式簿価は拠出した現金から始まり、損失の按分額だけ減少する（IRC §1367(a)(2)）。パートナーシップと異なり、S法人の第三者からの借入は株主の簿価に含まれない。株主自身が法人に貸し付けた場合にだけ債権簿価（debt basis）が生じる。\n\n当初の株式簿価 $50,000\nMarkの損失按分額（$20,000 × 50%） −$10,000\n2年目期首の簿価 $40,000\n\n$50,000はパススルーされた損失を無視している。$70,000は銀行借入$60,000の半分（$30,000）を加えて損失$10,000を引いているが、法人の銀行借入は株主の簿価を増やさない。$100,000は株主2人の拠出額の合計である。",
+      "references": ["IRC §1366(a)", "IRC §1367(a)", "IRC §1366(d)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part2 Q.38 (AICPA No. 71981)"
+    },
+    {
+      "id": "reg-corp-141",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "A C corporation has the following capital gains and capital losses for years 1 and 2:\n\nYear | Capital Gains | Capital Losses\nYear 1 | $250,000 | $300,000\nYear 2 | 425,000 | 350,000\n\nIf the C corporation had no capital gains or losses prior to year 1, what is the minimum net capital gain that can be reported for year 2?",
+      "choices": [
+        { "label": "A", "text": "$25,000" },
+        { "label": "B", "text": "$50,000" },
+        { "label": "C", "text": "$75,000" },
+        { "label": "D", "text": "$425,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A C corporation may deduct capital losses only to the extent of capital gains (IRC §1211(a)). A net capital loss is carried back three years and then forward five years as a short-term capital loss (IRC §1212(a)(1)).\n\nYear 1: $250,000 - $300,000 = $(50,000) net capital loss.\nCarryback: the corporation had no capital gains in the three prior years, so nothing can be absorbed; the $50,000 is carried forward to year 2.\nYear 2: $425,000 - $350,000 = $75,000 net capital gain before the carryforward.\nLess carryforward: $75,000 - $50,000 = $25,000 net capital gain for year 2.\n\nThe $75,000 amount ignores the $50,000 capital loss carryforward from year 1. The $50,000 amount is the year 1 net capital loss, not the year 2 gain. The $425,000 amount is year 2 gross capital gains with no netting of capital losses.",
+      "explanationJa": "C法人の資本損失はキャピタルゲインの範囲でしか控除できず（IRC §1211(a)）、純資本損失は3年繰り戻し、その後5年繰り越す（短期資本損失として扱う。§1212(a)(1)）。\n\n1年目: $250,000 − $300,000 = ▲$50,000（純資本損失）\n繰戻し: 過去3年にキャピタルゲインがないので吸収できず、$50,000を2年目へ繰り越す\n2年目: $425,000 − $350,000 = $75,000（繰越前の純キャピタルゲイン）\n繰越控除後: $75,000 − $50,000 = $25,000\n\n$75,000は1年目からの繰越$50,000を無視している。$50,000は1年目の純資本損失の額で、2年目の利得ではない。$425,000は2年目のキャピタルゲイン総額で、資本損失と相殺していない。",
+      "references": ["IRC §1211(a)", "IRC §1212(a)(1)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2021 Recently Released Q.15 (AICPA No. 504555)"
+    },
+    {
+      "id": "reg-corp-142",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "The following information relates to three corporations, Mauve, Teal, and Fuchsia:\n\nStockholders | Mauve | Teal | Fuchsia\nAdams | 10% | 18% | 22%\nJefferson | 40% | 22% | 0%\nWashington | 50% | 0% | 0%\nBrook | 0% | 33% | 70%\nSmith | 0% | 27% | 8%\nTotal | 100% | 100% | 100%\n\nNone of the corporations has made a subchapter S election. Which of the following statements about the corporations is true?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "All three corporations must file a consolidated return."
+        },
+        {
+          "label": "B",
+          "text": "All three corporations can elect to file a consolidated return."
+        },
+        {
+          "label": "C",
+          "text": "Two of the three corporations can elect to file a consolidated return."
+        },
+        {
+          "label": "D",
+          "text": "None of the corporations can file a consolidated return."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Only an affiliated group of corporations may file a consolidated return (IRC §1501). An affiliated group requires a common parent corporation that directly owns stock possessing at least 80% of the total voting power and at least 80% of the total value of the stock of at least one other includible corporation (IRC §1504(a)). Mauve, Teal, and Fuchsia are owned only by individuals, and none of the corporations owns stock in another. Common ownership by individuals (a brother-sister arrangement) does not create an affiliated group, so none of the corporations can file a consolidated return.\n\nConsolidated filing is never mandatory; it is an election available only to an affiliated group, so it is not true that all three must file a consolidated return. Because there is no parent-subsidiary relationship among any of the corporations, neither all three nor any two of them can elect to file a consolidated return.",
+      "explanationJa": "連結申告ができるのは関連法人グループ（affiliated group）だけである（IRC §1501）。関連法人グループには、少なくとも1社の他の法人の株式について議決権総数の80%以上かつ価値総額の80%以上を直接保有する共通の親法人が必要である（§1504(a)）。Mauve、Teal、Fuchsiaの株主は個人だけで、どの法人も他の法人の株式を保有していない。個人による共通支配（兄弟会社関係）では関連法人グループにならないため、どの法人も連結申告はできない。\n\n連結申告は強制ではなく、関連法人グループにだけ認められる選択なので、3社が連結申告しなければならないということはない。親子関係がまったくないので、3社全部でも、そのうち2社でも連結申告を選択することはできない。",
+      "references": ["IRC §1501", "IRC §1504(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2021 Recently Released Q.16 (AICPA No. 87816)"
+    },
+    {
+      "id": "reg-corp-143",
+      "topic": "Corporate Taxation",
+      "subtopic": "Corporate Taxation",
+      "stem": "Which of the following events may result in termination of S corporation status for a company?",
+      "choices": [
+        { "label": "A", "text": "The company issued shares to an estate." },
+        {
+          "label": "B",
+          "text": "The company issued shares to a qualified profit-sharing plan."
+        },
+        {
+          "label": "C",
+          "text": "The company issued shares to a partnership in which all the partners are U.S. citizens."
+        },
+        {
+          "label": "D",
+          "text": "The company issued two series of the same class of stock with identical liquidating and distribution rights but different voting rights."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "An S election terminates when the corporation ceases to be a small business corporation (IRC §1362(d)(2)). A partnership is not a permitted shareholder (IRC §1361(b)(1)), regardless of whether its partners are U.S. citizens, so issuing shares to a partnership terminates the S election.\n\nAn estate is a permitted shareholder. A qualified profit-sharing plan trust exempt under §501(a) is a permitted tax-exempt shareholder (IRC §1361(c)(6)). Differences in voting rights among shares are disregarded in determining whether a corporation has more than one class of stock (IRC §1361(c)(4)), so shares with identical distribution and liquidation rights but different voting rights do not create a second class of stock.",
+      "explanationJa": "S法人の選択は、法人が small business corporation の要件を満たさなくなった時点で終了する（IRC §1362(d)(2)）。パートナーシップは、パートナーが米国市民かどうかにかかわらず株主になれない（§1361(b)(1)）ので、パートナーシップへの株式発行はS法人の地位を終了させる。\n\n遺産財団は株主になれる。§501(a)で非課税の適格利益分配制度の信託は、免税団体の株主として認められる（§1361(c)(6)）。議決権の違いは株式の種類が1つかどうかの判定で無視される（§1361(c)(4)）ため、分配・残余財産の権利が同じで議決権だけが異なる株式は2つ目の種類にならない。",
+      "references": [
+        "IRC §1361(b)(1)(B)",
+        "IRC §1361(c)(4)",
+        "IRC §1362(d)(2)"
+      ],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2021 Recently Released Q.36 (AICPA No. 64283)"
     }
   ]
 }
