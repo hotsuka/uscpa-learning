@@ -2,7 +2,7 @@
   "id": "reg-bankruptcy",
   "name": "Bankruptcy",
   "topic": "Bankruptcy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "reg-bkr-001",
@@ -723,6 +723,190 @@
       "references": [],
       "difficulty": "intermediate",
       "source": "Proactive AICPA過去問DB REG Bankruptcy Q.24"
+    },
+    {
+      "id": "reg-bkr-025",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the Secured Transactions Article of the UCC, which of the following security agreements does not need to be in writing to be enforceable?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A security agreement collateralizing a debt of less than $500"
+        },
+        {
+          "label": "B",
+          "text": "A security agreement where the collateral is highly perishable or subject to wide price fluctuations"
+        },
+        {
+          "label": "C",
+          "text": "A security agreement where the collateral is in the possession of the secured party"
+        },
+        {
+          "label": "D",
+          "text": "A security agreement involving a purchase money security interest"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under UCC §9-203(b)(3), a security interest attaches and is enforceable when value has been given, the debtor has rights in the collateral, and either (1) the debtor has authenticated (signed) a security agreement describing the collateral, or (2) the collateral is in the possession of the secured party under the debtor's security agreement. When the secured party possesses the collateral (a pledge), the security agreement may be oral.\n\nThere is no dollar threshold under Article 9 that excuses a written security agreement for small debts.\nPerishable collateral or collateral subject to price fluctuations does not eliminate the authenticated record requirement.\nA purchase money security interest still requires an authenticated security agreement unless the secured party has possession; PMSI status affects perfection and priority, not the writing requirement.",
+      "explanationJa": "UCC §9-203(b)(3) により、担保権は、価値の供与、債務者の担保物に対する権利、および ①担保物を記載した担保契約に債務者が署名（認証）したこと、または ②担保契約に基づき担保権者が担保物を占有していること、のいずれかがあれば成立し強制できる。担保権者が担保物を占有している場合（質）は、担保契約は口頭でよい。\n少額の債務なら書面不要という規定は無い。腐敗しやすい物や価格変動の大きい物でも書面（認証された記録）は必要。購入代金担保権（PMSI）も、占有が無ければ書面が必要で、PMSI であることは対抗要件・優先順位に関係するだけである。",
+      "references": ["UCC §9-203(b)(3)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2012 Recently Released Q.28 (AICPA No. 89828)"
+    },
+    {
+      "id": "reg-bkr-026",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "ABC Co. loaned XYZ Co. $5,000. Under the Secured Transactions Article of the UCC, which of the following items would give ABC the best position in the event of default on the loan by XYZ?",
+      "choices": [
+        { "label": "A", "text": "A signed security interest not filed." },
+        { "label": "B", "text": "A financing statement." },
+        {
+          "label": "C",
+          "text": "Common stock promised as collateral for the loan."
+        },
+        {
+          "label": "D",
+          "text": "Possession of XYZ's service truck as collateral."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A security interest is enforceable against the debtor (attaches) when value is given, the debtor has rights in the collateral, and either the debtor authenticates a security agreement describing the collateral or the secured party takes possession under the agreement (UCC §9-203(b)). Goods such as a truck may be perfected by the secured party's possession (UCC §9-313(a)). Taking possession of XYZ's service truck therefore both attaches and perfects ABC's security interest, giving ABC the best position against XYZ and its other creditors on default.\n\nA signed security interest that is not filed is attached but unperfected, so it is subordinate to perfected creditors and a bankruptcy trustee. A financing statement alone does not create a security interest; without a security agreement or possession there is nothing to perfect. Common stock that is merely promised as collateral has not been delivered or described in an authenticated security agreement, so no security interest has attached.",
+      "explanationJa": "担保権は、対価の供与、債務者の担保物に対する権利、そして担保物を記載した担保契約への債務者の署名（認証）または担保権者による占有、の3要件で成立（attach）する（UCC §9-203(b)）。トラックのような物品は担保権者の占有によって対抗要件を具備できる（UCC §9-313(a)）。XYZのサービス用トラックを占有すれば、担保権の成立と対抗要件の具備が同時に満たされ、債務不履行時にABCは最も有利な立場に立つ。\n\n署名済みだが登録していない担保権は、成立していても対抗要件がなく、対抗要件を備えた債権者や破産管財人に劣後する。financing statementだけでは担保権は成立せず、担保契約も占有もなければ対抗要件の対象がない。担保として約束されただけの普通株は、引き渡されておらず署名された担保契約にも記載されていないので、担保権は成立していない。",
+      "references": ["UCC §9-203(b)", "UCC §9-313(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.26 (AICPA No. null)"
+    },
+    {
+      "id": "reg-bkr-027",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "A company that has filed a Chapter 11 bankruptcy petition intends to pay an insider key employee an inducement to remain with the company. The average amount of similar payments made to nonmanagement employees will be $35,000 in the same calendar year. Which of the following annual monetary incentives can be paid to this employee?",
+      "choices": [
+        { "label": "A", "text": "$335,000" },
+        { "label": "B", "text": "$355,000" },
+        { "label": "C", "text": "$375,000" },
+        { "label": "D", "text": "$395,000" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bankruptcy Code §503(c)(1), added by the Bankruptcy Abuse Prevention and Consumer Protection Act of 2005, restricts retention payments (key employee retention plans) to insiders of a Chapter 11 debtor. In addition to other conditions (a bona fide job offer from another business at the same or greater compensation and services essential to the survival of the business), the amount paid to the insider may not exceed 10 times the mean of similar transfers made to nonmanagement employees for any purpose during the same calendar year.\n\nCap = 10 x $35,000 = $350,000\n\n$335,000 is within the $350,000 cap and is the only amount that can be paid. $355,000, $375,000 and $395,000 all exceed 10 times the $35,000 average paid to nonmanagement employees.",
+      "explanationJa": "2005年の破産法改正（BAPCPA）で追加された破産法 §503(c)(1) は、Chapter 11 の債務者が内部者（insider）に支払う引き留めのための報酬を制限している。他社から同等以上の報酬の正式なオファーがあること等の要件に加え、金額は同じ暦年に管理職以外の従業員へ支払われた同種の支払の平均額の10倍を超えてはならない。\n\n上限 = $35,000 × 10 = $350,000\n\n$350,000 以下に収まるのは $335,000 だけである。$355,000・$375,000・$395,000 はいずれも上限 $350,000 を超えるため支払えない。",
+      "references": ["11 U.S.C. §503(c)(1)"],
+      "difficulty": "advanced",
+      "source": "Proactive AICPA過去問DB REG 2018 Recently Released Q.20 (AICPA No. 71009)"
+    },
+    {
+      "id": "reg-bkr-028",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the federal Bankruptcy Code, an involuntary petition in bankruptcy may not be filed against which of the following parties?",
+      "choices": [
+        { "label": "A", "text": "A stockbroker." },
+        { "label": "B", "text": "A farmer." },
+        { "label": "C", "text": "A postal worker." },
+        { "label": "D", "text": "A railroad employee." }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under Bankruptcy Code §303(a), an involuntary case under Chapter 7 or Chapter 11 may not be commenced against a farmer, a family farmer, or a nonprofit (not a moneyed, business or commercial) corporation. A farmer can therefore be the subject only of a voluntary petition.\n\nA stockbroker, a postal worker and a railroad employee are not protected by §303(a). (A railroad as an entity cannot be a Chapter 7 debtor, but a railroad employee is an individual who may be the subject of an involuntary petition.)",
+      "explanationJa": "破産法 §303(a) により、農業者（farmer）、家族経営農業者、非営利法人に対しては、Chapter 7 または Chapter 11 の強制申立て（involuntary petition）をすることができない。農業者については任意申立てのみが可能である。\n\n株式仲買人、郵便局員、鉄道会社の従業員は §303(a) の保護対象ではない（鉄道会社そのものは Chapter 7 の債務者になれないが、その従業員は個人として強制申立ての対象となりうる）。",
+      "references": ["11 U.S.C. §303(a)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2019 Recently Released Q.27 (AICPA No. 58465)"
+    },
+    {
+      "id": "reg-bkr-029",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Jones files for protection under Chapter 7 of the federal Bankruptcy Code. Which of the following debts will be discharged?",
+      "choices": [
+        { "label": "A", "text": "Six months of child support in arrears." },
+        {
+          "label": "B",
+          "text": "Six months of alimony due to Jones' former spouse."
+        },
+        {
+          "label": "C",
+          "text": "Federal taxes due on Jones' timely filed tax return for the prior year."
+        },
+        {
+          "label": "D",
+          "text": "A secured claim by a creditor relating to Jones' purchase of an appliance."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A Chapter 7 discharge releases the debtor from personal liability on prepetition debts except those listed in Bankruptcy Code §523(a). A secured claim for the purchase of an appliance is not on that list, so Jones's personal liability on that debt is discharged. The creditor's lien on the appliance survives the discharge, but the creditor can no longer collect any deficiency from Jones personally.\n\nSix months of child support in arrears and six months of alimony are domestic support obligations, which are nondischargeable under §523(a)(5). Federal income taxes on the prior year's timely filed return are priority taxes (the return was due within three years before the petition) and are nondischargeable under §523(a)(1).",
+      "explanationJa": "第7章の免責は、§523(a)に列挙された債務を除き、申立前の債務についての債務者の個人責任を消滅させる。家電の購入代金に係る担保付債権は列挙に含まれないため、Jonesの個人責任は免責される。担保権（家電に対する先取特権）自体は免責後も残るが、債権者は不足額をJones個人から回収できなくなる。\n\n6か月分の養育費の滞納と6か月分の扶養料は家庭扶養債務であり、§523(a)(5)により免責されない。前年分の期限内申告に係る連邦税は、申立前3年以内に申告期限が到来した優先租税債権であり、§523(a)(1)により免責されない。",
+      "references": [
+        "11 U.S.C. §523(a)(1), (a)(5)",
+        "11 U.S.C. §727",
+        "11 U.S.C. §524"
+      ],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part2 Q.4 (AICPA No. 64749)"
+    },
+    {
+      "id": "reg-bkr-030",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the Secured Transactions Article of the UCC, in a situation where the financing statement contains no special provisions and the debtor has defaulted, the secured party generally has the right to",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Require the debtor to deliver the collateral to the secured party."
+        },
+        {
+          "label": "B",
+          "text": "Peacefully take possession of the collateral without judicial process."
+        },
+        {
+          "label": "C",
+          "text": "Sell the collateral without notifying the debtor."
+        },
+        {
+          "label": "D",
+          "text": "Retain the collateral and proceed against the debtor for any balance due."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "After default, a secured party may take possession of the collateral without judicial process, provided it proceeds without a breach of the peace (UCC §9-609(a)-(b)). This self-help repossession right exists even if the security agreement contains no special provisions.\n\nThe right to require the debtor to assemble and deliver the collateral to the secured party exists only if the parties so agreed (UCC §9-609(c)); with no special provisions, it is not available. A secured party that sells the collateral must generally send the debtor reasonable authenticated notification of the disposition (UCC §9-611), so selling without notifying the debtor is not permitted. Retaining the collateral in satisfaction of the debt (strict foreclosure under UCC §9-620) discharges the obligation, so the secured party cannot both retain the collateral and proceed against the debtor for any balance due.",
+      "explanationJa": "債務不履行後、担保権者は平穏を害しない限り、裁判手続を経ずに担保物を占有取得できる（UCC §9-609(a)(b)）。この自力救済による取戻しは、担保契約に特別の定めがなくても認められる。\n\n債務者に担保物を集めて引き渡すよう求める権利は、当事者がそう合意した場合に限られる（§9-609(c)）ため、特別の定めがない本問では認められない。担保物を処分する場合は原則として債務者への事前通知が必要（§9-611）であり、通知なしの売却はできない。担保物を債務の弁済に充てて保持する（§9-620の strict foreclosure）と債務は消滅するため、担保物を保持したうえで残額を請求することはできない。",
+      "references": ["UCC §9-609", "UCC §9-611", "UCC §9-620"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part2 Q.5 (AICPA No. 56919)"
+    },
+    {
+      "id": "reg-bkr-031",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Which of the following statements regarding a creditor's rights against a surety is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The surety is primarily liable to the creditor."
+        },
+        {
+          "label": "B",
+          "text": "A surety does not have the right of subrogation."
+        },
+        {
+          "label": "C",
+          "text": "The creditor must collect payment from the surety through a wage garnishment."
+        },
+        {
+          "label": "D",
+          "text": "The creditor must first attempt to collect the debt from the primary debtor before being able to collect from the surety."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A surety promises to answer for the debt of the principal debtor and is primarily liable to the creditor: once the debt is due and unpaid, the creditor may demand payment from the surety immediately, without first proceeding against the principal debtor or giving the surety notice of default.\n\nA surety that pays the debt does have the right of subrogation; it steps into the creditor's position and acquires the creditor's rights against the principal debtor, including any security interest (Restatement (Third) of Suretyship and Guaranty §27). The creditor is not limited to wage garnishment and may collect from the surety by any lawful means. The rule that the creditor must first attempt to collect from the primary debtor describes a guarantor of collection, not a surety.",
+      "explanationJa": "保証人（surety）は主債務者の債務を弁済することを約束した者で、債権者に対して一次的な責任を負う。債務の弁済期が来て未払いであれば、債権者は主債務者への請求や不履行の通知をせずに、直ちに保証人に支払を求めることができる。\n\n債務を弁済した保証人は代位権（right of subrogation）を持ち、担保権を含めて債権者の主債務者に対する権利を取得する（保証に関する第3リステイトメント §27）。債権者の回収方法は賃金差押えに限られない。まず主債務者から回収を試みなければならないのは取立保証人（guarantor of collection）の場合であり、suretyには当てはまらない。",
+      "references": [
+        "Restatement (Third) of Suretyship and Guaranty §1",
+        "Restatement (Third) of Suretyship and Guaranty §27"
+      ],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2021 Recently Released Q.24 (AICPA No. 82872)"
     }
   ]
 }

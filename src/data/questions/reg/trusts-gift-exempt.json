@@ -2,7 +2,7 @@
   "id": "reg-trusts-gift-exempt",
   "name": "Trusts, Gift Taxes & Tax-Exempt Organizations",
   "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "questions": [
     {
       "id": "reg-tge-001",
@@ -483,6 +483,455 @@
       "references": [],
       "difficulty": "intermediate",
       "source": "Proactive AICPA過去問DB REG Trusts, Gift Taxes & Tax-Exempt Organizations Q.16"
+    },
+    {
+      "id": "reg-tge-017",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "What is the due date of a federal estate tax return (Form 706), for a taxpayer who died on May 15, year 2, assuming that a request for an extension of time is not filed?",
+      "choices": [
+        { "label": "A", "text": "September 15, year 2" },
+        { "label": "B", "text": "December 31, year 2" },
+        { "label": "C", "text": "January 31, year 3" },
+        { "label": "D", "text": "February 15, year 3" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §6075(a), the federal estate tax return (Form 706) is due 9 months after the date of the decedent's death. A 6-month extension is available under IRC §6081, but none was requested here.\n\nDate of death: May 15, year 2\nDue date: May 15, year 2 + 9 months = February 15, year 3\n\nSeptember 15, year 2 is only 4 months after death. December 31, year 2 is the end of the calendar year, which is irrelevant to the estate tax return. January 31, year 3 is not tied to the 9-month rule.",
+      "explanationJa": "IRC §6075(a)により、連邦遺産税申告書（Form 706）の期限は死亡日から9か月後。§6081で6か月の延長が可能だが、本問では申請していない。\n\n死亡日 year 2年5月15日 ＋ 9か月 = year 3年2月15日\n\nyear 2年9月15日は死亡後4か月にすぎない。year 2年12月31日は暦年末で遺産税申告とは無関係。year 3年1月31日も9か月ルールと結び付かない。",
+      "references": ["IRC §6075(a)", "IRC §6081"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2013 Recently Released Q.13 (AICPA No. 90213)"
+    },
+    {
+      "id": "reg-tge-018",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "A trust has distributable net income of $14,000 and distributes $20,000 to the sole beneficiary. What amounts are taxable to the trust and to the beneficiary?\n\nTrust | Beneficiary",
+      "choices": [
+        { "label": "A", "text": "$14,000 | $0" },
+        { "label": "B", "text": "$0 | $14,000" },
+        { "label": "C", "text": "$14,000 | $20,000" },
+        { "label": "D", "text": "$0 | $20,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Distributable net income (DNI, IRC §643(a)) caps both the trust's distribution deduction and the amount taxable to the beneficiary. Under IRC §661(a), the trust deducts distributions, but not more than DNI. Under IRC §662(a), the beneficiary includes distributions in income, but not more than DNI. The excess distribution is treated as a tax-free distribution of corpus.\n\nDistributions: $20,000; DNI: $14,000\nTrust distribution deduction = lesser of $20,000 or $14,000 = $14,000\nTrust taxable income from DNI = $14,000 - $14,000 = $0\nBeneficiary's taxable amount = lesser of $20,000 or $14,000 = $14,000\n\nTrust $14,000 / beneficiary $0 ignores the distribution deduction and taxes the income at the trust level even though it was distributed. Trust $14,000 / beneficiary $20,000 taxes the same income twice and taxes the beneficiary beyond DNI. Trust $0 / beneficiary $20,000 taxes the beneficiary on $6,000 of corpus, which exceeds DNI.",
+      "explanationJa": "分配可能純所得（DNI、IRC §643(a)）は、信託の分配控除と受益者の課税額の両方の上限となる。§661(a)により信託は分配額をDNIを上限に控除し、§662(a)により受益者は分配額をDNIを上限に所得に含める。DNIを超える分配は元本の非課税分配となる。\n\n分配額 $20,000、DNI $14,000\n信託の分配控除 = $20,000と$14,000の小さい方 = $14,000\n信託の課税所得 = $14,000 − $14,000 = $0\n受益者の課税額 = $20,000と$14,000の小さい方 = $14,000\n\n信託$14,000・受益者$0は分配控除を無視している。信託$14,000・受益者$20,000は同じ所得に二重課税し、受益者にもDNI超の課税をしている。信託$0・受益者$20,000はDNIを超える元本$6,000まで受益者に課税している。",
+      "references": ["IRC §661(a)", "IRC §662(a)", "IRC §643(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2013 Recently Released Q.39 (AICPA No. 90239)"
+    },
+    {
+      "id": "reg-tge-019",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following is a disadvantage of a revocable trust?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The grantor will be subject to gift taxes on the transfer of property to the trust."
+        },
+        {
+          "label": "B",
+          "text": "The trust assets are subject to being probated upon the death of the grantor."
+        },
+        {
+          "label": "C",
+          "text": "The grantor loses power to control the trust funds for federal estate tax purposes."
+        },
+        {
+          "label": "D",
+          "text": "The trust is included in the gross estate of the grantor."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Because the grantor of a revocable trust retains the power to revoke, amend, or terminate the trust, the trust property is included in the grantor's gross estate at death under IRC §2038. This inclusion is the main tax disadvantage of a revocable trust.\n\nTransfers to a revocable trust are incomplete gifts, so no gift tax is imposed on the transfer. Trust assets pass under the trust instrument and avoid probate, which is a principal advantage of the trust. The grantor keeps control over the trust funds (that retained control is what causes estate inclusion) rather than losing it.",
+      "explanationJa": "撤回可能信託の設定者は信託の撤回・変更・終了の権限を保持するため、死亡時に信託財産が総遺産に含まれる（IRC §2038）。これが撤回可能信託の主な税務上の不利益である。\n\n撤回可能信託への移転は未完成贈与なので贈与税は課されない。信託財産は信託証書に従って承継され、検認（probate）を経ないのがむしろ利点である。設定者は信託財産の支配を失わず、その支配を保持していることこそが遺産算入の原因である。",
+      "references": ["IRC §2038", "IRC §2511"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2015 Recently Released Q.17 (AICPA No. 90817)"
+    },
+    {
+      "id": "reg-tge-020",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "A husband and wife agree to split monetary gifts to their relatives. The husband gives his daughter $20,500, and the wife gives her niece $17,000. The annual exclusion is $12,000. What amount is the taxable gift for the husband and wife?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$13,500" },
+        { "label": "C", "text": "$17,000" },
+        { "label": "D", "text": "$37,500" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "When spouses elect gift splitting under IRC §2513, each gift made by either spouse to a third party is treated as made one-half by each spouse. Each spouse then applies the annual exclusion (given as $12,000) separately to each donee.\n\nGift to daughter: $20,500 → $10,250 treated as made by each spouse\nGift to niece: $17,000 → $8,500 treated as made by each spouse\nEach spouse's gift to the daughter: $10,250 − $10,250 exclusion = $0\nEach spouse's gift to the niece: $8,500 − $8,500 exclusion = $0\nTotal taxable gifts: $0\n\nThe $13,500 amount applies a single exclusion to each gift without splitting ($20,500 − $12,000 = $8,500 plus $17,000 − $12,000 = $5,000). The $17,000 amount and the $37,500 amount ignore the annual exclusion for one or both gifts.",
+      "explanationJa": "配偶者がIRC §2513の贈与分割を選択すると、どちらの配偶者が第三者に贈与しても、各配偶者が半分ずつ贈与したものとして扱われる。各配偶者は受贈者ごとに年間除外額（問題では$12,000）を適用する。\n\n娘への贈与$20,500 → 各配偶者$10,250\n姪への贈与$17,000 → 各配偶者$8,500\n各配偶者の娘への贈与: $10,250 − 除外$10,250 = $0\n各配偶者の姪への贈与: $8,500 − 除外$8,500 = $0\n課税贈与額の合計: $0\n\n$13,500は分割せずに各贈与から除外額を1回だけ引いている（$20,500 − $12,000 = $8,500と$17,000 − $12,000 = $5,000）。$17,000や$37,500は一方または両方の贈与で年間除外額を無視している。",
+      "references": ["IRC §2513", "IRC §2503(b)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2015 Recently Released Q.30 (AICPA No. 90830)"
+    },
+    {
+      "id": "reg-tge-021",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Mike and Carol, a married couple, have two assets at the time of Mike's death: a $10,000,000 life insurance policy owned by Mike naming Carol as the sole beneficiary, and $8,000,000 of real estate owned by the couple as joint tenants with right of survivorship. What is the amount of the marital deduction to Mike's estate for these two assets?",
+      "choices": [
+        { "label": "A", "text": "$9,000,000" },
+        { "label": "B", "text": "$10,000,000" },
+        { "label": "C", "text": "$14,000,000" },
+        { "label": "D", "text": "$18,000,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "The marital deduction equals the value of property included in the decedent's gross estate that passes to the surviving spouse (IRC §2056).\n\nLife insurance owned by Mike: fully included in the gross estate (§2042) and paid to Carol → $10,000,000\nReal estate held by spouses as joint tenants with right of survivorship: one-half included (§2040(b)) and passes to Carol → $8,000,000 × 50% = $4,000,000\nMarital deduction: $10,000,000 + $4,000,000 = $14,000,000\n\nThe $9,000,000 amount includes only half of the insurance proceeds and half of the real estate. The $10,000,000 amount omits the real estate. The $18,000,000 amount includes all of the real estate, but only one-half of property held jointly by spouses is in the gross estate.",
+      "explanationJa": "配偶者控除額は、総遺産に含まれ生存配偶者に移転する財産の価額である（IRC §2056）。\n\nMikeが所有する生命保険: 全額が総遺産に算入され（§2042）、Carolに支払われる → $10,000,000\n夫婦の生存者権付き合有不動産: 半分が算入され（§2040(b)）、Carolに移転 → $8,000,000 × 50% = $4,000,000\n配偶者控除: $10,000,000 + $4,000,000 = $14,000,000\n\n$9,000,000は保険金と不動産の両方を半分にしている。$10,000,000は不動産を落としている。$18,000,000は不動産全額を含めているが、夫婦の合有財産は半分しか総遺産に入らない。",
+      "references": ["IRC §2056", "IRC §2042", "IRC §2040(b)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2015 Recently Released Q.32 (AICPA No. 90832)"
+    },
+    {
+      "id": "reg-tge-022",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Orsen, a U.S. citizen and the sole income beneficiary of a simple trust, is entitled to receive current distributions of the trust income. During the current year the trust reported:\n\nDividend income | $8,000\nAccounting fees allocable to income | (2,000)\nShort-term capital gain allocable to corpus | 3,000\n\nWhat amount of the trust income is includible in Orsen's gross income?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$6,000" },
+        { "label": "C", "text": "$8,000" },
+        { "label": "D", "text": "$9,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A beneficiary of a simple trust includes in gross income the trust income required to be distributed currently, limited to distributable net income (DNI) (IRC §652(a)). Capital gains allocated to corpus are excluded from DNI (§643(a)(3)).\n\nDividend income: $8,000\nLess accounting fees allocable to income: (2,000)\nTrust accounting income required to be distributed: $6,000\nDNI (short-term capital gain allocated to corpus excluded): $6,000\nAmount includible in Orsen's gross income: $6,000\n\nThe $0 amount ignores that a simple trust's income is taxed to the beneficiary. The $8,000 amount ignores the fees allocable to income. The $9,000 amount includes the capital gain that is allocated to corpus and retained by the trust.",
+      "explanationJa": "単純信託の受益者は、当期に分配すべき信託所得を分配可能純所得（DNI）の範囲で総所得に算入する（IRC §652(a)）。元本に配分された譲渡益はDNIに含まれない（§643(a)(3)）。\n\n配当所得: $8,000\n所得に配分される会計報酬: (2,000)\n分配すべき信託会計上の所得: $6,000\nDNI（元本に配分された短期譲渡益を除く）: $6,000\nOrsenの総所得算入額: $6,000\n\n$0は単純信託の所得が受益者に課税されることを無視している。$8,000は所得に配分される報酬を差し引いていない。$9,000は元本に配分され信託に留保される譲渡益まで含めている。",
+      "references": ["IRC §652(a)", "IRC §643(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2016 Recently Released Q.20 (AICPA No. null)"
+    },
+    {
+      "id": "reg-tge-023",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "At the close of the prior year, an individual taxpayer transferred assets into an irrevocable trust, retaining the right to the income from the trust for life. During the year, the assets earned ordinary dividends and interest income. The tax liability on the income earned will be paid",
+      "choices": [
+        { "label": "A", "text": "Entirely by the trust." },
+        { "label": "B", "text": "Entirely by the individual taxpayer." },
+        {
+          "label": "C",
+          "text": "By the trust on the interest income only, and by the individual taxpayer for the dividend income."
+        },
+        {
+          "label": "D",
+          "text": "By the trust on the dividend income only, and by the individual taxpayer for the interest income."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under IRC §677(a), the grantor is treated as the owner of any portion of a trust whose income is, or may be, distributed to the grantor without the consent of an adverse party. Under §671, the income of that portion is taxed directly to the grantor, even if the trust is irrevocable. Because the individual retained the right to all trust income for life, both the dividends and the interest are taxed entirely to the individual.\n\nMaking the trust irrevocable does not shift the tax on income the grantor keeps, so the trust does not pay tax on any of this income. Splitting the tax between the trust and the individual according to whether the income is dividends or interest has no basis in the grantor trust rules; the character of the income does not change who is taxed.",
+      "explanationJa": "IRC §677(a)により、信託所得が委託者に分配される（または分配されうる）部分については、委託者がその所有者として扱われる。§671により、その部分の所得は信託が撤回不能であっても委託者に直接課税される。本問の個人は生涯にわたり信託所得すべてを受け取る権利を留保しているので、配当も利息も全額が個人に課税される。\n\n撤回不能にしても委託者が受け取る所得の課税は移らないため、信託が税を負担することはない。配当か利息かによって信託と個人で課税を分けるという規定はグランター・トラストのルールにはなく、所得の種類は納税者を変えない。",
+      "references": ["IRC §677(a)", "IRC §671"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.19 (AICPA No. null)"
+    },
+    {
+      "id": "reg-tge-024",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following types of business may not qualify for a 501(c)(3) exemption from federal income taxes?",
+      "choices": [
+        { "label": "A", "text": "A foundation." },
+        { "label": "B", "text": "A fund." },
+        { "label": "C", "text": "A corporation." },
+        { "label": "D", "text": "A partnership." }
+      ],
+      "correctAnswer": "D",
+      "explanation": "IRC §501(c)(3) exempts \"corporations, and any community chest, fund, or foundation\" organized and operated exclusively for religious, charitable, scientific, educational, or similar purposes. A partnership is not among the listed forms of organization, so a partnership may not qualify for 501(c)(3) exemption.\n\nA foundation, a fund, and a corporation are each expressly listed in §501(c)(3) and can qualify if they meet the organizational and operational tests.",
+      "explanationJa": "IRC §501(c)(3)は、宗教・慈善・科学・教育などの目的のためにのみ組織・運営される「法人、共同募金、基金（fund）、財団（foundation）」を免税とする。パートナーシップはこの列挙に含まれないため、501(c)(3)の免税資格を得られない。\n\n財団、基金、法人はいずれも§501(c)(3)に明記されており、組織要件・運営要件を満たせば免税資格を得られる。",
+      "references": ["IRC §501(c)(3)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.20 (AICPA No. null)"
+    },
+    {
+      "id": "reg-tge-025",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "This year, Beck gave $5,000 cash to a nephew, canceled $3,000 of the same nephew's indebtedness, donated $1,500 to a political party, and gave $1,200 of municipal bonds to a parent. What is the amount of Beck's gifts before considering the gift tax annual exclusion?",
+      "choices": [
+        { "label": "A", "text": "$5,000" },
+        { "label": "B", "text": "$8,000" },
+        { "label": "C", "text": "$9,200" },
+        { "label": "D", "text": "$10,700" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A gift is any transfer for less than full consideration (IRC §2511). Cash to the nephew, forgiveness of the nephew's debt (Treas. Reg. §25.2511-1(a)), and municipal bonds given to a parent are all gifts at their fair market value. Under §2501(a)(4), transfers to a political organization for its use are not subject to gift tax.\n\nGifts = $5,000 + $3,000 + $1,200 = $9,200\n\nThe $10,700 amount includes the $1,500 political contribution. The $8,000 amount omits the municipal bonds, and the $5,000 amount counts only the cash gift; canceling the nephew's debt and transferring bonds are also gifts.",
+      "explanationJa": "贈与とは、十分な対価を受けない財産の移転をいう（IRC §2511）。甥への現金、甥の債務の免除（Treas. Reg. §25.2511-1(a)）、親への地方債の譲渡は、いずれも時価で贈与となる。政治団体への拠出は§2501(a)(4)により贈与税の対象外である。\n\n贈与額 = $5,000 + $3,000 + $1,200 = $9,200\n\n$10,700は政治献金$1,500を含めた額。$8,000は地方債を漏らした額、$5,000は現金だけの額で、債務免除と債券の譲渡も贈与に当たる。",
+      "references": [
+        "IRC §2511(a)",
+        "IRC §2501(a)(4)",
+        "Treas. Reg. §25.2511-1(a)"
+      ],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.29 (AICPA No. null)"
+    },
+    {
+      "id": "reg-tge-026",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following items is not normally taken into account in determining distributable net income of a simple trust?",
+      "choices": [
+        { "label": "A", "text": "Tax-exempt interest." },
+        { "label": "B", "text": "Fiduciary fee." },
+        { "label": "C", "text": "Taxable interest income." },
+        { "label": "D", "text": "Personal exemption." }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Distributable net income (DNI) is the trust's taxable income with specified modifications under IRC §643(a). One modification is that no deduction is taken for the personal exemption allowed to trusts under §642(b) (§643(a)(2)). Therefore the personal exemption is not taken into account in determining DNI.\n\nTax-exempt interest is added back in computing DNI under §643(a)(5), net of allocable expenses. Fiduciary fees are deductible expenses that reduce DNI, and taxable interest income is included in DNI.",
+      "explanationJa": "分配可能純所得（DNI）は、信託の課税所得にIRC §643(a)の調整を加えて計算する。その調整の一つとして、§642(b)で信託に認められる人的控除は差し引かない（§643(a)(2)）。したがって人的控除はDNIの計算に含めない。\n\n非課税利息は、配賦される費用を差し引いた純額でDNIに加算される（§643(a)(5)）。受託者報酬はDNIを減らす控除項目であり、課税される利息収入はDNIに含まれる。",
+      "references": ["IRC §643(a)(2)", "IRC §642(b)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.39 (AICPA No. null)"
+    },
+    {
+      "id": "reg-tge-027",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "A simple trust had $25,000 in capital gains, $10,000 in municipal interest, $5,000 in corporate bond interest, and $2,000 in accounting and trustee fees. According to the trust agreement, capital gains are to be distributed to the beneficiary. What is the distributable net income for this trust?",
+      "choices": [
+        { "label": "A", "text": "$28,000" },
+        { "label": "B", "text": "$30,000" },
+        { "label": "C", "text": "$38,000" },
+        { "label": "D", "text": "$40,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "DNI starts with the trust's income and makes the modifications in IRC §643(a). Capital gains are normally excluded from DNI because they are allocated to corpus (§643(a)(3)), but they are included when the governing instrument requires them to be distributed to the beneficiary (Treas. Reg. §1.643(a)-3(b)). Tax-exempt municipal interest is included in DNI (§643(a)(5)), and the accounting and trustee fees are deducted.\n\nCapital gains required to be distributed = $25,000\nMunicipal interest = $10,000\nCorporate bond interest = $5,000\nLess accounting and trustee fees = ($2,000)\nDNI = $38,000\n\nThe $40,000 amount omits the $2,000 of fees. The $28,000 amount excludes the municipal interest, which is part of DNI. The $30,000 amount excludes the municipal interest and does not deduct the fees.",
+      "explanationJa": "DNIは信託の所得にIRC §643(a)の調整を加えて計算する。キャピタルゲインは元本に配分されるので通常はDNIから除外されるが（§643(a)(3)）、信託証書で受益者への分配が求められている場合はDNIに含まれる（Treas. Reg. §1.643(a)-3(b)）。非課税の地方債利息もDNIに含まれ（§643(a)(5)）、会計・受託者報酬は差し引く。\n\n分配が求められるキャピタルゲイン = $25,000\n地方債利息 = $10,000\n社債利息 = $5,000\n会計・受託者報酬 = ($2,000)\nDNI = $38,000\n\n$40,000は報酬$2,000を差し引いていない額。$28,000はDNIに含まれる地方債利息を除外した額。$30,000は地方債利息を除外し、報酬も差し引いていない額である。",
+      "references": [
+        "IRC §643(a)(3)",
+        "IRC §643(a)(5)",
+        "Treas. Reg. §1.643(a)-3(b)"
+      ],
+      "difficulty": "advanced",
+      "source": "Proactive AICPA過去問DB REG 2017 Recently Released Q.40 (AICPA No. null)"
+    },
+    {
+      "id": "reg-tge-028",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "A taxpayer died in year 1 with a gross estate valued at $100,000,000. In the taxpayer's will, he gave $40,000,000 of his gross estate to his surviving spouse, with no restrictions. His surviving spouse also receives $20,000,000 in assets not included in the taxpayer's gross estate. What is the amount of the marital deduction for the taxpayer's estate?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$20,000,000" },
+        { "label": "C", "text": "$40,000,000" },
+        { "label": "D", "text": "$60,000,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under IRC §2056(a), the estate tax marital deduction equals the value of property that is included in the decedent's gross estate and passes from the decedent to the surviving spouse (and is not a nondeductible terminable interest). The decedent left $40,000,000 of the gross estate to the spouse with no restrictions, so the marital deduction is $40,000,000.\n\nThe $20,000,000 of assets the spouse receives outside the gross estate did not pass from the decedent through the estate, so it is not included in the deduction; the $60,000,000 amount wrongly adds it, and the $20,000,000 amount counts only those excluded assets. The $0 amount ignores that an unrestricted bequest to a surviving spouse qualifies for the deduction.",
+      "explanationJa": "IRC §2056(a)により、遺産税の配偶者控除は、被相続人の総遺産に含まれ、被相続人から生存配偶者に移転する財産（控除不可の終了権益を除く）の価額である。被相続人は総遺産のうち$40,000,000を無条件で配偶者に遺したので、配偶者控除は$40,000,000となる。\n\n配偶者が総遺産以外で受け取る$20,000,000は遺産を通じて被相続人から移転したものではないので控除に含まれない。$60,000,000はそれを加えた誤り、$20,000,000はその対象外の資産だけを数えた額である。$0は配偶者への無条件の遺贈が控除の対象になることを無視している。",
+      "references": ["IRC §2056(a)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2018 Recently Released Q.8 (AICPA No. 65537)"
+    },
+    {
+      "id": "reg-tge-029",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "An executor paid the following on behalf of an estate: $3,500 for attorney's fees, $1,000 for a burial lot, $5,000 of state estate tax, and a $750 credit card debt of the decedent. What amount can be deducted from the gross estate?",
+      "choices": [
+        { "label": "A", "text": "$3,500" },
+        { "label": "B", "text": "$4,250" },
+        { "label": "C", "text": "$5,250" },
+        { "label": "D", "text": "$10,250" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under IRC §2053(a), the gross estate is reduced by funeral expenses, administration expenses and claims against the estate (debts of the decedent). Under IRC §2058, state estate taxes paid are also deductible in computing the taxable estate. All four payments are therefore deductible.\n\nAttorney's fees (administration expense) = $3,500\nBurial lot (funeral expense) = $1,000\nState estate tax (§2058) = $5,000\nCredit card debt (claim against the estate) = $750\nTotal deduction = $10,250\n\nThe $3,500 amount includes only the attorney's fees. The $4,250 amount adds only the credit card debt to the attorney's fees, omitting the burial lot and the state estate tax. The $5,250 amount omits the $5,000 state estate tax, which is deductible under §2058.",
+      "explanationJa": "IRC §2053(a) により、葬儀費用、遺産管理費用、遺産に対する債権（被相続人の債務）は総遺産額から控除できる。さらに IRC §2058 により、州の遺産税も課税遺産額の計算上控除できる。したがって4つの支払はすべて控除対象となる。\n\n弁護士報酬（管理費用）$3,500 + 墓地（葬儀費用）$1,000 + 州遺産税 $5,000 + クレジットカード債務 $750 = $10,250\n\n$3,500 は弁護士報酬のみ。$4,250 は弁護士報酬とクレジットカード債務だけで、墓地と州遺産税を漏らしている。$5,250 は §2058 で控除できる州遺産税 $5,000 を漏らしている。",
+      "references": ["IRC §2053(a)", "IRC §2058"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2018 Recently Released Q.24 (AICPA No. null)"
+    },
+    {
+      "id": "reg-tge-030",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Each of the following may qualify as a tax-exempt organization, except",
+      "choices": [
+        { "label": "A", "text": "A community savings and loan association." },
+        { "label": "B", "text": "A country club." },
+        { "label": "C", "text": "An amateur sports association." },
+        { "label": "D", "text": "A domestic fraternal society." }
+      ],
+      "correctAnswer": "A",
+      "explanation": "IRC §501(c) lists the types of organizations that may be exempt from federal income tax. A community savings and loan association is a for-profit financial institution and does not qualify as such an organization; only credit unions without capital stock and certain mutual reserve-fund organizations qualify under §501(c)(14).\n\nA country club may qualify as a social club under §501(c)(7). An amateur sports association may qualify under §501(c)(3) (fostering national or international amateur sports competition). A domestic fraternal society may qualify under §501(c)(8) or §501(c)(10).",
+      "explanationJa": "IRC §501(c) は連邦所得税が免除されうる団体の種類を列挙している。地域の貯蓄貸付組合（savings and loan association）は営利の金融機関であり、この列挙に該当しない。§501(c)(14) で免税となるのは資本金を持たない信用組合など一部の相互組織に限られる。\n\nカントリークラブは社交クラブとして §501(c)(7) で、アマチュアスポーツ団体は §501(c)(3)（アマチュアスポーツ競技の振興）で、国内の友愛団体は §501(c)(8) または §501(c)(10) で免税となりうる。",
+      "references": ["IRC §501(c)(7)", "IRC §501(c)(8)", "IRC §501(c)(14)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2018 Recently Released Q.32 (AICPA No. 76128)"
+    },
+    {
+      "id": "reg-tge-031",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "A taxpayer died, leaving a large estate. At that time, the taxpayer solely owned a $1,000,000 life insurance policy listing the surviving spouse and each of three children as equal beneficiaries. What is the estate tax marital deduction, if any, for this policy?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$250,000" },
+        { "label": "C", "text": "$500,000" },
+        { "label": "D", "text": "$1,000,000" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Life insurance proceeds on a policy the decedent owned are included in the gross estate (IRC §2042). The estate tax marital deduction is allowed only for the value of property included in the gross estate that passes to the surviving spouse (IRC §2056(a)). The spouse is one of four equal beneficiaries.\n\nGross estate inclusion = $1,000,000\nAmount passing to the surviving spouse = $1,000,000 / 4 = $250,000\nMarital deduction = $250,000\n\nThe $0 amount ignores that the spouse's share passes to the spouse and qualifies. The $500,000 amount gives the spouse half of the proceeds rather than one-fourth. The $1,000,000 amount treats the entire policy as passing to the spouse, but three-fourths passes to the children and does not qualify.",
+      "explanationJa": "被相続人が所有していた生命保険契約の保険金は総遺産額に含まれる（IRC §2042）。遺産税の配偶者控除は、総遺産額に含まれる財産のうち生存配偶者に移転する部分についてのみ認められる（IRC §2056(a)）。本問では配偶者は4人の均等な受取人の1人である。\n\n総遺産額への算入 = $1,000,000\n配偶者が受け取る額 = $1,000,000 ÷ 4 = $250,000\n配偶者控除 = $250,000\n\n$0 は配偶者の受取分が控除対象となることを無視している。$500,000 は配偶者の取り分を4分の1ではなく半分としている。$1,000,000 は全額が配偶者に移転するとしているが、4分の3は子どもに移転するので控除対象とならない。",
+      "references": ["IRC §2042", "IRC §2056(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2019 Recently Released Q.10 (AICPA No. 72289)"
+    },
+    {
+      "id": "reg-tge-032",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "A $50,000 cash gift will reduce an individual's unified credit against gift tax if the gift is made to a",
+      "choices": [
+        { "label": "A", "text": "University located in the U.S." },
+        { "label": "B", "text": "14-year-old child living in the U.S." },
+        { "label": "C", "text": "Spouse who is a U.S. citizen." },
+        { "label": "D", "text": "Church located in the U.S." }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The unified credit is used only when a gift is a taxable gift. A $50,000 cash gift to a 14-year-old child is a present-interest gift that qualifies for the inflation-indexed annual exclusion (IRC §2503(b)), but $50,000 exceeds that exclusion, and no deduction applies to a gift to a child. The excess is a taxable gift that uses part of the donor's unified credit.\n\nGifts to a U.S. university and to a U.S. church are fully deductible as charitable gifts (IRC §2522), and a gift to a spouse who is a U.S. citizen is fully deductible under the unlimited gift tax marital deduction (IRC §2523). None of these produces a taxable gift, so they do not reduce the unified credit.",
+      "explanationJa": "統一税額控除（unified credit）が使われるのは課税贈与がある場合だけである。14歳の子への現金 $50,000 の贈与は現在利益の贈与として、インフレ調整される年間非課税枠（IRC §2503(b)）の対象となるが、$50,000 はその枠を超え、子への贈与には控除もない。超過分は課税贈与となり、贈与者の統一税額控除を使う。\n\n米国の大学や教会への贈与は慈善贈与として全額控除され（IRC §2522）、米国市民である配偶者への贈与は無制限の配偶者控除で全額控除される（IRC §2523）。いずれも課税贈与が生じないので、統一税額控除は減らない。",
+      "references": ["IRC §2503(b)", "IRC §2522", "IRC §2523"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2019 Recently Released Q.31 (AICPA No. 70991)"
+    },
+    {
+      "id": "reg-tge-033",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Lake Trust, a simple trust, reported the following items of income and expense during the year:\n\nDividend income | $2,500\nTaxable interest income | 2,000\nCapital gains (allocable to corpus) | 5,000\nAccounting fees (allocable to income) | (500)\nTrustee fees (allocable to income) | (750)\n\nWhat is Lake's distributable net income?",
+      "choices": [
+        { "label": "A", "text": "$9,500" },
+        { "label": "B", "text": "$8,250" },
+        { "label": "C", "text": "$5,000" },
+        { "label": "D", "text": "$3,250" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Distributable net income (DNI) is the trust's taxable income with certain modifications (IRC §643(a)). Capital gains allocated to corpus and not paid, credited or required to be distributed to beneficiaries are excluded from DNI (IRC §643(a)(3)). Deductible expenses such as accounting and trustee fees reduce DNI.\n\nDividend income = $2,500\nTaxable interest income = $2,000\nLess accounting fees = ($500)\nLess trustee fees = ($750)\nDNI = $3,250\n\nThe $9,500 amount includes the $5,000 capital gain allocated to corpus and ignores the fees. The $8,250 amount deducts the fees but still includes the capital gain. The $5,000 amount is the capital gain alone, which is excluded from DNI.",
+      "explanationJa": "distributable net income（DNI）は、信託の課税所得に一定の修正を加えたものである（IRC §643(a)）。元本（corpus）に配分され、受益者に分配・計上・分配義務のないキャピタルゲインは DNI から除外する（IRC §643(a)(3)）。会計報酬や受託者報酬などの控除可能な費用は DNI を減らす。\n\n配当 $2,500 + 課税利息 $2,000 − 会計報酬 $500 − 受託者報酬 $750 = DNI $3,250\n\n$9,500 は元本に配分されたキャピタルゲイン $5,000 を含め、費用も差し引いていない。$8,250 は費用を差し引いているがキャピタルゲインを含めている。$5,000 は DNI から除外されるキャピタルゲインそのものである。",
+      "references": ["IRC §643(a)", "IRC §643(a)(3)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part1 Q.25 (AICPA No. null)"
+    },
+    {
+      "id": "reg-tge-034",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following payments requires the filing of a gift tax return?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "$20,000 tuition payment to XYZ College for a friend."
+        },
+        {
+          "label": "B",
+          "text": "$20,000 medical payment to a doctor for a friend."
+        },
+        { "label": "C", "text": "$20,000 to a political organization." },
+        { "label": "D", "text": "$20,000 cash to a friend." }
+      ],
+      "correctAnswer": "D",
+      "explanation": "A gift tax return (Form 709) must be filed by an individual who makes gifts to any one donee during the year that exceed the annual exclusion, other than gifts that are excluded in full (IRC §6019). The annual exclusion is an inflation-indexed amount that is below $20,000 ($19,000 for 2025), so a $20,000 cash gift to a friend exceeds it and requires a gift tax return, even though no gift tax may be due because of the unified credit.\n\nA tuition payment made directly to an educational organization and a medical payment made directly to the provider of medical care are qualified transfers that are excluded from gifts in unlimited amounts (IRC §2503(e)), so they do not require a return. A transfer to a political organization is not subject to gift tax (IRC §2501(a)(4)) and does not require a return.",
+      "explanationJa": "1年間に同一の受贈者に対して年間非課税枠を超える贈与をした個人は、全額が除外される贈与を除き、贈与税申告書（Form 709）を提出しなければならない（IRC §6019）。年間非課税枠はインフレ調整される$20,000未満の額（2025年は$19,000）なので、友人への現金$20,000の贈与は枠を超え、統一税額控除により納税額が生じなくても申告が必要である。\n\n教育機関に直接支払う授業料と、医療提供者に直接支払う医療費は、金額の制限なく贈与から除外される（§2503(e)）ため申告は不要。政治団体への移転も贈与税の対象外（§2501(a)(4)）で申告は不要。",
+      "references": ["IRC §6019", "IRC §2503(b)", "IRC §2503(e)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part2 Q.10 (AICPA No. 60783)"
+    },
+    {
+      "id": "reg-tge-035",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following types of organizations is considered a public charity for purposes of the charitable contribution deduction?",
+      "choices": [
+        { "label": "A", "text": "Chambers of commerce." },
+        { "label": "B", "text": "Supplemental unemployment benefit trusts." },
+        { "label": "C", "text": "Cemetery companies." },
+        { "label": "D", "text": "Religious organizations." }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Public charities are the organizations described in IRC §170(b)(1), to which an individual may contribute up to the 50% (60% for cash) AGI limitation. Churches and conventions or associations of churches are listed in §170(b)(1), so religious organizations are public charities.\n\nChambers of commerce are business leagues exempt under §501(c)(6); contributions to them are not deductible as charitable contributions. Supplemental unemployment benefit trusts are exempt under §501(c)(17) and are not charitable organizations. Cemetery companies may receive deductible contributions under §170(c)(5), but they are not public charities; contributions to them are subject to the 30% limitation for non-50% organizations.",
+      "explanationJa": "パブリック・チャリティは IRC §170(b)(1) に列挙された団体で、個人はAGIの50%（現金は60%）を限度に寄附金控除できる。教会およびその連合体は §170(b)(1) に列挙されており、宗教団体はパブリック・チャリティに当たる。\n\n商工会議所は §501(c)(6) の事業者団体で、寄附金控除の対象外。補足的失業給付信託は §501(c)(17) の免税団体で、慈善団体ではない。墓地会社への寄附は §170(c)(5) により控除できるが、パブリック・チャリティではなく30%限度の団体に当たる。",
+      "references": ["IRC §170(b)(1)(A)(i)", "IRC §501(c)(3)", "IRC §509(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part2 Q.21 (AICPA No. 66359)"
+    },
+    {
+      "id": "reg-tge-036",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following is a requirement for a simple trust?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The trust must not have a charitable beneficiary."
+        },
+        {
+          "label": "B",
+          "text": "The trust must distribute its entire corpus currently."
+        },
+        {
+          "label": "C",
+          "text": "The trust must adopt the cash method of accounting."
+        },
+        {
+          "label": "D",
+          "text": "The trust must make no distribution of its income currently."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "A simple trust is a trust whose governing instrument requires that all of its income be distributed currently, that does not provide for any amounts to be paid, permanently set aside, or used for charitable purposes, and that does not distribute corpus during the year (IRC §651(a); Treas. Reg. §1.651(a)-1). A simple trust therefore must not have a charitable beneficiary; a trust that can make charitable contributions is a complex trust.\n\nA simple trust must distribute its income currently, not its entire corpus; a trust that distributes corpus in a year is treated as a complex trust for that year. There is no requirement that a simple trust adopt the cash method of accounting. A trust that makes no current distribution of income is the opposite of a simple trust, which is required to distribute all of its income currently.",
+      "explanationJa": "単純信託（simple trust）とは、信託証書により全所得を当期に分配することが求められ、慈善目的への支払・積立・使用の定めがなく、その年に元本を分配しない信託をいう（IRC §651(a)、Treas. Reg. §1.651(a)-1）。したがって単純信託は慈善の受益者を持てない。慈善寄附ができる信託は複合信託（complex trust）である。\n\n単純信託が当期に分配しなければならないのは所得であって元本全部ではなく、元本を分配した年は複合信託として扱われる。現金主義を採用しなければならないという要件はない。当期に所得を分配しない信託は、全所得の当期分配を求められる単純信託とは逆である。",
+      "references": ["IRC §651(a)", "Treas. Reg. §1.651(a)-1"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2020 Recently Released Part2 Q.42 (AICPA No. 83834)"
+    },
+    {
+      "id": "reg-tge-037",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "In determining the amount of taxable gifts, the Internal Revenue Code allows each of the following, except the",
+      "choices": [
+        { "label": "A", "text": "Charitable contribution deduction." },
+        { "label": "B", "text": "Standard deduction." },
+        { "label": "C", "text": "Gift tax annual exclusion." },
+        { "label": "D", "text": "Marital deduction." }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Taxable gifts are total gifts for the year less the annual exclusion for each donee (IRC §2503(b)), the charitable deduction for gifts to qualified charities (IRC §2522), and the marital deduction for gifts to a spouse (IRC §2523). There is no standard deduction in computing taxable gifts; the standard deduction (IRC §63(c)) is an income tax concept used in computing an individual's taxable income.\n\nThe charitable contribution deduction, the gift tax annual exclusion, and the marital deduction are each allowed in determining the amount of taxable gifts.",
+      "explanationJa": "課税贈与額は、その年の贈与総額から、受贈者ごとの年間非課税枠（IRC §2503(b)）、適格な慈善団体への贈与に係る寄附金控除（§2522）、配偶者への贈与に係る配偶者控除（§2523）を差し引いて計算する。課税贈与額の計算に標準控除はない。標準控除（§63(c)）は個人の所得税で課税所得を計算するための制度である。\n\n寄附金控除、贈与税の年間非課税枠、配偶者控除は、いずれも課税贈与額の計算で認められる。",
+      "references": ["IRC §2503(b)", "IRC §2522", "IRC §2523"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2021 Recently Released Q.9 (AICPA No. 71105)"
+    },
+    {
+      "id": "reg-tge-038",
+      "topic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "subtopic": "Trusts, Gift Taxes & Tax-Exempt Organizations",
+      "stem": "Which of the following statements is true about the taxation of trusts?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The basis of property donated to a trust is fair market value at date of gift."
+        },
+        {
+          "label": "B",
+          "text": "Distributed income is subject to double taxation."
+        },
+        {
+          "label": "C",
+          "text": "The income that is passed through to a beneficiary has the same tax attributes in the hands of the beneficiary as when it is received by the trust."
+        },
+        { "label": "D", "text": "The trust's income is taxed at a flat rate" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "A trust is a conduit for income it distributes: amounts included in a beneficiary's income have the same character in the beneficiary's hands as in the hands of the trust (IRC §§652(b), 662(b)). For example, tax-exempt interest, qualified dividends, and capital gains included in distributable net income keep that character when passed through to the beneficiary.\n\nProperty donated to a trust takes the donor's carryover basis under the gift basis rules (IRC §1015), not fair market value at the date of gift. Distributed income is not subject to double taxation, because the trust deducts the income distribution and the beneficiary reports it, so the income is taxed only once. A trust's retained income is taxed at graduated rates under a compressed rate schedule (IRC §1(e)), not at a flat rate.",
+      "explanationJa": "信託は分配する所得の導管であり、受益者の所得に算入される金額は、信託の段階と同じ性質を受益者の手元でも保つ（IRC §652(b), §662(b)）。たとえば分配可能純所得（DNI）に含まれる非課税利子、適格配当、キャピタルゲインは、その性質のまま受益者に引き継がれる。\n\n信託に贈与された資産は贈与の規定（§1015）により贈与者の取得価額を引き継ぎ、贈与時の時価にはならない。分配された所得は信託が分配控除を受け受益者が申告するので1回しか課税されず、二重課税にはならない。信託が留保した所得には累進税率（幅の狭い税率表。§1(e)）が適用され、単一税率ではない。",
+      "references": ["IRC §652(b)", "IRC §662(b)", "IRC §1(e)"],
+      "difficulty": "basic",
+      "source": "Proactive AICPA過去問DB REG 2021 Recently Released Q.38 (AICPA No. 64307)"
     }
   ]
 }
