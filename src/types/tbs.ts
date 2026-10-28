@@ -65,4 +65,6 @@ export interface TBSAttempt {
   taskAttempts: TBSTaskAttempt[];
   completedAt: string;
   totalScore: number;
+  /** 他の端末からNotion経由で取り込んだ回答。この端末の分としてNotionへ送り直さないために使う */
+  imported?: true;
 }

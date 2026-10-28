@@ -29,4 +29,6 @@ export interface QuestionAttempt {
   // null は「正誤不明」を示す（v2 migrate の recalculate バグでデータが壊れた回答に対するリカバリ用）
   isCorrect: boolean | null;
   attemptedAt: string;
+  /** 他の端末からNotion経由で取り込んだ回答。この端末の分としてNotionへ送り直さないために使う */
+  imported?: true;
 }
