@@ -32,6 +32,8 @@ export interface MockExamResult {
   difficultyBreakdown: Record<string, { correct: number; total: number }>;
   topicBreakdown: Record<string, { correct: number; total: number }>;
   answers: MockExamAnswer[];
+  /** 他の端末からNotion経由で取り込んだ結果。この端末の分としてNotionへ送り直さないために使う */
+  imported?: true;
 }
 
 /** 科目が記録されていない過去の結果はFAR模試しか存在しなかった時期のもの */

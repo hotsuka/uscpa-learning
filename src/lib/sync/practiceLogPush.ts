@@ -18,11 +18,11 @@ import {
 } from "./practiceLog";
 
 /**
- * 問題演習ログをNotionへ送る（同期の第3段階: 送るだけ）
+ * 問題演習ログをNotionへ送る
  *
  * 回答・TBS・模試のストアは読むだけで書き換えない。
  * ローカルに書くのは「どのチャンクをどの内容で送ったか」を覚える PUSH_STATE_KEY だけ。
- * 他の端末の分の取り込みは次の段階で行う。
+ * 他の端末の分の取り込みは practiceLogPull.ts で行う。
  */
 
 export const PRACTICE_LOG_KINDS: readonly PracticeLogKind[] = [
@@ -38,6 +38,16 @@ export type LocalPracticeLog = {
   [K in PracticeLogKind]: PracticeLogItemMap[K][];
 };
 
+/** この端末で解いた回答（他の端末から取り込んだものを除く） */
+export function ownItems<K extends PracticeLogKind>(
+  kind: K,
+  local: LocalPracticeLog,
+): PracticeLogItemMap[K][] {
+  return (local[kind] as PracticeLogItemMap[K][]).filter(
+    (item) => !item.imported,
+  );
+}
+
 export interface PushPlan {
   /** 内容が変わった（または未送信の）チャンク */
   toSend: PracticeLogChunkInput[];
@@ -47,7 +57,7 @@ export interface PushPlan {
 
 /**
  * 送るチャンクを決める。
- * この段階ではまだ他の端末の分を取り込んでいないため、ローカルの回答はすべてこの端末のものとして送る。
+ * 他の端末から取り込んだ回答（imported）は元の端末のチャンクにあるため、この端末の分としては送らない。
  */
 export function planPracticeLogPush(params: {
   local: LocalPracticeLog;
@@ -58,7 +68,11 @@ export function planPracticeLogPush(params: {
   const toSend: PracticeLogChunkInput[] = [];
   let totalChunks = 0;
   for (const kind of PRACTICE_LOG_KINDS) {
-    const chunks = buildChunks(kind, params.local[kind], params.deviceId);
+    const chunks = buildChunks(
+      kind,
+      ownItems(kind, params.local),
+      params.deviceId,
+    );
     totalChunks += chunks.length;
     for (const chunk of chunks) {
       const { segments, hash } = serializeChunk(chunk);
@@ -87,7 +101,7 @@ export interface KindVerification {
   ownOnNotion: number;
   /** ローカルにあるのにこの端末のチャンクに無い件数（送信後は0になるはず） */
   missingOnNotion: number;
-  /** 他の端末のチャンクにあり、ローカルに無い件数（次の段階で取り込む分） */
+  /** 他の端末のチャンクにあり、ローカルに無い件数（取り込みで入る分） */
   onlyOnOtherDevices: number;
 }
 
@@ -132,8 +146,10 @@ export function verifyPracticeLog(params: {
     const localKeys = new Set(
       params.local[kind].map((item) => itemKey(kind, item)),
     );
+    // 未送信はこの端末で解いた分だけを数える（取り込んだ分は元の端末のチャンクにある）
     let missingOnNotion = 0;
-    for (const key of localKeys) if (!ownKeys[kind].has(key)) missingOnNotion++;
+    for (const item of ownItems(kind, params.local))
+      if (!ownKeys[kind].has(itemKey(kind, item))) missingOnNotion++;
     let onlyOnOtherDevices = 0;
     for (const key of otherKeys[kind])
       if (!localKeys.has(key)) onlyOnOtherDevices++;
@@ -151,7 +167,7 @@ export function verifyPracticeLog(params: {
 
 // ---- ブラウザで動かす部分 ----
 
-const readLocal = (): LocalPracticeLog => ({
+export const readLocal = (): LocalPracticeLog => ({
   mcq: useQuestionBankStore.getState().attempts,
   tbs: useTBSBankStore.getState().attempts,
   mock: useMockExamStore.getState().results,

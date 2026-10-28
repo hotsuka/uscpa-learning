@@ -62,6 +62,13 @@ describe("planPracticeLogPush", () => {
     expect(planPracticeLogPush({ local: local(attempts), deviceId: "dev-a", pushedHashes, force: true }).toSend).toHaveLength(2)
   })
 
+  it("他の端末から取り込んだ回答は、この端末の分として送らない", () => {
+    const imported: QuestionAttempt = { ...mcq("q9", "2026-10-26T01:00:00.000Z"), imported: true }
+    const plan = planPracticeLogPush({ local: local([...attempts, imported]), deviceId: "dev-a", pushedHashes: {} })
+
+    expect(plan.toSend.map((c) => c.key)).toEqual(["dev-a:mcq:2026-10-27:0", "dev-a:mcq:2026-10-28:0"])
+  })
+
   it("ローカルの回答を書き換えない", () => {
     const data = local(attempts)
     const snapshot = JSON.stringify(data)
@@ -90,6 +97,17 @@ describe("verifyPracticeLog", () => {
     })
 
     expect(result.kinds[0]).toMatchObject({ ownOnNotion: 1, missingOnNotion: 1, onlyOnOtherDevices: 1 })
+  })
+
+  it("取り込んだ回答は未送信に数えない", () => {
+    const imported: QuestionAttempt = { ...mcq("q9", "2026-10-26T01:00:00.000Z"), imported: true }
+    const result = verifyPracticeLog({
+      local: local([...mine, imported]),
+      deviceId: "dev-a",
+      remote: [...remoteOf(mine, "dev-a"), ...remoteOf([imported], "dev-b")],
+    })
+
+    expect(result.kinds[0]).toEqual({ kind: "mcq", local: 3, ownOnNotion: 2, missingOnNotion: 0, onlyOnOtherDevices: 0 })
   })
 
   it("読めないページを数え、他の件数の集計は続ける", () => {

@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CloudUpload, ListChecks, RefreshCw } from "lucide-react";
+import { CloudDownload, CloudUpload, ListChecks, RefreshCw } from "lucide-react";
 import {
   pushPracticeLog,
   verifyPracticeLogWithNotion,
@@ -17,6 +17,7 @@ import {
   type PushResult,
   type VerificationResult,
 } from "@/lib/sync/practiceLogPush";
+import { pullPracticeLog, type PullResult } from "@/lib/sync/practiceLogPull";
 import type { PracticeLogKind } from "@/lib/sync/practiceLog";
 
 const KIND_LABEL: Record<PracticeLogKind, string> = {
@@ -26,13 +27,16 @@ const KIND_LABEL: Record<PracticeLogKind, string> = {
 };
 
 /**
- * 問題演習ログ（回答・TBS・模試）をNotionへ送り、件数を照合するカード
- * 同期の第3段階のため送るだけで、ローカルの回答履歴は書き換えない
+ * 問題演習ログ（回答・TBS・模試）をNotionへ送り、他の端末の分を取り込み、件数を照合するカード
+ * 取り込みはローカルに無い回答を足すだけで、ローカルの回答を消したり書き換えたりはしない
  */
 export function PracticeLogSyncCard() {
-  const [busy, setBusy] = useState<"push" | "verify" | null>(null);
+  const [busy, setBusy] = useState<"push" | "pull" | "verify" | null>(
+    null,
+  );
   const [progress, setProgress] = useState<PushProgress | null>(null);
   const [pushResult, setPushResult] = useState<PushResult | null>(null);
+  const [pullResult, setPullResult] = useState<PullResult | null>(null);
   const [verification, setVerification] = useState<VerificationResult | null>(
     null,
   );
@@ -55,6 +59,21 @@ export function PracticeLogSyncCard() {
     }
   };
 
+  const handlePull = async () => {
+    setBusy("pull");
+    setErrorMessage(null);
+    setPullResult(null);
+    try {
+      setPullResult(await pullPracticeLog());
+    } catch (error) {
+      setErrorMessage(
+        `取り込みに失敗しました: ${error instanceof Error ? error.message : "不明なエラー"}`,
+      );
+    } finally {
+      setBusy(null);
+    }
+  };
+
   const handleVerify = async () => {
     setBusy("verify");
     setErrorMessage(null);
@@ -74,10 +93,10 @@ export function PracticeLogSyncCard() {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <CloudUpload className="h-5 w-5" />
-          問題演習ログのNotion送信
+          問題演習ログのNotion同期
         </CardTitle>
         <CardDescription>
-          四択MC・TBS・模試の回答履歴をNotionの「問題演習ログ」へ送ります。送るだけで、この端末の回答履歴は書き換えません。
+          四択MC・TBS・模試の回答履歴をNotionの「問題演習ログ」へ送り、他の端末で解いた分を取り込みます。取り込みはこの端末に無い回答を足すだけで、この端末の回答は消しません。取り込む前にバックアップを取ります。
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -85,6 +104,14 @@ export function PracticeLogSyncCard() {
           <Button onClick={() => handlePush(false)} disabled={busy !== null}>
             <CloudUpload className="mr-2 h-4 w-4" />
             Notionへ送る
+          </Button>
+          <Button
+            variant="outline"
+            onClick={handlePull}
+            disabled={busy !== null}
+          >
+            <CloudDownload className="mr-2 h-4 w-4" />
+            Notionから取り込む
           </Button>
           <Button
             variant="outline"
@@ -109,6 +136,11 @@ export function PracticeLogSyncCard() {
             送信中… {progress.sent} / {progress.total} ページ
           </p>
         )}
+        {busy === "pull" && (
+          <p className="text-sm text-muted-foreground">
+            他の端末の分を読み込み中…
+          </p>
+        )}
         {busy === "verify" && (
           <p className="text-sm text-muted-foreground">
             Notionの内容を読み込み中…
@@ -129,6 +161,38 @@ export function PracticeLogSyncCard() {
               <p className="text-destructive">
                 {pushResult.failed.length}{" "}
                 件は送れませんでした（もう一度「Notionへ送る」を押すと、送れなかった分だけ送り直します）。
+              </p>
+            )}
+          </div>
+        )}
+
+        {pullResult && (
+          <div className="text-sm space-y-1">
+            {pullResult.added.mcq + pullResult.added.tbs + pullResult.added.mock ===
+            0 ? (
+              <p>
+                他の端末のページ {pullResult.remoteChunks}{" "}
+                件を確認しました。取り込む回答はありませんでした。
+              </p>
+            ) : (
+              <>
+                <p>
+                  四択MC {pullResult.added.mcq.toLocaleString()} 件・TBS{" "}
+                  {pullResult.added.tbs.toLocaleString()} 件・模試{" "}
+                  {pullResult.added.mock.toLocaleString()} 件を取り込みました。
+                </p>
+                {pullResult.backedUp && (
+                  <p className="text-muted-foreground">
+                    取り込む前の状態は下の「データバックアップ」に「移行前(Notion取り込み前)」として保存しました。
+                  </p>
+                )}
+              </>
+            )}
+            {pullResult.unreadableChunks.length > 0 && (
+              <p className="text-destructive">
+                読めないページが {pullResult.unreadableChunks.length}{" "}
+                件あり、取り込みませんでした:{" "}
+                {pullResult.unreadableChunks.slice(0, 3).join(", ")}
               </p>
             )}
           </div>
