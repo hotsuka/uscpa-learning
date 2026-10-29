@@ -100,6 +100,37 @@ describe("mergeIntoLocal", () => {
     expect(removedIds).toEqual(["a"])
   })
 
+  it("別の端末で同じPDFを登録した教材は二重に取り込まない", () => {
+    const hash = "a".repeat(64)
+    const cloud = manifest([
+      material("chrome-1", {
+        name: "REG_Sales",
+        cloudPathWithout: `materials/pdf/${hash}.pdf`,
+      }),
+    ])
+    const local = [material("comet-1", { name: "別名", contentHash: hash })]
+    const { materials } = mergeIntoLocal(local, cloud)
+    expect(materials.map((m) => m.id)).toEqual(["comet-1"])
+  })
+
+  it("科目と教材名が同じ教材は二重に取り込まない", () => {
+    const cloud = manifest([
+      material("chrome-1", { name: "REG_Sales", cloudPathWithout: "materials/pdf/x.pdf" }),
+    ])
+    const local = [material("comet-1", { name: "REG_Sales" })]
+    const { materials } = mergeIntoLocal(local, cloud)
+    expect(materials.map((m) => m.id)).toEqual(["comet-1"])
+  })
+
+  it("クラウド側に同じ教材が2件あっても1件だけ取り込む", () => {
+    const cloud = manifest([
+      material("chrome-1", { name: "REG_Sales", cloudPathWithout: "materials/pdf/x.pdf" }),
+      material("comet-1", { name: "REG_Sales", cloudPathWithout: "materials/pdf/x.pdf" }),
+    ])
+    const { materials } = mergeIntoLocal([], cloud)
+    expect(materials).toHaveLength(1)
+  })
+
   it("端末の教材にクラウドのパスを補う", () => {
     const cloud = manifest([material("a", { cloudPathWithout: "materials/pdf/a.pdf" })])
     const { materials } = mergeIntoLocal([material("a")], cloud)
