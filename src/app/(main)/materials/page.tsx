@@ -32,6 +32,20 @@ import {
   type MaterialFileGroup,
 } from "@/lib/materials/parseMaterialFileName"
 import {
+  addPendingTombstones,
+  CloudKeyError,
+  CloudNotConfiguredError,
+  fetchManifest,
+  getStoredKey,
+  loadPendingTombstones,
+  needsUpload,
+  pushMaterials,
+  savePendingTombstones,
+  setStoredKey,
+  uploadPdf,
+} from "@/lib/materials/cloudClient"
+import { mergeIntoLocal } from "@/lib/materials/cloudManifest"
+import {
   Plus,
   FileText,
   Upload,
@@ -43,6 +57,7 @@ import {
   Search,
   X,
   Download,
+  Cloud,
 } from "lucide-react"
 
 const STORAGE_KEY = "uscpa-materials"
@@ -282,10 +297,120 @@ export default function MaterialsPage() {
     return matchesSearch && matchesSubject && matchesSubtopic
   })
 
-  // 初回読み込み時にローカルストレージから教材を取得
+  // クラウド同期の状態表示
+  const [isCloudSyncing, setIsCloudSyncing] = useState(false)
+  const [cloudMessage, setCloudMessage] = useState<string | null>(null)
+  const cloudSyncingRef = useRef(false)
+  const cloudSyncAgainRef = useRef(false)
+
+  /**
+   * クラウドと教材を同期する。
+   * 1. この端末にしかないPDFをクラウドへ上げる
+   * 2. 教材一覧をクラウドへ足し込む（行は消さない）
+   * 3. 他の端末で登録された教材をこの端末の一覧に取り込む（PDFは開いたときに取得）
+   * askKey=true のときは合言葉が未入力なら入力を求める
+   */
+  const syncWithCloud = async (askKey: boolean): Promise<void> => {
+    if (cloudSyncingRef.current) {
+      // 同期中に登録・削除があったら、終わってからもう一度回す
+      cloudSyncAgainRef.current = true
+      return
+    }
+    if (!getStoredKey()) {
+      if (!askKey) return
+      const input = window.prompt("教材クラウドの合言葉を入力してください")
+      if (!input) return
+      setStoredKey(input.trim())
+    }
+
+    cloudSyncingRef.current = true
+    setIsCloudSyncing(true)
+    try {
+      // 未同期の行を拾うため、stateではなくlocalStorageの最新を読む
+      const pending = loadMaterials().filter(needsUpload)
+      const failed: string[] = []
+
+      for (const [index, material] of pending.entries()) {
+        setCloudMessage(`PDFをクラウドへ保存中… ${index + 1}/${pending.length}`)
+        try {
+          const updates: Partial<Material> = {}
+          if (material.pdfWithoutAnswers?.startsWith("indexeddb:") && !material.cloudPathWithout) {
+            const blob = await exportPDFFromIndexedDB(material.id, "without")
+            if (blob) updates.cloudPathWithout = await uploadPdf(blob)
+          }
+          if (material.pdfWithAnswers?.startsWith("indexeddb:") && !material.cloudPathWith) {
+            const blob = await exportPDFFromIndexedDB(material.id, "with")
+            if (blob) updates.cloudPathWith = await uploadPdf(blob)
+          }
+          // 1件ごとに保存する。途中で止まってもここまでの分はやり直さずに済む。
+          // 同期中に登録・削除された分を消さないよう、毎回最新を読み直して書く
+          const next = loadAllMaterials().map((m) =>
+            m.id === material.id ? { ...m, ...updates } : m,
+          )
+          saveMaterials(next)
+          setMaterials(next.filter(isValidMaterial))
+        } catch (error) {
+          if (error instanceof CloudKeyError || error instanceof CloudNotConfiguredError) throw error
+          console.error(`Failed to upload ${material.name}:`, error)
+          failed.push(material.name)
+        }
+      }
+
+      setCloudMessage("教材一覧を同期中…")
+      // PDFがクラウドにある教材だけを一覧に載せる（他の端末で開けない行を作らない）
+      const shareable = loadMaterials().filter((m) => m.cloudPathWithout)
+      const tombstones = loadPendingTombstones()
+      const manifest = await pushMaterials([...shareable, ...tombstones])
+      const sentIds = new Set(tombstones.map((t) => t.id))
+      savePendingTombstones(loadPendingTombstones().filter((t) => !sentIds.has(t.id)))
+
+      // 送信後に削除された教材をクラウドから復活させない
+      const stillPending = new Set(loadPendingTombstones().map((t) => t.id))
+      const local = loadAllMaterials()
+      const { materials: merged } = mergeIntoLocal(local, {
+        ...manifest,
+        materials: manifest.materials.filter((m) => !stillPending.has(m.id)),
+      })
+      saveMaterials(merged)
+      setMaterials(merged.filter(isValidMaterial))
+
+      const fromCloud = Math.max(0, merged.length - local.length)
+      const parts = ["クラウドと同期しました"]
+      if (pending.length > 0) parts.push(`${pending.length - failed.length}件を保存`)
+      if (fromCloud > 0) parts.push(`${fromCloud}件を取り込み`)
+      if (failed.length > 0) parts.push(`${failed.length}件は失敗（${failed.join("、")}）`)
+      setCloudMessage(parts.join(" / "))
+    } catch (error) {
+      console.error("Cloud sync failed:", error)
+      if (error instanceof CloudKeyError) {
+        setCloudMessage("合言葉が違います。もう一度「クラウド同期」を押して入力してください")
+      } else if (error instanceof CloudNotConfiguredError) {
+        setCloudMessage("クラウド保存がまだ設定されていません")
+      } else {
+        setCloudMessage("クラウドとの同期に失敗しました。時間をおいて再度お試しください")
+      }
+    } finally {
+      cloudSyncingRef.current = false
+      setIsCloudSyncing(false)
+    }
+    if (cloudSyncAgainRef.current) {
+      cloudSyncAgainRef.current = false
+      await syncWithCloud(false)
+    }
+  }
+
+  // 削除を他の端末にも伝える（クラウドのPDF本体は消さず、削除の印だけ付ける）。
+  // 送る前に端末へ控えておき、同期中や通信失敗でも次の同期で必ず送る
+  const pushTombstones = (removed: Material[]) => {
+    if (addPendingTombstones(removed) > 0) void syncWithCloud(false)
+  }
+
+  // 初回読み込み時にローカルストレージから教材を取得し、合言葉が入力済みならクラウドと同期する
   useEffect(() => {
     setMaterials(loadMaterials())
     setInvalidMaterials(loadInvalidMaterials())
+    void syncWithCloud(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // 無効な教材を削除
@@ -339,6 +464,7 @@ export default function MaterialsPage() {
     setMaterials(kept)
     saveMaterials(kept)
     setSelectedIds(new Set())
+    pushTombstones(materials.filter((m) => selectedIds.has(m.id)))
   }
 
   // 重複のうち最新の1件だけを残し、古い方を削除する
@@ -363,6 +489,7 @@ export default function MaterialsPage() {
     const kept = materials.filter((m) => !removeIds.includes(m.id))
     setMaterials(kept)
     saveMaterials(kept)
+    pushTombstones(materials.filter((m) => removeIds.includes(m.id)))
     alert(`${removeIds.length}件の重複を削除しました`)
   }
 
@@ -415,6 +542,7 @@ export default function MaterialsPage() {
       setUploadSubtopic("")
       setPdfWithoutAnswers(null)
       setPdfWithAnswers(null)
+      void syncWithCloud(false)
     } catch (error) {
       console.error("Failed to save PDF:", error)
       alert("PDFの保存に失敗しました")
@@ -498,6 +626,7 @@ export default function MaterialsPage() {
     setBulkGroups([])
     if (bulkInputRef.current) bulkInputRef.current.value = ""
     setIsBulkUploading(false)
+    if (addedCount > 0) void syncWithCloud(false)
 
     if (skippedCount > 0 || failedNames.length > 0) {
       const lines = [`${addedCount}件を登録しました`]
@@ -642,6 +771,13 @@ export default function MaterialsPage() {
           全データ削除
         </Button>
 
+        {cloudMessage && (
+          <p className="text-sm text-muted-foreground flex items-center gap-2">
+            <Cloud className="h-4 w-4 shrink-0" />
+            {cloudMessage}
+          </p>
+        )}
+
         {/* 検索・フィルター・アップロードボタン */}
         <div className="flex flex-col sm:flex-row gap-4">
           {/* 検索ボックス */}
@@ -715,6 +851,14 @@ export default function MaterialsPage() {
 
           {/* アクションボタン */}
           <div className="flex gap-2 shrink-0">
+            <Button
+              variant="outline"
+              onClick={() => void syncWithCloud(true)}
+              disabled={isCloudSyncing}
+            >
+              <Cloud className="h-4 w-4 mr-2" />
+              {isCloudSyncing ? "同期中..." : "クラウド同期"}
+            </Button>
             {materials.length > 0 && (
               <Button
                 variant="outline"

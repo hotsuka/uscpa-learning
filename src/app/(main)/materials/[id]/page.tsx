@@ -12,7 +12,8 @@ import type { PDFViewerRef } from "@/components/materials/PDFViewer"
 import { ResizableHorizontalPanel, ResizableVerticalPanel } from "@/components/ui/resizable-panel"
 import { SUBJECTS, type Subject, type Material } from "@/types"
 import { SubtopicSelector } from "@/components/timer/SubtopicSelector"
-import { getPDFFromIndexedDB, deleteAllPDFsForMaterial } from "@/lib/indexeddb"
+import { deleteAllPDFsForMaterial } from "@/lib/indexeddb"
+import { addPendingTombstones, loadMaterialPdfUrl } from "@/lib/materials/cloudClient"
 import { useIsDesktop } from "@/hooks/useMediaQuery"
 import { useTimer } from "@/hooks/useTimer"
 import { ConfirmDialog } from "@/components/common/ConfirmDialog"
@@ -229,14 +230,19 @@ export default function MaterialDetailPage() {
       setMaterial(data)
 
       if (data) {
-        // IndexedDBからPDFを読み込み
-        if (data.pdfWithoutAnswers?.startsWith("indexeddb:")) {
-          urlWithout = await getPDFFromIndexedDB(materialId, "without")
-          setPdfUrlWithout(urlWithout)
-        }
-        if (data.pdfWithAnswers?.startsWith("indexeddb:")) {
-          urlWith = await getPDFFromIndexedDB(materialId, "with")
-          setPdfUrlWith(urlWith)
+        // IndexedDBからPDFを読み込む。この端末に無ければクラウドから取得する
+        try {
+          if (data.pdfWithoutAnswers?.startsWith("indexeddb:")) {
+            urlWithout = await loadMaterialPdfUrl(data, "without")
+            setPdfUrlWithout(urlWithout)
+          }
+          if (data.pdfWithAnswers?.startsWith("indexeddb:")) {
+            urlWith = await loadMaterialPdfUrl(data, "with")
+            setPdfUrlWith(urlWith)
+          }
+        } catch (error) {
+          console.error("Failed to load PDF from cloud:", error)
+          alert("クラウドからPDFを取得できませんでした。教材一覧で「クラウド同期」を押して合言葉を確認してください")
         }
       }
 
@@ -289,6 +295,8 @@ export default function MaterialDetailPage() {
         const materials: Material[] = JSON.parse(storedMaterials)
         const updatedMaterials = materials.filter(m => m.id !== materialId)
         localStorage.setItem("uscpa-materials", JSON.stringify(updatedMaterials))
+        // 他の端末にも削除を伝える（次にクラウド同期したときに送る）
+        addPendingTombstones(materials.filter(m => m.id === materialId))
       }
 
       // メモも削除
