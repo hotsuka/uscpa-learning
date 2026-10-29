@@ -82,10 +82,29 @@ export function mergeIntoLocal(
     );
   }
 
+  // 同じ教材を別の端末でも登録していると、IDが違うまま一覧に二重に並ぶ。
+  // PDFの中身（保存先パス）か「科目＋教材名」が同じものは取り込まない
+  const contentKey = (m: Material): string | null =>
+    m.cloudPathWithout ??
+    (m.contentHash ? `materials/pdf/${m.contentHash}.pdf` : null);
+  const nameKey = (m: Material): string => `${m.subject}::${m.name}`;
+  const seenContent = new Set<string>();
+  const seenNames = new Set<string>();
+  const remember = (m: Material) => {
+    const key = contentKey(m);
+    if (key) seenContent.add(key);
+    seenNames.add(nameKey(m));
+  };
+  result.forEach(remember);
+
   const localIds = new Set(local.map((m) => m.id));
   for (const cloud of manifest.materials) {
     if (localIds.has(cloud.id) || cloud.deletedAt || !cloud.cloudPathWithout)
       continue;
+    const key = contentKey(cloud);
+    if ((key && seenContent.has(key)) || seenNames.has(nameKey(cloud)))
+      continue;
+    remember(cloud);
     const { deletedAt: _deletedAt, ...rest } = cloud;
     result.push({
       ...rest,
