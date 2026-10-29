@@ -10,10 +10,12 @@ export const MATERIALS_KEY_HEADER = "x-materials-key";
 const MANIFEST_PATH = "materials/index.json";
 
 export function isCloudConfigured(): boolean {
-  return Boolean(
-    process.env.BLOB_READ_WRITE_TOKEN?.trim() &&
-    process.env.MATERIALS_ACCESS_KEY?.trim(),
+  // ストアの接続方式によって、読み書きトークンかストアID（OIDC認証）のどちらかが入る
+  const hasStore = Boolean(
+    process.env.BLOB_READ_WRITE_TOKEN?.trim() ||
+    process.env.BLOB_STORE_ID?.trim(),
   );
+  return hasStore && Boolean(process.env.MATERIALS_ACCESS_KEY?.trim());
 }
 
 export function isValidMaterialsKey(key: string | null | undefined): boolean {

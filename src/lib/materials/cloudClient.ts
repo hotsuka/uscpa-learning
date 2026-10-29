@@ -1,4 +1,4 @@
-import { upload } from "@vercel/blob/client"
+import { uploadPresigned } from "@vercel/blob/client"
 import type { Material } from "@/types"
 import { getPDFFromIndexedDB, savePDFToIndexedDB } from "@/lib/indexeddb"
 import type { CloudManifest, CloudMaterial } from "@/lib/materials/cloudManifest"
@@ -75,7 +75,7 @@ export async function sha256Hex(blob: Blob): Promise<string> {
 // PDFをクラウドへ上げ、保存先パスを返す。同じ内容なら同じパスになるので二重に増えない
 export async function uploadPdf(blob: Blob): Promise<string> {
   const pathname = pdfPathForHash(await sha256Hex(blob))
-  await upload(pathname, blob, {
+  await uploadPresigned(pathname, blob, {
     access: "private",
     handleUploadUrl: "/api/materials/upload",
     clientPayload: requireKey(),
