@@ -2,7 +2,7 @@
   "id": "reg-bankruptcy",
   "name": "Bankruptcy",
   "topic": "Bankruptcy",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "questions": [
     {
       "id": "reg-bkr-001",
@@ -1159,6 +1159,276 @@
       "references": ["UCC §9-615(d)", "UCC §9-620(e)", "UCC §9-611(b)"],
       "difficulty": "basic",
       "source": "Proactive REG テキスト Secured Transaction Q.20"
+    },
+    {
+      "id": "reg-bkr-046",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Strong Corp. filed a voluntary petition in bankruptcy under the reorganization provisions of Chapter 11 of the Federal Bankruptcy Code. A reorganization plan was filed and agreed to by all necessary parties. The court confirmed the plan and a final decree was entered.\n\nWhich of the following parties ordinarily must approve the plan?\n\n1/2 of the secured creditors | 2/3 of the shareholders",
+      "choices": [
+        { "label": "A", "text": "Yes | Yes" },
+        { "label": "B", "text": "Yes | No" },
+        { "label": "C", "text": "No | No" },
+        { "label": "D", "text": "No | Yes" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under 11 U.S.C. §1126(c), a class of creditors accepts a Chapter 11 plan only if creditors holding at least two-thirds in dollar amount and more than one-half in number of the allowed claims in that class vote to accept. Approval by one-half of the secured creditors is therefore not, by itself, the acceptance standard, so the first column is No. Under §1126(d), a class of equity interests accepts the plan if holders of at least two-thirds in amount of the interests vote to accept, so approval by two-thirds of the shareholders is ordinarily required, giving Yes. (A class that is not impaired is deemed to accept under §1126(f), and a plan can be confirmed over a dissenting class only through the cramdown rules of §1129(b).)\n\n\"Yes | Yes\" and \"Yes | No\" wrongly treat one-half of the secured creditors as the acceptance requirement; creditor classes need both more than one-half in number and two-thirds in amount. \"No | No\" ignores that the shareholder class ordinarily votes on the plan under the two-thirds-in-amount standard.",
+      "explanationJa": "チャプター11の再建計画は、債権者の組（クラス）では「債権額の3分の2以上かつ債権者数の過半数」の賛成で承認されます（§1126(c)）。単に担保付債権者の2分の1が承認すればよいわけではないので、左の列は No です。株主（持分権者）の組は、持分の3分の2以上の賛成で承認するので（§1126(d)）、通常は承認が必要で、右の列は Yes です（権利が変更されない組は承認したものとみなされ（§1126(f)）、反対する組があってもクラムダウン（§1129(b)）で認可される例外はあります）。\n\n担保付債権者の2分の1を承認要件とする組み合わせは、人数と金額の二重要件を見落としています。株主の承認を不要とする組み合わせは、持分権者の組も3分の2基準で議決することを見落としています。",
+      "references": ["11 U.S.C. §1126(c)", "11 U.S.C. §1126(d)", "11 U.S.C. §1129(b)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Bankruptcy Q.2"
+    },
+    {
+      "id": "reg-bkr-047",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Strong Corp. filed a voluntary petition in bankruptcy under the reorganization provisions of Chapter 11 of the Federal Bankruptcy Code. A reorganization plan was filed and agreed to by all necessary parties. The court confirmed the plan and a final decree was entered.\n\nWhich of the following statements best describes the effect of the entry of the court's final decree?",
+      "choices": [
+        { "label": "A", "text": "Strong Corp. will be discharged from all its debts and liabilities." },
+        { "label": "B", "text": "Strong Corp. will be discharged only from the debts owed creditors who agreed to the reorganization plan." },
+        { "label": "C", "text": "Strong Corp. will be discharged from all its debts and liabilities that arose before the date of confirmation of the plan." },
+        { "label": "D", "text": "Strong Corp. will be discharged from all its debts and liabilities that arose before the confirmation of the plan, except as otherwise provided in the plan, the order of confirmation, or the Bankruptcy Code." }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under 11 U.S.C. §1141(d)(1), confirmation of a Chapter 11 plan discharges the debtor from any debt that arose before the date of confirmation, except as otherwise provided in the plan, the order confirming the plan, or the Bankruptcy Code. Under §1141(a), the confirmed plan binds the debtor and all creditors, whether or not a particular creditor accepted the plan.\n\nA discharge from all debts and liabilities is overstated, because only pre-confirmation debts are discharged and exceptions apply. A discharge only from debts owed to creditors who agreed to the plan is wrong, because the confirmed plan binds all creditors. A discharge from all pre-confirmation debts without qualification omits the exceptions in the plan, the confirmation order, and the Code.",
+      "explanationJa": "チャプター11では、計画の認可により、認可日より前に生じた債務から免責されます。ただし、計画・認可命令・破産法で別段の定めがあるものは除かれます（§1141(d)(1)）。認可された計画は、賛成したかどうかにかかわらず全債権者を拘束します（§1141(a)）。\n\n「すべての債務から免責」は、認可後の債務や例外を含めてしまうので言い過ぎです。「計画に同意した債権者への債務だけ免責」は、計画が全債権者を拘束する点と矛盾します。「認可前の債務すべてから免責」は、計画・命令・破産法による例外を落としています。",
+      "references": ["11 U.S.C. §1141(d)(1)", "11 U.S.C. §1141(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Bankruptcy Q.3"
+    },
+    {
+      "id": "reg-bkr-048",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Which of the following statements is correct concerning the voluntary filing of a petition in bankruptcy?",
+      "choices": [
+        { "label": "A", "text": "If the debtor has 12 or more creditors, the unsecured claims must total at least $22,000." },
+        { "label": "B", "text": "The debtor must be insolvent." },
+        { "label": "C", "text": "If the debtor has less than 12 creditors, the unsecured claims must total at least $18,000." },
+        { "label": "D", "text": "The petition may be filed jointly by spouses." }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under 11 U.S.C. §302(a), an individual and the individual's spouse may file a single joint petition, so a voluntary petition may be filed jointly by spouses. A voluntary petition under §301 does not require the debtor to be insolvent; the debtor only needs to be eligible under §109.\n\nThe statements about 12 or more creditors and about fewer than 12 creditors describe the numerical and dollar requirements that creditors must meet to file an involuntary petition under §303(b). They do not apply to a voluntary filing, and the dollar amounts are adjusted periodically for inflation under §104. The statement that the debtor must be insolvent is wrong because insolvency is not a condition of a voluntary petition.",
+      "explanationJa": "夫婦は1通の共同申立て（joint petition）で破産を申し立てることができます（§302(a)）。任意申立て（§301）では、債務者が支払不能（insolvent）であることは要件ではありません。\n\n債権者が12人以上・12人未満の場合の金額要件は、債権者が申し立てる強制申立て（§303(b)）の要件で、任意申立てには関係ありません（金額は§104により物価調整で改定されます）。「債務者が支払不能でなければならない」も任意申立ての要件ではないため誤りです。",
+      "references": ["11 U.S.C. §302(a)", "11 U.S.C. §301", "11 U.S.C. §303(b)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Bankruptcy Q.4"
+    },
+    {
+      "id": "reg-bkr-049",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Dart, Inc., a closely held corporation, was petitioned involuntarily into bankruptcy under the liquidation provisions of Chapter 7 of the Federal Bankruptcy Code. Dart contested the petition. Dart has not been paying its business debts as they became due, has defaulted on its mortgage loan payments, and owes back taxes to the IRS. The total cash value of Dart's bankruptcy estate after the sale of all assets and payment of administration expenses is $100,000. Dart has the following creditors:\n\n- Fracon Bank is owed $75,000 principal and accrued interest on a mortgage loan secured by Dart's real property. The property was valued at and sold, in bankruptcy, for $70,000.\n- The IRS has a $12,000 recorded judgment for unpaid corporate income tax.\n- JOG Office Supplies has an unsecured claim of $3,000 that was timely filed.\n- Nanstar Electric Co. has an unsecured claim of $1,200 that was not timely filed.\n- Decoy Publications has a claim of $20,000, of which $2,000 is secured by Dart's inventory that was valued and sold, in bankruptcy, for $2,000. The claim was timely filed.\n\nWhich of the following statements would correctly describe the result of Dart's opposing the petition?",
+      "choices": [
+        { "label": "A", "text": "Dart will win because the petition should have been filed under Chapter 11." },
+        { "label": "B", "text": "Dart will win because there are not more than 12 creditors." },
+        { "label": "C", "text": "Dart will lose because it is not paying its debts as they become due." },
+        { "label": "D", "text": "Dart will lose because of its debt to the IRS." }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under 11 U.S.C. §303(h)(1), if an involuntary petition is contested, the court orders relief only if the debtor is generally not paying its undisputed debts as they become due (or a custodian took possession of the debtor's property within 120 days before filing). Dart has not been paying its business debts as they became due, so Dart will lose.\n\nCreditors may file an involuntary petition under either Chapter 7 or Chapter 11 (§303(a)), and a closely held business corporation is a proper Chapter 7 debtor, so the argument that the petition should have been filed under Chapter 11 fails. Having fewer than 12 creditors does not defeat the petition; it only means a single qualifying creditor may file (§303(b)(2)). A single debt to the IRS is not the statutory test; the test is the general failure to pay debts as they come due.",
+      "explanationJa": "強制申立てに債務者が異議を述べた場合、裁判所が救済命令を出すのは、債務者が弁済期の来た争いのない債務を一般的に支払っていないとき（または申立て前120日以内に管財人等が財産を占有したとき）です（§303(h)(1)）。Dartは弁済期の来た事業債務を支払っていないので、異議は通らず負けます。\n\n強制申立てはチャプター7でもチャプター11でもでき（§303(a)）、閉鎖会社はチャプター7の債務者になれるので「チャプター11で申し立てるべきだった」は理由になりません。債権者が12人未満であることは、要件を満たす債権者1人で申し立てられるというだけで、異議の理由にはなりません。IRSへの債務があること自体は判断基準ではなく、基準は債務の一般的な不払いです。",
+      "references": ["11 U.S.C. §303(h)(1)", "11 U.S.C. §303(b)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Bankruptcy Q.6"
+    },
+    {
+      "id": "reg-bkr-050",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Dart, Inc., a closely held corporation, was petitioned involuntarily into bankruptcy under the liquidation provisions of Chapter 7 of the Federal Bankruptcy Code. Dart contested the petition. Dart has not been paying its business debts as they became due, has defaulted on its mortgage loan payments, and owes back taxes to the IRS. The total cash value of Dart's bankruptcy estate after the sale of all assets and payment of administration expenses is $100,000. Dart has the following creditors:\n\n- Fracon Bank is owed $75,000 principal and accrued interest on a mortgage loan secured by Dart's real property. The property was valued at and sold, in bankruptcy, for $70,000.\n- The IRS has a $12,000 recorded judgment for unpaid corporate income tax.\n- JOG Office Supplies has an unsecured claim of $3,000 that was timely filed.\n- Nanstar Electric Co. has an unsecured claim of $1,200 that was not timely filed.\n- Decoy Publications has a claim of $20,000, of which $2,000 is secured by Dart's inventory that was valued and sold, in bankruptcy, for $2,000. The claim was timely filed.\n\nAssume that the bankruptcy estate was distributed.\n\nWhat dollar amount would Nanstar Electric Co. receive?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$800" },
+        { "label": "C", "text": "$1,000" },
+        { "label": "D", "text": "$1,200" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Secured creditors are paid first from their collateral, then priority claims under 11 U.S.C. §507, then timely filed general unsecured claims, and only then tardily filed claims (§726(a)(3)).\nEstate available: $100,000\nLess Fracon Bank's secured claim (collateral sold for $70,000): $100,000 - $70,000 = $30,000\nLess Decoy's secured portion (inventory sold for $2,000): $30,000 - $2,000 = $28,000\nLess IRS priority tax claim (§507(a)(8)): $28,000 - $12,000 = $16,000\nTimely general unsecured claims: Fracon deficiency $5,000 + JOG $3,000 + Decoy $18,000 = $26,000\nBecause $16,000 does not pay the $26,000 of timely general unsecured claims in full, nothing remains for the tardily filed claim. Nanstar receives $0.\n\nThe $1,200 amount treats Nanstar's claim as paid in full. Any partial payment, such as $800 or $1,000, would require the late claim to share in the distribution with the timely filed general unsecured claims, but a tardily filed claim is paid only after those claims are paid in full.",
+      "explanationJa": "配当の順序は、担保付債権（担保物の売却代金から）→ 優先債権（§507）→ 期限内に届け出た一般無担保債権 → 期限後に届け出た債権（§726(a)(3)）です。\n財団 $100,000 − Fracon の担保分 $70,000 − Decoy の担保分 $2,000 = $28,000\n$28,000 − IRS の優先租税債権 $12,000 = $16,000\n期限内の一般無担保債権は Fracon の不足額 $5,000 + JOG $3,000 + Decoy $18,000 = $26,000 で、$16,000 では全額払えません。\nしたがって期限後に届け出た Nanstar の $1,200 には配当が回らず、受取額は $0 です。$1,200 は全額配当とした誤り、$800 や $1,000 のような一部配当も、期限後の債権を期限内の債権と同順位で扱わない限り生じず、誤りです。",
+      "references": ["11 U.S.C. §726(a)", "11 U.S.C. §507(a)(8)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Bankruptcy Q.8"
+    },
+    {
+      "id": "reg-bkr-051",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Dart, Inc., a closely held corporation, was petitioned involuntarily into bankruptcy under the liquidation provisions of Chapter 7 of the Federal Bankruptcy Code. Dart contested the petition. Dart has not been paying its business debts as they became due, has defaulted on its mortgage loan payments, and owes back taxes to the IRS. The total cash value of Dart's bankruptcy estate after the sale of all assets and payment of administration expenses is $100,000. Dart has the following creditors:\n\n- Fracon Bank is owed $75,000 principal and accrued interest on a mortgage loan secured by Dart's real property. The property was valued at and sold, in bankruptcy, for $70,000.\n- The IRS has a $12,000 recorded judgment for unpaid corporate income tax.\n- JOG Office Supplies has an unsecured claim of $3,000 that was timely filed.\n- Nanstar Electric Co. has an unsecured claim of $1,200 that was not timely filed.\n- Decoy Publications has a claim of $20,000, of which $2,000 is secured by Dart's inventory that was valued and sold, in bankruptcy, for $2,000. The claim was timely filed.\n\nAssume that the bankruptcy estate was distributed.\n\nWhat total dollar amount would Fracon Bank receive on its secured and unsecured claims? (rounded to nearest hundred)",
+      "choices": [
+        { "label": "A", "text": "$75,000" },
+        { "label": "B", "text": "$73,600" },
+        { "label": "C", "text": "$73,100" },
+        { "label": "D", "text": "$70,000" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Under 11 U.S.C. §506(a), Fracon's $75,000 claim is secured to the extent of the $70,000 value of its collateral, and the $5,000 balance is a general unsecured claim. Distribution under §726:\nEstate available: $100,000\nLess secured claims: $70,000 (Fracon) + $2,000 (Decoy) = $72,000, leaving $28,000\nLess IRS priority tax claim (§507(a)(8)): $28,000 - $12,000 = $16,000\nTimely general unsecured claims: $5,000 (Fracon) + $3,000 (JOG) + $18,000 (Decoy) = $26,000\nFracon's unsecured share: $16,000 x $5,000 / $26,000 = $3,077\nFracon's total: $70,000 + $3,077 = $73,077, rounded to $73,100\n\nThe $75,000 amount assumes Fracon's deficiency is paid in full, which ignores the IRS priority claim and the pro rata sharing with other unsecured creditors. The $70,000 amount ignores Fracon's right to share as a general unsecured creditor for its $5,000 deficiency. The $73,600 amount does not result from sharing the $16,000 pro rata among the $26,000 of timely general unsecured claims.",
+      "explanationJa": "Fracon の債権 $75,000 のうち、担保物の価値 $70,000 までが担保付債権で、残り $5,000 は一般無担保債権になります（§506(a)）。\n財団 $100,000 − 担保付債権（Fracon $70,000 + Decoy $2,000）= $28,000\n$28,000 − IRS の優先租税債権 $12,000 = $16,000\n期限内の一般無担保債権 $26,000（Fracon $5,000・JOG $3,000・Decoy $18,000）で按分すると、Fracon は $16,000 × 5,000/26,000 = $3,077\n合計 $70,000 + $3,077 = $73,077 → 百ドル単位で $73,100 です。\n$75,000 は不足額まで全額払われるとした誤り、$70,000 は不足額の按分配当を無視した誤り、$73,600 は $26,000 での按分計算になっていません。",
+      "references": ["11 U.S.C. §506(a)", "11 U.S.C. §726(a)", "11 U.S.C. §507(a)(8)"],
+      "difficulty": "advanced",
+      "source": "Proactive REG テキスト Bankruptcy Q.9"
+    },
+    {
+      "id": "reg-bkr-052",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Dart, Inc., a closely held corporation, was petitioned involuntarily into bankruptcy under the liquidation provisions of Chapter 7 of the Federal Bankruptcy Code. Dart contested the petition. Dart has not been paying its business debts as they became due, has defaulted on its mortgage loan payments, and owes back taxes to the IRS. The total cash value of Dart's bankruptcy estate after the sale of all assets and payment of administration expenses is $100,000. Dart has the following creditors:\n\n- Fracon Bank is owed $75,000 principal and accrued interest on a mortgage loan secured by Dart's real property. The property was valued at and sold, in bankruptcy, for $70,000.\n- The IRS has a $12,000 recorded judgment for unpaid corporate income tax.\n- JOG Office Supplies has an unsecured claim of $3,000 that was timely filed.\n- Nanstar Electric Co. has an unsecured claim of $1,200 that was not timely filed.\n- Decoy Publications has a claim of $20,000, of which $2,000 is secured by Dart's inventory that was valued and sold, in bankruptcy, for $2,000. The claim was timely filed.\n\nAssume that the bankruptcy estate was distributed.\n\nWhat dollar amount would the IRS receive?",
+      "choices": [
+        { "label": "A", "text": "$0" },
+        { "label": "B", "text": "$8,000" },
+        { "label": "C", "text": "$10,000" },
+        { "label": "D", "text": "$12,000" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Unsecured claims of governmental units for income taxes are priority claims under 11 U.S.C. §507(a)(8) and are paid before general unsecured claims (§726(a)(1)).\nEstate available: $100,000\nLess secured claims paid from collateral: $70,000 (Fracon) + $2,000 (Decoy) = $72,000, leaving $28,000\nIRS priority claim: $12,000, which is fully covered by the $28,000 remaining\nThe IRS receives $12,000.\n\nThe $0 amount ignores the tax priority. The $8,000 and $10,000 amounts would leave part of the IRS claim unpaid even though $28,000 remains after the secured claims; a priority claim is paid in full before any general unsecured creditor receives a distribution.",
+      "explanationJa": "法人所得税の租税債権は優先債権（§507(a)(8)）で、一般無担保債権より先に支払われます。\n財団 $100,000 − 担保付債権（Fracon $70,000 + Decoy $2,000）= $28,000 が残るので、IRS の $12,000 は全額支払われます。\n$0 は優先順位を無視した誤り、$8,000 や $10,000 は、担保付債権の弁済後に $28,000 残っているのに IRS の債権の一部しか払わない誤りです。優先債権は一般無担保債権への配当より先に全額支払われます。",
+      "references": ["11 U.S.C. §507(a)(8)", "11 U.S.C. §726(a)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Bankruptcy Q.10"
+    },
+    {
+      "id": "reg-bkr-053",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the liquidation provisions of Chapter 7 of the Federal Bankruptcy Code, a debtor will be denied a discharge in bankruptcy if the debtor",
+      "choices": [
+        { "label": "A", "text": "Fails to list a creditor" },
+        { "label": "B", "text": "Owes alimony and support payments" },
+        { "label": "C", "text": "Cannot pay administration expenses" },
+        { "label": "D", "text": "Refuses to satisfactorily explain a loss of assets" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under 11 U.S.C. §727(a)(5), the court denies a Chapter 7 discharge if the debtor fails to explain satisfactorily any loss of assets or deficiency of assets to meet the debtor's liabilities. Denial of discharge means no debts are discharged.\n\nFailing to list a creditor does not bar the discharge; it only makes the unscheduled debt nondischargeable in some cases (§523(a)(3)). Owing alimony and support makes those particular obligations nondischargeable (§523(a)(5)) but does not deny the discharge of other debts. Inability to pay administration expenses is not a ground for denying a discharge.",
+      "explanationJa": "資産の減少や債務を賄うのに足りない理由を十分に説明できない場合、チャプター7の免責は拒否されます（§727(a)(5)）。免責の拒否は、すべての債務が免責されないことを意味します。\n\n債権者を一覧に載せなかった場合は、その債務が免責されないことがある（§523(a)(3)）だけで、免責全体は拒否されません。扶養料・養育費の債務は、その債務自体が非免責になる（§523(a)(5)）だけです。管理費用を払えないことは免責拒否の事由ではありません。",
+      "references": ["11 U.S.C. §727(a)(5)", "11 U.S.C. §523(a)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Bankruptcy Q.11"
+    },
+    {
+      "id": "reg-bkr-054",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Which of the following claims will not be discharged in bankruptcy?",
+      "choices": [
+        { "label": "A", "text": "A claim that arises from alimony or child support" },
+        { "label": "B", "text": "A claim that arises from the debtor's breach of a contract" },
+        { "label": "C", "text": "A claim brought by a secured creditor that remains unsatisfied after the sale of the collateral" },
+        { "label": "D", "text": "Credit card bills and medical bills" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under 11 U.S.C. §523(a)(5), a domestic support obligation, such as alimony or child support, is excepted from discharge.\n\nA claim arising from the debtor's breach of a contract is an ordinary unsecured debt and is dischargeable. A secured creditor's deficiency that remains after the sale of the collateral becomes a general unsecured claim and is dischargeable. Credit card bills and medical bills are ordinary consumer debts and are dischargeable unless a specific exception, such as fraud, applies.",
+      "explanationJa": "扶養料や養育費などの家族扶養債務（domestic support obligation）は免責されません（§523(a)(5)）。\n\n契約違反による債務は通常の無担保債務で免責されます。担保物を売却しても残った担保付債権者の不足額は一般無担保債権となり、免責されます。クレジットカードや医療費の債務も、詐欺などの例外に当たらない限り免責されます。",
+      "references": ["11 U.S.C. §523(a)(5)"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Bankruptcy Q.12"
+    },
+    {
+      "id": "reg-bkr-055",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Which of the following acts by a debtor could result in a bankruptcy court revoking the debtor's discharge?\n\nI. Failure to list one creditor\nII. Failure to answer correctly material questions on the bankruptcy petition",
+      "choices": [
+        { "label": "A", "text": "I only" },
+        { "label": "B", "text": "II only" },
+        { "label": "C", "text": "Both I and II" },
+        { "label": "D", "text": "Neither I nor II" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under 11 U.S.C. §727(d), the court may revoke a discharge if it was obtained through the debtor's fraud, or if the debtor committed acts such as refusing to answer a material question approved by the court (§727(a)(6)). Giving false answers to material questions on the bankruptcy petition is a false oath (§727(a)(4)); if the discharge was obtained through that fraud, the court may revoke it under §727(d)(1). Statement II can therefore result in revocation.\n\nFailure to list one creditor does not cause the discharge to be revoked. Under §523(a)(3), the unscheduled debt may simply remain nondischargeable, while the discharge of the debtor's other debts stands. For this reason \"I only\" and \"Both I and II\" are wrong, and \"Neither I nor II\" is wrong because false answers to material questions can lead to revocation.",
+      "explanationJa": "免責の取消し（§727(d)）は、免責が債務者の詐欺によって得られた場合や、裁判所が認めた重要な質問への回答拒否（§727(a)(6)）などがあった場合に認められます。破産申立書の重要な質問に正しく答えないことは虚偽の宣誓（§727(a)(4)）に当たり、それによって免責を得たときは詐欺による免責取得として取り消され得ます（§727(d)(1)）。したがって II は該当します。\n\n債権者を1人載せなかっただけでは免責は取り消されず、その載せなかった債務が非免責になるにとどまります（§523(a)(3)）。そのため I を含む組み合わせは誤りで、どちらも該当しないとするのも誤りです。",
+      "references": ["11 U.S.C. §727(d)", "11 U.S.C. §523(a)(3)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Bankruptcy Q.13"
+    },
+    {
+      "id": "reg-bkr-056",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Under the liquidation provisions of Chapter 7 of the Federal Bankruptcy Code, certain property acquired by the debtor after the filing of the petition becomes part of the bankruptcy estate. An example of such property is",
+      "choices": [
+        { "label": "A", "text": "Inheritances received by the debtor within 180 days after the filing of the petition." },
+        { "label": "B", "text": "Child support payments received by the debtor within one year after the filing of the petition." },
+        { "label": "C", "text": "Social Security payments received by the debtor within 180 days after the filing of the petition." },
+        { "label": "D", "text": "Wages earned by the debtor within one year after the filing of the petition." }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Under 11 U.S.C. §541(a)(5), property that the debtor acquires or becomes entitled to acquire within 180 days after the filing of the petition by bequest, devise, or inheritance, as a result of a property settlement or divorce decree, or as a beneficiary of a life insurance policy becomes property of the estate. An inheritance received within 180 days after filing is therefore included.\n\nChild support payments received after filing are not among the post-petition property brought into the estate and are for the support of the child. Social Security benefits are protected from the claims of creditors by federal law and are not post-petition property brought into the estate. Wages earned by an individual Chapter 7 debtor for services performed after the filing are excluded from the estate under §541(a)(6).",
+      "explanationJa": "申立て後180日以内に相続・遺贈、財産分与・離婚判決、生命保険の受益者として取得した財産は、破産財団に含まれます（§541(a)(5)）。したがって申立て後180日以内に受け取った相続財産が該当します。\n\n申立て後に受け取る養育費は、財団に取り込まれる申立て後の財産に当たりません。社会保障給付は連邦法で債権者の差押えから保護されており、財団に含まれません。個人のチャプター7債務者が申立て後の労務で得た賃金は財団から除かれます（§541(a)(6)）。",
+      "references": ["11 U.S.C. §541(a)(5)", "11 U.S.C. §541(a)(6)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Bankruptcy Q.14"
+    },
+    {
+      "id": "reg-bkr-057",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Which of the following transfers by a debtor, within ninety days of filing for bankruptcy, could be set aside as a preferential payment?",
+      "choices": [
+        { "label": "A", "text": "Making a gift to charity" },
+        { "label": "B", "text": "Paying a business utility bill" },
+        { "label": "C", "text": "Borrowing money from a bank secured by giving a mortgage on business property" },
+        { "label": "D", "text": "Prepaying an installment loan on inventory" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Under 11 U.S.C. §547(b), the trustee may avoid a transfer of the debtor's property to or for the benefit of a creditor, for or on account of an antecedent debt, made while the debtor was insolvent (presumed during the 90 days before filing under §547(f)), within 90 days before filing, that lets the creditor receive more than it would in a Chapter 7 liquidation. Prepaying an installment loan on inventory pays an existing (antecedent) debt ahead of schedule and prefers that lender, so it can be set aside.\n\nA gift to charity is not a transfer to a creditor on an antecedent debt, so it is not a preference (it may be examined as a fraudulent transfer instead). Paying a business utility bill is a payment in the ordinary course of business protected by §547(c)(2). Borrowing money secured by a mortgage is a contemporaneous exchange for new value under §547(c)(1), not a payment of an antecedent debt.",
+      "explanationJa": "偏頗行為（preference）として取り消せるのは、申立て前90日以内に、支払不能の状態で（90日間は支払不能と推定、§547(f)）、既存の債務（antecedent debt）について債権者に移転し、清算時より多く受け取らせる行為です（§547(b)）。在庫の割賦ローンの繰上げ返済は、既存債務を期限前に払って特定の債権者を優遇するので取り消せます。\n\n慈善団体への寄付は債権者への既存債務の弁済ではないため偏頗行為に当たりません（詐害行為として問題になることはあります）。事業の公共料金の支払いは通常の事業過程の弁済として保護されます（§547(c)(2)）。抵当権を設定して新たに借り入れるのは、新たな価値との同時交換（§547(c)(1)）で、既存債務の弁済ではありません。",
+      "references": ["11 U.S.C. §547(b)", "11 U.S.C. §547(c)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Bankruptcy Q.16"
+    },
+    {
+      "id": "reg-bkr-058",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "On June 5, Year 8, Gold rented equipment under a four-year lease. On March 8, Year 9, Gold was petitioned involuntarily into bankruptcy under the Federal Bankruptcy Code's liquidation provisions. A trustee was appointed. The fair market value of the equipment exceeds the balance of the lease payments due. The trustee",
+      "choices": [
+        { "label": "A", "text": "May not reject the equipment lease because the fair market value of the equipment exceeds the balance of the lease payments due" },
+        { "label": "B", "text": "May elect not to assume the equipment lease" },
+        { "label": "C", "text": "Must assume the equipment lease because its term exceeds one year" },
+        { "label": "D", "text": "Must assume and subsequently assign the equipment lease" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Under 11 U.S.C. §365(a), the trustee, subject to the court's approval, may assume or reject any executory contract or unexpired lease of the debtor. In a Chapter 7 case, an unexpired lease of personal property that the trustee does not assume within 60 days after the order for relief is deemed rejected (§365(d)(1)). The trustee therefore may elect not to assume the equipment lease.\n\nThe trustee is not barred from rejecting the lease because the equipment's fair market value exceeds the remaining lease payments; that fact only bears on whether assumption would benefit the estate. Nothing requires assumption because the lease term exceeds one year. Assignment under §365(f) is an option available after assumption, not a requirement.",
+      "explanationJa": "管財人は、裁判所の承認を得て、債務者の未履行契約や期間の残っているリースを引き受ける（assume）ことも拒絶する（reject）こともできます（§365(a)）。チャプター7では、動産のリースを救済命令後60日以内に引き受けなければ拒絶したものとみなされます（§365(d)(1)）。したがって管財人はリースを引き受けないことを選べます。\n\n設備の時価が残りのリース料を上回っていても拒絶できないわけではなく、それは引受けが財団に有利かどうかの判断材料にすぎません。リース期間が1年を超えるから引き受けなければならない、という規定はありません。譲渡（§365(f)）は引受け後に選べる手段で、義務ではありません。",
+      "references": ["11 U.S.C. §365(a)", "11 U.S.C. §365(d)(1)"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Bankruptcy Q.17"
+    },
+    {
+      "id": "reg-bkr-059",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Which of the following liens generally require(s) the lien holder to give notice of legal action before selling the debtor's property to satisfy the debt?\n\nMechanic's lien | Artisan's lien",
+      "choices": [
+        { "label": "A", "text": "Yes | Yes" },
+        { "label": "B", "text": "Yes | No" },
+        { "label": "C", "text": "No | Yes" },
+        { "label": "D", "text": "No | No" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Both liens are creditors' rights that can be enforced against the debtor's property only after notice to the debtor. A mechanic's lien on real property (for labor or materials that improved the property) is enforced through a judicial foreclosure action, and the owner must be given notice of the action before the property is sold. An artisan's lien is a possessory lien on personal property that the artisan repaired or improved; state lien statutes generally require the lien holder to give the owner notice before the property is sold to satisfy the debt.\n\n\"Yes | No\" is wrong because an artisan's lien holder generally cannot sell the property without first notifying the owner. \"No | Yes\" is wrong because a mechanic's lien is enforced through a foreclosure action that requires notice to the owner. \"No | No\" ignores the notice requirement for both liens.",
+      "explanationJa": "どちらの留置権（リーエン）も、債務者に通知したうえでなければ財産を売却して弁済に充てることはできません。メカニクス・リーエン（不動産の工事・資材の代金のための不動産上の担保権）は、裁判所での実行手続き（foreclosure）によって行使し、売却前に所有者へ通知が必要です。アーティザンズ・リーエン（修理・加工した動産を占有する留置権）も、州法上、売却前に所有者へ通知する必要があります。\n\nアーティザンズ・リーエンは通知不要とする組み合わせ、メカニクス・リーエンは通知不要とする組み合わせ、どちらも通知不要とする組み合わせは、いずれも通知要件を見落としています。",
+      "references": ["State mechanic's lien statutes (judicial foreclosure)", "State artisan's (possessory) lien statutes"],
+      "difficulty": "intermediate",
+      "source": "Proactive REG テキスト Bankruptcy Q.18"
+    },
+    {
+      "id": "reg-bkr-060",
+      "topic": "Bankruptcy",
+      "subtopic": "Bankruptcy",
+      "stem": "Which of the following will enable a creditor to collect money from a debtor's wages?",
+      "choices": [
+        { "label": "A", "text": "An order of receivership" },
+        { "label": "B", "text": "An order of garnishment" },
+        { "label": "C", "text": "A writ of execution" },
+        { "label": "D", "text": "A writ of attachment" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Garnishment is a creditor's remedy in which a court orders a third party that holds money owed to the debtor, such as the debtor's employer, to pay part of that money to the creditor. An order of garnishment therefore lets a creditor collect from the debtor's wages. Federal law (Consumer Credit Protection Act, 15 U.S.C. §1673) limits the amount of disposable earnings that can be garnished.\n\nAn order of receivership appoints a receiver to take charge of and preserve the debtor's property; it is not a means of reaching wages held by an employer. A writ of execution directs the sheriff to seize and sell the debtor's nonexempt property to satisfy a judgment. A writ of attachment is a prejudgment seizure of the debtor's property to secure a possible judgment. Neither writ is directed at wages owed by a third party.",
+      "explanationJa": "差押命令（garnishment）は、債務者にお金を支払う立場にある第三者（雇用主など）に対し、その一部を債権者へ支払うよう裁判所が命じる債権回収手段です。したがって給与から回収できるのは差押命令です。差し押さえられる給与の額には連邦法（消費者信用保護法、15 U.S.C. §1673）の上限があります。\n\n管財命令（receivership）は財産を管理・保全する管財人を選任するもので、雇用主が支払う給与を回収する手段ではありません。執行令状（writ of execution）は判決に基づき保安官が債務者の差押可能な財産を差し押さえて売却するもの、仮差押令状（writ of attachment）は判決前に債務者の財産を差し押さえるもので、いずれも第三者が支払う給与を対象とするものではありません。",
+      "references": ["15 U.S.C. §1673", "State garnishment statutes"],
+      "difficulty": "basic",
+      "source": "Proactive REG テキスト Bankruptcy Q.20"
     }
   ]
 }
