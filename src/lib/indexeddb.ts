@@ -63,7 +63,7 @@ export function openDB(): Promise<IDBDatabase> {
  */
 export async function savePDFToIndexedDB(
   materialId: string,
-  file: File,
+  file: File | Blob,
   type: "without" | "with",
 ): Promise<void> {
   const db = await openDB();

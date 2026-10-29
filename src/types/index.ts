@@ -223,6 +223,9 @@ export interface Material {
   totalPages: number;
   // 回答なし版PDFの内容ハッシュ。教材名を変えて再アップロードしても重複を検出できるようにする
   contentHash?: string;
+  // クラウド（Vercel Blob）上のPDFのパス。別のブラウザ・端末で開くときにここから取得する
+  cloudPathWithout?: string;
+  cloudPathWith?: string;
   createdAt: string;
   updatedAt: string;
 }
