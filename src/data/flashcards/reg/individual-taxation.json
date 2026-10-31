@@ -1,0 +1,1034 @@
+{
+  "id": "reg-individual-taxation",
+  "subject": "REG",
+  "topic": "Individual Taxation",
+  "name": "Individual Taxation 頻出論点",
+  "version": "1",
+  "cards": [
+    {
+      "id": "reg-it-fc-001",
+      "category": "Passive Activity",
+      "front": "受動的活動（passive activity）に当たるものは何か？ 当たらない所得の例も答えよ。",
+      "back": "受動的活動:\n・すべての賃貸活動（rental activity）。ただし不動産専門家（real estate professional）は例外\n・納税者が実質的に参加（material participation）していない事業（リミテッド・パートナーの持分、サイレント・パートナー等）\n受動的でないもの:\n・ポートフォリオ所得（利息・配当・キャピタルゲイン・事業外の年金）\n・給与・ボーナス、パートナーシップからの保証支払（guaranteed payment）\n・実質参加している事業の所得",
+      "note": "ひっかけ: 事業用に一時運用している資金の利息も portfolio income であり、受動的損失と相殺できない（it-141）。\n積極的参加（active participation）は賃貸不動産の特別控除枠を使う条件にすぎず、賃貸が受動的でなくなるわけではない（reg-ind-053 の解説の記述は不正確）。",
+      "relatedQuestionIds": [
+        "reg-ind-049",
+        "reg-ind-053",
+        "reg-ind-141"
+      ],
+      "sources": [
+        "教材 p18",
+        "問題バンク reg-ind-049 の解説",
+        "問題バンク reg-ind-060 の解説",
+        "問題バンク reg-ind-141 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-002",
+      "category": "Passive Activity",
+      "front": "受動的損失（passive activity loss）は何と相殺でき、控除しきれない分はどう扱うか？",
+      "back": "・受動的所得とだけ相殺できる（給与・ポートフォリオ所得とは不可）\n・控除しきれない分は停止損失（suspended loss）として無期限に繰り越す\n・繰戻し（carryback）はない\n・キャピタルロスの年$3,000枠のような「一般所得との相殺枠」はない（例外は賃貸不動産の active participation 枠のみ）",
+      "relatedQuestionIds": [
+        "reg-ind-077",
+        "reg-ind-113",
+        "reg-ind-037"
+      ],
+      "sources": [
+        "教材 p18",
+        "問題バンク reg-ind-077 の解説",
+        "問題バンク reg-ind-113 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-003",
+      "category": "Passive Activity",
+      "front": "受動的活動の持分を処分した年、その活動の当期損失と停止損失はどう扱うか？",
+      "back": "持分の全部を、関連者以外へ、全額課税される取引で処分した場合:\n・当期損失と過去の停止損失の全額が受動的でない損失とみなされる\n・給与・ポートフォリオ所得・売却益を含むあらゆる所得と相殺できる",
+      "note": "計算の型（it-039）: 売却益＋その他所得 − 停止損失合計 = AGI。",
+      "relatedQuestionIds": [
+        "reg-ind-039",
+        "reg-ind-069"
+      ],
+      "sources": [
+        "教材 p18（売却年に使用）",
+        "問題バンク reg-ind-039 の解説",
+        "問題バンク reg-ind-069 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-004",
+      "category": "Passive Activity",
+      "front": "賃貸不動産に積極的に参加（active participation）している個人の特別控除枠（$25,000）と、その縮小計算は？",
+      "back": "・賃貸不動産の損失を受動的でない所得から最大$25,000控除できる\n・修正AGI（受動的損失を考慮する前）が$100,000を超える部分の50%だけ枠が減り、$150,000で枠はゼロ\n・計算の型: 枠 = $25,000 − (修正AGI − $100,000) × 50%\n例: AGI $120,000、損失$40,000 → 枠$15,000 → 控除$15,000（残りは繰越）",
+      "note": "ひっかけ: 対象は賃貸「不動産」だけ。設備のレンタル事業には使えない（it-070）。積極的に参加していなければ枠はゼロ（it-037）。",
+      "relatedQuestionIds": [
+        "reg-ind-078",
+        "reg-ind-084",
+        "reg-ind-070",
+        "reg-ind-037"
+      ],
+      "sources": [
+        "教材 p18",
+        "教材 p24",
+        "問題バンク reg-ind-078 の解説",
+        "https://www.irs.gov/publications/p925"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-005",
+      "category": "Passive Activity",
+      "front": "実質的参加（material participation）、積極的参加（active participation）、不動産専門家（real estate professional）の違いは？",
+      "back": "・実質的参加: 例として年500時間超の参加。事業が受動的でなくなる\n・積極的参加: 実質的参加より低い基準（入居者の承認や賃料の決定などの管理判断）。賃貸不動産の$25,000枠を使う条件\n・不動産専門家: 人的役務の半分超、かつ年750時間超を不動産業に従事し、かつその賃貸に実質的に参加。その賃貸は受動的扱いにならない",
+      "note": "ひっかけ: 「直近5年のうち3年黒字」は趣味損失（hobby loss）の推定規定で、実質的参加の判定ではない。従業員の労働時間は所有者の参加時間に入らない（it-095）。",
+      "relatedQuestionIds": [
+        "reg-ind-092",
+        "reg-ind-095"
+      ],
+      "sources": [
+        "教材 p18（50% & 750 hours）",
+        "問題バンク reg-ind-092 の解説",
+        "問題バンク reg-ind-095 の解説",
+        "https://www.irs.gov/publications/p925"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-006",
+      "category": "Passive Activity",
+      "front": "複数の受動的活動があるとき、停止損失は各活動にどう配分するか？",
+      "back": "損失が出た活動に、損失額の比率で按分する。\n計算の型: 停止損失合計 × (その活動の損失 ÷ 損失活動の損失合計)\n例: X ($30,000)、Y ($50,000)、Z +$20,000 → 停止損失 $60,000\nX への配分 = $60,000 × 30/80 = $22,500",
+      "relatedQuestionIds": [
+        "reg-ind-030"
+      ],
+      "sources": [
+        "問題バンク reg-ind-030 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-007",
+      "category": "Gross Income - Exclusions",
+      "front": "けが・病気に関連して受け取る金銭のうち、総所得から除外されるものは？",
+      "back": "除外（非課税）:\n・労災補償（workers' compensation）\n・身体的な傷害・病気に対する補償的な損害賠償（逸失賃金の分、身体的傷害から生じた精神的苦痛の分も含む）\n・雇用主の健康保険からの医療費の補填（その医療費を控除していない場合）\n・本人が税引後で保険料を払った障害保険の給付\n課税:\n・懲罰的損害賠償（punitive damages）\n・身体的傷害と関係ない賠償の逸失利益・逸失賃金（雇用上の紛争・事業上の請求など）\n・雇用主が保険料を負担した障害給付（給与として課税。cafeteria plan で税引前に払った分を含む）",
+      "relatedQuestionIds": [
+        "reg-ind-139",
+        "reg-ind-031",
+        "reg-ind-023"
+      ],
+      "sources": [
+        "教材 p19",
+        "問題バンク reg-ind-139 の解説",
+        "問題バンク reg-ind-031 の解説",
+        "https://www.irs.gov/faqs/interest-dividends-other-types-of-income/life-insurance-disability-insurance-proceeds",
+        "https://www.irs.gov/government-entities/tax-implications-of-settlements-and-judgments",
+        "問題バンク reg-ind-023 の解説"
+      ],
+      "note": "教材 p19 は障害給付を無条件で非課税としているが、非課税になるのは本人が税引後で保険料を払った場合に限る。"
+    },
+    {
+      "id": "reg-it-fc-008",
+      "category": "Gross Income - Exclusions",
+      "front": "奨学金（scholarship）のうち非課税になる部分と課税になる部分は？",
+      "back": "非課税: 学位取得を目指す学生（degree candidate）が、授業料・必須の手数料・教科書・用品・必要な機器に使った部分\n課税:\n・寮費と食費（room and board）\n・研究や教育など役務の対価（stipend、TA報酬など。学位に必要な役務でも課税）\n・学位を目指さない者の奨学金",
+      "relatedQuestionIds": [
+        "reg-ind-027",
+        "reg-ind-137"
+      ],
+      "sources": [
+        "教材 p19",
+        "問題バンク reg-ind-027 の解説",
+        "問題バンク reg-ind-137 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-009",
+      "category": "Gross Income - Exclusions",
+      "front": "利息の課税・非課税の区分（州債、米国債、税金還付の利息、Series EE 債、VA保険の利息）は？",
+      "back": "・州債・地方債（municipal bond）の利息: 連邦では非課税\n・米国債（Treasury）の利息: 連邦では課税（州税だけ非課税）\n・州・連邦の税金還付に付く利息: 課税\n・VA保険の配当を預けた分の利息: 非課税\n・Series EE 債の利息: 高等教育の授業料・手数料（本人・配偶者・扶養者）に充てた分は除外できる。room and board は対象外。対象費用は非課税の奨学金を差し引いて計算し、所得による制限もある",
+      "note": "ひっかけ: 「州の税金還付」そのものと「還付に付いた利息」は扱いが違う。利息は常に課税。",
+      "relatedQuestionIds": [
+        "reg-ind-097",
+        "reg-ind-145",
+        "reg-ind-018"
+      ],
+      "sources": [
+        "教材 p12",
+        "問題バンク reg-ind-097 の解説",
+        "問題バンク reg-ind-145 の解説",
+        "問題バンク reg-ind-136 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-010",
+      "category": "Gross Income - Exclusions",
+      "front": "贈与・相続・生命保険金は総所得に入るか？ 生命保険を有償で譲り受けた場合はどうなるか？",
+      "back": "・贈与・相続（bequest, inheritance）: 受け取った時点では非課税。後で売れば、売却額と取得価額の差が課税\n・死亡による生命保険金: 原則非課税\n・例外（transfer for value）: 被保険者の生存中に保険を有償で譲り受けた場合\n  課税額 = 保険金 − (購入対価 + 譲受後に払った保険料)\n  例: $200,000 − ($25,000 + $40,000) = $135,000",
+      "relatedQuestionIds": [
+        "reg-ind-036",
+        "reg-ind-164",
+        "reg-ind-138"
+      ],
+      "sources": [
+        "教材 p11",
+        "教材 p19",
+        "問題バンク reg-ind-036 の解説",
+        "問題バンク reg-ind-164 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-011",
+      "category": "Gross Income - Inclusions",
+      "front": "現金以外で受け取った報酬（財産・役務・物々交換）は、いくらを所得にするか？",
+      "back": "・受け取った財産・役務の時価（FMV）を所得にする\n・請求額や、相手側の取得価額は関係ない\n・物々交換（barter）は差額を相殺せず、受け取った側の価値の全額が所得\n・報酬として受け取った株式の取得価額 = 受取時の時価。売却時はそこからの差額が損益\n・非適格ストックオプション: 行使時の差額（時価 − 行使価格）が給与",
+      "note": "例（it-132）: 現金$200＋時価$350の本棚 → 所得$550（請求額$600ではない）。",
+      "relatedQuestionIds": [
+        "reg-ind-132",
+        "reg-ind-100",
+        "reg-ind-064"
+      ],
+      "sources": [
+        "教材 p11",
+        "問題バンク reg-ind-132 の解説",
+        "問題バンク reg-ind-100 の解説",
+        "問題バンク reg-ind-087 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-012",
+      "category": "Gross Income - Inclusions",
+      "front": "前年分の州所得税の還付（state tax refund）は今年の所得になるか？",
+      "back": "・前年に標準控除を使った → 還付は所得にならない\n・前年に項目別控除で州税を控除した → 税負担が減った分だけ所得（tax benefit rule）\n  所得額 = 還付額と「前年の項目別控除が標準控除を超えた額」の少ない方\n・還付に付いた利息は前年の控除方法にかかわらず課税",
+      "relatedQuestionIds": [
+        "reg-ind-042",
+        "reg-ind-050",
+        "reg-ind-009"
+      ],
+      "sources": [
+        "教材 p19",
+        "教材 p32",
+        "問題バンク reg-ind-050 の解説",
+        "問題バンク reg-ind-042 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-013",
+      "category": "Gross Income - Inclusions",
+      "front": "社会保障給付（social security benefits）が課税対象になる仕組みと、最大の課税割合は？",
+      "back": "・判定に使う所得 = 修正AGI + 給付の1/2\n・基準額: 単身・世帯主 $25,000／夫婦合算 $32,000（夫婦個別で同居していた場合 $0）\n・判定所得が $34,000（合算 $44,000）を超えると最大85%まで課税\n・課税されるのはどんな場合も給付の85%まで",
+      "relatedQuestionIds": [
+        "reg-ind-135"
+      ],
+      "sources": [
+        "問題バンク reg-ind-135 の解説",
+        "https://www.irs.gov/publications/p915"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-014",
+      "category": "Gross Income - Inclusions",
+      "front": "失業給付・賞品・拾得物・配当のうち課税されるものは？ 賞（award）が非課税になる条件は？",
+      "back": "課税:\n・失業給付（州の給付も、元雇用主の補足給付も）\n・賞品・懸賞・宝くじの当選金\n・拾った現金（treasure trove）\n・普通株・優先株の配当\n生命保険の配当: 払込保険料を超えるまでは保険料の返還で非課税\n文学・科学などの業績に対する賞が非課税になる条件（すべて満たす）:\n・本人が応募などをせずに選ばれた\n・将来の役務提供を求められない\n・本人の指定で、支払者が政府機関か慈善団体へ直接渡した",
+      "relatedQuestionIds": [
+        "reg-ind-056",
+        "reg-ind-133",
+        "reg-ind-134"
+      ],
+      "sources": [
+        "教材 p13",
+        "教材 p19",
+        "問題バンク reg-ind-133 の解説",
+        "問題バンク reg-ind-134 の解説",
+        "問題バンク reg-ind-090 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-015",
+      "category": "Filing Status",
+      "front": "年の途中で配偶者が死亡した年、または年末に法的に別居していた年の申告区分は？",
+      "back": "・婚姻状態は原則として年末で判定する\n・年の途中で配偶者が死亡: その年は年間を通じて婚姻中とみなし、夫婦合算申告（MFJ）ができる（その年に再婚していないこと）\n・年末に離婚判決や別居扶養命令で法的に別居している: 未婚扱い。扶養者などがいなければ単身（Single）",
+      "relatedQuestionIds": [
+        "reg-ind-013",
+        "reg-ind-130",
+        "reg-ind-104"
+      ],
+      "sources": [
+        "教材 p5",
+        "問題バンク reg-ind-130 の解説",
+        "問題バンク reg-ind-104 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-016",
+      "category": "Filing Status",
+      "front": "適格寡婦（qualifying surviving spouse / qualifying widow(er)）の要件と使える期間は？",
+      "back": "・使えるのは死亡した年の翌年と翌々年の2年間（死亡年は合算申告）\n・再婚していない\n・扶養する子（実子か継子）が、自宅に年間を通じて同居している\n・家計費の半分超を負担している\n・死亡年に合算申告ができる立場だった",
+      "note": "ひっかけ: 扶養する子がいなければ翌年から単身（Single）（it-129, it-086）。3年目以降は、子がいれば世帯主（HOH）が有利（it-099）。",
+      "relatedQuestionIds": [
+        "reg-ind-003",
+        "reg-ind-129",
+        "reg-ind-099",
+        "reg-ind-086"
+      ],
+      "sources": [
+        "教材 p5",
+        "問題バンク reg-ind-003 の解説",
+        "問題バンク reg-ind-099 の解説",
+        "問題バンク reg-ind-129 の解説",
+        "問題バンク reg-ind-086 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-017",
+      "category": "Filing Status",
+      "front": "世帯主（head of household）の要件は？ 親を扶養する場合の例外は？",
+      "back": "すべて必要:\n・未婚であり、適格寡婦にも当たらない\n・世帯を維持する費用の半分超を負担している\n・対象となる人（扶養する子・親族）が年の半分超同居している\n例外: 扶養している親は同居していなくてよい（納税者が維持する別の家に住んでいてもよい）",
+      "note": "ひっかけ: 適格寡婦の要件を満たす人は世帯主を選べない（it-115）。",
+      "relatedQuestionIds": [
+        "reg-ind-111",
+        "reg-ind-115"
+      ],
+      "sources": [
+        "教材 p5",
+        "問題バンク reg-ind-111 の解説",
+        "問題バンク reg-ind-115 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-018",
+      "category": "Filing Status",
+      "front": "世帯主の「世帯維持費の半分超」の判定に入る費用と入らない費用は？",
+      "back": "入る: 固定資産税、住宅ローン利息、家賃、光熱費、修繕・維持費、住宅の保険料、家で消費する食費\n入らない: 衣服、教育費、医療費、休暇費用、生命保険料、交通費、納税者や家族自身が家で提供した役務の価値",
+      "relatedQuestionIds": [
+        "reg-ind-131"
+      ],
+      "sources": [
+        "問題バンク reg-ind-131 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-019",
+      "category": "Dependents",
+      "front": "親を扶養者（qualifying relative）にするための扶養要件（support test）と市民・居住者要件は？",
+      "back": "・扶養要件: 納税者が対象者の年間扶養費の50%超を負担する。対象者自身の非課税所得（社会保障給付など）で払った分も扶養費の合計に含める\n・市民・居住者要件: 米国市民・米国国籍者・米国居住者、またはカナダ・メキシコの居住者であること（メキシコ在住でも可）\n例: 扶養費$45,000のうち親が社会保障で$25,000負担 → 納税者の負担44% → 扶養者にできない",
+      "note": "旧ルールとの違い: 2018年以降、扶養控除（人的控除）の金額はゼロ（OBBBAで恒久化）。ただし扶養者の判定は世帯主や税額控除で引き続き必要。",
+      "relatedQuestionIds": [
+        "reg-ind-025"
+      ],
+      "sources": [
+        "教材 p8",
+        "問題バンク reg-ind-025 の解説",
+        "https://www.irs.gov/newsroom/understanding-the-working-families-tax-cuts-individual-tax-provisions-youtube-video-text-script"
+      ]
+    },
+    {
+      "id": "reg-it-fc-020",
+      "category": "Credits",
+      "front": "還付される税額控除（refundable）と還付されない税額控除（nonrefundable）の例は？",
+      "back": "・還付あり（税額がゼロでも還付される）: 勤労所得税額控除（EIC）\n・一部還付: 子ども税額控除（Child Tax Credit）\n・還付なし（税額をゼロまで減らすだけ）: 前年AMTの税額控除（minimum tax credit）、高齢者・障害者控除、子ども・扶養者のケア控除（child and dependent care credit）、外国税額控除",
+      "relatedQuestionIds": [
+        "reg-ind-126"
+      ],
+      "sources": [
+        "教材(Other Topics) p5",
+        "教材(Other Topics) p8",
+        "問題バンク reg-ind-126 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-021",
+      "category": "Credits",
+      "front": "子ども・扶養者のケア控除（child and dependent care credit）を受けるのに、AGIの上限や就労の要件はあるか？",
+      "back": "・AGIの上限はない。AGIは控除率を決めるだけ（AGIが低いほど率が高い）\n・費用は就労のため（employment-related）である必要がある。求職中の費用も就労のための費用に含まれる\n・夫婦合算申告では、勤労所得の少ない方の配偶者の勤労所得が上限。フルタイム学生や自分の世話ができない配偶者は勤労所得があるとみなす\n・対象者: 13歳未満の子、または自分の世話ができない扶養者や配偶者",
+      "note": "AICPA過去問の「AGI $15,000以下が必要か／就労中である必要があるか」はどちらも No（it-125）。\n教材(Other Topics) p5 の「実際に働いている必要がある」は不正確。求職中の費用も対象。控除率は2026年から OBBBA で変わる。",
+      "relatedQuestionIds": [
+        "reg-ind-125"
+      ],
+      "sources": [
+        "教材(Other Topics) p5",
+        "問題バンク reg-ind-125 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-022",
+      "category": "Credits",
+      "front": "教育費の税額控除（American Opportunity Credit／Lifetime Learning Credit）の対象費用と主な違いは？",
+      "back": "対象費用: 授業料と手数料（AOCは教材費も含む）。寮費・食費は対象外\nAmerican Opportunity Credit: 学生1人ごと、高等教育の最初の4年、学位課程で半分以上の通学\nLifetime Learning Credit: 納税者1人ごと、学部・大学院とも可、通学量や学位の要件なし\n同じ学生について同じ年に両方は使えない",
+      "relatedQuestionIds": [
+        "reg-ind-047"
+      ],
+      "sources": [
+        "教材(Other Topics) p6",
+        "問題バンク reg-ind-047 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-023",
+      "category": "Credits",
+      "front": "個人が外国に払った所得税は、どう扱えるか？",
+      "back": "・毎年、項目別控除（taxes の欄）か外国税額控除（foreign tax credit）のどちらかを選べる\n・同じ税金に両方は使えない\n・一般に、税額から直接引ける税額控除の方が有利",
+      "note": "ひっかけ: 「2%フロアの雑控除」「AGI計算前の控除」「控除不可」はいずれも誤り。外国の固定資産税は項目別控除の対象外。",
+      "relatedQuestionIds": [
+        "reg-ind-124",
+        "reg-ind-019",
+        "reg-ind-162"
+      ],
+      "sources": [
+        "教材 p32",
+        "教材(Other Topics) p5",
+        "問題バンク reg-ind-124 の解説",
+        "https://www.irs.gov/instructions/i1040sca"
+      ]
+    },
+    {
+      "id": "reg-it-fc-024",
+      "category": "Rental Income & Vacation Home",
+      "front": "賃貸収入として受け取った年に課税されるもの、されないものは？",
+      "back": "受け取った年に課税（発生主義の納税者でも）:\n・前受け家賃（来年分、最終月分を含む）\n・賃貸借の解約金（lease cancellation payment）を賃借人から受け取った場合\n・家賃の代わりに賃借人が行った改良（improvement in lieu of rent）\n課税されない:\n・返還する予定の敷金（security deposit）\n・家賃の代わりではない改良",
+      "note": "ひっかけ: 敷金を最終月の家賃に充てる約束なら前受け家賃として課税。",
+      "relatedQuestionIds": [
+        "reg-ind-008",
+        "reg-ind-014",
+        "reg-ind-022"
+      ],
+      "sources": [
+        "教材 p18",
+        "問題バンク reg-ind-011 の解説",
+        "問題バンク reg-ind-014 の解説",
+        "問題バンク reg-ind-022 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-025",
+      "category": "Rental Income & Vacation Home",
+      "front": "自宅や別荘を賃貸した日数・自己使用日数によって、賃貸収入と経費の扱いはどう変わるか？",
+      "back": "・賃貸が14日以下: 賃貸収入は非課税、賃貸経費は控除不可（住宅ローン利息・固定資産税は通常どおり項目別控除）\n・自己使用が「14日」と「賃貸日数の10%」の大きい方を超える: 住居扱い（vacation home）\n  経費を賃貸日数と自己使用日数で按分\n  賃貸の控除は賃貸収入まで（損失は出せない）\n・賃貸15日以上で、自己使用が上の基準以下: 賃貸物件扱い（損失は受動的活動の制限の範囲で控除可）",
+      "note": "例（it-143）: 自己使用50日・賃貸200日 → 50日 > 20日なので住居扱い。光熱費・維持費は按分が必要。",
+      "relatedQuestionIds": [
+        "reg-ind-058",
+        "reg-ind-117",
+        "reg-ind-143"
+      ],
+      "sources": [
+        "教材 p18",
+        "問題バンク reg-ind-117 の解説",
+        "問題バンク reg-ind-143 の解説",
+        "https://www.irs.gov/publications/p925",
+        "https://www.irs.gov/publications/p527"
+      ]
+    },
+    {
+      "id": "reg-it-fc-026",
+      "category": "Business Income & Schedules",
+      "front": "個人の所得や経費はどの Schedule で申告するか（C／E／F／A）？",
+      "back": "・Schedule C: 個人事業（sole proprietor）の収入と経費。自分に払う管理報酬の受取側も C\n・Schedule E: 賃貸収入、ロイヤルティ（著作権料など）、パススルー事業体からの所得\n・Schedule F: 農業（作物・家畜）の収入と経費\n・Schedule A: 項目別控除（医療費、住宅ローン利息など）",
+      "note": "例（it-015）: 自分の賃貸物件から管理報酬を取る → 賃貸収入と管理報酬の経費は E、管理報酬の収入は C。",
+      "relatedQuestionIds": [
+        "reg-ind-015",
+        "reg-ind-029",
+        "reg-ind-010"
+      ],
+      "sources": [
+        "問題バンク reg-ind-010 の解説",
+        "問題バンク reg-ind-015 の解説",
+        "問題バンク reg-ind-029 の解説",
+        "問題バンク reg-ind-061 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-027",
+      "category": "Business Income & Schedules",
+      "front": "Schedule C（個人事業）で経費にできないものは？",
+      "back": "・連邦所得税、その予定納税\n・寄附金（個人の項目別控除へ）\n・オーナーへの給与（引出し、owner's draw）\n・罰金・反則金（駐車違反など）\n・違法な紹介料・賄賂\n・投資関係の費用\n・自営業税の1/2、自営業者の健康保険料、Keogh への拠出（いずれも AGI 計算前の控除で、Schedule C ではない）",
+      "note": "経費にできるもの: 通常かつ必要な費用（部品、広告、通信費、業務用の作業着、待合室の雑誌、技能を維持・向上するセミナーなど）。",
+      "relatedQuestionIds": [
+        "reg-ind-017",
+        "reg-ind-040",
+        "reg-ind-091"
+      ],
+      "sources": [
+        "教材 p15",
+        "教材 p23",
+        "問題バンク reg-ind-017 の解説",
+        "問題バンク reg-ind-040 の解説",
+        "問題バンク reg-ind-146 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-028",
+      "category": "Business Income & Schedules",
+      "front": "違法薬物の販売事業（§280E）では、何を差し引けるか？",
+      "back": "・売上原価（cost of goods sold）は差し引ける（控除ではなく総所得の計算上の減額のため）\n・それ以外の経費（家賃・給与・広告など）は控除できない",
+      "relatedQuestionIds": [
+        "reg-ind-142"
+      ],
+      "sources": [
+        "問題バンク reg-ind-142 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-029",
+      "category": "Capital Gains & Losses",
+      "front": "個人のキャピタルロスは、一般所得からいくらまで控除でき、残りはどうなるか？",
+      "back": "・短期・長期を相殺した純キャピタルロスは、一般所得から年$3,000まで（夫婦個別申告は$1,500）\n・残りは無期限に繰り越す（個人は繰戻しなし）\n・保有1年超が長期、1年以下が短期\n・自宅など個人使用資産の売却損は控除不可で、相殺の計算にも入れない",
+      "note": "S法人などから流れてくるキャピタルロスにも、個人の段階でこの$3,000枠がかかる（it-107）。",
+      "relatedQuestionIds": [
+        "reg-ind-046",
+        "reg-ind-101",
+        "reg-ind-107"
+      ],
+      "sources": [
+        "問題バンク reg-ind-046 の解説",
+        "問題バンク reg-ind-101 の解説",
+        "https://www.irs.gov/taxtopics/tc409"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-030",
+      "category": "Capital Gains & Losses",
+      "front": "相続した財産の取得価額（basis）と保有期間は？",
+      "back": "・取得価額 = 死亡日の時価（遺言執行者が代替評価日〈6か月後〉を選んだ場合はその日の時価。それより前に分配・売却された財産はその日の時価）。被相続人の取得価額は使わない\n・保有期間は実際の期間にかかわらず長期\n・相続した時点では所得にならない\n例: 死亡日時価$5,000の株を4か月後に$7,500で売却 → $2,500 の長期キャピタルゲイン",
+      "note": "贈与で受け取った財産は、利益の計算では贈与者の取得価額を引き継ぐ（相続と違う）。",
+      "relatedQuestionIds": [
+        "reg-ind-074",
+        "reg-ind-164",
+        "reg-ind-165"
+      ],
+      "sources": [
+        "問題バンク reg-ind-074 の解説",
+        "問題バンク reg-ind-165 の解説",
+        "https://www.irs.gov/publications/p550"
+      ]
+    },
+    {
+      "id": "reg-it-fc-031",
+      "category": "Capital Gains & Losses",
+      "front": "§1244株（小規模事業会社の株式）の損失と、無価値になった有価証券（worthless securities）の扱いは？",
+      "back": "§1244株:\n・損失は通常損失（ordinary loss）。年$50,000まで（夫婦合算申告は$100,000）\n・限度額は会社ごとではなく、その年の§1244損失の合計に適用\n・限度を超える分はキャピタルロス\n無価値になった有価証券: その年の最終日に売却したものとみなす（短期か長期かはその日で判定）",
+      "note": "例（it-075）: 単身で$48,000＋$20,000 → 通常損失$50,000、キャピタルロス$18,000。",
+      "relatedQuestionIds": [
+        "reg-ind-075",
+        "reg-ind-079"
+      ],
+      "sources": [
+        "問題バンク reg-ind-075 の解説",
+        "問題バンク reg-ind-079 の解説",
+        "https://www.irs.gov/publications/p550"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-032",
+      "category": "Adjustments to AGI",
+      "front": "AGI の計算前に引ける控除（adjustments / for AGI）と、引けないものの代表例は？",
+      "back": "AGI計算前に引ける:\n・従来型IRAへの拠出（控除できる分）\n・自営業税の1/2\n・自営業者の健康保険料\n・Keogh/SEP への拠出\n・学生ローンの利息\n・雇用主に返した陪審員の日当\n・定期預金の中途解約ペナルティ（解約した年）\n引けない:\n・Coverdell 教育貯蓄口座への拠出\n・従業員の未償還の業務費用（現在は控除不可。教員の教材費・予備役など一部の例外を除く）",
+      "note": "旧ルールとの違い: 引っ越し費用（教材 p27。現役軍人などの例外を除く）と、2018年末より後の離婚合意による扶養料（教材 p26）は現在は控除できない。",
+      "relatedQuestionIds": [
+        "reg-ind-016",
+        "reg-ind-148",
+        "reg-ind-149"
+      ],
+      "sources": [
+        "教材 p21",
+        "教材 p27",
+        "問題バンク reg-ind-016 の解説",
+        "問題バンク reg-ind-148 の解説",
+        "問題バンク reg-ind-149 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-033",
+      "category": "Adjustments to AGI",
+      "front": "学生ローン利息控除（student loan interest deduction）の上限と条件は？",
+      "back": "・控除額 = 実際に払った利息と$2,500の少ない方\n・AGI の計算前に引く控除なので、項目別控除を選ばなくても使える\n・期間の制限はない（利息を払う限り控除できる）\n・夫婦個別申告では使えない。他人の扶養者になっている人も使えない\n・修正AGIに応じて縮小・ゼロになる",
+      "note": "旧ルールとの違い: 以前は「最初の60か月分の支払」に限られていたが廃止（it-156）。",
+      "relatedQuestionIds": [
+        "reg-ind-156",
+        "reg-ind-041"
+      ],
+      "sources": [
+        "教材 p28",
+        "問題バンク reg-ind-156 の解説",
+        "https://www.irs.gov/taxtopics/tc456"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-034",
+      "category": "Adjustments to AGI",
+      "front": "個人事業主の Keogh プランで、拠出率をかける「earned income」はどう計算するか？",
+      "back": "earned income = 自営業の純所得 − 控除できる Keogh 拠出額 − 自営業税の1/2",
+      "note": "ひっかけ: 自営業税の「全額」や「Keogh拠出の1/2」を引く選択肢は誤り（it-151）。",
+      "relatedQuestionIds": [
+        "reg-ind-151"
+      ],
+      "sources": [
+        "教材 p26",
+        "問題バンク reg-ind-151 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-035",
+      "category": "Itemized Deductions - Medical",
+      "front": "医療費控除（medical expenses）の足切りと、どの年に控除するかのルールは？",
+      "back": "・補填されない医療費のうち AGI の7.5%を超える部分を項目別控除できる\n・控除するのは払った年（サービスを受けた年ではない）。過去に受けた治療の代金も、払った年に控除\n・クレジットカード払いはカードで決済した日に支払済み（カードの請求を払った日ではない）\n・本人・配偶者・扶養者の分が対象\n・保険からの補填分は差し引く\n例: AGI $60,000、カード決済$10,000（年内返済$7,000）→ $10,000 − $4,500 = $5,500",
+      "relatedQuestionIds": [
+        "reg-ind-034",
+        "reg-ind-073",
+        "reg-ind-155"
+      ],
+      "sources": [
+        "教材 p31",
+        "教材 p37（10→7.5）",
+        "問題バンク reg-ind-034 の解説",
+        "問題バンク reg-ind-073 の解説",
+        "https://www.irs.gov/instructions/i1040sca"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-036",
+      "category": "Itemized Deductions - Medical",
+      "front": "医療費控除の特殊なケース（介護施設、自宅の改修、美容整形、特別支援学校）の扱いは？",
+      "back": "・介護施設: 入所の主な目的が医療なら、食事・宿泊を含む全額が医療費。主目的が医療でなければ医療・看護の部分だけ\n・医療目的の自宅改修: 費用のうち自宅の価値の増加を超える部分だけ。車いす用のドア拡幅など価値が増えない改修は全額\n・美容整形: 原則として対象外。先天的な異常・事故やけが・外見を損なう病気による変形を治す手術は対象\n・主に医療を受けるための特別支援学校: 授業料・食事・宿泊を含めて医療費",
+      "note": "例（it-153）: プール$100,000（価値増$25,000）＋ドア拡幅$10,000 → $75,000 + $10,000 = $85,000。",
+      "relatedQuestionIds": [
+        "reg-ind-006",
+        "reg-ind-153",
+        "reg-ind-154"
+      ],
+      "sources": [
+        "教材 p31",
+        "問題バンク reg-ind-006 の解説",
+        "問題バンク reg-ind-153 の解説",
+        "問題バンク reg-ind-154 の解説",
+        "問題バンク reg-ind-155 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-037",
+      "category": "Itemized Deductions - Interest",
+      "front": "投資用借入の利息（investment interest expense）の控除限度は？",
+      "back": "・控除できるのは純投資所得（net investment income）まで。超えた分は翌年以降へ無期限に繰越\n・投資所得に入らないもの:\n  非課税の地方債の利息\n  賃貸収入（受動的所得であって投資所得ではない）\n・投資の助言料や貸金庫代は雑控除で、現在は控除できない（投資利息とは別）",
+      "note": "ひっかけ: 住宅ローン利息は別の区分で、投資利息の控除額を減らさない（it-158）。",
+      "relatedQuestionIds": [
+        "reg-ind-044",
+        "reg-ind-065",
+        "reg-ind-054"
+      ],
+      "sources": [
+        "教材 p33",
+        "問題バンク reg-ind-044 の解説",
+        "問題バンク reg-ind-065 の解説",
+        "問題バンク reg-ind-054 の解説",
+        "問題バンク reg-ind-158 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-038",
+      "category": "Itemized Deductions - Interest",
+      "front": "住宅ローン利息（qualified residence interest）の控除の対象と借入限度は？",
+      "back": "・対象の住宅: 主たる住居ともう1つの住居（別荘など）\n・取得用の借入（購入・建築・大規模改良のための借入で、その住宅を担保とするもの）の利息を控除\n・借入限度: 2017年12月15日より後の借入は$750,000（夫婦個別は$375,000）。それ以前の借入は$1,000,000（同$500,000）\n・ホームエクイティローン: 借入金をその家の購入・建築・大規模改良に使った場合だけ控除\n・自動車ローンなど個人の利息、自宅の光熱費・保険料は控除不可",
+      "note": "OBBBA で$750,000の限度は恒久化され、2026年からは住宅ローン保険料も再び住宅ローン利息として控除できる。旧ルール（教材 p33）の「ホームエクイティ$100,000」は現在は使わない。",
+      "relatedQuestionIds": [
+        "reg-ind-160",
+        "reg-ind-157"
+      ],
+      "sources": [
+        "教材 p33",
+        "教材 p47（訂正メモ）",
+        "問題バンク reg-ind-160 の解説",
+        "問題バンク reg-ind-157 の解説",
+        "https://www.irs.gov/instructions/i1040sca",
+        "https://www.irs.gov/newsroom/understanding-the-working-families-tax-cuts-individual-tax-provisions-youtube-video-text-script"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-039",
+      "category": "Tax Payments, Penalties & Statute of Limitations",
+      "front": "予定納税不足のペナルティ（underpayment of estimated tax）を避ける納付額の基準は？",
+      "back": "次の少ない方を期限内に納付（源泉徴収を含む）:\n・当年の税額の90%\n・前年の税額の100%（前年のAGIが$150,000超なら110%。夫婦個別は$75,000超）\n・収入が季節で偏る個人は年換算法（annualized income installment method）を使える\n・季節調整法（seasonal method）は法人だけで、個人は使えない\n例: 前年税額$30,000（AGI $150,000超）、当年税額$50,000 → $33,000 と $45,000 の少ない方 = $33,000",
+      "relatedQuestionIds": [
+        "reg-ind-068",
+        "reg-ind-118",
+        "reg-ind-119"
+      ],
+      "sources": [
+        "問題バンク reg-ind-068 の解説",
+        "問題バンク reg-ind-119 の解説",
+        "https://www.irs.gov/instructions/i2210",
+        "https://www.irs.gov/taxtopics/tc306"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-040",
+      "category": "Tax Payments, Penalties & Statute of Limitations",
+      "front": "更正・還付請求の期限（statute of limitations）と、申告誤りを直す方法は？",
+      "back": "・原則: 申告期限と実際の申告日の遅い方から3年（IRSの追加課税も納税者の還付請求も）\n・還付請求は「申告から3年」と「納付から2年」の遅い方まで\n・総所得の25%超の申告漏れ: IRSは6年まで追加課税できる\n・詐欺・虚偽の申告: IRSの追加課税に期限なし\n・貸倒れ・無価値になった有価証券: 納税者は7年まで還付請求できる\n・期限内に誤りが見つかったら Form 1040-X で修正申告する\n補足: 期限後申告・納付不足のペナルティは、どちらも未納の税額（税額 − 源泉徴収などの納付済み額）にかける",
+      "relatedQuestionIds": [
+        "reg-ind-002",
+        "reg-ind-063"
+      ],
+      "sources": [
+        "教材 p9",
+        "問題バンク reg-ind-002 の解説",
+        "問題バンク reg-ind-063 の解説",
+        "教材(Other Topics) p8"
+      ]
+    },
+    {
+      "id": "reg-it-fc-041",
+      "category": "Annuities & Retirement Plans",
+      "front": "自分で購入した年金（annuity）の受取額のうち、課税される部分の計算方法は？",
+      "back": "・非課税割合（exclusion ratio）= 投資額（購入価格）÷ 予定受取総額\n・予定受取総額 = 年間の受取額 × 余命の年数（または支払年数）\n・その年に受け取った額 ×（1 − 非課税割合）が課税\n例: $90,000で月$500・余命25年 → 予定受取総額$150,000、非課税60%。10月から3回受取 $1,500 × 40% = $600",
+      "note": "ひっかけ: 初年度は受け取った月数だけで計算する（12か月分ではない）。",
+      "relatedQuestionIds": [
+        "reg-ind-021",
+        "reg-ind-088",
+        "reg-ind-103"
+      ],
+      "sources": [
+        "教材 p17",
+        "問題バンク reg-ind-021 の解説",
+        "問題バンク reg-ind-088 の解説",
+        "問題バンク reg-ind-103 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-042",
+      "category": "Annuities & Retirement Plans",
+      "front": "従来型IRAや適格退職プランからの受取・積立はいつ、どのように課税されるか？",
+      "back": "・控除済みの拠出だけの従来型IRAからの引出し: 全額が通常所得（キャピタルゲインにはならない）\n・59歳半より前の引出し: 通常の所得税に加えて10%の追加税（例外あり）\n・雇用主による適格プランへの拠出と運用益: 受け取るまで従業員には課税されない",
+      "note": "例（it-055）: 33歳で$30,000引出し、限界税率35% → (35% + 10%) × $30,000 = $13,500。",
+      "relatedQuestionIds": [
+        "reg-ind-093",
+        "reg-ind-055",
+        "reg-ind-109"
+      ],
+      "sources": [
+        "教材 p25",
+        "問題バンク reg-ind-055 の解説",
+        "問題バンク reg-ind-093 の解説",
+        "問題バンク reg-ind-109 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-043",
+      "category": "Flow-through Income & Loss Limits",
+      "front": "S法人やパートナーシップの所得は、分配（distribution）を受けたかどうかで課税が変わるか？",
+      "back": "・変わらない。持分比率に応じた所得が、分配の有無にかかわらず個人の所得になる\n・取得価額（basis）を超えない現金分配は非課税（basis の回収）\n・項目ごとに個人の申告へ移す（通常所得、利息、§1231損失など）。純§1231損失は通常損失\n例: 40%持分、S法人の所得$200,000、分配$100,000 → 所得$80,000",
+      "relatedQuestionIds": [
+        "reg-ind-004",
+        "reg-ind-110"
+      ],
+      "sources": [
+        "問題バンク reg-ind-004 の解説",
+        "問題バンク reg-ind-110 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-044",
+      "category": "Flow-through Income & Loss Limits",
+      "front": "パートナーが配分された損失を控除するとき、どの制限をどの順でかけるか？",
+      "back": "1. 持分の取得価額（basis）の制限（年末の basis で判定）\n2. 危険負担額（at-risk）の制限\n3. 受動的活動損失の制限\n4. キャピタルロスなら、さらに個人のキャピタルロス控除の年間上限\n・各制限で控除できなかった分は繰り越す\n例: 損失$12,000、年末の basis $10,000、at-risk $8,000 → 控除$8,000",
+      "relatedQuestionIds": [
+        "reg-ind-112",
+        "reg-ind-114",
+        "reg-ind-107"
+      ],
+      "sources": [
+        "問題バンク reg-ind-112 の解説",
+        "問題バンク reg-ind-114 の解説",
+        "問題バンク reg-ind-107 の解説"
+      ],
+      "note": "受動的活動の制限の後に、事業損失の超過分の制限（excess business loss、§461(l)。OBBBAで恒久化）もかかる。"
+    },
+    {
+      "id": "reg-it-fc-045",
+      "category": "AMT",
+      "front": "代替ミニマム税（AMT）の計算の流れと、納める AMT の額は？",
+      "back": "通常の課税所得\n± AMT調整項目（adjustments: 標準控除と州・地方税の控除は認めない など）\n＋ 優遇項目（preferences。常にプラス）\n＝ AMTI\n− 基礎控除額（exemption）\n× AMT税率 ＝ 仮ミニマム税（tentative minimum tax）\nAMT = 仮ミニマム税 − 通常の税額（プラスのときだけ）\n・AMT のうち時期のずれによる分は、翌年以降の税額控除（minimum tax credit）として無期限に繰り越せる（繰戻しなし）",
+      "relatedQuestionIds": [
+        "reg-ind-122",
+        "reg-ind-121",
+        "reg-ind-089"
+      ],
+      "sources": [
+        "教材(Other Topics) p3",
+        "教材(Other Topics) p4",
+        "問題バンク reg-ind-122 の解説",
+        "問題バンク reg-ind-121 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-046",
+      "category": "AMT",
+      "front": "AMT の優遇項目（tax preference items）に当たるもの、当たらないものは？",
+      "back": "当たる:\n・非課税の特定私的活動債（private activity bond）の利息\n・取得価額を超える率法減耗控除（percentage depletion）\n当たらない:\n・長期キャピタルゲイン、適格配当（AMTでも優遇税率のまま）\n・値上がりしたキャピタルゲイン資産の寄附（以前は優遇項目だったが廃止）",
+      "relatedQuestionIds": [
+        "reg-ind-108",
+        "reg-ind-120"
+      ],
+      "sources": [
+        "教材(Other Topics) p4",
+        "問題バンク reg-ind-108 の解説",
+        "問題バンク reg-ind-120 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-047",
+      "category": "Accounting Methods",
+      "front": "現金主義（cash basis）の個人の収入と、前払い利息はいつ計上するか？",
+      "back": "・収入: 実際に受け取るか、自由に使える状態になったとき（constructive receipt）に計上。売掛金の増減は関係ない\n・受取りを先送りしても、使える状態なら当年の所得（小切手を取りに行くのを翌年に延ばす など）\n・12月に受け取った小切手は、入金が翌年1月でも当年の所得\n・配当は宣言・支払日だけでは受け取ったことにならない。小切手が翌年1月に届けば翌年の所得\n・前払いした利息: 現金主義でも、利息が対応する各年に配分して控除（当年分だけを当年に控除）",
+      "relatedQuestionIds": [
+        "reg-ind-038",
+        "reg-ind-005",
+        "reg-ind-083"
+      ],
+      "sources": [
+        "教材 p11",
+        "教材 p15",
+        "問題バンク reg-ind-005 の解説",
+        "問題バンク reg-ind-038 の解説",
+        "問題バンク reg-ind-083 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-048",
+      "category": "Fringe Benefits",
+      "front": "雇用主が負担する団体定期生命保険（group-term life insurance）のうち、従業員の所得になる部分は？ 家族に与えられた福利厚生は誰の所得か？",
+      "back": "・保障額$50,000までの保険料は非課税\n・$50,000を超える保障額の保険料（IRSの統一保険料表で計算）は従業員の所得\n  例: 保障額$200,000、$2.76/千ドル → ($200,000 − $50,000) ÷ 1,000 × $2.76 = $414\n・福利厚生は、配偶者など家族に与えられても、役務を提供した従業員本人の所得",
+      "relatedQuestionIds": [
+        "reg-ind-076",
+        "reg-ind-140",
+        "reg-ind-052"
+      ],
+      "sources": [
+        "教材 p11",
+        "問題バンク reg-ind-076 の解説",
+        "問題バンク reg-ind-052 の解説",
+        "https://www.irs.gov/publications/p15b"
+      ],
+      "taxYear": "2026",
+      "note": "例の$2.76/千ドルは問題文が与えた仮定値。実際はIRSの表（年齢別の月額レート）で計算する。$50,000は法定額で年度によって変わらない。"
+    },
+    {
+      "id": "reg-it-fc-049",
+      "category": "Alimony & Divorce",
+      "front": "2018年末より後に成立した離婚合意による扶養料（alimony）、財産分与、養育費の課税関係は？",
+      "back": "・扶養料: 受け取った側の所得にならず、払った側も控除できない\n・財産分与（property settlement）: 双方とも課税・控除なし。受け取った側は元の取得価額（basis）と保有期間を引き継ぐ（時価ではない）\n・養育費（child support）: 新旧どちらのルールでも、受取側の所得にならず、支払側も控除できない",
+      "note": "旧ルール（2018年以前の合意）: 扶養料は受取側の所得・支払側の控除。子の18歳到達などで減額される部分は養育費とみなした（教材 p14）。",
+      "relatedQuestionIds": [
+        "reg-ind-001",
+        "reg-ind-085",
+        "reg-ind-012"
+      ],
+      "sources": [
+        "教材 p14",
+        "教材 p26",
+        "問題バンク reg-ind-001 の解説",
+        "問題バンク reg-ind-085 の解説",
+        "問題バンク reg-ind-012 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-050",
+      "category": "Sale of Principal Residence",
+      "front": "自宅の売却益の非課税枠（§121）の金額と要件は？",
+      "back": "・非課税枠: $250,000（夫婦合算申告は$500,000）\n・売却前5年のうち2年以上、所有し、主たる住居として使っていること\n・$500,000の枠: 夫婦のどちらかが所有要件を満たし、夫婦の両方が使用要件を満たすこと\n・原則として、売却前2年以内に別の自宅で非課税枠を使っていないこと\n・計算: 売却額 − 売却費用 − (取得費 + 改良費) = 売却益。そこから非課税枠を引く",
+      "note": "ひっかけ: 年齢や買替えは関係ない（it-106）。売却直前の修繕・塗装費は計算に影響しない（it-081）。",
+      "relatedQuestionIds": [
+        "reg-ind-066",
+        "reg-ind-081",
+        "reg-ind-106"
+      ],
+      "sources": [
+        "問題バンク reg-ind-066 の解説",
+        "問題バンク reg-ind-106 の解説",
+        "https://www.irs.gov/taxtopics/tc701"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-051",
+      "category": "Itemized Deductions - Charitable",
+      "front": "寄附金控除（charitable contributions）の対象外や、評価・時期のルールは？",
+      "back": "・対象外: 個人への贈与、政治献金、外国の慈善団体、自分の時間・役務の価値（役務のために払った実費は対象）\n・クレジットカードでの寄附は決済した年に控除\n・寄附で受けた見返りの価値は差し引く\n・保有1年以下の値上がり株などの通常所得資産: 取得価額と時価の低い方\n・1回$250以上の寄附は、受領した団体の書面が必要\n・限度を超えた分は5年繰越",
+      "note": "OBBBAによる変更（2026年から）: 項目別控除者は寄附の合計のうち AGI の0.5%を超える部分だけ控除。標準控除者も公益慈善団体への現金寄附を$1,000（夫婦合算$2,000）まで控除できる（donor-advised fund への寄附は対象外）。",
+      "relatedQuestionIds": [
+        "reg-ind-082",
+        "reg-ind-094",
+        "reg-ind-035"
+      ],
+      "sources": [
+        "教材 p34",
+        "問題バンク reg-ind-082 の解説",
+        "問題バンク reg-ind-094 の解説",
+        "問題バンク reg-ind-035 の解説",
+        "https://www.irs.gov/instructions/i1040sca",
+        "https://www.irs.gov/newsroom/one-big-beautiful-bill-provisions",
+        "https://www.irs.gov/newsroom/understanding-the-working-families-tax-cuts-individual-tax-provisions-youtube-video-text-script"
+      ],
+      "taxYear": "2025（OBBBA変更点は2026）"
+    },
+    {
+      "id": "reg-it-fc-052",
+      "category": "Itemized Deductions - Casualty & Theft",
+      "front": "個人の災害・盗難損失（personal casualty loss）を控除できる条件と、控除額の計算は？",
+      "back": "・控除できるのは連邦が指定した災害（federally declared disaster）による損失だけ（災害による利益とは相殺できる）\n・損失額 = 時価の下落額と取得価額（adjusted basis）の少ない方 − 保険金など\n・さらに1件ごとに$100を引き、損失合計から AGI の10%を引く\n・偶発的な破損や、シロアリなどの徐々に進む劣化は対象外\n・個人目的の取引の損失は、災害・盗難でなければ控除できない",
+      "note": "OBBBAで連邦指定災害に限る制限は恒久化され、2026年から一部の州指定災害にも広がった。例（it-007）: 損失$4,100 − $100 − $4,000(10%) = $0。",
+      "relatedQuestionIds": [
+        "reg-ind-007",
+        "reg-ind-161",
+        "reg-ind-159"
+      ],
+      "sources": [
+        "教材 p35",
+        "問題バンク reg-ind-007 の解説",
+        "問題バンク reg-ind-161 の解説",
+        "https://www.irs.gov/instructions/i1040sca",
+        "https://www.irs.gov/newsroom/understanding-the-working-families-tax-cuts-individual-tax-provisions-youtube-video-text-script",
+        "問題バンク reg-ind-159 の解説"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-053",
+      "category": "Itemized Deductions - Gambling Losses",
+      "front": "ギャンブルの賞金と損失（gambling winnings / losses）の扱いは？",
+      "back": "・賞金（宝くじを含む）は全額を総所得に入れる。損失と相殺しない\n・損失は項目別控除でだけ、賞金の額まで控除できる。控除しきれない分の繰越はない\n・標準控除を選んだ人は損失を控除できない\n・2026年から（OBBBA）: 控除できるのは損失の90%まで。さらに賞金の額が上限",
+      "note": "例（it-067）: 損失$7,000 × 90% = $6,300 → 賞金$3,000が上限 → $3,000。ギャンブル損失は2%の雑控除ではない（停止の対象外）。",
+      "relatedQuestionIds": [
+        "reg-ind-067",
+        "reg-ind-144",
+        "reg-ind-020"
+      ],
+      "sources": [
+        "教材 p19",
+        "問題バンク reg-ind-067 の解説",
+        "問題バンク reg-ind-144 の解説",
+        "https://www.irs.gov/instructions/i1040sca",
+        "https://www.irs.gov/newsroom/understanding-the-working-families-tax-cuts-individual-tax-provisions-youtube-video-text-script"
+      ],
+      "taxYear": "2026"
+    },
+    {
+      "id": "reg-it-fc-054",
+      "category": "Itemized Deductions - Miscellaneous (Suspended)",
+      "front": "AGIの2%を超える部分を控除できた雑控除（miscellaneous itemized deductions）は現在どうなっているか？ 何が含まれるか？",
+      "back": "・2018年以降は控除できない（OBBBAで恒久的に廃止）\n・含まれるもの: 税務申告の作成報酬、投資の助言料、IRAの管理手数料、従業員の未償還の業務費用（組合費、専門誌、雇用主の都合の在宅オフィス など）\n・含まれないもの（引き続き控除可）: ギャンブル損失（賞金まで）",
+      "note": "旧ルール（教材 p36）: AGIの2%を超える部分を控除できた。旧ルールの金額計算を選ばせるひっかけに注意（it-163 の正解は$0）。",
+      "relatedQuestionIds": [
+        "reg-ind-163",
+        "reg-ind-024",
+        "reg-ind-048"
+      ],
+      "sources": [
+        "教材 p36",
+        "問題バンク reg-ind-163 の解説",
+        "問題バンク reg-ind-024 の解説",
+        "https://www.irs.gov/newsroom/understanding-the-working-families-tax-cuts-individual-tax-provisions-youtube-video-text-script"
+      ]
+    },
+    {
+      "id": "reg-it-fc-055",
+      "category": "Itemized Deductions - Taxes (SALT)",
+      "front": "項目別控除できる税金（SALT）と、その上限は？",
+      "back": "控除できる: 州・地方の所得税（その年に源泉・予定納税・過年度分として払ったもの）。所得税の代わりに一般売上税（sales tax）を選んでもよい（両方は不可）、自分が所有する不動産の州・地方の固定資産税、価値に基づく州・地方の動産税\n控除できない: 連邦所得税、自営業税（1/2は AGI 計算前の控除）、外国の固定資産税、相続税\n上限（2025年）: 合計$40,000（夫婦個別$20,000）。修正AGIが$500,000（同$250,000）を超えると減額されるが、$10,000（同$5,000）より下がらない",
+      "note": "旧ルールとの違い: 2018〜2024年の上限は$10,000。教材や過去問の$10,000を現行値としない。\n教材 p32 の売上税（控除不可）と外国の固定資産税（控除可）の扱いは旧法。現行法では逆になる。",
+      "relatedQuestionIds": [
+        "reg-ind-062"
+      ],
+      "sources": [
+        "教材 p32",
+        "問題バンク reg-ind-062 の解説",
+        "https://www.irs.gov/instructions/i1040sca"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-056",
+      "category": "Self-Employment Tax",
+      "front": "自営業税（self-employment tax）の課税の条件、計算、所得からの控除は？",
+      "back": "・自営業の純所得が$400以上なら課税\n・課税対象 = 自営業の純所得 × 92.35%\n・税率: 社会保障12.4%（年度ごとに改定される賃金上限まで）+ メディケア2.9%（上限なし）\n・一定額を超える所得には0.9%の追加メディケア税もかかる\n・自営業税の1/2を AGI 計算前に控除できる\n・個人事業主は自分の事業の従業員ではないので、FICA の源泉徴収はない\n・開業後の数年間の免除はない",
+      "note": "例（it-045）: 自営業税$5,000 → AGI計算前の控除は$2,500。",
+      "relatedQuestionIds": [
+        "reg-ind-045",
+        "reg-ind-096",
+        "reg-ind-146"
+      ],
+      "sources": [
+        "教材 p15",
+        "教材 p25",
+        "問題バンク reg-ind-045 の解説",
+        "問題バンク reg-ind-096 の解説",
+        "https://www.irs.gov/taxtopics/tc554"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-057",
+      "category": "Cancellation of Debt",
+      "front": "借金の免除（cancellation of debt）は所得になるか？ 税務上の債務超過（insolvent）はどう判定するか？",
+      "back": "・借金の免除は原則として所得\n・破産手続での免除は非課税\n・債務超過の判定: 免除の直前に、負債の総額が資産の時価（FMV）を超えているか\n  破産法で免除されない負債も含め、すべての負債を数える\n  資産は取得価額ではなく時価で比べる\n・債務超過なら、免除益は債務超過額までは非課税（超える分は所得）\n  例: 免除$30,000・債務超過$20,000 → 所得$10,000",
+      "note": "例（it-057）: 負債$175,000、資産の時価$155,000（取得価額$250,000）→ $20,000の債務超過。",
+      "relatedQuestionIds": [
+        "reg-ind-057"
+      ],
+      "sources": [
+        "教材 p11",
+        "教材 p19",
+        "問題バンク reg-ind-057 の解説"
+      ]
+    },
+    {
+      "id": "reg-it-fc-058",
+      "category": "Kiddie Tax",
+      "front": "子の不労所得に親の税率がかかる（kiddie tax）のはどんな子か？",
+      "back": "不労所得（利息・配当・キャピタルゲインなど）が基準額を超え、次のいずれかに当たる子:\n・年末に18歳未満\n・18歳で、勤労所得が自分の扶養費の半分以下\n・年末に19歳以上24歳未満のフルタイム学生で、勤労所得が自分の扶養費の半分以下\n・対象は基準額を超える純不労所得だけ。給与などの勤労所得は子の税率のまま",
+      "note": "例（it-033）: 22歳の学生、給与$11,000、社債の利息$9,000、親が扶養費の半分超を負担 → 利息の一部だけが kiddie tax の対象。問題バンクの解説は「under 25」と書くが、IRS は「19歳以上24歳未満」。",
+      "relatedQuestionIds": [
+        "reg-ind-033"
+      ],
+      "sources": [
+        "問題バンク reg-ind-033 の解説",
+        "https://www.irs.gov/taxtopics/tc553"
+      ]
+    },
+    {
+      "id": "reg-it-fc-059",
+      "category": "Net Investment Income Tax",
+      "front": "純投資所得税（net investment income tax, NIIT）の対象者、税率、課税対象は？",
+      "back": "・対象: 個人、遺産財団、信託。C法人と非居住外国人は対象外\n・税率: 3.8%\n・個人の課税対象: 純投資所得と「修正AGIが基準額を超える額」の少ない方\n・基準額: 単身・世帯主$200,000／夫婦合算・適格寡婦$250,000／夫婦個別$125,000",
+      "relatedQuestionIds": [
+        "reg-ind-116"
+      ],
+      "sources": [
+        "問題バンク reg-ind-116 の解説",
+        "https://www.irs.gov/taxtopics/tc559",
+        "IRC §1411(e)（対象外の者）"
+      ],
+      "taxYear": "2025"
+    },
+    {
+      "id": "reg-it-fc-060",
+      "category": "Standard Deduction",
+      "front": "追加の標準控除（additional standard deduction）の要件は？ 2025年の標準控除の額は？",
+      "back": "追加の標準控除: 65歳以上、または視覚障害者であること（条件ごとに加算）。扶養者がいる必要はない\n夫婦個別申告: 配偶者が項目別控除を選ぶと標準控除は使えない\n2025年の標準控除（OBBBA）:\n・単身・夫婦個別 $15,750\n・夫婦合算 $31,500\n・世帯主 $23,625\n別枠: 65歳以上は2025〜2028年に$6,000の追加控除（修正AGI $75,000超（合算$150,000超）で縮小）",
+      "note": "教材 p6 の2021年の金額（$12,550など）を現行値としない。",
+      "relatedQuestionIds": [
+        "reg-ind-152"
+      ],
+      "sources": [
+        "教材 p30",
+        "問題バンク reg-ind-152 の解説",
+        "https://www.irs.gov/newsroom/working-families-tax-cuts-individuals-and-workers",
+        "教材 p6"
+      ],
+      "taxYear": "2025"
+    }
+  ]
+}

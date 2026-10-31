@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useQuestionBankStore } from "@/stores/questionBankStore";
 import { useTBSBankStore } from "@/stores/tbsBankStore";
 import { useMockExamStore } from "@/stores/mockExamStore";
+import { useFlashcardStore } from "@/stores/flashcardStore";
 import {
   PUSH_AFTER_ANSWER_DELAY_MS,
   isAutoSyncDue,
@@ -49,6 +50,9 @@ export function usePracticeLogAutoSync() {
       }),
       useMockExamStore.subscribe((state, prev) => {
         if (state.results !== prev.results) schedulePush();
+      }),
+      useFlashcardStore.subscribe((state, prev) => {
+        if (state.reviews !== prev.reviews) schedulePush();
       }),
     ];
 

@@ -16,7 +16,7 @@ const mcq = (questionId: string, attemptedAt: string, selectedAnswer = "A", isCo
 
 const tbs = (tbsId: string, completedAt: string): TBSAttempt => ({ tbsId, taskAttempts: [], completedAt, totalScore: 80 })
 
-const empty = (): LocalPracticeLog => ({ mcq: [], tbs: [], mock: [] })
+const empty = (): LocalPracticeLog => ({ mcq: [], tbs: [], mock: [], flash: [] })
 
 // ある端末がNotionへ送った状態のチャンクにする
 const remoteOf = <K extends PracticeLogKind>(kind: K, items: PracticeLogItemMap[K][], deviceId: string): PracticeLogRemoteChunk[] =>
@@ -45,7 +45,7 @@ describe("planPracticeLogPull", () => {
       remote: remoteOf("mcq", other, "dev-b"),
     })
 
-    expect(plan.added).toEqual({ mcq: 1, tbs: 0, mock: 0 })
+    expect(plan.added).toEqual({ mcq: 1, tbs: 0, mock: 0, flash: 0 })
     expect(plan.additions.mcq).toEqual([{ ...other[1], imported: true }])
   })
 
@@ -77,8 +77,20 @@ describe("planPracticeLogPull", () => {
       remote: remoteOf("tbs", [tbs("tbs-1", "2026-10-27T01:00:00.000Z")], "dev-b"),
     })
 
-    expect(plan.added).toEqual({ mcq: 0, tbs: 1, mock: 0 })
+    expect(plan.added).toEqual({ mcq: 0, tbs: 1, mock: 0, flash: 0 })
     expect(plan.additions.tbs[0].imported).toBe(true)
+  })
+
+  it("フラッシュカードの自己採点も取り込み、同じ記録は重ねない", () => {
+    const review = { cardId: "reg-it-fc-001", deckId: "reg-individual-taxation", result: "forgot" as const, reviewedAt: "2026-10-31T01:00:00.000Z" }
+    const plan = planPracticeLogPull({
+      local: { ...empty(), flash: [{ ...review, reviewedAt: "2026-10-30T01:00:00.000Z" }] },
+      deviceId: "dev-a",
+      remote: [...remoteOf("flash", [review], "dev-b"), ...remoteOf("flash", [review], "dev-c")],
+    })
+
+    expect(plan.added).toEqual({ mcq: 0, tbs: 0, mock: 0, flash: 1 })
+    expect(plan.additions.flash[0]).toEqual({ ...review, imported: true })
   })
 
   it("読めないページは飛ばし、他のページは取り込む", () => {

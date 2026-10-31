@@ -3,6 +3,7 @@ export const TARGET_KEYS = [
   "uscpa-question-bank",
   "uscpa-tbs-bank",
   "uscpa-mock-exams",
+  "uscpa-flashcards",
 ] as const;
 
 export type TargetKey = (typeof TARGET_KEYS)[number];
@@ -42,6 +43,7 @@ export const RECORD_ARRAY_PATH: Partial<Record<BackupKey, string>> = {
   "uscpa-question-bank": "attempts",
   "uscpa-tbs-bank": "attempts",
   "uscpa-mock-exams": "results",
+  "uscpa-flashcards": "reviews",
   "uscpa-records": "records",
   "uscpa-notes": "notes",
 };

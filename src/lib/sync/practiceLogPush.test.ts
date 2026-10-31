@@ -12,7 +12,7 @@ const mcq = (questionId: string, attemptedAt: string): QuestionAttempt => ({
   attemptedAt,
 })
 
-const local = (attempts: QuestionAttempt[]): LocalPracticeLog => ({ mcq: attempts, tbs: [], mock: [] })
+const local = (attempts: QuestionAttempt[]): LocalPracticeLog => ({ mcq: attempts, tbs: [], mock: [], flash: [] })
 
 // ローカルの回答を、ある端末がNotionへ送った状態のチャンクにする
 const remoteOf = (attempts: QuestionAttempt[], deviceId: string): PracticeLogRemoteChunk[] =>

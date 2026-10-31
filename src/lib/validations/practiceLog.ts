@@ -4,7 +4,7 @@ import { MAX_SEGMENT_CHARS, MAX_SEGMENTS } from "@/lib/sync/practiceLog";
 // 1回の送信で書き込むチャンクの上限。Notionのレート制限（3リクエスト/秒）とサーバーの実行時間に収めるため
 export const MAX_CHUNKS_PER_REQUEST = 10;
 
-const kindSchema = z.enum(["mcq", "tbs", "mock"]);
+const kindSchema = z.enum(["mcq", "tbs", "mock", "flash"]);
 
 export const practiceLogChunkSchema = z
   .object({
