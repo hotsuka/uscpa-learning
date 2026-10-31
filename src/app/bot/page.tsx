@@ -16,6 +16,7 @@ import {
 import {
   buildQuestionIndex,
   buildReviewQueue,
+  pickFocusSubject,
   summarizeExams,
   summarizeMocks,
   summarizeStudyTime,
@@ -31,6 +32,7 @@ import {
  * クエリ（任意）:
  *   weekday / weekend … 平日・休日の目標時間（h）。目標時間はNotionに同期していないため既定は設定画面の初期値
  *   review … 再出題リストの件数（既定20、最大50）
+ *   subject … 正答率・再出題・模試を絞る科目（FAR / BAR / REG / all）。既定は次に受ける試験の科目
  */
 
 export const dynamic = "force-dynamic";
@@ -143,9 +145,19 @@ export default async function BotSummaryPage({
 
   const studyTime = summarizeStudyTime(data.records, today, targets);
   const exams = summarizeExams(data.examDates, today);
-  const topics = summarizeTopics(data.attempts, questionIndex);
-  const review = buildReviewQueue(data.attempts, questionIndex, today, reviewLimit);
-  const mocks = summarizeMocks(data.mocks, 5);
+
+  // 受験済みの科目の問題で埋まらないよう、正答率・再出題・模試は対象の科目だけにする
+  const subjectParam = Array.isArray(params.subject) ? params.subject[0] : params.subject;
+  const focusSubject = pickFocusSubject(subjectParam, exams);
+  const inFocus = (subject: string) => focusSubject === null || subject === focusSubject;
+  const focusAttempts = data.attempts.filter((a) => {
+    const indexed = questionIndex.byId.get(a.questionId);
+    return indexed !== undefined && inFocus(indexed.subject);
+  });
+  const topics = summarizeTopics(focusAttempts, questionIndex).filter((t) => inFocus(t.subject));
+  const review = buildReviewQueue(focusAttempts, questionIndex, today, reviewLimit);
+  const mocks = summarizeMocks(data.mocks.filter((m) => inFocus(m.subject ?? "FAR")), 5);
+  const focusLabel = focusSubject ?? "全科目";
 
   // 弱点: 5問以上解いたテーマを初見正答率の低い順に
   const weakTopics = topics
@@ -157,6 +169,7 @@ export default async function BotSummaryPage({
     generatedAt: generatedAt.toISOString(),
     today,
     readOnly: true,
+    focusSubject,
     targets,
     studyTime,
     exams,
@@ -177,6 +190,9 @@ export default async function BotSummaryPage({
         <p>
           このページは表示専用です。記録の追加・編集はできません。機械で読む場合は末尾の
           <code>#bot-data</code>（JSON）を使ってください。
+        </p>
+        <p>
+          対象科目: {focusLabel}（弱点・再出題・模試・テーマ別の表はこの科目だけ。学習時間と試験日は全科目）
         </p>
         {data.warnings.map((w) => (
           <p key={w} className="text-red-600">

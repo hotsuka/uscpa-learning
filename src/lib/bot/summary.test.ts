@@ -6,6 +6,7 @@ import {
   buildQuestionIndex,
   buildReviewQueue,
   diffDays,
+  pickFocusSubject,
   summarizeExams,
   summarizeStudyTime,
   summarizeTopics,
@@ -124,6 +125,27 @@ describe("summarizeExams", () => {
       { subject: "FAR", examDate: "2026-11-30", daysLeft: 30 },
       { subject: "REG", examDate: "2026-12-18", daysLeft: 48 },
     ]);
+  });
+});
+
+describe("pickFocusSubject", () => {
+  const exams = [
+    { subject: "AUD" as const, examDate: "2026-11-30", daysLeft: 30 },
+    { subject: "REG" as const, examDate: "2026-12-27", daysLeft: 57 },
+  ];
+
+  it("指定が無ければ、問題バンクのある科目のうち次に受ける試験の科目にする（AUDは飛ばす）", () => {
+    expect(pickFocusSubject(undefined, exams)).toBe("REG");
+  });
+
+  it("指定があればそれを使い、all なら絞らない", () => {
+    expect(pickFocusSubject("far", exams)).toBe("FAR");
+    expect(pickFocusSubject("all", exams)).toBeNull();
+  });
+
+  it("知らない科目の指定は無視し、該当する試験が無ければ絞らない", () => {
+    expect(pickFocusSubject("XYZ", exams)).toBe("REG");
+    expect(pickFocusSubject(undefined, [])).toBeNull();
   });
 });
 
