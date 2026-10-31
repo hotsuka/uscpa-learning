@@ -94,7 +94,7 @@ export function chunkToProperties(chunk: PracticeLogChunkInput): CreatePageParam
   }
 }
 
-const KINDS: readonly PracticeLogKind[] = ["mcq", "tbs", "mock"]
+const KINDS: readonly PracticeLogKind[] = ["mcq", "tbs", "mock", "flash"]
 
 /** Notionページをチャンクとして読む。列が欠けていても落とさず、読めた範囲で返す */
 export function pageToRemoteChunk(page: PageObjectResponse): PracticeLogRemoteChunk {

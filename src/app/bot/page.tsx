@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { StudyRecord, Subject } from "@/types";
 import type { QuestionAttempt } from "@/types/questions";
 import type { MockExamResult } from "@/stores/mockExamStore";
+import type { FlashcardReview } from "@/types/flashcards";
 import { getRecords, getSettings, isNotionConfigured } from "@/lib/notion";
 import { getPracticeLogChunks, isPracticeLogConfigured } from "@/lib/notion/practiceLog";
 import { mergePracticeLog, parseChunkPayload } from "@/lib/sync/practiceLog";
@@ -22,6 +23,8 @@ import {
   summarizeStudyTime,
   summarizeTopics,
 } from "@/lib/bot/summary";
+import { flashcardDecks } from "@/data/flashcards";
+import { buildTodayQueue, scheduleCard } from "@/lib/flashcards/schedule";
 
 /**
  * 学習補助ボット（Grok Bot）向けの読み取り専用ページ
@@ -32,6 +35,7 @@ import {
  * クエリ（任意）:
  *   weekday / weekend … 平日・休日の目標時間（h）。目標時間はNotionに同期していないため既定は設定画面の初期値
  *   review … 再出題リストの件数（既定20、最大50）
+ *   cards … 今日のフラッシュカードの件数（既定10、最大50）
  *   subject … 正答率・再出題・模試を絞る科目（FAR / BAR / REG / all）。既定は次に受ける試験の科目
  */
 
@@ -45,6 +49,7 @@ export const metadata: Metadata = {
 const DEFAULT_TARGETS = { weekday: 4, weekend: 6 };
 const DEFAULT_REVIEW_LIMIT = 20;
 const MAX_REVIEW_LIMIT = 50;
+const DEFAULT_CARD_LIMIT = 10;
 
 const questionIndex = buildQuestionIndex([
   ["REG", regQuestionSets],
@@ -66,11 +71,12 @@ interface LoadedData {
   examDates: Partial<Record<Subject, string>>;
   attempts: QuestionAttempt[];
   mocks: MockExamResult[];
+  flashReviews: FlashcardReview[];
   warnings: string[];
 }
 
 async function loadData(): Promise<LoadedData> {
-  const data: LoadedData = { records: [], examDates: {}, attempts: [], mocks: [], warnings: [] };
+  const data: LoadedData = { records: [], examDates: {}, attempts: [], mocks: [], flashReviews: [], warnings: [] };
   if (!isNotionConfigured()) {
     data.warnings.push("Notionが設定されていないため、データを読めませんでした");
     return data;
@@ -101,19 +107,22 @@ async function loadData(): Promise<LoadedData> {
     // 全端末のチャンクをキーで1件にまとめる（アプリが取り込むときと同じ和集合・正誤補正）
     const mcq: QuestionAttempt[] = [];
     const mock: MockExamResult[] = [];
+    const flash: FlashcardReview[] = [];
     let unreadable = 0;
     for (const chunk of chunks.value) {
-      if (chunk.kind !== "mcq" && chunk.kind !== "mock") continue;
+      if (chunk.kind !== "mcq" && chunk.kind !== "mock" && chunk.kind !== "flash") continue;
       const parsed = parseChunkPayload(chunk.kind, chunk.segments);
       if (!parsed) {
         unreadable++;
         continue;
       }
       if (chunk.kind === "mcq") mcq.push(...(parsed.items as QuestionAttempt[]));
-      else mock.push(...(parsed.items as MockExamResult[]));
+      else if (chunk.kind === "mock") mock.push(...(parsed.items as MockExamResult[]));
+      else flash.push(...(parsed.items as FlashcardReview[]));
     }
     data.attempts = mergePracticeLog("mcq", [], mcq).items;
     data.mocks = mergePracticeLog("mock", [], mock).items;
+    data.flashReviews = mergePracticeLog("flash", [], flash).items;
     if (unreadable > 0) data.warnings.push(`読めなかった演習ログのチャンクが${unreadable}件あります`);
   }
   return data;
@@ -159,6 +168,31 @@ export default async function BotSummaryPage({
   const mocks = summarizeMocks(data.mocks.filter((m) => inFocus(m.subject ?? "FAR")), 5);
   const focusLabel = focusSubject ?? "全科目";
 
+  // フラッシュカード: 対象科目のデッキごとに、今日出すカード（復習→未学習）と進み具合
+  const cardLimit = Math.floor(numberParam(params.cards, DEFAULT_CARD_LIMIT, MAX_REVIEW_LIMIT));
+  const flashcards = flashcardDecks
+    .filter((deck) => inFocus(deck.subject))
+    .map((deck) => {
+      const statuses = deck.cards.map((c) => scheduleCard(c.id, data.flashReviews, today).status);
+      const queue = buildTodayQueue(deck.cards, data.flashReviews, today);
+      return {
+        deckId: deck.id,
+        subject: deck.subject,
+        name: deck.name,
+        totalCards: deck.cards.length,
+        dueCards: statuses.filter((s) => s === "due").length,
+        newCards: statuses.filter((s) => s === "new").length,
+        reviewedToday: data.flashReviews.filter(
+          (r) => r.deckId === deck.id && getJSTDateString(new Date(r.reviewedAt)) === today,
+        ).length,
+        today: queue.slice(0, cardLimit).map(({ card, schedule }) => ({
+          ...card,
+          status: schedule.status,
+          forgotCount: schedule.forgotCount,
+        })),
+      };
+    });
+
   // 弱点: 5問以上解いたテーマを初見正答率の低い順に
   const weakTopics = topics
     .filter((t) => t.attemptedQuestions >= 5)
@@ -177,6 +211,7 @@ export default async function BotSummaryPage({
     topics,
     review,
     mocks,
+    flashcards,
     warnings: data.warnings,
   };
 
@@ -294,6 +329,40 @@ export default async function BotSummaryPage({
             </li>
           ))}
         </ol>
+      </section>
+
+      <section>
+        <h2 className="mb-2 text-lg font-semibold">今日のフラッシュカード</h2>
+        {flashcards.length === 0 ? (
+          <p>対象科目のフラッシュカードはありません。</p>
+        ) : (
+          flashcards.map((deck) => (
+            <div key={deck.deckId} className="space-y-3">
+              <p>
+                {deck.subject} {deck.name}: 全{deck.totalCards}枚・復習{deck.dueCards}枚・未学習{deck.newCards}
+                枚・今日の自己採点{deck.reviewedToday}回（アプリの「フラッシュカード」画面で解くと記録されます）
+              </p>
+              <ol className="list-decimal space-y-3 pl-5">
+                {deck.today.map((card) => (
+                  <li key={card.id}>
+                    <p className="font-medium">
+                      [{card.category} / {card.id}] {card.status === "due" ? "復習" : "未学習"}
+                      {card.forgotCount > 0 && `・忘れた回数${card.forgotCount}`}
+                      {card.taxYear && `・${card.taxYear}年分の金額`}
+                    </p>
+                    <p className="whitespace-pre-wrap">Q. {card.front}</p>
+                    <details>
+                      <summary>答え</summary>
+                      <p className="whitespace-pre-wrap">{card.back}</p>
+                      {card.note && <p className="whitespace-pre-wrap">補足: {card.note}</p>}
+                      <p>出典: {card.sources.join(" / ")}</p>
+                    </details>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))
+        )}
       </section>
 
       <section>

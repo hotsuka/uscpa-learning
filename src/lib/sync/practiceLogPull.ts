@@ -1,6 +1,7 @@
 import { useQuestionBankStore } from "@/stores/questionBankStore";
 import { useTBSBankStore } from "@/stores/tbsBankStore";
 import { useMockExamStore } from "@/stores/mockExamStore";
+import { useFlashcardStore } from "@/stores/flashcardStore";
 import { getDeviceId } from "@/lib/utils";
 import { saveSnapshots } from "@/lib/backup/autoBackup";
 import { TARGET_KEYS } from "@/lib/backup/constants";
@@ -41,11 +42,12 @@ export function planPracticeLogPull(params: {
   deviceId: string;
   remote: PracticeLogRemoteChunk[];
 }): PullPlan {
-  const additions: LocalPracticeLog = { mcq: [], tbs: [], mock: [] };
+  const additions: LocalPracticeLog = { mcq: [], tbs: [], mock: [], flash: [] };
   const seen: Record<PracticeLogKind, Set<string>> = {
     mcq: new Set(params.local.mcq.map((item) => itemKey("mcq", item))),
     tbs: new Set(params.local.tbs.map((item) => itemKey("tbs", item))),
     mock: new Set(params.local.mock.map((item) => itemKey("mock", item))),
+    flash: new Set(params.local.flash.map((item) => itemKey("flash", item))),
   };
   const unreadableChunks: string[] = [];
 
@@ -74,6 +76,7 @@ export function planPracticeLogPull(params: {
       mcq: additions.mcq.length,
       tbs: additions.tbs.length,
       mock: additions.mock.length,
+      flash: additions.flash.length,
     },
     unreadableChunks,
   };
@@ -136,7 +139,7 @@ export async function pullPracticeLog(): Promise<PullResult> {
     unreadableChunks: plan.unreadableChunks,
     backedUp: false,
   };
-  const totalAdded = plan.added.mcq + plan.added.tbs + plan.added.mock;
+  const totalAdded = plan.added.mcq + plan.added.tbs + plan.added.mock + plan.added.flash;
   if (totalAdded === 0) return result;
 
   // 書き込めずに途中で止まらないよう、足した後の容量を先に見積もる
@@ -173,6 +176,9 @@ export async function pullPracticeLog(): Promise<PullResult> {
   }));
   useMockExamStore.setState((state) => ({
     results: mergePracticeLog("mock", state.results, plan.additions.mock).items,
+  }));
+  useFlashcardStore.setState((state) => ({
+    reviews: mergePracticeLog("flash", state.reviews, plan.additions.flash).items,
   }));
 
   return result;

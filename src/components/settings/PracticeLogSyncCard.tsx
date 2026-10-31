@@ -29,6 +29,7 @@ const KIND_LABEL: Record<PracticeLogKind, string> = {
   mcq: "四択MC",
   tbs: "TBS",
   mock: "模試",
+  flash: "フラッシュカード",
 };
 
 /**
@@ -193,7 +194,10 @@ export function PracticeLogSyncCard() {
 
         {pullResult && (
           <div className="text-sm space-y-1">
-            {pullResult.added.mcq + pullResult.added.tbs + pullResult.added.mock ===
+            {pullResult.added.mcq +
+              pullResult.added.tbs +
+              pullResult.added.mock +
+              pullResult.added.flash ===
             0 ? (
               <p>
                 他の端末のページ {pullResult.remoteChunks}{" "}
@@ -204,7 +208,8 @@ export function PracticeLogSyncCard() {
                 <p>
                   四択MC {pullResult.added.mcq.toLocaleString()} 件・TBS{" "}
                   {pullResult.added.tbs.toLocaleString()} 件・模試{" "}
-                  {pullResult.added.mock.toLocaleString()} 件を取り込みました。
+                  {pullResult.added.mock.toLocaleString()} 件・フラッシュカード{" "}
+                  {pullResult.added.flash.toLocaleString()} 件を取り込みました。
                 </p>
                 {pullResult.backedUp && (
                   <p className="text-muted-foreground">

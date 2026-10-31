@@ -1,23 +1,25 @@
 import type { QuestionAttempt } from "@/types/questions";
 import type { TBSAttempt } from "@/types/tbs";
 import type { MockExamResult } from "@/stores/mockExamStore";
+import type { FlashcardReview } from "@/types/flashcards";
 import { applyAnswerCorrections } from "@/lib/practice/answerCorrections";
 import { getJSTDateString } from "@/lib/utils";
 
 /**
- * 問題演習ログ（四択MC・TBS・模試の結果）をNotionで端末間同期するための純粋関数群
+ * 問題演習ログ（四択MC・TBS・模試の結果・フラッシュカードの自己採点）をNotionで端末間同期するための純粋関数群
  *
  * 1ページ = (端末ID, 種類, JST日付, 連番) のチャンクにまとめ、回答のJSONをテキスト欄へ分割して入れる。
  * 各端末は自分のチャンクだけを書くので書き込みの競合は起きない。
  * 他の端末のチャンクはキーによる和集合で取り込み、ローカルの回答は消さない・上書きしない。
  */
 
-export type PracticeLogKind = "mcq" | "tbs" | "mock";
+export type PracticeLogKind = "mcq" | "tbs" | "mock" | "flash";
 
 export interface PracticeLogItemMap {
   mcq: QuestionAttempt;
   tbs: TBSAttempt;
   mock: MockExamResult;
+  flash: FlashcardReview;
 }
 
 export interface PracticeLogChunk<K extends PracticeLogKind> {
@@ -55,6 +57,10 @@ export function itemKey<K extends PracticeLogKind>(
       const a = item as TBSAttempt;
       return `${a.tbsId}@${a.completedAt}`;
     }
+    case "flash": {
+      const r = item as FlashcardReview;
+      return `${r.cardId}@${r.reviewedAt}`;
+    }
     default:
       return (item as MockExamResult).id;
   }
@@ -70,6 +76,8 @@ export function itemTimestamp<K extends PracticeLogKind>(
       return (item as QuestionAttempt).attemptedAt;
     case "tbs":
       return (item as TBSAttempt).completedAt;
+    case "flash":
+      return (item as FlashcardReview).reviewedAt;
     default:
       return (item as MockExamResult).finishedAt;
   }
@@ -82,7 +90,7 @@ const timeOf = (iso: string): number => {
 
 /**
  * ストアに置くときの並び順にそろえる。
- * MC・TBSは古い順（tbsBankStore.getLatestAttempt は配列の末尾を最新として扱う）、模試は新しい順。
+ * MC・TBS・フラッシュカードは古い順（tbsBankStore.getLatestAttempt は配列の末尾を最新として扱う）、模試は新しい順。
  */
 function sortForStore<K extends PracticeLogKind>(
   kind: K,
@@ -210,6 +218,13 @@ const isValidItem = (kind: PracticeLogKind, v: unknown): boolean => {
         typeof v.completedAt === "string" &&
         typeof v.totalScore === "number" &&
         Array.isArray(v.taskAttempts)
+      );
+    case "flash":
+      return (
+        typeof v.cardId === "string" &&
+        typeof v.deckId === "string" &&
+        (v.result === "remembered" || v.result === "forgot") &&
+        typeof v.reviewedAt === "string"
       );
     default:
       return (

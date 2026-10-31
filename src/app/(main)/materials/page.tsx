@@ -51,6 +51,7 @@ import {
   Upload,
   Calendar,
   BookOpen,
+  Layers,
   Eye,
   Trash2,
   AlertTriangle,
@@ -731,6 +732,28 @@ export default function MaterialsPage() {
                   </p>
                 </div>
                 <Badge variant="secondary" className="shrink-0">
+                  New
+                </Badge>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* フラッシュカード */}
+        <Link href="/materials/flashcards">
+          <Card className="border-amber-200 bg-amber-50/50 hover:bg-amber-50 transition-colors cursor-pointer">
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center shrink-0">
+                  <Layers className="w-6 h-6 text-amber-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-amber-900">フラッシュカード</h3>
+                  <p className="text-sm text-amber-700">
+                    REG Individual Taxation の頻出論点を1問1答で確認
+                  </p>
+                </div>
+                <Badge variant="secondary" className="shrink-0 bg-amber-100 text-amber-700">
                   New
                 </Badge>
               </div>

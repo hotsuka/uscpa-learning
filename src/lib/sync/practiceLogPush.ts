@@ -1,6 +1,7 @@
 import { useQuestionBankStore } from "@/stores/questionBankStore";
 import { useTBSBankStore } from "@/stores/tbsBankStore";
 import { useMockExamStore } from "@/stores/mockExamStore";
+import { useFlashcardStore } from "@/stores/flashcardStore";
 import { getDeviceId } from "@/lib/utils";
 import type {
   PracticeLogChunkInput,
@@ -20,7 +21,7 @@ import {
 /**
  * 問題演習ログをNotionへ送る
  *
- * 回答・TBS・模試のストアは読むだけで書き換えない。
+ * 回答・TBS・模試・フラッシュカードのストアは読むだけで書き換えない。
  * ローカルに書くのは「どのチャンクをどの内容で送ったか」を覚える PUSH_STATE_KEY だけ。
  * 他の端末の分の取り込みは practiceLogPull.ts で行う。
  */
@@ -29,6 +30,7 @@ export const PRACTICE_LOG_KINDS: readonly PracticeLogKind[] = [
   "mcq",
   "tbs",
   "mock",
+  "flash",
 ];
 
 // 送信済みチャンクのハッシュ（チャンクキー → ハッシュ）。内容が変わったチャンクだけを送るために使う
@@ -122,11 +124,13 @@ export function verifyPracticeLog(params: {
     mcq: new Set(),
     tbs: new Set(),
     mock: new Set(),
+    flash: new Set(),
   };
   const otherKeys: Record<PracticeLogKind, Set<string>> = {
     mcq: new Set(),
     tbs: new Set(),
     mock: new Set(),
+    flash: new Set(),
   };
 
   for (const chunk of params.remote) {
@@ -171,6 +175,7 @@ export const readLocal = (): LocalPracticeLog => ({
   mcq: useQuestionBankStore.getState().attempts,
   tbs: useTBSBankStore.getState().attempts,
   mock: useMockExamStore.getState().results,
+  flash: useFlashcardStore.getState().reviews,
 });
 
 const readPushedHashes = (): Record<string, string> => {
