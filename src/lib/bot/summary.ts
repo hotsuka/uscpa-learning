@@ -193,6 +193,28 @@ export function summarizeExams(
     .sort((a, b) => a.daysLeft - b.daysLeft);
 }
 
+const QUESTION_SUBJECTS: QuestionSubject[] = ["FAR", "BAR", "REG"];
+
+/**
+ * 再出題・弱点を絞る科目を決める。
+ * クエリで科目が指定されていればそれ（"all" なら絞らない）、無ければ問題バンクがある科目のうち次に受ける試験の科目。
+ * どれも無ければ絞らない（null）。
+ */
+export function pickFocusSubject(
+  param: string | undefined,
+  exams: ExamCountdown[],
+): QuestionSubject | null {
+  const requested = param?.toUpperCase();
+  if (requested === "ALL") return null;
+  if (QUESTION_SUBJECTS.includes(requested as QuestionSubject)) {
+    return requested as QuestionSubject;
+  }
+  const next = exams.find((e) =>
+    QUESTION_SUBJECTS.includes(e.subject as QuestionSubject),
+  );
+  return next ? (next.subject as QuestionSubject) : null;
+}
+
 // ---- テーマ別の正答率 ----
 
 export interface TopicStat {
