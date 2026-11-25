@@ -27,6 +27,11 @@ import {
   getBarScopeForQuestion,
   BAR_SCOPE_LABELS,
 } from "@/data/questions/bar/barScope"
+import {
+  getRegScopeForSet,
+  getRegScopeForQuestion,
+  REG_SCOPE_LABELS,
+} from "@/data/questions/reg/regScope"
 import { useQuestionBankStore } from "@/stores/questionBankStore"
 import { useRecordStore } from "@/stores/recordStore"
 import { usePracticeSession } from "@/hooks/usePracticeSession"
@@ -96,11 +101,13 @@ const loadInitialSubject = (): Subject => {
   return isBankSubject(stored) ? stored : "FAR"
 }
 
-// テーマ一覧に出す区分ラベル。範囲内のみのセットは null（FARの in / BARの未登録セット / REGの全セット）。
+// テーマ一覧に出す区分ラベル。範囲内のみのセットは null（FARの in / BARの未登録セット / REGの in）。
 // BAR画面でFARから借りたセットは、範囲区分ではなくBAR上のAreaを示す
 const getSetLabel = (subject: Subject, setId: string): string | null => {
-  // REGは過去問DBの「現行科目での分類：REG」の問題だけなので、全セットを範囲内として扱う
-  if (subject === "REG") return null
+  if (subject === "REG") {
+    const { scope } = getRegScopeForSet(setId)
+    return scope === "in" ? null : REG_SCOPE_LABELS[scope]
+  }
   if (subject === "FAR") {
     const { scope } = getFarScopeForSet(setId)
     return scope === "in" ? null : FAR_SCOPE_LABELS[scope]
@@ -149,7 +156,7 @@ export default function QuestionsPage() {
   }, [questionSets])
 
   // 出題範囲フィルター適用後の問題IDの集合。統計カードもこの母集団に連動させる。
-  // FARはテーマ単位（getFarScopeForSet）、BARは問題単位（getBarScopeForQuestion）で判定。
+  // FARはテーマ単位（getFarScopeForSet）、BAR・REGは問題単位（getBarScopeForQuestion / getRegScopeForQuestion）で判定。
   // 判定が out のものだけを範囲外とし、gray / unverified は安全側に倒して範囲内に含める。
   // BAR画面の Area II/III（FARセット）は barScope に登録がなく unverified なので「BAR範囲のみ」に残る
   const scopedQuestionIds = useMemo(() => {
@@ -162,7 +169,7 @@ export default function QuestionsPage() {
         }
         const scope =
           subject === "REG"
-            ? "in"
+            ? getRegScopeForQuestion(set.id, q.id)
             : subject === "BAR"
               ? getBarScopeForQuestion(set.id, q.id)
               : getFarScopeForSet(set.id).scope
