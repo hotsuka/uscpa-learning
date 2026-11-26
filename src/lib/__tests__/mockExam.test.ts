@@ -4,10 +4,16 @@ import {
   buildMockExam,
   countFreshMockRuns,
   countSeenQuestions,
+  getMockExamQuestionCount,
   MOCK_EXAM_QUESTION_COUNT,
 } from "@/lib/mockExam"
 import { getBarScopeForQuestion } from "@/data/questions/bar/barScope"
 import { barFreshMockQuestionSets, barQuestionSets } from "@/data/questions/bar"
+import { getRegQuestionById, regQuestionSets } from "@/data/questions/reg"
+import {
+  getRegAreaForQuestion,
+  getRegScopeForQuestion,
+} from "@/data/questions/reg/regScope"
 
 describe("countSeenQuestions", () => {
   it("questionIdごとの出題回数を集計する", () => {
@@ -106,6 +112,54 @@ describe("buildMockExam（BAR）", () => {
     for (let i = 0; i < 20; i++) {
       const ids = buildMockExam({}, "BAR").map((e) => e.question.id)
       expect(ids.filter((id) => id.startsWith("pen-"))).toEqual([])
+    }
+  })
+})
+
+describe("buildMockExam（REG）", () => {
+  const setIdByQuestionId = new Map<string, string>()
+  for (const set of regQuestionSets)
+    for (const q of set.questions) setIdByQuestionId.set(q.id, set.id)
+
+  it("本番どおり72問をArea配分11/14/7/19/21で抽出する", () => {
+    expect(getMockExamQuestionCount("REG")).toBe(72)
+    const entries = buildMockExam({}, "REG")
+    expect(entries).toHaveLength(72)
+    const byArea = entries.reduce<Record<string, number>>((acc, e) => {
+      acc[e.area] = (acc[e.area] ?? 0) + 1
+      return acc
+    }, {})
+    expect(byArea).toEqual({ I: 11, II: 14, III: 7, IV: 19, V: 21 })
+  })
+
+  it("同一模試内で問題が重複しない", () => {
+    const ids = buildMockExam({}, "REG").map((e) => e.question.id)
+    expect(new Set(ids).size).toBe(ids.length)
+  })
+
+  it("出題範囲外（贈与税・遺産税・信託）を出さない", () => {
+    for (let i = 0; i < 20; i++) {
+      for (const entry of buildMockExam({}, "REG")) {
+        const setId = setIdByQuestionId.get(entry.question.id)
+        expect(setId).toBeDefined()
+        expect(getRegScopeForQuestion(setId!, entry.question.id)).not.toBe("out")
+      }
+    }
+  })
+
+  it("範囲内の全問に Area が割り当てられている（模試から漏れる問題が無い）", () => {
+    const unmapped = regQuestionSets.flatMap((set) =>
+      set.questions
+        .filter((q) => getRegScopeForQuestion(set.id, q.id) !== "out")
+        .filter((q) => getRegAreaForQuestion(set.id, q.id) === null)
+        .map((q) => q.id),
+    )
+    expect(unmapped).toEqual([])
+  })
+
+  it("誤答レビュー用に問題IDから本文を引ける", () => {
+    for (const entry of buildMockExam({}, "REG")) {
+      expect(getRegQuestionById(entry.question.id)?.stem).toBe(entry.question.stem)
     }
   })
 })

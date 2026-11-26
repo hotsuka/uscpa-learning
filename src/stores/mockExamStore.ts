@@ -1,12 +1,12 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { FarArea } from "@/data/questions/far/farScope";
-import type { MockExamSubject } from "@/lib/mockExam";
+import type { MockExamArea, MockExamSubject } from "@/lib/mockExam";
 
 export interface MockExamAnswer {
   questionId: string;
   topic: string;
-  area: FarArea;
+  /** FAR/BAR は I〜III、REG は I〜V */
+  area: MockExamArea;
   difficulty: "basic" | "intermediate" | "advanced";
   /** 元ラベル（A〜D）。未回答は null */
   selectedAnswer: string | null;

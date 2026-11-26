@@ -1,4 +1,4 @@
-import type { QuestionSet } from "@/types/questions";
+import type { FARQuestion, QuestionSet } from "@/types/questions";
 
 // Proactive AICPA過去問DB（Multiple Choice Core: REG）の全問をチャプターのセクション単位で収録したもの。
 // 2011〜2021年の Recently Released（正解のみ公開）は、Core MC と重複しない問題に英日の解説を付けて同じ単元へ追記した。
@@ -32,3 +32,14 @@ export const regQuestionSets: QuestionSet[] = [
   // Core MC に章が無い雇用税・労働者区分などの連邦法規（ブループリント Area II-D）。RR 由来の問題だけ
   federalRegulation,
 ] as QuestionSet[];
+
+// 模試の誤答レビューで問題IDから本文を引くための索引
+const regQuestionById = new Map<string, FARQuestion>(
+  regQuestionSets.flatMap((set) =>
+    set.questions.map((q) => [q.id, q] as const),
+  ),
+);
+
+export function getRegQuestionById(id: string): FARQuestion | undefined {
+  return regQuestionById.get(id);
+}

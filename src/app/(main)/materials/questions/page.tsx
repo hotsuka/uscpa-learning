@@ -67,7 +67,6 @@ const QUESTION_SETS_BY_SUBJECT = {
 } satisfies Record<Subject, typeof farQuestionSets>
 
 // 模試モードがある科目（REGは模試の出題配分が未整備）
-const hasMockExam = (subject: Subject) => subject !== "REG"
 
 // 出題範囲フィルターは科目ごとに保存する。共通の1キーだと、BAR画面で選んだ「範囲のみ」が
 // FAR画面では「FAR範囲のみ」として効き、BAR論点のFARセット（デリバティブ等）が0問になるため
@@ -524,14 +523,12 @@ export default function QuestionsPage() {
               （全{totalQuestions}問）
             </p>
           </div>
-          {hasMockExam(subject) && (
-            <Button asChild variant="outline" size="sm" className="shrink-0">
-              <Link href={`/materials/questions/mock?subject=${subject}`}>
-                <ClipboardCheck className="w-4 h-4 mr-1.5" />
-                模試モード
-              </Link>
-            </Button>
-          )}
+          <Button asChild variant="outline" size="sm" className="shrink-0">
+            <Link href={`/materials/questions/mock?subject=${subject}`}>
+              <ClipboardCheck className="w-4 h-4 mr-1.5" />
+              模試モード
+            </Link>
+          </Button>
         </div>
 
         {/* 統計カード */}
