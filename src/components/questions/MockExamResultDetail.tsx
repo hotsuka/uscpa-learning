@@ -7,6 +7,7 @@ import { MarkdownPreview } from "@/components/notes/MarkdownPreview"
 import { QuestionStem } from "@/components/materials/QuestionStem";
 import { getQuestionById } from "@/data/questions/far"
 import { getBarQuestionById } from "@/data/questions/bar"
+import { getRegQuestionById } from "@/data/questions/reg"
 import { MOCK_EXAM_TARGET_RATE, type MockExamSubject } from "@/lib/mockExam"
 import {
   getMockExamSubject,
@@ -27,6 +28,13 @@ const AREA_LABELS: Record<MockExamSubject, Record<string, string>> = {
     I: "Area I 業務分析",
     II: "Area II 技術的会計・報告",
     III: "Area III 州・地方政府",
+  },
+  REG: {
+    I: "Area I 倫理・税務手続",
+    II: "Area II ビジネス法",
+    III: "Area III 資産取引",
+    IV: "Area IV 個人課税",
+    V: "Area V 事業体課税",
   },
 }
 
@@ -91,7 +99,9 @@ function WrongAnswerReview({
   const question =
     subject === "BAR"
       ? getBarQuestionById(answer.questionId)
-      : getQuestionById(answer.questionId)
+      : subject === "REG"
+        ? getRegQuestionById(answer.questionId)
+        : getQuestionById(answer.questionId)
 
   return (
     <div className="border rounded-lg">

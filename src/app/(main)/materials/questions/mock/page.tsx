@@ -16,9 +16,9 @@ import {
   buildMockExam,
   countFreshMockRuns,
   countSeenQuestions,
+  getMockExamMinutes,
+  getMockExamQuestionCount,
   MOCK_EXAM_AREA_QUOTA,
-  MOCK_EXAM_QUESTION_COUNT,
-  MOCK_EXAM_MINUTES,
   MOCK_EXAM_TARGET_RATE,
   type MockExamQuestionEntry,
   type MockExamSubject,
@@ -45,7 +45,10 @@ import {
 // review: 過去の模試結果を履歴から見直すフェーズ
 type Phase = "intro" | "running" | "result" | "review"
 
-const MOCK_EXAM_SUBJECTS: MockExamSubject[] = ["FAR", "BAR"]
+const MOCK_EXAM_SUBJECTS: MockExamSubject[] = ["FAR", "BAR", "REG"]
+
+const isMockExamSubject = (value: string | null): value is MockExamSubject =>
+  MOCK_EXAM_SUBJECTS.some((s) => s === value)
 
 const formatRemaining = (sec: number): string => {
   const m = Math.floor(sec / 60)
@@ -73,7 +76,7 @@ export default function MockExamPage() {
   const [answers, setAnswers] = useState<Record<number, string>>({})
   const [flagged, setFlagged] = useState<Set<number>>(new Set())
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [remainingSec, setRemainingSec] = useState(MOCK_EXAM_MINUTES * 60)
+  const [remainingSec, setRemainingSec] = useState(getMockExamMinutes("FAR") * 60)
   const [result, setResult] = useState<MockExamResult | null>(null)
   // 履歴から見直し中の過去結果
   const [reviewingResult, setReviewingResult] = useState<MockExamResult | null>(null)
@@ -97,12 +100,22 @@ export default function MockExamPage() {
   const allResults = useMockExamStore((s) => s.results)
   // 履歴と出題済み判定は選択中の科目の結果だけで行う
   const pastResults = allResults.filter((r) => getMockExamSubject(r) === subject)
+  const questionCount = getMockExamQuestionCount(subject)
+  const examMinutes = getMockExamMinutes(subject)
+  const areaQuotaText = Object.entries(MOCK_EXAM_AREA_QUOTA[subject])
+    .map(([area, count]) => `${area}:${count}問`)
+    .join(" / ")
+  // REGは問題バンクの全問が演習画面にも出ている（初見模試用の問題が無い）
+  const allPracticedNote =
+    subject === "REG"
+      ? "演習画面で解いた問題からも出題します（初見の実力より点数が高めに出ます）。過去の模試で出題済みの問題は後回しにします。"
+      : null
 
   // 問題バンク画面から ?subject=BAR で来たときはその科目で開く。
   // useSearchParams は静的生成時に Suspense 境界を要求するため、マウント後に読む
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get("subject")
-    if (requested === "FAR" || requested === "BAR") setSubject(requested)
+    if (isMockExamSubject(requested)) setSubject(requested)
   }, [])
 
   const handleStart = (): void => {
@@ -120,11 +133,11 @@ export default function MockExamPage() {
     setAnswers({})
     setFlagged(new Set())
     setCurrentIndex(0)
-    setRemainingSec(MOCK_EXAM_MINUTES * 60)
+    setRemainingSec(examMinutes * 60)
     setResult(null)
     setReviewingResult(null)
     startedAtRef.current = new Date().toISOString()
-    deadlineRef.current = Date.now() + MOCK_EXAM_MINUTES * 60 * 1000
+    deadlineRef.current = Date.now() + examMinutes * 60 * 1000
     finishedRef.current = false
     setPhase("running")
   }
@@ -390,16 +403,14 @@ export default function MockExamPage() {
                 <div className="flex items-center gap-2">
                   <ClipboardCheck className="w-4 h-4 text-muted-foreground" />
                   <span>
-                    全{MOCK_EXAM_QUESTION_COUNT}問 — {subject}出題範囲からArea配分
-                    （I:{MOCK_EXAM_AREA_QUOTA[subject].I}問 / II:
-                    {MOCK_EXAM_AREA_QUOTA[subject].II}問 / III:
-                    {MOCK_EXAM_AREA_QUOTA[subject].III}問）で自動抽出
+                    全{questionCount}問 — {subject}出題範囲からArea配分
+                    （{areaQuotaText}）で自動抽出
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Timer className="w-4 h-4 text-muted-foreground" />
                   <span>
-                    制限時間{MOCK_EXAM_MINUTES}分 — 時間切れで自動提出、目標は正答率
+                    制限時間{examMinutes}分 — 時間切れで自動提出、目標は正答率
                     {MOCK_EXAM_TARGET_RATE}%以上
                   </span>
                 </div>
@@ -442,6 +453,9 @@ export default function MockExamPage() {
                       通常: 演習で解いた問題も含めて出題します（点数は実力より高めに出ます）。
                     </p>
                   </div>
+                )}
+                {allPracticedNote && (
+                  <p className="pt-2 text-xs text-muted-foreground">{allPracticedNote}</p>
                 )}
                 <Button onClick={handleStart} className="w-full mt-2">
                   {useFresh ? "初見模試を開始する" : "模試を開始する"}

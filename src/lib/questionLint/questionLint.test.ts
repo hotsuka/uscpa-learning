@@ -16,7 +16,16 @@ import {
   barOwnAreaIIIIIQuestionSets,
   barQuestionSets,
 } from "@/data/questions/bar";
-import { MOCK_EXAM_AREA_QUOTA, MOCK_EXAM_MINUTES } from "@/lib/mockExam";
+import { regQuestionSets } from "@/data/questions/reg";
+import {
+  getRegAreaForQuestion,
+  getRegScopeForQuestion,
+} from "@/data/questions/reg/regScope";
+import {
+  getMockExamMinutes,
+  MOCK_EXAM_AREA_QUOTA,
+  MOCK_EXAM_MINUTES,
+} from "@/lib/mockExam";
 import type { FARQuestion, QuestionSet } from "@/types/questions";
 import type { TBSQuestion } from "@/types/tbs";
 import { barFreshMockPool, collectIssues, mockTimeSummary } from "./collect";
@@ -280,6 +289,24 @@ describe("④ 模試の想定解答時間", () => {
     expect(expectedMcqMockMinutes(barFreshMockPool())).toBeLessThanOrEqual(
       MOCK_EXAM_MINUTES,
     );
+  });
+
+  it("REG模試（72問）の想定解答時間が制限時間に収まる", () => {
+    const pools: Record<string, FARQuestion[]> = {};
+    for (const set of regQuestionSets) {
+      for (const q of set.questions) {
+        if (getRegScopeForQuestion(set.id, q.id) === "out") continue;
+        const area = getRegAreaForQuestion(set.id, q.id);
+        if (area) pools[area] = [...(pools[area] ?? []), q];
+      }
+    }
+    const pool = {
+      id: "reg-mock",
+      quota: MOCK_EXAM_AREA_QUOTA.REG,
+      pools,
+      limitMinutes: getMockExamMinutes("REG"),
+    };
+    expect(lintMcqMockTime(pool)).toEqual([]);
   });
 });
 

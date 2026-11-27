@@ -75,6 +75,46 @@ export function getRegScopeForQuestion(
   return info.restScope ?? "in";
 }
 
+// ---- Area（模試の配分用） ----
+// ブループリント2026年版 REG節の Content allocation（REG1）:
+//   I 倫理・職業上の責任・連邦税手続 10-20% / II ビジネス法 15-25% /
+//   III 資産取引の連邦税 5-15% / IV 個人の連邦税 22-32% / V 事業体の連邦税 23-33%
+// 各セットの問題はすべて同じ単元（subtopic が1種類）なので、セット単位で Area を決める
+export type RegArea = "I" | "II" | "III" | "IV" | "V";
+
+export const REG_AREA_BY_SET_ID: Record<string, RegArea> = {
+  // Circular 230・申告書作成者の責任・税務手続・CPAの法的責任（Area I）
+  "reg-tax-ethics": "I",
+  // 契約・物品売買（UCC 2）・破産・事業体の形態・代理・連邦法規（雇用税等）は Area II の各トピック
+  "reg-contracts": "II",
+  "reg-sales-contracts": "II",
+  "reg-bankruptcy": "II",
+  "reg-business-structure": "II",
+  "reg-agency": "II",
+  "reg-federal-regulation": "II",
+  "reg-property-transactions": "III",
+  "reg-individual-taxation": "IV",
+  "reg-corporate-taxation": "V",
+  "reg-partnership-taxation": "V",
+  // 範囲内に残る5問のうち4問は免税団体（Area V-F）。寄附金控除の1問は下の個別指定で IV
+  "reg-trusts-gift-exempt": "V",
+};
+
+// セットの Area と異なる問題だけを個別に指定する
+const REG_AREA_BY_QUESTION_ID: Record<string, RegArea> = {
+  "reg-tge-035": "IV",
+};
+
+/** 問題の Area。登録の無いセットは null（模試に出さない） */
+export function getRegAreaForQuestion(
+  setId: string,
+  questionId: string,
+): RegArea | null {
+  return (
+    REG_AREA_BY_QUESTION_ID[questionId] ?? REG_AREA_BY_SET_ID[setId] ?? null
+  );
+}
+
 // UI表示用ラベル（in はラベルを出さない）
 export const REG_SCOPE_LABELS: Record<RegScope, string> = {
   in: "REG",
